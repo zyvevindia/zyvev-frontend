@@ -10,6 +10,8 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# Env overrides (never commit secrets). ".env.local" matches this pattern.
 *.local
 
 # Editor directories and files

@@ -7,17 +7,13 @@
   ENVIRONMENT VARIABLES
   ==========================================================
 
-  Development:
+  Copy .env.example to .env.local for local overrides (gitignored).
+
+  Development default:
   VITE_API_URL=http://localhost:5000
 
-  Production:
-  VITE_API_URL=https://evsavari-api.onrender.com
-
-  Example .env:
-  VITE_API_URL=http://localhost:5000
-
-  Example .env.production:
-  VITE_API_URL=https://evsavari-api.onrender.com
+  Production / CI:
+  Set VITE_API_URL in the deployment environment (see .env.production).
 
   Optional Google Analytics (GA4):
   VITE_GA_ID=G-XXXXXXXXXX
