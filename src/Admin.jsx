@@ -500,7 +500,7 @@ export default function Admin() {
       {/* ================= SIDEBAR ================= */}
 
       <div style={sidebar}>
-        <h2>Zyvev</h2>
+        <h2>EVSavari</h2>
 
         <Link
           to="/admin"
@@ -564,7 +564,7 @@ export default function Admin() {
         <div style={premiumHeader}>
           <div>
             <h1>
-              📊 Zyvev CRM Dashboard
+              📊 EVSavari CRM Dashboard
             </h1>
 
             <p>
