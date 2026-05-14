@@ -1,0 +1,556 @@
+/* =========================================================
+   ======================= ROOT =============================
+   ========================================================= */
+
+:root {
+  --zyvev-primary: #2563eb;
+  --zyvev-primary-dark: #1d4ed8;
+
+  --zyvev-bg: #f8fafc;
+  --zyvev-bg-soft: #eef2ff;
+
+  --zyvev-text: #0f172a;
+  --zyvev-text-soft: #64748b;
+
+  --zyvev-border: #e2e8f0;
+
+  --zyvev-shadow-sm:
+    0 10px 24px rgba(15, 23, 42, 0.06);
+
+  --zyvev-shadow-md:
+    0 18px 40px rgba(15, 23, 42, 0.08);
+
+  --zyvev-shadow-lg:
+    0 28px 70px rgba(15, 23, 42, 0.12);
+
+  --zyvev-radius-sm: 16px;
+  --zyvev-radius-md: 24px;
+  --zyvev-radius-lg: 32px;
+
+  --zyvev-transition:
+    all 0.28s ease;
+}
+
+/* =========================================================
+   ==================== GLOBAL RESET ========================
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f8fafc,
+      #eef2ff
+    );
+
+  color: var(--zyvev-text);
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================================================
+   ====================== TYPOGRAPHY ========================
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+p {
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =========================================================
+   ======================== LINKS ===========================
+   ========================================================= */
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================================
+   ======================= SCROLLBAR ========================
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      180deg,
+      #2563eb,
+      #1d4ed8
+    );
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #1d4ed8,
+      #1e40af
+    );
+}
+
+/* =========================================================
+   ===================== SELECTION ==========================
+   ========================================================= */
+
+::selection {
+  background: #bfdbfe;
+  color: #0f172a;
+}
+
+/* =========================================================
+   ==================== GLOBAL CONTAINERS ==================
+   ========================================================= */
+
+.zyvev-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-inline: clamp(18px, 3vw, 36px);
+}
+
+.zyvev-section {
+  padding-block:
+    clamp(48px, 7vw, 100px);
+}
+
+/* =========================================================
+   ======================= GRID HELPERS ====================
+   ========================================================= */
+
+.zyvev-grid-4 {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    );
+
+  gap: 30px;
+
+  align-items: stretch;
+}
+
+.zyvev-grid-3 {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(340px, 1fr)
+    );
+
+  gap: 28px;
+}
+
+.zyvev-grid-2 {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(420px, 1fr)
+    );
+
+  gap: 28px;
+}
+
+/* =========================================================
+   ===================== PREMIUM CARD =======================
+   ========================================================= */
+
+.zyvev-card {
+  background: white;
+
+  border-radius:
+    var(--zyvev-radius-md);
+
+  border:
+    1px solid
+    var(--zyvev-border);
+
+  box-shadow:
+    var(--zyvev-shadow-sm);
+
+  transition:
+    var(--zyvev-transition);
+}
+
+.zyvev-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    var(--zyvev-shadow-md);
+}
+
+/* =========================================================
+   ==================== PREMIUM BUTTONS ====================
+   ========================================================= */
+
+.zyvev-button-primary {
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #1d4ed8
+    );
+
+  color: white;
+
+  border: none;
+
+  border-radius:
+    var(--zyvev-radius-sm);
+
+  padding: 14px 22px;
+
+  font-weight: 700;
+
+  transition:
+    var(--zyvev-transition);
+
+  box-shadow:
+    0 14px 32px
+    rgba(37, 99, 235, 0.22);
+}
+
+.zyvev-button-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 18px 40px
+    rgba(37, 99, 235, 0.28);
+}
+
+.zyvev-button-secondary {
+  background: #0f172a;
+
+  color: white;
+
+  border: none;
+
+  border-radius:
+    var(--zyvev-radius-sm);
+
+  padding: 14px 22px;
+
+  font-weight: 700;
+
+  transition:
+    var(--zyvev-transition);
+}
+
+.zyvev-button-secondary:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   ====================== INPUT STYLES =====================
+   ========================================================= */
+
+.zyvev-input {
+  width: 100%;
+
+  border:
+    1px solid #d1d5db;
+
+  border-radius:
+    18px;
+
+  padding: 16px 18px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    var(--zyvev-transition);
+
+  background: white;
+}
+
+.zyvev-input:focus {
+  border-color: #93c5fd;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.12);
+}
+
+/* =========================================================
+   ==================== RESPONSIVE XL ======================
+   ========================================================= */
+
+@media (max-width: 1400px) {
+  .zyvev-grid-4 {
+    gap: 26px;
+  }
+}
+
+/* =========================================================
+   ==================== RESPONSIVE LG ======================
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .zyvev-grid-4 {
+    grid-template-columns:
+      repeat(
+        auto-fit,
+        minmax(260px, 1fr)
+      );
+  }
+
+  .zyvev-grid-3 {
+    grid-template-columns:
+      repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+      );
+  }
+
+  .zyvev-grid-2 {
+    grid-template-columns:
+      1fr;
+  }
+}
+
+/* =========================================================
+   =================== RESPONSIVE TABLET ===================
+   ========================================================= */
+
+@media (max-width: 992px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .zyvev-section {
+    padding-block:
+      clamp(42px, 6vw, 70px);
+  }
+
+  .zyvev-grid-4,
+  .zyvev-grid-3 {
+    grid-template-columns:
+      repeat(
+        auto-fit,
+        minmax(240px, 1fr)
+      );
+
+    gap: 22px;
+  }
+
+  .zyvev-button-primary,
+  .zyvev-button-secondary {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   ==================== RESPONSIVE MOBILE ==================
+   ========================================================= */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    line-height: 1.02;
+  }
+
+  h2 {
+    line-height: 1.08;
+  }
+
+  p {
+    line-height: 1.75;
+  }
+
+  .zyvev-container {
+    padding-inline: 18px;
+  }
+
+  .zyvev-grid-4,
+  .zyvev-grid-3,
+  .zyvev-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .zyvev-card {
+    border-radius: 24px;
+  }
+
+  .zyvev-button-primary,
+  .zyvev-button-secondary {
+    min-height: 52px;
+
+    border-radius: 18px;
+
+    font-size: 14px;
+  }
+
+  .zyvev-input {
+    min-height: 54px;
+
+    border-radius: 18px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* =========================================================
+   ================== RESPONSIVE SMALL MOBILE ==============
+   ========================================================= */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .zyvev-section {
+    padding-block: 42px;
+  }
+
+  .zyvev-container {
+    padding-inline: 14px;
+  }
+
+  .zyvev-card {
+    border-radius: 22px;
+  }
+
+  .zyvev-button-primary,
+  .zyvev-button-secondary {
+    padding: 14px 18px;
+  }
+
+  .zyvev-input {
+    padding: 15px 16px;
+  }
+}
+
+/* =========================================================
+   ===================== TOUCH DEVICES =====================
+   ========================================================= */
+
+@media (hover: none) {
+  .zyvev-card:hover,
+  .zyvev-button-primary:hover,
+  .zyvev-button-secondary:hover {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   ======================= UTILITIES ========================
+   ========================================================= */
+
+.zyvev-text-center {
+  text-align: center;
+}
+
+.zyvev-hidden-mobile {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .zyvev-hidden-mobile {
+    display: none;
+  }
+}
+
+.zyvev-hidden-desktop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .zyvev-hidden-desktop {
+    display: block;
+  }
+}
+
+@keyframes zyvev-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}

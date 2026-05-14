@@ -1,0 +1,529 @@
+import {
+  lazy,
+  Suspense,
+  useEffect,
+} from "react";
+
+import {
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
+import {
+  Helmet,
+} from "react-helmet-async";
+
+import Home from "./pages/Home";
+import ComparePage from "./pages/ComparePage";
+
+import {
+  trackPageView,
+} from "./utils/analytics";
+
+/* =========================================================
+   ===================== LAZY IMPORTS ======================
+   ========================================================= */
+
+const Admin = lazy(() =>
+  import("./Admin")
+);
+
+const Login = lazy(() =>
+  import("./Login")
+);
+
+const PrivateRoute = lazy(() =>
+  import("./PrivateRoute")
+);
+
+const Users = lazy(() =>
+  import("./pages/Users")
+);
+
+const SalesDashboard = lazy(() =>
+  import("./pages/SalesDashboard")
+);
+
+const KanbanBoard = lazy(() =>
+  import("./pages/KanbanBoard")
+);
+
+const CarDetails = lazy(() =>
+  import("./pages/CarDetails")
+);
+
+const SalesAnalytics = lazy(() =>
+  import("./pages/SalesAnalytics")
+);
+
+const ListingPage = lazy(() =>
+  import("./pages/ListingPage")
+);
+
+/* =========================================================
+   ================= NORMAL IMPORTS ========================
+   ========================================================= */
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+
+/* =========================================================
+   ==================== ROUTE LOADER =======================
+   ========================================================= */
+
+function RouteLoader() {
+
+  return (
+
+    <div style={routeLoaderWrapper}>
+
+      <div style={routeLoaderCard}>
+
+        <div style={routeLoaderLogo}>
+          ⚡
+        </div>
+
+        <h2 style={routeLoaderTitle}>
+          Loading EVSavari
+        </h2>
+
+        <p style={routeLoaderText}>
+          Preparing premium EV experience...
+        </p>
+
+        <div style={routeSpinner} />
+
+      </div>
+
+    </div>
+  );
+}
+
+/* =========================================================
+   ======================= APP ROUTES =======================
+   ========================================================= */
+
+export default function App() {
+
+  const location =
+    useLocation();
+
+  /* =========================================================
+     ==================== ANALYTICS TRACK ===================
+     ========================================================= */
+
+  useEffect(() => {
+
+    trackPageView(
+      location.pathname
+    );
+
+  }, [location]);
+
+  /* =========================================================
+     ========================= RENDER ========================
+     ========================================================= */
+
+  return (
+
+    <>
+      <ScrollToTop />
+
+      <Navbar />
+
+      <Suspense
+        fallback={<RouteLoader />}
+      >
+
+        <Routes>
+
+          {/* ================= PUBLIC ================= */}
+
+          <Route
+            path="/"
+            element={<Home />}
+          />
+
+          <Route
+            path="/car/:slug"
+            element={<CarDetails />}
+          />
+
+          <Route
+            path="/compare"
+            element={<ComparePage />}
+          />
+
+          <Route
+            path="/popular"
+            element={<ListingPage />}
+          />
+
+          <Route
+            path="/latest"
+            element={<ListingPage />}
+          />
+
+          <Route
+            path="/upcoming"
+            element={<ListingPage />}
+          />
+
+          <Route
+            path="/cars"
+            element={<ListingPage />}
+          />
+
+          <Route
+            path="/bikes"
+            element={<ListingPage />}
+          />
+
+          <Route
+            path="/scooters"
+            element={<ListingPage />}
+          />
+
+          <Route
+            path="/:category"
+            element={<ListingPage />}
+          />
+
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+
+          {/* ================= ADMIN ================= */}
+
+          <Route
+            path="/admin"
+            element={
+              <PrivateRoute
+                allowedRoles={[
+                  "admin",
+                  "sales",
+                ]}
+              >
+                <Admin />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/users"
+            element={
+              <PrivateRoute
+                allowedRoles={[
+                  "admin",
+                ]}
+              >
+                <Users />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/analytics"
+            element={
+              <PrivateRoute
+                allowedRoles={[
+                  "admin",
+                ]}
+              >
+                <Admin />
+              </PrivateRoute>
+            }
+          />
+
+          {/* ================= SALES ================= */}
+
+          <Route
+            path="/sales"
+            element={
+              <PrivateRoute
+                allowedRoles={[
+                  "sales",
+                ]}
+              >
+                <SalesDashboard />
+              </PrivateRoute>
+            }
+          />
+
+          {/* ================= KANBAN ================= */}
+
+          <Route
+            path="/kanban"
+            element={
+              <PrivateRoute
+                allowedRoles={[
+                  "admin",
+                  "sales",
+                ]}
+              >
+                <KanbanBoard />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/sales-analytics"
+            element={<SalesAnalytics />}
+          />
+
+          {/* ================= 404 ================= */}
+
+          <Route
+            path="*"
+            element={
+              <>
+                <Helmet>
+
+                  <title>
+                    Page Not Found | EVSavari
+                  </title>
+
+                  <meta
+                    name="robots"
+                    content="noindex"
+                  />
+
+                </Helmet>
+
+                <div style={notFoundWrapper}>
+
+                  <div style={notFoundCard}>
+
+                    <div style={notFoundIcon}>
+                      ⚡
+                    </div>
+
+                    <h1 style={notFoundTitle}>
+                      404
+                    </h1>
+
+                    <p style={notFoundText}>
+                      The page you are looking for
+                      does not exist.
+                    </p>
+
+                    <button
+                      onClick={() =>
+                        window.location.href = "/"
+                      }
+
+                      style={primaryButton}
+                    >
+                      Back to Home
+                    </button>
+
+                  </div>
+
+                </div>
+              </>
+            }
+          />
+
+        </Routes>
+
+      </Suspense>
+
+      <Footer />
+
+    </>
+  );
+}
+
+/* =========================================================
+   ======================= STYLES ===========================
+   ========================================================= */
+
+const primaryButton = {
+  background:
+    "linear-gradient(135deg, #2563eb, #1d4ed8)",
+
+  color: "white",
+
+  border: "none",
+
+  padding: "14px 20px",
+
+  borderRadius: "14px",
+
+  cursor: "pointer",
+
+  fontWeight: "600",
+
+  fontSize: "15px",
+};
+
+const routeLoaderWrapper = {
+  minHeight: "70vh",
+
+  display: "flex",
+
+  alignItems: "center",
+
+  justifyContent: "center",
+
+  padding: "30px",
+};
+
+const routeLoaderCard = {
+  background: "white",
+
+  padding: "50px 40px",
+
+  borderRadius: "32px",
+
+  border:
+    "1px solid #e2e8f0",
+
+  textAlign: "center",
+
+  boxShadow:
+    "0 24px 60px rgba(15,23,42,0.08)",
+};
+
+const routeLoaderLogo = {
+  width: "90px",
+
+  height: "90px",
+
+  margin:
+    "0 auto 24px",
+
+  borderRadius: "28px",
+
+  background:
+    "linear-gradient(135deg, #2563eb, #1d4ed8)",
+
+  display: "flex",
+
+  alignItems: "center",
+
+  justifyContent: "center",
+
+  fontSize: "40px",
+
+  color: "white",
+
+  boxShadow:
+    "0 20px 40px rgba(37,99,235,0.28)",
+};
+
+const routeLoaderTitle = {
+  fontSize: "34px",
+
+  fontWeight: "800",
+
+  color: "#0f172a",
+
+  marginBottom: "12px",
+};
+
+const routeLoaderText = {
+  color: "#64748b",
+
+  lineHeight: "1.8",
+
+  marginBottom: "28px",
+};
+
+const routeSpinner = {
+  width: "52px",
+
+  height: "52px",
+
+  margin: "0 auto",
+
+  border:
+    "4px solid rgba(37,99,235,0.12)",
+
+  borderTop:
+    "4px solid #2563eb",
+
+  borderRadius: "50%",
+
+  animation:
+    "zyvev-spin 1s linear infinite",
+};
+
+const notFoundWrapper = {
+  minHeight: "70vh",
+
+  display: "flex",
+
+  alignItems: "center",
+
+  justifyContent: "center",
+
+  padding: "30px",
+};
+
+const notFoundCard = {
+  background: "white",
+
+  padding: "60px 40px",
+
+  borderRadius: "32px",
+
+  border:
+    "1px solid #e2e8f0",
+
+  textAlign: "center",
+
+  maxWidth: "520px",
+
+  width: "100%",
+
+  boxShadow:
+    "0 24px 60px rgba(15,23,42,0.08)",
+};
+
+const notFoundIcon = {
+  width: "90px",
+
+  height: "90px",
+
+  margin:
+    "0 auto 24px",
+
+  borderRadius: "28px",
+
+  background:
+    "linear-gradient(135deg, #2563eb, #1d4ed8)",
+
+  display: "flex",
+
+  alignItems: "center",
+
+  justifyContent: "center",
+
+  fontSize: "40px",
+
+  color: "white",
+};
+
+const notFoundTitle = {
+  fontSize: "72px",
+
+  fontWeight: "800",
+
+  color: "#0f172a",
+
+  marginBottom: "10px",
+
+  lineHeight: "1",
+};
+
+const notFoundText = {
+  color: "#64748b",
+
+  lineHeight: "1.8",
+
+  marginBottom: "30px",
+};

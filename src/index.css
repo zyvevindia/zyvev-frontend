@@ -1,0 +1,31 @@
+/* ================= GLOBAL RESET ================= */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f7fb;
+  color: #1a1a1a;
+}
+
+/* ================= HEADINGS ================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* ================= BUTTON ================= */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
