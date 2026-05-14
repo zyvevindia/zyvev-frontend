@@ -13,6 +13,12 @@ import { API_URL } from "../config";
 
 import normalizeCar from "../utils/normalizeCar";
 
+import {
+  COMPARE_CARS_STORAGE_KEY,
+  COMPARE_CARS_SYNC_EVENT,
+  loadCompareCarsFromStorage,
+} from "../utils/compareCarsStorage";
+
 import HomeSection from "../components/HomeSection";
 
 import CompactCarCard from "../components/CompactCarCard";
@@ -97,17 +103,9 @@ export default function Home() {
 
   const [compareList,
     setCompareList] =
-    useState(() => {
-
-      const saved =
-        localStorage.getItem(
-          "compareCars"
-        );
-
-      return saved
-        ? JSON.parse(saved)
-        : [];
-    });
+    useState(
+      loadCompareCarsFromStorage
+    );
 
   const [filters,
     setFilters] =
@@ -206,7 +204,7 @@ export default function Home() {
 
       .catch((err) => {
 
-        console.log(err);
+        console.error(err);
 
         setError(
           "Unable to load EV data right now."
@@ -247,7 +245,7 @@ export default function Home() {
   useEffect(() => {
 
     localStorage.setItem(
-      "compareCars",
+      COMPARE_CARS_STORAGE_KEY,
 
       JSON.stringify(
         compareList
@@ -255,6 +253,32 @@ export default function Home() {
     );
 
   }, [compareList]);
+
+  useEffect(() => {
+
+    const onCompareSync =
+      () => {
+
+        setCompareList(
+          loadCompareCarsFromStorage()
+        );
+      };
+
+    window.addEventListener(
+      COMPARE_CARS_SYNC_EVENT,
+
+      onCompareSync
+    );
+
+    return () => {
+
+      window.removeEventListener(
+        COMPARE_CARS_SYNC_EVENT,
+
+        onCompareSync
+      );
+    };
+  }, []);
 
   /* =========================================================
      ======================= COMPARE =========================

@@ -6,9 +6,15 @@ import {
 
 import {
   useParams,
+  useLocation,
+  Link,
+  useNavigate,
+  useSearchParams,
 } from "react-router-dom";
 
-import Footer from "../components/Footer";
+import {
+  Helmet,
+} from "react-helmet-async";
 
 import CarCard from "../components/CarCard";
 
@@ -16,9 +22,17 @@ import CarCardSkeleton from "../components/skeletons/CarCardSkeleton";
 
 import normalizeCar from "../utils/normalizeCar";
 
-const API_URL =
-  import.meta.env.VITE_API_URL ||
-  "http://localhost:5000";
+import {
+  API_URL,
+  SITE_ORIGIN,
+  APP_CONFIG,
+} from "../config";
+
+import {
+  COMPARE_CARS_STORAGE_KEY,
+  COMPARE_CARS_SYNC_EVENT,
+  loadCompareCarsFromStorage,
+} from "../utils/compareCarsStorage";
 
 /* =========================================================
    ===================== LISTING PAGE =======================
@@ -28,6 +42,20 @@ export default function ListingPage() {
 
   const { category } =
     useParams();
+
+  const { pathname } =
+    useLocation();
+
+  const navigate =
+    useNavigate();
+
+  const [searchParams] =
+    useSearchParams();
+
+  const compareMode =
+    searchParams.get(
+      "compareMode"
+    ) === "true";
 
   const [cars, setCars] =
     useState([]);
@@ -46,6 +74,12 @@ export default function ListingPage() {
 
   const [error, setError] =
     useState("");
+
+  const [compareList,
+    setCompareList] =
+    useState(
+      loadCompareCarsFromStorage
+    );
 
   /* =========================================================
      ======================= FETCH CARS ======================
@@ -67,6 +101,7 @@ export default function ListingPage() {
           );
 
         if (!response.ok) {
+
           throw new Error(
             "Failed to fetch EVs"
           );
@@ -74,11 +109,6 @@ export default function ListingPage() {
 
         const data =
           await response.json();
-
-        console.log(
-          "Cars API Response:",
-          data
-        );
 
         const normalized =
           (data?.cars || []).map(
@@ -89,7 +119,10 @@ export default function ListingPage() {
 
       } catch (error) {
 
-        console.error(error);
+        console.error(
+          "ListingPage Error:",
+          error
+        );
 
         setError(
           "Unable to load EV listings."
@@ -105,6 +138,85 @@ export default function ListingPage() {
 
   }, []);
 
+  useEffect(() => {
+
+    localStorage.setItem(
+      COMPARE_CARS_STORAGE_KEY,
+
+      JSON.stringify(
+        compareList
+      )
+    );
+  }, [compareList]);
+
+  useEffect(() => {
+
+    const onCompareSync =
+      () => {
+
+        setCompareList(
+          loadCompareCarsFromStorage()
+        );
+      };
+
+    window.addEventListener(
+      COMPARE_CARS_SYNC_EVENT,
+
+      onCompareSync
+    );
+
+    return () => {
+
+      window.removeEventListener(
+        COMPARE_CARS_SYNC_EVENT,
+
+        onCompareSync
+      );
+    };
+  }, []);
+
+  const toggleCompare =
+    (car) => {
+
+      setCompareList(
+        (prev) => {
+
+          if (
+            prev.find(
+              (c) =>
+                c._id ===
+                car._id
+            )
+          ) {
+
+            return prev.filter(
+              (c) =>
+                c._id !==
+                car._id
+            );
+          }
+
+          if (
+            prev.length >=
+            3
+          ) {
+
+            alert(
+              "Maximum 3 EVs can be compared."
+            );
+
+            return prev;
+          }
+
+          return [
+            ...prev,
+
+            car,
+          ];
+        }
+      );
+    };
+
   /* =========================================================
      ===================== FILTERED DATA =====================
      ========================================================= */
@@ -112,7 +224,10 @@ export default function ListingPage() {
   const filteredCars =
     useMemo(() => {
 
-      let filtered = [...cars];
+      let filtered =
+        Array.isArray(cars)
+          ? [...cars]
+          : [];
 
       /* ================= CATEGORY ================= */
 
@@ -121,7 +236,7 @@ export default function ListingPage() {
         filtered =
           filtered.filter(
             (car) =>
-              car.category
+              car?.category
                 ?.toLowerCase()
                 .includes(
                   category.toLowerCase()
@@ -136,13 +251,13 @@ export default function ListingPage() {
         filtered =
           filtered.filter(
             (car) =>
-              car.name
+              car?.name
                 ?.toLowerCase()
                 .includes(
                   search.toLowerCase()
                 ) ||
 
-              car.brand
+              car?.brand
                 ?.toLowerCase()
                 .includes(
                   search.toLowerCase()
@@ -157,7 +272,7 @@ export default function ListingPage() {
         filtered =
           filtered.filter(
             (car) =>
-              car.brand === brand
+              car?.brand === brand
           );
       }
 
@@ -170,7 +285,8 @@ export default function ListingPage() {
 
         filtered.sort(
           (a, b) =>
-            a.price - b.price
+            (a?.price || 0) -
+            (b?.price || 0)
         );
       }
 
@@ -181,7 +297,8 @@ export default function ListingPage() {
 
         filtered.sort(
           (a, b) =>
-            b.price - a.price
+            (b?.price || 0) -
+            (a?.price || 0)
         );
       }
 
@@ -192,7 +309,8 @@ export default function ListingPage() {
 
         filtered.sort(
           (a, b) =>
-            b.range - a.range
+            (b?.range || 0) -
+            (a?.range || 0)
         );
       }
 
@@ -213,13 +331,155 @@ export default function ListingPage() {
   const brands = [
 
     ...new Set(
-      cars
+      (cars || [])
         .map(
-          (car) => car.brand
+          (car) => car?.brand
         )
         .filter(Boolean)
     ),
   ];
+
+  /* =========================================================
+     ======================== SEO ============================
+     ========================================================= */
+
+  const seo =
+    useMemo(() => {
+
+      const origin =
+        SITE_ORIGIN;
+
+      const path =
+        pathname || "/cars";
+
+      const normalizedPath =
+
+        path.length > 1 &&
+        path.endsWith("/")
+          ? path.slice(0, -1)
+          : path;
+
+      const canonical =
+        `${origin}${normalizedPath}`;
+
+      const baseDesc =
+        "Browse, filter, and compare electric cars, scooters, and bikes in India on EVSavari.";
+
+      const byPath = {
+
+        "/popular": {
+
+          title:
+            "Popular electric vehicles | EVSavari",
+
+          description:
+            `Discover trending and best-selling EVs in India. ${baseDesc}`,
+        },
+
+        "/latest": {
+
+          title:
+            "Latest electric vehicles | EVSavari",
+
+          description:
+            `New arrivals and recently listed electric vehicles. ${baseDesc}`,
+        },
+
+        "/upcoming": {
+
+          title:
+            "Upcoming electric vehicles | EVSavari",
+
+          description:
+            `Future EV launches and models to watch. ${baseDesc}`,
+        },
+
+        "/cars": {
+
+          title:
+            "Browse electric cars & EVs | EVSavari",
+
+          description:
+            `Explore electric cars and SUVs. ${baseDesc}`,
+        },
+
+        "/bikes": {
+
+          title:
+            "Electric bikes in India | EVSavari",
+
+          description:
+            `Compare electric two-wheelers and e-bikes. ${baseDesc}`,
+        },
+
+        "/scooters": {
+
+          title:
+            "Electric scooters in India | EVSavari",
+
+          description:
+            `Find e-scooters by range, price, and brand. ${baseDesc}`,
+        },
+      };
+
+      const match =
+        byPath[normalizedPath];
+
+      if (match) {
+
+        return {
+
+          ...match,
+
+          canonical,
+        };
+      }
+
+      if (category) {
+
+        const label =
+
+          category
+            .replace(
+              /-/g,
+              " "
+            )
+            .replace(
+              /\b\w/g,
+              (c) =>
+                c.toUpperCase()
+            );
+
+        return {
+
+          title:
+            `${label} — Electric vehicles | EVSavari`,
+
+          description:
+            `${label} listings on EVSavari. ${baseDesc}`,
+
+          canonical:
+            `${origin}${normalizedPath}`,
+        };
+      }
+
+      return {
+
+        title:
+          `Electric vehicles | ${APP_CONFIG.appName}`,
+
+        description: baseDesc,
+
+        canonical,
+      };
+
+    }, [
+      pathname,
+      category,
+    ]);
+
+  const ogImage =
+    `${SITE_ORIGIN}/og-image.jpg`;
 
   /* =========================================================
      ========================= RENDER ========================
@@ -234,6 +494,74 @@ export default function ListingPage() {
       }}
     >
 
+      <Helmet>
+
+        <title>
+          {seo.title}
+        </title>
+
+        <meta
+          name="description"
+          content={seo.description}
+        />
+
+        <link
+          rel="canonical"
+          href={seo.canonical}
+        />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
+
+        <meta
+          property="og:title"
+          content={seo.title}
+        />
+
+        <meta
+          property="og:description"
+          content={seo.description}
+        />
+
+        <meta
+          property="og:url"
+          content={seo.canonical}
+        />
+
+        <meta
+          property="og:image"
+          content={ogImage}
+        />
+
+        <meta
+          property="og:site_name"
+          content={APP_CONFIG.appName}
+        />
+
+        <meta
+          name="twitter:card"
+          content="summary_large_image"
+        />
+
+        <meta
+          name="twitter:title"
+          content={seo.title}
+        />
+
+        <meta
+          name="twitter:description"
+          content={seo.description}
+        />
+
+        <meta
+          name="twitter:image"
+          content={ogImage}
+        />
+
+      </Helmet>
+
       {/* ================= HERO ================= */}
 
       <section
@@ -244,7 +572,7 @@ export default function ListingPage() {
           color: "white",
 
           padding:
-            "100px 20px 70px",
+            "120px 20px 80px",
 
           textAlign: "center",
         }}
@@ -272,7 +600,7 @@ export default function ListingPage() {
 
             margin: "0 auto",
 
-            lineHeight: 1.7,
+            lineHeight: "1.7",
           }}
         >
           Compare premium EVs,
@@ -398,6 +726,105 @@ export default function ListingPage() {
 
       </section>
 
+      {compareMode && (
+
+        <section
+          style={{
+            maxWidth: "1300px",
+
+            margin: "28px auto 0",
+
+            padding: "0 20px",
+          }}
+        >
+
+          <div
+            style={{
+              background:
+                "linear-gradient(135deg,#eff6ff,#dbeafe)",
+
+              border: "1px solid #93c5fd",
+
+              borderRadius: "18px",
+
+              padding: "16px 20px",
+
+              color: "#0f172a",
+            }}
+          >
+
+            <strong
+              style={{
+                fontSize: "15px",
+              }}
+            >
+              Select 2–3 EVs to compare
+            </strong>
+
+            <p
+              style={{
+                margin: "8px 0 0",
+
+                fontSize: "14px",
+
+                lineHeight: 1.65,
+
+                color: "#334155",
+              }}
+            >
+
+              Tap{" "}
+
+              <strong>
+                Compare
+              </strong>
+
+              {" "}
+              on the cards below. When you have at
+              least two, use the floating{" "}
+
+              <strong>
+                Compare
+              </strong>
+
+              {" "}
+              button to view them side by side.
+            </p>
+
+            {compareList.length >=
+              2 && (
+
+              <Link
+                to="/compare"
+
+                state={{
+                  cars:
+                    compareList,
+                }}
+
+                style={{
+                  display:
+                    "inline-block",
+
+                  marginTop: "12px",
+
+                  fontWeight: 700,
+
+                  color: "#1d4ed8",
+
+                  textDecoration: "none",
+                }}
+              >
+                Open compare page →
+              </Link>
+            )}
+
+          </div>
+
+        </section>
+
+      )}
+
       {/* ================= LISTINGS ================= */}
 
       <section
@@ -481,8 +908,20 @@ export default function ListingPage() {
               (car) => (
 
                 <CarCard
-                  key={car._id}
+                  key={
+                    car?._id ||
+                    car?.id
+                  }
                   car={car}
+                  compareList={
+                    compareList
+                  }
+                  toggleCompare={
+                    toggleCompare
+                  }
+                  compareModeActive={
+                    compareMode
+                  }
                 />
               )
             )}
@@ -492,7 +931,48 @@ export default function ListingPage() {
 
       </section>
 
-      <Footer />
+      <>
+
+        {compareList.length ===
+          1 && (
+
+          <div
+            style={compareHelperBox}
+          >
+            Select 1 more EV to compare
+          </div>
+        )}
+
+        {compareList.length >=
+          2 && (
+
+          <button
+            type="button"
+            style={
+              floatingCompareButton
+            }
+            onClick={() =>
+              navigate(
+                "/compare",
+
+                {
+                  state: {
+                    cars:
+                      compareList,
+                  },
+                }
+              )
+            }
+          >
+            Compare (
+            {
+              compareList.length
+            }
+            )
+          </button>
+        )}
+
+      </>
 
     </div>
   );
@@ -550,4 +1030,70 @@ const emptyText = {
   fontSize: "16px",
 
   lineHeight: "1.8",
+};
+
+const compareHelperBox = {
+  position: "fixed",
+
+  bottom: "22px",
+
+  right: "22px",
+
+  background:
+    "rgba(15,23,42,0.92)",
+
+  color: "white",
+
+  padding: "14px 18px",
+
+  borderRadius: "18px",
+
+  fontWeight: "600",
+
+  fontSize: "14px",
+
+  backdropFilter:
+    "blur(14px)",
+
+  boxShadow:
+    "0 14px 34px rgba(0,0,0,0.24)",
+
+  zIndex: 999,
+
+  border:
+    "1px solid rgba(255,255,255,0.08)",
+
+  maxWidth: "280px",
+
+  lineHeight: "1.5",
+};
+
+const floatingCompareButton = {
+  position: "fixed",
+
+  bottom: "22px",
+
+  right: "22px",
+
+  background:
+    "linear-gradient(135deg, #2563eb, #1d4ed8)",
+
+  color: "white",
+
+  border: "none",
+
+  padding: "16px 24px",
+
+  borderRadius: "18px",
+
+  cursor: "pointer",
+
+  fontWeight: "700",
+
+  fontSize: "15px",
+
+  boxShadow:
+    "0 16px 36px rgba(37,99,235,0.34)",
+
+  zIndex: 1000,
 };

@@ -1,4 +1,10 @@
+import {
+  useState,
+} from "react";
+
 import { Link } from "react-router-dom";
+
+import LeadInquiryModal from "./LeadInquiryModal";
 
 /* =========================================================
    ====================== CAR CARD ==========================
@@ -6,21 +12,108 @@ import { Link } from "react-router-dom";
 
 export default function CarCard({
   car,
-  compareList,
-  toggleCompare,
+  compareList = [],
+  toggleCompare = () => {},
+  compareModeActive = false,
 }) {
-  const isCompared = compareList.find(
-    (c) => c._id === car._id
-  );
+  /* =======================================================
+     ================= SAFETY FALLBACKS ====================
+     ======================================================= */
+
+  const safeCar = car || {};
+
+  const {
+    _id,
+    name,
+    brand,
+    image,
+    price,
+    range,
+    battery,
+  } = safeCar;
+
+  const isCompared =
+    Array.isArray(compareList) &&
+    compareList.find(
+      (c) => c?._id === _id
+    );
+
+  const fallbackImage =
+    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop";
+
+  const safeImage =
+    image || fallbackImage;
+
+  const safeName =
+    name || "Electric Vehicle";
+
+  const safeBrand =
+    brand || "EV";
+
+  const safePrice =
+    typeof price === "number"
+      ? price
+      : 0;
+
+  const safeRange =
+    range || "N/A";
+
+  const safeBattery =
+    battery || "Battery";
+
+  const carSlug =
+    safeCar.slug;
+
+  const detailPath =
+    carSlug
+      ? `/car/${carSlug}`
+      : `/car/${_id}`;
+
+  const [inquiryOpen,
+    setInquiryOpen] =
+    useState(false);
+
+  const [inquiryHeadline,
+    setInquiryHeadline] =
+    useState(
+      "Request a callback"
+    );
+
+  const [inquirySubmit,
+    setInquirySubmit] =
+    useState(
+      "Request callback"
+    );
+
+  const openInquiry = (
+    headline,
+    submit
+  ) => {
+
+    setInquiryHeadline(
+      headline
+    );
+
+    setInquirySubmit(
+      submit
+    );
+
+    setInquiryOpen(
+      true
+    );
+  };
 
   return (
+    <>
     <div
       style={card}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform =
           "translateY(-10px)";
+
         e.currentTarget.style.boxShadow =
           "0 30px 60px rgba(15,23,42,0.14)";
+
         e.currentTarget.style.border =
           "1px solid #bfdbfe";
 
@@ -37,8 +130,10 @@ export default function CarCard({
       onMouseLeave={(e) => {
         e.currentTarget.style.transform =
           "translateY(0px)";
+
         e.currentTarget.style.boxShadow =
           "0 14px 40px rgba(15,23,42,0.08)";
+
         e.currentTarget.style.border =
           "1px solid #e2e8f0";
 
@@ -58,9 +153,13 @@ export default function CarCard({
       <div style={imageWrapper}>
         <img
           className="car-image"
-          src={car.image}
-          alt={car.name}
-          style={image}
+          src={safeImage}
+          alt={safeName}
+          style={imageStyle}
+          onError={(e) => {
+            e.target.src =
+              fallbackImage;
+          }}
         />
 
         {/* ================= IMAGE OVERLAY ================= */}
@@ -70,7 +169,7 @@ export default function CarCard({
         {/* ================= BRAND BADGE ================= */}
 
         <div style={brandBadge}>
-          {car.brand}
+          {safeBrand}
         </div>
       </div>
 
@@ -81,12 +180,12 @@ export default function CarCard({
 
         <div style={topContent}>
           <h3 style={title}>
-            {car.name}
+            {safeName}
           </h3>
 
-          <p style={price}>
+          <p style={priceStyle}>
             ₹
-            {car.price.toLocaleString()}
+            {safePrice.toLocaleString()}
           </p>
 
           {/* ================= SPECS ================= */}
@@ -98,7 +197,7 @@ export default function CarCard({
               </span>
 
               <span style={specValue}>
-                ⚡ {car.range} km
+                ⚡ {safeRange} km
               </span>
             </div>
 
@@ -108,7 +207,7 @@ export default function CarCard({
               </span>
 
               <span style={specValue}>
-                🔋 {car.battery}
+                🔋 {safeBattery}
               </span>
             </div>
           </div>
@@ -118,7 +217,7 @@ export default function CarCard({
 
         <div style={buttonContainer}>
           <Link
-            to={`/car/${car._id}`}
+            to={detailPath}
             style={{
               textDecoration: "none",
               flex: 1,
@@ -133,14 +232,22 @@ export default function CarCard({
           </Link>
 
           <button
+            type="button"
             style={{
               ...secondaryButton,
               background: isCompared
                 ? "#f59e0b"
                 : "#111827",
+              ...(compareModeActive &&
+              !isCompared
+                ? {
+                    boxShadow:
+                      "0 0 0 3px rgba(96,165,250,0.75)",
+                  }
+                : {}),
             }}
             onClick={() =>
-              toggleCompare(car)
+              toggleCompare(safeCar)
             }
           >
             {isCompared
@@ -148,8 +255,60 @@ export default function CarCard({
               : "Compare"}
           </button>
         </div>
+
+        <div style={leadRow}>
+          <button
+            type="button"
+            style={ctaOutline}
+            onClick={() =>
+              openInquiry(
+                "Request a callback",
+                "Request callback"
+              )
+            }
+          >
+            Callback
+          </button>
+
+          <button
+            type="button"
+            style={ctaOutline}
+            onClick={() =>
+              openInquiry(
+                "Get the best deal",
+                "Get best deal"
+              )
+            }
+          >
+            Best deal
+          </button>
+        </div>
       </div>
     </div>
+
+      <LeadInquiryModal
+        isOpen={inquiryOpen}
+        onClose={() =>
+          setInquiryOpen(
+            false
+          )
+        }
+        sourcePage="listing_card"
+        vehicleName={`${safeBrand} ${safeName}`}
+        vehicleId={
+          String(
+            carSlug || _id || ""
+          )
+        }
+        mongoCarId={
+          _id
+            ? String(_id)
+            : ""
+        }
+        headline={inquiryHeadline}
+        submitLabel={inquirySubmit}
+      />
+    </>
   );
 }
 
@@ -180,7 +339,7 @@ const imageWrapper = {
   aspectRatio: "16 / 10",
 };
 
-const image = {
+const imageStyle = {
   width: "100%",
   height: "100%",
   objectFit: "cover",
@@ -238,7 +397,7 @@ const title = {
   letterSpacing: "-0.5px",
 };
 
-const price = {
+const priceStyle = {
   fontSize: "30px",
   fontWeight: "800",
   color: "#2563eb",
@@ -284,6 +443,26 @@ const buttonContainer = {
   display: "flex",
   gap: "12px",
   alignItems: "stretch",
+};
+
+const leadRow = {
+  display: "flex",
+  gap: "10px",
+  marginTop: "10px",
+};
+
+const ctaOutline = {
+  flex: 1,
+  padding: "12px 10px",
+  borderRadius: "14px",
+  border:
+    "1px solid #bfdbfe",
+  background: "#f8fafc",
+  color: "#1d4ed8",
+  fontWeight: "700",
+  fontSize: "13px",
+  cursor: "pointer",
+  minHeight: "46px",
 };
 
 const primaryButton = {

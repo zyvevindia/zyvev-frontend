@@ -4,10 +4,79 @@ import {
 } from "react-router-dom";
 
 import {
+  useCallback,
+  useMemo,
+  useState,
+} from "react";
+
+import {
   Helmet,
 } from "react-helmet-async";
 
 import CompactCarCard from "../components/CompactCarCard";
+
+import LeadInquiryModal from "../components/LeadInquiryModal";
+
+import {
+  COMPARE_CARS_STORAGE_KEY,
+  loadCompareCarsFromStorage,
+  notifyCompareCarsSync,
+} from "../utils/compareCarsStorage";
+
+/* =========================================================
+   ===================== BEST VALUE (PURE) ===================
+   ========================================================= */
+
+function getBestValueId(
+  cars
+) {
+
+  if (
+    !cars?.length
+  ) {
+
+    return null;
+  }
+
+  let best =
+    cars[0];
+
+  let bestScore =
+
+    (
+      best.startingPrice || 1
+    ) /
+
+    (
+      best.specifications
+        ?.range || 1
+    );
+
+  cars.forEach((c) => {
+
+    const score =
+
+      (
+        c.startingPrice || 1
+      ) /
+
+      (
+        c.specifications
+          ?.range || 1
+      );
+
+    if (
+      score < bestScore
+    ) {
+
+      best = c;
+
+      bestScore = score;
+    }
+  });
+
+  return best._id;
+}
 
 /* =========================================================
    ===================== COMPARE PAGE =======================
@@ -21,16 +90,131 @@ export default function ComparePage() {
   const location =
     useLocation();
 
+  const [inquiryOpen,
+    setInquiryOpen] =
+    useState(false);
+
+  const [inquiryHeadline,
+    setInquiryHeadline] =
+    useState(
+      "Request a callback"
+    );
+
+  const [inquirySubmit,
+    setInquirySubmit] =
+    useState(
+      "Request callback"
+    );
+
+  const openInquiry = (
+    headline,
+    submit
+  ) => {
+
+    setInquiryHeadline(
+      headline
+    );
+
+    setInquirySubmit(
+      submit
+    );
+
+    setInquiryOpen(
+      true
+    );
+  };
+
   const cars =
-    location.state?.cars ||
+    useMemo(() => {
 
-    JSON.parse(
-      localStorage.getItem(
-        "compareCars"
-      )
-    ) ||
+      if (
+        location.state?.cars !=
+        null
+      ) {
 
-    [];
+        return Array.isArray(
+          location.state.cars
+        )
+          ? location.state.cars
+          : [];
+      }
+
+      return loadCompareCarsFromStorage();
+    }, [
+      location.state,
+
+      location.key,
+    ]);
+
+  const compareVehicleLabel =
+    useMemo(() => {
+
+      return cars
+        .map(
+          (c) =>
+            c?.name
+        )
+        .filter(Boolean)
+        .join(" vs ");
+    }, [cars]);
+
+  const compareVehicleIds =
+    useMemo(() => {
+
+      return cars
+        .map(
+          (c) =>
+            String(
+              c?._id || ""
+            )
+        )
+        .filter(Boolean)
+        .join(",");
+    }, [cars]);
+
+  const bestId =
+    useMemo(() => {
+
+      return getBestValueId(
+        cars
+      );
+    }, [cars]);
+
+  const primaryMongoCarId =
+    useMemo(() => {
+
+      return cars[0]?._id
+        ? String(
+          cars[0]._id
+        )
+        : "";
+    }, [cars]);
+
+  const clearComparison =
+    useCallback(() => {
+
+      try {
+
+        localStorage.removeItem(
+          COMPARE_CARS_STORAGE_KEY
+        );
+      } catch {
+
+        /* ignore */
+      }
+
+      notifyCompareCarsSync();
+
+      navigate(
+        "/compare",
+
+        {
+          replace: true,
+
+          state: {},
+        }
+      );
+    }, [navigate]);
 
   /* =========================================================
      ===================== EMPTY STATE =======================
@@ -83,8 +267,11 @@ export default function ComparePage() {
             </p>
 
             <button
+              type="button"
               onClick={() =>
-                navigate("/")
+                navigate(
+                  "/cars?compareMode=true"
+                )
               }
 
               style={primaryButton}
@@ -98,55 +285,6 @@ export default function ComparePage() {
       </>
     );
   }
-
-  /* =========================================================
-     ===================== BEST VALUE ========================
-     ========================================================= */
-
-  const getBestValueId =
-    (cars) => {
-
-      let best = cars[0];
-
-      let bestScore =
-
-        (
-          best.startingPrice || 1
-        ) /
-
-        (
-          best.specifications
-            ?.range || 1
-        );
-
-      cars.forEach((c) => {
-
-        const score =
-
-          (
-            c.startingPrice || 1
-          ) /
-
-          (
-            c.specifications
-              ?.range || 1
-          );
-
-        if (
-          score < bestScore
-        ) {
-
-          best = c;
-
-          bestScore = score;
-        }
-      });
-
-      return best._id;
-    };
-
-  const bestId =
-    getBestValueId(cars);
 
   /* =========================================================
      ========================= RENDER ========================
@@ -210,8 +348,39 @@ export default function ComparePage() {
             <div style={compareButtons}>
 
               <button
+                type="button"
                 onClick={() =>
-                  navigate("/")
+                  openInquiry(
+                    "Request a callback",
+                    "Request callback"
+                  )
+                }
+
+                style={secondaryButton}
+              >
+                Request callback
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  openInquiry(
+                    "Get the best deal",
+                    "Get best deal"
+                  )
+                }
+
+                style={secondaryButton}
+              >
+                Get best deal
+              </button>
+
+              <button
+                type="button"
+                onClick={() =>
+                  navigate(
+                    "/cars?compareMode=true"
+                  )
                 }
 
                 style={secondaryButton}
@@ -220,14 +389,10 @@ export default function ComparePage() {
               </button>
 
               <button
-                onClick={() => {
-
-                  localStorage.removeItem(
-                    "compareCars"
-                  );
-
-                  window.location.reload();
-                }}
+                type="button"
+                onClick={
+                  clearComparison
+                }
 
                 style={primaryButton}
               >
@@ -537,6 +702,29 @@ export default function ComparePage() {
         </section>
 
       </div>
+
+      <LeadInquiryModal
+        isOpen={inquiryOpen}
+        onClose={() =>
+          setInquiryOpen(
+            false
+          )
+        }
+        sourcePage="compare"
+        vehicleName={
+          compareVehicleLabel ||
+          "EV comparison"
+        }
+        vehicleId={
+          compareVehicleIds
+        }
+        mongoCarId={
+          primaryMongoCarId
+        }
+        headline={inquiryHeadline}
+        submitLabel={inquirySubmit}
+      />
+
     </>
   );
 }
