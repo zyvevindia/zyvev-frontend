@@ -10,18 +10,15 @@ import {
   isAuthenticated
 } from "../auth";
 
-/* =========================================================
-   ==================== CRM STATUSES ========================
-   ========================================================= */
+import NotificationBell from "../components/NotificationBell";
 
-const STATUSES = [
-  "new",
-  "contacted",
-  "interested",
-  "negotiation",
-  "converted",
-  "lost"
-];
+import LeadDetailDrawer from "../components/LeadDetailDrawer";
+
+import {
+  PIPELINE_STAGES,
+
+  kanbanBucketKey
+} from "../crm/leadPipeline";
 
 /* =========================================================
    ==================== KANBAN BOARD =======================
@@ -44,6 +41,9 @@ export default function KanbanBoard() {
 
   const [draggedLead,
     setDraggedLead] =
+    useState(null);
+
+  const [detailLead, setDetailLead] =
     useState(null);
 
   /* =====================================================
@@ -111,7 +111,7 @@ export default function KanbanBoard() {
 
     } catch (err) {
 
-      console.log(err);
+      console.error(err);
 
       alert("Server error");
 
@@ -130,6 +130,34 @@ export default function KanbanBoard() {
     fetchLeads();
 
   }, []);
+
+  /* =====================================================
+     ============== MERGE LEAD FROM DRAWER ==================
+     ===================================================== */
+
+  const handleLeadUpdatedFromDrawer =
+    (updated) => {
+
+      setLeads((prev) =>
+
+        prev.map((l) =>
+
+          l._id === updated._id
+
+            ? updated
+            : l
+        )
+      );
+
+      setDetailLead((cur) =>
+
+        cur &&
+        cur._id === updated._id
+
+          ? updated
+          : cur
+      );
+    };
 
   /* =====================================================
      ================= UPDATE STATUS ======================
@@ -180,7 +208,7 @@ export default function KanbanBoard() {
 
       } catch (err) {
 
-        console.log(err);
+        console.error(err);
 
         alert("Server error");
       }
@@ -332,15 +360,21 @@ export default function KanbanBoard() {
 
         <div style={header}>
 
-          <h1 style={headerTitle}>
-            📌 CRM Kanban Pipeline
-          </h1>
+          <div>
 
-          <p style={headerSubtitle}>
-            Drag and drop leads between
-            sales stages to manage your
-            EV sales workflow efficiently.
-          </p>
+            <h1 style={headerTitle}>
+              📌 CRM Kanban Pipeline
+            </h1>
+
+            <p style={headerSubtitle}>
+              Drag and drop leads between
+              sales stages to manage your
+              EV sales workflow efficiently.
+            </p>
+
+          </div>
+
+          <NotificationBell />
 
         </div>
 
@@ -348,16 +382,16 @@ export default function KanbanBoard() {
 
         <div style={board}>
 
-          {STATUSES.map((status) => (
+          {PIPELINE_STAGES.map((stage) => (
 
             <div
-              key={status}
+              key={stage.key}
               style={column}
               onDragOver={(e) =>
                 e.preventDefault()
               }
               onDrop={() =>
-                handleDrop(status)
+                handleDrop(stage.key)
               }
             >
 
@@ -366,16 +400,18 @@ export default function KanbanBoard() {
               <div style={columnHeader}>
 
                 <h3 style={columnTitle}>
-                  {status}
+                  {stage.label}
                 </h3>
 
                 <span style={countBadge}>
 
                   {
                     leads.filter(
-                      l =>
-                        l.status ===
-                        status
+                      (l) =>
+                        kanbanBucketKey(
+                          l.status
+                        ) ===
+                        stage.key
                     ).length
                   }
 
@@ -390,8 +426,10 @@ export default function KanbanBoard() {
                 {leads
                   .filter(
                     (lead) =>
-                      lead.status ===
-                      status
+                      kanbanBucketKey(
+                        lead.status
+                      ) ===
+                      stage.key
                   )
                   .map((lead) => (
 
@@ -417,7 +455,12 @@ export default function KanbanBoard() {
                       </p>
 
                       <p style={leadInfo}>
-                        🚗 {lead.carId?.name}
+                        🚗{" "}
+                        {lead.vehicleName ||
+
+                          lead.carId?.name ||
+
+                          "—"}
                       </p>
 
                       {/* PRIORITY */}
@@ -468,6 +511,18 @@ export default function KanbanBoard() {
 
                       </div>
 
+                      <button
+                        type="button"
+                        draggable={false}
+                        style={detailsBtn}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setDetailLead(lead);
+                        }}
+                      >
+                        View details
+                      </button>
+
                     </div>
 
                   ))}
@@ -479,6 +534,23 @@ export default function KanbanBoard() {
           ))}
 
         </div>
+
+        <LeadDetailDrawer
+
+          lead={detailLead}
+
+          open={Boolean(detailLead)}
+
+          onClose={() =>
+            setDetailLead(null)
+          }
+
+          token={token}
+
+          onUpdated={
+            handleLeadUpdatedFromDrawer
+          }
+        />
 
       </div>
 
@@ -549,7 +621,12 @@ const header = {
   borderRadius: "24px",
   marginBottom: "28px",
   boxShadow:
-    "0 15px 40px rgba(37,99,235,0.25)"
+    "0 15px 40px rgba(37,99,235,0.25)",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "flex-start",
+  gap: "20px",
+  flexWrap: "wrap"
 };
 
 const headerTitle = {
@@ -594,7 +671,7 @@ const columnHeader = {
 
 const columnTitle = {
   margin: 0,
-  textTransform: "capitalize",
+  textTransform: "none",
   color: "#0f172a",
   fontSize: "20px",
   fontWeight: "700"
@@ -668,6 +745,19 @@ const noteCount = {
   marginTop: "14px",
   fontSize: "13px",
   color: "#64748b"
+};
+
+const detailsBtn = {
+  marginTop: "12px",
+  width: "100%",
+  padding: "10px 12px",
+  borderRadius: "12px",
+  border: "1px solid #cbd5e1",
+  background: "#f8fafc",
+  color: "#1e40af",
+  fontWeight: "700",
+  fontSize: "13px",
+  cursor: "pointer"
 };
 
 const loadingContainer = {

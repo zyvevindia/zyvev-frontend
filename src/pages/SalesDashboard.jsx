@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 import NotificationBell from "../components/NotificationBell";
 
 import {
+  labelForStatus
+} from "../crm/leadPipeline";
+
+import {
   logout,
   isAuthenticated
 } from "../auth";
@@ -50,6 +54,9 @@ export default function SalesDashboard() {
       overdue: [],
       today: []
     });
+
+  const [crmMetrics, setCrmMetrics] =
+    useState(null);
 
   /* =====================================================
      ================= AUTO LOGOUT ========================
@@ -116,7 +123,7 @@ export default function SalesDashboard() {
 
     } catch (err) {
 
-      console.log(err);
+      console.error(err);
 
       setError("Server error");
 
@@ -156,7 +163,36 @@ export default function SalesDashboard() {
 
       } catch (err) {
 
-        console.log(err);
+        console.error(err);
+      }
+    };
+
+  const fetchCrmMetrics =
+    async () => {
+
+      try {
+
+        const response =
+          await fetch(
+            `${API_URL}/api/sales/crm-dashboard`,
+            {
+              headers: {
+                Authorization:
+                  `Bearer ${token}`
+              }
+            }
+          );
+
+        const data =
+          await response.json();
+
+        if (response.ok) {
+
+          setCrmMetrics(data);
+        }
+      } catch (err) {
+
+        console.error(err);
       }
     };
 
@@ -169,6 +205,8 @@ export default function SalesDashboard() {
     fetchLeads();
 
     fetchFollowUpSummary();
+
+    fetchCrmMetrics();
 
   }, []);
 
@@ -227,13 +265,15 @@ export default function SalesDashboard() {
 
       fetchLeads();
 
+      fetchCrmMetrics();
+
       alert(
         "Lead status updated"
       );
 
     } catch (err) {
 
-      console.log(err);
+      console.error(err);
 
       alert("Server error");
     }
@@ -302,11 +342,13 @@ export default function SalesDashboard() {
 
       fetchLeads();
 
+      fetchCrmMetrics();
+
       alert("Note added");
 
     } catch (err) {
 
-      console.log(err);
+      console.error(err);
 
       alert("Server error");
     }
@@ -383,7 +425,7 @@ export default function SalesDashboard() {
 
       } catch (err) {
 
-        console.log(err);
+        console.error(err);
 
         alert("Server error");
       }
@@ -418,7 +460,7 @@ export default function SalesDashboard() {
     const message =
 `Hello ${lead.name},
 
-Thank you for your interest in ${lead.carId?.name}.
+Thank you for your interest in ${lead.vehicleName || lead.carId?.name || "our EVs"}.
 
 Our sales team from EVSavari will assist you shortly.
 
@@ -463,9 +505,13 @@ Thank you.`;
       case "interested":
         return "#0f9d58";
 
+      case "test_drive":
+        return "#0891b2";
+
       case "negotiation":
         return "#ea580c";
 
+      case "won":
       case "converted":
         return "#16a34a";
 
@@ -647,43 +693,233 @@ Thank you.`;
         <div style={kpiGrid}>
 
           <div style={kpiCard}>
-            <p>Total Leads</p>
+            <p>Total leads</p>
             <h2>
-              {leads.length}
+              {crmMetrics?.totalLeads ??
+                leads.length}
             </h2>
           </div>
 
           <div style={kpiCard}>
-            <p>Interested</p>
+            <p>New leads</p>
             <h2>
 
-              {
+              {crmMetrics?.newLeads ??
                 leads.filter(
-                  l =>
+                  (l) =>
                     l.status ===
-                    "interested"
-                ).length
-              }
+                      "new" ||
+                    l.status ===
+                      "assigned"
+                ).length}
 
             </h2>
           </div>
 
           <div style={kpiCard}>
-            <p>Converted</p>
+            <p>Won leads</p>
             <h2>
 
-              {
+              {crmMetrics?.wonLeads ??
                 leads.filter(
-                  l =>
+                  (l) =>
                     l.status ===
-                    "converted"
-                ).length
-              }
+                      "won" ||
+                    l.status ===
+                      "converted"
+                ).length}
+
+            </h2>
+          </div>
+
+          <div style={kpiCard}>
+            <p>Conversion rate</p>
+            <h2>
+
+              {crmMetrics
+                ? `${crmMetrics.conversionRate}%`
+                : leads.length > 0
+                  ? `${(
+                      (leads.filter(
+                        (l) =>
+                          l.status ===
+                            "won" ||
+                          l.status ===
+                            "converted"
+                      ).length /
+                        leads.length) *
+                      100
+                    ).toFixed(2)}%`
+                  : "0%"}
 
             </h2>
           </div>
 
         </div>
+
+        {crmMetrics && (
+
+          <>
+
+            <h3 style={analyticsSectionTitle}>
+              Pipeline analytics
+            </h3>
+
+            <div style={analyticsGrid}>
+
+              <div style={analyticsCard}>
+
+                <h4 style={analyticsCardTitle}>
+                  Top vehicles
+                </h4>
+
+                <ul style={rankedList}>
+
+                  {(
+                    !crmMetrics.topVehicles ||
+                    crmMetrics.topVehicles
+                      .length === 0
+                  ) ? (
+
+                    <li style={mutedLi}>
+                      No data yet
+                    </li>
+
+                  ) : (
+
+                    crmMetrics.topVehicles.map(
+                      (row, i) => (
+
+                        <li
+                          key={i}
+                          style={rankedLi}
+                        >
+
+                          <span>
+                            {row.name}
+                          </span>
+
+                          <strong>
+                            {row.count}
+                          </strong>
+
+                        </li>
+
+                      )
+                    )
+
+                  )}
+
+                </ul>
+
+              </div>
+
+              <div style={analyticsCard}>
+
+                <h4 style={analyticsCardTitle}>
+                  Top cities
+                </h4>
+
+                <ul style={rankedList}>
+
+                  {(
+                    !crmMetrics.topCities ||
+                    crmMetrics.topCities
+                      .length === 0
+                  ) ? (
+
+                    <li style={mutedLi}>
+                      No data yet
+                    </li>
+
+                  ) : (
+
+                    crmMetrics.topCities.map(
+                      (row, i) => (
+
+                        <li
+                          key={i}
+                          style={rankedLi}
+                        >
+
+                          <span>
+                            {row.name}
+                          </span>
+
+                          <strong>
+                            {row.count}
+                          </strong>
+
+                        </li>
+
+                      )
+                    )
+
+                  )}
+
+                </ul>
+
+              </div>
+
+              <div style={analyticsCard}>
+
+                <h4 style={analyticsCardTitle}>
+                  Lead sources
+                </h4>
+
+                <ul style={rankedList}>
+
+                  {(
+                    !crmMetrics.leadSources ||
+                    crmMetrics.leadSources
+                      .length === 0
+                  ) ? (
+
+                    <li style={mutedLi}>
+                      No data yet
+                    </li>
+
+                  ) : (
+
+                    crmMetrics.leadSources.map(
+                      (row, i) => (
+
+                        <li
+                          key={i}
+                          style={rankedLi}
+                        >
+
+                          <span
+                            style={{
+                              wordBreak:
+                                "break-word",
+                              paddingRight:
+                                "8px"
+                            }}
+                          >
+                            {row.source}
+                          </span>
+
+                          <strong>
+                            {row.count}
+                          </strong>
+
+                        </li>
+
+                      )
+                    )
+
+                  )}
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </>
+
+        )}
 
         {/* ================= ERROR ================= */}
 
@@ -731,7 +967,12 @@ Thank you.`;
                   </p>
 
                   <p style={leadInfo}>
-                    🚗 {lead.carId?.name}
+                    🚗{" "}
+                    {lead.vehicleName ||
+
+                      lead.carId?.name ||
+
+                      "—"}
                   </p>
 
                 </div>
@@ -747,7 +988,9 @@ Thank you.`;
                         )
                     }}
                   >
-                    {lead.status}
+                    {labelForStatus(
+                      lead.status
+                    )}
                   </span>
 
                   <div
@@ -906,12 +1149,16 @@ Thank you.`;
                       Interested
                     </option>
 
+                    <option value="test_drive">
+                      Test drive
+                    </option>
+
                     <option value="negotiation">
                       Negotiation
                     </option>
 
-                    <option value="converted">
-                      Converted
+                    <option value="won">
+                      Won
                     </option>
 
                     <option value="lost">
@@ -995,6 +1242,80 @@ Thank you.`;
 
               </div>
 
+              {/* ================= STATUS HISTORY ================= */}
+
+              <div style={section}>
+
+                <h4 style={sectionTitle}>
+                  Status history
+                </h4>
+
+                {!lead.statusHistory ||
+                lead.statusHistory.length === 0 ? (
+
+                  <p style={emptyText}>
+                    {labelForStatus(lead.status)}
+                    {" · "}
+                    {lead.createdAt
+                      ? new Date(
+                        lead.createdAt
+                      ).toLocaleString()
+                      : "—"}
+                  </p>
+
+                ) : (
+
+                  <div>
+
+                    {[...lead.statusHistory]
+                      .reverse()
+                      .map((h, index) => (
+
+                        <div
+                          key={index}
+                          style={noteCard}
+                        >
+
+                          <strong>
+                            {labelForStatus(
+                              h.status
+                            )}
+                          </strong>
+
+                          <p
+                            style={{
+                              margin:
+                                "6px 0 0",
+
+                              fontSize: "13px",
+
+                              color: "#64748b"
+                            }}
+                          >
+
+                            {h.at
+                              ? new Date(
+                                h.at
+                              ).toLocaleString()
+                              : "—"}
+                            {h.changedBy?.name
+                              ? ` · ${h.changedBy.name}`
+                              : ""}
+                            {h.changedByDealer?.name
+                              ? ` · ${h.changedByDealer.name} (dealer)`
+                              : ""}
+                          </p>
+
+                        </div>
+
+                      ))}
+
+                  </div>
+
+                )}
+
+              </div>
+
               {/* ================= TIMELINE ================= */}
 
               <div style={section}>
@@ -1033,7 +1354,12 @@ Thank you.`;
                             {new Date(
                               note.createdAt
                             ).toLocaleString()}
-
+                            {note.createdBy?.name
+                              ? ` · ${note.createdBy.name}`
+                              : ""}
+                            {note.createdByDealer?.name
+                              ? ` · ${note.createdByDealer.name} (dealer)`
+                              : ""}
                           </small>
 
                         </div>
@@ -1192,6 +1518,59 @@ const kpiCard = {
   boxShadow:
     "0 12px 30px rgba(15,23,42,0.06)",
   border: "1px solid #e5e7eb"
+};
+
+const analyticsSectionTitle = {
+  margin: "8px 0 16px",
+  fontSize: "20px",
+  fontWeight: "800",
+  color: "#0f172a"
+};
+
+const analyticsGrid = {
+  display: "grid",
+  gridTemplateColumns:
+    "repeat(auto-fit, minmax(260px, 1fr))",
+  gap: "20px",
+  marginBottom: "28px"
+};
+
+const analyticsCard = {
+  background: "white",
+  padding: "20px",
+  borderRadius: "20px",
+  border: "1px solid #e5e7eb",
+  boxShadow:
+    "0 8px 24px rgba(15,23,42,0.05)"
+};
+
+const analyticsCardTitle = {
+  margin: "0 0 12px",
+  fontSize: "15px",
+  fontWeight: "700",
+  color: "#1e293b"
+};
+
+const rankedList = {
+  listStyle: "none",
+  margin: 0,
+  padding: 0
+};
+
+const rankedLi = {
+  display: "flex",
+  justifyContent: "space-between",
+  gap: "12px",
+  padding: "8px 0",
+  borderBottom: "1px solid #f1f5f9",
+  fontSize: "14px",
+  color: "#334155"
+};
+
+const mutedLi = {
+  padding: "8px 0",
+  fontSize: "14px",
+  color: "#94a3b8"
 };
 
 const leadCard = {

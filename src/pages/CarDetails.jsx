@@ -10,7 +10,7 @@ import {
   useParams,
 } from "react-router-dom";
 
-import LeadForm from "../components/LeadForm";
+import LeadInquiryModal from "../components/LeadInquiryModal";
 import EMICalculator from "../components/EMICalculator";
 
 import SEO from "../components/SEO/SEO";
@@ -50,6 +50,40 @@ export default function CarDetails() {
   const [selectedColor, setSelectedColor] =
     useState(null);
 
+  const [inquiryOpen,
+    setInquiryOpen] =
+    useState(false);
+
+  const [inquiryHeadline,
+    setInquiryHeadline] =
+    useState(
+      "Request a callback"
+    );
+
+  const [inquirySubmit,
+    setInquirySubmit] =
+    useState(
+      "Request callback"
+    );
+
+  const openInquiry = (
+    headline,
+    submit
+  ) => {
+
+    setInquiryHeadline(
+      headline
+    );
+
+    setInquirySubmit(
+      submit
+    );
+
+    setInquiryOpen(
+      true
+    );
+  };
+
   /* =========================================================
      ======================= FETCH CAR =======================
      ========================================================= */
@@ -74,7 +108,7 @@ export default function CarDetails() {
 
       } catch (err) {
 
-        console.log(err);
+        console.error(err);
 
         setLoading(false);
       }
@@ -95,9 +129,10 @@ export default function CarDetails() {
         carId: slug,
       }),
 
-    }).catch((err) =>
-      console.log(err)
-    );
+    }).catch((err) => {
+
+      console.error(err);
+    });
 
   }, [slug]);
 
@@ -838,6 +873,32 @@ export default function CarDetails() {
             <div style={actionRow}>
 
               <button
+                type="button"
+                style={secondaryAction}
+                onClick={() =>
+                  openInquiry(
+                    "Request a callback",
+                    "Request callback"
+                  )
+                }
+              >
+                Request callback
+              </button>
+
+              <button
+                type="button"
+                style={secondaryAction}
+                onClick={() =>
+                  openInquiry(
+                    "Get the best deal",
+                    "Get best deal"
+                  )
+                }
+              >
+                Get best deal
+              </button>
+
+              <button
                 style={primaryAction}
               >
                 Book Test Drive
@@ -848,12 +909,29 @@ export default function CarDetails() {
 
                 onClick={() => {
 
-                  const existing =
-                    JSON.parse(
+                  let existing = [];
+
+                  try {
+
+                    const raw =
                       localStorage.getItem(
                         "compareCars"
-                      )
-                    ) || [];
+                      );
+
+                    if (raw) {
+
+                      const parsed =
+                        JSON.parse(raw);
+
+                      existing =
+                        Array.isArray(parsed)
+                          ? parsed
+                          : [];
+                    }
+                  } catch {
+
+                    existing = [];
+                  }
 
                   const alreadyExists =
                     existing.find(
@@ -919,9 +997,67 @@ export default function CarDetails() {
           <div style={bottomGrid}>
 
             <div style={premiumCard}>
-              <LeadForm
-                carId={car._id}
-              />
+
+              <h3
+                style={{
+                  margin: "0 0 10px 0",
+                  fontSize: "20px",
+                  fontWeight: "800",
+                  color: "#0f172a",
+                }}
+              >
+                Dealer assistance
+              </h3>
+
+              <p
+                style={{
+                  margin: "0 0 16px 0",
+                  fontSize: "14px",
+                  lineHeight: "1.75",
+                  color: "#475569",
+                }}
+              >
+                Verified EV dealers will contact you
+                with pricing and availability. Your
+                details are used only for this enquiry.
+              </p>
+
+              <div
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                }}
+              >
+
+                <button
+                  type="button"
+                  style={secondaryAction}
+                  onClick={() =>
+                    openInquiry(
+                      "Request a callback",
+                      "Request callback"
+                    )
+                  }
+                >
+                  Request callback
+                </button>
+
+                <button
+                  type="button"
+                  style={secondaryAction}
+                  onClick={() =>
+                    openInquiry(
+                      "Get the best deal",
+                      "Get best deal"
+                    )
+                  }
+                >
+                  Get best deal
+                </button>
+
+              </div>
+
             </div>
 
             <div style={premiumCard}>
@@ -929,6 +1065,31 @@ export default function CarDetails() {
                 price={activePrice}
               />
             </div>
+
+            <LeadInquiryModal
+              isOpen={inquiryOpen}
+              onClose={() =>
+                setInquiryOpen(
+                  false
+                )
+              }
+              sourcePage="car_details"
+              vehicleName={car.name}
+              vehicleId={
+                String(
+                  car.slug ||
+                    car._id ||
+                    ""
+                )
+              }
+              mongoCarId={
+                String(
+                  car._id || ""
+                )
+              }
+              headline={inquiryHeadline}
+              submitLabel={inquirySubmit}
+            />
 
           </div>
 

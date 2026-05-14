@@ -3,7 +3,7 @@ import { useState } from "react";
 import { API_URL } from "../config";
 
 import {
-  validateLeadForm,
+  validateMiniLeadForm,
   sanitizeInput,
 } from "../utils/validators";
 
@@ -108,7 +108,7 @@ export default function LeadForm({
       /* ================= VALIDATION ================= */
 
       const validation =
-        validateLeadForm({
+        validateMiniLeadForm({
 
           name,
 
@@ -177,7 +177,7 @@ export default function LeadForm({
 
       } catch (err) {
 
-        console.log(
+        console.error(
           "LEAD SUBMIT ERROR:",
           err
         );

@@ -29,6 +29,139 @@ import {
 
 import { API_URL } from "./config";
 
+import {
+  labelForStatus
+} from "./crm/leadPipeline";
+
+/* =========================================================
+   ===================== LEAD TABLE HELPERS ==================
+   ========================================================= */
+
+function statusBadge(status) {
+
+  const map = {
+
+    new: {
+      bg: "#dbeafe",
+      fg: "#1d4ed8",
+    },
+
+    assigned: {
+      bg: "#fef3c7",
+      fg: "#b45309",
+    },
+
+    contacted: {
+      bg: "#e0e7ff",
+      fg: "#4338ca",
+    },
+
+    interested: {
+      bg: "#dcfce7",
+      fg: "#15803d",
+    },
+
+    negotiation: {
+      bg: "#ffedd5",
+      fg: "#c2410c",
+    },
+
+    test_drive: {
+      bg: "#cffafe",
+      fg: "#0e7490",
+    },
+
+    won: {
+      bg: "#bbf7d0",
+      fg: "#166534",
+    },
+
+    converted: {
+      bg: "#bbf7d0",
+      fg: "#166534",
+    },
+
+    lost: {
+      bg: "#fee2e2",
+      fg: "#b91c1c",
+    },
+  };
+
+  const c =
+    map[status] ||
+    map.new;
+
+  return {
+
+    display: "inline-block",
+
+    padding: "4px 10px",
+
+    borderRadius: "999px",
+
+    fontWeight: "700",
+
+    fontSize: "11px",
+
+    textTransform: "uppercase",
+
+    background: c.bg,
+
+    color: c.fg,
+  };
+}
+
+const thCell = {
+
+  padding: "10px 8px",
+
+  fontWeight: "600",
+
+  whiteSpace: "nowrap",
+};
+
+const tdCell = {
+
+  padding: "10px 8px",
+
+  verticalAlign: "top",
+};
+
+const newBadge = {
+
+  display: "inline-block",
+
+  padding: "3px 8px",
+
+  borderRadius: "8px",
+
+  fontSize: "10px",
+
+  fontWeight: "800",
+
+  background: "#2563eb",
+
+  color: "white",
+};
+
+const linkBtn = {
+
+  border: "none",
+
+  background: "transparent",
+
+  color: "#2563eb",
+
+  cursor: "pointer",
+
+  fontSize: "12px",
+
+  fontWeight: "600",
+
+  textDecoration: "underline",
+  padding: 0,
+};
+
 /* =========================================================
    ==================== ADMIN DASHBOARD =====================
    ========================================================= */
@@ -63,6 +196,25 @@ export default function Admin() {
 
   const [assignments, setAssignments] =
     useState({});
+
+  const [assignmentDealers, setAssignmentDealers] =
+    useState({});
+
+  const [dealersList, setDealersList] =
+    useState([]);
+
+  const [dealerPick, setDealerPick] =
+    useState({});
+
+  const [dealerForm, setDealerForm] =
+    useState({
+      name: "",
+      email: "",
+      password: "",
+      phone: "",
+      cities: "",
+      brands: "",
+    });
 
   /* ================= ADD CAR ================= */
 
@@ -145,7 +297,7 @@ export default function Admin() {
 
   const fetchLeads = () => {
     fetch(
-      `${API_URL}/api/admin/leads?page=${page}&limit=5`,
+      `${API_URL}/api/admin/leads?page=${page}&limit=10`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -196,6 +348,25 @@ export default function Admin() {
       });
   }, []);
 
+  useEffect(() => {
+    if (role !== "admin") return;
+
+    fetch(`${API_URL}/api/admin/dealers`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+
+      .then((data) => {
+        setDealersList(Array.isArray(data) ? data : []);
+      })
+
+      .catch(() => {
+        setDealersList([]);
+      });
+  }, [role, token]);
+
   /* =====================================================
      ================= ASSIGN LEAD ========================
      ===================================================== */
@@ -206,13 +377,33 @@ export default function Admin() {
     const assignedTo =
       assignments[leadId];
 
-    if (!assignedTo) {
-      alert("Select sales user");
+    const dealerId =
+      dealerPick[leadId];
+
+    if (!assignedTo && !dealerId) {
+      alert("Select a sales user and/or dealer account");
 
       return;
     }
 
     try {
+      const body = {};
+
+      if (assignedTo) {
+        body.assignedTo = assignedTo;
+      }
+
+      if (dealerId) {
+        body.dealerId = dealerId;
+      }
+
+      const desk =
+        assignmentDealers[leadId];
+
+      if (desk != null && desk !== "") {
+        body.assignedDealer = desk;
+      }
+
       const response = await fetch(
         `${API_URL}/api/admin/leads/${leadId}/assign`,
         {
@@ -225,9 +416,7 @@ export default function Admin() {
             Authorization: `Bearer ${token}`,
           },
 
-          body: JSON.stringify({
-            assignedTo,
-          }),
+          body: JSON.stringify(body),
         }
       );
 
@@ -249,9 +438,85 @@ export default function Admin() {
         "Lead assigned successfully"
       );
     } catch (err) {
-      console.log(err);
+      console.error(err);
 
       alert("Server error");
+    }
+  };
+
+  const createDealer = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(`${API_URL}/api/admin/dealers`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          name: dealerForm.name,
+          email: dealerForm.email,
+          password: dealerForm.password,
+          phone: dealerForm.phone,
+          cities: dealerForm.cities,
+          brands: dealerForm.brands,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.error || data.errors?.join?.(", ") || "Failed");
+        return;
+      }
+
+      setDealerForm({
+        name: "",
+        email: "",
+        password: "",
+        phone: "",
+        cities: "",
+        brands: "",
+      });
+
+      const list = await fetch(`${API_URL}/api/admin/dealers`, {
+        headers: { Authorization: `Bearer ${token}` },
+      }).then((r) => r.json());
+
+      setDealersList(Array.isArray(list) ? list : []);
+
+      alert("Dealer created");
+    } catch (err) {
+      console.error(err);
+      alert("Server error");
+    }
+  };
+
+  const toggleDealerActive = async (dealerId, next) => {
+    try {
+      const res = await fetch(`${API_URL}/api/admin/dealers/${dealerId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ isActive: next }),
+      });
+
+      if (!res.ok) {
+        const d = await res.json();
+        alert(d.error || "Update failed");
+        return;
+      }
+
+      const list = await fetch(`${API_URL}/api/admin/dealers`, {
+        headers: { Authorization: `Bearer ${token}` },
+      }).then((r) => r.json());
+
+      setDealersList(Array.isArray(list) ? list : []);
+    } catch (err) {
+      console.error(err);
     }
   };
 
@@ -442,7 +707,7 @@ export default function Admin() {
         });
         setHeroImage(null);
       } catch (err) {
-        console.log(err);
+        console.error(err);
 
         alert("Server error");
       } finally {
@@ -552,6 +817,13 @@ export default function Admin() {
             >
               👥 Sales Users
             </Link>
+
+            <a
+              href="#dealers"
+              style={menuItem}
+            >
+              🏢 Dealers
+            </a>
           </>
         )}
       </div>
@@ -587,6 +859,633 @@ export default function Admin() {
               Logout
             </button>
           </div>
+        </div>
+
+        {role === "admin" && (
+          <div id="dealers" style={card}>
+            <h2 style={sectionTitle}>🏢 Dealer accounts</h2>
+
+            <form
+              onSubmit={createDealer}
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "10px",
+                marginBottom: "20px",
+              }}
+            >
+              <input
+                placeholder="Name"
+                required
+                value={dealerForm.name}
+                onChange={(e) =>
+                  setDealerForm({
+                    ...dealerForm,
+                    name: e.target.value,
+                  })
+                }
+                style={input}
+              />
+              <input
+                placeholder="Email"
+                type="email"
+                required
+                value={dealerForm.email}
+                onChange={(e) =>
+                  setDealerForm({
+                    ...dealerForm,
+                    email: e.target.value,
+                  })
+                }
+                style={input}
+              />
+              <input
+                placeholder="Password"
+                type="password"
+                required
+                value={dealerForm.password}
+                onChange={(e) =>
+                  setDealerForm({
+                    ...dealerForm,
+                    password: e.target.value,
+                  })
+                }
+                style={input}
+              />
+              <input
+                placeholder="Phone"
+                value={dealerForm.phone}
+                onChange={(e) =>
+                  setDealerForm({
+                    ...dealerForm,
+                    phone: e.target.value,
+                  })
+                }
+                style={input}
+              />
+              <input
+                placeholder="Cities (comma-separated)"
+                value={dealerForm.cities}
+                onChange={(e) =>
+                  setDealerForm({
+                    ...dealerForm,
+                    cities: e.target.value,
+                  })
+                }
+                style={input}
+              />
+              <input
+                placeholder="Brands (comma-separated)"
+                value={dealerForm.brands}
+                onChange={(e) =>
+                  setDealerForm({
+                    ...dealerForm,
+                    brands: e.target.value,
+                  })
+                }
+                style={input}
+              />
+              <button type="submit" style={submitBtn}>
+                Create dealer
+              </button>
+            </form>
+
+            <div style={{ overflowX: "auto" }}>
+              <table
+                style={{
+                  width: "100%",
+                  borderCollapse: "collapse",
+                  fontSize: "13px",
+                }}
+              >
+                <thead>
+                  <tr
+                    style={{
+                      textAlign: "left",
+                      borderBottom: "1px solid #e2e8f0",
+                      color: "#64748b",
+                    }}
+                  >
+                    <th style={thCell}>Name</th>
+                    <th style={thCell}>Email</th>
+                    <th style={thCell}>Cities</th>
+                    <th style={thCell}>Brands</th>
+                    <th style={thCell}>Active</th>
+                    <th style={thCell}>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {dealersList.map((d) => (
+                    <tr key={d._id} style={{ borderBottom: "1px solid #f1f5f9" }}>
+                      <td style={tdCell}>{d.name}</td>
+                      <td style={tdCell}>{d.email}</td>
+                      <td style={tdCell}>
+                        {(d.cities || []).join(", ") || "—"}
+                      </td>
+                      <td style={tdCell}>
+                        {(d.brands || []).join(", ") || "—"}
+                      </td>
+                      <td style={tdCell}>
+                        {d.isActive ? "Yes" : "No"}
+                      </td>
+                      <td style={tdCell}>
+                        <button
+                          type="button"
+                          style={linkBtn}
+                          onClick={() =>
+                            toggleDealerActive(d._id, !d.isActive)
+                          }
+                        >
+                          {d.isActive ? "Deactivate" : "Activate"}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* =====================================================
+           ================= RECENT LEADS ======================
+           ===================================================== */}
+
+        <div
+          id="recent-leads"
+          style={card}
+        >
+
+          <h2 style={sectionTitle}>
+            📥 Recent leads
+          </h2>
+
+          <div
+            style={{
+              overflowX: "auto",
+            }}
+          >
+
+            <table
+              style={{
+                width: "100%",
+                borderCollapse:
+                  "collapse",
+                fontSize: "13px",
+              }}
+            >
+
+              <thead>
+
+                <tr
+                  style={{
+                    textAlign: "left",
+                    borderBottom:
+                      "1px solid #e2e8f0",
+                    color: "#64748b",
+                  }}
+                >
+
+                  <th style={thCell}>
+                    New
+                  </th>
+
+                  <th style={thCell}>
+                    Date
+                  </th>
+
+                  <th style={thCell}>
+                    Name
+                  </th>
+
+                  <th style={thCell}>
+                    Phone
+                  </th>
+
+                  <th style={thCell}>
+                    Email
+                  </th>
+
+                  <th style={thCell}>
+                    City
+                  </th>
+
+                  <th style={thCell}>
+                    Vehicle
+                  </th>
+
+                  <th style={thCell}>
+                    Source
+                  </th>
+
+                  <th style={thCell}>
+                    Status
+                  </th>
+
+                  <th style={thCell}>
+                    Dealership
+                  </th>
+
+                  <th style={thCell}>
+                    Message
+                  </th>
+
+                  <th style={thCell}>
+                    Assign
+                  </th>
+
+                  <th style={thCell} />
+
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                {leads.map(
+                  (lead) => {
+
+                    const isUnread =
+
+                      lead.status ===
+                        "new" &&
+                      !lead.readByAdmin;
+
+                    return (
+
+                      <tr
+                        key={
+                          lead._id
+                        }
+                        style={{
+                          borderBottom:
+                            "1px solid #f1f5f9",
+                          background:
+                            isUnread
+                              ? "#eff6ff"
+                              : "transparent",
+                        }}
+                      >
+
+                        <td style={tdCell}>
+
+                          {isUnread ? (
+
+                            <span
+                              style={
+                                newBadge
+                              }
+                            >
+                              NEW
+                            </span>
+                          ) : (
+                            "—"
+                          )}
+                        </td>
+
+                        <td style={tdCell}>
+
+                          {lead.createdAt
+                            ? new Date(
+                              lead.createdAt
+                            ).toLocaleString()
+                            : "—"}
+                        </td>
+
+                        <td style={tdCell}>
+                          {lead.name}
+                        </td>
+
+                        <td style={tdCell}>
+                          {lead.phone}
+                        </td>
+
+                        <td style={tdCell}>
+                          {lead.email ||
+                            "—"}
+                        </td>
+
+                        <td style={tdCell}>
+                          {lead.city ||
+                            "—"}
+                        </td>
+
+                        <td style={tdCell}>
+
+                          {lead.vehicleName ||
+
+                            lead.carId
+                              ?.name ||
+
+                            "—"}
+                        </td>
+
+                        <td style={tdCell}>
+
+                          {lead.sourcePage ||
+                            "—"}
+                        </td>
+
+                        <td style={tdCell}>
+
+                          <span
+                            style={statusBadge(
+                              lead.status
+                            )}
+                          >
+
+                            {labelForStatus(
+                              lead.status
+                            )}
+                          </span>
+                        </td>
+
+                        <td style={tdCell}>
+                          {lead.dealer?.name ||
+                            lead.dealer?.email ||
+                            "—"}
+                        </td>
+
+                        <td
+                          style={{
+                            ...tdCell,
+                            maxWidth:
+                              "180px",
+                            whiteSpace:
+                              "nowrap",
+                            overflow:
+                              "hidden",
+                            textOverflow:
+                              "ellipsis",
+                          }}
+                          title={
+                            lead.message ||
+                            ""
+                          }
+                        >
+
+                          {lead.message ||
+                            "—"}
+                        </td>
+
+                        <td style={tdCell}>
+
+                          <select
+                            style={input}
+                            value={
+                              assignments[
+                                lead._id
+                              ] ||
+                              ""
+                            }
+                            onChange={(e) =>
+                              setAssignments(
+                                {
+                                  ...assignments,
+
+                                  [lead._id]:
+                                    e.target
+                                      .value,
+                                }
+                              )
+                            }
+                          >
+
+                            <option value="">
+                              Select sales (optional)
+                            </option>
+
+                            {salesUsers.map(
+                              (u) => (
+
+                                <option
+                                  key={
+                                    u._id
+                                  }
+                                  value={
+                                    u._id
+                                  }
+                                >
+                                  {u.name}{" "}
+                                  (
+                                  {
+                                    u.email
+                                  }
+                                  )
+                                </option>
+                              )
+                            )}
+                          </select>
+
+                          <input
+                            type="text"
+                            placeholder="Dealer / desk (optional)"
+                            style={{
+                              ...input,
+                              marginTop: "6px",
+                              width: "100%",
+                              boxSizing: "border-box",
+                            }}
+                            value={
+                              assignmentDealers[
+                                lead._id
+                              ] || ""
+                            }
+                            onChange={(e) =>
+                              setAssignmentDealers(
+                                {
+                                  ...assignmentDealers,
+
+                                  [lead._id]:
+                                    e.target
+                                      .value,
+                                }
+                              )
+                            }
+                          />
+
+                          <select
+                            style={{
+                              ...input,
+                              marginTop: "6px",
+                              width: "100%",
+                              boxSizing: "border-box",
+                            }}
+                            value={
+                              dealerPick[
+                                lead._id
+                              ] || ""
+                            }
+                            onChange={(e) =>
+                              setDealerPick({
+                                ...dealerPick,
+
+                                [lead._id]:
+                                  e.target
+                                    .value,
+                              })
+                            }
+                          >
+
+                            <option value="">
+                              Dealer account (optional)
+                            </option>
+
+                            {dealersList.map(
+                              (d) => (
+
+                                <option
+                                  key={d._id}
+                                  value={d._id}
+                                >
+                                  {d.name}{" "}
+                                  ({d.email})
+                                </option>
+                              )
+                            )}
+                          </select>
+
+                          <button
+                            type="button"
+                            style={{
+                              ...submitBtn,
+                              marginTop:
+                                "8px",
+                              width:
+                                "100%",
+                              fontSize:
+                                "12px",
+                              padding:
+                                "8px 10px",
+                            }}
+                            onClick={() =>
+                              assignLead(
+                                lead._id
+                              )
+                            }
+                          >
+                            Assign
+                          </button>
+                        </td>
+
+                        <td style={tdCell}>
+
+                          {role ===
+                            "admin" &&
+                            isUnread && (
+
+                              <button
+                                type="button"
+                                style={
+                                  linkBtn
+                                }
+                                onClick={async () => {
+
+                                  try {
+
+                                    await fetch(
+
+                                      `${API_URL}/api/admin/leads/${lead._id}/read`,
+
+                                      {
+                                        method:
+                                          "PUT",
+
+                                        headers:
+                                          {
+                                            Authorization:
+                                              `Bearer ${token}`,
+                                          },
+                                      }
+                                    );
+
+                                    fetchLeads();
+                                  } catch (e) {
+
+                                    console.error(
+                                      e
+                                    );
+                                  }
+                                }}
+                              >
+                                Mark read
+                              </button>
+                            )}
+                        </td>
+
+                      </tr>
+                    );
+                  }
+                )}
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent:
+                "space-between",
+              marginTop: "16px",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "10px",
+            }}
+          >
+
+            <button
+              type="button"
+              style={submitBtn}
+              disabled={
+                page <= 1
+              }
+              onClick={() =>
+                setPage(
+                  (p) =>
+                    Math.max(
+                      1,
+                      p - 1
+                    )
+                )
+              }
+            >
+              Prev
+            </button>
+
+            <span
+              style={{
+                fontSize: "14px",
+                color: "#64748b",
+              }}
+            >
+
+              Page {page} /{" "}
+              {totalPages}
+            </span>
+
+            <button
+              type="button"
+              style={submitBtn}
+              disabled={
+                page >=
+                totalPages
+              }
+              onClick={() =>
+                setPage(
+                  (p) =>
+                    p + 1
+                )
+              }
+            >
+              Next
+            </button>
+
+          </div>
+
         </div>
 
         {/* =====================================================

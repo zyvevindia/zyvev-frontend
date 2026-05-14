@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { API_URL } from "./config";
+
 function Leads() {
   const [leads, setLeads] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -8,11 +10,11 @@ function Leads() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/leads");
+      const res = await fetch(`${API_URL}/leads`);
       const data = await res.json();
       setLeads(data);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
 
     setLoading(false);
