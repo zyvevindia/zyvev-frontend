@@ -1,10 +1,15 @@
 import { useEffect } from "react";
 
+import {
+  Helmet,
+} from "react-helmet-async";
+
 /* =========================================================
    ===================== STATIC PAGE =======================
    ========================================================= */
 
 export default function StaticPage({
+  pageTitle,
   title,
   subtitle,
   sections = [],
@@ -26,6 +31,19 @@ export default function StaticPage({
 
   return (
     <div style={pageWrapper}>
+      <Helmet>
+
+        <title>
+          {pageTitle || title}
+        </title>
+
+        <meta
+          name="robots"
+          content="index, follow"
+        />
+
+      </Helmet>
+
       {/* ================= HERO ================= */}
 
       <section style={heroSection}>

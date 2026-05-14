@@ -59,11 +59,31 @@ export default function Footer() {
           {/* ================= SOCIAL ================= */}
 
           <div style={socialRow}>
-            {["𝕏", "in", "▶", "ⓕ"].map(
-              (icon, index) => (
-                <div
-                  key={index}
-                  style={socialIcon}
+            {[
+              {
+                id: "x",
+                label: "𝕏",
+              },
+              {
+                id: "in",
+                label: "in",
+              },
+              {
+                id: "yt",
+                label: "▶",
+              },
+              {
+                id: "fb",
+                label: "ⓕ",
+              },
+            ].map(
+              (item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  style={socialButton}
+                  title="Social profiles coming soon"
+                  aria-label={`${item.label} (coming soon)`}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform =
                       "translateY(-4px)";
@@ -81,8 +101,8 @@ export default function Footer() {
                       "none";
                   }}
                 >
-                  {icon}
-                </div>
+                  {item.label}
+                </button>
               )
             )}
           </div>
@@ -157,7 +177,7 @@ export default function Footer() {
 
           <div style={contactWrapper}>
             <p style={contactText}>
-              📧 support@EVSavari.com
+              📧 support@evsavari.com
             </p>
 
             <p style={contactText}>
@@ -179,14 +199,20 @@ export default function Footer() {
 
       <div style={bottomBar}>
         <div style={bottomBarContainer}>
-          <p style={bottomText}>
-            © 2026 EVSavari. All rights
-            reserved.
-          </p>
+          <div style={bottomBarLeft}>
+            <p style={bottomText}>
+              © {new Date().getFullYear()}{" "}
+              EVSavari. All rights reserved.
+            </p>
 
-          <p style={bottomSubtext}>
-            Driving the future of
-            electric mobility.
+            <p style={bottomSubtext}>
+              India’s electric vehicle marketplace.
+            </p>
+          </div>
+
+          <p style={bottomLegal}>
+            Vehicle specifications, pricing, and availability may
+            vary by region and are provided for informational purposes.
           </p>
         </div>
       </div>
@@ -277,7 +303,8 @@ const footerContainer = {
   display: "grid",
   gridTemplateColumns:
     "repeat(auto-fit, minmax(240px, 1fr))",
-  gap: "60px",
+  gap: "clamp(36px, 5vw, 60px)",
+  alignItems: "flex-start",
 };
 
 const brandSection = {
@@ -341,9 +368,10 @@ const socialRow = {
   display: "flex",
   gap: "14px",
   flexWrap: "wrap",
+  alignItems: "center",
 };
 
-const socialIcon = {
+const socialButton = {
   width: "46px",
   height: "46px",
   borderRadius: "16px",
@@ -353,13 +381,16 @@ const socialIcon = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  cursor: "pointer",
+  cursor: "default",
   fontWeight: "700",
   fontSize: "15px",
   transition: "all 0.28s ease",
   backdropFilter: "blur(8px)",
   border:
     "1px solid rgba(255,255,255,0.06)",
+  padding: 0,
+  margin: 0,
+  fontFamily: "inherit",
 };
 
 /* =========================================================
@@ -422,12 +453,19 @@ const bottomBarContainer = {
   maxWidth: "1500px",
   margin: "0 auto",
   padding:
-    "26px clamp(20px, 4vw, 36px)",
+    "28px clamp(20px, 4vw, 36px) 32px",
   display: "flex",
-  justifyContent: "space-between",
+  flexDirection: "column",
   alignItems: "center",
-  flexWrap: "wrap",
-  gap: "14px",
+  textAlign: "center",
+  gap: "12px",
+};
+
+const bottomBarLeft = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "6px",
+  alignItems: "center",
 };
 
 const bottomText = {
@@ -440,4 +478,12 @@ const bottomSubtext = {
   color: "#64748b",
   margin: 0,
   fontSize: "14px",
+};
+
+const bottomLegal = {
+  color: "#64748b",
+  margin: 0,
+  fontSize: "12px",
+  lineHeight: "1.6",
+  maxWidth: "520px",
 };
