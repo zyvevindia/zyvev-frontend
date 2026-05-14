@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 import CreateSalesUser from "../components/CreateSalesUser";
 
+import { API_URL } from "../config";
+
 import {
   getToken,
   logout
@@ -37,7 +39,7 @@ export default function Users() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/admin/users",
+        `${API_URL}/api/admin/users`,
         {
           headers: {
             Authorization: `Bearer ${token}`

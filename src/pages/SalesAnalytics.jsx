@@ -101,7 +101,7 @@ export default function SalesAnalytics() {
 
     } catch (err) {
 
-      console.log(err);
+      console.error(err);
 
       setError("Server error");
 

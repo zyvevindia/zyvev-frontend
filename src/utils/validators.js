@@ -129,6 +129,83 @@ export const sanitizeInput = (
 export const validateLeadForm = ({
   name,
   phone,
+  email,
+  city,
+  interestedVehicle,
+  message,
+}) => {
+
+  const errors = {};
+
+  if (!isValidName(name)) {
+
+    errors.name =
+      "Please enter valid name";
+  }
+
+  if (
+    !isValidIndianPhone(phone)
+  ) {
+
+    errors.phone =
+      "Please enter valid mobile number";
+  }
+
+  if (!isValidEmail(email)) {
+
+    errors.email =
+      "Please enter valid email";
+  }
+
+  if (!isRequired(city)) {
+
+    errors.city =
+      "City is required";
+  } else if (
+    cleanString(city).length < 2
+  ) {
+
+    errors.city =
+      "Please enter a valid city";
+  }
+
+  if (
+    !isRequired(interestedVehicle) ||
+    cleanString(interestedVehicle).length < 2
+  ) {
+
+    errors.interestedVehicle =
+      "Please enter the vehicle you are interested in";
+  }
+
+  if (
+    message &&
+    !hasMaxLength(
+      message,
+      2000
+    )
+  ) {
+
+    errors.message =
+      "Message is too long (max 2000 characters)";
+  }
+
+  return {
+
+    isValid:
+      Object.keys(errors).length === 0,
+
+    errors,
+  };
+};
+
+/* =========================================================
+   ================= LEGACY MINI LEAD ======================
+   ========================================================= */
+
+export const validateMiniLeadForm = ({
+  name,
+  phone,
 }) => {
 
   const errors = {};

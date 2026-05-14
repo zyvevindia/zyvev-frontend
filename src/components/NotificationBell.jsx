@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { API_URL } from "../config";
+
 /* =========================================================
    ================= NOTIFICATION BELL =====================
    ========================================================= */
@@ -30,7 +32,7 @@ export default function NotificationBell() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/notifications",
+        `${API_URL}/api/notifications`,
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -47,7 +49,7 @@ export default function NotificationBell() {
 
     } catch (err) {
 
-      console.log(err);
+      console.error(err);
 
     } finally {
 
@@ -90,7 +92,7 @@ export default function NotificationBell() {
     try {
 
       await fetch(
-        `http://localhost:5000/api/notifications/${id}/read`,
+        `${API_URL}/api/notifications/${id}/read`,
         {
           method: "PUT",
 
@@ -117,7 +119,7 @@ export default function NotificationBell() {
 
     } catch (err) {
 
-      console.log(err);
+      console.error(err);
     }
   };
 
