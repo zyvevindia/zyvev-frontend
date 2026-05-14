@@ -121,7 +121,7 @@ export default function Users() {
       {/* ================= SIDEBAR ================= */}
       <div style={sidebar}>
 
-        <h2>Zyvev</h2>
+        <h2>EVSavari</h2>
 
         <button
           style={menuButton}

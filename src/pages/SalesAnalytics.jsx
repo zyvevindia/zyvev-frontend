@@ -195,7 +195,7 @@ export default function SalesAnalytics() {
 
       <div style={sidebar}>
 
-        <h2>Zyvev CRM</h2>
+        <h2>EVSavari CRM</h2>
 
         <button
           style={menuItem}

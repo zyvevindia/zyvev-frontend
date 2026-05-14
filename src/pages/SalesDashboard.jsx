@@ -420,7 +420,7 @@ export default function SalesDashboard() {
 
 Thank you for your interest in ${lead.carId?.name}.
 
-Our sales team from Zyvev EV Marketplace will assist you shortly.
+Our sales team from EVSavari will assist you shortly.
 
 Thank you.`;
 
@@ -538,7 +538,7 @@ Thank you.`;
         <div>
 
           <h2 style={sidebarTitle}>
-            Zyvev CRM
+            EVSavari CRM
           </h2>
 
           <p style={sidebarSubtext}>

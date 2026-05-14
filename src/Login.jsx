@@ -163,7 +163,7 @@ export default function Login() {
         {/* ================= BRAND ================= */}
         <div style={brand}>
 
-          <h1>Zyvev</h1>
+          <h1>EVSavari</h1>
 
           <p>
             EV Marketplace CRM Platform
@@ -244,12 +244,12 @@ export default function Login() {
 
           <p>
             Admin:
-            admin@zyvev.com
+            admin@evsavari.com
           </p>
 
           <p>
             Sales:
-            sales1@zyvev.com
+            sales1@evsavari.com
           </p>
 
         </div>

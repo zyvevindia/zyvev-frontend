@@ -287,7 +287,7 @@ export default function KanbanBoard() {
         <div>
 
           <h2 style={sidebarTitle}>
-            Zyvev CRM
+            EVSavari CRM
           </h2>
 
           <p style={sidebarSubtext}>
