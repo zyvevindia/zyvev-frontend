@@ -25,13 +25,18 @@ export default function PrivateRoute({
 
   if (!authenticated) {
 
-    // ---------- CLEANUP SESSION ----------
     logout();
 
-    // ---------- REDIRECT LOGIN ----------
+    const loginPath =
+      location.pathname.startsWith(
+        "/dealer"
+      )
+        ? "/dealer/login"
+        : "/login";
+
     return (
       <Navigate
-        to="/login"
+        to={loginPath}
         replace
         state={{
           from: location.pathname
@@ -51,9 +56,16 @@ export default function PrivateRoute({
 
     logout();
 
+    const loginPath =
+      location.pathname.startsWith(
+        "/dealer"
+      )
+        ? "/dealer/login"
+        : "/login";
+
     return (
       <Navigate
-        to="/login"
+        to={loginPath}
         replace
       />
     );
@@ -82,6 +94,16 @@ export default function PrivateRoute({
       return (
         <Navigate
           to="/admin"
+          replace
+        />
+      );
+    }
+
+    if (role === "dealer") {
+
+      return (
+        <Navigate
+          to="/dealer"
           replace
         />
       );

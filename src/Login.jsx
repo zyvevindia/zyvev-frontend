@@ -5,7 +5,8 @@ import {
 
 import {
   useNavigate,
-  useLocation
+  useLocation,
+  Link
 } from "react-router-dom";
 
 import {
@@ -52,6 +53,10 @@ export default function Login() {
       } else if (role === "sales") {
 
         navigate("/sales");
+
+      } else if (role === "dealer") {
+
+        navigate("/dealer");
       }
     }
 
@@ -257,7 +262,20 @@ export default function Login() {
         {/* ================= FOOTER ================= */}
         <div style={footer}>
 
-          Secure CRM & Analytics Platform
+          <Link
+            to="/dealer/login"
+            style={{
+              color: "#2563eb",
+              fontWeight: "600",
+              textDecoration: "none"
+            }}
+          >
+            Dealer portal login
+          </Link>
+
+          <p style={{ margin: "10px 0 0", color: "#64748b" }}>
+            Secure CRM & Analytics Platform
+          </p>
 
         </div>
 

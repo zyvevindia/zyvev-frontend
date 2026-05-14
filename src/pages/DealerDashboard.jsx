@@ -1,0 +1,1662 @@
+import {
+  useEffect,
+  useState
+} from "react";
+
+import { API_URL } from "../config";
+
+import {
+  useNavigate
+} from "react-router-dom";
+
+import {
+  logout,
+  isAuthenticated
+} from "../auth";
+
+import {
+  labelForStatus
+} from "../crm/leadPipeline";
+
+/* =========================================================
+   ==================== DEALER DASHBOARD ===================
+   ========================================================= */
+
+export default function DealerDashboard() {
+
+  const navigate = useNavigate();
+
+  const token =
+    localStorage.getItem("token");
+
+  const [tab, setTab] =
+    useState("leads");
+
+  const [leads, setLeads] =
+    useState([]);
+
+  const [analytics, setAnalytics] =
+    useState(null);
+
+  const [cars, setCars] =
+    useState([]);
+
+  const [loading, setLoading] =
+    useState(true);
+
+  const [statusPick, setStatusPick] =
+    useState({});
+
+  const [notes, setNotes] =
+    useState({});
+
+  const [showCarModal, setShowCarModal] =
+    useState(false);
+
+  const [carForm, setCarForm] =
+    useState({
+      name: "",
+      brand: "",
+      slug: "",
+      category: "SUV",
+      startingPrice: "",
+      topVariantPrice: "",
+      overview: "",
+      galleryImages: "[]",
+      colors: "[]",
+      variants: "[]",
+      features: "[]",
+      safety: "[]",
+      specifications: "{}",
+      dimensions: "{}",
+      seo: "{}",
+      isFeatured: "false",
+      heroFile: null
+    });
+
+  useEffect(() => {
+
+    const interval =
+      setInterval(() => {
+
+        if (!isAuthenticated()) {
+
+          logout();
+
+          navigate("/dealer/login");
+        }
+
+      }, 60000);
+
+    return () =>
+      clearInterval(interval);
+
+  }, [navigate]);
+
+  const loadLeads = async () => {
+
+    const res =
+      await fetch(
+        `${API_URL}/api/dealer/leads`,
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`
+          }
+        }
+      );
+
+    const data =
+      await res.json();
+
+    if (res.ok) {
+
+      setLeads(
+        data.leads || []
+      );
+    }
+  };
+
+  const loadAnalytics = async () => {
+
+    const res =
+      await fetch(
+        `${API_URL}/api/dealer/analytics`,
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`
+          }
+        }
+      );
+
+    const data =
+      await res.json();
+
+    if (res.ok) {
+
+      setAnalytics(data);
+    }
+  };
+
+  const loadCars = async () => {
+
+    const res =
+      await fetch(
+        `${API_URL}/api/dealer/cars`,
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`
+          }
+        }
+      );
+
+    const data =
+      await res.json();
+
+    if (res.ok) {
+
+      setCars(data.cars || []);
+    }
+  };
+
+  const refreshAll = async () => {
+
+    setLoading(true);
+
+    try {
+
+      await Promise.all([
+        loadLeads(),
+        loadAnalytics(),
+        loadCars()
+      ]);
+    } finally {
+
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+
+    refreshAll();
+
+  }, []);
+
+  const updateStatus = async (
+    leadId
+  ) => {
+
+    const status =
+      statusPick[leadId];
+
+    if (!status) {
+
+      alert("Select a status");
+
+      return;
+    }
+
+    const res =
+      await fetch(
+        `${API_URL}/api/dealer/leads/${leadId}/status`,
+        {
+          method: "PUT",
+
+          headers: {
+            "Content-Type":
+              "application/json",
+
+            Authorization:
+              `Bearer ${token}`
+          },
+
+          body: JSON.stringify({
+            status
+          })
+        }
+      );
+
+    const data =
+      await res.json();
+
+    if (!res.ok) {
+
+      alert(
+        data.error ||
+        "Update failed"
+      );
+
+      return;
+    }
+
+    await loadLeads();
+
+    await loadAnalytics();
+  };
+
+  const addNote = async (
+    leadId
+  ) => {
+
+    const text =
+      notes[leadId];
+
+    if (!text?.trim()) {
+
+      alert("Enter a note");
+
+      return;
+    }
+
+    const res =
+      await fetch(
+        `${API_URL}/api/dealer/leads/${leadId}/notes`,
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json",
+
+            Authorization:
+              `Bearer ${token}`
+          },
+
+          body: JSON.stringify({
+            text
+          })
+        }
+      );
+
+    const data =
+      await res.json();
+
+    if (!res.ok) {
+
+      alert(
+        data.error ||
+        "Failed to add note"
+      );
+
+      return;
+    }
+
+    setNotes({
+      ...notes,
+      [leadId]: ""
+    });
+
+    await loadLeads();
+
+    await loadAnalytics();
+  };
+
+  const setListingStatus = async (
+    carId,
+    dealerListingStatus
+  ) => {
+
+    const res =
+      await fetch(
+        `${API_URL}/api/dealer/cars/${carId}/listing`,
+        {
+          method: "PATCH",
+
+          headers: {
+            "Content-Type":
+              "application/json",
+
+            Authorization:
+              `Bearer ${token}`
+          },
+
+          body: JSON.stringify({
+            dealerListingStatus
+          })
+        }
+      );
+
+    if (!res.ok) {
+
+      const d =
+        await res.json();
+
+      alert(
+        d.error ||
+        "Could not update"
+      );
+
+      return;
+    }
+
+    loadCars();
+  };
+
+  const openWhatsApp = (lead) => {
+
+    const phone =
+      lead.phone?.replace(
+        /\D/g,
+        ""
+      );
+
+    if (
+      !phone ||
+      phone.length < 10
+    ) {
+
+      alert("Invalid phone");
+
+      return;
+    }
+
+    const vehicle =
+      lead.vehicleName ||
+
+      lead.carId?.name ||
+
+      "our EV";
+
+    const message =
+      `Hello ${lead.name}, thank you for your interest in ${vehicle}. This is your EVSavari dealer partner.`;
+
+    window.open(
+      `https://wa.me/91${phone}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  };
+
+  const submitNewCar = async (e) => {
+
+    e.preventDefault();
+
+    if (!carForm.heroFile) {
+
+      alert("Hero image is required");
+
+      return;
+    }
+
+    const fd =
+      new FormData();
+
+    fd.append(
+      "name",
+      carForm.name
+    );
+
+    fd.append(
+      "brand",
+      carForm.brand
+    );
+
+    fd.append(
+      "slug",
+      carForm.slug
+    );
+
+    fd.append(
+      "category",
+      carForm.category
+    );
+
+    fd.append(
+      "startingPrice",
+      carForm.startingPrice
+    );
+
+    fd.append(
+      "topVariantPrice",
+      carForm.topVariantPrice || "0"
+    );
+
+    fd.append(
+      "overview",
+      carForm.overview
+    );
+
+    fd.append(
+      "galleryImages",
+      carForm.galleryImages
+    );
+
+    fd.append(
+      "colors",
+      carForm.colors
+    );
+
+    fd.append(
+      "variants",
+      carForm.variants
+    );
+
+    fd.append(
+      "features",
+      carForm.features
+    );
+
+    fd.append(
+      "safety",
+      carForm.safety
+    );
+
+    fd.append(
+      "specifications",
+      carForm.specifications
+    );
+
+    fd.append(
+      "dimensions",
+      carForm.dimensions
+    );
+
+    fd.append(
+      "seo",
+      carForm.seo
+    );
+
+    fd.append(
+      "isFeatured",
+      carForm.isFeatured
+    );
+
+    fd.append(
+      "heroImage",
+      carForm.heroFile
+    );
+
+    const res =
+      await fetch(
+        `${API_URL}/api/dealer/cars`,
+        {
+          method: "POST",
+
+          headers: {
+            Authorization:
+              `Bearer ${token}`
+          },
+
+          body: fd
+        }
+      );
+
+    const data =
+      await res.json();
+
+    if (!res.ok) {
+
+      alert(
+        data.error ||
+        data.message ||
+        "Create failed"
+      );
+
+      return;
+    }
+
+    setShowCarModal(false);
+
+    setCarForm({
+      ...carForm,
+      name: "",
+      brand: "",
+      slug: "",
+      startingPrice: "",
+      heroFile: null
+    });
+
+    loadCars();
+  };
+
+  const handleLogout = () => {
+
+    logout();
+
+    navigate("/dealer/login");
+  };
+
+  if (loading) {
+
+    return (
+
+      <div style={loadingBox}>
+        Loading dealer portal…
+      </div>
+
+    );
+  }
+
+  return (
+
+    <div style={layout}>
+
+      <div style={sidebar}>
+
+        <h2 style={sbTitle}>
+          EVSavari
+        </h2>
+
+        <p style={sbSub}>
+          Dealer portal
+        </p>
+
+        <button
+          type="button"
+          style={{
+            ...menuBtn,
+            ...(tab === "leads"
+              ? menuActive
+              : {})
+          }}
+          onClick={() =>
+            setTab("leads")
+          }
+        >
+          📥 Leads
+        </button>
+
+        <button
+          type="button"
+          style={{
+            ...menuBtn,
+            ...(tab === "analytics"
+              ? menuActive
+              : {})
+          }}
+          onClick={() =>
+            setTab("analytics")
+          }
+        >
+          📈 Analytics
+        </button>
+
+        <button
+          type="button"
+          style={{
+            ...menuBtn,
+            ...(tab === "inventory"
+              ? menuActive
+              : {})
+          }}
+          onClick={() =>
+            setTab("inventory")
+          }
+        >
+          🚗 Inventory
+        </button>
+
+        <button
+          type="button"
+          style={menuBtn}
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+
+      </div>
+
+      <div style={main}>
+
+        <div style={header}>
+
+          <div>
+
+            <h1 style={h1}>
+              Dealer dashboard
+            </h1>
+
+            <p style={sub}>
+              Assigned leads, inventory, and performance
+            </p>
+
+          </div>
+
+        </div>
+
+        {tab === "analytics" && analytics && (
+
+          <div style={grid4}>
+
+            <div style={kpi}>
+              <p>Total leads</p>
+              <h2>
+                {analytics.totalLeads}
+              </h2>
+            </div>
+
+            <div style={kpi}>
+              <p>Won leads</p>
+              <h2>
+                {analytics.wonLeads}
+              </h2>
+            </div>
+
+            <div style={kpi}>
+              <p>Response rate</p>
+              <h2>
+                {analytics.responseRate}%
+              </h2>
+            </div>
+
+            <div style={kpi}>
+              <p>Active listings</p>
+              <h2>
+
+                {
+                  cars.filter(
+                    (c) =>
+                      c.dealerListingStatus ===
+                      "active"
+                  ).length
+                }
+
+              </h2>
+            </div>
+
+          </div>
+
+        )}
+
+        {tab === "analytics" && analytics && (
+
+          <div style={split}>
+
+            <div style={panel}>
+
+              <h3 style={h3}>
+                Top vehicles
+              </h3>
+
+              <ul style={ul}>
+
+                {(
+                  !analytics.topVehicles ||
+                  !analytics.topVehicles.length
+                ) ? (
+
+                  <li style={muted}>
+                    No data
+                  </li>
+
+                ) : (
+
+                  analytics.topVehicles.map(
+                    (r, i) => (
+
+                      <li
+                        key={i}
+                        style={li}
+                      >
+
+                        <span>
+                          {r.name}
+                        </span>
+
+                        <strong>
+                          {r.count}
+                        </strong>
+
+                      </li>
+
+                    )
+                  )
+
+                )}
+
+              </ul>
+
+            </div>
+
+            <div style={panel}>
+
+              <h3 style={h3}>
+                City distribution
+              </h3>
+
+              <ul style={ul}>
+
+                {(
+                  !analytics.cityDistribution ||
+                  !analytics.cityDistribution.length
+                ) ? (
+
+                  <li style={muted}>
+                    No data
+                  </li>
+
+                ) : (
+
+                  analytics.cityDistribution.map(
+                    (r, i) => (
+
+                      <li
+                        key={i}
+                        style={li}
+                      >
+
+                        <span>
+                          {r.city}
+                        </span>
+
+                        <strong>
+                          {r.count}
+                        </strong>
+
+                      </li>
+
+                    )
+                  )
+
+                )}
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        )}
+
+        {tab === "inventory" && (
+
+          <>
+
+            <button
+              type="button"
+              style={primary}
+              onClick={() =>
+                setShowCarModal(true)
+              }
+            >
+              Add EV listing
+            </button>
+
+            <div style={card}>
+
+              <h3 style={h3}>
+                Your listings
+              </h3>
+
+              {cars.length === 0 ? (
+
+                <p style={muted}>
+                  No listings yet.
+                </p>
+
+              ) : (
+
+                <div style={{ overflowX: "auto" }}>
+
+                  <table style={table}>
+
+                    <thead>
+
+                      <tr>
+
+                        <th style={th}>
+                          Name
+                        </th>
+
+                        <th style={th}>
+                          Brand
+                        </th>
+
+                        <th style={th}>
+                          Price
+                        </th>
+
+                        <th style={th}>
+                          Status
+                        </th>
+
+                        <th style={th}>
+                          Actions
+                        </th>
+
+                      </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                      {cars.map((c) => (
+
+                        <tr key={c._id}>
+
+                          <td style={td}>
+                            {c.name}
+                          </td>
+
+                          <td style={td}>
+                            {c.brand}
+                          </td>
+
+                          <td style={td}>
+                            {c.startingPrice}
+                          </td>
+
+                          <td style={td}>
+                            {c.dealerListingStatus}
+                          </td>
+
+                          <td style={td}>
+
+                            <button
+                              type="button"
+                              style={smallBtn}
+                              onClick={() =>
+                                setListingStatus(
+                                  c._id,
+                                  "sold"
+                                )
+                              }
+                            >
+                              Sold
+                            </button>
+
+                            <button
+                              type="button"
+                              style={smallBtn}
+                              onClick={() =>
+                                setListingStatus(
+                                  c._id,
+                                  "unavailable"
+                                )
+                              }
+                            >
+                              Unavailable
+                            </button>
+
+                            <button
+                              type="button"
+                              style={smallBtn}
+                              onClick={() =>
+                                setListingStatus(
+                                  c._id,
+                                  "active"
+                                )
+                              }
+                            >
+                              Active
+                            </button>
+
+                          </td>
+
+                        </tr>
+
+                      ))}
+
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+              )}
+
+            </div>
+
+          </>
+
+        )}
+
+        {tab === "leads" && (
+
+          <>
+
+            {leads.length === 0 ? (
+
+              <div style={card}>
+                <p>
+                  No leads assigned to your dealership yet.
+                </p>
+              </div>
+
+            ) : (
+
+              leads.map((lead) => (
+
+                <div
+                  key={lead._id}
+                  style={leadCard}
+                >
+
+                  <div style={leadTop}>
+
+                    <div>
+
+                      <h3 style={leadName}>
+                        {lead.name}
+                      </h3>
+
+                      <p style={meta}>
+                        📞 {lead.phone}
+                      </p>
+
+                      <p style={meta}>
+                        ✉️{" "}
+                        {lead.email || "—"}
+                      </p>
+
+                      <p style={meta}>
+                        📍{" "}
+                        {lead.city || "—"}
+                      </p>
+
+                      <p style={meta}>
+                        🚗{" "}
+                        {lead.vehicleName ||
+
+                          lead.carId?.name ||
+
+                          "—"}
+                      </p>
+
+                      <p style={meta}>
+                        🔗{" "}
+                        {lead.sourcePage || "—"}
+                      </p>
+
+                    </div>
+
+                    <div>
+
+                      <span style={badge}>
+                        {labelForStatus(
+                          lead.status
+                        )}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                  <div style={row}>
+
+                    <select
+                      style={sel}
+                      value={
+                        statusPick[
+                          lead._id
+                        ] || ""
+                      }
+                      onChange={(e) =>
+                        setStatusPick({
+                          ...statusPick,
+
+                          [lead._id]:
+                            e.target.value
+                        })
+                      }
+                    >
+
+                      <option value="">
+                        Update status…
+                      </option>
+
+                      <option value="contacted">
+                        Contacted
+                      </option>
+
+                      <option value="interested">
+                        Interested
+                      </option>
+
+                      <option value="test_drive">
+                        Test drive
+                      </option>
+
+                      <option value="negotiation">
+                        Negotiation
+                      </option>
+
+                      <option value="won">
+                        Won
+                      </option>
+
+                      <option value="lost">
+                        Lost
+                      </option>
+
+                    </select>
+
+                    <button
+                      type="button"
+                      style={primary}
+                      onClick={() =>
+                        updateStatus(
+                          lead._id
+                        )
+                      }
+                    >
+                      Save status
+                    </button>
+
+                  </div>
+
+                  <textarea
+                    style={ta}
+                    rows={3}
+                    placeholder="Add a note…"
+                    value={
+                      notes[lead._id] || ""
+                    }
+                    onChange={(e) =>
+                      setNotes({
+                        ...notes,
+
+                        [lead._id]:
+                          e.target.value
+                      })
+                    }
+                  />
+
+                  <button
+                    type="button"
+                    style={secondary}
+                    onClick={() =>
+                      addNote(lead._id)
+                    }
+                  >
+                    Add note
+                  </button>
+
+                  <button
+                    type="button"
+                    style={wa}
+                    onClick={() =>
+                      openWhatsApp(lead)
+                    }
+                  >
+                    WhatsApp customer
+                  </button>
+
+                  <div style={hist}>
+
+                    <h4 style={h4}>
+                      Lead history
+                    </h4>
+
+                    {(
+                      !lead.statusHistory ||
+                      !lead.statusHistory.length
+                    ) ? (
+
+                      <p style={muted}>
+                        {labelForStatus(lead.status)}{" "}
+                        ·{" "}
+                        {lead.createdAt
+                          ? new Date(
+                            lead.createdAt
+                          ).toLocaleString()
+                          : ""}
+                      </p>
+
+                    ) : (
+
+                      [...lead.statusHistory]
+                        .reverse()
+                        .map(
+                          (h, i) => (
+
+                            <div
+                              key={i}
+                              style={histRow}
+                            >
+
+                              <strong>
+                                {labelForStatus(
+                                  h.status
+                                )}
+                              </strong>
+
+                              <span style={muted}>
+
+                                {h.at
+                                  ? new Date(
+                                    h.at
+                                  ).toLocaleString()
+                                  : ""}
+                                {h.changedByDealer?.name
+                                  ? ` · ${h.changedByDealer.name}`
+                                  : ""}
+
+                              </span>
+
+                            </div>
+
+                          )
+                        )
+
+                    )}
+
+                  </div>
+
+                  <div style={hist}>
+
+                    <h4 style={h4}>
+                      Notes
+                    </h4>
+
+                    {(
+                      !lead.notes ||
+                      !lead.notes.length
+                    ) ? (
+
+                      <p style={muted}>
+                        No notes
+                      </p>
+
+                    ) : (
+
+                      [...lead.notes]
+                        .reverse()
+                        .map(
+                          (n, i) => (
+
+                            <div
+                              key={i}
+                              style={noteBox}
+                            >
+
+                              <p style={{ margin: 0 }}>
+                                {n.text}
+                              </p>
+
+                              <small style={muted}>
+
+                                {n.createdAt
+                                  ? new Date(
+                                    n.createdAt
+                                  ).toLocaleString()
+                                  : ""}
+                                {n.createdByDealer?.name
+                                  ? ` · ${n.createdByDealer.name}`
+                                  : ""}
+
+                              </small>
+
+                            </div>
+
+                          )
+                        )
+
+                    )}
+
+                  </div>
+
+                </div>
+
+              ))
+
+            )}
+
+          </>
+
+        )}
+
+      </div>
+
+      {showCarModal && (
+
+        <div
+          style={modalBg}
+          onClick={() =>
+            setShowCarModal(false)
+          }
+        >
+
+          <div
+            style={modal}
+            onClick={(e) =>
+              e.stopPropagation()
+            }
+          >
+
+            <h3>
+              New listing
+            </h3>
+
+            <form
+              onSubmit={submitNewCar}
+              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+            >
+
+              <input
+                placeholder="Name"
+                required
+                value={carForm.name}
+                onChange={(e) =>
+                  setCarForm({
+                    ...carForm,
+                    name: e.target.value
+                  })
+                }
+                style={input}
+              />
+
+              <input
+                placeholder="Brand"
+                required
+                value={carForm.brand}
+                onChange={(e) =>
+                  setCarForm({
+                    ...carForm,
+                    brand: e.target.value
+                  })
+                }
+                style={input}
+              />
+
+              <input
+                placeholder="Slug (url)"
+                required
+                value={carForm.slug}
+                onChange={(e) =>
+                  setCarForm({
+                    ...carForm,
+                    slug: e.target.value
+                  })
+                }
+                style={input}
+              />
+
+              <input
+                placeholder="Starting price (number)"
+                required
+                value={carForm.startingPrice}
+                onChange={(e) =>
+                  setCarForm({
+                    ...carForm,
+                    startingPrice:
+                      e.target.value
+                  })
+                }
+                style={input}
+              />
+
+              <label style={label}>
+                Hero image
+              </label>
+
+              <input
+                type="file"
+                accept="image/*"
+                required
+                onChange={(e) =>
+                  setCarForm({
+                    ...carForm,
+                    heroFile:
+                      e.target.files?.[0] ||
+                      null
+                  })
+                }
+              />
+
+              <textarea
+                placeholder="Overview (optional)"
+                rows={3}
+                value={carForm.overview}
+                onChange={(e) =>
+                  setCarForm({
+                    ...carForm,
+                    overview:
+                      e.target.value
+                  })
+                }
+                style={ta}
+              />
+
+              <div style={{ display: "flex", gap: "10px" }}>
+
+                <button
+                  type="submit"
+                  style={primary}
+                >
+                  Publish
+                </button>
+
+                <button
+                  type="button"
+                  style={secondary}
+                  onClick={() =>
+                    setShowCarModal(false)
+                  }
+                >
+                  Cancel
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      )}
+
+    </div>
+
+  );
+}
+
+const layout = {
+  display: "flex",
+  minHeight: "100vh",
+  background: "#f5f7fb",
+  flexWrap: "wrap"
+};
+
+const sidebar = {
+  width: "240px",
+  background:
+    "linear-gradient(180deg, #0f172a, #1e293b)",
+  color: "#fff",
+  padding: "28px 20px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "12px"
+};
+
+const sbTitle = {
+  margin: 0,
+  fontSize: "24px",
+  fontWeight: "800"
+};
+
+const sbSub = {
+  color: "#cbd5e1",
+  margin: "0 0 16px"
+};
+
+const menuBtn = {
+  background: "rgba(255,255,255,0.06)",
+  border: "none",
+  color: "#fff",
+  padding: "12px 14px",
+  borderRadius: "12px",
+  textAlign: "left",
+  cursor: "pointer",
+  fontWeight: "600"
+};
+
+const menuActive = {
+  background:
+    "linear-gradient(135deg, #2563eb, #1d4ed8)"
+};
+
+const main = {
+  flex: 1,
+  padding: "28px",
+  minWidth: 0
+};
+
+const header = {
+  background:
+    "linear-gradient(135deg, #1e3a8a, #2563eb)",
+  color: "#fff",
+  padding: "24px",
+  borderRadius: "20px",
+  marginBottom: "22px"
+};
+
+const h1 = {
+  margin: 0,
+  fontSize: "30px",
+  fontWeight: "800"
+};
+
+const sub = {
+  margin: "8px 0 0",
+  opacity: 0.9
+};
+
+const grid4 = {
+  display: "grid",
+  gridTemplateColumns:
+    "repeat(auto-fit, minmax(200px, 1fr))",
+  gap: "16px",
+  marginBottom: "20px"
+};
+
+const kpi = {
+  background: "#fff",
+  borderRadius: "16px",
+  padding: "18px",
+  border: "1px solid #e5e7eb",
+  boxShadow:
+    "0 8px 24px rgba(15,23,42,0.05)"
+};
+
+const split = {
+  display: "grid",
+  gridTemplateColumns:
+    "repeat(auto-fit, minmax(280px, 1fr))",
+  gap: "16px"
+};
+
+const panel = {
+  background: "#fff",
+  borderRadius: "16px",
+  padding: "18px",
+  border: "1px solid #e5e7eb"
+};
+
+const h3 = {
+  margin: "0 0 12px",
+  fontSize: "16px",
+  fontWeight: "700",
+  color: "#0f172a"
+};
+
+const h4 = {
+  margin: "0 0 8px",
+  fontSize: "14px",
+  fontWeight: "700",
+  color: "#334155"
+};
+
+const ul = {
+  listStyle: "none",
+  margin: 0,
+  padding: 0
+};
+
+const li = {
+  display: "flex",
+  justifyContent: "space-between",
+  padding: "8px 0",
+  borderBottom: "1px solid #f1f5f9",
+  fontSize: "14px"
+};
+
+const muted = {
+  color: "#64748b",
+  fontSize: "14px"
+};
+
+const card = {
+  background: "#fff",
+  borderRadius: "20px",
+  padding: "22px",
+  marginTop: "16px",
+  border: "1px solid #e5e7eb"
+};
+
+const primary = {
+  background:
+    "linear-gradient(135deg, #2563eb, #1d4ed8)",
+  color: "#fff",
+  border: "none",
+  borderRadius: "12px",
+  padding: "10px 16px",
+  fontWeight: "700",
+  cursor: "pointer",
+  marginRight: "8px",
+  marginTop: "8px"
+};
+
+const secondary = {
+  background: "#f1f5f9",
+  color: "#0f172a",
+  border: "1px solid #cbd5e1",
+  borderRadius: "12px",
+  padding: "10px 16px",
+  fontWeight: "600",
+  cursor: "pointer"
+};
+
+const wa = {
+  ...secondary,
+  marginTop: "8px",
+  background: "#dcfce7",
+  borderColor: "#86efac"
+};
+
+const leadCard = {
+  ...card,
+  marginBottom: "18px"
+};
+
+const leadTop = {
+  display: "flex",
+  justifyContent: "space-between",
+  gap: "16px",
+  flexWrap: "wrap",
+  marginBottom: "14px"
+};
+
+const leadName = {
+  margin: "0 0 8px",
+  fontSize: "22px",
+  color: "#0f172a"
+};
+
+const meta = {
+  margin: "4px 0",
+  color: "#475569",
+  fontSize: "14px"
+};
+
+const badge = {
+  background: "#e0e7ff",
+  color: "#3730a3",
+  padding: "6px 12px",
+  borderRadius: "999px",
+  fontWeight: "700",
+  fontSize: "13px"
+};
+
+const row = {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "10px",
+  alignItems: "center",
+  marginBottom: "10px"
+};
+
+const sel = {
+  padding: "10px",
+  borderRadius: "10px",
+  border: "1px solid #cbd5e1",
+  minWidth: "200px"
+};
+
+const ta = {
+  width: "100%",
+  boxSizing: "border-box",
+  borderRadius: "12px",
+  border: "1px solid #cbd5e1",
+  padding: "10px",
+  fontFamily: "inherit",
+  marginBottom: "8px"
+};
+
+const hist = {
+  marginTop: "14px",
+  paddingTop: "12px",
+  borderTop: "1px solid #e5e7eb"
+};
+
+const histRow = {
+  padding: "8px 0",
+  fontSize: "14px"
+};
+
+const noteBox = {
+  background: "#f8fafc",
+  padding: "10px 12px",
+  borderRadius: "12px",
+  marginBottom: "8px",
+  border: "1px solid #e2e8f0"
+};
+
+const table = {
+  width: "100%",
+  borderCollapse: "collapse",
+  fontSize: "14px"
+};
+
+const th = {
+  textAlign: "left",
+  padding: "10px 8px",
+  borderBottom: "1px solid #e2e8f0",
+  color: "#64748b"
+};
+
+const td = {
+  padding: "10px 8px",
+  borderBottom: "1px solid #f1f5f9"
+};
+
+const smallBtn = {
+  ...secondary,
+  marginRight: "6px",
+  marginBottom: "6px",
+  fontSize: "12px",
+  padding: "6px 10px"
+};
+
+const modalBg = {
+  position: "fixed",
+  inset: 0,
+  background: "rgba(15,23,42,0.45)",
+  zIndex: 9998,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "16px"
+};
+
+const modal = {
+  background: "#fff",
+  borderRadius: "20px",
+  padding: "24px",
+  maxWidth: "480px",
+  width: "100%",
+  maxHeight: "90vh",
+  overflowY: "auto"
+};
+
+const input = {
+  padding: "10px 12px",
+  borderRadius: "10px",
+  border: "1px solid #cbd5e1"
+};
+
+const label = {
+  fontSize: "13px",
+  fontWeight: "600",
+  color: "#334155"
+};
+
+const loadingBox = {
+  minHeight: "60vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "#f5f7fb"
+};
