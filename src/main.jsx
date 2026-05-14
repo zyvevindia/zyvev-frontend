@@ -14,6 +14,8 @@ import App from "./App.jsx";
 
 import ErrorBoundary from "./components/ErrorBoundary";
 
+import GoogleAnalytics from "./components/GoogleAnalytics";
+
 import "./index.css";
 
 /* =========================================================
@@ -31,6 +33,8 @@ ReactDOM.createRoot(
       <BrowserRouter>
 
         <ErrorBoundary>
+
+          <GoogleAnalytics />
 
           <App />
 

@@ -11,13 +11,16 @@
   VITE_API_URL=http://localhost:5000
 
   Production:
-  VITE_API_URL=https://api.evsavari.com
+  VITE_API_URL=https://evsavari-api.onrender.com
 
   Example .env:
   VITE_API_URL=http://localhost:5000
 
   Example .env.production:
-  VITE_API_URL=https://api.evsavari.com
+  VITE_API_URL=https://evsavari-api.onrender.com
+
+  Optional Google Analytics (GA4):
+  VITE_GA_ID=G-XXXXXXXXXX
 */
 
 /* =========================================================
@@ -41,7 +44,7 @@ const DEV_FALLBACK =
   "http://localhost:5000";
 
 const PROD_FALLBACK =
-  "https://api.evsavari.com";
+  "https://evsavari-api.onrender.com";
 
 /* =========================================================
    ======================= API URL =========================
@@ -51,9 +54,11 @@ export const API_URL = (
 
   ENV_API_URL ||
 
-  (IS_DEV
-    ? DEV_FALLBACK
-    : PROD_FALLBACK)
+  (
+    IS_DEV
+      ? DEV_FALLBACK
+      : PROD_FALLBACK
+  )
 
 ).replace(/\/$/, "");
 
@@ -79,11 +84,14 @@ export const APP_CONFIG = {
     "evsavari.com",
 
   apiDomain:
-    "api.evsavari.com",
+    "evsavari-api.onrender.com",
 
   supportEmail:
     "support@evsavari.com",
 };
+
+export const SITE_ORIGIN =
+  `https://${APP_CONFIG.domain}`;
 
 /* =========================================================
    ====================== API ROUTES =======================
@@ -116,18 +124,21 @@ export const API_ROUTES = {
 
 export const ENVIRONMENT = {
 
-  isDev: IS_DEV,
+  isDev:
+    IS_DEV,
 
-  isProd: IS_PROD,
+  isProd:
+    IS_PROD,
 
-  apiUrl: API_URL,
+  apiUrl:
+    API_URL,
 };
 
 /* =========================================================
    ====================== DEBUG LOGS =======================
    ========================================================= */
 
-if (IS_DEV) {
+if (import.meta.env.DEV) {
 
   console.log(
 
@@ -146,5 +157,8 @@ if (IS_DEV) {
 
     version:
       APP_CONFIG.version,
+
+    mode:
+      import.meta.env.MODE,
   });
 }
