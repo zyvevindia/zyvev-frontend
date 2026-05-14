@@ -57,6 +57,14 @@ const SalesAnalytics = lazy(() =>
   import("./pages/SalesAnalytics")
 );
 
+const DealerLogin = lazy(() =>
+  import("./pages/DealerLogin")
+);
+
+const DealerDashboard = lazy(() =>
+  import("./pages/DealerDashboard")
+);
+
 const ListingPage = lazy(() =>
   import("./pages/ListingPage")
 );
@@ -68,6 +76,15 @@ const ListingPage = lazy(() =>
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+
+import StaticPage from "./pages/StaticPage";
+
+import {
+  ABOUT_PAGE,
+  CONTACT_PAGE,
+  PRIVACY_PAGE,
+  TERMS_PAGE,
+} from "./content/staticPages";
 
 /* =========================================================
    ==================== ROUTE LOADER =======================
@@ -187,13 +204,65 @@ export default function App() {
           />
 
           <Route
-            path="/:category"
-            element={<ListingPage />}
+            path="/about"
+            element={
+              <StaticPage
+                {...ABOUT_PAGE}
+              />
+            }
+          />
+
+          <Route
+            path="/contact"
+            element={
+              <StaticPage
+                {...CONTACT_PAGE}
+              />
+            }
+          />
+
+          <Route
+            path="/privacy"
+            element={
+              <StaticPage
+                {...PRIVACY_PAGE}
+              />
+            }
+          />
+
+          <Route
+            path="/terms"
+            element={
+              <StaticPage
+                {...TERMS_PAGE}
+              />
+            }
           />
 
           <Route
             path="/login"
             element={<Login />}
+          />
+
+          <Route
+            path="/dealer/login"
+            element={<DealerLogin />}
+          />
+
+          <Route
+            path="/dealer"
+            element={
+              <PrivateRoute
+                allowedRoles={["dealer"]}
+              >
+                <DealerDashboard />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/:category"
+            element={<ListingPage />}
           />
 
           {/* ================= ADMIN ================= */}
@@ -271,7 +340,15 @@ export default function App() {
 
           <Route
             path="/sales-analytics"
-            element={<SalesAnalytics />}
+            element={
+              <PrivateRoute
+                allowedRoles={[
+                  "admin",
+                ]}
+              >
+                <SalesAnalytics />
+              </PrivateRoute>
+            }
           />
 
           {/* ================= 404 ================= */}
