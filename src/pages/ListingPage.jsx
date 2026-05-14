@@ -8,7 +8,6 @@ import {
   useParams,
 } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 import CarCard from "../components/CarCard";
@@ -45,6 +44,9 @@ export default function ListingPage() {
   const [sortBy, setSortBy] =
     useState("");
 
+  const [error, setError] =
+    useState("");
+
   /* =========================================================
      ======================= FETCH CARS ======================
      ========================================================= */
@@ -57,16 +59,29 @@ export default function ListingPage() {
 
         setLoading(true);
 
+        setError("");
+
         const response =
           await fetch(
             `${API_URL}/cars`
           );
 
+        if (!response.ok) {
+          throw new Error(
+            "Failed to fetch EVs"
+          );
+        }
+
         const data =
           await response.json();
 
+        console.log(
+          "Cars API Response:",
+          data
+        );
+
         const normalized =
-          (data.cars || []).map(
+          (data?.cars || []).map(
             normalizeCar
           );
 
@@ -75,6 +90,10 @@ export default function ListingPage() {
       } catch (error) {
 
         console.error(error);
+
+        setError(
+          "Unable to load EV listings."
+        );
 
       } finally {
 
@@ -118,13 +137,13 @@ export default function ListingPage() {
           filtered.filter(
             (car) =>
               car.name
-                .toLowerCase()
+                ?.toLowerCase()
                 .includes(
                   search.toLowerCase()
                 ) ||
 
               car.brand
-                .toLowerCase()
+                ?.toLowerCase()
                 .includes(
                   search.toLowerCase()
                 )
@@ -194,9 +213,11 @@ export default function ListingPage() {
   const brands = [
 
     ...new Set(
-      cars.map(
-        (car) => car.brand
-      )
+      cars
+        .map(
+          (car) => car.brand
+        )
+        .filter(Boolean)
     ),
   ];
 
@@ -213,8 +234,6 @@ export default function ListingPage() {
       }}
     >
 
-      <Navbar />
-
       {/* ================= HERO ================= */}
 
       <section
@@ -225,7 +244,7 @@ export default function ListingPage() {
           color: "white",
 
           padding:
-            "80px 20px 60px",
+            "100px 20px 70px",
 
           textAlign: "center",
         }}
@@ -292,7 +311,7 @@ export default function ListingPage() {
             display: "grid",
 
             gridTemplateColumns:
-              "2fr 1fr 1fr",
+              "repeat(auto-fit,minmax(240px,1fr))",
 
             gap: "20px",
 
@@ -304,7 +323,7 @@ export default function ListingPage() {
           <input
             type="text"
 
-            placeholder="Search EV..."
+            placeholder="Search by EV or brand..."
 
             value={search}
 
@@ -412,6 +431,20 @@ export default function ListingPage() {
                 key={index}
               />
             ))}
+
+          </div>
+
+        ) : error ? (
+
+          <div style={emptyState}>
+
+            <h2 style={emptyTitle}>
+              Something Went Wrong
+            </h2>
+
+            <p style={emptyText}>
+              {error}
+            </p>
 
           </div>
 
