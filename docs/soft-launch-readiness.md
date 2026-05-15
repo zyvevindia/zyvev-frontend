@@ -1,5 +1,7 @@
 # EVSavari soft launch — deployment readiness
 
+For **step-by-step production execution** (Vercel, Render, env lists, launch order), use **[production-deployment-guide.md](./production-deployment-guide.md)**.
+
 This document supports **production deployment** (Vercel + Render) and **manual QA** before soft launch. It is not a substitute for full automated testing.
 
 ---

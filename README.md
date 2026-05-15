@@ -7,9 +7,12 @@ Vite + React marketplace UI for [EVSavari](https://evsavari.com).
 - Node.js 20+
 - Backend API running locally (default `http://localhost:5000`) or a reachable staging/production API
 
-## Environment variables
+## Deployment
 
-See **[docs/soft-launch-readiness.md](./docs/soft-launch-readiness.md)** for deployment checklist, launch blockers, and QA flows.
+- **[docs/production-deployment-guide.md](./docs/production-deployment-guide.md)** — step-by-step Vercel + Render execution, exact env lists, compatibility checks, smoke tests, and ordered launch sequence.
+- **[docs/soft-launch-readiness.md](./docs/soft-launch-readiness.md)** — risks, blockers, and supplemental QA notes.
+
+## Environment variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
