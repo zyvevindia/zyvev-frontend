@@ -9,6 +9,8 @@ Vite + React marketplace UI for [EVSavari](https://evsavari.com).
 
 ## Environment variables
 
+See **[docs/soft-launch-readiness.md](./docs/soft-launch-readiness.md)** for deployment checklist, launch blockers, and QA flows.
+
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `VITE_API_URL` | Yes (or rely on dev/prod fallbacks in `src/config.js`) | Base URL for the EVSavari API (no trailing slash) |
