@@ -8,6 +8,7 @@ import { API_URL } from "../config";
 import {
   useNavigate,
   useParams,
+  useSearchParams,
 } from "react-router-dom";
 
 import LeadInquiryModal from "../components/LeadInquiryModal";
@@ -40,12 +41,19 @@ import {
 
 import { getOgImage } from "../utils/vehicleMedia";
 
-import { fetchVehicleBySlug } from "../utils/vehicleDetailResolver";
+import {
+  fetchVehicleFamilyBySlug,
+} from "../utils/vehicleDetailResolver";
+
+import {
+  extractFamilySlug,
+  formatFamilyName,
+} from "../utils/modelFamily";
 
 import {
   canonicalVehicleUrl,
   normalizeVehicleSlug,
-  vehicleDetailPath,
+  vehicleFamilyPath,
 } from "../utils/vehicleRoutes";
 
 import VehicleImage from "../components/media/VehicleImage";
@@ -71,17 +79,29 @@ export default function CarDetails() {
   const { slug } =
     useParams();
 
+  const [searchParams] =
+    useSearchParams();
+
   const navigate =
     useNavigate();
 
   const [car, setCar] =
     useState(null);
 
+  const [family, setFamily] =
+    useState(null);
+
+  const [familyVariants, setFamilyVariants] =
+    useState([]);
+
   const {
     vehicle: displayCar,
     catalogLoading,
     hasGoldExperience,
-  } = useCatalogEnrichment(car, slug);
+  } = useCatalogEnrichment(
+    car,
+    car?.slug || searchParams.get("variant") || slug
+  );
 
   const [loading, setLoading] =
     useState(true);
@@ -145,29 +165,33 @@ export default function CarDetails() {
     async function fetchCar() {
       setLoading(true);
 
-      const result = await fetchVehicleBySlug(slug);
+      const variantParam =
+        searchParams.get("variant");
+
+      const result =
+        await fetchVehicleFamilyBySlug(slug, {
+          variantSlug: variantParam,
+        });
 
       if (cancelled) return;
 
       if (result?.vehicle) {
+        setFamily(result.family);
+        setFamilyVariants(result.variants || []);
         setCar(result.vehicle);
 
-        const resolved = normalizeVehicleSlug(
-          result.resolvedSlug
-        );
-        const requested = normalizeVehicleSlug(slug);
-
-        if (
-          resolved &&
-          requested &&
-          resolved !== requested
-        ) {
+        if (result.canonicalizeTo) {
           navigate(
-            vehicleDetailPath(resolved),
+            vehicleFamilyPath(
+              result.canonicalizeTo,
+              result.selectedVariantSlug
+            ),
             { replace: true }
           );
         }
       } else {
+        setFamily(null);
+        setFamilyVariants([]);
         setCar(null);
       }
 
@@ -198,7 +222,7 @@ export default function CarDetails() {
       cancelled = true;
     };
 
-  }, [slug, navigate]);
+  }, [slug, navigate, searchParams]);
 
   /* =========================================================
      ================= INITIAL SELECTORS =====================
@@ -214,14 +238,18 @@ export default function CarDetails() {
 
     setSelectedImage(hero);
 
-    if (
+    const match = familyVariants.find(
+      (v) => v.slug === car.slug
+    );
+    if (match) {
+      setSelectedVariant(match);
+    } else if (
       Array.isArray(car.variants) &&
       car.variants.length > 0
     ) {
-
-      setSelectedVariant(
-        car.variants[0]
-      );
+      setSelectedVariant(car.variants[0]);
+    } else {
+      setSelectedVariant(car);
     }
 
     if (
@@ -234,7 +262,7 @@ export default function CarDetails() {
       );
     }
 
-  }, [car]);
+  }, [car, familyVariants]);
 
   useEffect(() => {
     if (!displayCar || loading) return;
@@ -278,6 +306,19 @@ export default function CarDetails() {
      ========================================================= */
 
   const vehicle = displayCar;
+
+  const familySlug =
+    family?.familySlug ||
+    extractFamilySlug(vehicle.slug || slug);
+
+  const familyTitle =
+    family?.familyName ||
+    formatFamilyName(familySlug, vehicle.brand);
+
+  const variantOptions =
+    familyVariants.length > 0
+      ? familyVariants
+      : vehicle.variants || [];
 
   const galleryImages =
     vehicle.galleryImages?.length > 0
@@ -393,7 +434,7 @@ export default function CarDetails() {
     description: overview,
     images: galleryImages,
     priceInr: activePrice,
-    slug,
+    slug: familySlug,
     sku: vehicle._id,
   });
 
@@ -401,8 +442,8 @@ export default function CarDetails() {
     { name: "Home", url: "/" },
     { name: "Cars", url: "/cars" },
     {
-      name: vehicle.name,
-      url: canonicalVehicleUrl(slug),
+      name: familyTitle,
+      url: canonicalVehicleUrl(familySlug),
     },
   ]);
 
@@ -417,7 +458,7 @@ export default function CarDetails() {
         title={seoTitle}
         description={seoDescription}
         canonical={
-          canonicalVehicleUrl(slug)
+          canonicalVehicleUrl(familySlug)
         }
         image={getOgImage(vehicle)}
         type="product"
@@ -616,11 +657,36 @@ export default function CarDetails() {
               </div>
 
               <h1 style={carTitle}>
-                {vehicle.name}
+                {familyTitle}
               </h1>
+
+              {variantOptions.length > 1 && (
+                <p style={familyMetaLine}>
+                  {variantOptions.length} variants · from{" "}
+                  {formatIndianPrice(
+                    family?.startingPrice || activePrice
+                  )}{" "}
+                  · up to {family?.maxRange || activeRange} km
+                </p>
+              )}
 
               <p style={priceText}>
                 {formatIndianPrice(activePrice)}
+                {(selectedVariant?.variantLabel ||
+                  (vehicle.slug !== familySlug &&
+                    vehicle.name !== familyTitle &&
+                    vehicle.name)) && (
+                  <span style={variantPriceHint}>
+                    {" "}
+                    ·{" "}
+                    {selectedVariant?.variantLabel ||
+                      vehicle.name?.replace(
+                        familyTitle,
+                        ""
+                      ).trim() ||
+                      vehicle.name}
+                  </span>
+                )}
               </p>
 
               <p style={subtitleText}>
@@ -640,8 +706,7 @@ export default function CarDetails() {
 
             {/* ================= VARIANTS ================= */}
 
-            {vehicle.variants?.length >
-              0 && (
+            {variantOptions.length > 0 && (
 
               <div>
 
@@ -651,50 +716,50 @@ export default function CarDetails() {
 
                 <div style={variantGrid}>
 
-                  {vehicle.variants.map(
-                    (
-                      variant,
-                      index
-                    ) => (
+                  {variantOptions.map((variant) => {
+                    const isActive =
+                      normalizeVehicleSlug(vehicle.slug) ===
+                      normalizeVehicleSlug(variant.slug);
 
+                    return (
                       <button
-                        key={index}
-
+                        key={variant.slug || variant._id}
+                        type="button"
                         style={{
                           ...variantButton,
-
-                          border:
-                            selectedVariant
-                              ?.name ===
-                            variant.name
-
-                              ? "2px solid #2563eb"
-
-                              : "1px solid #e2e8f0",
+                          border: isActive
+                            ? "2px solid #2563eb"
+                            : "1px solid #e2e8f0",
                         }}
-
-                        onClick={() =>
-                          setSelectedVariant(
-                            variant
-                          )
-                        }
+                        onClick={() => {
+                          setCar(variant);
+                          setSelectedVariant(variant);
+                          navigate(
+                            vehicleFamilyPath(
+                              familySlug,
+                              variant.slug
+                            ),
+                            { replace: true }
+                          );
+                        }}
                       >
-
                         <strong>
-                          {
-                            variant.name
-                          }
+                          {variant.variantLabel || variant.name}
                         </strong>
-
                         <span>
                           {formatIndianPriceCompact(
-                            variant.price
+                            variant.price || variant.startingPrice
                           )}
                         </span>
-
+                        <span style={variantRangeHint}>
+                          {variant.specifications?.range ||
+                            variant.range ||
+                            "—"}{" "}
+                          km
+                        </span>
                       </button>
-                    )
-                  )}
+                    );
+                  })}
 
                 </div>
 
@@ -1315,6 +1380,26 @@ const priceText = {
   color: "#2563eb",
 
   marginBottom: "20px",
+};
+
+const familyMetaLine = {
+  fontSize: "15px",
+  color: "#64748b",
+  margin: "0 0 12px",
+  lineHeight: 1.5,
+};
+
+const variantPriceHint = {
+  fontSize: "0.55em",
+  fontWeight: "600",
+  color: "#64748b",
+};
+
+const variantRangeHint = {
+  display: "block",
+  fontSize: "13px",
+  color: "#64748b",
+  marginTop: "4px",
 };
 
 const subtitleText = {

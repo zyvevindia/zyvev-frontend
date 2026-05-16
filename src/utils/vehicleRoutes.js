@@ -4,6 +4,8 @@
 
 import { SITE_ORIGIN } from "../config";
 
+import { extractFamilySlug } from "./modelFamily";
+
 export const CANONICAL_VEHICLE_PREFIX = "/cars";
 export const LEGACY_VEHICLE_PREFIX = "/car";
 
@@ -56,16 +58,43 @@ export function resolveSlugCandidates(rawSlug) {
 /**
  * In-app path for vehicle detail (canonical).
  */
+/**
+ * Canonical in-app path — always model-family slug for discovery cards.
+ */
+export function vehicleFamilyPath(familySlug, variantSlug) {
+  const family = normalizeVehicleSlug(familySlug);
+  if (!family) {
+    return CANONICAL_VEHICLE_PREFIX;
+  }
+
+  const base = `${CANONICAL_VEHICLE_PREFIX}/${family}`;
+  const variant = normalizeVehicleSlug(variantSlug);
+
+  if (variant && variant !== family) {
+    return `${base}?variant=${encodeURIComponent(variant)}`;
+  }
+
+  return base;
+}
+
 export function vehicleDetailPath(slugOrCar, idFallback) {
   const slug =
     typeof slugOrCar === "string"
       ? slugOrCar
-      : slugOrCar?.slug;
+      : slugOrCar?.familySlug ||
+        slugOrCar?.slug;
 
   const normalized = normalizeVehicleSlug(slug);
 
   if (normalized) {
-    return `${CANONICAL_VEHICLE_PREFIX}/${normalized}`;
+    const family = extractFamilySlug(normalized);
+    const variant =
+      typeof slugOrCar === "object" && slugOrCar?.variantSlug
+        ? slugOrCar.variantSlug
+        : normalized !== family
+          ? normalized
+          : undefined;
+    return vehicleFamilyPath(family || normalized, variant);
   }
 
   if (idFallback) {

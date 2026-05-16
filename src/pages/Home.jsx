@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useMemo,
   useState,
 } from "react";
 
@@ -14,6 +15,13 @@ import { API_URL } from "../config";
 import { LOCAL_FALLBACK_EV } from "../utils/imageUtils";
 
 import normalizeCar from "../utils/normalizeCar";
+
+import {
+  aggregateModelFamilies,
+  familyToListingCard,
+  filterFamilies,
+  sortFamilies,
+} from "../utils/modelFamily";
 
 import {
   COMPARE_CARS_STORAGE_KEY,
@@ -90,7 +98,7 @@ export default function Home() {
   const navigate =
     useNavigate();
 
-  const [cars, setCars] =
+  const [variants, setVariants] =
     useState([]);
 
   const [loading,
@@ -120,45 +128,49 @@ export default function Home() {
      =================== HOME SECTIONS DATA ==================
      ========================================================= */
 
-  const featuredCars =
-    cars.filter(
-      (car) =>
-        car.isFeatured
-    );
+  const families = useMemo(() => {
+    const aggregated = aggregateModelFamilies(variants);
+    const filtered = filterFamilies(aggregated, filters);
+    return sortFamilies(filtered, filters.sortBy);
+  }, [variants, filters]);
 
-  const latestCars =
-    [...cars]
+  const familiesPerPage = 6;
 
-      .sort(
-        (a, b) =>
-          new Date(
-            b.createdAt
-          ) -
-          new Date(
-            a.createdAt
-          )
-      )
+  const paginatedFamilies = useMemo(
+    () =>
+      families.slice(
+        (page - 1) * familiesPerPage,
+        page * familiesPerPage
+      ),
+    [families, page]
+  );
 
-      .slice(0, 6);
+  const featuredFamilies = useMemo(
+    () =>
+      [...families]
+        .filter((f) => f.isFeatured)
+        .slice(0, 6),
+    [families]
+  );
 
-  const premiumRangeCars =
-    [...cars]
+  const latestFamilies = useMemo(
+    () =>
+      [...families]
+        .sort(
+          (a, b) =>
+            (b.createdAt || 0) - (a.createdAt || 0)
+        )
+        .slice(0, 6),
+    [families]
+  );
 
-      .sort(
-        (a, b) =>
-
-          (
-            b.specifications
-              ?.range || 0
-          ) -
-
-          (
-            a.specifications
-              ?.range || 0
-          )
-      )
-
-      .slice(0, 6);
+  const premiumRangeFamilies = useMemo(
+    () =>
+      [...families]
+        .sort((a, b) => b.maxRange - a.maxRange)
+        .slice(0, 6),
+    [families]
+  );
 
   /* =========================================================
      ======================= FETCH CARS ======================
@@ -169,8 +181,8 @@ export default function Home() {
     const query =
       new URLSearchParams({
         ...filters,
-        page,
-        limit: 6,
+        page: 1,
+        limit: 50,
       }).toString();
 
     setLoading(true);
@@ -187,7 +199,7 @@ export default function Home() {
 
       .then((data) => {
 
-        setCars(
+        setVariants(
           (
             data.cars || []
           ).map(
@@ -195,9 +207,7 @@ export default function Home() {
           )
         );
 
-        setTotalPages(
-          data.totalPages || 1
-        );
+        setTotalPages(1);
 
         setLoading(false);
       })
@@ -213,7 +223,25 @@ export default function Home() {
         setLoading(false);
       });
 
-  }, [filters, page]);
+  }, [filters]);
+
+  useEffect(() => {
+    setTotalPages(
+      Math.max(
+        1,
+        Math.ceil(families.length / familiesPerPage)
+      )
+    );
+    if (
+      page >
+      Math.max(
+        1,
+        Math.ceil(families.length / familiesPerPage)
+      )
+    ) {
+      setPage(1);
+    }
+  }, [families.length, page]);
 
   /* =========================================================
      ======================= SCROLL TOP ======================
@@ -323,6 +351,31 @@ export default function Home() {
         ]);
       }
     };
+
+  const renderFamilyCard = (family, badge) => {
+    const card = familyToListingCard(family);
+    const compareTarget =
+      family.defaultVariant || card;
+
+    return (
+      <CompactCarCard
+        key={family.familySlug}
+        car={{
+          ...card,
+          badge:
+            badge ||
+            (family.variantCount > 1
+              ? `${family.variantCount} variants`
+              : undefined),
+          range: family.maxRange,
+          price: family.startingPrice,
+        }}
+        onCompare={() =>
+          toggleCompare(compareTarget)
+        }
+      />
+    );
+  };
 
   /* =========================================================
      ======================= JSON-LD =========================
@@ -602,7 +655,7 @@ export default function Home() {
 
         {!loading &&
           !error &&
-          cars.length === 0 && (
+          families.length === 0 && (
 
             <div style={statusBox}>
 
@@ -638,38 +691,17 @@ export default function Home() {
 
             !error &&
 
-            (
-              featuredCars.length >
-              0
-
-                ? featuredCars
-
-                : cars
+            (featuredFamilies.length > 0
+              ? featuredFamilies
+              : paginatedFamilies
+            ).map((family) =>
+              renderFamilyCard(
+                family,
+                family.isFeatured
+                  ? "Popular"
+                  : "Trending"
+              )
             )
-
-              .slice(0, 6)
-
-              .map((car) => (
-
-                <CompactCarCard
-                  key={car._id}
-
-                  car={{
-                    ...car,
-
-                    badge:
-                      car.isFeatured
-                        ? "Popular"
-                        : "Trending",
-                  }}
-
-                  onCompare={() =>
-                    toggleCompare(
-                      car
-                    )
-                  }
-                />
-              ))
           )}
 
         </HomeSection>
@@ -701,44 +733,8 @@ export default function Home() {
 
             !error &&
 
-            latestCars.map(
-              (car) => (
-
-                <CompactCarCard
-                  key={car._id}
-
-                  car={{
-                    ...car,
-
-                    image:
-                      car.heroImage ||
-                      car.image,
-
-                    price:
-                      car.startingPrice,
-
-                    range:
-                      car
-                        .specifications
-                        ?.range || 0,
-
-                    battery:
-                      car
-                        .specifications
-                        ?.batteryPack ||
-                      "EV",
-
-                    badge:
-                      "New",
-                  }}
-
-                  onCompare={() =>
-                    toggleCompare(
-                      car
-                    )
-                  }
-                />
-              )
+            latestFamilies.map((family) =>
+              renderFamilyCard(family, "New")
             )
           )}
 
@@ -769,44 +765,8 @@ export default function Home() {
 
             !error &&
 
-            premiumRangeCars.map(
-              (car) => (
-
-                <CompactCarCard
-                  key={car._id}
-
-                  car={{
-                    ...car,
-
-                    image:
-                      car.heroImage ||
-                      car.image,
-
-                    price:
-                      car.startingPrice,
-
-                    range:
-                      car
-                        .specifications
-                        ?.range || 0,
-
-                    battery:
-                      car
-                        .specifications
-                        ?.batteryPack ||
-                      "EV",
-
-                    badge:
-                      "Long Range",
-                  }}
-
-                  onCompare={() =>
-                    toggleCompare(
-                      car
-                    )
-                  }
-                />
-              )
+            premiumRangeFamilies.map((family) =>
+              renderFamilyCard(family, "Long Range")
             )
           )}
 

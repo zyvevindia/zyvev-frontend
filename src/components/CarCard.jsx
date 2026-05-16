@@ -280,7 +280,10 @@ export default function CarCard({
                 : {}),
             }}
             onClick={() =>
-              toggleCompare(safeCar)
+              toggleCompare(
+                safeCar.defaultVariant ||
+                  safeCar
+              )
             }
           >
             {isCompared

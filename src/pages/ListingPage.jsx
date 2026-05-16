@@ -23,6 +23,13 @@ import CarCardSkeleton from "../components/skeletons/CarCardSkeleton";
 import normalizeCar from "../utils/normalizeCar";
 
 import {
+  aggregateModelFamilies,
+  familyToListingCard,
+  filterFamilies,
+  sortFamilies,
+} from "../utils/modelFamily";
+
+import {
   API_URL,
   SITE_ORIGIN,
   APP_CONFIG,
@@ -221,108 +228,34 @@ export default function ListingPage() {
      ===================== FILTERED DATA =====================
      ========================================================= */
 
-  const filteredCars =
-    useMemo(() => {
+  const families = useMemo(
+    () => aggregateModelFamilies(cars),
+    [cars]
+  );
 
-      let filtered =
-        Array.isArray(cars)
-          ? [...cars]
-          : [];
+  const filteredFamilies = useMemo(() => {
+    let list = [...families];
 
-      /* ================= CATEGORY ================= */
+    if (category) {
+      list = list.filter((f) =>
+        (f.category || "")
+          .toLowerCase()
+          .includes(category.toLowerCase())
+      );
+    }
 
-      if (category) {
+    const sortKey =
+      sortBy === "price-low"
+        ? "priceLow"
+        : sortBy === "price-high"
+          ? "priceHigh"
+          : sortBy === "range-high"
+            ? "rangeHigh"
+            : "";
 
-        filtered =
-          filtered.filter(
-            (car) =>
-              car?.category
-                ?.toLowerCase()
-                .includes(
-                  category.toLowerCase()
-                )
-          );
-      }
-
-      /* ================= SEARCH ================= */
-
-      if (search) {
-
-        filtered =
-          filtered.filter(
-            (car) =>
-              car?.name
-                ?.toLowerCase()
-                .includes(
-                  search.toLowerCase()
-                ) ||
-
-              car?.brand
-                ?.toLowerCase()
-                .includes(
-                  search.toLowerCase()
-                )
-          );
-      }
-
-      /* ================= BRAND ================= */
-
-      if (brand) {
-
-        filtered =
-          filtered.filter(
-            (car) =>
-              car?.brand === brand
-          );
-      }
-
-      /* ================= SORT ================= */
-
-      if (
-        sortBy ===
-        "price-low"
-      ) {
-
-        filtered.sort(
-          (a, b) =>
-            (a?.price || 0) -
-            (b?.price || 0)
-        );
-      }
-
-      if (
-        sortBy ===
-        "price-high"
-      ) {
-
-        filtered.sort(
-          (a, b) =>
-            (b?.price || 0) -
-            (a?.price || 0)
-        );
-      }
-
-      if (
-        sortBy ===
-        "range-high"
-      ) {
-
-        filtered.sort(
-          (a, b) =>
-            (b?.range || 0) -
-            (a?.range || 0)
-        );
-      }
-
-      return filtered;
-
-    }, [
-      cars,
-      category,
-      search,
-      brand,
-      sortBy,
-    ]);
+    list = filterFamilies(list, { brand, search });
+    return sortFamilies(list, sortKey);
+  }, [families, category, search, brand, sortBy]);
 
   /* =========================================================
      ======================= BRANDS ==========================
@@ -331,9 +264,9 @@ export default function ListingPage() {
   const brands = [
 
     ...new Set(
-      (cars || [])
+      (families || [])
         .map(
-          (car) => car?.brand
+          (f) => f?.brand
         )
         .filter(Boolean)
     ),
@@ -875,7 +808,7 @@ export default function ListingPage() {
 
           </div>
 
-        ) : filteredCars.length ===
+        ) : filteredFamilies.length ===
           0 ? (
 
           <div style={emptyState}>
@@ -904,26 +837,22 @@ export default function ListingPage() {
             }}
           >
 
-            {filteredCars.map(
-              (car) => (
+            {filteredFamilies.map(
+              (family) => {
+                const card = familyToListingCard(family);
+                const compareCar =
+                  family.defaultVariant || card;
 
-                <CarCard
-                  key={
-                    car?._id ||
-                    car?.id
-                  }
-                  car={car}
-                  compareList={
-                    compareList
-                  }
-                  toggleCompare={
-                    toggleCompare
-                  }
-                  compareModeActive={
-                    compareMode
-                  }
-                />
-              )
+                return (
+                  <CarCard
+                    key={family.familySlug}
+                    car={card}
+                    compareList={compareList}
+                    toggleCompare={toggleCompare}
+                    compareModeActive={compareMode}
+                  />
+                );
+              }
             )}
 
           </div>
