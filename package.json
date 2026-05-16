@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:sitemaps": "node ../zyvev-backend/scripts/build-sitemaps.mjs",
-    "build": "npm run build:sitemaps && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
