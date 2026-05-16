@@ -13,4 +13,7 @@ export const BUYER_EVENTS = Object.freeze({
   LEAD_CTA_INITIATED: "lead_cta_initiated",
   LEAD_SUBMITTED: "lead_submitted",
   BOOKMARK_SAVED: "bookmark_saved",
+  VARIANT_SELECTED: "variant_selected",
+  VARIANT_COMPARE_CLICKED: "variant_compare_clicked",
+  PRICING_INTERACTION: "pricing_interaction",
 });

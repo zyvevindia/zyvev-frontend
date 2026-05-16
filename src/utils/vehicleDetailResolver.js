@@ -20,6 +20,8 @@ import {
 
 import { logProduction } from "./productionLog";
 
+import { pickDefaultVariantForDetail } from "./variantInsights";
+
 const OBJECT_ID_PATTERN = /^[a-f0-9]{24}$/i;
 
 function vehicleFromCatalogDto(dto) {
@@ -198,6 +200,7 @@ export async function fetchVehicleFamilyBySlug(
     family.variants.find(
       (v) => v.slug === preferredVariant
     ) ||
+    pickDefaultVariantForDetail(family.variants) ||
     family.defaultVariant ||
     family.variants[0];
 
