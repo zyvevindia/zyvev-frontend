@@ -207,6 +207,77 @@ export default function TrafficIntelligencePage() {
             />
           </section>
 
+          {data.whatsappConversions && (
+            <section style={card}>
+              <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+                WhatsApp conversion
+              </h2>
+              <p style={{ margin: "0 0 0.5rem", color: "#64748b" }}>
+                Clicks: {data.whatsappConversions.clicks} · Leads:{" "}
+                {data.whatsappConversions.leads} · Rate:{" "}
+                {data.whatsappConversions.conversionRate}%
+              </p>
+            </section>
+          )}
+
+          {data.conversionRateBySource?.length > 0 && (
+            <section style={card}>
+              <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+                Conversion rate by source
+              </h2>
+              <table style={table}>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: "left" }}>Source</th>
+                    <th style={{ textAlign: "right" }}>Leads</th>
+                    <th style={{ textAlign: "right" }}>Rate %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.conversionRateBySource.map((row) => (
+                    <tr key={row.source}>
+                      <td>{row.source}</td>
+                      <td style={{ textAlign: "right" }}>{row.leads}</td>
+                      <td style={{ textAlign: "right" }}>
+                        {row.conversionRate}%
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          )}
+
+          <section style={card}>
+            <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+              Top converting pages
+            </h2>
+            {data.topConvertingPages?.length ? (
+              <table style={table}>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: "left" }}>Page</th>
+                    <th style={{ textAlign: "right" }}>Leads</th>
+                    <th style={{ textAlign: "right" }}>Rate %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.topConvertingPages.map((row, i) => (
+                    <tr key={`${row.label}-${i}`}>
+                      <td>{row.label}</td>
+                      <td style={{ textAlign: "right" }}>{row.count}</td>
+                      <td style={{ textAlign: "right" }}>
+                        {row.conversionRate ?? "—"}%
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p style={{ color: "#64748b", margin: 0 }}>No page conversions yet.</p>
+            )}
+          </section>
+
           {data.compareTrends?.length > 0 && (
             <section style={card}>
               <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
@@ -218,7 +289,9 @@ export default function TrafficIntelligencePage() {
                     <th style={{ textAlign: "left" }}>Compare slug</th>
                     <th style={{ textAlign: "right" }}>Started</th>
                     <th style={{ textAlign: "right" }}>Completed</th>
-                    <th style={{ textAlign: "right" }}>%</th>
+                    <th style={{ textAlign: "right" }}>Engage %</th>
+                    <th style={{ textAlign: "right" }}>Leads</th>
+                    <th style={{ textAlign: "right" }}>Lead %</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -230,10 +303,19 @@ export default function TrafficIntelligencePage() {
                       <td style={{ textAlign: "right" }}>
                         {row.completionRate ?? "—"}
                       </td>
+                      <td style={{ textAlign: "right" }}>{row.leads ?? 0}</td>
+                      <td style={{ textAlign: "right" }}>
+                        {row.leadConversionRate ?? "—"}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+              {data.compareToLead?.totalCompareLeads != null && (
+                <p style={{ margin: "0.75rem 0 0", fontSize: "0.85rem", color: "#64748b" }}>
+                  Compare-path leads (period): {data.compareToLead.totalCompareLeads}
+                </p>
+              )}
             </section>
           )}
 

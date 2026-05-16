@@ -2,10 +2,11 @@
  * WhatsApp-first lead deep links with vehicle + city + source context.
  */
 
-import { SITE_ORIGIN, WHATSAPP_SALES_NUMBER } from "../config";
+import { API_URL, SITE_ORIGIN, WHATSAPP_SALES_NUMBER } from "../config";
 import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
 import { BUYER_EVENTS } from "../event-tracking/eventTypes";
 import { buildBuyerInquiryTemplate } from "./whatsappOps";
+import { getAnonymousSessionId } from "../event-tracking/session";
 
 /**
  * @param {object} ctx
@@ -46,6 +47,31 @@ export function buildWhatsAppLeadUrl(ctx = {}) {
 }
 
 /**
+ * Record WhatsApp intent as a lightweight lead (non-blocking).
+ */
+export function recordWhatsAppLeadIntent(ctx = {}) {
+  const payload = {
+    sourcePage: ctx.sourcePage || "",
+    familySlug: ctx.familySlug || ctx.vehicleSlug || "",
+    variantSlug: ctx.variantSlug || "",
+    city: ctx.city || "",
+    vehicleName: ctx.vehicleName || "",
+    anonymousSessionId: getAnonymousSessionId() || "",
+    intent: ctx.intent || "inquiry",
+    brand: ctx.brand || "",
+  };
+
+  fetch(`${API_URL}/api/leads/whatsapp-intent`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+    keepalive: true,
+  }).catch(() => {
+    /* non-blocking */
+  });
+}
+
+/**
  * Open WhatsApp with prefilled message and track CTA.
  */
 export function openWhatsAppLead(ctx = {}) {
@@ -63,14 +89,23 @@ export function openWhatsAppLead(ctx = {}) {
     metadata: {
       intent: ctx.intent || "inquiry",
       city: ctx.city,
+      familySlug: ctx.familySlug,
+      variantSlug: ctx.variantSlug,
     },
   });
 
   trackBuyerEvent(BUYER_EVENTS.WHATSAPP_LEAD_CLICKED, {
     sourcePage: ctx.sourcePage || "",
     vehicleSlugs: ctx.vehicleSlug ? [ctx.vehicleSlug] : [],
-    metadata: { intent: ctx.intent, city: ctx.city },
+    metadata: {
+      intent: ctx.intent,
+      city: ctx.city,
+      familySlug: ctx.familySlug,
+      variantSlug: ctx.variantSlug,
+    },
   });
+
+  recordWhatsAppLeadIntent(ctx);
 
   window.open(url, "_blank", "noopener,noreferrer");
   return true;

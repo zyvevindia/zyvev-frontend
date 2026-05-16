@@ -50,7 +50,20 @@ function mergeIntelligence(ops = {}, behavioral = {}, adminAnalytics = {}) {
     topComparePages: normalizeTopList(
       o.topComparePages || b.topComparePages || b.compareGuides || b.comparePages
     ),
-    compareTrends: asArray(o.compareConversions?.trends),
+    compareTrends: asArray(
+      o.compareToLead?.trends || o.compareConversions?.trends
+    ),
+    conversionRateBySource: asArray(o.leadConversions?.conversionRateBySource),
+    whatsappConversions: o.whatsappConversions || null,
+    topConvertingPages: normalizeTopList(
+      o.topConvertingPages,
+      { labelKey: "label", valueKey: "count" }
+    ).map((row) => ({
+      ...row,
+      conversionRate: row.meta?.conversionRate,
+      views: row.meta?.views,
+    })),
+    compareToLead: o.compareToLead || null,
     topViewedEvs: normalizeTopList(
       b.topViewedEvs ||
         b.topVehicles ||

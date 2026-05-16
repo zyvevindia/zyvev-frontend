@@ -216,6 +216,9 @@ export default function Admin() {
       brands: "",
     });
 
+  const [opsSummary, setOpsSummary] =
+    useState(null);
+
   /* ================= ADD CAR ================= */
 
   const [carForm, setCarForm] =
@@ -290,6 +293,17 @@ export default function Admin() {
         setAnalytics({})
       );
   }, []);
+
+  useEffect(() => {
+    if (role !== "admin") return;
+
+    fetch(`${API_URL}/api/admin/ops-summary`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((res) => res.json())
+      .then((data) => setOpsSummary(data))
+      .catch(() => setOpsSummary(null));
+  }, [role, token]);
 
   /* =====================================================
      ================= FETCH LEADS ========================
@@ -882,6 +896,72 @@ export default function Admin() {
           </div>
         </div>
 
+        {role === "admin" && opsSummary && (
+          <div style={card}>
+            <h2 style={sectionTitle}>⚙️ Operations pulse</h2>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit, minmax(140px, 1fr))",
+                gap: "12px",
+                marginBottom: "12px",
+              }}
+            >
+              <div>
+                <div style={{ fontSize: "12px", color: "#64748b" }}>
+                  Overdue follow-ups
+                </div>
+                <strong style={{ fontSize: "1.25rem", color: "#dc2626" }}>
+                  {opsSummary.overdueCount}
+                </strong>
+              </div>
+              <div>
+                <div style={{ fontSize: "12px", color: "#64748b" }}>
+                  Avg response (hrs)
+                </div>
+                <strong style={{ fontSize: "1.25rem" }}>
+                  {opsSummary.avgResponseHours ?? "—"}
+                </strong>
+              </div>
+              <div>
+                <div style={{ fontSize: "12px", color: "#64748b" }}>
+                  Pending dealer apps
+                </div>
+                <strong style={{ fontSize: "1.25rem" }}>
+                  {opsSummary.pendingDealerApplications}
+                </strong>
+              </div>
+              <div>
+                <div style={{ fontSize: "12px", color: "#64748b" }}>
+                  Active dealers
+                </div>
+                <strong style={{ fontSize: "1.25rem" }}>
+                  {opsSummary.activeDealers}
+                </strong>
+              </div>
+            </div>
+            {opsSummary.overdueLeads?.length > 0 && (
+              <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#64748b" }}>
+                Overdue:{" "}
+                {opsSummary.overdueLeads
+                  .slice(0, 5)
+                  .map((l) => l.name)
+                  .join(", ")}
+              </p>
+            )}
+            {opsSummary.dealerActivity?.length > 0 && (
+              <div style={{ fontSize: "13px" }}>
+                <strong>Dealer activity (7d):</strong>{" "}
+                {opsSummary.dealerActivity
+                  .slice(0, 4)
+                  .map((d) => `${d.name} (${d.leads7d} leads)`)
+                  .join(" · ")}
+              </div>
+            )}
+          </div>
+        )}
+
         {role === "admin" && (
           <div id="dealers" style={card}>
             <h2 style={sectionTitle}>🏢 Dealer accounts</h2>
@@ -1097,7 +1177,15 @@ export default function Admin() {
                   </th>
 
                   <th style={thCell}>
-                    Source
+                    Page
+                  </th>
+
+                  <th style={thCell}>
+                    Channel
+                  </th>
+
+                  <th style={thCell}>
+                    SLA
                   </th>
 
                   <th style={thCell}>
@@ -1206,6 +1294,42 @@ export default function Admin() {
 
                           {lead.sourcePage ||
                             "—"}
+                        </td>
+
+                        <td style={tdCell}>
+                          {lead.leadSource || "form"}
+                        </td>
+
+                        <td style={tdCell}>
+                          {(() => {
+                            const overdue =
+                              opsSummary?.overdueLeads?.some(
+                                (o) => o._id === lead._id
+                              ) ||
+                              (lead.createdAt &&
+                                !lead.firstRespondedAt &&
+                                (Date.now() -
+                                  new Date(lead.createdAt).getTime()) /
+                                  3600000 >=
+                                  48);
+                            if (overdue) {
+                              return (
+                                <span style={{ color: "#dc2626", fontWeight: 600 }}>
+                                  Overdue
+                                </span>
+                              );
+                            }
+                            if (lead.firstRespondedAt && lead.createdAt) {
+                              const hrs = Math.round(
+                                ((new Date(lead.firstRespondedAt) -
+                                  new Date(lead.createdAt)) /
+                                  3600000) *
+                                  10
+                              ) / 10;
+                              return `${hrs}h`;
+                            }
+                            return "—";
+                          })()}
                         </td>
 
                         <td style={tdCell}>
