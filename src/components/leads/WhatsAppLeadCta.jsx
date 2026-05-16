@@ -32,6 +32,8 @@ const styles = {
 export default function WhatsAppLeadCta({
   vehicleName = "",
   vehicleSlug = "",
+  familySlug = "",
+  variantSlug = "",
   city = "",
   sourcePage = "",
   seoPageSlug = "",
@@ -48,6 +50,8 @@ export default function WhatsAppLeadCta({
     openWhatsAppLead({
       vehicleName,
       vehicleSlug,
+      familySlug,
+      variantSlug,
       city,
       sourcePage,
       seoPageSlug,

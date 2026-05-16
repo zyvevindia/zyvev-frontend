@@ -5,6 +5,7 @@
 import { SITE_ORIGIN, WHATSAPP_SALES_NUMBER } from "../config";
 import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
 import { BUYER_EVENTS } from "../event-tracking/eventTypes";
+import { buildBuyerInquiryTemplate } from "./whatsappOps";
 
 /**
  * @param {object} ctx
@@ -16,33 +17,24 @@ import { BUYER_EVENTS } from "../event-tracking/eventTypes";
  * @param {string[]} [ctx.compareSlugs]
  */
 export function buildWhatsAppLeadMessage(ctx = {}) {
-  const lines = [
-    "Hi EVSavari — I'd like help with an electric car enquiry.",
-  ];
+  const base = buildBuyerInquiryTemplate({
+    vehicleName: ctx.vehicleName,
+    variantSlug: ctx.variantSlug,
+    familySlug: ctx.familySlug,
+    city: ctx.city,
+    sourcePage: ctx.sourcePage,
+    intent: ctx.intent,
+  });
 
-  if (ctx.vehicleName) {
-    lines.push(`Vehicle: ${ctx.vehicleName}`);
-  }
+  const extras = [];
   if (ctx.vehicleSlug) {
-    lines.push(`Model link: ${SITE_ORIGIN}/cars/${ctx.vehicleSlug}`);
+    extras.push(`Model link: ${SITE_ORIGIN}/cars/${ctx.vehicleSlug}`);
   }
   if (ctx.compareSlugs?.length >= 2) {
-    lines.push(`Comparing: ${ctx.compareSlugs.join(" vs ")}`);
-  }
-  if (ctx.city) {
-    lines.push(`City: ${ctx.city}`);
-  }
-  if (ctx.sourcePage) {
-    const path = ctx.sourcePage.startsWith("/")
-      ? ctx.sourcePage
-      : `/${ctx.sourcePage}`;
-    lines.push(`Source: ${SITE_ORIGIN}${path}`);
+    extras.push(`Comparing: ${ctx.compareSlugs.join(" vs ")}`);
   }
 
-  lines.push("");
-  lines.push("(Sent via EVSavari — please confirm on-road price & availability.)");
-
-  return lines.join("\n");
+  return extras.length ? `${base}\n${extras.join("\n")}` : base;
 }
 
 export function buildWhatsAppLeadUrl(ctx = {}) {

@@ -29,19 +29,28 @@ function normalizeTopList(rows, { labelKey = "label", valueKey = "count" } = {})
  * @param {object} behavioral
  * @param {object} adminAnalytics
  */
-function mergeIntelligence(behavioral = {}, adminAnalytics = {}) {
+function mergeIntelligence(ops = {}, behavioral = {}, adminAnalytics = {}) {
   const b = behavioral?.report || behavioral || {};
+  const o = ops || {};
 
   return {
-    generatedAt: new Date().toISOString(),
-    days: b.days || behavioral?.days || 7,
-    source: behavioral ? "live" : "partial",
+    generatedAt: o.generatedAt || new Date().toISOString(),
+    days: o.periodDays || b.days || behavioral?.days || 7,
+    source: ops ? "traffic-ops" : behavioral ? "live" : "partial",
+    conversionFunnel: asArray(o.conversionFunnel || b.conversionFunnel),
     topCityPages: normalizeTopList(
-      b.topCityPages || b.cityPages || b.pagesByCity
+      o.topCityPages || b.topCityPages || b.cityPages || b.pagesByCity
+    ),
+    cityDemandHeatmap: normalizeTopList(
+      o.cityDemandHeatmap || b.cityDemandHeatmap
+    ),
+    topLandingPages: normalizeTopList(
+      o.topLandingPages || b.topLandingPages
     ),
     topComparePages: normalizeTopList(
-      b.topComparePages || b.compareGuides || b.comparePages
+      o.topComparePages || b.topComparePages || b.compareGuides || b.comparePages
     ),
+    compareTrends: asArray(o.compareConversions?.trends),
     topViewedEvs: normalizeTopList(
       b.topViewedEvs ||
         b.topVehicles ||
@@ -55,22 +64,34 @@ function mergeIntelligence(behavioral = {}, adminAnalytics = {}) {
     ),
     leadConversions: {
       total: Number(
-        b.leadConversions?.total ??
+        o.leadConversions?.total ??
+          b.leadConversions?.total ??
           b.leadsSubmitted ??
           adminAnalytics?.totalLeads ??
           0
       ),
       bySource: normalizeTopList(
-        b.leadConversions?.bySource || b.leadsBySource
+        o.leadConversions?.bySource ||
+          b.leadConversions?.bySource ||
+          b.leadsBySource
       ),
+      byLanding: normalizeTopList(o.leadConversions?.byLanding),
       overTime: asArray(
         adminAnalytics?.leadsOverTime || b.leadConversions?.overTime
       ),
     },
     compareConversions: {
-      total: Number(b.compareConversions?.total ?? b.compareCompleted ?? 0),
-      started: Number(b.compareStarted ?? b.compareSessions ?? 0),
+      total: Number(
+        o.compareConversions?.total ??
+          b.compareConversions?.total ??
+          b.compareCompleted ??
+          0
+      ),
+      started: Number(
+        o.compareConversions?.started ?? b.compareStarted ?? b.compareSessions ?? 0
+      ),
       completionRate:
+        o.compareConversions?.completionRate ??
         b.compareCompletionRate ??
         (b.compareCompleted && b.compareStarted
           ? Math.round((b.compareCompleted / b.compareStarted) * 100)
@@ -79,12 +100,12 @@ function mergeIntelligence(behavioral = {}, adminAnalytics = {}) {
     variantInterest: normalizeTopList(
       b.variantInterest || b.variantSelected || b.topVariants
     ),
-    raw: { behavioral: b, adminAnalytics },
+    raw: { ops: o, behavioral: b, adminAnalytics },
   };
 }
 
 function emptyShell(days = 7) {
-  return mergeIntelligence({ days, report: {} }, {});
+  return mergeIntelligence({}, { days, report: {} }, {});
 }
 
 /**
@@ -94,8 +115,19 @@ function emptyShell(days = 7) {
 export async function fetchTrafficIntelligence(days = 7, token) {
   if (!token) return emptyShell(days);
 
+  let trafficOps = null;
   let behavioral = null;
   let adminAnalytics = null;
+
+  try {
+    const res = await fetch(
+      `${API_URL}/api/admin/traffic-ops?days=${days}`,
+      { headers: authHeaders(token) }
+    );
+    if (res.ok) trafficOps = await res.json();
+  } catch {
+    /* backend optional */
+  }
 
   try {
     const res = await fetch(
@@ -119,11 +151,12 @@ export async function fetchTrafficIntelligence(days = 7, token) {
     /* fallback */
   }
 
-  if (!behavioral && !adminAnalytics) {
+  if (!trafficOps && !behavioral && !adminAnalytics) {
     return { ...emptyShell(days), source: "unavailable" };
   }
 
   return mergeIntelligence(
+    trafficOps || {},
     behavioral || { days },
     adminAnalytics || {}
   );

@@ -157,6 +157,86 @@ export default function TrafficIntelligencePage() {
             )}
           </div>
 
+          {data.conversionFunnel?.length > 0 && (
+            <section style={card}>
+              <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+                Conversion funnel
+              </h2>
+              <table style={table}>
+                <tbody>
+                  {data.conversionFunnel.map((step) => (
+                    <tr key={step.stage}>
+                      <td style={{ padding: "0.35rem 0" }}>{step.stage}</td>
+                      <td style={{ textAlign: "right", fontWeight: 600 }}>
+                        {step.count}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          )}
+
+          <section style={card}>
+            <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+              Top landing pages
+            </h2>
+            <RankedTable
+              rows={data.topLandingPages}
+              emptyLabel="No landing page views recorded."
+            />
+          </section>
+
+          <section style={card}>
+            <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+              City demand heatmap
+            </h2>
+            <RankedTable
+              rows={data.cityDemandHeatmap}
+              emptyLabel="No city demand signals yet."
+            />
+          </section>
+
+          <section style={card}>
+            <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+              Lead source attribution
+            </h2>
+            <RankedTable
+              rows={data.leadConversions?.bySource}
+              emptyLabel="No leads in this period."
+            />
+          </section>
+
+          {data.compareTrends?.length > 0 && (
+            <section style={card}>
+              <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+                Compare conversion trends
+              </h2>
+              <table style={table}>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: "left" }}>Compare slug</th>
+                    <th style={{ textAlign: "right" }}>Started</th>
+                    <th style={{ textAlign: "right" }}>Completed</th>
+                    <th style={{ textAlign: "right" }}>%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.compareTrends.map((row) => (
+                    <tr key={row.slug}>
+                      <td>{row.slug}</td>
+                      <td style={{ textAlign: "right" }}>{row.started}</td>
+                      <td style={{ textAlign: "right" }}>{row.completed}</td>
+                      <td style={{ textAlign: "right" }}>
+                        {row.completionRate ?? "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          )}
+
           <section style={card}>
             <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>Top city pages</h2>
             <RankedTable

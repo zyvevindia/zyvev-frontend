@@ -97,8 +97,7 @@ export default function DealerSignup() {
 
       setSuccess(true);
     } catch (err) {
-      setSuccess(true);
-      console.warn("Dealer signup stored locally pending API:", err.message);
+      setError(err.message || "Unable to submit application. Please try again.");
     } finally {
       setLoading(false);
     }

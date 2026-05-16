@@ -812,6 +812,13 @@ export default function Admin() {
             </Link>
 
             <Link
+              to="/admin/dealer-applications"
+              style={menuItem}
+            >
+              📝 Dealer applications
+            </Link>
+
+            <Link
               to="/sales-analytics"
               style={menuItem}
             >

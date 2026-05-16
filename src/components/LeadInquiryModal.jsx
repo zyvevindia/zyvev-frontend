@@ -25,6 +25,8 @@ import {
   getAnonymousSessionIdForLead,
 } from "../event-tracking/trackBuyerEvent";
 
+import LeadTrustBanner from "./leads/LeadTrustBanner";
+
 /* =========================================================
    ================== LEAD INQUIRY MODAL =====================
    ========================================================= */
@@ -237,6 +239,19 @@ export default function LeadInquiryModal({
                 anonymousSessionId:
                   getAnonymousSessionIdForLead() ||
                   undefined,
+
+                leadSource: "form",
+
+                familySlug:
+                  String(leadMetadata.familySlug || "").trim(),
+
+                variantSlug:
+                  String(leadMetadata.variantSlug || "").trim(),
+
+                leadMetadata: {
+                  ...leadMetadata,
+                  formMode,
+                },
               }),
             }
           );
@@ -390,10 +405,7 @@ export default function LeadInquiryModal({
           {headline}
         </h2>
 
-        <p style={trustLine}>
-          Verified EV dealers will contact you
-          shortly. We never sell your details.
-        </p>
+        <LeadTrustBanner compact />
 
         {success ? (
 

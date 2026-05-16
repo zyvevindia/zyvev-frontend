@@ -6,7 +6,9 @@ import {
 import { API_URL } from "../config";
 
 import {
-  useNavigate
+  NavLink,
+  useLocation,
+  useNavigate,
 } from "react-router-dom";
 
 import {
@@ -15,8 +17,11 @@ import {
 } from "../auth";
 
 import {
-  labelForStatus
+  labelForStatus,
+  PIPELINE_STATUS_VALUES,
 } from "../crm/leadPipeline";
+
+import { openDealerLeadWhatsApp } from "../utils/whatsappOps";
 
 /* =========================================================
    ==================== DEALER DASHBOARD ===================
@@ -25,12 +30,24 @@ import {
 export default function DealerDashboard() {
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const tabFromPath =
+    location.pathname.includes("/leads")
+      ? "leads"
+      : location.pathname.includes("/profile")
+        ? "inventory"
+        : "analytics";
 
   const token =
     localStorage.getItem("token");
 
   const [tab, setTab] =
-    useState("leads");
+    useState(tabFromPath);
+
+  useEffect(() => {
+    setTab(tabFromPath);
+  }, [tabFromPath]);
 
   const [leads, setLeads] =
     useState([]);
@@ -49,6 +66,16 @@ export default function DealerDashboard() {
 
   const [notes, setNotes] =
     useState({});
+
+  const [dealerProfile, setDealerProfile] =
+    useState(null);
+
+  const [profileForm, setProfileForm] =
+    useState({
+      cities: "",
+      brands: "",
+      phone: "",
+    });
 
   const [showCarModal, setShowCarModal] =
     useState(false);
@@ -139,6 +166,49 @@ export default function DealerDashboard() {
     }
   };
 
+  const loadDealer = async () => {
+    const res = await fetch(`${API_URL}/api/dealer/me`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await res.json();
+    if (res.ok && data.dealer) {
+      setDealerProfile(data.dealer);
+      setProfileForm({
+        cities: (data.dealer.cities || []).join(", "),
+        brands: (data.dealer.brands || []).join(", "),
+        phone: data.dealer.phone || "",
+      });
+    }
+  };
+
+  const saveProfile = async () => {
+    const res = await fetch(`${API_URL}/api/dealer/profile`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        phone: profileForm.phone,
+        cities: profileForm.cities
+          .split(",")
+          .map((c) => c.trim())
+          .filter(Boolean),
+        brands: profileForm.brands
+          .split(",")
+          .map((b) => b.trim())
+          .filter(Boolean),
+      }),
+    });
+    if (!res.ok) {
+      const d = await res.json();
+      alert(d.error || "Could not save profile");
+      return;
+    }
+    await loadDealer();
+    alert("Profile updated");
+  };
+
   const loadCars = async () => {
 
     const res =
@@ -170,7 +240,8 @@ export default function DealerDashboard() {
       await Promise.all([
         loadLeads(),
         loadAnalytics(),
-        loadCars()
+        loadCars(),
+        loadDealer(),
       ]);
     } finally {
 
@@ -335,37 +406,12 @@ export default function DealerDashboard() {
   };
 
   const openWhatsApp = (lead) => {
+    const dealerName =
+      JSON.parse(localStorage.getItem("dealer") || "{}")?.name || "";
 
-    const phone =
-      lead.phone?.replace(
-        /\D/g,
-        ""
-      );
-
-    if (
-      !phone ||
-      phone.length < 10
-    ) {
-
-      alert("Invalid phone");
-
-      return;
+    if (!openDealerLeadWhatsApp(lead, { name: dealerName })) {
+      alert("Invalid phone number");
     }
-
-    const vehicle =
-      lead.vehicleName ||
-
-      lead.carId?.name ||
-
-      "our EV";
-
-    const message =
-      `Hello ${lead.name}, thank you for your interest in ${vehicle}. This is your EVSavari dealer partner.`;
-
-    window.open(
-      `https://wa.me/91${phone}?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
   };
 
   const submitNewCar = async (e) => {
@@ -542,50 +588,41 @@ export default function DealerDashboard() {
           Dealer portal
         </p>
 
-        <button
-          type="button"
-          style={{
+        <NavLink
+          to="/dealer/leads"
+          style={({ isActive }) => ({
             ...menuBtn,
-            ...(tab === "leads"
-              ? menuActive
-              : {})
-          }}
-          onClick={() =>
-            setTab("leads")
-          }
+            ...(isActive ? menuActive : {}),
+            textDecoration: "none",
+            display: "block",
+          })}
         >
           📥 Leads
-        </button>
+        </NavLink>
 
-        <button
-          type="button"
-          style={{
+        <NavLink
+          to="/dealer/dashboard"
+          style={({ isActive }) => ({
             ...menuBtn,
-            ...(tab === "analytics"
-              ? menuActive
-              : {})
-          }}
-          onClick={() =>
-            setTab("analytics")
-          }
+            ...(isActive ? menuActive : {}),
+            textDecoration: "none",
+            display: "block",
+          })}
         >
-          📈 Analytics
-        </button>
+          📈 Dashboard
+        </NavLink>
 
-        <button
-          type="button"
-          style={{
+        <NavLink
+          to="/dealer/profile"
+          style={({ isActive }) => ({
             ...menuBtn,
-            ...(tab === "inventory"
-              ? menuActive
-              : {})
-          }}
-          onClick={() =>
-            setTab("inventory")
-          }
+            ...(isActive ? menuActive : {}),
+            textDecoration: "none",
+            display: "block",
+          })}
         >
-          🚗 Inventory
-        </button>
+          🚗 Profile & inventory
+        </NavLink>
 
         <button
           type="button"
@@ -604,11 +641,19 @@ export default function DealerDashboard() {
           <div>
 
             <h1 style={h1}>
-              Dealer dashboard
+              {tab === "leads"
+                ? "Lead management"
+                : tab === "inventory"
+                  ? "Dealer profile"
+                  : "Dealer dashboard"}
             </h1>
 
             <p style={sub}>
-              Assigned leads, inventory, and performance
+              {tab === "leads"
+                ? "Contact, follow-up, and convert assigned enquiries"
+                : tab === "inventory"
+                  ? "Coverage, brands, and inventory listings"
+                  : "Performance overview and demand signals"}
             </p>
 
           </div>
@@ -762,6 +807,61 @@ export default function DealerDashboard() {
         {tab === "inventory" && (
 
           <>
+
+            <div style={card}>
+              <h3 style={h3}>Dealer profile</h3>
+              {dealerProfile && (
+                <p style={muted}>
+                  {dealerProfile.name} · {dealerProfile.email}
+                </p>
+              )}
+              <label style={{ display: "block", marginTop: "0.75rem" }}>
+                Phone
+                <input
+                  style={input}
+                  value={profileForm.phone}
+                  onChange={(e) =>
+                    setProfileForm({
+                      ...profileForm,
+                      phone: e.target.value,
+                    })
+                  }
+                />
+              </label>
+              <label style={{ display: "block", marginTop: "0.5rem" }}>
+                Cities (comma-separated)
+                <input
+                  style={input}
+                  value={profileForm.cities}
+                  onChange={(e) =>
+                    setProfileForm({
+                      ...profileForm,
+                      cities: e.target.value,
+                    })
+                  }
+                />
+              </label>
+              <label style={{ display: "block", marginTop: "0.5rem" }}>
+                Brands (comma-separated)
+                <input
+                  style={input}
+                  value={profileForm.brands}
+                  onChange={(e) =>
+                    setProfileForm({
+                      ...profileForm,
+                      brands: e.target.value,
+                    })
+                  }
+                />
+              </label>
+              <button
+                type="button"
+                style={{ ...primary, marginTop: "0.75rem" }}
+                onClick={saveProfile}
+              >
+                Save profile
+              </button>
+            </div>
 
             <button
               type="button"
@@ -959,6 +1059,23 @@ export default function DealerDashboard() {
                         {lead.sourcePage || "—"}
                       </p>
 
+                      <p style={meta}>
+                        📣 Source:{" "}
+                        {lead.leadSource || "form"}
+                        {lead.variantSlug
+                          ? ` · variant: ${lead.variantSlug}`
+                          : ""}
+                      </p>
+
+                      {lead.createdAt && (
+                        <p style={meta}>
+                          🕐{" "}
+                          {new Date(
+                            lead.createdAt
+                          ).toLocaleString("en-IN")}
+                        </p>
+                      )}
+
                     </div>
 
                     <div>
@@ -996,29 +1113,13 @@ export default function DealerDashboard() {
                         Update status…
                       </option>
 
-                      <option value="contacted">
-                        Contacted
-                      </option>
-
-                      <option value="interested">
-                        Interested
-                      </option>
-
-                      <option value="test_drive">
-                        Test drive
-                      </option>
-
-                      <option value="negotiation">
-                        Negotiation
-                      </option>
-
-                      <option value="won">
-                        Won
-                      </option>
-
-                      <option value="lost">
-                        Lost
-                      </option>
+                      {PIPELINE_STATUS_VALUES.filter(
+                        (s) => s !== "new"
+                      ).map((s) => (
+                        <option key={s} value={s}>
+                          {labelForStatus(s)}
+                        </option>
+                      ))}
 
                     </select>
 

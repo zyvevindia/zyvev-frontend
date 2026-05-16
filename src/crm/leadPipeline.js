@@ -5,6 +5,7 @@
 export const PIPELINE_STAGES = [
   { key: "new", label: "New" },
   { key: "contacted", label: "Contacted" },
+  { key: "follow_up", label: "Follow-up" },
   { key: "interested", label: "Interested" },
   { key: "test_drive", label: "Test drive" },
   { key: "negotiation", label: "Negotiation" },
@@ -33,6 +34,11 @@ export function kanbanBucketKey(status) {
   if (s === "converted") {
 
     return "won";
+  }
+
+  if (s === "follow-up" || s === "followup") {
+
+    return "follow_up";
   }
 
   if (!PIPELINE_KEYS.has(s)) {

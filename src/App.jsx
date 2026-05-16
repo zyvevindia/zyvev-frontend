@@ -7,6 +7,7 @@ import {
 import {
   Routes,
   Route,
+  Navigate,
   useLocation,
 } from "react-router-dom";
 
@@ -83,6 +84,10 @@ const DealerDashboard = lazy(() =>
 
 const TrafficIntelligencePage = lazy(() =>
   import("./pages/admin/TrafficIntelligencePage")
+);
+
+const DealerApplicationsPage = lazy(() =>
+  import("./pages/admin/DealerApplicationsPage")
 );
 
 const ListingPage = lazy(() =>
@@ -435,6 +440,15 @@ export default function App() {
             element={
               <PrivateRoute allowedRoles={["admin", "sales"]}>
                 <TrafficIntelligencePage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/dealer-applications"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <DealerApplicationsPage />
               </PrivateRoute>
             }
           />
