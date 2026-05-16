@@ -40,7 +40,7 @@ const upcomingCars = [
     name: "Tata Sierra EV",
 
     image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop",
+      "https://cdn.evsavari.com/catalog/_fallbacks/tata-suv.jpg",
 
     launchDate: "October 2025",
 
@@ -53,7 +53,7 @@ const upcomingCars = [
     name: "Mahindra BE.05",
 
     image:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop",
+      "https://cdn.evsavari.com/catalog/_fallbacks/mahindra-suv.jpg",
 
     launchDate: "December 2025",
 
@@ -66,7 +66,7 @@ const upcomingCars = [
     name: "Maruti eVX",
 
     image:
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1200&auto=format&fit=crop",
+      "https://cdn.evsavari.com/catalog/_fallbacks/generic-suv.jpg",
 
     launchDate: "January 2026",
 

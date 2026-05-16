@@ -1,0 +1,108 @@
+{
+  "seoPage": {
+    "slug": "best-evs-under-10-lakh",
+    "pageTypeId": "budget_under_10",
+    "category": "budget",
+    "title": "Electric cars well suited under ₹10 lakh (ex-showroom) | EVSavari",
+    "metaDescription": "Data-backed EV picks under ₹10 lakh ex-showroom in India — aligned with city use, ownership cost, and charging practicality.",
+    "intro": "These electric cars are better aligned with buyers targeting under ₹10 lakh ex-showroom. Rankings use ownership cost signals and catalog intelligence — not marketing superlatives.",
+    "recommendationLogic": {
+      "pageTypeId": "budget_under_10",
+      "category": "budget",
+      "primaryScoreKey": "budgetOwnership",
+      "secondaryScoreKeys": [
+        "compareValue",
+        "dailyCommute"
+      ],
+      "filters": {
+        "maxExShowroom": 1000000,
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 3,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-comet-ev-play",
+        "displayName": "Mg Play",
+        "exShowroom": 798000,
+        "claimedRangeKm": 230,
+        "compositeScore": 74,
+        "confidence": "medium",
+        "explanation": "Better aligned for budget-conscious ownership under ₹10 lakh ex-showroom (composite score 74).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car. Ex-showroom from ₹7.98 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/mg-comet-ev-play"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-tiago-ev-xt",
+        "displayName": "Tata XT",
+        "exShowroom": 799000,
+        "claimedRangeKm": 250,
+        "compositeScore": 74,
+        "confidence": "medium",
+        "explanation": "Better aligned for budget-conscious ownership under ₹10 lakh ex-showroom (composite score 74).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot. Ex-showroom from ₹7.99 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/tata-tiago-ev-xt"
+      },
+      {
+        "rank": 3,
+        "slug": "mg-comet-ev-plush-plus",
+        "displayName": "Mg Plush+",
+        "exShowroom": 998000,
+        "claimedRangeKm": 230,
+        "compositeScore": 69,
+        "confidence": "low",
+        "explanation": "Better aligned for budget-conscious ownership under ₹10 lakh ex-showroom (composite score 69).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car. Ex-showroom from ₹9.98 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/mg-comet-ev-plush-plus"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "mg-comet-ev-play",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car. Ex-showroom from ₹7.98 lakh — verify on-road price in your city."
+        },
+        {
+          "slug": "tata-tiago-ev-xt",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot. Ex-showroom from ₹7.99 lakh — verify on-road price in your city."
+        },
+        {
+          "slug": "mg-comet-ev-plush-plus",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car. Ex-showroom from ₹9.98 lakh — verify on-road price in your city."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is practical under ₹10 lakh ex-showroom?",
+        "answer": "Our list filters Tier-1 catalog variants at or below ₹10 lakh ex-showroom, then orders by ownership-value composite scores — not paid placements."
+      },
+      {
+        "question": "Should I rely only on ex-showroom price?",
+        "answer": "No. On-road price varies by city (registration, insurance). Use ex-showroom as a comparison anchor and confirm on-road quotes locally."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Mg Play is currently highest on our budget under 10 composite (score 74, medium confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Mg Play?",
+        "answer": "Indicative ex-showroom from catalog: ₹7.98 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-evs-under-10-lakh",
+    "canonicalUrl": "https://evsavari.com/cars/best-evs-under-10-lakh",
+    "generatedAt": "2026-05-16T07:17:49.596Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

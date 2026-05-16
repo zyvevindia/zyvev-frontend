@@ -1,0 +1,155 @@
+{
+  "seoPage": {
+    "slug": "best-evs-for-highway-driving",
+    "pageTypeId": "highway_driving",
+    "category": "usage",
+    "title": "EVs well suited for highway driving in India | EVSavari",
+    "metaDescription": "Highway-practical EV picks using range realism, fast-charge practicality, and scenario alignment — not ARAI hype.",
+    "intro": "Highway driving picks weigh scenario highway confidence, fast-charge practicality, and conservative range bands — for buyers who regularly leave the city. Plan stops; do not treat ARAI range as a petrol tank.",
+    "recommendationLogic": {
+      "pageTypeId": "highway_driving",
+      "category": "usage",
+      "primaryScoreKey": "highwayDriving",
+      "secondaryScoreKeys": [
+        "dailyCommute",
+        "compareValue"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mahindra-xuv400-ec-pro",
+        "displayName": "Mahindra EC Pro",
+        "exShowroom": 1549000,
+        "claimedRangeKm": 456,
+        "compositeScore": 78,
+        "confidence": "medium",
+        "explanation": "Better aligned for highway driving with planning-band realism (score 78).",
+        "tradeoff": "Strengths noted in catalog: Engaging drive vs softer rivals, Competitive DC charging in segment. Tradeoff to weigh: Brand service depth varies by city vs Tata.",
+        "detailPath": "/cars/mahindra-xuv400-ec-pro"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-xuv400-el-pro",
+        "displayName": "Mahindra EL Pro",
+        "exShowroom": 1749000,
+        "claimedRangeKm": 456,
+        "compositeScore": 78,
+        "confidence": "medium",
+        "explanation": "Better aligned for highway driving with planning-band realism (score 78).",
+        "tradeoff": "Strengths noted in catalog: Engaging drive vs softer rivals, Competitive DC charging in segment. Tradeoff to weigh: Brand service depth varies by city vs Tata.",
+        "detailPath": "/cars/mahindra-xuv400-el-pro"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-be-6-pack-three-select",
+        "displayName": "Mahindra Pack Three Select",
+        "exShowroom": 2199000,
+        "claimedRangeKm": 483,
+        "compositeScore": 78,
+        "confidence": "medium",
+        "explanation": "Better aligned for highway driving with planning-band realism (score 78).",
+        "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited.",
+        "detailPath": "/cars/mahindra-be-6-pack-three-select"
+      },
+      {
+        "rank": 4,
+        "slug": "hyundai-kona-electric-premium",
+        "displayName": "Hyundai Premium",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 484,
+        "compositeScore": 78,
+        "confidence": "medium",
+        "explanation": "Better aligned for highway driving with planning-band realism (score 78).",
+        "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays.",
+        "detailPath": "/cars/hyundai-kona-electric-premium"
+      },
+      {
+        "rank": 5,
+        "slug": "byd-atto-3-dynamic",
+        "displayName": "Byd Dynamic",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 468,
+        "compositeScore": 78,
+        "confidence": "medium",
+        "explanation": "Better aligned for highway driving with planning-band realism (score 78).",
+        "tradeoff": "Strengths noted in catalog: Strong tech and efficiency story vs legacy OEM EVs, Competitive DC charging and LFP durability messaging. Tradeoff to weigh: Service network still maturing outside major metros.",
+        "detailPath": "/cars/byd-atto-3-dynamic"
+      },
+      {
+        "rank": 6,
+        "slug": "mahindra-xev-9e-pack-three-select",
+        "displayName": "Mahindra Pack Three Select",
+        "exShowroom": 2999000,
+        "claimedRangeKm": 656,
+        "compositeScore": 78,
+        "confidence": "medium",
+        "explanation": "Better aligned for highway driving with planning-band realism (score 78).",
+        "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory.",
+        "detailPath": "/cars/mahindra-xev-9e-pack-three-select"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "mahindra-xuv400-ec-pro",
+          "tradeoff": "Strengths noted in catalog: Engaging drive vs softer rivals, Competitive DC charging in segment. Tradeoff to weigh: Brand service depth varies by city vs Tata."
+        },
+        {
+          "slug": "mahindra-xuv400-el-pro",
+          "tradeoff": "Strengths noted in catalog: Engaging drive vs softer rivals, Competitive DC charging in segment. Tradeoff to weigh: Brand service depth varies by city vs Tata."
+        },
+        {
+          "slug": "mahindra-be-6-pack-three-select",
+          "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited."
+        },
+        {
+          "slug": "hyundai-kona-electric-premium",
+          "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays."
+        },
+        {
+          "slug": "byd-atto-3-dynamic",
+          "tradeoff": "Strengths noted in catalog: Strong tech and efficiency story vs legacy OEM EVs, Competitive DC charging and LFP durability messaging. Tradeoff to weigh: Service network still maturing outside major metros."
+        },
+        {
+          "slug": "mahindra-xev-9e-pack-three-select",
+          "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is well suited for city driving?",
+        "answer": "City picks weigh maneuverability, commuter persona fit, and urban range practicality from catalog scores."
+      },
+      {
+        "question": "Is ARAI range enough for city use?",
+        "answer": "Use real-world range bands in our catalog where available — city traffic often differs from lab cycles."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Mahindra EC Pro is currently highest on our highway driving composite (score 78, medium confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Mahindra EC Pro?",
+        "answer": "Indicative ex-showroom from catalog: ₹15.49 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-evs-for-highway-driving",
+    "canonicalUrl": "https://evsavari.com/cars/best-evs-for-highway-driving",
+    "generatedAt": "2026-05-16T07:17:49.832Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

@@ -100,8 +100,9 @@ export function getResponsiveImage(
    ====================== IMAGE FALLBACK ===================
    ========================================================= */
 
+/** Neutral catalog placeholder — not a random stock sports car */
 export const fallbackEVImage =
-  "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop";
+  "https://cdn.evsavari.com/catalog/_fallbacks/ev-placeholder.jpg";
 
 /* =========================================================
    ==================== SAFE IMAGE URL =====================

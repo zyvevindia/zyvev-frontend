@@ -1,5 +1,7 @@
 import React from "react";
 
+import { logProduction } from "../utils/productionLog";
+
 /* =========================================================
    ===================== ERROR BOUNDARY ====================
    ========================================================= */
@@ -39,10 +41,14 @@ class ErrorBoundary extends React.Component {
     errorInfo
   ) {
 
-    console.error(
-      "EVSavari ErrorBoundary:",
-      error,
-      errorInfo
+    logProduction(
+      "ui",
+      "error_boundary",
+      {
+        message: error?.message,
+        componentStack: errorInfo?.componentStack?.slice(0, 200),
+      },
+      "error"
     );
   }
 

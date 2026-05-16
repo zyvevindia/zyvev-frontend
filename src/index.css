@@ -29,3 +29,12 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
+
+@keyframes vehicleImageShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}

@@ -1,49 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
->
-
-  <url>
-    <loc>https://evsavari.com/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://evsavari.com/compare</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://evsavari.com/cars</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://evsavari.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://evsavari.com/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://evsavari.com/privacy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://evsavari.com/terms</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://evsavari.com/sitemaps/static.xml</loc>
+    <lastmod>2026-05-16</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://evsavari.com/sitemaps/cars.xml</loc>
+    <lastmod>2026-05-16</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://evsavari.com/sitemaps/seo-pages.xml</loc>
+    <lastmod>2026-05-16</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://evsavari.com/sitemaps/compare.xml</loc>
+    <lastmod>2026-05-16</lastmod>
+  </sitemap>
+</sitemapindex>

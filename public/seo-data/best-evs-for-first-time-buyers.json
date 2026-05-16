@@ -1,0 +1,151 @@
+{
+  "seoPage": {
+    "slug": "best-evs-for-first-time-buyers",
+    "pageTypeId": "first_time_buyer",
+    "category": "ownership",
+    "title": "EVs well suited for first-time electric car buyers | EVSavari",
+    "metaDescription": "First EV buyer guidance with anxiety-reduction and ease-of-ownership signals from catalog intelligence.",
+    "intro": "First-time EV buyer picks emphasize ease-of-ownership, charging clarity, and lower lifestyle friction — with honest tradeoffs, not hype.",
+    "recommendationLogic": {
+      "pageTypeId": "first_time_buyer",
+      "category": "ownership",
+      "primaryScoreKey": "firstTimeBuyer",
+      "secondaryScoreKeys": [
+        "apartmentCharging",
+        "cityDriving"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-tiago-ev-xt",
+        "displayName": "Tata XT",
+        "exShowroom": 799000,
+        "claimedRangeKm": 250,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Well suited for first-time EV buyers — ease and charging practicality (score 86).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
+        "detailPath": "/cars/tata-tiago-ev-xt"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-tiago-ev-xz-plus",
+        "displayName": "Tata XZ+",
+        "exShowroom": 1199000,
+        "claimedRangeKm": 315,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Well suited for first-time EV buyers — ease and charging practicality (score 86).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
+        "detailPath": "/cars/tata-tiago-ev-xz-plus"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-nexon-ev-creative-plus",
+        "displayName": "Tata Creative+",
+        "exShowroom": 1449000,
+        "claimedRangeKm": 275,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Well suited for first-time EV buyers — ease and charging practicality (score 86).",
+        "tradeoff": "Strengths noted in catalog: Lowest entry price in Nexon EV lineup with proven Tata service density, Easy to park and drive in dense city traffic. Tradeoff to weigh: Shorter certified range than Long Range rivals in segment.",
+        "detailPath": "/cars/tata-nexon-ev-creative-plus"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-nexon-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1649000,
+        "claimedRangeKm": 465,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Well suited for first-time EV buyers — ease and charging practicality (score 86).",
+        "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals.",
+        "detailPath": "/cars/tata-nexon-ev-empowered-lr"
+      },
+      {
+        "rank": 5,
+        "slug": "tata-punch-ev-smart-plus",
+        "displayName": "Tata Smart+",
+        "exShowroom": 1099000,
+        "claimedRangeKm": 315,
+        "compositeScore": 84,
+        "confidence": "high",
+        "explanation": "Well suited for first-time EV buyers — ease and charging practicality (score 84).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs.",
+        "detailPath": "/cars/tata-punch-ev-smart-plus"
+      },
+      {
+        "rank": 6,
+        "slug": "tata-punch-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1249000,
+        "claimedRangeKm": 421,
+        "compositeScore": 84,
+        "confidence": "high",
+        "explanation": "Well suited for first-time EV buyers — ease and charging practicality (score 84).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs.",
+        "detailPath": "/cars/tata-punch-ev-empowered-lr"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "tata-tiago-ev-xt",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+        },
+        {
+          "slug": "tata-tiago-ev-xz-plus",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+        },
+        {
+          "slug": "tata-nexon-ev-creative-plus",
+          "tradeoff": "Strengths noted in catalog: Lowest entry price in Nexon EV lineup with proven Tata service density, Easy to park and drive in dense city traffic. Tradeoff to weigh: Shorter certified range than Long Range rivals in segment."
+        },
+        {
+          "slug": "tata-nexon-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals."
+        },
+        {
+          "slug": "tata-punch-ev-smart-plus",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs."
+        },
+        {
+          "slug": "tata-punch-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is easier for first-time buyers?",
+        "answer": "First-time buyer alignment uses first-EV persona scores, anxiety reduction, and charging practicality — not generic marketing claims."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Tata XT is currently highest on our first time buyer composite (score 86, high confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Tata XT?",
+        "answer": "Indicative ex-showroom from catalog: ₹7.99 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-evs-for-first-time-buyers",
+    "canonicalUrl": "https://evsavari.com/cars/best-evs-for-first-time-buyers",
+    "generatedAt": "2026-05-16T07:17:49.718Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

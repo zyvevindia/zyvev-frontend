@@ -5,6 +5,7 @@ import {
 
 import {
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -13,7 +14,22 @@ import {
   Helmet,
 } from "react-helmet-async";
 
+import JsonLd from "../components/SEO/JsonLd";
+
+import {
+  buildBreadcrumbSchema,
+  buildCompareItemListSchema,
+} from "../utils/structuredData";
+
 import CompactCarCard from "../components/CompactCarCard";
+
+import CompareInsightCard from "../components/catalog/CompareInsightCard";
+
+import CompareScenarioPanel from "../components/catalog/CompareScenarioPanel";
+
+import CompareTrustPanel from "../components/catalog/CompareTrustPanel";
+
+import { formatIndianPriceCompact } from "../utils/formatIndianPrice";
 
 import LeadInquiryModal from "../components/LeadInquiryModal";
 
@@ -22,6 +38,10 @@ import {
   loadCompareCarsFromStorage,
   notifyCompareCarsSync,
 } from "../utils/compareCarsStorage";
+
+import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
+
+import { BUYER_EVENTS } from "../event-tracking/eventTypes";
 
 /* =========================================================
    ===================== BEST VALUE (PURE) ===================
@@ -106,24 +126,6 @@ export default function ComparePage() {
       "Request callback"
     );
 
-  const openInquiry = (
-    headline,
-    submit
-  ) => {
-
-    setInquiryHeadline(
-      headline
-    );
-
-    setInquirySubmit(
-      submit
-    );
-
-    setInquiryOpen(
-      true
-    );
-  };
-
   const cars =
     useMemo(() => {
 
@@ -189,6 +191,80 @@ export default function ComparePage() {
         )
         : "";
     }, [cars]);
+
+  const compareSlugsKey = useMemo(
+    () =>
+      cars
+        .map((c) => c?.slug)
+        .filter(Boolean)
+        .sort()
+        .join("|"),
+    [cars]
+  );
+
+  const compareBreadcrumb = useMemo(
+    () =>
+      buildBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Compare EVs", url: "/compare" },
+      ]),
+    []
+  );
+
+  const compareListSchema = useMemo(
+    () =>
+      cars.length >= 2
+        ? buildCompareItemListSchema(cars)
+        : null,
+    [cars]
+  );
+
+  useEffect(() => {
+    if (!compareSlugsKey) return;
+
+    const slugs = compareSlugsKey.split("|");
+
+    if (slugs.length >= 2) {
+      trackBuyerEvent(BUYER_EVENTS.COMPARE_STARTED, {
+        sourcePage: "compare",
+        vehicleSlugs: slugs,
+        compareDepth: slugs.length,
+      });
+    }
+  }, [compareSlugsKey]);
+
+  const openInquiry = (
+    headline,
+    submit
+  ) => {
+
+    setInquiryHeadline(
+      headline
+    );
+
+    setInquirySubmit(
+      submit
+    );
+
+    setInquiryOpen(
+      true
+    );
+
+    const slugs = cars
+      .map((c) => c?.slug)
+      .filter(Boolean);
+
+    trackBuyerEvent(BUYER_EVENTS.LEAD_CTA_INITIATED, {
+      sourcePage: "compare",
+      vehicleSlugs: slugs,
+    });
+
+    trackBuyerEvent(BUYER_EVENTS.COMPARE_COMPLETED, {
+      sourcePage: "compare",
+      vehicleSlugs: slugs,
+      compareDepth: cars.length,
+    });
+  };
 
   const clearComparison =
     useCallback(() => {
@@ -315,6 +391,11 @@ export default function ComparePage() {
         />
 
       </Helmet>
+
+      <JsonLd data={compareBreadcrumb} />
+      {compareListSchema && (
+        <JsonLd data={compareListSchema} />
+      )}
 
       <div style={comparePage}>
 
@@ -465,15 +546,25 @@ export default function ComparePage() {
                       badge:
                         isBest
                           ? "Recommended"
+                          : car.catalogMeta
+                            ?.compareValueScore !=
+                            null
+                          ? `Value ${car.catalogMeta.compareValueScore}`
                           : "Compared",
                     }}
                   />
+
+                  <CompareInsightCard car={car} />
 
                 </div>
               );
             })}
 
           </div>
+
+          <CompareTrustPanel cars={cars} />
+
+          <CompareScenarioPanel cars={cars} />
 
           {/* ================= SPEC TABLE ================= */}
 
@@ -558,11 +649,10 @@ export default function ComparePage() {
                               : {}),
                           }}
                         >
-                          ₹
-                          {(
+                          {formatIndianPriceCompact(
                             car.startingPrice ||
-                            0
-                          ).toLocaleString()}
+                              0
+                          )}
                         </td>
                       );
                     })}
@@ -938,7 +1028,7 @@ const compareGrid = {
   display: "grid",
 
   gridTemplateColumns:
-    "repeat(auto-fit, minmax(300px, 1fr))",
+    "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
 
   gap: "30px",
 

@@ -1,0 +1,188 @@
+{
+  "seoPage": {
+    "slug": "best-evs-under-20-lakh",
+    "pageTypeId": "budget_under_20",
+    "category": "budget",
+    "title": "Electric cars well suited under ₹20 lakh (ex-showroom) | EVSavari",
+    "metaDescription": "EV recommendations under ₹20 lakh ex-showroom — ranked by ownership practicality, not hype.",
+    "intro": "EV options under ₹20 lakh ex-showroom, filtered and ordered by practical ownership fit and value alignment from our Tier-1 catalog.",
+    "recommendationLogic": {
+      "pageTypeId": "budget_under_20",
+      "category": "budget",
+      "primaryScoreKey": "budgetOwnership",
+      "secondaryScoreKeys": [
+        "compareValue",
+        "familyUsage"
+      ],
+      "filters": {
+        "maxExShowroom": 2000000,
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 17,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-tiago-ev-xt",
+        "displayName": "Tata XT",
+        "exShowroom": 799000,
+        "claimedRangeKm": 250,
+        "compositeScore": 73,
+        "confidence": "medium",
+        "explanation": "Practical under ₹20 lakh ex-showroom with strong value and ownership alignment (score 73).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot. Ex-showroom from ₹7.99 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/tata-tiago-ev-xt"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-comet-ev-play",
+        "displayName": "Mg Play",
+        "exShowroom": 798000,
+        "claimedRangeKm": 230,
+        "compositeScore": 72,
+        "confidence": "medium",
+        "explanation": "Practical under ₹20 lakh ex-showroom with strong value and ownership alignment (score 72).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car. Ex-showroom from ₹7.98 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/mg-comet-ev-play"
+      },
+      {
+        "rank": 3,
+        "slug": "mg-comet-ev-plush-plus",
+        "displayName": "Mg Plush+",
+        "exShowroom": 998000,
+        "claimedRangeKm": 230,
+        "compositeScore": 67,
+        "confidence": "low",
+        "explanation": "Practical under ₹20 lakh ex-showroom with strong value and ownership alignment (score 67).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car. Ex-showroom from ₹9.98 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/mg-comet-ev-plush-plus"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-punch-ev-smart-plus",
+        "displayName": "Tata Smart+",
+        "exShowroom": 1099000,
+        "claimedRangeKm": 315,
+        "compositeScore": 66,
+        "confidence": "low",
+        "explanation": "Practical under ₹20 lakh ex-showroom with strong value and ownership alignment (score 66).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs. Ex-showroom from ₹10.99 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/tata-punch-ev-smart-plus"
+      },
+      {
+        "rank": 5,
+        "slug": "citroen-ec3-live",
+        "displayName": "Citroen Live",
+        "exShowroom": 1161000,
+        "claimedRangeKm": 320,
+        "compositeScore": 65,
+        "confidence": "low",
+        "explanation": "Practical under ₹20 lakh ex-showroom with strong value and ownership alignment (score 65).",
+        "tradeoff": "Strengths noted in catalog: Distinctive design, AC-only simplicity for apartment charging. Tradeoff to weigh: No DC fast charging. Ex-showroom from ₹11.61 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/citroen-ec3-live"
+      },
+      {
+        "rank": 6,
+        "slug": "tata-tiago-ev-xz-plus",
+        "displayName": "Tata XZ+",
+        "exShowroom": 1199000,
+        "claimedRangeKm": 315,
+        "compositeScore": 63,
+        "confidence": "low",
+        "explanation": "Practical under ₹20 lakh ex-showroom with strong value and ownership alignment (score 63).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot. Ex-showroom from ₹11.99 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/tata-tiago-ev-xz-plus"
+      },
+      {
+        "rank": 7,
+        "slug": "tata-punch-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1249000,
+        "claimedRangeKm": 421,
+        "compositeScore": 63,
+        "confidence": "low",
+        "explanation": "Practical under ₹20 lakh ex-showroom with strong value and ownership alignment (score 63).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs. Ex-showroom from ₹12.49 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/tata-punch-ev-empowered-lr"
+      },
+      {
+        "rank": 8,
+        "slug": "citroen-ec3-shine",
+        "displayName": "Citroen Shine",
+        "exShowroom": 1299000,
+        "claimedRangeKm": 320,
+        "compositeScore": 61,
+        "confidence": "low",
+        "explanation": "Practical under ₹20 lakh ex-showroom with strong value and ownership alignment (score 61).",
+        "tradeoff": "Strengths noted in catalog: Distinctive design, AC-only simplicity for apartment charging. Tradeoff to weigh: No DC fast charging. Ex-showroom from ₹12.99 lakh — verify on-road price in your city.",
+        "detailPath": "/cars/citroen-ec3-shine"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "tata-tiago-ev-xt",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot. Ex-showroom from ₹7.99 lakh — verify on-road price in your city."
+        },
+        {
+          "slug": "mg-comet-ev-play",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car. Ex-showroom from ₹7.98 lakh — verify on-road price in your city."
+        },
+        {
+          "slug": "mg-comet-ev-plush-plus",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car. Ex-showroom from ₹9.98 lakh — verify on-road price in your city."
+        },
+        {
+          "slug": "tata-punch-ev-smart-plus",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs. Ex-showroom from ₹10.99 lakh — verify on-road price in your city."
+        },
+        {
+          "slug": "citroen-ec3-live",
+          "tradeoff": "Strengths noted in catalog: Distinctive design, AC-only simplicity for apartment charging. Tradeoff to weigh: No DC fast charging. Ex-showroom from ₹11.61 lakh — verify on-road price in your city."
+        },
+        {
+          "slug": "tata-tiago-ev-xz-plus",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot. Ex-showroom from ₹11.99 lakh — verify on-road price in your city."
+        },
+        {
+          "slug": "tata-punch-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs. Ex-showroom from ₹12.49 lakh — verify on-road price in your city."
+        },
+        {
+          "slug": "citroen-ec3-shine",
+          "tradeoff": "Strengths noted in catalog: Distinctive design, AC-only simplicity for apartment charging. Tradeoff to weigh: No DC fast charging. Ex-showroom from ₹12.99 lakh — verify on-road price in your city."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "What EVs are well suited under ₹20 lakh?",
+        "answer": "Variants at or below ₹20 lakh ex-showroom ranked by budget ownership and value alignment from catalog intelligence."
+      },
+      {
+        "question": "Do subsidies change these picks?",
+        "answer": "State subsidies and FAME policies change effective price. Re-verify eligibility when you shortlist."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Tata XT is currently highest on our budget under 20 composite (score 73, medium confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Tata XT?",
+        "answer": "Indicative ex-showroom from catalog: ₹7.99 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-evs-under-20-lakh",
+    "canonicalUrl": "https://evsavari.com/cars/best-evs-under-20-lakh",
+    "generatedAt": "2026-05-16T07:17:49.622Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

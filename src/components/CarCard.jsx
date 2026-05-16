@@ -6,6 +6,22 @@ import { Link } from "react-router-dom";
 
 import LeadInquiryModal from "./LeadInquiryModal";
 
+import CatalogListingSignals from "./catalog/CatalogListingSignals";
+
+import CatalogCardTrust from "./catalog/CatalogCardTrust";
+
+import { formatIndianPriceCompact } from "../utils/formatIndianPrice";
+
+import { pickListingSignals } from "../utils/listingSignals";
+
+import VehicleImage from "./media/VehicleImage";
+
+import { vehicleDetailPath } from "../utils/vehicleRoutes";
+
+import CatalogOwnershipChips from "./catalog/CatalogOwnershipChips";
+
+import { pickOwnershipChips } from "../utils/ownershipReality";
+
 /* =========================================================
    ====================== CAR CARD ==========================
    ========================================================= */
@@ -38,11 +54,15 @@ export default function CarCard({
       (c) => c?._id === _id
     );
 
-  const fallbackImage =
-    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop";
+  const listingSignals = pickListingSignals(
+    safeCar,
+    2
+  );
 
-  const safeImage =
-    image || fallbackImage;
+  const ownershipChips = pickOwnershipChips(
+    safeCar.catalogMeta,
+    2
+  );
 
   const safeName =
     name || "Electric Vehicle";
@@ -64,10 +84,10 @@ export default function CarCard({
   const carSlug =
     safeCar.slug;
 
-  const detailPath =
-    carSlug
-      ? `/car/${carSlug}`
-      : `/car/${_id}`;
+  const detailPath = vehicleDetailPath(
+    safeCar,
+    _id
+  );
 
   const [inquiryOpen,
     setInquiryOpen] =
@@ -151,22 +171,29 @@ export default function CarCard({
       {/* ================= CAR IMAGE ================= */}
 
       <div style={imageWrapper}>
-        <img
-          className="car-image"
-          src={safeImage}
+        <VehicleImage
+          car={safeCar}
+          role="listing"
           alt={safeName}
-          style={imageStyle}
-          onError={(e) => {
-            e.target.src =
-              fallbackImage;
+          imgClassName="car-image"
+          imgStyle={imageStyle}
+          wrapperStyle={{
+            position: "absolute",
+            inset: 0,
+            height: "100%",
+            aspectRatio: "unset",
           }}
         />
 
-        {/* ================= IMAGE OVERLAY ================= */}
-
         <div style={imageOverlay} />
 
-        {/* ================= BRAND BADGE ================= */}
+        {listingSignals.length > 0 && (
+          <div style={signalsOverlay}>
+            <CatalogListingSignals
+              signals={listingSignals}
+            />
+          </div>
+        )}
 
         <div style={brandBadge}>
           {safeBrand}
@@ -184,9 +211,15 @@ export default function CarCard({
           </h3>
 
           <p style={priceStyle}>
-            ₹
-            {safePrice.toLocaleString()}
+            {formatIndianPriceCompact(safePrice)}
           </p>
+
+          <CatalogCardTrust
+            catalogMeta={safeCar.catalogMeta}
+            catalogSource={safeCar.catalogSource}
+          />
+
+          <CatalogOwnershipChips chips={ownershipChips} />
 
           {/* ================= SPECS ================= */}
 
@@ -334,16 +367,10 @@ const card = {
 const imageWrapper = {
   position: "relative",
   overflow: "hidden",
-  background:
-    "linear-gradient(135deg, #e2e8f0, #f8fafc)",
   aspectRatio: "16 / 10",
 };
 
 const imageStyle = {
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-  display: "block",
   transition: "transform 0.55s ease",
 };
 
@@ -352,6 +379,15 @@ const imageOverlay = {
   inset: 0,
   background:
     "linear-gradient(to top, rgba(15,23,42,0.28), transparent 55%)",
+  pointerEvents: "none",
+};
+
+const signalsOverlay = {
+  position: "absolute",
+  bottom: "14px",
+  left: "14px",
+  right: "14px",
+  zIndex: 2,
   pointerEvents: "none",
 };
 

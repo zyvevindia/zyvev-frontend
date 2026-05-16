@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 
+import { formatIndianPrice } from "../utils/formatIndianPrice";
+
+import { vehicleDetailPath } from "../utils/vehicleRoutes";
+
 /* =========================================================
    ================ UPCOMING CAR CARD ======================
    ========================================================= */
@@ -26,10 +30,10 @@ export default function UpcomingCarCard({
      SEO FRIENDLY URL
      ===================================================== */
 
-  const carUrl =
-    car.slug
-      ? `/car/${car.slug}`
-      : `/car/${car._id}`;
+  const carUrl = vehicleDetailPath(
+    car,
+    car._id
+  );
 
   return (
     <div
@@ -145,9 +149,9 @@ export default function UpcomingCarCard({
               </p>
 
               <p style={priceStyle}>
-                ₹
-                {Number(price)
-                  .toLocaleString()}
+                {formatIndianPrice(price, {
+                  prefix: "From ",
+                })}
               </p>
 
             </div>

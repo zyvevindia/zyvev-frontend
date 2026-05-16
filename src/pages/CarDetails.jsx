@@ -18,6 +18,45 @@ import JsonLd from "../components/SEO/JsonLd";
 
 import CarDetailsSkeleton from "../components/skeletons/CarDetailsSkeleton";
 
+import CatalogTrustBadge from "../components/catalog/CatalogTrustBadge";
+
+import EvDetailGoldSections from "../components/catalog/EvDetailGoldSections";
+
+import useCatalogEnrichment from "../hooks/useCatalogEnrichment";
+
+import {
+  buildFaqSchema,
+} from "../utils/catalogExperience";
+
+import {
+  buildVehicleSchema,
+  buildBreadcrumbSchema,
+} from "../utils/structuredData";
+
+import {
+  formatIndianPrice,
+  formatIndianPriceCompact,
+} from "../utils/formatIndianPrice";
+
+import { getOgImage } from "../utils/vehicleMedia";
+
+import { fetchVehicleBySlug } from "../utils/vehicleDetailResolver";
+
+import {
+  canonicalVehicleUrl,
+  normalizeVehicleSlug,
+  vehicleDetailPath,
+} from "../utils/vehicleRoutes";
+
+import VehicleImage from "../components/media/VehicleImage";
+import VehicleDetailNotFound from "../components/catalog/VehicleDetailNotFound";
+
+import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
+
+import { BUYER_EVENTS } from "../event-tracking/eventTypes";
+
+import { getLastSeoSource } from "../buyer-intelligence/journeyBuffer";
+
 import {
   getResponsiveImage,
   getSafeImage,
@@ -37,6 +76,12 @@ export default function CarDetails() {
 
   const [car, setCar] =
     useState(null);
+
+  const {
+    vehicle: displayCar,
+    catalogLoading,
+    hasGoldExperience,
+  } = useCatalogEnrichment(car, slug);
 
   const [loading, setLoading] =
     useState(true);
@@ -82,6 +127,11 @@ export default function CarDetails() {
     setInquiryOpen(
       true
     );
+
+    trackBuyerEvent(BUYER_EVENTS.LEAD_CTA_INITIATED, {
+      vehicleSlugs: slug ? [normalizeVehicleSlug(slug)] : [],
+      sourcePage: window.location.pathname,
+    });
   };
 
   /* =========================================================
@@ -90,28 +140,38 @@ export default function CarDetails() {
 
   useEffect(() => {
 
+    let cancelled = false;
+
     async function fetchCar() {
+      setLoading(true);
 
-      try {
+      const result = await fetchVehicleBySlug(slug);
 
-        const res =
-          await fetch(
-            `${API_URL}/cars/slug/${slug}`
+      if (cancelled) return;
+
+      if (result?.vehicle) {
+        setCar(result.vehicle);
+
+        const resolved = normalizeVehicleSlug(
+          result.resolvedSlug
+        );
+        const requested = normalizeVehicleSlug(slug);
+
+        if (
+          resolved &&
+          requested &&
+          resolved !== requested
+        ) {
+          navigate(
+            vehicleDetailPath(resolved),
+            { replace: true }
           );
-
-        const data =
-          await res.json();
-
-        setCar(data);
-
-        setLoading(false);
-
-      } catch (err) {
-
-        console.error(err);
-
-        setLoading(false);
+        }
+      } else {
+        setCar(null);
       }
+
+      setLoading(false);
     }
 
     fetchCar();
@@ -126,7 +186,7 @@ export default function CarDetails() {
       },
 
       body: JSON.stringify({
-        carId: slug,
+        carId: normalizeVehicleSlug(slug) || slug,
       }),
 
     }).catch((err) => {
@@ -134,7 +194,11 @@ export default function CarDetails() {
       console.error(err);
     });
 
-  }, [slug]);
+    return () => {
+      cancelled = true;
+    };
+
+  }, [slug, navigate]);
 
   /* =========================================================
      ================= INITIAL SELECTORS =====================
@@ -172,11 +236,31 @@ export default function CarDetails() {
 
   }, [car]);
 
+  useEffect(() => {
+    if (!displayCar || loading) return;
+
+    const vehicleSlug =
+      normalizeVehicleSlug(
+        displayCar.slug || slug
+      ) || slug;
+
+    trackBuyerEvent(BUYER_EVENTS.DETAIL_PAGE_VIEWED, {
+      vehicleSlugs: vehicleSlug ? [vehicleSlug] : [],
+      sourcePage: window.location.pathname,
+      sessionIntent: getLastSeoSource()
+        ? "seo_referral"
+        : undefined,
+      metadata: getLastSeoSource()
+        ? { seoPageSlug: getLastSeoSource() }
+        : undefined,
+    });
+  }, [displayCar, loading, slug]);
+
   /* =========================================================
      ======================= LOADING =========================
      ========================================================= */
 
-  if (loading) {
+  if (loading || catalogLoading) {
 
     return <CarDetailsSkeleton />;
   }
@@ -185,51 +269,30 @@ export default function CarDetails() {
      ======================= NOT FOUND =======================
      ========================================================= */
 
-  if (!car) {
-
-    return (
-
-      <div style={loadingWrapper}>
-
-        <div style={loaderCard}>
-
-          <h2>
-            Vehicle not found
-          </h2>
-
-          <button
-            style={backButton}
-            onClick={() =>
-              navigate("/")
-            }
-          >
-            Back to Home
-          </button>
-
-        </div>
-
-      </div>
-    );
+  if (!displayCar) {
+    return <VehicleDetailNotFound requestedSlug={slug} />;
   }
 
   /* =========================================================
      ====================== GALLERY ==========================
      ========================================================= */
 
-  const galleryImages =
-    car.galleryImages?.length > 0
+  const vehicle = displayCar;
 
-      ? car.galleryImages
+  const galleryImages =
+    vehicle.galleryImages?.length > 0
+
+      ? vehicle.galleryImages
 
       : [
-          car.heroImage ||
-          car.image,
+          vehicle.heroImage ||
+          vehicle.image,
         ];
 
   const displayImage =
     selectedColor?.image ||
     selectedImage ||
-    car.heroImage;
+    vehicle.heroImage;
 
   const safeDisplayImage =
     getSafeImage(
@@ -248,14 +311,14 @@ export default function CarDetails() {
   const activePrice =
     selectedVariant?.price ||
 
-    car.startingPrice ||
+    vehicle.startingPrice ||
 
     0;
 
   const activeRange =
     selectedVariant?.range ||
 
-    car.specifications
+    vehicle.specifications
       ?.range ||
 
     0;
@@ -264,7 +327,7 @@ export default function CarDetails() {
     selectedVariant
       ?.batteryPack ||
 
-    car.specifications
+    vehicle.specifications
       ?.batteryPack ||
 
     "EV Battery";
@@ -273,156 +336,75 @@ export default function CarDetails() {
     selectedVariant
       ?.chargingTime ||
 
-    car.specifications
+    vehicle.specifications
       ?.chargingTime ||
 
     "Fast Charging";
 
   const topSpeed =
-    car.specifications
+    vehicle.specifications
       ?.topSpeed ||
 
     "N/A";
 
   const features =
-    Array.isArray(car.features)
+    Array.isArray(vehicle.features)
 
-      ? car.features
+      ? vehicle.features
 
       : [];
 
   const safety =
-    Array.isArray(car.safety)
+    Array.isArray(vehicle.safety)
 
-      ? car.safety
+      ? vehicle.safety
 
       : [];
 
   const overview =
-    car.overview ||
+    vehicle.catalogMeta?.expertSummary ||
+    vehicle.overview ||
 
     "Experience next-generation electric mobility.";
+
+  const seoTitle =
+    vehicle.seo?.metaTitle ||
+    `${vehicle.name} Price, Range, Specs & Review | EVSavari`;
+
+  const seoDescription =
+    vehicle.seo?.metaDescription ||
+    overview;
+
+  const faqSchema = buildFaqSchema(
+    [
+      ...(vehicle.catalogMeta?.faq || []),
+      ...(vehicle.catalogMeta?.chargingFaq || []),
+    ],
+    canonicalVehicleUrl(slug)
+  );
 
   /* =========================================================
      ====================== JSON-LD SEO ======================
      ========================================================= */
 
-  const productSchema = {
+  const vehicleSchema = buildVehicleSchema({
+    name: vehicle.name,
+    brand: vehicle.brand,
+    description: overview,
+    images: galleryImages,
+    priceInr: activePrice,
+    slug,
+    sku: vehicle._id,
+  });
 
-    "@context":
-      "https://schema.org",
-
-    "@type":
-      "Product",
-
-    name:
-      car.name,
-
-    image:
-      galleryImages,
-
-    description:
-      overview,
-
-    brand: {
-
-      "@type":
-        "Brand",
-
-      name:
-        car.brand ||
-        "EVSavari",
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Cars", url: "/cars" },
+    {
+      name: vehicle.name,
+      url: canonicalVehicleUrl(slug),
     },
-
-    category:
-      car.category ||
-      "Electric Vehicle",
-
-    sku:
-      car._id,
-
-    model:
-      selectedVariant?.name ||
-      car.name,
-
-    offers: {
-
-      "@type":
-        "Offer",
-
-      priceCurrency:
-        "INR",
-
-      price:
-        activePrice,
-
-      availability:
-        "https://schema.org/InStock",
-
-      url:
-        `https://evsavari.com/car/${slug}`,
-
-      seller: {
-
-        "@type":
-          "Organization",
-
-        name:
-          "EVSavari",
-      },
-    },
-  };
-
-  const breadcrumbSchema = {
-
-    "@context":
-      "https://schema.org",
-
-    "@type":
-      "BreadcrumbList",
-
-    itemListElement: [
-
-      {
-        "@type":
-          "ListItem",
-
-        position: 1,
-
-        name:
-          "Home",
-
-        item:
-          "https://evsavari.com",
-      },
-
-      {
-        "@type":
-          "ListItem",
-
-        position: 2,
-
-        name:
-          "Cars",
-
-        item:
-          "https://evsavari.com/cars",
-      },
-
-      {
-        "@type":
-          "ListItem",
-
-        position: 3,
-
-        name:
-          car.name,
-
-        item:
-          `https://evsavari.com/car/${slug}`,
-      },
-    ],
-  };
+  ]);
 
   /* =========================================================
      ========================= RENDER ========================
@@ -432,35 +414,26 @@ export default function CarDetails() {
 
     <>
       <SEO
-        title={
-          `${car.name} Price, Range, Specs & Review | EVSavari`
-        }
-
-        description={
-          car.overview ||
-
-          `Explore ${car.name} price, battery, range, charging time, specifications and reviews on EVSavari.`
-        }
-
+        title={seoTitle}
+        description={seoDescription}
         canonical={
-          `https://evsavari.com/car/${slug}`
+          canonicalVehicleUrl(slug)
         }
-
-        image={
-          car.heroImage ||
-          car.image
-        }
-
+        image={getOgImage(vehicle)}
         type="product"
       />
 
       <JsonLd
-        data={productSchema}
+        data={vehicleSchema}
       />
 
       <JsonLd
         data={breadcrumbSchema}
       />
+
+      {faqSchema && (
+        <JsonLd data={faqSchema} />
+      )}
 
       <div style={pageContainer}>
 
@@ -494,41 +467,20 @@ export default function CarDetails() {
 
             <div style={imageSection}>
 
-              <picture style={pictureWrapper}>
-
-                <source
-                  media="(max-width: 640px)"
-                  srcSet={
-                    responsiveMainImage.small
-                  }
-                />
-
-                <source
-                  media="(max-width: 1024px)"
-                  srcSet={
-                    responsiveMainImage.medium
-                  }
-                />
-
-                <img
-                  src={
-                    responsiveMainImage.large
-                  }
-
-                  alt={car.name}
-
-                  style={carImage}
-
-                  loading="eager"
-
-                  fetchPriority="high"
-
-                  decoding="async"
-
-                  draggable="false"
-                />
-
-              </picture>
+              <VehicleImage
+                car={vehicle}
+                src={safeDisplayImage}
+                role="hero"
+                alt={vehicle.name}
+                eager
+                responsive
+                imgStyle={carImage}
+                wrapperStyle={{
+                  width: "100%",
+                  height: "100%",
+                  aspectRatio: "unset",
+                }}
+              />
 
             </div>
 
@@ -545,11 +497,6 @@ export default function CarDetails() {
                   const safeImage =
                     getSafeImage(
                       image
-                    );
-
-                  const responsiveThumb =
-                    getResponsiveImage(
-                      safeImage
                     );
 
                   return (
@@ -577,22 +524,17 @@ export default function CarDetails() {
                       aria-label={`View image ${index + 1}`}
                     >
 
-                      <img
-                        src={
-                          responsiveThumb.small
-                        }
-
-                        alt={`${car.name} ${index + 1}`}
-
-                        style={
-                          galleryImage
-                        }
-
-                        loading="lazy"
-
-                        decoding="async"
-
-                        draggable="false"
+                      <VehicleImage
+                        car={vehicle}
+                        src={safeImage}
+                        role="gallery"
+                        alt={`${vehicle.name} ${index + 1}`}
+                        imgStyle={galleryImage}
+                        wrapperStyle={{
+                          width: "100%",
+                          height: "100%",
+                          aspectRatio: "unset",
+                        }}
                       />
 
                     </button>
@@ -604,7 +546,7 @@ export default function CarDetails() {
 
             {/* ================= COLORS ================= */}
 
-            {car.colors?.length >
+            {vehicle.colors?.length >
               0 && (
 
               <div>
@@ -615,7 +557,7 @@ export default function CarDetails() {
 
                 <div style={colorRow}>
 
-                  {car.colors.map(
+                  {vehicle.colors.map(
                     (
                       color,
                       index
@@ -669,28 +611,36 @@ export default function CarDetails() {
             <div>
 
               <div style={premiumBadge}>
-                {car.category ||
+                {vehicle.category ||
                   "Premium Electric Vehicle"}
               </div>
 
               <h1 style={carTitle}>
-                {car.name}
+                {vehicle.name}
               </h1>
 
               <p style={priceText}>
-                ₹
-                {activePrice.toLocaleString()}
+                {formatIndianPrice(activePrice)}
               </p>
 
               <p style={subtitleText}>
                 {overview}
               </p>
 
+              <CatalogTrustBadge
+                catalogMeta={
+                  vehicle.catalogMeta
+                }
+                catalogSource={
+                  vehicle.catalogSource
+                }
+              />
+
             </div>
 
             {/* ================= VARIANTS ================= */}
 
-            {car.variants?.length >
+            {vehicle.variants?.length >
               0 && (
 
               <div>
@@ -701,7 +651,7 @@ export default function CarDetails() {
 
                 <div style={variantGrid}>
 
-                  {car.variants.map(
+                  {vehicle.variants.map(
                     (
                       variant,
                       index
@@ -737,8 +687,9 @@ export default function CarDetails() {
                         </strong>
 
                         <span>
-                          ₹
-                          {variant.price.toLocaleString()}
+                          {formatIndianPriceCompact(
+                            variant.price
+                          )}
                         </span>
 
                       </button>
@@ -937,12 +888,12 @@ export default function CarDetails() {
                     existing.find(
                       (item) =>
                         item._id ===
-                        car._id
+                        vehicle._id
                     );
 
                   if (!alreadyExists) {
 
-                    existing.push(car);
+                    existing.push(vehicle);
 
                     localStorage.setItem(
                       "compareCars",
@@ -972,6 +923,13 @@ export default function CarDetails() {
 
         </section>
 
+        {hasGoldExperience && (
+          <EvDetailGoldSections
+            car={vehicle}
+            slug={slug}
+          />
+        )}
+
         {/* ================= OVERVIEW ================= */}
 
         <section style={overviewContainer}>
@@ -982,8 +940,9 @@ export default function CarDetails() {
               Vehicle Overview
             </h2>
 
-            <p style={descriptionText}>
-              {overview}
+              <p style={descriptionText}>
+              {vehicle.catalogMeta?.expertSummary ||
+                overview}
             </p>
 
           </div>
@@ -1074,17 +1033,17 @@ export default function CarDetails() {
                 )
               }
               sourcePage="car_details"
-              vehicleName={car.name}
+              vehicleName={vehicle.name}
               vehicleId={
                 String(
-                  car.slug ||
-                    car._id ||
+                  vehicle.slug ||
+                    vehicle._id ||
                     ""
                 )
               }
               mongoCarId={
                 String(
-                  car._id || ""
+                  vehicle._id || ""
                 )
               }
               headline={inquiryHeadline}
@@ -1181,7 +1140,7 @@ const heroSection = {
   display: "grid",
 
   gridTemplateColumns:
-    "repeat(auto-fit, minmax(340px, 1fr))",
+    "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
 
   gap: "34px",
 
@@ -1575,7 +1534,7 @@ const bottomGrid = {
   display: "grid",
 
   gridTemplateColumns:
-    "repeat(auto-fit, minmax(340px, 1fr))",
+    "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
 
   gap: "28px",
 };

@@ -16,6 +16,14 @@ import {
   radius,
 } from "../styles/ui";
 
+import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
+
+import { BUYER_EVENTS } from "../event-tracking/eventTypes";
+
+import {
+  getAnonymousSessionIdForLead,
+} from "../event-tracking/trackBuyerEvent";
+
 /* =========================================================
    ================== LEAD INQUIRY MODAL =====================
    ========================================================= */
@@ -210,6 +218,10 @@ export default function LeadInquiryModal({
                 carId:
                   carIdPayload ||
                   undefined,
+
+                anonymousSessionId:
+                  getAnonymousSessionIdForLead() ||
+                  undefined,
               }),
             }
           );
@@ -256,6 +268,13 @@ export default function LeadInquiryModal({
         }
 
         setSuccess(true);
+
+        trackBuyerEvent(BUYER_EVENTS.LEAD_SUBMITTED, {
+          sourcePage: String(sourcePage || "").trim(),
+          vehicleSlugs: vehicleId
+            ? [String(vehicleId).trim()]
+            : [],
+        });
 
         setName("");
 
@@ -579,11 +598,14 @@ const overlay = {
   background:
     "rgba(15,23,42,0.55)",
   display: "flex",
-  alignItems: "center",
+  alignItems: "flex-start",
   justifyContent: "center",
   padding:
     "clamp(12px, 4vw, 24px)",
+  paddingTop: "max(12px, env(safe-area-inset-top, 0px))",
+  paddingBottom: "max(12px, env(safe-area-inset-bottom, 0px))",
   overflowY: "auto",
+  WebkitOverflowScrolling: "touch",
 };
 
 const modalCard = {

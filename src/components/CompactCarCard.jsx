@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom";
 
-import {
-  getResponsiveImage,
-  getSafeImage,
-} from "../utils/imageUtils";
+import CatalogListingSignals from "./catalog/CatalogListingSignals";
+
+import CatalogCardTrust from "./catalog/CatalogCardTrust";
+
+import { formatIndianPriceCompact } from "../utils/formatIndianPrice";
+
+import { pickListingSignals } from "../utils/listingSignals";
+
+import VehicleImage from "./media/VehicleImage";
+
+import { vehicleDetailPath } from "../utils/vehicleRoutes";
+
+import CatalogOwnershipChips from "./catalog/CatalogOwnershipChips";
+
+import { pickOwnershipChips } from "../utils/ownershipReality";
 
 /* =========================================================
    ================= COMPACT CAR CARD ======================
@@ -32,26 +43,24 @@ export default function CompactCarCard({
     car.specifications?.batteryPack ||
     "EV";
 
-  const imageUrl =
-    getSafeImage(
+  const listingSignals = pickListingSignals(
+    car,
+    2
+  );
 
-      car.heroImage ||
-      car.image
-    );
-
-  const responsiveImages =
-    getResponsiveImage(
-      imageUrl
-    );
+  const ownershipChips = pickOwnershipChips(
+    car.catalogMeta,
+    2
+  );
 
   /* =====================================================
      SEO FRIENDLY URL
      ===================================================== */
 
-  const carUrl =
-    car.slug
-      ? `/car/${car.slug}`
-      : `/car/${car._id}`;
+  const carUrl = vehicleDetailPath(
+    car,
+    car._id
+  );
 
   /* =====================================================
      ACCESSIBILITY LABEL
@@ -121,44 +130,20 @@ export default function CompactCarCard({
       {/* ================= IMAGE ================= */}
 
       <div style={imageWrapper}>
-
-        <picture>
-
-          <source
-            media="(max-width: 640px)"
-            srcSet={
-              responsiveImages.small
-            }
-          />
-
-          <source
-            media="(max-width: 1024px)"
-            srcSet={
-              responsiveImages.medium
-            }
-          />
-
-          <img
-            className="compact-car-image"
-
-            src={
-              responsiveImages.large
-            }
-
-            alt={car.name}
-
-            style={image}
-
-            loading="lazy"
-
-            decoding="async"
-
-            fetchPriority="low"
-
-            draggable="false"
-          />
-
-        </picture>
+        <VehicleImage
+          car={car}
+          role="compare"
+          alt={car.name}
+          responsive
+          imgClassName="compact-car-image"
+          imgStyle={image}
+          wrapperStyle={{
+            position: "absolute",
+            inset: 0,
+            height: "100%",
+            aspectRatio: "unset",
+          }}
+        />
 
         {/* ================= OVERLAY ================= */}
 
@@ -170,6 +155,14 @@ export default function CompactCarCard({
 
           <div style={badge}>
             {car.badge}
+          </div>
+        )}
+
+        {listingSignals.length > 0 && (
+          <div style={signalsOverlay}>
+            <CatalogListingSignals
+              signals={listingSignals}
+            />
           </div>
         )}
 
@@ -188,10 +181,15 @@ export default function CompactCarCard({
           </h3>
 
           <p style={priceStyle}>
-            ₹
-            {Number(price)
-              .toLocaleString()}
+            {formatIndianPriceCompact(price)}
           </p>
+
+          <CatalogCardTrust
+            catalogMeta={car.catalogMeta}
+            catalogSource={car.catalogSource}
+          />
+
+          <CatalogOwnershipChips chips={ownershipChips} />
 
           {/* ================= SPECS ================= */}
 
@@ -304,6 +302,15 @@ const imageOverlay = {
   background:
     "linear-gradient(to top, rgba(15,23,42,0.24), transparent 60%)",
 
+  pointerEvents: "none",
+};
+
+const signalsOverlay = {
+  position: "absolute",
+  bottom: "12px",
+  left: "12px",
+  right: "12px",
+  zIndex: 10,
   pointerEvents: "none",
 };
 

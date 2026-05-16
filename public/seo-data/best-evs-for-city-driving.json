@@ -1,0 +1,155 @@
+{
+  "seoPage": {
+    "slug": "best-evs-for-city-driving",
+    "pageTypeId": "city_driving",
+    "category": "usage",
+    "title": "EVs well suited for city driving in India | EVSavari",
+    "metaDescription": "City-focused EV picks based on maneuverability, real-world range bands, and commuter fit scores.",
+    "intro": "City driving suitability combines maneuverability scores, commuter persona fit, and real-world range bands — for buyers who mostly drive in urban conditions.",
+    "recommendationLogic": {
+      "pageTypeId": "city_driving",
+      "category": "usage",
+      "primaryScoreKey": "cityDriving",
+      "secondaryScoreKeys": [
+        "dailyCommute",
+        "officeCommute"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-comet-ev-play",
+        "displayName": "Mg Play",
+        "exShowroom": 798000,
+        "claimedRangeKm": 230,
+        "compositeScore": 88,
+        "confidence": "high",
+        "explanation": "Well suited for city driving based on maneuverability and commuter fit (score 88).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car.",
+        "detailPath": "/cars/mg-comet-ev-play"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-comet-ev-plush-plus",
+        "displayName": "Mg Plush+",
+        "exShowroom": 998000,
+        "claimedRangeKm": 230,
+        "compositeScore": 88,
+        "confidence": "high",
+        "explanation": "Well suited for city driving based on maneuverability and commuter fit (score 88).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car.",
+        "detailPath": "/cars/mg-comet-ev-plush-plus"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-tiago-ev-xt",
+        "displayName": "Tata XT",
+        "exShowroom": 799000,
+        "claimedRangeKm": 250,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Well suited for city driving based on maneuverability and commuter fit (score 87).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
+        "detailPath": "/cars/tata-tiago-ev-xt"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-tiago-ev-xz-plus",
+        "displayName": "Tata XZ+",
+        "exShowroom": 1199000,
+        "claimedRangeKm": 315,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Well suited for city driving based on maneuverability and commuter fit (score 87).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
+        "detailPath": "/cars/tata-tiago-ev-xz-plus"
+      },
+      {
+        "rank": 5,
+        "slug": "tata-punch-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1249000,
+        "claimedRangeKm": 421,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Well suited for city driving based on maneuverability and commuter fit (score 87).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs.",
+        "detailPath": "/cars/tata-punch-ev-empowered-lr"
+      },
+      {
+        "rank": 6,
+        "slug": "tata-punch-ev-smart-plus",
+        "displayName": "Tata Smart+",
+        "exShowroom": 1099000,
+        "claimedRangeKm": 315,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Well suited for city driving based on maneuverability and commuter fit (score 86).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs.",
+        "detailPath": "/cars/tata-punch-ev-smart-plus"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "mg-comet-ev-play",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car."
+        },
+        {
+          "slug": "mg-comet-ev-plush-plus",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car."
+        },
+        {
+          "slug": "tata-tiago-ev-xt",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+        },
+        {
+          "slug": "tata-tiago-ev-xz-plus",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+        },
+        {
+          "slug": "tata-punch-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs."
+        },
+        {
+          "slug": "tata-punch-ev-smart-plus",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is well suited for city driving?",
+        "answer": "City picks weigh maneuverability, commuter persona fit, and urban range practicality from catalog scores."
+      },
+      {
+        "question": "Is ARAI range enough for city use?",
+        "answer": "Use real-world range bands in our catalog where available — city traffic often differs from lab cycles."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Mg Play is currently highest on our city driving composite (score 88, high confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Mg Play?",
+        "answer": "Indicative ex-showroom from catalog: ₹7.98 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-evs-for-city-driving",
+    "canonicalUrl": "https://evsavari.com/cars/best-evs-for-city-driving",
+    "generatedAt": "2026-05-16T07:17:49.643Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

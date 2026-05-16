@@ -1,0 +1,91 @@
+{
+  "seoPage": {
+    "slug": "nexon-ev-vs-mg-zs-ev",
+    "pageTypeId": "head_to_head",
+    "category": "compare",
+    "title": "Tata Nexon EV vs MG ZS EV — decision comparison | EVSavari",
+    "metaDescription": "Side-by-side Nexon EV and MG ZS EV comparison using catalog intelligence — tradeoffs, not rankings hype.",
+    "intro": "This comparison contrasts two catalog variants side by side. We highlight where each is better aligned — with tradeoffs, not a single winner claim.",
+    "recommendationLogic": {
+      "pageTypeId": "head_to_head",
+      "category": "compare",
+      "primaryScoreKey": "compareValue",
+      "secondaryScoreKeys": [],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": [
+        "tata-nexon-ev-empowered-lr",
+        "mg-zs-ev-excite"
+      ],
+      "candidatePoolSize": 2,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-nexon-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1649000,
+        "claimedRangeKm": 465,
+        "compositeScore": 59,
+        "confidence": "low",
+        "explanation": "Compared on catalog intelligence dimensions relevant to this decision (score 59).",
+        "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals.",
+        "detailPath": "/cars/tata-nexon-ev-empowered-lr"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-zs-ev-excite",
+        "displayName": "Mg Excite",
+        "exShowroom": 1399000,
+        "claimedRangeKm": 461,
+        "compositeScore": 59,
+        "confidence": "low",
+        "explanation": "Compared on catalog intelligence dimensions relevant to this decision (score 59).",
+        "tradeoff": "Strengths noted in catalog: Larger boot and cabin vs Nexon-class rivals, Faster DC charging than many LFP mass SUVs. Tradeoff to weigh: MG service network thinner than Tata in Tier 2/3.",
+        "detailPath": "/cars/mg-zs-ev-excite"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Compare Tata Empowered LR and Mg Excite on the dimensions that matter to you — range, charging, space, and on-road budget. Neither is positioned as a universal winner.",
+      "considerations": [
+        {
+          "slug": "tata-nexon-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals."
+        },
+        {
+          "slug": "mg-zs-ev-excite",
+          "tradeoff": "Strengths noted in catalog: Larger boot and cabin vs Nexon-class rivals, Faster DC charging than many LFP mass SUVs. Tradeoff to weigh: MG service network thinner than Tata in Tier 2/3."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is better in this comparison?",
+        "answer": "Neither variant is declared a universal winner. Each section explains where a variant is better aligned and what to trade off."
+      },
+      {
+        "question": "Should I test drive both?",
+        "answer": "Yes — seat comfort, visibility, and charging access at your home/work matter beyond spec sheets."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Tata Empowered LR is currently highest on our head to head composite (score 59, low confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Tata Empowered LR?",
+        "answer": "Indicative ex-showroom from catalog: ₹16.49 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/nexon-ev-vs-mg-zs-ev",
+    "canonicalUrl": "https://evsavari.com/cars/nexon-ev-vs-mg-zs-ev",
+    "generatedAt": "2026-05-16T07:17:49.794Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

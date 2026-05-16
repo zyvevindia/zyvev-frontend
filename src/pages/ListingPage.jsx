@@ -97,7 +97,7 @@ export default function ListingPage() {
 
         const response =
           await fetch(
-            `${API_URL}/cars`
+            `${API_URL}/cars?limit=50`
           );
 
         if (!response.ok) {

@@ -1,0 +1,151 @@
+{
+  "seoPage": {
+    "slug": "best-family-electric-cars",
+    "pageTypeId": "family",
+    "category": "usage",
+    "title": "Family electric cars — practical picks for Indian buyers | EVSavari",
+    "metaDescription": "Family-oriented EV recommendations using boot space, rear comfort, and family suitability intelligence.",
+    "intro": "Family-oriented picks weigh rear comfort, boot practicality, and family suitability scores — with clear tradeoffs on range and charging for weekend trips.",
+    "recommendationLogic": {
+      "pageTypeId": "family",
+      "category": "usage",
+      "primaryScoreKey": "familyUsage",
+      "secondaryScoreKeys": [
+        "cityDriving",
+        "compareValue"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mahindra-xev-9e-pack-two",
+        "displayName": "Mahindra Pack Two",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 542,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Better aligned for family use — space and comfort signals support this pick (score 86).",
+        "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory.",
+        "detailPath": "/cars/mahindra-xev-9e-pack-two"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-xev-9e-pack-three-select",
+        "displayName": "Mahindra Pack Three Select",
+        "exShowroom": 2999000,
+        "claimedRangeKm": 656,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Better aligned for family use — space and comfort signals support this pick (score 86).",
+        "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory.",
+        "detailPath": "/cars/mahindra-xev-9e-pack-three-select"
+      },
+      {
+        "rank": 3,
+        "slug": "byd-atto-3-dynamic",
+        "displayName": "Byd Dynamic",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 468,
+        "compositeScore": 84,
+        "confidence": "high",
+        "explanation": "Better aligned for family use — space and comfort signals support this pick (score 84).",
+        "tradeoff": "Strengths noted in catalog: Strong tech and efficiency story vs legacy OEM EVs, Competitive DC charging and LFP durability messaging. Tradeoff to weigh: Service network still maturing outside major metros.",
+        "detailPath": "/cars/byd-atto-3-dynamic"
+      },
+      {
+        "rank": 4,
+        "slug": "byd-atto-3-superior",
+        "displayName": "Byd Superior",
+        "exShowroom": 2999000,
+        "claimedRangeKm": 521,
+        "compositeScore": 84,
+        "confidence": "high",
+        "explanation": "Better aligned for family use — space and comfort signals support this pick (score 84).",
+        "tradeoff": "Strengths noted in catalog: Strong tech and efficiency story vs legacy OEM EVs, Competitive DC charging and LFP durability messaging. Tradeoff to weigh: Service network still maturing outside major metros.",
+        "detailPath": "/cars/byd-atto-3-superior"
+      },
+      {
+        "rank": 5,
+        "slug": "mg-zs-ev-excite",
+        "displayName": "Mg Excite",
+        "exShowroom": 1399000,
+        "claimedRangeKm": 461,
+        "compositeScore": 83,
+        "confidence": "high",
+        "explanation": "Better aligned for family use — space and comfort signals support this pick (score 83).",
+        "tradeoff": "Strengths noted in catalog: Larger boot and cabin vs Nexon-class rivals, Faster DC charging than many LFP mass SUVs. Tradeoff to weigh: MG service network thinner than Tata in Tier 2/3.",
+        "detailPath": "/cars/mg-zs-ev-excite"
+      },
+      {
+        "rank": 6,
+        "slug": "mahindra-xuv400-ec-pro",
+        "displayName": "Mahindra EC Pro",
+        "exShowroom": 1549000,
+        "claimedRangeKm": 456,
+        "compositeScore": 83,
+        "confidence": "high",
+        "explanation": "Better aligned for family use — space and comfort signals support this pick (score 83).",
+        "tradeoff": "Strengths noted in catalog: Engaging drive vs softer rivals, Competitive DC charging in segment. Tradeoff to weigh: Brand service depth varies by city vs Tata.",
+        "detailPath": "/cars/mahindra-xuv400-ec-pro"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "mahindra-xev-9e-pack-two",
+          "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory."
+        },
+        {
+          "slug": "mahindra-xev-9e-pack-three-select",
+          "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory."
+        },
+        {
+          "slug": "byd-atto-3-dynamic",
+          "tradeoff": "Strengths noted in catalog: Strong tech and efficiency story vs legacy OEM EVs, Competitive DC charging and LFP durability messaging. Tradeoff to weigh: Service network still maturing outside major metros."
+        },
+        {
+          "slug": "byd-atto-3-superior",
+          "tradeoff": "Strengths noted in catalog: Strong tech and efficiency story vs legacy OEM EVs, Competitive DC charging and LFP durability messaging. Tradeoff to weigh: Service network still maturing outside major metros."
+        },
+        {
+          "slug": "mg-zs-ev-excite",
+          "tradeoff": "Strengths noted in catalog: Larger boot and cabin vs Nexon-class rivals, Faster DC charging than many LFP mass SUVs. Tradeoff to weigh: MG service network thinner than Tata in Tier 2/3."
+        },
+        {
+          "slug": "mahindra-xuv400-ec-pro",
+          "tradeoff": "Strengths noted in catalog: Engaging drive vs softer rivals, Competitive DC charging in segment. Tradeoff to weigh: Brand service depth varies by city vs Tata."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which electric car is better aligned for families?",
+        "answer": "Family recommendations use boot practicality, rear comfort, and family suitability scores — with tradeoffs called out per variant."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Mahindra Pack Two is currently highest on our family composite (score 86, high confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Mahindra Pack Two?",
+        "answer": "Indicative ex-showroom from catalog: ₹24.99 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-family-electric-cars",
+    "canonicalUrl": "https://evsavari.com/cars/best-family-electric-cars",
+    "generatedAt": "2026-05-16T07:17:49.662Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

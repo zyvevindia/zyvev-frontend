@@ -131,6 +131,28 @@ export const ENVIRONMENT = {
 };
 
 /* =========================================================
+   ================= SEO DECISION PAGES ====================
+   ========================================================= */
+
+/**
+ * When true, reserved /cars/:slug paths render SEO decision pages.
+ * Static fallback: /public/seo-data/{slug}.json (build-seo-pages-json.mjs)
+ */
+export const SEO_PAGES_ENABLED =
+  import.meta.env.VITE_SEO_PAGES === "true";
+
+/* =========================================================
+   ============ BEHAVIORAL / BUYER INTENT ====================
+   ========================================================= */
+
+/**
+ * Privacy-safe anonymous buyer event tracking.
+ * Requires BEHAVIORAL_INTELLIGENCE_ENABLED=true on backend.
+ */
+export const BEHAVIORAL_INTELLIGENCE_ENABLED =
+  import.meta.env.VITE_BEHAVIORAL_INTELLIGENCE === "true";
+
+/* =========================================================
    ====================== DEBUG LOGS =======================
    ========================================================= */
 

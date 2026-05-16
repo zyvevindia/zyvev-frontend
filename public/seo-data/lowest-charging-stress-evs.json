@@ -1,0 +1,155 @@
+{
+  "seoPage": {
+    "slug": "lowest-charging-stress-evs",
+    "pageTypeId": "lowest_charging_stress",
+    "category": "charging",
+    "title": "Lower charging-stress electric cars in India | EVSavari",
+    "metaDescription": "EVs better aligned with lower charging anxiety — home AC, apartment access, and practical charging notes.",
+    "intro": "Lower charging-stress picks use charging practicality and anxiety-reduction signals from catalog intelligence — confirm parking access and route chargers before you buy.",
+    "recommendationLogic": {
+      "pageTypeId": "lowest_charging_stress",
+      "category": "charging",
+      "primaryScoreKey": "lowChargingStress",
+      "secondaryScoreKeys": [
+        "homeCharging",
+        "apartmentCharging"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mahindra-be-6-pack-two",
+        "displayName": "Mahindra Pack Two",
+        "exShowroom": 1899000,
+        "claimedRangeKm": 427,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Lower indicative charging stress for practical ownership (score 87).",
+        "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited.",
+        "detailPath": "/cars/mahindra-be-6-pack-two"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-be-6-pack-three-select",
+        "displayName": "Mahindra Pack Three Select",
+        "exShowroom": 2199000,
+        "claimedRangeKm": 483,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Lower indicative charging stress for practical ownership (score 87).",
+        "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited.",
+        "detailPath": "/cars/mahindra-be-6-pack-three-select"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-xev-9e-pack-two",
+        "displayName": "Mahindra Pack Two",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 542,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Lower indicative charging stress for practical ownership (score 87).",
+        "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory.",
+        "detailPath": "/cars/mahindra-xev-9e-pack-two"
+      },
+      {
+        "rank": 4,
+        "slug": "hyundai-kona-electric-premium",
+        "displayName": "Hyundai Premium",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 484,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Lower indicative charging stress for practical ownership (score 87).",
+        "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays.",
+        "detailPath": "/cars/hyundai-kona-electric-premium"
+      },
+      {
+        "rank": 5,
+        "slug": "mahindra-xev-9e-pack-three-select",
+        "displayName": "Mahindra Pack Three Select",
+        "exShowroom": 2999000,
+        "claimedRangeKm": 656,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Lower indicative charging stress for practical ownership (score 87).",
+        "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory.",
+        "detailPath": "/cars/mahindra-xev-9e-pack-three-select"
+      },
+      {
+        "rank": 6,
+        "slug": "mercedes-eqa-250-plus",
+        "displayName": "Mercedes 250+",
+        "exShowroom": 4990000,
+        "claimedRangeKm": 459,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Lower indicative charging stress for practical ownership (score 87).",
+        "tradeoff": "Strengths noted in catalog: Mercedes ownership prestige, Refined highway manners. Tradeoff to weigh: Running costs at luxury tier.",
+        "detailPath": "/cars/mercedes-eqa-250-plus"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "mahindra-be-6-pack-two",
+          "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited."
+        },
+        {
+          "slug": "mahindra-be-6-pack-three-select",
+          "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited."
+        },
+        {
+          "slug": "mahindra-xev-9e-pack-two",
+          "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory."
+        },
+        {
+          "slug": "hyundai-kona-electric-premium",
+          "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays."
+        },
+        {
+          "slug": "mahindra-xev-9e-pack-three-select",
+          "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory."
+        },
+        {
+          "slug": "mercedes-eqa-250-plus",
+          "tradeoff": "Strengths noted in catalog: Mercedes ownership prestige, Refined highway manners. Tradeoff to weigh: Running costs at luxury tier."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is well suited for city driving?",
+        "answer": "City picks weigh maneuverability, commuter persona fit, and urban range practicality from catalog scores."
+      },
+      {
+        "question": "Is ARAI range enough for city use?",
+        "answer": "Use real-world range bands in our catalog where available — city traffic often differs from lab cycles."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Mahindra Pack Two is currently highest on our lowest charging stress composite (score 87, high confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Mahindra Pack Two?",
+        "answer": "Indicative ex-showroom from catalog: ₹18.99 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/lowest-charging-stress-evs",
+    "canonicalUrl": "https://evsavari.com/cars/lowest-charging-stress-evs",
+    "generatedAt": "2026-05-16T07:17:49.848Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "seoPage": {
+    "slug": "best-evs-for-home-charging",
+    "pageTypeId": "home_charging",
+    "category": "charging",
+    "title": "EVs well suited for home charging in India | EVSavari",
+    "metaDescription": "Home charging–aligned EV recommendations using AC kW, wallbox readiness, and charging ecosystem data.",
+    "intro": "Home charging–aligned EVs are ranked using AC charging kW, wallbox readiness, and ecosystem compatibility from catalog data.",
+    "recommendationLogic": {
+      "pageTypeId": "home_charging",
+      "category": "charging",
+      "primaryScoreKey": "homeCharging",
+      "secondaryScoreKeys": [
+        "apartmentCharging",
+        "dailyCommute"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "hyundai-kona-electric-premium",
+        "displayName": "Hyundai Premium",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 484,
+        "compositeScore": 70,
+        "confidence": "low",
+        "explanation": "Well suited for home AC charging setups in catalog data (score 70).",
+        "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays.",
+        "detailPath": "/cars/hyundai-kona-electric-premium"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-xev-9e-pack-three-select",
+        "displayName": "Mahindra Pack Three Select",
+        "exShowroom": 2999000,
+        "claimedRangeKm": 656,
+        "compositeScore": 70,
+        "confidence": "low",
+        "explanation": "Well suited for home AC charging setups in catalog data (score 70).",
+        "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory.",
+        "detailPath": "/cars/mahindra-xev-9e-pack-three-select"
+      },
+      {
+        "rank": 3,
+        "slug": "kia-ev6-gt-line",
+        "displayName": "Kia GT Line",
+        "exShowroom": 6590000,
+        "claimedRangeKm": 708,
+        "compositeScore": 70,
+        "confidence": "low",
+        "explanation": "Well suited for home AC charging setups in catalog data (score 70).",
+        "tradeoff": "Strengths noted in catalog: 800V-class fast charging, Long ARAI range headline. Tradeoff to weigh: Luxury pricing.",
+        "detailPath": "/cars/kia-ev6-gt-line"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-nexon-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1649000,
+        "claimedRangeKm": 465,
+        "compositeScore": 69,
+        "confidence": "low",
+        "explanation": "Well suited for home AC charging setups in catalog data (score 69).",
+        "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals.",
+        "detailPath": "/cars/tata-nexon-ev-empowered-lr"
+      },
+      {
+        "rank": 5,
+        "slug": "mahindra-be-6-pack-two",
+        "displayName": "Mahindra Pack Two",
+        "exShowroom": 1899000,
+        "claimedRangeKm": 427,
+        "compositeScore": 69,
+        "confidence": "low",
+        "explanation": "Well suited for home AC charging setups in catalog data (score 69).",
+        "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited.",
+        "detailPath": "/cars/mahindra-be-6-pack-two"
+      },
+      {
+        "rank": 6,
+        "slug": "mahindra-be-6-pack-three-select",
+        "displayName": "Mahindra Pack Three Select",
+        "exShowroom": 2199000,
+        "claimedRangeKm": 483,
+        "compositeScore": 69,
+        "confidence": "low",
+        "explanation": "Well suited for home AC charging setups in catalog data (score 69).",
+        "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited.",
+        "detailPath": "/cars/mahindra-be-6-pack-three-select"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "hyundai-kona-electric-premium",
+          "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays."
+        },
+        {
+          "slug": "mahindra-xev-9e-pack-three-select",
+          "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory."
+        },
+        {
+          "slug": "kia-ev6-gt-line",
+          "tradeoff": "Strengths noted in catalog: 800V-class fast charging, Long ARAI range headline. Tradeoff to weigh: Luxury pricing."
+        },
+        {
+          "slug": "tata-nexon-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals."
+        },
+        {
+          "slug": "mahindra-be-6-pack-two",
+          "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited."
+        },
+        {
+          "slug": "mahindra-be-6-pack-three-select",
+          "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is well suited for home charging?",
+        "answer": "Home charging picks use AC kW, wallbox readiness, and ecosystem compatibility from Tier-1 charging blocks."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Hyundai Premium is currently highest on our home charging composite (score 70, low confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Hyundai Premium?",
+        "answer": "Indicative ex-showroom from catalog: ₹24.99 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-evs-for-home-charging",
+    "canonicalUrl": "https://evsavari.com/cars/best-evs-for-home-charging",
+    "generatedAt": "2026-05-16T07:17:49.757Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

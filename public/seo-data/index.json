@@ -1,0 +1,107 @@
+{
+  "pages": [
+    {
+      "slug": "best-evs-under-10-lakh",
+      "title": "Electric cars well suited under ₹10 lakh (ex-showroom) | EVSavari",
+      "canonicalPath": "/cars/best-evs-under-10-lakh",
+      "category": "budget"
+    },
+    {
+      "slug": "best-evs-under-20-lakh",
+      "title": "Electric cars well suited under ₹20 lakh (ex-showroom) | EVSavari",
+      "canonicalPath": "/cars/best-evs-under-20-lakh",
+      "category": "budget"
+    },
+    {
+      "slug": "best-evs-for-city-driving",
+      "title": "EVs well suited for city driving in India | EVSavari",
+      "canonicalPath": "/cars/best-evs-for-city-driving",
+      "category": "usage"
+    },
+    {
+      "slug": "best-family-electric-cars",
+      "title": "Family electric cars — practical picks for Indian buyers | EVSavari",
+      "canonicalPath": "/cars/best-family-electric-cars",
+      "category": "usage"
+    },
+    {
+      "slug": "best-evs-for-office-commute",
+      "title": "EVs practical for office commute in India | EVSavari",
+      "canonicalPath": "/cars/best-evs-for-office-commute",
+      "category": "usage"
+    },
+    {
+      "slug": "lowest-maintenance-electric-cars",
+      "title": "Lower-maintenance electric cars in India | EVSavari",
+      "canonicalPath": "/cars/lowest-maintenance-electric-cars",
+      "category": "ownership"
+    },
+    {
+      "slug": "best-evs-for-first-time-buyers",
+      "title": "EVs well suited for first-time electric car buyers | EVSavari",
+      "canonicalPath": "/cars/best-evs-for-first-time-buyers",
+      "category": "ownership"
+    },
+    {
+      "slug": "best-evs-for-apartment-living",
+      "title": "EVs practical for apartment living & home charging | EVSavari",
+      "canonicalPath": "/cars/best-evs-for-apartment-living",
+      "category": "ownership"
+    },
+    {
+      "slug": "best-evs-for-home-charging",
+      "title": "EVs well suited for home charging in India | EVSavari",
+      "canonicalPath": "/cars/best-evs-for-home-charging",
+      "category": "charging"
+    },
+    {
+      "slug": "best-evs-for-daily-commute",
+      "title": "EVs practical for daily commute in India | EVSavari",
+      "canonicalPath": "/cars/best-evs-for-daily-commute",
+      "category": "charging"
+    },
+    {
+      "slug": "nexon-ev-vs-mg-zs-ev",
+      "title": "Tata Nexon EV vs MG ZS EV — decision comparison | EVSavari",
+      "canonicalPath": "/cars/nexon-ev-vs-mg-zs-ev",
+      "category": "compare"
+    },
+    {
+      "slug": "comet-ev-vs-tiago-ev",
+      "title": "MG Comet EV vs Tata Tiago EV — decision comparison | EVSavari",
+      "canonicalPath": "/cars/comet-ev-vs-tiago-ev",
+      "category": "compare"
+    },
+    {
+      "slug": "best-evs-for-highway-driving",
+      "title": "EVs well suited for highway driving in India | EVSavari",
+      "canonicalPath": "/cars/best-evs-for-highway-driving",
+      "category": "usage"
+    },
+    {
+      "slug": "lowest-charging-stress-evs",
+      "title": "Lower charging-stress electric cars in India | EVSavari",
+      "canonicalPath": "/cars/lowest-charging-stress-evs",
+      "category": "charging"
+    },
+    {
+      "slug": "easiest-evs-for-first-time-buyers",
+      "title": "Easiest EVs for first-time electric car buyers | EVSavari",
+      "canonicalPath": "/cars/easiest-evs-for-first-time-buyers",
+      "category": "ownership"
+    },
+    {
+      "slug": "best-evs-for-apartment-parking",
+      "title": "EVs practical for apartment parking & AC charging | EVSavari",
+      "canonicalPath": "/cars/best-evs-for-apartment-parking",
+      "category": "ownership"
+    },
+    {
+      "slug": "best-city-electric-cars-india",
+      "title": "Best city electric cars in India — practical picks | EVSavari",
+      "canonicalPath": "/cars/best-city-electric-cars-india",
+      "category": "usage"
+    }
+  ],
+  "count": 17
+}

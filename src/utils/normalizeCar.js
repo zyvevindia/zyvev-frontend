@@ -1,4 +1,20 @@
+import { getListingImage } from "./vehicleMedia";
+import { normalizeVehicleSlug } from "./vehicleRoutes";
+import { logProduction } from "./productionLog";
+
 export default function normalizeCar(car) {
+  const listingImage = getListingImage(car);
+  const slug = normalizeVehicleSlug(car.slug);
+
+  if (!slug && car.name) {
+    logProduction(
+      "catalog",
+      "missing_vehicle_slug",
+      { name: car.name, id: car._id },
+      "warn"
+    );
+  }
+
   return {
     ...car,
 
@@ -8,10 +24,23 @@ export default function normalizeCar(car) {
 
     brand: car.brand || "EV Brand",
 
-    image:
+    heroImage: car.heroImage || car.image || listingImage,
+
+    listingThumbnail:
+      car.listingThumbnail || listingImage,
+
+    compareThumbnail:
+      car.compareThumbnail ||
+      car.listingThumbnail ||
       car.heroImage ||
-      car.image ||
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop",
+      listingImage,
+
+    ogImage:
+      car.ogImage ||
+      car.heroImage ||
+      listingImage,
+
+    image: listingImage,
 
     price:
       car.startingPrice ||
@@ -36,13 +65,15 @@ export default function normalizeCar(car) {
       car.specifications?.topSpeed ||
       "N/A",
 
-    slug:
-      car.slug ||
-      car.name
-        ?.toLowerCase()
-        .replace(/\s+/g, "-"),
+    slug,
 
     isFeatured:
       car.isFeatured || false,
+
+    catalogSource:
+      car.catalogSource || "legacy",
+
+    catalogMeta:
+      car.catalogMeta || null,
   };
 }

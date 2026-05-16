@@ -37,6 +37,14 @@ const PrivateRoute = lazy(() =>
   import("./PrivateRoute")
 );
 
+const LegacyCarRedirect = lazy(() =>
+  import("./components/routing/LegacyCarRedirect")
+);
+
+const CarsSlugRouter = lazy(() =>
+  import("./components/routing/CarsSlugRouter")
+);
+
 const Users = lazy(() =>
   import("./pages/Users")
 );
@@ -69,6 +77,46 @@ const ListingPage = lazy(() =>
   import("./pages/ListingPage")
 );
 
+const EditorialLayout = lazy(() =>
+  import("./pages/admin/editorial/EditorialLayout")
+);
+
+const EditorialDashboard = lazy(() =>
+  import("./pages/admin/editorial/EditorialDashboard")
+);
+
+const EditorialJobDetail = lazy(() =>
+  import("./pages/admin/editorial/JobDetailPage")
+);
+
+const EditorialStaged = lazy(() =>
+  import("./pages/admin/editorial/StagedPublishPage")
+);
+
+const EditorialCoverage = lazy(() =>
+  import("./pages/admin/editorial/CoveragePage")
+);
+
+const EditorialObservations = lazy(() =>
+  import("./pages/admin/editorial/ObservationsPage")
+);
+
+const EditorialLeadQuality = lazy(() =>
+  import("./pages/admin/editorial/LeadQualityPage")
+);
+
+const EditorialPublicBeta = lazy(() =>
+  import("./pages/admin/editorial/PublicBetaPage")
+);
+
+const EditorialMarketHealth = lazy(() =>
+  import("./pages/admin/editorial/MarketHealthPage")
+);
+
+const EditorialMarketLearning = lazy(() =>
+  import("./pages/admin/editorial/MarketLearningPage")
+);
+
 /* =========================================================
    ================= NORMAL IMPORTS ========================
    ========================================================= */
@@ -76,6 +124,7 @@ const ListingPage = lazy(() =>
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import PublicBetaBanner from "./components/PublicBetaBanner";
 
 import StaticPage from "./pages/StaticPage";
 
@@ -148,6 +197,8 @@ export default function App() {
     <>
       <ScrollToTop />
 
+      <PublicBetaBanner />
+
       <Navbar />
 
       <Suspense
@@ -164,8 +215,13 @@ export default function App() {
           />
 
           <Route
+            path="/cars/:slug"
+            element={<CarsSlugRouter />}
+          />
+
+          <Route
             path="/car/:slug"
-            element={<CarDetails />}
+            element={<LegacyCarRedirect />}
           />
 
           <Route
@@ -306,6 +362,25 @@ export default function App() {
               </PrivateRoute>
             }
           />
+
+          <Route
+            path="/admin/editorial"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <EditorialLayout />
+              </PrivateRoute>
+            }
+          >
+            <Route index element={<EditorialDashboard />} />
+            <Route path="jobs/:jobId" element={<EditorialJobDetail />} />
+            <Route path="staged" element={<EditorialStaged />} />
+            <Route path="coverage" element={<EditorialCoverage />} />
+            <Route path="observations" element={<EditorialObservations />} />
+            <Route path="lead-quality" element={<EditorialLeadQuality />} />
+            <Route path="public-beta" element={<EditorialPublicBeta />} />
+            <Route path="market-health" element={<EditorialMarketHealth />} />
+            <Route path="market-learning" element={<EditorialMarketLearning />} />
+          </Route>
 
           {/* ================= SALES ================= */}
 

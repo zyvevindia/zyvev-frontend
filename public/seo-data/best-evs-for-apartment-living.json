@@ -1,0 +1,151 @@
+{
+  "seoPage": {
+    "slug": "best-evs-for-apartment-living",
+    "pageTypeId": "apartment_living",
+    "category": "ownership",
+    "title": "EVs practical for apartment living & home charging | EVSavari",
+    "metaDescription": "Apartment-friendly EV picks — home AC charging support, wallbox practicality, and charging ecosystem notes.",
+    "intro": "Apartment living picks prioritize home AC charging support, wallbox practicality, and lower charging friction for shared parking setups. We explain tradeoffs — not every EV fits every society parking rule.",
+    "recommendationLogic": {
+      "pageTypeId": "apartment_living",
+      "category": "ownership",
+      "primaryScoreKey": "apartmentCharging",
+      "secondaryScoreKeys": [
+        "homeCharging",
+        "firstTimeBuyer"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-nexon-ev-creative-plus",
+        "displayName": "Tata Creative+",
+        "exShowroom": 1449000,
+        "claimedRangeKm": 275,
+        "compositeScore": 81,
+        "confidence": "medium",
+        "explanation": "Practical for apartment living with home charging considerations (score 81).",
+        "tradeoff": "Strengths noted in catalog: Lowest entry price in Nexon EV lineup with proven Tata service density, Easy to park and drive in dense city traffic. Tradeoff to weigh: Shorter certified range than Long Range rivals in segment.",
+        "detailPath": "/cars/tata-nexon-ev-creative-plus"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-nexon-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1649000,
+        "claimedRangeKm": 465,
+        "compositeScore": 81,
+        "confidence": "medium",
+        "explanation": "Practical for apartment living with home charging considerations (score 81).",
+        "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals.",
+        "detailPath": "/cars/tata-nexon-ev-empowered-lr"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-tiago-ev-xt",
+        "displayName": "Tata XT",
+        "exShowroom": 799000,
+        "claimedRangeKm": 250,
+        "compositeScore": 80,
+        "confidence": "medium",
+        "explanation": "Practical for apartment living with home charging considerations (score 80).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
+        "detailPath": "/cars/tata-tiago-ev-xt"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-tiago-ev-xz-plus",
+        "displayName": "Tata XZ+",
+        "exShowroom": 1199000,
+        "claimedRangeKm": 315,
+        "compositeScore": 80,
+        "confidence": "medium",
+        "explanation": "Practical for apartment living with home charging considerations (score 80).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
+        "detailPath": "/cars/tata-tiago-ev-xz-plus"
+      },
+      {
+        "rank": 5,
+        "slug": "mahindra-xev-9e-pack-two",
+        "displayName": "Mahindra Pack Two",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 542,
+        "compositeScore": 80,
+        "confidence": "medium",
+        "explanation": "Practical for apartment living with home charging considerations (score 80).",
+        "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory.",
+        "detailPath": "/cars/mahindra-xev-9e-pack-two"
+      },
+      {
+        "rank": 6,
+        "slug": "hyundai-kona-electric-premium",
+        "displayName": "Hyundai Premium",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 484,
+        "compositeScore": 80,
+        "confidence": "medium",
+        "explanation": "Practical for apartment living with home charging considerations (score 80).",
+        "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays.",
+        "detailPath": "/cars/hyundai-kona-electric-premium"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "tata-nexon-ev-creative-plus",
+          "tradeoff": "Strengths noted in catalog: Lowest entry price in Nexon EV lineup with proven Tata service density, Easy to park and drive in dense city traffic. Tradeoff to weigh: Shorter certified range than Long Range rivals in segment."
+        },
+        {
+          "slug": "tata-nexon-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals."
+        },
+        {
+          "slug": "tata-tiago-ev-xt",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+        },
+        {
+          "slug": "tata-tiago-ev-xz-plus",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+        },
+        {
+          "slug": "mahindra-xev-9e-pack-two",
+          "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory."
+        },
+        {
+          "slug": "hyundai-kona-electric-premium",
+          "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV works for apartment living?",
+        "answer": "Apartment picks prioritize home AC charging support and lower charging friction; society permissions and parking still matter."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Tata Creative+ is currently highest on our apartment living composite (score 81, medium confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Tata Creative+?",
+        "answer": "Indicative ex-showroom from catalog: ₹14.49 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-evs-for-apartment-living",
+    "canonicalUrl": "https://evsavari.com/cars/best-evs-for-apartment-living",
+    "generatedAt": "2026-05-16T07:17:49.738Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

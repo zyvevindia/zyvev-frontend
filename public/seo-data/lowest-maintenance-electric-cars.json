@@ -1,0 +1,151 @@
+{
+  "seoPage": {
+    "slug": "lowest-maintenance-electric-cars",
+    "pageTypeId": "low_maintenance",
+    "category": "ownership",
+    "title": "Lower-maintenance electric cars in India | EVSavari",
+    "metaDescription": "EVs better aligned with lower indicative service and ownership friction — with clear tradeoffs.",
+    "intro": "Lower-maintenance alignment uses indicative service cost per km and resale confidence — always verify with your local service network.",
+    "recommendationLogic": {
+      "pageTypeId": "low_maintenance",
+      "category": "ownership",
+      "primaryScoreKey": "lowMaintenance",
+      "secondaryScoreKeys": [
+        "budgetOwnership",
+        "compareValue"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-tiago-ev-xt",
+        "displayName": "Tata XT",
+        "exShowroom": 799000,
+        "claimedRangeKm": 250,
+        "compositeScore": 74,
+        "confidence": "medium",
+        "explanation": "Better aligned with lower indicative maintenance and ownership friction (score 74).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
+        "detailPath": "/cars/tata-tiago-ev-xt"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-punch-ev-smart-plus",
+        "displayName": "Tata Smart+",
+        "exShowroom": 1099000,
+        "claimedRangeKm": 315,
+        "compositeScore": 73,
+        "confidence": "medium",
+        "explanation": "Better aligned with lower indicative maintenance and ownership friction (score 73).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs.",
+        "detailPath": "/cars/tata-punch-ev-smart-plus"
+      },
+      {
+        "rank": 3,
+        "slug": "mg-comet-ev-play",
+        "displayName": "Mg Play",
+        "exShowroom": 798000,
+        "claimedRangeKm": 230,
+        "compositeScore": 72,
+        "confidence": "medium",
+        "explanation": "Better aligned with lower indicative maintenance and ownership friction (score 72).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car.",
+        "detailPath": "/cars/mg-comet-ev-play"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-punch-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1249000,
+        "claimedRangeKm": 421,
+        "compositeScore": 71,
+        "confidence": "low",
+        "explanation": "Better aligned with lower indicative maintenance and ownership friction (score 71).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs.",
+        "detailPath": "/cars/tata-punch-ev-empowered-lr"
+      },
+      {
+        "rank": 5,
+        "slug": "tata-nexon-ev-creative-plus",
+        "displayName": "Tata Creative+",
+        "exShowroom": 1449000,
+        "claimedRangeKm": 275,
+        "compositeScore": 71,
+        "confidence": "low",
+        "explanation": "Better aligned with lower indicative maintenance and ownership friction (score 71).",
+        "tradeoff": "Strengths noted in catalog: Lowest entry price in Nexon EV lineup with proven Tata service density, Easy to park and drive in dense city traffic. Tradeoff to weigh: Shorter certified range than Long Range rivals in segment.",
+        "detailPath": "/cars/tata-nexon-ev-creative-plus"
+      },
+      {
+        "rank": 6,
+        "slug": "mg-comet-ev-plush-plus",
+        "displayName": "Mg Plush+",
+        "exShowroom": 998000,
+        "claimedRangeKm": 230,
+        "compositeScore": 70,
+        "confidence": "low",
+        "explanation": "Better aligned with lower indicative maintenance and ownership friction (score 70).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car.",
+        "detailPath": "/cars/mg-comet-ev-plush-plus"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "tata-tiago-ev-xt",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+        },
+        {
+          "slug": "tata-punch-ev-smart-plus",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs."
+        },
+        {
+          "slug": "mg-comet-ev-play",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car."
+        },
+        {
+          "slug": "tata-punch-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs."
+        },
+        {
+          "slug": "tata-nexon-ev-creative-plus",
+          "tradeoff": "Strengths noted in catalog: Lowest entry price in Nexon EV lineup with proven Tata service density, Easy to park and drive in dense city traffic. Tradeoff to weigh: Shorter certified range than Long Range rivals in segment."
+        },
+        {
+          "slug": "mg-comet-ev-plush-plus",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV has lower indicative running cost?",
+        "answer": "We use catalog service-cost-per-km and resale confidence signals — verify with your nearest authorized service center."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Tata XT is currently highest on our low maintenance composite (score 74, medium confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Tata XT?",
+        "answer": "Indicative ex-showroom from catalog: ₹7.99 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/lowest-maintenance-electric-cars",
+    "canonicalUrl": "https://evsavari.com/cars/lowest-maintenance-electric-cars",
+    "generatedAt": "2026-05-16T07:17:49.700Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

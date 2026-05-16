@@ -1,0 +1,155 @@
+{
+  "seoPage": {
+    "slug": "best-evs-for-apartment-parking",
+    "pageTypeId": "apartment_parking",
+    "category": "ownership",
+    "title": "EVs practical for apartment parking & AC charging | EVSavari",
+    "metaDescription": "Apartment parking picks — overnight AC suitability, wallbox practicality, and shared-parking considerations.",
+    "intro": "Apartment parking picks focus on overnight AC charging, wallbox readiness, and shared-parking friction — not marketing range claims.",
+    "recommendationLogic": {
+      "pageTypeId": "apartment_parking",
+      "category": "ownership",
+      "primaryScoreKey": "apartmentCharging",
+      "secondaryScoreKeys": [
+        "homeCharging",
+        "lowChargingStress"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mahindra-xev-9e-pack-two",
+        "displayName": "Mahindra Pack Two",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 542,
+        "compositeScore": 83,
+        "confidence": "high",
+        "explanation": "Practical for apartment parking with AC charging considerations (score 83).",
+        "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory.",
+        "detailPath": "/cars/mahindra-xev-9e-pack-two"
+      },
+      {
+        "rank": 2,
+        "slug": "hyundai-kona-electric-premium",
+        "displayName": "Hyundai Premium",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 484,
+        "compositeScore": 83,
+        "confidence": "high",
+        "explanation": "Practical for apartment parking with AC charging considerations (score 83).",
+        "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays.",
+        "detailPath": "/cars/hyundai-kona-electric-premium"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-xev-9e-pack-three-select",
+        "displayName": "Mahindra Pack Three Select",
+        "exShowroom": 2999000,
+        "claimedRangeKm": 656,
+        "compositeScore": 83,
+        "confidence": "high",
+        "explanation": "Practical for apartment parking with AC charging considerations (score 83).",
+        "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory.",
+        "detailPath": "/cars/mahindra-xev-9e-pack-three-select"
+      },
+      {
+        "rank": 4,
+        "slug": "mahindra-be-6-pack-two",
+        "displayName": "Mahindra Pack Two",
+        "exShowroom": 1899000,
+        "claimedRangeKm": 427,
+        "compositeScore": 82,
+        "confidence": "high",
+        "explanation": "Practical for apartment parking with AC charging considerations (score 82).",
+        "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited.",
+        "detailPath": "/cars/mahindra-be-6-pack-two"
+      },
+      {
+        "rank": 5,
+        "slug": "mahindra-be-6-pack-three-select",
+        "displayName": "Mahindra Pack Three Select",
+        "exShowroom": 2199000,
+        "claimedRangeKm": 483,
+        "compositeScore": 82,
+        "confidence": "high",
+        "explanation": "Practical for apartment parking with AC charging considerations (score 82).",
+        "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited.",
+        "detailPath": "/cars/mahindra-be-6-pack-three-select"
+      },
+      {
+        "rank": 6,
+        "slug": "mg-zs-ev-excite",
+        "displayName": "Mg Excite",
+        "exShowroom": 1399000,
+        "claimedRangeKm": 461,
+        "compositeScore": 81,
+        "confidence": "medium",
+        "explanation": "Practical for apartment parking with AC charging considerations (score 81).",
+        "tradeoff": "Strengths noted in catalog: Larger boot and cabin vs Nexon-class rivals, Faster DC charging than many LFP mass SUVs. Tradeoff to weigh: MG service network thinner than Tata in Tier 2/3.",
+        "detailPath": "/cars/mg-zs-ev-excite"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "mahindra-xev-9e-pack-two",
+          "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory."
+        },
+        {
+          "slug": "hyundai-kona-electric-premium",
+          "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays."
+        },
+        {
+          "slug": "mahindra-xev-9e-pack-three-select",
+          "tradeoff": "Strengths noted in catalog: Three-row flexibility, Long-range headline. Tradeoff to weigh: Price crosses into luxury EV territory."
+        },
+        {
+          "slug": "mahindra-be-6-pack-two",
+          "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited."
+        },
+        {
+          "slug": "mahindra-be-6-pack-three-select",
+          "tradeoff": "Strengths noted in catalog: Born-electric platform, Strong DC charging headline. Tradeoff to weigh: New nameplate — resale data limited."
+        },
+        {
+          "slug": "mg-zs-ev-excite",
+          "tradeoff": "Strengths noted in catalog: Larger boot and cabin vs Nexon-class rivals, Faster DC charging than many LFP mass SUVs. Tradeoff to weigh: MG service network thinner than Tata in Tier 2/3."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is well suited for city driving?",
+        "answer": "City picks weigh maneuverability, commuter persona fit, and urban range practicality from catalog scores."
+      },
+      {
+        "question": "Is ARAI range enough for city use?",
+        "answer": "Use real-world range bands in our catalog where available — city traffic often differs from lab cycles."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Mahindra Pack Two is currently highest on our apartment parking composite (score 83, high confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Mahindra Pack Two?",
+        "answer": "Indicative ex-showroom from catalog: ₹24.99 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-evs-for-apartment-parking",
+    "canonicalUrl": "https://evsavari.com/cars/best-evs-for-apartment-parking",
+    "generatedAt": "2026-05-16T07:17:49.881Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

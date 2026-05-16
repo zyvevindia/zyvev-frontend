@@ -1,0 +1,151 @@
+{
+  "seoPage": {
+    "slug": "best-evs-for-office-commute",
+    "pageTypeId": "office_commute",
+    "category": "usage",
+    "title": "EVs practical for office commute in India | EVSavari",
+    "metaDescription": "Office commute EV picks — balanced for daily distance, running cost, and ease of use.",
+    "intro": "Office commute recommendations balance city usability, indicative running cost, and daily-distance practicality.",
+    "recommendationLogic": {
+      "pageTypeId": "office_commute",
+      "category": "usage",
+      "primaryScoreKey": "officeCommute",
+      "secondaryScoreKeys": [
+        "cityDriving",
+        "dailyCommute"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-punch-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1249000,
+        "claimedRangeKm": 421,
+        "compositeScore": 80,
+        "confidence": "medium",
+        "explanation": "Practical for regular office commute distances and running-cost profile (score 80).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs.",
+        "detailPath": "/cars/tata-punch-ev-empowered-lr"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-nexon-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1649000,
+        "claimedRangeKm": 465,
+        "compositeScore": 80,
+        "confidence": "medium",
+        "explanation": "Practical for regular office commute distances and running-cost profile (score 80).",
+        "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals.",
+        "detailPath": "/cars/tata-nexon-ev-empowered-lr"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-tiago-ev-xz-plus",
+        "displayName": "Tata XZ+",
+        "exShowroom": 1199000,
+        "claimedRangeKm": 315,
+        "compositeScore": 79,
+        "confidence": "medium",
+        "explanation": "Practical for regular office commute distances and running-cost profile (score 79).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
+        "detailPath": "/cars/tata-tiago-ev-xz-plus"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-curvv-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1899000,
+        "claimedRangeKm": 585,
+        "compositeScore": 78,
+        "confidence": "medium",
+        "explanation": "Practical for regular office commute distances and running-cost profile (score 78).",
+        "tradeoff": "Strengths noted in catalog: Distinctive design, Long-range option in Tata lineup. Tradeoff to weigh: New model — resale data still forming.",
+        "detailPath": "/cars/tata-curvv-ev-empowered-lr"
+      },
+      {
+        "rank": 5,
+        "slug": "byd-atto-3-superior",
+        "displayName": "Byd Superior",
+        "exShowroom": 2999000,
+        "claimedRangeKm": 521,
+        "compositeScore": 78,
+        "confidence": "medium",
+        "explanation": "Practical for regular office commute distances and running-cost profile (score 78).",
+        "tradeoff": "Strengths noted in catalog: Strong tech and efficiency story vs legacy OEM EVs, Competitive DC charging and LFP durability messaging. Tradeoff to weigh: Service network still maturing outside major metros.",
+        "detailPath": "/cars/byd-atto-3-superior"
+      },
+      {
+        "rank": 6,
+        "slug": "hyundai-kona-electric-premium",
+        "displayName": "Hyundai Premium",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 484,
+        "compositeScore": 77,
+        "confidence": "medium",
+        "explanation": "Practical for regular office commute distances and running-cost profile (score 77).",
+        "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays.",
+        "detailPath": "/cars/hyundai-kona-electric-premium"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "tata-punch-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs."
+        },
+        {
+          "slug": "tata-nexon-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals."
+        },
+        {
+          "slug": "tata-tiago-ev-xz-plus",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+        },
+        {
+          "slug": "tata-curvv-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: Distinctive design, Long-range option in Tata lineup. Tradeoff to weigh: New model — resale data still forming."
+        },
+        {
+          "slug": "byd-atto-3-superior",
+          "tradeoff": "Strengths noted in catalog: Strong tech and efficiency story vs legacy OEM EVs, Competitive DC charging and LFP durability messaging. Tradeoff to weigh: Service network still maturing outside major metros."
+        },
+        {
+          "slug": "hyundai-kona-electric-premium",
+          "tradeoff": "Strengths noted in catalog: Mature Hyundai ownership experience in metros, Strong highway manners and DC charging. Tradeoff to weigh: Price premium over Nexon/XUV400/ZS value plays."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is practical for office commute?",
+        "answer": "Commute picks balance city usability, indicative running cost, and conservative range for daily distances."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Tata Empowered LR is currently highest on our office commute composite (score 80, medium confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Tata Empowered LR?",
+        "answer": "Indicative ex-showroom from catalog: ₹12.49 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-evs-for-office-commute",
+    "canonicalUrl": "https://evsavari.com/cars/best-evs-for-office-commute",
+    "generatedAt": "2026-05-16T07:17:49.681Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}

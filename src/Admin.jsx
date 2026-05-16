@@ -818,6 +818,13 @@ export default function Admin() {
               👥 Sales Users
             </Link>
 
+            <Link
+              to="/admin/editorial"
+              style={menuItem}
+            >
+              📋 Editorial Ops
+            </Link>
+
             <a
               href="#dealers"
               style={menuItem}

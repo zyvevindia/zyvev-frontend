@@ -1,0 +1,187 @@
+{
+  "seoPage": {
+    "slug": "best-city-electric-cars-india",
+    "pageTypeId": "best_city_india",
+    "category": "usage",
+    "title": "Best city electric cars in India — practical picks | EVSavari",
+    "metaDescription": "City EV recommendations using maneuverability, commuter fit, and conservative range planning bands.",
+    "intro": "Best city electric cars in India are ranked using city driving scores, daily commute fit, and lower charging-stress signals from catalog intelligence.",
+    "recommendationLogic": {
+      "pageTypeId": "best_city_india",
+      "category": "usage",
+      "primaryScoreKey": "cityDriving",
+      "secondaryScoreKeys": [
+        "dailyCommute",
+        "lowChargingStress"
+      ],
+      "filters": {
+        "launchStatus": "on-sale"
+      },
+      "compareSlugs": null,
+      "candidatePoolSize": 29,
+      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-tiago-ev-xz-plus",
+        "displayName": "Tata XZ+",
+        "exShowroom": 1199000,
+        "claimedRangeKm": 315,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Strong city electric car fit for Indian urban use (score 86).",
+        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
+        "detailPath": "/cars/tata-tiago-ev-xz-plus"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-punch-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1249000,
+        "claimedRangeKm": 421,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Strong city electric car fit for Indian urban use (score 86).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs.",
+        "detailPath": "/cars/tata-punch-ev-empowered-lr"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-punch-ev-smart-plus",
+        "displayName": "Tata Smart+",
+        "exShowroom": 1099000,
+        "claimedRangeKm": 315,
+        "compositeScore": 85,
+        "confidence": "high",
+        "explanation": "Strong city electric car fit for Indian urban use (score 85).",
+        "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs.",
+        "detailPath": "/cars/tata-punch-ev-smart-plus"
+      },
+      {
+        "rank": 4,
+        "slug": "mg-comet-ev-play",
+        "displayName": "Mg Play",
+        "exShowroom": 798000,
+        "claimedRangeKm": 230,
+        "compositeScore": 84,
+        "confidence": "high",
+        "explanation": "Strong city electric car fit for Indian urban use (score 84).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car.",
+        "detailPath": "/cars/mg-comet-ev-play"
+      },
+      {
+        "rank": 5,
+        "slug": "mg-comet-ev-plush-plus",
+        "displayName": "Mg Plush+",
+        "exShowroom": 998000,
+        "claimedRangeKm": 230,
+        "compositeScore": 84,
+        "confidence": "high",
+        "explanation": "Strong city electric car fit for Indian urban use (score 84).",
+        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car.",
+        "detailPath": "/cars/mg-comet-ev-plush-plus"
+      },
+      {
+        "rank": 6,
+        "slug": "tata-nexon-ev-empowered-lr",
+        "displayName": "Tata Empowered LR",
+        "exShowroom": 1649000,
+        "claimedRangeKm": 465,
+        "compositeScore": 84,
+        "confidence": "high",
+        "explanation": "Strong city electric car fit for Indian urban use (score 84).",
+        "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals.",
+        "detailPath": "/cars/tata-nexon-ev-empowered-lr"
+      },
+      {
+        "rank": 7,
+        "slug": "citroen-ec3-live",
+        "displayName": "Citroen Live",
+        "exShowroom": 1161000,
+        "claimedRangeKm": 320,
+        "compositeScore": 83,
+        "confidence": "high",
+        "explanation": "Strong city electric car fit for Indian urban use (score 83).",
+        "tradeoff": "Strengths noted in catalog: Distinctive design, AC-only simplicity for apartment charging. Tradeoff to weigh: No DC fast charging.",
+        "detailPath": "/cars/citroen-ec3-live"
+      },
+      {
+        "rank": 8,
+        "slug": "citroen-ec3-shine",
+        "displayName": "Citroen Shine",
+        "exShowroom": 1299000,
+        "claimedRangeKm": 320,
+        "compositeScore": 83,
+        "confidence": "high",
+        "explanation": "Strong city electric car fit for Indian urban use (score 83).",
+        "tradeoff": "Strengths noted in catalog: Distinctive design, AC-only simplicity for apartment charging. Tradeoff to weigh: No DC fast charging.",
+        "detailPath": "/cars/citroen-ec3-shine"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation includes tradeoffs. Higher composite scores indicate better alignment with this page's intent — not a guarantee for every buyer.",
+      "considerations": [
+        {
+          "slug": "tata-tiago-ev-xz-plus",
+          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+        },
+        {
+          "slug": "tata-punch-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs."
+        },
+        {
+          "slug": "tata-punch-ev-smart-plus",
+          "tradeoff": "Strengths noted in catalog: Compact footprint for Indian cities, Tata service density. Tradeoff to weigh: Highway refinement below larger SUVs."
+        },
+        {
+          "slug": "mg-comet-ev-play",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car."
+        },
+        {
+          "slug": "mg-comet-ev-plush-plus",
+          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car."
+        },
+        {
+          "slug": "tata-nexon-ev-empowered-lr",
+          "tradeoff": "Strengths noted in catalog: strong class service footprint for mass-market EV SUVs, Strong city efficiency and approachable driving manners. Tradeoff to weigh: 50 kW DC peak is slower than several newer rivals."
+        },
+        {
+          "slug": "citroen-ec3-live",
+          "tradeoff": "Strengths noted in catalog: Distinctive design, AC-only simplicity for apartment charging. Tradeoff to weigh: No DC fast charging."
+        },
+        {
+          "slug": "citroen-ec3-shine",
+          "tradeoff": "Strengths noted in catalog: Distinctive design, AC-only simplicity for apartment charging. Tradeoff to weigh: No DC fast charging."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which EV is well suited for city driving?",
+        "answer": "City picks weigh maneuverability, commuter persona fit, and urban range practicality from catalog scores."
+      },
+      {
+        "question": "Is ARAI range enough for city use?",
+        "answer": "Use real-world range bands in our catalog where available — city traffic often differs from lab cycles."
+      },
+      {
+        "question": "What is the top pick on this page?",
+        "answer": "Tata XZ+ is currently highest on our best city india composite (score 86, high confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+      },
+      {
+        "question": "What is the ex-showroom price of Tata XZ+?",
+        "answer": "Indicative ex-showroom from catalog: ₹11.99 lakh. Confirm on-road price with a dealer in your city."
+      }
+    ],
+    "canonicalPath": "/cars/best-city-electric-cars-india",
+    "canonicalUrl": "https://evsavari.com/cars/best-city-electric-cars-india",
+    "generatedAt": "2026-05-16T07:17:49.898Z",
+    "governance": {
+      "tonePolicy": "editorial_templates_only",
+      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "superlativesAvoided": true
+    }
+  }
+}
