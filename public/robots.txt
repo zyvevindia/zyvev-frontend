@@ -15,10 +15,19 @@ Disallow: /login
 Disallow: /users
 Disallow: /kanban
 
-# Query-string crawl traps (SPA filter/compare state)
-Disallow: /*?*
+# Legacy compare query-string URLs (canonical compare uses /compare/:slug)
+Disallow: /compare?
+Disallow: /*?cars=*
+Disallow: /*?utm_*
+Disallow: /*?fbclid*
+Disallow: /*?gclid*
+Disallow: /*?debug*
+Disallow: /*?ref=*
 
-# Legacy vehicle prefix — canonical is /cars/:slug
+# Variant trim selection on vehicle pages (family URL is canonical)
+Allow: /*?variant=
+
+# Legacy vehicle prefix — canonical is /cars/:familySlug
 Disallow: /car/
 
 # Internal static data

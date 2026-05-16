@@ -45,6 +45,10 @@ const CarsSlugRouter = lazy(() =>
   import("./components/routing/CarsSlugRouter")
 );
 
+const SeoGuidesHub = lazy(() =>
+  import("./pages/SeoGuidesHub")
+);
+
 const Users = lazy(() =>
   import("./pages/Users")
 );
@@ -135,6 +139,16 @@ import {
   TERMS_PAGE,
 } from "./content/staticPages";
 
+import {
+  BestEvsDiscoveryPage,
+  CompareGuideDiscoveryPage,
+  ChargingGuideDiscoveryPage,
+  OwnershipGuideDiscoveryPage,
+  BrandDiscoveryPage,
+  CityEvsDiscoveryPage,
+  CityChargingDiscoveryPage,
+} from "./pages/discoveryRoutes";
+
 /* =========================================================
    ==================== ROUTE LOADER =======================
    ========================================================= */
@@ -212,6 +226,46 @@ export default function App() {
           <Route
             path="/"
             element={<Home />}
+          />
+
+          <Route
+            path="/guides"
+            element={<SeoGuidesHub />}
+          />
+
+          <Route
+            path="/best-evs/:useCase"
+            element={<BestEvsDiscoveryPage />}
+          />
+
+          <Route
+            path="/compare/:compareSlug"
+            element={<CompareGuideDiscoveryPage />}
+          />
+
+          <Route
+            path="/charging-guides/:slug"
+            element={<ChargingGuideDiscoveryPage />}
+          />
+
+          <Route
+            path="/ownership-guides/:slug"
+            element={<OwnershipGuideDiscoveryPage />}
+          />
+
+          <Route
+            path="/brands/:brand"
+            element={<BrandDiscoveryPage />}
+          />
+
+          <Route
+            path="/cities/:city/evs"
+            element={<CityEvsDiscoveryPage />}
+          />
+
+          <Route
+            path="/cities/:city/charging"
+            element={<CityChargingDiscoveryPage />}
           />
 
           <Route

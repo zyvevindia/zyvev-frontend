@@ -1,105 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://evsavari.com/cars/best-evs-under-10-lakh</loc>
+    <loc>https://evsavari.com/guides</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-evs-under-20-lakh</loc>
+    <loc>https://evsavari.com/best-evs/under-10-lakh</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-evs-for-city-driving</loc>
+    <loc>https://evsavari.com/best-evs/under-20-lakh</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-family-electric-cars</loc>
+    <loc>https://evsavari.com/best-evs/city-driving</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-evs-for-office-commute</loc>
+    <loc>https://evsavari.com/best-evs/family</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/lowest-maintenance-electric-cars</loc>
+    <loc>https://evsavari.com/best-evs/office-commute</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-evs-for-first-time-buyers</loc>
+    <loc>https://evsavari.com/best-evs/highway-driving</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-evs-for-apartment-living</loc>
+    <loc>https://evsavari.com/best-evs/city-cars-india</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-evs-for-home-charging</loc>
+    <loc>https://evsavari.com/charging-guides/daily-commute</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-evs-for-daily-commute</loc>
+    <loc>https://evsavari.com/charging-guides/home-charging</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/nexon-ev-vs-mg-zs-ev</loc>
+    <loc>https://evsavari.com/charging-guides/low-stress</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/comet-ev-vs-tiago-ev</loc>
+    <loc>https://evsavari.com/ownership-guides/low-maintenance</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-evs-for-highway-driving</loc>
+    <loc>https://evsavari.com/ownership-guides/first-time-buyers</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/lowest-charging-stress-evs</loc>
+    <loc>https://evsavari.com/ownership-guides/easiest-first-ev</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/easiest-evs-for-first-time-buyers</loc>
+    <loc>https://evsavari.com/ownership-guides/apartment-living</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-evs-for-apartment-parking</loc>
+    <loc>https://evsavari.com/ownership-guides/apartment-parking</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://evsavari.com/cars/best-city-electric-cars-india</loc>
+    <loc>https://evsavari.com/compare/nexon-ev-vs-mg-zs-ev</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://evsavari.com/compare/comet-ev-vs-tiago-ev</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://evsavari.com/brands/tata</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.78</priority>
+  </url>
+  <url>
+    <loc>https://evsavari.com/cities/bengaluru/charging</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://evsavari.com/cities/bengaluru/evs</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.76</priority>
   </url>
 </urlset>

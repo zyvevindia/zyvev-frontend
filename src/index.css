@@ -611,3 +611,118 @@ button {
   flex: 1 1 auto;
   min-height: 0;
 }
+
+/* ================= SEO RELATED LINKS ================= */
+
+.seo-related-links {
+  margin: 2rem 0;
+  padding: 1.25rem 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.seo-related-links__block + .seo-related-links__block {
+  margin-top: 1.25rem;
+}
+
+.seo-related-links__title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.seo-related-links__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.seo-related-links__link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.seo-related-links__link:hover {
+  text-decoration: underline;
+}
+
+/* ================= SEO GUIDES HUB ================= */
+
+.seo-guides-hub {
+  min-height: 60vh;
+  background: #f8fafc;
+  padding: 2rem 1rem 4rem;
+}
+
+.seo-guides-hub__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.seo-guides-hub__crumb {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.seo-guides-hub__title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.75rem;
+}
+
+.seo-guides-hub__lead {
+  color: #475569;
+  line-height: 1.7;
+  margin: 0 0 2rem;
+}
+
+.seo-guides-hub__section {
+  margin-bottom: 2rem;
+}
+
+.seo-guides-hub__section h2 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.75rem;
+}
+
+.seo-guides-hub__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.seo-guides-hub__list a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.seo-guides-hub__list a:hover {
+  text-decoration: underline;
+}
+
+.seo-guides-hub__list--compact {
+  font-size: 0.875rem;
+}
+
+.seo-guides-hub__note {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 0.75rem;
+}
+
+.seo-guides-hub__dev {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}

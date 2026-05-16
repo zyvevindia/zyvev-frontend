@@ -1,0 +1,50 @@
+{
+  "seoPage": {
+    "slug": "city-bengaluru-evs",
+    "category": "city",
+    "title": "Electric Cars in Bengaluru — Local Picks & Buying Guide | EVSavari",
+    "metaDescription": "Best electric cars for Bengaluru buyers: commute-friendly EVs, apartment charging tips, and comparisons on EVSavari.",
+    "intro": "Bengaluru's stop-start traffic and growing charging infrastructure make EVs attractive for daily commuters. This page highlights EV families that fit typical Bengaluru driving patterns and links to charging and ownership guides.",
+    "recommendationLogic": {
+      "category": "city",
+      "methodology": "City recommendations weight city-driving and commute scores from catalog intelligence."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Popular choice for Bengaluru families needing space and DC fast-charging access.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Ultra-compact footprint for tight parking and short urban hops.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Budget-friendly hatchback for first-time EV owners in the city.",
+        "detailPath": "/cars/tata-tiago-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Apartment charging access varies by society — read our apartment-living guide before you buy.",
+      "Peak-hour range can differ from ARAI claims; plan around your actual office commute distance."
+    ],
+    "faq": [
+      {
+        "question": "Is an EV practical for Bengaluru traffic?",
+        "answer": "Yes for most daily commuters under 80–100 km/day with home or workplace charging."
+      },
+      {
+        "question": "Where can I find charging guides?",
+        "answer": "See our charging guides hub for home charging and lower charging-stress picks."
+      }
+    ]
+  }
+}

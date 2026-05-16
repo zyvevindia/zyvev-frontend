@@ -1,64 +1,30 @@
 /**
- * Client-side sitemap registry preparation — not deployed to public/sitemap.xml yet.
+ * Client-side sitemap registry — mirrors build:sitemaps output for dev tooling.
  */
-
-import { SEO_PAGE_SLUGS } from "../data/seoPageSlugs";
 
 import { SITE_ORIGIN } from "../config";
+import { buildFullSitemapManifest } from "../seo/sitemap";
 
-import { canonicalSeoPageUrl, seoPagePath } from "./seoRoutes";
-
-import { canonicalVehicleUrl } from "./vehicleRoutes";
-
-const STATIC_PATHS = [
-  "/",
-  "/cars",
-  "/compare",
-  "/about",
-  "/contact",
-  "/privacy",
-];
-
-/**
- * @param {string[]} vehicleSlugs — from API or build manifest
- */
-export function buildClientSitemapEntries(vehicleSlugs = []) {
-  const entries = [];
-  const origin = SITE_ORIGIN;
-
-  for (const path of STATIC_PATHS) {
-    entries.push({
-      loc: `${origin}${path}`,
-      type: "static",
-      priority: path === "/" ? 1 : 0.7,
-    });
-  }
-
-  for (const slug of vehicleSlugs) {
-    entries.push({
-      loc: canonicalVehicleUrl(slug, origin),
-      type: "vehicle_detail",
-      priority: 0.8,
-    });
-  }
-
-  for (const slug of SEO_PAGE_SLUGS) {
-    entries.push({
-      loc: canonicalSeoPageUrl(slug, origin),
-      type: "seo_decision_page",
-      priority: 0.75,
-    });
-  }
+export function buildClientSitemapEntries() {
+  const manifest = buildFullSitemapManifest(SITE_ORIGIN);
+  const entries = [
+    ...manifest.static,
+    ...manifest.vehicles,
+    ...manifest.discovery,
+  ].map((e) => ({
+    loc: e.loc,
+    path: e.path,
+    priority: e.priority,
+  }));
 
   return {
-    generatedAt: new Date().toISOString(),
-    count: entries.length,
+    generatedAt: manifest.generatedAt,
+    count: manifest.counts.total,
     entries,
-    deployNote:
-      "Wire to build step → public/sitemap.xml when ready for production crawl.",
+    legacyGuideUrlsExcluded: true,
   };
 }
 
 export function listSeoPathsForSitemap() {
-  return SEO_PAGE_SLUGS.map((slug) => seoPagePath(slug));
+  return buildFullSitemapManifest(SITE_ORIGIN).discovery.map((e) => e.path);
 }

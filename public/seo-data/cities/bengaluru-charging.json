@@ -1,0 +1,43 @@
+{
+  "seoPage": {
+    "slug": "city-bengaluru-charging",
+    "category": "city",
+    "title": "EV Charging in Bengaluru — Home, Workplace & Public | EVSavari",
+    "metaDescription": "Charging reality for Bengaluru EV owners: home AC setup, apartment constraints, and EVs that minimize charging stress.",
+    "intro": "Bengaluru buyers should plan charging before trim selection. This guide connects city-specific ownership constraints with EV families that tolerate slower apartment AC charging or benefit from workplace top-ups.",
+    "recommendationLogic": {
+      "category": "charging",
+      "methodology": "Links charging-focused decision guides and lower charging-stress vehicle picks."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Wide fast-charging network compatibility for occasional top-ups.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "explanation": "Efficient city use when overnight AC charging is available.",
+        "detailPath": "/cars/tata-punch-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Society approvals and load limits affect home charging — confirm with your RWA before purchase.",
+      "Public DC hubs are growing but not uniform across corridors — map your regular routes."
+    ],
+    "faq": [
+      {
+        "question": "Can I charge an EV in a Bengaluru apartment?",
+        "answer": "Often yes with society permission and a dedicated meter; see our apartment-living ownership guide."
+      },
+      {
+        "question": "Which EVs have lower charging stress?",
+        "answer": "Browse our lowest charging-stress guide for models with efficient packs and sensible AC times."
+      }
+    ]
+  }
+}

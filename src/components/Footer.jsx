@@ -127,6 +127,11 @@ export default function Footer() {
             />
 
             <FooterLink
+              to="/guides"
+              label="EV Guides"
+            />
+
+            <FooterLink
               to="/popular"
               label="Popular EVs"
             />

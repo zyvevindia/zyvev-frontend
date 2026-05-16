@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:sitemaps": "node scripts/build-sitemaps.mjs",
+    "prebuild": "npm run build:sitemaps",
     "lint": "eslint .",
+    "seo:qa": "node scripts/seo-qa.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

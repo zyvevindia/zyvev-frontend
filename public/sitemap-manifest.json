@@ -1,11 +1,293 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-05-16T15:41:30.725Z",
-  "staticUrlCount": 5,
-  "vehicleUrlCount": 29,
-  "seoPageUrlCount": 17,
-  "compareUrlCount": 1,
-  "totalUrls": 52,
-  "tier1VariantCount": 29,
-  "slugCollisionsExcluded": []
+  "generatedAt": "2026-05-16T18:29:23.798Z",
+  "static": [
+    {
+      "loc": "https://evsavari.com/",
+      "path": "/",
+      "priority": 1,
+      "changefreq": "daily"
+    },
+    {
+      "loc": "https://evsavari.com/cars",
+      "path": "/cars",
+      "priority": 0.9,
+      "changefreq": "daily"
+    },
+    {
+      "loc": "https://evsavari.com/compare",
+      "path": "/compare",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/about",
+      "path": "/about",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "loc": "https://evsavari.com/contact",
+      "path": "/contact",
+      "priority": 0.6,
+      "changefreq": "monthly"
+    },
+    {
+      "loc": "https://evsavari.com/privacy",
+      "path": "/privacy",
+      "priority": 0.4,
+      "changefreq": "yearly"
+    },
+    {
+      "loc": "https://evsavari.com/terms",
+      "path": "/terms",
+      "priority": 0.4,
+      "changefreq": "yearly"
+    }
+  ],
+  "vehicles": [
+    {
+      "loc": "https://evsavari.com/cars/hyundai-kona-electric",
+      "path": "/cars/hyundai-kona-electric",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/mahindra-xev-9e",
+      "path": "/cars/mahindra-xev-9e",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/mahindra-xuv400",
+      "path": "/cars/mahindra-xuv400",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/mahindra-be-6",
+      "path": "/cars/mahindra-be-6",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/tata-nexon-ev",
+      "path": "/cars/tata-nexon-ev",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/tata-curvv-ev",
+      "path": "/cars/tata-curvv-ev",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/tata-punch-ev",
+      "path": "/cars/tata-punch-ev",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/tata-tiago-ev",
+      "path": "/cars/tata-tiago-ev",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/mercedes-eqb",
+      "path": "/cars/mercedes-eqb",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/mercedes-eqa",
+      "path": "/cars/mercedes-eqa",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/mg-comet-ev",
+      "path": "/cars/mg-comet-ev",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/citroen-ec3",
+      "path": "/cars/citroen-ec3",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/volvo-ex40",
+      "path": "/cars/volvo-ex40",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/byd-atto-3",
+      "path": "/cars/byd-atto-3",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/mg-zs-ev",
+      "path": "/cars/mg-zs-ev",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/bmw-ix1",
+      "path": "/cars/bmw-ix1",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cars/kia-ev6",
+      "path": "/cars/kia-ev6",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    }
+  ],
+  "discovery": [
+    {
+      "loc": "https://evsavari.com/guides",
+      "path": "/guides",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/under-10-lakh",
+      "path": "/best-evs/under-10-lakh",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/under-20-lakh",
+      "path": "/best-evs/under-20-lakh",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/city-driving",
+      "path": "/best-evs/city-driving",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/family",
+      "path": "/best-evs/family",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/office-commute",
+      "path": "/best-evs/office-commute",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/highway-driving",
+      "path": "/best-evs/highway-driving",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/city-cars-india",
+      "path": "/best-evs/city-cars-india",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/charging-guides/daily-commute",
+      "path": "/charging-guides/daily-commute",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/charging-guides/home-charging",
+      "path": "/charging-guides/home-charging",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/charging-guides/low-stress",
+      "path": "/charging-guides/low-stress",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/low-maintenance",
+      "path": "/ownership-guides/low-maintenance",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/first-time-buyers",
+      "path": "/ownership-guides/first-time-buyers",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/easiest-first-ev",
+      "path": "/ownership-guides/easiest-first-ev",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/apartment-living",
+      "path": "/ownership-guides/apartment-living",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/apartment-parking",
+      "path": "/ownership-guides/apartment-parking",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/nexon-ev-vs-mg-zs-ev",
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/comet-ev-vs-tiago-ev",
+      "path": "/compare/comet-ev-vs-tiago-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/brands/tata",
+      "path": "/brands/tata",
+      "priority": 0.78,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/bengaluru/charging",
+      "path": "/cities/bengaluru/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/bengaluru/evs",
+      "path": "/cities/bengaluru/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    }
+  ],
+  "counts": {
+    "static": 7,
+    "vehicles": 17,
+    "discovery": 21,
+    "total": 45
+  },
+  "legacyGuideUrlsExcluded": true,
+  "sitemapFiles": {
+    "static": 7,
+    "cars": 17,
+    "discovery": 21,
+    "compare": 1
+  }
 }

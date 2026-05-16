@@ -1,40 +1,70 @@
+import { useMemo } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-
 import { Helmet } from "react-helmet-async";
 
 import SEO from "../components/SEO/SEO";
 import JsonLd from "../components/SEO/JsonLd";
-
 import SeoPageIntro from "../components/SEO/SeoPageIntro";
 import SeoRecommendationList from "../components/SEO/SeoRecommendationList";
 import SeoTradeoffs from "../components/SEO/SeoTradeoffs";
 import SeoFaqBlock from "../components/SEO/SeoFaqBlock";
 import SeoRelatedLinks from "../components/SEO/SeoRelatedLinks";
 
-import useSeoPage from "../hooks/useSeoPage";
-
-import { buildGuidePageMeta } from "../seo/meta";
-import { resolveGuideCanonicalUrl } from "../seo/legacyCanonicalMap";
+import useDiscoveryPage from "../hooks/useDiscoveryPage";
+import { resolveDiscoveryRoute, PAGE_TYPES } from "../seo/registry";
+import { buildGuidePageMeta, stripBrandSuffix } from "../seo/meta";
 import { buildDiscoveryPageSchemas } from "../seo/schema";
 import { getDiscoveryLinkSections } from "../seo/internalLinks";
 import { replaceCompareCars } from "../utils/compareCarsStorage";
 
-export default function SeoGuidePage() {
-  const { slug } = useParams();
+const PAGE_TYPE_LABELS = {
+  [PAGE_TYPES.BEST_EVS]: "Best EVs",
+  [PAGE_TYPES.CHARGING_GUIDE]: "Charging",
+  [PAGE_TYPES.OWNERSHIP_GUIDE]: "Ownership",
+  [PAGE_TYPES.COMPARE_GUIDE]: "Compare",
+  [PAGE_TYPES.BRAND]: "Brands",
+  [PAGE_TYPES.CITY_EVS]: "Cities",
+  [PAGE_TYPES.CITY_CHARGING]: "Charging",
+};
+
+export default function DiscoverySeoPage({ pageType }) {
+  const params = useParams();
   const navigate = useNavigate();
-  const { seoPage, loading, error, retry } = useSeoPage(slug);
+
+  const routeContext = useMemo(
+    () => resolveDiscoveryRoute(pageType, params),
+    [pageType, params]
+  );
+
+  const { seoPage, loading, error, retry } =
+    useDiscoveryPage(routeContext);
+
+  if (!routeContext) {
+    return (
+      <div style={styles.page}>
+        <Helmet>
+          <title>Page not found | EVSavari</title>
+          <meta name="robots" content="noindex, follow" />
+        </Helmet>
+        <div style={styles.notFound}>
+          <h1>Invalid discovery URL</h1>
+          <p>
+            <Link to="/guides">Browse EV guides</Link>
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
       <div style={styles.page}>
-        <div style={styles.loader}>Loading decision guide…</div>
+        <div style={styles.loader}>Loading guide…</div>
       </div>
     );
   }
 
   if (error || !seoPage) {
-    const isLoadFailed = error === "load_failed";
-
     return (
       <div style={styles.page}>
         <Helmet>
@@ -42,36 +72,33 @@ export default function SeoGuidePage() {
           <meta name="robots" content="noindex, follow" />
         </Helmet>
         <div style={styles.notFound}>
-          <h1>
-            {isLoadFailed
-              ? "Could not load this guide"
-              : "Guide not found"}
-          </h1>
+          <h1>Guide not found</h1>
           <p>
-            {isLoadFailed
-              ? "Please check your connection and try again."
-              : "This decision page is unavailable."}{" "}
-            <Link to="/cars">Browse all EVs</Link>.
+            <Link to="/guides">All EV guides</Link> ·{" "}
+            <Link to="/cars">Browse EVs</Link>
           </p>
-          {isLoadFailed && (
-            <button type="button" style={styles.retryBtn} onClick={retry}>
-              Retry
-            </button>
-          )}
+          <button type="button" style={styles.retryBtn} onClick={retry}>
+            Retry
+          </button>
         </div>
       </div>
     );
   }
 
-  const isCompare = seoPage.category === "compare";
   const canonical =
-    seoPage.canonicalUrl || resolveGuideCanonicalUrl(seoPage.slug);
+    routeContext.canonicalUrl || seoPage.canonicalUrl;
   const meta = buildGuidePageMeta(seoPage, canonical);
+  const isCompare = seoPage.category === "compare";
+  const typeLabel = PAGE_TYPE_LABELS[pageType] || "Guides";
 
   const breadcrumbs = [
     { name: "Home", url: "/" },
     { name: "Guides", url: "/guides" },
-    { name: meta.h1, url: canonical },
+    { name: typeLabel, url: "/guides" },
+    {
+      name: stripBrandSuffix(seoPage.title),
+      url: canonical,
+    },
   ];
 
   const schemas = buildDiscoveryPageSchemas({
@@ -116,7 +143,7 @@ export default function SeoGuidePage() {
           <span> / </span>
           <Link to="/guides">Guides</Link>
           <span> / </span>
-          <span>Guide</span>
+          <span>{typeLabel}</span>
         </nav>
 
         <h1 style={styles.h1}>{meta.h1}</h1>
@@ -134,11 +161,11 @@ export default function SeoGuidePage() {
 
         <SeoTradeoffs tradeoffs={seoPage.tradeoffs} />
 
-        {isCompare && seoPage.rankedVehicles.length >= 2 && (
+        {isCompare && seoPage.rankedVehicles?.length >= 2 && (
           <section style={styles.compareCta}>
             <button
               type="button"
-              style={styles.compareLink}
+              style={styles.compareBtn}
               onClick={openCompareTool}
             >
               Open full compare tool →
@@ -201,16 +228,14 @@ const styles = {
     fontWeight: 600,
     cursor: "pointer",
   },
-  compareCta: {
-    marginBottom: "2rem",
-  },
-  compareLink: {
+  compareCta: { marginBottom: "2rem" },
+  compareBtn: {
     display: "inline-block",
     padding: "0.75rem 1.25rem",
     background: "#2563eb",
     color: "#fff",
-    borderRadius: "8px",
     border: "none",
+    borderRadius: "8px",
     fontWeight: 600,
     cursor: "pointer",
   },
