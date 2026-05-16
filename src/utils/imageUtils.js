@@ -100,9 +100,21 @@ export function getResponsiveImage(
    ====================== IMAGE FALLBACK ===================
    ========================================================= */
 
-/** Neutral catalog placeholder — not a random stock sports car */
-export const fallbackEVImage =
-  "https://cdn.evsavari.com/catalog/_fallbacks/ev-placeholder.jpg";
+/** Hosted catalog CDN — placeholder URLs in Tier-1 JSON; not production-ready yet */
+export const CATALOG_CDN_HOST = "cdn.evsavari.com";
+
+/** Local static asset (Vercel /public) — always available */
+export const LOCAL_FALLBACK_EV = "/fallback-ev.svg";
+
+/** @deprecated use LOCAL_FALLBACK_EV — kept for imports */
+export const fallbackEVImage = LOCAL_FALLBACK_EV;
+
+export function isCatalogCdnUrl(url = "") {
+  return (
+    typeof url === "string" &&
+    url.includes(CATALOG_CDN_HOST)
+  );
+}
 
 /* =========================================================
    ==================== SAFE IMAGE URL =====================

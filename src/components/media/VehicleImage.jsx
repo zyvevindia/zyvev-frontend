@@ -9,6 +9,10 @@ import {
 } from "../../utils/imageUtils";
 
 import {
+  LOCAL_FALLBACK_EV,
+} from "../../utils/imageUtils";
+
+import {
   IMAGE_ASPECT,
   buildImageFallbackChain,
 } from "../../utils/vehicleMedia";
@@ -54,15 +58,26 @@ export default function VehicleImage({
     onLoadProp?.();
   }, [onLoadProp]);
 
-  const handleError = useCallback(() => {
-    if (index < chain.length - 1) {
-      setIndex((i) => i + 1);
-      setLoaded(false);
-      return;
-    }
-    setLoaded(true);
-    onBroken?.(src);
-  }, [index, chain.length, onBroken, src]);
+  const handleError = useCallback(
+    (event) => {
+      if (index < chain.length - 1) {
+        setIndex((i) => i + 1);
+        setLoaded(false);
+        return;
+      }
+
+      const img = event?.currentTarget;
+      if (img && img.src !== LOCAL_FALLBACK_EV) {
+        img.src = LOCAL_FALLBACK_EV;
+        setLoaded(false);
+        return;
+      }
+
+      setLoaded(true);
+      onBroken?.(src);
+    },
+    [index, chain.length, onBroken, src]
+  );
 
   const imgBaseStyle = {
     position: "absolute",

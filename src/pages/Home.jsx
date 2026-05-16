@@ -11,6 +11,8 @@ import SEO from "../components/SEO/SEO";
 
 import { API_URL } from "../config";
 
+import { LOCAL_FALLBACK_EV } from "../utils/imageUtils";
+
 import normalizeCar from "../utils/normalizeCar";
 
 import {
@@ -39,8 +41,7 @@ const upcomingCars = [
 
     name: "Tata Sierra EV",
 
-    image:
-      "https://cdn.evsavari.com/catalog/_fallbacks/tata-suv.jpg",
+    image: LOCAL_FALLBACK_EV,
 
     launchDate: "October 2025",
 
@@ -65,8 +66,7 @@ const upcomingCars = [
 
     name: "Maruti eVX",
 
-    image:
-      "https://cdn.evsavari.com/catalog/_fallbacks/generic-suv.jpg",
+    image: LOCAL_FALLBACK_EV,
 
     launchDate: "January 2026",
 

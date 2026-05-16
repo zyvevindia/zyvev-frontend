@@ -4,6 +4,8 @@ import { formatIndianPrice } from "../utils/formatIndianPrice";
 
 import { vehicleDetailPath } from "../utils/vehicleRoutes";
 
+import { LOCAL_FALLBACK_EV } from "../utils/imageUtils";
+
 /* =========================================================
    ================ UPCOMING CAR CARD ======================
    ========================================================= */
@@ -19,7 +21,7 @@ export default function UpcomingCarCard({
   const imageUrl =
     car.heroImage ||
     car.image ||
-    "https://via.placeholder.com/600x400";
+    LOCAL_FALLBACK_EV;
 
   const price =
     car.price ||
@@ -95,6 +97,11 @@ export default function UpcomingCarCard({
           src={imageUrl}
           alt={car.name}
           style={image}
+          onError={(e) => {
+            if (e.currentTarget.src !== LOCAL_FALLBACK_EV) {
+              e.currentTarget.src = LOCAL_FALLBACK_EV;
+            }
+          }}
         />
 
         {/* ================= IMAGE OVERLAY ================= */}

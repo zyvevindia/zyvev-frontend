@@ -2,9 +2,14 @@
  * Vehicle image resolution with catalog-aware fallbacks.
  */
 
-import { fallbackEVImage } from "./imageUtils";
+import {
+  CATALOG_CDN_HOST,
+  LOCAL_FALLBACK_EV,
+  fallbackEVImage,
+  isCatalogCdnUrl,
+} from "./imageUtils";
 
-const CDN = "https://cdn.evsavari.com/catalog";
+const CDN = `https://${CATALOG_CDN_HOST}/catalog`;
 
 export const IMAGE_ASPECT = {
   listing: "16 / 10",
@@ -23,7 +28,7 @@ export function brandFallbackUrl(brandSlug, bodyType = "suv") {
   )
     ? bodyType
     : "suv";
-  return `${CDN}/_fallbacks/${brand}-${body}.jpg`;
+  return LOCAL_FALLBACK_EV;
 }
 
 function slugFromCar(car) {
@@ -53,6 +58,22 @@ function uniqueUrls(urls) {
   });
 }
 
+function finalizeFallbackChain(urls) {
+  const resolved = uniqueUrls(urls);
+  const hosted = resolved.filter((u) => !isCatalogCdnUrl(u));
+  const catalogCdn = resolved.filter(isCatalogCdnUrl);
+
+  if (hosted.length > 0) {
+    return uniqueUrls([...hosted, ...catalogCdn, LOCAL_FALLBACK_EV]);
+  }
+
+  if (catalogCdn.length > 0) {
+    return uniqueUrls([...catalogCdn, LOCAL_FALLBACK_EV]);
+  }
+
+  return [LOCAL_FALLBACK_EV];
+}
+
 export function getSlugCdnHero(slug) {
   if (!slug) return null;
   return `${CDN}/${slug}/hero.jpg`;
@@ -75,7 +96,7 @@ export function buildImageFallbackChain(car, role = "listing") {
   );
 
   if (role === "compare") {
-    return uniqueUrls([
+    return finalizeFallbackChain([
       car?.compareThumbnail,
       meta.compareThumbnail,
       car?.listingThumbnail,
@@ -91,7 +112,7 @@ export function buildImageFallbackChain(car, role = "listing") {
   }
 
   if (role === "og") {
-    return uniqueUrls([
+    return finalizeFallbackChain([
       car?.ogImage,
       meta.ogImage,
       car?.heroImage,
@@ -104,7 +125,7 @@ export function buildImageFallbackChain(car, role = "listing") {
   }
 
   if (role === "hero") {
-    return uniqueUrls([
+    return finalizeFallbackChain([
       car?.heroImage,
       meta.heroImage,
       car?.image,
@@ -116,7 +137,7 @@ export function buildImageFallbackChain(car, role = "listing") {
     ]);
   }
 
-  return uniqueUrls([
+  return finalizeFallbackChain([
     car?.listingThumbnail,
     meta.listingThumbnail,
     car?.heroImage,

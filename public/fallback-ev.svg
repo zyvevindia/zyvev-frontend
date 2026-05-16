@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Electric vehicle placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <linearGradient id="car" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <g transform="translate(140 130)">
+    <rect x="80" y="170" width="360" height="24" rx="12" fill="#94a3b8"/>
+    <path d="M120 170 L160 90 L420 90 L460 170 Z" fill="url(#car)"/>
+    <rect x="100" y="100" width="340" height="80" rx="18" fill="url(#car)"/>
+    <circle cx="160" cy="194" r="36" fill="#1e293b"/>
+    <circle cx="160" cy="194" r="20" fill="#475569"/>
+    <circle cx="400" cy="194" r="36" fill="#1e293b"/>
+    <circle cx="400" cy="194" r="20" fill="#475569"/>
+    <path d="M200 115 L240 115 L250 95 L290 95" stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <text x="260" y="250" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#475569" font-weight="600">EV image coming soon</text>
+  </g>
+</svg>
