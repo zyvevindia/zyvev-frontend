@@ -7,6 +7,7 @@ import { API_URL } from "../config";
 
 import {
   validateLeadForm,
+  validateTestDriveForm,
   sanitizeInput,
 } from "../utils/validators";
 
@@ -47,7 +48,12 @@ export default function LeadInquiryModal({
   mongoCarId = "",
   headline = "EV enquiry",
   submitLabel = "Submit enquiry",
+  formMode = "inquiry",
+  variantOptions = [],
+  defaultVariantSlug = "",
+  leadMetadata = {},
 }) {
+  const isTestDrive = formMode === "test_drive";
 
   const [name, setName] =
     useState("");
@@ -99,12 +105,21 @@ export default function LeadInquiryModal({
 
     setLoading(false);
 
+    const defaultVariant =
+      variantOptions.find(
+        (v) => v.slug === defaultVariantSlug
+      );
+
     setInterestedVehicle(
-      defaultVehicleName || ""
+      defaultVariant?.label ||
+        defaultVehicleName ||
+        ""
     );
   }, [
     isOpen,
     defaultVehicleName,
+    defaultVariantSlug,
+    variantOptions,
   ]);
 
   /* =========================================================
@@ -120,21 +135,21 @@ export default function LeadInquiryModal({
 
       setFieldErrors({});
 
-      const validation =
-        validateLeadForm({
-
-          name,
-
-          phone,
-
-          email,
-
-          city,
-
-          interestedVehicle,
-
-          message,
-        });
+      const validation = isTestDrive
+        ? validateTestDriveForm({
+            name,
+            phone,
+            city,
+            interestedVehicle,
+          })
+        : validateLeadForm({
+            name,
+            phone,
+            email,
+            city,
+            interestedVehicle,
+            message,
+          });
 
       if (
         !validation.isValid
@@ -269,11 +284,28 @@ export default function LeadInquiryModal({
 
         setSuccess(true);
 
+        if (isTestDrive) {
+          trackBuyerEvent(BUYER_EVENTS.TEST_DRIVE_REQUESTED, {
+            sourcePage: String(sourcePage || "").trim(),
+            vehicleSlugs: leadMetadata.variantSlug
+              ? [String(leadMetadata.variantSlug).trim()]
+              : vehicleId
+                ? [String(vehicleId).trim()]
+                : [],
+            metadata: {
+              familySlug: leadMetadata.familySlug || "",
+              variantSlug: leadMetadata.variantSlug || "",
+              brand: leadMetadata.brand || "",
+            },
+          });
+        }
+
         trackBuyerEvent(BUYER_EVENTS.LEAD_SUBMITTED, {
           sourcePage: String(sourcePage || "").trim(),
           vehicleSlugs: vehicleId
             ? [String(vehicleId).trim()]
             : [],
+          metadata: isTestDrive ? leadMetadata : undefined,
         });
 
         setName("");
@@ -450,28 +482,29 @@ export default function LeadInquiryModal({
               </p>
             )}
 
-            <label style={label}>
-              Email *
-            </label>
+            {!isTestDrive && (
+              <>
+                <label style={label}>
+                  Email *
+                </label>
 
-            <input
-              type="email"
-              value={email}
-              onChange={(e) =>
-                setEmail(
-                  e.target.value.trim()
-                )
-              }
-              style={input}
-              placeholder="you@example.com"
-              autoComplete="email"
-            />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) =>
+                    setEmail(e.target.value.trim())
+                  }
+                  style={input}
+                  placeholder="you@example.com"
+                  autoComplete="email"
+                />
 
-            {fieldErrors.email && (
-
-              <p style={fieldError}>
-                {fieldErrors.email}
-              </p>
+                {fieldErrors.email && (
+                  <p style={fieldError}>
+                    {fieldErrors.email}
+                  </p>
+                )}
+              </>
             )}
 
             <label style={label}>
@@ -500,49 +533,74 @@ export default function LeadInquiryModal({
             )}
 
             <label style={label}>
-              Interested vehicle *
+              {isTestDrive
+                ? "Preferred variant *"
+                : "Interested vehicle *"}
             </label>
 
-            <input
-              value={interestedVehicle}
-              onChange={(e) =>
-                setInterestedVehicle(
-                  sanitizeInput(
-                    e.target.value
+            {isTestDrive &&
+            variantOptions.length > 0 ? (
+              <select
+                value={interestedVehicle}
+                onChange={(e) =>
+                  setInterestedVehicle(e.target.value)
+                }
+                style={input}
+              >
+                <option value="">
+                  Select a variant
+                </option>
+                {variantOptions.map((opt) => (
+                  <option
+                    key={opt.slug}
+                    value={opt.label}
+                  >
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <input
+                value={interestedVehicle}
+                onChange={(e) =>
+                  setInterestedVehicle(
+                    sanitizeInput(e.target.value)
                   )
-                )
-              }
-              style={input}
-              placeholder="Model you are exploring"
-            />
+                }
+                style={input}
+                placeholder="Model you are exploring"
+              />
+            )}
 
             {fieldErrors.interestedVehicle && (
-
               <p style={fieldError}>
                 {fieldErrors.interestedVehicle}
               </p>
             )}
 
             <label style={label}>
-              Message (optional)
+              {isTestDrive
+                ? "Notes (optional)"
+                : "Message (optional)"}
             </label>
 
             <textarea
               value={message}
               onChange={(e) =>
                 setMessage(
-                  sanitizeInput(
-                    e.target.value
-                  )
+                  sanitizeInput(e.target.value)
                 )
               }
               style={textarea}
-              rows={4}
-              placeholder="Preferred time to call, variant, budget…"
+              rows={isTestDrive ? 3 : 4}
+              placeholder={
+                isTestDrive
+                  ? "Preferred date or time slot…"
+                  : "Preferred time to call, variant, budget…"
+              }
             />
 
             {fieldErrors.message && (
-
               <p style={fieldError}>
                 {fieldErrors.message}
               </p>

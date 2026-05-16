@@ -16,4 +16,5 @@ export const BUYER_EVENTS = Object.freeze({
   VARIANT_SELECTED: "variant_selected",
   VARIANT_COMPARE_CLICKED: "variant_compare_clicked",
   PRICING_INTERACTION: "pricing_interaction",
+  TEST_DRIVE_REQUESTED: "test_drive_requested",
 });

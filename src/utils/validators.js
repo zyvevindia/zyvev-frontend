@@ -199,6 +199,42 @@ export const validateLeadForm = ({
   };
 };
 
+export const validateTestDriveForm = ({
+  name,
+  phone,
+  city,
+  interestedVehicle,
+}) => {
+  const errors = {};
+
+  if (!isValidName(name)) {
+    errors.name = "Please enter valid name";
+  }
+
+  if (!isValidIndianPhone(phone)) {
+    errors.phone = "Please enter valid mobile number";
+  }
+
+  if (!isRequired(city)) {
+    errors.city = "City is required";
+  } else if (cleanString(city).length < 2) {
+    errors.city = "Please enter a valid city";
+  }
+
+  if (
+    !isRequired(interestedVehicle) ||
+    cleanString(interestedVehicle).length < 2
+  ) {
+    errors.interestedVehicle =
+      "Please select a variant";
+  }
+
+  return {
+    isValid: Object.keys(errors).length === 0,
+    errors,
+  };
+};
+
 /* =========================================================
    ================= LEGACY MINI LEAD ======================
    ========================================================= */

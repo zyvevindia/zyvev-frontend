@@ -29,9 +29,121 @@ function drivetrainTag(v) {
 }
 
 function chargingMinutes(v) {
-  const raw = v?.specifications?.chargingTime || "";
+  const raw =
+    v?.chargingTime ||
+    v?.specifications?.chargingTime ||
+    "";
   const match = String(raw).match(/(\d+)\s*min/i);
   return match ? Number(match[1]) : null;
+}
+
+const FALLBACK_CHARGING = "Fast charging supported";
+const FALLBACK_PERFORMANCE = "—";
+const FALLBACK_BATTERY = "EV battery pack";
+
+/**
+ * Shared hero/gallery fallback for trims missing media.
+ */
+export function resolveFamilyMediaFallback(
+  family,
+  variants = []
+) {
+  const fromFamily =
+    family?.heroImage ||
+    family?.image ||
+    family?.defaultVariant?.heroImage;
+  if (fromFamily) return fromFamily;
+
+  for (const v of variants) {
+    const candidate = v?.heroImage || v?.image;
+    if (candidate) return candidate;
+  }
+  return null;
+}
+
+export function applyFamilyMediaFallback(
+  variants = [],
+  fallbackUrl
+) {
+  if (!fallbackUrl) return variants;
+
+  return variants.map((v) => {
+    const hero =
+      v.heroImage || v.image || fallbackUrl;
+    const gallery =
+      Array.isArray(v.galleryImages) &&
+      v.galleryImages.length > 0
+        ? v.galleryImages
+        : [hero];
+
+    return {
+      ...v,
+      heroImage: hero,
+      image: v.image || hero,
+      galleryImages: gallery,
+    };
+  });
+}
+
+/**
+ * Normalized specs — never undefined blocks on trim switch.
+ */
+export function resolveVariantSpecs(
+  variant,
+  familyFallback = null
+) {
+  const specs = variant?.specifications || {};
+  const familySpecs =
+    familyFallback?.specifications || {};
+
+  const range =
+    Number(
+      variant?.range ??
+        specs.range ??
+        familySpecs.range ??
+        familyFallback?.range
+    ) || 0;
+
+  const price =
+    numericPrice(variant) ||
+    numericPrice(familyFallback);
+
+  return {
+    price,
+    range,
+    battery:
+      variant?.batteryPack ||
+      specs.batteryPack ||
+      familySpecs.batteryPack ||
+      FALLBACK_BATTERY,
+    charging:
+      variant?.chargingTime ||
+      specs.chargingTime ||
+      familySpecs.chargingTime ||
+      FALLBACK_CHARGING,
+    topSpeed:
+      specs.topSpeed ||
+      familySpecs.topSpeed ||
+      FALLBACK_PERFORMANCE,
+  };
+}
+
+export function preloadVariantGallery(
+  images = []
+) {
+  if (typeof window === "undefined") return;
+
+  const unique = [
+    ...new Set(
+      images.filter((url) => typeof url === "string" && url)
+    ),
+  ];
+
+  for (const url of unique.slice(0, 8)) {
+    const img = new window.Image();
+    img.decoding = "async";
+    img.src = url;
+  }
 }
 
 export const BEST_FOR_LABELS = {
@@ -116,30 +228,37 @@ export function computeVariantAwards(variants = []) {
   return awards;
 }
 
-export function enrichVariantsWithInsights(variants = []) {
+export function enrichVariantsWithInsights(
+  variants = [],
+  familyFallback = null
+) {
   const awards = computeVariantAwards(variants);
 
-  return variants.map((v) => ({
-    ...v,
-    insightBadges: (awards[v.slug] || []).map(
-      (key) => ({
-        key,
-        label: BEST_FOR_LABELS[key] || key,
-      })
-    ),
-    drivetrain: drivetrainTag(v),
-    confidenceScore: confidenceScore(v),
-    displayBattery:
-      v.specifications?.batteryPack || v.battery || "—",
-    displayRange:
-      numericRange(v) > 0
-        ? `${numericRange(v)} km`
-        : "—",
-    displayCharging:
-      v.specifications?.chargingTime || "—",
-    displayPerformance:
-      v.specifications?.topSpeed || "—",
-  }));
+  return variants.map((v) => {
+    const normalized = resolveVariantSpecs(
+      v,
+      familyFallback
+    );
+
+    return {
+      ...v,
+      insightBadges: (awards[v.slug] || []).map(
+        (key) => ({
+          key,
+          label: BEST_FOR_LABELS[key] || key,
+        })
+      ),
+      drivetrain: drivetrainTag(v),
+      confidenceScore: confidenceScore(v),
+      displayBattery: normalized.battery,
+      displayRange:
+        normalized.range > 0
+          ? `${normalized.range} km`
+          : "—",
+      displayCharging: normalized.charging,
+      displayPerformance: normalized.topSpeed,
+    };
+  });
 }
 
 export function buildVariantComparisonRows(variants = []) {

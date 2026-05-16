@@ -1,5 +1,26 @@
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 
+function pickVisibleBadges(badges = []) {
+  const priority = [
+    "recommended",
+    "best_value",
+    "long_range",
+  ];
+  const picked = [];
+
+  for (const key of priority) {
+    const match = badges.find((b) => b.key === key);
+    if (match) picked.push(match);
+    if (picked.length >= 2) break;
+  }
+
+  if (!picked.length && badges[0]) {
+    picked.push(badges[0]);
+  }
+
+  return picked;
+}
+
 export default function VariantSelector({
   variants = [],
   selectedSlug,
@@ -52,10 +73,9 @@ export default function VariantSelector({
         {variants.map((variant) => {
           const isActive =
             selectedSlug === variant.slug;
-          const primaryBadge =
-            variant.insightBadges?.find(
-              (b) => b.key === "recommended"
-            ) || variant.insightBadges?.[0];
+          const visibleBadges = pickVisibleBadges(
+            variant.insightBadges
+          );
 
           return (
             <button
@@ -70,15 +90,31 @@ export default function VariantSelector({
               }`}
               onClick={() => onSelect(variant)}
             >
-              {primaryBadge && (
+              {isActive && (
                 <span
-                  className={`variant-selector-badge${
-                    primaryBadge.key === "recommended"
-                      ? " variant-selector-badge--recommended"
-                      : ""
-                  }`}
-                >
-                  {primaryBadge.label}
+                  className="variant-selector-card__active-ring"
+                  aria-hidden
+                />
+              )}
+
+              {visibleBadges.length > 0 && (
+                <span className="variant-selector-card__badges">
+                  {visibleBadges.map((badge) => (
+                    <span
+                      key={badge.key}
+                      className={`variant-selector-badge${
+                        badge.key === "recommended"
+                          ? " variant-selector-badge--recommended"
+                          : badge.key === "best_value"
+                            ? " variant-selector-badge--value"
+                            : badge.key === "long_range"
+                              ? " variant-selector-badge--range"
+                              : ""
+                      }`}
+                    >
+                      {badge.label}
+                    </span>
+                  ))}
                 </span>
               )}
 

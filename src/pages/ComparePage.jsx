@@ -34,9 +34,8 @@ import { formatIndianPriceCompact } from "../utils/formatIndianPrice";
 import LeadInquiryModal from "../components/LeadInquiryModal";
 
 import {
-  COMPARE_CARS_STORAGE_KEY,
   loadCompareCarsFromStorage,
-  notifyCompareCarsSync,
+  saveCompareCars,
 } from "../utils/compareCarsStorage";
 
 import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
@@ -268,28 +267,12 @@ export default function ComparePage() {
 
   const clearComparison =
     useCallback(() => {
+      saveCompareCars([]);
 
-      try {
-
-        localStorage.removeItem(
-          COMPARE_CARS_STORAGE_KEY
-        );
-      } catch {
-
-        /* ignore */
-      }
-
-      notifyCompareCarsSync();
-
-      navigate(
-        "/compare",
-
-        {
-          replace: true,
-
-          state: {},
-        }
-      );
+      navigate("/compare", {
+        replace: true,
+        state: {},
+      });
     }, [navigate]);
 
   /* =========================================================
@@ -492,7 +475,10 @@ export default function ComparePage() {
 
           {/* ================= CARD GRID ================= */}
 
-          <div style={compareGrid}>
+          <div
+            className="compare-page-grid"
+            style={compareGrid}
+          >
 
             {cars.map((car) => {
 
@@ -502,20 +488,13 @@ export default function ComparePage() {
               return (
 
                 <div
-                  key={car._id}
-
-                  style={{
-                    ...compareCardWrapper,
-
-                    ...(isBest
-                      ? bestCompareCard
-                      : {}),
-                  }}
+                  key={car._id || car.slug}
+                  className={`compare-page-card${isBest ? " compare-page-card--best" : ""}`}
+                  style={compareCardWrapper}
                 >
 
                   {isBest && (
-
-                    <div style={bestBadge}>
+                    <div className="compare-page-card__badge">
                       Best Value
                     </div>
                   )}
@@ -554,7 +533,9 @@ export default function ComparePage() {
                     }}
                   />
 
-                  <CompareInsightCard car={car} />
+                  <div className="compare-page-card__insight">
+                    <CompareInsightCard car={car} />
+                  </div>
 
                 </div>
               );
@@ -1028,46 +1009,19 @@ const compareGrid = {
   display: "grid",
 
   gridTemplateColumns:
-    "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
+    "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
 
-  gap: "30px",
+  gap: "28px",
 
   alignItems: "stretch",
 };
 
 const compareCardWrapper = {
   position: "relative",
-};
-
-const bestCompareCard = {
-  transform:
-    "translateY(-6px)",
-};
-
-const bestBadge = {
-  position: "absolute",
-
-  top: "-14px",
-
-  right: "18px",
-
-  zIndex: 20,
-
-  background:
-    "linear-gradient(135deg, #16a34a, #15803d)",
-
-  color: "white",
-
-  padding: "10px 16px",
-
-  borderRadius: "999px",
-
-  fontSize: "12px",
-
-  fontWeight: "700",
-
-  boxShadow:
-    "0 14px 28px rgba(22,163,74,0.28)",
+  display: "flex",
+  flexDirection: "column",
+  minHeight: "100%",
+  height: "100%",
 };
 
 /* =========================================================

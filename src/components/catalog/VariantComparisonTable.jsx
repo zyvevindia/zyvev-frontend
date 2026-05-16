@@ -1,6 +1,41 @@
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { buildVariantComparisonRows } from "../../utils/variantInsights";
 
+function ConfidenceMeter({ value }) {
+  if (value == null) {
+    return <span className="variant-comparison__confidence-na">—</span>;
+  }
+
+  const pct = Math.max(0, Math.min(100, Math.round(value)));
+  let level = "low";
+  if (pct >= 75) level = "high";
+  else if (pct >= 50) level = "medium";
+
+  return (
+    <span className="variant-comparison__confidence">
+      <span
+        className={`variant-comparison__confidence-bar variant-comparison__confidence-bar--${level}`}
+        style={{ width: `${pct}%` }}
+      />
+      <span className="variant-comparison__confidence-label">
+        {pct}%
+      </span>
+    </span>
+  );
+}
+
+function rowHighlightClass(row, isActive) {
+  const classes = [];
+  if (isActive) classes.push("variant-comparison__row--active");
+  if (row.badges?.some((b) => b.key === "recommended")) {
+    classes.push("variant-comparison__row--recommended");
+  }
+  if (row.badges?.some((b) => b.key === "best_value")) {
+    classes.push("variant-comparison__row--best-value");
+  }
+  return classes.join(" ") || undefined;
+}
+
 export default function VariantComparisonTable({
   variants = [],
   selectedSlug,
@@ -27,7 +62,91 @@ export default function VariantComparisonTable({
         family.
       </p>
 
-      <div className="variant-comparison__scroll">
+      <div className="variant-comparison__cards">
+        {rows.map((row) => {
+          const isActive = row.slug === selectedSlug;
+          const highlight = rowHighlightClass(row, isActive);
+
+          return (
+            <article
+              key={row.slug}
+              className={`variant-comparison-card${highlight ? ` ${highlight}` : ""}`}
+            >
+              <button
+                type="button"
+                className="variant-comparison-card__select"
+                onClick={() =>
+                  onSelect?.(
+                    variants.find(
+                      (v) => v.slug === row.slug
+                    )
+                  )
+                }
+              >
+                <span className="variant-comparison-card__name">
+                  {row.name}
+                </span>
+              </button>
+              {row.badges?.length > 0 && (
+                <div className="variant-comparison__badges">
+                  {row.badges.slice(0, 3).map((b) => (
+                    <span
+                      key={b.key}
+                      className={`variant-comparison__badge${
+                        b.key === "best_value"
+                          ? " variant-comparison__badge--value"
+                          : b.key === "long_range"
+                            ? " variant-comparison__badge--range"
+                            : b.key === "recommended"
+                              ? " variant-comparison__badge--recommended"
+                              : ""
+                      }`}
+                    >
+                      {b.label}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <dl className="variant-comparison-card__specs">
+                <div>
+                  <dt>Price</dt>
+                  <dd>
+                    {row.priceLabel
+                      ? formatIndianPriceCompact(
+                          row.priceLabel
+                        )
+                      : "—"}
+                  </dd>
+                </div>
+                <div>
+                  <dt>Battery</dt>
+                  <dd>{row.battery || "—"}</dd>
+                </div>
+                <div>
+                  <dt>Range</dt>
+                  <dd>{row.rangeLabel || "—"}</dd>
+                </div>
+                <div>
+                  <dt>Charging</dt>
+                  <dd>{row.charging || "—"}</dd>
+                </div>
+                <div>
+                  <dt>Performance</dt>
+                  <dd>{row.performance || "—"}</dd>
+                </div>
+                <div>
+                  <dt>Confidence</dt>
+                  <dd>
+                    <ConfidenceMeter value={row.confidence} />
+                  </dd>
+                </div>
+              </dl>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="variant-comparison__scroll variant-comparison__scroll--desktop">
         <table className="variant-comparison__table">
           <thead>
             <tr>
@@ -43,14 +162,12 @@ export default function VariantComparisonTable({
           <tbody>
             {rows.map((row) => {
               const isActive = row.slug === selectedSlug;
+              const rowClass = rowHighlightClass(row, isActive);
+
               return (
                 <tr
                   key={row.slug}
-                  className={
-                    isActive
-                      ? "variant-comparison__row--active"
-                      : undefined
-                  }
+                  className={rowClass}
                 >
                   <th scope="row">
                     <button
@@ -68,16 +185,22 @@ export default function VariantComparisonTable({
                     </button>
                     {row.badges?.length > 0 && (
                       <span className="variant-comparison__badges">
-                        {row.badges
-                          .slice(0, 2)
-                          .map((b) => (
-                            <span
-                              key={b.key}
-                              className="variant-comparison__badge"
-                            >
-                              {b.label}
-                            </span>
-                          ))}
+                        {row.badges.slice(0, 3).map((b) => (
+                          <span
+                            key={b.key}
+                            className={`variant-comparison__badge${
+                              b.key === "best_value"
+                                ? " variant-comparison__badge--value"
+                                : b.key === "long_range"
+                                  ? " variant-comparison__badge--range"
+                                  : b.key === "recommended"
+                                    ? " variant-comparison__badge--recommended"
+                                    : ""
+                            }`}
+                          >
+                            {b.label}
+                          </span>
+                        ))}
                       </span>
                     )}
                   </th>
@@ -93,9 +216,7 @@ export default function VariantComparisonTable({
                   <td>{row.charging || "—"}</td>
                   <td>{row.performance || "—"}</td>
                   <td>
-                    {row.confidence != null
-                      ? `${Math.round(row.confidence)}%`
-                      : "—"}
+                    <ConfidenceMeter value={row.confidence} />
                   </td>
                 </tr>
               );
