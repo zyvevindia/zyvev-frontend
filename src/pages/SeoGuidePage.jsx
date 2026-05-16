@@ -5,10 +5,10 @@ import { Helmet } from "react-helmet-async";
 import SEO from "../components/SEO/SEO";
 import JsonLd from "../components/SEO/JsonLd";
 
-import SeoPageIntro from "../components/seo/SeoPageIntro";
-import SeoRecommendationList from "../components/seo/SeoRecommendationList";
-import SeoTradeoffs from "../components/seo/SeoTradeoffs";
-import SeoFaqBlock from "../components/seo/SeoFaqBlock";
+import SeoPageIntro from "../components/SEO/SeoPageIntro";
+import SeoRecommendationList from "../components/SEO/SeoRecommendationList";
+import SeoTradeoffs from "../components/SEO/SeoTradeoffs";
+import SeoFaqBlock from "../components/SEO/SeoFaqBlock";
 
 import useSeoPage from "../hooks/useSeoPage";
 
