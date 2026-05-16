@@ -8,6 +8,7 @@
     "build": "vite build",
     "build:sitemaps": "node scripts/build-sitemaps.mjs",
     "content:generate": "node scripts/generate-content.mjs",
+    "gsc:verify": "node scripts/verify-gsc-readiness.mjs",
     "prebuild": "npm run content:generate && npm run build:sitemaps",
     "lint": "eslint .",
     "seo:qa": "node scripts/seo-qa.mjs",

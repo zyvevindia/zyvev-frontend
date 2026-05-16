@@ -55,6 +55,7 @@ function sanitizeClientPayload(payload) {
     "ctaType",
     "citySlug",
     "compareSlug",
+    "intent",
   ];
 
   for (const key of keys) {

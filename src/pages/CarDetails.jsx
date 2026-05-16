@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 
 import LeadInquiryModal from "../components/LeadInquiryModal";
+import WhatsAppLeadCta from "../components/leads/WhatsAppLeadCta";
 import EMICalculator from "../components/EMICalculator";
 
 import SEO from "../components/SEO/SEO";
@@ -1138,6 +1139,15 @@ export default function CarDetails() {
               >
                 Book Test Drive
               </button>
+
+              <WhatsAppLeadCta
+                vehicleName={vehicle.name}
+                vehicleSlug={familySlug}
+                sourcePage={`/cars/${familySlug}`}
+                intent="inquiry"
+                label="WhatsApp enquiry"
+                variant="secondary"
+              />
 
               <button
                 style={secondaryAction}

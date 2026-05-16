@@ -3,6 +3,8 @@
 Operational guidance for real-world indexing — **no GSC API integration** in this sprint.
 
 **Master playbook:** [search-console-operations.md](./search-console-operations.md)  
+**Pre-deploy checklist:** [search-console-checklist.md](./search-console-checklist.md) · `npm run gsc:verify`  
+**Indexing monitor:** [indexing-monitoring-checklist.md](./indexing-monitoring-checklist.md)  
 **Week 1 cadence:** [week-1-indexing-ops.md](./week-1-indexing-ops.md) · [week-1-indexing-monitor.md](./week-1-indexing-monitor.md) · [live-indexing-checklist.md](./live-indexing-checklist.md)
 
 ## Workflows

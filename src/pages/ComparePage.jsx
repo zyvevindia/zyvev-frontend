@@ -32,6 +32,7 @@ import CompareTrustPanel from "../components/catalog/CompareTrustPanel";
 import { formatIndianPriceCompact } from "../utils/formatIndianPrice";
 
 import LeadInquiryModal from "../components/LeadInquiryModal";
+import WhatsAppLeadCta from "../components/leads/WhatsAppLeadCta";
 
 import {
   loadCompareCarsFromStorage,
@@ -438,6 +439,15 @@ export default function ComparePage() {
               >
                 Get best deal
               </button>
+
+              <WhatsAppLeadCta
+                sourcePage="/compare"
+                compareSlugs={cars.map((c) => c.slug).filter(Boolean)}
+                vehicleName={compareVehicleLabel || "EV comparison"}
+                intent="compare"
+                label="WhatsApp enquiry"
+                variant="secondary"
+              />
 
               <button
                 type="button"

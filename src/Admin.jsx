@@ -805,6 +805,13 @@ export default function Admin() {
             </Link>
 
             <Link
+              to="/admin/traffic"
+              style={menuItem}
+            >
+              📊 Traffic intelligence
+            </Link>
+
+            <Link
               to="/sales-analytics"
               style={menuItem}
             >

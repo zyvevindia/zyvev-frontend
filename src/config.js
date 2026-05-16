@@ -152,6 +152,13 @@ export const SEO_PAGES_ENABLED =
 export const BEHAVIORAL_INTELLIGENCE_ENABLED =
   import.meta.env.VITE_BEHAVIORAL_INTELLIGENCE === "true";
 
+/**
+ * WhatsApp sales line for buyer CTAs (digits only, with country code e.g. 9198xxxxxxxx).
+ * Omit or leave empty to hide WhatsApp CTAs.
+ */
+export const WHATSAPP_SALES_NUMBER =
+  import.meta.env.VITE_WHATSAPP_SALES_NUMBER || "";
+
 /* =========================================================
    ====================== DEBUG LOGS =======================
    ========================================================= */

@@ -73,8 +73,16 @@ const DealerLogin = lazy(() =>
   import("./pages/DealerLogin")
 );
 
+const DealerSignup = lazy(() =>
+  import("./pages/DealerSignup")
+);
+
 const DealerDashboard = lazy(() =>
   import("./pages/DealerDashboard")
+);
+
+const TrafficIntelligencePage = lazy(() =>
+  import("./pages/admin/TrafficIntelligencePage")
 );
 
 const ListingPage = lazy(() =>
@@ -360,6 +368,11 @@ export default function App() {
           />
 
           <Route
+            path="/dealer/signup"
+            element={<DealerSignup />}
+          />
+
+          <Route
             path="/dealer"
             element={
               <PrivateRoute
@@ -413,6 +426,15 @@ export default function App() {
                 ]}
               >
                 <Admin />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/traffic"
+            element={
+              <PrivateRoute allowedRoles={["admin", "sales"]}>
+                <TrafficIntelligencePage />
               </PrivateRoute>
             }
           />

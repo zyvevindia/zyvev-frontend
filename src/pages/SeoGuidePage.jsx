@@ -10,6 +10,11 @@ import SeoRecommendationList from "../components/SEO/SeoRecommendationList";
 import SeoTradeoffs from "../components/SEO/SeoTradeoffs";
 import SeoFaqBlock from "../components/SEO/SeoFaqBlock";
 import SeoRelatedLinks from "../components/SEO/SeoRelatedLinks";
+import WhatsAppLeadCta from "../components/leads/WhatsAppLeadCta";
+import MethodologyPanel from "../components/trust/MethodologyPanel";
+import EditorialTransparency from "../components/trust/EditorialTransparency";
+import OwnershipPracticality from "../components/trust/OwnershipPracticality";
+import ConfidenceExplainer from "../components/trust/ConfidenceExplainer";
 
 import useSeoPage from "../hooks/useSeoPage";
 
@@ -129,12 +134,38 @@ export default function SeoGuidePage() {
           recommendationLogic={seoPage.recommendationLogic}
         />
 
+        <MethodologyPanel
+          recommendationLogic={seoPage.recommendationLogic}
+          category={seoPage.category}
+        />
+
+        {seoPage.category === "ownership" && (
+          <OwnershipPracticality
+            bullets={
+              Array.isArray(seoPage.tradeoffs) ? seoPage.tradeoffs : undefined
+            }
+          />
+        )}
+
         <SeoRecommendationList
           rankedVehicles={seoPage.rankedVehicles}
           isCompare={isCompare}
           seoPageSlug={seoPage.slug}
           sourcePage={resolveGuideCanonicalPath(seoPage.slug)}
         />
+
+        <ConfidenceExplainer />
+
+        <div style={{ margin: "1.25rem 0" }}>
+          <WhatsAppLeadCta
+            sourcePage={resolveGuideCanonicalPath(seoPage.slug)}
+            seoPageSlug={seoPage.slug}
+            vehicleName={seoPage.rankedVehicles?.[0]?.displayName}
+            vehicleSlug={seoPage.rankedVehicles?.[0]?.slug}
+            intent={isCompare ? "compare" : "guide"}
+            variant="secondary"
+          />
+        </div>
 
         <SeoTradeoffs tradeoffs={seoPage.tradeoffs} />
 
@@ -153,6 +184,8 @@ export default function SeoGuidePage() {
         <SeoFaqBlock faq={seoPage.faq} />
 
         <SeoRelatedLinks sections={linkSections} />
+
+        <EditorialTransparency compact />
 
         <p style={styles.disclaimer}>
           Rankings use catalog intelligence composites — not paid placements.

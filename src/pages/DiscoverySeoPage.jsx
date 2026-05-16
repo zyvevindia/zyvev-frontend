@@ -18,9 +18,13 @@ import { getDiscoveryLinkSections } from "../seo/internalLinks";
 import { replaceCompareCars } from "../utils/compareCarsStorage";
 import {
   trackDiscoveryPageView,
-  trackSeoCtaClicked,
   trackCompareGuideClicked,
 } from "../content/tracking/discoveryAnalytics";
+import WhatsAppLeadCta from "../components/leads/WhatsAppLeadCta";
+import MethodologyPanel from "../components/trust/MethodologyPanel";
+import EditorialTransparency from "../components/trust/EditorialTransparency";
+import OwnershipPracticality from "../components/trust/OwnershipPracticality";
+import ConfidenceExplainer from "../components/trust/ConfidenceExplainer";
 
 const PAGE_TYPE_LABELS = {
   [PAGE_TYPES.BEST_EVS]: "Best EVs",
@@ -168,12 +172,55 @@ export default function DiscoverySeoPage({ pageType }) {
           recommendationLogic={seoPage.recommendationLogic}
         />
 
+        <MethodologyPanel
+          recommendationLogic={seoPage.recommendationLogic}
+          category={seoPage.category}
+        />
+
+        {(seoPage.category === "ownership" ||
+          seoPage.category === "city") && (
+          <OwnershipPracticality
+            bullets={
+              Array.isArray(seoPage.tradeoffs)
+                ? seoPage.tradeoffs
+                : undefined
+            }
+          />
+        )}
+
         <SeoRecommendationList
           rankedVehicles={seoPage.rankedVehicles}
           isCompare={isCompare}
           seoPageSlug={seoPage.slug}
           sourcePage={discoveryPath}
         />
+
+        <ConfidenceExplainer />
+
+        <div style={{ margin: "1.5rem 0", display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+          <WhatsAppLeadCta
+            sourcePage={discoveryPath}
+            seoPageSlug={seoPage.slug}
+            city={routeContext.params?.city || ""}
+            compareSlugs={
+              isCompare
+                ? (seoPage.rankedVehicles || []).map((v) => v.slug)
+                : []
+            }
+            vehicleName={
+              !isCompare && seoPage.rankedVehicles?.[0]
+                ? seoPage.rankedVehicles[0].displayName
+                : ""
+            }
+            vehicleSlug={
+              !isCompare && seoPage.rankedVehicles?.[0]
+                ? seoPage.rankedVehicles[0].slug
+                : ""
+            }
+            intent={isCompare ? "compare" : "guide"}
+            variant="secondary"
+          />
+        </div>
 
         <SeoTradeoffs tradeoffs={seoPage.tradeoffs} />
 
@@ -192,6 +239,8 @@ export default function DiscoverySeoPage({ pageType }) {
         <SeoFaqBlock faq={seoPage.faq} />
 
         <SeoRelatedLinks sections={linkSections} />
+
+        <EditorialTransparency compact />
 
         <p style={styles.disclaimer}>
           Rankings use catalog intelligence composites — not paid placements.

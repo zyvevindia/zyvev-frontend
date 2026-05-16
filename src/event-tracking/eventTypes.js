@@ -21,4 +21,5 @@ export const BUYER_EVENTS = Object.freeze({
   SEO_CTA_CLICKED: "seo_cta_clicked",
   COMPARE_GUIDE_CLICKED: "compare_guide_clicked",
   CITY_PAGE_VIEWED: "city_page_viewed",
+  WHATSAPP_LEAD_CLICKED: "whatsapp_lead_clicked",
 });

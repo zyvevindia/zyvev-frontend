@@ -191,6 +191,12 @@ export default function DealerLogin() {
 
         <p style={footer}>
 
+          <Link to="/dealer/signup" style={link}>
+            Dealer signup
+          </Link>
+
+          {" · "}
+
           <Link
             to="/login"
             style={link}
