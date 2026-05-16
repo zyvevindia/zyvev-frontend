@@ -3,7 +3,7 @@
  * Run: npm run build:sitemaps
  */
 
-import { writeFileSync, mkdirSync, readdirSync, existsSync } from "node:fs";
+import { writeFileSync, mkdirSync, readdirSync, existsSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -13,6 +13,7 @@ import {
   buildDiscoveryGuideSitemapEntries,
   buildFullSitemapManifest,
 } from "../src/seo/sitemap.js";
+import { GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH } from "../src/seo/legacyCanonicalMap.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -22,6 +23,45 @@ const sitemapsDir = join(publicDir, "sitemaps");
 const SITE_ORIGIN =
   process.env.VITE_SITE_ORIGIN || "https://evsavari.com";
 const LASTMOD = new Date().toISOString().slice(0, 10);
+
+function discoveryEntry(path, priority, siteOrigin = SITE_ORIGIN) {
+  return {
+    loc: `${siteOrigin}${path}`,
+    path,
+    priority,
+    changefreq: "weekly",
+  };
+}
+
+function mergeDiscoveryEntries(baseEntries, siteOrigin) {
+  const byPath = new Map();
+  for (const e of baseEntries) {
+    byPath.set(e.path, e);
+  }
+
+  byPath.set("/guides", discoveryEntry("/guides", 0.85, siteOrigin));
+
+  for (const path of Object.values(GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH)) {
+    const priority = path.startsWith("/compare/") ? 0.82 : 0.8;
+    byPath.set(path, discoveryEntry(path, priority, siteOrigin));
+  }
+
+  const manifestPath = join(publicDir, "seo-data/content-manifest.json");
+  if (existsSync(manifestPath)) {
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+    for (const row of manifest.entries || []) {
+      if (!row.path) continue;
+      let priority = 0.8;
+      if (row.pageType === "city_evs" || row.pageType === "city_charging") {
+        priority = 0.76;
+      }
+      if (row.pageType === "compare_guide") priority = 0.82;
+      byPath.set(row.path, discoveryEntry(row.path, priority, siteOrigin));
+    }
+  }
+
+  return [...byPath.values()];
+}
 
 function escapeXml(value) {
   return String(value)
@@ -150,9 +190,9 @@ mkdirSync(sitemapsDir, { recursive: true });
 
 const staticEntries = buildStaticSitemapEntries(SITE_ORIGIN);
 const vehicleEntries = buildVehicleFamilySitemapEntries(SITE_ORIGIN);
-const discoveryEntries = buildDiscoveryGuideSitemapEntries(
-  SITE_ORIGIN,
-  extras
+const discoveryEntries = mergeDiscoveryEntries(
+  buildDiscoveryGuideSitemapEntries(SITE_ORIGIN, extras),
+  SITE_ORIGIN
 );
 const compareEntries = [{ loc: `${SITE_ORIGIN}/compare`, path: "/compare", priority: 0.85, changefreq: "weekly" }];
 

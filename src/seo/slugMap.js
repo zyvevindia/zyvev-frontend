@@ -2,8 +2,14 @@
  * Maps new discovery URL segments → existing content slugs in /seo-data/.
  */
 
+import {
+  GENERATED_BEST_EVS_USE_CASE_TO_SLUG,
+  GENERATED_OWNERSHIP_GUIDE_TO_SLUG,
+  GENERATED_COMPARE_SLUGS,
+} from "../content/generated/manifest.js";
+
 /** /best-evs/:useCase */
-export const BEST_EVS_USE_CASE_TO_SLUG = {
+const BASE_BEST_EVS_USE_CASE_TO_SLUG = {
   "under-10-lakh": "best-evs-under-10-lakh",
   "under-20-lakh": "best-evs-under-20-lakh",
   "city-driving": "best-evs-for-city-driving",
@@ -12,6 +18,11 @@ export const BEST_EVS_USE_CASE_TO_SLUG = {
   "highway-driving": "best-evs-for-highway-driving",
   "daily-commute": "best-evs-for-daily-commute",
   "city-cars-india": "best-city-electric-cars-india",
+};
+
+export const BEST_EVS_USE_CASE_TO_SLUG = {
+  ...BASE_BEST_EVS_USE_CASE_TO_SLUG,
+  ...GENERATED_BEST_EVS_USE_CASE_TO_SLUG,
 };
 
 /** /charging-guides/:slug */
@@ -23,7 +34,7 @@ export const CHARGING_GUIDE_TO_SLUG = {
 };
 
 /** /ownership-guides/:slug */
-export const OWNERSHIP_GUIDE_TO_SLUG = {
+const BASE_OWNERSHIP_GUIDE_TO_SLUG = {
   "first-time-buyers": "best-evs-for-first-time-buyers",
   "easiest-first-ev": "easiest-evs-for-first-time-buyers",
   "apartment-living": "best-evs-for-apartment-living",
@@ -31,10 +42,16 @@ export const OWNERSHIP_GUIDE_TO_SLUG = {
   "low-maintenance": "lowest-maintenance-electric-cars",
 };
 
+export const OWNERSHIP_GUIDE_TO_SLUG = {
+  ...BASE_OWNERSHIP_GUIDE_TO_SLUG,
+  ...GENERATED_OWNERSHIP_GUIDE_TO_SLUG,
+};
+
 /** /compare/:slug (dedicated SEO compare URLs) */
 export const COMPARE_GUIDE_SLUGS = new Set([
   "nexon-ev-vs-mg-zs-ev",
   "comet-ev-vs-tiago-ev",
+  ...GENERATED_COMPARE_SLUGS,
 ]);
 
 export function normalizeSegment(value) {
@@ -64,10 +81,7 @@ export function resolveChargingGuideContentSlug(slug) {
 
 export function resolveOwnershipGuideContentSlug(slug) {
   const key = normalizeSegment(slug);
-  return (
-    OWNERSHIP_GUIDE_TO_SLUG[key] ||
-    `best-evs-for-${key}`
-  );
+  return OWNERSHIP_GUIDE_TO_SLUG[key] || `ownership-${key}`;
 }
 
 export function resolveCompareGuideContentSlug(compareSlug) {

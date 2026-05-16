@@ -13,6 +13,7 @@ import {
   getBestEvsGuideLinks,
   getChargingGuideLinks,
   getOwnershipGuideLinks,
+  getCityGuideLinks,
 } from "../seo/internalLinks";
 
 import { fetchSeoPagesList } from "../utils/seoPageApi";
@@ -62,9 +63,10 @@ export default function SeoGuidesHub() {
     }),
   ].filter(Boolean);
 
-  const bestEvs = getBestEvsGuideLinks({ limit: 8 });
+  const bestEvs = getBestEvsGuideLinks({ limit: 12 });
   const charging = getChargingGuideLinks({ limit: 4 });
-  const ownership = getOwnershipGuideLinks({ limit: 4 });
+  const ownership = getOwnershipGuideLinks({ limit: 10 });
+  const cities = getCityGuideLinks({ limit: 12 });
 
   return (
     <div className="seo-guides-hub">
@@ -124,20 +126,21 @@ export default function SeoGuidesHub() {
         </section>
 
         <section className="seo-guides-hub__section">
-          <h2>Brand & city hubs</h2>
+          <h2>EVs by city</h2>
+          <ul className="seo-guides-hub__list seo-guides-hub__list--columns">
+            {cities.map((link) => (
+              <li key={link.href}>
+                <Link to={link.href}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="seo-guides-hub__section">
+          <h2>Brand hubs</h2>
           <ul className="seo-guides-hub__list">
             <li>
               <Link to="/brands/tata">Tata electric cars</Link>
-            </li>
-            <li>
-              <Link to="/cities/bengaluru/evs">
-                EVs in Bengaluru
-              </Link>
-            </li>
-            <li>
-              <Link to="/cities/bengaluru/charging">
-                Charging in Bengaluru
-              </Link>
             </li>
           </ul>
         </section>

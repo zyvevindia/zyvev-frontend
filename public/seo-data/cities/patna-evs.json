@@ -1,0 +1,118 @@
+{
+  "seoPage": {
+    "slug": "city-patna-evs",
+    "category": "city",
+    "title": "Electric Cars in Patna — Local Picks & Buying Guide | EVSavari",
+    "metaDescription": "Electric cars for Patna: commute-friendly EV families, charging tips, and comparisons on EVSavari.",
+    "intro": "Patna's emerging EV interest and improving highway links make EVs attractive for many commuters. This page highlights model families that fit typical Patna usage and links to charging and ownership guides.",
+    "recommendationLogic": {
+      "category": "city",
+      "methodology": "City recommendations weight city-driving and commute scores from catalog intelligence."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-zs-ev",
+        "displayName": "MG Zs EV",
+        "explanation": "Well suited for Patna buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/mg-zs-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Well suited for Patna buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Well suited for Patna buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "explanation": "Well suited for Patna buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/tata-punch-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Apartment charging access in Patna varies — review our apartment-living ownership guide.",
+      "Peak-hour range can differ from lab claims; plan around your real commute distance."
+    ],
+    "faq": [
+      {
+        "question": "Is an EV practical in Patna?",
+        "answer": "For most daily commuters under 80–100 km/day with home or workplace charging, yes — traffic patterns in Patna often suit EV efficiency."
+      },
+      {
+        "question": "What should I check before buying an EV in Patna?",
+        "answer": "Confirm apartment or workplace charging access, realistic commute distance, and on-road price with a local dealer."
+      },
+      {
+        "question": "Where can I compare charging guides?",
+        "answer": "Browse our charging guides hub for home charging, commute, and lower charging-stress picks."
+      },
+      {
+        "question": "Are rankings paid placements?",
+        "answer": "No — picks use catalog intelligence composites, not sponsored ordering."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Patna charging",
+        "links": [
+          {
+            "label": "Patna charging guide",
+            "href": "/cities/patna/charging"
+          },
+          {
+            "label": "Home charging guide",
+            "href": "/charging-guides/home-charging"
+          },
+          {
+            "label": "Lower charging-stress EVs",
+            "href": "/charging-guides/low-stress"
+          }
+        ]
+      },
+      {
+        "title": "Popular comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Ownership",
+        "links": [
+          {
+            "label": "Apartment living",
+            "href": "/ownership-guides/apartment-living"
+          },
+          {
+            "label": "First-time buyers",
+            "href": "/ownership-guides/first-time-buyers"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/cities/patna/evs",
+    "canonicalUrl": "https://evsavari.com/cities/patna/evs",
+    "generatedAt": "2026-05-16T18:43:07.942Z"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "seoPage": {
+    "slug": "city-ludhiana-evs",
+    "category": "city",
+    "title": "Electric Cars in Ludhiana — Local Picks & Buying Guide | EVSavari",
+    "metaDescription": "Electric cars for Ludhiana: commute-friendly EV families, charging tips, and comparisons on EVSavari.",
+    "intro": "Ludhiana's Punjab highway access and commercial interest make EVs attractive for many commuters. This page highlights model families that fit typical Ludhiana usage and links to charging and ownership guides.",
+    "recommendationLogic": {
+      "category": "city",
+      "methodology": "City recommendations weight city-driving and commute scores from catalog intelligence."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Well suited for Ludhiana buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen Ec3",
+        "explanation": "Well suited for Ludhiana buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/citroen-ec3"
+      },
+      {
+        "rank": 3,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Well suited for Ludhiana buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 4,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Well suited for Ludhiana buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/volvo-ex40"
+      }
+    ],
+    "tradeoffs": [
+      "Apartment charging access in Ludhiana varies — review our apartment-living ownership guide.",
+      "Peak-hour range can differ from lab claims; plan around your real commute distance."
+    ],
+    "faq": [
+      {
+        "question": "Is an EV practical in Ludhiana?",
+        "answer": "For most daily commuters under 80–100 km/day with home or workplace charging, yes — traffic patterns in Ludhiana often suit EV efficiency."
+      },
+      {
+        "question": "What should I check before buying an EV in Ludhiana?",
+        "answer": "Confirm apartment or workplace charging access, realistic commute distance, and on-road price with a local dealer."
+      },
+      {
+        "question": "Where can I compare charging guides?",
+        "answer": "Browse our charging guides hub for home charging, commute, and lower charging-stress picks."
+      },
+      {
+        "question": "Are rankings paid placements?",
+        "answer": "No — picks use catalog intelligence composites, not sponsored ordering."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Ludhiana charging",
+        "links": [
+          {
+            "label": "Ludhiana charging guide",
+            "href": "/cities/ludhiana/charging"
+          },
+          {
+            "label": "Home charging guide",
+            "href": "/charging-guides/home-charging"
+          },
+          {
+            "label": "Lower charging-stress EVs",
+            "href": "/charging-guides/low-stress"
+          }
+        ]
+      },
+      {
+        "title": "Popular comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Ownership",
+        "links": [
+          {
+            "label": "Apartment living",
+            "href": "/ownership-guides/apartment-living"
+          },
+          {
+            "label": "First-time buyers",
+            "href": "/ownership-guides/first-time-buyers"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/cities/ludhiana/evs",
+    "canonicalUrl": "https://evsavari.com/cities/ludhiana/evs",
+    "generatedAt": "2026-05-16T18:43:07.950Z"
+  }
+}

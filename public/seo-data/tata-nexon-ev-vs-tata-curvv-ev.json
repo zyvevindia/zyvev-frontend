@@ -1,0 +1,106 @@
+{
+  "seoPage": {
+    "slug": "tata-nexon-ev-vs-tata-curvv-ev",
+    "pageTypeId": "head_to_head",
+    "category": "compare",
+    "title": "Tata Nexon EV vs Tata Curvv EV — Decision Comparison | EVSavari",
+    "metaDescription": "Side-by-side Tata Nexon EV and Tata Curvv EV comparison with tradeoffs — not hype rankings.",
+    "intro": "This comparison contrasts Tata Nexon EV and Tata Curvv EV on dimensions Indian buyers care about — range bands, charging, space, and indicative pricing. Review tradeoffs; we do not declare a universal winner.",
+    "recommendationLogic": {
+      "pageTypeId": "head_to_head",
+      "category": "compare",
+      "compareSlugs": [
+        "tata-nexon-ev",
+        "tata-curvv-ev"
+      ],
+      "methodology": "Deterministic catalog comparison on range, charging, and value signals — no paid placement.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Tata Nexon EV may suit buyers prioritising familiarity and service access — verify charging and boot space.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "explanation": "Tata Curvv EV may suit buyers wanting different packaging or charging flexibility — confirm on-road price locally.",
+        "detailPath": "/cars/tata-curvv-ev"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Compare Tata Nexon EV and Tata Curvv EV on range, charging speed, cabin space, and on-road budget. Neither is positioned as a universal winner — weigh tradeoffs for your commute and parking setup.",
+      "considerations": [
+        {
+          "slug": "tata-nexon-ev",
+          "tradeoff": "Tata Nexon EV may suit buyers prioritising brand familiarity and service access in their city — verify DC charging speed and boot space for your routine."
+        },
+        {
+          "slug": "tata-curvv-ev",
+          "tradeoff": "Tata Curvv EV may suit buyers wanting different packaging or charging flexibility — confirm on-road price and nearest service centre before deciding."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which is better — Tata Nexon EV or Tata Curvv EV?",
+        "answer": "Neither is a universal winner. Compare range, charging, space, and on-road budget for your use case."
+      },
+      {
+        "question": "Should I test drive both?",
+        "answer": "Yes — seat comfort, visibility, and charging access at home/work matter beyond spec sheets."
+      },
+      {
+        "question": "Can I open the full compare tool?",
+        "answer": "Use the compare button on this page to load both variants in EVSavari's interactive compare view."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom figures are indicative — confirm on-road price and offers with a dealer in your city."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "More comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Buying guides",
+        "links": [
+          {
+            "label": "Best EVs under ₹10 lakh",
+            "href": "/best-evs/under-10-lakh"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/best-evs/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "open_compare_tool",
+      "label": "Open full compare tool →",
+      "vehicleSlugs": [
+        "tata-nexon-ev",
+        "tata-curvv-ev"
+      ]
+    },
+    "canonicalPath": "/compare/tata-nexon-ev-vs-tata-curvv-ev",
+    "canonicalUrl": "https://evsavari.com/compare/tata-nexon-ev-vs-tata-curvv-ev",
+    "generatedAt": "2026-05-16T18:43:07.973Z"
+  }
+}

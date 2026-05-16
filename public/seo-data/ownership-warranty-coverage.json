@@ -1,0 +1,93 @@
+{
+  "seoPage": {
+    "slug": "ownership-warranty-coverage",
+    "category": "ownership",
+    "title": "EV Ownership: Warranty coverage | EVSavari",
+    "metaDescription": "Indian EV ownership guide on warranty coverage — practical notes before you buy on EVSavari.",
+    "intro": "Before you shortlist a model, understand how warranty coverage affects your EV ownership experience in India. This guide links to comparisons and use-case picks.",
+    "recommendationLogic": {
+      "category": "ownership",
+      "methodology": "Editorial ownership template with catalog-backed model shortlists."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "explanation": "Catalog variant to evaluate for warranty coverage in your city.",
+        "detailPath": "/cars/byd-atto-3"
+      },
+      {
+        "rank": 2,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Catalog variant to evaluate for warranty coverage in your city.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "explanation": "Catalog variant to evaluate for warranty coverage in your city.",
+        "detailPath": "/cars/tata-punch-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "explanation": "Catalog variant to evaluate for warranty coverage in your city.",
+        "detailPath": "/cars/hyundai-kona-electric"
+      }
+    ],
+    "tradeoffs": [
+      "Factor warranty coverage into your total cost of ownership alongside electricity rates and charging access.",
+      "Verify warranty terms and service network coverage in your city before purchase.",
+      "Shortlist two to three model families, then compare variants on EVSavari."
+    ],
+    "faq": [
+      {
+        "question": "What should I know about warranty coverage before buying an EV?",
+        "answer": "Use this guide to weigh tradeoffs against your parking, commute, and budget — then shortlist models on EVSavari."
+      },
+      {
+        "question": "Do all EVs behave the same here?",
+        "answer": "No — battery chemistry, charging speed, and service networks vary by brand and model family."
+      },
+      {
+        "question": "Where can I compare models?",
+        "answer": "Browse best-EV guides by use case or open side-by-side comparisons from the guides hub."
+      },
+      {
+        "question": "Is this financial advice?",
+        "answer": "No — ownership notes are educational; confirm insurance, warranty, and tax benefits locally."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Explore more",
+        "links": [
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Browse EV catalog",
+            "href": "/cars"
+          },
+          {
+            "label": "Compare tool",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/warranty-coverage",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/warranty-coverage",
+    "generatedAt": "2026-05-16T18:43:07.985Z"
+  }
+}

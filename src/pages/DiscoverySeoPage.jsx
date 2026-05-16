@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -16,6 +16,11 @@ import { buildGuidePageMeta, stripBrandSuffix } from "../seo/meta";
 import { buildDiscoveryPageSchemas } from "../seo/schema";
 import { getDiscoveryLinkSections } from "../seo/internalLinks";
 import { replaceCompareCars } from "../utils/compareCarsStorage";
+import {
+  trackDiscoveryPageView,
+  trackSeoCtaClicked,
+  trackCompareGuideClicked,
+} from "../content/tracking/discoveryAnalytics";
 
 const PAGE_TYPE_LABELS = {
   [PAGE_TYPES.BEST_EVS]: "Best EVs",
@@ -38,6 +43,11 @@ export default function DiscoverySeoPage({ pageType }) {
 
   const { seoPage, loading, error, retry } =
     useDiscoveryPage(routeContext);
+
+  useEffect(() => {
+    if (!seoPage || !routeContext || loading || error) return;
+    trackDiscoveryPageView(routeContext, seoPage);
+  }, [seoPage, routeContext, loading, error]);
 
   if (!routeContext) {
     return (
@@ -108,6 +118,7 @@ export default function DiscoverySeoPage({ pageType }) {
   });
 
   const linkSections = getDiscoveryLinkSections(seoPage);
+  const discoveryPath = routeContext.path || "";
 
   const openCompareTool = () => {
     const ranked = seoPage.rankedVehicles || [];
@@ -119,6 +130,10 @@ export default function DiscoverySeoPage({ pageType }) {
       specifications: { range: v.claimedRangeKm },
     }));
     const list = replaceCompareCars(cars);
+    trackCompareGuideClicked(routeContext, seoPage, {
+      action: "open_compare_tool",
+      vehicleSlugs: ranked.map((v) => v.slug),
+    });
     navigate("/compare", {
       state: { cars: list, variantCompareSession: true },
     });
@@ -157,6 +172,7 @@ export default function DiscoverySeoPage({ pageType }) {
           rankedVehicles={seoPage.rankedVehicles}
           isCompare={isCompare}
           seoPageSlug={seoPage.slug}
+          sourcePage={discoveryPath}
         />
 
         <SeoTradeoffs tradeoffs={seoPage.tradeoffs} />

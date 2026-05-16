@@ -17,4 +17,8 @@ export const BUYER_EVENTS = Object.freeze({
   VARIANT_COMPARE_CLICKED: "variant_compare_clicked",
   PRICING_INTERACTION: "pricing_interaction",
   TEST_DRIVE_REQUESTED: "test_drive_requested",
+  GUIDE_VIEWED: "guide_viewed",
+  SEO_CTA_CLICKED: "seo_cta_clicked",
+  COMPARE_GUIDE_CLICKED: "compare_guide_clicked",
+  CITY_PAGE_VIEWED: "city_page_viewed",
 });

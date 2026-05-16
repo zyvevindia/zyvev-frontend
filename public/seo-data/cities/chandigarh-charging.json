@@ -1,0 +1,111 @@
+{
+  "seoPage": {
+    "slug": "city-chandigarh-charging",
+    "category": "city",
+    "title": "EV Charging in Chandigarh — Home, Workplace & Public | EVSavari",
+    "metaDescription": "Charging guide for Chandigarh EV buyers: home AC setup, apartment constraints, and public charger planning.",
+    "intro": "Charging convenience in Chandigarh depends on parking type, society rules, and your daily km. Use this guide to plan home or workplace charging before you shortlist a model.",
+    "recommendationLogic": {
+      "category": "city",
+      "methodology": "City charging guidance combines ownership patterns and catalog charging-stress signals."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Lower charging-stress profile for Chandigarh owners with predictable daily km.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 2,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Lower charging-stress profile for Chandigarh owners with predictable daily km.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Lower charging-stress profile for Chandigarh owners with predictable daily km.",
+        "detailPath": "/cars/tata-nexon-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Society approvals can delay wallbox installs — start conversations early.",
+      "Public DC availability varies by locality; do not rely on it as your only plan."
+    ],
+    "faq": [
+      {
+        "question": "How easy is home charging in Chandigarh?",
+        "answer": "Depends on parking type — apartments may need society approval; independent homes are often simpler for AC wallbox installs."
+      },
+      {
+        "question": "Are public chargers available in Chandigarh?",
+        "answer": "Metro networks are expanding, but daily reliability still improves when you can charge at home or work."
+      },
+      {
+        "question": "Which EVs reduce charging stress?",
+        "answer": "See our lower charging-stress guide for models with practical range bands and charging flexibility."
+      },
+      {
+        "question": "Should I buy a portable charger first?",
+        "answer": "Many owners start with a 3-pin or Type-2 AC setup; confirm load limits with your electrician before install."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Chandigarh charging",
+        "links": [
+          {
+            "label": "Chandigarh charging guide",
+            "href": "/cities/chandigarh/charging"
+          },
+          {
+            "label": "Home charging guide",
+            "href": "/charging-guides/home-charging"
+          },
+          {
+            "label": "Lower charging-stress EVs",
+            "href": "/charging-guides/low-stress"
+          }
+        ]
+      },
+      {
+        "title": "Popular comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Ownership",
+        "links": [
+          {
+            "label": "Apartment living",
+            "href": "/ownership-guides/apartment-living"
+          },
+          {
+            "label": "First-time buyers",
+            "href": "/ownership-guides/first-time-buyers"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "city_evs",
+      "label": "See EV picks in Chandigarh →",
+      "href": "/cities/chandigarh/evs"
+    },
+    "canonicalPath": "/cities/chandigarh/charging",
+    "canonicalUrl": "https://evsavari.com/cities/chandigarh/charging",
+    "generatedAt": "2026-05-16T18:43:07.927Z"
+  }
+}

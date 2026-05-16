@@ -1,0 +1,636 @@
+{
+  "generatedAt": "2026-05-16T18:43:08.021Z",
+  "count": 105,
+  "pages": [
+    {
+      "slug": "city-bengaluru-evs",
+      "title": "Electric Cars in Bengaluru — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/bengaluru/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-bengaluru-charging",
+      "title": "EV Charging in Bengaluru — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/bengaluru/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-mumbai-evs",
+      "title": "Electric Cars in Mumbai — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/mumbai/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-mumbai-charging",
+      "title": "EV Charging in Mumbai — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/mumbai/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-delhi-evs",
+      "title": "Electric Cars in Delhi NCR — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/delhi/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-delhi-charging",
+      "title": "EV Charging in Delhi NCR — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/delhi/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-hyderabad-evs",
+      "title": "Electric Cars in Hyderabad — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/hyderabad/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-hyderabad-charging",
+      "title": "EV Charging in Hyderabad — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/hyderabad/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-chennai-evs",
+      "title": "Electric Cars in Chennai — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/chennai/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-chennai-charging",
+      "title": "EV Charging in Chennai — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/chennai/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-pune-evs",
+      "title": "Electric Cars in Pune — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/pune/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-pune-charging",
+      "title": "EV Charging in Pune — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/pune/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-kolkata-evs",
+      "title": "Electric Cars in Kolkata — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/kolkata/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-kolkata-charging",
+      "title": "EV Charging in Kolkata — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/kolkata/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-ahmedabad-evs",
+      "title": "Electric Cars in Ahmedabad — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/ahmedabad/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-ahmedabad-charging",
+      "title": "EV Charging in Ahmedabad — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/ahmedabad/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-jaipur-evs",
+      "title": "Electric Cars in Jaipur — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/jaipur/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-jaipur-charging",
+      "title": "EV Charging in Jaipur — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/jaipur/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-lucknow-evs",
+      "title": "Electric Cars in Lucknow — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/lucknow/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-lucknow-charging",
+      "title": "EV Charging in Lucknow — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/lucknow/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-kochi-evs",
+      "title": "Electric Cars in Kochi — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/kochi/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-kochi-charging",
+      "title": "EV Charging in Kochi — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/kochi/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-chandigarh-evs",
+      "title": "Electric Cars in Chandigarh — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/chandigarh/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-chandigarh-charging",
+      "title": "EV Charging in Chandigarh — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/chandigarh/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-indore-evs",
+      "title": "Electric Cars in Indore — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/indore/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-indore-charging",
+      "title": "EV Charging in Indore — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/indore/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-nagpur-evs",
+      "title": "Electric Cars in Nagpur — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/nagpur/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-nagpur-charging",
+      "title": "EV Charging in Nagpur — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/nagpur/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-coimbatore-evs",
+      "title": "Electric Cars in Coimbatore — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/coimbatore/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-coimbatore-charging",
+      "title": "EV Charging in Coimbatore — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/coimbatore/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-surat-evs",
+      "title": "Electric Cars in Surat — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/surat/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-surat-charging",
+      "title": "EV Charging in Surat — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/surat/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-visakhapatnam-evs",
+      "title": "Electric Cars in Visakhapatnam — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/visakhapatnam/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-visakhapatnam-charging",
+      "title": "EV Charging in Visakhapatnam — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/visakhapatnam/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-bhopal-evs",
+      "title": "Electric Cars in Bhopal — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/bhopal/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-bhopal-charging",
+      "title": "EV Charging in Bhopal — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/bhopal/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-patna-evs",
+      "title": "Electric Cars in Patna — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/patna/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-patna-charging",
+      "title": "EV Charging in Patna — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/patna/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-guwahati-evs",
+      "title": "Electric Cars in Guwahati — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/guwahati/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-guwahati-charging",
+      "title": "EV Charging in Guwahati — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/guwahati/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-thiruvananthapuram-evs",
+      "title": "Electric Cars in Thiruvananthapuram — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/thiruvananthapuram/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-thiruvananthapuram-charging",
+      "title": "EV Charging in Thiruvananthapuram — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/thiruvananthapuram/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-vadodara-evs",
+      "title": "Electric Cars in Vadodara — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/vadodara/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-vadodara-charging",
+      "title": "EV Charging in Vadodara — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/vadodara/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-ludhiana-evs",
+      "title": "Electric Cars in Ludhiana — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/ludhiana/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-ludhiana-charging",
+      "title": "EV Charging in Ludhiana — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/ludhiana/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-noida-evs",
+      "title": "Electric Cars in Noida — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/noida/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-noida-charging",
+      "title": "EV Charging in Noida — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/noida/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "city-gurgaon-evs",
+      "title": "Electric Cars in Gurgaon — Local Picks & Buying Guide | EVSavari",
+      "canonicalPath": "/cities/gurgaon/evs",
+      "pageType": "city_evs"
+    },
+    {
+      "slug": "city-gurgaon-charging",
+      "title": "EV Charging in Gurgaon — Home, Workplace & Public | EVSavari",
+      "canonicalPath": "/cities/gurgaon/charging",
+      "pageType": "city_charging"
+    },
+    {
+      "slug": "nexon-ev-vs-mg-zs-ev",
+      "title": "Tata Nexon EV vs MG Zs EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/nexon-ev-vs-mg-zs-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "comet-ev-vs-tiago-ev",
+      "title": "MG Comet EV vs Tata Tiago EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/comet-ev-vs-tiago-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "tata-punch-ev-vs-tata-nexon-ev",
+      "title": "Tata Punch EV vs Tata Nexon EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/tata-punch-ev-vs-tata-nexon-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "tata-curvv-ev-vs-tata-nexon-ev",
+      "title": "Tata Curvv EV vs Tata Nexon EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/tata-curvv-ev-vs-tata-nexon-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "mg-zs-ev-vs-hyundai-kona-electric",
+      "title": "MG Zs EV vs Hyundai Kona Electric — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/mg-zs-ev-vs-hyundai-kona-electric",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "byd-atto-3-vs-mg-zs-ev",
+      "title": "BYD Atto 3 vs MG Zs EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/byd-atto-3-vs-mg-zs-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "tata-tiago-ev-vs-citroen-ec3",
+      "title": "Tata Tiago EV vs Citroen Ec3 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/tata-tiago-ev-vs-citroen-ec3",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "mahindra-xuv400-vs-tata-nexon-ev",
+      "title": "Mahindra Xuv400 vs Tata Nexon EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/mahindra-xuv400-vs-tata-nexon-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "kia-ev6-vs-byd-atto-3",
+      "title": "Kia Ev6 vs BYD Atto 3 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/kia-ev6-vs-byd-atto-3",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "bmw-ix1-vs-mercedes-eqb",
+      "title": "BMW Ix1 vs Mercedes Eqb — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/bmw-ix1-vs-mercedes-eqb",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "mercedes-eqa-vs-bmw-ix1",
+      "title": "Mercedes Eqa vs BMW Ix1 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/mercedes-eqa-vs-bmw-ix1",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "volvo-ex40-vs-kia-ev6",
+      "title": "Volvo Ex40 vs Kia Ev6 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/volvo-ex40-vs-kia-ev6",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "mahindra-be-6-vs-mahindra-xuv400",
+      "title": "Mahindra Be 6 vs Mahindra Xuv400 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/mahindra-be-6-vs-mahindra-xuv400",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "mahindra-xev-9e-vs-mahindra-be-6",
+      "title": "Mahindra Xev 9e vs Mahindra Be 6 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/mahindra-xev-9e-vs-mahindra-be-6",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "hyundai-kona-electric-vs-kia-ev6",
+      "title": "Hyundai Kona Electric vs Kia Ev6 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/hyundai-kona-electric-vs-kia-ev6",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "tata-punch-ev-vs-mg-comet-ev",
+      "title": "Tata Punch EV vs MG Comet EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/tata-punch-ev-vs-mg-comet-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "citroen-ec3-vs-tata-tiago-ev",
+      "title": "Citroen Ec3 vs Tata Tiago EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/citroen-ec3-vs-tata-tiago-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "tata-nexon-ev-vs-tata-curvv-ev",
+      "title": "Tata Nexon EV vs Tata Curvv EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/tata-nexon-ev-vs-tata-curvv-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "tata-nexon-ev-vs-mahindra-xuv400",
+      "title": "Tata Nexon EV vs Mahindra Xuv400 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/tata-nexon-ev-vs-mahindra-xuv400",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "mg-zs-ev-vs-byd-atto-3",
+      "title": "MG Zs EV vs BYD Atto 3 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/mg-zs-ev-vs-byd-atto-3",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "tata-punch-ev-vs-citroen-ec3",
+      "title": "Tata Punch EV vs Citroen Ec3 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/tata-punch-ev-vs-citroen-ec3",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "hyundai-kona-electric-vs-tata-nexon-ev",
+      "title": "Hyundai Kona Electric vs Tata Nexon EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/hyundai-kona-electric-vs-tata-nexon-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "mercedes-eqb-vs-volvo-ex40",
+      "title": "Mercedes Eqb vs Volvo Ex40 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/mercedes-eqb-vs-volvo-ex40",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "mahindra-xev-9e-vs-kia-ev6",
+      "title": "Mahindra Xev 9e vs Kia Ev6 — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/mahindra-xev-9e-vs-kia-ev6",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "tata-curvv-ev-vs-mg-zs-ev",
+      "title": "Tata Curvv EV vs MG Zs EV — Decision Comparison | EVSavari",
+      "canonicalPath": "/compare/tata-curvv-ev-vs-mg-zs-ev",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "ownership-battery-health",
+      "title": "EV Ownership: Battery health & longevity | EVSavari",
+      "canonicalPath": "/ownership-guides/battery-health",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-resale-value",
+      "title": "EV Ownership: Resale value expectations | EVSavari",
+      "canonicalPath": "/ownership-guides/resale-value",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-warranty-coverage",
+      "title": "EV Ownership: Warranty coverage | EVSavari",
+      "canonicalPath": "/ownership-guides/warranty-coverage",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-service-network",
+      "title": "EV Ownership: Service network access | EVSavari",
+      "canonicalPath": "/ownership-guides/service-network",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-rain-range",
+      "title": "EV Ownership: Rain & weather range impact | EVSavari",
+      "canonicalPath": "/ownership-guides/rain-range",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-highway-ownership",
+      "title": "EV Ownership: Highway ownership | EVSavari",
+      "canonicalPath": "/ownership-guides/highway-ownership",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-used-ev-buying",
+      "title": "EV Ownership: Used EV buying | EVSavari",
+      "canonicalPath": "/ownership-guides/used-ev-buying",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-fleet-commercial",
+      "title": "EV Ownership: Fleet & commercial use | EVSavari",
+      "canonicalPath": "/ownership-guides/fleet-commercial",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-running-cost",
+      "title": "EV Ownership: Running cost vs petrol | EVSavari",
+      "canonicalPath": "/ownership-guides/running-cost",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-insurance-tco",
+      "title": "EV Ownership: Insurance & total cost | EVSavari",
+      "canonicalPath": "/ownership-guides/insurance-tco",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-tax-benefits",
+      "title": "EV Ownership: EV tax benefits | EVSavari",
+      "canonicalPath": "/ownership-guides/tax-benefits",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-home-charger-install",
+      "title": "EV Ownership: Home charger installation | EVSavari",
+      "canonicalPath": "/ownership-guides/home-charger-install",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-society-rwa",
+      "title": "EV Ownership: Society & RWA approvals | EVSavari",
+      "canonicalPath": "/ownership-guides/society-rwa",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-monsoon-driving",
+      "title": "EV Ownership: Monsoon driving | EVSavari",
+      "canonicalPath": "/ownership-guides/monsoon-driving",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "ownership-long-term-reliability",
+      "title": "EV Ownership: Long-term reliability | EVSavari",
+      "canonicalPath": "/ownership-guides/long-term-reliability",
+      "pageType": "ownership_guide"
+    },
+    {
+      "slug": "best-evs-for-weekend-trips",
+      "title": "Best EVs for Weekend trips in India | EVSavari",
+      "canonicalPath": "/best-evs/weekend-trips",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-ride-hailing",
+      "title": "Best EVs for Ride-hailing & taxi use in India | EVSavari",
+      "canonicalPath": "/best-evs/ride-hailing",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-senior-drivers",
+      "title": "Best EVs for Senior drivers in India | EVSavari",
+      "canonicalPath": "/best-evs/senior-drivers",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-women-safety",
+      "title": "Best EVs for Women buyers prioritising safety tech in India | EVSavari",
+      "canonicalPath": "/best-evs/women-safety",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-large-family",
+      "title": "Best EVs for Large families needing space in India | EVSavari",
+      "canonicalPath": "/best-evs/large-family",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-performance",
+      "title": "Best EVs for Performance-oriented buyers in India | EVSavari",
+      "canonicalPath": "/best-evs/performance",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-tech-savvy",
+      "title": "Best EVs for Tech-savvy buyers in India | EVSavari",
+      "canonicalPath": "/best-evs/tech-savvy",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-semi-urban",
+      "title": "Best EVs for Semi-urban & tier-2 roads in India | EVSavari",
+      "canonicalPath": "/best-evs/semi-urban",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-college-students",
+      "title": "Best EVs for College & young professionals in India | EVSavari",
+      "canonicalPath": "/best-evs/college-students",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-corporate-fleet",
+      "title": "Best EVs for Corporate fleet shortlists in India | EVSavari",
+      "canonicalPath": "/best-evs/corporate-fleet",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-luxury-buyers",
+      "title": "Best EVs for Luxury EV buyers in India | EVSavari",
+      "canonicalPath": "/best-evs/luxury-buyers",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-compact-parking",
+      "title": "Best EVs for Tight parking & compact slots in India | EVSavari",
+      "canonicalPath": "/best-evs/compact-parking",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-long-range-highway",
+      "title": "Best EVs for Long-range highway use in India | EVSavari",
+      "canonicalPath": "/best-evs/long-range-highway",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-budget-lease",
+      "title": "Best EVs for Budget lease & subscription in India | EVSavari",
+      "canonicalPath": "/best-evs/budget-lease",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-taxi-commercial",
+      "title": "Best EVs for Taxi & commercial duty in India | EVSavari",
+      "canonicalPath": "/best-evs/taxi-commercial",
+      "pageType": "best_evs"
+    }
+  ]
+}

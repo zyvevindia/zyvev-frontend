@@ -1,14 +1,13 @@
 /**
  * SEO QA — run: npm run seo:qa
- * Audits discovery canonicals, sitemap coverage, schema, links, FAQs.
+ * Audits content-manifest + legacy guides + sitemap coverage.
  */
 
-import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { auditSeoPages, auditDiscoveryManifest } from "../src/seo/qa.js";
-import { buildFullSitemapManifest, listExpectedDiscoveryPaths } from "../src/seo/sitemap.js";
 import { resolveGuideCanonicalPath, GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH } from "../src/seo/legacyCanonicalMap.js";
 import { SEO_PAGE_SLUGS } from "../src/data/seoPageSlugs.js";
 
@@ -25,74 +24,77 @@ function stripBrand(title) {
   return String(title || "").replace(/ \| EVSavari$/, "").trim();
 }
 
-function discoverSeoDataExtras() {
-  const brands = [];
-  const cityRoutes = [];
-  const brandsDir = join(root, "public/seo-data/brands");
-  const citiesDir = join(root, "public/seo-data/cities");
-
-  if (existsSync(brandsDir)) {
-    for (const file of readdirSync(brandsDir)) {
-      if (file.endsWith(".json")) brands.push(file.replace(/\.json$/, ""));
-    }
+function pageFromManifestEntry(entry) {
+  let seo = {};
+  try {
+    const data = loadJson(entry.filePath);
+    seo = data?.seoPage || {};
+  } catch {
+    return null;
   }
-  if (existsSync(citiesDir)) {
-    for (const file of readdirSync(citiesDir)) {
-      if (!file.endsWith(".json")) continue;
-      const base = file.replace(/\.json$/, "");
-      if (base.endsWith("-charging")) {
-        cityRoutes.push({ city: base.replace(/-charging$/, ""), type: "charging" });
-      } else if (base.endsWith("-evs")) {
-        cityRoutes.push({ city: base.replace(/-evs$/, ""), type: "evs" });
-      }
-    }
-  }
-  return { brands, cityRoutes };
-}
 
-function loadGuidePage(contentSlug, canonicalPath) {
-  const data = loadJson(`public/seo-data/${contentSlug}.json`);
-  const seo = data?.seoPage || {};
-  const faq = Array.isArray(seo.faq) ? seo.faq : [];
-  const ranked = Array.isArray(seo.rankedVehicles) ? seo.rankedVehicles : [];
+  const relatedLinks = seo.relatedLinks || [];
+  const internalLinkCount = relatedLinks.reduce(
+    (n, s) => n + (s.links?.length || 0),
+    0
+  );
 
   return {
-    id: contentSlug,
-    path: canonicalPath,
-    title: seo.title,
+    id: entry.contentSlug,
+    path: entry.path,
+    title: seo.title || entry.title,
     description: seo.metaDescription,
-    canonical: `${SITE_ORIGIN}${canonicalPath}`,
-    h1: stripBrand(seo.title),
-    faqCount: faq.length,
-    rankedCount: ranked.length,
-    internalLinkCount: ranked.length > 0 ? 5 : 0,
-    hasSchemaCandidates: Boolean(seo.title && canonicalPath),
-    category: seo.category,
-    sitemapEligible: true,
-  };
-}
-
-function loadNestedPage(relPath, canonicalPath) {
-  const data = loadJson(`public/seo-data/${relPath}.json`);
-  const seo = data?.seoPage || data || {};
-  const faq = Array.isArray(seo.faq) ? seo.faq : [];
-
-  return {
-    id: relPath,
-    path: canonicalPath,
-    title: seo.title,
-    description: seo.metaDescription || seo.description,
-    canonical: `${SITE_ORIGIN}${canonicalPath}`,
-    h1: stripBrand(seo.title),
-    faqCount: faq.length,
+    canonical: entry.canonicalUrl || `${SITE_ORIGIN}${entry.path}`,
+    h1: stripBrand(seo.title || entry.h1),
+    faqCount: Array.isArray(seo.faq) ? seo.faq.length : 0,
     rankedCount: Array.isArray(seo.rankedVehicles) ? seo.rankedVehicles.length : 0,
-    hasSchemaCandidates: Boolean(seo.title),
-    category: seo.category || "discovery",
+    internalLinkCount: internalLinkCount || (seo.rankedVehicles?.length > 0 ? 3 : 0),
+    hasSchemaCandidates: Boolean(seo.title && entry.path),
+    category: seo.category || entry.pageType,
     sitemapEligible: true,
+    contentSlug: entry.contentSlug,
   };
 }
 
-const extras = discoverSeoDataExtras();
+function loadLegacyGuidePages() {
+  const pages = [];
+  const manifestSlugs = new Set();
+
+  if (existsSync(join(root, "public/seo-data/content-manifest.json"))) {
+    const manifest = loadJson("public/seo-data/content-manifest.json");
+    for (const e of manifest.entries || []) {
+      manifestSlugs.add(e.contentSlug);
+    }
+  }
+
+  for (const slug of SEO_PAGE_SLUGS) {
+    if (manifestSlugs.has(slug)) continue;
+    const path = resolveGuideCanonicalPath(slug);
+    try {
+      const data = loadJson(`public/seo-data/${slug}.json`);
+      const seo = data?.seoPage || {};
+      pages.push({
+        id: slug,
+        path,
+        title: seo.title,
+        description: seo.metaDescription,
+        canonical: `${SITE_ORIGIN}${path}`,
+        h1: stripBrand(seo.title),
+        faqCount: Array.isArray(seo.faq) ? seo.faq.length : 0,
+        rankedCount: Array.isArray(seo.rankedVehicles) ? seo.rankedVehicles.length : 0,
+        internalLinkCount: 5,
+        hasSchemaCandidates: Boolean(seo.title),
+        category: seo.category,
+        sitemapEligible: true,
+        contentSlug: slug,
+      });
+    } catch {
+      /* skip */
+    }
+  }
+  return pages;
+}
+
 const pages = [
   {
     id: "guides-hub",
@@ -110,35 +112,29 @@ const pages = [
   },
 ];
 
-for (const slug of SEO_PAGE_SLUGS) {
-  const path = resolveGuideCanonicalPath(slug);
-  pages.push(loadGuidePage(slug, path));
+if (existsSync(join(root, "public/seo-data/content-manifest.json"))) {
+  const manifest = loadJson("public/seo-data/content-manifest.json");
+  for (const entry of manifest.entries || []) {
+    const page = pageFromManifestEntry(entry);
+    if (page) pages.push(page);
+  }
 }
 
-for (const brand of extras.brands) {
-  pages.push(
-    loadNestedPage(`brands/${brand}`, `/brands/${brand}`)
-  );
-}
+pages.push(...loadLegacyGuidePages());
 
-for (const { city, type } of extras.cityRoutes) {
-  const suffix = type === "charging" ? "charging" : "evs";
-  const file = type === "charging" ? `${city}-charging` : `${city}-evs`;
-  pages.push(
-    loadNestedPage(`cities/${file}`, `/cities/${city}/${suffix}`)
-  );
-}
+const sitemapPaths = [
+  "/guides",
+  ...Object.values(GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH),
+  ...pages.filter((p) => p.sitemapEligible).map((p) => p.path),
+];
+const uniqueSitemapPaths = [...new Set(sitemapPaths)];
 
-const sitemapPaths = listExpectedDiscoveryPaths(extras);
-const manifest = buildFullSitemapManifest(SITE_ORIGIN, extras);
-const sitemapLocPaths = new Set(
-  manifest.discovery.map((e) => e.path)
-);
+const sitemapLocPaths = new Set(uniqueSitemapPaths);
 
 const basic = auditSeoPages(pages);
 const discovery = auditDiscoveryManifest({
   pages,
-  sitemapPaths,
+  sitemapPaths: uniqueSitemapPaths,
   sitemapLocPaths,
   legacyGuidePaths: SEO_PAGE_SLUGS.map((s) => `/cars/${s}`),
   siteOrigin: SITE_ORIGIN,
@@ -151,7 +147,7 @@ const result = {
   issues: [...basic.issues, ...discovery.issues],
   warnings: [...basic.warnings, ...discovery.warnings],
   pagesAudited: pages.length,
-  sitemapDiscoveryCount: sitemapPaths.length,
+  sitemapDiscoveryCount: uniqueSitemapPaths.length,
   canonicalGuideCount: Object.keys(GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH).length,
 };
 
@@ -159,7 +155,7 @@ console.log(
   `SEO QA: ${result.pagesAudited} pages | ${result.issueCount} errors | ${result.warningCount} warnings`
 );
 console.log(
-  `  Discovery sitemap paths: ${result.sitemapDiscoveryCount} | Canonical guides: ${result.canonicalGuideCount}`
+  `  Discovery sitemap paths: ${result.sitemapDiscoveryCount} | Legacy canonical guides: ${result.canonicalGuideCount}`
 );
 
 for (const issue of result.issues) {

@@ -50,6 +50,11 @@ function sanitizeClientPayload(payload) {
     "scenarioKey",
     "journeyStep",
     "metadata",
+    "pageType",
+    "discoveryPath",
+    "ctaType",
+    "citySlug",
+    "compareSlug",
   ];
 
   for (const key of keys) {

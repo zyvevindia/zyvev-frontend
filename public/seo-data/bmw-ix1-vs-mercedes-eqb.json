@@ -1,0 +1,106 @@
+{
+  "seoPage": {
+    "slug": "bmw-ix1-vs-mercedes-eqb",
+    "pageTypeId": "head_to_head",
+    "category": "compare",
+    "title": "BMW Ix1 vs Mercedes Eqb — Decision Comparison | EVSavari",
+    "metaDescription": "Side-by-side BMW Ix1 and Mercedes Eqb comparison with tradeoffs — not hype rankings.",
+    "intro": "This comparison contrasts BMW Ix1 and Mercedes Eqb on dimensions Indian buyers care about — range bands, charging, space, and indicative pricing. Review tradeoffs; we do not declare a universal winner.",
+    "recommendationLogic": {
+      "pageTypeId": "head_to_head",
+      "category": "compare",
+      "compareSlugs": [
+        "bmw-ix1",
+        "mercedes-eqb"
+      ],
+      "methodology": "Deterministic catalog comparison on range, charging, and value signals — no paid placement.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "bmw-ix1",
+        "displayName": "BMW Ix1",
+        "explanation": "BMW Ix1 may suit buyers prioritising familiarity and service access — verify charging and boot space.",
+        "detailPath": "/cars/bmw-ix1"
+      },
+      {
+        "rank": 2,
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes Eqb",
+        "explanation": "Mercedes Eqb may suit buyers wanting different packaging or charging flexibility — confirm on-road price locally.",
+        "detailPath": "/cars/mercedes-eqb"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Compare BMW Ix1 and Mercedes Eqb on range, charging speed, cabin space, and on-road budget. Neither is positioned as a universal winner — weigh tradeoffs for your commute and parking setup.",
+      "considerations": [
+        {
+          "slug": "bmw-ix1",
+          "tradeoff": "BMW Ix1 may suit buyers prioritising brand familiarity and service access in their city — verify DC charging speed and boot space for your routine."
+        },
+        {
+          "slug": "mercedes-eqb",
+          "tradeoff": "Mercedes Eqb may suit buyers wanting different packaging or charging flexibility — confirm on-road price and nearest service centre before deciding."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which is better — BMW Ix1 or Mercedes Eqb?",
+        "answer": "Neither is a universal winner. Compare range, charging, space, and on-road budget for your use case."
+      },
+      {
+        "question": "Should I test drive both?",
+        "answer": "Yes — seat comfort, visibility, and charging access at home/work matter beyond spec sheets."
+      },
+      {
+        "question": "Can I open the full compare tool?",
+        "answer": "Use the compare button on this page to load both variants in EVSavari's interactive compare view."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom figures are indicative — confirm on-road price and offers with a dealer in your city."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "More comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Buying guides",
+        "links": [
+          {
+            "label": "Best EVs under ₹10 lakh",
+            "href": "/best-evs/under-10-lakh"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/best-evs/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "open_compare_tool",
+      "label": "Open full compare tool →",
+      "vehicleSlugs": [
+        "bmw-ix1",
+        "mercedes-eqb"
+      ]
+    },
+    "canonicalPath": "/compare/bmw-ix1-vs-mercedes-eqb",
+    "canonicalUrl": "https://evsavari.com/compare/bmw-ix1-vs-mercedes-eqb",
+    "generatedAt": "2026-05-16T18:43:07.965Z"
+  }
+}

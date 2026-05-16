@@ -712,6 +712,12 @@ button {
   text-decoration: underline;
 }
 
+.seo-guides-hub__list--columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.35rem 1.25rem;
+}
+
 .seo-guides-hub__list--compact {
   font-size: 0.875rem;
 }

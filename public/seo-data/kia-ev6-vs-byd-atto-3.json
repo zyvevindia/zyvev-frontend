@@ -1,0 +1,106 @@
+{
+  "seoPage": {
+    "slug": "kia-ev6-vs-byd-atto-3",
+    "pageTypeId": "head_to_head",
+    "category": "compare",
+    "title": "Kia Ev6 vs BYD Atto 3 — Decision Comparison | EVSavari",
+    "metaDescription": "Side-by-side Kia Ev6 and BYD Atto 3 comparison with tradeoffs — not hype rankings.",
+    "intro": "This comparison contrasts Kia Ev6 and BYD Atto 3 on dimensions Indian buyers care about — range bands, charging, space, and indicative pricing. Review tradeoffs; we do not declare a universal winner.",
+    "recommendationLogic": {
+      "pageTypeId": "head_to_head",
+      "category": "compare",
+      "compareSlugs": [
+        "kia-ev6",
+        "byd-atto-3"
+      ],
+      "methodology": "Deterministic catalog comparison on range, charging, and value signals — no paid placement.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Kia Ev6 may suit buyers prioritising familiarity and service access — verify charging and boot space.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 2,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "explanation": "BYD Atto 3 may suit buyers wanting different packaging or charging flexibility — confirm on-road price locally.",
+        "detailPath": "/cars/byd-atto-3"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Compare Kia Ev6 and BYD Atto 3 on range, charging speed, cabin space, and on-road budget. Neither is positioned as a universal winner — weigh tradeoffs for your commute and parking setup.",
+      "considerations": [
+        {
+          "slug": "kia-ev6",
+          "tradeoff": "Kia Ev6 may suit buyers prioritising brand familiarity and service access in their city — verify DC charging speed and boot space for your routine."
+        },
+        {
+          "slug": "byd-atto-3",
+          "tradeoff": "BYD Atto 3 may suit buyers wanting different packaging or charging flexibility — confirm on-road price and nearest service centre before deciding."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which is better — Kia Ev6 or BYD Atto 3?",
+        "answer": "Neither is a universal winner. Compare range, charging, space, and on-road budget for your use case."
+      },
+      {
+        "question": "Should I test drive both?",
+        "answer": "Yes — seat comfort, visibility, and charging access at home/work matter beyond spec sheets."
+      },
+      {
+        "question": "Can I open the full compare tool?",
+        "answer": "Use the compare button on this page to load both variants in EVSavari's interactive compare view."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom figures are indicative — confirm on-road price and offers with a dealer in your city."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "More comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Buying guides",
+        "links": [
+          {
+            "label": "Best EVs under ₹10 lakh",
+            "href": "/best-evs/under-10-lakh"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/best-evs/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "open_compare_tool",
+      "label": "Open full compare tool →",
+      "vehicleSlugs": [
+        "kia-ev6",
+        "byd-atto-3"
+      ]
+    },
+    "canonicalPath": "/compare/kia-ev6-vs-byd-atto-3",
+    "canonicalUrl": "https://evsavari.com/compare/kia-ev6-vs-byd-atto-3",
+    "generatedAt": "2026-05-16T18:43:07.964Z"
+  }
+}

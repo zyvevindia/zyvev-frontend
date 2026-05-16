@@ -1,6 +1,6 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-05-16T18:29:23.798Z",
+  "generatedAt": "2026-05-16T18:43:09.136Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
@@ -265,6 +265,18 @@
       "changefreq": "weekly"
     },
     {
+      "loc": "https://evsavari.com/cities/ahmedabad/charging",
+      "path": "/cities/ahmedabad/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/ahmedabad/evs",
+      "path": "/cities/ahmedabad/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
       "loc": "https://evsavari.com/cities/bengaluru/charging",
       "path": "/cities/bengaluru/charging",
       "priority": 0.76,
@@ -275,19 +287,295 @@
       "path": "/cities/bengaluru/evs",
       "priority": 0.76,
       "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/bhopal/charging",
+      "path": "/cities/bhopal/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/bhopal/evs",
+      "path": "/cities/bhopal/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/chandigarh/charging",
+      "path": "/cities/chandigarh/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/chandigarh/evs",
+      "path": "/cities/chandigarh/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/chennai/charging",
+      "path": "/cities/chennai/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/chennai/evs",
+      "path": "/cities/chennai/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/coimbatore/charging",
+      "path": "/cities/coimbatore/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/coimbatore/evs",
+      "path": "/cities/coimbatore/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/delhi/charging",
+      "path": "/cities/delhi/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/delhi/evs",
+      "path": "/cities/delhi/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/gurgaon/charging",
+      "path": "/cities/gurgaon/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/gurgaon/evs",
+      "path": "/cities/gurgaon/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/guwahati/charging",
+      "path": "/cities/guwahati/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/guwahati/evs",
+      "path": "/cities/guwahati/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/hyderabad/charging",
+      "path": "/cities/hyderabad/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/hyderabad/evs",
+      "path": "/cities/hyderabad/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/indore/charging",
+      "path": "/cities/indore/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/indore/evs",
+      "path": "/cities/indore/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/jaipur/charging",
+      "path": "/cities/jaipur/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/jaipur/evs",
+      "path": "/cities/jaipur/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/kochi/charging",
+      "path": "/cities/kochi/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/kochi/evs",
+      "path": "/cities/kochi/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/kolkata/charging",
+      "path": "/cities/kolkata/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/kolkata/evs",
+      "path": "/cities/kolkata/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/lucknow/charging",
+      "path": "/cities/lucknow/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/lucknow/evs",
+      "path": "/cities/lucknow/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/ludhiana/charging",
+      "path": "/cities/ludhiana/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/ludhiana/evs",
+      "path": "/cities/ludhiana/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/mumbai/charging",
+      "path": "/cities/mumbai/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/mumbai/evs",
+      "path": "/cities/mumbai/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/nagpur/charging",
+      "path": "/cities/nagpur/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/nagpur/evs",
+      "path": "/cities/nagpur/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/noida/charging",
+      "path": "/cities/noida/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/noida/evs",
+      "path": "/cities/noida/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/patna/charging",
+      "path": "/cities/patna/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/patna/evs",
+      "path": "/cities/patna/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/pune/charging",
+      "path": "/cities/pune/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/pune/evs",
+      "path": "/cities/pune/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/surat/charging",
+      "path": "/cities/surat/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/surat/evs",
+      "path": "/cities/surat/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/thiruvananthapuram/charging",
+      "path": "/cities/thiruvananthapuram/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/thiruvananthapuram/evs",
+      "path": "/cities/thiruvananthapuram/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/vadodara/charging",
+      "path": "/cities/vadodara/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/vadodara/evs",
+      "path": "/cities/vadodara/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/visakhapatnam/charging",
+      "path": "/cities/visakhapatnam/charging",
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/cities/visakhapatnam/evs",
+      "path": "/cities/visakhapatnam/evs",
+      "priority": 0.76,
+      "changefreq": "weekly"
     }
   ],
   "counts": {
     "static": 7,
     "vehicles": 17,
-    "discovery": 21,
-    "total": 45
+    "discovery": 69,
+    "total": 93
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
     "static": 7,
     "cars": 17,
-    "discovery": 21,
+    "discovery": 122,
     "compare": 1
   }
 }

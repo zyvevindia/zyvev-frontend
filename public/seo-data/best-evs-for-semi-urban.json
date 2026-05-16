@@ -1,0 +1,100 @@
+{
+  "seoPage": {
+    "slug": "best-evs-for-semi-urban",
+    "category": "usage",
+    "title": "Best EVs for Semi-urban & tier-2 roads in India | EVSavari",
+    "metaDescription": "EVs well suited for semi-urban & tier-2 roads in India — data-driven shortlist on EVSavari.",
+    "intro": "This guide surfaces electric cars well suited for semi-urban & tier-2 roads using catalog intelligence — with tradeoffs, not a single “best EV” claim.",
+    "recommendationLogic": {
+      "category": "usage",
+      "methodology": "Composite of usage-fit scores from catalog intelligence; no manual paid overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Well suited for semi-urban & tier-2 roads based on catalog usage and value signals.",
+        "detailPath": "/cars/tata-tiago-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Well suited for semi-urban & tier-2 roads based on catalog usage and value signals.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra Xev 9e",
+        "explanation": "Well suited for semi-urban & tier-2 roads based on catalog usage and value signals.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 4,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra Be 6",
+        "explanation": "Well suited for semi-urban & tier-2 roads based on catalog usage and value signals.",
+        "detailPath": "/cars/mahindra-be-6"
+      },
+      {
+        "rank": 5,
+        "slug": "mg-zs-ev",
+        "displayName": "MG Zs EV",
+        "explanation": "Well suited for semi-urban & tier-2 roads based on catalog usage and value signals.",
+        "detailPath": "/cars/mg-zs-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Match semi-urban & tier-2 roads needs to your real commute km and charging setup.",
+      "Confirm on-road price and variant availability with a dealer in your city."
+    ],
+    "faq": [
+      {
+        "question": "Which EVs are well suited for semi-urban & tier-2 roads?",
+        "answer": "Picks on this page combine catalog scores for the stated use case — review tradeoffs before you decide."
+      },
+      {
+        "question": "Why isn't there a single best EV?",
+        "answer": "Charging access, budget, and driving mix differ — we show well-suited options, not one-size-fits-all winners."
+      },
+      {
+        "question": "How often is this list updated?",
+        "answer": "Rankings refresh as catalog intelligence and on-sale variants change."
+      },
+      {
+        "question": "Can I compare two shortlisted models?",
+        "answer": "Yes — use compare guides or the compare tool after opening a model family page."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Explore more",
+        "links": [
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Browse EV catalog",
+            "href": "/cars"
+          },
+          {
+            "label": "Compare tool",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/best-evs/semi-urban",
+    "canonicalUrl": "https://evsavari.com/best-evs/semi-urban",
+    "generatedAt": "2026-05-16T18:43:08.006Z"
+  }
+}

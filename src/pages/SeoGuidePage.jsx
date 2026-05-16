@@ -14,7 +14,10 @@ import SeoRelatedLinks from "../components/SEO/SeoRelatedLinks";
 import useSeoPage from "../hooks/useSeoPage";
 
 import { buildGuidePageMeta } from "../seo/meta";
-import { resolveGuideCanonicalUrl } from "../seo/legacyCanonicalMap";
+import {
+  resolveGuideCanonicalUrl,
+  resolveGuideCanonicalPath,
+} from "../seo/legacyCanonicalMap";
 import { buildDiscoveryPageSchemas } from "../seo/schema";
 import { getDiscoveryLinkSections } from "../seo/internalLinks";
 import { replaceCompareCars } from "../utils/compareCarsStorage";
@@ -130,6 +133,7 @@ export default function SeoGuidePage() {
           rankedVehicles={seoPage.rankedVehicles}
           isCompare={isCompare}
           seoPageSlug={seoPage.slug}
+          sourcePage={resolveGuideCanonicalPath(seoPage.slug)}
         />
 
         <SeoTradeoffs tradeoffs={seoPage.tradeoffs} />

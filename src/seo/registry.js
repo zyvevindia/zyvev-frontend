@@ -26,6 +26,7 @@ import {
 } from "./slugMap";
 
 import { SEO_PAGE_SLUGS } from "../data/seoPageSlugs";
+import { CONTENT_REGISTRY_ENTRIES } from "../content/generated/manifest.js";
 import {
   resolveGuideCanonicalPath,
   resolveGuideCanonicalUrl,
@@ -176,6 +177,19 @@ export function buildRegistryManifest() {
       contentSlug: slug,
       canonicalUrl: resolveGuideCanonicalUrl(slug),
       legacyPath: `/cars/${slug}`,
+    });
+  }
+
+  const seen = new Set(entries.map((e) => e.path));
+  for (const row of CONTENT_REGISTRY_ENTRIES) {
+    if (seen.has(row.path)) continue;
+    seen.add(row.path);
+    entries.push({
+      id: row.id,
+      pageType: row.pageType,
+      path: row.path,
+      contentSlug: row.contentSlug,
+      canonicalUrl: row.canonicalUrl,
     });
   }
 

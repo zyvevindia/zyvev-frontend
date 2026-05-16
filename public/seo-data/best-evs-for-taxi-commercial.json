@@ -1,0 +1,100 @@
+{
+  "seoPage": {
+    "slug": "best-evs-for-taxi-commercial",
+    "category": "usage",
+    "title": "Best EVs for Taxi & commercial duty in India | EVSavari",
+    "metaDescription": "EVs well suited for taxi & commercial duty in India — data-driven shortlist on EVSavari.",
+    "intro": "This guide surfaces electric cars well suited for taxi & commercial duty using catalog intelligence — with tradeoffs, not a single “best EV” claim.",
+    "recommendationLogic": {
+      "category": "usage",
+      "methodology": "Composite of usage-fit scores from catalog intelligence; no manual paid overrides.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Well suited for taxi & commercial duty based on catalog usage and value signals.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Well suited for taxi & commercial duty based on catalog usage and value signals.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Well suited for taxi & commercial duty based on catalog usage and value signals.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Well suited for taxi & commercial duty based on catalog usage and value signals.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 5,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "explanation": "Well suited for taxi & commercial duty based on catalog usage and value signals.",
+        "detailPath": "/cars/tata-punch-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Match taxi & commercial duty needs to your real commute km and charging setup.",
+      "Confirm on-road price and variant availability with a dealer in your city."
+    ],
+    "faq": [
+      {
+        "question": "Which EVs are well suited for taxi & commercial duty?",
+        "answer": "Picks on this page combine catalog scores for the stated use case — review tradeoffs before you decide."
+      },
+      {
+        "question": "Why isn't there a single best EV?",
+        "answer": "Charging access, budget, and driving mix differ — we show well-suited options, not one-size-fits-all winners."
+      },
+      {
+        "question": "How often is this list updated?",
+        "answer": "Rankings refresh as catalog intelligence and on-sale variants change."
+      },
+      {
+        "question": "Can I compare two shortlisted models?",
+        "answer": "Yes — use compare guides or the compare tool after opening a model family page."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Explore more",
+        "links": [
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Browse EV catalog",
+            "href": "/cars"
+          },
+          {
+            "label": "Compare tool",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/best-evs/taxi-commercial",
+    "canonicalUrl": "https://evsavari.com/best-evs/taxi-commercial",
+    "generatedAt": "2026-05-16T18:43:08.013Z"
+  }
+}

@@ -3,89 +3,100 @@
     "slug": "comet-ev-vs-tiago-ev",
     "pageTypeId": "head_to_head",
     "category": "compare",
-    "title": "MG Comet EV vs Tata Tiago EV — decision comparison | EVSavari",
-    "metaDescription": "Comet EV vs Tiago EV — compact EV decision page with explainable strengths and tradeoffs.",
-    "intro": "This comparison contrasts two catalog variants side by side. We highlight where each is better aligned — with tradeoffs, not a single winner claim.",
+    "title": "MG Comet EV vs Tata Tiago EV — Decision Comparison | EVSavari",
+    "metaDescription": "Side-by-side MG Comet EV and Tata Tiago EV comparison with tradeoffs — not hype rankings.",
+    "intro": "This comparison contrasts MG Comet EV and Tata Tiago EV on dimensions Indian buyers care about — range bands, charging, space, and indicative pricing. Review tradeoffs; we do not declare a universal winner.",
     "recommendationLogic": {
       "pageTypeId": "head_to_head",
       "category": "compare",
-      "primaryScoreKey": "compareValue",
-      "secondaryScoreKeys": [],
-      "filters": {
-        "launchStatus": "on-sale"
-      },
       "compareSlugs": [
-        "mg-comet-ev-play",
-        "tata-tiago-ev-xt"
+        "mg-comet-ev",
+        "tata-tiago-ev"
       ],
-      "candidatePoolSize": 2,
-      "methodology": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
+      "methodology": "Deterministic catalog comparison on range, charging, and value signals — no paid placement.",
       "tonePolicy": "well_suited_language_only"
     },
     "rankedVehicles": [
       {
         "rank": 1,
-        "slug": "mg-comet-ev-play",
-        "displayName": "Mg Play",
-        "exShowroom": 798000,
-        "claimedRangeKm": 230,
-        "compositeScore": 62,
-        "confidence": "low",
-        "explanation": "Compared on catalog intelligence dimensions relevant to this decision (score 62).",
-        "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car.",
-        "detailPath": "/cars/mg-comet-ev-play"
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "MG Comet EV may suit buyers prioritising familiarity and service access — verify charging and boot space.",
+        "detailPath": "/cars/mg-comet-ev"
       },
       {
         "rank": 2,
-        "slug": "tata-tiago-ev-xt",
-        "displayName": "Tata XT",
-        "exShowroom": 799000,
-        "claimedRangeKm": 250,
-        "compositeScore": 63,
-        "confidence": "low",
-        "explanation": "Compared on catalog intelligence dimensions relevant to this decision (score 63).",
-        "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot.",
-        "detailPath": "/cars/tata-tiago-ev-xt"
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Tata Tiago EV may suit buyers wanting different packaging or charging flexibility — confirm on-road price locally.",
+        "detailPath": "/cars/tata-tiago-ev"
       }
     ],
     "tradeoffs": {
-      "summary": "Compare Mg Play and Tata XT on the dimensions that matter to you — range, charging, space, and on-road budget. Neither is positioned as a universal winner.",
+      "summary": "Compare MG Comet EV and Tata Tiago EV on range, charging speed, cabin space, and on-road budget. Neither is positioned as a universal winner — weigh tradeoffs for your commute and parking setup.",
       "considerations": [
         {
-          "slug": "mg-comet-ev-play",
-          "tradeoff": "Strengths noted in catalog: Tiny footprint for urban parking, Distinctive design. Tradeoff to weigh: Not highway-capable as primary car."
+          "slug": "mg-comet-ev",
+          "tradeoff": "MG Comet EV may suit buyers prioritising brand familiarity and service access in their city — verify DC charging speed and boot space for your routine."
         },
         {
-          "slug": "tata-tiago-ev-xt",
-          "tradeoff": "Strengths noted in catalog: Lowest Tata EV entry, Easy city parking. Tradeoff to weigh: Small boot."
+          "slug": "tata-tiago-ev",
+          "tradeoff": "Tata Tiago EV may suit buyers wanting different packaging or charging flexibility — confirm on-road price and nearest service centre before deciding."
         }
       ]
     },
     "faq": [
       {
-        "question": "Which EV is better in this comparison?",
-        "answer": "Neither variant is declared a universal winner. Each section explains where a variant is better aligned and what to trade off."
+        "question": "Which is better — MG Comet EV or Tata Tiago EV?",
+        "answer": "Neither is a universal winner. Compare range, charging, space, and on-road budget for your use case."
       },
       {
         "question": "Should I test drive both?",
-        "answer": "Yes — seat comfort, visibility, and charging access at your home/work matter beyond spec sheets."
+        "answer": "Yes — seat comfort, visibility, and charging access at home/work matter beyond spec sheets."
       },
       {
-        "question": "What is the top pick on this page?",
-        "answer": "Mg Play is currently highest on our head to head composite (score 62, low confidence). This is not a universal \"best EV\" claim — review tradeoffs below."
+        "question": "Can I open the full compare tool?",
+        "answer": "Use the compare button on this page to load both variants in EVSavari's interactive compare view."
       },
       {
-        "question": "What is the ex-showroom price of Mg Play?",
-        "answer": "Indicative ex-showroom from catalog: ₹7.98 lakh. Confirm on-road price with a dealer in your city."
+        "question": "Are prices final?",
+        "answer": "Ex-showroom figures are indicative — confirm on-road price and offers with a dealer in your city."
       }
     ],
-    "canonicalPath": "/cars/comet-ev-vs-tiago-ev",
-    "canonicalUrl": "https://evsavari.com/cars/comet-ev-vs-tiago-ev",
-    "generatedAt": "2026-05-16T07:17:49.812Z",
-    "governance": {
-      "tonePolicy": "editorial_templates_only",
-      "rankingMethod": "Deterministic composite of internal recommendation scores (70% primary, 30% secondary average). No manual ranking overrides.",
-      "superlativesAvoided": true
-    }
+    "relatedLinks": [
+      {
+        "title": "More comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          }
+        ]
+      },
+      {
+        "title": "Buying guides",
+        "links": [
+          {
+            "label": "Best EVs under ₹10 lakh",
+            "href": "/best-evs/under-10-lakh"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/best-evs/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "open_compare_tool",
+      "label": "Open full compare tool →",
+      "vehicleSlugs": [
+        "mg-comet-ev",
+        "tata-tiago-ev"
+      ]
+    },
+    "canonicalPath": "/compare/comet-ev-vs-tiago-ev",
+    "canonicalUrl": "https://evsavari.com/compare/comet-ev-vs-tiago-ev",
+    "generatedAt": "2026-05-16T18:43:07.957Z"
   }
 }

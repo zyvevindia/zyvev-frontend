@@ -10,7 +10,7 @@ import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
 
 import { appendJourneyStep } from "../../buyer-intelligence/journeyBuffer";
 
-function trackSeoToDetail(targetSlug, seoPageSlug) {
+function trackSeoToDetail(targetSlug, seoPageSlug, sourcePage = "") {
   appendJourneyStep({
     type: "seo_to_detail",
     seoPageSlug,
@@ -20,9 +20,8 @@ function trackSeoToDetail(targetSlug, seoPageSlug) {
     seoPageSlug,
     targetSlug,
     vehicleSlugs: targetSlug ? [targetSlug] : [],
-    sourcePage: seoPageSlug
-      ? `/cars/${seoPageSlug}`
-      : "",
+    sourcePage: sourcePage || (seoPageSlug ? `/cars/${seoPageSlug}` : ""),
+    discoveryPath: sourcePage || "",
     sessionIntent: inferSeoIntent(seoPageSlug),
   });
 }
@@ -41,6 +40,7 @@ export default function SeoRecommendationList({
   rankedVehicles = [],
   isCompare = false,
   seoPageSlug = "",
+  sourcePage = "",
 }) {
   if (!rankedVehicles.length) {
     return (
@@ -67,7 +67,7 @@ export default function SeoRecommendationList({
                 to={vehicleDetailPath(item.slug)}
                 style={styles.titleLink}
                 onClick={() =>
-                  trackSeoToDetail(item.slug, seoPageSlug)
+                  trackSeoToDetail(item.slug, seoPageSlug, sourcePage)
                 }
               >
                 {item.displayName}

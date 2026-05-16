@@ -1,0 +1,118 @@
+{
+  "seoPage": {
+    "slug": "city-kochi-evs",
+    "category": "city",
+    "title": "Electric Cars in Kochi — Local Picks & Buying Guide | EVSavari",
+    "metaDescription": "Electric cars for Kochi: commute-friendly EV families, charging tips, and comparisons on EVSavari.",
+    "intro": "Kochi's coastal humidity and moderate daily distances make EVs attractive for many commuters. This page highlights model families that fit typical Kochi usage and links to charging and ownership guides.",
+    "recommendationLogic": {
+      "category": "city",
+      "methodology": "City recommendations weight city-driving and commute scores from catalog intelligence."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "bmw-ix1",
+        "displayName": "BMW Ix1",
+        "explanation": "Well suited for Kochi buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/bmw-ix1"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Well suited for Kochi buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/tata-tiago-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra Xev 9e",
+        "explanation": "Well suited for Kochi buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "explanation": "Well suited for Kochi buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/tata-curvv-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Apartment charging access in Kochi varies — review our apartment-living ownership guide.",
+      "Peak-hour range can differ from lab claims; plan around your real commute distance."
+    ],
+    "faq": [
+      {
+        "question": "Is an EV practical in Kochi?",
+        "answer": "For most daily commuters under 80–100 km/day with home or workplace charging, yes — traffic patterns in Kochi often suit EV efficiency."
+      },
+      {
+        "question": "What should I check before buying an EV in Kochi?",
+        "answer": "Confirm apartment or workplace charging access, realistic commute distance, and on-road price with a local dealer."
+      },
+      {
+        "question": "Where can I compare charging guides?",
+        "answer": "Browse our charging guides hub for home charging, commute, and lower charging-stress picks."
+      },
+      {
+        "question": "Are rankings paid placements?",
+        "answer": "No — picks use catalog intelligence composites, not sponsored ordering."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Kochi charging",
+        "links": [
+          {
+            "label": "Kochi charging guide",
+            "href": "/cities/kochi/charging"
+          },
+          {
+            "label": "Home charging guide",
+            "href": "/charging-guides/home-charging"
+          },
+          {
+            "label": "Lower charging-stress EVs",
+            "href": "/charging-guides/low-stress"
+          }
+        ]
+      },
+      {
+        "title": "Popular comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Ownership",
+        "links": [
+          {
+            "label": "Apartment living",
+            "href": "/ownership-guides/apartment-living"
+          },
+          {
+            "label": "First-time buyers",
+            "href": "/ownership-guides/first-time-buyers"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/cities/kochi/evs",
+    "canonicalUrl": "https://evsavari.com/cities/kochi/evs",
+    "generatedAt": "2026-05-16T18:43:07.924Z"
+  }
+}

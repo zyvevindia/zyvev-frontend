@@ -1,0 +1,106 @@
+{
+  "seoPage": {
+    "slug": "mahindra-be-6-vs-mahindra-xuv400",
+    "pageTypeId": "head_to_head",
+    "category": "compare",
+    "title": "Mahindra Be 6 vs Mahindra Xuv400 — Decision Comparison | EVSavari",
+    "metaDescription": "Side-by-side Mahindra Be 6 and Mahindra Xuv400 comparison with tradeoffs — not hype rankings.",
+    "intro": "This comparison contrasts Mahindra Be 6 and Mahindra Xuv400 on dimensions Indian buyers care about — range bands, charging, space, and indicative pricing. Review tradeoffs; we do not declare a universal winner.",
+    "recommendationLogic": {
+      "pageTypeId": "head_to_head",
+      "category": "compare",
+      "compareSlugs": [
+        "mahindra-be-6",
+        "mahindra-xuv400"
+      ],
+      "methodology": "Deterministic catalog comparison on range, charging, and value signals — no paid placement.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra Be 6",
+        "explanation": "Mahindra Be 6 may suit buyers prioritising familiarity and service access — verify charging and boot space.",
+        "detailPath": "/cars/mahindra-be-6"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra Xuv400",
+        "explanation": "Mahindra Xuv400 may suit buyers wanting different packaging or charging flexibility — confirm on-road price locally.",
+        "detailPath": "/cars/mahindra-xuv400"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Compare Mahindra Be 6 and Mahindra Xuv400 on range, charging speed, cabin space, and on-road budget. Neither is positioned as a universal winner — weigh tradeoffs for your commute and parking setup.",
+      "considerations": [
+        {
+          "slug": "mahindra-be-6",
+          "tradeoff": "Mahindra Be 6 may suit buyers prioritising brand familiarity and service access in their city — verify DC charging speed and boot space for your routine."
+        },
+        {
+          "slug": "mahindra-xuv400",
+          "tradeoff": "Mahindra Xuv400 may suit buyers wanting different packaging or charging flexibility — confirm on-road price and nearest service centre before deciding."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which is better — Mahindra Be 6 or Mahindra Xuv400?",
+        "answer": "Neither is a universal winner. Compare range, charging, space, and on-road budget for your use case."
+      },
+      {
+        "question": "Should I test drive both?",
+        "answer": "Yes — seat comfort, visibility, and charging access at home/work matter beyond spec sheets."
+      },
+      {
+        "question": "Can I open the full compare tool?",
+        "answer": "Use the compare button on this page to load both variants in EVSavari's interactive compare view."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom figures are indicative — confirm on-road price and offers with a dealer in your city."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "More comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Buying guides",
+        "links": [
+          {
+            "label": "Best EVs under ₹10 lakh",
+            "href": "/best-evs/under-10-lakh"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/best-evs/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "open_compare_tool",
+      "label": "Open full compare tool →",
+      "vehicleSlugs": [
+        "mahindra-be-6",
+        "mahindra-xuv400"
+      ]
+    },
+    "canonicalPath": "/compare/mahindra-be-6-vs-mahindra-xuv400",
+    "canonicalUrl": "https://evsavari.com/compare/mahindra-be-6-vs-mahindra-xuv400",
+    "generatedAt": "2026-05-16T18:43:07.968Z"
+  }
+}

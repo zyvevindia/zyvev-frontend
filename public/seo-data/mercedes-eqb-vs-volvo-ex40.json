@@ -1,0 +1,106 @@
+{
+  "seoPage": {
+    "slug": "mercedes-eqb-vs-volvo-ex40",
+    "pageTypeId": "head_to_head",
+    "category": "compare",
+    "title": "Mercedes Eqb vs Volvo Ex40 — Decision Comparison | EVSavari",
+    "metaDescription": "Side-by-side Mercedes Eqb and Volvo Ex40 comparison with tradeoffs — not hype rankings.",
+    "intro": "This comparison contrasts Mercedes Eqb and Volvo Ex40 on dimensions Indian buyers care about — range bands, charging, space, and indicative pricing. Review tradeoffs; we do not declare a universal winner.",
+    "recommendationLogic": {
+      "pageTypeId": "head_to_head",
+      "category": "compare",
+      "compareSlugs": [
+        "mercedes-eqb",
+        "volvo-ex40"
+      ],
+      "methodology": "Deterministic catalog comparison on range, charging, and value signals — no paid placement.",
+      "tonePolicy": "well_suited_language_only"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes Eqb",
+        "explanation": "Mercedes Eqb may suit buyers prioritising familiarity and service access — verify charging and boot space.",
+        "detailPath": "/cars/mercedes-eqb"
+      },
+      {
+        "rank": 2,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Volvo Ex40 may suit buyers wanting different packaging or charging flexibility — confirm on-road price locally.",
+        "detailPath": "/cars/volvo-ex40"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Compare Mercedes Eqb and Volvo Ex40 on range, charging speed, cabin space, and on-road budget. Neither is positioned as a universal winner — weigh tradeoffs for your commute and parking setup.",
+      "considerations": [
+        {
+          "slug": "mercedes-eqb",
+          "tradeoff": "Mercedes Eqb may suit buyers prioritising brand familiarity and service access in their city — verify DC charging speed and boot space for your routine."
+        },
+        {
+          "slug": "volvo-ex40",
+          "tradeoff": "Volvo Ex40 may suit buyers wanting different packaging or charging flexibility — confirm on-road price and nearest service centre before deciding."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Which is better — Mercedes Eqb or Volvo Ex40?",
+        "answer": "Neither is a universal winner. Compare range, charging, space, and on-road budget for your use case."
+      },
+      {
+        "question": "Should I test drive both?",
+        "answer": "Yes — seat comfort, visibility, and charging access at home/work matter beyond spec sheets."
+      },
+      {
+        "question": "Can I open the full compare tool?",
+        "answer": "Use the compare button on this page to load both variants in EVSavari's interactive compare view."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom figures are indicative — confirm on-road price and offers with a dealer in your city."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "More comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Buying guides",
+        "links": [
+          {
+            "label": "Best EVs under ₹10 lakh",
+            "href": "/best-evs/under-10-lakh"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/best-evs/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "open_compare_tool",
+      "label": "Open full compare tool →",
+      "vehicleSlugs": [
+        "mercedes-eqb",
+        "volvo-ex40"
+      ]
+    },
+    "canonicalPath": "/compare/mercedes-eqb-vs-volvo-ex40",
+    "canonicalUrl": "https://evsavari.com/compare/mercedes-eqb-vs-volvo-ex40",
+    "generatedAt": "2026-05-16T18:43:07.979Z"
+  }
+}

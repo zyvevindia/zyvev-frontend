@@ -1,0 +1,118 @@
+{
+  "seoPage": {
+    "slug": "city-mumbai-evs",
+    "category": "city",
+    "title": "Electric Cars in Mumbai — Local Picks & Buying Guide | EVSavari",
+    "metaDescription": "Electric cars for Mumbai: commute-friendly EV families, charging tips, and comparisons on EVSavari.",
+    "intro": "Mumbai's dense urban commutes and mixed parking access make EVs attractive for many commuters. This page highlights model families that fit typical Mumbai usage and links to charging and ownership guides.",
+    "recommendationLogic": {
+      "category": "city",
+      "methodology": "City recommendations weight city-driving and commute scores from catalog intelligence."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Well suited for Mumbai buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "explanation": "Well suited for Mumbai buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/hyundai-kona-electric"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra Xev 9e",
+        "explanation": "Well suited for Mumbai buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "explanation": "Well suited for Mumbai buyers weighing daily commute distance and local charging access.",
+        "detailPath": "/cars/tata-punch-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Apartment charging access in Mumbai varies — review our apartment-living ownership guide.",
+      "Peak-hour range can differ from lab claims; plan around your real commute distance."
+    ],
+    "faq": [
+      {
+        "question": "Is an EV practical in Mumbai?",
+        "answer": "For most daily commuters under 80–100 km/day with home or workplace charging, yes — traffic patterns in Mumbai often suit EV efficiency."
+      },
+      {
+        "question": "What should I check before buying an EV in Mumbai?",
+        "answer": "Confirm apartment or workplace charging access, realistic commute distance, and on-road price with a local dealer."
+      },
+      {
+        "question": "Where can I compare charging guides?",
+        "answer": "Browse our charging guides hub for home charging, commute, and lower charging-stress picks."
+      },
+      {
+        "question": "Are rankings paid placements?",
+        "answer": "No — picks use catalog intelligence composites, not sponsored ordering."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Mumbai charging",
+        "links": [
+          {
+            "label": "Mumbai charging guide",
+            "href": "/cities/mumbai/charging"
+          },
+          {
+            "label": "Home charging guide",
+            "href": "/charging-guides/home-charging"
+          },
+          {
+            "label": "Lower charging-stress EVs",
+            "href": "/charging-guides/low-stress"
+          }
+        ]
+      },
+      {
+        "title": "Popular comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Ownership",
+        "links": [
+          {
+            "label": "Apartment living",
+            "href": "/ownership-guides/apartment-living"
+          },
+          {
+            "label": "First-time buyers",
+            "href": "/ownership-guides/first-time-buyers"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/cities/mumbai/evs",
+    "canonicalUrl": "https://evsavari.com/cities/mumbai/evs",
+    "generatedAt": "2026-05-16T18:43:07.899Z"
+  }
+}

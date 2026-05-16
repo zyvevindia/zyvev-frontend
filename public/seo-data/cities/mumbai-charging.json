@@ -1,0 +1,111 @@
+{
+  "seoPage": {
+    "slug": "city-mumbai-charging",
+    "category": "city",
+    "title": "EV Charging in Mumbai — Home, Workplace & Public | EVSavari",
+    "metaDescription": "Charging guide for Mumbai EV buyers: home AC setup, apartment constraints, and public charger planning.",
+    "intro": "Charging convenience in Mumbai depends on parking type, society rules, and your daily km. Use this guide to plan home or workplace charging before you shortlist a model.",
+    "recommendationLogic": {
+      "category": "city",
+      "methodology": "City charging guidance combines ownership patterns and catalog charging-stress signals."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Lower charging-stress profile for Mumbai owners with predictable daily km.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 2,
+        "slug": "bmw-ix1",
+        "displayName": "BMW Ix1",
+        "explanation": "Lower charging-stress profile for Mumbai owners with predictable daily km.",
+        "detailPath": "/cars/bmw-ix1"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra Xuv400",
+        "explanation": "Lower charging-stress profile for Mumbai owners with predictable daily km.",
+        "detailPath": "/cars/mahindra-xuv400"
+      }
+    ],
+    "tradeoffs": [
+      "Society approvals can delay wallbox installs — start conversations early.",
+      "Public DC availability varies by locality; do not rely on it as your only plan."
+    ],
+    "faq": [
+      {
+        "question": "How easy is home charging in Mumbai?",
+        "answer": "Depends on parking type — apartments may need society approval; independent homes are often simpler for AC wallbox installs."
+      },
+      {
+        "question": "Are public chargers available in Mumbai?",
+        "answer": "Metro networks are expanding, but daily reliability still improves when you can charge at home or work."
+      },
+      {
+        "question": "Which EVs reduce charging stress?",
+        "answer": "See our lower charging-stress guide for models with practical range bands and charging flexibility."
+      },
+      {
+        "question": "Should I buy a portable charger first?",
+        "answer": "Many owners start with a 3-pin or Type-2 AC setup; confirm load limits with your electrician before install."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Mumbai charging",
+        "links": [
+          {
+            "label": "Mumbai charging guide",
+            "href": "/cities/mumbai/charging"
+          },
+          {
+            "label": "Home charging guide",
+            "href": "/charging-guides/home-charging"
+          },
+          {
+            "label": "Lower charging-stress EVs",
+            "href": "/charging-guides/low-stress"
+          }
+        ]
+      },
+      {
+        "title": "Popular comparisons",
+        "links": [
+          {
+            "label": "Nexon EV vs MG ZS EV",
+            "href": "/compare/nexon-ev-vs-mg-zs-ev"
+          },
+          {
+            "label": "Comet EV vs Tiago EV",
+            "href": "/compare/comet-ev-vs-tiago-ev"
+          }
+        ]
+      },
+      {
+        "title": "Ownership",
+        "links": [
+          {
+            "label": "Apartment living",
+            "href": "/ownership-guides/apartment-living"
+          },
+          {
+            "label": "First-time buyers",
+            "href": "/ownership-guides/first-time-buyers"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "city_evs",
+      "label": "See EV picks in Mumbai →",
+      "href": "/cities/mumbai/evs"
+    },
+    "canonicalPath": "/cities/mumbai/charging",
+    "canonicalUrl": "https://evsavari.com/cities/mumbai/charging",
+    "generatedAt": "2026-05-16T18:43:07.899Z"
+  }
+}

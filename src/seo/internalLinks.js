@@ -16,7 +16,10 @@ import {
   BEST_EVS_USE_CASE_TO_SLUG,
   CHARGING_GUIDE_TO_SLUG,
   OWNERSHIP_GUIDE_TO_SLUG,
+  COMPARE_GUIDE_SLUGS,
 } from "./slugMap";
+
+import { GENERATED_CITY_SLUGS } from "../content/generated/manifest.js";
 
 const CATEGORY_RELATED = {
   budget: ["best-evs-under-20-lakh", "lowest-maintenance-electric-cars"],
@@ -35,8 +38,40 @@ const CATEGORY_RELATED = {
     "lowest-charging-stress-evs",
     "best-evs-for-daily-commute",
   ],
-  compare: ["nexon-ev-vs-mg-zs-ev", "comet-ev-vs-tiago-ev"],
+  compare: [...COMPARE_GUIDE_SLUGS].slice(0, 6),
 };
+
+const CITY_DISPLAY = {
+  bengaluru: "Bengaluru",
+  mumbai: "Mumbai",
+  delhi: "Delhi NCR",
+  hyderabad: "Hyderabad",
+  chennai: "Chennai",
+  pune: "Pune",
+  kolkata: "Kolkata",
+  ahmedabad: "Ahmedabad",
+  jaipur: "Jaipur",
+  lucknow: "Lucknow",
+  kochi: "Kochi",
+  chandigarh: "Chandigarh",
+  indore: "Indore",
+  nagpur: "Nagpur",
+  coimbatore: "Coimbatore",
+  surat: "Surat",
+  visakhapatnam: "Visakhapatnam",
+  bhopal: "Bhopal",
+  patna: "Patna",
+  guwahati: "Guwahati",
+  thiruvananthapuram: "Thiruvananthapuram",
+  vadodara: "Vadodara",
+  ludhiana: "Ludhiana",
+  noida: "Noida",
+  gurgaon: "Gurgaon",
+};
+
+function cityLabel(slug) {
+  return CITY_DISPLAY[slug] || slug.replace(/-/g, " ");
+}
 
 function guideLink(slug, title, pathFn) {
   const useCaseEntry = Object.entries(BEST_EVS_USE_CASE_TO_SLUG).find(
@@ -143,8 +178,48 @@ export function getBestEvsGuideLinks({ limit = 6 } = {}) {
     );
 }
 
+export function getCityGuideLinks({ limit = 8 } = {}) {
+  return GENERATED_CITY_SLUGS.slice(0, limit).map((city) => ({
+    slug: city,
+    label: `EVs in ${cityLabel(city)}`,
+    href: `/cities/${city}/evs`,
+  }));
+}
+
 export function getDiscoveryLinkSections(seoPage) {
+  if (Array.isArray(seoPage?.relatedLinks) && seoPage.relatedLinks.length) {
+    return seoPage.relatedLinks;
+  }
+
   const sections = [];
+
+  if (seoPage?.category === "city") {
+    const cityMatch = seoPage.slug?.match(/^city-(.+?)-(evs|charging)$/);
+    if (cityMatch) {
+      const [, citySlug] = cityMatch;
+      sections.push({
+        title: "This city",
+        links: [
+          {
+            slug: `${citySlug}-evs`,
+            label: `EV picks in ${cityLabel(citySlug)}`,
+            href: `/cities/${citySlug}/evs`,
+          },
+          {
+            slug: `${citySlug}-charging`,
+            label: `${cityLabel(citySlug)} charging`,
+            href: `/cities/${citySlug}/charging`,
+          },
+        ],
+      });
+    }
+    sections.push({
+      title: "More cities",
+      links: getCityGuideLinks({ limit: 6 }).filter(
+        (l) => l.slug !== cityMatch?.[1]
+      ),
+    });
+  }
 
   const related = getRelatedGuides(seoPage);
   if (related.length) {
