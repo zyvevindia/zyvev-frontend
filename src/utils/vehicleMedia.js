@@ -1,33 +1,26 @@
 /**
- * Vehicle image resolution with catalog-aware fallbacks.
+ * Vehicle image resolution with Cloudinary-first delivery and fallbacks.
  */
 
+import { LOCAL_FALLBACK_EV, ROLE_ASPECT } from "../config/media.js";
 import {
-  CATALOG_CDN_HOST,
-  LOCAL_FALLBACK_EV,
-  fallbackEVImage,
-  isCatalogCdnUrl,
-} from "./imageUtils";
+  familyCatalogUrl,
+  isPlaceholderMediaUrl,
+  variantCatalogUrl,
+} from "../media/cloudinary.js";
+import {
+  getProductionFamilyMedia,
+  resolveFamilySlugFromCar,
+  resolveFamilySlugFromVariantSlug,
+} from "../media/familyMediaManifest.js";
+import { pickMediaFields } from "../media/vehicleMediaSchema.js";
 
-const CDN = `https://${CATALOG_CDN_HOST}/catalog`;
+/** @deprecated use ROLE_ASPECT from config/media */
+export const IMAGE_ASPECT = ROLE_ASPECT;
 
-export const IMAGE_ASPECT = {
-  listing: "16 / 10",
-  compare: "16 / 10",
-  hero: "16 / 10",
-  gallery: "16 / 10",
-  og: "1.91 / 1",
-};
+export const LOCAL_FALLBACK_EV_EXPORT = LOCAL_FALLBACK_EV;
 
-export function brandFallbackUrl(brandSlug, bodyType = "suv") {
-  const brand = String(brandSlug || "generic")
-    .toLowerCase()
-    .replace(/\s+/g, "-");
-  const body = ["hatchback", "sedan", "suv", "micro-suv", "coupe-suv"].includes(
-    bodyType
-  )
-    ? bodyType
-    : "suv";
+export function brandFallbackUrl() {
   return LOCAL_FALLBACK_EV;
 }
 
@@ -39,75 +32,96 @@ function slugFromCar(car) {
   ).toLowerCase();
 }
 
-function brandSlugFromCar(car) {
-  const raw =
-    car?.brandSlug ||
-    car?.catalogMeta?.brandSlug ||
-    String(car?.brand || "")
-      .toLowerCase()
-      .replace(/\s+/g, "-");
-  return raw === "mg" ? "mg" : raw;
-}
-
 function uniqueUrls(urls) {
   const seen = new Set();
   return urls.filter((u) => {
     if (!u || typeof u !== "string" || seen.has(u)) return false;
+    if (isPlaceholderMediaUrl(u)) return false;
     seen.add(u);
     return true;
   });
 }
 
+function familyMediaForRole(familySlug, role) {
+  const block = getProductionFamilyMedia(familySlug);
+  if (!block) return [];
+
+  if (role === "compare") {
+    return [
+      block.compareThumbnail,
+      block.listingThumbnail,
+      block.heroImage,
+    ];
+  }
+  if (role === "og") {
+    return [block.ogImage, block.heroImage];
+  }
+  if (role === "hero") {
+    return [block.heroImage, block.listingThumbnail];
+  }
+  if (role === "gallery") {
+    return [...(block.gallery || []), ...(block.interior || [])];
+  }
+  if (role === "interior") {
+    return block.interior || [];
+  }
+
+  return [
+    block.listingThumbnail,
+    block.heroImage,
+    block.compareThumbnail,
+  ];
+}
+
+function variantCdnFallbacks(slug, role) {
+  if (!slug) return [];
+  const files =
+    role === "compare"
+      ? ["compare-thumb.jpg", "listing-thumb.jpg", "hero.jpg"]
+      : role === "hero"
+        ? ["hero.jpg", "listing-thumb.jpg"]
+        : role === "og"
+          ? ["og.jpg", "hero.jpg"]
+          : ["listing-thumb.jpg", "hero.jpg"];
+
+  return files.map((f) => variantCatalogUrl(slug, f));
+}
+
 function finalizeFallbackChain(urls) {
   const resolved = uniqueUrls(urls);
-  const hosted = resolved.filter((u) => !isCatalogCdnUrl(u));
-  const catalogCdn = resolved.filter(isCatalogCdnUrl);
-
-  if (hosted.length > 0) {
-    return uniqueUrls([...hosted, ...catalogCdn, LOCAL_FALLBACK_EV]);
+  if (resolved.length > 0) {
+    return uniqueUrls([...resolved, LOCAL_FALLBACK_EV]);
   }
-
-  if (catalogCdn.length > 0) {
-    return uniqueUrls([...catalogCdn, LOCAL_FALLBACK_EV]);
-  }
-
   return [LOCAL_FALLBACK_EV];
 }
 
-export function getSlugCdnHero(slug) {
-  if (!slug) return null;
-  return `${CDN}/${slug}/hero.jpg`;
-}
-
-export function getSlugCdnListing(slug) {
-  if (!slug) return null;
-  return `${CDN}/${slug}/listing-thumb.jpg`;
-}
-
-/**
- * Ordered fallback chain for broken-image recovery (no layout shift).
- */
 export function buildImageFallbackChain(car, role = "listing") {
   const slug = slugFromCar(car);
+  const familySlug =
+    resolveFamilySlugFromCar(car) ||
+    resolveFamilySlugFromVariantSlug(slug);
   const meta = car?.catalogMeta?.media || {};
-  const brandFb = brandFallbackUrl(
-    brandSlugFromCar(car),
-    car?.bodyType || car?.category?.toLowerCase()
-  );
+  const fieldValues = pickMediaFields(car, role);
+
+  const familyUrls = familySlug
+    ? familyMediaForRole(familySlug, role)
+    : [];
+
+  const variantUrls = variantCdnFallbacks(slug, role);
 
   if (role === "compare") {
     return finalizeFallbackChain([
       car?.compareThumbnail,
       meta.compareThumbnail,
+      ...fieldValues,
+      ...familyUrls,
       car?.listingThumbnail,
       meta.listingThumbnail,
       car?.heroImage,
       meta.heroImage,
       car?.image,
-      getSlugCdnListing(slug),
-      getSlugCdnHero(slug),
-      brandFb,
-      fallbackEVImage,
+      ...variantUrls,
+      LOCAL_FALLBACK_EV,
     ]);
   }
 
@@ -115,12 +129,13 @@ export function buildImageFallbackChain(car, role = "listing") {
     return finalizeFallbackChain([
       car?.ogImage,
       meta.ogImage,
+      ...fieldValues,
+      ...familyUrls,
       car?.heroImage,
       meta.heroImage,
-      getSlugCdnHero(slug),
-      `${CDN}/${slug}/og.jpg`,
-      brandFb,
-      fallbackEVImage,
+      familySlug ? familyCatalogUrl(familySlug, "og.jpg") : null,
+      ...variantUrls,
+      LOCAL_FALLBACK_EV,
     ]);
   }
 
@@ -128,48 +143,65 @@ export function buildImageFallbackChain(car, role = "listing") {
     return finalizeFallbackChain([
       car?.heroImage,
       meta.heroImage,
+      ...fieldValues,
+      ...familyUrls,
       car?.image,
-      getSlugCdnHero(slug),
       car?.listingThumbnail,
       meta.listingThumbnail,
-      brandFb,
-      fallbackEVImage,
+      ...variantUrls,
+      LOCAL_FALLBACK_EV,
+    ]);
+  }
+
+  if (role === "gallery") {
+    return finalizeFallbackChain([
+      ...(car?.galleryImages || []),
+      ...(meta.gallery || []),
+      ...fieldValues,
+      ...familyUrls,
+      ...variantUrls,
+      LOCAL_FALLBACK_EV,
+    ]);
+  }
+
+  if (role === "interior") {
+    return finalizeFallbackChain([
+      ...(meta.interior || []),
+      ...fieldValues,
+      ...(getProductionFamilyMedia(familySlug)?.interior || []),
+      LOCAL_FALLBACK_EV,
     ]);
   }
 
   return finalizeFallbackChain([
     car?.listingThumbnail,
     meta.listingThumbnail,
+    ...fieldValues,
+    ...familyUrls,
     car?.heroImage,
     meta.heroImage,
     car?.image,
-    getSlugCdnListing(slug),
-    getSlugCdnHero(slug),
-    brandFb,
-    fallbackEVImage,
+    ...variantUrls,
+    LOCAL_FALLBACK_EV,
   ]);
 }
 
 export function getListingImage(car) {
-  const chain = buildImageFallbackChain(car, "listing");
-  return chain[0] || fallbackEVImage;
+  return buildImageFallbackChain(car, "listing")[0] || LOCAL_FALLBACK_EV;
 }
 
 export function getCompareThumbnail(car) {
-  const chain = buildImageFallbackChain(car, "compare");
-  return chain[0] || fallbackEVImage;
+  return buildImageFallbackChain(car, "compare")[0] || LOCAL_FALLBACK_EV;
 }
 
 export function getHeroImage(car) {
-  const chain = buildImageFallbackChain(car, "hero");
-  return chain[0] || fallbackEVImage;
+  return buildImageFallbackChain(car, "hero")[0] || LOCAL_FALLBACK_EV;
 }
 
 export function getOgImage(car) {
-  const chain = buildImageFallbackChain(car, "og");
-  return chain[0] || fallbackEVImage;
+  return buildImageFallbackChain(car, "og")[0] || LOCAL_FALLBACK_EV;
 }
 
 export function resolveVehicleImage(car, role = "listing") {
-  return buildImageFallbackChain(car, role)[0] || fallbackEVImage;
+  return buildImageFallbackChain(car, role)[0] || LOCAL_FALLBACK_EV;
 }

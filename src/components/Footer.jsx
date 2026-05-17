@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import ReportIssueLink from "./feedback/ReportIssueLink";
+
 /* =========================================================
    ========================= FOOTER =========================
    ========================================================= */
@@ -213,6 +215,8 @@ export default function Footer() {
             <p style={bottomSubtext}>
               India’s electric vehicle marketplace.
             </p>
+
+            <ReportIssueLink />
           </div>
 
           <p style={bottomLegal}>

@@ -41,6 +41,13 @@ const isLikelyMongoId = (value) => {
   );
 };
 
+function fieldInputStyle(base, errors, field) {
+  return {
+    ...base,
+    borderColor: errors[field] ? colors.danger : colors.border,
+  };
+}
+
 export default function LeadInquiryModal({
   isOpen,
   onClose,
@@ -299,6 +306,13 @@ export default function LeadInquiryModal({
 
         setSuccess(true);
 
+        if (data?.merged) {
+          trackBuyerEvent(BUYER_EVENTS.LEAD_SUBMITTED, {
+            sourcePage: String(sourcePage || "").trim(),
+            metadata: { merged: true, leadId: data.leadId },
+          });
+        }
+
         if (isTestDrive) {
           trackBuyerEvent(BUYER_EVENTS.TEST_DRIVE_REQUESTED, {
             sourcePage: String(sourcePage || "").trim(),
@@ -315,13 +329,15 @@ export default function LeadInquiryModal({
           });
         }
 
-        trackBuyerEvent(BUYER_EVENTS.LEAD_SUBMITTED, {
-          sourcePage: String(sourcePage || "").trim(),
-          vehicleSlugs: vehicleId
-            ? [String(vehicleId).trim()]
-            : [],
-          metadata: isTestDrive ? leadMetadata : undefined,
-        });
+        if (!data?.merged) {
+          trackBuyerEvent(BUYER_EVENTS.LEAD_SUBMITTED, {
+            sourcePage: String(sourcePage || "").trim(),
+            vehicleSlugs: vehicleId
+              ? [String(vehicleId).trim()]
+              : [],
+            metadata: isTestDrive ? leadMetadata : undefined,
+          });
+        }
 
         setName("");
 
@@ -450,9 +466,10 @@ export default function LeadInquiryModal({
                   )
                 )
               }
-              style={input}
+              style={fieldInputStyle(input, fieldErrors, "name")}
               placeholder="Your name"
               autoComplete="name"
+              aria-invalid={Boolean(fieldErrors.name)}
             />
 
             {fieldErrors.name && (
@@ -481,10 +498,11 @@ export default function LeadInquiryModal({
                     )
                 )
               }
-              style={input}
+              style={fieldInputStyle(input, fieldErrors, "phone")}
               placeholder="10-digit Indian mobile"
               inputMode="numeric"
               autoComplete="tel"
+              aria-invalid={Boolean(fieldErrors.phone)}
             />
 
             {fieldErrors.phone && (
@@ -497,7 +515,7 @@ export default function LeadInquiryModal({
             {!isTestDrive && (
               <>
                 <label style={label}>
-                  Email *
+                  Email (optional)
                 </label>
 
                 <input
@@ -506,9 +524,10 @@ export default function LeadInquiryModal({
                   onChange={(e) =>
                     setEmail(e.target.value.trim())
                   }
-                  style={input}
+                  style={fieldInputStyle(input, fieldErrors, "email")}
                   placeholder="you@example.com"
                   autoComplete="email"
+                  aria-invalid={Boolean(fieldErrors.email)}
                 />
 
                 {fieldErrors.email && (
@@ -532,9 +551,10 @@ export default function LeadInquiryModal({
                   )
                 )
               }
-              style={input}
+              style={fieldInputStyle(input, fieldErrors, "city")}
               placeholder="e.g. Bengaluru"
               autoComplete="address-level2"
+              aria-invalid={Boolean(fieldErrors.city)}
             />
 
             {fieldErrors.city && (
@@ -557,7 +577,14 @@ export default function LeadInquiryModal({
                 onChange={(e) =>
                   setInterestedVehicle(e.target.value)
                 }
-                style={input}
+                style={fieldInputStyle(
+                  input,
+                  fieldErrors,
+                  "interestedVehicle"
+                )}
+                aria-invalid={Boolean(
+                  fieldErrors.interestedVehicle
+                )}
               >
                 <option value="">
                   Select a variant
@@ -579,8 +606,15 @@ export default function LeadInquiryModal({
                     sanitizeInput(e.target.value)
                   )
                 }
-                style={input}
+                style={fieldInputStyle(
+                  input,
+                  fieldErrors,
+                  "interestedVehicle"
+                )}
                 placeholder="Model you are exploring"
+                aria-invalid={Boolean(
+                  fieldErrors.interestedVehicle
+                )}
               />
             )}
 
@@ -603,8 +637,9 @@ export default function LeadInquiryModal({
                   sanitizeInput(e.target.value)
                 )
               }
-              style={textarea}
+              style={fieldInputStyle(textarea, fieldErrors, "message")}
               rows={isTestDrive ? 3 : 4}
+              aria-invalid={Boolean(fieldErrors.message)}
               placeholder={
                 isTestDrive
                   ? "Preferred date or time slot…"

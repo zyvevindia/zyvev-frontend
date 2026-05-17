@@ -109,6 +109,9 @@ export default function Home() {
     setError] =
     useState("");
 
+  const [fetchRetryKey, setFetchRetryKey] =
+    useState(0);
+
   const [compareList,
     setCompareList] =
     useState(
@@ -189,41 +192,34 @@ export default function Home() {
 
     setError("");
 
-    fetch(
-      `${API_URL}/cars?${query}`
-    )
+    let cancelled = false;
 
-      .then((res) =>
-        res.json()
-      )
-
+    fetch(`${API_URL}/cars?${query}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to load EV catalog");
+        }
+        return res.json();
+      })
       .then((data) => {
-
-        setVariants(
-          (
-            data.cars || []
-          ).map(
-            normalizeCar
-          )
-        );
-
+        if (cancelled) return;
+        setVariants((data.cars || []).map(normalizeCar));
         setTotalPages(1);
-
         setLoading(false);
       })
-
       .catch((err) => {
-
+        if (cancelled) return;
         console.error(err);
-
         setError(
-          "Unable to load EV data right now."
+          "Unable to load EV data right now. Check your connection and try again."
         );
-
         setLoading(false);
       });
 
-  }, [filters]);
+    return () => {
+      cancelled = true;
+    };
+  }, [filters, fetchRetryKey]);
 
   useEffect(() => {
     setTotalPages(
@@ -647,7 +643,22 @@ export default function Home() {
           error && (
 
             <div style={errorBox}>
-              {error}
+              <p style={{ margin: "0 0 0.75rem" }}>{error}</p>
+              <button
+                type="button"
+                onClick={() => setFetchRetryKey((k) => k + 1)}
+                style={{
+                  padding: "0.5rem 1rem",
+                  borderRadius: "8px",
+                  border: "none",
+                  background: "#2563eb",
+                  color: "#fff",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+              >
+                Try again
+              </button>
             </div>
           )}
 

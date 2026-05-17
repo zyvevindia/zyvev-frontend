@@ -151,7 +151,7 @@ export const validateLeadForm = ({
       "Please enter valid mobile number";
   }
 
-  if (!isValidEmail(email)) {
+  if (cleanString(email) && !isValidEmail(email)) {
 
     errors.email =
       "Please enter valid email";

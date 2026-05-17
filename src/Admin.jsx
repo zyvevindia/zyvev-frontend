@@ -11,6 +11,18 @@ import {
 /* ================= COMPONENTS ================= */
 
 import NotificationBell from "./components/NotificationBell";
+import LeadTimelineModal from "./components/admin/LeadTimelineModal";
+import OpsAuditLogPanel from "./components/admin/OpsAuditLogPanel";
+import AdminLeadsOpsBar from "./components/admin/AdminLeadsOpsBar";
+import {
+  AUDIT_ACTIONS,
+  logOpsAudit,
+} from "./services/opsAuditLog";
+import {
+  fetchAllAdminLeads,
+  downloadServerLeadsExport,
+} from "./services/adminExportApi";
+import { downloadCsvFromObjects } from "./utils/csvExport";
 
 /* ================= CHART IMPORT ================= */
 
@@ -219,6 +231,21 @@ export default function Admin() {
   const [opsSummary, setOpsSummary] =
     useState(null);
 
+  const [leadFilter, setLeadFilter] =
+    useState("");
+
+  const [opsQueue, setOpsQueue] =
+    useState(null);
+
+  const [timelineLead, setTimelineLead] =
+    useState(null);
+
+  const [exportingLeads, setExportingLeads] =
+    useState(false);
+
+  const [selectedLeadIds, setSelectedLeadIds] =
+    useState([]);
+
   /* ================= ADD CAR ================= */
 
   const [carForm, setCarForm] =
@@ -309,9 +336,26 @@ export default function Admin() {
      ================= FETCH LEADS ========================
      ===================================================== */
 
-  const fetchLeads = () => {
+  useEffect(() => {
+    if (role !== "admin") return;
     fetch(
-      `${API_URL}/api/admin/leads?page=${page}&limit=10`,
+      `${API_URL}/api/admin/ops-queue?filter=unmatched`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+      .then((res) => res.json())
+      .then((data) => setOpsQueue(data))
+      .catch(() => setOpsQueue(null));
+  }, [role, token]);
+
+  const fetchLeads = () => {
+    const qs = new URLSearchParams({
+      page: String(page),
+      limit: "10",
+    });
+    if (leadFilter) qs.set("filter", leadFilter);
+
+    fetch(
+      `${API_URL}/api/admin/leads?${qs.toString()}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -333,7 +377,7 @@ export default function Admin() {
 
   useEffect(() => {
     fetchLeads();
-  }, [page]);
+  }, [page, leadFilter]);
 
   /* =====================================================
      ================= FETCH SALES USERS ==================
@@ -448,6 +492,24 @@ export default function Admin() {
 
       fetchLeads();
 
+      logOpsAudit({
+        action: AUDIT_ACTIONS.LEAD_ASSIGNED,
+        actorRole: role || "admin",
+        targetType: "lead",
+        targetId: leadId,
+        metadata: {
+          summary: [
+            assignedTo && `sales:${assignedTo}`,
+            dealerId && `dealer:${dealerId}`,
+            desk && `desk:${desk}`,
+          ]
+            .filter(Boolean)
+            .join(" "),
+          assignedTo,
+          dealerId,
+        },
+      });
+
       alert(
         "Lead assigned successfully"
       );
@@ -456,6 +518,106 @@ export default function Admin() {
 
       alert("Server error");
     }
+  };
+
+  const exportLeadsCsv = async (days) => {
+    setExportingLeads(true);
+    try {
+      const rows = await fetchAllAdminLeads(token, {
+        filter: leadFilter,
+        days,
+      });
+      if (!rows.length) {
+        alert("No leads to export");
+        return;
+      }
+      downloadCsvFromObjects(
+        rows,
+        (l) => ({
+          id: l._id,
+          createdAt: l.createdAt,
+          name: l.name,
+          phone: l.phone,
+          email: l.email || "",
+          city: l.city || "",
+          vehicle: l.vehicleName || l.carId?.name || "",
+          status: l.status,
+          source: l.sourcePage || "",
+          leadSource: l.leadSource || "",
+          dealer: l.dealer?.name || "",
+        }),
+        `evsavari-leads-${leadFilter || "all"}-${days || "all"}d.csv`
+      );
+    } catch (e) {
+      console.error(e);
+      alert("Export failed");
+    } finally {
+      setExportingLeads(false);
+    }
+  };
+
+  const toggleLeadSelection = (leadId) => {
+    setSelectedLeadIds((prev) =>
+      prev.includes(leadId)
+        ? prev.filter((id) => id !== leadId)
+        : [...prev, leadId]
+    );
+  };
+
+  const bulkMarkRead = async () => {
+    for (const id of selectedLeadIds) {
+      await fetch(`${API_URL}/api/admin/leads/${id}/read`, {
+        method: "PUT",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+    }
+    logOpsAudit({
+      action: AUDIT_ACTIONS.BULK_LEAD_READ,
+      actorRole: role || "admin",
+      metadata: { count: selectedLeadIds.length },
+    });
+    setSelectedLeadIds([]);
+    fetchLeads();
+  };
+
+  const bulkAssignDealer = async (dealerId) => {
+    for (const id of selectedLeadIds) {
+      await fetch(`${API_URL}/api/admin/leads/${id}/assign`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ dealerId }),
+      });
+    }
+    logOpsAudit({
+      action: AUDIT_ACTIONS.BULK_LEAD_ASSIGN,
+      actorRole: role || "admin",
+      metadata: { dealerId, count: selectedLeadIds.length },
+    });
+    setSelectedLeadIds([]);
+    fetchLeads();
+  };
+
+  const bulkUpdateStatus = async (status) => {
+    for (const id of selectedLeadIds) {
+      await fetch(`${API_URL}/api/admin/leads/${id}/status`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ status }),
+      });
+    }
+    logOpsAudit({
+      action: AUDIT_ACTIONS.BULK_STATUS_UPDATE,
+      actorRole: role || "admin",
+      metadata: { status, count: selectedLeadIds.length },
+    });
+    setSelectedLeadIds([]);
+    fetchLeads();
   };
 
   const createDealer = async (e) => {
@@ -529,6 +691,14 @@ export default function Admin() {
       }).then((r) => r.json());
 
       setDealersList(Array.isArray(list) ? list : []);
+
+      logOpsAudit({
+        action: AUDIT_ACTIONS.DEALER_OVERRIDE,
+        actorRole: "admin",
+        targetType: "dealer",
+        targetId: dealerId,
+        metadata: { isActive: next },
+      });
     } catch (err) {
       console.error(err);
     }
@@ -826,6 +996,20 @@ export default function Admin() {
             </Link>
 
             <Link
+              to="/admin/ops-qa"
+              style={menuItem}
+            >
+              ✅ Operational QA
+            </Link>
+
+            <Link
+              to="/admin/media-qa"
+              style={menuItem}
+            >
+              🖼 Media QA
+            </Link>
+
+            <Link
               to="/admin/dealer-applications"
               style={menuItem}
             >
@@ -961,6 +1145,8 @@ export default function Admin() {
             )}
           </div>
         )}
+
+        {role === "admin" && <OpsAuditLogPanel limit={20} />}
 
         {role === "admin" && (
           <div id="dealers" style={card}>
@@ -1124,6 +1310,68 @@ export default function Admin() {
 
           <div
             style={{
+              display: "flex",
+              gap: "0.5rem",
+              flexWrap: "wrap",
+              marginBottom: "0.75rem",
+              alignItems: "center",
+            }}
+          >
+            {role === "admin" && (
+              <AdminLeadsOpsBar
+                leadFilter={leadFilter}
+                onFilterChange={(value) => {
+                  setLeadFilter(value);
+                  setPage(1);
+                  setSelectedLeadIds([]);
+                }}
+                selectedCount={selectedLeadIds.length}
+                dealersList={dealersList}
+                onBulkAssign={bulkAssignDealer}
+                onBulkMarkRead={bulkMarkRead}
+                onBulkStatus={bulkUpdateStatus}
+                onExportClient={exportLeadsCsv}
+                onExportServer={(days) =>
+                  downloadServerLeadsExport(token, { days })
+                }
+                exporting={exportingLeads}
+              />
+            )}
+          </div>
+
+          {opsQueue?.counts && (
+            <span
+              style={{
+                fontSize: "12px",
+                color: "#64748b",
+                display: "block",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Unmatched: {opsQueue.counts.unmatched} · Overdue:{" "}
+              {opsQueue.counts.overdue}
+              {opsQueue.inactiveDealers?.length > 0 &&
+                ` · Inactive dealers: ${opsQueue.inactiveDealers.length}`}
+            </span>
+          )}
+
+          {opsQueue?.inactiveDealers?.length > 0 && (
+            <p
+              style={{
+                fontSize: "13px",
+                color: "#b45309",
+                margin: "0 0 0.75rem",
+              }}
+            >
+              ⚠ Inactive dealer warning:{" "}
+              {opsQueue.inactiveDealers
+                .map((d) => d.name)
+                .join(", ")}
+            </p>
+          )}
+
+          <div
+            style={{
               overflowX: "auto",
             }}
           >
@@ -1147,6 +1395,28 @@ export default function Admin() {
                     color: "#64748b",
                   }}
                 >
+
+                  {role === "admin" && (
+                    <th style={thCell}>
+                      <input
+                        type="checkbox"
+                        checked={
+                          leads.length > 0 &&
+                          selectedLeadIds.length === leads.length
+                        }
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setSelectedLeadIds(
+                              leads.map((l) => l._id)
+                            );
+                          } else {
+                            setSelectedLeadIds([]);
+                          }
+                        }}
+                        aria-label="Select all"
+                      />
+                    </th>
+                  )}
 
                   <th style={thCell}>
                     New
@@ -1204,6 +1474,10 @@ export default function Admin() {
                     Assign
                   </th>
 
+                  <th style={thCell}>
+                    Timeline
+                  </th>
+
                   <th style={thCell} />
 
                 </tr>
@@ -1236,6 +1510,21 @@ export default function Admin() {
                               : "transparent",
                         }}
                       >
+
+                        {role === "admin" && (
+                          <td style={tdCell}>
+                            <input
+                              type="checkbox"
+                              checked={selectedLeadIds.includes(
+                                lead._id
+                              )}
+                              onChange={() =>
+                                toggleLeadSelection(lead._id)
+                              }
+                              aria-label={`Select ${lead.name}`}
+                            />
+                          </td>
+                        )}
 
                         <td style={tdCell}>
 
@@ -1515,6 +1804,18 @@ export default function Admin() {
                         </td>
 
                         <td style={tdCell}>
+                          <button
+                            type="button"
+                            style={linkBtn}
+                            onClick={() =>
+                              setTimelineLead(lead)
+                            }
+                          >
+                            View
+                          </button>
+                        </td>
+
+                        <td style={tdCell}>
 
                           {role ===
                             "admin" &&
@@ -1544,6 +1845,17 @@ export default function Admin() {
                                           },
                                       }
                                     );
+
+                                    logOpsAudit({
+                                      action:
+                                        AUDIT_ACTIONS.LEAD_READ_ADMIN,
+                                      actorRole: "admin",
+                                      targetType: "lead",
+                                      targetId: lead._id,
+                                      metadata: {
+                                        name: lead.name,
+                                      },
+                                    });
 
                                     fetchLeads();
                                   } catch (e) {
@@ -1913,6 +2225,11 @@ export default function Admin() {
           </form>
         </div>
       </div>
+
+      <LeadTimelineModal
+        lead={timelineLead}
+        onClose={() => setTimelineLead(null)}
+      />
     </div>
   );
 }

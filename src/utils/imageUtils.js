@@ -1,136 +1,49 @@
-/* =========================================================
-   ==================== IMAGE UTILITIES ====================
-   ========================================================= */
+/**
+ * Image utilities — re-exports Cloudinary-aware helpers for backward compatibility.
+ */
 
-/*
-  PURPOSE:
+export {
+  CLOUDINARY_BASE,
+  CLOUDINARY_CLOUD_NAME,
+  LEGACY_CATALOG_CDN_HOST as CATALOG_CDN_HOST,
+  LOCAL_FALLBACK_EV,
+  LOCAL_FALLBACK_EV as fallbackEVImage,
+} from "../config/media.js";
 
-  - Cloudinary optimization
-  - responsive image delivery
-  - faster loading
-  - SEO improvements
-  - Core Web Vitals optimization
-*/
+export {
+  isCloudinaryUrl as isCloudinaryImage,
+  isLegacyCatalogCdnUrl as isCatalogCdnUrl,
+  isPlaceholderMediaUrl,
+  applyCloudinaryTransforms,
+  cloudinaryDeliveryUrl,
+} from "../media/cloudinary.js";
 
-/* =========================================================
-   ================= CLOUDINARY DETECTION ==================
-   ========================================================= */
+export {
+  buildSrcSet,
+  buildResponsiveSources,
+} from "../media/responsive.js";
 
-export function isCloudinaryImage(
-  url = ""
-) {
+import { applyCloudinaryTransforms } from "../media/cloudinary.js";
+import { LOCAL_FALLBACK_EV } from "../config/media.js";
 
-  return url.includes(
-    "res.cloudinary.com"
-  );
+/** @deprecated use applyCloudinaryTransforms */
+export function optimizeImage(url = "", { width = 800, quality = "auto", format = "auto" } = {}) {
+  if (!url) return "";
+  return applyCloudinaryTransforms(url, { width, quality, format });
 }
 
-/* =========================================================
-   ================== OPTIMIZE IMAGE URL ===================
-   ========================================================= */
-
-export function optimizeImage(
-  url = "",
-
-  {
-    width = 800,
-    quality = "auto",
-    format = "auto",
-  } = {}
-) {
-
-  if (!url) {
-    return "";
-  }
-
-  /* ================= NON-CLOUDINARY ================= */
-
-  if (
-    !isCloudinaryImage(url)
-  ) {
-
-    return url;
-  }
-
-  /* ================= ALREADY OPTIMIZED ================= */
-
-  if (
-    url.includes("/upload/")
-  ) {
-
-    return url.replace(
-
-      "/upload/",
-
-      `/upload/f_${format},q_${quality},w_${width},c_limit/`
-    );
-  }
-
-  return url;
-}
-
-/* =========================================================
-   ================== RESPONSIVE SOURCES ===================
-   ========================================================= */
-
-export function getResponsiveImage(
-  url = ""
-) {
-
+/** @deprecated use buildResponsiveSources */
+export function getResponsiveImage(url = "") {
   return {
-
-    small:
-      optimizeImage(url, {
-        width: 480,
-      }),
-
-    medium:
-      optimizeImage(url, {
-        width: 800,
-      }),
-
-    large:
-      optimizeImage(url, {
-        width: 1200,
-      }),
+    small: applyCloudinaryTransforms(url, { width: 480 }),
+    medium: applyCloudinaryTransforms(url, { width: 800 }),
+    large: applyCloudinaryTransforms(url, { width: 1200 }),
   };
 }
 
-/* =========================================================
-   ====================== IMAGE FALLBACK ===================
-   ========================================================= */
-
-/** Hosted catalog CDN — placeholder URLs in Tier-1 JSON; not production-ready yet */
-export const CATALOG_CDN_HOST = "cdn.evsavari.com";
-
-/** Local static asset (Vercel /public) — always available */
-export const LOCAL_FALLBACK_EV = "/fallback-ev.svg";
-
-/** @deprecated use LOCAL_FALLBACK_EV — kept for imports */
-export const fallbackEVImage = LOCAL_FALLBACK_EV;
-
-export function isCatalogCdnUrl(url = "") {
-  return (
-    typeof url === "string" &&
-    url.includes(CATALOG_CDN_HOST)
-  );
-}
-
-/* =========================================================
-   ==================== SAFE IMAGE URL =====================
-   ========================================================= */
-
-export function getSafeImage(
-  image
-) {
-
-  if (
-    !image ||
-    typeof image !== "string"
-  ) {
-
-    return fallbackEVImage;
+export function getSafeImage(image) {
+  if (!image || typeof image !== "string") {
+    return LOCAL_FALLBACK_EV;
   }
-
   return image;
 }

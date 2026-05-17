@@ -82,6 +82,12 @@ export default function ListingPage() {
   const [error, setError] =
     useState("");
 
+  const [compareHint, setCompareHint] =
+    useState("");
+
+  const [fetchRetryKey, setFetchRetryKey] =
+    useState(0);
+
   const [compareList,
     setCompareList] =
     useState(
@@ -143,7 +149,7 @@ export default function ListingPage() {
 
     fetchCars();
 
-  }, []);
+  }, [fetchRetryKey]);
 
   useEffect(() => {
 
@@ -203,17 +209,14 @@ export default function ListingPage() {
             );
           }
 
-          if (
-            prev.length >=
-            3
-          ) {
-
-            alert(
-              "Maximum 3 EVs can be compared."
+          if (prev.length >= 3) {
+            setCompareHint(
+              "You can compare up to 3 EVs. Remove one to add another."
             );
-
             return prev;
           }
+
+          setCompareHint("");
 
           return [
             ...prev,
@@ -724,6 +727,19 @@ export default function ListingPage() {
               button to view them side by side.
             </p>
 
+            {compareHint && (
+              <p
+                style={{
+                  margin: "10px 0 0",
+                  fontSize: "13px",
+                  color: "#b45309",
+                  fontWeight: 600,
+                }}
+              >
+                {compareHint}
+              </p>
+            )}
+
             {compareList.length >=
               2 && (
 
@@ -805,6 +821,23 @@ export default function ListingPage() {
             <p style={emptyText}>
               {error}
             </p>
+
+            <button
+              type="button"
+              onClick={() => setFetchRetryKey((k) => k + 1)}
+              style={{
+                marginTop: "1rem",
+                padding: "0.55rem 1.25rem",
+                borderRadius: "8px",
+                border: "none",
+                background: "#2563eb",
+                color: "#fff",
+                fontWeight: 600,
+                cursor: "pointer",
+              }}
+            >
+              Try again
+            </button>
 
           </div>
 

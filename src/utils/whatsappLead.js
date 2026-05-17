@@ -8,6 +8,10 @@ import { BUYER_EVENTS } from "../event-tracking/eventTypes";
 import { buildBuyerInquiryTemplate } from "./whatsappOps";
 import { getAnonymousSessionId } from "../event-tracking/session";
 
+function asArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
 /**
  * @param {object} ctx
  * @param {string} [ctx.vehicleName]
@@ -50,6 +54,7 @@ export function buildWhatsAppLeadUrl(ctx = {}) {
  * Record WhatsApp intent as a lightweight lead (non-blocking).
  */
 export function recordWhatsAppLeadIntent(ctx = {}) {
+  const compareSlugs = asArray(ctx.compareSlugs);
   const payload = {
     sourcePage: ctx.sourcePage || "",
     familySlug: ctx.familySlug || ctx.vehicleSlug || "",
@@ -59,6 +64,8 @@ export function recordWhatsAppLeadIntent(ctx = {}) {
     anonymousSessionId: getAnonymousSessionId() || "",
     intent: ctx.intent || "inquiry",
     brand: ctx.brand || "",
+    seoPageSlug: ctx.seoPageSlug || "",
+    compareSlugs,
   };
 
   fetch(`${API_URL}/api/leads/whatsapp-intent`, {
@@ -78,30 +85,38 @@ export function openWhatsAppLead(ctx = {}) {
   const url = buildWhatsAppLeadUrl(ctx);
   if (!url) return false;
 
+  const compareSlugs = asArray(ctx.compareSlugs);
+  const vehicleSlugs = compareSlugs.length
+    ? compareSlugs
+    : ctx.vehicleSlug
+      ? [ctx.vehicleSlug]
+      : [];
+
   trackBuyerEvent(BUYER_EVENTS.SEO_CTA_CLICKED, {
     ctaType: "whatsapp_lead",
     sourcePage: ctx.sourcePage || "",
     discoveryPath: ctx.sourcePage || "",
     seoPageSlug: ctx.seoPageSlug || "",
-    vehicleSlugs: ctx.vehicleSlug
-      ? [ctx.vehicleSlug]
-      : ctx.compareSlugs || [],
+    vehicleSlugs,
     metadata: {
       intent: ctx.intent || "inquiry",
       city: ctx.city,
       familySlug: ctx.familySlug,
       variantSlug: ctx.variantSlug,
+      compareSlugs,
     },
   });
 
   trackBuyerEvent(BUYER_EVENTS.WHATSAPP_LEAD_CLICKED, {
     sourcePage: ctx.sourcePage || "",
-    vehicleSlugs: ctx.vehicleSlug ? [ctx.vehicleSlug] : [],
+    vehicleSlugs,
     metadata: {
       intent: ctx.intent,
       city: ctx.city,
       familySlug: ctx.familySlug,
       variantSlug: ctx.variantSlug,
+      compareSlugs,
+      seoPageSlug: ctx.seoPageSlug,
     },
   });
 

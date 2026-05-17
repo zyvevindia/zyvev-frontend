@@ -22,6 +22,21 @@ import {
 } from "../crm/leadPipeline";
 
 import { openDealerLeadWhatsApp } from "../utils/whatsappOps";
+import LeadTimeline from "../components/crm/LeadTimeline";
+import DealerQualityBar from "../components/dealer/DealerQualityBar";
+import {
+  AUDIT_ACTIONS,
+  logOpsAudit,
+} from "../services/opsAuditLog";
+import { hoursSince } from "../utils/leadTimeline";
+
+const QUICK_STATUSES = [
+  "contacted",
+  "follow_up",
+  "interested",
+  "won",
+  "lost",
+];
 
 /* =========================================================
    ==================== DEALER DASHBOARD ===================
@@ -51,6 +66,9 @@ export default function DealerDashboard() {
 
   const [leads, setLeads] =
     useState([]);
+
+  const [unreadCount, setUnreadCount] =
+    useState(0);
 
   const [analytics, setAnalytics] =
     useState(null);
@@ -137,11 +155,43 @@ export default function DealerDashboard() {
       await res.json();
 
     if (res.ok) {
-
-      setLeads(
-        data.leads || []
-      );
+      setLeads(data.leads || []);
+      setUnreadCount(Number(data.unreadCount || 0));
     }
+  };
+
+  const markLeadRead = async (leadId) => {
+    await fetch(`${API_URL}/api/dealer/leads/${leadId}/read`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    setUnreadCount((n) => Math.max(0, n - 1));
+    setLeads((prev) =>
+      prev.map((l) =>
+        l._id === leadId ? { ...l, readByDealer: true } : l
+      )
+    );
+    logOpsAudit({
+      action: AUDIT_ACTIONS.LEAD_READ_DEALER,
+      actorRole: "dealer",
+      targetType: "lead",
+      targetId: leadId,
+    });
+  };
+
+  const markAllLeadsRead = async () => {
+    await fetch(`${API_URL}/api/dealer/leads/read-all`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    setUnreadCount(0);
+    setLeads((prev) => prev.map((l) => ({ ...l, readByDealer: true })));
+    logOpsAudit({
+      action: AUDIT_ACTIONS.LEAD_READ_ALL_DEALER,
+      actorRole: "dealer",
+      targetType: "lead",
+      metadata: { count: leads.length },
+    });
   };
 
   const loadAnalytics = async () => {
@@ -302,8 +352,44 @@ export default function DealerDashboard() {
       return;
     }
 
+    logOpsAudit({
+      action: AUDIT_ACTIONS.LEAD_STATUS_CHANGED,
+      actorRole: "dealer",
+      targetType: "lead",
+      targetId: leadId,
+      metadata: { status },
+    });
+
     await loadLeads();
 
+    await loadAnalytics();
+  };
+
+  const quickUpdateStatus = async (leadId, status) => {
+    const res = await fetch(
+      `${API_URL}/api/dealer/leads/${leadId}/status`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ status }),
+      }
+    );
+    if (!res.ok) {
+      const data = await res.json();
+      alert(data.error || "Update failed");
+      return;
+    }
+    logOpsAudit({
+      action: AUDIT_ACTIONS.LEAD_STATUS_CHANGED,
+      actorRole: "dealer",
+      targetType: "lead",
+      targetId: leadId,
+      metadata: { status, quick: true },
+    });
+    await loadLeads();
     await loadAnalytics();
   };
 
@@ -598,6 +684,9 @@ export default function DealerDashboard() {
           })}
         >
           📥 Leads
+          {unreadCount > 0 ? (
+            <span style={unreadPill}> {unreadCount} new</span>
+          ) : null}
         </NavLink>
 
         <NavLink
@@ -684,6 +773,29 @@ export default function DealerDashboard() {
                 {analytics.responseRate}%
               </h2>
             </div>
+
+            {analytics.responsiveness && (
+              <>
+                <div style={kpi}>
+                  <p>Response score</p>
+                  <h2>
+                    {analytics.responsiveness.responseScore ?? "—"}%
+                  </h2>
+                </div>
+                <div style={kpi}>
+                  <p>Avg first response</p>
+                  <h2>
+                    {analytics.responsiveness.avgFirstResponseHours ?? "—"}h
+                  </h2>
+                </div>
+                <div style={kpi}>
+                  <p>SLA breaches</p>
+                  <h2>
+                    {analytics.responsiveness.slaBreaches ?? 0}
+                  </h2>
+                </div>
+              </>
+            )}
 
             <div style={kpi}>
               <p>Active listings</p>
@@ -1006,6 +1118,22 @@ export default function DealerDashboard() {
 
           <>
 
+            <DealerQualityBar
+              analytics={analytics}
+              leads={leads}
+              unreadCount={unreadCount}
+            />
+
+            {unreadCount > 0 && (
+              <button
+                type="button"
+                style={{ ...primary, marginBottom: "1rem" }}
+                onClick={markAllLeadsRead}
+              >
+                Mark all as read ({unreadCount})
+              </button>
+            )}
+
             {leads.length === 0 ? (
 
               <div style={card}>
@@ -1016,11 +1144,21 @@ export default function DealerDashboard() {
 
             ) : (
 
-              leads.map((lead) => (
+              leads.map((lead) => {
+                const openHrs = hoursSince(lead.createdAt);
+                const isUnread = !lead.readByDealer;
 
+                return (
                 <div
                   key={lead._id}
-                  style={leadCard}
+                  className="dealer-lead-card"
+                  style={{
+                    ...leadCard,
+                    ...(isUnread ? leadCardUnread : {}),
+                  }}
+                  onClick={() => {
+                    if (isUnread) markLeadRead(lead._id);
+                  }}
                 >
 
                   <div style={leadTop}>
@@ -1029,6 +1167,9 @@ export default function DealerDashboard() {
 
                       <h3 style={leadName}>
                         {lead.name}
+                        {isUnread && (
+                          <span style={newTag}> NEW</span>
+                        )}
                       </h3>
 
                       <p style={meta}>
@@ -1073,6 +1214,12 @@ export default function DealerDashboard() {
                           {new Date(
                             lead.createdAt
                           ).toLocaleString("en-IN")}
+                          {openHrs != null && (
+                            <span style={slaHint}>
+                              {" "}
+                              · open {openHrs}h
+                            </span>
+                          )}
                         </p>
                       )}
 
@@ -1088,6 +1235,24 @@ export default function DealerDashboard() {
 
                     </div>
 
+                  </div>
+
+                  <div
+                    style={quickRow}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {QUICK_STATUSES.map((s) => (
+                      <button
+                        key={s}
+                        type="button"
+                        style={
+                          lead.status === s ? quickBtnActive : quickBtn
+                        }
+                        onClick={() => quickUpdateStatus(lead._id, s)}
+                      >
+                        {labelForStatus(s)}
+                      </button>
+                    ))}
                   </div>
 
                   <div style={row}>
@@ -1175,64 +1340,12 @@ export default function DealerDashboard() {
                   </button>
 
                   <div style={hist}>
-
-                    <h4 style={h4}>
-                      Lead history
-                    </h4>
-
-                    {(
-                      !lead.statusHistory ||
-                      !lead.statusHistory.length
-                    ) ? (
-
-                      <p style={muted}>
-                        {labelForStatus(lead.status)}{" "}
-                        ·{" "}
-                        {lead.createdAt
-                          ? new Date(
-                            lead.createdAt
-                          ).toLocaleString()
-                          : ""}
-                      </p>
-
-                    ) : (
-
-                      [...lead.statusHistory]
-                        .reverse()
-                        .map(
-                          (h, i) => (
-
-                            <div
-                              key={i}
-                              style={histRow}
-                            >
-
-                              <strong>
-                                {labelForStatus(
-                                  h.status
-                                )}
-                              </strong>
-
-                              <span style={muted}>
-
-                                {h.at
-                                  ? new Date(
-                                    h.at
-                                  ).toLocaleString()
-                                  : ""}
-                                {h.changedByDealer?.name
-                                  ? ` · ${h.changedByDealer.name}`
-                                  : ""}
-
-                              </span>
-
-                            </div>
-
-                          )
-                        )
-
-                    )}
-
+                    <h4 style={h4}>Operational timeline</h4>
+                    <LeadTimeline
+                      lead={lead}
+                      compact
+                      showProgress={false}
+                    />
                   </div>
 
                   <div style={hist}>
@@ -1289,10 +1402,17 @@ export default function DealerDashboard() {
                   </div>
 
                 </div>
-
-              ))
+              );
+              })
 
             )}
+
+            <style>{`
+              @media (max-width: 640px) {
+                .dealer-lead-card { padding: 14px !important; margin-bottom: 12px !important; }
+                .dealer-lead-card h3 { font-size: 18px !important; }
+              }
+            `}</style>
 
           </>
 
@@ -1620,6 +1740,57 @@ const wa = {
 const leadCard = {
   ...card,
   marginBottom: "18px"
+};
+
+const leadCardUnread = {
+  outline: "2px solid #2563eb",
+  background: "#f8fafc",
+  boxShadow: "0 0 0 1px #dbeafe",
+};
+
+const newTag = {
+  fontSize: "11px",
+  fontWeight: 800,
+  color: "#2563eb",
+  verticalAlign: "middle",
+};
+
+const unreadPill = {
+  fontSize: "11px",
+  background: "#2563eb",
+  color: "#fff",
+  padding: "2px 6px",
+  borderRadius: "999px",
+  marginLeft: "4px",
+};
+
+const slaHint = {
+  color: "#b45309",
+  fontWeight: 600,
+};
+
+const quickRow = {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "6px",
+  marginBottom: "10px",
+};
+
+const quickBtn = {
+  padding: "6px 10px",
+  borderRadius: "999px",
+  border: "1px solid #cbd5e1",
+  background: "#fff",
+  fontSize: "12px",
+  fontWeight: 600,
+  cursor: "pointer",
+};
+
+const quickBtnActive = {
+  ...quickBtn,
+  background: "#dbeafe",
+  borderColor: "#2563eb",
+  color: "#1d4ed8",
 };
 
 const leadTop = {

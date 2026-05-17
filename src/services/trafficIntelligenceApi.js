@@ -64,6 +64,13 @@ function mergeIntelligence(ops = {}, behavioral = {}, adminAnalytics = {}) {
       views: row.meta?.views,
     })),
     compareToLead: o.compareToLead || null,
+    compareToWhatsApp: o.compareToWhatsApp || null,
+    cityWiseConversion: Array.isArray(o.cityWiseConversion)
+      ? o.cityWiseConversion
+      : [],
+    dealerWiseConversion: Array.isArray(o.dealerWiseConversion)
+      ? o.dealerWiseConversion
+      : [],
     topViewedEvs: normalizeTopList(
       b.topViewedEvs ||
         b.topVehicles ||

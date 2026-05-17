@@ -276,11 +276,26 @@ export default function ComparePage() {
       });
     }, [navigate]);
 
+  const removeFromCompare = useCallback(
+    (target) => {
+      const key = target?._id || target?.slug;
+      const next = cars.filter(
+        (c) => (c?._id || c?.slug) !== key
+      );
+      saveCompareCars(next);
+      navigate("/compare", {
+        replace: true,
+        state: { cars: next },
+      });
+    },
+    [cars, navigate]
+  );
+
   /* =========================================================
      ===================== EMPTY STATE =======================
      ========================================================= */
 
-  if (cars.length === 0) {
+  if (cars.length < 2) {
 
     return (
 
@@ -317,13 +332,15 @@ export default function ComparePage() {
             </div>
 
             <h2 style={emptyCompareTitle}>
-              No EVs Selected
+              {cars.length === 1
+                ? "Add one more EV"
+                : "No EVs selected"}
             </h2>
 
             <p style={emptyCompareText}>
-              Select at least 2 electric
-              vehicles to unlock premium
-              side-by-side comparison.
+              {cars.length === 1
+                ? "You need at least 2 vehicles for a side-by-side comparison. Add another EV from the catalog."
+                : "Select at least 2 electric vehicles to unlock premium side-by-side comparison."}
             </p>
 
             <button
@@ -508,6 +525,28 @@ export default function ComparePage() {
                       Best Value
                     </div>
                   )}
+
+                  <button
+                    type="button"
+                    onClick={() => removeFromCompare(car)}
+                    aria-label={`Remove ${car.name} from comparison`}
+                    style={{
+                      position: "absolute",
+                      top: "10px",
+                      right: "10px",
+                      zIndex: 2,
+                      border: "none",
+                      borderRadius: "8px",
+                      padding: "0.35rem 0.6rem",
+                      fontSize: "12px",
+                      fontWeight: 600,
+                      background: "rgba(15,23,42,0.72)",
+                      color: "#fff",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Remove
+                  </button>
 
                   <CompactCarCard
                     car={{

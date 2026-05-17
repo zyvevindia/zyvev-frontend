@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import OpsHealthCards from "../../components/admin/OpsHealthCards";
+import IndexingObservability from "../../components/admin/IndexingObservability";
+import { fetchOpsHealth } from "../../services/opsHealthApi";
 import { fetchTrafficIntelligence } from "../../services/trafficIntelligenceApi";
 import { BEHAVIORAL_INTELLIGENCE_ENABLED } from "../../config";
+import { downloadCsvFromObjects } from "../../utils/csvExport";
 
 const card = {
   background: "#fff",
@@ -47,6 +51,7 @@ function RankedTable({ rows, emptyLabel = "No data yet" }) {
 export default function TrafficIntelligencePage() {
   const [days, setDays] = useState(7);
   const [data, setData] = useState(null);
+  const [opsHealth, setOpsHealth] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -57,9 +62,15 @@ export default function TrafficIntelligencePage() {
     setLoading(true);
     setError("");
 
-    fetchTrafficIntelligence(days, token)
-      .then((result) => {
-        if (!cancelled) setData(result);
+    Promise.all([
+      fetchTrafficIntelligence(days, token),
+      fetchOpsHealth(token),
+    ])
+      .then(([traffic, health]) => {
+        if (!cancelled) {
+          setData(traffic);
+          setOpsHealth(health);
+        }
       })
       .catch(() => {
         if (!cancelled) setError("Could not load traffic intelligence.");
@@ -83,9 +94,12 @@ export default function TrafficIntelligencePage() {
       <h1 style={{ margin: "0 0 0.5rem", fontSize: "1.75rem" }}>
         Traffic & lead intelligence
       </h1>
-      <p style={{ color: "#64748b", marginBottom: "1.5rem" }}>
+      <p style={{ color: "#64748b", marginBottom: "0.75rem" }}>
         Aggregates behavioral events and lead analytics. Enable{" "}
         <code>VITE_BEHAVIORAL_INTELLIGENCE</code> for full event streams.
+      </p>
+      <p style={{ marginBottom: "1.5rem", fontSize: "0.9rem" }}>
+        <Link to="/admin/ops-qa">Operational QA tools →</Link>
       </p>
 
       <div style={{ marginBottom: "1rem", display: "flex", gap: "0.75rem", alignItems: "center", flexWrap: "wrap" }}>
@@ -106,10 +120,72 @@ export default function TrafficIntelligencePage() {
             Source: {data.source}
           </span>
         )}
+        {data && (
+          <button
+            type="button"
+            onClick={() => {
+              const periodLabel = `${days}d`;
+              const rows = [
+                ...(data.leadConversions?.bySource || []).map((r) => ({
+                  metric: "leads_by_source",
+                  label: r.label,
+                  count: r.count,
+                })),
+                ...(data.topLandingPages || []).map((r) => ({
+                  metric: "landing_page",
+                  label: r.label,
+                  count: r.count,
+                })),
+                ...(data.compareTrends || []).map((r) => ({
+                  metric: "compare_trend",
+                  label: r.slug,
+                  count: r.leads ?? r.completed,
+                })),
+              ];
+              if (!rows.length) {
+                alert("No traffic data to export");
+                return;
+              }
+              downloadCsvFromObjects(
+                rows,
+                (r) => r,
+                `traffic-summary-${periodLabel}-${new Date().toISOString().slice(0, 10)}.csv`
+              );
+            }}
+            style={{
+              padding: "0.35rem 0.75rem",
+              borderRadius: "8px",
+              border: "1px solid #e2e8f0",
+              background: "#fff",
+              cursor: "pointer",
+            }}
+          >
+            Export CSV
+          </button>
+        )}
       </div>
 
       {loading && <p>Loading…</p>}
       {error && <p style={{ color: "#dc2626" }}>{error}</p>}
+
+      {opsHealth && !loading && (
+        <OpsHealthCards
+          opsHealth={opsHealth}
+          trafficData={data}
+          showIndexing={false}
+          showGscLinks={false}
+        />
+      )}
+
+      {!loading && (
+        <IndexingObservability
+          topDiscoveryPages={
+            data?.topConvertingPages?.length
+              ? data.topConvertingPages
+              : data?.topLandingPages
+          }
+        />
+      )}
 
       {data && !loading && (
         <>
@@ -336,6 +412,88 @@ export default function TrafficIntelligencePage() {
             <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>Top viewed EVs</h2>
             <RankedTable rows={data.topViewedEvs} />
           </section>
+
+          {data.compareToWhatsApp?.trends?.length > 0 && (
+            <section style={card}>
+              <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+                Compare → WhatsApp conversion
+              </h2>
+              <table style={table}>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: "left" }}>Compare</th>
+                    <th style={{ textAlign: "right" }}>Started</th>
+                    <th style={{ textAlign: "right" }}>WhatsApp</th>
+                    <th style={{ textAlign: "right" }}>%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.compareToWhatsApp.trends.map((row) => (
+                    <tr key={row.slug}>
+                      <td>{row.slug}</td>
+                      <td style={{ textAlign: "right" }}>{row.compareStarted}</td>
+                      <td style={{ textAlign: "right" }}>{row.whatsappClicks}</td>
+                      <td style={{ textAlign: "right" }}>
+                        {row.conversionRate ?? "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          )}
+
+          {data.cityWiseConversion?.length > 0 && (
+            <section style={card}>
+              <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+                City-wise conversion
+              </h2>
+              <table style={table}>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: "left" }}>City</th>
+                    <th style={{ textAlign: "right" }}>Leads</th>
+                    <th style={{ textAlign: "right" }}>Rate %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.cityWiseConversion.map((row) => (
+                    <tr key={row.city}>
+                      <td>{row.city}</td>
+                      <td style={{ textAlign: "right" }}>{row.leads}</td>
+                      <td style={{ textAlign: "right" }}>
+                        {row.conversionRate ?? "—"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          )}
+
+          {data.dealerWiseConversion?.length > 0 && (
+            <section style={card}>
+              <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+                Dealer-wise conversion
+              </h2>
+              <table style={table}>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: "left" }}>Dealer</th>
+                    <th style={{ textAlign: "right" }}>Leads</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.dealerWiseConversion.map((row) => (
+                    <tr key={row.dealerId}>
+                      <td>{row.name}</td>
+                      <td style={{ textAlign: "right" }}>{row.leads}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          )}
 
           <section style={card}>
             <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>CTA clicks</h2>

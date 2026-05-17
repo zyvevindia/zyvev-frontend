@@ -162,6 +162,11 @@ export default function SeoGuidePage() {
             seoPageSlug={seoPage.slug}
             vehicleName={seoPage.rankedVehicles?.[0]?.displayName}
             vehicleSlug={seoPage.rankedVehicles?.[0]?.slug}
+            compareSlugs={
+              isCompare
+                ? seoPage.rankedVehicles.slice(0, 2).map((v) => v.slug)
+                : []
+            }
             intent={isCompare ? "compare" : "guide"}
             variant="secondary"
           />

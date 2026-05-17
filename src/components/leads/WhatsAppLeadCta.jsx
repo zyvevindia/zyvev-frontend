@@ -75,9 +75,14 @@ export default function WhatsAppLeadCta({
         <span aria-hidden="true">💬</span>
         {label}
       </button>
-      <p style={styles.hint}>
+      <p className="wa-cta-hint" style={styles.hint}>
         Opens WhatsApp with your vehicle and page context pre-filled.
       </p>
+      <style>{`
+        @media (max-width: 640px) {
+          .wa-cta-hint { display: none; }
+        }
+      `}</style>
     </div>
   );
 }

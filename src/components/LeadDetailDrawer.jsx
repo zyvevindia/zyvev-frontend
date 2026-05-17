@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { API_URL } from "../config";
 
 import {
   labelForStatus
 } from "../crm/leadPipeline";
+import LeadTimeline from "./crm/LeadTimeline";
+import { fetchOpsAuditLog } from "../services/opsAuditLog";
 
 /* =========================================================
    ================= LEAD DETAIL DRAWER ===================
@@ -29,6 +31,14 @@ export default function LeadDetailDrawer({
   const [saving, setSaving] =
     useState(false);
 
+  const [auditEntries, setAuditEntries] =
+    useState([]);
+
+  useEffect(() => {
+    if (!open || !lead?._id) return;
+    fetchOpsAuditLog({ limit: 40, targetId: lead._id }).then(setAuditEntries);
+  }, [open, lead?._id]);
+
   if (!open || !lead) {
 
     return null;
@@ -40,18 +50,6 @@ export default function LeadDetailDrawer({
     lead.carId?.name ||
 
     "—";
-
-  const historyEntries =
-    Array.isArray(lead.statusHistory) &&
-    lead.statusHistory.length > 0
-      ? [...lead.statusHistory].reverse()
-      : [
-          {
-            status: lead.status,
-
-            at: lead.createdAt
-          }
-        ];
 
   const addNote = async () => {
 
@@ -273,46 +271,14 @@ export default function LeadDetailDrawer({
           </section>
 
           <section style={section}>
-
             <h3 style={sectionTitle}>
-              Status history
+              Operational timeline
             </h3>
-
-            <ul style={historyList}>
-
-              {historyEntries.map(
-                (h, i) => (
-
-                  <li
-                    key={i}
-                    style={historyItem}
-                  >
-
-                    <span style={historyStatus}>
-                      {labelForStatus(h.status)}
-                    </span>
-
-                    <span style={historyMeta}>
-                      {h.at
-                        ? new Date(
-                          h.at
-                        ).toLocaleString()
-                        : "—"}
-                      {h.changedBy?.name
-                        ? ` · ${h.changedBy.name}`
-                        : ""}
-                      {h.changedByDealer?.name
-                        ? ` · ${h.changedByDealer.name} (dealer)`
-                        : ""}
-                    </span>
-
-                  </li>
-
-                )
-              )}
-
-            </ul>
-
+            <LeadTimeline
+              lead={lead}
+              auditEntries={auditEntries}
+              compact
+            />
           </section>
 
           <section style={section}>

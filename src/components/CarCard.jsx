@@ -5,6 +5,7 @@ import {
 import { Link } from "react-router-dom";
 
 import LeadInquiryModal from "./LeadInquiryModal";
+import WhatsAppLeadCta from "./leads/WhatsAppLeadCta";
 
 import CatalogListingSignals from "./catalog/CatalogListingSignals";
 
@@ -319,6 +320,18 @@ export default function CarCard({
             Best deal
           </button>
         </div>
+
+        <div style={waRow}>
+          <WhatsAppLeadCta
+            vehicleName={`${safeBrand} ${safeName}`}
+            vehicleSlug={carSlug || ""}
+            sourcePage="listing_card"
+            intent="inquiry"
+            label="WhatsApp"
+            variant="secondary"
+            style={waBtnCompact}
+          />
+        </div>
       </div>
     </div>
 
@@ -488,6 +501,16 @@ const leadRow = {
   display: "flex",
   gap: "10px",
   marginTop: "10px",
+};
+
+const waRow = {
+  marginTop: "8px",
+};
+
+const waBtnCompact = {
+  padding: "0.5rem 0.75rem",
+  fontSize: "0.85rem",
+  width: "100%",
 };
 
 const ctaOutline = {

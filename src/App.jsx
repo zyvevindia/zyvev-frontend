@@ -86,6 +86,14 @@ const TrafficIntelligencePage = lazy(() =>
   import("./pages/admin/TrafficIntelligencePage")
 );
 
+const OperationalQaPage = lazy(() =>
+  import("./pages/admin/OperationalQaPage")
+);
+
+const MediaQaPage = lazy(() =>
+  import("./pages/admin/MediaQaPage")
+);
+
 const DealerApplicationsPage = lazy(() =>
   import("./pages/admin/DealerApplicationsPage")
 );
@@ -440,6 +448,24 @@ export default function App() {
             element={
               <PrivateRoute allowedRoles={["admin", "sales"]}>
                 <TrafficIntelligencePage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/ops-qa"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <OperationalQaPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/media-qa"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <MediaQaPage />
               </PrivateRoute>
             }
           />

@@ -12,6 +12,11 @@
     "prebuild": "npm run content:generate && npm run build:sitemaps",
     "lint": "eslint .",
     "seo:qa": "node scripts/seo-qa.mjs",
+    "media:audit": "node scripts/media-audit.mjs",
+    "media:fix-cloudinary": "node scripts/cloudinary-fix-publicids.mjs",
+    "media:discover-cloudinary": "node scripts/cloudinary-fix-publicids.mjs --discover",
+    "launch:smoke": "node scripts/launch-smoke.mjs",
+    "check:api": "node scripts/check-local-api.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -22,6 +27,7 @@
     "recharts": "^3.8.1"
   },
   "devDependencies": {
+    "cloudinary": "^2.9.0",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

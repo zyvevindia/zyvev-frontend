@@ -58,6 +58,7 @@ import {
 
 import VehicleImage from "../components/media/VehicleImage";
 import VehicleDetailNotFound from "../components/catalog/VehicleDetailNotFound";
+import NetworkErrorPanel from "../components/ui/NetworkErrorPanel";
 import VariantSelector from "../components/catalog/VariantSelector";
 import VariantComparisonTable from "../components/catalog/VariantComparisonTable";
 import DetailBreadcrumbs from "../components/catalog/DetailBreadcrumbs";
@@ -154,6 +155,12 @@ export default function CarDetails() {
   const [loading, setLoading] =
     useState(true);
 
+  const [loadError, setLoadError] =
+    useState(null);
+
+  const [fetchRetryKey, setFetchRetryKey] =
+    useState(0);
+
   const [selectedImage, setSelectedImage] =
     useState("");
 
@@ -231,35 +238,52 @@ export default function CarDetails() {
 
     async function fetchCar() {
       setLoading(true);
+      setLoadError(null);
 
       const variantParam =
         searchParams.get("variant");
 
-      const result =
-        await fetchVehicleFamilyBySlug(slug, {
-          variantSlug: variantParam,
-        });
-
-      if (cancelled) return;
-
-      if (result?.vehicle) {
-        setFamily(result.family);
-        setFamilyVariants(result.variants || []);
-        setCar(result.vehicle);
-
-        if (result.canonicalizeTo) {
-          navigate(
-            vehicleFamilyPath(
-              result.canonicalizeTo,
-              result.selectedVariantSlug
-            ),
-            { replace: true }
-          );
+      try {
+        const catalogProbe = await fetch(
+          `${API_URL}/cars?limit=1`
+        );
+        if (!catalogProbe.ok) {
+          throw new Error("catalog_unavailable");
         }
-      } else {
+
+        const result =
+          await fetchVehicleFamilyBySlug(slug, {
+            variantSlug: variantParam,
+          });
+
+        if (cancelled) return;
+
+        if (result?.vehicle) {
+          setFamily(result.family);
+          setFamilyVariants(result.variants || []);
+          setCar(result.vehicle);
+
+          if (result.canonicalizeTo) {
+            navigate(
+              vehicleFamilyPath(
+                result.canonicalizeTo,
+                result.selectedVariantSlug
+              ),
+              { replace: true }
+            );
+          }
+        } else {
+          setFamily(null);
+          setFamilyVariants([]);
+          setCar(null);
+          setLoadError("not_found");
+        }
+      } catch {
+        if (cancelled) return;
         setFamily(null);
         setFamilyVariants([]);
         setCar(null);
+        setLoadError("load_failed");
       }
 
       setLoading(false);
@@ -289,7 +313,7 @@ export default function CarDetails() {
       cancelled = true;
     };
 
-  }, [slug, navigate]);
+  }, [slug, navigate, searchParams, fetchRetryKey]);
 
   useEffect(() => {
     if (loading || !familyVariants.length) return;
@@ -531,6 +555,16 @@ export default function CarDetails() {
   /* =========================================================
      ======================= NOT FOUND =======================
      ========================================================= */
+
+  if (loadError === "load_failed") {
+    return (
+      <NetworkErrorPanel
+        title="Could not load this vehicle"
+        message="The catalog may be temporarily unavailable. Check your connection and try again."
+        onRetry={() => setFetchRetryKey((k) => k + 1)}
+      />
+    );
+  }
 
   if (!displayCar) {
     return <VehicleDetailNotFound requestedSlug={slug} />;
@@ -1143,6 +1177,8 @@ export default function CarDetails() {
               <WhatsAppLeadCta
                 vehicleName={vehicle.name}
                 vehicleSlug={familySlug}
+                familySlug={familySlug}
+                variantSlug={selectedVariantSlug}
                 sourcePage={`/cars/${familySlug}`}
                 intent="inquiry"
                 label="WhatsApp enquiry"
@@ -1324,6 +1360,17 @@ export default function CarDetails() {
                 >
                   Get best deal
                 </button>
+
+                <WhatsAppLeadCta
+                  vehicleName={vehicle.name}
+                  vehicleSlug={familySlug}
+                  familySlug={familySlug}
+                  variantSlug={selectedVariantSlug}
+                  sourcePage={`/cars/${familySlug}`}
+                  intent="inquiry"
+                  label="WhatsApp enquiry"
+                  variant="secondary"
+                />
 
               </div>
 

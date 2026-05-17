@@ -4,18 +4,25 @@ import {
   useState,
 } from "react";
 
+import { LOCAL_FALLBACK_EV } from "../../config/media.js";
 import {
-  getResponsiveImage,
-} from "../../utils/imageUtils";
-
-import {
-  LOCAL_FALLBACK_EV,
-} from "../../utils/imageUtils";
-
+  buildResponsiveSources,
+  COMPARE_SIZES,
+  HERO_SIZES,
+  LISTING_SIZES,
+} from "../../media/responsive.js";
 import {
   IMAGE_ASPECT,
   buildImageFallbackChain,
-} from "../../utils/vehicleMedia";
+} from "../../utils/vehicleMedia.js";
+
+const SIZES_BY_ROLE = {
+  listing: LISTING_SIZES,
+  compare: COMPARE_SIZES,
+  hero: HERO_SIZES,
+  gallery: LISTING_SIZES,
+  og: HERO_SIZES,
+};
 
 /**
  * Catalog-aware image with aspect-ratio box, loading placeholder, and fallback chain.
@@ -36,8 +43,9 @@ export default function VehicleImage({
 }) {
   const chain = useMemo(() => {
     if (srcProp) {
-      return buildImageFallbackChain(car, role).length
-        ? [srcProp, ...buildImageFallbackChain(car, role)]
+      const base = buildImageFallbackChain(car, role);
+      return base.length
+        ? [srcProp, ...base.filter((u) => u !== srcProp)]
         : [srcProp];
     }
     return buildImageFallbackChain(car, role);
@@ -48,10 +56,12 @@ export default function VehicleImage({
 
   const src = chain[Math.min(index, chain.length - 1)] || "";
   const aspect = aspectRatio || IMAGE_ASPECT[role] || IMAGE_ASPECT.listing;
+  const sizes = SIZES_BY_ROLE[role] || LISTING_SIZES;
 
-  const responsiveSet = responsive
-    ? getResponsiveImage(src)
-    : null;
+  const responsiveSet = useMemo(() => {
+    if (!responsive || !src) return null;
+    return buildResponsiveSources(src, [480, 800, 1200]);
+  }, [responsive, src]);
 
   const handleLoad = useCallback(() => {
     setLoaded(true);
@@ -89,6 +99,18 @@ export default function VehicleImage({
     opacity: loaded ? 1 : 0,
     transition: "opacity 0.35s ease",
     ...imgStyle,
+  };
+
+  const imgProps = {
+    className: imgClassName,
+    alt,
+    style: imgBaseStyle,
+    loading: eager ? "eager" : "lazy",
+    decoding: "async",
+    fetchPriority: eager ? "high" : "auto",
+    draggable: false,
+    onLoad: handleLoad,
+    onError: handleError,
   };
 
   return (
@@ -129,41 +151,25 @@ export default function VehicleImage({
           }}
         >
           <source
-            media="(max-width: 640px)"
-            srcSet={responsiveSet.small}
+            type="image/avif"
+            srcSet={responsiveSet.avifSrcSet}
+            sizes={sizes}
           />
           <source
-            media="(max-width: 1024px)"
-            srcSet={responsiveSet.medium}
+            type="image/webp"
+            srcSet={responsiveSet.webpSrcSet}
+            sizes={sizes}
           />
           <img
-            key={src}
-            className={imgClassName}
-            src={responsiveSet.large}
-            alt={alt}
-            style={imgBaseStyle}
-            loading={eager ? "eager" : "lazy"}
-            decoding="async"
-            fetchPriority={eager ? "high" : "low"}
-            draggable="false"
-            onLoad={handleLoad}
-            onError={handleError}
+            key={`${src}-${index}`}
+            {...imgProps}
+            src={responsiveSet.default}
+            srcSet={responsiveSet.srcSet}
+            sizes={sizes}
           />
         </picture>
       ) : (
-        <img
-          key={src}
-          className={imgClassName}
-          src={src}
-          alt={alt}
-          style={imgBaseStyle}
-          loading={eager ? "eager" : "lazy"}
-          decoding="async"
-          fetchPriority={eager ? "high" : "auto"}
-          draggable="false"
-          onLoad={handleLoad}
-          onError={handleError}
-        />
+        <img key={`${src}-${index}`} {...imgProps} src={src} />
       )}
     </div>
   );

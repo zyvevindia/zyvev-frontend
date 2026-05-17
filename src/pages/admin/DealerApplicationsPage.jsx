@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { API_URL } from "../../config";
+import {
+  AUDIT_ACTIONS,
+  logOpsAudit,
+} from "../../services/opsAuditLog";
+import { fetchDealerApplicationsForExport } from "../../services/adminExportApi";
+import { downloadCsvFromObjects } from "../../utils/csvExport";
 
 const card = {
   background: "#fff",
@@ -17,6 +23,8 @@ export default function DealerApplicationsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [review, setReview] = useState({});
+  const [exporting, setExporting] = useState(false);
+  const [exportFrom, setExportFrom] = useState("");
 
   const token = localStorage.getItem("token");
 
@@ -78,8 +86,53 @@ export default function DealerApplicationsPage() {
         payload.approvePassword = pwd;
       }
       await patchApplication(id, payload);
+
+      logOpsAudit({
+        action: AUDIT_ACTIONS.DEALER_APPLICATION_REVIEW,
+        actorRole: "admin",
+        targetType: "application",
+        targetId: id,
+        metadata: {
+          onboardingStatus,
+          summary: `${onboardingStatus} · ${payload.assignedTo || ""}`,
+        },
+      });
     } catch (err) {
       alert(err.message);
+    }
+  };
+
+  const exportCsv = async () => {
+    setExporting(true);
+    try {
+      let rows = await fetchDealerApplicationsForExport(token, filter);
+      if (exportFrom) {
+        const from = new Date(exportFrom).getTime();
+        rows = rows.filter(
+          (a) => a.createdAt && new Date(a.createdAt).getTime() >= from
+        );
+      }
+      if (!rows.length) {
+        alert("No applications to export");
+        return;
+      }
+      downloadCsvFromObjects(
+        rows,
+        (a) => ({
+          id: a._id,
+          dealership: a.dealershipName,
+          contact: a.contactName,
+          email: a.email,
+          phone: a.phone,
+          city: a.citySlug,
+          brands: (a.brands || []).join("; "),
+          status: a.onboardingStatus,
+          submitted: a.createdAt,
+        }),
+        `dealer-applications-${filter || "all"}.csv`
+      );
+    } finally {
+      setExporting(false);
     }
   };
 
@@ -95,7 +148,16 @@ export default function DealerApplicationsPage() {
         Review signup requests before activating dealer accounts.
       </p>
 
-      <label style={{ display: "block", marginBottom: "1rem" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "0.75rem",
+          alignItems: "center",
+          marginBottom: "1rem",
+        }}
+      >
+      <label style={{ display: "block" }}>
         Status{" "}
         <select value={filter} onChange={(e) => setFilter(e.target.value)}>
           <option value="pending">Pending</option>
@@ -105,6 +167,18 @@ export default function DealerApplicationsPage() {
           <option value="">All</option>
         </select>
       </label>
+      <label style={{ fontSize: "0.85rem" }}>
+        From{" "}
+        <input
+          type="date"
+          value={exportFrom}
+          onChange={(e) => setExportFrom(e.target.value)}
+        />
+      </label>
+      <button type="button" onClick={exportCsv} disabled={exporting}>
+        {exporting ? "Exporting…" : "Export CSV"}
+      </button>
+      </div>
 
       {loading && <p>Loading…</p>}
       {error && <p style={{ color: "#dc2626" }}>{error}</p>}
