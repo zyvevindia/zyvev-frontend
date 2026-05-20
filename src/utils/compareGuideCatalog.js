@@ -7,6 +7,7 @@ import {
   extractFamilySlug,
 } from "./modelFamily";
 import { pickDefaultVariantForDetail } from "./variantInsights";
+import { resolveCatalogImageUrl } from "./vehicleMedia";
 import { resolveFullDisplayName } from "./vehicleDisplayName";
 
 /**
@@ -76,7 +77,18 @@ function applyCompareDisplayName(car, seoPage, familySlug) {
   const name = resolveFullDisplayName(car, {
     seoDisplayName: ranked?.displayName,
   });
-  return { ...car, name, fullDisplayName: name };
+  const family = normalizeVehicleSlug(familySlug);
+  const compareImage = resolveCatalogImageUrl(car, "compare");
+
+  return {
+    ...car,
+    name,
+    fullDisplayName: name,
+    familySlug: car.familySlug || family,
+    compareThumbnail: car.compareThumbnail || compareImage,
+    heroImage: car.heroImage || compareImage,
+    image: car.image || compareImage,
+  };
 }
 
 /**

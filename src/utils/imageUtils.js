@@ -16,6 +16,8 @@ export {
   isPlaceholderMediaUrl,
   applyCloudinaryTransforms,
   cloudinaryDeliveryUrl,
+  coerceCatalogMediaToUrl,
+  normalizeCloudinaryDeliveryUrl,
 } from "../media/cloudinary.js";
 
 export {

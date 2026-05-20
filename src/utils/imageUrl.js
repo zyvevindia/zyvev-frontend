@@ -1,3 +1,5 @@
+import { coerceCatalogMediaToUrl } from "../media/cloudinary.js";
+
 /**
  * Guards against symbolic media role labels used as image src
  * (e.g. "compare-thumb" → /compare/slug/compare-thumb → 404).
@@ -86,7 +88,9 @@ export function isValidImageUrl(url) {
  * @returns {string|null}
  */
 export function sanitizeImageUrl(url) {
-  return isValidImageUrl(url) ? url.trim() : null;
+  const resolved = coerceCatalogMediaToUrl(url);
+  if (!resolved) return null;
+  return isValidImageUrl(resolved) ? resolved : null;
 }
 
 /**

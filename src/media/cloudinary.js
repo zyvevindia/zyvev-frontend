@@ -5,6 +5,8 @@
 import {
   CLOUDINARY_BASE,
   CLOUDINARY_CLOUD_NAME,
+  CATALOG_MEDIA_PREFIX,
+  DEFAULT_CLOUDINARY_CLOUD_NAME,
   DEFAULT_IMAGE_FORMAT,
   DEFAULT_IMAGE_QUALITY,
   LEGACY_CATALOG_CDN_HOST,
@@ -13,6 +15,30 @@ import { isValidCatalogAssetFilename } from "../utils/imageUrl.js";
 import { isProductionFamilySlug } from "./productionFamilies.js";
 
 const UPLOAD_SEGMENT = "/image/upload/";
+
+const WRONG_CLOUD_SEGMENT = new RegExp(
+  `^https://res\\.cloudinary\\.com/(?:evsavari|catalog)/`,
+  "i"
+);
+
+/**
+ * Fix delivery URLs where catalog folder prefix was used as cloud name.
+ * @param {unknown} url
+ * @returns {string|null}
+ */
+export function normalizeCloudinaryDeliveryUrl(url) {
+  if (!url || typeof url !== "string") return null;
+  const trimmed = url.trim();
+  if (!trimmed) return null;
+  if (!trimmed.includes("res.cloudinary.com")) return trimmed;
+  if (WRONG_CLOUD_SEGMENT.test(trimmed)) {
+    return trimmed.replace(
+      WRONG_CLOUD_SEGMENT,
+      `https://res.cloudinary.com/${DEFAULT_CLOUDINARY_CLOUD_NAME}/`
+    );
+  }
+  return trimmed;
+}
 
 export function isCloudinaryUrl(url = "") {
   return (
@@ -106,7 +132,9 @@ export function cloudinaryDeliveryUrl(
   if (/^(compare-thumb|listing-thumb|hero)$/i.test(id)) return null;
 
   const transform = buildTransformString(options);
-  return `${CLOUDINARY_BASE}/image/upload/${transform}/${id}`;
+  return normalizeCloudinaryDeliveryUrl(
+    `${CLOUDINARY_BASE}/image/upload/${transform}/${id}`
+  );
 }
 
 /**
@@ -116,7 +144,7 @@ export function familyCatalogPublicId(familySlug, filename) {
   const family = String(familySlug || "").trim().toLowerCase();
   const file = String(filename || "").trim();
   if (!family || !isValidCatalogAssetFilename(file)) return null;
-  return `evsavari/catalog/families/${family}/${file}`;
+  return `${CATALOG_MEDIA_PREFIX}/families/${family}/${file}`;
 }
 
 export function familyCatalogUrl(familySlug, filename, options = {}) {
@@ -130,11 +158,48 @@ export function variantCatalogPublicId(variantSlug, filename) {
   const slug = String(variantSlug || "").trim().toLowerCase();
   const file = String(filename || "").trim();
   if (!slug || !isValidCatalogAssetFilename(file)) return null;
-  return `evsavari/catalog/variants/${slug}/${file}`;
+  return `${CATALOG_MEDIA_PREFIX}/variants/${slug}/${file}`;
 }
 
 /** Speculative variant paths are not requested at runtime (avoid CDN 404s). */
 export function variantCatalogUrl() {
+  return null;
+}
+
+/**
+ * Resolve API/catalog media value to a delivery URL (never invent bare role tokens).
+ * @param {unknown} value
+ * @returns {string|null}
+ */
+export function coerceCatalogMediaToUrl(value) {
+  if (value == null) return null;
+  if (typeof value !== "string") return null;
+
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+
+  if (
+    trimmed.startsWith("http://") ||
+    trimmed.startsWith("https://")
+  ) {
+    return normalizeCloudinaryDeliveryUrl(trimmed);
+  }
+
+  if (trimmed.startsWith("/") && !trimmed.startsWith("//")) {
+    return trimmed;
+  }
+
+  const publicId = trimmed
+    .replace(/^\/+/, "")
+    .replace(/\.(jpg|jpeg|png|webp|avif)$/i, "");
+
+  if (
+    publicId.startsWith(`${CATALOG_MEDIA_PREFIX}/`) ||
+    publicId.startsWith("evsavari/catalog/")
+  ) {
+    return cloudinaryDeliveryUrl(publicId);
+  }
+
   return null;
 }
 

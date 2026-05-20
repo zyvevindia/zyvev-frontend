@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import ScoreCircle from "../common/ScoreCircle";
 import VehicleImage from "../media/VehicleImage";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
+import { resolveCatalogImageUrl } from "../../utils/vehicleMedia";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 import {
   resolveFullDisplayName,
@@ -129,6 +131,25 @@ export default function CompareVehicleCard({
   const href =
     car && (detailHref || vehicleDetailPath(car, car._id));
 
+  const compareImageSrc = car
+    ? resolveCatalogImageUrl(car, "compare")
+    : null;
+
+  useEffect(() => {
+    if (!import.meta.env.DEV || !car) return;
+    console.log("COMPARE_IMAGE_DEBUG", {
+      vehicle: car?.name,
+      slug: car?.slug,
+      familySlug: car?.familySlug,
+      media: car?.catalogMeta?.media,
+      compareThumbnail: car?.compareThumbnail,
+      heroImage: car?.heroImage,
+      image: car?.image,
+      listingThumbnail: car?.listingThumbnail,
+      resolvedSrc: compareImageSrc,
+    });
+  }, [car, compareImageSrc]);
+
   if (!car || typeof car !== "object") return null;
 
   return (
@@ -141,6 +162,7 @@ export default function CompareVehicleCard({
       <div className="compare-vehicle-card__media">
         <VehicleImage
           car={car}
+          src={compareImageSrc}
           role="compare"
           alt={displayName}
           responsive

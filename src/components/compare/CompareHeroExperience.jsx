@@ -23,7 +23,6 @@ const CompareBelowFoldSections = lazy(() =>
 );
 
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
-import { sanitizeImageUrl } from "../../utils/imageUrl";
 import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
 import { saveCompareCars } from "../../utils/compareCarsStorage";
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
@@ -371,14 +370,7 @@ export default function CompareHeroExperience({
                   ) : null}
 
                   <CompareVehicleCard
-                    car={{
-                      ...car,
-                      image:
-                        sanitizeImageUrl(car.compareThumbnail) ||
-                        sanitizeImageUrl(car.heroImage) ||
-                        sanitizeImageUrl(car.image) ||
-                        null,
-                    }}
+                    car={car}
                     isRecommended={isBest}
                     eagerImage={cardIndex === 0}
                     detailHref={vehicleDetailPath(car, car._id)}

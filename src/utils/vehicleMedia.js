@@ -4,6 +4,7 @@
 
 import { LOCAL_FALLBACK_EV, ROLE_ASPECT } from "../config/media.js";
 import {
+  coerceCatalogMediaToUrl,
   familyCatalogUrl,
   isPlaceholderMediaUrl,
 } from "../media/cloudinary.js";
@@ -62,6 +63,76 @@ function uniqueUrls(urls, options = {}) {
 }
 
 export { isValidImageUrl, sanitizeImageUrl };
+
+/**
+ * Resolve the best compare/listing/hero image from catalog fields (API first, then tier-1 manifest).
+ * @param {object|null|undefined} car
+ * @param {"compare"|"listing"|"hero"|"og"|"gallery"|"interior"} [role]
+ * @returns {string|null}
+ */
+export function resolveCatalogImageUrl(car, role = "compare") {
+  if (!car || typeof car !== "object") return null;
+
+  const meta = car.catalogMeta?.media || {};
+
+  const fieldLists = {
+    compare: [
+      car.compareThumbnail,
+      meta.compareThumbnail,
+      car.heroImage,
+      meta.heroImage,
+      car.image,
+      car.listingThumbnail,
+      meta.listingThumbnail,
+    ],
+    listing: [
+      car.listingThumbnail,
+      meta.listingThumbnail,
+      car.image,
+      car.heroImage,
+      meta.heroImage,
+    ],
+    hero: [
+      car.heroImage,
+      meta.heroImage,
+      car.image,
+      car.listingThumbnail,
+      meta.listingThumbnail,
+    ],
+    og: [car.ogImage, meta.ogImage, car.heroImage, meta.heroImage],
+  };
+
+  const fields = fieldLists[role] || fieldLists.listing;
+
+  for (const raw of fields) {
+    const url = sanitizeImageUrl(raw);
+    if (url) return url;
+  }
+
+  const familySlug = resolveFamilySlugFromCar(car);
+  if (!familySlug || !isProductionFamilySlug(familySlug)) {
+    return null;
+  }
+
+  const block = getProductionFamilyMedia(familySlug);
+  if (!block) return null;
+
+  const manifestOrder =
+    role === "compare"
+      ? [block.compareThumbnail, block.heroImage, block.listingThumbnail]
+      : role === "hero"
+        ? [block.heroImage, block.listingThumbnail]
+        : role === "og"
+          ? [block.ogImage, block.heroImage]
+          : [block.listingThumbnail, block.heroImage];
+
+  for (const raw of manifestOrder) {
+    const url = coerceCatalogMediaToUrl(raw);
+    if (url && isValidImageUrl(url)) return url;
+  }
+
+  return null;
+}
 
 function familyMediaForRole(familySlug, role) {
   const block = getProductionFamilyMedia(familySlug);

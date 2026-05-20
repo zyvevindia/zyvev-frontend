@@ -5,9 +5,36 @@
 /** Production Cloudinary account (override via VITE_CLOUDINARY_CLOUD_NAME). */
 export const DEFAULT_CLOUDINARY_CLOUD_NAME = "dznvmumze";
 
-export const CLOUDINARY_CLOUD_NAME =
-  import.meta.env.VITE_CLOUDINARY_CLOUD_NAME ||
-  DEFAULT_CLOUDINARY_CLOUD_NAME;
+/**
+ * Folder prefix inside Cloudinary — NOT the cloud name.
+ * @see CATALOG_FOLDER
+ */
+export const CATALOG_MEDIA_PREFIX = "evsavari/catalog";
+
+/** Values that must never be used as res.cloudinary.com cloud segment. */
+const INVALID_CLOUDINARY_CLOUD_NAMES = new Set([
+  "evsavari",
+  "catalog",
+  "evsavari-catalog",
+]);
+
+/**
+ * Resolve Cloudinary cloud name from env, ignoring mistaken folder-prefix values.
+ */
+export function resolveCloudinaryCloudName() {
+  const fromEnv = String(
+    import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || ""
+  ).trim();
+  if (
+    fromEnv &&
+    !INVALID_CLOUDINARY_CLOUD_NAMES.has(fromEnv.toLowerCase())
+  ) {
+    return fromEnv;
+  }
+  return DEFAULT_CLOUDINARY_CLOUD_NAME;
+}
+
+export const CLOUDINARY_CLOUD_NAME = resolveCloudinaryCloudName();
 
 export const CLOUDINARY_BASE = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`;
 
