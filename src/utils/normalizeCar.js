@@ -1,79 +1,76 @@
+import { sanitizeCarImageFields } from "./imageUrl";
 import { getListingImage } from "./vehicleMedia";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { logProduction } from "./productionLog";
 
 export default function normalizeCar(car) {
-  const listingImage = getListingImage(car);
-  const slug = normalizeVehicleSlug(car.slug);
+  const cleaned = sanitizeCarImageFields(car);
+  const listingImage = getListingImage(cleaned);
+  const slug = normalizeVehicleSlug(cleaned.slug);
 
-  if (!slug && car.name) {
+  if (!slug && cleaned.name) {
     logProduction(
       "catalog",
       "missing_vehicle_slug",
-      { name: car.name, id: car._id },
+      { name: cleaned.name, id: cleaned._id },
       "warn"
     );
   }
 
   return {
-    ...car,
+    ...cleaned,
 
-    _id: car._id || "",
+    _id: cleaned._id || "",
 
-    name: car.name || "Unknown EV",
+    name: cleaned.name || "Unknown EV",
 
-    brand: car.brand || "EV Brand",
+    brand: cleaned.brand || "EV Brand",
 
-    heroImage: car.heroImage || car.image || listingImage,
+    heroImage:
+      cleaned.heroImage || cleaned.image || listingImage || null,
 
-    listingThumbnail:
-      car.listingThumbnail || listingImage,
+    listingThumbnail: cleaned.listingThumbnail || listingImage || null,
 
     compareThumbnail:
-      car.compareThumbnail ||
-      car.listingThumbnail ||
-      car.heroImage ||
-      listingImage,
+      cleaned.compareThumbnail ||
+      cleaned.listingThumbnail ||
+      cleaned.heroImage ||
+      listingImage ||
+      null,
 
-    ogImage:
-      car.ogImage ||
-      car.heroImage ||
-      listingImage,
+    ogImage: cleaned.ogImage || cleaned.heroImage || listingImage || null,
 
-    image: listingImage,
+    image: listingImage || null,
 
     price:
-      car.startingPrice ||
-      car.price ||
+      cleaned.startingPrice ||
+      cleaned.price ||
       0,
 
     range:
-      car.specifications?.range ||
-      car.range ||
+      cleaned.specifications?.range ||
+      cleaned.range ||
       0,
 
     battery:
-      car.specifications?.batteryPack ||
-      car.battery ||
+      cleaned.specifications?.batteryPack ||
+      cleaned.battery ||
       "EV Battery",
 
     chargingTime:
-      car.specifications?.chargingTime ||
+      cleaned.specifications?.chargingTime ||
       "N/A",
 
     topSpeed:
-      car.specifications?.topSpeed ||
+      cleaned.specifications?.topSpeed ||
       "N/A",
 
     slug,
 
-    isFeatured:
-      car.isFeatured || false,
+    isFeatured: cleaned.isFeatured || false,
 
-    catalogSource:
-      car.catalogSource || "legacy",
+    catalogSource: cleaned.catalogSource || "legacy",
 
-    catalogMeta:
-      car.catalogMeta || null,
+    catalogMeta: cleaned.catalogMeta || null,
   };
 }

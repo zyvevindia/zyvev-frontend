@@ -5,6 +5,7 @@
 import {
   mergeIntelligenceIntoCatalogMeta,
 } from "./catalogIntelligence";
+import { sanitizeImageUrl } from "./imageUrl";
 
 const TAG_LABELS = {
   best_for_family: "Family Friendly",
@@ -57,6 +58,23 @@ export function mergeCatalogIntoVehicle(vehicle, catalogDto) {
   const merged = {
     ...catalogDto.marketplace,
     ...vehicle,
+    heroImage: sanitizeImageUrl(
+      catalogDto.media?.heroImage ?? vehicle.heroImage
+    ),
+    listingThumbnail: sanitizeImageUrl(
+      catalogDto.media?.listingThumbnail ?? vehicle.listingThumbnail
+    ),
+    compareThumbnail: sanitizeImageUrl(
+      catalogDto.media?.compareThumbnail ?? vehicle.compareThumbnail
+    ),
+    ogImage: sanitizeImageUrl(
+      catalogDto.media?.ogImage ?? vehicle.ogImage
+    ),
+    image: sanitizeImageUrl(
+      catalogDto.media?.listingThumbnail ??
+        vehicle.image ??
+        vehicle.heroImage
+    ),
     catalogSource: "master",
     catalogMeta: {
       ...(catalogDto.marketplace?.catalogMeta || {}),
@@ -97,13 +115,21 @@ export function mergeCatalogIntoVehicle(vehicle, catalogDto) {
         highway: catalogDto.practicality?.highwayComfortScore,
       },
       media: {
-        heroImage: catalogDto.media?.heroImage,
-        listingThumbnail:
-          catalogDto.media?.listingThumbnail,
-        compareThumbnail:
-          catalogDto.media?.compareThumbnail,
-        ogImage: catalogDto.media?.ogImage,
-        assets: catalogDto.media?.assets || [],
+        heroImage: sanitizeImageUrl(catalogDto.media?.heroImage),
+        listingThumbnail: sanitizeImageUrl(
+          catalogDto.media?.listingThumbnail
+        ),
+        compareThumbnail: sanitizeImageUrl(
+          catalogDto.media?.compareThumbnail
+        ),
+        ogImage: sanitizeImageUrl(catalogDto.media?.ogImage),
+        assets: (catalogDto.media?.assets || [])
+          .map((asset) => {
+            if (!asset || typeof asset !== "object") return null;
+            const url = sanitizeImageUrl(asset.url || asset.src);
+            return url ? { ...asset, url } : null;
+          })
+          .filter(Boolean),
       },
     },
   };

@@ -11,6 +11,8 @@ export const MEDIA_ROLES = {
   OG: "og",
 };
 
+import { sanitizeImageUrl } from "../utils/imageUrl.js";
+
 /** Car / master variant field names per role */
 export const ROLE_FIELD_MAP = {
   hero: ["heroImage"],
@@ -28,22 +30,42 @@ export function pickMediaFields(car = {}, role = "listing") {
 
   for (const field of fields) {
     if (car?.[field]) {
-      if (Array.isArray(car[field])) values.push(...car[field]);
-      else values.push(car[field]);
+      if (Array.isArray(car[field])) {
+        for (const item of car[field]) {
+          const url = sanitizeImageUrl(item);
+          if (url) values.push(url);
+        }
+      } else {
+        const url = sanitizeImageUrl(car[field]);
+        if (url) values.push(url);
+      }
     }
     if (meta[field]) {
-      if (Array.isArray(meta[field])) values.push(...meta[field]);
-      else values.push(meta[field]);
+      if (Array.isArray(meta[field])) {
+        for (const item of meta[field]) {
+          const url = sanitizeImageUrl(item);
+          if (url) values.push(url);
+        }
+      } else {
+        const url = sanitizeImageUrl(meta[field]);
+        if (url) values.push(url);
+      }
     }
   }
 
   if (role === "gallery" && Array.isArray(car?.galleryImages)) {
-    values.push(...car.galleryImages);
+    for (const item of car.galleryImages) {
+      const url = sanitizeImageUrl(item);
+      if (url) values.push(url);
+    }
   }
 
   if (role === "interior" && Array.isArray(meta?.interior)) {
-    values.push(...meta.interior);
+    for (const item of meta.interior) {
+      const url = sanitizeImageUrl(item);
+      if (url) values.push(url);
+    }
   }
 
-  return values.filter(Boolean);
+  return values;
 }

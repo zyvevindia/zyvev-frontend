@@ -29,7 +29,22 @@ export function isLegacyCatalogCdnUrl(url = "") {
 export function isPlaceholderMediaUrl(url = "") {
   if (!url || typeof url !== "string") return true;
   if (isLegacyCatalogCdnUrl(url)) return true;
-  return /unsplash\.com|picsum\.photos|via\.placeholder/i.test(url);
+  if (/unsplash\.com|picsum\.photos|via\.placeholder/i.test(url)) {
+    return true;
+  }
+  const lower = url.trim().toLowerCase();
+  if (
+    lower === "hero" ||
+    lower === "compare-thumb" ||
+    lower === "listing-thumb" ||
+    lower === "listing" ||
+    lower === "compare"
+  ) {
+    return true;
+  }
+  return /^(compare-thumb|listing-thumb|hero)(\.(jpg|jpeg|png|webp))?$/i.test(
+    url.trim()
+  );
 }
 
 /**

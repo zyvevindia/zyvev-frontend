@@ -8,6 +8,7 @@ import {
   isPlaceholderMediaUrl,
   variantCatalogUrl,
 } from "../media/cloudinary.js";
+import { isValidImageUrl, sanitizeImageUrl } from "./imageUrl.js";
 import {
   getProductionFamilyMedia,
   resolveFamilySlugFromCar,
@@ -35,12 +36,15 @@ function slugFromCar(car) {
 function uniqueUrls(urls) {
   const seen = new Set();
   return urls.filter((u) => {
-    if (!u || typeof u !== "string" || seen.has(u)) return false;
-    if (isPlaceholderMediaUrl(u)) return false;
-    seen.add(u);
+    const clean = sanitizeImageUrl(u);
+    if (!clean || seen.has(clean)) return false;
+    if (isPlaceholderMediaUrl(clean)) return false;
+    seen.add(clean);
     return true;
   });
 }
+
+export { isValidImageUrl, sanitizeImageUrl };
 
 function familyMediaForRole(familySlug, role) {
   const block = getProductionFamilyMedia(familySlug);

@@ -2,6 +2,7 @@
    ============== COMPARE LIST (localStorage) ===============
    ========================================================= */
 
+import { sanitizeImageUrl } from "./imageUrl";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { resolveFullDisplayName } from "./vehicleDisplayName";
 
@@ -51,10 +52,16 @@ export function sanitizeCompareCar(car) {
     name,
     fullDisplayName: name,
     brand: car.brand || "",
-    image: car.image || car.heroImage || "",
-    heroImage: car.heroImage || car.image || "",
-    listingThumbnail: car.listingThumbnail || "",
-    compareThumbnail: car.compareThumbnail || "",
+    image:
+      sanitizeImageUrl(car.image) ||
+      sanitizeImageUrl(car.heroImage) ||
+      null,
+    heroImage:
+      sanitizeImageUrl(car.heroImage) ||
+      sanitizeImageUrl(car.image) ||
+      null,
+    listingThumbnail: sanitizeImageUrl(car.listingThumbnail),
+    compareThumbnail: sanitizeImageUrl(car.compareThumbnail),
     startingPrice:
       Number(car.startingPrice ?? car.price) || 0,
     price: Number(car.price ?? car.startingPrice) || 0,

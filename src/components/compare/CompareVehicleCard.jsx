@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import ScoreCircle from "../common/ScoreCircle";
@@ -129,14 +128,6 @@ export default function CompareVehicleCard({
   const betterAtPills = car ? resolveBetterAtPills(meta, car) : [];
   const href =
     car && (detailHref || vehicleDetailPath(car, car._id));
-
-  useEffect(() => {
-    console.log("COMPARE_RENDER", {
-      vehicle: car,
-      fullDisplayName: displayName,
-      score,
-    });
-  }, [car, displayName, score]);
 
   if (!car || typeof car !== "object") return null;
 

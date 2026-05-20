@@ -12,10 +12,18 @@ import {
   LISTING_SIZES,
 } from "../../media/responsive.js";
 import { logImageFallback } from "../../launch/imageFallbackLog.js";
+import { isValidImageUrl } from "../../utils/imageUrl.js";
 import {
   IMAGE_ASPECT,
   buildImageFallbackChain,
 } from "../../utils/vehicleMedia.js";
+
+const PLACEHOLDER_LABEL = "EV image coming soon";
+
+function filterValidChain(urls) {
+  if (!Array.isArray(urls)) return [];
+  return urls.filter((u) => isValidImageUrl(u));
+}
 
 const SIZES_BY_ROLE = {
   listing: LISTING_SIZES,
@@ -43,24 +51,37 @@ export default function VehicleImage({
   onBroken,
 }) {
   const chain = useMemo(() => {
-    if (srcProp) {
-      const base = buildImageFallbackChain(car, role);
-      return base.length
-        ? [srcProp, ...base.filter((u) => u !== srcProp)]
-        : [srcProp];
-    }
-    return buildImageFallbackChain(car, role);
+    const raw = (() => {
+      if (srcProp && isValidImageUrl(srcProp)) {
+        const base = filterValidChain(
+          buildImageFallbackChain(car, role)
+        );
+        return [srcProp, ...base.filter((u) => u !== srcProp)];
+      }
+      return filterValidChain(buildImageFallbackChain(car, role));
+    })();
+
+    if (raw.length > 0) return raw;
+
+    return isValidImageUrl(LOCAL_FALLBACK_EV)
+      ? [LOCAL_FALLBACK_EV]
+      : [];
   }, [car, role, srcProp]);
 
   const [index, setIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [showPlaceholder, setShowPlaceholder] = useState(
+    chain.length === 0
+  );
 
-  const src = chain[Math.min(index, chain.length - 1)] || "";
+  const src = showPlaceholder
+    ? ""
+    : chain[Math.min(index, chain.length - 1)] || "";
   const aspect = aspectRatio || IMAGE_ASPECT[role] || IMAGE_ASPECT.listing;
   const sizes = SIZES_BY_ROLE[role] || LISTING_SIZES;
 
   const responsiveSet = useMemo(() => {
-    if (!responsive || !src) return null;
+    if (!responsive || !src || !isValidImageUrl(src)) return null;
     return buildResponsiveSources(src, [480, 800, 1200]);
   }, [responsive, src]);
 
@@ -79,6 +100,12 @@ export default function VehicleImage({
 
       if (index < chain.length - 1) {
         const nextUrl = chain[index + 1];
+        if (!isValidImageUrl(nextUrl)) {
+          setShowPlaceholder(true);
+          setLoaded(true);
+          onBroken?.(failedUrl);
+          return;
+        }
         logImageFallback({
           role,
           failedUrl,
@@ -91,7 +118,11 @@ export default function VehicleImage({
       }
 
       const img = event?.currentTarget;
-      if (img && img.src !== LOCAL_FALLBACK_EV) {
+      if (
+        img &&
+        isValidImageUrl(LOCAL_FALLBACK_EV) &&
+        !img.src.endsWith(LOCAL_FALLBACK_EV)
+      ) {
         logImageFallback({
           role,
           failedUrl,
@@ -103,10 +134,11 @@ export default function VehicleImage({
         return;
       }
 
+      setShowPlaceholder(true);
       setLoaded(true);
-      onBroken?.(src);
+      onBroken?.(failedUrl);
     },
-    [index, chain.length, onBroken, src, role, car, chain]
+    [index, chain, onBroken, src, role, car]
   );
 
   const imgBaseStyle = {
@@ -149,7 +181,7 @@ export default function VehicleImage({
         ...wrapperStyle,
       }}
     >
-      {!loaded && (
+      {!loaded && !showPlaceholder && (
         <span
           style={{
             position: "absolute",
@@ -161,7 +193,32 @@ export default function VehicleImage({
         />
       )}
 
-      {responsive && responsiveSet ? (
+      {showPlaceholder ? (
+        <div
+          className="vehicle-image-placeholder"
+          style={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "12px",
+            textAlign: "center",
+            color: "#64748b",
+            fontSize: "0.8125rem",
+            fontWeight: 500,
+            lineHeight: 1.35,
+            background:
+              "linear-gradient(145deg, #f1f5f9 0%, #e2e8f0 100%)",
+          }}
+          role="img"
+          aria-label={PLACEHOLDER_LABEL}
+        >
+          {PLACEHOLDER_LABEL}
+        </div>
+      ) : null}
+
+      {!showPlaceholder && responsive && responsiveSet ? (
         <picture
           style={{
             position: "absolute",
@@ -188,9 +245,9 @@ export default function VehicleImage({
             sizes={sizes}
           />
         </picture>
-      ) : (
+      ) : !showPlaceholder ? (
         <img key={`${src}-${index}`} {...imgProps} src={src} />
-      )}
+      ) : null}
     </div>
   );
 }
