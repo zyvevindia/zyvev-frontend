@@ -104,9 +104,8 @@ export default function DiscoverySeoPage({ pageType }) {
   const { seoPage, loading, error, retry } =
     useDiscoveryPage(routeContext);
 
-  const isCompareGuide =
-    pageType === PAGE_TYPES.COMPARE_GUIDE ||
-    seoPage?.category === "compare";
+  /** Compare guides only on /compare/:slug — avoids dual editorial layouts */
+  const isCompareGuide = pageType === PAGE_TYPES.COMPARE_GUIDE;
 
   const {
     cars: guideCars,
@@ -251,20 +250,28 @@ export default function DiscoverySeoPage({ pageType }) {
             heroTitle={meta.h1}
             heroBadge="EV comparison"
             recommendationLogic={seoPage.recommendationLogic}
+            guideSeoPage={seoPage}
             showClearComparison={false}
             enableFab
           />
         ) : (
-          <div style={{ padding: "2rem 20px", textAlign: "center", color: "#64748b" }}>
-            <p>
-              Catalog data for this pair is temporarily unavailable.{" "}
-              <Link to="/compare">Try the compare hub</Link> or{" "}
-              <Link to="/cars">browse EVs</Link>.
-            </p>
-          </div>
+          <>
+            <div
+              style={{
+                padding: "2rem 20px",
+                textAlign: "center",
+                color: "#64748b",
+              }}
+            >
+              <p>
+                Catalog data for this pair is temporarily unavailable.{" "}
+                <Link to="/compare">Try the compare hub</Link> or{" "}
+                <Link to="/cars">browse EVs</Link>.
+              </p>
+            </div>
+            <CompareGuideEditorialSections seoPage={seoPage} />
+          </>
         )}
-
-        <CompareGuideEditorialSections seoPage={seoPage} />
       </div>
     );
   }

@@ -17,6 +17,7 @@ import CompareTrustPanel from "../catalog/CompareTrustPanel";
 import LeadInquiryModal from "../LeadInquiryModal";
 import WhatsAppLeadCta from "../leads/WhatsAppLeadCta";
 import CompareUtilityRail from "./CompareUtilityRail";
+import CompareGuideEditorialSections from "./CompareGuideEditorialSections";
 
 const CompareBelowFoldSections = lazy(() =>
   import("../catalog/CompareBelowFoldSections")
@@ -78,6 +79,8 @@ export default function CompareHeroExperience({
   topSlot = null,
   recommendationLogic = null,
   usefulnessLabel,
+  /** SEO payload for /compare/:slug — editorial renders once below real-world block */
+  guideSeoPage = null,
 }) {
   const navigate = useNavigate();
   const [inquiryOpen, setInquiryOpen] = useState(false);
@@ -524,6 +527,10 @@ export default function CompareHeroExperience({
             <div className="compare-trust-panel">
               <CompareTrustPanel cars={cars} />
             </div>
+          ) : null}
+
+          {variant === "guide" && guideSeoPage ? (
+            <CompareGuideEditorialSections seoPage={guideSeoPage} />
           ) : null}
         </section>
       </div>

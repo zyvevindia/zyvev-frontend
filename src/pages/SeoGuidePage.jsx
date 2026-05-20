@@ -1,4 +1,10 @@
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  Link,
+  Navigate,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 
 import { Helmet } from "react-helmet-async";
 
@@ -76,6 +82,12 @@ export default function SeoGuidePage() {
   const isCompare = seoPage.category === "compare";
   const canonical =
     seoPage.canonicalUrl || resolveGuideCanonicalUrl(seoPage.slug);
+  const canonicalPath = resolveGuideCanonicalPath(seoPage.slug);
+
+  if (isCompare && location.pathname !== canonicalPath) {
+    return <Navigate to={canonicalPath} replace />;
+  }
+
   const meta = buildGuidePageMeta(seoPage, canonical);
   const legacySuperseded =
     isLegacyGuideSuperseded(seoPage.slug) &&

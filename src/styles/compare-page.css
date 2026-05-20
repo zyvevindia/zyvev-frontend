@@ -712,10 +712,11 @@
 /* FAB clearance belongs on editorial footer, not a blank band before it */
 .compare-guide-page .compare-page--with-fab {
   padding-bottom: 0;
+  margin-bottom: 0;
 }
 
-.compare-guide-page .compare-guide-editorial {
-  padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px) + 1.25rem);
+.compare-guide-page .compare-page--guide.compare-page--with-fab {
+  min-height: 0;
 }
 
 .compare-guide-page__breadcrumb-bar {
@@ -733,9 +734,21 @@
 
 .compare-guide-editorial {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.25rem clamp(16px, 3vw, 28px) 2rem;
+  margin: 0;
+  padding: 1rem 0 0;
   border-top: 1px solid #e2e8f0;
+}
+
+/* Editorial lives inside .compare-main — no extra outer gap or duplicate shell */
+.compare-guide-page .compare-main .compare-guide-editorial {
+  max-width: none;
+  margin-top: 12px;
+  margin-bottom: 0;
+  padding: 1rem 0 calc(72px + env(safe-area-inset-bottom, 0px));
+}
+
+.compare-guide-page .compare-main {
+  padding-bottom: 0;
 }
 
 .compare-guide-editorial__heading {
