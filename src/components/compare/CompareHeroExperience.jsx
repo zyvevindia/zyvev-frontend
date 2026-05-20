@@ -11,8 +11,7 @@ import {
 
 import "../../styles/compare-page.css";
 
-import CompactCarCard from "../CompactCarCard";
-import CompareInsightCard from "../catalog/CompareInsightCard";
+import CompareVehicleCard from "./CompareVehicleCard";
 import CompareTrustPanel from "../catalog/CompareTrustPanel";
 import LeadInquiryModal from "../LeadInquiryModal";
 import WhatsAppLeadCta from "../leads/WhatsAppLeadCta";
@@ -351,17 +350,13 @@ export default function CompareHeroExperience({
 
         <section className="compare-main">
           <div className={gridClass}>
-            {cars.map((car, cardIndex) => {
+            {intelligentCars.map((car, cardIndex) => {
               const isBest = car._id === bestId;
               return (
                 <div
                   key={car._id || car.slug}
                   className={`compare-page-card${isBest ? " compare-page-card--best" : ""}`}
                 >
-                  {isBest && (
-                    <div className="compare-page-card__badge">Best Value</div>
-                  )}
-
                   {variant === "tool" ? (
                     <button
                       type="button"
@@ -373,40 +368,15 @@ export default function CompareHeroExperience({
                     </button>
                   ) : null}
 
-                  <div className="compare-page-card__body">
-                    <div className="compare-page-card__vehicle">
-                      <CompactCarCard
-                        variant="compare"
-                        eagerImage={cardIndex === 0}
-                        car={{
-                          ...car,
-                          image: car.heroImage || car.image,
-                          price: car.startingPrice,
-                          range: car.specifications?.range || 0,
-                          battery:
-                            car.specifications?.batteryPack || "EV Battery",
-                          badge: isBest
-                            ? "Recommended"
-                            : car.catalogMeta?.compareValueScore != null
-                              ? `Value ${car.catalogMeta.compareValueScore}`
-                              : "Compared",
-                        }}
-                      />
-                    </div>
-
-                    <div className="compare-page-card__insight">
-                      <CompareInsightCard car={car} />
-                    </div>
-
-                    <div className="compare-page-card__cta-wrap">
-                      <Link
-                        to={vehicleDetailPath(car, car._id)}
-                        className="compare-page-card__cta"
-                      >
-                        View Details
-                      </Link>
-                    </div>
-                  </div>
+                  <CompareVehicleCard
+                    car={{
+                      ...car,
+                      image: car.heroImage || car.image,
+                    }}
+                    isRecommended={isBest}
+                    eagerImage={cardIndex === 0}
+                    detailHref={vehicleDetailPath(car, car._id)}
+                  />
                 </div>
               );
             })}

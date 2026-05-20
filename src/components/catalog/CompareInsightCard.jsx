@@ -1,5 +1,6 @@
 /**
- * Per-vehicle compare intelligence — embedded compact block inside compare cards.
+ * Legacy compare insight strip (value score row). Not used on /compare pages —
+ * see CompareVehicleCard for the active renderer.
  */
 
 export default function CompareInsightCard({ car }) {
