@@ -1,53 +1,31 @@
-import { Link } from "react-router-dom";
-
 import SeoTradeoffs from "../SEO/SeoTradeoffs";
 import SeoFaqBlock from "../SEO/SeoFaqBlock";
-import SeoRelatedLinks from "../SEO/SeoRelatedLinks";
-import EditorialTransparency from "../trust/EditorialTransparency";
-import ConfidenceExplainer from "../trust/ConfidenceExplainer";
 
 /**
- * Below-the-fold SEO / editorial blocks for /compare/:slug (crawlable, not above-fold).
- * Intro + methodology at top of compare UI live in CompareUtilityRail / hero only.
+ * Compact SEO block for /compare/:slug — below real-world comparison only.
+ * Methodology + usefulness live in CompareUtilityRail (no duplication here).
  */
-export default function CompareGuideEditorialSections({
-  seoPage,
-  linkSections = [],
-  discoveryPath = "",
-  typeLabel = "Compare",
-}) {
+export default function CompareGuideEditorialSections({ seoPage }) {
   if (!seoPage) return null;
 
   return (
-    <article className="compare-guide-editorial" aria-label="Comparison guide details">
-      <nav className="compare-guide-editorial__breadcrumb" aria-label="Breadcrumb">
-        <Link to="/">Home</Link>
-        <span> / </span>
-        <Link to="/guides">Guides</Link>
-        <span> / </span>
-        <span>{typeLabel}</span>
-      </nav>
-
+    <article
+      className="compare-guide-editorial"
+      aria-label="Comparison guide details"
+    >
       <h2 className="compare-guide-editorial__heading">About this comparison</h2>
 
       {seoPage.intro ? (
         <p className="compare-guide-editorial__intro">{seoPage.intro}</p>
       ) : null}
 
-      <ConfidenceExplainer />
+      <div className="compare-guide-editorial__tradeoffs">
+        <SeoTradeoffs tradeoffs={seoPage.tradeoffs} />
+      </div>
 
-      <SeoTradeoffs tradeoffs={seoPage.tradeoffs} />
-
-      <SeoFaqBlock faq={seoPage.faq} />
-
-      <SeoRelatedLinks sections={linkSections} />
-
-      <EditorialTransparency compact />
-
-      <p className="compare-guide-editorial__disclaimer">
-        Rankings use catalog intelligence composites — not paid placements. Verify
-        prices, charging access, and on-road costs locally before buying.
-      </p>
+      <div className="compare-guide-editorial__faq">
+        <SeoFaqBlock faq={seoPage.faq} />
+      </div>
     </article>
   );
 }

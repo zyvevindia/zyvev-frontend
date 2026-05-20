@@ -667,8 +667,55 @@
 /* —— SEO compare guide (/compare/:slug) —— */
 
 .compare-guide-page {
-  min-height: 100vh;
+  min-height: 0;
   background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Guide routes: do not force full-viewport height on compare shell (was causing huge gap before editorial) */
+.compare-guide-page .compare-page--guide {
+  min-height: 0;
+}
+
+.compare-guide-page .compare-main {
+  padding: 20px clamp(16px, 3vw, 28px) 12px;
+}
+
+.compare-guide-page .compare-spec {
+  margin-top: 24px;
+}
+
+.compare-guide-page .compare-utility-rail {
+  margin: 16px auto 0;
+}
+
+.compare-guide-page .compare-below-fold {
+  margin-top: 0;
+}
+
+.compare-guide-page .compare-advantage-panel,
+.compare-guide-page .compare-trust-summary {
+  margin: 14px 0;
+}
+
+.compare-guide-page .compare-main .compare-scenario-panel {
+  margin-top: 12px;
+}
+
+.compare-guide-page .compare-deferred-skeleton--inline {
+  min-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: transparent;
+  animation: none;
+}
+
+/* FAB clearance belongs on editorial footer, not a blank band before it */
+.compare-guide-page .compare-page--with-fab {
+  padding-bottom: 0;
+}
+
+.compare-guide-page .compare-guide-editorial {
+  padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px) + 1.25rem);
 }
 
 .compare-guide-page__breadcrumb-bar {
@@ -685,29 +732,39 @@
 }
 
 .compare-guide-editorial {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2.5rem 20px 4rem;
-}
-
-.compare-guide-editorial__breadcrumb {
-  font-size: 0.875rem;
-  color: #64748b;
-  margin-bottom: 1rem;
+  padding: 1.25rem clamp(16px, 3vw, 28px) 2rem;
+  border-top: 1px solid #e2e8f0;
 }
 
 .compare-guide-editorial__heading {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #0f172a;
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
 }
 
 .compare-guide-editorial__intro {
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: #334155;
-  margin: 0 0 1.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: #475569;
+  margin: 0 0 1rem;
+  max-width: 72ch;
+}
+
+.compare-guide-editorial__tradeoffs section {
+  margin-bottom: 1rem !important;
+  padding: 0.875rem 1rem !important;
+}
+
+.compare-guide-editorial__tradeoffs h2 {
+  font-size: 1rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.compare-guide-editorial__faq {
+  margin-top: 0.25rem;
 }
 
 /* Utility rail — specs → methodology → usefulness → report */
@@ -736,15 +793,8 @@
   margin-top: 0;
 }
 
-.compare-guide-editorial__disclaimer {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  line-height: 1.5;
-  margin-top: 2rem;
-}
-
 .compare-guide-loading {
-  min-height: 50vh;
+  min-height: 0;
 }
 
 .compare-guide-loading__shimmer {

@@ -243,7 +243,11 @@ export default function CompareHeroExperience({
 
   return (
     <>
-      <div className="compare-page compare-page--with-fab">
+      <div
+        className={`compare-page compare-page--with-fab${
+          variant === "guide" ? " compare-page--guide" : ""
+        }`}
+      >
         {topSlot}
 
         <section className="compare-hero">
@@ -498,24 +502,29 @@ export default function CompareHeroExperience({
             }
           />
 
-          <Suspense
-            fallback={
-              <div
-                className="compare-deferred-skeleton"
-                aria-busy="true"
-                aria-label="Loading comparison insights"
+          <div className="compare-below-fold">
+            <Suspense
+              fallback={
+                <div
+                  className="compare-deferred-skeleton compare-deferred-skeleton--inline"
+                  aria-busy="true"
+                  aria-label="Loading comparison insights"
+                />
+              }
+            >
+              <CompareBelowFoldSections
+                cars={cars}
+                intelligentCars={intelligentCars}
+                guideMode={variant === "guide"}
               />
-            }
-          >
-            <CompareBelowFoldSections
-              cars={cars}
-              intelligentCars={intelligentCars}
-            />
-          </Suspense>
-
-          <div className="compare-trust-panel">
-            <CompareTrustPanel cars={cars} />
+            </Suspense>
           </div>
+
+          {variant === "tool" ? (
+            <div className="compare-trust-panel">
+              <CompareTrustPanel cars={cars} />
+            </div>
+          ) : null}
         </section>
       </div>
 

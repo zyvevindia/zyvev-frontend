@@ -264,12 +264,7 @@ export default function DiscoverySeoPage({ pageType }) {
           </div>
         )}
 
-        <CompareGuideEditorialSections
-          seoPage={seoPage}
-          linkSections={linkSections}
-          discoveryPath={discoveryPath}
-          typeLabel={typeLabel}
-        />
+        <CompareGuideEditorialSections seoPage={seoPage} />
       </div>
     );
   }
