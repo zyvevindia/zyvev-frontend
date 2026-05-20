@@ -42,7 +42,7 @@ function uniqueUrls(urls, options = {}) {
   const { role = "listing" } = options;
   const seen = new Set();
   return urls.filter((u) => {
-    const clean = sanitizeImageUrl(u);
+    const clean = sanitizeImageUrl(u, { role });
     if (!clean || seen.has(clean)) return false;
     if (isPlaceholderMediaUrl(clean)) return false;
     if (isManifestGuessCatalogUrl(clean)) return false;
@@ -82,6 +82,8 @@ export function resolveCatalogImageUrl(car, role = "compare") {
       car.image,
       car.listingThumbnail,
       meta.listingThumbnail,
+      car.heroImage,
+      meta.heroImage,
     ],
     listing: [
       car.listingThumbnail,
@@ -119,7 +121,7 @@ export function resolveCatalogImageUrl(car, role = "compare") {
 
   const manifestOrder =
     role === "compare"
-      ? [block.compareThumbnail, block.listingThumbnail]
+      ? [block.compareThumbnail, block.listingThumbnail, block.heroImage]
       : role === "hero"
         ? [block.heroImage, block.listingThumbnail]
         : role === "og"
@@ -139,7 +141,11 @@ function familyMediaForRole(familySlug, role) {
   if (!block) return [];
 
   if (role === "compare") {
-    return [block.compareThumbnail, block.listingThumbnail];
+    return [
+      block.compareThumbnail,
+      block.listingThumbnail,
+      block.heroImage,
+    ];
   }
   if (role === "og") {
     return [block.ogImage, block.heroImage];

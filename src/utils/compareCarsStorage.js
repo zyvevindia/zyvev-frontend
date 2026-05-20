@@ -52,14 +52,10 @@ export function sanitizeCompareCar(car) {
     name,
     fullDisplayName: name,
     brand: car.brand || "",
-    image: sanitizeImageUrl(car.image, { role: "compare" }),
-    heroImage: sanitizeImageUrl(car.heroImage, { role: "compare" }),
-    listingThumbnail: sanitizeImageUrl(car.listingThumbnail, {
-      role: "compare",
-    }),
-    compareThumbnail: sanitizeImageUrl(car.compareThumbnail, {
-      role: "compare",
-    }),
+    image: sanitizeImageUrl(car.image),
+    heroImage: sanitizeImageUrl(car.heroImage),
+    listingThumbnail: sanitizeImageUrl(car.listingThumbnail),
+    compareThumbnail: sanitizeImageUrl(car.compareThumbnail),
     startingPrice:
       Number(car.startingPrice ?? car.price) || 0,
     price: Number(car.price ?? car.startingPrice) || 0,

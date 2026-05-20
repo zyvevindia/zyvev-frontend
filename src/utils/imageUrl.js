@@ -9,27 +9,35 @@ import {
  * (e.g. "compare-thumb" → /compare/slug/compare-thumb → 404).
  */
 
-const INVALID_PLACEHOLDER_TOKENS = [
-  "compare-thumb",
-  "listing-thumb",
+/** Bare strings that must never be used as image src or Cloudinary public IDs. */
+export const BARE_INVALID_IMAGE_VALUES = new Set([
+  "",
   "hero",
-];
+  "hero.jpg",
+  "placeholder",
+  "placeholder.jpg",
+  "compare-thumb",
+  "compare-thumb.jpg",
+  "listing-thumb",
+  "listing-thumb.jpg",
+]);
 
-/** Bare asset filenames — never valid as browser src (resolve via Cloudinary helper). */
-const BARE_ASSET_FILENAME =
-  /^(compare-thumb|listing-thumb|hero)(\.(jpg|jpeg|png|webp|avif))?$/i;
+/**
+ * Strict equality check for fake fallback filenames (not URL/path substrings).
+ * @param {unknown} value
+ */
+export function isBareInvalidImageValue(value) {
+  if (value == null) return true;
+  if (typeof value !== "string") return false;
+  return BARE_INVALID_IMAGE_VALUES.has(value.trim().toLowerCase());
+}
 
 /**
  * Bare role token (not a delivery URL).
  * @param {unknown} value
  */
 export function isSymbolicMediaToken(value) {
-  if (typeof value !== "string") return false;
-  const trimmed = value.trim();
-  return (
-    INVALID_PLACEHOLDER_TOKENS.includes(trimmed.toLowerCase()) ||
-    BARE_ASSET_FILENAME.test(trimmed)
-  );
+  return typeof value === "string" && isBareInvalidImageValue(value);
 }
 
 /**
@@ -98,9 +106,9 @@ export function sanitizeImageUrl(url, options = {}) {
   if (url == null) return null;
   if (isRejectedCatalogMediaRef(url)) return null;
   if (typeof url === "string" && isSymbolicMediaToken(url)) return null;
-  const resolved = coerceCatalogMediaToUrl(url, options);
+  const resolved = coerceCatalogMediaToUrl(url);
   if (!resolved || isRejectedCatalogMediaRef(resolved)) return null;
-  if (isBlockedCatalogDeliveryUrl(resolved, options)) return null;
+  if (isBlockedCatalogDeliveryUrl(resolved)) return null;
   return isValidImageUrl(resolved) ? resolved : null;
 }
 

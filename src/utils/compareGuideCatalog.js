@@ -87,11 +87,9 @@ function applyCompareDisplayName(car, seoPage, familySlug) {
     fullDisplayName: name,
     familySlug: car.familySlug || family,
     compareThumbnail:
-      sanitizeImageUrl(car.compareThumbnail, { role: "compare" }) ||
-      compareImage,
-    heroImage: sanitizeImageUrl(car.heroImage, { role: "compare" }),
-    image:
-      sanitizeImageUrl(car.image, { role: "compare" }) || compareImage,
+      sanitizeImageUrl(car.compareThumbnail) || compareImage,
+    heroImage: sanitizeImageUrl(car.heroImage),
+    image: sanitizeImageUrl(car.image) || compareImage,
   };
 }
 
