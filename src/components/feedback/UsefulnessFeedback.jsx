@@ -17,6 +17,7 @@ export default function UsefulnessFeedback({
   sourcePage = "",
   metadata = {},
   showReportLink = true,
+  label = "Was this useful?",
 }) {
   const [vote, setVote] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -48,7 +49,7 @@ export default function UsefulnessFeedback({
 
   return (
     <div className="usefulness-feedback" aria-label="Section feedback">
-      <span className="usefulness-feedback__label">Was this useful?</span>
+      <span className="usefulness-feedback__label">{label}</span>
       <div className="usefulness-feedback__actions">
         <button
           type="button"

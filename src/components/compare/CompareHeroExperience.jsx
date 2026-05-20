@@ -16,7 +16,7 @@ import CompareInsightCard from "../catalog/CompareInsightCard";
 import CompareTrustPanel from "../catalog/CompareTrustPanel";
 import LeadInquiryModal from "../LeadInquiryModal";
 import WhatsAppLeadCta from "../leads/WhatsAppLeadCta";
-import UsefulnessFeedback from "../feedback/UsefulnessFeedback";
+import CompareUtilityRail from "./CompareUtilityRail";
 
 const CompareBelowFoldSections = lazy(() =>
   import("../catalog/CompareBelowFoldSections")
@@ -76,6 +76,8 @@ export default function CompareHeroExperience({
   showClearComparison = true,
   enableFab = true,
   topSlot = null,
+  recommendationLogic = null,
+  usefulnessLabel,
 }) {
   const navigate = useNavigate();
   const [inquiryOpen, setInquiryOpen] = useState(false);
@@ -259,7 +261,9 @@ export default function CompareHeroExperience({
 
             <h1 className="compare-hero__title">{title}</h1>
 
-            <p className="compare-hero__subtitle">{subtitle}</p>
+            {variant !== "guide" && subtitle ? (
+              <p className="compare-hero__subtitle">{subtitle}</p>
+            ) : null}
 
             {cars.length === 2 && variant === "tool" ? (
               <p
@@ -401,34 +405,6 @@ export default function CompareHeroExperience({
             })}
           </div>
 
-          <div className="compare-trust-panel">
-            <CompareTrustPanel cars={cars} />
-          </div>
-
-          <UsefulnessFeedback
-            context="compare"
-            sourcePage={sourcePage}
-            metadata={{
-              vehicleSlugs: cars.map((c) => c.slug).filter(Boolean),
-              compareDepth: cars.length,
-            }}
-          />
-
-          <Suspense
-            fallback={
-              <div
-                className="compare-deferred-skeleton"
-                aria-busy="true"
-                aria-label="Loading comparison insights"
-              />
-            }
-          >
-            <CompareBelowFoldSections
-              cars={cars}
-              intelligentCars={intelligentCars}
-            />
-          </Suspense>
-
           <div className="compare-spec">
             <div className="compare-spec__header">
               <h2 className="compare-spec__title">Detailed Specifications</h2>
@@ -505,6 +481,40 @@ export default function CompareHeroExperience({
                 Confirm specs with the dealer.
               </p>
             )}
+          </div>
+
+          <CompareUtilityRail
+            recommendationLogic={recommendationLogic}
+            sourcePage={sourcePage}
+            metadata={{
+              vehicleSlugs: cars.map((c) => c.slug).filter(Boolean),
+              compareDepth: cars.length,
+            }}
+            usefulnessLabel={
+              usefulnessLabel ||
+              (variant === "guide"
+                ? "Was this comparison useful?"
+                : "Was this useful?")
+            }
+          />
+
+          <Suspense
+            fallback={
+              <div
+                className="compare-deferred-skeleton"
+                aria-busy="true"
+                aria-label="Loading comparison insights"
+              />
+            }
+          >
+            <CompareBelowFoldSections
+              cars={cars}
+              intelligentCars={intelligentCars}
+            />
+          </Suspense>
+
+          <div className="compare-trust-panel">
+            <CompareTrustPanel cars={cars} />
           </div>
         </section>
       </div>

@@ -218,11 +218,6 @@ export default function DiscoverySeoPage({ pageType }) {
 
   /* —— Compare guide: premium compare engine above the fold —— */
   if (isCompareGuide) {
-    const introLine =
-      typeof seoPage.intro === "string"
-        ? seoPage.intro.split(/(?<=[.!?])\s+/)[0]
-        : "";
-
     return (
       <div className="compare-guide-page">
         <SEO
@@ -254,8 +249,8 @@ export default function DiscoverySeoPage({ pageType }) {
             sourcePage={discoveryPath}
             variant="guide"
             heroTitle={meta.h1}
-            heroSubtitle={introLine || meta.description}
             heroBadge="EV comparison"
+            recommendationLogic={seoPage.recommendationLogic}
             showClearComparison={false}
             enableFab
           />

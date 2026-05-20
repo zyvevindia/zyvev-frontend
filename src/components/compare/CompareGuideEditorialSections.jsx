@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 
-import SeoPageIntro from "../SEO/SeoPageIntro";
 import SeoTradeoffs from "../SEO/SeoTradeoffs";
 import SeoFaqBlock from "../SEO/SeoFaqBlock";
 import SeoRelatedLinks from "../SEO/SeoRelatedLinks";
-import MethodologyPanel from "../trust/MethodologyPanel";
 import EditorialTransparency from "../trust/EditorialTransparency";
 import ConfidenceExplainer from "../trust/ConfidenceExplainer";
 
 /**
  * Below-the-fold SEO / editorial blocks for /compare/:slug (crawlable, not above-fold).
+ * Intro + methodology at top of compare UI live in CompareUtilityRail / hero only.
  */
 export default function CompareGuideEditorialSections({
   seoPage,
@@ -31,15 +30,9 @@ export default function CompareGuideEditorialSections({
 
       <h2 className="compare-guide-editorial__heading">About this comparison</h2>
 
-      <SeoPageIntro
-        intro={seoPage.intro}
-        recommendationLogic={seoPage.recommendationLogic}
-      />
-
-      <MethodologyPanel
-        recommendationLogic={seoPage.recommendationLogic}
-        category={seoPage.category}
-      />
+      {seoPage.intro ? (
+        <p className="compare-guide-editorial__intro">{seoPage.intro}</p>
+      ) : null}
 
       <ConfidenceExplainer />
 
