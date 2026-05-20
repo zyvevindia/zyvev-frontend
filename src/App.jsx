@@ -310,7 +310,11 @@ export default function App() {
 
           <Route
             path="/compare/:compareSlug"
-            element={<CompareGuideDiscoveryPage />}
+            element={
+              <CompareErrorBoundary>
+                <CompareGuideDiscoveryPage />
+              </CompareErrorBoundary>
+            }
           />
 
           <Route

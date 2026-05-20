@@ -664,6 +664,87 @@
 }
 
 /* Suspense placeholder for below-fold compare intelligence — fixed height avoids CLS */
+/* —— SEO compare guide (/compare/:slug) —— */
+
+.compare-guide-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.compare-guide-page__breadcrumb-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px 0;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.compare-guide-page__breadcrumb-bar a {
+  color: #475569;
+  text-decoration: none;
+}
+
+.compare-guide-editorial {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 20px 4rem;
+}
+
+.compare-guide-editorial__breadcrumb {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.compare-guide-editorial__heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1rem;
+}
+
+.compare-guide-editorial__disclaimer {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-top: 2rem;
+}
+
+.compare-guide-loading {
+  min-height: 50vh;
+}
+
+.compare-guide-loading__shimmer {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: compare-guide-shimmer 1.2s ease-in-out infinite;
+  border-radius: 8px;
+  margin: 0 auto 12px;
+}
+
+.compare-guide-loading__title {
+  height: 32px;
+  max-width: 420px;
+}
+
+.compare-guide-loading__subtitle {
+  height: 18px;
+  max-width: 520px;
+}
+
+.compare-hero--skeleton {
+  min-height: 140px;
+}
+
+@keyframes compare-guide-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
 .compare-deferred-skeleton {
   min-height: 220px;
   margin-top: 24px;
