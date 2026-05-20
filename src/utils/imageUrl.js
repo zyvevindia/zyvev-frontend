@@ -21,6 +21,41 @@ const SYMBOLIC_MEDIA_TOKENS = new Set([
 const SYMBOLIC_MEDIA_PATTERN =
   /^(compare-thumb|listing-thumb|hero)(\.(jpg|jpeg|png|webp))?$/i;
 
+/** Cloudinary delivery paths built from manifest filenames (extension stripped). */
+const CATALOG_GUESS_ASSET_TAIL =
+  /\/(compare-thumb|listing-thumb|hero)(\/|$|\?)/i;
+
+/**
+ * Catalog asset filename (not a bare role token).
+ * @param {unknown} filename
+ */
+export function isValidCatalogAssetFilename(filename) {
+  if (typeof filename !== "string") return false;
+  const trimmed = filename.trim();
+  if (trimmed.length <= 6) return false;
+  if (SYMBOLIC_MEDIA_PATTERN.test(trimmed)) return false;
+  return (
+    trimmed.includes("/") ||
+    trimmed.includes(".jpg") ||
+    trimmed.includes(".jpeg") ||
+    trimmed.includes(".png") ||
+    trimmed.includes(".webp") ||
+    trimmed.includes(".avif")
+  );
+}
+
+/**
+ * Manifest-style Cloudinary URL (may 404 if asset not uploaded).
+ * @param {unknown} url
+ */
+export function isManifestGuessCatalogUrl(url) {
+  if (typeof url !== "string" || !url.includes("res.cloudinary.com")) {
+    return false;
+  }
+  if (url.includes("/catalog/variants/")) return true;
+  return CATALOG_GUESS_ASSET_TAIL.test(url.split("?")[0]);
+}
+
 /**
  * @param {unknown} url
  * @returns {boolean}

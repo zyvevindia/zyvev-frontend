@@ -26,17 +26,11 @@ export default function normalizeCar(car) {
 
     brand: cleaned.brand || "EV Brand",
 
-    heroImage:
-      cleaned.heroImage || cleaned.image || listingImage || null,
+    heroImage: cleaned.heroImage || cleaned.image || null,
 
     listingThumbnail: cleaned.listingThumbnail || listingImage || null,
 
-    compareThumbnail:
-      cleaned.compareThumbnail ||
-      cleaned.listingThumbnail ||
-      cleaned.heroImage ||
-      listingImage ||
-      null,
+    compareThumbnail: cleaned.compareThumbnail || null,
 
     ogImage: cleaned.ogImage || cleaned.heroImage || listingImage || null,
 

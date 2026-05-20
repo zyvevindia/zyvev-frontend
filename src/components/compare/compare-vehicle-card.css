@@ -240,21 +240,57 @@
   background: linear-gradient(135deg, #1d4ed8, #1e40af);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .compare-vehicle-card__content {
+    gap: 14px;
+    padding: 12px 14px 14px;
+  }
+
   .compare-vehicle-card__insight-row {
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: stretch;
+    gap: 16px;
+  }
+
+  .compare-vehicle-card__insights {
+    gap: 10px;
+  }
+
+  .compare-vehicle-card__better-at {
+    margin-bottom: 0;
   }
 
   .compare-vehicle-card__score-col {
-    flex-direction: row;
-    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+    margin-top: 4px;
+    padding-top: 4px;
   }
 
   .compare-vehicle-card__score-label {
     max-width: none;
-    text-align: right;
+    text-align: center;
+  }
+
+  .compare-vehicle-card__gauge.score-circle {
+    width: 88px !important;
+    height: 88px !important;
+    filter: drop-shadow(0 6px 14px rgba(21, 128, 61, 0.16));
+  }
+
+  .compare-vehicle-card__gauge .compare-vehicle-card__gauge-value {
+    font-size: 1.35rem;
+  }
+
+  .compare-vehicle-card__gauge .compare-vehicle-card__gauge-suffix {
+    font-size: 0.62rem;
+    margin-top: 1px;
+  }
+
+  .compare-vehicle-card__cta {
+    margin-top: 10px;
   }
 }

@@ -6,11 +6,15 @@ import { LOCAL_FALLBACK_EV, ROLE_ASPECT } from "../config/media.js";
 import {
   familyCatalogUrl,
   isPlaceholderMediaUrl,
-  variantCatalogUrl,
 } from "../media/cloudinary.js";
-import { isValidImageUrl, sanitizeImageUrl } from "./imageUrl.js";
+import {
+  isManifestGuessCatalogUrl,
+  isValidImageUrl,
+  sanitizeImageUrl,
+} from "./imageUrl.js";
 import {
   getProductionFamilyMedia,
+  isProductionFamilySlug,
   resolveFamilySlugFromCar,
   resolveFamilySlugFromVariantSlug,
 } from "../media/familyMediaManifest.js";
@@ -33,12 +37,28 @@ function slugFromCar(car) {
   ).toLowerCase();
 }
 
-function uniqueUrls(urls) {
+function uniqueUrls(urls, options = {}) {
+  const { role = "listing", allowManifestGuesses = true } = options;
   const seen = new Set();
   return urls.filter((u) => {
     const clean = sanitizeImageUrl(u);
     if (!clean || seen.has(clean)) return false;
     if (isPlaceholderMediaUrl(clean)) return false;
+    if (!allowManifestGuesses && isManifestGuessCatalogUrl(clean)) {
+      return false;
+    }
+    if (
+      role === "compare" &&
+      clean.includes("res.cloudinary.com") &&
+      clean.includes("/catalog/variants/")
+    ) {
+      return false;
+    }
+    if (clean.includes("/catalog/families/")) {
+      const familyMatch = clean.match(/\/catalog\/families\/([a-z0-9-]+)\//i);
+      const family = familyMatch?.[1]?.toLowerCase();
+      if (family && !isProductionFamilySlug(family)) return false;
+    }
     seen.add(clean);
     return true;
   });
@@ -77,26 +97,23 @@ function familyMediaForRole(familySlug, role) {
   ];
 }
 
-function variantCdnFallbacks(slug, role) {
-  if (!slug) return [];
-  const files =
-    role === "compare"
-      ? ["compare-thumb.jpg", "listing-thumb.jpg", "hero.jpg"]
-      : role === "hero"
-        ? ["hero.jpg", "listing-thumb.jpg"]
-        : role === "og"
-          ? ["og.jpg", "hero.jpg"]
-          : ["listing-thumb.jpg", "hero.jpg"];
-
-  return files.map((f) => variantCatalogUrl(slug, f));
+function variantCdnFallbacks() {
+  return [];
 }
 
-function finalizeFallbackChain(urls) {
-  const resolved = uniqueUrls(urls);
+function finalizeFallbackChain(urls, options = {}) {
+  const { role = "listing", allowLocalFallback = true } = options;
+  const allowManifestGuesses = role !== "compare";
+  const resolved = uniqueUrls(urls, { role, allowManifestGuesses });
   if (resolved.length > 0) {
-    return uniqueUrls([...resolved, LOCAL_FALLBACK_EV]);
+    return allowLocalFallback
+      ? uniqueUrls([...resolved, LOCAL_FALLBACK_EV], {
+          role,
+          allowManifestGuesses,
+        })
+      : resolved;
   }
-  return [LOCAL_FALLBACK_EV];
+  return allowLocalFallback ? [LOCAL_FALLBACK_EV] : [];
 }
 
 export function buildImageFallbackChain(car, role = "listing") {
@@ -107,26 +124,28 @@ export function buildImageFallbackChain(car, role = "listing") {
   const meta = car?.catalogMeta?.media || {};
   const fieldValues = pickMediaFields(car, role);
 
-  const familyUrls = familySlug
-    ? familyMediaForRole(familySlug, role)
-    : [];
+  const familyUrls =
+    role === "compare"
+      ? []
+      : familySlug
+        ? familyMediaForRole(familySlug, role)
+        : [];
 
-  const variantUrls = variantCdnFallbacks(slug, role);
+  const variantUrls = variantCdnFallbacks();
 
   if (role === "compare") {
-    return finalizeFallbackChain([
-      car?.compareThumbnail,
-      meta.compareThumbnail,
-      ...fieldValues,
-      ...familyUrls,
-      car?.listingThumbnail,
-      meta.listingThumbnail,
-      car?.heroImage,
-      meta.heroImage,
-      car?.image,
-      ...variantUrls,
-      LOCAL_FALLBACK_EV,
-    ]);
+    return finalizeFallbackChain(
+      [
+        car?.compareThumbnail,
+        meta.compareThumbnail,
+        ...fieldValues,
+        car?.heroImage,
+        meta.heroImage,
+        car?.listingThumbnail,
+        meta.listingThumbnail,
+      ],
+      { role: "compare", allowLocalFallback: false }
+    );
   }
 
   if (role === "og") {

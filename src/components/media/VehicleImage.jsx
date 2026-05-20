@@ -12,7 +12,10 @@ import {
   LISTING_SIZES,
 } from "../../media/responsive.js";
 import { logImageFallback } from "../../launch/imageFallbackLog.js";
-import { isValidImageUrl } from "../../utils/imageUrl.js";
+import {
+  isManifestGuessCatalogUrl,
+  isValidImageUrl,
+} from "../../utils/imageUrl.js";
 import {
   IMAGE_ASPECT,
   buildImageFallbackChain,
@@ -20,9 +23,13 @@ import {
 
 const PLACEHOLDER_LABEL = "EV image coming soon";
 
-function filterValidChain(urls) {
+function filterValidChain(urls, role = "listing") {
   if (!Array.isArray(urls)) return [];
-  return urls.filter((u) => isValidImageUrl(u));
+  return urls.filter((u) => {
+    if (!isValidImageUrl(u)) return false;
+    if (role === "compare" && isManifestGuessCatalogUrl(u)) return false;
+    return true;
+  });
 }
 
 const SIZES_BY_ROLE = {
@@ -54,14 +61,17 @@ export default function VehicleImage({
     const raw = (() => {
       if (srcProp && isValidImageUrl(srcProp)) {
         const base = filterValidChain(
-          buildImageFallbackChain(car, role)
+          buildImageFallbackChain(car, role),
+          role
         );
         return [srcProp, ...base.filter((u) => u !== srcProp)];
       }
-      return filterValidChain(buildImageFallbackChain(car, role));
+      return filterValidChain(buildImageFallbackChain(car, role), role);
     })();
 
     if (raw.length > 0) return raw;
+
+    if (role === "compare") return [];
 
     return isValidImageUrl(LOCAL_FALLBACK_EV)
       ? [LOCAL_FALLBACK_EV]

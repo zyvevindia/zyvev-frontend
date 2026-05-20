@@ -4,15 +4,9 @@
  */
 
 import { familyCatalogUrl } from "./cloudinary.js";
+import { PRODUCTION_FAMILY_SLUGS } from "./productionFamilies.js";
 
-const FAMILIES = [
-  "tata-nexon-ev",
-  "tata-punch-ev",
-  "tata-curvv-ev",
-  "mg-comet-ev",
-  "mg-zs-ev",
-  "mahindra-be-6",
-];
+const FAMILIES = [...PRODUCTION_FAMILY_SLUGS];
 
 function familyMediaBlock(familySlug) {
   return {
@@ -35,7 +29,7 @@ export const PRODUCTION_FAMILY_MEDIA = Object.fromEntries(
   FAMILIES.map((slug) => [slug, familyMediaBlock(slug)])
 );
 
-export const PRODUCTION_FAMILY_SLUGS = [...FAMILIES];
+export { PRODUCTION_FAMILY_SLUGS, isProductionFamilySlug } from "./productionFamilies.js";
 
 const FAMILY_PREFIXES = [...PRODUCTION_FAMILY_SLUGS].sort(
   (a, b) => b.length - a.length

@@ -9,6 +9,8 @@ import {
   DEFAULT_IMAGE_QUALITY,
   LEGACY_CATALOG_CDN_HOST,
 } from "../config/media.js";
+import { isValidCatalogAssetFilename } from "../utils/imageUrl.js";
+import { isProductionFamilySlug } from "./productionFamilies.js";
 
 const UPLOAD_SEGMENT = "/image/upload/";
 
@@ -107,6 +109,9 @@ export function cloudinaryDeliveryUrl(
     .replace(/^\/+/, "")
     .replace(/\.(jpg|jpeg|png|webp|avif)$/i, "");
 
+  if (!id || id.length <= 6) return null;
+  if (/^(compare-thumb|listing-thumb|hero)$/i.test(id)) return null;
+
   const transform = buildTransformString(options);
   return `${CLOUDINARY_BASE}/image/upload/${transform}/${id}`;
 }
@@ -116,28 +121,28 @@ export function cloudinaryDeliveryUrl(
  */
 export function familyCatalogPublicId(familySlug, filename) {
   const family = String(familySlug || "").trim().toLowerCase();
-  const file = String(filename || "hero.jpg");
+  const file = String(filename || "").trim();
+  if (!family || !isValidCatalogAssetFilename(file)) return null;
   return `evsavari/catalog/families/${family}/${file}`;
 }
 
 export function familyCatalogUrl(familySlug, filename, options = {}) {
-  return cloudinaryDeliveryUrl(
-    familyCatalogPublicId(familySlug, filename),
-    options
-  );
+  if (!isProductionFamilySlug(familySlug)) return null;
+  const publicId = familyCatalogPublicId(familySlug, filename);
+  if (!publicId) return null;
+  return cloudinaryDeliveryUrl(publicId, options);
 }
 
 export function variantCatalogPublicId(variantSlug, filename) {
   const slug = String(variantSlug || "").trim().toLowerCase();
-  const file = String(filename || "hero.jpg");
+  const file = String(filename || "").trim();
+  if (!slug || !isValidCatalogAssetFilename(file)) return null;
   return `evsavari/catalog/variants/${slug}/${file}`;
 }
 
-export function variantCatalogUrl(variantSlug, filename, options = {}) {
-  return cloudinaryDeliveryUrl(
-    variantCatalogPublicId(variantSlug, filename),
-    options
-  );
+/** Speculative variant paths are not requested at runtime (avoid CDN 404s). */
+export function variantCatalogUrl() {
+  return null;
 }
 
 export { CLOUDINARY_CLOUD_NAME, CLOUDINARY_BASE };
