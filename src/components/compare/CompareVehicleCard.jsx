@@ -5,9 +5,20 @@ import ScoreCircle from "../common/ScoreCircle";
 import VehicleImage from "../media/VehicleImage";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
-import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
-
+import {
+  resolveFullDisplayName,
+  preserveOemCasing,
+} from "../../utils/vehicleDisplayName";
 import "./compare-vehicle-card.css";
+
+function coerceDisplayString(value) {
+  if (value == null) return "";
+  if (typeof value === "string") return value.trim();
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return String(value);
+  }
+  return "";
+}
 
 function resolveEvsavariScore(car) {
   const composite =
@@ -25,30 +36,33 @@ function resolveEvsavariScore(car) {
 }
 
 function resolveStrengthLabel(meta) {
-  const picks = meta?.comparePicks;
-  return (
-    picks?.strongestAdvantageLabel ||
-    meta?.strongestAdvantages?.[0]?.label ||
-    (typeof meta?.strongestAdvantages?.[0] === "string"
-      ? meta.strongestAdvantages[0]
-      : null)
-  );
+  if (!meta || typeof meta !== "object") return null;
+  const picks = meta.comparePicks;
+  const label =
+    coerceDisplayString(picks?.strongestAdvantageLabel) ||
+    coerceDisplayString(meta.strongestAdvantages?.[0]?.label) ||
+    (typeof meta.strongestAdvantages?.[0] === "string"
+      ? coerceDisplayString(meta.strongestAdvantages[0])
+      : "");
+  return label || null;
 }
 
 function resolveTradeoffLabel(meta) {
-  const picks = meta?.comparePicks;
-  return (
-    picks?.biggestWeaknessLabel ||
-    meta?.compareNarrative?.tradeoffSummary ||
-    meta?.weakestAreas?.[0]?.label ||
-    (typeof meta?.weakestAreas?.[0] === "string"
-      ? meta.weakestAreas[0]
-      : null)
-  );
+  if (!meta || typeof meta !== "object") return null;
+  const picks = meta.comparePicks;
+  const label =
+    coerceDisplayString(picks?.biggestWeaknessLabel) ||
+    coerceDisplayString(meta.compareNarrative?.tradeoffSummary) ||
+    coerceDisplayString(meta.weakestAreas?.[0]?.label) ||
+    (typeof meta.weakestAreas?.[0] === "string"
+      ? coerceDisplayString(meta.weakestAreas[0])
+      : "");
+  return label || null;
 }
 
 function resolveBetterAtPills(meta, car) {
-  const fromAdvantages = (meta?.strongestAdvantages || [])
+  if (!meta || typeof meta !== "object") return [];
+  const fromAdvantages = (meta.strongestAdvantages || [])
     .map((item) => {
       if (typeof item === "string") return item;
       return item?.label || item?.title || item?.id || "";
@@ -94,25 +108,37 @@ export default function CompareVehicleCard({
   eagerImage = false,
   detailHref,
 }) {
-  useEffect(() => {
-    console.log("ACTIVE_COMPARE_CARD_RENDERER");
-  }, []);
+  const displayName = car
+    ? coerceDisplayString(car.fullDisplayName) ||
+      resolveFullDisplayName(car)
+    : "Unknown EV";
 
-  if (!car) return null;
-
-  const displayName =
-    car.fullDisplayName || resolveFullDisplayName(car);
-
-  const meta = car.catalogMeta || {};
-  const price = car.startingPrice || car.price || 0;
-  const range = car.specifications?.range || car.range || 0;
-  const battery =
-    car.specifications?.batteryPack || car.battery || "EV Battery";
-  const score = resolveEvsavariScore(car);
+  const meta =
+    car && typeof car.catalogMeta === "object" && car.catalogMeta
+      ? car.catalogMeta
+      : {};
+  const price = Number(car?.startingPrice ?? car?.price) || 0;
+  const range =
+    Number(car?.specifications?.range ?? car?.range) || 0;
+  const battery = coerceDisplayString(
+    car?.specifications?.batteryPack || car?.battery
+  ) || "EV Battery";
+  const score = car ? resolveEvsavariScore(car) : null;
   const strength = resolveStrengthLabel(meta);
   const tradeoff = resolveTradeoffLabel(meta);
-  const betterAtPills = resolveBetterAtPills(meta, car);
-  const href = detailHref || vehicleDetailPath(car, car._id);
+  const betterAtPills = car ? resolveBetterAtPills(meta, car) : [];
+  const href =
+    car && (detailHref || vehicleDetailPath(car, car._id));
+
+  useEffect(() => {
+    console.log("COMPARE_RENDER", {
+      vehicle: car,
+      fullDisplayName: displayName,
+      score,
+    });
+  }, [car, displayName, score]);
+
+  if (!car || typeof car !== "object") return null;
 
   return (
     <article
@@ -144,7 +170,9 @@ export default function CompareVehicleCard({
       </div>
 
       <div className="compare-vehicle-card__content">
-        <h3 className="compare-vehicle-card__title">{displayName}</h3>
+        <h3 className="compare-vehicle-card__title">
+          {preserveOemCasing(displayName) || "Unknown EV"}
+        </h3>
         <p className="compare-vehicle-card__price">
           {formatIndianPriceCompact(price)}
         </p>

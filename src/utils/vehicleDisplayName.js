@@ -18,10 +18,23 @@ const OEM_WORDS = {
  * Preserve OEM tokens (MG, BYD, EV) — avoid naive title-case on acronyms.
  */
 export function preserveOemCasing(name) {
-  return String(name || "").replace(
+  const raw = name;
+  if (raw == null || typeof raw === "object") return "";
+  return String(raw).replace(
     /\b(mg|byd|bmw|ev|kia|tata|mahindra|hyundai|citroen|mercedes|volvo)\b/gi,
     (match) => OEM_WORDS[match.toLowerCase()] || match
   );
+}
+
+const UNKNOWN_EV_LABEL = "Unknown EV";
+
+function coerceDisplayString(value) {
+  if (value == null) return "";
+  if (typeof value === "string") return value.trim();
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return String(value);
+  }
+  return "";
 }
 
 function isFullVehicleName(name) {
@@ -112,9 +125,10 @@ export function resolveFullDisplayName(car, options = {}) {
  * Ranked SEO row display name helper (family-level guides).
  */
 export function resolveRankedVehicleDisplayName(ranked, catalogCar = null) {
-  const seoName = ranked?.displayName?.trim();
+  const seoName = coerceDisplayString(ranked?.displayName);
   if (catalogCar) {
     return resolveFullDisplayName(catalogCar, { seoDisplayName: seoName });
   }
-  return preserveOemCasing(seoName || ranked?.slug || "");
+  const out = preserveOemCasing(seoName || coerceDisplayString(ranked?.slug));
+  return out || UNKNOWN_EV_LABEL;
 }

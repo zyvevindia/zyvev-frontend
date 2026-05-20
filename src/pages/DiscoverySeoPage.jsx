@@ -141,6 +141,12 @@ export default function DiscoverySeoPage({ pageType }) {
     guideCars,
   ]);
 
+  const compareSeoPage = useMemo(() => {
+    if (!isCompareGuide || !seoPage) return seoPage;
+    if (!guideCars?.length || guideCars.length < 2) return seoPage;
+    return enrichCompareSeoPage(seoPage, guideCars);
+  }, [isCompareGuide, seoPage, guideCars]);
+
   if (!routeContext) {
     return (
       <div style={editorialPageStyles.page}>
@@ -216,12 +222,6 @@ export default function DiscoverySeoPage({ pageType }) {
 
   const linkSections = getDiscoveryLinkSections(seoPage);
   const discoveryPath = routeContext.path || "";
-
-  const compareSeoPage = useMemo(() => {
-    if (!isCompareGuide || !seoPage) return seoPage;
-    if (guideCars.length < 2) return seoPage;
-    return enrichCompareSeoPage(seoPage, guideCars);
-  }, [isCompareGuide, seoPage, guideCars]);
 
   /* —— Compare guide: premium compare engine above the fold —— */
   if (isCompareGuide) {
