@@ -35,17 +35,10 @@ export function isPlaceholderMediaUrl(url = "") {
     return true;
   }
   const lower = url.trim().toLowerCase();
-  if (
+  return (
     lower === "hero" ||
     lower === "compare-thumb" ||
-    lower === "listing-thumb" ||
-    lower === "listing" ||
-    lower === "compare"
-  ) {
-    return true;
-  }
-  return /^(compare-thumb|listing-thumb|hero)(\.(jpg|jpeg|png|webp))?$/i.test(
-    url.trim()
+    lower === "listing-thumb"
   );
 }
 

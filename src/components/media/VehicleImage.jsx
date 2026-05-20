@@ -23,11 +23,11 @@ import {
 
 const PLACEHOLDER_LABEL = "EV image coming soon";
 
-function filterValidChain(urls, role = "listing") {
+function filterValidChain(urls) {
   if (!Array.isArray(urls)) return [];
   return urls.filter((u) => {
     if (!isValidImageUrl(u)) return false;
-    if (role === "compare" && isManifestGuessCatalogUrl(u)) return false;
+    if (isManifestGuessCatalogUrl(u)) return false;
     return true;
   });
 }
@@ -60,13 +60,10 @@ export default function VehicleImage({
   const chain = useMemo(() => {
     const raw = (() => {
       if (srcProp && isValidImageUrl(srcProp)) {
-        const base = filterValidChain(
-          buildImageFallbackChain(car, role),
-          role
-        );
+        const base = filterValidChain(buildImageFallbackChain(car, role));
         return [srcProp, ...base.filter((u) => u !== srcProp)];
       }
-      return filterValidChain(buildImageFallbackChain(car, role), role);
+      return filterValidChain(buildImageFallbackChain(car, role));
     })();
 
     if (raw.length > 0) return raw;

@@ -1,29 +1,22 @@
 /**
- * Guards against symbolic media role labels being used as image src
+ * Guards against symbolic media role labels used as image src
  * (e.g. "compare-thumb" → /compare/slug/compare-thumb → 404).
  */
 
-const SYMBOLIC_MEDIA_TOKENS = new Set([
-  "hero",
-  "listing",
-  "compare",
-  "gallery",
-  "interior",
-  "og",
+const INVALID_PLACEHOLDER_TOKENS = [
   "compare-thumb",
   "listing-thumb",
-  "hero-image",
-  "hero.jpg",
-  "listing-thumb.jpg",
-  "compare-thumb.jpg",
-]);
+  "hero",
+];
 
-const SYMBOLIC_MEDIA_PATTERN =
-  /^(compare-thumb|listing-thumb|hero)(\.(jpg|jpeg|png|webp))?$/i;
-
-/** Cloudinary delivery paths built from manifest filenames (extension stripped). */
-const CATALOG_GUESS_ASSET_TAIL =
-  /\/(compare-thumb|listing-thumb|hero)(\/|$|\?)/i;
+/**
+ * Bare role token (not a delivery URL).
+ * @param {unknown} value
+ */
+export function isSymbolicMediaToken(value) {
+  if (typeof value !== "string") return false;
+  return INVALID_PLACEHOLDER_TOKENS.includes(value.trim().toLowerCase());
+}
 
 /**
  * Catalog asset filename (not a bare role token).
@@ -32,8 +25,7 @@ const CATALOG_GUESS_ASSET_TAIL =
 export function isValidCatalogAssetFilename(filename) {
   if (typeof filename !== "string") return false;
   const trimmed = filename.trim();
-  if (trimmed.length <= 6) return false;
-  if (SYMBOLIC_MEDIA_PATTERN.test(trimmed)) return false;
+  if (trimmed.length <= 6 || isSymbolicMediaToken(trimmed)) return false;
   return (
     trimmed.includes("/") ||
     trimmed.includes(".jpg") ||
@@ -45,15 +37,21 @@ export function isValidCatalogAssetFilename(filename) {
 }
 
 /**
- * Manifest-style Cloudinary URL (may 404 if asset not uploaded).
+ * Speculative catalog URL that should not be requested (variant guesses).
+ * Full Cloudinary family delivery URLs are allowed.
  * @param {unknown} url
  */
 export function isManifestGuessCatalogUrl(url) {
-  if (typeof url !== "string" || !url.includes("res.cloudinary.com")) {
-    return false;
+  if (typeof url !== "string") return false;
+  const trimmed = url.trim();
+  if (isSymbolicMediaToken(trimmed)) return true;
+  if (
+    trimmed.includes("res.cloudinary.com") &&
+    trimmed.includes("/catalog/variants/")
+  ) {
+    return true;
   }
-  if (url.includes("/catalog/variants/")) return true;
-  return CATALOG_GUESS_ASSET_TAIL.test(url.split("?")[0]);
+  return false;
 }
 
 /**
@@ -61,26 +59,25 @@ export function isManifestGuessCatalogUrl(url) {
  * @returns {boolean}
  */
 export function isValidImageUrl(url) {
-  if (typeof url !== "string") return false;
+  if (!url || typeof url !== "string") return false;
 
   const trimmed = url.trim();
   if (!trimmed) return false;
 
-  const lower = trimmed.toLowerCase();
-  if (SYMBOLIC_MEDIA_TOKENS.has(lower)) return false;
-  if (SYMBOLIC_MEDIA_PATTERN.test(trimmed)) return false;
+  if (INVALID_PLACEHOLDER_TOKENS.includes(trimmed.toLowerCase())) {
+    return false;
+  }
 
   return (
-    trimmed.startsWith("http://") ||
-    trimmed.startsWith("https://") ||
+    trimmed.startsWith("http") ||
     trimmed.startsWith("/") ||
-    trimmed.startsWith("data:") ||
-    trimmed.includes(".webp") ||
     trimmed.includes(".jpg") ||
     trimmed.includes(".jpeg") ||
     trimmed.includes(".png") ||
+    trimmed.includes(".webp") ||
     trimmed.includes(".avif") ||
-    trimmed.includes(".svg")
+    trimmed.includes(".svg") ||
+    trimmed.includes("cloudinary")
   );
 }
 

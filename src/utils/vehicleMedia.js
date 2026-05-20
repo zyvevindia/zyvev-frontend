@@ -38,26 +38,23 @@ function slugFromCar(car) {
 }
 
 function uniqueUrls(urls, options = {}) {
-  const { role = "listing", allowManifestGuesses = true } = options;
+  const { role = "listing" } = options;
   const seen = new Set();
   return urls.filter((u) => {
     const clean = sanitizeImageUrl(u);
     if (!clean || seen.has(clean)) return false;
     if (isPlaceholderMediaUrl(clean)) return false;
-    if (!allowManifestGuesses && isManifestGuessCatalogUrl(clean)) {
-      return false;
-    }
-    if (
-      role === "compare" &&
-      clean.includes("res.cloudinary.com") &&
-      clean.includes("/catalog/variants/")
-    ) {
-      return false;
-    }
+    if (isManifestGuessCatalogUrl(clean)) return false;
     if (clean.includes("/catalog/families/")) {
       const familyMatch = clean.match(/\/catalog\/families\/([a-z0-9-]+)\//i);
       const family = familyMatch?.[1]?.toLowerCase();
       if (family && !isProductionFamilySlug(family)) return false;
+    }
+    if (
+      role === "compare" &&
+      clean.includes("/catalog/variants/")
+    ) {
+      return false;
     }
     seen.add(clean);
     return true;
@@ -103,14 +100,10 @@ function variantCdnFallbacks() {
 
 function finalizeFallbackChain(urls, options = {}) {
   const { role = "listing", allowLocalFallback = true } = options;
-  const allowManifestGuesses = role !== "compare";
-  const resolved = uniqueUrls(urls, { role, allowManifestGuesses });
+  const resolved = uniqueUrls(urls, { role });
   if (resolved.length > 0) {
     return allowLocalFallback
-      ? uniqueUrls([...resolved, LOCAL_FALLBACK_EV], {
-          role,
-          allowManifestGuesses,
-        })
+      ? uniqueUrls([...resolved, LOCAL_FALLBACK_EV], { role })
       : resolved;
   }
   return allowLocalFallback ? [LOCAL_FALLBACK_EV] : [];
@@ -125,11 +118,9 @@ export function buildImageFallbackChain(car, role = "listing") {
   const fieldValues = pickMediaFields(car, role);
 
   const familyUrls =
-    role === "compare"
-      ? []
-      : familySlug
-        ? familyMediaForRole(familySlug, role)
-        : [];
+    familySlug && isProductionFamilySlug(familySlug)
+      ? familyMediaForRole(familySlug, role)
+      : [];
 
   const variantUrls = variantCdnFallbacks();
 
@@ -143,6 +134,7 @@ export function buildImageFallbackChain(car, role = "listing") {
         meta.heroImage,
         car?.listingThumbnail,
         meta.listingThumbnail,
+        ...familyUrls,
       ],
       { role: "compare", allowLocalFallback: false }
     );
