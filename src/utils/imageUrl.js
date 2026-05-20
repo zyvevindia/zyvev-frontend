@@ -1,5 +1,6 @@
 import {
   coerceCatalogMediaToUrl,
+  isBlockedCatalogDeliveryUrl,
   isRejectedCatalogMediaRef,
 } from "../media/cloudinary.js";
 
@@ -90,14 +91,16 @@ export function isValidImageUrl(url) {
 
 /**
  * @param {unknown} url
+ * @param {{ role?: string }} [options]
  * @returns {string|null}
  */
-export function sanitizeImageUrl(url) {
+export function sanitizeImageUrl(url, options = {}) {
   if (url == null) return null;
   if (isRejectedCatalogMediaRef(url)) return null;
   if (typeof url === "string" && isSymbolicMediaToken(url)) return null;
-  const resolved = coerceCatalogMediaToUrl(url);
+  const resolved = coerceCatalogMediaToUrl(url, options);
   if (!resolved || isRejectedCatalogMediaRef(resolved)) return null;
+  if (isBlockedCatalogDeliveryUrl(resolved, options)) return null;
   return isValidImageUrl(resolved) ? resolved : null;
 }
 

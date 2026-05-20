@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import ScoreCircle from "../common/ScoreCircle";
@@ -134,21 +133,6 @@ export default function CompareVehicleCard({
   const compareImageSrc = car
     ? resolveCatalogImageUrl(car, "compare")
     : null;
-
-  useEffect(() => {
-    if (!import.meta.env.DEV || !car) return;
-    console.log("COMPARE_IMAGE_DEBUG", {
-      vehicle: car?.name,
-      slug: car?.slug,
-      familySlug: car?.familySlug,
-      media: car?.catalogMeta?.media,
-      compareThumbnail: car?.compareThumbnail,
-      heroImage: car?.heroImage,
-      image: car?.image,
-      listingThumbnail: car?.listingThumbnail,
-      resolvedSrc: compareImageSrc,
-    });
-  }, [car, compareImageSrc]);
 
   if (!car || typeof car !== "object") return null;
 

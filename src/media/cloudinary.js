@@ -45,15 +45,51 @@ export function isRejectedCatalogMediaRef(value) {
   if (!trimmed) return true;
   const lower = trimmed.toLowerCase();
   if (FAKE_MEDIA_REF.test(trimmed)) return true;
-  if (lower.includes("compare-thumb.jpg") || lower.includes("listing-thumb.jpg")) {
+  if (
+    lower.includes("compare-thumb.jpg") ||
+    lower.includes("listing-thumb.jpg") ||
+    lower.includes("hero.jpg")
+  ) {
     return true;
   }
   if (
-    (lower.includes("compare-thumb") || lower.includes("listing-thumb")) &&
+    (lower.includes("compare-thumb") ||
+      lower.includes("listing-thumb") ||
+      lower === "hero") &&
     !lower.includes("/catalog/families/")
   ) {
     return true;
   }
+  return false;
+}
+
+/** Cloudinary catalog path ending in /hero (extensionless public_id). */
+const CATALOG_HERO_ASSET_PATH =
+  /\/catalog\/families\/[a-z0-9-]+\/hero(\.jpg)?(\?|$)/i;
+
+/**
+ * Block delivery URLs that should not be requested on compare (or are invalid).
+ * @param {unknown} url
+ * @param {{ role?: string }} [options]
+ */
+export function isBlockedCatalogDeliveryUrl(url, options = {}) {
+  if (!url || typeof url !== "string") return true;
+  if (isRejectedCatalogMediaRef(url)) return true;
+
+  const path = url.split("?")[0];
+
+  if (options.role === "compare" && CATALOG_HERO_ASSET_PATH.test(path)) {
+    return true;
+  }
+
+  if (CATALOG_HERO_ASSET_PATH.test(path)) {
+    const familyMatch = path.match(/\/catalog\/families\/([a-z0-9-]+)\//i);
+    const family = familyMatch?.[1]?.toLowerCase();
+    if (family && !isProductionFamilySlug(family)) {
+      return true;
+    }
+  }
+
   return false;
 }
 
@@ -162,11 +198,32 @@ export function applyCloudinaryTransforms(
 /**
  * Delivery URL from public_id (no version — Cloudinary resolves latest).
  */
+function isUnsafeTransformInput(value, options = {}) {
+  if (value == null) return true;
+  const raw = String(value).trim();
+  if (!raw) return true;
+  const lower = raw.toLowerCase();
+  if (lower.includes("placeholder") && !lower.startsWith("http")) return true;
+  if (
+    lower.includes("compare-thumb") ||
+    lower.includes("listing-thumb")
+  ) {
+    if (!lower.includes("/catalog/families/")) return true;
+  }
+  if (options.role === "compare" && /\bhero\b/.test(lower)) {
+    if (!lower.startsWith("http") || CATALOG_HERO_ASSET_PATH.test(raw)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export function cloudinaryDeliveryUrl(
   publicId,
   options = {}
 ) {
   if (isRejectedCatalogMediaRef(publicId)) return null;
+  if (isUnsafeTransformInput(publicId, options)) return null;
 
   const id = String(publicId || "")
     .replace(/^\/+/, "")
@@ -180,7 +237,11 @@ export function cloudinaryDeliveryUrl(
   const url = normalizeCloudinaryDeliveryUrl(
     `${CLOUDINARY_BASE}/image/upload/${transform}/${id}`
   );
-  return url && !isRejectedCatalogMediaRef(url) ? url : null;
+  return url &&
+    !isRejectedCatalogMediaRef(url) &&
+    !isBlockedCatalogDeliveryUrl(url, options)
+    ? url
+    : null;
 }
 
 /**
@@ -231,7 +292,7 @@ export function variantCatalogUrl() {
  * @param {unknown} value
  * @returns {string|null}
  */
-export function coerceCatalogMediaToUrl(value) {
+export function coerceCatalogMediaToUrl(value, options = {}) {
   if (value == null) return null;
   if (typeof value !== "string") return null;
 
@@ -242,8 +303,13 @@ export function coerceCatalogMediaToUrl(value) {
     trimmed.startsWith("http://") ||
     trimmed.startsWith("https://")
   ) {
+    if (isUnsafeTransformInput(trimmed, options)) return null;
     const url = normalizeCloudinaryDeliveryUrl(trimmed);
-    return url && !isRejectedCatalogMediaRef(url) ? url : null;
+    return url &&
+      !isRejectedCatalogMediaRef(url) &&
+      !isBlockedCatalogDeliveryUrl(url, options)
+      ? url
+      : null;
   }
 
   if (trimmed.startsWith("/") && !trimmed.startsWith("//")) {
@@ -260,7 +326,7 @@ export function coerceCatalogMediaToUrl(value) {
     publicId.startsWith(`${CATALOG_MEDIA_PREFIX}/`) ||
     publicId.startsWith("evsavari/catalog/")
   ) {
-    return cloudinaryDeliveryUrl(publicId);
+    return cloudinaryDeliveryUrl(publicId, options);
   }
 
   return null;

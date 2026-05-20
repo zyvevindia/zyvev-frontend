@@ -79,8 +79,6 @@ export function resolveCatalogImageUrl(car, role = "compare") {
     compare: [
       car.compareThumbnail,
       meta.compareThumbnail,
-      car.heroImage,
-      meta.heroImage,
       car.image,
       car.listingThumbnail,
       meta.listingThumbnail,
@@ -104,8 +102,10 @@ export function resolveCatalogImageUrl(car, role = "compare") {
 
   const fields = fieldLists[role] || fieldLists.listing;
 
+  const sanitizeOpts = { role };
+
   for (const raw of fields) {
-    const url = sanitizeImageUrl(raw);
+    const url = sanitizeImageUrl(raw, sanitizeOpts);
     if (url) return url;
   }
 
@@ -119,7 +119,7 @@ export function resolveCatalogImageUrl(car, role = "compare") {
 
   const manifestOrder =
     role === "compare"
-      ? [block.heroImage, block.compareThumbnail, block.listingThumbnail]
+      ? [block.compareThumbnail, block.listingThumbnail]
       : role === "hero"
         ? [block.heroImage, block.listingThumbnail]
         : role === "og"
@@ -127,7 +127,7 @@ export function resolveCatalogImageUrl(car, role = "compare") {
           : [block.listingThumbnail, block.heroImage];
 
   for (const raw of manifestOrder) {
-    const url = sanitizeImageUrl(raw);
+    const url = sanitizeImageUrl(raw, sanitizeOpts);
     if (url) return url;
   }
 
@@ -139,11 +139,7 @@ function familyMediaForRole(familySlug, role) {
   if (!block) return [];
 
   if (role === "compare") {
-    return [
-      block.compareThumbnail,
-      block.listingThumbnail,
-      block.heroImage,
-    ];
+    return [block.compareThumbnail, block.listingThumbnail];
   }
   if (role === "og") {
     return [block.ogImage, block.heroImage];

@@ -20,10 +20,10 @@ import {
 
 const PLACEHOLDER_LABEL = "EV image coming soon";
 
-function filterValidChain(urls) {
+function filterValidChain(urls, role = "listing") {
   if (!Array.isArray(urls)) return [];
   return urls
-    .map((u) => sanitizeImageUrl(u))
+    .map((u) => sanitizeImageUrl(u, { role }))
     .filter(Boolean);
 }
 
@@ -53,21 +53,28 @@ export default function VehicleImage({
   onBroken,
 }) {
   const chain = useMemo(() => {
-    const primary = sanitizeImageUrl(srcProp);
+    const sanitizeOpts = { role };
+    const primary = sanitizeImageUrl(srcProp, sanitizeOpts);
 
     if (role === "compare") {
       return primary ? [primary] : [];
     }
 
     if (primary) {
-      const base = filterValidChain(buildImageFallbackChain(car, role));
+      const base = filterValidChain(
+        buildImageFallbackChain(car, role),
+        role
+      );
       return [primary, ...base.filter((u) => u !== primary)];
     }
 
-    const raw = filterValidChain(buildImageFallbackChain(car, role));
+    const raw = filterValidChain(
+      buildImageFallbackChain(car, role),
+      role
+    );
     if (raw.length > 0) return raw;
 
-    const fallback = sanitizeImageUrl(LOCAL_FALLBACK_EV);
+    const fallback = sanitizeImageUrl(LOCAL_FALLBACK_EV, sanitizeOpts);
     return fallback ? [fallback] : [];
   }, [car, role, srcProp]);
 
@@ -84,7 +91,7 @@ export default function VehicleImage({
   const sizes = SIZES_BY_ROLE[role] || LISTING_SIZES;
 
   const responsiveSet = useMemo(() => {
-    if (!responsive || !src || !sanitizeImageUrl(src)) return null;
+    if (!responsive || !src || !sanitizeImageUrl(src, { role })) return null;
     return buildResponsiveSources(src, [480, 800, 1200]);
   }, [responsive, src]);
 
@@ -103,7 +110,7 @@ export default function VehicleImage({
 
       if (index < chain.length - 1) {
         const nextUrl = chain[index + 1];
-        if (!sanitizeImageUrl(nextUrl)) {
+        if (!sanitizeImageUrl(nextUrl, { role })) {
           setShowPlaceholder(true);
           setLoaded(true);
           onBroken?.(failedUrl);
@@ -123,7 +130,7 @@ export default function VehicleImage({
       const img = event?.currentTarget;
       if (
         img &&
-        sanitizeImageUrl(LOCAL_FALLBACK_EV) &&
+        sanitizeImageUrl(LOCAL_FALLBACK_EV, { role }) &&
         !img.src.endsWith(LOCAL_FALLBACK_EV)
       ) {
         logImageFallback({
