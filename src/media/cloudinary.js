@@ -21,6 +21,42 @@ const WRONG_CLOUD_SEGMENT = new RegExp(
   "i"
 );
 
+/** Extensionless tier-1 asset tails (never pass *.jpg into delivery URLs). */
+const FAMILY_ASSET_BASENAMES = new Set([
+  "hero",
+  "listing-thumb",
+  "compare-thumb",
+  "og",
+]);
+
+const CATALOG_ASSET_JPG_SUFFIX =
+  /\/(compare-thumb|listing-thumb|hero)\.jpg(?=\/|\?|$)/gi;
+
+const FAKE_MEDIA_REF =
+  /^(compare-thumb|listing-thumb|hero)(\.(jpg|jpeg|png|webp|avif))?$/i;
+
+/**
+ * Reject bare filenames and broken Cloudinary paths before URL generation.
+ * @param {unknown} value
+ */
+export function isRejectedCatalogMediaRef(value) {
+  if (value == null || typeof value !== "string") return true;
+  const trimmed = value.trim();
+  if (!trimmed) return true;
+  const lower = trimmed.toLowerCase();
+  if (FAKE_MEDIA_REF.test(trimmed)) return true;
+  if (lower.includes("compare-thumb.jpg") || lower.includes("listing-thumb.jpg")) {
+    return true;
+  }
+  if (
+    (lower.includes("compare-thumb") || lower.includes("listing-thumb")) &&
+    !lower.includes("/catalog/families/")
+  ) {
+    return true;
+  }
+  return false;
+}
+
 /**
  * Fix delivery URLs where catalog folder prefix was used as cloud name.
  * @param {unknown} url
@@ -28,15 +64,21 @@ const WRONG_CLOUD_SEGMENT = new RegExp(
  */
 export function normalizeCloudinaryDeliveryUrl(url) {
   if (!url || typeof url !== "string") return null;
-  const trimmed = url.trim();
+  let trimmed = url.trim();
   if (!trimmed) return null;
-  if (!trimmed.includes("res.cloudinary.com")) return trimmed;
-  if (WRONG_CLOUD_SEGMENT.test(trimmed)) {
-    return trimmed.replace(
-      WRONG_CLOUD_SEGMENT,
-      `https://res.cloudinary.com/${DEFAULT_CLOUDINARY_CLOUD_NAME}/`
-    );
+  if (isRejectedCatalogMediaRef(trimmed)) return null;
+
+  if (trimmed.includes("res.cloudinary.com")) {
+    if (WRONG_CLOUD_SEGMENT.test(trimmed)) {
+      trimmed = trimmed.replace(
+        WRONG_CLOUD_SEGMENT,
+        `https://res.cloudinary.com/${DEFAULT_CLOUDINARY_CLOUD_NAME}/`
+      );
+    }
+    trimmed = trimmed.replace(CATALOG_ASSET_JPG_SUFFIX, "/$1");
+    if (isRejectedCatalogMediaRef(trimmed)) return null;
   }
+
   return trimmed;
 }
 
@@ -124,17 +166,21 @@ export function cloudinaryDeliveryUrl(
   publicId,
   options = {}
 ) {
+  if (isRejectedCatalogMediaRef(publicId)) return null;
+
   const id = String(publicId || "")
     .replace(/^\/+/, "")
     .replace(/\.(jpg|jpeg|png|webp|avif)$/i, "");
 
   if (!id || id.length <= 6) return null;
   if (/^(compare-thumb|listing-thumb|hero)$/i.test(id)) return null;
+  if (!id.includes("/") && !FAMILY_ASSET_BASENAMES.has(id)) return null;
 
   const transform = buildTransformString(options);
-  return normalizeCloudinaryDeliveryUrl(
+  const url = normalizeCloudinaryDeliveryUrl(
     `${CLOUDINARY_BASE}/image/upload/${transform}/${id}`
   );
+  return url && !isRejectedCatalogMediaRef(url) ? url : null;
 }
 
 /**
@@ -151,6 +197,20 @@ export function familyCatalogUrl(familySlug, filename, options = {}) {
   if (!isProductionFamilySlug(familySlug)) return null;
   const publicId = familyCatalogPublicId(familySlug, filename);
   if (!publicId) return null;
+  return cloudinaryDeliveryUrl(publicId, options);
+}
+
+/**
+ * Tier-1 family asset by extensionless basename (preferred over *.jpg filenames).
+ * @param {string} familySlug
+ * @param {"hero"|"listing-thumb"|"compare-thumb"|"og"} assetBasename
+ */
+export function familyCatalogAssetUrl(familySlug, assetBasename, options = {}) {
+  if (!isProductionFamilySlug(familySlug)) return null;
+  const family = String(familySlug || "").trim().toLowerCase();
+  const asset = String(assetBasename || "").trim().toLowerCase();
+  if (!family || !FAMILY_ASSET_BASENAMES.has(asset)) return null;
+  const publicId = `${CATALOG_MEDIA_PREFIX}/families/${family}/${asset}`;
   return cloudinaryDeliveryUrl(publicId, options);
 }
 
@@ -176,32 +236,31 @@ export function coerceCatalogMediaToUrl(value) {
   if (typeof value !== "string") return null;
 
   const trimmed = value.trim();
-  if (!trimmed) return null;
+  if (!trimmed || isRejectedCatalogMediaRef(trimmed)) return null;
 
   if (
     trimmed.startsWith("http://") ||
     trimmed.startsWith("https://")
   ) {
-    return normalizeCloudinaryDeliveryUrl(trimmed);
+    const url = normalizeCloudinaryDeliveryUrl(trimmed);
+    return url && !isRejectedCatalogMediaRef(url) ? url : null;
   }
 
   if (trimmed.startsWith("/") && !trimmed.startsWith("//")) {
-    return trimmed;
+    return isRejectedCatalogMediaRef(trimmed) ? null : trimmed;
   }
 
   const publicId = trimmed
     .replace(/^\/+/, "")
     .replace(/\.(jpg|jpeg|png|webp|avif)$/i, "");
 
+  if (isRejectedCatalogMediaRef(publicId)) return null;
+
   if (
     publicId.startsWith(`${CATALOG_MEDIA_PREFIX}/`) ||
     publicId.startsWith("evsavari/catalog/")
   ) {
     return cloudinaryDeliveryUrl(publicId);
-  }
-
-  if (/^(compare-thumb|listing-thumb|hero)(\.(jpg|jpeg|png|webp|avif))?$/i.test(publicId)) {
-    return null;
   }
 
   return null;

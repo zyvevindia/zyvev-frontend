@@ -1,4 +1,7 @@
-import { coerceCatalogMediaToUrl } from "../media/cloudinary.js";
+import {
+  coerceCatalogMediaToUrl,
+  isRejectedCatalogMediaRef,
+} from "../media/cloudinary.js";
 
 /**
  * Guards against symbolic media role labels used as image src
@@ -91,9 +94,10 @@ export function isValidImageUrl(url) {
  */
 export function sanitizeImageUrl(url) {
   if (url == null) return null;
+  if (isRejectedCatalogMediaRef(url)) return null;
   if (typeof url === "string" && isSymbolicMediaToken(url)) return null;
   const resolved = coerceCatalogMediaToUrl(url);
-  if (!resolved) return null;
+  if (!resolved || isRejectedCatalogMediaRef(resolved)) return null;
   return isValidImageUrl(resolved) ? resolved : null;
 }
 

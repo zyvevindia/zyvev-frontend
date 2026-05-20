@@ -3,24 +3,31 @@
  * Upload targets: evsavari/catalog/families/{familySlug}/
  */
 
-import { familyCatalogUrl } from "./cloudinary.js";
+import {
+  familyCatalogAssetUrl,
+  familyCatalogUrl,
+} from "./cloudinary.js";
 import { PRODUCTION_FAMILY_SLUGS } from "./productionFamilies.js";
 
 const FAMILIES = [...PRODUCTION_FAMILY_SLUGS];
 
 function familyMediaBlock(familySlug) {
   return {
-    heroImage: familyCatalogUrl(familySlug, "hero.jpg"),
-    listingThumbnail: familyCatalogUrl(familySlug, "listing-thumb.jpg"),
-    compareThumbnail: familyCatalogUrl(familySlug, "compare-thumb.jpg"),
-    ogImage: familyCatalogUrl(familySlug, "og.jpg"),
+    heroImage: familyCatalogAssetUrl(familySlug, "hero"),
+    listingThumbnail: familyCatalogAssetUrl(familySlug, "listing-thumb"),
+    compareThumbnail: familyCatalogAssetUrl(familySlug, "compare-thumb"),
+    ogImage: familyCatalogAssetUrl(familySlug, "og"),
     gallery: [
       familyCatalogUrl(familySlug, "exterior-1.jpg"),
       familyCatalogUrl(familySlug, "exterior-2.jpg"),
       familyCatalogUrl(familySlug, "exterior-3.jpg"),
-    ],
-    interior: [familyCatalogUrl(familySlug, "interior-1.jpg")],
-    charging: [familyCatalogUrl(familySlug, "charging-port.jpg")],
+    ].filter(Boolean),
+    interior: [familyCatalogUrl(familySlug, "interior-1.jpg")].filter(
+      Boolean
+    ),
+    charging: [familyCatalogUrl(familySlug, "charging-port.jpg")].filter(
+      Boolean
+    ),
   };
 }
 

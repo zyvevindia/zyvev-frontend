@@ -17,6 +17,7 @@ export {
   applyCloudinaryTransforms,
   cloudinaryDeliveryUrl,
   coerceCatalogMediaToUrl,
+  isRejectedCatalogMediaRef,
   normalizeCloudinaryDeliveryUrl,
 } from "../media/cloudinary.js";
 

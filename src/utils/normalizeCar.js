@@ -1,11 +1,12 @@
-import { sanitizeCarImageFields } from "./imageUrl";
+import { sanitizeCarImageFields, sanitizeImageUrl } from "./imageUrl";
 import { getListingImage } from "./vehicleMedia";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { logProduction } from "./productionLog";
 
 export default function normalizeCar(car) {
   const cleaned = sanitizeCarImageFields(car);
-  const listingImage = getListingImage(cleaned);
+  const listingImage =
+    sanitizeImageUrl(getListingImage(cleaned)) || null;
   const slug = normalizeVehicleSlug(cleaned.slug);
 
   if (!slug && cleaned.name) {

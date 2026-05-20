@@ -119,7 +119,7 @@ export function resolveCatalogImageUrl(car, role = "compare") {
 
   const manifestOrder =
     role === "compare"
-      ? [block.compareThumbnail, block.heroImage, block.listingThumbnail]
+      ? [block.heroImage, block.compareThumbnail, block.listingThumbnail]
       : role === "hero"
         ? [block.heroImage, block.listingThumbnail]
         : role === "og"
@@ -127,8 +127,8 @@ export function resolveCatalogImageUrl(car, role = "compare") {
           : [block.listingThumbnail, block.heroImage];
 
   for (const raw of manifestOrder) {
-    const url = coerceCatalogMediaToUrl(raw);
-    if (url && isValidImageUrl(url)) return url;
+    const url = sanitizeImageUrl(raw);
+    if (url) return url;
   }
 
   return null;
