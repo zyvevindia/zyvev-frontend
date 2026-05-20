@@ -11,13 +11,21 @@ const INVALID_PLACEHOLDER_TOKENS = [
   "hero",
 ];
 
+/** Bare asset filenames — never valid as browser src (resolve via Cloudinary helper). */
+const BARE_ASSET_FILENAME =
+  /^(compare-thumb|listing-thumb|hero)(\.(jpg|jpeg|png|webp|avif))?$/i;
+
 /**
  * Bare role token (not a delivery URL).
  * @param {unknown} value
  */
 export function isSymbolicMediaToken(value) {
   if (typeof value !== "string") return false;
-  return INVALID_PLACEHOLDER_TOKENS.includes(value.trim().toLowerCase());
+  const trimmed = value.trim();
+  return (
+    INVALID_PLACEHOLDER_TOKENS.includes(trimmed.toLowerCase()) ||
+    BARE_ASSET_FILENAME.test(trimmed)
+  );
 }
 
 /**
@@ -66,19 +74,13 @@ export function isValidImageUrl(url) {
   const trimmed = url.trim();
   if (!trimmed) return false;
 
-  if (INVALID_PLACEHOLDER_TOKENS.includes(trimmed.toLowerCase())) {
-    return false;
-  }
+  if (isSymbolicMediaToken(trimmed)) return false;
 
   return (
-    trimmed.startsWith("http") ||
+    trimmed.startsWith("http://") ||
+    trimmed.startsWith("https://") ||
     trimmed.startsWith("/") ||
-    trimmed.includes(".jpg") ||
-    trimmed.includes(".jpeg") ||
-    trimmed.includes(".png") ||
-    trimmed.includes(".webp") ||
-    trimmed.includes(".avif") ||
-    trimmed.includes(".svg") ||
+    trimmed.startsWith("data:") ||
     trimmed.includes("cloudinary")
   );
 }
@@ -88,6 +90,8 @@ export function isValidImageUrl(url) {
  * @returns {string|null}
  */
 export function sanitizeImageUrl(url) {
+  if (url == null) return null;
+  if (typeof url === "string" && isSymbolicMediaToken(url)) return null;
   const resolved = coerceCatalogMediaToUrl(url);
   if (!resolved) return null;
   return isValidImageUrl(resolved) ? resolved : null;

@@ -200,6 +200,10 @@ export function coerceCatalogMediaToUrl(value) {
     return cloudinaryDeliveryUrl(publicId);
   }
 
+  if (/^(compare-thumb|listing-thumb|hero)(\.(jpg|jpeg|png|webp|avif))?$/i.test(publicId)) {
+    return null;
+  }
+
   return null;
 }
 

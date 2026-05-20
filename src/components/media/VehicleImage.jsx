@@ -12,10 +12,7 @@ import {
   LISTING_SIZES,
 } from "../../media/responsive.js";
 import { logImageFallback } from "../../launch/imageFallbackLog.js";
-import {
-  isManifestGuessCatalogUrl,
-  isValidImageUrl,
-} from "../../utils/imageUrl.js";
+import { sanitizeImageUrl } from "../../utils/imageUrl.js";
 import {
   IMAGE_ASPECT,
   buildImageFallbackChain,
@@ -25,11 +22,9 @@ const PLACEHOLDER_LABEL = "EV image coming soon";
 
 function filterValidChain(urls) {
   if (!Array.isArray(urls)) return [];
-  return urls.filter((u) => {
-    if (!isValidImageUrl(u)) return false;
-    if (isManifestGuessCatalogUrl(u)) return false;
-    return true;
-  });
+  return urls
+    .map((u) => sanitizeImageUrl(u))
+    .filter(Boolean);
 }
 
 const SIZES_BY_ROLE = {
@@ -58,21 +53,22 @@ export default function VehicleImage({
   onBroken,
 }) {
   const chain = useMemo(() => {
-    const raw = (() => {
-      if (srcProp && isValidImageUrl(srcProp)) {
-        const base = filterValidChain(buildImageFallbackChain(car, role));
-        return [srcProp, ...base.filter((u) => u !== srcProp)];
-      }
-      return filterValidChain(buildImageFallbackChain(car, role));
-    })();
+    const primary = sanitizeImageUrl(srcProp);
 
+    if (role === "compare") {
+      return primary ? [primary] : [];
+    }
+
+    if (primary) {
+      const base = filterValidChain(buildImageFallbackChain(car, role));
+      return [primary, ...base.filter((u) => u !== primary)];
+    }
+
+    const raw = filterValidChain(buildImageFallbackChain(car, role));
     if (raw.length > 0) return raw;
 
-    if (role === "compare") return [];
-
-    return isValidImageUrl(LOCAL_FALLBACK_EV)
-      ? [LOCAL_FALLBACK_EV]
-      : [];
+    const fallback = sanitizeImageUrl(LOCAL_FALLBACK_EV);
+    return fallback ? [fallback] : [];
   }, [car, role, srcProp]);
 
   const [index, setIndex] = useState(0);
@@ -88,7 +84,7 @@ export default function VehicleImage({
   const sizes = SIZES_BY_ROLE[role] || LISTING_SIZES;
 
   const responsiveSet = useMemo(() => {
-    if (!responsive || !src || !isValidImageUrl(src)) return null;
+    if (!responsive || !src || !sanitizeImageUrl(src)) return null;
     return buildResponsiveSources(src, [480, 800, 1200]);
   }, [responsive, src]);
 
@@ -107,7 +103,7 @@ export default function VehicleImage({
 
       if (index < chain.length - 1) {
         const nextUrl = chain[index + 1];
-        if (!isValidImageUrl(nextUrl)) {
+        if (!sanitizeImageUrl(nextUrl)) {
           setShowPlaceholder(true);
           setLoaded(true);
           onBroken?.(failedUrl);
@@ -127,7 +123,7 @@ export default function VehicleImage({
       const img = event?.currentTarget;
       if (
         img &&
-        isValidImageUrl(LOCAL_FALLBACK_EV) &&
+        sanitizeImageUrl(LOCAL_FALLBACK_EV) &&
         !img.src.endsWith(LOCAL_FALLBACK_EV)
       ) {
         logImageFallback({

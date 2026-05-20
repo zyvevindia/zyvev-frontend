@@ -196,19 +196,8 @@ export function buildImageFallbackChain(car, role = "listing") {
   const variantUrls = variantCdnFallbacks();
 
   if (role === "compare") {
-    return finalizeFallbackChain(
-      [
-        car?.compareThumbnail,
-        meta.compareThumbnail,
-        ...fieldValues,
-        car?.heroImage,
-        meta.heroImage,
-        car?.listingThumbnail,
-        meta.listingThumbnail,
-        ...familyUrls,
-      ],
-      { role: "compare", allowLocalFallback: false }
-    );
+    const resolved = resolveCatalogImageUrl(car, "compare");
+    return resolved ? [resolved] : [];
   }
 
   if (role === "og") {
