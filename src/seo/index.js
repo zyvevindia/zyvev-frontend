@@ -4,6 +4,9 @@
 
 export * from "./canonical";
 export * from "./meta";
+export * from "./pageMetadata";
+export * from "./slugs";
+export * from "./vehicleInternalLinks";
 export * from "./schema";
 export * from "./qa";
 export * from "./registry";
@@ -17,6 +20,9 @@ export {
 } from "./legacyCanonicalMap";
 export {
   buildDiscoveryGuideSitemapEntries,
+  buildCompareGuideSitemapEntries,
+  buildStaticSitemapEntries,
+  buildVehicleFamilySitemapEntries,
   buildFullSitemapManifest,
   listExpectedDiscoveryPaths,
 } from "./sitemap";

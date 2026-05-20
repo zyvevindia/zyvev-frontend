@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import ReportIssueLink from "./feedback/ReportIssueLink";
+import NewsletterSignup from "./footer/NewsletterSignup";
 
 /* =========================================================
    ========================= FOOTER =========================
@@ -57,6 +58,8 @@ export default function Footer() {
             electric cars, scooters, and
             upcoming EV launches in India.
           </p>
+
+          <NewsletterSignup />
 
           {/* ================= SOCIAL ================= */}
 
@@ -156,6 +159,11 @@ export default function Footer() {
             <FooterLink
               to="/about"
               label="About Us"
+            />
+
+            <FooterLink
+              to="/how-evsavari-works"
+              label="How EVSavari works"
             />
 
             <FooterLink

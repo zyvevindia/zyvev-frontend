@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import TurnstileWidget from "../security/TurnstileWidget";
+import { trackFeedbackSubmitted } from "../../analytics/funnel";
 import { submitUserFeedback } from "../../services/feedbackApi";
+import { BETA_FEEDBACK_ACK_LINE } from "../../config/launchProfiles";
 import { colors, radius, shadows } from "../../styles/ui";
-
-const CATEGORIES = [
-  { value: "wrong_data", label: "Wrong price or specs" },
-  { value: "broken_image", label: "Broken or missing image" },
-  { value: "compare", label: "Compare page issue" },
-  { value: "form", label: "Form or lead issue" },
-  { value: "performance", label: "Slow or not loading" },
-  { value: "other", label: "Other" },
-];
+import { isTurnstileConfigured } from "../../utils/turnstile";
+import {
+  FEEDBACK_CATEGORY_DEFS,
+  FEEDBACK_SEVERITY_LEVELS,
+  getFeedbackCategoryDef,
+  normalizeFeedbackCategoryId,
+} from "../../ops/feedbackTaxonomy";
 
 export default function ReportIssueModal({
   isOpen,
@@ -20,19 +21,25 @@ export default function ReportIssueModal({
 }) {
   const location = useLocation();
   const [category, setCategory] = useState("other");
+  const [severity, setSeverity] = useState("medium");
   const [description, setDescription] = useState("");
   const [email, setEmail] = useState("");
   const [screenshot, setScreenshot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
     if (!isOpen) return;
-    setCategory(context.defaultCategory || "other");
+    const defCat = context.defaultCategory || "other";
+    const normalizedCat = normalizeFeedbackCategoryId(defCat);
+    setCategory(normalizedCat);
+    setSeverity(getFeedbackCategoryDef(normalizedCat).defaultSeverity);
     setDescription("");
     setEmail("");
     setScreenshot("");
+    setTurnstileToken("");
     setSuccess(false);
     setError("");
   }, [isOpen, context.defaultCategory]);
@@ -58,17 +65,35 @@ export default function ReportIssueModal({
     event.preventDefault();
     setLoading(true);
     setError("");
+
+    if (isTurnstileConfigured() && !turnstileToken) {
+      setError(
+        "Please complete the security check before submitting."
+      );
+      setLoading(false);
+      return;
+    }
+
     try {
       const result = await submitUserFeedback({
         category,
+        severity,
         description,
         email,
         route: location.pathname + location.search,
         context: {
           ...context,
           hash: location.hash,
+          feedbackSeverity: severity,
+          feedbackCategory: category,
         },
         screenshotDataUrl: screenshot,
+        turnstileToken,
+      });
+      trackFeedbackSubmitted({
+        route: location.pathname + location.search,
+        category,
+        severity,
       });
       setSuccess(true);
       if (result.localOnly) {
@@ -117,8 +142,8 @@ export default function ReportIssueModal({
           Report an issue
         </h2>
         <p style={{ color: colors?.muted || "#64748b", fontSize: "0.9rem" }}>
-          Help us improve EVSavari during soft launch. We capture this page URL
-          automatically.
+          Structured categories help our editorial team prioritize fixes. We capture this
+          page URL automatically.
         </p>
 
         {success ? (
@@ -126,6 +151,11 @@ export default function ReportIssueModal({
             <p style={{ color: "#15803d", fontWeight: 600 }}>
               Thank you — your report was received.
             </p>
+            {BETA_FEEDBACK_ACK_LINE ? (
+              <p style={{ color: "#475569", fontSize: "0.85rem", marginTop: "0.35rem" }}>
+                {BETA_FEEDBACK_ACK_LINE}
+              </p>
+            ) : null}
             {error && (
               <p style={{ color: "#b45309", fontSize: "0.85rem" }}>{error}</p>
             )}
@@ -151,12 +181,37 @@ export default function ReportIssueModal({
               Issue type
               <select
                 value={category}
-                onChange={(e) => setCategory(e.target.value)}
+                onChange={(e) => {
+                  const next = e.target.value;
+                  setCategory(next);
+                  setSeverity(getFeedbackCategoryDef(next).defaultSeverity);
+                }}
                 style={inputStyle}
               >
-                {CATEGORIES.map((c) => (
-                  <option key={c.value} value={c.value}>
+                {FEEDBACK_CATEGORY_DEFS.map((c) => (
+                  <option key={c.id} value={c.id}>
                     {c.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            {FEEDBACK_CATEGORY_DEFS.find((c) => c.id === category)?.hint ? (
+              <p style={{ fontSize: "0.8rem", color: "#64748b", marginTop: "-0.35rem" }}>
+                {FEEDBACK_CATEGORY_DEFS.find((c) => c.id === category).hint}
+              </p>
+            ) : null}
+
+            <label style={labelStyle}>
+              Severity (for prioritization)
+              <select
+                value={severity}
+                onChange={(e) => setSeverity(e.target.value)}
+                style={inputStyle}
+              >
+                {FEEDBACK_SEVERITY_LEVELS.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.label}
                   </option>
                 ))}
               </select>
@@ -195,6 +250,12 @@ export default function ReportIssueModal({
               />
             </label>
 
+            <TurnstileWidget
+              onToken={setTurnstileToken}
+              onExpire={() => setTurnstileToken("")}
+              onError={() => setTurnstileToken("")}
+            />
+
             {error && !success && (
               <p style={{ color: "#dc2626", fontSize: "0.9rem" }}>{error}</p>
             )}
@@ -208,7 +269,10 @@ export default function ReportIssueModal({
             >
               <button
                 type="submit"
-                disabled={loading}
+                disabled={
+                  loading ||
+                  (isTurnstileConfigured() && !turnstileToken)
+                }
                 style={{
                   flex: 1,
                   padding: "0.65rem",

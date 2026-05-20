@@ -1,126 +1,37 @@
-/* =========================================================
-   ===================== GOOGLE ANALYTICS ==================
-   ========================================================= */
+/**
+ * Legacy analytics exports — delegates to centralized analytics layer.
+ */
 
-/*
-  IMPORTANT:
+import { trackPageView as trackPageViewCentral } from "../analytics/track";
+import { trackAnalytics } from "../analytics/track";
+import { ANALYTICS_EVENTS } from "../analytics/events";
 
-  Replace:
+export const trackPageView = trackPageViewCentral;
 
-  G-XXXXXXXXXX
+export function trackEvent(action, category, label = "", value = 0) {
+  trackAnalytics(action, {
+    event_category: category,
+    event_label: String(label || "").slice(0, 120),
+    value: Number(value) || 0,
+  });
+}
 
-  with your real Google Analytics GA4 ID.
-*/
+export function trackLead(carName) {
+  trackAnalytics(ANALYTICS_EVENTS.LEAD_SUBMITTED, {
+    vehicle_name: String(carName || "").slice(0, 80),
+    form_type: "legacy_lead",
+  });
+}
 
-/* =========================================================
-   ====================== PAGE TRACKING ====================
-   ========================================================= */
+export function trackCompare(compareCount) {
+  trackAnalytics(ANALYTICS_EVENTS.COMPARE_COMPLETED, {
+    compare_depth: compareCount,
+    source_page: "legacy",
+  });
+}
 
-export const trackPageView =
-  (path) => {
-
-    if (
-      !window.gtag
-    ) {
-      return;
-    }
-
-    window.gtag(
-      "config",
-
-      "G-XXXXXXXXXX",
-
-      {
-        page_path: path,
-      }
-    );
-  };
-
-/* =========================================================
-   ======================= EVENT TRACKING ==================
-   ========================================================= */
-
-export const trackEvent =
-  (
-    action,
-    category,
-    label = "",
-    value = 0
-  ) => {
-
-    if (
-      !window.gtag
-    ) {
-      return;
-    }
-
-    window.gtag(
-      "event",
-
-      action,
-
-      {
-        event_category:
-          category,
-
-        event_label:
-          label,
-
-        value,
-      }
-    );
-  };
-
-/* =========================================================
-   ===================== LEAD TRACKING =====================
-   ========================================================= */
-
-export const trackLead =
-  (
-    carName
-  ) => {
-
-    trackEvent(
-      "lead_generated",
-
-      "Lead",
-
-      carName
-    );
-  };
-
-/* =========================================================
-   ==================== COMPARE TRACKING ===================
-   ========================================================= */
-
-export const trackCompare =
-  (
-    compareCount
-  ) => {
-
-    trackEvent(
-      "compare_ev",
-
-      "Comparison",
-
-      `Compared ${compareCount} EVs`
-    );
-  };
-
-/* =========================================================
-   ==================== CAR VIEW TRACKING ==================
-   ========================================================= */
-
-export const trackCarView =
-  (
-    carName
-  ) => {
-
-    trackEvent(
-      "view_ev",
-
-      "Vehicle",
-
-      carName
-    );
-  };
+export function trackCarView(carName) {
+  trackAnalytics(ANALYTICS_EVENTS.EV_VIEWED, {
+    vehicle_name: String(carName || "").slice(0, 80),
+  });
+}

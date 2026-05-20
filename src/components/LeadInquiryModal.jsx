@@ -1,9 +1,14 @@
 import {
   useEffect,
+  useMemo,
+  useRef,
   useState,
 } from "react";
 
 import { API_URL } from "../config";
+import { safeFetchJson } from "../utils/safeFetch";
+import { buildLeadRoutingPlan } from "../utils/leadRouting";
+import { trackLeadFormAbandoned } from "../analytics/funnel";
 
 import {
   validateLeadForm,
@@ -22,10 +27,20 @@ import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
 import { BUYER_EVENTS } from "../event-tracking/eventTypes";
 
 import {
+  trackLaunchLeadFormOpen,
+  trackLaunchLeadFormSubmit,
+} from "../launch/launchTelemetry";
+
+import {
   getAnonymousSessionIdForLead,
 } from "../event-tracking/trackBuyerEvent";
 
 import LeadTrustBanner from "./leads/LeadTrustBanner";
+
+import {
+  getCitiesForState,
+  indiaStates,
+} from "../data/indiaLocations";
 
 /* =========================================================
    ================== LEAD INQUIRY MODAL =====================
@@ -48,19 +63,76 @@ function fieldInputStyle(base, errors, field) {
   };
 }
 
+/**
+ * Compose modal title: "Book a test drive — Tata Curvv EV Empowered"
+ * @param {string} headline
+ * @param {string} vehicleName
+ */
+export function buildLeadModalTitle(
+  headline = "",
+  vehicleName = ""
+) {
+  const base = String(headline || "").trim();
+  const vehicle = String(vehicleName || "").trim();
+
+  if (!base) {
+    return vehicle || "EV enquiry";
+  }
+
+  if (!vehicle) {
+    return base;
+  }
+
+  if (
+    base.toLowerCase().includes(
+      vehicle.toLowerCase()
+    )
+  ) {
+    return base;
+  }
+
+  return `${base} — ${vehicle}`;
+}
+
+/**
+ * Full vehicle string for API (model + optional trim).
+ */
+export function buildSubmittedVehicleName({
+  modelName = "",
+  variantName = "",
+  fallback = "",
+}) {
+  const model = String(modelName || "").trim();
+  const variant = String(variantName || "").trim();
+
+  if (
+    model &&
+    variant &&
+    variant.toLowerCase() !== model.toLowerCase() &&
+    !model.toLowerCase().includes(variant.toLowerCase())
+  ) {
+    return `${model} (${variant})`;
+  }
+
+  return model || variant || String(fallback || "").trim();
+}
+
 export default function LeadInquiryModal({
   isOpen,
   onClose,
   sourcePage,
+  modelName = "",
   vehicleName: defaultVehicleName = "",
   vehicleId = "",
   mongoCarId = "",
   headline = "EV enquiry",
+  subtitle = "",
   submitLabel = "Submit enquiry",
   formMode = "inquiry",
   variantOptions = [],
   defaultVariantSlug = "",
   leadMetadata = {},
+  composeTitleWithVehicle = true,
 }) {
   const isTestDrive = formMode === "test_drive";
 
@@ -73,6 +145,9 @@ export default function LeadInquiryModal({
   const [email, setEmail] =
     useState("");
 
+  const [state, setState] =
+    useState("");
+
   const [city, setCity] =
     useState("");
 
@@ -81,6 +156,9 @@ export default function LeadInquiryModal({
     useState("");
 
   const [message, setMessage] =
+    useState("");
+
+  const [honeypot, setHoneypot] =
     useState("");
 
   const [loading, setLoading] =
@@ -99,36 +177,103 @@ export default function LeadInquiryModal({
      ===================== RESET ON OPEN ===================
      ========================================================= */
 
+  const wasOpenRef = useRef(false);
+  const submittedRef = useRef(false);
+
+  const cityOptions = useMemo(
+    () => getCitiesForState(state),
+    [state]
+  );
+
+  const carDisplayName = (
+    modelName ||
+    defaultVehicleName ||
+    ""
+  ).trim();
+
+  const displayTitle = useMemo(
+    () =>
+      composeTitleWithVehicle
+        ? buildLeadModalTitle(
+            headline,
+            carDisplayName
+          )
+        : String(headline || "").trim() ||
+          "EV enquiry",
+    [headline, carDisplayName, composeTitleWithVehicle]
+  );
+
+  const showVariantPicker =
+    isTestDrive && variantOptions.length > 1;
+
+  const showCarField = Boolean(carDisplayName);
+  const showVariantField = isTestDrive;
+
+  const resetFormFields = () => {
+    setName("");
+    setPhone("");
+    setEmail("");
+    setState("");
+    setCity("");
+    setMessage("");
+    setHoneypot("");
+    setError("");
+    setFieldErrors({});
+    setLoading(false);
+    setSuccess(false);
+  };
+
   useEffect(() => {
+    const wasOpen = wasOpenRef.current;
+    const justOpened = isOpen && !wasOpen;
+    const justClosed = wasOpen && !isOpen;
+    wasOpenRef.current = isOpen;
 
-    if (!isOpen) {
+    if (justClosed && !submittedRef.current) {
+      trackLeadFormAbandoned({
+        sourcePage,
+        formType: isTestDrive ? "test_drive" : formMode || "inquiry",
+        familySlug: leadMetadata?.familySlug || "",
+      });
+    }
 
+    if (!justOpened) {
       return;
     }
 
-    setSuccess(false);
+    submittedRef.current = false;
 
-    setError("");
+    trackLaunchLeadFormOpen({
+      sourcePage,
+      formType: isTestDrive ? "test_drive" : formMode || "inquiry",
+      familySlug: leadMetadata?.familySlug,
+    });
 
-    setFieldErrors({});
+    resetFormFields();
 
-    setLoading(false);
-
-    const defaultVariant =
-      variantOptions.find(
-        (v) => v.slug === defaultVariantSlug
-      );
-
-    setInterestedVehicle(
-      defaultVariant?.label ||
-        defaultVehicleName ||
-        ""
+    const defaultVariant = variantOptions.find(
+      (v) => v.slug === defaultVariantSlug
     );
+
+    if (isTestDrive) {
+      setInterestedVehicle(
+        defaultVariant?.label || ""
+      );
+    } else {
+      setInterestedVehicle(
+        defaultVariant?.label ||
+          defaultVehicleName ||
+          carDisplayName ||
+          ""
+      );
+    }
   }, [
     isOpen,
     defaultVehicleName,
     defaultVariantSlug,
     variantOptions,
+    isTestDrive,
+    carDisplayName,
   ]);
 
   /* =========================================================
@@ -144,10 +289,15 @@ export default function LeadInquiryModal({
 
       setFieldErrors({});
 
+      if (honeypot.trim()) {
+        return;
+      }
+
       const validation = isTestDrive
         ? validateTestDriveForm({
             name,
             phone,
+            state,
             city,
             interestedVehicle,
           })
@@ -155,6 +305,7 @@ export default function LeadInquiryModal({
             name,
             phone,
             email,
+            state,
             city,
             interestedVehicle,
             message,
@@ -181,90 +332,75 @@ export default function LeadInquiryModal({
             ? vehicleId.trim()
             : "";
 
+      const submittedVehicleName = sanitizeInput(
+        isTestDrive
+          ? buildSubmittedVehicleName({
+              modelName: carDisplayName,
+              variantName: interestedVehicle,
+            })
+          : interestedVehicle ||
+              carDisplayName ||
+              defaultVehicleName
+      );
+
       try {
+        const routing = buildLeadRoutingPlan({
+          city: sanitizeInput(city),
+          state: sanitizeInput(state),
+          familySlug: leadMetadata.familySlug,
+          brand: leadMetadata.brand,
+          vehicleName: submittedVehicleName,
+        });
 
-        const res =
-          await fetch(
-            `${API_URL}/leads`,
-            {
-
-              method: "POST",
-
-              headers: {
-                "Content-Type":
-                  "application/json",
+        const res = await safeFetchJson(`${API_URL}/leads`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          timeoutMs: 20000,
+          label: "lead_submit",
+          body: JSON.stringify({
+            name: sanitizeInput(name),
+            phone: phone.replace(/\D/g, ""),
+            email: sanitizeInput(email).toLowerCase(),
+            city: sanitizeInput(city),
+            state: sanitizeInput(state),
+            message: sanitizeInput(message),
+            vehicleName: submittedVehicleName,
+            modelName: sanitizeInput(carDisplayName),
+            variantName: isTestDrive
+              ? sanitizeInput(interestedVehicle)
+              : "",
+            vehicleId: String(vehicleId || "").trim(),
+            sourcePage: String(sourcePage || "").trim(),
+            carId: carIdPayload || undefined,
+            anonymousSessionId:
+              getAnonymousSessionIdForLead() || undefined,
+            leadSource: "form",
+            familySlug: String(leadMetadata.familySlug || "").trim(),
+            variantSlug: String(leadMetadata.variantSlug || "").trim(),
+            leadStatus: routing.plan.leadStatusTag,
+            assignedDealerId: routing.plan.dealerId,
+            leadMetadata: {
+              ...leadMetadata,
+              leadIntent: {
+                formMode,
+                sourcePage: String(sourcePage || "").trim(),
+                headline: String(headline || "").trim(),
+                isTestDrive,
               },
+              formMode,
+              state: sanitizeInput(state),
+              city: sanitizeInput(city),
+              modelName: sanitizeInput(carDisplayName),
+              variantName: isTestDrive
+                ? sanitizeInput(interestedVehicle)
+                : "",
+              routing: routing.plan,
+              routingLog: routing.log,
+            },
+          }),
+        });
 
-              body: JSON.stringify({
-
-                name:
-                  sanitizeInput(
-                    name
-                  ),
-
-                phone:
-
-                  phone.replace(
-                    /\D/g,
-                    ""
-                  ),
-
-                email:
-                  sanitizeInput(
-                    email
-                  ).toLowerCase(),
-
-                city:
-                  sanitizeInput(
-                    city
-                  ),
-
-                message:
-                  sanitizeInput(
-                    message
-                  ),
-
-                vehicleName:
-                  sanitizeInput(
-                    interestedVehicle
-                  ),
-
-                vehicleId:
-                  String(
-                    vehicleId || ""
-                  ).trim(),
-
-                sourcePage:
-                  String(
-                    sourcePage || ""
-                  ).trim(),
-
-                carId:
-                  carIdPayload ||
-                  undefined,
-
-                anonymousSessionId:
-                  getAnonymousSessionIdForLead() ||
-                  undefined,
-
-                leadSource: "form",
-
-                familySlug:
-                  String(leadMetadata.familySlug || "").trim(),
-
-                variantSlug:
-                  String(leadMetadata.variantSlug || "").trim(),
-
-                leadMetadata: {
-                  ...leadMetadata,
-                  formMode,
-                },
-              }),
-            }
-          );
-
-        const data =
-          await res.json();
+        const data = res.data || {};
 
         if (!res.ok) {
 
@@ -304,12 +440,18 @@ export default function LeadInquiryModal({
           );
         }
 
+        submittedRef.current = true;
         setSuccess(true);
 
         if (data?.merged) {
           trackBuyerEvent(BUYER_EVENTS.LEAD_SUBMITTED, {
             sourcePage: String(sourcePage || "").trim(),
             metadata: { merged: true, leadId: data.leadId },
+          });
+          trackLaunchLeadFormSubmit({
+            sourcePage: String(sourcePage || "").trim(),
+            formType: isTestDrive ? "test_drive" : "inquiry",
+            vehicleSlugs: vehicleId ? [String(vehicleId).trim()] : [],
           });
         }
 
@@ -337,17 +479,15 @@ export default function LeadInquiryModal({
               : [],
             metadata: isTestDrive ? leadMetadata : undefined,
           });
+          trackLaunchLeadFormSubmit({
+            sourcePage: String(sourcePage || "").trim(),
+            formType: isTestDrive ? "test_drive" : "inquiry",
+            vehicleSlugs: vehicleId
+              ? [String(vehicleId).trim()]
+              : [],
+          });
         }
 
-        setName("");
-
-        setPhone("");
-
-        setEmail("");
-
-        setCity("");
-
-        setMessage("");
       } catch (err) {
 
         console.error(err);
@@ -367,12 +507,16 @@ export default function LeadInquiryModal({
      ========================================================= */
 
   const handleClose = () => {
-
     if (loading) {
-
       return;
     }
 
+    resetFormFields();
+    onClose();
+  };
+
+  const handleSuccessOk = () => {
+    resetFormFields();
     onClose();
   };
 
@@ -405,53 +549,182 @@ export default function LeadInquiryModal({
 
       <div style={modalCard}>
 
-        <button
-          type="button"
-          onClick={handleClose}
-          style={closeBtn}
-          aria-label="Close enquiry form"
-        >
-          ✕
-        </button>
-
-        <h2
-          id="lead-inquiry-title"
-          style={modalTitle}
-        >
-          {headline}
-        </h2>
-
-        <LeadTrustBanner compact />
-
         {success ? (
 
-          <div style={successBox}>
-
-            <div style={successIcon}>
-              ✓
+          <div
+            style={successView}
+            role="status"
+            aria-live="polite"
+          >
+            <div style={successIconRing} aria-hidden>
+              <span style={successCheck}>✓</span>
             </div>
 
-            <p style={successText}>
-              Thank you! Your enquiry has been
-              received. A dealer partner will reach
-              out on your registered number.
+            <h2
+              id="lead-inquiry-title"
+              style={successTitle}
+            >
+              Request submitted successfully
+            </h2>
+
+            <p style={successMessage}>
+              Thank you! An EVSavari partner will contact
+              you shortly regarding your enquiry.
+            </p>
+
+            <p style={successNote}>
+              You may receive a callback, WhatsApp message,
+              or SMS.
             </p>
 
             <button
               type="button"
-              onClick={handleClose}
-              style={primaryBtn}
+              onClick={handleSuccessOk}
+              style={successOkBtn}
             >
-              Close
+              OK
             </button>
-
           </div>
         ) : (
+          <>
+            <button
+              type="button"
+              onClick={handleClose}
+              style={closeBtn}
+              disabled={loading}
+              aria-label="Close enquiry form"
+            >
+              ✕
+            </button>
 
-          <form
-            onSubmit={handleSubmit}
-            style={formStack}
-          >
+            <h2
+              id="lead-inquiry-title"
+              style={modalTitle}
+              title={displayTitle}
+            >
+              {displayTitle}
+            </h2>
+
+            {subtitle ? (
+              <p style={modalSubtitle}>{subtitle}</p>
+            ) : null}
+
+            <LeadTrustBanner compact />
+
+            <p
+              style={{
+                margin: "0 0 1rem",
+                fontSize: "0.8125rem",
+                color: "#64748b",
+                lineHeight: 1.5,
+              }}
+            >
+              We route this enquiry only — no marketing lists. Dealer partners are onboarded
+              under EVSavari quality checks.
+            </p>
+
+            <form
+              onSubmit={handleSubmit}
+              style={formStack}
+            >
+            <input
+              type="text"
+              name="company"
+              value={honeypot}
+              onChange={(e) =>
+                setHoneypot(e.target.value)
+              }
+              style={honeypotInput}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
+
+            {showCarField ? (
+              <>
+                <label style={label}>
+                  Car *
+                </label>
+                <input
+                  value={carDisplayName}
+                  readOnly
+                  tabIndex={-1}
+                  style={vehicleReadonlyInput}
+                  aria-readonly="true"
+                />
+              </>
+            ) : null}
+
+            {showVariantField ? (
+              <>
+                <label style={label}>
+                  Interested vehicle *
+                </label>
+
+                {showVariantPicker ? (
+                  <select
+                    value={interestedVehicle}
+                    onChange={(e) =>
+                      setInterestedVehicle(
+                        e.target.value
+                      )
+                    }
+                    style={fieldInputStyle(
+                      selectInput,
+                      fieldErrors,
+                      "interestedVehicle"
+                    )}
+                    aria-invalid={Boolean(
+                      fieldErrors.interestedVehicle
+                    )}
+                  >
+                    <option value="">
+                      Select a variant
+                    </option>
+                    {variantOptions.map((opt) => (
+                      <option
+                        key={opt.slug}
+                        value={opt.label}
+                      >
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    value={interestedVehicle}
+                    readOnly
+                    tabIndex={-1}
+                    style={vehicleReadonlyInput}
+                    aria-readonly="true"
+                  />
+                )}
+
+                {fieldErrors.interestedVehicle && (
+                  <p style={fieldError}>
+                    {fieldErrors.interestedVehicle}
+                  </p>
+                )}
+              </>
+            ) : !showCarField ? (
+              <>
+                <label style={label}>
+                  Interested vehicle *
+                </label>
+                <input
+                  value={interestedVehicle}
+                  readOnly
+                  tabIndex={-1}
+                  style={vehicleReadonlyInput}
+                  aria-readonly="true"
+                />
+                {fieldErrors.interestedVehicle && (
+                  <p style={fieldError}>
+                    {fieldErrors.interestedVehicle}
+                  </p>
+                )}
+              </>
+            ) : null}
 
             <label style={label}>
               Full name *
@@ -539,88 +812,77 @@ export default function LeadInquiryModal({
             )}
 
             <label style={label}>
-              City *
+              State *
             </label>
 
-            <input
-              value={city}
-              onChange={(e) =>
-                setCity(
-                  sanitizeInput(
-                    e.target.value
-                  )
-                )
-              }
-              style={fieldInputStyle(input, fieldErrors, "city")}
-              placeholder="e.g. Bengaluru"
-              autoComplete="address-level2"
-              aria-invalid={Boolean(fieldErrors.city)}
-            />
+            <select
+              value={state}
+              onChange={(e) => {
+                setState(e.target.value);
+                setCity("");
+              }}
+              style={fieldInputStyle(
+                selectInput,
+                fieldErrors,
+                "state"
+              )}
+              aria-invalid={Boolean(fieldErrors.state)}
+            >
+              <option value="">
+                Select state
+              </option>
+              {indiaStates.map((stateName) => (
+                <option
+                  key={stateName}
+                  value={stateName}
+                >
+                  {stateName}
+                </option>
+              ))}
+            </select>
 
-            {fieldErrors.city && (
-
+            {fieldErrors.state && (
               <p style={fieldError}>
-                {fieldErrors.city}
+                {fieldErrors.state}
               </p>
             )}
 
             <label style={label}>
-              {isTestDrive
-                ? "Preferred variant *"
-                : "Interested vehicle *"}
+              City *
             </label>
 
-            {isTestDrive &&
-            variantOptions.length > 0 ? (
-              <select
-                value={interestedVehicle}
-                onChange={(e) =>
-                  setInterestedVehicle(e.target.value)
-                }
-                style={fieldInputStyle(
-                  input,
+            <select
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              disabled={!state}
+              style={{
+                ...fieldInputStyle(
+                  selectInput,
                   fieldErrors,
-                  "interestedVehicle"
-                )}
-                aria-invalid={Boolean(
-                  fieldErrors.interestedVehicle
-                )}
-              >
-                <option value="">
-                  Select a variant
+                  "city"
+                ),
+                ...(!state ? selectDisabled : null),
+              }}
+              aria-invalid={Boolean(fieldErrors.city)}
+            >
+              <option value="">
+                {state
+                  ? "Select city"
+                  : "Select state first"}
+              </option>
+              {cityOptions.map((cityName) => (
+                <option
+                  key={cityName}
+                  value={cityName}
+                >
+                  {cityName}
                 </option>
-                {variantOptions.map((opt) => (
-                  <option
-                    key={opt.slug}
-                    value={opt.label}
-                  >
-                    {opt.label}
-                  </option>
-                ))}
-              </select>
-            ) : (
-              <input
-                value={interestedVehicle}
-                onChange={(e) =>
-                  setInterestedVehicle(
-                    sanitizeInput(e.target.value)
-                  )
-                }
-                style={fieldInputStyle(
-                  input,
-                  fieldErrors,
-                  "interestedVehicle"
-                )}
-                placeholder="Model you are exploring"
-                aria-invalid={Boolean(
-                  fieldErrors.interestedVehicle
-                )}
-              />
-            )}
+              ))}
+            </select>
 
-            {fieldErrors.interestedVehicle && (
+            {fieldErrors.city && (
               <p style={fieldError}>
-                {fieldErrors.interestedVehicle}
+                {fieldErrors.city}
               </p>
             )}
 
@@ -665,15 +927,19 @@ export default function LeadInquiryModal({
               disabled={loading}
               style={{
                 ...primaryBtn,
-                opacity: loading
-                  ? 0.75
-                  : 1,
+                ...submitBtnLayout,
+                opacity: loading ? 0.85 : 1,
+                cursor: loading ? "wait" : "pointer",
               }}
             >
-
-              {loading
-                ? "Sending…"
-                : submitLabel}
+              {loading ? (
+                <span style={submitBtnInner}>
+                  <span style={spinner} aria-hidden />
+                  Sending…
+                </span>
+              ) : (
+                submitLabel
+              )}
             </button>
 
             <p style={privacyNote}>
@@ -683,7 +949,8 @@ export default function LeadInquiryModal({
               enquiry.
             </p>
 
-          </form>
+            </form>
+          </>
         )}
 
       </div>
@@ -744,10 +1011,21 @@ const closeBtn = {
 
 const modalTitle = {
   margin: "0 40px 10px 0",
-  fontSize: "22px",
+  fontSize: "clamp(18px, 4.5vw, 22px)",
   fontWeight: "800",
   color: colors.text,
   letterSpacing: "-0.4px",
+  lineHeight: 1.35,
+  wordBreak: "break-word",
+  overflowWrap: "anywhere",
+  hyphens: "auto",
+};
+
+const modalSubtitle = {
+  margin: "0 0 14px 0",
+  fontSize: "14px",
+  lineHeight: "1.65",
+  color: colors.textLight,
 };
 
 const trustLine = {
@@ -778,6 +1056,35 @@ const input = {
   border: `1px solid ${colors.border}`,
   fontSize: "15px",
   outline: "none",
+};
+
+const selectInput = {
+  ...input,
+  background: colors.surface,
+  cursor: "pointer",
+};
+
+const selectDisabled = {
+  background: "#f1f5f9",
+  color: "#94a3b8",
+  cursor: "not-allowed",
+};
+
+const vehicleReadonlyInput = {
+  ...input,
+  background: "#f8fafc",
+  color: colors.text,
+  fontWeight: "600",
+  cursor: "default",
+};
+
+const honeypotInput = {
+  position: "absolute",
+  left: "-9999px",
+  width: "1px",
+  height: "1px",
+  opacity: 0,
+  pointerEvents: "none",
 };
 
 const textarea = {
@@ -822,29 +1129,91 @@ const privacyNote = {
   margin: "10px 0 0 0",
 };
 
-const successBox = {
-  textAlign: "center",
-  padding: "8px 0 0 0",
-};
-
-const successIcon = {
-  width: "56px",
-  height: "56px",
-  margin: "0 auto 16px",
-  borderRadius: "50%",
-  background:
-    "linear-gradient(135deg,#16a34a,#15803d)",
-  color: "white",
+const submitBtnLayout = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontSize: "28px",
-  fontWeight: "800",
 };
 
-const successText = {
+const submitBtnInner = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "10px",
+};
+
+const spinner = {
+  width: "18px",
+  height: "18px",
+  border: "2px solid rgba(255,255,255,0.35)",
+  borderTopColor: "#ffffff",
+  borderRadius: "50%",
+  animation: "lead-inquiry-spin 0.7s linear infinite",
+  flexShrink: 0,
+};
+
+const successView = {
+  textAlign: "center",
+  padding: "clamp(12px, 3vw, 20px) 4px clamp(8px, 2vw, 12px)",
+  animation: "lead-inquiry-fade-in 0.35s ease-out",
+};
+
+const successIconRing = {
+  width: "72px",
+  height: "72px",
+  margin: "0 auto 20px",
+  borderRadius: "50%",
+  background:
+    "linear-gradient(135deg, #22c55e, #15803d)",
+  boxShadow:
+    "0 12px 28px rgba(22, 163, 74, 0.35)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
+const successCheck = {
+  color: "#ffffff",
+  fontSize: "34px",
+  fontWeight: "800",
+  lineHeight: 1,
+};
+
+const successTitle = {
+  margin: "0 0 12px",
+  fontSize: "22px",
+  fontWeight: "800",
+  color: colors.text,
+  letterSpacing: "-0.35px",
+};
+
+const successMessage = {
+  margin: "0 0 10px",
   fontSize: "15px",
-  lineHeight: "1.75",
+  lineHeight: 1.75,
   color: colors.textLight,
-  margin: "0 0 20px 0",
+};
+
+const successNote = {
+  margin: "0 0 24px",
+  fontSize: "13px",
+  lineHeight: 1.6,
+  color: "#64748b",
+};
+
+const successOkBtn = {
+  display: "block",
+  margin: "0 auto",
+  minWidth: "140px",
+  maxWidth: "220px",
+  width: "100%",
+  border: "none",
+  borderRadius: "14px",
+  padding: "14px 28px",
+  fontWeight: "700",
+  fontSize: "15px",
+  color: "#ffffff",
+  cursor: "pointer",
+  background: gradientsBtn,
+  boxShadow: "0 10px 24px rgba(37, 99, 235, 0.28)",
 };

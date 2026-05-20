@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
 import OpsHealthCards from "../../components/admin/OpsHealthCards";
@@ -7,6 +7,19 @@ import { fetchOpsHealth } from "../../services/opsHealthApi";
 import { fetchTrafficIntelligence } from "../../services/trafficIntelligenceApi";
 import { BEHAVIORAL_INTELLIGENCE_ENABLED } from "../../config";
 import { downloadCsvFromObjects } from "../../utils/csvExport";
+import {
+  rankCompareDropOffHotspots,
+  rankLowConvertingHighTrafficLandings,
+} from "../../ops/trafficObservationOps";
+import {
+  pickComparePagesGainingTraffic,
+  pickDiscoveryLandingsWithTraffic,
+  rankWeakEngagementByTrafficClass,
+} from "../../ops/seoTractionOps";
+import {
+  buildCompareImprovementQueue,
+  summarizeCompareImprovement,
+} from "../../ops/compareImprovementOps";
 
 const card = {
   background: "#fff",
@@ -54,6 +67,52 @@ export default function TrafficIntelligencePage() {
   const [opsHealth, setOpsHealth] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const compareDropOffHotspots = useMemo(
+    () => rankCompareDropOffHotspots(data?.compareTrends),
+    [data]
+  );
+
+  const lowConvertingLandings = useMemo(
+    () =>
+      rankLowConvertingHighTrafficLandings(
+        data?.topLandingPages,
+        data?.topConvertingPages
+      ),
+    [data]
+  );
+
+  const discoveryTraffic = useMemo(
+    () => pickDiscoveryLandingsWithTraffic(data?.topLandingPages),
+    [data]
+  );
+
+  const compareTrafficSignals = useMemo(
+    () =>
+      pickComparePagesGainingTraffic(
+        data?.topComparePages,
+        data?.topLandingPages
+      ),
+    [data]
+  );
+
+  const weakEngagementByClass = useMemo(
+    () =>
+      rankWeakEngagementByTrafficClass(
+        data?.topLandingPages,
+        data?.topConvertingPages
+      ),
+    [data]
+  );
+
+  const compareImprovementQueue = useMemo(
+    () =>
+      buildCompareImprovementQueue({
+        compareTrends: data?.compareTrends,
+        topCompares: data?.topComparePages,
+      }),
+    [data]
+  );
 
   const token = localStorage.getItem("token");
 
@@ -261,6 +320,91 @@ export default function TrafficIntelligencePage() {
               rows={data.topLandingPages}
               emptyLabel="No landing page views recorded."
             />
+          </section>
+
+          <section style={card}>
+            <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>Top exit pages</h2>
+            <p style={{ fontSize: "0.8rem", color: "#64748b", marginTop: 0 }}>
+              Wired from <code>traffic-ops</code> / behavioral payloads as{" "}
+              <code>topExitPages</code>. Cross-check high exits in GSC for the same
+              period when available.
+            </p>
+            <RankedTable
+              rows={data.topExitPages}
+              emptyLabel="No exit-page breakdown from backend yet."
+            />
+          </section>
+
+          <section style={card}>
+            <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+              SEO traction signals (internal)
+            </h2>
+            <p style={{ fontSize: "0.8rem", color: "#64748b", marginTop: 0 }}>
+              Heuristic labels on landing paths — triage content and internal links;
+              not a substitute for Search Console impressions.
+            </p>
+            <h3 style={{ fontSize: "0.95rem" }}>Discovery pages with traffic</h3>
+            <RankedTable
+              rows={discoveryTraffic}
+              emptyLabel="No discovery-class landings in this period."
+            />
+            <h3 style={{ fontSize: "0.95rem", marginTop: "1rem" }}>
+              Compare paths with traffic
+            </h3>
+            <RankedTable
+              rows={compareTrafficSignals}
+              emptyLabel="No compare-class traffic rows matched."
+            />
+            <h3 style={{ fontSize: "0.95rem", marginTop: "1rem" }}>
+              Weak engagement (high traffic, not in top converters)
+            </h3>
+            {weakEngagementByClass.length ? (
+              <table style={table}>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: "left" }}>Page</th>
+                    <th style={{ textAlign: "left" }}>Class</th>
+                    <th style={{ textAlign: "right" }}>Views</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {weakEngagementByClass.map((row, i) => (
+                    <tr key={`${row.label}-${i}`}>
+                      <td>{row.label}</td>
+                      <td style={{ textTransform: "capitalize" }}>
+                        {row.trafficClass}
+                      </td>
+                      <td style={{ textAlign: "right" }}>{row.count}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p style={{ color: "#64748b", margin: 0 }}>No rows matched thresholds.</p>
+            )}
+          </section>
+
+          <section style={card}>
+            <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+              Compare improvement queue (deterministic)
+            </h2>
+            <p style={{ fontSize: "0.8rem", color: "#64748b", marginTop: 0 }}>
+              Abandonment + missing-guide heuristics — pair with{" "}
+              <Link to="/admin/real-usage-learning">Real usage learning</Link> for catalog-backed
+              gaps.
+            </p>
+            <p style={{ fontSize: "0.85rem" }}>
+              Rows: {compareImprovementQueue.length} · High abandon:{" "}
+              {summarizeCompareImprovement(compareImprovementQueue).highAbandonment} · Missing guides:{" "}
+              {summarizeCompareImprovement(compareImprovementQueue).missingGuides}
+            </p>
+            <ol style={{ fontSize: "0.8rem", color: "#475569", paddingLeft: "1.1rem" }}>
+              {compareImprovementQueue.slice(0, 10).map((row) => (
+                <li key={row.key} style={{ marginBottom: 6 }}>
+                  <code>{row.pairSlug}</code> — {row.issues.join(", ")}
+                </li>
+              ))}
+            </ol>
           </section>
 
           <section style={card}>
@@ -503,6 +647,58 @@ export default function TrafficIntelligencePage() {
           <section style={card}>
             <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>Variant interest</h2>
             <RankedTable rows={data.variantInterest} />
+          </section>
+
+          <section style={card}>
+            <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+              Compare drop-off hotspots (heuristic)
+            </h2>
+            <p style={{ fontSize: "0.8rem", color: "#64748b", marginTop: 0 }}>
+              Sessions with volume but completion % at or below 42 — tune UX or data
+              quality for these pairs.
+            </p>
+            {compareDropOffHotspots.length ? (
+              <table style={table}>
+                <thead>
+                  <tr>
+                    <th style={{ textAlign: "left" }}>Compare</th>
+                    <th style={{ textAlign: "right" }}>Started</th>
+                    <th style={{ textAlign: "right" }}>Complete %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {compareDropOffHotspots.map((row) => (
+                    <tr key={row.slug}>
+                      <td>{row.slug}</td>
+                      <td style={{ textAlign: "right" }}>{row.started}</td>
+                      <td style={{ textAlign: "right" }}>{row.completionRate}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <p style={{ color: "#64748b", margin: 0 }}>No hotspots matched thresholds.</p>
+            )}
+          </section>
+
+          <section style={card}>
+            <h2 style={{ marginTop: 0, fontSize: "1.1rem" }}>
+              High-traffic landings without lead match (heuristic)
+            </h2>
+            <p style={{ fontSize: "0.8rem", color: "#64748b", marginTop: 0 }}>
+              Landing labels not present in top converting list — review CTAs and
+              trust copy (label matching is approximate).
+            </p>
+            {lowConvertingLandings.length ? (
+              <RankedTable rows={lowConvertingLandings} emptyLabel="" />
+            ) : (
+              <p style={{ color: "#64748b", margin: 0 }}>No rows matched thresholds.</p>
+            )}
+            <p style={{ fontSize: "0.8rem", marginTop: "0.75rem" }}>
+              <Link to="/admin/real-usage-learning">Discovery friction buffer</Link>
+              {" · "}
+              <Link to="/admin/ops-discipline">Daily ops discipline</Link>
+            </p>
           </section>
         </>
       )}

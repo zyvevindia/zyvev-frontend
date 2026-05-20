@@ -1,20 +1,25 @@
 import {
+  Link,
   useLocation,
   useNavigate,
 } from "react-router-dom";
 
+import "../styles/compare-page.css";
+
 import {
+  lazy,
+  Suspense,
   useCallback,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 
-import {
-  Helmet,
-} from "react-helmet-async";
-
 import JsonLd from "../components/SEO/JsonLd";
+import SeoHead from "../components/SEO/SeoHead";
+import { buildCompareToolMeta } from "../seo/pageMetadata";
+import { canonicalCompareHubUrl } from "../seo/canonical";
 
 import {
   buildBreadcrumbSchema,
@@ -25,23 +30,57 @@ import CompactCarCard from "../components/CompactCarCard";
 
 import CompareInsightCard from "../components/catalog/CompareInsightCard";
 
-import CompareScenarioPanel from "../components/catalog/CompareScenarioPanel";
-
 import CompareTrustPanel from "../components/catalog/CompareTrustPanel";
 
+const CompareBelowFoldSections = lazy(() =>
+  import("../components/catalog/CompareBelowFoldSections")
+);
+
 import { formatIndianPriceCompact } from "../utils/formatIndianPrice";
+
+import { vehicleDetailPath } from "../utils/vehicleRoutes";
+
+import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest";
+import { compareGuidePath } from "../seo/slugs";
 
 import LeadInquiryModal from "../components/LeadInquiryModal";
 import WhatsAppLeadCta from "../components/leads/WhatsAppLeadCta";
 
 import {
+  COMPARE_CARS_SYNC_EVENT,
   loadCompareCarsFromStorage,
   saveCompareCars,
 } from "../utils/compareCarsStorage";
 
 import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
+import {
+  trackLaunchCompareCta,
+  trackLaunchCompareStarted,
+} from "../launch/launchTelemetry";
 
 import { BUYER_EVENTS } from "../event-tracking/eventTypes";
+
+import {
+  attachIntelligenceToCompareCars,
+  getActiveCompareRows,
+  formatCompareCellValue,
+  getCompareHighlightWinnerId,
+} from "../intelligence/compareSpecRows";
+
+import {
+  trackCompareAbandoned,
+  trackIntelligenceCompareEngaged,
+} from "../analytics/funnel";
+import UsefulnessFeedback from "../components/feedback/UsefulnessFeedback";
+
+const POPULAR_COMPARE_SLUGS = (GENERATED_COMPARE_SLUGS || []).slice(0, 6);
+
+function formatCompareGuideLabel(slug) {
+  return String(slug || "")
+    .replace(/-vs-/gi, " vs ")
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 /* =========================================================
    ===================== BEST VALUE (PURE) ===================
@@ -73,24 +112,15 @@ function getBestValueId(
     );
 
   cars.forEach((c) => {
-
+    const catalogScore = c.catalogMeta?.compareValueScore;
     const score =
+      catalogScore != null
+        ? -Number(catalogScore)
+        : (c.startingPrice || 1) /
+          (c.specifications?.range || c.range || 1);
 
-      (
-        c.startingPrice || 1
-      ) /
-
-      (
-        c.specifications
-          ?.range || 1
-      );
-
-    if (
-      score < bestScore
-    ) {
-
+    if (score < bestScore) {
       best = c;
-
       bestScore = score;
     }
   });
@@ -126,27 +156,46 @@ export default function ComparePage() {
       "Request callback"
     );
 
-  const cars =
-    useMemo(() => {
+  const [cars, setCars] = useState(
+    () => loadCompareCarsFromStorage()
+  );
 
-      if (
-        location.state?.cars !=
-        null
-      ) {
+  const intelligentCars = useMemo(
+    () => attachIntelligenceToCompareCars(cars),
+    [cars]
+  );
 
-        return Array.isArray(
-          location.state.cars
-        )
-          ? location.state.cars
-          : [];
-      }
+  const compareSpecRows = useMemo(
+    () => getActiveCompareRows(intelligentCars),
+    [intelligentCars]
+  );
 
-      return loadCompareCarsFromStorage();
-    }, [
-      location.state,
+  useEffect(() => {
+    if (Array.isArray(location.state?.cars)) {
+      setCars(saveCompareCars(location.state.cars));
+      return;
+    }
 
-      location.key,
-    ]);
+    setCars(loadCompareCarsFromStorage());
+  }, [location.key, location.state?.cars]);
+
+  useEffect(() => {
+    const onSync = () => {
+      setCars(loadCompareCarsFromStorage());
+    };
+
+    window.addEventListener(
+      COMPARE_CARS_SYNC_EVENT,
+      onSync
+    );
+
+    return () => {
+      window.removeEventListener(
+        COMPARE_CARS_SYNC_EVENT,
+        onSync
+      );
+    };
+  }, []);
 
   const compareVehicleLabel =
     useMemo(() => {
@@ -178,9 +227,21 @@ export default function ComparePage() {
     useMemo(() => {
 
       return getBestValueId(
-        cars
+        intelligentCars
       );
-    }, [cars]);
+    }, [intelligentCars]);
+
+  const intelligenceTrackedRef = useRef(false);
+  useEffect(() => {
+    if (intelligentCars.length < 2) return;
+    if (intelligenceTrackedRef.current) return;
+    intelligenceTrackedRef.current = true;
+    trackIntelligenceCompareEngaged({
+      vehicleSlugs: intelligentCars.map((c) => c.slug),
+      sourcePage: "compare",
+      rowCount: compareSpecRows.length,
+    });
+  }, [intelligentCars, compareSpecRows.length]);
 
   const primaryMongoCarId =
     useMemo(() => {
@@ -211,10 +272,19 @@ export default function ComparePage() {
     []
   );
 
+  const comparePageMeta = useMemo(
+    () => buildCompareToolMeta({ cars }),
+    [cars]
+  );
+
   const compareListSchema = useMemo(
     () =>
       cars.length >= 2
-        ? buildCompareItemListSchema(cars)
+        ? buildCompareItemListSchema(
+            cars,
+            undefined,
+            canonicalCompareHubUrl()
+          )
         : null,
     [cars]
   );
@@ -225,13 +295,31 @@ export default function ComparePage() {
     const slugs = compareSlugsKey.split("|");
 
     if (slugs.length >= 2) {
-      trackBuyerEvent(BUYER_EVENTS.COMPARE_STARTED, {
+      trackLaunchCompareStarted({
         sourcePage: "compare",
         vehicleSlugs: slugs,
         compareDepth: slugs.length,
       });
     }
   }, [compareSlugsKey]);
+
+  const compareAbandonTracked = useRef(false);
+  const inquiryOpenRef = useRef(inquiryOpen);
+  inquiryOpenRef.current = inquiryOpen;
+  useEffect(() => {
+    if (cars.length < 2) return undefined;
+    const slugs = cars.map((c) => c.slug).filter(Boolean);
+    const depth = cars.length;
+    return () => {
+      if (compareAbandonTracked.current || inquiryOpenRef.current) return;
+      compareAbandonTracked.current = true;
+      trackCompareAbandoned({
+        vehicleSlugs: slugs,
+        compareDepth: depth,
+        sourcePage: "compare",
+      });
+    };
+  }, [cars]);
 
   const openInquiry = (
     headline,
@@ -254,16 +342,17 @@ export default function ComparePage() {
       .map((c) => c?.slug)
       .filter(Boolean);
 
+    trackLaunchCompareCta({
+      sourcePage: "compare",
+      headline,
+      vehicleSlugs: slugs,
+    });
+
     trackBuyerEvent(BUYER_EVENTS.LEAD_CTA_INITIATED, {
       sourcePage: "compare",
       vehicleSlugs: slugs,
     });
 
-    trackBuyerEvent(BUYER_EVENTS.COMPARE_COMPLETED, {
-      sourcePage: "compare",
-      vehicleSlugs: slugs,
-      compareDepth: cars.length,
-    });
   };
 
   const clearComparison =
@@ -275,6 +364,13 @@ export default function ComparePage() {
         state: {},
       });
     }, [navigate]);
+
+  const goToExploreCompare = useCallback(() => {
+    if (cars.length) {
+      saveCompareCars(cars);
+    }
+    navigate("/cars?compareMode=true");
+  }, [cars, navigate]);
 
   const removeFromCompare = useCallback(
     (target) => {
@@ -300,44 +396,23 @@ export default function ComparePage() {
     return (
 
       <>
-        <Helmet>
+        <SeoHead meta={comparePageMeta} />
 
-          <title>
-            Compare Electric Vehicles | EVSavari
-          </title>
+        <div className="compare-empty">
 
-          <meta
-            name="description"
-            content="Compare electric cars, scooters and bikes side-by-side including battery range, pricing, charging and specifications."
-          />
+          <div className="compare-empty__card">
 
-          <meta
-            name="robots"
-            content="index, follow"
-          />
-
-          <link
-            rel="canonical"
-            href="https://evsavari.com/compare"
-          />
-
-        </Helmet>
-
-        <div style={emptyCompareWrapper}>
-
-          <div style={emptyCompareCard}>
-
-            <div style={emptyCompareIcon}>
+            <div className="compare-empty__icon" aria-hidden>
               ⚡
             </div>
 
-            <h2 style={emptyCompareTitle}>
+            <h2 className="compare-empty__title">
               {cars.length === 1
                 ? "Add one more EV"
                 : "No EVs selected"}
             </h2>
 
-            <p style={emptyCompareText}>
+            <p className="compare-empty__text">
               {cars.length === 1
                 ? "You need at least 2 vehicles for a side-by-side comparison. Add another EV from the catalog."
                 : "Select at least 2 electric vehicles to unlock premium side-by-side comparison."}
@@ -351,10 +426,52 @@ export default function ComparePage() {
                 )
               }
 
-              style={primaryButton}
+              className="compare-hero__btn compare-hero__btn--primary"
             >
               Explore EVs
             </button>
+
+            {POPULAR_COMPARE_SLUGS.length > 0 ? (
+              <div style={{ marginTop: "1.75rem" }}>
+                <p
+                  style={{
+                    fontSize: "0.8125rem",
+                    fontWeight: 600,
+                    color: "#64748b",
+                    margin: "0 0 0.5rem",
+                  }}
+                >
+                  Popular comparisons
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "0.5rem",
+                    justifyContent: "center",
+                  }}
+                >
+                  {POPULAR_COMPARE_SLUGS.map((slug) => (
+                    <Link
+                      key={slug}
+                      to={compareGuidePath(slug)}
+                      style={{
+                        fontSize: "0.8125rem",
+                        padding: "0.35rem 0.65rem",
+                        borderRadius: "999px",
+                        border: "1px solid #e2e8f0",
+                        background: "#fff",
+                        color: "#0f172a",
+                        textDecoration: "none",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {formatCompareGuideLabel(slug)}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : null}
 
           </div>
 
@@ -363,71 +480,67 @@ export default function ComparePage() {
     );
   }
 
-  /* =========================================================
-     ========================= RENDER ========================
-     ========================================================= */
+  const gridClass =
+    cars.length === 3
+      ? "compare-page-grid compare-page-grid--cols-3"
+      : "compare-page-grid";
 
   return (
 
     <>
-      <Helmet>
-
-        <title>
-          Compare Electric Vehicles | EVSavari
-        </title>
-
-        <meta
-          name="description"
-          content="Compare electric cars, scooters and bikes side-by-side including battery range, pricing, charging and specifications."
-        />
-
-        <meta
-          name="robots"
-          content="index, follow"
-        />
-
-        <link
-          rel="canonical"
-          href="https://evsavari.com/compare"
-        />
-
-      </Helmet>
+      <SeoHead meta={comparePageMeta} />
 
       <JsonLd data={compareBreadcrumb} />
       {compareListSchema && (
         <JsonLd data={compareListSchema} />
       )}
 
-      <div style={comparePage}>
+      <div className="compare-page compare-page--with-fab">
 
         {/* ================= HERO ================= */}
 
-        <section style={compareHeroSection}>
+        <section className="compare-hero">
+          <div
+            className="compare-hero__glow compare-hero__glow--tr"
+            aria-hidden
+          />
+          <div
+            className="compare-hero__glow compare-hero__glow--bl"
+            aria-hidden
+          />
 
-          <div style={compareHeroGlow} />
-
-          <div style={compareHeroGlowBottom} />
-
-          <div style={compareHeroContent}>
-
-            <div style={compareBadge}>
+          <div className="compare-hero__content">
+            <span className="compare-hero__badge">
               Premium EV Comparison
-            </div>
+            </span>
 
-            <h1 style={compareHeroTitle}>
+            <h1 className="compare-hero__title">
               Compare Electric Vehicles
             </h1>
 
-            <p style={compareHeroSubtitle}>
-              Analyze pricing,
-              battery range,
-              charging speed,
-              and specifications
-              side-by-side to discover
-              the perfect EV for your lifestyle.
+            <p className="compare-hero__subtitle">
+              Side-by-side pricing, range, charging, and specs to
+              find the right EV for your needs.
             </p>
 
-            <div style={compareButtons}>
+            {cars.length === 2 ? (
+              <p
+                style={{
+                  margin: "0.35rem auto 0",
+                  fontSize: "0.875rem",
+                  color: "#64748b",
+                  maxWidth: "36rem",
+                }}
+              >
+                You can compare up to three EVs — add one more from{" "}
+                <Link to="/cars?compareMode=true" style={{ color: "#2563eb", fontWeight: 600 }}>
+                  Browse
+                </Link>{" "}
+                for charging and ownership context side by side.
+              </p>
+            ) : null}
+
+            <div className="compare-hero__actions">
 
               <button
                 type="button"
@@ -438,21 +551,20 @@ export default function ComparePage() {
                   )
                 }
 
-                style={secondaryButton}
+                className="compare-hero__btn compare-hero__btn--ghost"
               >
                 Request callback
               </button>
 
               <button
                 type="button"
+                className="compare-hero__btn compare-hero__btn--ghost"
                 onClick={() =>
                   openInquiry(
                     "Get the best deal",
                     "Get best deal"
                   )
                 }
-
-                style={secondaryButton}
               >
                 Get best deal
               </button>
@@ -468,46 +580,27 @@ export default function ComparePage() {
 
               <button
                 type="button"
-                onClick={() =>
-                  navigate(
-                    "/cars?compareMode=true"
-                  )
-                }
-
-                style={secondaryButton}
+                onClick={goToExploreCompare}
+                className="compare-hero__btn compare-hero__btn--ghost"
               >
                 Explore More EVs
               </button>
 
               <button
                 type="button"
-                onClick={
-                  clearComparison
-                }
-
-                style={primaryButton}
+                className="compare-hero__btn compare-hero__btn--primary"
+                onClick={clearComparison}
               >
                 Clear Comparison
               </button>
-
             </div>
-
           </div>
-
         </section>
 
-        {/* ================= MAIN ================= */}
+        <section className="compare-main">
+          <div className={gridClass}>
 
-        <section style={compareSection}>
-
-          {/* ================= CARD GRID ================= */}
-
-          <div
-            className="compare-page-grid"
-            style={compareGrid}
-          >
-
-            {cars.map((car) => {
+            {cars.map((car, cardIndex) => {
 
               const isBest =
                 car._id === bestId;
@@ -517,7 +610,6 @@ export default function ComparePage() {
                 <div
                   key={car._id || car.slug}
                   className={`compare-page-card${isBest ? " compare-page-card--best" : ""}`}
-                  style={compareCardWrapper}
                 >
 
                   {isBest && (
@@ -530,26 +622,17 @@ export default function ComparePage() {
                     type="button"
                     onClick={() => removeFromCompare(car)}
                     aria-label={`Remove ${car.name} from comparison`}
-                    style={{
-                      position: "absolute",
-                      top: "10px",
-                      right: "10px",
-                      zIndex: 2,
-                      border: "none",
-                      borderRadius: "8px",
-                      padding: "0.35rem 0.6rem",
-                      fontSize: "12px",
-                      fontWeight: 600,
-                      background: "rgba(15,23,42,0.72)",
-                      color: "#fff",
-                      cursor: "pointer",
-                    }}
+                    className="compare-page-card__remove"
                   >
                     Remove
                   </button>
 
-                  <CompactCarCard
-                    car={{
+                  <div className="compare-page-card__body">
+                    <div className="compare-page-card__vehicle">
+                      <CompactCarCard
+                        variant="compare"
+                        eagerImage={cardIndex === 0}
+                        car={{
                       ...car,
 
                       image:
@@ -579,68 +662,86 @@ export default function ComparePage() {
                             null
                           ? `Value ${car.catalogMeta.compareValueScore}`
                           : "Compared",
-                    }}
-                  />
+                        }}
+                      />
+                    </div>
 
-                  <div className="compare-page-card__insight">
-                    <CompareInsightCard car={car} />
+                    <div className="compare-page-card__insight">
+                      <CompareInsightCard car={car} />
+                    </div>
+
+                    <div className="compare-page-card__cta-wrap">
+                      <Link
+                        to={vehicleDetailPath(car, car._id)}
+                        className="compare-page-card__cta"
+                      >
+                        View Details
+                      </Link>
+                    </div>
                   </div>
-
                 </div>
               );
             })}
 
           </div>
 
-          <CompareTrustPanel cars={cars} />
+          <div className="compare-trust-panel">
+            <CompareTrustPanel cars={cars} />
+          </div>
 
-          <CompareScenarioPanel cars={cars} />
+          <UsefulnessFeedback
+            context="compare"
+            sourcePage="/compare"
+            metadata={{
+              vehicleSlugs: cars.map((c) => c.slug).filter(Boolean),
+              compareDepth: cars.length,
+            }}
+          />
 
-          {/* ================= SPEC TABLE ================= */}
+          <Suspense
+            fallback={
+              <div
+                className="compare-deferred-skeleton"
+                aria-busy="true"
+                aria-label="Loading comparison insights"
+              />
+            }
+          >
+            <CompareBelowFoldSections
+              cars={cars}
+              intelligentCars={intelligentCars}
+            />
+          </Suspense>
 
-          <div style={specSection}>
-
-            <div style={specHeaderRow}>
-
-              <h2 style={specHeading}>
+          <div className="compare-spec">
+            <div className="compare-spec__header">
+              <h2 className="compare-spec__title">
                 Detailed Specifications
               </h2>
-
-              <div style={mobileHint}>
-                ← Swipe horizontally →
-              </div>
-
+              <span className="compare-spec__hint">
+                Swipe horizontally on mobile
+              </span>
             </div>
 
-            <div style={specTableWrapper}>
-
-              <table style={specTable}>
+            <div className="compare-spec__table-wrap">
+              <table className="compare-spec__table">
 
                 <thead>
 
                   <tr>
 
-                    <th style={specHeaderLeft}>
-                      Specifications
-                    </th>
+                    <th>Specifications</th>
 
                     {cars.map((car) => {
-
-                      const isBest =
-                        car._id === bestId;
-
+                      const isBest = car._id === bestId;
                       return (
-
                         <th
                           key={car._id}
-
-                          style={{
-                            ...specHeader,
-
-                            ...(isBest
-                              ? bestSpecHeader
-                              : {}),
-                          }}
+                          className={
+                            isBest
+                              ? "compare-spec__th--best"
+                              : undefined
+                          }
                         >
                           {car.name}
                         </th>
@@ -652,176 +753,82 @@ export default function ComparePage() {
                 </thead>
 
                 <tbody>
-
-                  {/* ================= PRICE ================= */}
-
-                  <tr>
-
-                    <td style={specLabel}>
-                      Starting Price
-                    </td>
-
-                    {cars.map((car) => {
-
-                      const isBest =
-                        car._id === bestId;
-
-                      return (
-
-                        <td
-                          key={car._id}
-
-                          style={{
-                            ...specValue,
-
-                            ...(isBest
-                              ? bestSpecValue
-                              : {}),
-                          }}
-                        >
-                          {formatIndianPriceCompact(
-                            car.startingPrice ||
-                              0
-                          )}
-                        </td>
+                  {compareSpecRows.map((row) => {
+                    const highlightId =
+                      getCompareHighlightWinnerId(
+                        intelligentCars,
+                        row
                       );
-                    })}
-
-                  </tr>
-
-                  {/* ================= RANGE ================= */}
-
-                  <tr>
-
-                    <td style={specLabel}>
-                      Driving Range
-                    </td>
-
-                    {cars.map((car) => {
-
-                      const range =
-                        car
-                          .specifications
-                          ?.range || 0;
-
-                      const maxRange =
-                        Math.max(
-
-                          ...cars.map(
-                            (c) =>
-
-                              c
-                                .specifications
-                                ?.range || 0
-                          )
-                        );
-
-                      return (
-
-                        <td
-                          key={car._id}
-
-                          style={{
-                            ...specValue,
-
-                            ...(range === maxRange
-                              ? greenHighlight
-                              : {}),
-                          }}
-                        >
-                          {range} km
+                    return (
+                      <tr key={row.id}>
+                        <td className="compare-spec__label">
+                          {row.label}
+                          {row.estimated ? (
+                            <span className="ev-intel-est">
+                              {" "}
+                              Est.
+                            </span>
+                          ) : null}
                         </td>
-                      );
-                    })}
-
-                  </tr>
-
-                  {/* ================= BATTERY ================= */}
-
-                  <tr>
-
-                    <td style={specLabel}>
-                      Battery Pack
-                    </td>
-
-                    {cars.map((car) => (
-
-                      <td
-                        key={car._id}
-
-                        style={specValue}
-                      >
-                        {
-                          car
-                            .specifications
-                            ?.batteryPack
-                        }
-                      </td>
-                    ))}
-
-                  </tr>
-
-                  {/* ================= CHARGING ================= */}
-
-                  <tr>
-
-                    <td style={specLabel}>
-                      Charging Time
-                    </td>
-
-                    {cars.map((car) => (
-
-                      <td
-                        key={car._id}
-
-                        style={specValue}
-                      >
-                        {
-                          car
-                            .specifications
-                            ?.chargingTime
-                        }
-                      </td>
-                    ))}
-
-                  </tr>
-
-                  {/* ================= TOP SPEED ================= */}
-
-                  <tr>
-
-                    <td style={specLabel}>
-                      Top Speed
-                    </td>
-
-                    {cars.map((car) => (
-
-                      <td
-                        key={car._id}
-
-                        style={specValue}
-                      >
-                        {
-                          car
-                            .specifications
-                            ?.topSpeed
-                        }
-                      </td>
-                    ))}
-
-                  </tr>
-
+                        {intelligentCars.map((car) => {
+                          const raw = row.getRaw(car);
+                          const isBest =
+                            highlightId === car._id;
+                          const isValueBest =
+                            row.id === "price" &&
+                            car._id === bestId;
+                          return (
+                            <td
+                              key={car._id}
+                              className={`compare-spec__value${
+                                isBest || isValueBest
+                                  ? " compare-spec__value--highlight"
+                                  : ""
+                              }${
+                                isValueBest
+                                  ? " compare-spec__value--best"
+                                  : ""
+                              }`}
+                            >
+                              {formatCompareCellValue(
+                                raw,
+                                row
+                              )}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
                 </tbody>
 
               </table>
 
             </div>
+            {compareSpecRows.some((r) => r.estimated) && (
+              <p className="compare-spec__estimate-hint">
+                * Estimated values use configurable assumptions — not OEM
+                quotes. Confirm specs with the dealer.
+              </p>
+            )}
 
           </div>
 
         </section>
 
       </div>
+
+      <button
+        type="button"
+        className="compare-add-more-fab"
+        onClick={goToExploreCompare}
+        aria-label="Add more EVs to comparison"
+      >
+        <span className="compare-add-more-fab__icon" aria-hidden>
+          +
+        </span>
+        Add more EVs
+      </button>
 
       <LeadInquiryModal
         isOpen={inquiryOpen}

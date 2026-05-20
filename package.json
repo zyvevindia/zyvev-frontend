@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,12 +15,26 @@
     "prebuild": "npm run content:generate && npm run build:sitemaps",
     "lint": "eslint .",
     "seo:qa": "node scripts/seo-qa.mjs",
+    "seo:foundation": "node scripts/seo-foundation-smoke.mjs",
+    "ops:analytics-smoke": "node scripts/ops-analytics-smoke.mjs",
+    "intelligence:smoke": "node scripts/intelligence-smoke.mjs",
+    "intelligence:phase2-smoke": "node scripts/intelligence-phase2-smoke.mjs",
+    "trust:smoke": "node scripts/trust-layer-smoke.mjs",
+    "catalog-ops:smoke": "node scripts/catalog-ops-smoke.mjs",
+    "ops:usage-learning-smoke": "node scripts/ops-usage-learning-smoke.mjs",
+    "soft-launch:smoke": "node scripts/soft-launch-smoke.mjs",
+    "post-launch:smoke": "npm run seo:qa && npm run trust:smoke && npm run soft-launch:smoke && npm run catalog-ops:smoke && npm run intelligence:smoke && npm run ops:usage-learning-smoke",
+    "ingestion:smoke": "node scripts/ingestion-smoke.mjs",
     "media:audit": "node scripts/media-audit.mjs",
     "media:fix-cloudinary": "node scripts/cloudinary-fix-publicids.mjs",
     "media:discover-cloudinary": "node scripts/cloudinary-fix-publicids.mjs --discover",
     "launch:smoke": "node scripts/launch-smoke.mjs",
+    "launch:validate": "node scripts/launch-validate.mjs",
     "check:api": "node scripts/check-local-api.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy:smoke": "node scripts/deploy-smoke.mjs",
+    "deploy:repo-check": "node scripts/deployment-repo-validation.mjs",
+    "ci:full": "npm run deploy:repo-check && npm run build && npm run post-launch:smoke && npm run ingestion:smoke"
   },
   "dependencies": {
     "react": "^19.2.5",

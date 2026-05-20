@@ -8,9 +8,11 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import SEO from "../components/SEO/SEO";
+import SeoHead from "../components/SEO/SeoHead";
+import { buildHomePageMeta } from "../seo/pageMetadata";
 
 import { API_URL } from "../config";
+import { safeFetchJson } from "../utils/safeFetch";
 
 import { LOCAL_FALLBACK_EV } from "../utils/imageUtils";
 
@@ -23,11 +25,6 @@ import {
   sortFamilies,
 } from "../utils/modelFamily";
 
-import {
-  COMPARE_CARS_STORAGE_KEY,
-  COMPARE_CARS_SYNC_EVENT,
-  loadCompareCarsFromStorage,
-} from "../utils/compareCarsStorage";
 
 import HomeSection from "../components/HomeSection";
 
@@ -88,13 +85,6 @@ const upcomingCars = [
 
 export default function Home() {
 
-  const [page, setPage] =
-    useState(1);
-
-  const [totalPages,
-    setTotalPages] =
-    useState(1);
-
   const navigate =
     useNavigate();
 
@@ -111,12 +101,6 @@ export default function Home() {
 
   const [fetchRetryKey, setFetchRetryKey] =
     useState(0);
-
-  const [compareList,
-    setCompareList] =
-    useState(
-      loadCompareCarsFromStorage
-    );
 
   const [filters,
     setFilters] =
@@ -136,17 +120,6 @@ export default function Home() {
     const filtered = filterFamilies(aggregated, filters);
     return sortFamilies(filtered, filters.sortBy);
   }, [variants, filters]);
-
-  const familiesPerPage = 6;
-
-  const paginatedFamilies = useMemo(
-    () =>
-      families.slice(
-        (page - 1) * familiesPerPage,
-        page * familiesPerPage
-      ),
-    [families, page]
-  );
 
   const featuredFamilies = useMemo(
     () =>
@@ -175,6 +148,14 @@ export default function Home() {
     [families]
   );
 
+  const popularFamilies = useMemo(
+    () =>
+      featuredFamilies.length > 0
+        ? featuredFamilies
+        : families.slice(0, 6),
+    [featuredFamilies, families]
+  );
+
   /* =========================================================
      ======================= FETCH CARS ======================
      ========================================================= */
@@ -194,164 +175,37 @@ export default function Home() {
 
     let cancelled = false;
 
-    fetch(`${API_URL}/cars?${query}`)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to load EV catalog");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        if (cancelled) return;
-        setVariants((data.cars || []).map(normalizeCar));
-        setTotalPages(1);
-        setLoading(false);
-      })
-      .catch((err) => {
-        if (cancelled) return;
-        console.error(err);
+    (async () => {
+      const { ok, data } = await safeFetchJson(
+        `${API_URL}/cars?${query}`,
+        { label: "homepage catalog", fallback: { cars: [] } }
+      );
+
+      if (cancelled) return;
+
+      if (!ok) {
+        setVariants([]);
         setError(
           "Unable to load EV data right now. Check your connection and try again."
         );
-        setLoading(false);
-      });
+      } else {
+        setVariants((data?.cars || []).map(normalizeCar));
+        setError("");
+      }
+      setLoading(false);
+    })();
 
     return () => {
       cancelled = true;
     };
   }, [filters, fetchRetryKey]);
 
-  useEffect(() => {
-    setTotalPages(
-      Math.max(
-        1,
-        Math.ceil(families.length / familiesPerPage)
-      )
-    );
-    if (
-      page >
-      Math.max(
-        1,
-        Math.ceil(families.length / familiesPerPage)
-      )
-    ) {
-      setPage(1);
-    }
-  }, [families.length, page]);
-
-  /* =========================================================
-     ======================= SCROLL TOP ======================
-     ========================================================= */
-
-  useEffect(() => {
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-
-  }, [page]);
-
-  /* =========================================================
-     ======================= RESET PAGE ======================
-     ========================================================= */
-
-  useEffect(() => {
-
-    setPage(1);
-
-  }, [filters]);
-
   /* =========================================================
      ======================= SAVE COMPARE ====================
      ========================================================= */
 
-  useEffect(() => {
-
-    localStorage.setItem(
-      COMPARE_CARS_STORAGE_KEY,
-
-      JSON.stringify(
-        compareList
-      )
-    );
-
-  }, [compareList]);
-
-  useEffect(() => {
-
-    const onCompareSync =
-      () => {
-
-        setCompareList(
-          loadCompareCarsFromStorage()
-        );
-      };
-
-    window.addEventListener(
-      COMPARE_CARS_SYNC_EVENT,
-
-      onCompareSync
-    );
-
-    return () => {
-
-      window.removeEventListener(
-        COMPARE_CARS_SYNC_EVENT,
-
-        onCompareSync
-      );
-    };
-  }, []);
-
-  /* =========================================================
-     ======================= COMPARE =========================
-     ========================================================= */
-
-  const toggleCompare =
-    (car) => {
-
-      if (
-        compareList.find(
-          (c) =>
-            c._id ===
-            car._id
-        )
-      ) {
-
-        setCompareList(
-          compareList.filter(
-            (c) =>
-              c._id !==
-              car._id
-          )
-        );
-
-      } else {
-
-        if (
-          compareList.length >=
-          3
-        ) {
-
-          alert(
-            "Maximum 3 EVs can be compared."
-          );
-
-          return;
-        }
-
-        setCompareList([
-          ...compareList,
-          car,
-        ]);
-      }
-    };
-
   const renderFamilyCard = (family, badge) => {
     const card = familyToListingCard(family);
-    const compareTarget =
-      family.defaultVariant || card;
 
     return (
       <CompactCarCard
@@ -366,9 +220,6 @@ export default function Home() {
           range: family.maxRange,
           price: family.startingPrice,
         }}
-        onCompare={() =>
-          toggleCompare(compareTarget)
-        }
       />
     );
   };
@@ -414,15 +265,7 @@ export default function Home() {
   return (
 
     <>
-      <SEO
-        title="EVSavari | India's Premium EV Marketplace"
-
-        description="Explore electric cars, scooters and bikes in India. Compare EV prices, battery range, charging time, specifications and reviews on EVSavari."
-
-        keywords="EV India, electric cars India, EV marketplace, Tata EV, MG EV, Mahindra EV, electric scooters, EVSavari"
-
-        canonical="https://evsavari.com"
-      />
+      <SeoHead meta={buildHomePageMeta()} />
 
       <JsonLd
         data={homeSchema}
@@ -476,7 +319,7 @@ export default function Home() {
                 style={secondaryHeroButton}
 
                 onClick={() =>
-                  navigate("/compare")
+                  navigate("/cars?compareMode=true")
                 }
               >
                 Compare EVs
@@ -702,10 +545,7 @@ export default function Home() {
 
             !error &&
 
-            (featuredFamilies.length > 0
-              ? featuredFamilies
-              : paginatedFamilies
-            ).map((family) =>
+            popularFamilies.map((family) =>
               renderFamilyCard(
                 family,
                 family.isFeatured
@@ -791,6 +631,7 @@ export default function Home() {
           subtitle="Stay ahead with upcoming electric vehicles expected to launch soon in India."
 
           viewAllLink="/upcoming"
+          compactBottom
         >
 
           {upcomingCars.map(
@@ -805,84 +646,7 @@ export default function Home() {
 
         </HomeSection>
 
-        {/* ================= PAGINATION ================= */}
-
-        <div style={paginationWrapper}>
-
-          <button
-            disabled={page === 1}
-
-            onClick={() =>
-              setPage(page - 1)
-            }
-
-            style={secondaryButton}
-          >
-            ⬅ Prev
-          </button>
-
-          <span style={paginationText}>
-            Page {page} of {totalPages}
-          </span>
-
-          <button
-            disabled={
-              page === totalPages
-            }
-
-            onClick={() =>
-              setPage(page + 1)
-            }
-
-            style={secondaryButton}
-          >
-            Next ➡
-          </button>
-
-        </div>
-
-        {/* ================= FLOATING COMPARE ================= */}
-
-        <>
-          {compareList.length ===
-            1 && (
-
-            <div style={compareHelperBox}>
-
-              Select 1 more EV to compare
-
-            </div>
-          )}
-
-          {compareList.length >=
-            2 && (
-
-            <button
-              style={
-                floatingCompareButton
-              }
-
-              onClick={() =>
-                navigate(
-                  "/compare",
-
-                  {
-                    state: {
-                      cars:
-                        compareList,
-                    },
-                  }
-                )
-              }
-            >
-              Compare (
-              {
-                compareList.length
-              }
-              )
-            </button>
-          )}
-        </>
+        {/* Curated sections end — homepage has no pagination */}
 
       </div>
     </>
@@ -895,9 +659,7 @@ export default function Home() {
 
 const pageContainer = {
   minHeight: "100vh",
-  background:
-    "#f5f7fb",
-  paddingBottom: "70px",
+  background: "#f5f7fb",
 };
 
 /* =========================================================
@@ -1175,112 +937,6 @@ const secondaryButton = {
   fontSize: "14px",
 
   whiteSpace: "nowrap",
-};
-
-/* =========================================================
-   ======================== PAGINATION ======================
-   ========================================================= */
-
-const paginationWrapper = {
-  display: "flex",
-
-  justifyContent: "center",
-
-  alignItems: "center",
-
-  gap: "18px",
-
-  flexWrap: "wrap",
-
-  padding:
-    "34px 20px 10px",
-};
-
-const paginationText = {
-  fontWeight: "700",
-
-  color: "#0f172a",
-
-  fontSize: "15px",
-
-  background: "white",
-
-  padding: "12px 18px",
-
-  borderRadius: "16px",
-
-  boxShadow:
-    "0 8px 20px rgba(15,23,42,0.05)",
-};
-
-/* =========================================================
-   ==================== FLOATING COMPARE ===================
-   ========================================================= */
-
-const compareHelperBox = {
-  position: "fixed",
-
-  bottom: "22px",
-
-  right: "22px",
-
-  background:
-    "rgba(15,23,42,0.92)",
-
-  color: "white",
-
-  padding: "14px 18px",
-
-  borderRadius: "18px",
-
-  fontWeight: "600",
-
-  fontSize: "14px",
-
-  backdropFilter:
-    "blur(14px)",
-
-  boxShadow:
-    "0 14px 34px rgba(0,0,0,0.24)",
-
-  zIndex: 999,
-
-  border:
-    "1px solid rgba(255,255,255,0.08)",
-
-  maxWidth: "280px",
-
-  lineHeight: "1.5",
-};
-
-const floatingCompareButton = {
-  position: "fixed",
-
-  bottom: "22px",
-
-  right: "22px",
-
-  background:
-    "linear-gradient(135deg, #2563eb, #1d4ed8)",
-
-  color: "white",
-
-  border: "none",
-
-  padding: "16px 24px",
-
-  borderRadius: "18px",
-
-  cursor: "pointer",
-
-  fontWeight: "700",
-
-  fontSize: "15px",
-
-  boxShadow:
-    "0 16px 36px rgba(37,99,235,0.34)",
-
-  zIndex: 1000,
 };
 
 /* =========================================================

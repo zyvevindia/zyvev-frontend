@@ -1,3 +1,8 @@
+import {
+  isValidIndiaCity,
+  isValidIndiaState,
+} from "../data/indiaLocations";
+
 /* =========================================================
    ===================== HELPERS ===========================
    ========================================================= */
@@ -130,6 +135,7 @@ export const validateLeadForm = ({
   name,
   phone,
   email,
+  state,
   city,
   interestedVehicle,
   message,
@@ -157,16 +163,14 @@ export const validateLeadForm = ({
       "Please enter valid email";
   }
 
-  if (!isRequired(city)) {
+  if (!isValidIndiaState(state)) {
+    errors.state = "Please select your state";
+  }
 
-    errors.city =
-      "City is required";
-  } else if (
-    cleanString(city).length < 2
-  ) {
-
-    errors.city =
-      "Please enter a valid city";
+  if (!isValidIndiaCity(state, city)) {
+    errors.city = isValidIndiaState(state)
+      ? "Please select your city"
+      : "Please select state first";
   }
 
   if (
@@ -202,6 +206,7 @@ export const validateLeadForm = ({
 export const validateTestDriveForm = ({
   name,
   phone,
+  state,
   city,
   interestedVehicle,
 }) => {
@@ -215,10 +220,14 @@ export const validateTestDriveForm = ({
     errors.phone = "Please enter valid mobile number";
   }
 
-  if (!isRequired(city)) {
-    errors.city = "City is required";
-  } else if (cleanString(city).length < 2) {
-    errors.city = "Please enter a valid city";
+  if (!isValidIndiaState(state)) {
+    errors.state = "Please select your state";
+  }
+
+  if (!isValidIndiaCity(state, city)) {
+    errors.city = isValidIndiaState(state)
+      ? "Please select your city"
+      : "Please select state first";
   }
 
   if (

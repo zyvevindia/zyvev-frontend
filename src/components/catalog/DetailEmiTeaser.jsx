@@ -30,6 +30,7 @@ function estimateMonthlyEmi(
 export default function DetailEmiTeaser({
   price,
   onOpenCalculator,
+  variant = "default",
 }) {
   const emi = useMemo(() => {
     const down = Math.round(Number(price) * 0.2);
@@ -37,6 +38,27 @@ export default function DetailEmiTeaser({
   }, [price]);
 
   if (!price || price <= 0) return null;
+
+  if (variant === "card") {
+    return (
+      <div className="cd-teaser-card">
+        <span className="cd-teaser-card__label">Est. EMI</span>
+        <strong className="cd-teaser-card__value">
+          ₹{emi.toLocaleString("en-IN")}/mo
+        </strong>
+        <span className="cd-teaser-card__hint">
+          20% down · 9% · 5 years
+        </span>
+        <button
+          type="button"
+          className="cd-teaser-card__link"
+          onClick={onOpenCalculator}
+        >
+          Calculate EMI →
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="detail-emi-teaser">

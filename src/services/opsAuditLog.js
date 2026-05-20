@@ -20,6 +20,11 @@ export const AUDIT_ACTIONS = {
   BULK_LEAD_READ: "bulk_lead_read",
   BULK_LEAD_ASSIGN: "bulk_lead_assign",
   BULK_STATUS_UPDATE: "bulk_status_update",
+  CATALOG_INGESTION_QUEUED: "catalog_ingestion_queued",
+  CATALOG_INGESTION_APPROVED: "catalog_ingestion_approved",
+  CATALOG_INGESTION_REJECTED: "catalog_ingestion_rejected",
+  CATALOG_INGESTION_DEFERRED: "catalog_ingestion_deferred",
+  CATALOG_INGESTION_EXPORTED: "catalog_ingestion_exported",
 };
 
 function readLocal() {

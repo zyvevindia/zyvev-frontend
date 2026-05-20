@@ -31,6 +31,40 @@ export function isVariantSlug(rawSlug) {
   return Boolean(slug && family && slug !== family);
 }
 
+/**
+ * Keep only trim-level variants for compare/table flows.
+ * Drops the parent family slug when real trims exist (e.g. tata-curvv-ev vs tata-curvv-ev-empowered).
+ */
+export function filterComparableVariants(
+  variants = [],
+  familySlug = ""
+) {
+  const list = (variants || []).filter(Boolean);
+  if (!list.length) return [];
+
+  const family = normalizeVehicleSlug(
+    familySlug || extractFamilySlug(list[0]?.slug || list[0]?.familySlug)
+  );
+
+  const trims = list.filter((v) =>
+    isVariantSlug(v.slug || v.variantSlug)
+  );
+
+  if (trims.length > 0) return trims;
+
+  if (list.length <= 1) return list;
+
+  if (family) {
+    return list.filter(
+      (v) =>
+        normalizeVehicleSlug(v.slug || v.variantSlug) !==
+        family
+    );
+  }
+
+  return list;
+}
+
 export function formatFamilyName(familySlug, brandLabel = "") {
   const slug = normalizeVehicleSlug(familySlug);
   if (!slug) return "Electric Vehicle";
@@ -115,10 +149,20 @@ export function aggregateModelFamilies(cars) {
     const sortedVariants = [...variants].sort(
       (a, b) => numericPrice(a) - numericPrice(b)
     );
-    const representative = pickRepresentativeVariant(sortedVariants);
-    const heroSource = pickHeroVariant(sortedVariants);
-    const prices = sortedVariants.map(numericPrice).filter((p) => p > 0);
-    const ranges = sortedVariants.map(numericRange).filter((r) => r > 0);
+    const comparableVariants = filterComparableVariants(
+      sortedVariants,
+      familySlug
+    );
+    const representative = pickRepresentativeVariant(
+      comparableVariants
+    );
+    const heroSource = pickHeroVariant(comparableVariants);
+    const prices = comparableVariants
+      .map(numericPrice)
+      .filter((p) => p > 0);
+    const ranges = comparableVariants
+      .map(numericRange)
+      .filter((r) => r > 0);
 
     const startingPrice = prices.length
       ? Math.min(...prices)
@@ -132,7 +176,7 @@ export function aggregateModelFamilies(cars) {
 
     const familyName = formatFamilyName(familySlug, brand);
 
-    const variantDtos = sortedVariants.map((v) => ({
+    const variantDtos = comparableVariants.map((v) => ({
       ...v,
       variantSlug: v.slug,
       variantLabel: variantLabel(v),
@@ -141,7 +185,7 @@ export function aggregateModelFamilies(cars) {
 
     const catalogMeta =
       representative?.catalogMeta ||
-      sortedVariants.find((v) => v.catalogMeta)?.catalogMeta ||
+      comparableVariants.find((v) => v.catalogMeta)?.catalogMeta ||
       null;
 
     families.push({
@@ -178,16 +222,16 @@ export function aggregateModelFamilies(cars) {
         representative?.specifications?.batteryPack ||
         representative?.battery ||
         "EV Battery",
-      variantCount: sortedVariants.length,
+      variantCount: variantDtos.length,
       variants: variantDtos,
       defaultVariant: representative,
-      isFeatured: sortedVariants.some((v) => v.isFeatured),
+      isFeatured: comparableVariants.some((v) => v.isFeatured),
       category:
         representative?.category ||
-        sortedVariants[0]?.category,
+        comparableVariants[0]?.category,
       catalogMeta,
       catalogSource: representative?.catalogSource,
-      createdAt: sortedVariants.reduce((latest, v) => {
+      createdAt: comparableVariants.reduce((latest, v) => {
         const t = new Date(v.createdAt || 0).getTime();
         return t > latest ? t : latest;
       }, 0),

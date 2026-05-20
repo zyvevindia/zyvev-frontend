@@ -23,6 +23,10 @@ import CatalogOwnershipChips from "./catalog/CatalogOwnershipChips";
 
 import { pickOwnershipChips } from "../utils/ownershipReality";
 
+import "../styles/car-card-compare.css";
+
+import { isCarInCompareList } from "../utils/compareCarsStorage";
+
 /* =========================================================
    ====================== CAR CARD ==========================
    ========================================================= */
@@ -49,11 +53,10 @@ export default function CarCard({
     battery,
   } = safeCar;
 
-  const isCompared =
-    Array.isArray(compareList) &&
-    compareList.find(
-      (c) => c?._id === _id
-    );
+  const isCompared = isCarInCompareList(
+    compareList,
+    safeCar.defaultVariant || safeCar
+  );
 
   const listingSignals = pickListingSignals(
     safeCar,
@@ -176,6 +179,7 @@ export default function CarCard({
           car={safeCar}
           role="listing"
           alt={safeName}
+          responsive
           imgClassName="car-image"
           imgStyle={imageStyle}
           wrapperStyle={{
@@ -267,19 +271,18 @@ export default function CarCard({
 
           <button
             type="button"
-            style={{
-              ...secondaryButton,
-              background: isCompared
-                ? "#f59e0b"
-                : "#111827",
-              ...(compareModeActive &&
-              !isCompared
-                ? {
-                    boxShadow:
-                      "0 0 0 3px rgba(96,165,250,0.75)",
-                  }
-                : {}),
-            }}
+            className={[
+              "car-card__compare-btn",
+              isCompared
+                ? "car-card__compare-btn--selected"
+                : "",
+              compareModeActive && !isCompared
+                ? "car-card__compare-btn--hint"
+                : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            style={secondaryButton}
             onClick={() =>
               toggleCompare(
                 safeCar.defaultVariant ||
@@ -287,9 +290,7 @@ export default function CarCard({
               )
             }
           >
-            {isCompared
-              ? "Remove"
-              : "Compare"}
+            {isCompared ? "✓ Comparing" : "Compare"}
           </button>
         </div>
 
@@ -343,7 +344,8 @@ export default function CarCard({
           )
         }
         sourcePage="listing_card"
-        vehicleName={`${safeBrand} ${safeName}`}
+        modelName={`${safeBrand} ${safeName}`.trim()}
+        vehicleName={`${safeBrand} ${safeName}`.trim()}
         vehicleId={
           String(
             carSlug || _id || ""

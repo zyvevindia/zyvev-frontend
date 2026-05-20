@@ -1,4 +1,4 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 import { Helmet } from "react-helmet-async";
 
@@ -22,6 +22,7 @@ import { buildGuidePageMeta } from "../seo/meta";
 import {
   resolveGuideCanonicalUrl,
   resolveGuideCanonicalPath,
+  isLegacyGuideSuperseded,
 } from "../seo/legacyCanonicalMap";
 import { buildDiscoveryPageSchemas } from "../seo/schema";
 import { getDiscoveryLinkSections } from "../seo/internalLinks";
@@ -29,6 +30,7 @@ import { replaceCompareCars } from "../utils/compareCarsStorage";
 
 export default function SeoGuidePage() {
   const { slug } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
   const { seoPage, loading, error, retry } = useSeoPage(slug);
 
@@ -75,6 +77,9 @@ export default function SeoGuidePage() {
   const canonical =
     seoPage.canonicalUrl || resolveGuideCanonicalUrl(seoPage.slug);
   const meta = buildGuidePageMeta(seoPage, canonical);
+  const legacySuperseded =
+    isLegacyGuideSuperseded(seoPage.slug) &&
+    location.pathname.startsWith("/cars/");
 
   const breadcrumbs = [
     { name: "Home", url: "/" },
@@ -112,6 +117,11 @@ export default function SeoGuidePage() {
         description={meta.description}
         canonical={meta.canonical}
         type="article"
+        robots={
+          legacySuperseded
+            ? "noindex, follow"
+            : "index, follow"
+        }
       />
 
       {schemas.map((schema, i) => (

@@ -15,9 +15,10 @@ Disallow: /login
 Disallow: /users
 Disallow: /kanban
 
-# Legacy compare query-string URLs (canonical compare uses /compare/:slug)
+# Compare tool session noise (canonical editorial compares use /compare/:slug)
 Disallow: /compare?
 Disallow: /*?cars=*
+Disallow: /*?compareMode=*
 Disallow: /*?utm_*
 Disallow: /*?fbclid*
 Disallow: /*?gclid*
@@ -30,7 +31,18 @@ Allow: /*?variant=
 # Legacy vehicle prefix — canonical is /cars/:familySlug
 Disallow: /car/
 
-# Internal static data
+# Internal / non-public surfaces
 Disallow: /seo-data/
+Disallow: /api/
+Disallow: /debug/
+
+# Allow high-value discovery paths explicitly
+Allow: /cars/
+Allow: /compare/
+Allow: /best-evs/
+Allow: /brands/
+Allow: /cities/
+Allow: /guides
+Allow: /discover/
 
 Sitemap: https://evsavari.com/sitemap.xml

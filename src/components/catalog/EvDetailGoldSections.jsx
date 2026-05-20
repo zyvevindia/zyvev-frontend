@@ -31,8 +31,7 @@ const card = {
   background: "white",
   borderRadius: "24px",
   padding: "28px 32px",
-  boxShadow:
-    "0 14px 40px rgba(15,23,42,0.06)",
+  boxShadow: "0 14px 40px rgba(15,23,42,0.06)",
   border: "1px solid #e2e8f0",
   marginBottom: "24px",
 };
@@ -66,6 +65,77 @@ const tag = {
   fontSize: "13px",
   fontWeight: "600",
 };
+
+function shouldRender(only, key) {
+  if (!only?.length) return true;
+  return only.includes(key);
+}
+
+function GoldSection({
+  layout,
+  id,
+  ariaLabelledby,
+  collapsible = false,
+  defaultOpen = true,
+  summaryTitle = "",
+  summaryPreview = "",
+  children,
+}) {
+  if (layout === "v2" && collapsible) {
+    return (
+      <section
+        id={id}
+        className="cd-section cd-collapsible-section cd-card"
+        aria-labelledby={ariaLabelledby}
+      >
+        <details
+          className="cd-collapsible-section__details"
+          open={defaultOpen}
+        >
+          <summary className="cd-collapsible-section__summary">
+            <span className="cd-collapsible-section__summary-text">
+              <span className="cd-collapsible-section__title">
+                {summaryTitle}
+              </span>
+              {summaryPreview ? (
+                <span className="cd-collapsible-section__preview">
+                  {summaryPreview}
+                </span>
+              ) : null}
+            </span>
+            <span
+              className="cd-collapsible-section__chevron"
+              aria-hidden
+            >
+              ▾
+            </span>
+          </summary>
+          <div className="cd-collapsible-section__body cd-content-card">
+            {children}
+          </div>
+        </details>
+      </section>
+    );
+  }
+
+  if (layout === "v2") {
+    return (
+      <section
+        id={id}
+        className="cd-section cd-card cd-content-card"
+        aria-labelledby={ariaLabelledby}
+      >
+        {children}
+      </section>
+    );
+  }
+
+  return (
+    <section style={section} aria-labelledby={ariaLabelledby}>
+      <article style={card}>{children}</article>
+    </section>
+  );
+}
 
 function ScoreBar({ label, value }) {
   if (value == null) return null;
@@ -108,14 +178,16 @@ function ScoreBar({ label, value }) {
 export default function EvDetailGoldSections({
   car,
   slug,
+  only = null,
+  layout = "default",
+  collapsibleSections = false,
 }) {
   if (!hasCatalogExperience(car)) {
     return null;
   }
 
   const meta = car.catalogMeta;
-  const summary =
-    meta.expertSummary || car.overview;
+  const summary = meta.expertSummary || car.overview;
 
   const allFaq = [
     ...(meta.faq || []),
@@ -123,31 +195,46 @@ export default function EvDetailGoldSections({
   ];
 
   const showIntelligence = hasCatalogIntelligence(car);
+  const h2Style = layout === "v2" ? undefined : h2;
+  const bodyStyle = layout === "v2" ? undefined : body;
+  const titleClass = layout === "v2" ? "cd-section__title" : undefined;
+  const wrapperStyle =
+    layout === "v2" ? undefined : { marginTop: "40px" };
+
+  const hasCharging =
+    meta.chargingSummary ||
+    meta.chargingEcosystem ||
+    meta.chargingFaq?.length > 0;
 
   return (
-    <div style={{ marginTop: "40px" }}>
-      {showIntelligence && (
+    <div style={wrapperStyle}>
+      {showIntelligence &&
+        shouldRender(only, "intelligence") && (
+          <section style={section}>
+            <CatalogDecisionBlocks catalogMeta={meta} slug={slug} />
+          </section>
+        )}
+
+      {shouldRender(only, "trust") && layout !== "v2" && (
         <section style={section}>
-          <CatalogDecisionBlocks
-            catalogMeta={meta}
-            slug={slug}
-          />
+          <TrustConfidenceBlock car={car} />
+          <OwnershipRealityPanel car={car} />
         </section>
       )}
 
-      <section style={section}>
-        <TrustConfidenceBlock car={car} />
-
-        <OwnershipRealityPanel car={car} />
-      </section>
-
-      {/* Quick decision */}
-      <section style={section} aria-labelledby="ev-quick-decision">
-        <article style={card}>
-          <h2 id="ev-quick-decision" style={h2}>
+      {shouldRender(only, "fit-life") && (
+        <GoldSection
+          layout={layout}
+          ariaLabelledby="ev-quick-decision"
+        >
+          <h2
+            id="ev-quick-decision"
+            className={titleClass}
+            style={h2Style}
+          >
             Should this EV fit your life?
           </h2>
-          <p style={body}>{summary}</p>
+          <p style={bodyStyle || body}>{summary}</p>
           {meta.psychologyTags?.length > 0 && (
             <div style={tagRow}>
               {meta.psychologyTags.map((t) => (
@@ -160,7 +247,7 @@ export default function EvDetailGoldSections({
           {meta.compareValueScore != null && (
             <p
               style={{
-                ...body,
+                ...(bodyStyle || body),
                 marginTop: "16px",
                 fontWeight: "600",
                 color: "#1d4ed8",
@@ -170,17 +257,29 @@ export default function EvDetailGoldSections({
               segment
             </p>
           )}
-        </article>
-      </section>
+        </GoldSection>
+      )}
 
-      {/* Ownership & suitability */}
-      <section style={section} aria-labelledby="ev-ownership">
-        <article style={card}>
-          <h2 id="ev-ownership" style={h2}>
+      {shouldRender(only, "ownership") && (
+        <GoldSection
+          layout={layout}
+          ariaLabelledby="ev-ownership"
+        >
+          {layout === "v2" && (
+            <>
+              <TrustConfidenceBlock car={car} />
+              <OwnershipRealityPanel car={car} />
+            </>
+          )}
+          <h2
+            id="ev-ownership"
+            className={titleClass}
+            style={h2Style}
+          >
             Ownership confidence
           </h2>
           {meta.psychologyNarrative && (
-            <p style={{ ...body, marginBottom: "20px" }}>
+            <p style={{ ...(bodyStyle || body), marginBottom: "20px" }}>
               {meta.psychologyNarrative}
             </p>
           )}
@@ -197,7 +296,7 @@ export default function EvDetailGoldSections({
             value={meta.suitabilityScores?.highway}
           />
           {meta.ownershipWarranty?.batteryYears && (
-            <p style={{ ...body, marginTop: "16px" }}>
+            <p style={{ ...(bodyStyle || body), marginTop: "16px" }}>
               Battery warranty: up to{" "}
               {meta.ownershipWarranty.batteryYears} years
               {meta.ownershipWarranty.batteryKm
@@ -206,69 +305,75 @@ export default function EvDetailGoldSections({
               . Always confirm with the OEM for your variant and city.
             </p>
           )}
-        </article>
-      </section>
+        </GoldSection>
+      )}
 
-      {showIntelligence && meta.safety && (
-        <section style={section} aria-labelledby="ev-safety">
-          <article style={card}>
-            <h2 id="ev-safety" style={h2}>
+      {showIntelligence &&
+        meta.safety &&
+        shouldRender(only, "safety") && (
+          <GoldSection layout={layout} ariaLabelledby="ev-safety">
+            <h2 id="ev-safety" className={titleClass} style={h2Style}>
               Safety & driver assistance
             </h2>
-            <p style={body}>
+            <p style={bodyStyle || body}>
               {meta.safety.airbags?.count != null && (
                 <>
                   {meta.safety.airbags.count} airbags
                   {meta.safety.adas?.level != null
                     ? ` · ADAS level ${meta.safety.adas.level}`
                     : ""}
-                  {meta.safety.stability?.esc
-                    ? " · ESC"
-                    : ""}
-                  {meta.safety.stability?.hillHold
-                    ? " · Hill hold"
-                    : ""}
+                  {meta.safety.stability?.esc ? " · ESC" : ""}
+                  {meta.safety.stability?.hillHold ? " · Hill hold" : ""}
                   .
                 </>
               )}
               {meta.safety.bharatNcap?.stars != null && (
                 <>
                   {" "}
-                  Bharat NCAP: {meta.safety.bharatNcap.stars}★
-                  (verify latest test for your variant).
+                  Bharat NCAP: {meta.safety.bharatNcap.stars}★ (verify latest
+                  test for your variant).
                 </>
               )}
             </p>
-          </article>
-        </section>
-      )}
+          </GoldSection>
+        )}
 
-      {/* Charging */}
-      {(meta.chargingSummary ||
-        meta.chargingEcosystem ||
-        meta.chargingFaq?.length > 0) && (
-        <section style={section} aria-labelledby="ev-charging">
-          <article style={card}>
-            <h2 id="ev-charging" style={h2}>
+      {hasCharging && shouldRender(only, "charging") && (
+        <GoldSection
+          layout={layout}
+          id={layout === "v2" ? "detail-charging" : undefined}
+          ariaLabelledby="ev-charging"
+          collapsible={
+            collapsibleSections && layout === "v2"
+          }
+          summaryTitle="Charging confidence"
+          summaryPreview="Charging options, speed, and real-world range confidence."
+        >
+          {!(collapsibleSections && layout === "v2") && (
+            <h2
+              id="ev-charging"
+              className={titleClass}
+              style={h2Style}
+            >
               Charging confidence
             </h2>
-            <details
-              onToggle={(e) => {
-                if (e.target.open) {
-                  trackBuyerEvent(
-                    BUYER_EVENTS.CHARGING_REALITY_EXPANDED,
-                    {
-                      vehicleSlugs: car?.slug
-                        ? [car.slug]
-                        : [],
-                      sourcePage:
-                        window.location.pathname,
-                      panel: "charging_reality",
-                    }
-                  );
-                }
-              }}
-            >
+          )}
+          <details
+            open={layout === "v2"}
+            onToggle={(e) => {
+              if (e.target.open) {
+                trackBuyerEvent(
+                  BUYER_EVENTS.CHARGING_REALITY_EXPANDED,
+                  {
+                    vehicleSlugs: car?.slug ? [car.slug] : [],
+                    sourcePage: window.location.pathname,
+                    panel: "charging_reality",
+                  }
+                );
+              }
+            }}
+          >
+            {layout !== "v2" && (
               <summary
                 style={{
                   cursor: "pointer",
@@ -279,12 +384,12 @@ export default function EvDetailGoldSections({
               >
                 View charging & range details
               </summary>
-            {meta.chargingSummary && (
-              <p style={body}>{meta.chargingSummary}</p>
             )}
-            {meta.chargingEcosystem?.networkCompatibility
-              ?.length > 0 && (
-              <p style={{ ...body, marginTop: "12px" }}>
+            {meta.chargingSummary && (
+              <p style={bodyStyle || body}>{meta.chargingSummary}</p>
+            )}
+            {meta.chargingEcosystem?.networkCompatibility?.length > 0 && (
+              <p style={{ ...(bodyStyle || body), marginTop: "12px" }}>
                 Network compatibility:{" "}
                 {meta.chargingEcosystem.networkCompatibility
                   .slice(0, 4)
@@ -293,129 +398,118 @@ export default function EvDetailGoldSections({
               </p>
             )}
             {meta.chargingEcosystem?.estimatedChargingCost && (
-              <p style={{ ...body, marginTop: "8px", fontSize: "13px" }}>
+              <p
+                style={{
+                  ...(bodyStyle || body),
+                  marginTop: "8px",
+                  fontSize: "13px",
+                }}
+              >
                 Indicative energy cost: AC ~₹
-                {
-                  meta.chargingEcosystem.estimatedChargingCost
-                    .acPerKwhInr
-                }
+                {meta.chargingEcosystem.estimatedChargingCost.acPerKwhInr}
                 /kWh, DC ~₹
-                {
-                  meta.chargingEcosystem.estimatedChargingCost
-                    .dcPerKwhInr
-                }
+                {meta.chargingEcosystem.estimatedChargingCost.dcPerKwhInr}
                 /kWh.
               </p>
             )}
             {meta.realWorldRangeKm && (
-              <p style={{ ...body, marginTop: "12px" }}>
-                Real-world range estimate:{" "}
-                {meta.realWorldRangeKm.min}–
-                {meta.realWorldRangeKm.max} km (mixed use; not
-                ARAI certified).
+              <p style={{ ...(bodyStyle || body), marginTop: "12px" }}>
+                Real-world range estimate: {meta.realWorldRangeKm.min}–
+                {meta.realWorldRangeKm.max} km (mixed use; not ARAI certified).
                 {meta.claimedRangeKm && (
-                  <>
-                    {" "}
-                    Certified (ARAI): {meta.claimedRangeKm} km.
-                  </>
+                  <> Certified (ARAI): {meta.claimedRangeKm} km.</>
                 )}
               </p>
             )}
-            </details>
-          </article>
-        </section>
+          </details>
+        </GoldSection>
       )}
 
-      {/* Pros / cons */}
-      {(meta.pros?.length || meta.cons?.length) && (
-        <section style={section} aria-labelledby="ev-pros-cons">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns:
-                "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "24px",
-            }}
-          >
-            {meta.pros?.length > 0 && (
-              <article style={card}>
-                <h2 id="ev-pros-cons" style={h2}>
-                  What owners love
-                </h2>
-                <ul style={{ margin: 0, paddingLeft: "20px" }}>
-                  {meta.pros.map((item, i) => (
-                    <li
-                      key={i}
-                      style={{
-                        ...body,
-                        marginBottom: "8px",
-                      }}
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            )}
-            {meta.cons?.length > 0 && (
-              <article style={card}>
-                <h2 style={h2}>Honest trade-offs</h2>
-                <ul style={{ margin: 0, paddingLeft: "20px" }}>
-                  {meta.cons.map((item, i) => (
-                    <li
-                      key={i}
-                      style={{
-                        ...body,
-                        marginBottom: "8px",
-                      }}
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            )}
-          </div>
-        </section>
+      {meta.pros?.length > 0 && shouldRender(only, "pros") && (
+        <GoldSection
+          layout={layout}
+          id={layout === "v2" ? "detail-reviews" : undefined}
+          ariaLabelledby="ev-pros"
+        >
+          <h2 id="ev-pros" className={titleClass} style={h2Style}>
+            What owners love
+          </h2>
+          <ul style={{ margin: 0, paddingLeft: "20px" }}>
+            {meta.pros.map((item, i) => (
+              <li
+                key={i}
+                style={{ ...(bodyStyle || body), marginBottom: "8px" }}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </GoldSection>
       )}
 
-      {/* Cost of ownership */}
-      {meta.ownershipCost5yr?.totalInr && (
-        <section style={section} aria-labelledby="ev-cost">
-          <article style={card}>
-            <h2 id="ev-cost" style={h2}>
+      {meta.cons?.length > 0 && shouldRender(only, "cons") && (
+        <GoldSection layout={layout} ariaLabelledby="ev-cons">
+          <h2 id="ev-cons" className={titleClass} style={h2Style}>
+            Honest trade-offs
+          </h2>
+          <ul style={{ margin: 0, paddingLeft: "20px" }}>
+            {meta.cons.map((item, i) => (
+              <li
+                key={i}
+                style={{ ...(bodyStyle || body), marginBottom: "8px" }}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </GoldSection>
+      )}
+
+      {meta.ownershipCost5yr?.totalInr &&
+        shouldRender(only, "cost") && (
+          <GoldSection layout={layout} ariaLabelledby="ev-cost">
+            <h2 id="ev-cost" className={titleClass} style={h2Style}>
               Cost of ownership insight
             </h2>
-            <p style={body}>
+            <p style={bodyStyle || body}>
               Indicative 5-year ownership: ₹
-              {meta.ownershipCost5yr.totalInr.toLocaleString()}{" "}
-              (energy, service, insurance estimates). Use this as a
-              planning guide—not a quote.
+              {meta.ownershipCost5yr.totalInr.toLocaleString()} (energy,
+              service, insurance estimates). Use this as a planning guide—not a
+              quote.
             </p>
-          </article>
-        </section>
-      )}
+          </GoldSection>
+        )}
 
-      {/* Compare rivals */}
-      {meta.compareRivals?.length > 0 && (
-        <section style={section} aria-labelledby="ev-compare-rivals">
-          <article style={card}>
-            <h2 id="ev-compare-rivals" style={h2}>
-              Compare with rivals
-            </h2>
-            <p style={{ ...body, marginBottom: "16px" }}>
-              See how this EV stacks up against similar models on
-              EVSavari.
+      {meta.compareRivals?.length > 0 &&
+        shouldRender(only, "compare-rivals") && (
+          <GoldSection
+            layout={layout}
+            id={layout === "v2" ? "detail-compare" : undefined}
+            ariaLabelledby="ev-compare-rivals"
+            collapsible={
+              collapsibleSections && layout === "v2"
+            }
+            summaryTitle="Compare"
+            summaryPreview="See how this EV stacks up against similar models on EVSavari."
+          >
+            {!(collapsibleSections && layout === "v2") && (
+              <h2
+                id="ev-compare-rivals"
+                className={titleClass}
+                style={h2Style}
+              >
+                Compare with rivals
+              </h2>
+            )}
+            <p style={{ ...(bodyStyle || body), marginBottom: "16px" }}>
+              See how this EV stacks up against similar models on EVSavari.
             </p>
             <div style={tagRow}>
               {meta.compareRivals.slice(0, 4).map((rivalSlug) => (
                 <Link
                   key={rivalSlug}
                   to={vehicleDetailPath(rivalSlug)}
-                  style={{
-                    ...tag,
-                    textDecoration: "none",
-                  }}
+                  style={{ ...tag, textDecoration: "none" }}
                 >
                   {rivalSlug.replace(/-/g, " ")}
                 </Link>
@@ -435,57 +529,60 @@ export default function EvDetailGoldSections({
                 cursor: "pointer",
               }}
               onClick={() => {
-                trackBuyerEvent(
-                  BUYER_EVENTS.COMPARE_STARTED,
-                  {
-                    vehicleSlugs:
-                      meta.compareRivals?.slice(0, 4) || [],
-                    sourcePage: window.location.pathname,
-                    sessionIntent: "detail_compare_rivals",
-                  }
-                );
+                trackBuyerEvent(BUYER_EVENTS.COMPARE_STARTED, {
+                  vehicleSlugs: meta.compareRivals?.slice(0, 4) || [],
+                  sourcePage: window.location.pathname,
+                  sessionIntent: "detail_compare_rivals",
+                });
                 window.location.href = "/compare";
               }}
             >
               Open compare tool
             </button>
-          </article>
-        </section>
-      )}
+          </GoldSection>
+        )}
 
-      {/* FAQs */}
-      {allFaq.length > 0 && (
-        <section style={section} aria-labelledby="ev-faq">
-          <article style={card}>
-            <h2 id="ev-faq" style={h2}>
+      {allFaq.length > 0 && shouldRender(only, "faq") && (
+        <GoldSection
+          layout={layout}
+          id={layout === "v2" ? "detail-faqs" : undefined}
+          ariaLabelledby="ev-faq"
+          collapsible={
+            collapsibleSections && layout === "v2"
+          }
+          summaryTitle="FAQs"
+          summaryPreview="Find answers to the most common questions about this EV."
+        >
+          {!(collapsibleSections && layout === "v2") && (
+            <h2 id="ev-faq" className={titleClass} style={h2Style}>
               EV buyer FAQs
             </h2>
-            {allFaq.map((item, i) => (
-              <details
-                key={i}
+          )}
+          {allFaq.map((item, i) => (
+            <details
+              key={i}
+              style={{
+                marginBottom: "12px",
+                borderBottom: "1px solid #e2e8f0",
+                paddingBottom: "12px",
+              }}
+            >
+              <summary
                 style={{
-                  marginBottom: "12px",
-                  borderBottom: "1px solid #e2e8f0",
-                  paddingBottom: "12px",
+                  fontWeight: "700",
+                  color: "#0f172a",
+                  cursor: "pointer",
+                  fontSize: "15px",
                 }}
               >
-                <summary
-                  style={{
-                    fontWeight: "700",
-                    color: "#0f172a",
-                    cursor: "pointer",
-                    fontSize: "15px",
-                  }}
-                >
-                  {item.q}
-                </summary>
-                <p style={{ ...body, marginTop: "8px" }}>
-                  {item.a}
-                </p>
-              </details>
-            ))}
-          </article>
-        </section>
+                {item.q}
+              </summary>
+              <p style={{ ...(bodyStyle || body), marginTop: "8px" }}>
+                {item.a}
+              </p>
+            </details>
+          ))}
+        </GoldSection>
       )}
     </div>
   );

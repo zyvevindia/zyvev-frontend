@@ -1,6 +1,7 @@
 import {
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 
@@ -12,11 +13,9 @@ import {
   useSearchParams,
 } from "react-router-dom";
 
-import {
-  Helmet,
-} from "react-helmet-async";
-
 import CarCard from "../components/CarCard";
+import SeoHead from "../components/SEO/SeoHead";
+import { buildListingPageMeta } from "../seo/pageMetadata";
 
 import CarCardSkeleton from "../components/skeletons/CarCardSkeleton";
 
@@ -25,21 +24,43 @@ import normalizeCar from "../utils/normalizeCar";
 import {
   aggregateModelFamilies,
   familyToListingCard,
-  filterFamilies,
   sortFamilies,
 } from "../utils/modelFamily";
 
-import {
-  API_URL,
-  SITE_ORIGIN,
-  APP_CONFIG,
-} from "../config";
+import { API_URL } from "../config";
+
+import { saveCompareCars } from "../utils/compareCarsStorage";
+
+import { safeFetchJsonWithRetry } from "../utils/safeFetch";
+
+import useCompareCars from "../hooks/useCompareCars";
+
+import EvDiscoveryFilters from "../components/discovery/EvDiscoveryFilters";
+import EvRecommendationWidget from "../components/discovery/EvRecommendationWidget";
 
 import {
-  COMPARE_CARS_STORAGE_KEY,
-  COMPARE_CARS_SYNC_EVENT,
-  loadCompareCarsFromStorage,
-} from "../utils/compareCarsStorage";
+  filterEnrichedFamilies,
+  parseIntelligenceFiltersFromParams,
+  writeIntelligenceFiltersToParams,
+} from "../intelligence/filterMatcher.js";
+import { trackIntelligenceFilterApplied, trackSearchZeroResults } from "../analytics/funnel";
+
+import "../styles/ev-discovery.css";
+
+function resolveListingCategory(pathname, categoryParam) {
+  if (categoryParam) return categoryParam;
+  const segment = String(pathname || "")
+    .replace(/^\//, "")
+    .split("/")[0];
+  if (
+    ["bikes", "scooters", "popular", "latest", "upcoming"].includes(
+      segment
+    )
+  ) {
+    return segment;
+  }
+  return null;
+}
 
 /* =========================================================
    ===================== LISTING PAGE =======================
@@ -56,7 +77,7 @@ export default function ListingPage() {
   const navigate =
     useNavigate();
 
-  const [searchParams] =
+  const [searchParams, setSearchParams] =
     useSearchParams();
 
   const compareMode =
@@ -88,11 +109,10 @@ export default function ListingPage() {
   const [fetchRetryKey, setFetchRetryKey] =
     useState(0);
 
-  const [compareList,
-    setCompareList] =
-    useState(
-      loadCompareCarsFromStorage
-    );
+  const {
+    compareList,
+    toggleCompare: toggleCompareCar,
+  } = useCompareCars();
 
   /* =========================================================
      ======================= FETCH CARS ======================
@@ -108,20 +128,21 @@ export default function ListingPage() {
 
         setError("");
 
-        const response =
-          await fetch(
-            `${API_URL}/cars?limit=50`
-          );
+        const response = await safeFetchJsonWithRetry(
+          `${API_URL}/cars?limit=50`,
+          {
+            label: "listing_catalog",
+            timeoutMs: 18000,
+          }
+        );
 
         if (!response.ok) {
-
           throw new Error(
-            "Failed to fetch EVs"
+            response.error || "Failed to fetch EVs"
           );
         }
 
-        const data =
-          await response.json();
+        const data = response.data;
 
         const normalized =
           (data?.cars || []).map(
@@ -151,85 +172,47 @@ export default function ListingPage() {
 
   }, [fetchRetryKey]);
 
-  useEffect(() => {
+  const toggleCompare = (car) => {
+    const { limitReached } = toggleCompareCar(car);
 
-    localStorage.setItem(
-      COMPARE_CARS_STORAGE_KEY,
-
-      JSON.stringify(
-        compareList
-      )
-    );
-  }, [compareList]);
-
-  useEffect(() => {
-
-    const onCompareSync =
-      () => {
-
-        setCompareList(
-          loadCompareCarsFromStorage()
-        );
-      };
-
-    window.addEventListener(
-      COMPARE_CARS_SYNC_EVENT,
-
-      onCompareSync
-    );
-
-    return () => {
-
-      window.removeEventListener(
-        COMPARE_CARS_SYNC_EVENT,
-
-        onCompareSync
+    if (limitReached) {
+      setCompareHint(
+        "You can compare up to 3 EVs. Remove one to add another."
       );
-    };
-  }, []);
+      return;
+    }
 
-  const toggleCompare =
-    (car) => {
+    setCompareHint("");
+  };
 
-      setCompareList(
-        (prev) => {
-
-          if (
-            prev.find(
-              (c) =>
-                c._id ===
-                car._id
-            )
-          ) {
-
-            return prev.filter(
-              (c) =>
-                c._id !==
-                car._id
-            );
-          }
-
-          if (prev.length >= 3) {
-            setCompareHint(
-              "You can compare up to 3 EVs. Remove one to add another."
-            );
-            return prev;
-          }
-
-          setCompareHint("");
-
-          return [
-            ...prev,
-
-            car,
-          ];
-        }
-      );
-    };
+  const openComparePage = () => {
+    const list = saveCompareCars(compareList);
+    navigate("/compare", {
+      state: { cars: list },
+    });
+  };
 
   /* =========================================================
      ===================== FILTERED DATA =====================
      ========================================================= */
+
+  const listingCategory = useMemo(
+    () => resolveListingCategory(pathname, category),
+    [pathname, category]
+  );
+
+  const intelligenceFilterIds = useMemo(
+    () => parseIntelligenceFiltersFromParams(searchParams),
+    [searchParams]
+  );
+
+  const setIntelligenceFilters = (ids) => {
+    const next = writeIntelligenceFiltersToParams(
+      ids,
+      searchParams
+    );
+    setSearchParams(next, { replace: true });
+  };
 
   const families = useMemo(
     () => aggregateModelFamilies(cars),
@@ -237,13 +220,17 @@ export default function ListingPage() {
   );
 
   const filteredFamilies = useMemo(() => {
-    let list = [...families];
+    let list = filterEnrichedFamilies(families, {
+      brand,
+      search,
+      intelligenceFilterIds,
+    });
 
-    if (category) {
+    if (listingCategory) {
       list = list.filter((f) =>
         (f.category || "")
           .toLowerCase()
-          .includes(category.toLowerCase())
+          .includes(listingCategory.toLowerCase())
       );
     }
 
@@ -256,9 +243,47 @@ export default function ListingPage() {
             ? "rangeHigh"
             : "";
 
-    list = filterFamilies(list, { brand, search });
     return sortFamilies(list, sortKey);
-  }, [families, category, search, brand, sortBy]);
+  }, [
+    families,
+    listingCategory,
+    search,
+    brand,
+    sortBy,
+    intelligenceFilterIds,
+  ]);
+
+  const hasActiveListingFilters = useMemo(
+    () =>
+      Boolean(search?.trim()) ||
+      Boolean(brand) ||
+      Boolean(sortBy) ||
+      intelligenceFilterIds.length > 0,
+    [search, brand, sortBy, intelligenceFilterIds]
+  );
+
+  const clearListingFilters = () => {
+    setSearch("");
+    setBrand("");
+    setSortBy("");
+    setIntelligenceFilters([]);
+  };
+
+  const lastSearchZeroKeyRef = useRef("");
+
+  useEffect(() => {
+    if (loading || error) return;
+    const q = search.trim();
+    if (!q) {
+      lastSearchZeroKeyRef.current = "";
+      return;
+    }
+    if (filteredFamilies.length > 0) return;
+    const key = `${pathname}|${q}`;
+    if (lastSearchZeroKeyRef.current === key) return;
+    lastSearchZeroKeyRef.current = key;
+    trackSearchZeroResults({ query: q, sourcePage: pathname || "/cars" });
+  }, [loading, error, search, filteredFamilies.length, pathname]);
 
   /* =========================================================
      ======================= BRANDS ==========================
@@ -279,143 +304,14 @@ export default function ListingPage() {
      ======================== SEO ============================
      ========================================================= */
 
-  const seo =
-    useMemo(() => {
-
-      const origin =
-        SITE_ORIGIN;
-
-      const path =
-        pathname || "/cars";
-
-      const normalizedPath =
-
-        path.length > 1 &&
-        path.endsWith("/")
-          ? path.slice(0, -1)
-          : path;
-
-      const canonical =
-        `${origin}${normalizedPath}`;
-
-      const baseDesc =
-        "Browse, filter, and compare electric cars, scooters, and bikes in India on EVSavari.";
-
-      const byPath = {
-
-        "/popular": {
-
-          title:
-            "Popular electric vehicles | EVSavari",
-
-          description:
-            `Discover trending and best-selling EVs in India. ${baseDesc}`,
-        },
-
-        "/latest": {
-
-          title:
-            "Latest electric vehicles | EVSavari",
-
-          description:
-            `New arrivals and recently listed electric vehicles. ${baseDesc}`,
-        },
-
-        "/upcoming": {
-
-          title:
-            "Upcoming electric vehicles | EVSavari",
-
-          description:
-            `Future EV launches and models to watch. ${baseDesc}`,
-        },
-
-        "/cars": {
-
-          title:
-            "Browse electric cars & EVs | EVSavari",
-
-          description:
-            `Explore electric cars and SUVs. ${baseDesc}`,
-        },
-
-        "/bikes": {
-
-          title:
-            "Electric bikes in India | EVSavari",
-
-          description:
-            `Compare electric two-wheelers and e-bikes. ${baseDesc}`,
-        },
-
-        "/scooters": {
-
-          title:
-            "Electric scooters in India | EVSavari",
-
-          description:
-            `Find e-scooters by range, price, and brand. ${baseDesc}`,
-        },
-      };
-
-      const match =
-        byPath[normalizedPath];
-
-      if (match) {
-
-        return {
-
-          ...match,
-
-          canonical,
-        };
-      }
-
-      if (category) {
-
-        const label =
-
-          category
-            .replace(
-              /-/g,
-              " "
-            )
-            .replace(
-              /\b\w/g,
-              (c) =>
-                c.toUpperCase()
-            );
-
-        return {
-
-          title:
-            `${label} — Electric vehicles | EVSavari`,
-
-          description:
-            `${label} listings on EVSavari. ${baseDesc}`,
-
-          canonical:
-            `${origin}${normalizedPath}`,
-        };
-      }
-
-      return {
-
-        title:
-          `Electric vehicles | ${APP_CONFIG.appName}`,
-
-        description: baseDesc,
-
-        canonical,
-      };
-
-    }, [
-      pathname,
-      category,
-    ]);
-
-  const ogImage =
-    `${SITE_ORIGIN}/og-image.jpg`;
+  const seo = useMemo(
+    () =>
+      buildListingPageMeta({
+        pathname: pathname || "/cars",
+        category,
+      }),
+    [pathname, category]
+  );
 
   /* =========================================================
      ========================= RENDER ========================
@@ -430,73 +326,7 @@ export default function ListingPage() {
       }}
     >
 
-      <Helmet>
-
-        <title>
-          {seo.title}
-        </title>
-
-        <meta
-          name="description"
-          content={seo.description}
-        />
-
-        <link
-          rel="canonical"
-          href={seo.canonical}
-        />
-
-        <meta
-          property="og:type"
-          content="website"
-        />
-
-        <meta
-          property="og:title"
-          content={seo.title}
-        />
-
-        <meta
-          property="og:description"
-          content={seo.description}
-        />
-
-        <meta
-          property="og:url"
-          content={seo.canonical}
-        />
-
-        <meta
-          property="og:image"
-          content={ogImage}
-        />
-
-        <meta
-          property="og:site_name"
-          content={APP_CONFIG.appName}
-        />
-
-        <meta
-          name="twitter:card"
-          content="summary_large_image"
-        />
-
-        <meta
-          name="twitter:title"
-          content={seo.title}
-        />
-
-        <meta
-          name="twitter:description"
-          content={seo.description}
-        />
-
-        <meta
-          name="twitter:image"
-          content={ogImage}
-        />
-
-      </Helmet>
+      <SeoHead meta={seo} />
 
       {/* ================= HERO ================= */}
 
@@ -658,9 +488,38 @@ export default function ListingPage() {
 
           </select>
 
+          <EvDiscoveryFilters
+            families={families}
+            activeFilterIds={intelligenceFilterIds}
+            onChange={setIntelligenceFilters}
+            onFilterToggleAnalytics={(filterId, active) =>
+              trackIntelligenceFilterApplied({
+                filterId,
+                active,
+                sourcePage: pathname || "/cars",
+                activeCount: intelligenceFilterIds.length,
+              })
+            }
+          />
+
         </div>
 
       </section>
+
+      {!compareMode && families.length > 0 && (
+        <section
+          style={{
+            maxWidth: "1300px",
+            margin: "24px auto 0",
+            padding: "0 20px",
+          }}
+        >
+          <EvRecommendationWidget
+            families={families}
+            sourcePage={pathname || "/cars"}
+          />
+        </section>
+      )}
 
       {compareMode && (
 
@@ -743,29 +602,23 @@ export default function ListingPage() {
             {compareList.length >=
               2 && (
 
-              <Link
-                to="/compare"
-
-                state={{
-                  cars:
-                    compareList,
-                }}
-
+              <button
+                type="button"
+                onClick={openComparePage}
                 style={{
-                  display:
-                    "inline-block",
-
+                  display: "inline-block",
                   marginTop: "12px",
-
                   fontWeight: 700,
-
                   color: "#1d4ed8",
-
-                  textDecoration: "none",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                  textDecoration: "underline",
                 }}
               >
                 Open compare page →
-              </Link>
+              </button>
             )}
 
           </div>
@@ -851,10 +704,64 @@ export default function ListingPage() {
             </h2>
 
             <p style={emptyText}>
-              Try adjusting filters or
-              search terms.
+              Try adjusting filters, search, or explore EVSavari compare and guides.
             </p>
 
+            <div
+              style={{
+                marginTop: "1.25rem",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.75rem",
+                justifyContent: "center",
+              }}
+            >
+              {hasActiveListingFilters ? (
+                <button
+                  type="button"
+                  onClick={clearListingFilters}
+                  style={{
+                    padding: "0.55rem 1.25rem",
+                    borderRadius: "8px",
+                    border: "none",
+                    background: "#2563eb",
+                    color: "#fff",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                  }}
+                >
+                  Clear filters and search
+                </button>
+              ) : null}
+              <Link
+                to="/compare"
+                style={{
+                  padding: "0.55rem 1.25rem",
+                  borderRadius: "8px",
+                  border: "1px solid #cbd5e1",
+                  background: "#fff",
+                  color: "#0f172a",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                }}
+              >
+                Open compare
+              </Link>
+              <Link
+                to="/guides"
+                style={{
+                  padding: "0.55rem 1.25rem",
+                  borderRadius: "8px",
+                  border: "1px solid #cbd5e1",
+                  background: "#fff",
+                  color: "#0f172a",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                }}
+              >
+                Browse guides
+              </Link>
+            </div>
           </div>
 
         ) : (
@@ -913,18 +820,7 @@ export default function ListingPage() {
             style={
               floatingCompareButton
             }
-            onClick={() =>
-              navigate(
-                "/compare",
-
-                {
-                  state: {
-                    cars:
-                      compareList,
-                  },
-                }
-              )
-            }
+            onClick={openComparePage}
           >
             Compare (
             {

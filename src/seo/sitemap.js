@@ -3,10 +3,13 @@
  */
 
 import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies.js";
+import { INTELLIGENCE_DISCOVERY_PRESETS } from "../data/intelligenceDiscoveryPresets.js";
+import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
+
+import { GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH } from "./legacyCanonicalMap.js";
 
 /** Default when not passed (Node build scripts, tests). */
 export const DEFAULT_SITE_ORIGIN = "https://evsavari.com";
-import { GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH } from "./legacyCanonicalMap.js";
 
 function absoluteUrl(path, siteOrigin) {
   const normalized = String(path || "/").startsWith("/")
@@ -24,19 +27,26 @@ function uniqueEntries(entries) {
   });
 }
 
-function entry(path, { priority = 0.75, changefreq = "weekly", siteOrigin = SITE_ORIGIN } = {}) {
+function entry(
+  path,
+  {
+    priority = 0.75,
+    changefreq = "weekly",
+    siteOrigin = DEFAULT_SITE_ORIGIN,
+    lastmod,
+  } = {}
+) {
   return {
     loc: absoluteUrl(path, siteOrigin),
     path,
     priority,
     changefreq,
+    ...(lastmod ? { lastmod } : {}),
   };
 }
 
 /**
  * All discovery guide URLs (canonical paths only — no legacy /cars/ guides).
- * @param {string} [siteOrigin]
- * @param {{ brands?: string[], cityRoutes?: Array<{ city: string, type: 'evs'|'charging' }> }} [extras]
  */
 export function buildDiscoveryGuideSitemapEntries(
   siteOrigin = DEFAULT_SITE_ORIGIN,
@@ -78,11 +88,32 @@ export function buildDiscoveryGuideSitemapEntries(
   return uniqueEntries(entries);
 }
 
+/**
+ * Rule-ranked intelligence discovery pages — /discover/:preset
+ */
+export function buildIntelligenceDiscoverySitemapEntries(
+  siteOrigin = DEFAULT_SITE_ORIGIN
+) {
+  return Object.values(INTELLIGENCE_DISCOVERY_PRESETS).map((preset) =>
+    entry(preset.path, {
+      priority: 0.81,
+      changefreq: "weekly",
+      siteOrigin,
+    })
+  );
+}
+
 export function buildStaticSitemapEntries(siteOrigin = DEFAULT_SITE_ORIGIN) {
   return [
     entry("/", { priority: 1, changefreq: "daily", siteOrigin }),
     entry("/cars", { priority: 0.9, changefreq: "daily", siteOrigin }),
     entry("/compare", { priority: 0.85, changefreq: "weekly", siteOrigin }),
+    entry("/guides", { priority: 0.85, changefreq: "weekly", siteOrigin }),
+    entry("/popular", { priority: 0.82, changefreq: "daily", siteOrigin }),
+    entry("/latest", { priority: 0.8, changefreq: "daily", siteOrigin }),
+    entry("/upcoming", { priority: 0.78, changefreq: "weekly", siteOrigin }),
+    entry("/bikes", { priority: 0.75, changefreq: "weekly", siteOrigin }),
+    entry("/scooters", { priority: 0.75, changefreq: "weekly", siteOrigin }),
     entry("/about", { priority: 0.6, changefreq: "monthly", siteOrigin }),
     entry("/contact", { priority: 0.6, changefreq: "monthly", siteOrigin }),
     entry("/privacy", { priority: 0.4, changefreq: "yearly", siteOrigin }),
@@ -91,9 +122,11 @@ export function buildStaticSitemapEntries(siteOrigin = DEFAULT_SITE_ORIGIN) {
 }
 
 /**
- * Vehicle family detail pages only — no variant slugs, no ?variant=.
+ * Vehicle family detail pages — /cars/:familySlug (no ?variant=).
  */
-export function buildVehicleFamilySitemapEntries(siteOrigin = SITE_ORIGIN) {
+export function buildVehicleFamilySitemapEntries(
+  siteOrigin = DEFAULT_SITE_ORIGIN
+) {
   return TIER1_MODEL_FAMILY_SLUGS.map((familySlug) =>
     entry(`/cars/${familySlug}`, {
       priority: 0.8,
@@ -103,10 +136,36 @@ export function buildVehicleFamilySitemapEntries(siteOrigin = SITE_ORIGIN) {
   );
 }
 
-export function buildCompareHubSitemapEntries(siteOrigin = DEFAULT_SITE_ORIGIN) {
-  return [
+/**
+ * Editorial compare guides — /compare/:slug
+ */
+export function buildCompareGuideSitemapEntries(
+  siteOrigin = DEFAULT_SITE_ORIGIN,
+  { lastmodByPath = {} } = {}
+) {
+  const entries = [
     entry("/compare", { priority: 0.85, changefreq: "weekly", siteOrigin }),
   ];
+
+  for (const slug of GENERATED_COMPARE_SLUGS) {
+    const path = `/compare/${slug}`;
+    entries.push(
+      entry(path, {
+        priority: 0.82,
+        changefreq: "weekly",
+        siteOrigin,
+        lastmod: lastmodByPath[path],
+      })
+    );
+  }
+
+  return uniqueEntries(entries);
+}
+
+export function buildCompareHubSitemapEntries(
+  siteOrigin = DEFAULT_SITE_ORIGIN
+) {
+  return buildCompareGuideSitemapEntries(siteOrigin);
 }
 
 export function buildFullSitemapManifest(
@@ -119,23 +178,33 @@ export function buildFullSitemapManifest(
     siteOrigin,
     extras
   );
+  const intelligenceDiscoveryEntries =
+    buildIntelligenceDiscoverySitemapEntries(siteOrigin);
+  const compareEntries = buildCompareGuideSitemapEntries(siteOrigin);
+
+  const mergedDiscovery = uniqueEntries([
+    ...discoveryEntries,
+    ...intelligenceDiscoveryEntries,
+  ]);
 
   return {
     siteOrigin,
     generatedAt: new Date().toISOString(),
     static: staticEntries,
     vehicles: vehicleEntries,
-    discovery: discoveryEntries,
+    discovery: mergedDiscovery,
+    compare: compareEntries,
     counts: {
       static: staticEntries.length,
       vehicles: vehicleEntries.length,
-      discovery: discoveryEntries.length,
+      discovery: mergedDiscovery.length,
+      compare: compareEntries.length,
       total:
         staticEntries.length +
         vehicleEntries.length +
-        discoveryEntries.length,
+        mergedDiscovery.length +
+        compareEntries.length,
     },
-    /** @deprecated legacy /cars/ guide URLs excluded */
     legacyGuideUrlsExcluded: true,
   };
 }
@@ -146,6 +215,9 @@ export function listExpectedDiscoveryPaths(extras = {}) {
   const paths = new Set(["/guides"]);
   for (const p of Object.values(GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH)) {
     paths.add(p);
+  }
+  for (const slug of GENERATED_COMPARE_SLUGS) {
+    paths.add(`/compare/${slug}`);
   }
   for (const brand of brands) {
     paths.add(`/brands/${brand}`);

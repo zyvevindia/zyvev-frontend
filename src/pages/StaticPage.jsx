@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 
-import {
-  Helmet,
-} from "react-helmet-async";
+import SeoHead from "../components/SEO/SeoHead";
+import { buildStaticPageMeta } from "../seo/pageMetadata";
 
 /* =========================================================
    ===================== STATIC PAGE =======================
@@ -13,10 +12,14 @@ export default function StaticPage({
   title,
   subtitle,
   sections = [],
+  path = "/",
 }) {
-  /* =========================================================
-     ===================== SCROLL TOP ========================
-     ========================================================= */
+  const meta = buildStaticPageMeta({
+    pageTitle,
+    title,
+    subtitle,
+    path,
+  });
 
   useEffect(() => {
     window.scrollTo({
@@ -25,68 +28,30 @@ export default function StaticPage({
     });
   }, []);
 
-  /* =========================================================
-     ========================= RENDER ========================
-     ========================================================= */
-
   return (
     <div style={pageWrapper}>
-      <Helmet>
-
-        <title>
-          {pageTitle || title}
-        </title>
-
-        <meta
-          name="robots"
-          content="index, follow"
-        />
-
-      </Helmet>
-
-      {/* ================= HERO ================= */}
+      <SeoHead meta={meta} />
 
       <section style={heroSection}>
         <div style={heroOverlay}>
-          <h1 style={heroTitle}>
-            {title}
-          </h1>
-
-          <p style={heroSubtitle}>
-            {subtitle}
-          </p>
+          <h1 style={heroTitle}>{title}</h1>
+          <p style={heroSubtitle}>{subtitle}</p>
         </div>
       </section>
 
-      {/* ================= CONTENT ================= */}
-
       <section style={contentSection}>
         <div style={contentWrapper}>
-          {sections.map(
-            (section, index) => (
-              <div
-                key={index}
-                style={contentCard}
-              >
-                <h2 style={sectionTitle}>
-                  {section.heading}
-                </h2>
-
-                <p style={sectionText}>
-                  {section.text}
-                </p>
-              </div>
-            )
-          )}
+          {sections.map((section, index) => (
+            <div key={index} style={contentCard}>
+              <h2 style={sectionTitle}>{section.heading}</h2>
+              <p style={sectionText}>{section.text}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>
   );
 }
-
-/* =========================================================
-   ========================= STYLES =========================
-   ========================================================= */
 
 const pageWrapper = {
   minHeight: "100vh",
@@ -94,8 +59,7 @@ const pageWrapper = {
 };
 
 const heroSection = {
-  background:
-    "linear-gradient(135deg, #0f172a, #1d4ed8)",
+  background: "linear-gradient(135deg, #0f172a, #1d4ed8)",
   padding: "90px 24px",
 };
 
@@ -105,8 +69,7 @@ const heroOverlay = {
 };
 
 const heroTitle = {
-  fontSize:
-    "clamp(42px, 8vw, 72px)",
+  fontSize: "clamp(42px, 8vw, 72px)",
   fontWeight: "800",
   color: "white",
   lineHeight: "1.05",
@@ -122,8 +85,7 @@ const heroSubtitle = {
 };
 
 const contentSection = {
-  padding:
-    "70px 24px 100px",
+  padding: "70px 24px 100px",
 };
 
 const contentWrapper = {
@@ -138,14 +100,12 @@ const contentCard = {
   background: "white",
   borderRadius: "28px",
   padding: "38px",
-  boxShadow:
-    "0 16px 40px rgba(15,23,42,0.06)",
+  boxShadow: "0 16px 40px rgba(15,23,42,0.06)",
   border: "1px solid #e2e8f0",
 };
 
 const sectionTitle = {
-  fontSize:
-    "clamp(24px, 4vw, 34px)",
+  fontSize: "clamp(24px, 4vw, 34px)",
   fontWeight: "800",
   color: "#0f172a",
   marginBottom: "18px",

@@ -24,7 +24,7 @@ function run(cmd, args) {
 }
 
 console.log("\n=== EVSavari launch smoke ===\n");
-console.log("1/2 SEO QA…\n");
+console.log("1/4 SEO QA…\n");
 
 try {
   await run("npm", ["run", "seo:qa"]);
@@ -33,7 +33,25 @@ try {
   process.exit(1);
 }
 
-console.log("\n2/2 Media audit…\n");
+console.log("\n2/4 Launch validate…\n");
+
+try {
+  await run("npm", ["run", "launch:validate"]);
+} catch {
+  console.error("\nLaunch validate failed.\n");
+  process.exit(1);
+}
+
+console.log("\n3/4 Soft-launch smoke…\n");
+
+try {
+  await run("npm", ["run", "soft-launch:smoke"]);
+} catch {
+  console.error("\nSoft-launch smoke failed.\n");
+  process.exit(1);
+}
+
+console.log("\n4/4 Media audit…\n");
 
 try {
   await run("npm", ["run", "media:audit"]);

@@ -1,6 +1,6 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-05-17T09:07:24.205Z",
+  "generatedAt": "2026-05-20T09:29:18.851Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
@@ -18,6 +18,42 @@
       "loc": "https://evsavari.com/compare",
       "path": "/compare",
       "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/guides",
+      "path": "/guides",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/popular",
+      "path": "/popular",
+      "priority": 0.82,
+      "changefreq": "daily"
+    },
+    {
+      "loc": "https://evsavari.com/latest",
+      "path": "/latest",
+      "priority": 0.8,
+      "changefreq": "daily"
+    },
+    {
+      "loc": "https://evsavari.com/upcoming",
+      "path": "/upcoming",
+      "priority": 0.78,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/bikes",
+      "path": "/bikes",
+      "priority": 0.75,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/scooters",
+      "path": "/scooters",
+      "priority": 0.75,
       "changefreq": "weekly"
     },
     {
@@ -563,19 +599,226 @@
       "path": "/cities/visakhapatnam/evs",
       "priority": 0.76,
       "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/discover/city-driving",
+      "path": "/discover/city-driving",
+      "priority": 0.81,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/discover/under-15-lakh",
+      "path": "/discover/under-15-lakh",
+      "priority": 0.81,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/discover/fastest-charging",
+      "path": "/discover/fastest-charging",
+      "priority": 0.81,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/discover/apartment-living",
+      "path": "/discover/apartment-living",
+      "priority": 0.81,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/discover/long-range",
+      "path": "/discover/long-range",
+      "priority": 0.81,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/discover/family-friendly",
+      "path": "/discover/family-friendly",
+      "priority": 0.81,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/discover/adas-equipped",
+      "path": "/discover/adas-equipped",
+      "priority": 0.81,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/discover/highway-evs",
+      "path": "/discover/highway-evs",
+      "priority": 0.81,
+      "changefreq": "weekly"
+    }
+  ],
+  "compare": [
+    {
+      "loc": "https://evsavari.com/compare",
+      "path": "/compare",
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/nexon-ev-vs-mg-zs-ev",
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/comet-ev-vs-tiago-ev",
+      "path": "/compare/comet-ev-vs-tiago-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-punch-ev-vs-tata-nexon-ev",
+      "path": "/compare/tata-punch-ev-vs-tata-nexon-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-curvv-ev-vs-tata-nexon-ev",
+      "path": "/compare/tata-curvv-ev-vs-tata-nexon-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mg-zs-ev-vs-hyundai-kona-electric",
+      "path": "/compare/mg-zs-ev-vs-hyundai-kona-electric",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/byd-atto-3-vs-mg-zs-ev",
+      "path": "/compare/byd-atto-3-vs-mg-zs-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-tiago-ev-vs-citroen-ec3",
+      "path": "/compare/tata-tiago-ev-vs-citroen-ec3",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mahindra-xuv400-vs-tata-nexon-ev",
+      "path": "/compare/mahindra-xuv400-vs-tata-nexon-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/kia-ev6-vs-byd-atto-3",
+      "path": "/compare/kia-ev6-vs-byd-atto-3",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/bmw-ix1-vs-mercedes-eqb",
+      "path": "/compare/bmw-ix1-vs-mercedes-eqb",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mercedes-eqa-vs-bmw-ix1",
+      "path": "/compare/mercedes-eqa-vs-bmw-ix1",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/volvo-ex40-vs-kia-ev6",
+      "path": "/compare/volvo-ex40-vs-kia-ev6",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mahindra-be-6-vs-mahindra-xuv400",
+      "path": "/compare/mahindra-be-6-vs-mahindra-xuv400",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mahindra-xev-9e-vs-mahindra-be-6",
+      "path": "/compare/mahindra-xev-9e-vs-mahindra-be-6",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/hyundai-kona-electric-vs-kia-ev6",
+      "path": "/compare/hyundai-kona-electric-vs-kia-ev6",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-punch-ev-vs-mg-comet-ev",
+      "path": "/compare/tata-punch-ev-vs-mg-comet-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/citroen-ec3-vs-tata-tiago-ev",
+      "path": "/compare/citroen-ec3-vs-tata-tiago-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-nexon-ev-vs-tata-curvv-ev",
+      "path": "/compare/tata-nexon-ev-vs-tata-curvv-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-nexon-ev-vs-mahindra-xuv400",
+      "path": "/compare/tata-nexon-ev-vs-mahindra-xuv400",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mg-zs-ev-vs-byd-atto-3",
+      "path": "/compare/mg-zs-ev-vs-byd-atto-3",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-punch-ev-vs-citroen-ec3",
+      "path": "/compare/tata-punch-ev-vs-citroen-ec3",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/hyundai-kona-electric-vs-tata-nexon-ev",
+      "path": "/compare/hyundai-kona-electric-vs-tata-nexon-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mercedes-eqb-vs-volvo-ex40",
+      "path": "/compare/mercedes-eqb-vs-volvo-ex40",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mahindra-xev-9e-vs-kia-ev6",
+      "path": "/compare/mahindra-xev-9e-vs-kia-ev6",
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-curvv-ev-vs-mg-zs-ev",
+      "path": "/compare/tata-curvv-ev-vs-mg-zs-ev",
+      "priority": 0.82,
+      "changefreq": "weekly"
     }
   ],
   "counts": {
-    "static": 7,
+    "static": 13,
     "vehicles": 17,
-    "discovery": 69,
-    "total": 93
+    "discovery": 77,
+    "compare": 26,
+    "total": 133
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
-    "static": 7,
+    "static": 13,
     "cars": 17,
-    "discovery": 122,
-    "compare": 1
+    "discovery": 130,
+    "compare": 26
   }
 }

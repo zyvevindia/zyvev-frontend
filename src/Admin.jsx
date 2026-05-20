@@ -1010,6 +1010,48 @@ export default function Admin() {
             </Link>
 
             <Link
+              to="/admin/launch-status"
+              style={menuItem}
+            >
+              🚀 Launch status
+            </Link>
+
+            <Link
+              to="/admin/catalog-ops"
+              style={menuItem}
+            >
+              📋 Catalog intelligence ops
+            </Link>
+
+            <Link
+              to="/admin/catalog-ingestion"
+              style={menuItem}
+            >
+              📥 Catalog ingestion
+            </Link>
+
+            <Link
+              to="/admin/soft-launch-ops"
+              style={menuItem}
+            >
+              🚦 Soft launch ops
+            </Link>
+
+            <Link
+              to="/admin/real-usage-learning"
+              style={menuItem}
+            >
+              📈 Real usage learning
+            </Link>
+
+            <Link
+              to="/admin/ops-discipline"
+              style={menuItem}
+            >
+              ✅ Ops discipline hub
+            </Link>
+
+            <Link
               to="/admin/dealer-applications"
               style={menuItem}
             >

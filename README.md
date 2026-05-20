@@ -9,7 +9,8 @@ Vite + React marketplace UI for [EVSavari](https://evsavari.com).
 
 ## Deployment
 
-- **[docs/production-deployment-guide.md](./docs/production-deployment-guide.md)** — step-by-step Vercel + Render execution, exact env lists, compatibility checks, smoke tests, and ordered launch sequence.
+- **[docs/deploy/README.md](./docs/deploy/README.md)** — automation sprint index: architecture, runbook, env checklist, rollback, CI, `deploy:smoke`.
+- **[docs/production-deployment-guide.md](./docs/production-deployment-guide.md)** — step-by-step Vercel + Render execution, env lists, compatibility checks, smoke tests, and ordered launch sequence.
 - **[docs/soft-launch-readiness.md](./docs/soft-launch-readiness.md)** — risks, blockers, and supplemental QA notes.
 
 ## Environment variables
@@ -41,6 +42,9 @@ Set `VITE_API_URL` (and optionally `VITE_GA_ID`) in your hosting provider or CI 
 npm install
 npm run dev
 npm run build
+npm run post-launch:smoke
+npm run deploy:smoke -- https://evsavari.com
+npm run ci:full
 npm run lint
 ```
 

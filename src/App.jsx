@@ -94,6 +94,38 @@ const MediaQaPage = lazy(() =>
   import("./pages/admin/MediaQaPage")
 );
 
+const LaunchStatusPage = lazy(() =>
+  import("./pages/admin/LaunchStatusPage")
+);
+
+const LaunchReadinessPage = lazy(() =>
+  import("./pages/admin/LaunchReadinessPage")
+);
+
+const RealUsageLearningPage = lazy(() =>
+  import("./pages/admin/RealUsageLearningPage")
+);
+
+const OpsDisciplineHubPage = lazy(() =>
+  import("./pages/admin/OpsDisciplineHubPage")
+);
+
+const OpsSnapshotPage = lazy(() =>
+  import("./pages/admin/OpsSnapshotPage")
+);
+
+const CatalogOpsPage = lazy(() =>
+  import("./pages/admin/CatalogOpsPage")
+);
+
+const CatalogIngestionOpsPage = lazy(() =>
+  import("./pages/admin/CatalogIngestionOpsPage")
+);
+
+const SoftLaunchOpsPage = lazy(() =>
+  import("./pages/admin/SoftLaunchOpsPage")
+);
+
 const DealerApplicationsPage = lazy(() =>
   import("./pages/admin/DealerApplicationsPage")
 );
@@ -149,16 +181,24 @@ const EditorialMarketLearning = lazy(() =>
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import PublicBetaBanner from "./components/PublicBetaBanner";
+import SoftLaunchBanner from "./components/SoftLaunchBanner";
+import CompareErrorBoundary from "./components/errors/CompareErrorBoundary";
 
 import StaticPage from "./pages/StaticPage";
+import ContactPage from "./pages/ContactPage";
 
 import {
   ABOUT_PAGE,
-  CONTACT_PAGE,
   PRIVACY_PAGE,
   TERMS_PAGE,
 } from "./content/staticPages";
+import {
+  HOW_EVSAVARI_WORKS,
+  TRUST_SCORING_PAGE,
+  TRUST_FRESHNESS_PAGE,
+  TRUST_OWNERSHIP_PAGE,
+} from "./content/trustPages";
+import TrustMethodologyPage from "./pages/trust/TrustMethodologyPage";
 
 import {
   BestEvsDiscoveryPage,
@@ -169,6 +209,10 @@ import {
   CityEvsDiscoveryPage,
   CityChargingDiscoveryPage,
 } from "./pages/discoveryRoutes";
+
+const IntelligenceDiscoveryPage = lazy(() =>
+  import("./pages/IntelligenceDiscoveryPage")
+);
 
 /* =========================================================
    ==================== ROUTE LOADER =======================
@@ -232,7 +276,7 @@ export default function App() {
     <>
       <ScrollToTop />
 
-      <PublicBetaBanner />
+      <SoftLaunchBanner />
 
       <Navbar />
 
@@ -257,6 +301,11 @@ export default function App() {
           <Route
             path="/best-evs/:useCase"
             element={<BestEvsDiscoveryPage />}
+          />
+
+          <Route
+            path="/discover/:presetSlug"
+            element={<IntelligenceDiscoveryPage />}
           />
 
           <Route
@@ -301,7 +350,11 @@ export default function App() {
 
           <Route
             path="/compare"
-            element={<ComparePage />}
+            element={
+              <CompareErrorBoundary>
+                <ComparePage />
+              </CompareErrorBoundary>
+            }
           />
 
           <Route
@@ -335,21 +388,58 @@ export default function App() {
           />
 
           <Route
+            path="/how-evsavari-works"
+            element={
+              <TrustMethodologyPage
+                page={HOW_EVSAVARI_WORKS}
+                breadcrumbLabel="How EVSavari works"
+              />
+            }
+          />
+
+          <Route
+            path="/trust/scoring"
+            element={
+              <TrustMethodologyPage
+                page={TRUST_SCORING_PAGE}
+                breadcrumbLabel="Scoring"
+              />
+            }
+          />
+
+          <Route
+            path="/trust/freshness"
+            element={
+              <TrustMethodologyPage
+                page={TRUST_FRESHNESS_PAGE}
+                breadcrumbLabel="Freshness"
+              />
+            }
+          />
+
+          <Route
+            path="/trust/ownership"
+            element={
+              <TrustMethodologyPage
+                page={TRUST_OWNERSHIP_PAGE}
+                breadcrumbLabel="Ownership"
+              />
+            }
+          />
+
+          <Route
             path="/about"
             element={
               <StaticPage
                 {...ABOUT_PAGE}
+                path="/about"
               />
             }
           />
 
           <Route
             path="/contact"
-            element={
-              <StaticPage
-                {...CONTACT_PAGE}
-              />
-            }
+            element={<ContactPage />}
           />
 
           <Route
@@ -357,6 +447,7 @@ export default function App() {
             element={
               <StaticPage
                 {...PRIVACY_PAGE}
+                path="/privacy"
               />
             }
           />
@@ -366,6 +457,7 @@ export default function App() {
             element={
               <StaticPage
                 {...TERMS_PAGE}
+                path="/terms"
               />
             }
           />
@@ -466,6 +558,78 @@ export default function App() {
             element={
               <PrivateRoute allowedRoles={["admin"]}>
                 <MediaQaPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/launch-status"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <LaunchStatusPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/launch-readiness"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <LaunchReadinessPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/real-usage-learning"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <RealUsageLearningPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/ops-discipline"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <OpsDisciplineHubPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/ops-snapshot"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <OpsSnapshotPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/catalog-ops"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CatalogOpsPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/catalog-ingestion"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CatalogIngestionOpsPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/soft-launch-ops"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <SoftLaunchOpsPage />
               </PrivateRoute>
             }
           />

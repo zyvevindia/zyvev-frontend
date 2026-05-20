@@ -47,6 +47,9 @@ function mergeIntelligence(ops = {}, behavioral = {}, adminAnalytics = {}) {
     topLandingPages: normalizeTopList(
       o.topLandingPages || b.topLandingPages
     ),
+    topExitPages: normalizeTopList(
+      o.topExitPages || b.topExitPages || b.exitPages
+    ),
     topComparePages: normalizeTopList(
       o.topComparePages || b.topComparePages || b.compareGuides || b.comparePages
     ),

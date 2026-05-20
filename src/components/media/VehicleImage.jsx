@@ -11,6 +11,7 @@ import {
   HERO_SIZES,
   LISTING_SIZES,
 } from "../../media/responsive.js";
+import { logImageFallback } from "../../launch/imageFallbackLog.js";
 import {
   IMAGE_ASPECT,
   buildImageFallbackChain,
@@ -70,7 +71,20 @@ export default function VehicleImage({
 
   const handleError = useCallback(
     (event) => {
+      const failedUrl = src;
+      const slug =
+        car?.slug ||
+        car?.catalogMeta?.slug ||
+        "";
+
       if (index < chain.length - 1) {
+        const nextUrl = chain[index + 1];
+        logImageFallback({
+          role,
+          failedUrl,
+          fallbackUrl: nextUrl,
+          slug,
+        });
         setIndex((i) => i + 1);
         setLoaded(false);
         return;
@@ -78,6 +92,12 @@ export default function VehicleImage({
 
       const img = event?.currentTarget;
       if (img && img.src !== LOCAL_FALLBACK_EV) {
+        logImageFallback({
+          role,
+          failedUrl,
+          fallbackUrl: LOCAL_FALLBACK_EV,
+          slug,
+        });
         img.src = LOCAL_FALLBACK_EV;
         setLoaded(false);
         return;
@@ -86,7 +106,7 @@ export default function VehicleImage({
       setLoaded(true);
       onBroken?.(src);
     },
-    [index, chain.length, onBroken, src]
+    [index, chain.length, onBroken, src, role, car, chain]
   );
 
   const imgBaseStyle = {

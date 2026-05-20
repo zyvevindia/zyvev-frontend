@@ -1,0 +1,22 @@
+/* Compare toggle on catalog CarCard */
+
+.car-card__compare-btn {
+  color: #fff;
+  background: #111827;
+  border: 1px solid #111827;
+}
+
+.car-card__compare-btn--hint {
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.45);
+}
+
+.car-card__compare-btn--selected {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  border-color: #15803d;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.28);
+}
+
+.car-card__compare-btn--selected:hover {
+  filter: brightness(1.05);
+}

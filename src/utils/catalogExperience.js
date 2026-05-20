@@ -85,6 +85,9 @@ export function mergeCatalogIntoVehicle(vehicle, catalogDto) {
       claimedRangeKm: catalogDto.range?.claimedKm,
       realWorldRangeKm: catalogDto.range?.realWorldKm,
       chargingSummary: buildChargingSummary(catalogDto.charging),
+      chargingIntelligence: catalogDto.charging || null,
+      chargingPracticality:
+        catalogDto.chargingPracticality ?? null,
       ownershipWarranty: catalogDto.ownership || {},
       ownershipCost5yr: catalogDto.pricing?.ownershipCost5yr,
       priceLastUpdated: catalogDto.pricing?.priceLastUpdated,
@@ -125,8 +128,13 @@ function buildChargingSummary(charging) {
   const parts = [];
   if (charging.acKw) parts.push(`${charging.acKw} kW AC`);
   if (charging.dcKw) parts.push(`${charging.dcKw} kW DC`);
+  if (charging.connectorType) parts.push(charging.connectorType);
   if (charging.dcTime10to80Minutes) {
     parts.push(`10–80% in ~${charging.dcTime10to80Minutes} min`);
+  }
+  if (charging.homeChargingSupported) parts.push("Home charging supported");
+  if (charging.portableChargerIncluded) {
+    parts.push("Portable charger included");
   }
   return parts.join(" · ");
 }

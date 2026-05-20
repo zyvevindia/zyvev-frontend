@@ -1,3 +1,8 @@
+import {
+  extractFamilySlug,
+  filterComparableVariants,
+} from "./modelFamily";
+
 /**
  * Variant-level heuristics for trim selection UX (detail page).
  */
@@ -262,7 +267,15 @@ export function enrichVariantsWithInsights(
 }
 
 export function buildVariantComparisonRows(variants = []) {
-  return enrichVariantsWithInsights(variants).map((v) => ({
+  const familySlug = extractFamilySlug(
+    variants[0]?.familySlug || variants[0]?.slug
+  );
+  const comparable = filterComparableVariants(
+    variants,
+    familySlug
+  );
+
+  return enrichVariantsWithInsights(comparable).map((v) => ({
     slug: v.slug,
     name: v.variantLabel || v.name,
     price: numericPrice(v),

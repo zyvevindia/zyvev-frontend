@@ -1,0 +1,28 @@
+# Example Render blueprint for the EVSavari API (sibling repo — NOT wired automatically).
+# Copy to backend repository root as `render.yaml` and customize.
+#
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: evsavari-api
+    runtime: node
+    region: singapore # or closest to users
+    plan: starter
+    buildCommand: npm ci && npm run build # if backend has a build step; else npm ci
+    startCommand: npm start
+    healthCheckPath: /health # implement GET /health on API, or use /cars?limit=1 in dashboard
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://evsavari.com
+      - key: TURNSTILE_SECRET_KEY
+        sync: false
+      - key: TURNSTILE_SITE_KEY
+        sync: false
+      # Add BEHAVIORAL_INTELLIGENCE_ENABLED, Sentry, etc. per backend .env.example

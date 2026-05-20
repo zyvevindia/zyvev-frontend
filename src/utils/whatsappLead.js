@@ -4,6 +4,7 @@
 
 import { API_URL, SITE_ORIGIN, WHATSAPP_SALES_NUMBER } from "../config";
 import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
+import { trackLaunchWhatsAppCta } from "../launch/launchTelemetry";
 import { BUYER_EVENTS } from "../event-tracking/eventTypes";
 import { buildBuyerInquiryTemplate } from "./whatsappOps";
 import { getAnonymousSessionId } from "../event-tracking/session";
@@ -118,6 +119,12 @@ export function openWhatsAppLead(ctx = {}) {
       compareSlugs,
       seoPageSlug: ctx.seoPageSlug,
     },
+  });
+
+  trackLaunchWhatsAppCta({
+    sourcePage: ctx.sourcePage || "",
+    vehicleSlugs,
+    intent: ctx.intent,
   });
 
   recordWhatsAppLeadIntent(ctx);

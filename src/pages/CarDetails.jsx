@@ -17,14 +17,14 @@ import LeadInquiryModal from "../components/LeadInquiryModal";
 import WhatsAppLeadCta from "../components/leads/WhatsAppLeadCta";
 import EMICalculator from "../components/EMICalculator";
 
-import SEO from "../components/SEO/SEO";
+import SeoHead from "../components/SEO/SeoHead";
 import JsonLd from "../components/SEO/JsonLd";
+import DetailSeoDiscovery from "../components/catalog/DetailSeoDiscovery";
 
 import CarDetailsSkeleton from "../components/skeletons/CarDetailsSkeleton";
 
-import CatalogTrustBadge from "../components/catalog/CatalogTrustBadge";
-
 import EvDetailGoldSections from "../components/catalog/EvDetailGoldSections";
+import DetailOverviewDashboard from "../components/car/DetailOverviewDashboard";
 
 import useCatalogEnrichment from "../hooks/useCatalogEnrichment";
 
@@ -33,9 +33,11 @@ import {
 } from "../utils/catalogExperience";
 
 import {
-  buildVehicleSchema,
+  buildProductSchema,
   buildBreadcrumbSchema,
 } from "../utils/structuredData";
+
+import { buildVehiclePageMeta } from "../seo/pageMetadata";
 
 import { formatIndianPrice } from "../utils/formatIndianPrice";
 
@@ -47,6 +49,7 @@ import {
 
 import {
   extractFamilySlug,
+  filterComparableVariants,
   formatFamilyName,
 } from "../utils/modelFamily";
 
@@ -59,10 +62,14 @@ import {
 import VehicleImage from "../components/media/VehicleImage";
 import VehicleDetailNotFound from "../components/catalog/VehicleDetailNotFound";
 import NetworkErrorPanel from "../components/ui/NetworkErrorPanel";
-import VariantSelector from "../components/catalog/VariantSelector";
 import VariantComparisonTable from "../components/catalog/VariantComparisonTable";
 import DetailBreadcrumbs from "../components/catalog/DetailBreadcrumbs";
-import DetailEmiTeaser from "../components/catalog/DetailEmiTeaser";
+import "../styles/car-details.css";
+import DetailHero from "../components/car/DetailHero";
+import DetailActionBar from "../components/car/DetailActionBar";
+import DetailTabs, { DETAIL_TABS } from "../components/car/DetailTabs";
+import DetailDealerAssistance from "../components/car/DetailDealerAssistance";
+import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
 
 import {
   applyFamilyMediaFallback,
@@ -84,15 +91,17 @@ import {
 } from "../utils/compareCarsStorage";
 
 import { trackBuyerEvent } from "../event-tracking/trackBuyerEvent";
+import {
+  trackFinanceHelpCta,
+  trackLaunchDealerAssistance,
+  trackLaunchEvViewed,
+} from "../launch/launchTelemetry";
 
 import { BUYER_EVENTS } from "../event-tracking/eventTypes";
 
 import { getLastSeoSource } from "../buyer-intelligence/journeyBuffer";
 
-import {
-  getResponsiveImage,
-  getSafeImage,
-} from "../utils/imageUtils";
+import { getSafeImage } from "../utils/imageUtils";
 
 /* =========================================================
    ==================== CAR DETAILS PAGE ===================
@@ -109,6 +118,9 @@ export default function CarDetails() {
   const comparisonRef = useRef(null);
   const emiSectionRef = useRef(null);
   const mediaFallbackRef = useRef(null);
+
+  const [activeTab, setActiveTab] =
+    useState("detail-overview");
 
   const navigate =
     useNavigate();
@@ -189,6 +201,12 @@ export default function CarDetails() {
       "Request callback"
     );
 
+  const [inquirySubtitle, setInquirySubtitle] =
+    useState("");
+
+  const [inquiryLeadMetadata, setInquiryLeadMetadata] =
+    useState({});
+
   const openInquiry = (
     headline,
     submit
@@ -201,6 +219,10 @@ export default function CarDetails() {
     setInquirySubmit(
       submit
     );
+
+    setInquirySubtitle("");
+
+    setInquiryLeadMetadata({});
 
     setInquiryOpen(
       true
@@ -415,12 +437,27 @@ export default function CarDetails() {
   const navigateVariantCompare = useCallback(
     (variants, options = {}) => {
       const { cleanSession = false } = options;
-      const list =
+      const rawList =
         variants?.length > 0
           ? variants
           : car
             ? [car]
             : [];
+
+      const compareFamilySlug =
+        extractFamilySlug(
+          rawList[0]?.familySlug ||
+            rawList[0]?.slug ||
+            car?.familySlug ||
+            car?.slug ||
+            slug ||
+            ""
+        );
+
+      const list = filterComparableVariants(
+        rawList,
+        compareFamilySlug
+      );
 
       trackVariantEvent(
         BUYER_EVENTS.COMPARE_STARTED,
@@ -446,16 +483,77 @@ export default function CarDetails() {
         },
       });
     },
-    [car, navigate, getVariantAnalyticsContext]
+    [car, navigate, getVariantAnalyticsContext, slug]
   );
 
   const scrollToEmiCalculator = useCallback(() => {
     trackPricingInteraction("emi_scroll_cta");
-    emiSectionRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    document
+      .getElementById("detail-emi-calculator")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
   }, [trackPricingInteraction]);
+
+  const scrollToDealer = useCallback(() => {
+    trackLaunchDealerAssistance({
+      sourcePage: "car_details",
+      surface: "scroll_to_dealer",
+    });
+    document
+      .getElementById("detail-dealer-assistance")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  }, []);
+
+  const handleFinanceHelp = useCallback((source = "action_bar") => {
+    const ctx = getVariantAnalyticsContext();
+
+    trackFinanceHelpCta({
+      sourcePage: "car_details",
+      source,
+      familySlug: ctx.familySlug,
+      variantSlug: ctx.variantSlug,
+      carSlug: ctx.familySlug || slug || "",
+    });
+
+    setInquiryHeadline("Get EV Finance Help");
+    setInquirySubmit("Talk to finance expert");
+    setInquirySubtitle(
+      "Our finance partners can help you understand EMI, down payment, eligibility, and EV loan options."
+    );
+    setInquiryLeadMetadata({
+      intent: "finance_help",
+      source: "finance_help_cta",
+      ctaSource: source,
+      familySlug: ctx.familySlug,
+      variantSlug: ctx.variantSlug,
+      brand: ctx.brand,
+    });
+    setInquiryOpen(true);
+  }, [getVariantAnalyticsContext, slug]);
+
+  const scrollToSection = useCallback((sectionId) => {
+    setActiveTab(sectionId);
+
+    let targetId = sectionId;
+    if (
+      sectionId === "detail-variants" &&
+      !document.getElementById("detail-variants")
+    ) {
+      targetId = "detail-compare";
+    }
+
+    document
+      .getElementById(targetId)
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  }, []);
 
   const openTestDrive = useCallback(() => {
     setTestDriveOpen(true);
@@ -535,13 +633,42 @@ export default function CarDetails() {
         : {},
     });
 
-    trackBuyerEvent(BUYER_EVENTS.DETAIL_PAGE_VIEWED, {
-      ...ctx,
-      sessionIntent: getLastSeoSource()
-        ? "seo_referral"
-        : undefined,
+    trackLaunchEvViewed({
+      familySlug: ctx.familySlug,
+      variantSlug: ctx.variantSlug,
+      sourcePage: ctx.sourcePage,
+      brand: ctx.brand,
     });
   }, [displayCar, loading, slug, family?.familySlug]);
+
+  useEffect(() => {
+    if (!displayCar) return;
+
+    const ids = DETAIL_TABS.map((t) => t.id);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort(
+            (a, b) =>
+              b.intersectionRatio - a.intersectionRatio
+          );
+        const top = visible[0]?.target?.id;
+        if (top) setActiveTab(top);
+      },
+      {
+        rootMargin: "-120px 0px -55% 0px",
+        threshold: [0, 0.15, 0.35],
+      }
+    );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [displayCar, slug]);
 
   /* =========================================================
      ======================= LOADING =========================
@@ -589,14 +716,20 @@ export default function CarDetails() {
       ? familyVariants
       : vehicle.variants || [];
 
+  const comparableVariants = filterComparableVariants(
+    variantOptions,
+    familySlug
+  );
+
   const familyFallbackVehicle =
     family?.defaultVariant ||
+    comparableVariants[0] ||
     variantOptions[0] ||
     vehicle;
 
   const enrichedVariants =
     enrichVariantsWithInsights(
-      variantOptions,
+      comparableVariants,
       familyFallbackVehicle
     );
 
@@ -632,11 +765,6 @@ export default function CarDetails() {
       displayImage
     );
 
-  const responsiveMainImage =
-    getResponsiveImage(
-      safeDisplayImage
-    );
-
   /* =========================================================
      ====================== VARIANT DATA =====================
      ========================================================= */
@@ -666,19 +794,36 @@ export default function CarDetails() {
 
       : [];
 
-  const overview =
-    vehicle.catalogMeta?.expertSummary ||
-    vehicle.overview ||
-
+  const expertSummary = String(
+    vehicle.catalogMeta?.expertSummary || ""
+  ).trim();
+  const vehicleOverviewText = String(
+    vehicle.overview || ""
+  ).trim();
+  const overviewFallback =
     "Experience next-generation electric mobility.";
 
-  const seoTitle =
-    vehicle.seo?.metaTitle ||
-    `${vehicle.name} Price, Range, Specs & Review | EVSavari`;
+  const overview =
+    expertSummary ||
+    vehicleOverviewText ||
+    overviewFallback;
 
-  const seoDescription =
-    vehicle.seo?.metaDescription ||
-    overview;
+  const overviewSupplement =
+    expertSummary &&
+    vehicleOverviewText &&
+    expertSummary !== vehicleOverviewText
+      ? vehicleOverviewText
+      : null;
+
+  const pageMeta = buildVehiclePageMeta({
+    name: vehicle.name,
+    brand: vehicle.brand,
+    overview,
+    familySlug,
+    image: getOgImage(vehicle),
+    metaTitle: vehicle.seo?.metaTitle,
+    metaDescription: vehicle.seo?.metaDescription,
+  });
 
   const faqSchema = buildFaqSchema(
     [
@@ -688,18 +833,33 @@ export default function CarDetails() {
     canonicalVehicleUrl(slug)
   );
 
+  const familyMaxRange =
+    Number(family?.maxRange) ||
+    Math.max(
+      0,
+      ...enrichedVariants.map((v) =>
+        Number(v.range ?? v.specifications?.range ?? 0)
+      )
+    );
+
   /* =========================================================
      ====================== JSON-LD SEO ======================
      ========================================================= */
 
-  const vehicleSchema = buildVehicleSchema({
+  const batteryKwh =
+    vehicle.batteryCapacity ||
+    vehicle.specifications?.batteryCapacity ||
+    vehicle.catalogMeta?.battery?.capacityKwh;
+
+  const productSchema = buildProductSchema({
     name: vehicle.name,
     brand: vehicle.brand,
     description: overview,
     images: galleryImages,
     priceInr: activePrice,
     slug: familySlug,
-    sku: vehicle._id,
+    rangeKm: familyMaxRange || vehicle.range,
+    batteryKwh,
   });
 
   const brandLabel =
@@ -722,6 +882,19 @@ export default function CarDetails() {
       : []),
   ]);
 
+  const safetyLabel =
+    vehicle.catalogMeta?.safety?.bharatNcap?.stars != null
+      ? `${vehicle.catalogMeta.safety.bharatNcap.stars} Star NCAP`
+      : safety[0] || null;
+
+  const handleCompareEv = () => {
+    navigateVariantCompare(
+      comparableVariants.length > 0
+        ? comparableVariants
+        : [vehicle]
+    );
+  };
+
   /* =========================================================
      ========================= RENDER ========================
      ========================================================= */
@@ -729,19 +902,9 @@ export default function CarDetails() {
   return (
 
     <>
-      <SEO
-        title={seoTitle}
-        description={seoDescription}
-        canonical={
-          canonicalVehicleUrl(familySlug)
-        }
-        image={getOgImage(vehicle)}
-        type="product"
-      />
+      <SeoHead meta={pageMeta} />
 
-      <JsonLd
-        data={vehicleSchema}
-      />
+      <JsonLd data={productSchema} />
 
       <JsonLd
         data={breadcrumbSchema}
@@ -751,692 +914,263 @@ export default function CarDetails() {
         <JsonLd data={faqSchema} />
       )}
 
-      <div style={pageContainer}>
-
-        {/* ================= TOP BAR ================= */}
-
-        <div style={topBar}>
-
-          <button
-            onClick={() =>
-              navigate(-1)
-            }
-
-            style={backButton}
-
-            aria-label="Go back"
-          >
-            ← Back
-          </button>
-
-        </div>
-
-        <DetailBreadcrumbs
-          brand={brandLabel}
-          familySlug={familySlug}
-          familyTitle={familyTitle}
-          variantLabel={activeVariantLabel}
-        />
-
-        {/* ================= HERO ================= */}
-
-        <section style={heroSection}>
-
-          {/* ================= LEFT ================= */}
-
-          <div style={leftColumn}>
-
-            {/* ================= MAIN IMAGE ================= */}
-
-            <div
-              style={imageSection}
-              className="detail-hero-frame"
+      <div className="cd-page">
+        <div className="cd-shell">
+          <div style={topBar}>
+            <button
+              onClick={() => navigate(-1)}
+              style={backButton}
+              aria-label="Go back"
             >
-              <div
-                key={selectedVariantSlug}
-                className="detail-hero-image-wrap"
-              >
-              <VehicleImage
-                car={vehicle}
-                src={safeDisplayImage}
-                role="hero"
-                alt={vehicle.name}
-                eager
-                responsive
-                imgStyle={carImage}
-                wrapperStyle={{
-                  width: "100%",
-                  height: "100%",
-                  aspectRatio: "unset",
-                }}
-              />
-              </div>
-            </div>
-
-            {/* ================= GALLERY ================= */}
-
-            <div style={galleryRow}>
-
-              {galleryImages.map(
-                (
-                  image,
-                  index
-                ) => {
-
-                  const safeImage =
-                    getSafeImage(
-                      image
-                    );
-
-                  return (
-
-                    <button
-                      key={index}
-
-                      style={{
-                        ...galleryButton,
-
-                        border:
-                          selectedImage === image
-
-                            ? "3px solid #2563eb"
-
-                            : "1px solid #e2e8f0",
-                      }}
-
-                      onClick={() =>
-                        setSelectedImage(
-                          image
-                        )
-                      }
-
-                      aria-label={`View image ${index + 1}`}
-                    >
-
-                      <VehicleImage
-                        car={vehicle}
-                        src={safeImage}
-                        role="gallery"
-                        alt={`${vehicle.name} ${index + 1}`}
-                        imgStyle={galleryImage}
-                        wrapperStyle={{
-                          width: "100%",
-                          height: "100%",
-                          aspectRatio: "unset",
-                        }}
-                      />
-
-                    </button>
-                  );
-                }
-              )}
-
-            </div>
-
-            {/* ================= COLORS ================= */}
-
-            {vehicle.colors?.length >
-              0 && (
-
-              <div>
-
-                <h2 style={sectionTitle}>
-                  Available Colors
-                </h2>
-
-                <div style={colorRow}>
-
-                  {vehicle.colors.map(
-                    (
-                      color,
-                      index
-                    ) => (
-
-                      <button
-                        key={index}
-
-                        style={{
-                          ...colorButton,
-
-                          border:
-                            selectedColor
-                              ?.name ===
-                            color.name
-
-                              ? "3px solid #2563eb"
-
-                              : "1px solid #cbd5e1",
-                        }}
-
-                        onClick={() => {
-
-                          setSelectedColor(
-                            color
-                          );
-
-                          setSelectedImage(
-                            color.image
-                          );
-                        }}
-
-                        aria-label={`Select ${color.name} color`}
-                      >
-                        {color.name}
-                      </button>
-                    )
-                  )}
-
-                </div>
-
-              </div>
-            )}
-
+              ← Back
+            </button>
           </div>
 
-          {/* ================= RIGHT ================= */}
-
-          <div style={infoSection}>
-
-            <div>
-
-              <div style={premiumBadge}>
-                {vehicle.category ||
-                  "Premium Electric Vehicle"}
-              </div>
-
-              <h1 style={carTitle}>
-                {familyTitle}
-              </h1>
-
-              {variantOptions.length > 1 && (
-                <p style={familyMetaLine}>
-                  {variantOptions.length} variants · from{" "}
-                  {formatIndianPrice(
-                    family?.startingPrice || activePrice
-                  )}{" "}
-                  · up to {family?.maxRange || activeRange} km
-                </p>
-              )}
-
-              <p
-                className="detail-hero-price"
-                style={priceText}
-                role="button"
-                tabIndex={0}
-                onClick={() =>
-                  trackPricingInteraction("price_display")
-                }
-                onKeyDown={(e) => {
-                  if (
-                    e.key === "Enter" ||
-                    e.key === " "
-                  ) {
-                    trackPricingInteraction(
-                      "price_display"
-                    );
-                  }
-                }}
-              >
-                {formatIndianPrice(activePrice)}
-                {(selectedVariant?.variantLabel ||
-                  (vehicle.slug !== familySlug &&
-                    vehicle.name !== familyTitle &&
-                    vehicle.name)) && (
-                  <span style={variantPriceHint}>
-                    {" "}
-                    ·{" "}
-                    {selectedVariant?.variantLabel ||
-                      vehicle.name?.replace(
-                        familyTitle,
-                        ""
-                      ).trim() ||
-                      vehicle.name}
-                  </span>
-                )}
-              </p>
-
-              <DetailEmiTeaser
-                price={activePrice}
-                onOpenCalculator={scrollToEmiCalculator}
-              />
-
-              <p style={subtitleText}>
-                {overview}
-              </p>
-
-              <CatalogTrustBadge
-                catalogMeta={
-                  vehicle.catalogMeta
-                }
-                catalogSource={
-                  vehicle.catalogSource
-                }
-              />
-
-            </div>
-
-            {/* ================= SPEC GRID ================= */}
-
-            <div
-              style={specGrid}
-              className="detail-spec-grid-stable"
-            >
-
-              <div style={specCard}>
-                <p style={specLabel}>
-                  Range
-                </p>
-
-                <h3 style={specValue}>
-                  ⚡ {activeRange > 0 ? `${activeRange} km` : "—"}
-                </h3>
-              </div>
-
-              <div style={specCard}>
-                <p style={specLabel}>
-                  Battery
-                </p>
-
-                <h3 style={specValue}>
-                  🔋 {activeBattery}
-                </h3>
-              </div>
-
-              <div style={specCard}>
-                <p style={specLabel}>
-                  Charging
-                </p>
-
-                <h3 style={specValue}>
-                  ⚡ {activeCharging}
-                </h3>
-              </div>
-
-              <div style={specCard}>
-                <p style={specLabel}>
-                  Top Speed
-                </p>
-
-                <h3 style={specValue}>
-                  🚀 {topSpeed}
-                </h3>
-              </div>
-
-            </div>
-
-            {/* ================= FEATURES ================= */}
-
-            {features.length >
-              0 && (
-
-              <div>
-
-                <h2 style={sectionTitle}>
-                  Features
-                </h2>
-
-                <div style={highlightGrid}>
-
-                  {features.map(
-                    (
-                      item,
-                      index
-                    ) => (
-
-                      <div
-                        key={index}
-
-                        style={
-                          highlightCard
-                        }
-                      >
-                        ✔ {item}
-                      </div>
-                    )
-                  )}
-
-                </div>
-
-              </div>
-            )}
-
-            {/* ================= SAFETY ================= */}
-
-            {safety.length >
-              0 && (
-
-              <div>
-
-                <h2 style={sectionTitle}>
-                  Safety
-                </h2>
-
-                <div style={highlightGrid}>
-
-                  {safety.map(
-                    (
-                      item,
-                      index
-                    ) => (
-
-                      <div
-                        key={index}
-
-                        style={
-                          safetyCard
-                        }
-                      >
-                        🛡 {item}
-                      </div>
-                    )
-                  )}
-
-                </div>
-
-              </div>
-            )}
-
-            {/* ================= CTA ================= */}
-
-            <div style={actionRow}>
-
-              <button
-                type="button"
-                style={secondaryAction}
-                onClick={() =>
-                  openInquiry(
-                    "Request a callback",
-                    "Request callback"
-                  )
-                }
-              >
-                Request callback
-              </button>
-
-              <button
-                type="button"
-                style={secondaryAction}
-                onClick={() =>
-                  openInquiry(
-                    "Get the best deal",
-                    "Get best deal"
-                  )
-                }
-              >
-                Get best deal
-              </button>
-
-              <button
-                type="button"
-                style={primaryAction}
-                onClick={openTestDrive}
-              >
-                Book Test Drive
-              </button>
-
-              <WhatsAppLeadCta
-                vehicleName={vehicle.name}
-                vehicleSlug={familySlug}
-                familySlug={familySlug}
-                variantSlug={selectedVariantSlug}
-                sourcePage={`/cars/${familySlug}`}
-                intent="inquiry"
-                label="WhatsApp enquiry"
-                variant="secondary"
-              />
-
-              <button
-                style={secondaryAction}
-                onClick={() =>
-                  navigateVariantCompare(
-                    variantOptions.length > 1
-                      ? variantOptions
-                      : [vehicle]
-                  )
-                }
-              >
-                Compare EV
-              </button>
-
-            </div>
-
-          </div>
-
-        </section>
-
-        {enrichedVariants.length > 0 && (
-          <VariantSelector
-            sticky={enrichedVariants.length > 1}
-            variants={enrichedVariants}
-            selectedSlug={selectedVariantSlug}
-            onSelect={handleSelectVariant}
-            onCompareVariants={
-              enrichedVariants.length > 1
-                ? scrollToVariantComparison
-                : undefined
-            }
+          <DetailBreadcrumbs
+            brand={brandLabel}
+            familySlug={familySlug}
+            familyTitle={familyTitle}
+            variantLabel={activeVariantLabel}
           />
-        )}
 
-        <section
-          ref={emiSectionRef}
-          id="detail-emi-calculator"
-          className="detail-emi-section"
-        >
-          <div
-            style={{
-              maxWidth: "1500px",
-              margin: "0 auto",
-              padding:
-                "8px clamp(18px, 3vw, 36px) 0",
-            }}
-            onFocusCapture={() =>
-              trackPricingInteraction("emi_calculator")
+          <DetailHero
+            vehicle={vehicle}
+            familyTitle={familyTitle}
+            activeVariantLabel={activeVariantLabel}
+            variantCount={comparableVariants.length}
+            familyMaxRange={familyMaxRange}
+            activePrice={activePrice}
+            activeRange={activeRange}
+            activeBattery={activeBattery}
+            activeCharging={activeCharging}
+            topSpeed={topSpeed}
+            safetyLabel={safetyLabel}
+            category={vehicle.category}
+            galleryImages={galleryImages}
+            selectedImage={selectedImage}
+            selectedVariantSlug={selectedVariantSlug}
+            safeDisplayImage={safeDisplayImage}
+            onSelectImage={setSelectedImage}
+            onPriceClick={() =>
+              trackPricingInteraction("price_display")
             }
-          >
-            <EMICalculator price={activePrice} />
-          </div>
-        </section>
+            onScrollEmi={scrollToEmiCalculator}
+            onScrollDealer={scrollToDealer}
+          />
 
-        {enrichedVariants.length > 1 && (
-          <div ref={comparisonRef}>
+          <DetailActionBar
+            onEmi={scrollToEmiCalculator}
+            onDealer={scrollToDealer}
+            onRequestCallback={() => {
+              trackLaunchDealerAssistance({
+                sourcePage: "car_details",
+                surface: "request_callback",
+              });
+              openInquiry(
+                "Request a callback",
+                "Request callback"
+              );
+            }}
+            onGetBestDeal={() => {
+              trackLaunchDealerAssistance({
+                sourcePage: "car_details",
+                surface: "get_best_deal",
+              });
+              openInquiry("Get the best deal", "Get best deal");
+            }}
+            onTestDrive={openTestDrive}
+            onFinanceHelp={() => handleFinanceHelp("action_bar")}
+            onCompare={handleCompareEv}
+          />
+
+          <DetailTabs
+            activeId={activeTab}
+            onSelect={scrollToSection}
+          />
+
+          <section
+            id="detail-overview"
+            className="cd-section cd-card cd-content-card cd-overview-section"
+          >
+            <DetailOverviewDashboard
+              overview={overview}
+              overviewSupplement={overviewSupplement}
+              features={features}
+              catalogMeta={vehicle.catalogMeta}
+              catalogSource={vehicle.catalogSource}
+              vehicle={vehicle}
+            />
+          </section>
+
+          {enrichedVariants.length >= 1 && (
             <VariantComparisonTable
+              ref={comparisonRef}
               variants={enrichedVariants}
               selectedSlug={selectedVariantSlug}
               onSelect={handleSelectVariant}
+              onCompareAll={() =>
+                navigateVariantCompare(comparableVariants, {
+                  cleanSession: true,
+                })
+              }
             />
-            <div
-              style={{
-                maxWidth: "1500px",
-                margin: "0 auto",
-                padding:
-                  "0 clamp(18px, 3vw, 36px) 8px",
-              }}
-            >
-              <button
-                type="button"
-                className="variant-selector__compare-btn"
-                onClick={() =>
-                  navigateVariantCompare(
-                    variantOptions,
-                    { cleanSession: true }
-                  )
-                }
-              >
-                Compare all variants
-              </button>
-            </div>
-          </div>
-        )}
+          )}
+          {hasGoldExperience && (
+            <EvDetailGoldSections
+              car={vehicle}
+              slug={slug}
+              layout="v2"
+              only={["compare-rivals"]}
+            />
+          )}
 
-        {hasGoldExperience && (
-          <EvDetailGoldSections
+          <EvIntelligenceSections
             car={vehicle}
             slug={slug}
+            layout="v2"
+            sections={[
+              "range",
+              "charging",
+              "ownership",
+              "features",
+              "suitability",
+            ]}
           />
-        )}
 
-        {/* ================= OVERVIEW ================= */}
-
-        <section style={overviewContainer}>
-
-          <div style={overviewCard}>
-
-            <h2 style={sectionTitle}>
-              Vehicle Overview
-            </h2>
-
-              <p style={descriptionText}>
-              {vehicle.catalogMeta?.expertSummary ||
-                overview}
+          <section
+            id="detail-emi-calculator"
+            className="cd-section cd-card cd-content-card detail-emi-section"
+          >
+            <h2 className="cd-section__title">EMI</h2>
+            <p className="cd-section__intro">
+              Calculate EMI and check finance options in your city.
             </p>
-
-          </div>
-
-        </section>
-
-        {/* ================= LOWER ================= */}
-
-        <section style={bottomSection}>
-
-          <div style={bottomGrid}>
-
-            <div style={premiumCard}>
-
-              <h3
-                style={{
-                  margin: "0 0 10px 0",
-                  fontSize: "20px",
-                  fontWeight: "800",
-                  color: "#0f172a",
-                }}
-              >
-                Dealer assistance
-              </h3>
-
-              <p
-                style={{
-                  margin: "0 0 16px 0",
-                  fontSize: "14px",
-                  lineHeight: "1.75",
-                  color: "#475569",
-                }}
-              >
-                Verified EV dealers will contact you
-                with pricing and availability. Your
-                details are used only for this enquiry.
-              </p>
-
-              <div
-                style={{
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                }}
-              >
-
-                <button
-                  type="button"
-                  style={secondaryAction}
-                  onClick={() =>
-                    openInquiry(
-                      "Request a callback",
-                      "Request callback"
-                    )
-                  }
-                >
-                  Request callback
-                </button>
-
-                <button
-                  type="button"
-                  style={secondaryAction}
-                  onClick={() =>
-                    openInquiry(
-                      "Get the best deal",
-                      "Get best deal"
-                    )
-                  }
-                >
-                  Get best deal
-                </button>
-
-                <WhatsAppLeadCta
-                  vehicleName={vehicle.name}
-                  vehicleSlug={familySlug}
-                  familySlug={familySlug}
-                  variantSlug={selectedVariantSlug}
-                  sourcePage={`/cars/${familySlug}`}
-                  intent="inquiry"
-                  label="WhatsApp enquiry"
-                  variant="secondary"
-                />
-
-              </div>
-
+            <div
+              ref={emiSectionRef}
+              className="detail-emi-section__inner"
+              onFocusCapture={() =>
+                trackPricingInteraction("emi_calculator")
+              }
+            >
+              <EMICalculator
+                price={activePrice}
+                onGetFinanceHelp={() =>
+                  handleFinanceHelp("emi_widget")
+                }
+              />
             </div>
+          </section>
 
-            <LeadInquiryModal
-              isOpen={inquiryOpen}
-              onClose={() =>
-                setInquiryOpen(
-                  false
-                )
-              }
-              sourcePage="car_details"
-              vehicleName={vehicle.name}
-              vehicleId={
-                String(
-                  vehicle.slug ||
-                    vehicle._id ||
-                    ""
-                )
-              }
-              mongoCarId={
-                String(
-                  vehicle._id || ""
-                )
-              }
-              headline={inquiryHeadline}
-              submitLabel={inquirySubmit}
+          {hasGoldExperience && (
+            <EvDetailGoldSections
+              car={vehicle}
+              slug={slug}
+              layout="v2"
+              only={["faq"]}
             />
+          )}
 
-            <LeadInquiryModal
-              isOpen={testDriveOpen}
-              onClose={() => setTestDriveOpen(false)}
-              sourcePage="car_details_test_drive"
-              formMode="test_drive"
-              vehicleName={
-                selectedVariant?.variantLabel ||
-                vehicle.name
-              }
-              vehicleId={String(
-                selectedVariant?.slug ||
-                  vehicle.slug ||
-                  ""
-              )}
-              mongoCarId={String(vehicle._id || "")}
-              headline="Book a test drive"
-              submitLabel="Request test drive"
-              defaultVariantSlug={selectedVariantSlug}
-              variantOptions={enrichedVariants.map(
-                (v) => ({
-                  slug: v.slug,
-                  label:
-                    v.variantLabel || v.name,
-                })
-              )}
-              leadMetadata={{
-                familySlug,
-                variantSlug: selectedVariantSlug,
-                brand: vehicle.brand || "",
-              }}
-            />
+          <section
+            id="detail-reviews"
+            className="cd-section cd-card cd-content-card"
+          >
+            <h2 className="cd-section__title">Reviews</h2>
+            <p className="cd-section__intro">
+              See expert and user reviews across categories. Owner reviews
+              and ratings for this model are being curated on EVSavari.
+              Explore variant specs and compare rivals while we add verified
+              owner feedback.
+            </p>
+          </section>
 
-          </div>
+          {safety.length > 0 && (
+            <section className="cd-section cd-card cd-content-card">
+              <h2 className="cd-section__title">Safety</h2>
+              <div className="cd-features-grid">
+                {safety.map((item, index) => (
+                  <div key={index} className="cd-feature-chip">
+                    🛡 {item}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
-        </section>
+          <DetailSeoDiscovery
+            familySlug={familySlug}
+            vehicleName={vehicle.name}
+            compareRivals={
+              vehicle.catalogMeta?.compareRivals || []
+            }
+            brand={vehicle.brand}
+            bodyType={
+              vehicle.bodyType ||
+              vehicle.catalogMeta?.bodyType
+            }
+            priceInr={activePrice}
+          />
 
+          <DetailDealerAssistance
+            vehicle={vehicle}
+            familySlug={familySlug}
+            selectedVariantSlug={selectedVariantSlug}
+            onRequestCallback={() => {
+              trackLaunchDealerAssistance({
+                sourcePage: "car_details",
+                surface: "request_callback",
+              });
+              openInquiry(
+                "Request a callback",
+                "Request callback"
+              );
+            }}
+            onGetBestDeal={() => {
+              trackLaunchDealerAssistance({
+                sourcePage: "car_details",
+                surface: "get_best_deal",
+              });
+              openInquiry("Get the best deal", "Get best deal");
+            }}
+          />
+
+          <LeadInquiryModal
+            isOpen={inquiryOpen}
+            onClose={() => setInquiryOpen(false)}
+            sourcePage="car_details"
+            modelName={familyTitle}
+            vehicleName={vehicle.name}
+            vehicleId={String(vehicle.slug || vehicle._id || "")}
+            mongoCarId={String(vehicle._id || "")}
+            headline={inquiryHeadline}
+            subtitle={inquirySubtitle}
+            submitLabel={inquirySubmit}
+            leadMetadata={inquiryLeadMetadata}
+          />
+
+          <LeadInquiryModal
+            isOpen={testDriveOpen}
+            onClose={() => setTestDriveOpen(false)}
+            sourcePage="car_details_test_drive"
+            formMode="test_drive"
+            modelName={familyTitle}
+            vehicleId={String(
+              selectedVariant?.slug || vehicle.slug || ""
+            )}
+            mongoCarId={String(vehicle._id || "")}
+            headline="Book a test drive"
+            submitLabel="Request test drive"
+            defaultVariantSlug={selectedVariantSlug}
+            variantOptions={enrichedVariants.map((v) => ({
+              slug: v.slug,
+              label: v.variantLabel || v.name,
+            }))}
+            leadMetadata={{
+              familySlug,
+              variantSlug: selectedVariantSlug,
+              brand: vehicle.brand || "",
+            }}
+          />
+        </div>
       </div>
 
     </>
@@ -1891,37 +1625,6 @@ const secondaryAction = {
 
   transition:
     "all 0.25s ease",
-};
-
-const overviewContainer = {
-  maxWidth: "1500px",
-
-  margin: "0 auto",
-
-  padding:
-    "34px clamp(18px, 3vw, 36px) 0",
-};
-
-const overviewCard = {
-  background: "white",
-
-  borderRadius: "30px",
-
-  padding: "40px",
-
-  border:
-    "1px solid #e2e8f0",
-
-  boxShadow:
-    "0 24px 60px rgba(15,23,42,0.06)",
-};
-
-const descriptionText = {
-  color: "#475569",
-
-  lineHeight: "2",
-
-  fontSize: "16px",
 };
 
 const bottomSection = {

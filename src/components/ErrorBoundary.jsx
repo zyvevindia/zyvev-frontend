@@ -1,6 +1,7 @@
 import React from "react";
 
 import { logProduction } from "../utils/productionLog";
+import { captureException } from "../monitoring/sentry";
 
 /* =========================================================
    ===================== ERROR BOUNDARY ====================
@@ -50,6 +51,11 @@ class ErrorBoundary extends React.Component {
       },
       "error"
     );
+
+    captureException(error, {
+      surface: "error_boundary",
+      componentStack: errorInfo?.componentStack?.slice(0, 500),
+    });
   }
 
   /* =========================================================

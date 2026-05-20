@@ -13,6 +13,7 @@ import SeoRelatedLinks from "../components/SEO/SeoRelatedLinks";
 import useDiscoveryPage from "../hooks/useDiscoveryPage";
 import { resolveDiscoveryRoute, PAGE_TYPES } from "../seo/registry";
 import { buildGuidePageMeta, stripBrandSuffix } from "../seo/meta";
+import { buildCompareGuidePageMeta } from "../seo/pageMetadata";
 import { buildDiscoveryPageSchemas } from "../seo/schema";
 import { getDiscoveryLinkSections } from "../seo/internalLinks";
 import { replaceCompareCars } from "../utils/compareCarsStorage";
@@ -101,8 +102,12 @@ export default function DiscoverySeoPage({ pageType }) {
 
   const canonical =
     routeContext.canonicalUrl || seoPage.canonicalUrl;
-  const meta = buildGuidePageMeta(seoPage, canonical);
-  const isCompare = seoPage.category === "compare";
+  const isCompare =
+    pageType === PAGE_TYPES.COMPARE_GUIDE ||
+    seoPage.category === "compare";
+  const meta = isCompare
+    ? buildCompareGuidePageMeta(seoPage, canonical)
+    : buildGuidePageMeta(seoPage, canonical);
   const typeLabel = PAGE_TYPE_LABELS[pageType] || "Guides";
 
   const breadcrumbs = [

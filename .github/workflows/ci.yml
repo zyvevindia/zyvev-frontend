@@ -1,0 +1,51 @@
+# Lightweight production-safe CI — build + smoke suites (no deploy).
+# Triggers: PRs and pushes to default integration branches.
+
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - develop
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deployment repo validation (static, no install)
+        run: node scripts/deployment-repo-validation.mjs
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Production build (Vite + SEO artifacts)
+        run: npm run build
+
+      - name: Post-launch smoke suite (SEO QA, trust, soft-launch, catalog-ops, intelligence, usage-learning)
+        run: npm run post-launch:smoke
+
+      - name: Catalog ingestion smoke
+        run: npm run ingestion:smoke
+
+      # Optional: enable when eslint is clean on main
+      # - name: Lint
+      #   run: npm run lint

@@ -11,7 +11,9 @@ import {
   buildStaticSitemapEntries,
   buildVehicleFamilySitemapEntries,
   buildDiscoveryGuideSitemapEntries,
+  buildCompareGuideSitemapEntries,
   buildFullSitemapManifest,
+  buildIntelligenceDiscoverySitemapEntries,
 } from "../src/seo/sitemap.js";
 import { GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH } from "../src/seo/legacyCanonicalMap.js";
 
@@ -22,7 +24,33 @@ const sitemapsDir = join(publicDir, "sitemaps");
 
 const SITE_ORIGIN =
   process.env.VITE_SITE_ORIGIN || "https://evsavari.com";
-const LASTMOD = new Date().toISOString().slice(0, 10);
+const DEFAULT_LASTMOD = new Date().toISOString().slice(0, 10);
+
+function loadLastmodByPath() {
+  const map = {};
+  const manifestPath = join(publicDir, "seo-data/content-manifest.json");
+
+  if (!existsSync(manifestPath)) {
+    return map;
+  }
+
+  try {
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+
+    for (const row of manifest.entries || []) {
+      if (!row.path) continue;
+      const raw = row.updatedAt || row.generatedAt || manifest.generatedAt;
+
+      if (raw) {
+        map[row.path] = String(raw).slice(0, 10);
+      }
+    }
+  } catch {
+    /* non-fatal */
+  }
+
+  return map;
+}
 
 function discoveryEntry(path, priority, siteOrigin = SITE_ORIGIN) {
   return {
@@ -60,6 +88,12 @@ function mergeDiscoveryEntries(baseEntries, siteOrigin) {
     }
   }
 
+  for (const entry of buildIntelligenceDiscoverySitemapEntries(
+    siteOrigin
+  )) {
+    byPath.set(entry.path, entry);
+  }
+
   return [...byPath.values()];
 }
 
@@ -72,12 +106,12 @@ function escapeXml(value) {
     .replace(/'/g, "&apos;");
 }
 
-function urlsetXml(entries) {
+function urlsetXml(entries, defaultLastmod = DEFAULT_LASTMOD) {
   const body = entries
     .map(
       (e) => `  <url>
     <loc>${escapeXml(e.loc)}</loc>
-    <lastmod>${LASTMOD}</lastmod>
+    <lastmod>${escapeXml(e.lastmod || defaultLastmod)}</lastmod>
     <changefreq>${e.changefreq || "weekly"}</changefreq>
     <priority>${Number(e.priority ?? 0.75).toFixed(2)}</priority>
   </url>`
@@ -91,12 +125,12 @@ ${body}
 `;
 }
 
-function sitemapIndexXml(sitemapFiles) {
+function sitemapIndexXml(sitemapFiles, lastmod = DEFAULT_LASTMOD) {
   const body = sitemapFiles
     .map(
       (file) => `  <sitemap>
     <loc>${escapeXml(`${SITE_ORIGIN}/sitemaps/${file}`)}</loc>
-    <lastmod>${LASTMOD}</lastmod>
+    <lastmod>${lastmod}</lastmod>
   </sitemap>`
     )
     .join("\n");
@@ -161,9 +195,10 @@ Disallow: /login
 Disallow: /users
 Disallow: /kanban
 
-# Legacy compare query-string URLs (canonical compare uses /compare/:slug)
+# Compare tool session noise (canonical editorial compares use /compare/:slug)
 Disallow: /compare?
 Disallow: /*?cars=*
+Disallow: /*?compareMode=*
 Disallow: /*?utm_*
 Disallow: /*?fbclid*
 Disallow: /*?gclid*
@@ -176,14 +211,26 @@ Allow: /*?variant=
 # Legacy vehicle prefix — canonical is /cars/:familySlug
 Disallow: /car/
 
-# Internal static data
+# Internal / non-public surfaces
 Disallow: /seo-data/
+Disallow: /api/
+Disallow: /debug/
+
+# Allow high-value discovery paths explicitly
+Allow: /cars/
+Allow: /compare/
+Allow: /best-evs/
+Allow: /brands/
+Allow: /cities/
+Allow: /guides
+Allow: /discover/
 
 Sitemap: ${SITE_ORIGIN}/sitemap.xml
 `;
 }
 
 const extras = discoverSeoDataExtras();
+const lastmodByPath = loadLastmodByPath();
 const manifest = buildFullSitemapManifest(SITE_ORIGIN, extras);
 
 mkdirSync(sitemapsDir, { recursive: true });
@@ -194,7 +241,9 @@ const discoveryEntries = mergeDiscoveryEntries(
   buildDiscoveryGuideSitemapEntries(SITE_ORIGIN, extras),
   SITE_ORIGIN
 );
-const compareEntries = [{ loc: `${SITE_ORIGIN}/compare`, path: "/compare", priority: 0.85, changefreq: "weekly" }];
+const compareEntries = buildCompareGuideSitemapEntries(SITE_ORIGIN, {
+  lastmodByPath,
+});
 
 writeFileSync(join(sitemapsDir, "static.xml"), urlsetXml(staticEntries));
 writeFileSync(join(sitemapsDir, "cars.xml"), urlsetXml(vehicleEntries));

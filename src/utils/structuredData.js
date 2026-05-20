@@ -9,6 +9,76 @@ import { canonicalVehicleUrl } from "./vehicleRoutes";
 import { canonicalSeoPageUrl } from "./seoRoutes";
 
 /**
+ * schema.org Product — primary rich-result shape for EV detail pages.
+ */
+export function buildProductSchema({
+  name,
+  brand,
+  description,
+  images = [],
+  priceInr,
+  slug,
+  rangeKm,
+  batteryKwh,
+  siteOrigin = SITE_ORIGIN,
+}) {
+  const url = canonicalVehicleUrl(slug, siteOrigin);
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name,
+    description:
+      description || `${name} — electric vehicle on EVSavari`,
+    url,
+    image: images.filter(Boolean),
+    category: "Electric Vehicle",
+    brand: {
+      "@type": "Brand",
+      name: brand || "EV",
+    },
+  };
+
+  const additionalProperty = [];
+
+  if (rangeKm != null && Number(rangeKm) > 0) {
+    additionalProperty.push({
+      "@type": "PropertyValue",
+      name: "Range (certified)",
+      value: `${Math.round(Number(rangeKm))} km`,
+    });
+  }
+
+  if (batteryKwh != null && Number(batteryKwh) > 0) {
+    additionalProperty.push({
+      "@type": "PropertyValue",
+      name: "Battery capacity",
+      value: `${Number(batteryKwh)} kWh`,
+    });
+  }
+
+  if (additionalProperty.length) {
+    schema.additionalProperty = additionalProperty;
+  }
+
+  if (priceInr != null && priceInr > 0) {
+    schema.offers = {
+      "@type": "Offer",
+      priceCurrency: "INR",
+      price: priceInr,
+      availability: "https://schema.org/InStock",
+      url,
+      seller: {
+        "@type": "Organization",
+        name: "EVSavari",
+      },
+    };
+  }
+
+  return schema;
+}
+
+/**
  * schema.org Vehicle (aligned with canonical URL).
  */
 export function buildVehicleSchema({
@@ -91,20 +161,33 @@ export function buildFaqPageSchema(faqItems, pageUrl) {
 /**
  * Compare hub — ItemList of compared vehicles (no ranking claims).
  */
-export function buildCompareItemListSchema(cars, siteOrigin = SITE_ORIGIN) {
+export function buildCompareItemListSchema(
+  cars,
+  siteOrigin = SITE_ORIGIN,
+  pageUrl
+) {
   if (!cars?.length) return null;
+
+  const names = cars
+    .map((c) => c?.name || c?.slug)
+    .filter(Boolean);
+
+  const listName =
+    names.length >= 2
+      ? `${names[0]} vs ${names.slice(1).join(" vs ")}`
+      : "EV comparison selection";
 
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "EV comparison selection",
-    url: `${siteOrigin}/compare`,
+    name: listName,
+    url: pageUrl || `${siteOrigin}/compare`,
     numberOfItems: cars.length,
     itemListElement: cars.map((car, i) => ({
       "@type": "ListItem",
       position: i + 1,
       item: {
-        "@type": "Vehicle",
+        "@type": "Product",
         name: car.name || car.slug,
         url: car.slug
           ? canonicalVehicleUrl(car.slug, siteOrigin)

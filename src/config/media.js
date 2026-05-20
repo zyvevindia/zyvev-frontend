@@ -6,10 +6,7 @@
 export const DEFAULT_CLOUDINARY_CLOUD_NAME = "dznvmumze";
 
 export const CLOUDINARY_CLOUD_NAME =
-  (typeof import.meta !== "undefined" &&
-    import.meta.env?.VITE_CLOUDINARY_CLOUD_NAME) ||
-  process.env.VITE_CLOUDINARY_CLOUD_NAME ||
-  process.env.CLOUDINARY_CLOUD_NAME ||
+  import.meta.env.VITE_CLOUDINARY_CLOUD_NAME ||
   DEFAULT_CLOUDINARY_CLOUD_NAME;
 
 export const CLOUDINARY_BASE = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`;

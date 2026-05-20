@@ -15,6 +15,7 @@ import {
   getOwnershipGuideLinks,
   getCityGuideLinks,
 } from "../seo/internalLinks";
+import { getIntelligenceDiscoveryLinks } from "../seo/intelligenceDiscoveryLinks.js";
 
 import { fetchSeoPagesList } from "../utils/seoPageApi";
 
@@ -67,6 +68,9 @@ export default function SeoGuidesHub() {
   const charging = getChargingGuideLinks({ limit: 4 });
   const ownership = getOwnershipGuideLinks({ limit: 10 });
   const cities = getCityGuideLinks({ limit: 12 });
+  const intelligenceDiscovery = getIntelligenceDiscoveryLinks({
+    limit: 8,
+  });
 
   return (
     <div className="seo-guides-hub">
@@ -96,6 +100,21 @@ export default function SeoGuidesHub() {
           <h2>Best EVs by use case</h2>
           <ul className="seo-guides-hub__list">
             {bestEvs.map((link) => (
+              <li key={link.href}>
+                <Link to={link.href}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="seo-guides-hub__section">
+          <h2>EV intelligence picks</h2>
+          <p className="seo-guides-hub__note">
+            Rule-ranked lists from EVSavari charging, range, and suitability
+            scores — not sponsored placements.
+          </p>
+          <ul className="seo-guides-hub__list">
+            {intelligenceDiscovery.map((link) => (
               <li key={link.href}>
                 <Link to={link.href}>{link.label}</Link>
               </li>

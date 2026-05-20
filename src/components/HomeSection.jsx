@@ -9,9 +9,17 @@ export default function HomeSection({
   viewAllLink,
   loading = false,
   emptyMessage = "No vehicles available right now.",
+  compactBottom = false,
 }) {
+  const sectionStyle = compactBottom
+    ? {
+        ...section,
+        paddingBottom: "clamp(20px, 3vw, 40px)",
+      }
+    : section;
+
   return (
-    <section style={section}>
+    <section style={sectionStyle}>
       {/* ================= HEADER ================= */}
 
       <div style={header}>

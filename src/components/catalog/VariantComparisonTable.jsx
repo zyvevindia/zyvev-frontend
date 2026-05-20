@@ -1,3 +1,5 @@
+import { forwardRef } from "react";
+
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { buildVariantComparisonRows } from "../../utils/variantInsights";
 
@@ -36,28 +38,33 @@ function rowHighlightClass(row, isActive) {
   return classes.join(" ") || undefined;
 }
 
-export default function VariantComparisonTable({
-  variants = [],
-  selectedSlug,
-  onSelect,
-  id = "variant-comparison",
-}) {
+const VariantComparisonTable = forwardRef(function VariantComparisonTable(
+  {
+    variants = [],
+    selectedSlug,
+    onSelect,
+    onCompareAll,
+    id = "detail-variants",
+  },
+  ref
+) {
   const rows = buildVariantComparisonRows(variants);
-  if (rows.length < 2) return null;
+  if (rows.length < 1) return null;
 
   return (
     <section
+      ref={ref}
       id={id}
-      className="variant-comparison"
+      className="cd-section cd-card cd-content-card variant-comparison"
       aria-labelledby={`${id}-title`}
     >
       <h2
         id={`${id}-title`}
-        className="variant-comparison__title"
+        className="cd-section__title"
       >
-        Variant comparison
+        Variants
       </h2>
-      <p className="variant-comparison__subtitle">
+      <p className="cd-section__intro">
         Side-by-side specs for every trim in this model
         family.
       </p>
@@ -224,6 +231,20 @@ export default function VariantComparisonTable({
           </tbody>
         </table>
       </div>
+
+      {onCompareAll ? (
+        <footer className="variant-comparison__footer">
+          <button
+            type="button"
+            className="variant-selector__compare-btn"
+            onClick={onCompareAll}
+          >
+            Compare all variants
+          </button>
+        </footer>
+      ) : null}
     </section>
   );
-}
+});
+
+export default VariantComparisonTable;

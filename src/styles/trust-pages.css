@@ -1,0 +1,71 @@
+.trust-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 48px) 20px 64px;
+}
+
+.trust-page__hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.trust-page__subtitle {
+  color: #64748b;
+  line-height: 1.65;
+  font-size: 1.0625rem;
+  margin: 0;
+}
+
+.trust-page__section {
+  margin-top: 28px;
+}
+
+.trust-page__section h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+
+.trust-page__section p {
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.trust-page__links {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.trust-page__links-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  margin: 0 0 12px;
+}
+
+.trust-page__links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.trust-page__links a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.trust-page__links a:hover {
+  text-decoration: underline;
+}

@@ -22,7 +22,11 @@ import { pickOwnershipChips } from "../utils/ownershipReality";
 
 export default function CompactCarCard({
   car,
+  variant = "default",
+  /** First compare column only — improves LCP without eager-loading every tile */
+  eagerImage = false,
 }) {
+  const isCompare = variant === "compare";
 
   /* =====================================================
      NORMALIZED VALUES
@@ -73,58 +77,41 @@ export default function CompactCarCard({
      RENDER
      ===================================================== */
 
-  return (
+  const articleClass = [
+    isCompare ? "compact-car-card--compare" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
-    <article
-      style={card}
-
-      aria-label={car.name}
-
-      onMouseEnter={(e) => {
-
-        e.currentTarget.style.transform =
-          "translateY(-8px)";
-
+  const handleMouseEnter = isCompare
+    ? undefined
+    : (e) => {
+        e.currentTarget.style.transform = "translateY(-8px)";
         e.currentTarget.style.boxShadow =
           "0 28px 55px rgba(15,23,42,0.12)";
+        e.currentTarget.style.border = "1px solid #bfdbfe";
+        const img = e.currentTarget.querySelector(".compact-car-image");
+        if (img) img.style.transform = "scale(1.06)";
+      };
 
-        e.currentTarget.style.border =
-          "1px solid #bfdbfe";
-
-        const image =
-          e.currentTarget.querySelector(
-            ".compact-car-image"
-          );
-
-        if (image) {
-
-          image.style.transform =
-            "scale(1.06)";
-        }
-      }}
-
-      onMouseLeave={(e) => {
-
-        e.currentTarget.style.transform =
-          "translateY(0px)";
-
+  const handleMouseLeave = isCompare
+    ? undefined
+    : (e) => {
+        e.currentTarget.style.transform = "translateY(0px)";
         e.currentTarget.style.boxShadow =
           "0 10px 28px rgba(15,23,42,0.06)";
+        e.currentTarget.style.border = "1px solid #e2e8f0";
+        const img = e.currentTarget.querySelector(".compact-car-image");
+        if (img) img.style.transform = "scale(1)";
+      };
 
-        e.currentTarget.style.border =
-          "1px solid #e2e8f0";
-
-        const image =
-          e.currentTarget.querySelector(
-            ".compact-car-image"
-          );
-
-        if (image) {
-
-          image.style.transform =
-            "scale(1)";
-        }
-      }}
+  return (
+    <article
+      className={articleClass || undefined}
+      style={card}
+      aria-label={car.name}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
 
       {/* ================= IMAGE ================= */}
@@ -135,6 +122,7 @@ export default function CompactCarCard({
           role="compare"
           alt={car.name}
           responsive
+          eager={Boolean(eagerImage)}
           imgClassName="compact-car-image"
           imgStyle={image}
           wrapperStyle={{
@@ -158,7 +146,7 @@ export default function CompactCarCard({
           </div>
         )}
 
-        {listingSignals.length > 0 && (
+        {listingSignals.length > 0 && !isCompare && (
           <div style={signalsOverlay}>
             <CatalogListingSignals
               signals={listingSignals}
@@ -170,62 +158,86 @@ export default function CompactCarCard({
 
       {/* ================= CONTENT ================= */}
 
-      <div style={content}>
+      <div
+        className={
+          isCompare ? "compact-car-card__content" : undefined
+        }
+        style={content}
+      >
+        <div
+          className={
+            isCompare ? "compact-car-card__top" : undefined
+          }
+          style={topContent}
+        >
 
-        {/* ================= TOP ================= */}
-
-        <div style={topContent}>
-
-          <h3 style={title}>
+          <h3
+            className={
+              isCompare ? "compact-car-card__title" : undefined
+            }
+            style={title}
+          >
             {car.name}
           </h3>
 
-          <p style={priceStyle}>
+          <p
+            className={
+              isCompare ? "compact-car-card__price" : undefined
+            }
+            style={priceStyle}
+          >
             {formatIndianPriceCompact(price)}
           </p>
 
-          <CatalogCardTrust
-            catalogMeta={car.catalogMeta}
-            catalogSource={car.catalogSource}
-          />
+          {!isCompare && (
+            <CatalogCardTrust
+              catalogMeta={car.catalogMeta}
+              catalogSource={car.catalogSource}
+            />
+          )}
 
-          <CatalogOwnershipChips chips={ownershipChips} />
+          {!isCompare && (
+            <CatalogOwnershipChips chips={ownershipChips} />
+          )}
 
-          {/* ================= SPECS ================= */}
-
-          <div style={specRow}>
-
-            <span style={specItem}>
+          <div
+            className={
+              isCompare ? "compact-car-card__specs" : undefined
+            }
+            style={specRow}
+          >
+            <span
+              className={
+                isCompare ? "compact-car-card__spec" : undefined
+              }
+              style={specItem}
+            >
               ⚡ {range} km
             </span>
 
-            <span style={specItem}>
+            <span
+              className={
+                isCompare ? "compact-car-card__spec" : undefined
+              }
+              style={specItem}
+            >
               🔋 {battery}
             </span>
-
           </div>
-
         </div>
 
-        {/* ================= BUTTON ================= */}
-
-        <Link
-          to={carUrl}
-
-          aria-label={ariaLabel}
-
-          style={{
-            textDecoration: "none",
-            display: "flex",
-          }}
-        >
-
-          <button style={button}>
-            View Details
-          </button>
-
-        </Link>
-
+        {!isCompare && (
+          <Link
+            to={carUrl}
+            aria-label={ariaLabel}
+            style={{
+              textDecoration: "none",
+              display: "flex",
+            }}
+          >
+            <button style={button}>View Details</button>
+          </Link>
+        )}
       </div>
 
     </article>

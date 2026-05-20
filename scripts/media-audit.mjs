@@ -104,4 +104,8 @@ if (summary.errors > 0 || probeFailed) {
   process.exit(1);
 }
 
+console.log(
+  "\nTip: VehicleImage uses responsive srcsets when `responsive` is set (e.g. CarCard, compare cards). Keep fixed aspect-ratio wrappers to avoid CLS.\n"
+);
+
 console.log("\nMedia audit complete.\n");
