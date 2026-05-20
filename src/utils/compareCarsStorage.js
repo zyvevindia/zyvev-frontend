@@ -3,6 +3,7 @@
    ========================================================= */
 
 import { normalizeVehicleSlug } from "./vehicleRoutes";
+import { resolveFullDisplayName } from "./vehicleDisplayName";
 
 export const COMPARE_CARS_STORAGE_KEY = "compareCars";
 
@@ -41,15 +42,14 @@ export function sanitizeCompareCar(car) {
   if (!slug && !id) return null;
 
   const specs = car.specifications || {};
+  const name = resolveFullDisplayName(car);
 
   return {
     _id: id || slug,
     slug: slug || id,
     familySlug: String(car.familySlug || slug || "").trim(),
-    name:
-      car.name ||
-      car.variantLabel ||
-      "Electric Vehicle",
+    name,
+    fullDisplayName: name,
     brand: car.brand || "",
     image: car.image || car.heroImage || "",
     heroImage: car.heroImage || car.image || "",

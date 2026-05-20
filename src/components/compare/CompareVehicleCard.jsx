@@ -5,6 +5,7 @@ import ScoreCircle from "../common/ScoreCircle";
 import VehicleImage from "../media/VehicleImage";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
+import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
 
 import "./compare-vehicle-card.css";
 
@@ -99,6 +100,9 @@ export default function CompareVehicleCard({
 
   if (!car) return null;
 
+  const displayName =
+    car.fullDisplayName || resolveFullDisplayName(car);
+
   const meta = car.catalogMeta || {};
   const price = car.startingPrice || car.price || 0;
   const range = car.specifications?.range || car.range || 0;
@@ -115,13 +119,13 @@ export default function CompareVehicleCard({
       className={`compare-vehicle-card${
         isRecommended ? " compare-vehicle-card--recommended" : ""
       }`}
-      aria-label={car.name}
+      aria-label={displayName}
     >
       <div className="compare-vehicle-card__media">
         <VehicleImage
           car={car}
           role="compare"
-          alt={car.name}
+          alt={displayName}
           responsive
           eager={eagerImage}
           imgClassName="compact-car-image"
@@ -140,7 +144,7 @@ export default function CompareVehicleCard({
       </div>
 
       <div className="compare-vehicle-card__content">
-        <h3 className="compare-vehicle-card__title">{car.name}</h3>
+        <h3 className="compare-vehicle-card__title">{displayName}</h3>
         <p className="compare-vehicle-card__price">
           {formatIndianPriceCompact(price)}
         </p>

@@ -23,6 +23,7 @@ const CompareBelowFoldSections = lazy(() =>
 );
 
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
+import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
 import { saveCompareCars } from "../../utils/compareCarsStorage";
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
 import {
@@ -99,7 +100,7 @@ export default function CompareHeroExperience({
   const compareVehicleLabel = useMemo(
     () =>
       cars
-        .map((c) => c?.name)
+        .map((c) => resolveFullDisplayName(c))
         .filter(Boolean)
         .join(" vs "),
     [cars]
@@ -404,7 +405,7 @@ export default function CompareHeroExperience({
                             isBest ? "compare-spec__th--best" : undefined
                           }
                         >
-                          {car.name}
+                          {resolveFullDisplayName(car)}
                         </th>
                       );
                     })}

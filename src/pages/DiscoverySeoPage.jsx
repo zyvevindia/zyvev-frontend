@@ -1,4 +1,6 @@
 import { useEffect, useMemo } from "react";
+
+import { enrichCompareSeoPage } from "../utils/enrichCompareSeoPage";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
@@ -215,6 +217,12 @@ export default function DiscoverySeoPage({ pageType }) {
   const linkSections = getDiscoveryLinkSections(seoPage);
   const discoveryPath = routeContext.path || "";
 
+  const compareSeoPage = useMemo(() => {
+    if (!isCompareGuide || !seoPage) return seoPage;
+    if (guideCars.length < 2) return seoPage;
+    return enrichCompareSeoPage(seoPage, guideCars);
+  }, [isCompareGuide, seoPage, guideCars]);
+
   /* —— Compare guide: premium compare engine above the fold —— */
   if (isCompareGuide) {
     return (
@@ -250,7 +258,7 @@ export default function DiscoverySeoPage({ pageType }) {
             heroTitle={meta.h1}
             heroBadge="EV comparison"
             recommendationLogic={seoPage.recommendationLogic}
-            guideSeoPage={seoPage}
+            guideSeoPage={compareSeoPage}
             showClearComparison={false}
             enableFab
           />
@@ -269,7 +277,7 @@ export default function DiscoverySeoPage({ pageType }) {
                 <Link to="/cars">browse EVs</Link>.
               </p>
             </div>
-            <CompareGuideEditorialSections seoPage={seoPage} />
+            <CompareGuideEditorialSections seoPage={compareSeoPage} />
           </>
         )}
       </div>

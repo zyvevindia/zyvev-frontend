@@ -176,8 +176,30 @@
   max-width: 7rem;
 }
 
-.compare-vehicle-card__gauge {
+.compare-vehicle-card__gauge.score-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
   filter: drop-shadow(0 8px 20px rgba(21, 128, 61, 0.18));
+}
+
+.compare-vehicle-card__gauge .score-circle__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.compare-vehicle-card__gauge .score-circle__label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
 }
 
 .compare-vehicle-card__gauge .compare-vehicle-card__gauge-value {
@@ -185,12 +207,15 @@
   font-weight: 800;
   color: #0f172a;
   line-height: 1;
+  margin: 0;
 }
 
 .compare-vehicle-card__gauge .compare-vehicle-card__gauge-suffix {
   font-size: 0.7rem;
   font-weight: 700;
   color: #64748b;
+  margin: 2px 0 0;
+  line-height: 1;
 }
 
 .compare-vehicle-card__cta {

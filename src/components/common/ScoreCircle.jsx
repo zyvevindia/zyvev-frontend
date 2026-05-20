@@ -32,7 +32,12 @@ export default function ScoreCircle({
   return (
     <div
       className={rootClass}
-      style={{ width: size, height: size }}
+      style={{
+        width: size,
+        height: size,
+        position: "relative",
+        flexShrink: 0,
+      }}
       role="img"
       aria-label={`EVSavari score ${displayScore} out of 100`}
     >

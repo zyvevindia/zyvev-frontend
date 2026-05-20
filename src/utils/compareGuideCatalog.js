@@ -2,6 +2,12 @@ import { API_URL } from "../config";
 import normalizeCar from "./normalizeCar";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { fetchVehicleBySlug } from "./vehicleDetailResolver";
+import {
+  aggregateModelFamilies,
+  extractFamilySlug,
+} from "./modelFamily";
+import { pickDefaultVariantForDetail } from "./variantInsights";
+import { resolveFullDisplayName } from "./vehicleDisplayName";
 
 /**
  * Ordered family slugs for a compare guide SEO payload.
@@ -20,20 +26,65 @@ export function extractCompareSlugsFromSeoPage(seoPage) {
 }
 
 function orderCarsBySlugs(cars, slugOrder) {
-  const bySlug = new Map(
-    cars.map((c) => [normalizeVehicleSlug(c.slug), c])
-  );
+  const byFamily = new Map();
+  for (const car of cars) {
+    const family = extractFamilySlug(car.slug);
+    if (!family) continue;
+    const existing = byFamily.get(family);
+    if (!existing) {
+      byFamily.set(family, car);
+      continue;
+    }
+    const existingName = resolveFullDisplayName(existing);
+    const nextName = resolveFullDisplayName(car);
+    if (nextName.length > existingName.length) {
+      byFamily.set(family, car);
+    }
+  }
   return slugOrder
-    .map((s) => bySlug.get(s))
+    .map((s) => byFamily.get(normalizeVehicleSlug(s)))
     .filter(Boolean);
+}
+
+function pickCompareCarForFamily(pool, familySlug) {
+  const slug = normalizeVehicleSlug(familySlug);
+  if (!slug || !pool?.length) return null;
+
+  const direct = pool.find(
+    (c) => normalizeVehicleSlug(c.slug) === slug
+  );
+  const families = aggregateModelFamilies(pool);
+  const family = families.find((f) => f.familySlug === slug);
+  if (!family) return direct || null;
+
+  const rep =
+    pickDefaultVariantForDetail(family.variants) ||
+    family.defaultVariant ||
+    family.variants?.[0];
+  if (!rep) return direct || null;
+
+  return normalizeCar({
+    ...rep,
+    familySlug: slug,
+  });
+}
+
+function applyCompareDisplayName(car, seoPage, familySlug) {
+  const ranked = seoPage?.rankedVehicles?.find(
+    (v) => normalizeVehicleSlug(v.slug) === normalizeVehicleSlug(familySlug)
+  );
+  const name = resolveFullDisplayName(car, {
+    seoDisplayName: ranked?.displayName,
+  });
+  return { ...car, name, fullDisplayName: name };
 }
 
 /**
  * Minimal catalog row when API misses a slug (intelligence still builds).
  */
-export function rankedVehicleToCompareCar(ranked) {
+export function rankedVehicleToCompareCar(ranked, seoPage = null) {
   const slug = normalizeVehicleSlug(ranked.slug);
-  return normalizeCar({
+  const stub = normalizeCar({
     _id: slug || ranked.slug,
     slug,
     name: ranked.displayName || slug,
@@ -42,47 +93,61 @@ export function rankedVehicleToCompareCar(ranked) {
       range: ranked.claimedRangeKm ?? ranked.range,
     },
   });
+  return applyCompareDisplayName(stub, seoPage, slug);
 }
 
-/**
- * Fetch normalized compare cars for guide slugs (parallel slug API, then catalog scan).
- * @param {string[]} slugOrder
- */
-export async function fetchCatalogCarsForCompareSlugs(slugOrder) {
-  const slugs = [...new Set(slugOrder.map((s) => normalizeVehicleSlug(s)).filter(Boolean))];
-  if (slugs.length < 2) return [];
-
+async function fetchCatalogPool(slugs) {
   const fetched = [];
 
-  if (slugs.length <= 3) {
-    const results = await Promise.all(
-      slugs.map((slug) => fetchVehicleBySlug(slug))
-    );
-    for (const row of results) {
-      if (row?.vehicle) fetched.push(normalizeCar(row.vehicle));
-    }
-    if (fetched.length >= 2) {
-      return orderCarsBySlugs(fetched, slugs);
-    }
+  const results = await Promise.all(
+    slugs.map((slug) => fetchVehicleBySlug(slug))
+  );
+  for (const row of results) {
+    if (row?.vehicle) fetched.push(normalizeCar(row.vehicle));
   }
 
   try {
     const res = await fetch(`${API_URL}/cars?limit=120`);
-    if (!res.ok) return orderCarsBySlugs(fetched, slugs);
-    const data = await res.json();
-    const list = (data?.cars || []).map(normalizeCar);
-    const want = new Set(slugs);
-    const matched = list.filter((c) => want.has(normalizeVehicleSlug(c.slug)));
-    const merged = [...fetched];
-    for (const c of matched) {
-      if (!merged.some((m) => normalizeVehicleSlug(m.slug) === normalizeVehicleSlug(c.slug))) {
-        merged.push(c);
+    if (res.ok) {
+      const data = await res.json();
+      const list = (data?.cars || []).map(normalizeCar);
+      for (const c of list) {
+        const key = normalizeVehicleSlug(c.slug);
+        if (
+          !fetched.some(
+            (m) => normalizeVehicleSlug(m.slug) === key
+          )
+        ) {
+          fetched.push(c);
+        }
       }
     }
-    return orderCarsBySlugs(merged, slugs);
   } catch {
-    return orderCarsBySlugs(fetched, slugs);
+    /* use slug fetches only */
   }
+
+  return fetched;
+}
+
+/**
+ * Fetch normalized compare cars for guide slugs (best variant per family).
+ * @param {string[]} slugOrder
+ */
+export async function fetchCatalogCarsForCompareSlugs(slugOrder) {
+  const slugs = [
+    ...new Set(
+      slugOrder.map((s) => normalizeVehicleSlug(s)).filter(Boolean)
+    ),
+  ];
+  if (slugs.length < 2) return [];
+
+  const pool = await fetchCatalogPool(slugs);
+  return slugs
+    .map((familySlug) => {
+      const car = pickCompareCarForFamily(pool, familySlug);
+      return car ? normalizeCar(car) : null;
+    })
+    .filter(Boolean);
 }
 
 /**
@@ -93,18 +158,29 @@ export async function fetchCatalogCarsForCompareSlugs(slugOrder) {
 export function mergeRankedWithCatalogCars(seoPage, catalogCars) {
   const order = extractCompareSlugsFromSeoPage(seoPage);
   const ranked = seoPage?.rankedVehicles || [];
-  const bySlug = new Map(
-    (catalogCars || []).map((c) => [normalizeVehicleSlug(c.slug), c])
-  );
+  const pool = catalogCars || [];
 
   return order
     .map((slug) => {
-      const full = bySlug.get(slug);
-      if (full) return full;
-      const row = ranked.find(
+      const rankedRow = ranked.find(
         (v) => normalizeVehicleSlug(v.slug) === slug
       );
-      return row ? rankedVehicleToCompareCar(row) : null;
+      const fromCatalog =
+        pickCompareCarForFamily(pool, slug) ||
+        pool.find(
+          (c) =>
+            normalizeVehicleSlug(c.slug) === slug ||
+            extractFamilySlug(c.slug) === slug
+        );
+
+      if (fromCatalog) {
+        return applyCompareDisplayName(fromCatalog, seoPage, slug);
+      }
+      if (rankedRow) {
+        return rankedVehicleToCompareCar(rankedRow, seoPage);
+      }
+      return null;
     })
     .filter(Boolean);
 }
+
