@@ -38,7 +38,10 @@ export const CLOUDINARY_CLOUD_NAME = resolveCloudinaryCloudName();
 
 export const CLOUDINARY_BASE = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`;
 
-/** Legacy placeholder host — deprioritized in fallback chains */
+/**
+ * Legacy custom CDN host (offline) — rewritten to res.cloudinary.com at runtime.
+ * Do not use for new URLs.
+ */
 export const LEGACY_CATALOG_CDN_HOST = "cdn.evsavari.com";
 
 export const LOCAL_FALLBACK_EV = "/fallback-ev.svg";

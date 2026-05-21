@@ -58,6 +58,11 @@ export const API_URL = (
 
 ).replace(/\/$/, "");
 
+/** True when production build targets a local API (common Vercel misconfiguration). */
+export const API_URL_MISCONFIGURED_FOR_PROD =
+  IS_PROD &&
+  /localhost|127\.0\.0\.1|0\.0\.0\.0/i.test(API_URL);
+
 /* =========================================================
    ==================== APP METADATA =======================
    ========================================================= */
@@ -186,4 +191,12 @@ if (import.meta.env.DEV) {
     mode:
       import.meta.env.MODE,
   });
+}
+
+if (API_URL_MISCONFIGURED_FOR_PROD) {
+  console.error(
+    "[EVSavari] Production build has VITE_API_URL pointing at localhost:",
+    API_URL,
+    "— set VITE_API_URL to your public HTTPS API in Vercel Production env and redeploy."
+  );
 }

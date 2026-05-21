@@ -3,17 +3,29 @@
  */
 
 import { RESPONSIVE_WIDTHS } from "../config/media.js";
-import { applyCloudinaryTransforms, isCloudinaryUrl } from "./cloudinary.js";
+import {
+  applyCloudinaryTransforms,
+  bypassLegacyCatalogCdn,
+  isCloudinaryUrl,
+  isLegacyCatalogCdnUrl,
+} from "./cloudinary.js";
+
+function responsiveDeliveryUrl(url) {
+  if (!url || typeof url !== "string") return "";
+  if (isLegacyCatalogCdnUrl(url)) {
+    return bypassLegacyCatalogCdn(url) || "";
+  }
+  return isCloudinaryUrl(url) ? url : bypassLegacyCatalogCdn(url) || "";
+}
 
 export function buildSrcSet(
   url,
   widths = RESPONSIVE_WIDTHS,
   format
 ) {
-  if (!url) return "";
-  if (!isCloudinaryUrl(url)) {
-    return `${url} ${widths[widths.length - 1] || 800}w`;
-  }
+  const delivery = responsiveDeliveryUrl(url);
+  if (!delivery || !isCloudinaryUrl(delivery)) return "";
+  url = delivery;
 
   return widths
     .map((w) => {
@@ -27,25 +39,19 @@ export function buildSrcSet(
 }
 
 export function buildResponsiveSources(url, widths = [480, 800, 1200]) {
-  if (!url) {
+  const delivery = responsiveDeliveryUrl(url);
+  if (!delivery || !isCloudinaryUrl(delivery)) {
     return { avif: "", webp: "", default: "", srcSet: "" };
   }
 
+  url = delivery;
+
   const srcSet = buildSrcSet(url, widths);
   const maxW = widths[widths.length - 1];
-  const defaultUrl = isCloudinaryUrl(url)
-    ? applyCloudinaryTransforms(url, { width: maxW })
-    : url;
+  const defaultUrl = applyCloudinaryTransforms(url, { width: maxW });
 
   if (!isCloudinaryUrl(url)) {
-    return {
-      avif: defaultUrl,
-      webp: defaultUrl,
-      default: defaultUrl,
-      srcSet,
-      avifSrcSet: srcSet,
-      webpSrcSet: srcSet,
-    };
+    return { avif: "", webp: "", default: "", srcSet: "" };
   }
 
   return {

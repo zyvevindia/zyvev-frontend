@@ -15,6 +15,7 @@ export {
   isLegacyCatalogCdnUrl as isCatalogCdnUrl,
   isPlaceholderMediaUrl,
   applyCloudinaryTransforms,
+  bypassLegacyCatalogCdn,
   cloudinaryDeliveryUrl,
   coerceCatalogMediaToUrl,
   isBlockedCatalogDeliveryUrl,
@@ -29,6 +30,7 @@ export {
 
 import { applyCloudinaryTransforms } from "../media/cloudinary.js";
 import { LOCAL_FALLBACK_EV } from "../config/media.js";
+import { sanitizeImageUrl } from "./imageUrl.js";
 
 /** @deprecated use applyCloudinaryTransforms */
 export function optimizeImage(url = "", { width = 800, quality = "auto", format = "auto" } = {}) {
@@ -46,8 +48,5 @@ export function getResponsiveImage(url = "") {
 }
 
 export function getSafeImage(image) {
-  if (!image || typeof image !== "string") {
-    return LOCAL_FALLBACK_EV;
-  }
-  return image;
+  return sanitizeImageUrl(image) || LOCAL_FALLBACK_EV;
 }

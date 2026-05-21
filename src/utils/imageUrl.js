@@ -1,6 +1,8 @@
 import {
+  bypassLegacyCatalogCdn,
   coerceCatalogMediaToUrl,
   isBlockedCatalogDeliveryUrl,
+  isLegacyCatalogCdnUrl,
   isRejectedCatalogMediaRef,
 } from "../media/cloudinary.js";
 
@@ -87,6 +89,7 @@ export function isValidImageUrl(url) {
   if (!trimmed) return false;
 
   if (isSymbolicMediaToken(trimmed)) return false;
+  if (isLegacyCatalogCdnUrl(trimmed)) return false;
 
   return (
     trimmed.startsWith("http://") ||
@@ -106,9 +109,17 @@ export function sanitizeImageUrl(url, options = {}) {
   if (url == null) return null;
   if (isRejectedCatalogMediaRef(url)) return null;
   if (typeof url === "string" && isSymbolicMediaToken(url)) return null;
+
+  if (typeof url === "string" && isLegacyCatalogCdnUrl(url)) {
+    const migrated = bypassLegacyCatalogCdn(url);
+    if (!migrated || isLegacyCatalogCdnUrl(migrated)) return null;
+    url = migrated;
+  }
+
   const resolved = coerceCatalogMediaToUrl(url);
   if (!resolved || isRejectedCatalogMediaRef(resolved)) return null;
   if (isBlockedCatalogDeliveryUrl(resolved)) return null;
+  if (isLegacyCatalogCdnUrl(resolved)) return null;
   return isValidImageUrl(resolved) ? resolved : null;
 }
 

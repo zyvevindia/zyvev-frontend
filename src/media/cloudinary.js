@@ -68,7 +68,85 @@ export function isBlockedCatalogDeliveryUrl(url) {
 }
 
 /**
+ * Derive Cloudinary public_id from a legacy CDN pathname.
+ * @param {string} pathname
+ * @returns {string|null}
+ */
+function publicIdFromLegacyCdnPathname(pathname = "") {
+  const path = String(pathname).replace(/^\/+/, "");
+  if (!path || path.includes("/_fallbacks/")) return null;
+
+  const stripExt = (id) =>
+    id.replace(/\.(jpg|jpeg|png|webp|avif)$/i, "");
+
+  if (path.startsWith(`${CATALOG_MEDIA_PREFIX}/`)) {
+    return stripExt(path);
+  }
+
+  if (path.startsWith("catalog/")) {
+    return stripExt(
+      path.replace(/^catalog\//, `${CATALOG_MEDIA_PREFIX}/`)
+    );
+  }
+
+  const catalogIdx = path.indexOf("catalog/");
+  if (catalogIdx >= 0) {
+    return stripExt(
+      path
+        .slice(catalogIdx)
+        .replace(/^catalog\//, `${CATALOG_MEDIA_PREFIX}/`)
+    );
+  }
+
+  return null;
+}
+
+/**
+ * Map dead cdn.evsavari.com URLs to res.cloudinary.com delivery (CDN bypass).
+ * @param {string} url
+ * @returns {string|null}
+ */
+function rewriteLegacyCatalogCdnUrl(url) {
+  if (!url?.includes?.(LEGACY_CATALOG_CDN_HOST)) return null;
+
+  try {
+    let absolute = String(url).trim();
+    if (absolute.startsWith("//")) {
+      absolute = `https:${absolute}`;
+    }
+    if (!/^https?:\/\//i.test(absolute)) return null;
+
+    const publicId = publicIdFromLegacyCdnPathname(
+      new URL(absolute).pathname
+    );
+    if (!publicId) return null;
+
+    return cloudinaryDeliveryUrl(publicId);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Never emit legacy CDN hosts — rewrite to Cloudinary or drop.
+ * @param {unknown} url
+ * @returns {string|null}
+ */
+export function bypassLegacyCatalogCdn(url) {
+  if (!url || typeof url !== "string") return null;
+  const trimmed = url.trim();
+  if (!trimmed) return null;
+  if (!isLegacyCatalogCdnUrl(trimmed)) {
+    return trimmed.includes("res.cloudinary.com")
+      ? normalizeCloudinaryDeliveryUrl(trimmed)
+      : trimmed;
+  }
+  return rewriteLegacyCatalogCdnUrl(trimmed);
+}
+
+/**
  * Fix delivery URLs where catalog folder prefix was used as cloud name.
+ * Rewrites legacy cdn.evsavari.com hosts to res.cloudinary.com (CDN is offline).
  * @param {unknown} url
  * @returns {string|null}
  */
@@ -77,6 +155,12 @@ export function normalizeCloudinaryDeliveryUrl(url) {
   let trimmed = url.trim();
   if (!trimmed) return null;
   if (isRejectedCatalogMediaRef(trimmed)) return null;
+
+  if (trimmed.includes(LEGACY_CATALOG_CDN_HOST)) {
+    const rewritten = rewriteLegacyCatalogCdnUrl(trimmed);
+    if (!rewritten) return null;
+    trimmed = rewritten;
+  }
 
   if (trimmed.includes("res.cloudinary.com")) {
     if (WRONG_CLOUD_SEGMENT.test(trimmed)) {
@@ -88,6 +172,8 @@ export function normalizeCloudinaryDeliveryUrl(url) {
     trimmed = trimmed.replace(CATALOG_ASSET_JPG_SUFFIX, "/$1");
     if (isRejectedCatalogMediaRef(trimmed)) return null;
   }
+
+  if (isLegacyCatalogCdnUrl(trimmed)) return null;
 
   return trimmed;
 }
@@ -150,8 +236,14 @@ export function applyCloudinaryTransforms(
   url = "",
   options = {}
 ) {
+  if (!url) return "";
+
+  if (isLegacyCatalogCdnUrl(url)) {
+    url = bypassLegacyCatalogCdn(url) || "";
+  }
+
   if (!url || !isCloudinaryUrl(url)) {
-    return url;
+    return "";
   }
 
   const transform = buildTransformString(options);
@@ -249,8 +341,12 @@ export function coerceCatalogMediaToUrl(value) {
   if (value == null) return null;
   if (typeof value !== "string") return null;
 
-  const trimmed = value.trim();
+  let trimmed = value.trim();
   if (!trimmed || isRejectedCatalogMediaRef(trimmed)) return null;
+
+  if (trimmed.startsWith("//")) {
+    trimmed = `https:${trimmed}`;
+  }
 
   if (
     trimmed.startsWith("http://") ||
@@ -259,7 +355,8 @@ export function coerceCatalogMediaToUrl(value) {
     const url = normalizeCloudinaryDeliveryUrl(trimmed);
     return url &&
       !isRejectedCatalogMediaRef(url) &&
-      !isBlockedCatalogDeliveryUrl(url)
+      !isBlockedCatalogDeliveryUrl(url) &&
+      !isLegacyCatalogCdnUrl(url)
       ? url
       : null;
   }

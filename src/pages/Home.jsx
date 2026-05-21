@@ -11,8 +11,8 @@ import {
 import SeoHead from "../components/SEO/SeoHead";
 import { buildHomePageMeta } from "../seo/pageMetadata";
 
-import { API_URL } from "../config";
-import { safeFetchJson } from "../utils/safeFetch";
+import { API_URL, API_URL_MISCONFIGURED_FOR_PROD } from "../config";
+import { safeFetchJsonWithRetry } from "../utils/safeFetch";
 
 import { LOCAL_FALLBACK_EV } from "../utils/imageUtils";
 
@@ -58,8 +58,7 @@ const upcomingCars = [
 
     name: "Mahindra BE.05",
 
-    image:
-      "https://cdn.evsavari.com/catalog/_fallbacks/mahindra-suv.jpg",
+    image: LOCAL_FALLBACK_EV,
 
     launchDate: "December 2025",
 
@@ -176,17 +175,28 @@ export default function Home() {
     let cancelled = false;
 
     (async () => {
-      const { ok, data } = await safeFetchJson(
-        `${API_URL}/cars?${query}`,
+      const catalogUrl = `${API_URL}/cars?${query}`;
+
+      const { ok, data, error, status } = await safeFetchJsonWithRetry(
+        catalogUrl,
         { label: "homepage catalog", fallback: { cars: [] } }
       );
 
       if (cancelled) return;
 
       if (!ok) {
+        console.error("[EVSavari homepage catalog]", {
+          requestUrl: catalogUrl,
+          apiBase: API_URL,
+          status,
+          error,
+          misconfiguredProdApi: API_URL_MISCONFIGURED_FOR_PROD,
+        });
         setVariants([]);
         setError(
-          "Unable to load EV data right now. Check your connection and try again."
+          API_URL_MISCONFIGURED_FOR_PROD
+            ? "Catalog API is misconfigured for production (localhost). Update VITE_API_URL on Vercel and redeploy."
+            : "Unable to load EV data right now. Check your connection and try again."
         );
       } else {
         setVariants((data?.cars || []).map(normalizeCar));
@@ -541,10 +551,7 @@ export default function Home() {
               )
             )
 
-          ) : (
-
-            !error &&
-
+          ) : error ? null : (
             popularFamilies.map((family) =>
               renderFamilyCard(
                 family,
@@ -580,10 +587,7 @@ export default function Home() {
               )
             )
 
-          ) : (
-
-            !error &&
-
+          ) : error ? null : (
             latestFamilies.map((family) =>
               renderFamilyCard(family, "New")
             )
@@ -612,10 +616,7 @@ export default function Home() {
               )
             )
 
-          ) : (
-
-            !error &&
-
+          ) : error ? null : (
             premiumRangeFamilies.map((family) =>
               renderFamilyCard(family, "Long Range")
             )
