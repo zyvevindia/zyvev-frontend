@@ -81,6 +81,14 @@ export default function LaunchStatusPage() {
         <Link to="/admin/launch-readiness">Traffic readiness checklist</Link>
         {" · "}
         <Link to="/admin/media-qa">Media QA</Link>
+        {" · "}
+        <Link to="/admin/system-status">System status</Link>
+        {" · "}
+        <Link to="/admin/media-health">Media health</Link>
+        {" · "}
+        <Link to="/admin/catalog-health">Catalog health</Link>
+        {" · "}
+        <Link to="/admin/launch-checklist">Launch checklist</Link>
       </p>
 
       <h1 style={{ marginTop: 0 }}>Launch status</h1>

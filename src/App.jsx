@@ -21,6 +21,8 @@ import ComparePage from "./pages/ComparePage";
 import {
   trackPageView,
 } from "./utils/analytics";
+import { captureAcquisitionContext } from "./utils/acquisitionContext";
+import { logSlowRoute } from "./utils/routePerformance";
 
 /* =========================================================
    ===================== LAZY IMPORTS ======================
@@ -124,6 +126,138 @@ const CatalogIngestionOpsPage = lazy(() =>
 
 const SoftLaunchOpsPage = lazy(() =>
   import("./pages/admin/SoftLaunchOpsPage")
+);
+
+const SystemStatusPage = lazy(() =>
+  import("./pages/admin/SystemStatusPage")
+);
+
+const MediaHealthPage = lazy(() =>
+  import("./pages/admin/MediaHealthPage")
+);
+
+const CatalogHealthPage = lazy(() =>
+  import("./pages/admin/CatalogHealthPage")
+);
+
+const LaunchChecklistPage = lazy(() =>
+  import("./pages/admin/LaunchChecklistPage")
+);
+
+const UserInsightsPage = lazy(() =>
+  import("./pages/admin/UserInsightsPage")
+);
+
+const CompareQualityPage = lazy(() =>
+  import("./pages/admin/CompareQualityPage")
+);
+
+const CatalogFreshnessPage = lazy(() =>
+  import("./pages/admin/CatalogFreshnessPage")
+);
+
+const SeoOpportunitiesPage = lazy(() =>
+  import("./pages/admin/SeoOpportunitiesPage")
+);
+
+const FeedbackLearningPage = lazy(() =>
+  import("./pages/admin/FeedbackLearningPage")
+);
+
+const SoftLaunchMonitorPage = lazy(() =>
+  import("./pages/admin/SoftLaunchMonitorPage")
+);
+
+const PerformanceLearningPage = lazy(() =>
+  import("./pages/admin/PerformanceLearningPage")
+);
+
+const CompareCalibrationPage = lazy(() =>
+  import("./pages/admin/CompareCalibrationPage")
+);
+
+const HighIntentJourneysPage = lazy(() =>
+  import("./pages/admin/HighIntentJourneysPage")
+);
+
+const SeoAuthorityPage = lazy(() =>
+  import("./pages/admin/SeoAuthorityPage")
+);
+
+const Tier1ExperiencePage = lazy(() =>
+  import("./pages/admin/Tier1ExperiencePage")
+);
+
+const ConversionInsightsPage = lazy(() =>
+  import("./pages/admin/ConversionInsightsPage")
+);
+
+const PublicBetaOpsPage = lazy(() =>
+  import("./pages/admin/PublicBetaOpsPage")
+);
+
+const CatalogIntelligencePage = lazy(() =>
+  import("./pages/admin/CatalogIntelligencePage")
+);
+
+const BehavioralIntelligencePage = lazy(() =>
+  import("./pages/admin/BehavioralIntelligencePage")
+);
+
+const MediaStagingPage = lazy(() =>
+  import("./pages/admin/MediaStagingPage")
+);
+
+const RecommendationRealismPage = lazy(() =>
+  import("./pages/admin/RecommendationRealismPage")
+);
+
+const BehavioralTrustPage = lazy(() =>
+  import("./pages/admin/BehavioralTrustPage")
+);
+
+const PremiumJourneysPage = lazy(() =>
+  import("./pages/admin/PremiumJourneysPage")
+);
+
+const PremiumOwnershipJourneysPage = lazy(() =>
+  import("./pages/admin/PremiumOwnershipJourneysPage")
+);
+
+const OwnershipAuthorityPage = lazy(() =>
+  import("./pages/admin/OwnershipAuthorityPage")
+);
+
+const OwnershipIntelligencePage = lazy(() =>
+  import("./pages/admin/OwnershipIntelligencePage")
+);
+
+const RecommendationMaturityPage = lazy(() =>
+  import("./pages/admin/RecommendationMaturityPage")
+);
+
+const TrustFeedbackPage = lazy(() =>
+  import("./pages/admin/TrustFeedbackPage")
+);
+
+const RecommendationRefinementPage = lazy(() =>
+  import("./pages/admin/RecommendationRefinementPage")
+);
+
+const ConversionRefinementPage = lazy(() =>
+  import("./pages/admin/ConversionRefinementPage")
+);
+
+const ContentUsefulnessPage = lazy(() =>
+  import("./pages/admin/ContentUsefulnessPage")
+);
+
+const ConversionQualityPage = lazy(() =>
+  import("./pages/admin/ConversionQualityPage")
+);
+
+const TrustedConversionsPage = lazy(() =>
+  import("./pages/admin/TrustedConversionsPage")
 );
 
 const DealerApplicationsPage = lazy(() =>
@@ -260,12 +394,20 @@ export default function App() {
      ========================================================= */
 
   useEffect(() => {
+    const started = performance.now();
 
-    trackPageView(
-      location.pathname
-    );
+    captureAcquisitionContext();
+    trackPageView(location.pathname);
 
-  }, [location]);
+    const raf = requestAnimationFrame(() => {
+      logSlowRoute(location.pathname, {
+        durationMs: Math.round(performance.now() - started),
+        label: "route-paint",
+      });
+    });
+
+    return () => cancelAnimationFrame(raf);
+  }, [location.pathname]);
 
   /* =========================================================
      ========================= RENDER ========================
@@ -492,11 +634,6 @@ export default function App() {
             }
           />
 
-          <Route
-            path="/:category"
-            element={<ListingPage />}
-          />
-
           {/* ================= ADMIN ================= */}
 
           <Route
@@ -571,6 +708,303 @@ export default function App() {
             element={
               <PrivateRoute allowedRoles={["admin"]}>
                 <LaunchStatusPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/system-status"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <SystemStatusPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/media-health"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <MediaHealthPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/catalog-health"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CatalogHealthPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/launch-checklist"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <LaunchChecklistPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/user-insights"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <UserInsightsPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/compare-quality"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CompareQualityPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/catalog-freshness"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CatalogFreshnessPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/seo-opportunities"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <SeoOpportunitiesPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/feedback-learning"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <FeedbackLearningPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/soft-launch-monitor"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <SoftLaunchMonitorPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/performance-learning"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <PerformanceLearningPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/compare-calibration"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CompareCalibrationPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/high-intent-journeys"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <HighIntentJourneysPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/seo-authority"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <SeoAuthorityPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/tier1-experience"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <Tier1ExperiencePage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/conversion-insights"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <ConversionInsightsPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/behavioral-trust"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <BehavioralTrustPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/public-beta-ops"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <PublicBetaOpsPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/catalog-intelligence"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CatalogIntelligencePage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/ownership-intelligence"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <OwnershipIntelligencePage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/recommendation-maturity"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <RecommendationMaturityPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/trust-feedback"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <TrustFeedbackPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/recommendation-refinement"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <RecommendationRefinementPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/conversion-refinement"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <ConversionRefinementPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/content-usefulness"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <ContentUsefulnessPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/behavioral-intelligence"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <BehavioralIntelligencePage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/media-staging"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <MediaStagingPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/recommendation-realism"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <RecommendationRealismPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/premium-journeys"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <PremiumJourneysPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/premium-ownership-journeys"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <PremiumOwnershipJourneysPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/ownership-authority"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <OwnershipAuthorityPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/conversion-quality"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <ConversionQualityPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/trusted-conversions"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <TrustedConversionsPage />
               </PrivateRoute>
             }
           />
@@ -708,6 +1142,12 @@ export default function App() {
                 <SalesAnalytics />
               </PrivateRoute>
             }
+          />
+
+          {/* Listing categories — after admin/sales so paths like /admin/* are not shadowed */}
+          <Route
+            path="/:category"
+            element={<ListingPage />}
           />
 
           {/* ================= 404 ================= */}

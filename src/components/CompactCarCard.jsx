@@ -119,7 +119,7 @@ export default function CompactCarCard({
       <div style={imageWrapper}>
         <VehicleImage
           car={car}
-          role="compare"
+          role="listing"
           alt={car.name}
           responsive
           eager={Boolean(eagerImage)}

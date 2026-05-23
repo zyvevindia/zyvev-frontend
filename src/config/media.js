@@ -21,10 +21,18 @@ const INVALID_CLOUDINARY_CLOUD_NAMES = new Set([
 /**
  * Resolve Cloudinary cloud name from env, ignoring mistaken folder-prefix values.
  */
+function readEnv(key) {
+  if (typeof import.meta !== "undefined" && import.meta.env?.[key] != null) {
+    return String(import.meta.env[key]);
+  }
+  if (typeof process !== "undefined" && process.env?.[key] != null) {
+    return String(process.env[key]);
+  }
+  return "";
+}
+
 export function resolveCloudinaryCloudName() {
-  const fromEnv = String(
-    import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || ""
-  ).trim();
+  const fromEnv = readEnv("VITE_CLOUDINARY_CLOUD_NAME").trim();
   if (
     fromEnv &&
     !INVALID_CLOUDINARY_CLOUD_NAMES.has(fromEnv.toLowerCase())

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import {
   extractCompareSlugsFromSeoPage,
@@ -17,6 +17,8 @@ export default function useCompareGuideCars(seoPage, opts = {}) {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(Boolean(seoPage));
   const [error, setError] = useState(null);
+  const [retryKey, setRetryKey] = useState(0);
+  const retry = useCallback(() => setRetryKey((k) => k + 1), []);
 
   const slugOrder = useMemo(
     () => (seoPage ? extractCompareSlugsFromSeoPage(seoPage) : []),
@@ -61,7 +63,7 @@ export default function useCompareGuideCars(seoPage, opts = {}) {
     return () => {
       cancelled = true;
     };
-  }, [seoPage, slugOrder.join("|"), syncStorage]);
+  }, [seoPage, slugOrder.join("|"), syncStorage, retryKey]);
 
-  return { cars, loading, error, slugOrder };
+  return { cars, loading, error, slugOrder, retry };
 }

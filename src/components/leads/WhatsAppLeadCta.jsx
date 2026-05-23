@@ -40,6 +40,7 @@ export default function WhatsAppLeadCta({
   compareSlugs = [],
   intent = "inquiry",
   label = "Chat on WhatsApp",
+  hint = "Opens WhatsApp with your vehicle and page context pre-filled.",
   variant = "primary",
   className = "",
   style = {},
@@ -76,7 +77,7 @@ export default function WhatsAppLeadCta({
         {label}
       </button>
       <p className="wa-cta-hint" style={styles.hint}>
-        Opens WhatsApp with your vehicle and page context pre-filled.
+        {hint}
       </p>
       <style>{`
         @media (max-width: 640px) {

@@ -16,6 +16,8 @@ import CompareTrustPanel from "../catalog/CompareTrustPanel";
 import LeadInquiryModal from "../LeadInquiryModal";
 import WhatsAppLeadCta from "../leads/WhatsAppLeadCta";
 import CompareUtilityRail from "./CompareUtilityRail";
+import CompareTrustExplain from "./CompareTrustExplain";
+import CompareReliabilitySummary from "./CompareReliabilitySummary";
 import CompareGuideEditorialSections from "./CompareGuideEditorialSections";
 
 const CompareBelowFoldSections = lazy(() =>
@@ -41,6 +43,12 @@ import {
   trackCompareAbandoned,
   trackIntelligenceCompareEngaged,
 } from "../../analytics/funnel";
+import { attachScrollDepthTracker } from "../../utils/scrollDepthTracker";
+import {
+  COMPARE_CALLBACK_LABEL,
+  COMPARE_PRICING_CTA_LABEL,
+  WHATSAPP_CTA_LABEL,
+} from "../../utils/conversionTrustCopy";
 
 function getBestValueId(cars) {
   if (!cars?.length) return null;
@@ -155,6 +163,11 @@ export default function CompareHeroExperience({
       });
     }
   }, [compareSlugsKey, sourcePage]);
+
+  useEffect(() => {
+    if (cars.length < 2) return undefined;
+    return attachScrollDepthTracker("compare");
+  }, [cars.length]);
 
   const compareAbandonTracked = useRef(false);
   const inquiryOpenRef = useRef(inquiryOpen);
@@ -295,18 +308,22 @@ export default function CompareHeroExperience({
             <div className="compare-hero__actions">
               <button
                 type="button"
-                onClick={() => openInquiry("Request a callback", "Request callback")}
+                onClick={() =>
+                  openInquiry("Request dealer callback", COMPARE_CALLBACK_LABEL)
+                }
                 className="compare-hero__btn compare-hero__btn--ghost"
               >
-                Request callback
+                {COMPARE_CALLBACK_LABEL}
               </button>
 
               <button
                 type="button"
                 className="compare-hero__btn compare-hero__btn--ghost"
-                onClick={() => openInquiry("Get the best deal", "Get best deal")}
+                onClick={() =>
+                  openInquiry("Compare on-road quotes", COMPARE_PRICING_CTA_LABEL)
+                }
               >
-                Get best deal
+                {COMPARE_PRICING_CTA_LABEL}
               </button>
 
               <WhatsAppLeadCta
@@ -314,7 +331,7 @@ export default function CompareHeroExperience({
                 compareSlugs={cars.map((c) => c.slug).filter(Boolean)}
                 vehicleName={compareVehicleLabel || "EV comparison"}
                 intent="compare"
-                label="WhatsApp enquiry"
+                label={WHATSAPP_CTA_LABEL}
                 variant="secondary"
               />
 
@@ -458,9 +475,22 @@ export default function CompareHeroExperience({
             )}
           </div>
 
+          {intelligentCars.length >= 2 ? (
+            <>
+              <CompareTrustExplain
+                cars={intelligentCars}
+                recommendedSlug={
+                  intelligentCars.find((c) => c._id === bestId)?.slug
+                }
+              />
+              <CompareReliabilitySummary cars={intelligentCars} />
+            </>
+          ) : null}
+
           <CompareUtilityRail
             recommendationLogic={recommendationLogic}
             sourcePage={sourcePage}
+            cars={cars}
             metadata={{
               vehicleSlugs: cars.map((c) => c.slug).filter(Boolean),
               compareDepth: cars.length,

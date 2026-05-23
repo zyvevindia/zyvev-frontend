@@ -1,4 +1,5 @@
 import { API_URL } from "../config";
+import { safeFetchJsonWithRetry } from "./safeFetch";
 
 import normalizeCar from "./normalizeCar";
 
@@ -31,11 +32,12 @@ function vehicleFromCatalogDto(dto) {
   return null;
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url);
-  if (!res.ok) return { ok: false, status: res.status, data: null };
-  const data = await res.json();
-  return { ok: true, status: res.status, data };
+async function fetchJson(url, label = "vehicle_detail") {
+  return safeFetchJsonWithRetry(url, {
+    label,
+    fallback: null,
+    timeoutMs: 20000,
+  });
 }
 
 /**
@@ -111,11 +113,12 @@ export async function fetchVehicleBySlug(rawSlug) {
   const trimmed = String(rawSlug || "").trim();
   if (OBJECT_ID_PATTERN.test(trimmed)) {
     try {
-      const res = await fetch(
-        `${API_URL}/cars/${encodeURIComponent(trimmed)}`
+      const byId = await fetchJson(
+        `${API_URL}/cars/${encodeURIComponent(trimmed)}`,
+        "vehicle_by_id"
       );
-      if (res.ok) {
-        const data = await res.json();
+      if (byId.ok && byId.data && !byId.data.error) {
+        const data = byId.data;
         if (data && !data.error) {
           const resolvedSlug =
             normalizeVehicleSlug(data.slug) || trimmed;
@@ -140,16 +143,16 @@ export async function fetchVehicleBySlug(rawSlug) {
  * @returns {Promise<object[]>}
  */
 export async function fetchCatalogVehiclesForFallback(limit = 50) {
-  try {
-    const res = await fetch(
-      `${API_URL}/cars?limit=${encodeURIComponent(limit)}`
-    );
-    if (!res.ok) return [];
-    const data = await res.json();
-    return Array.isArray(data?.cars) ? data.cars : [];
-  } catch {
-    return [];
-  }
+  const res = await safeFetchJsonWithRetry(
+    `${API_URL}/cars?limit=${encodeURIComponent(limit)}`,
+    {
+      label: "catalog_fallback_list",
+      fallback: { cars: [] },
+      timeoutMs: 20000,
+    }
+  );
+  if (!res.ok) return [];
+  return Array.isArray(res.data?.cars) ? res.data.cars : [];
 }
 
 /**

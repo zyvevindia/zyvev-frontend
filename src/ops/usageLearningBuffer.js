@@ -33,12 +33,29 @@ function write(entries) {
 /**
  * @param {{ type: string; meta?: object }} event
  */
+const SESSION_KEY = "evsavari-usage-session-v1";
+
+export function getUsageSessionId() {
+  if (typeof sessionStorage === "undefined") return "ssr";
+  try {
+    let id = sessionStorage.getItem(SESSION_KEY);
+    if (!id) {
+      id = `sess-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+      sessionStorage.setItem(SESSION_KEY, id);
+    }
+    return id;
+  } catch {
+    return `sess-${Date.now()}`;
+  }
+}
+
 export function appendUsageLearningEvent(event) {
   const row = {
     id: `ul-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     at: new Date().toISOString(),
     type: String(event.type || "unknown").slice(0, 64),
     meta: event.meta && typeof event.meta === "object" ? event.meta : {},
+    sessionId: getUsageSessionId(),
   };
   write([row, ...read()]);
   return row;

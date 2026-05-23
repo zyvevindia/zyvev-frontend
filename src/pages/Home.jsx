@@ -12,6 +12,7 @@ import SeoHead from "../components/SEO/SeoHead";
 import { buildHomePageMeta } from "../seo/pageMetadata";
 
 import { API_URL, API_URL_MISCONFIGURED_FOR_PROD } from "../config";
+import { catalogUnavailableMessage } from "../utils/apiDiagnostics";
 import { safeFetchJsonWithRetry } from "../utils/safeFetch";
 
 import { LOCAL_FALLBACK_EV } from "../utils/imageUtils";
@@ -177,7 +178,8 @@ export default function Home() {
     (async () => {
       const catalogUrl = `${API_URL}/cars?${query}`;
 
-      const { ok, data, error, status } = await safeFetchJsonWithRetry(
+      const { ok, data, error, status, durationMs } =
+        await safeFetchJsonWithRetry(
         catalogUrl,
         { label: "homepage catalog", fallback: { cars: [] } }
       );
@@ -185,18 +187,11 @@ export default function Home() {
       if (cancelled) return;
 
       if (!ok) {
-        console.error("[EVSavari homepage catalog]", {
-          requestUrl: catalogUrl,
-          apiBase: API_URL,
-          status,
-          error,
-          misconfiguredProdApi: API_URL_MISCONFIGURED_FOR_PROD,
-        });
         setVariants([]);
         setError(
           API_URL_MISCONFIGURED_FOR_PROD
             ? "Catalog API is misconfigured for production (localhost). Update VITE_API_URL on Vercel and redeploy."
-            : "Unable to load EV data right now. Check your connection and try again."
+            : catalogUnavailableMessage({ error, status, durationMs })
         );
       } else {
         setVariants((data?.cars || []).map(normalizeCar));

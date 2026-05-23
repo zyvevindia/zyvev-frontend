@@ -14,10 +14,10 @@ import {
 import TrustTransparencyPanel from "../trust/TrustTransparencyPanel";
 import { SUITABILITY_LEVEL } from "../../intelligence/suitabilityInsights";
 import {
+  trackChargingGuideOpened,
   trackChargingPracticalityViewed,
-  trackChargingSectionViewed,
   trackFeatureComparisonViewed,
-  trackOwnershipInsightViewed,
+  trackOwnershipGuideOpened,
 } from "../../analytics/funnel";
 import "../../styles/ev-trust.css";
 
@@ -86,7 +86,7 @@ export default function EvIntelligenceSections({
   const featuresRef = useRef(null);
 
   useSectionViewOnce(chargingRef, () =>
-    trackChargingSectionViewed({ familySlug: slug, sourcePage: "car_detail" })
+    trackChargingGuideOpened({ familySlug: slug, sourcePage: "car_detail" })
   );
   useSectionViewOnce(practicalityRef, () =>
     trackChargingPracticalityViewed({
@@ -95,7 +95,7 @@ export default function EvIntelligenceSections({
     })
   );
   useSectionViewOnce(ownershipRef, () =>
-    trackOwnershipInsightViewed({ familySlug: slug, sourcePage: "car_detail" })
+    trackOwnershipGuideOpened({ familySlug: slug, sourcePage: "car_detail" })
   );
   useSectionViewOnce(featuresRef, () =>
     trackFeatureComparisonViewed({ familySlug: slug, sourcePage: "car_detail" })

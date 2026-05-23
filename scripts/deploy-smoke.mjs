@@ -36,6 +36,16 @@ const DEEP_COMPARE_PATH =
 const DEEP_DISCOVER_PATH =
   process.env.EVSAVARI_DEPLOY_SMOKE_DISCOVER_PATH || "/discover/city-driving";
 
+/** Must exist in the live main JS bundle (guards stale frontend deploys) */
+const REQUIRED_ADMIN_BUNDLE_PATHS = [
+  "/admin/public-beta-ops",
+  "/admin/recommendation-refinement",
+  "/admin/content-usefulness",
+  "/admin/conversion-refinement",
+  "/admin/media-health",
+  "/admin/seo-authority",
+];
+
 const issues = [];
 const ok = [];
 const warnings = [];
@@ -137,6 +147,34 @@ async function main() {
     else pass("Homepage: no X-Robots-Tag (OK)");
   } catch (e) {
     fail(`Homepage: ${errMsg(e)}`);
+  }
+
+  // Live bundle must include ops admin routes (client-side router paths)
+  try {
+    const { text: homeHtml } = await getText(`${SITE}/`);
+    const indexMatch = homeHtml.match(/\/assets\/index-[^"]+\.js/);
+    if (!indexMatch) {
+      fail("Homepage HTML missing index-*.js script (cannot verify admin routes)");
+    } else {
+      const indexUrl = `${SITE}${indexMatch[0]}`;
+      const { res, text: indexJs } = await getText(indexUrl);
+      if (!res.ok) {
+        fail(`Main bundle ${indexMatch[0]} HTTP ${res.status}`);
+      } else {
+        const missing = REQUIRED_ADMIN_BUNDLE_PATHS.filter((p) => !indexJs.includes(p));
+        if (missing.length) {
+          fail(
+            `Stale frontend deploy: main bundle missing admin routes: ${missing.join(", ")}`
+          );
+        } else {
+          pass(
+            `Main bundle includes ${REQUIRED_ADMIN_BUNDLE_PATHS.length} critical admin routes`
+          );
+        }
+      }
+    }
+  } catch (e) {
+    fail(`Admin bundle check: ${errMsg(e)}`);
   }
 
   // Deep routes → SPA shell (compare list + deep compare + discover + admin)

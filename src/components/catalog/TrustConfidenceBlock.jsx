@@ -13,6 +13,7 @@ import {
 import useTrackOnView from "../../hooks/useTrackOnView";
 
 import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
+import OwnershipGuidanceStrip from "../trust/OwnershipGuidanceStrip";
 
 const card = {
   background: "white",
@@ -102,6 +103,8 @@ export default function TrustConfidenceBlock({ car }) {
           ))}
         </ul>
       )}
+
+      <OwnershipGuidanceStrip car={car} variant="detail" />
 
       <p style={{ ...sub, marginTop: "16px", marginBottom: 0 }}>
         {meta.trustPresentation?.disclaimer ||

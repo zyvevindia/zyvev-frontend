@@ -489,8 +489,9 @@ export default function LeadInquiryModal({
         }
 
       } catch (err) {
-
-        console.error(err);
+        if (import.meta.env.DEV) {
+          console.error(err);
+        }
 
         setError(
           err.message ||

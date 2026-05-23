@@ -112,6 +112,8 @@ export default function DiscoverySeoPage({ pageType }) {
   const {
     cars: guideCars,
     loading: guideCarsLoading,
+    error: guideCarsError,
+    retry: retryGuideCars,
   } = useCompareGuideCars(isCompareGuide ? seoPage : null);
 
   useEffect(() => {
@@ -269,13 +271,34 @@ export default function DiscoverySeoPage({ pageType }) {
                 padding: "2rem 20px",
                 textAlign: "center",
                 color: "#64748b",
+                maxWidth: "520px",
+                margin: "0 auto",
               }}
             >
-              <p>
-                Catalog data for this pair is temporarily unavailable.{" "}
-                <Link to="/compare">Try the compare hub</Link> or{" "}
-                <Link to="/cars">browse EVs</Link>.
+              <p style={{ marginBottom: "1rem" }}>
+                {guideCarsError === "catalog_partial"
+                  ? "We could not load full vehicle data for this comparison. Editorial content is still available below."
+                  : "Catalog data for this pair is temporarily unavailable."}
               </p>
+              <button
+                type="button"
+                onClick={retryGuideCars}
+                style={{
+                  marginRight: "0.75rem",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "8px",
+                  border: "none",
+                  background: "#2563eb",
+                  color: "#fff",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                }}
+              >
+                Retry catalog load
+              </button>
+              <Link to="/compare">Compare hub</Link>
+              {" · "}
+              <Link to="/cars">Browse EVs</Link>
             </div>
             <CompareGuideEditorialSections seoPage={compareSeoPage} />
           </>

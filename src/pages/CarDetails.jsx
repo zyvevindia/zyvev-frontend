@@ -25,6 +25,11 @@ import CarDetailsSkeleton from "../components/skeletons/CarDetailsSkeleton";
 
 import EvDetailGoldSections from "../components/catalog/EvDetailGoldSections";
 import DetailOverviewDashboard from "../components/car/DetailOverviewDashboard";
+import TrustDataStrip from "../components/trust/TrustDataStrip";
+import {
+  buildDetailOwnershipExpectation,
+  buildDetailTrustMaturityNote,
+} from "../utils/ownershipTrustCopy";
 
 import useCatalogEnrichment from "../hooks/useCatalogEnrichment";
 
@@ -101,6 +106,11 @@ import { BUYER_EVENTS } from "../event-tracking/eventTypes";
 
 import { getLastSeoSource } from "../buyer-intelligence/journeyBuffer";
 
+import { detailUnavailableMessage } from "../utils/apiDiagnostics";
+import {
+  safeFetchFireAndForget,
+  safeFetchJsonWithRetry,
+} from "../utils/safeFetch";
 import { getSafeImage } from "../utils/imageUtils";
 
 /* =========================================================
@@ -168,6 +178,8 @@ export default function CarDetails() {
     useState(true);
 
   const [loadError, setLoadError] =
+    useState(null);
+  const [loadErrorContext, setLoadErrorContext] =
     useState(null);
 
   const [fetchRetryKey, setFetchRetryKey] =
@@ -261,18 +273,37 @@ export default function CarDetails() {
     async function fetchCar() {
       setLoading(true);
       setLoadError(null);
+      setLoadErrorContext(null);
 
       const variantParam =
         searchParams.get("variant");
 
-      try {
-        const catalogProbe = await fetch(
-          `${API_URL}/cars?limit=1`
-        );
-        if (!catalogProbe.ok) {
-          throw new Error("catalog_unavailable");
+      const catalogProbe = await safeFetchJsonWithRetry(
+        `${API_URL}/cars?limit=1`,
+        {
+          label: "detail_catalog_probe",
+          fallback: { cars: [] },
+          timeoutMs: 20000,
         }
+      );
 
+      if (cancelled) return;
+
+      if (!catalogProbe.ok) {
+        setFamily(null);
+        setFamilyVariants([]);
+        setCar(null);
+        setLoadError("load_failed");
+        setLoadErrorContext({
+          error: catalogProbe.error,
+          status: catalogProbe.status,
+          durationMs: catalogProbe.durationMs,
+        });
+        setLoading(false);
+        return;
+      }
+
+      try {
         const result =
           await fetchVehicleFamilyBySlug(slug, {
             variantSlug: variantParam,
@@ -306,6 +337,11 @@ export default function CarDetails() {
         setFamilyVariants([]);
         setCar(null);
         setLoadError("load_failed");
+        setLoadErrorContext({
+          error: "network_error",
+          status: 0,
+          durationMs: catalogProbe.durationMs,
+        });
       }
 
       setLoading(false);
@@ -313,22 +349,13 @@ export default function CarDetails() {
 
     fetchCar();
 
-    fetch(`${API_URL}/views`, {
-
+    safeFetchFireAndForget(`${API_URL}/views`, {
       method: "POST",
-
-      headers: {
-        "Content-Type":
-          "application/json",
-      },
-
+      headers: { "Content-Type": "application/json" },
+      label: "vehicle_view",
       body: JSON.stringify({
         carId: normalizeVehicleSlug(slug) || slug,
       }),
-
-    }).catch((err) => {
-
-      console.error(err);
     });
 
     return () => {
@@ -687,7 +714,7 @@ export default function CarDetails() {
     return (
       <NetworkErrorPanel
         title="Could not load this vehicle"
-        message="The catalog may be temporarily unavailable. Check your connection and try again."
+        message={detailUnavailableMessage(loadErrorContext || {})}
         onRetry={() => setFetchRetryKey((k) => k + 1)}
       />
     );
@@ -1000,6 +1027,23 @@ export default function CarDetails() {
               catalogSource={vehicle.catalogSource}
               vehicle={vehicle}
             />
+            <TrustDataStrip car={vehicle} variant="detail" />
+            {vehicle ? (
+              <p
+                style={{
+                  fontSize: "0.85rem",
+                  color: "#64748b",
+                  lineHeight: 1.55,
+                  margin: "8px 0 0",
+                  maxWidth: 720,
+                }}
+              >
+                {buildDetailOwnershipExpectation(vehicle)}
+                {buildDetailTrustMaturityNote(vehicle) ? (
+                  <> {buildDetailTrustMaturityNote(vehicle)}</>
+                ) : null}
+              </p>
+            ) : null}
           </section>
 
           {enrichedVariants.length >= 1 && (

@@ -152,11 +152,9 @@ export default function ListingPage() {
         setCars(normalized);
 
       } catch (error) {
-
-        console.error(
-          "ListingPage Error:",
-          error
-        );
+        if (import.meta.env.DEV) {
+          console.error("ListingPage Error:", error);
+        }
 
         setError(
           "Unable to load EV listings."

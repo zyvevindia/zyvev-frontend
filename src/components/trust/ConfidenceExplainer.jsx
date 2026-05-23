@@ -24,8 +24,8 @@ export default function ConfidenceExplainer({ showLegend = true }) {
     <p style={note}>
       <strong>Confidence</strong> reflects how complete catalog signals are for
       this pick (range, charging, pricing), not a quality rating. Lower
-      confidence means fewer data points — use test drives and dealer quotes
-      before deciding.
+      confidence means fewer data points — compare calmly, then use test drives
+      and dealer quotes before deciding.
     </p>
   );
 }

@@ -1,6 +1,14 @@
+import { Children } from "react";
+
 /* =========================================================
    ==================== HOME SECTION =======================
    ========================================================= */
+
+function sectionHasContent(children) {
+  return Children.toArray(children).some(
+    (child) => child !== null && child !== undefined && child !== false
+  );
+}
 
 export default function HomeSection({
   title,
@@ -77,7 +85,7 @@ export default function HomeSection({
         <>
           {/* ================= EMPTY ================= */}
 
-          {!children ? (
+          {!sectionHasContent(children) ? (
             <div style={emptyState}>
               <div style={emptyIcon}>
                 ⚡

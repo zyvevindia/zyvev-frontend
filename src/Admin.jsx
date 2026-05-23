@@ -1017,6 +1017,209 @@ export default function Admin() {
             </Link>
 
             <Link
+              to="/admin/system-status"
+              style={menuItem}
+            >
+              🩺 System status
+            </Link>
+
+            <Link
+              to="/admin/launch-checklist"
+              style={menuItem}
+            >
+              ✅ Launch checklist
+            </Link>
+
+            <Link
+              to="/admin/media-health"
+              style={menuItem}
+            >
+              🖼 Media health
+            </Link>
+
+            <Link
+              to="/admin/media-staging"
+              style={menuItem}
+            >
+              📦 Media staging
+            </Link>
+
+            <Link
+              to="/admin/catalog-intelligence"
+              style={menuItem}
+            >
+              🧠 Catalog intelligence
+            </Link>
+
+            <Link
+              to="/admin/ownership-intelligence"
+              style={menuItem}
+            >
+              🏠 Ownership intelligence
+            </Link>
+
+            <Link
+              to="/admin/recommendation-maturity"
+              style={menuItem}
+            >
+              📈 Recommendation maturity
+            </Link>
+
+            <Link
+              to="/admin/trust-feedback"
+              style={menuItem}
+            >
+              💬 Trust feedback
+            </Link>
+
+            <Link
+              to="/admin/recommendation-refinement"
+              style={menuItem}
+            >
+              🎯 Recommendation refinement
+            </Link>
+
+            <Link
+              to="/admin/conversion-refinement"
+              style={menuItem}
+            >
+              🤝 Conversion refinement
+            </Link>
+
+            <Link
+              to="/admin/content-usefulness"
+              style={menuItem}
+            >
+              📚 Content usefulness
+            </Link>
+
+            <Link
+              to="/admin/behavioral-intelligence"
+              style={menuItem}
+            >
+              📈 Behavioral intelligence
+            </Link>
+
+            <Link
+              to="/admin/catalog-health"
+              style={menuItem}
+            >
+              📊 Catalog health
+            </Link>
+
+            <Link
+              to="/admin/behavioral-trust"
+              style={menuItem}
+            >
+              🧠 Behavioral trust
+            </Link>
+
+            <Link
+              to="/admin/public-beta-ops"
+              style={menuItem}
+            >
+              🚀 Trusted beta ops
+            </Link>
+
+            <Link
+              to="/admin/recommendation-realism"
+              style={menuItem}
+            >
+              🎯 Recommendation realism
+            </Link>
+
+            <Link
+              to="/admin/premium-ownership-journeys"
+              style={menuItem}
+            >
+              ⭐ Premium ownership
+            </Link>
+
+            <Link
+              to="/admin/ownership-authority"
+              style={menuItem}
+            >
+              📚 Ownership authority
+            </Link>
+
+            <Link
+              to="/admin/trusted-conversions"
+              style={menuItem}
+            >
+              📞 Trusted conversions
+            </Link>
+
+            <Link
+              to="/admin/compare-calibration"
+              style={menuItem}
+            >
+              ⚖ Compare calibration
+            </Link>
+
+            <Link
+              to="/admin/high-intent-journeys"
+              style={menuItem}
+            >
+              🎯 High-intent journeys
+            </Link>
+
+            <Link
+              to="/admin/seo-authority"
+              style={menuItem}
+            >
+              📈 SEO authority
+            </Link>
+
+            <Link
+              to="/admin/user-insights"
+              style={menuItem}
+            >
+              👤 User insights
+            </Link>
+
+            <Link
+              to="/admin/compare-quality"
+              style={menuItem}
+            >
+              ⚖ Compare quality
+            </Link>
+
+            <Link
+              to="/admin/catalog-freshness"
+              style={menuItem}
+            >
+              🕐 Catalog freshness
+            </Link>
+
+            <Link
+              to="/admin/seo-opportunities"
+              style={menuItem}
+            >
+              🔍 SEO opportunities
+            </Link>
+
+            <Link
+              to="/admin/feedback-learning"
+              style={menuItem}
+            >
+              💬 Feedback learning
+            </Link>
+
+            <Link
+              to="/admin/soft-launch-monitor"
+              style={menuItem}
+            >
+              📡 Soft launch monitor
+            </Link>
+
+            <Link
+              to="/admin/performance-learning"
+              style={menuItem}
+            >
+              ⏱ Performance learning
+            </Link>
+
+            <Link
               to="/admin/catalog-ops"
               style={menuItem}
             >

@@ -20,6 +20,11 @@ import {
   resolveFamilySlugFromVariantSlug,
 } from "../media/familyMediaManifest.js";
 import { pickMediaFields } from "../media/vehicleMediaSchema.js";
+import {
+  brandLogoUrl,
+  brandSiblingMediaUrls,
+  resolveBrandKeyFromFamily,
+} from "../media/brandFallback.js";
 
 /** @deprecated use ROLE_ASPECT from config/media */
 export const IMAGE_ASPECT = ROLE_ASPECT;
@@ -198,11 +203,24 @@ export function buildImageFallbackChain(car, role = "listing") {
   const variantUrls = variantCdnFallbacks();
 
   if (role === "compare") {
-    const resolved = resolveCatalogImageUrl(car, "compare");
-    return resolved ? [resolved] : [];
+    const brandKey = familySlug ? resolveBrandKeyFromFamily(familySlug) : null;
+    return finalizeFallbackChain(
+      [
+        resolveCatalogImageUrl(car, "compare"),
+        car?.compareThumbnail,
+        meta.compareThumbnail,
+        ...fieldValues,
+        ...familyUrls,
+        ...brandSiblingMediaUrls(familySlug, "compare"),
+        brandKey ? brandLogoUrl(brandKey) : null,
+        LOCAL_FALLBACK_EV,
+      ],
+      { role: "compare" }
+    );
   }
 
   if (role === "og") {
+    const brandKey = familySlug ? resolveBrandKeyFromFamily(familySlug) : null;
     return finalizeFallbackChain([
       car?.ogImage,
       meta.ogImage,
@@ -211,12 +229,15 @@ export function buildImageFallbackChain(car, role = "listing") {
       car?.heroImage,
       meta.heroImage,
       familySlug ? familyCatalogUrl(familySlug, "og.jpg") : null,
+      ...brandSiblingMediaUrls(familySlug, "hero"),
+      brandKey ? brandLogoUrl(brandKey) : null,
       ...variantUrls,
       LOCAL_FALLBACK_EV,
     ]);
   }
 
   if (role === "hero") {
+    const brandKey = familySlug ? resolveBrandKeyFromFamily(familySlug) : null;
     return finalizeFallbackChain([
       car?.heroImage,
       meta.heroImage,
@@ -225,6 +246,8 @@ export function buildImageFallbackChain(car, role = "listing") {
       car?.image,
       car?.listingThumbnail,
       meta.listingThumbnail,
+      ...brandSiblingMediaUrls(familySlug, "hero"),
+      brandKey ? brandLogoUrl(brandKey) : null,
       ...variantUrls,
       LOCAL_FALLBACK_EV,
     ]);
@@ -258,6 +281,10 @@ export function buildImageFallbackChain(car, role = "listing") {
     car?.heroImage,
     meta.heroImage,
     car?.image,
+    ...brandSiblingMediaUrls(familySlug, "listing"),
+    ...(familySlug
+      ? [brandLogoUrl(resolveBrandKeyFromFamily(familySlug))]
+      : []),
     ...variantUrls,
     LOCAL_FALLBACK_EV,
   ]);

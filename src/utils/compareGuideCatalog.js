@@ -1,4 +1,5 @@
 import { API_URL } from "../config";
+import { safeFetchJsonWithRetry } from "./safeFetch";
 import normalizeCar from "./normalizeCar";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { fetchVehicleBySlug } from "./vehicleDetailResolver";
@@ -120,24 +121,26 @@ async function fetchCatalogPool(slugs) {
     if (row?.vehicle) fetched.push(normalizeCar(row.vehicle));
   }
 
-  try {
-    const res = await fetch(`${API_URL}/cars?limit=120`);
-    if (res.ok) {
-      const data = await res.json();
-      const list = (data?.cars || []).map(normalizeCar);
-      for (const c of list) {
-        const key = normalizeVehicleSlug(c.slug);
-        if (
-          !fetched.some(
-            (m) => normalizeVehicleSlug(m.slug) === key
-          )
-        ) {
-          fetched.push(c);
-        }
+  const poolRes = await safeFetchJsonWithRetry(
+    `${API_URL}/cars?limit=120`,
+    {
+      label: "compare_guide_catalog_pool",
+      fallback: { cars: [] },
+      timeoutMs: 20000,
+    }
+  );
+  if (poolRes.ok) {
+    const list = (poolRes.data?.cars || []).map(normalizeCar);
+    for (const c of list) {
+      const key = normalizeVehicleSlug(c.slug);
+      if (
+        !fetched.some(
+          (m) => normalizeVehicleSlug(m.slug) === key
+        )
+      ) {
+        fetched.push(c);
       }
     }
-  } catch {
-    /* use slug fetches only */
   }
 
   return fetched;

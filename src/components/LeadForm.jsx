@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { API_URL } from "../config";
+import { safeFetchJson } from "../utils/safeFetch";
 
 import {
   validateMiniLeadForm,
@@ -130,41 +131,23 @@ export default function LeadForm({
 
       try {
 
-        const res =
-          await fetch(
-            `${API_URL}/leads`,
-            {
-
-              method: "POST",
-
-              headers: {
-                "Content-Type":
-                  "application/json",
-              },
-
-              body: JSON.stringify({
-
-                name:
-                  sanitizeInput(
-                    name
-                  ),
-
-                phone,
-
-                carId,
-              }),
-            }
-          );
-
-        const data =
-          await res.json();
+        const res = await safeFetchJson(`${API_URL}/leads`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          timeoutMs: 20000,
+          label: "mini_lead_submit",
+          body: JSON.stringify({
+            name: sanitizeInput(name),
+            phone,
+            carId,
+          }),
+        });
 
         if (!res.ok) {
-
-          throw new Error(
-            data?.error ||
-            "Unable to submit inquiry."
-          );
+          const errMsg =
+            (res.data && typeof res.data === "object" && res.data.error) ||
+            "Unable to submit inquiry.";
+          throw new Error(errMsg);
         }
 
         /* ================= SUCCESS ================= */
@@ -176,17 +159,12 @@ export default function LeadForm({
         setPhone("");
 
       } catch (err) {
-
-        console.error(
-          "LEAD SUBMIT ERROR:",
-          err
-        );
+        if (import.meta.env.DEV) {
+          console.error("LEAD SUBMIT ERROR:", err);
+        }
 
         setError(
-
-          err.message ||
-
-          "Unable to connect to server."
+          err.message || "Unable to connect to server."
         );
       }
 

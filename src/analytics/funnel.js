@@ -1,6 +1,11 @@
 import { ANALYTICS_EVENTS } from "./events";
 import { trackAnalytics } from "./track";
-import { appendUsageLearningEvent } from "../ops/usageLearningBuffer.js";
+import {
+  appendUsageLearningEvent,
+  listUsageLearningEvents,
+} from "../ops/usageLearningBuffer.js";
+import { acquisitionMetaForBuffer } from "../utils/acquisitionContext.js";
+import { getClientDeviceClass } from "../ops/analyticsMaturityOps.js";
 
 function slugList(slugs) {
   if (!Array.isArray(slugs)) {
@@ -22,6 +27,28 @@ export function trackEvViewed({
     source_page: sourcePage,
     brand,
   });
+  bufferFunnelEvent("ev_viewed", {
+    familySlug,
+    sourcePage,
+  });
+}
+
+function pairSlugFromPage(sourcePage = "") {
+  const m = String(sourcePage).match(/\/compare\/([^?#/]+)/i);
+  return m ? m[1].toLowerCase() : "";
+}
+
+function bufferFunnelEvent(type, meta = {}) {
+  const pairSlug = meta.pairSlug || pairSlugFromPage(meta.sourcePage);
+  appendUsageLearningEvent({
+    type,
+    meta: {
+      device: getClientDeviceClass(),
+      ...acquisitionMetaForBuffer(),
+      ...meta,
+      ...(pairSlug ? { pairSlug } : {}),
+    },
+  });
 }
 
 export function trackCompareStarted({
@@ -34,6 +61,19 @@ export function trackCompareStarted({
     compare_depth: compareDepth || vehicleSlugs.length,
     source_page: sourcePage,
   });
+  bufferFunnelEvent("compare_started", {
+    sourcePage,
+    depth: vehicleSlugs.length,
+  });
+
+  const recent = listUsageLearningEvents().slice(-12);
+  const hadRecentDoubt = recent.some((e) => e.type === "recommendation_doubted");
+  if (hadRecentDoubt) {
+    trackAnalytics(ANALYTICS_EVENTS.COMPARE_SWITCH_AFTER_DOUBT, {
+      source_page: sourcePage,
+    });
+    bufferFunnelEvent("compare_switch_after_doubt", { sourcePage });
+  }
 }
 
 export function trackCompareCompleted({
@@ -44,6 +84,10 @@ export function trackCompareCompleted({
     vehicle_slugs: slugList(vehicleSlugs).join(","),
     compare_depth: vehicleSlugs.length,
     source_page: sourcePage,
+  });
+  bufferFunnelEvent("compare_completed", {
+    sourcePage,
+    depth: vehicleSlugs.length,
   });
 }
 
@@ -60,6 +104,20 @@ export function trackLeadFormOpened(payload = {}) {
     source_page: payload.sourcePage,
     form_type: payload.formType || "inquiry",
     family_slug: payload.familySlug,
+  });
+}
+
+/** GA4-ready alias — fired when user opens lead form (intent start). */
+export function trackLeadStarted(payload = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.LEAD_STARTED, {
+    source_page: payload.sourcePage,
+    form_type: payload.formType || "inquiry",
+    family_slug: payload.familySlug,
+  });
+  bufferFunnelEvent("lead_started", {
+    sourcePage: payload.sourcePage,
+    formType: payload.formType,
+    familySlug: payload.familySlug,
   });
 }
 
@@ -136,6 +194,22 @@ export function trackChargingSectionViewed({
   });
 }
 
+/** GA4 + buffer — charging guide engagement (Phase 5C). */
+export function trackChargingGuideOpened({
+  familySlug,
+  sourcePage = "car_detail",
+} = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.CHARGING_GUIDE_OPENED, {
+    family_slug: familySlug,
+    source_page: sourcePage,
+  });
+  trackChargingSectionViewed({ familySlug, sourcePage });
+  bufferFunnelEvent("charging_guide_opened", {
+    familySlug,
+    sourcePage,
+  });
+}
+
 export function trackOwnershipInsightViewed({
   familySlug,
   sourcePage = "car_detail",
@@ -143,6 +217,22 @@ export function trackOwnershipInsightViewed({
   trackAnalytics(ANALYTICS_EVENTS.OWNERSHIP_INSIGHT_VIEWED, {
     family_slug: familySlug,
     source_page: sourcePage,
+  });
+}
+
+/** GA4 + buffer — ownership guide engagement (Phase 5C). */
+export function trackOwnershipGuideOpened({
+  familySlug,
+  sourcePage = "car_detail",
+} = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.OWNERSHIP_GUIDE_OPENED, {
+    family_slug: familySlug,
+    source_page: sourcePage,
+  });
+  trackOwnershipInsightViewed({ familySlug, sourcePage });
+  bufferFunnelEvent("ownership_guide_opened", {
+    familySlug,
+    sourcePage,
   });
 }
 
@@ -225,6 +315,11 @@ export function trackTrustTooltipOpened({
     field,
     family_slug: familySlug,
     source_page: sourcePage,
+  });
+  bufferFunnelEvent("trust_tooltip_opened", {
+    field,
+    familySlug,
+    sourcePage,
   });
 }
 
@@ -428,6 +523,11 @@ export function trackLeadFormAbandoned({
     form_type: formType,
     family_slug: familySlug,
   });
+  bufferFunnelEvent("lead_form_abandoned", {
+    sourcePage,
+    formType,
+    familySlug,
+  });
 }
 
 export function trackCtaFunnelStep({
@@ -441,5 +541,151 @@ export function trackCtaFunnelStep({
     cta_type: ctaType,
     source_page: sourcePage,
     label,
+  });
+}
+
+export function trackLeadAbandoned(payload = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.LEAD_ABANDONED, {
+    source_page: payload.sourcePage,
+    form_type: payload.formType || "inquiry",
+    family_slug: payload.familySlug,
+  });
+  bufferFunnelEvent("lead_abandoned", {
+    sourcePage: payload.sourcePage,
+    formType: payload.formType,
+    familySlug: payload.familySlug,
+  });
+}
+
+export function trackRepeatedEvInterest({ familySlug, sourcePage } = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.REPEATED_EV_INTEREST, {
+    family_slug: familySlug,
+    source_page: sourcePage,
+  });
+  bufferFunnelEvent("repeated_ev_interest", { familySlug, sourcePage });
+}
+
+export function trackMultiSessionCompare({ pairSlug, sourcePage } = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.MULTI_SESSION_COMPARE, {
+    pair_slug: pairSlug,
+    source_page: sourcePage,
+  });
+  bufferFunnelEvent("multi_session_compare", { pairSlug, sourcePage });
+}
+
+export function trackHighBounceCompare({ pairSlug, sourcePage, depth = 0 } = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.HIGH_BOUNCE_COMPARE, {
+    pair_slug: pairSlug,
+    source_page: sourcePage,
+    compare_depth: depth,
+  });
+  bufferFunnelEvent("high_bounce_compare", { pairSlug, sourcePage, depth });
+}
+
+export function trackWeakConversionCompare({ pairSlug, sourcePage } = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.WEAK_CONVERSION_COMPARE, {
+    pair_slug: pairSlug,
+    source_page: sourcePage,
+  });
+  bufferFunnelEvent("weak_conversion_compare", { pairSlug, sourcePage });
+}
+
+export function trackCompareSlow({ sourcePage, durationMs } = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.COMPARE_SLOW, {
+    source_page: sourcePage,
+    duration_ms: durationMs,
+  });
+  bufferFunnelEvent("compare_slow", { sourcePage, durationMs });
+}
+
+export function trackImageFallbackUsed({ role, familySlug, sourcePage } = {}) {
+  bufferFunnelEvent("image_fallback_used", { role, familySlug, sourcePage });
+}
+
+export function trackRoutePaintSlow({ route, durationMs } = {}) {
+  bufferFunnelEvent("route_paint_slow", { route, durationMs });
+}
+
+export function trackOwnershipTooltipOpened({
+  vehicleSlugs = [],
+  sourcePage = "",
+  panel = "ownership_guidance",
+} = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.OWNERSHIP_TOOLTIP_OPENED, {
+    vehicle_slugs: slugList(vehicleSlugs).join(","),
+    source_page: sourcePage,
+    panel,
+  });
+  bufferFunnelEvent("ownership_tooltip_opened", {
+    sourcePage,
+    panel,
+    slugs: vehicleSlugs,
+  });
+}
+
+export function trackChargingPracticalityOpened({
+  vehicleSlugs = [],
+  sourcePage = "",
+} = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.CHARGING_PRACTICALITY_OPENED, {
+    vehicle_slugs: slugList(vehicleSlugs).join(","),
+    source_page: sourcePage,
+  });
+  bufferFunnelEvent("charging_practicality_opened", {
+    sourcePage,
+    slugs: vehicleSlugs,
+  });
+}
+
+export function trackCompareConfidenceExpanded({
+  vehicleSlugs = [],
+  sourcePage = "compare",
+} = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.COMPARE_CONFIDENCE_EXPANDED, {
+    vehicle_slugs: slugList(vehicleSlugs).join(","),
+    source_page: sourcePage,
+  });
+  bufferFunnelEvent("compare_confidence_expanded", {
+    sourcePage,
+    slugs: vehicleSlugs,
+  });
+}
+
+export function trackSuitabilityGuidanceOpened({
+  vehicleSlugs = [],
+  sourcePage = "",
+} = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.SUITABILITY_GUIDANCE_OPENED, {
+    vehicle_slugs: slugList(vehicleSlugs).join(","),
+    source_page: sourcePage,
+  });
+  bufferFunnelEvent("suitability_guidance_opened", {
+    sourcePage,
+    slugs: vehicleSlugs,
+  });
+}
+
+export function trackRecommendationDoubted({
+  sourcePage = "compare",
+  reason = "",
+} = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.RECOMMENDATION_DOUBTED, {
+    source_page: sourcePage,
+    reason,
+  });
+  bufferFunnelEvent("recommendation_doubted", { sourcePage, reason });
+}
+
+export function trackCompareAbandonAfterGuidance({
+  vehicleSlugs = [],
+  sourcePage = "compare",
+} = {}) {
+  trackAnalytics(ANALYTICS_EVENTS.COMPARE_ABANDON_AFTER_GUIDANCE, {
+    vehicle_slugs: slugList(vehicleSlugs).join(","),
+    source_page: sourcePage,
+  });
+  bufferFunnelEvent("compare_abandon_after_guidance", {
+    sourcePage,
+    slugs: vehicleSlugs,
   });
 }

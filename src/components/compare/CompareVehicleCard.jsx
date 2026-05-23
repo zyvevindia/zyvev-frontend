@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 
 import ScoreCircle from "../common/ScoreCircle";
+import CompareScoreInsight from "./CompareScoreInsight";
+import TrustDataStrip from "../trust/TrustDataStrip";
 import VehicleImage from "../media/VehicleImage";
+import {
+  dedupeComparePills,
+} from "../../utils/compareConfidence";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { resolveCatalogImageUrl } from "../../utils/vehicleMedia";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
@@ -126,7 +131,9 @@ export default function CompareVehicleCard({
   const score = car ? resolveEvsavariScore(car) : null;
   const strength = resolveStrengthLabel(meta);
   const tradeoff = resolveTradeoffLabel(meta);
-  const betterAtPills = car ? resolveBetterAtPills(meta, car) : [];
+  const betterAtPills = car
+    ? dedupeComparePills(resolveBetterAtPills(meta, car))
+    : [];
   const href =
     car && (detailHref || vehicleDetailPath(car, car._id));
 
@@ -173,6 +180,8 @@ export default function CompareVehicleCard({
         <p className="compare-vehicle-card__price">
           {formatIndianPriceCompact(price)}
         </p>
+
+        <TrustDataStrip car={car} variant="compare" />
 
         <div className="compare-vehicle-card__specs">
           <span className="compare-vehicle-card__spec">⚡ {range} km</span>
@@ -225,9 +234,7 @@ export default function CompareVehicleCard({
 
           {score != null ? (
             <div className="compare-vehicle-card__score-col">
-              <p className="compare-vehicle-card__score-label">
-                EVSavari Score
-              </p>
+              <CompareScoreInsight car={car} />
               <ScoreCircle
                 score={score}
                 size={120}

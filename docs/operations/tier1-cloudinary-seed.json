@@ -1,0 +1,58 @@
+{
+  "_comment": "Wikimedia Commons thumb URLs (CC-BY-SA). Replace with OEM press packs when available.",
+  "tata-tiago-ev": {
+    "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+    "listing-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/960px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+    "compare-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Tata_Tiago_%28115%29.JPG/1280px-Tata_Tiago_%28115%29.JPG",
+    "og": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+    "exterior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+    "exterior-2": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Tata_Tiago_%28115%29.JPG/1280px-Tata_Tiago_%28115%29.JPG",
+    "exterior-3": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2022_Tata_Tiago_XZA%2B_rear_20230512.jpg/1280px-2022_Tata_Tiago_XZA%2B_rear_20230512.jpg",
+    "interior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+    "charging-port": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png"
+  },
+  "byd-atto-3": {
+    "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg",
+    "listing-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/960px-BYD_Atto_3_1X7A6493.jpg",
+    "compare-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/BYD_Atto_3_1X7A7105.jpg/1280px-BYD_Atto_3_1X7A7105.jpg",
+    "og": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg",
+    "exterior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg",
+    "exterior-2": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/BYD_Atto_3_1X7A7105.jpg/1280px-BYD_Atto_3_1X7A7105.jpg",
+    "exterior-3": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg",
+    "interior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg",
+    "charging-port": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg"
+  },
+  "mahindra-xuv400": {
+    "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg",
+    "listing-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/960px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg",
+    "compare-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg",
+    "og": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg",
+    "exterior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg",
+    "exterior-2": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg",
+    "exterior-3": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg",
+    "interior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg",
+    "charging-port": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg"
+  },
+  "mahindra-xev-9e": {
+    "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+    "listing-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/960px-Mahindra_XEV_9E.jpg",
+    "compare-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+    "og": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+    "exterior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+    "exterior-2": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+    "exterior-3": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+    "interior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+    "charging-port": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+  },
+  "hyundai-kona-electric": {
+    "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+    "listing-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/960px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+    "compare-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+    "og": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+    "exterior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+    "exterior-2": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+    "exterior-3": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+    "interior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+    "charging-port": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+  }
+}

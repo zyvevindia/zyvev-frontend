@@ -2,12 +2,14 @@
  * Graceful JSON fetch — returns structured result instead of throwing.
  */
 
-import { devWarn } from "../launch/devDiagnostics";
+import { logApiRequest } from "./apiDiagnostics.js";
+import { logSlowApiRequest } from "./routePerformance.js";
+import { devWarn } from "../launch/devDiagnostics.js";
 
 /**
  * @param {string} url
  * @param {RequestInit & { timeoutMs?: number; fallback?: unknown; label?: string }} [options]
- * @returns {Promise<{ ok: boolean; status: number; data: unknown; error: string | null }>}
+ * @returns {Promise<{ ok: boolean; status: number; data: unknown; error: string | null; durationMs: number }>}
  */
 export async function safeFetchJson(url, options = {}) {
   const {
@@ -19,6 +21,7 @@ export async function safeFetchJson(url, options = {}) {
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
+  const started = Date.now();
 
   try {
     const res = await fetch(url, {
@@ -26,29 +29,65 @@ export async function safeFetchJson(url, options = {}) {
       signal: controller.signal,
     });
 
+    const durationMs = Date.now() - started;
+
     if (!res.ok) {
       devWarn(`API ${label}: HTTP ${res.status}`);
+      logApiRequest({
+        label,
+        url,
+        ok: false,
+        status: res.status,
+        error: `HTTP ${res.status}`,
+        durationMs,
+      });
       return {
         ok: false,
         status: res.status,
         data: fallback,
         error: `HTTP ${res.status}`,
+        durationMs,
       };
     }
 
     const data = await res.json();
-    return { ok: true, status: res.status, data, error: null };
+    logApiRequest({
+      label,
+      url,
+      ok: true,
+      status: res.status,
+      error: null,
+      durationMs,
+    });
+    logSlowApiRequest(label, durationMs);
+    return {
+      ok: true,
+      status: res.status,
+      data,
+      error: null,
+      durationMs,
+    };
   } catch (err) {
+    const durationMs = Date.now() - started;
     const message =
       err?.name === "AbortError"
         ? "request_timeout"
         : err?.message || "network_error";
     devWarn(`API ${label} failed:`, message);
+    logApiRequest({
+      label,
+      url,
+      ok: false,
+      status: 0,
+      error: message,
+      durationMs,
+    });
     return {
       ok: false,
       status: 0,
       data: fallback,
       error: message,
+      durationMs,
     };
   } finally {
     clearTimeout(timer);
@@ -65,13 +104,29 @@ export async function safeFetchJsonWithRetry(url, options = {}) {
   const retryable =
     first.error === "request_timeout" ||
     first.error === "network_error" ||
-    first.status === 0;
+    first.status === 0 ||
+    first.status === 503 ||
+    first.status === 502;
 
   if (!retryable) return first;
 
   return safeFetchJson(url, {
     ...options,
-    timeoutMs: options.timeoutMs ?? 15000,
-    label: `${options.label || url} (retry)`,
+    timeoutMs: Math.max(options.timeoutMs ?? 15000, 20000),
+    label: `${options.label || "api"} (retry)`,
   });
+}
+
+/**
+ * Fire-and-forget POST/GET — never throws; logs failures only.
+ */
+export async function safeFetchFireAndForget(url, options = {}) {
+  try {
+    await safeFetchJson(url, {
+      ...options,
+      timeoutMs: options.timeoutMs ?? 8000,
+    });
+  } catch {
+    /* safeFetchJson does not throw */
+  }
 }

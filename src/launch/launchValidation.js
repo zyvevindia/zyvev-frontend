@@ -41,6 +41,16 @@ const ENV_CHECKS = [
     required: false,
     hint: "Optional GA4 measurement ID",
   },
+  {
+    key: "VITE_SENTRY_DSN",
+    required: false,
+    hint: "Optional Sentry error monitoring",
+  },
+  {
+    key: "VITE_SENTRY_TRACES_SAMPLE_RATE",
+    required: false,
+    hint: "Sentry performance sample rate (0–1)",
+  },
 ];
 
 export function verifyEnvironmentVariables() {

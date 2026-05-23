@@ -12,6 +12,7 @@ import {
   LISTING_SIZES,
 } from "../../media/responsive.js";
 import { logImageFallback } from "../../launch/imageFallbackLog.js";
+import { isLegacyCatalogCdnUrl } from "../../media/cloudinary.js";
 import { sanitizeImageUrl } from "../../utils/imageUrl.js";
 import {
   IMAGE_ASPECT,
@@ -55,24 +56,16 @@ export default function VehicleImage({
   const chain = useMemo(() => {
     const sanitizeOpts = { role };
     const primary = sanitizeImageUrl(srcProp, sanitizeOpts);
-
-    if (role === "compare") {
-      return primary ? [primary] : [];
-    }
-
-    if (primary) {
-      const base = filterValidChain(
-        buildImageFallbackChain(car, role),
-        role
-      );
-      return [primary, ...base.filter((u) => u !== primary)];
-    }
-
-    const raw = filterValidChain(
+    const base = filterValidChain(
       buildImageFallbackChain(car, role),
       role
     );
-    if (raw.length > 0) return raw;
+
+    if (primary) {
+      return [primary, ...base.filter((u) => u !== primary)];
+    }
+
+    if (base.length > 0) return base;
 
     const fallback = sanitizeImageUrl(LOCAL_FALLBACK_EV, sanitizeOpts);
     return fallback ? [fallback] : [];
@@ -84,16 +77,21 @@ export default function VehicleImage({
     chain.length === 0
   );
 
-  const src = showPlaceholder
+  const rawSrc = showPlaceholder
     ? ""
     : chain[Math.min(index, chain.length - 1)] || "";
+  const src =
+    rawSrc && !isLegacyCatalogCdnUrl(rawSrc)
+      ? sanitizeImageUrl(rawSrc, { role }) || ""
+      : "";
+  const usePlaceholder = showPlaceholder || !src;
   const aspect = aspectRatio || IMAGE_ASPECT[role] || IMAGE_ASPECT.listing;
   const sizes = SIZES_BY_ROLE[role] || LISTING_SIZES;
 
   const responsiveSet = useMemo(() => {
-    if (!responsive || !src || !sanitizeImageUrl(src, { role })) return null;
+    if (!responsive || usePlaceholder || !src) return null;
     return buildResponsiveSources(src, [480, 800, 1200]);
-  }, [responsive, src]);
+  }, [responsive, usePlaceholder, src]);
 
   const handleLoad = useCallback(() => {
     setLoaded(true);
@@ -124,6 +122,29 @@ export default function VehicleImage({
         });
         setIndex((i) => i + 1);
         setLoaded(false);
+        return;
+      }
+
+      if (role === "compare") {
+        const local = sanitizeImageUrl(LOCAL_FALLBACK_EV, { role });
+        if (
+          local &&
+          event?.currentTarget &&
+          !event.currentTarget.src.endsWith(LOCAL_FALLBACK_EV)
+        ) {
+          logImageFallback({
+            role,
+            failedUrl,
+            fallbackUrl: local,
+            slug,
+          });
+          event.currentTarget.src = local;
+          setLoaded(false);
+          return;
+        }
+        setShowPlaceholder(true);
+        setLoaded(true);
+        onBroken?.(failedUrl);
         return;
       }
 
@@ -191,7 +212,7 @@ export default function VehicleImage({
         ...wrapperStyle,
       }}
     >
-      {!loaded && !showPlaceholder && (
+      {!loaded && !usePlaceholder && (
         <span
           style={{
             position: "absolute",
@@ -203,7 +224,7 @@ export default function VehicleImage({
         />
       )}
 
-      {showPlaceholder ? (
+      {usePlaceholder ? (
         <div
           className="vehicle-image-placeholder"
           style={{
@@ -228,7 +249,7 @@ export default function VehicleImage({
         </div>
       ) : null}
 
-      {!showPlaceholder && responsive && responsiveSet ? (
+      {!usePlaceholder && responsive && responsiveSet ? (
         <picture
           style={{
             position: "absolute",
@@ -255,7 +276,7 @@ export default function VehicleImage({
             sizes={sizes}
           />
         </picture>
-      ) : !showPlaceholder ? (
+      ) : !usePlaceholder ? (
         <img key={`${src}-${index}`} {...imgProps} src={src} />
       ) : null}
     </div>
