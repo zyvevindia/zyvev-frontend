@@ -1,6 +1,8 @@
 /**
  * EV Intelligence Layer Phase 2 smoke checks.
  */
+import "./lib/bootstrapEnv.mjs";
+
 import { INTELLIGENCE_DISCOVERY_PRESETS } from "../src/data/intelligenceDiscoveryPresets.js";
 import { INTELLIGENCE_FILTER_DEFINITIONS } from "../src/intelligence/filterDefinitions.js";
 import { buildEvsavariScores } from "../src/intelligence/scoringEngine.js";

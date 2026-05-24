@@ -9,12 +9,13 @@
  *   npm run media:upload-tier1 -- --family=tata-tiago-ev
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createRequire } from "node:module";
+import { configureCloudinaryOrExit } from "./lib/cloudinarySdk.mjs";
 
-const require = createRequire(import.meta.url);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 
@@ -32,52 +33,6 @@ const OPTIONAL_ROLES = [
 const dryRun = process.argv.includes("--dry-run");
 const coreOnly = process.argv.includes("--core-only");
 const familyArg = process.argv.find((a) => a.startsWith("--family="))?.split("=")[1];
-
-function loadCloudinaryV2() {
-  try {
-    return require("cloudinary").v2;
-  } catch {
-    const backendPath = join(root, "../zyvev-backend/node_modules/cloudinary");
-    if (existsSync(backendPath)) {
-      return require(backendPath).v2;
-    }
-    console.error("cloudinary package not found. Run: npm install");
-    process.exit(1);
-  }
-}
-
-const cloudinary = loadCloudinaryV2();
-
-function loadEnvFiles() {
-  for (const name of [".env.local", ".env"]) {
-    const path = join(root, name);
-    if (!existsSync(path)) continue;
-    for (const line of readFileSync(path, "utf8").split(/\r?\n/)) {
-      const trimmed = line.trim();
-      if (!trimmed || trimmed.startsWith("#")) continue;
-      const eq = trimmed.indexOf("=");
-      if (eq === -1) continue;
-      const key = trimmed.slice(0, eq).trim();
-      let val = trimmed.slice(eq + 1).trim();
-      if (
-        (val.startsWith('"') && val.endsWith('"')) ||
-        (val.startsWith("'") && val.endsWith("'"))
-      ) {
-        val = val.slice(1, -1);
-      }
-      if (!process.env[key]) process.env[key] = val;
-    }
-  }
-}
-
-function requireEnv(name) {
-  const val = process.env[name];
-  if (!val) {
-    console.error(`Missing env: ${name}`);
-    process.exit(1);
-  }
-  return val;
-}
 
 function canonicalFolder(familySlug) {
   return `${ROOT_PREFIX}/catalog/families/${familySlug}`;
@@ -121,7 +76,7 @@ async function downloadRemoteImage(remoteUrl, retries = 4) {
   throw new Error("download failed");
 }
 
-async function uploadRole(familySlug, role, remoteUrl) {
+async function uploadRole(cloudinary, familySlug, role, remoteUrl) {
   const publicId = publicIdForRole(familySlug, role);
   const folder = canonicalFolder(familySlug);
 
@@ -149,22 +104,7 @@ async function uploadRole(familySlug, role, remoteUrl) {
 }
 
 async function main() {
-  loadEnvFiles();
-
-  const cloudName =
-    process.env.VITE_CLOUDINARY_CLOUD_NAME ||
-    process.env.CLOUDINARY_CLOUD_NAME ||
-    "dznvmumze";
-
-  requireEnv("CLOUDINARY_API_KEY");
-  requireEnv("CLOUDINARY_API_SECRET");
-
-  cloudinary.config({
-    cloud_name: cloudName,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET,
-    secure: true,
-  });
+  const { cloudinary, cloudName } = configureCloudinaryOrExit();
 
   const seedPath = join(root, "docs/operations/tier1-cloudinary-seed.json");
   const seed = JSON.parse(readFileSync(seedPath, "utf8"));
@@ -172,7 +112,7 @@ async function main() {
   const families = familyArg ? [familyArg] : Object.keys(seed).filter((k) => !k.startsWith("_"));
 
   console.log(
-    `\nTier-1 Cloudinary upload — ${families.length} famil(ies)${dryRun ? " (DRY-RUN)" : ""}${coreOnly ? " (core only)" : ""}\n`
+    `\nTier-1 Cloudinary upload — cloud ${cloudName}, ${families.length} famil(ies)${dryRun ? " (DRY-RUN)" : ""}${coreOnly ? " (core only)" : ""}\n`
   );
 
   let uploaded = 0;
@@ -198,7 +138,7 @@ async function main() {
         continue;
       }
       try {
-        const result = await uploadRole(familySlug, role, remoteUrl);
+        const result = await uploadRole(cloudinary, familySlug, role, remoteUrl);
         if (result.ok && !result.dryRun) uploaded += 1;
       } catch (err) {
         failed += 1;

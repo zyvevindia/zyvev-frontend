@@ -5,6 +5,8 @@
  * Outputs: console table, JSON + CSV under reports/
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";

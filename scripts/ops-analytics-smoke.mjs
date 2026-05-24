@@ -3,6 +3,8 @@
  * Run: npm run ops:analytics-smoke
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 import { ANALYTICS_EVENTS } from "../src/analytics/events.js";
 import { shouldEmitEvent } from "../src/analytics/dedupe.js";
 

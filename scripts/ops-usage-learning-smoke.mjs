@@ -3,6 +3,8 @@
  * npm run ops:usage-learning-smoke
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 import { feedbackOpsPriorityScore, normalizeFeedbackCategoryId } from "../src/ops/feedbackTaxonomy.js";
 import { summarizeUsageLearningBuffer } from "../src/ops/usageLearningBuffer.js";
 import { summarizeOemQueue } from "../src/ops/oemUpdateQueue.js";

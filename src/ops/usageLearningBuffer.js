@@ -3,6 +3,8 @@
  * Buffers funnel-friendly events (no PII). Cap ~200; ring-style trim.
  */
 
+import { mirrorUsageLearningEvent } from "../backend/services/persistenceMirror.js";
+
 const STORAGE_KEY = "evsavari-usage-learning-v1";
 const MAX = 200;
 
@@ -58,6 +60,7 @@ export function appendUsageLearningEvent(event) {
     sessionId: getUsageSessionId(),
   };
   write([row, ...read()]);
+  mirrorUsageLearningEvent(row);
   return row;
 }
 

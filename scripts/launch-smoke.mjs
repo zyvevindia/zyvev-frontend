@@ -2,6 +2,8 @@
  * Soft-launch smoke helpers — run: npm run launch:smoke
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

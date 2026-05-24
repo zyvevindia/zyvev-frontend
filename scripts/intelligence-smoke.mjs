@@ -1,6 +1,8 @@
 /**
  * EV Intelligence Layer — smoke checks (no browser).
  */
+import "./lib/bootstrapEnv.mjs";
+
 import { buildVehicleIntelligence } from "../src/intelligence/buildVehicleIntelligence.js";
 import {
   attachIntelligenceToCompareCars,

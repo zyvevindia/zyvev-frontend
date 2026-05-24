@@ -269,29 +269,31 @@ export default function CarCard({
             </button>
           </Link>
 
-          <button
-            type="button"
-            className={[
-              "car-card__compare-btn",
-              isCompared
-                ? "car-card__compare-btn--selected"
-                : "",
-              compareModeActive && !isCompared
-                ? "car-card__compare-btn--hint"
-                : "",
-            ]
-              .filter(Boolean)
-              .join(" ")}
-            style={secondaryButton}
-            onClick={() =>
-              toggleCompare(
-                safeCar.defaultVariant ||
-                  safeCar
-              )
-            }
-          >
-            {isCompared ? "✓ Comparing" : "Compare"}
-          </button>
+          {compareModeActive ? (
+            <button
+              type="button"
+              className={[
+                "car-card__compare-btn",
+                isCompared
+                  ? "car-card__compare-btn--selected"
+                  : "",
+                compareModeActive && !isCompared
+                  ? "car-card__compare-btn--hint"
+                  : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+              style={secondaryButton}
+              onClick={() =>
+                toggleCompare(
+                  safeCar.defaultVariant ||
+                    safeCar
+                )
+              }
+            >
+              {isCompared ? "✓ Comparing" : "Compare"}
+            </button>
+          ) : null}
         </div>
 
         <div style={leadRow}>

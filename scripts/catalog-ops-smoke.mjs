@@ -1,6 +1,8 @@
 /**
  * Catalog Intelligence Ops + Freshness Layer smoke checks.
  */
+import "./lib/bootstrapEnv.mjs";
+
 import { buildVehicleIntelligence } from "../src/intelligence/buildVehicleIntelligence.js";
 import {
   buildCatalogSnapshot,

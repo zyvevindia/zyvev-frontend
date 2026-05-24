@@ -1,6 +1,8 @@
 /**
  * Soft Launch Execution + Validation smoke checks.
  */
+import "./lib/bootstrapEnv.mjs";
+
 import { buildLeadRoutingPlan } from "../src/utils/leadRouting.js";
 import { buildContentOpsSummary } from "../src/intelligence/contentOpsAudit.js";
 import { ANALYTICS_EVENTS } from "../src/analytics/events.js";

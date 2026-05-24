@@ -2,6 +2,8 @@
  * Semi-automated catalog ingestion smoke — deterministic pipeline only (no network).
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 import assert from "node:assert/strict";
 
 import { validateImportEnvelope } from "../src/intelligence/ingestion/importSchema.js";

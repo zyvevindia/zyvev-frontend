@@ -2,6 +2,8 @@
  * Media staging audit — npm run media:staging-audit
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";

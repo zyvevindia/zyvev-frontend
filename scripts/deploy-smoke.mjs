@@ -13,6 +13,8 @@
  *   EVSAVARI_CLOUDINARY_NAME=dznvmumze npm run deploy:smoke
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 const SITE =
   process.argv[2]?.replace(/\/$/, "") ||
   process.env.EVSAVARI_SITE_ORIGIN?.replace(/\/$/, "") ||

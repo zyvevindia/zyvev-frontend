@@ -12,7 +12,6 @@ import {
   LISTING_SIZES,
 } from "../../media/responsive.js";
 import { logImageFallback } from "../../launch/imageFallbackLog.js";
-import { isLegacyCatalogCdnUrl } from "../../media/cloudinary.js";
 import { sanitizeImageUrl } from "../../utils/imageUrl.js";
 import {
   IMAGE_ASPECT,
@@ -80,10 +79,7 @@ export default function VehicleImage({
   const rawSrc = showPlaceholder
     ? ""
     : chain[Math.min(index, chain.length - 1)] || "";
-  const src =
-    rawSrc && !isLegacyCatalogCdnUrl(rawSrc)
-      ? sanitizeImageUrl(rawSrc, { role }) || ""
-      : "";
+  const src = sanitizeImageUrl(rawSrc, { role }) || "";
   const usePlaceholder = showPlaceholder || !src;
   const aspect = aspectRatio || IMAGE_ASPECT[role] || IMAGE_ASPECT.listing;
   const sizes = SIZES_BY_ROLE[role] || LISTING_SIZES;

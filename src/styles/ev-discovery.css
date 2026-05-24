@@ -2,12 +2,15 @@
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid #e2e8f0;
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
 }
 
 .ev-discovery-filters__row {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
 }
 
@@ -296,3 +299,19 @@
   font-size: 0.875rem;
   text-decoration: none;
 }
+
+
+@media (max-width: 760px) {
+  .ev-discovery-filters__row {
+    align-items: stretch;
+  }
+
+  .ev-discovery-filters__label {
+    width: 100%;
+  }
+
+  .ev-discovery-filters__clear {
+    margin-left: auto;
+  }
+}
+

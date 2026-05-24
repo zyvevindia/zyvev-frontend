@@ -3,6 +3,8 @@
  * Run: npm run build:sitemaps
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 import { writeFileSync, mkdirSync, readdirSync, existsSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";

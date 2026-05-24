@@ -3,6 +3,8 @@
  * Usage: npm run check:api
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 const API_URL = (
   process.env.VITE_API_URL || "http://localhost:5000"
 ).replace(/\/$/, "");

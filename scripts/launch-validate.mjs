@@ -4,6 +4,8 @@
  *        VITE_API_URL=https://evsavari-api.onrender.com npm run launch:validate
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 const API_URL = (
   process.env.VITE_API_URL || "https://evsavari-api.onrender.com"
 ).replace(/\/$/, "");

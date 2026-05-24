@@ -20,6 +20,13 @@ import { ReportIssueProvider } from "./components/feedback/ReportIssueProvider";
 
 import "./index.css";
 
+import { activateBackendPersistence } from "./backend/activation.js";
+import { getUsageSessionId } from "./ops/usageLearningBuffer.js";
+
+void activateBackendPersistence(getUsageSessionId()).catch(() => {
+  /* persistence activation is optional */
+});
+
 /* =========================================================
    ========================= RENDER =========================
    ========================================================= */

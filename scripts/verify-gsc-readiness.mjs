@@ -3,6 +3,8 @@
  * Run: npm run gsc:verify
  */
 
+import "./lib/bootstrapEnv.mjs";
+
 import { readFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";

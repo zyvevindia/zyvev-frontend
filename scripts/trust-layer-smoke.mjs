@@ -1,6 +1,8 @@
 /**
  * Real-World EV Data + Trust Layer smoke checks.
  */
+import "./lib/bootstrapEnv.mjs";
+
 import { buildVehicleIntelligence, withVehicleIntelligence } from "../src/intelligence/buildVehicleIntelligence.js";
 import { buildCompareTrustSummary } from "../src/intelligence/compareTrustSummary.js";
 import { buildChargingPracticality } from "../src/intelligence/chargingPracticality.js";

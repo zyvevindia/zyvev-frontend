@@ -80,10 +80,13 @@ export default function ListingPage() {
   const [searchParams, setSearchParams] =
     useSearchParams();
 
-  const compareMode =
+  const compareModeRequested =
     searchParams.get(
       "compareMode"
     ) === "true";
+
+  const compareMode =
+    !resolveListingCategory(pathname, category) && compareModeRequested;
 
   const [cars, setCars] =
     useState([]);
@@ -204,11 +207,28 @@ export default function ListingPage() {
     [searchParams]
   );
 
+  useEffect(() => {
+    if (!compareModeRequested) return;
+    if (!listingCategory) return;
+
+    const next = new URLSearchParams(searchParams);
+    next.delete("compareMode");
+    setSearchParams(next, { replace: true });
+  }, [
+    compareModeRequested,
+    listingCategory,
+    searchParams,
+    setSearchParams,
+  ]);
+
   const setIntelligenceFilters = (ids) => {
     const next = writeIntelligenceFiltersToParams(
       ids,
       searchParams
     );
+    if (!compareMode && next.has("compareMode")) {
+      next.delete("compareMode");
+    }
     setSearchParams(next, { replace: true });
   };
 
@@ -597,7 +617,7 @@ export default function ListingPage() {
               </p>
             )}
 
-            {compareList.length >=
+            {compareMode && compareList.length >=
               2 && (
 
               <button
@@ -633,7 +653,7 @@ export default function ListingPage() {
 
           margin: "70px auto",
 
-          padding: "0 20px",
+          padding: compareMode ? "0 20px 84px" : "0 20px",
         }}
       >
 
@@ -800,7 +820,7 @@ export default function ListingPage() {
 
       <>
 
-        {compareList.length ===
+        {compareMode && compareList.length ===
           1 && (
 
           <div
@@ -810,7 +830,7 @@ export default function ListingPage() {
           </div>
         )}
 
-        {compareList.length >=
+        {compareMode && compareList.length >=
           2 && (
 
           <button
@@ -953,3 +973,9 @@ const floatingCompareButton = {
 
   zIndex: 1000,
 };
+
+
+
+
+
+

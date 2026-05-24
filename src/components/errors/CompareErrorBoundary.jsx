@@ -36,10 +36,10 @@ export default class CompareErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <div className="compare-error-fallback">
-          <h1>Compare temporarily unavailable</h1>
+          <h1>Compare needs a quick refresh</h1>
           <p>
-            We could not render this comparison. Your selected EVs are still
-            saved — try again or browse individual models.
+            We hit a rendering issue, but your selected EVs are still saved.
+            Refresh compare or continue browsing and return anytime.
           </p>
           <div className="compare-error-fallback__actions">
             <button

@@ -1,0 +1,951 @@
+{
+  "generatedAt": "2026-05-24T06:39:14.659Z",
+  "tier1CoveragePct": 100,
+  "manifestFamilyCount": 11,
+  "tier1FamilyCount": 11,
+  "missingManifestFamilies": [],
+  "avgCompletenessPercent": 100,
+  "fallbackUsagePct": 0,
+  "compareReadyCount": 11,
+  "compareReadyPct": 100,
+  "galleryCompleteCount": 11,
+  "galleryCompletePct": 100,
+  "brokenAssetCount": 61,
+  "brokenAssets": [
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/og",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/og",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/og",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/og",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/og",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/og",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/charging-port",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/exterior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/exterior-2",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/exterior-3",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/interior-1",
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/charging-port"
+  ],
+  "brokenCoreAssetCount": 0,
+  "brokenCoreAssets": [],
+  "placeholderWarnings": 0,
+  "slugMismatches": [],
+  "topMissing": [],
+  "manifestRows": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "tata-nexon-ev"
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "tata-punch-ev"
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "tata-curvv-ev"
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "tata-tiago-ev"
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "mg-comet-ev"
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "mg-zs-ev"
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "mahindra-be-6"
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "mahindra-xev-9e"
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "mahindra-xuv400"
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "byd-atto-3"
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "media": {
+        "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/hero",
+        "listingThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/listing-thumb",
+        "compareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/compare-thumb",
+        "ogImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/og",
+        "gallery": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/exterior-1",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/exterior-2",
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/exterior-3"
+        ],
+        "interior": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/interior-1"
+        ],
+        "charging": [
+          "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/charging-port"
+        ]
+      },
+      "complete": true,
+      "missing": [],
+      "variantCoverage": "hyundai-kona-electric"
+    }
+  ],
+  "vehicleAudits": [
+    {
+      "slug": "tata-nexon-ev",
+      "familySlug": "tata-nexon-ev",
+      "slugMapping": {
+        "variantSlug": "tata-nexon-ev",
+        "explicitFamily": "tata-nexon-ev",
+        "resolvedFamily": "tata-nexon-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/tata-nexon-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/hero",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/listing-thumb",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/compare-thumb",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/og",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-nexon-ev/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "tata-punch-ev",
+      "familySlug": "tata-punch-ev",
+      "slugMapping": {
+        "variantSlug": "tata-punch-ev",
+        "explicitFamily": "tata-punch-ev",
+        "resolvedFamily": "tata-punch-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/tata-punch-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/hero",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/listing-thumb",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/compare-thumb",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/og",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-punch-ev/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "familySlug": "tata-curvv-ev",
+      "slugMapping": {
+        "variantSlug": "tata-curvv-ev",
+        "explicitFamily": "tata-curvv-ev",
+        "resolvedFamily": "tata-curvv-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/tata-curvv-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/hero",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/listing-thumb",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/compare-thumb",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/og",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-curvv-ev/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "tata-tiago-ev",
+      "familySlug": "tata-tiago-ev",
+      "slugMapping": {
+        "variantSlug": "tata-tiago-ev",
+        "explicitFamily": "tata-tiago-ev",
+        "resolvedFamily": "tata-tiago-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/tata-tiago-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/og",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mg-comet-ev",
+      "familySlug": "mg-comet-ev",
+      "slugMapping": {
+        "variantSlug": "mg-comet-ev",
+        "explicitFamily": "mg-comet-ev",
+        "resolvedFamily": "mg-comet-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mg-comet-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/og",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mg-zs-ev",
+      "familySlug": "mg-zs-ev",
+      "slugMapping": {
+        "variantSlug": "mg-zs-ev",
+        "explicitFamily": "mg-zs-ev",
+        "resolvedFamily": "mg-zs-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mg-zs-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/hero",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/listing-thumb",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/compare-thumb",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/og",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-zs-ev/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mahindra-be-6",
+      "familySlug": "mahindra-be-6",
+      "slugMapping": {
+        "variantSlug": "mahindra-be-6",
+        "explicitFamily": "mahindra-be-6",
+        "resolvedFamily": "mahindra-be-6",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mahindra-be-6"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/hero",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/listing-thumb",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/compare-thumb",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/og",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-be-6/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "familySlug": "mahindra-xev-9e",
+      "slugMapping": {
+        "variantSlug": "mahindra-xev-9e",
+        "explicitFamily": "mahindra-xev-9e",
+        "resolvedFamily": "mahindra-xev-9e",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mahindra-xev-9e"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/og",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mahindra-xuv400",
+      "familySlug": "mahindra-xuv400",
+      "slugMapping": {
+        "variantSlug": "mahindra-xuv400",
+        "explicitFamily": "mahindra-xuv400",
+        "resolvedFamily": "mahindra-xuv400",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mahindra-xuv400"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/og",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "byd-atto-3",
+      "familySlug": "byd-atto-3",
+      "slugMapping": {
+        "variantSlug": "byd-atto-3",
+        "explicitFamily": "byd-atto-3",
+        "resolvedFamily": "byd-atto-3",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/byd-atto-3"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/hero",
+          "chainLength": 4,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/listing-thumb",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/compare-thumb",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/og",
+          "chainLength": 4,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "hyundai-kona-electric",
+      "familySlug": "hyundai-kona-electric",
+      "slugMapping": {
+        "variantSlug": "hyundai-kona-electric",
+        "explicitFamily": "hyundai-kona-electric",
+        "resolvedFamily": "hyundai-kona-electric",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/hyundai-kona-electric"
+      },
+      "roles": {
+        "hero": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/hero",
+          "chainLength": 4,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/listing-thumb",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/compare-thumb",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/og",
+          "chainLength": 4,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/exterior-1",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": true,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    }
+  ],
+  "summary": {
+    "vehicles": 11,
+    "errors": 0,
+    "warnings": 0,
+    "cloudinaryReady": 11,
+    "issues": []
+  }
+}
