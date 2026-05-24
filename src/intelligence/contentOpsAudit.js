@@ -1,5 +1,6 @@
 import { buildCatalogOpsSummary } from "./catalogAudit.js";
 import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
+import { ensureArray } from "../utils/compareArrayUtils.js";
 
 /**
  * Content expansion ops — thin discovery/compare coverage signals.
@@ -13,7 +14,7 @@ export function buildContentOpsSummary(cars = []) {
       .filter(Boolean)
   );
 
-  const comparePairsAvailable = GENERATED_COMPARE_SLUGS.length;
+  const comparePairsAvailable = ensureArray(GENERATED_COMPARE_SLUGS).length;
   const familiesWithCompareGuide = [...slugs].filter((slug) =>
     GENERATED_COMPARE_SLUGS.some((pair) => pair.includes(slug))
   ).length;

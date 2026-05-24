@@ -1,3 +1,4 @@
+import { ensureArray } from "../utils/compareArrayUtils.js";
 import { formatIndianPriceCompact } from "../utils/formatIndianPrice.js";
 import { formatRangeConfidenceLabel } from "./rangeConfidence.js";
 import { formatIntelligenceValue, isPresent } from "./governance.js";
@@ -301,7 +302,7 @@ const COMPARE_INTEL_CACHE = new Map();
 const COMPARE_INTEL_CACHE_MAX = 48;
 
 function compareCarsSignature(cars) {
-  return (cars || [])
+  return ensureArray(cars)
     .map((c) =>
       [
         c?._id,
@@ -316,7 +317,7 @@ function compareCarsSignature(cars) {
 }
 
 export function attachIntelligenceToCompareCars(cars) {
-  const list = cars || [];
+  const list = ensureArray(cars);
   const sig = compareCarsSignature(list);
   if (sig && COMPARE_INTEL_CACHE.has(sig)) {
     return COMPARE_INTEL_CACHE.get(sig);

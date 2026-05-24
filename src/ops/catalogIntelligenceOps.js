@@ -3,6 +3,7 @@
  * Status: TRUSTED | GOOD | NEEDS_REVIEW | LOW_CONFIDENCE
  */
 
+import { ensureArray } from "../utils/compareArrayUtils.js";
 import { buildVehicleIntelligence } from "../intelligence/buildVehicleIntelligence.js";
 import { auditVehicleCatalog } from "../intelligence/catalogAudit.js";
 import { buildEvsavariScores } from "../intelligence/scoringEngine.js";
@@ -260,7 +261,9 @@ export function buildCatalogIntelligenceReport(ctx = {}) {
   };
   recordCatalogIntelligenceWeekly(snapshot);
 
-  const comparePairs = (ctx.comparePairs || ctx.traffic?.comparePairs || []).slice(
+  const comparePairs = ensureArray(
+    ctx.comparePairs || ctx.traffic?.comparePairs
+  ).slice(
     0,
     12
   );

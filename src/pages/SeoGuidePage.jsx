@@ -8,6 +8,7 @@ import {
 
 import { Helmet } from "react-helmet-async";
 
+import { ensureArray } from "../utils/compareArrayUtils";
 import SEO from "../components/SEO/SEO";
 import JsonLd from "../components/SEO/JsonLd";
 
@@ -108,7 +109,7 @@ export default function SeoGuidePage() {
   const linkSections = getDiscoveryLinkSections(seoPage);
 
   const openCompareTool = () => {
-    const ranked = seoPage.rankedVehicles || [];
+    const ranked = ensureArray(seoPage.rankedVehicles);
     if (ranked.length < 2) return;
     const cars = ranked.map((v) => ({
       slug: v.slug,

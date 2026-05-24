@@ -27,6 +27,7 @@ const CompareBelowFoldSections = lazy(() =>
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
 import { saveCompareCars } from "../../utils/compareCarsStorage";
+import { ensureArray } from "../../utils/compareArrayUtils";
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
 import {
   trackLaunchCompareCta,
@@ -95,9 +96,14 @@ export default function CompareHeroExperience({
   const [inquiryHeadline, setInquiryHeadline] = useState("Request a callback");
   const [inquirySubmit, setInquirySubmit] = useState("Request callback");
 
-  const intelligentCars = useMemo(
-    () => attachIntelligenceToCompareCars(cars),
+  const safeCars = useMemo(
+    () => ensureArray(cars),
     [cars]
+  );
+
+  const intelligentCars = useMemo(
+    () => attachIntelligenceToCompareCars(safeCars),
+    [safeCars]
   );
 
   const compareSpecRows = useMemo(
@@ -107,50 +113,50 @@ export default function CompareHeroExperience({
 
   const compareVehicleLabel = useMemo(
     () =>
-      cars
+      safeCars
         .map((c) => resolveFullDisplayName(c))
         .filter(Boolean)
         .join(" vs "),
-    [cars]
+    [safeCars]
   );
 
   const compareVehicleIds = useMemo(
     () =>
-      cars
+      safeCars
         .map((c) => String(c?._id || ""))
         .filter(Boolean)
         .join(","),
-    [cars]
+    [safeCars]
   );
 
   const bestId = useMemo(() => getBestValueId(intelligentCars), [intelligentCars]);
 
   const primaryMongoCarId = useMemo(
-    () => (cars[0]?._id ? String(cars[0]._id) : ""),
-    [cars]
+    () => (safeCars[0]?._id ? String(safeCars[0]._id) : ""),
+    [safeCars]
   );
 
   const compareSlugsKey = useMemo(
     () =>
-      cars
+      safeCars
         .map((c) => c?.slug)
         .filter(Boolean)
         .sort()
         .join("|"),
-    [cars]
+    [safeCars]
   );
 
   const intelligenceTrackedRef = useRef(false);
   useEffect(() => {
-    if (intelligentCars.length < 2) return;
+    if (safeCars.length < 2) return;
     if (intelligenceTrackedRef.current) return;
     intelligenceTrackedRef.current = true;
     trackIntelligenceCompareEngaged({
-      vehicleSlugs: intelligentCars.map((c) => c.slug),
+        vehicleSlugs: safeCars.map((c) => c.slug).filter(Boolean),
       sourcePage,
       rowCount: compareSpecRows.length,
     });
-  }, [intelligentCars, compareSpecRows.length, sourcePage]);
+  }, [safeCars.length, compareSpecRows.length, sourcePage]);
 
   useEffect(() => {
     if (!compareSlugsKey) return;
@@ -165,18 +171,18 @@ export default function CompareHeroExperience({
   }, [compareSlugsKey, sourcePage]);
 
   useEffect(() => {
-    if (cars.length < 2) return undefined;
+    if (safeCars.length < 2) return undefined;
     return attachScrollDepthTracker("compare");
-  }, [cars.length]);
+  }, [safeCars.length]);
 
   const compareAbandonTracked = useRef(false);
   const inquiryOpenRef = useRef(inquiryOpen);
   inquiryOpenRef.current = inquiryOpen;
 
   useEffect(() => {
-    if (cars.length < 2) return undefined;
-    const slugs = cars.map((c) => c.slug).filter(Boolean);
-    const depth = cars.length;
+    if (safeCars.length < 2) return undefined;
+    const slugs = safeCars.map((c) => c.slug).filter(Boolean);
+    const depth = safeCars.length;
     return () => {
       if (compareAbandonTracked.current || inquiryOpenRef.current) return;
       compareAbandonTracked.current = true;
@@ -186,7 +192,7 @@ export default function CompareHeroExperience({
         sourcePage,
       });
     };
-  }, [cars, sourcePage]);
+  }, [safeCars, sourcePage]);
 
   const persistCars = useCallback(
     (next) => {
@@ -202,7 +208,7 @@ export default function CompareHeroExperience({
       setInquiryHeadline(headline);
       setInquirySubmit(submit);
       setInquiryOpen(true);
-      const slugs = cars.map((c) => c?.slug).filter(Boolean);
+      const slugs = safeCars.map((c) => c?.slug).filter(Boolean);
       trackLaunchCompareCta({
         sourcePage,
         headline,
@@ -213,24 +219,24 @@ export default function CompareHeroExperience({
         vehicleSlugs: slugs,
       });
     },
-    [cars, sourcePage]
+    [safeCars, sourcePage]
   );
 
   const goToExploreCompare = useCallback(() => {
-    if (cars.length) saveCompareCars(cars);
+    if (safeCars.length) saveCompareCars(safeCars);
     navigate("/cars?compareMode=true");
-  }, [cars, navigate]);
+  }, [safeCars, navigate]);
 
   const removeFromCompare = useCallback(
     (target) => {
       const key = target?._id || target?.slug;
-      const next = cars.filter((c) => (c?._id || c?.slug) !== key);
+      const next = safeCars.filter((c) => (c?._id || c?.slug) !== key);
       persistCars(next);
       if (variant === "tool") {
         navigate("/compare", { replace: true, state: { cars: next } });
       }
     },
-    [cars, persistCars, navigate, variant]
+    [safeCars, persistCars, navigate, variant]
   );
 
   const clearComparison = useCallback(() => {
@@ -238,10 +244,10 @@ export default function CompareHeroExperience({
     navigate("/compare", { replace: true, state: {} });
   }, [persistCars, navigate]);
 
-  if (cars.length < 2) return null;
+  if (safeCars.length < 2) return null;
 
   const gridClass =
-    cars.length === 3
+    safeCars.length === 3
       ? "compare-page-grid compare-page-grid--cols-3"
       : "compare-page-grid";
 
@@ -285,7 +291,7 @@ export default function CompareHeroExperience({
               <p className="compare-hero__subtitle">{subtitle}</p>
             ) : null}
 
-            {cars.length === 2 && variant === "tool" ? (
+            {safeCars.length === 2 && variant === "tool" ? (
               <p
                 style={{
                   margin: "0.35rem auto 0",
@@ -328,7 +334,7 @@ export default function CompareHeroExperience({
 
               <WhatsAppLeadCta
                 sourcePage={sourcePage}
-                compareSlugs={cars.map((c) => c.slug).filter(Boolean)}
+                compareSlugs={safeCars.map((c) => c.slug).filter(Boolean)}
                 vehicleName={compareVehicleLabel || "EV comparison"}
                 intent="compare"
                 label={WHATSAPP_CTA_LABEL}
@@ -410,7 +416,7 @@ export default function CompareHeroExperience({
                 <thead>
                   <tr>
                     <th>Specifications</th>
-                    {cars.map((car) => {
+                    {safeCars.map((car) => {
                       const isBest = car._id === bestId;
                       return (
                         <th
@@ -490,10 +496,10 @@ export default function CompareHeroExperience({
           <CompareUtilityRail
             recommendationLogic={recommendationLogic}
             sourcePage={sourcePage}
-            cars={cars}
+            cars={safeCars}
             metadata={{
-              vehicleSlugs: cars.map((c) => c.slug).filter(Boolean),
-              compareDepth: cars.length,
+              vehicleSlugs: safeCars.map((c) => c.slug).filter(Boolean),
+              compareDepth: safeCars.length,
             }}
             usefulnessLabel={
               usefulnessLabel ||
@@ -514,7 +520,7 @@ export default function CompareHeroExperience({
               }
             >
               <CompareBelowFoldSections
-                cars={cars}
+                cars={safeCars}
                 intelligentCars={intelligentCars}
                 guideMode={variant === "guide"}
               />

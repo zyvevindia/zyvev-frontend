@@ -5,8 +5,18 @@
 import { sanitizeImageUrl } from "./imageUrl";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { resolveFullDisplayName } from "./vehicleDisplayName";
+import { ensureArray } from "./compareArrayUtils.js";
 
 export const COMPARE_CARS_STORAGE_KEY = "compareCars";
+
+/** Legacy localStorage keys from older builds */
+const LEGACY_COMPARE_STORAGE_KEYS = [
+  "compareSelections",
+  "compareList",
+  "compareQueue",
+  "compareState",
+  "evsavari:compare-cars",
+];
 
 export const COMPARE_CARS_SYNC_EVENT = "evsavari:compare-cars-sync";
 
@@ -80,12 +90,10 @@ export function sanitizeCompareCar(car) {
 }
 
 export function sanitizeCompareList(cars) {
-  if (!Array.isArray(cars)) return [];
-
   const seen = new Set();
   const list = [];
 
-  for (const item of cars) {
+  for (const item of ensureArray(cars)) {
     const clean = sanitizeCompareCar(item);
     if (!clean) continue;
 
@@ -121,17 +129,80 @@ export function isCarInCompareList(list, car) {
   );
 }
 
+function migrateLegacyCompareStorage() {
+  if (typeof window === "undefined" || !window.localStorage) {
+    return [];
+  }
+
+  let canonical = [];
+  try {
+    const raw = window.localStorage.getItem(COMPARE_CARS_STORAGE_KEY);
+    if (raw) {
+      canonical = sanitizeCompareList(JSON.parse(raw));
+    }
+  } catch {
+    try {
+      window.localStorage.removeItem(COMPARE_CARS_STORAGE_KEY);
+    } catch {
+      /* ignore */
+    }
+  }
+
+  if (canonical.length > 0) {
+    for (const key of LEGACY_COMPARE_STORAGE_KEYS) {
+      try {
+        window.localStorage.removeItem(key);
+      } catch {
+        /* ignore */
+      }
+    }
+    return canonical;
+  }
+
+  for (const key of LEGACY_COMPARE_STORAGE_KEYS) {
+    try {
+      const raw = window.localStorage.getItem(key);
+      if (!raw) continue;
+
+      let parsed;
+      try {
+        parsed = JSON.parse(raw);
+      } catch {
+        window.localStorage.removeItem(key);
+        continue;
+      }
+
+      const normalized = sanitizeCompareList(parsed);
+      if (normalized.length > 0) {
+        canonical = normalized;
+      }
+      window.localStorage.removeItem(key);
+    } catch {
+      try {
+        window.localStorage.removeItem(key);
+      } catch {
+        /* ignore */
+      }
+    }
+  }
+
+  if (canonical.length > 0) {
+    try {
+      window.localStorage.setItem(
+        COMPARE_CARS_STORAGE_KEY,
+        JSON.stringify(canonical)
+      );
+    } catch {
+      /* quota */
+    }
+  }
+
+  return canonical;
+}
+
 export function loadCompareCarsFromStorage() {
   try {
-    const raw = localStorage.getItem(COMPARE_CARS_STORAGE_KEY);
-
-    if (!raw) {
-      lastPersistedSerialized = "[]";
-      return [];
-    }
-
-    const parsed = JSON.parse(raw);
-    const list = sanitizeCompareList(parsed);
+    const list = sanitizeCompareList(migrateLegacyCompareStorage());
     lastPersistedSerialized = JSON.stringify(list);
     return list;
   } catch {

@@ -3,6 +3,7 @@
  */
 
 import { buildSeoOpportunityQueue } from "./seoOpportunityOps.js";
+import { ensureArray } from "../utils/compareArrayUtils.js";
 import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
 import { INTELLIGENCE_DISCOVERY_PRESETS } from "../data/intelligenceDiscoveryPresets.js";
 
@@ -213,7 +214,7 @@ export function buildSeoAuthorityReport(ctx = {}) {
     };
   }).sort((a, b) => b.guideOpportunityScore - a.guideOpportunityScore);
 
-  const compareToGuideLinks = strongestCompare.slice(0, 4).flatMap((cmp) =>
+  const compareToGuideLinks = ensureArray(strongestCompare).flatMap((cmp) =>
     guideOpportunities.slice(0, 2).map((g) => ({
       from: cmp.path,
       to: g.path,
@@ -397,7 +398,10 @@ export function buildSeoAuthorityReport(ctx = {}) {
       .slice(0, 6),
     mostDurableAuthorityDiscovery: trustContentOpportunities.slice(0, 6),
     weakAuthorityRetentionPaths: weakAuthorityDiscovery,
-    highRetentionCompareSupportContent: compareToGuideLinks.slice(0, 8),
+    highRetentionCompareSupportContent: ensureArray(compareToGuideLinks).slice(
+      0,
+      8
+    ),
     practicalContentDiscoveryGaps: practicalGuidesLackingDiscovery,
     authorityDiscoveryPersistence: authorityDiscoveryPersistence,
     practicalContentDiscoveryQuality: practicalDiscoveryQuality,

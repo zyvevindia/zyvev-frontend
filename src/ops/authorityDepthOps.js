@@ -2,6 +2,7 @@
  * Ownership & charging authority depth — quality clusters, no spam generation.
  */
 
+import { ensureArray } from "../utils/compareArrayUtils.js";
 import { INTELLIGENCE_DISCOVERY_PRESETS } from "../data/intelligenceDiscoveryPresets.js";
 import { AUTHORITY_GUIDE_TARGETS } from "./seoAuthorityOps.js";
 import { buildSeoAuthorityReport } from "./seoAuthorityOps.js";
@@ -118,7 +119,7 @@ export function buildAuthorityDepthReport(ctx = {}) {
       : 0;
 
   const compareGuideLinks = [
-    ...(seo.compareToGuideLinks || []),
+    ...(ensureArray(seo.compareToGuideLinks) || []),
     ...topics.flatMap((t) =>
       (ctx.traffic?.topComparePages || [])
         .slice(0, 2)

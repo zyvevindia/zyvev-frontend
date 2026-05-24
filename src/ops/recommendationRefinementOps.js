@@ -3,6 +3,7 @@
  * Threshold tuning views only; no new scoring engines.
  */
 
+import { ensureArray } from "../utils/compareArrayUtils.js";
 import { listUsageLearningEvents } from "./usageLearningBuffer.js";
 import { buildRecommendationMaturityReport, RECOMMENDATION_MATURITY_STATUS } from "./recommendationMaturityOps.js";
 import { buildOwnershipRealismReport } from "./ownershipRealismOps.js";
@@ -64,7 +65,7 @@ export function buildRecommendationRefinementReport(ctx = {}) {
         )
       : 0;
 
-  const unstableComparePairs = maturity.comparePairs
+  const unstableComparePairs = ensureArray(maturity.comparePairs)
     .filter(
       (p) =>
         p.trustVolatility >= 42 ||
@@ -98,14 +99,15 @@ export function buildRecommendationRefinementReport(ctx = {}) {
     .filter((r) => r.flags?.length >= 2)
     .slice(0, 10);
 
-  const compareRealismDisagreements = maturity.comparePairs.filter((p) =>
-    p.flags?.some((f) =>
-      [
-        "unrealistic_compare_separation",
-        "contradictory_ownership_suggestions",
-        "compare_realism_disagreement",
-      ].includes(f)
-    )
+  const compareRealismDisagreements = ensureArray(maturity.comparePairs).filter(
+    (p) =>
+      p.flags?.some((f) =>
+        [
+          "unrealistic_compare_separation",
+          "contradictory_ownership_suggestions",
+          "compare_realism_disagreement",
+        ].includes(f)
+      )
   );
 
   const lowTrustClusters = behavioralTrust.rows

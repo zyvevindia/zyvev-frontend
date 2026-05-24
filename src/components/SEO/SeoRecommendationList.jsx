@@ -9,6 +9,7 @@ import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
 import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
 
 import { appendJourneyStep } from "../../buyer-intelligence/journeyBuffer";
+import { ensureArray } from "../../utils/compareArrayUtils";
 
 function trackSeoToDetail(targetSlug, seoPageSlug, sourcePage = "") {
   appendJourneyStep({
@@ -42,7 +43,9 @@ export default function SeoRecommendationList({
   seoPageSlug = "",
   sourcePage = "",
 }) {
-  if (!rankedVehicles.length) {
+  const safeRanked = ensureArray(rankedVehicles);
+
+  if (!safeRanked.length) {
     return (
       <p style={styles.empty}>
         No catalog variants matched this page at this time.
@@ -59,7 +62,7 @@ export default function SeoRecommendationList({
       </h2>
 
       <ol style={styles.list}>
-        {rankedVehicles.map((item) => (
+        {safeRanked.map((item) => (
           <li key={item.slug} style={styles.card}>
             <div style={styles.header}>
               <span style={styles.rank}>#{item.rank}</span>

@@ -1,6 +1,7 @@
 import { extractFamilySlug } from "./modelFamily";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { resolveFullDisplayName } from "./vehicleDisplayName";
+import { ensureArray } from "./compareArrayUtils.js";
 
 function buildNameMap(guideCars) {
   const map = new Map();
@@ -32,7 +33,7 @@ export function enrichCompareSeoPage(seoPage, guideCars) {
   if (!seoPage) return seoPage;
   const nameByFamily = buildNameMap(guideCars);
 
-  const rankedVehicles = (seoPage.rankedVehicles || []).map((rv) => {
+  const rankedVehicles = ensureArray(seoPage.rankedVehicles).map((rv) => {
     const family = normalizeVehicleSlug(rv.slug);
     const displayName =
       nameByFamily.get(family) ||

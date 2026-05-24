@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { ensureArray } from "../../utils/compareArrayUtils";
 import { shouldShowRecommendationDoubt } from "../../utils/compareTrustEligibility.js";
 import {
   trackRecommendationDoubted,
@@ -78,7 +79,9 @@ export default function CompareRecommendationDoubt({
     if (!guidanceWasOpened || typeof window === "undefined") return undefined;
     const onLeave = () => {
       trackCompareAbandonAfterGuidance({
-        vehicleSlugs: cars.map((c) => c.slug).filter(Boolean),
+        vehicleSlugs: ensureArray(cars)
+          .map((c) => c?.slug)
+          .filter(Boolean),
         sourcePage,
       });
     };

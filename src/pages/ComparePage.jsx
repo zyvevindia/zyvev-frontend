@@ -33,8 +33,12 @@ import {
   loadCompareCarsFromStorage,
   saveCompareCars,
 } from "../utils/compareCarsStorage";
+import {
+  ensureArray,
+  normalizeCompareState,
+} from "../utils/compareHydration";
 
-const POPULAR_COMPARE_SLUGS = (GENERATED_COMPARE_SLUGS || []).slice(0, 6);
+const POPULAR_COMPARE_SLUGS = ensureArray(GENERATED_COMPARE_SLUGS).slice(0, 6);
 
 function formatCompareGuideLabel(slug) {
   return String(slug || "")
@@ -50,7 +54,7 @@ export default function ComparePage() {
   const [cars, setCars] = useState(() => loadCompareCarsFromStorage());
 
   useEffect(() => {
-    if (Array.isArray(location.state?.cars)) {
+    if (location.state?.cars != null) {
       setCars(saveCompareCars(location.state.cars));
       return;
     }
@@ -70,6 +74,8 @@ export default function ComparePage() {
     };
   }, []);
 
+  const safeCars = useMemo(() => normalizeCompareState(cars), [cars]);
+
   const compareBreadcrumb = useMemo(
     () =>
       buildBreadcrumbSchema([
@@ -80,27 +86,27 @@ export default function ComparePage() {
   );
 
   const comparePageMeta = useMemo(
-    () => buildCompareToolMeta({ cars }),
-    [cars]
+    () => buildCompareToolMeta({ cars: safeCars }),
+    [safeCars]
   );
 
   const compareListSchema = useMemo(
     () =>
-      cars.length >= 2
+      safeCars.length >= 2
         ? buildCompareItemListSchema(
-            cars,
+            safeCars,
             undefined,
             canonicalCompareHubUrl()
           )
         : null,
-    [cars]
+    [safeCars]
   );
 
   const handleCarsChange = useCallback((next) => {
-    setCars(next);
+    setCars(saveCompareCars(next));
   }, []);
 
-  if (cars.length < 2) {
+  if (safeCars.length < 2) {
     return (
       <>
         <SeoHead meta={comparePageMeta} />
@@ -112,13 +118,13 @@ export default function ComparePage() {
             </div>
 
             <h2 className="compare-empty__title">
-              {cars.length === 1
+              {safeCars.length === 1
                 ? "Add one more EV"
                 : "No EVs selected"}
             </h2>
 
             <p className="compare-empty__text">
-              {cars.length === 1
+              {safeCars.length === 1
                 ? "You need at least 2 vehicles for a side-by-side comparison. Add another EV from the catalog."
                 : "Select at least 2 electric vehicles to unlock premium side-by-side comparison."}
             </p>
@@ -186,7 +192,7 @@ export default function ComparePage() {
       {compareListSchema && <JsonLd data={compareListSchema} />}
 
       <CompareHeroExperience
-        cars={cars}
+        cars={safeCars}
         sourcePage="/compare"
         variant="tool"
         onCarsChange={handleCarsChange}

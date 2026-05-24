@@ -11,6 +11,7 @@ import { pickDefaultVariantForDetail } from "./variantInsights";
 import { sanitizeImageUrl } from "./imageUrl";
 import { resolveCatalogImageUrl } from "./vehicleMedia";
 import { resolveFullDisplayName } from "./vehicleDisplayName";
+import { ensureArray } from "./compareArrayUtils.js";
 
 /**
  * Ordered family slugs for a compare guide SEO payload.
@@ -22,7 +23,7 @@ export function extractCompareSlugsFromSeoPage(seoPage) {
   if (Array.isArray(fromLogic) && fromLogic.length >= 2) {
     return fromLogic.map((s) => normalizeVehicleSlug(s)).filter(Boolean);
   }
-  const ranked = seoPage?.rankedVehicles || [];
+  const ranked = ensureArray(seoPage?.rankedVehicles);
   return ranked
     .map((v) => normalizeVehicleSlug(v.slug))
     .filter(Boolean);
@@ -174,7 +175,7 @@ export async function fetchCatalogCarsForCompareSlugs(slugOrder) {
  */
 export function mergeRankedWithCatalogCars(seoPage, catalogCars) {
   const order = extractCompareSlugsFromSeoPage(seoPage);
-  const ranked = seoPage?.rankedVehicles || [];
+  const ranked = ensureArray(seoPage?.rankedVehicles);
   const pool = catalogCars || [];
 
   return order

@@ -2,6 +2,7 @@
  * Compare trust guidance — lifestyle-fit differences.
  */
 
+import { ensureArray } from "../../utils/compareArrayUtils";
 import { CATALOG_INTELLIGENCE } from "../../utils/catalogIntelligence";
 import { pickCompareTrustLeaders } from "../../utils/trustIntelligence";
 import useTrackOnView from "../../hooks/useTrackOnView";
@@ -40,7 +41,9 @@ export default function CompareTrustPanel({ cars }) {
   const leaders = pickCompareTrustLeaders(cars);
   if (!leaders.length) return null;
 
-  const vehicleSlugs = cars.map((c) => c?.slug).filter(Boolean);
+  const vehicleSlugs = ensureArray(cars)
+    .map((c) => c?.slug)
+    .filter(Boolean);
 
   const viewRef = useTrackOnView(
     BUYER_EVENTS.SCENARIO_COMPARE_VIEWED,

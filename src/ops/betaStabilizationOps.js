@@ -2,6 +2,7 @@
  * Public beta stabilization — weekly summaries and review queues from existing ops only.
  */
 
+import { ensureArray } from "../utils/compareArrayUtils.js";
 import { listUsageLearningEvents } from "./usageLearningBuffer.js";
 import { aggregateCompareBehavior } from "./behavioralTrustOps.js";
 import { buildBehavioralIntelligenceReport, getBehavioralIntelligenceWeeklySnapshots } from "./behavioralIntelligenceOps.js";
@@ -314,7 +315,7 @@ export function buildCalibrationReviewQueues(ctx = {}) {
     )
     .slice(0, 15);
 
-  const unstableRecommendationQueue = maturity.comparePairs
+  const unstableRecommendationQueue = ensureArray(maturity.comparePairs)
     .filter(
       (p) =>
         p.trustVolatility >= 45 ||

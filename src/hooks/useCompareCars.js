@@ -12,13 +12,14 @@ import {
   saveCompareCars,
   toggleCompareInList,
 } from "../utils/compareCarsStorage";
+import { loadCompareState } from "../utils/compareHydration";
 
 /**
  * Shared compare list state — single write path, no save/sync feedback loops.
  */
 export default function useCompareCars() {
   const [compareList, setCompareList] = useState(
-    () => loadCompareCarsFromStorage()
+    () => loadCompareState()
   );
   const skipExternalSyncRef = useRef(false);
 

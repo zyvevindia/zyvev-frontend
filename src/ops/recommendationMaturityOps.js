@@ -2,6 +2,7 @@
  * Recommendation maturity — trust volatility, realism regressions, compare maturity.
  */
 
+import { ensureArray } from "../utils/compareArrayUtils.js";
 import { buildCompareScoreInsight, auditCompareSetCredibility } from "../utils/compareConfidence.js";
 import { scoreOwnershipRealism } from "./ownershipRealismOps.js";
 import { scoreChargingPracticality } from "./chargingPracticalityOps.js";
@@ -192,7 +193,7 @@ export function buildRecommendationMaturityReport(ctx = {}) {
   );
   for (const r of rows) statusCounts[r.status] += 1;
 
-  const comparePairs = (ctx.comparePairs || [])
+  const comparePairs = ensureArray(ctx.comparePairs)
     .slice(0, 20)
     .map((p) => {
       const slug = p.slug || p.pairSlug || "";

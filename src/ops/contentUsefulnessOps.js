@@ -2,6 +2,7 @@
  * Content usefulness — guide engagement from session buffer (no new scoring engine).
  */
 
+import { ensureArray } from "../utils/compareArrayUtils.js";
 import { listUsageLearningEvents } from "./usageLearningBuffer.js";
 import { buildSeoAuthorityReport } from "./seoAuthorityOps.js";
 import { computeAuthorityDistributionSignals } from "./authorityDistributionOps.js";
@@ -103,7 +104,7 @@ export function buildContentUsefulnessReport(ctx = {}) {
     .filter((g) => g.guideOpportunityScore < 60)
     .slice(0, 8);
 
-  const compareSupportGuides = (seo.compareToGuideLinks || []).slice(0, 8);
+  const compareSupportGuides = ensureArray(seo.compareToGuideLinks).slice(0, 8);
 
   const usefulnessRate = seo.guideUsefulnessSignals?.rate;
   const guideUsefulnessTrend =
@@ -435,7 +436,7 @@ export function buildContentUsefulnessReport(ctx = {}) {
     ownershipEducationHotspots: ownershipHotspots.slice(0, 6),
     chargingEducationHotspots: chargingHotspots.slice(0, 6),
     lowEngagementAuthorityPages: lowEngagementAuthority,
-    compareToGuideTransitions: compareThenGuide.slice(0, 10),
+    compareToGuideTransitions: ensureArray(compareThenGuide).slice(0, 10),
     repeatGuideVisitCount: Object.keys(repeatGuidePaths).length,
     guideEngagementQuality:
       strongestPracticalGuides.length >= 3 ? "healthy" : "emerging",

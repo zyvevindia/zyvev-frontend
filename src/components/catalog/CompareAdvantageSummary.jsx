@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 
+import { ensureArray } from "../../utils/compareArrayUtils";
 import { buildCompareAdvantages } from "../../intelligence/compareAdvantages.js";
 import { trackCompareAdvantageViewed } from "../../analytics/funnel";
 
@@ -14,7 +15,9 @@ export default function CompareAdvantageSummary({ cars = [] }) {
     if (!summary.highlights?.length) return;
     tracked.current = true;
     trackCompareAdvantageViewed({
-      vehicleSlugs: cars.map((c) => c.slug).filter(Boolean),
+      vehicleSlugs: ensureArray(cars)
+        .map((c) => c?.slug)
+        .filter(Boolean),
       highlightCount: summary.highlights.length,
     });
   }, [cars, summary.highlights?.length]);

@@ -3,6 +3,7 @@
  */
 
 import { buildVehicleIntelligence } from "../intelligence/buildVehicleIntelligence.js";
+import { ensureArray } from "../utils/compareArrayUtils.js";
 import { scoreOwnershipRealism } from "./ownershipRealismOps.js";
 import { scoreChargingPracticality } from "./chargingPracticalityOps.js";
 
@@ -173,8 +174,8 @@ export function buildUserSuitabilityReport(ctx = {}) {
     (v) => v.topProfiles[0]?.fitScore < 52 && v.topProfiles[0]?.fitScore > 0
   );
 
-  const comparePairs = (ctx.comparePairs || []).slice(0, 10);
-  const compareGaps = comparePairs.map((pair) => {
+  const comparePairs = ensureArray(ctx.comparePairs).slice(0, 10);
+  const compareGaps = ensureArray(comparePairs).map((pair) => {
     const slug = pair.slug || pair.pairSlug || "";
     const vehicles = cars.filter((c) => {
       const s = String(c.slug || "").toLowerCase();
