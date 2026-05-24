@@ -1,13 +1,15 @@
 import { formatIndianPriceCompact } from "../utils/formatIndianPrice.js";
 import { isPresent } from "./governance.js";
 import { getBestForLabel } from "./scoringEngine.js";
+import { ensureArray } from "../utils/compareArrayUtils.js";
 
 /**
  * Deterministic compare advantage summary.
  * @param {object[]} cars — with evIntelligence attached
  */
 export function buildCompareAdvantages(cars = []) {
-  if (!cars?.length) return { winners: {}, perCar: [], highlights: [] };
+  const safeCars = ensureArray(cars, { label: "compareCars", subsystem: "compare-advantages" });
+  if (!safeCars.length) return { winners: {}, perCar: [], highlights: [] };
 
   const dimensions = [
     {
@@ -66,7 +68,7 @@ export function buildCompareAdvantages(cars = []) {
   const highlights = [];
 
   for (const dim of dimensions) {
-    const values = cars
+    const values = safeCars
       .map((c) => ({
         car: c,
         value: dim.getValue(c),
@@ -101,7 +103,7 @@ export function buildCompareAdvantages(cars = []) {
     });
   }
 
-  const perCar = cars.map((car) => {
+  const perCar = safeCars.map((car) => {
     const advantages = [];
     const disadvantages = [];
 
@@ -111,7 +113,7 @@ export function buildCompareAdvantages(cars = []) {
       } else {
         const dim = dimensions.find((d) => d.id === dimId);
         const myVal = dim?.getValue(car);
-        const winVal = cars.find((c) => c._id === win.carId);
+        const winVal = safeCars.find((c) => c._id === win.carId);
         const theirVal = dim?.getValue(winVal);
         if (
           isPresent(myVal) &&
@@ -133,7 +135,7 @@ export function buildCompareAdvantages(cars = []) {
     };
   });
 
-  const bestForRecommendations = pickBestForRecommendations(cars, winners);
+  const bestForRecommendations = pickBestForRecommendations(safeCars, winners);
 
   return {
     winners,

@@ -2,13 +2,15 @@ import { formatRangeBand } from "./rangeConfidence.js";
 import { isPresent } from "./governance.js";
 import { getConfidenceLabel } from "./trustMetadata.js";
 import { formatFreshnessLabel } from "./freshnessMetadata.js";
+import { ensureArray } from "../utils/compareArrayUtils.js";
 
 /**
  * Trust-oriented compare summary — clarity over density.
  * @param {object[]} cars with evIntelligence
  */
 export function buildCompareTrustSummary(cars = []) {
-  if (!cars?.length || cars.length < 2) {
+  const safeCars = ensureArray(cars, { label: "compareCars", subsystem: "compare-trust" });
+  if (safeCars.length < 2) {
     return {
       hasData: false,
       rangeRows: [],
@@ -18,7 +20,7 @@ export function buildCompareTrustSummary(cars = []) {
     };
   }
 
-  const rangeRows = cars.map((car) => {
+  const rangeRows = safeCars.map((car) => {
     const r = car.evIntelligence?.range;
     return {
       carId: car._id,
@@ -39,7 +41,7 @@ export function buildCompareTrustSummary(cars = []) {
     };
   });
 
-  const ownershipRows = cars.map((car) => {
+  const ownershipRows = safeCars.map((car) => {
     const o = car.evIntelligence?.ownership;
     return {
       carId: car._id,
@@ -57,7 +59,7 @@ export function buildCompareTrustSummary(cars = []) {
     };
   });
 
-  const chargingRows = cars.map((car) => {
+  const chargingRows = safeCars.map((car) => {
     const p = car.evIntelligence?.chargingPracticality;
     const c = car.evIntelligence?.charging;
     return {
@@ -74,7 +76,7 @@ export function buildCompareTrustSummary(cars = []) {
     };
   });
 
-  const freshnessRows = cars.map((car) => {
+  const freshnessRows = safeCars.map((car) => {
     const f = car.evFreshness || car.evIntelligence?.freshness;
     const t = car.evTransparency || car.evIntelligence?.transparency;
     return {

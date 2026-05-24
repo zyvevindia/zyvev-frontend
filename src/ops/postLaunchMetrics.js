@@ -34,8 +34,10 @@ function write(store) {
   }
 }
 
+import { safeSlice } from "../utils/compareArrayUtils.js";
+
 function trim(arr, max = MAX) {
-  return (arr || []).slice(0, max);
+  return safeSlice(arr, 0, max, { label: "metricsBuffer", subsystem: "post-launch" });
 }
 
 export function recordSlowApi({ label, durationMs, error = null } = {}) {

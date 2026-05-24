@@ -3,6 +3,11 @@
  */
 
 import { CONFIDENCE_LEVELS } from "../intelligence/constants.js";
+import {
+  ensureArray,
+  safeFlatMap,
+  safeMap,
+} from "./compareArrayUtils.js";
 
 function coerceScore(car) {
   const composite =
@@ -19,7 +24,7 @@ function coerceScore(car) {
 export function dedupeComparePills(pills = []) {
   const seen = new Set();
   const out = [];
-  for (const pill of pills) {
+  for (const pill of ensureArray(pills, { label: "pills", subsystem: "compare-ui" })) {
     const text = String(pill || "").trim();
     if (!text) continue;
     const key = text.toLowerCase();
@@ -36,11 +41,13 @@ export function dedupeComparePills(pills = []) {
 export function buildCompareScoreInsight(car = {}) {
   const score = coerceScore(car);
   const meta = car?.catalogMeta || {};
-  const explanations = car?.evScores?.explanations || [];
-  const topFactors = explanations
-    .slice(0, 3)
-    .map((row) => row?.label || row?.text)
-    .filter(Boolean);
+  const topFactors = safeMap(
+    car?.evScores?.explanations,
+    (row) => row?.label || row?.text,
+    { label: "evScores.explanations", subsystem: "compare-score" }
+  )
+    .filter(Boolean)
+    .slice(0, 3);
 
   const dataQuality = meta.dataQualityScore;
   const reviewed = meta.governanceStatus === "published" || meta.reviewed;
@@ -154,9 +161,10 @@ export function buildCompareScoreInsight(car = {}) {
  * @param {object[]} cars
  */
 export function auditCompareSetCredibility(cars = []) {
-  const scores = (cars || [])
-    .map(coerceScore)
-    .filter((s) => s != null);
+  const scores = safeMap(cars, coerceScore, {
+    label: "compareCars",
+    subsystem: "compare-audit",
+  }).filter((s) => s != null);
   const warnings = [];
   if (scores.length >= 2) {
     const max = Math.max(...scores);
@@ -169,12 +177,18 @@ export function auditCompareSetCredibility(cars = []) {
     }
   }
 
-  const allPills = (cars || []).flatMap((car) => {
-    const meta = car?.catalogMeta || {};
-    return (meta.strongestAdvantages || []).map((a) =>
-      typeof a === "string" ? a : a?.label
-    );
-  });
+  const allPills = safeFlatMap(
+    cars,
+    (car) => {
+      const meta = car?.catalogMeta || {};
+      return safeMap(
+        meta.strongestAdvantages,
+        (a) => (typeof a === "string" ? a : a?.label),
+        { label: "strongestAdvantages", subsystem: "compare-audit" }
+      );
+    },
+    { label: "compareCars", subsystem: "compare-audit" }
+  );
   const normalized = allPills.map((p) => String(p || "").toLowerCase()).filter(Boolean);
   const dupAcross = normalized.filter(
     (p, i) => normalized.indexOf(p) !== i

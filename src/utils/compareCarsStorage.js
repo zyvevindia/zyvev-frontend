@@ -137,8 +137,20 @@ function migrateLegacyCompareStorage() {
   let canonical = [];
   try {
     const raw = window.localStorage.getItem(COMPARE_CARS_STORAGE_KEY);
-    if (raw) {
-      canonical = sanitizeCompareList(JSON.parse(raw));
+    if (raw != null) {
+      const trimmed = String(raw).trim();
+      if (!trimmed) {
+        window.localStorage.removeItem(COMPARE_CARS_STORAGE_KEY);
+      } else {
+        try {
+          canonical = sanitizeCompareList(JSON.parse(trimmed));
+          if (!canonical.length) {
+            window.localStorage.setItem(COMPARE_CARS_STORAGE_KEY, "[]");
+          }
+        } catch {
+          window.localStorage.removeItem(COMPARE_CARS_STORAGE_KEY);
+        }
+      }
     }
   } catch {
     try {

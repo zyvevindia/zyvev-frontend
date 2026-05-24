@@ -1,15 +1,43 @@
 /**
- * Array coercion for compare-related persisted/runtime values.
+ * Central compare runtime array normalization — never throw on malformed shapes.
  */
 
-const MAX_INDEXED_OBJECT_KEYS = 5;
+const COMPARE_SHAPE_LABEL = "[Compare Runtime Shape]";
+
+function isDevCompareDiagnostics() {
+  try {
+    return Boolean(import.meta.env?.DEV);
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Dev-only shape diagnostics (no secrets / env values logged).
+ * @param {string} label
+ * @param {unknown} value
+ * @param {string} [subsystem]
+ */
+export function warnCompareShape(label, value, subsystem = "compare") {
+  if (!isDevCompareDiagnostics()) return;
+  if (value == null || Array.isArray(value)) return;
+
+  console.warn(COMPARE_SHAPE_LABEL, {
+    label,
+    subsystem,
+    typeof: typeof value,
+    isArray: Array.isArray(value),
+    constructor: value?.constructor?.name ?? null,
+  });
+}
 
 /**
  * Coerce unknown values to a safe array (never throws).
  * @param {unknown} value
+ * @param {{ label?: string, subsystem?: string }} [opts]
  * @returns {unknown[]}
  */
-export function ensureArray(value) {
+export function ensureArray(value, opts = {}) {
   if (value == null) return [];
 
   if (Array.isArray(value)) return value;
@@ -18,8 +46,9 @@ export function ensureArray(value) {
     const trimmed = value.trim();
     if (!trimmed) return [];
     try {
-      return ensureArray(JSON.parse(trimmed));
+      return ensureArray(JSON.parse(trimmed), opts);
     } catch {
+      warnCompareShape(opts.label || "string", value, opts.subsystem);
       return [];
     }
   }
@@ -28,12 +57,11 @@ export function ensureArray(value) {
     if (value instanceof Set) return Array.from(value);
 
     const keys = Object.keys(value);
-    const looksLikeIndexedObject =
-      keys.length > 0 &&
-      keys.every((k) => /^\d+$/.test(String(k))) &&
-      keys.length <= MAX_INDEXED_OBJECT_KEYS;
+    if (keys.length === 0) return [];
 
-    if (looksLikeIndexedObject) {
+    const allNumeric = keys.every((k) => /^\d+$/.test(String(k)));
+    if (allNumeric) {
+      warnCompareShape(opts.label || "indexed-object", value, opts.subsystem);
       return keys
         .sort((a, b) => Number(a) - Number(b))
         .map((k) => value[k]);
@@ -48,19 +76,64 @@ export function ensureArray(value) {
         (v.slug || v._id || v.name || v.brand)
     );
 
-    if (allCarLike) return values;
-    return [];
+    if (allCarLike) {
+      warnCompareShape(opts.label || "car-map", value, opts.subsystem);
+      return values;
+    }
+
+    warnCompareShape(opts.label || "object", value, opts.subsystem);
+    return values.filter((v) => v != null);
   }
 
+  warnCompareShape(opts.label || "scalar", value, opts.subsystem);
   return [];
 }
 
 /**
+ * @param {unknown} value
+ * @param {number} [start]
+ * @param {number} [end]
+ * @param {{ label?: string, subsystem?: string }} [opts]
+ */
+export function safeSlice(value, start, end, opts) {
+  return ensureArray(value, opts).slice(start, end);
+}
+
+/**
+ * @param {unknown} value
+ * @param {(item: unknown, index: number, array: unknown[]) => unknown} fn
+ * @param {{ label?: string, subsystem?: string }} [opts]
+ */
+export function safeMap(value, fn, opts) {
+  return ensureArray(value, opts).map(fn);
+}
+
+/**
+ * @param {unknown} value
+ * @param {(item: unknown, index: number, array: unknown[]) => boolean} fn
+ * @param {{ label?: string, subsystem?: string }} [opts]
+ */
+export function safeFilter(value, fn, opts) {
+  return ensureArray(value, opts).filter(fn);
+}
+
+/**
+ * @param {unknown} value
+ * @param {(item: unknown, index: number, array: unknown[]) => unknown[]} fn
+ * @param {{ label?: string, subsystem?: string }} [opts]
+ */
+export function safeFlatMap(value, fn, opts) {
+  return ensureArray(value, opts).flatMap(fn);
+}
+
+/**
+ * Compare pair rows for ops dashboards.
  * @param {unknown} raw
- * @returns {object[]}
  */
 export function normalizeComparePairs(raw) {
-  return ensureArray(raw).filter(
-    (item) => item && typeof item === "object" && !Array.isArray(item)
+  return safeFilter(
+    raw,
+    (item) => item && typeof item === "object" && !Array.isArray(item),
+    { label: "comparePairs", subsystem: "ops" }
   );
 }

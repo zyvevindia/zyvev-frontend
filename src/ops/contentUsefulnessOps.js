@@ -2,7 +2,7 @@
  * Content usefulness — guide engagement from session buffer (no new scoring engine).
  */
 
-import { ensureArray } from "../utils/compareArrayUtils.js";
+import { ensureArray, safeSlice } from "../utils/compareArrayUtils.js";
 import { listUsageLearningEvents } from "./usageLearningBuffer.js";
 import { buildSeoAuthorityReport } from "./seoAuthorityOps.js";
 import { computeAuthorityDistributionSignals } from "./authorityDistributionOps.js";
@@ -274,7 +274,9 @@ export function buildContentUsefulnessReport(ctx = {}) {
       id: c.clusterId,
       score: c.score,
     })),
-    ...(ownership.weakApartmentPracticality || []).slice(0, 3).map((r) => ({
+    ...(safeSlice(ownership.weakApartmentPracticality, 0, 3, {
+      subsystem: "content-usefulness",
+    }).map((r) => ({
       type: "ownership",
       slug: r.slug,
     })),

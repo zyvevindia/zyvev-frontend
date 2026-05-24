@@ -1,11 +1,11 @@
 import { extractFamilySlug } from "./modelFamily";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { resolveFullDisplayName } from "./vehicleDisplayName";
-import { ensureArray } from "./compareArrayUtils.js";
+import { ensureArray, safeMap } from "./compareArrayUtils.js";
 
 function buildNameMap(guideCars) {
   const map = new Map();
-  for (const car of guideCars || []) {
+  for (const car of ensureArray(guideCars, { subsystem: "compare-seo" })) {
     const family = normalizeVehicleSlug(extractFamilySlug(car.slug));
     if (!family) continue;
     map.set(family, car.fullDisplayName || resolveFullDisplayName(car));
@@ -15,7 +15,7 @@ function buildNameMap(guideCars) {
 
 function replaceLegacyNames(text, seoPage, nameByFamily) {
   let out = String(text || "");
-  for (const rv of seoPage?.rankedVehicles || []) {
+  for (const rv of ensureArray(seoPage?.rankedVehicles, { subsystem: "compare-seo" })) {
     const legacy = String(rv.displayName || "").trim();
     const family = normalizeVehicleSlug(rv.slug);
     const full = nameByFamily.get(family);
@@ -52,7 +52,8 @@ export function enrichCompareSeoPage(seoPage, guideCars) {
           seoPage,
           nameByFamily
         ),
-        considerations: (seoPage.tradeoffs.considerations || []).map(
+        considerations: safeMap(
+          seoPage.tradeoffs?.considerations,
           (row) => ({
             ...row,
             tradeoff: replaceLegacyNames(
@@ -60,12 +61,16 @@ export function enrichCompareSeoPage(seoPage, guideCars) {
               seoPage,
               nameByFamily
             ),
-          })
+          }),
+          { label: "tradeoffs.considerations", subsystem: "compare-seo" }
         ),
       }
     : seoPage.tradeoffs;
 
-  const faq = (seoPage.faq || []).map((item) => ({
+  const faq = safeMap(seoPage.faq, (item) => item, {
+    label: "faq",
+    subsystem: "compare-seo",
+  }).map((item) => ({
     ...item,
     question: replaceLegacyNames(item.question, seoPage, nameByFamily),
     answer: replaceLegacyNames(item.answer, seoPage, nameByFamily),

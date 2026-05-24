@@ -36,9 +36,13 @@ import {
 import {
   ensureArray,
   normalizeCompareState,
+  safeSlice,
 } from "../utils/compareHydration";
 
-const POPULAR_COMPARE_SLUGS = ensureArray(GENERATED_COMPARE_SLUGS).slice(0, 6);
+const POPULAR_COMPARE_SLUGS = safeSlice(GENERATED_COMPARE_SLUGS, 0, 6, {
+  label: "GENERATED_COMPARE_SLUGS",
+  subsystem: "compare-page",
+});
 
 function formatCompareGuideLabel(slug) {
   return String(slug || "")

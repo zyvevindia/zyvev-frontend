@@ -3,7 +3,7 @@
  */
 
 import { buildSeoOpportunityQueue } from "./seoOpportunityOps.js";
-import { ensureArray } from "../utils/compareArrayUtils.js";
+import { ensureArray, safeSlice } from "../utils/compareArrayUtils.js";
 import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
 import { INTELLIGENCE_DISCOVERY_PRESETS } from "../data/intelligenceDiscoveryPresets.js";
 
@@ -348,9 +348,11 @@ export function buildSeoAuthorityReport(ctx = {}) {
         : (ctx.seoDiscipline?.orphanDiscoveryPaths?.length ?? 0) <= 6
           ? "watch"
           : "weak",
-    weakDiscoveryPaths: (ctx.seoDiscipline?.orphanDiscoveryPaths || []).slice(
+    weakDiscoveryPaths: safeSlice(
+      ctx.seoDiscipline?.orphanDiscoveryPaths,
       0,
-      8
+      8,
+      { label: "orphanDiscoveryPaths", subsystem: "seo-authority" }
     ),
     orphanAuthorityContent: guideOpportunities
       .filter((g) => g.guideOpportunityScore < 50)

@@ -7,6 +7,12 @@ import VehicleImage from "../media/VehicleImage";
 import {
   dedupeComparePills,
 } from "../../utils/compareConfidence";
+import {
+  ensureArray,
+  safeMap,
+  safeSlice,
+  safeFilter,
+} from "../../utils/compareArrayUtils";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { resolveCatalogImageUrl } from "../../utils/vehicleMedia";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
@@ -67,40 +73,52 @@ function resolveTradeoffLabel(meta) {
 
 function resolveBetterAtPills(meta, car) {
   if (!meta || typeof meta !== "object") return [];
-  const fromAdvantages = (meta.strongestAdvantages || [])
-    .map((item) => {
+
+  const fromAdvantages = safeMap(
+    meta.strongestAdvantages,
+    (item) => {
       if (typeof item === "string") return item;
       return item?.label || item?.title || item?.id || "";
-    })
-    .filter(Boolean);
+    },
+    { label: "strongestAdvantages", subsystem: "compare-card" }
+  ).filter(Boolean);
 
   if (fromAdvantages.length > 0) {
-    return fromAdvantages.slice(0, 4);
+    return safeSlice(fromAdvantages, 0, 4, { subsystem: "compare-card" });
   }
 
   const pick = meta?.comparePicks?.strongestAdvantageLabel;
   if (pick) return [pick];
 
-  const pros = meta?.pros;
-  if (Array.isArray(pros) && pros.length > 0) {
-    return pros.slice(0, 3);
+  const pros = ensureArray(meta?.pros, { label: "pros", subsystem: "compare-card" });
+  if (pros.length > 0) {
+    return safeSlice(pros, 0, 3, { subsystem: "compare-card" });
   }
 
-  const explanations = car?.evScores?.explanations;
-  if (Array.isArray(explanations) && explanations.length > 0) {
-    return explanations
-      .map((row) => row?.label || row?.text || "")
-      .filter(Boolean)
-      .slice(0, 3);
+  const explanations = ensureArray(car?.evScores?.explanations, {
+    label: "evScores.explanations",
+    subsystem: "compare-card",
+  });
+  if (explanations.length > 0) {
+    return safeSlice(
+      safeMap(explanations, (row) => row?.label || row?.text || "", {
+        subsystem: "compare-card",
+      }).filter(Boolean),
+      0,
+      3,
+      { subsystem: "compare-card" }
+    );
   }
 
-  const insights = car?.evIntelligence?.suitability?.insights || [];
-  const fromSuitability = insights
-    .filter((i) => i.level === "strong" || i.level === "good")
+  const fromSuitability = safeFilter(
+    car?.evIntelligence?.suitability?.insights,
+    (i) => i.level === "strong" || i.level === "good",
+    { label: "suitability.insights", subsystem: "compare-card" }
+  )
     .map((i) => i.title || i.shortLabel || i.id)
     .filter(Boolean);
 
-  return fromSuitability.slice(0, 3);
+  return safeSlice(fromSuitability, 0, 3, { subsystem: "compare-card" });
 }
 
 /**

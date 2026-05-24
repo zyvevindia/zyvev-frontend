@@ -7,6 +7,7 @@ import {
   dedupeComparePills,
   buildCompareScoreInsight,
 } from "../utils/compareConfidence.js";
+import { ensureArray, safeMap } from "../utils/compareArrayUtils.js";
 
 export const COMPARE_QUALITY_STATUS = Object.freeze({
   STRONG: "STRONG",
@@ -34,11 +35,12 @@ function findCarsForPair(pairSlug, cars = []) {
 
 function resolveBetterAtPills(car) {
   const meta = car?.catalogMeta || {};
-  const fromAdvantages = (meta.strongestAdvantages || [])
-    .map((item) =>
-      typeof item === "string" ? item : item?.label || item?.title
-    )
-    .filter(Boolean);
+  const fromAdvantages = safeMap(
+    meta.strongestAdvantages,
+    (item) =>
+      typeof item === "string" ? item : item?.label || item?.title,
+    { label: "strongestAdvantages", subsystem: "compare-quality" }
+  ).filter(Boolean);
   return dedupeComparePills(fromAdvantages);
 }
 

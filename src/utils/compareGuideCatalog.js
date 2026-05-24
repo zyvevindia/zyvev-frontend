@@ -11,7 +11,7 @@ import { pickDefaultVariantForDetail } from "./variantInsights";
 import { sanitizeImageUrl } from "./imageUrl";
 import { resolveCatalogImageUrl } from "./vehicleMedia";
 import { resolveFullDisplayName } from "./vehicleDisplayName";
-import { ensureArray } from "./compareArrayUtils.js";
+import { ensureArray, safeMap } from "./compareArrayUtils.js";
 
 /**
  * Ordered family slugs for a compare guide SEO payload.
@@ -131,7 +131,10 @@ async function fetchCatalogPool(slugs) {
     }
   );
   if (poolRes.ok) {
-    const list = (poolRes.data?.cars || []).map(normalizeCar);
+    const list = safeMap(poolRes.data?.cars, normalizeCar, {
+      label: "catalogCars",
+      subsystem: "compare-guide",
+    });
     for (const c of list) {
       const key = normalizeVehicleSlug(c.slug);
       if (
@@ -176,7 +179,7 @@ export async function fetchCatalogCarsForCompareSlugs(slugOrder) {
 export function mergeRankedWithCatalogCars(seoPage, catalogCars) {
   const order = extractCompareSlugsFromSeoPage(seoPage);
   const ranked = ensureArray(seoPage?.rankedVehicles);
-  const pool = catalogCars || [];
+  const pool = ensureArray(catalogCars, { subsystem: "compare-guide" });
 
   return order
     .map((slug) => {

@@ -1,4 +1,4 @@
-import { ensureArray } from "../utils/compareArrayUtils.js";
+import { ensureArray, safeSlice } from "../utils/compareArrayUtils.js";
 import { formatIndianPriceCompact } from "../utils/formatIndianPrice.js";
 import { formatRangeConfidenceLabel } from "./rangeConfidence.js";
 import { formatIntelligenceValue, isPresent } from "./governance.js";
@@ -198,11 +198,17 @@ export const CORE_COMPARE_ROWS = [
     label: "Feature highlights",
     group: "features",
     getRaw: (car) => {
-      const h = ensureIntel(car)?.features?.highlights || [];
-      return h.length ? h.slice(0, 4).join(" · ") : null;
+      const h = ensureArray(ensureIntel(car)?.features?.highlights, {
+        label: "features.highlights",
+        subsystem: "compare-spec",
+      });
+      return h.length ? safeSlice(h, 0, 4, { subsystem: "compare-spec" }).join(" · ") : null;
     },
     isAvailable: (car) =>
-      (ensureIntel(car)?.features?.highlights?.length || 0) > 0,
+      ensureArray(ensureIntel(car)?.features?.highlights, {
+        label: "features.highlights",
+        subsystem: "compare-spec",
+      }).length > 0,
     highlightMode: "none",
   },
 ];

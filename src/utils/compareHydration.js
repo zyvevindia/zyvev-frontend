@@ -2,7 +2,15 @@
  * Compare state hydration — normalize persisted selections for UI/runtime safety.
  */
 
-export { ensureArray, normalizeComparePairs } from "./compareArrayUtils.js";
+export {
+  ensureArray,
+  safeSlice,
+  safeMap,
+  safeFilter,
+  safeFlatMap,
+  normalizeComparePairs,
+  warnCompareShape,
+} from "./compareArrayUtils.js";
 
 import { ensureArray } from "./compareArrayUtils.js";
 import {
@@ -24,7 +32,9 @@ export const LEGACY_COMPARE_STORAGE_KEYS = [
  * @returns {object[]}
  */
 export function normalizeCompareSelections(raw) {
-  return sanitizeCompareList(ensureArray(raw));
+  return sanitizeCompareList(
+    ensureArray(raw, { label: "compareSelections", subsystem: "storage" })
+  );
 }
 
 /** @param {unknown} raw @returns {object[]} */
