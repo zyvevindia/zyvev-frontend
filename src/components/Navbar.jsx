@@ -1,12 +1,20 @@
 import {
   Link,
   useLocation,
+  useNavigate,
 } from "react-router-dom";
 
 import {
+  useCallback,
   useEffect,
   useState,
 } from "react";
+
+import { COMPARE_CARS_SYNC_EVENT } from "../utils/compareCarsStorage";
+import {
+  getCompareNavDestination,
+  isCompareNavActive,
+} from "../utils/compareNav";
 
 /* =========================================================
    ======================= NAVBAR ===========================
@@ -16,6 +24,27 @@ export default function Navbar() {
 
   const location =
     useLocation();
+
+  const navigate = useNavigate();
+
+  const [compareNavPath, setCompareNavPath] = useState(
+    () => getCompareNavDestination()
+  );
+
+  const refreshCompareNavPath = useCallback(() => {
+    setCompareNavPath(getCompareNavDestination());
+  }, []);
+
+  useEffect(() => {
+    refreshCompareNavPath();
+    window.addEventListener(COMPARE_CARS_SYNC_EVENT, refreshCompareNavPath);
+    return () => {
+      window.removeEventListener(
+        COMPARE_CARS_SYNC_EVENT,
+        refreshCompareNavPath
+      );
+    };
+  }, [location.pathname, location.search, refreshCompareNavPath]);
 
   const [mobileMenuOpen,
     setMobileMenuOpen] =
@@ -123,7 +152,8 @@ export default function Navbar() {
 
     {
       label: "Compare",
-      path: "/compare",
+      path: compareNavPath,
+      isCompare: true,
     },
 
     {
@@ -274,17 +304,31 @@ export default function Navbar() {
           {navItems.map(
             (item) => {
 
-              const active =
-                isActive(
-                  item.path
-                );
+              const active = item.isCompare
+                ? isCompareNavActive(
+                    location.pathname,
+                    location.search
+                  )
+                : isActive(item.path);
+
+              const handleNavClick = (event) => {
+                if (item.isCompare) {
+                  event.preventDefault();
+                  const target = getCompareNavDestination();
+                  setCompareNavPath(target);
+                  closeMobileMenu();
+                  navigate(target);
+                  return;
+                }
+                closeMobileMenu();
+              };
 
               return (
 
                 <Link
-                  key={item.path}
+                  key={item.label}
 
-                  to={item.path}
+                  to={item.isCompare ? compareNavPath : item.path}
 
                   style={{
                     ...navItem,
@@ -294,9 +338,7 @@ export default function Navbar() {
                       : {}),
                   }}
 
-                  onClick={
-                    closeMobileMenu
-                  }
+                  onClick={handleNavClick}
 
                   aria-label={
                     item.label

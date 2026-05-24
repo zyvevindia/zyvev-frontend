@@ -274,7 +274,7 @@ export function buildContentUsefulnessReport(ctx = {}) {
       id: c.clusterId,
       score: c.score,
     })),
-    ...(safeSlice(ownership.weakApartmentPracticality, 0, 3, {
+    ...safeSlice(ownership.weakApartmentPracticality, 0, 3, {
       subsystem: "content-usefulness",
     }).map((r) => ({
       type: "ownership",
