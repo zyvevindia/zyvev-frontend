@@ -226,6 +226,28 @@
   text-align: center;
 }
 
+.cd-quick-spec--action {
+  width: 100%;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cd-quick-spec--action:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.cd-quick-spec--action:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
 .cd-quick-spec__icon {
   font-size: 1rem;
   margin-bottom: 4px;
@@ -365,6 +387,16 @@
 
 .cd-action-bar__btn--primary .cd-action-bar__icon {
   color: #fff;
+}
+
+/* —— Section scroll anchors (sticky header + tab bar) —— */
+
+.cd-section[id],
+.cd-seo-discovery[id],
+.variant-comparison[id],
+.ev-intel-section[id],
+.cd-collapsible-section[id] {
+  scroll-margin-top: var(--cd-detail-scroll-margin, 148px);
 }
 
 /* —— Tabs —— */

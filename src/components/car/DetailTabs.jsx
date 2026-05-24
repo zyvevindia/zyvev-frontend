@@ -1,14 +1,8 @@
 import { useEffect, useRef } from "react";
 
-export const DETAIL_TABS = [
-  { id: "detail-overview", label: "Overview" },
-  { id: "detail-variants", label: "Variants" },
-  { id: "detail-compare", label: "Compare" },
-  { id: "detail-charging", label: "Charging" },
-  { id: "detail-emi-calculator", label: "EMI" },
-  { id: "detail-faqs", label: "FAQs" },
-  { id: "detail-reviews", label: "Reviews" },
-];
+import { DETAIL_NAV_TABS } from "../../utils/detailPageNav";
+
+export { DETAIL_NAV_TABS as DETAIL_TABS };
 
 export default function DetailTabs({
   activeId,
@@ -35,7 +29,7 @@ export default function DetailTabs({
         role="tablist"
         aria-label="Vehicle sections"
       >
-        {DETAIL_TABS.map((tab) => (
+        {DETAIL_NAV_TABS.map((tab) => (
           <button
             key={tab.id}
             type="button"

@@ -15,7 +15,7 @@ export default function DetailDealerAssistance({
 }) {
   return (
     <section
-      id="detail-dealer-assistance"
+      id="assistance"
       className="cd-section cd-dealer cd-card"
       aria-labelledby="detail-dealer-title"
     >

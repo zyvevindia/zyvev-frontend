@@ -32,6 +32,7 @@ export default function DetailSeoDiscovery({
 
   return (
     <section
+      id="related-evs"
       className="cd-seo-discovery"
       aria-labelledby="cd-seo-discovery-title"
     >

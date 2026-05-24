@@ -26,6 +26,7 @@ export default function DetailHero({
   onPriceClick,
   onScrollEmi,
   onScrollDealer,
+  onScrollCharging,
 }) {
   const subtitleParts = [];
   if (activeVariantLabel) subtitleParts.push(activeVariantLabel);
@@ -140,6 +141,7 @@ export default function DetailHero({
           charging={activeCharging}
           safety={safetyLabel}
           topSpeed={topSpeed}
+          onScrollCharging={onScrollCharging}
         />
       </div>
     </section>

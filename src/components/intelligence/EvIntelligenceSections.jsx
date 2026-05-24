@@ -174,7 +174,7 @@ export default function EvIntelligenceSections({
       {show("range") && range.hasData && (
         <section
           className={cardClass}
-          id="detail-range-confidence"
+          id="range"
           aria-labelledby="ev-range-confidence-title"
         >
           <h2
@@ -256,7 +256,7 @@ export default function EvIntelligenceSections({
         <section
           ref={chargingRef}
           className={cardClass}
-          id="detail-charging-intelligence"
+          id="charging"
           aria-labelledby="ev-charging-intel-title"
         >
           <h2
@@ -298,6 +298,7 @@ export default function EvIntelligenceSections({
       {chargingPracticality?.hasData && (
         <section
           ref={practicalityRef}
+          id="charging-practicality"
           className={cardClass}
           aria-labelledby="ev-charging-practicality-title"
         >
@@ -418,6 +419,7 @@ export default function EvIntelligenceSections({
       {show("features") && features.hasData && (
         <section
           ref={featuresRef}
+          id="features"
           className={cardClass}
           aria-labelledby="ev-features-intel-title"
         >
@@ -439,6 +441,7 @@ export default function EvIntelligenceSections({
 
       {show("suitability") && suitability.hasData && (
         <section
+          id="suitability"
           className={cardClass}
           aria-labelledby="ev-suitability-title"
         >

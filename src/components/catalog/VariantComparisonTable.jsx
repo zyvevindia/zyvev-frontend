@@ -44,7 +44,7 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
     selectedSlug,
     onSelect,
     onCompareAll,
-    id = "detail-variants",
+    id = "variants",
   },
   ref
 ) {

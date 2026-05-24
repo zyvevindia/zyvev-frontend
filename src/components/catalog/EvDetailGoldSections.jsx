@@ -341,7 +341,7 @@ export default function EvDetailGoldSections({
       {hasCharging && shouldRender(only, "charging") && (
         <GoldSection
           layout={layout}
-          id={layout === "v2" ? "detail-charging" : undefined}
+          id={layout === "v2" ? "charging" : undefined}
           ariaLabelledby="ev-charging"
           collapsible={
             collapsibleSections && layout === "v2"
@@ -484,7 +484,7 @@ export default function EvDetailGoldSections({
         shouldRender(only, "compare-rivals") && (
           <GoldSection
             layout={layout}
-            id={layout === "v2" ? "detail-compare" : undefined}
+            id={layout === "v2" ? "compare" : undefined}
             ariaLabelledby="ev-compare-rivals"
             collapsible={
               collapsibleSections && layout === "v2"
@@ -545,7 +545,7 @@ export default function EvDetailGoldSections({
       {allFaq.length > 0 && shouldRender(only, "faq") && (
         <GoldSection
           layout={layout}
-          id={layout === "v2" ? "detail-faqs" : undefined}
+          id={layout === "v2" ? "faqs" : undefined}
           ariaLabelledby="ev-faq"
           collapsible={
             collapsibleSections && layout === "v2"

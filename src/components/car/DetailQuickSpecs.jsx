@@ -4,6 +4,7 @@ export default function DetailQuickSpecs({
   charging,
   safety,
   topSpeed,
+  onScrollCharging,
 }) {
   const items = [
     {
@@ -20,6 +21,7 @@ export default function DetailQuickSpecs({
       icon: "⚡",
       label: "Fast charging",
       value: charging || "—",
+      action: onScrollCharging,
     },
     {
       icon: "🛡",
@@ -30,15 +32,37 @@ export default function DetailQuickSpecs({
 
   return (
     <div className="cd-quick-specs" role="list">
-      {items.map((item) => (
-        <div key={item.label} className="cd-quick-spec" role="listitem">
-          <span className="cd-quick-spec__icon" aria-hidden>
-            {item.icon}
-          </span>
-          <span className="cd-quick-spec__label">{item.label}</span>
-          <span className="cd-quick-spec__value">{item.value}</span>
-        </div>
-      ))}
+      {items.map((item) => {
+        const inner = (
+          <>
+            <span className="cd-quick-spec__icon" aria-hidden>
+              {item.icon}
+            </span>
+            <span className="cd-quick-spec__label">{item.label}</span>
+            <span className="cd-quick-spec__value">{item.value}</span>
+          </>
+        );
+
+        if (item.action) {
+          return (
+            <button
+              key={item.label}
+              type="button"
+              className="cd-quick-spec cd-quick-spec--action"
+              role="listitem"
+              onClick={item.action}
+            >
+              {inner}
+            </button>
+          );
+        }
+
+        return (
+          <div key={item.label} className="cd-quick-spec" role="listitem">
+            {inner}
+          </div>
+        );
+      })}
     </div>
   );
 }

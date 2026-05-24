@@ -72,7 +72,12 @@ import DetailBreadcrumbs from "../components/catalog/DetailBreadcrumbs";
 import "../styles/car-details.css";
 import DetailHero from "../components/car/DetailHero";
 import DetailActionBar from "../components/car/DetailActionBar";
-import DetailTabs, { DETAIL_TABS } from "../components/car/DetailTabs";
+import DetailTabs from "../components/car/DetailTabs";
+import {
+  detailTabIdForSectionElement,
+  DETAIL_OBSERVED_SECTION_IDS,
+  scrollToDetailSection,
+} from "../utils/detailPageNav";
 import DetailDealerAssistance from "../components/car/DetailDealerAssistance";
 import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
 
@@ -130,7 +135,7 @@ export default function CarDetails() {
   const mediaFallbackRef = useRef(null);
 
   const [activeTab, setActiveTab] =
-    useState("detail-overview");
+    useState("overview");
 
   const navigate =
     useNavigate();
@@ -455,10 +460,7 @@ export default function CarDetails() {
           extra: { action: "scroll_to_table" },
         }
       );
-      comparisonRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      scrollToDetailSection("variants");
     }, [getVariantAnalyticsContext]);
 
   const navigateVariantCompare = useCallback(
@@ -515,12 +517,7 @@ export default function CarDetails() {
 
   const scrollToEmiCalculator = useCallback(() => {
     trackPricingInteraction("emi_scroll_cta");
-    document
-      .getElementById("detail-emi-calculator")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    scrollToDetailSection("emi");
   }, [trackPricingInteraction]);
 
   const scrollToDealer = useCallback(() => {
@@ -528,12 +525,11 @@ export default function CarDetails() {
       sourcePage: "car_details",
       surface: "scroll_to_dealer",
     });
-    document
-      .getElementById("detail-dealer-assistance")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    scrollToDetailSection("assistance");
+  }, []);
+
+  const scrollToCharging = useCallback(() => {
+    scrollToDetailSection("charging");
   }, []);
 
   const handleFinanceHelp = useCallback((source = "action_bar") => {
@@ -565,21 +561,7 @@ export default function CarDetails() {
 
   const scrollToSection = useCallback((sectionId) => {
     setActiveTab(sectionId);
-
-    let targetId = sectionId;
-    if (
-      sectionId === "detail-variants" &&
-      !document.getElementById("detail-variants")
-    ) {
-      targetId = "detail-compare";
-    }
-
-    document
-      .getElementById(targetId)
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    scrollToDetailSection(sectionId);
   }, []);
 
   const openTestDrive = useCallback(() => {
@@ -671,25 +653,34 @@ export default function CarDetails() {
   useEffect(() => {
     if (!displayCar) return;
 
-    const ids = DETAIL_TABS.map((t) => t.id);
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
           .filter((e) => e.isIntersecting)
-          .sort(
-            (a, b) =>
-              b.intersectionRatio - a.intersectionRatio
+          .sort((a, b) => {
+            const topDiff =
+              a.boundingClientRect.top - b.boundingClientRect.top;
+            if (Math.abs(topDiff) > 8) return topDiff;
+            return b.intersectionRatio - a.intersectionRatio;
+          });
+
+        for (const entry of visible) {
+          const tabId = detailTabIdForSectionElement(
+            entry.target?.id
           );
-        const top = visible[0]?.target?.id;
-        if (top) setActiveTab(top);
+          if (tabId) {
+            setActiveTab(tabId);
+            break;
+          }
+        }
       },
       {
-        rootMargin: "-120px 0px -55% 0px",
-        threshold: [0, 0.15, 0.35],
+        rootMargin: "-148px 0px -55% 0px",
+        threshold: [0, 0.12, 0.25, 0.4],
       }
     );
 
-    ids.forEach((id) => {
+    DETAIL_OBSERVED_SECTION_IDS.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
@@ -983,6 +974,7 @@ export default function CarDetails() {
             }
             onScrollEmi={scrollToEmiCalculator}
             onScrollDealer={scrollToDealer}
+            onScrollCharging={scrollToCharging}
           />
 
           <DetailActionBar
@@ -1016,7 +1008,7 @@ export default function CarDetails() {
           />
 
           <section
-            id="detail-overview"
+            id="overview"
             className="cd-section cd-card cd-content-card cd-overview-section"
           >
             <DetailOverviewDashboard
@@ -1049,6 +1041,7 @@ export default function CarDetails() {
           {enrichedVariants.length >= 1 && (
             <VariantComparisonTable
               ref={comparisonRef}
+              id="variants"
               variants={enrichedVariants}
               selectedSlug={selectedVariantSlug}
               onSelect={handleSelectVariant}
@@ -1082,7 +1075,7 @@ export default function CarDetails() {
           />
 
           <section
-            id="detail-emi-calculator"
+            id="emi"
             className="cd-section cd-card cd-content-card detail-emi-section"
           >
             <h2 className="cd-section__title">EMI</h2>
@@ -1115,7 +1108,7 @@ export default function CarDetails() {
           )}
 
           <section
-            id="detail-reviews"
+            id="reviews"
             className="cd-section cd-card cd-content-card"
           >
             <h2 className="cd-section__title">Reviews</h2>
