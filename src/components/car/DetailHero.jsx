@@ -15,8 +15,7 @@ export default function DetailHero({
   activeRange,
   activeBattery,
   activeCharging,
-  topSpeed,
-  safetyLabel,
+  fourthQuickSpec,
   category,
   galleryImages,
   selectedImage,
@@ -139,8 +138,7 @@ export default function DetailHero({
           range={activeRange}
           battery={activeBattery}
           charging={activeCharging}
-          safety={safetyLabel}
-          topSpeed={topSpeed}
+          fourthMetric={fourthQuickSpec}
           onScrollCharging={onScrollCharging}
         />
       </div>

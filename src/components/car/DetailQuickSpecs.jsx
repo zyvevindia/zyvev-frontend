@@ -2,10 +2,16 @@ export default function DetailQuickSpecs({
   range,
   battery,
   charging,
-  safety,
-  topSpeed,
+  fourthMetric,
   onScrollCharging,
 }) {
+  const fourth =
+    fourthMetric ?? {
+      label: "Acceleration",
+      icon: "⏱",
+      value: "—",
+    };
+
   const items = [
     {
       icon: "⚡",
@@ -24,9 +30,9 @@ export default function DetailQuickSpecs({
       action: onScrollCharging,
     },
     {
-      icon: "🛡",
-      label: "Safety",
-      value: safety || topSpeed || "—",
+      icon: fourth.icon,
+      label: fourth.label,
+      value: fourth.value,
     },
   ];
 

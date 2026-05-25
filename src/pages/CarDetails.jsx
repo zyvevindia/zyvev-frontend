@@ -117,6 +117,7 @@ import {
   safeFetchJsonWithRetry,
 } from "../utils/safeFetch";
 import { getSafeImage } from "../utils/imageUtils";
+import { resolveHeroFourthQuickSpec } from "../utils/heroDetailMetrics";
 
 /* =========================================================
    ==================== CAR DETAILS PAGE ===================
@@ -900,10 +901,10 @@ export default function CarDetails() {
       : []),
   ]);
 
-  const safetyLabel =
-    vehicle.catalogMeta?.safety?.bharatNcap?.stars != null
-      ? `${vehicle.catalogMeta.safety.bharatNcap.stars} Star NCAP`
-      : safety[0] || null;
+  const heroFourthQuickSpec = resolveHeroFourthQuickSpec({
+    accelerationRaw: topSpeed,
+    catalogMeta: vehicle.catalogMeta,
+  });
 
   const handleCompareEv = () => {
     navigateVariantCompare(
@@ -961,8 +962,7 @@ export default function CarDetails() {
             activeRange={activeRange}
             activeBattery={activeBattery}
             activeCharging={activeCharging}
-            topSpeed={topSpeed}
-            safetyLabel={safetyLabel}
+            fourthQuickSpec={heroFourthQuickSpec}
             category={vehicle.category}
             galleryImages={galleryImages}
             selectedImage={selectedImage}
