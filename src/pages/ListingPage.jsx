@@ -47,20 +47,13 @@ import { trackIntelligenceFilterApplied, trackSearchZeroResults } from "../analy
 
 import "../styles/ev-discovery.css";
 
-function resolveListingCategory(pathname, categoryParam) {
-  if (categoryParam) return categoryParam;
-  const segment = String(pathname || "")
-    .replace(/^\//, "")
-    .split("/")[0];
-  if (
-    ["bikes", "scooters", "popular", "latest", "upcoming"].includes(
-      segment
-    )
-  ) {
-    return segment;
-  }
-  return null;
-}
+import {
+  resolveListingSegment,
+  shouldFilterFamiliesByListingSegment,
+  shouldShowListingRecommendationWidget,
+  resolveListingCompareMode,
+  isBrowseOnlyListingSegment,
+} from "../utils/listingBrowseMode";
 
 /* =========================================================
    ===================== LISTING PAGE =======================
@@ -85,8 +78,17 @@ export default function ListingPage() {
       "compareMode"
     ) === "true";
 
-  const compareMode =
-    !resolveListingCategory(pathname, category) && compareModeRequested;
+  const listingSegment = useMemo(
+    () => resolveListingSegment(pathname, category),
+    [pathname, category]
+  );
+
+  const browseOnlyListing = isBrowseOnlyListingSegment(listingSegment);
+
+  const compareMode = resolveListingCompareMode(
+    listingSegment,
+    compareModeRequested
+  );
 
   const [cars, setCars] =
     useState([]);
@@ -197,11 +199,6 @@ export default function ListingPage() {
      ===================== FILTERED DATA =====================
      ========================================================= */
 
-  const listingCategory = useMemo(
-    () => resolveListingCategory(pathname, category),
-    [pathname, category]
-  );
-
   const intelligenceFilterIds = useMemo(
     () => parseIntelligenceFiltersFromParams(searchParams),
     [searchParams]
@@ -209,14 +206,16 @@ export default function ListingPage() {
 
   useEffect(() => {
     if (!compareModeRequested) return;
-    if (!listingCategory) return;
+    if (!listingSegment) return;
+    if (browseOnlyListing) return;
 
     const next = new URLSearchParams(searchParams);
     next.delete("compareMode");
     setSearchParams(next, { replace: true });
   }, [
     compareModeRequested,
-    listingCategory,
+    listingSegment,
+    browseOnlyListing,
     searchParams,
     setSearchParams,
   ]);
@@ -244,11 +243,11 @@ export default function ListingPage() {
       intelligenceFilterIds,
     });
 
-    if (listingCategory) {
+    if (shouldFilterFamiliesByListingSegment(listingSegment)) {
       list = list.filter((f) =>
         (f.category || "")
           .toLowerCase()
-          .includes(listingCategory.toLowerCase())
+          .includes(String(listingSegment).toLowerCase())
       );
     }
 
@@ -264,7 +263,7 @@ export default function ListingPage() {
     return sortFamilies(list, sortKey);
   }, [
     families,
-    listingCategory,
+    listingSegment,
     search,
     brand,
     sortBy,
@@ -524,7 +523,11 @@ export default function ListingPage() {
 
       </section>
 
-      {!compareMode && families.length > 0 && (
+      {shouldShowListingRecommendationWidget({
+        segment: listingSegment,
+        compareMode,
+        hasFamilies: families.length > 0,
+      }) && (
         <section
           style={{
             maxWidth: "1300px",

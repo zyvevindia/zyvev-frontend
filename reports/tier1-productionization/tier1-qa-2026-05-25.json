@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T19:06:54.183Z",
+  "generatedAt": "2026-05-25T19:45:22.214Z",
   "checks": [
     {
       "id": "cohort_size",
@@ -49,7 +49,7 @@
     }
   ],
   "productionReport": {
-    "generatedAt": "2026-05-25T19:06:54.176Z",
+    "generatedAt": "2026-05-25T19:45:22.197Z",
     "cohort": [
       "tata-nexon-ev",
       "tata-punch-ev",
@@ -286,7 +286,7 @@
       "mg-zs-ev-vs-byd-atto-3"
     ],
     "safety": {
-      "generatedAt": "2026-05-25T19:06:54.161Z",
+      "generatedAt": "2026-05-25T19:45:22.138Z",
       "vehicles": 5,
       "readyCount": 0,
       "partialCount": 5,
@@ -615,7 +615,7 @@
     }
   },
   "trustReport": {
-    "generatedAt": "2026-05-25T19:06:54.183Z",
+    "generatedAt": "2026-05-25T19:45:22.214Z",
     "cohort": [
       "tata-nexon-ev",
       "tata-punch-ev",

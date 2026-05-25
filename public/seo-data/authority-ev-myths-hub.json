@@ -80,7 +80,20 @@
         ]
       }
     ],
-    "compareSupportLinks": [],
+    "compareSupportLinks": [
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      },
+      {
+        "label": "Apartment suitability",
+        "href": "/ownership-guides/apartment-suitability"
+      }
+    ],
     "continueLearning": [
       {
         "step": 2,
@@ -214,6 +227,6 @@
     },
     "canonicalPath": "/ownership-guides/ev-myths",
     "canonicalUrl": "https://evsavari.com/ownership-guides/ev-myths",
-    "generatedAt": "2026-05-25T19:05:58.659Z"
+    "generatedAt": "2026-05-25T19:44:29.188Z"
   }
 }

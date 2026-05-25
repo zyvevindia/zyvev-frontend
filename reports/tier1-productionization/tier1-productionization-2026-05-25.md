@@ -1,6 +1,6 @@
 # Tier-1 productionization
 
-Generated: 2026-05-25T19:06:49.500Z
+Generated: 2026-05-25T19:45:09.968Z
 
 - **avgCompletenessPercent**: 31
 - **avgCompareTrustScore**: 94
@@ -11,7 +11,7 @@ Generated: 2026-05-25T19:06:49.500Z
 - **topMissingSpecs**: accelerationVerified: 5
 # Tier-1 productionization report
 
-Generated: 2026-05-25T19:06:49.499Z
+Generated: 2026-05-25T19:45:09.967Z
 
 **Cohort:** Tata Nexon EV · Tata Punch EV · Tata Curvv EV · MG ZS EV · BYD Atto 3
 
