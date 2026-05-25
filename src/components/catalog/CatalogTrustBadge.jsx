@@ -37,24 +37,6 @@ export default function CatalogTrustBadge({
   const confidence =
     catalogMeta.confidence;
 
-  const flagCount =
-    catalogMeta.verificationFlags?.length || 0;
-
-  const updated =
-    catalogMeta.priceLastUpdated ||
-    catalogMeta.lastUpdatedAt;
-
-  const updatedLabel = updated
-    ? new Date(updated).toLocaleDateString(
-        "en-IN",
-        {
-          day: "numeric",
-          month: "short",
-          year: "numeric",
-        }
-      )
-    : null;
-
   const isPublished =
     status === "published";
 
@@ -127,32 +109,6 @@ export default function CatalogTrustBadge({
           )}
         >
           {confidence} confidence
-        </span>
-      )}
-
-      {flagCount > 0 && (
-        <span
-          style={pill(
-            "#fff7ed",
-            "#9a3412",
-            "#fdba74"
-          )}
-          title="Some fields pending verification"
-        >
-          {flagCount} field
-          {flagCount > 1 ? "s" : ""} to verify
-        </span>
-      )}
-
-      {updatedLabel && (
-        <span
-          style={pill(
-            "#f8fafc",
-            "#64748b",
-            "#e2e8f0"
-          )}
-        >
-          Updated {updatedLabel}
         </span>
       )}
     </div>
