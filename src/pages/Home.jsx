@@ -15,9 +15,8 @@ import { API_URL, API_URL_MISCONFIGURED_FOR_PROD } from "../config";
 import { catalogUnavailableMessage } from "../utils/apiDiagnostics";
 import { safeFetchJsonWithRetry } from "../utils/safeFetch";
 
-import { LOCAL_FALLBACK_EV } from "../utils/imageUtils";
-
 import normalizeCar from "../utils/normalizeCar";
+import { UPCOMING_EV_CATALOG } from "../data/upcomingEvCatalog";
 
 import {
   aggregateModelFamilies,
@@ -40,44 +39,6 @@ import CarCardSkeleton from "../components/skeletons/CarCardSkeleton";
 /* =========================================================
    ===================== GLOBAL DATA ========================
    ========================================================= */
-
-const upcomingCars = [
-  {
-    _id: "u1",
-
-    name: "Tata Sierra EV",
-
-    image: LOCAL_FALLBACK_EV,
-
-    launchDate: "October 2025",
-
-    price: 2500000,
-  },
-
-  {
-    _id: "u2",
-
-    name: "Mahindra BE.05",
-
-    image: LOCAL_FALLBACK_EV,
-
-    launchDate: "December 2025",
-
-    price: 2700000,
-  },
-
-  {
-    _id: "u3",
-
-    name: "Maruti eVX",
-
-    image: LOCAL_FALLBACK_EV,
-
-    launchDate: "January 2026",
-
-    price: 2200000,
-  },
-];
 
 /* =========================================================
    ======================== HOME ============================
@@ -630,7 +591,7 @@ export default function Home() {
           compactBottom
         >
 
-          {upcomingCars.map(
+          {UPCOMING_EV_CATALOG.map(
             (car) => (
 
               <UpcomingCarCard

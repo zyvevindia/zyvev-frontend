@@ -24,5 +24,10 @@ export function isCompareNavActive(pathname, search = "") {
   const params = new URLSearchParams(search.startsWith("?") ? search.slice(1) : search);
   if (params.get("compareMode") !== "true") return false;
 
-  return pathname === "/cars" || pathname === "/popular";
+  return (
+    pathname === "/cars" ||
+    pathname === "/popular" ||
+    pathname === "/latest" ||
+    pathname === "/upcoming"
+  );
 }

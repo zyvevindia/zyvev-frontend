@@ -53,7 +53,10 @@ import {
   shouldShowListingRecommendationWidget,
   resolveListingCompareMode,
   isBrowseOnlyListingSegment,
+  applyBrowseSegmentFamilies,
 } from "../utils/listingBrowseMode";
+import { UPCOMING_EV_CATALOG } from "../data/upcomingEvCatalog";
+import UpcomingCarCard from "../components/UpcomingCarCard";
 
 /* =========================================================
    ===================== LISTING PAGE =======================
@@ -251,6 +254,8 @@ export default function ListingPage() {
       );
     }
 
+    list = applyBrowseSegmentFamilies(list, listingSegment);
+
     const sortKey =
       sortBy === "price-low"
         ? "priceLow"
@@ -277,6 +282,15 @@ export default function ListingPage() {
       Boolean(sortBy) ||
       intelligenceFilterIds.length > 0,
     [search, brand, sortBy, intelligenceFilterIds]
+  );
+
+  const showUpcomingCatalogFallback = useMemo(
+    () =>
+      listingSegment === "upcoming" &&
+      !hasActiveListingFilters &&
+      filteredFamilies.length === 0 &&
+      UPCOMING_EV_CATALOG.length > 0,
+    [listingSegment, hasActiveListingFilters, filteredFamilies.length]
   );
 
   const clearListingFilters = () => {
@@ -715,17 +729,36 @@ export default function ListingPage() {
 
           </div>
 
+        ) : showUpcomingCatalogFallback ? (
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fit,minmax(320px,1fr))",
+              gap: "30px",
+            }}
+          >
+            {UPCOMING_EV_CATALOG.map((car) => (
+              <UpcomingCarCard key={car._id} car={car} />
+            ))}
+          </div>
+
         ) : filteredFamilies.length ===
           0 ? (
 
           <div style={emptyState}>
 
             <h2 style={emptyTitle}>
-              No EVs Found
+              {listingSegment === "upcoming"
+                ? "Upcoming EVs Coming Soon"
+                : "No EVs Found"}
             </h2>
 
             <p style={emptyText}>
-              Try adjusting filters, search, or explore EVSavari compare and guides.
+              {listingSegment === "upcoming"
+                ? "We are adding more launch previews. Check back soon or browse the full catalog."
+                : "Try adjusting filters, search, or explore EVSavari compare and guides."}
             </p>
 
             <div

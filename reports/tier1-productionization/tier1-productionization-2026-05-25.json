@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T19:45:09.967Z",
+  "generatedAt": "2026-05-25T20:01:58.665Z",
   "cohort": [
     "tata-nexon-ev",
     "tata-punch-ev",
@@ -236,7 +236,7 @@
     "mg-zs-ev-vs-byd-atto-3"
   ],
   "safety": {
-    "generatedAt": "2026-05-25T19:45:09.931Z",
+    "generatedAt": "2026-05-25T20:01:58.648Z",
     "vehicles": 5,
     "readyCount": 0,
     "partialCount": 5,

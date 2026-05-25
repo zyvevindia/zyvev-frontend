@@ -1,6 +1,6 @@
 # Media completeness
 
-Generated: 2026-05-25T19:45:16.566Z
+Generated: 2026-05-25T20:02:01.590Z
 
 - **avgMediaCompletenessPercent**: 75
 - **familiesBelow60**: 0
@@ -8,7 +8,7 @@ Generated: 2026-05-25T19:45:16.566Z
 - **cloudinaryPrefix**: evsavari/catalog/families/<slug>/<role>
 # Tier-1 media completeness
 
-Generated: 2026-05-25T19:45:16.556Z
+Generated: 2026-05-25T20:02:01.588Z
 
 - Average completeness: **75%**
 - Families below 60%: **0**
