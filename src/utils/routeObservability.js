@@ -11,6 +11,7 @@ export function logRouteRedirect(from, to, slug) {
 }
 
 export function logSlugLookupFailure(rawSlug, candidates) {
+  if (!import.meta.env.DEV) return;
   console.warn(PREFIX, "detail_lookup_failed", {
     rawSlug,
     candidates,

@@ -3,6 +3,24 @@
  * Indicative specs for persistence + compare readiness; verify against OEM before campaigns.
  */
 
+/** Safety skeleton — no fabricated star ratings. */
+const PRODUCTIONIZATION_SAFETY_SKELETON = {
+  bharatNcap: { status: "not_tested" },
+  globalNcap: { status: "unknown" },
+  airbags: { status: "unknown" },
+  abs: { status: "unknown" },
+  esc: { status: "unknown" },
+  traction_control: { status: "unknown" },
+  adas: { status: "unknown" },
+};
+
+function productionizationSeo(brand, name) {
+  return {
+    metaTitle: `${brand} ${name} — Price, Range & Charging | EVSavari`,
+    metaDescription: `Compare ${brand} ${name} variants, range, charging, and ownership costs on EVSavari. Indicative data — verify with dealer.`,
+  };
+}
+
 export const TIER1_CATALOG_DEFINITIONS = [
   {
     slug: "tata-nexon-ev",
@@ -10,6 +28,8 @@ export const TIER1_CATALOG_DEFINITIONS = [
     name: "Nexon EV",
     category: "SUV",
     compareReady: true,
+    safetyMeta: PRODUCTIONIZATION_SAFETY_SKELETON,
+    seoMeta: productionizationSeo("Tata", "Nexon EV"),
     ownershipMeta: { apartmentFriendly: true, highwaySuitable: true, cityPrimary: true },
     chargingMeta: { acKw: 7.2, dcKw: 50, port: "CCS2" },
     variants: [
@@ -37,6 +57,8 @@ export const TIER1_CATALOG_DEFINITIONS = [
     name: "Punch EV",
     category: "SUV",
     compareReady: true,
+    safetyMeta: PRODUCTIONIZATION_SAFETY_SKELETON,
+    seoMeta: productionizationSeo("Tata", "Punch EV"),
     ownershipMeta: { apartmentFriendly: true, compactParking: true, cityPrimary: true },
     chargingMeta: { acKw: 3.3, dcKw: 50, port: "CCS2" },
     variants: [
@@ -91,6 +113,8 @@ export const TIER1_CATALOG_DEFINITIONS = [
     name: "Curvv EV",
     category: "SUV",
     compareReady: true,
+    safetyMeta: PRODUCTIONIZATION_SAFETY_SKELETON,
+    seoMeta: productionizationSeo("Tata", "Curvv EV"),
     ownershipMeta: { apartmentFriendly: true, highwaySuitable: true, familyPractical: true },
     chargingMeta: { acKw: 7.2, dcKw: 150, port: "CCS2" },
     variants: [
@@ -145,6 +169,8 @@ export const TIER1_CATALOG_DEFINITIONS = [
     name: "ZS EV",
     category: "SUV",
     compareReady: true,
+    safetyMeta: PRODUCTIONIZATION_SAFETY_SKELETON,
+    seoMeta: productionizationSeo("MG", "ZS EV"),
     ownershipMeta: { apartmentFriendly: true, highwaySuitable: true, familyPractical: true },
     chargingMeta: { acKw: 7.4, dcKw: 50, port: "CCS2" },
     variants: [
@@ -253,6 +279,8 @@ export const TIER1_CATALOG_DEFINITIONS = [
     name: "Atto 3",
     category: "SUV",
     compareReady: true,
+    safetyMeta: PRODUCTIONIZATION_SAFETY_SKELETON,
+    seoMeta: productionizationSeo("BYD", "Atto 3"),
     ownershipMeta: { apartmentFriendly: true, familyPractical: true, highwaySuitable: true },
     chargingMeta: { acKw: 7, dcKw: 80, port: "CCS2" },
     variants: [

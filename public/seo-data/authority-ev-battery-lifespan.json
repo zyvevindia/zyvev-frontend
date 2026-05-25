@@ -1,0 +1,218 @@
+{
+  "seoPage": {
+    "slug": "authority-ev-battery-lifespan",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "ev-battery-lifespan",
+    "title": "EV Battery Lifespan Explained — Calm, Honest Guidance | EVSavari",
+    "metaDescription": "EV Battery Lifespan Explained — Calm, Honest Guidance — practical ownership guidance for Indian buyers.",
+    "intro": "Battery lifespan is the heart of EV anxiety. This guide explains degradation in plain language — warranties, habits, and heat — without promising a ‘forever’ pack.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "What ‘lifespan’ means",
+        "type": "introduction",
+        "paragraphs": [
+          "Batteries slowly lose usable capacity over years. Manufacturers quote warranties with thresholds — read the fine print for your variant."
+        ]
+      },
+      {
+        "id": "practical",
+        "title": "Habits that matter in India",
+        "type": "practical",
+        "bullets": [
+          "Frequent DC fast charging can add heat stress — balance with AC when possible.",
+          "Parking in extreme heat — use shade where you can.",
+          "Letting the pack sit at 100% for weeks — many owners stay between comfortable daily bands."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Resale and long-term value",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Used EV pricing still reflects battery uncertainty — get documented service history when buying pre-owned."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Batteries die in three years",
+            "reality": "Many packs age gradually; warranty terms define support."
+          },
+          {
+            "myth": "Always charge to 100%",
+            "reality": "Daily habits can favour a lower ceiling unless you need full range tomorrow."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Compare battery sizes honestly",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Battery health guide",
+            "href": "/ownership-guides/battery-health"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "Running cost",
+        "href": "/ownership-guides/running-cost"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "ev-battery-lifespan",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 3,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/byd-atto-3"
+      },
+      {
+        "rank": 4,
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra Xuv400",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-xuv400"
+      }
+    ],
+    "tradeoffs": [
+      "Larger packs cost more upfront — buy capacity you use, not brochure maximum.",
+      "Climate and driving style change real-world retention.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "What warranty should I look for?",
+        "answer": "Years and km on the traction battery — note exclusions and authorised service rules."
+      },
+      {
+        "question": "Does fast charging ruin batteries?",
+        "answer": "Occasional DC is normal — constant fast charging without need may accelerate wear."
+      },
+      {
+        "question": "Can software fix degradation?",
+        "answer": "Software manages health — physical wear still occurs gradually."
+      },
+      {
+        "question": "Used EV battery risk?",
+        "answer": "Request history, warranty transfer rules, and a drive that matches your km needs."
+      },
+      {
+        "question": "Next step?",
+        "answer": "Compare range bands on EVSavari, then read running cost guide."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Battery health ownership",
+            "href": "/ownership-guides/battery-health"
+          },
+          {
+            "label": "Used EV buying",
+            "href": "/ownership-guides/used-ev-buying"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/battery-lifespan",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/battery-lifespan",
+    "generatedAt": "2026-05-25T19:05:58.640Z"
+  }
+}

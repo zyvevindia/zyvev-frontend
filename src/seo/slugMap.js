@@ -31,15 +31,36 @@ export const CHARGING_GUIDE_TO_SLUG = {
   "daily-commute": "best-evs-for-daily-commute",
   "low-stress": "lowest-charging-stress-evs",
   "apartment": "best-evs-for-apartment-living",
+  "charging-types": "authority-ev-charging-types",
+  "fast-vs-slow": "authority-fast-vs-slow",
+  "public-charging": "authority-public-charging",
+  "overnight-safety": "authority-overnight-safety",
+  "extension-board-risks": "authority-extension-risks",
+  "apartment-setup": "authority-apartment-setup",
 };
 
 /** /ownership-guides/:slug */
 const BASE_OWNERSHIP_GUIDE_TO_SLUG = {
-  "first-time-buyers": "best-evs-for-first-time-buyers",
+  "first-time-buyers": "authority-first-time-buyer",
   "easiest-first-ev": "easiest-evs-for-first-time-buyers",
   "apartment-living": "best-evs-for-apartment-living",
   "apartment-parking": "best-evs-for-apartment-parking",
   "low-maintenance": "lowest-maintenance-electric-cars",
+  "how-evs-work": "authority-how-evs-work",
+  "maintenance-basics": "authority-ev-maintenance",
+  "battery-lifespan": "authority-ev-battery-lifespan",
+  "apartment-suitability": "authority-apartment-suitability",
+  "city-commute": "authority-city-commute",
+  "family-ownership": "authority-family-ownership",
+  "ev-myths": "authority-ev-myths-hub",
+  "myth-battery-dies-quickly": "authority-myth-battery-dies-quickly",
+  "myth-rain-flood-safety": "authority-myth-rain-flood-safety",
+  "myth-fire-risk": "authority-myth-fire-risk",
+  "myth-highway-practicality": "authority-myth-highway-practicality",
+  "myth-apartment-charging-impossible": "authority-myth-apartment-charging-impossible",
+  "myth-maintenance-expensive": "authority-myth-maintenance-expensive",
+  "myth-battery-replacement-cost": "authority-myth-battery-replacement-cost",
+  "myth-resale-value-loss": "authority-myth-resale-value-loss",
 };
 
 export const OWNERSHIP_GUIDE_TO_SLUG = {

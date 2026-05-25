@@ -5,6 +5,7 @@ import { BEHAVIORAL_INTELLIGENCE_ENABLED } from "../config";
 import { getAnonymousSessionId } from "./session";
 
 import { appendJourneyStep } from "../buyer-intelligence/journeyBuffer";
+import { postTelemetrySilently } from "../utils/telemetryClient.js";
 
 const queue = [];
 let flushTimer = null;
@@ -78,15 +79,12 @@ async function flushQueue() {
 
   const batch = queue.splice(0, 20);
 
-  try {
-    await fetch(`${API_URL}/api/behavioral/events`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ events: batch }),
-      keepalive: true,
-    });
-  } catch {
-  }
+  await postTelemetrySilently(`${API_URL}/api/behavioral/events`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ events: batch }),
+    label: "behavioral_events",
+  });
 
   if (queue.length) scheduleFlush();
 }

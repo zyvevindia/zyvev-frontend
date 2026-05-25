@@ -21,6 +21,10 @@ import {
 } from "../media/familyMediaManifest.js";
 import { pickMediaFields } from "../media/vehicleMediaSchema.js";
 import {
+  filterRequestableMediaUrls,
+  isRequestableCatalogMediaUrl,
+} from "../media/catalogMediaAvailability.js";
+import {
   brandLogoUrl,
   brandSiblingMediaUrls,
   resolveBrandKeyFromFamily,
@@ -43,11 +47,22 @@ function slugFromCar(car) {
   ).toLowerCase();
 }
 
+function mediaGuardOptions(car) {
+  return {
+    catalogMeta: car?.catalogMeta,
+    familySlug: resolveFamilySlugFromCar(car),
+  };
+}
+
 function uniqueUrls(urls, options = {}) {
-  const { role = "listing" } = options;
+  const { role = "listing", catalogMeta = null, familySlug = null } =
+    options;
   const seen = new Set();
   return urls.filter((u) => {
-    const clean = sanitizeImageUrl(u, { role });
+    if (!isRequestableCatalogMediaUrl(u, { catalogMeta, familySlug })) {
+      return false;
+    }
+    const clean = sanitizeImageUrl(u, { role, catalogMeta, familySlug });
     if (!clean || seen.has(clean)) return false;
     if (isPlaceholderMediaUrl(clean)) return false;
     if (isManifestGuessCatalogUrl(clean)) return false;
@@ -177,11 +192,20 @@ function variantCdnFallbacks() {
 }
 
 function finalizeFallbackChain(urls, options = {}) {
-  const { role = "listing", allowLocalFallback = true } = options;
-  const resolved = uniqueUrls(urls, { role });
+  const {
+    role = "listing",
+    allowLocalFallback = true,
+    catalogMeta = null,
+    familySlug = null,
+  } = options;
+  const resolved = uniqueUrls(urls, { role, catalogMeta, familySlug });
   if (resolved.length > 0) {
     return allowLocalFallback
-      ? uniqueUrls([...resolved, LOCAL_FALLBACK_EV], { role })
+      ? uniqueUrls([...resolved, LOCAL_FALLBACK_EV], {
+          role,
+          catalogMeta,
+          familySlug,
+        })
       : resolved;
   }
   return allowLocalFallback ? [LOCAL_FALLBACK_EV] : [];
@@ -192,6 +216,7 @@ export function buildImageFallbackChain(car, role = "listing") {
   const familySlug =
     resolveFamilySlugFromCar(car) ||
     resolveFamilySlugFromVariantSlug(slug);
+  const guard = mediaGuardOptions(car);
   const meta = car?.catalogMeta?.media || {};
   const fieldValues = pickMediaFields(car, role);
 
@@ -215,7 +240,7 @@ export function buildImageFallbackChain(car, role = "listing") {
         brandKey ? brandLogoUrl(brandKey) : null,
         LOCAL_FALLBACK_EV,
       ],
-      { role: "compare" }
+      { role: "compare", ...guard }
     );
   }
 
@@ -233,7 +258,7 @@ export function buildImageFallbackChain(car, role = "listing") {
       brandKey ? brandLogoUrl(brandKey) : null,
       ...variantUrls,
       LOCAL_FALLBACK_EV,
-    ]);
+    ], guard);
   }
 
   if (role === "hero") {
@@ -250,27 +275,39 @@ export function buildImageFallbackChain(car, role = "listing") {
       brandKey ? brandLogoUrl(brandKey) : null,
       ...variantUrls,
       LOCAL_FALLBACK_EV,
-    ]);
+    ], guard);
   }
 
   if (role === "gallery") {
-    return finalizeFallbackChain([
-      ...(car?.galleryImages || []),
-      ...(meta.gallery || []),
-      ...fieldValues,
-      ...familyUrls,
-      ...variantUrls,
-      LOCAL_FALLBACK_EV,
-    ]);
+    const galleryCandidates = filterRequestableMediaUrls(
+      [
+        ...(car?.galleryImages || []),
+        ...(meta.gallery || []),
+        ...fieldValues,
+        ...familyUrls,
+        ...variantUrls,
+      ],
+      guard
+    );
+    return finalizeFallbackChain(
+      [...galleryCandidates, LOCAL_FALLBACK_EV],
+      guard
+    );
   }
 
   if (role === "interior") {
-    return finalizeFallbackChain([
-      ...(meta.interior || []),
-      ...fieldValues,
-      ...(getProductionFamilyMedia(familySlug)?.interior || []),
-      LOCAL_FALLBACK_EV,
-    ]);
+    return finalizeFallbackChain(
+      [
+        ...filterRequestableMediaUrls(meta.interior || [], guard),
+        ...filterRequestableMediaUrls(fieldValues, guard),
+        ...filterRequestableMediaUrls(
+          getProductionFamilyMedia(familySlug)?.interior || [],
+          guard
+        ),
+        LOCAL_FALLBACK_EV,
+      ],
+      guard
+    );
   }
 
   return finalizeFallbackChain([
@@ -287,7 +324,22 @@ export function buildImageFallbackChain(car, role = "listing") {
       : []),
     ...variantUrls,
     LOCAL_FALLBACK_EV,
-  ]);
+  ], guard);
+}
+
+/**
+ * Gallery URLs safe to render (no speculative optional probes).
+ * @param {object} car
+ * @returns {string[]}
+ */
+export function resolveRequestableGalleryImages(car) {
+  const hero = resolveCatalogImageUrl(car, "hero");
+  const fromCar = filterRequestableMediaUrls(
+    car?.galleryImages || [],
+    mediaGuardOptions(car)
+  );
+  if (fromCar.length > 0) return fromCar;
+  return hero ? [hero] : [];
 }
 
 export function getListingImage(car) {

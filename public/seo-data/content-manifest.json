@@ -1,13 +1,14 @@
 {
-  "generatedAt": "2026-05-25T07:25:18.423Z",
+  "generatedAt": "2026-05-25T19:05:58.724Z",
   "siteOrigin": "https://evsavari.com",
   "counts": {
     "city_evs": 25,
     "city_charging": 25,
     "compare": 25,
     "ownership": 15,
+    "authority_editorial": 22,
     "best_evs": 15,
-    "batch_total": 105
+    "batch_total": 127
   },
   "entries": [
     {
@@ -759,6 +760,226 @@
       "title": "Tata Curvv EV vs MG Zs EV — Decision Comparison | EVSavari",
       "h1": "Tata Curvv EV vs MG Zs EV — Decision Comparison",
       "filePath": "public/seo-data/tata-curvv-ev-vs-mg-zs-ev.json"
+    },
+    {
+      "id": "authority-how-evs-work",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-how-evs-work",
+      "path": "/ownership-guides/how-evs-work",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/how-evs-work",
+      "title": "How EVs Work — A Calm Beginner Guide for India | EVSavari",
+      "h1": "How EVs Work — A Calm Beginner Guide for India",
+      "filePath": "public/seo-data/authority-how-evs-work.json"
+    },
+    {
+      "id": "authority-ev-charging-types-explained",
+      "pageType": "charging_guide",
+      "contentSlug": "authority-ev-charging-types",
+      "path": "/charging-guides/charging-types",
+      "canonicalUrl": "https://evsavari.com/charging-guides/charging-types",
+      "title": "EV Charging Types Explained — AC, DC & What You Actually Need | EVSavari",
+      "h1": "EV Charging Types Explained — AC, DC & What You Actually Need",
+      "filePath": "public/seo-data/authority-ev-charging-types.json"
+    },
+    {
+      "id": "authority-ev-maintenance-explained",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-ev-maintenance",
+      "path": "/ownership-guides/maintenance-basics",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/maintenance-basics",
+      "title": "EV Maintenance Explained — What Still Needs Care in India | EVSavari",
+      "h1": "EV Maintenance Explained — What Still Needs Care in India",
+      "filePath": "public/seo-data/authority-ev-maintenance.json"
+    },
+    {
+      "id": "authority-ev-battery-lifespan",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-ev-battery-lifespan",
+      "path": "/ownership-guides/battery-lifespan",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/battery-lifespan",
+      "title": "EV Battery Lifespan Explained — Calm, Honest Guidance | EVSavari",
+      "h1": "EV Battery Lifespan Explained — Calm, Honest Guidance",
+      "filePath": "public/seo-data/authority-ev-battery-lifespan.json"
+    },
+    {
+      "id": "authority-fast-vs-slow-charging",
+      "pageType": "charging_guide",
+      "contentSlug": "authority-fast-vs-slow",
+      "path": "/charging-guides/fast-vs-slow",
+      "canonicalUrl": "https://evsavari.com/charging-guides/fast-vs-slow",
+      "title": "Fast Charging vs Slow Charging — What Indian Owners Need | EVSavari",
+      "h1": "Fast Charging vs Slow Charging — What Indian Owners Need",
+      "filePath": "public/seo-data/authority-fast-vs-slow.json"
+    },
+    {
+      "id": "authority-public-charging-guide",
+      "pageType": "charging_guide",
+      "contentSlug": "authority-public-charging",
+      "path": "/charging-guides/public-charging",
+      "canonicalUrl": "https://evsavari.com/charging-guides/public-charging",
+      "title": "Public EV Charging Guide for India — Planning, Not Promises | EVSavari",
+      "h1": "Public EV Charging Guide for India — Planning, Not Promises",
+      "filePath": "public/seo-data/authority-public-charging.json"
+    },
+    {
+      "id": "authority-overnight-charging-safety",
+      "pageType": "charging_guide",
+      "contentSlug": "authority-overnight-safety",
+      "path": "/charging-guides/overnight-safety",
+      "canonicalUrl": "https://evsavari.com/charging-guides/overnight-safety",
+      "title": "Overnight EV Charging Safety — Home & Society Basics | EVSavari",
+      "h1": "Overnight EV Charging Safety — Home & Society Basics",
+      "filePath": "public/seo-data/authority-overnight-safety.json"
+    },
+    {
+      "id": "authority-extension-board-charging-risks",
+      "pageType": "charging_guide",
+      "contentSlug": "authority-extension-risks",
+      "path": "/charging-guides/extension-board-risks",
+      "canonicalUrl": "https://evsavari.com/charging-guides/extension-board-risks",
+      "title": "Extension Board EV Charging Risks — Why Shortcuts Fail | EVSavari",
+      "h1": "Extension Board EV Charging Risks — Why Shortcuts Fail",
+      "filePath": "public/seo-data/authority-extension-risks.json"
+    },
+    {
+      "id": "authority-apartment-charging-setup",
+      "pageType": "charging_guide",
+      "contentSlug": "authority-apartment-setup",
+      "path": "/charging-guides/apartment-setup",
+      "canonicalUrl": "https://evsavari.com/charging-guides/apartment-setup",
+      "title": "Apartment EV Charging Setup in India — Society, Wiring & Backup | EVSavari",
+      "h1": "Apartment EV Charging Setup in India — Society, Wiring & Backup",
+      "filePath": "public/seo-data/authority-apartment-setup.json"
+    },
+    {
+      "id": "authority-apartment-ev-suitability",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-apartment-suitability",
+      "path": "/ownership-guides/apartment-suitability",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/apartment-suitability",
+      "title": "Is an EV Suitable for Apartment Living in India? | EVSavari",
+      "h1": "Is an EV Suitable for Apartment Living in India?",
+      "filePath": "public/seo-data/authority-apartment-suitability.json"
+    },
+    {
+      "id": "authority-ev-city-commute",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-city-commute",
+      "path": "/ownership-guides/city-commute",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/city-commute",
+      "title": "EV Ownership for City Commute in India | EVSavari",
+      "h1": "EV Ownership for City Commute in India",
+      "filePath": "public/seo-data/authority-city-commute.json"
+    },
+    {
+      "id": "authority-ev-family-ownership",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-family-ownership",
+      "path": "/ownership-guides/family-ownership",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/family-ownership",
+      "title": "EV Ownership for Families in India — Space, Safety & Trips | EVSavari",
+      "h1": "EV Ownership for Families in India — Space, Safety & Trips",
+      "filePath": "public/seo-data/authority-family-ownership.json"
+    },
+    {
+      "id": "authority-first-time-ev-buyer-guide",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-first-time-buyer",
+      "path": "/ownership-guides/first-time-buyers",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/first-time-buyers",
+      "title": "First-Time EV Buyer Guide for India — Calm, Step-by-Step | EVSavari",
+      "h1": "First-Time EV Buyer Guide for India — Calm, Step-by-Step",
+      "filePath": "public/seo-data/authority-first-time-buyer.json"
+    },
+    {
+      "id": "authority-ev-myths-hub",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-ev-myths-hub",
+      "path": "/ownership-guides/ev-myths",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/ev-myths",
+      "title": "EV Myths vs Reality — Calm Guide for Indian Buyers | EVSavari",
+      "h1": "EV Myths vs Reality — Calm Guide for Indian Buyers",
+      "filePath": "public/seo-data/authority-ev-myths-hub.json"
+    },
+    {
+      "id": "authority-myth-battery-dies-quickly",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-myth-battery-dies-quickly",
+      "path": "/ownership-guides/myth-battery-dies-quickly",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/myth-battery-dies-quickly",
+      "title": "Do EV Batteries Die Quickly? Myth vs Reality | EVSavari",
+      "h1": "Do EV Batteries Die Quickly? Myth vs Reality",
+      "filePath": "public/seo-data/authority-myth-battery-dies-quickly.json"
+    },
+    {
+      "id": "authority-myth-rain-flood-safety",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-myth-rain-flood-safety",
+      "path": "/ownership-guides/myth-rain-flood-safety",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/myth-rain-flood-safety",
+      "title": "Are EVs Safe in Rain and Floods? Myth vs Reality | EVSavari",
+      "h1": "Are EVs Safe in Rain and Floods? Myth vs Reality",
+      "filePath": "public/seo-data/authority-myth-rain-flood-safety.json"
+    },
+    {
+      "id": "authority-myth-fire-risk",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-myth-fire-risk",
+      "path": "/ownership-guides/myth-fire-risk",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/myth-fire-risk",
+      "title": "Do EVs Catch Fire Easily? Myth vs Reality | EVSavari",
+      "h1": "Do EVs Catch Fire Easily? Myth vs Reality",
+      "filePath": "public/seo-data/authority-myth-fire-risk.json"
+    },
+    {
+      "id": "authority-myth-highway-practicality",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-myth-highway-practicality",
+      "path": "/ownership-guides/myth-highway-practicality",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/myth-highway-practicality",
+      "title": "Are EVs Practical for Highways? Myth vs Reality | EVSavari",
+      "h1": "Are EVs Practical for Highways? Myth vs Reality",
+      "filePath": "public/seo-data/authority-myth-highway-practicality.json"
+    },
+    {
+      "id": "authority-myth-apartment-charging-impossible",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-myth-apartment-charging-impossible",
+      "path": "/ownership-guides/myth-apartment-charging-impossible",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/myth-apartment-charging-impossible",
+      "title": "Is EV Charging Impossible in Apartments? Myth vs Reality | EVSavari",
+      "h1": "Is EV Charging Impossible in Apartments? Myth vs Reality",
+      "filePath": "public/seo-data/authority-myth-apartment-charging-impossible.json"
+    },
+    {
+      "id": "authority-myth-maintenance-expensive",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-myth-maintenance-expensive",
+      "path": "/ownership-guides/myth-maintenance-expensive",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/myth-maintenance-expensive",
+      "title": "Is EV Maintenance Expensive? Myth vs Reality | EVSavari",
+      "h1": "Is EV Maintenance Expensive? Myth vs Reality",
+      "filePath": "public/seo-data/authority-myth-maintenance-expensive.json"
+    },
+    {
+      "id": "authority-myth-battery-replacement-cost",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-myth-battery-replacement-cost",
+      "path": "/ownership-guides/myth-battery-replacement-cost",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/myth-battery-replacement-cost",
+      "title": "Are EV Batteries Extremely Expensive to Replace? Myth vs Reality | EVSavari",
+      "h1": "Are EV Batteries Extremely Expensive to Replace? Myth vs Reality",
+      "filePath": "public/seo-data/authority-myth-battery-replacement-cost.json"
+    },
+    {
+      "id": "authority-myth-resale-value-loss",
+      "pageType": "ownership_guide",
+      "contentSlug": "authority-myth-resale-value-loss",
+      "path": "/ownership-guides/myth-resale-value-loss",
+      "canonicalUrl": "https://evsavari.com/ownership-guides/myth-resale-value-loss",
+      "title": "Do EVs Lose Resale Value Quickly? Myth vs Reality | EVSavari",
+      "h1": "Do EVs Lose Resale Value Quickly? Myth vs Reality",
+      "filePath": "public/seo-data/authority-myth-resale-value-loss.json"
     },
     {
       "id": "ownership-battery-health",

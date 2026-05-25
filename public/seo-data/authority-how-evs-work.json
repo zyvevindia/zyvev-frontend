@@ -1,0 +1,241 @@
+{
+  "seoPage": {
+    "slug": "authority-how-evs-work",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "how-evs-work",
+    "title": "How EVs Work — A Calm Beginner Guide for India | EVSavari",
+    "metaDescription": "How EVs Work — A Calm Beginner Guide for India — practical ownership guidance for Indian buyers.",
+    "intro": "Electric cars in India still feel new to many buyers. This guide explains how an EV moves, stores energy, and differs from petrol day-to-day — without promising zero hassle or unlimited range.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Beginner introduction",
+        "type": "introduction",
+        "paragraphs": [
+          "An electric vehicle uses a battery pack and an electric motor instead of a petrol engine. When you press the accelerator, the motor draws energy from the battery. When you slow down, many EVs recover some energy through regenerative braking.",
+          "For most owners, the meaningful change is not the motor alone — it is how you refuel (charge), plan range, and maintain the car over years."
+        ]
+      },
+      {
+        "id": "practical",
+        "title": "Practical explanation",
+        "type": "practical",
+        "bullets": [
+          "Home or workplace AC charging covers many commutes if parking allows it.",
+          "DC fast charging helps highway trips but should not be the only plan for daily life.",
+          "Range on the dashboard is an estimate — traffic, heat, and speed shift real km."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Ownership realism",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "EVs can lower running cost for predictable km, but upfront price, insurance, and charging setup still matter.",
+          "Apartment parking without a dedicated point often means slower adoption — plan charging before you shortlist models."
+        ]
+      },
+      {
+        "id": "concerns",
+        "title": "Common beginner concerns",
+        "type": "common_concerns",
+        "bullets": [
+          "Will the battery fail soon? — Modern packs have warranties; habits and heat still matter.",
+          "Is servicing zero? — Fewer moving parts, but tyres, brakes, coolant, and software updates remain.",
+          "Can any electrician install charging? — Prefer OEM-approved or certified installers."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions to avoid",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Every EV pays for itself in one year",
+            "reality": "Savings depend on km, tariff, and petrol prices — model carefully."
+          },
+          {
+            "myth": "More kWh always means better for you",
+            "reality": "A larger pack adds cost and weight — match range to your real commute."
+          },
+          {
+            "myth": "Public chargers will cover daily needs",
+            "reality": "Treat public DC as backup unless your parking cannot support AC."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "How this connects to compare",
+        "type": "compare_support",
+        "paragraphs": [
+          "After you understand basics, compare two or three model families on range bands, charging speed, and boot space — not marketing claims alone."
+        ],
+        "links": [
+          {
+            "label": "Open EV compare",
+            "href": "/compare"
+          },
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "Home charging guide",
+        "href": "/charging-guides/home-charging"
+      },
+      {
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      },
+      {
+        "step": 5,
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "how-evs-work",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/hyundai-kona-electric"
+      },
+      {
+        "rank": 2,
+        "slug": "bmw-ix1",
+        "displayName": "BMW Ix1",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/bmw-ix1"
+      },
+      {
+        "rank": 3,
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes Eqb",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mercedes-eqb"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-punch-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Charging access in your building may limit which models feel easy to own.",
+      "Highway-heavy users need honest DC planning — not just brochure range.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "Do EVs have gears?",
+        "answer": "Most consumer EVs use a single drive ratio — you drive like an automatic without gear shifts."
+      },
+      {
+        "question": "Can I drive an EV in heavy rain?",
+        "answer": "Yes with roadworthy equipment — avoid unsafe extension charging setups."
+      },
+      {
+        "question": "How often do I charge?",
+        "answer": "Many owners charge overnight every few days based on km — not necessarily every night."
+      },
+      {
+        "question": "Is an EV harder to drive?",
+        "answer": "Usually easier in city traffic — the learning curve is charging and range planning."
+      },
+      {
+        "question": "Where should I go next?",
+        "answer": "Shortlist models, then compare on EVSavari with your real commute km in mind."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "EV charging types explained",
+            "href": "/charging-guides/charging-types"
+          },
+          {
+            "label": "First-time buyer guide",
+            "href": "/ownership-guides/first-time-buyers"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/how-evs-work",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/how-evs-work",
+    "generatedAt": "2026-05-25T19:05:58.634Z"
+  }
+}

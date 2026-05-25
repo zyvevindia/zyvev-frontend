@@ -7,93 +7,9 @@ import { ensureArray, safeSlice } from "../utils/compareArrayUtils.js";
 import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
 import { INTELLIGENCE_DISCOVERY_PRESETS } from "../data/intelligenceDiscoveryPresets.js";
 
-/** Controlled authority clusters — no mass-generated pages. */
-export const AUTHORITY_GUIDE_TARGETS = Object.freeze([
-  {
-    id: "best_ev_under_10_lakh",
-    title: "Best EV under ₹10 lakh",
-    path: "/best-evs/under-10-lakh",
-    cluster: "best_ev_authority",
-    linkFrom: ["/discover/under-15-lakh", "/compare"],
-  },
-  {
-    id: "best_ev_city",
-    title: "Best EV for city driving",
-    path: "/discover/city-driving",
-    cluster: "discovery",
-    linkFrom: ["/compare", "/charging-guides/home-charging"],
-  },
-  {
-    id: "best_ev_highway",
-    title: "Best EV for highway driving",
-    path: "/discover/highway-evs",
-    cluster: "discovery",
-    linkFrom: ["/compare", "/ownership/highway-ownership"],
-  },
-  {
-    id: "best_ev_family",
-    title: "Best EV for family",
-    path: "/discover/family-friendly",
-    cluster: "discovery",
-    linkFrom: ["/compare", "/best-evs/large-family"],
-  },
-  {
-    id: "ev_charging_guide",
-    title: "EV charging guide",
-    path: "/charging-guides/home-charging",
-    cluster: "charging",
-    linkFrom: ["/compare", "/discover/apartment-living"],
-  },
-  {
-    id: "ev_ownership_cost",
-    title: "EV ownership cost guide",
-    path: "/ownership/running-cost",
-    cluster: "ownership",
-    linkFrom: ["/cars", "/compare"],
-  },
-  {
-    id: "ownership_reality",
-    title: "Ownership reality & TCO",
-    path: "/guides/ownership-running-cost",
-    cluster: "ownership_reality",
-    linkFrom: ["/compare", "/cars"],
-  },
-  {
-    id: "apartment_charging",
-    title: "Apartment & society charging",
-    path: "/guides/ownership-society-rwa",
-    cluster: "apartment",
-    linkFrom: ["/compare", "/discover/apartment-living"],
-  },
-  {
-    id: "city_vs_highway",
-    title: "City vs highway suitability",
-    path: "/discover/city-driving",
-    cluster: "suitability",
-    linkFrom: ["/compare", "/discover/highway-evs"],
-  },
-  {
-    id: "ev_beginner",
-    title: "EV beginner guidance",
-    path: "/discover/under-15-lakh",
-    cluster: "beginner",
-    linkFrom: ["/compare", "/cars"],
-  },
-  {
-    id: "family_practicality",
-    title: "Family EV practicality",
-    path: "/discover/family-friendly",
-    cluster: "family",
-    linkFrom: ["/compare", "/best-evs/large-family"],
-  },
-  {
-    id: "long_trip_guidance",
-    title: "Long-trip EV guidance",
-    path: "/guides/ownership-highway-ownership",
-    cluster: "highway",
-    linkFrom: ["/compare", "/discover/highway-evs"],
-  },
-]);
+/** Controlled authority clusters — sourced from src/content/authority/ */
+export { AUTHORITY_GUIDE_TARGETS } from "../content/authority/guideTargets.js";
+import { AUTHORITY_GUIDE_TARGETS } from "../content/authority/guideTargets.js";
 
 function clusterFromPath(path = "") {
   const p = String(path).toLowerCase();
@@ -248,6 +164,10 @@ export function buildSeoAuthorityReport(ctx = {}) {
   const usefulnessTotal = events.filter(
     (e) => e.type === "usefulness_feedback"
   ).length;
+  const usefulnessRate =
+    usefulnessTotal > 0
+      ? Math.round((usefulnessCount / usefulnessTotal) * 100)
+      : null;
 
   const weakAuthorityClusters = Object.entries(clusterCompleteness)
     .filter(([, c]) => c.score < 55)
@@ -301,6 +221,15 @@ export function buildSeoAuthorityReport(ctx = {}) {
     .filter(([, c]) => c.score < 60)
     .map(([id, c]) => ({ clusterId: id, score: c.score }));
 
+  const internalDiscoveryHealth =
+    (ctx.seoDiscipline?.orphanDiscoveryPaths?.length ?? 0) <= 2
+      ? "healthy"
+      : (ctx.seoDiscipline?.orphanDiscoveryPaths?.length ?? 0) <= 6
+        ? "watch"
+        : "weak";
+
+  const needsGuideSupport = weakCompare.filter((w) => w.severity !== "low");
+
   return {
     opportunities,
     strongestCompare,
@@ -316,7 +245,7 @@ export function buildSeoAuthorityReport(ctx = {}) {
     topicalAuthorityScore,
     clusterAuthorityScore,
     compareSeoMaturity,
-    needsGuideSupport: weakCompare.filter((w) => w.severity !== "low"),
+    needsGuideSupport,
     authorityDepthTrend,
     weakAuthorityClusters,
     underlinkedComparePages,
@@ -342,12 +271,7 @@ export function buildSeoAuthorityReport(ctx = {}) {
     lowEngagementAuthorityPages: guideOpportunities
       .filter((g) => g.guideOpportunityScore < 55)
       .slice(0, 8),
-    internalDiscoveryHealth:
-      (ctx.seoDiscipline?.orphanDiscoveryPaths?.length ?? 0) <= 2
-        ? "healthy"
-        : (ctx.seoDiscipline?.orphanDiscoveryPaths?.length ?? 0) <= 6
-          ? "watch"
-          : "weak",
+    internalDiscoveryHealth,
     weakDiscoveryPaths: safeSlice(
       ctx.seoDiscipline?.orphanDiscoveryPaths,
       0,

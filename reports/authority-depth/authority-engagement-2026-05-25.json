@@ -1,0 +1,456 @@
+{
+  "generatedAt": "2026-05-25T19:06:24.238Z",
+  "reportType": "authority-engagement",
+  "engagementScore": 85,
+  "pathways": {
+    "beginner": {
+      "total": 5,
+      "ready": 4,
+      "percent": 80
+    },
+    "charging": {
+      "total": 5,
+      "ready": 4,
+      "percent": 80
+    },
+    "ownership": {
+      "total": 5,
+      "ready": 5,
+      "percent": 100
+    },
+    "evMyths": {
+      "total": 5,
+      "ready": 4,
+      "percent": 80
+    }
+  },
+  "compareAuthorityDepth": {
+    "pairCount": 27,
+    "avgDepth": 100,
+    "weakPairs": [],
+    "missingOwnershipRealism": 0,
+    "missingBeginnerPath": 0,
+    "results": [
+      {
+        "compareSlug": "tata-nexon-ev-vs-mg-zs-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "tata-punch-ev-vs-tata-nexon-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "tata-curvv-ev-vs-byd-atto-3",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "mg-zs-ev-vs-byd-atto-3",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "nexon-ev-vs-mg-zs-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "byd-atto-3-vs-mg-zs-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "comet-ev-vs-tiago-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 8,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "tata-curvv-ev-vs-tata-nexon-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "mg-zs-ev-vs-hyundai-kona-electric",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "tata-tiago-ev-vs-citroen-ec3",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 8,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "mahindra-xuv400-vs-tata-nexon-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "kia-ev6-vs-byd-atto-3",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "bmw-ix1-vs-mercedes-eqb",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 5,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "mercedes-eqa-vs-bmw-ix1",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 5,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "volvo-ex40-vs-kia-ev6",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 5,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "mahindra-be-6-vs-mahindra-xuv400",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 5,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "mahindra-xev-9e-vs-mahindra-be-6",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 5,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "hyundai-kona-electric-vs-kia-ev6",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 5,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "tata-punch-ev-vs-mg-comet-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 8,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "citroen-ec3-vs-tata-tiago-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 8,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "tata-nexon-ev-vs-tata-curvv-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "tata-nexon-ev-vs-mahindra-xuv400",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "tata-punch-ev-vs-citroen-ec3",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 8,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      },
+      {
+        "compareSlug": "hyundai-kona-electric-vs-tata-nexon-ev",
+        "depthScore": 100,
+        "band": "strong",
+        "linkCount": 9,
+        "clusterCount": 3,
+        "gaps": [],
+        "hasBeginner": true,
+        "hasCharging": true,
+        "hasOwnership": true,
+        "hasMythSupport": false
+      }
+    ]
+  },
+  "topicsWithContinue": [
+    {
+      "id": "how-evs-work",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ev-vs-petrol-running-cost",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ev-maintenance-explained",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ev-battery-lifespan",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "home-charging-basics",
+      "continueCount": 4,
+      "routeReady": false
+    },
+    {
+      "id": "apartment-ev-suitability",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ev-charging-types-explained",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ev-ownership-for-beginners",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "home-charging-explained",
+      "continueCount": 4,
+      "routeReady": false
+    },
+    {
+      "id": "fast-vs-slow-charging",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "public-charging-guide",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "apartment-charging-setup",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ev-charging-cost-india",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "overnight-charging-safety",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "rain-water-charging-myths",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "extension-board-charging-risks",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ownership-running-cost-reality",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ownership-highway-reality",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ownership-society-rwa",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ownership-city-commute",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ownership-family",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ownership-battery-health",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "ev-myths-hub",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "myth-battery-dies-quickly",
+      "continueCount": 4,
+      "routeReady": true
+    },
+    {
+      "id": "myth-rain-flood-safety",
+      "continueCount": 4,
+      "routeReady": true
+    }
+  ],
+  "orphanAuthorityPages": [],
+  "summary": {
+    "avgPathwayReadiness": 85,
+    "weakComparePairs": 0
+  }
+}

@@ -1,5 +1,5 @@
 /**
- * Image fallback metrics — dev verbose, production deduped warnings.
+ * Image fallback metrics — dev verbose, production silent (metrics only).
  */
 
 import { devWarn } from "./devDiagnostics";
@@ -7,7 +7,7 @@ import { recordImageFallbackMetric } from "../ops/postLaunchMetrics.js";
 
 const logged = new Set();
 const COOLDOWN_MS = 60_000;
-const lastProdWarn = new Map();
+const lastProdMetric = new Map();
 
 export function logImageFallback({
   role = "listing",
@@ -30,15 +30,9 @@ export function logImageFallback({
   }
 
   const dedupeKey = `${slug}:${role}`;
-  const last = lastProdWarn.get(dedupeKey) || 0;
+  const last = lastProdMetric.get(dedupeKey) || 0;
   if (Date.now() - last < COOLDOWN_MS) return;
-  lastProdWarn.set(dedupeKey, Date.now());
+  lastProdMetric.set(dedupeKey, Date.now());
 
   recordImageFallbackMetric({ slug, role });
-
-  console.warn("[EVSavari Media] image fallback", {
-    slug: slug || "(unknown)",
-    role,
-    usedPlaceholder: !fallbackUrl || fallbackUrl.includes("fallback"),
-  });
 }

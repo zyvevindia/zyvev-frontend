@@ -1,0 +1,219 @@
+{
+  "seoPage": {
+    "slug": "authority-ev-maintenance",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "ev-maintenance-explained",
+    "title": "EV Maintenance Explained — What Still Needs Care in India | EVSavari",
+    "metaDescription": "EV Maintenance Explained — What Still Needs Care in India — practical ownership guidance for Indian buyers.",
+    "intro": "EV maintenance is often described as ‘zero service’. In reality, fewer engine items exist — but tyres, brakes, filters, coolant, and software updates still matter for safe ownership.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "What changes vs petrol",
+        "type": "introduction",
+        "paragraphs": [
+          "You generally skip oil changes and exhaust-related parts. The battery and motor still need monitoring through service schedules and warnings."
+        ]
+      },
+      {
+        "id": "practical",
+        "title": "Practical service checklist",
+        "type": "practical",
+        "bullets": [
+          "Tyre rotation and alignment — EV weight affects wear.",
+          "Brake fluid and pads — regen reduces use but does not eliminate service.",
+          "Cabin filter and wiper care — especially before monsoon.",
+          "Software updates — follow brand guidance at authorised centres."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Ownership realism",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Service network coverage in your city still matters — especially for warranty claims and high-voltage checks."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "EVs never need service",
+            "reality": "Schedules are lighter, not absent."
+          },
+          {
+            "myth": "Any workshop can service high-voltage systems",
+            "reality": "Use authorised networks for battery-related work."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Compare service access",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Service network guide",
+            "href": "/ownership-guides/service-network"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "Running cost guide",
+        "href": "/ownership-guides/running-cost"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "ev-maintenance-explained",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 2,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 3,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen Ec3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/citroen-ec3"
+      },
+      {
+        "rank": 4,
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra Xuv400",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-xuv400"
+      }
+    ],
+    "tradeoffs": [
+      "Out-of-town travel may need planning if service centres are sparse.",
+      "Independent garages may lack specialised EV tooling — confirm before purchase.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "How often should I service an EV?",
+        "answer": "Follow the brand schedule — often annual or km-based, lighter than many petrol cars."
+      },
+      {
+        "question": "Are brakes cheaper?",
+        "answer": "Often slower wear due to regen — still inspect regularly."
+      },
+      {
+        "question": "Does battery need ‘service’?",
+        "answer": "Health checks may be recommended — read warranty terms."
+      },
+      {
+        "question": "Monsoon preparation?",
+        "answer": "See monsoon driving guide for range and safety habits."
+      },
+      {
+        "question": "Compare next?",
+        "answer": "Shortlist brands with service presence in your city."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Battery lifespan",
+            "href": "/ownership-guides/battery-lifespan"
+          },
+          {
+            "label": "Low-maintenance picks",
+            "href": "/ownership-guides/low-maintenance"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/maintenance-basics",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/maintenance-basics",
+    "generatedAt": "2026-05-25T19:05:58.638Z"
+  }
+}

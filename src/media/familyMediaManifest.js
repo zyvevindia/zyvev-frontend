@@ -11,23 +11,19 @@ import { PRODUCTION_FAMILY_SLUGS } from "./productionFamilies.js";
 
 const FAMILIES = [...PRODUCTION_FAMILY_SLUGS];
 
+/**
+ * Core production assets only — optional gallery/interior/charging are not
+ * probed until verified (see catalogMediaAvailability.js).
+ */
 function familyMediaBlock(familySlug) {
   return {
     heroImage: familyCatalogAssetUrl(familySlug, "hero"),
     listingThumbnail: familyCatalogAssetUrl(familySlug, "listing-thumb"),
     compareThumbnail: familyCatalogAssetUrl(familySlug, "compare-thumb"),
-    ogImage: familyCatalogAssetUrl(familySlug, "og"),
-    gallery: [
-      familyCatalogUrl(familySlug, "exterior-1.jpg"),
-      familyCatalogUrl(familySlug, "exterior-2.jpg"),
-      familyCatalogUrl(familySlug, "exterior-3.jpg"),
-    ].filter(Boolean),
-    interior: [familyCatalogUrl(familySlug, "interior-1.jpg")].filter(
-      Boolean
-    ),
-    charging: [familyCatalogUrl(familySlug, "charging-port.jpg")].filter(
-      Boolean
-    ),
+    ogImage: null,
+    gallery: [],
+    interior: [],
+    charging: [],
   };
 }
 

@@ -3,6 +3,11 @@
  * Extensible for Bharat NCAP, Global NCAP, ADAS, airbags, structural scores.
  */
 
+import {
+  normalizeSafetyMetadata,
+  SAFETY_FIELD_STATUS,
+} from "../intelligence/safetyMetadata.js";
+
 const EMPTY_VALUES = new Set(["", "—", "N/A", "n/a", "na", "null", "undefined"]);
 
 /**
@@ -32,34 +37,40 @@ export function formatHeroAccelerationLabel(raw) {
  * @returns {string | null}
  */
 export function resolveVerifiedSafetyRating(catalogMeta) {
-  const safety = catalogMeta?.safety;
-  if (!safety || typeof safety !== "object") return null;
-
-  const bharat = safety.bharatNcap;
-  if (bharat?.stars != null && Number.isFinite(Number(bharat.stars))) {
-    const stars = Number(bharat.stars);
+  const normalized = normalizeSafetyMetadata(catalogMeta?.safety);
+  const bharat = normalized.bharatNcap;
+  if (
+    bharat.status === SAFETY_FIELD_STATUS.VERIFIED &&
+    bharat.stars != null
+  ) {
     const suffix = bharat.ratingYear ? ` (${bharat.ratingYear})` : "";
-    return `${stars}★ Bharat NCAP${suffix}`;
+    return `${bharat.stars}★ Bharat NCAP${suffix}`;
   }
 
-  const global = safety.globalNcap;
-  if (global?.stars != null && Number.isFinite(Number(global.stars))) {
-    const stars = Number(global.stars);
+  const global = normalized.globalNcap;
+  if (
+    global.status === SAFETY_FIELD_STATUS.VERIFIED &&
+    global.stars != null
+  ) {
     const suffix = global.ratingYear ? ` (${global.ratingYear})` : "";
-    return `${stars}★ Global NCAP${suffix}`;
+    return `${global.stars}★ Global NCAP${suffix}`;
   }
 
-  const adas = safety.adas;
-  if (adas?.level != null && adas?.verified === true) {
+  const adas = normalized.adas;
+  if (
+    adas.status === SAFETY_FIELD_STATUS.VERIFIED &&
+    adas.level != null
+  ) {
     return `ADAS Level ${adas.level}`;
   }
 
+  const structural = catalogMeta?.safety?.structuralScore;
   if (
-    safety.structuralScore != null &&
-    Number.isFinite(Number(safety.structuralScore)) &&
-    safety.structuralScoreVerified === true
+    structural != null &&
+    Number.isFinite(Number(structural)) &&
+    catalogMeta?.safety?.structuralScoreVerified === true
   ) {
-    return `Structural safety ${Number(safety.structuralScore)}/100`;
+    return `Structural safety ${Number(structural)}/100`;
   }
 
   return null;

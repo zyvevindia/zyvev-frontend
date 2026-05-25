@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2026-05-25T17:35:04.300Z",
+  "vehicleCount": 11,
+  "pairCount": 12,
+  "vehicleAudits": [
+    {
+      "slug": "tata-nexon-ev",
+      "name": "Nexon EV",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "tata-punch-ev",
+      "name": "Punch EV",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "tata-tiago-ev",
+      "name": "Tiago EV",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "name": "Curvv EV",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "mg-comet-ev",
+      "name": "Comet EV",
+      "issues": [
+        {
+          "code": "missing_charging_intel",
+          "field": "charging"
+        },
+        {
+          "code": "missing_charging_spec"
+        }
+      ],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "mg-zs-ev",
+      "name": "ZS EV",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "mahindra-be-6",
+      "name": "BE 6",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "name": "XEV 9e",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "mahindra-xuv400",
+      "name": "XUV400",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "byd-atto-3",
+      "name": "Atto 3",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    },
+    {
+      "slug": "hyundai-kona-electric",
+      "name": "Kona Electric",
+      "issues": [],
+      "warnings": [],
+      "softenedExplanations": [],
+      "scoreConfidence": "low"
+    }
+  ],
+  "pairAudits": [
+    {
+      "pairSlug": "nexon-ev-vs-mg-zs-ev",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "incomplete_catalog_pair",
+        "low_confidence_scores"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 1
+    },
+    {
+      "pairSlug": "comet-ev-vs-tiago-ev",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "incomplete_catalog_pair"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 0
+    },
+    {
+      "pairSlug": "tata-punch-ev-vs-tata-nexon-ev",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "low_confidence_scores"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 2
+    },
+    {
+      "pairSlug": "tata-curvv-ev-vs-tata-nexon-ev",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "low_confidence_scores"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 2
+    },
+    {
+      "pairSlug": "mg-zs-ev-vs-hyundai-kona-electric",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "low_confidence_scores"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 2
+    },
+    {
+      "pairSlug": "byd-atto-3-vs-mg-zs-ev",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "low_confidence_scores"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 2
+    },
+    {
+      "pairSlug": "tata-tiago-ev-vs-citroen-ec3",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "incomplete_catalog_pair",
+        "low_confidence_scores"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 1
+    },
+    {
+      "pairSlug": "mahindra-xuv400-vs-tata-nexon-ev",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "low_confidence_scores"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 2
+    },
+    {
+      "pairSlug": "kia-ev6-vs-byd-atto-3",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "incomplete_catalog_pair",
+        "low_confidence_scores"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 1
+    },
+    {
+      "pairSlug": "bmw-ix1-vs-mercedes-eqb",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "incomplete_catalog_pair"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 0
+    },
+    {
+      "pairSlug": "mercedes-eqa-vs-bmw-ix1",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "incomplete_catalog_pair"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 0
+    },
+    {
+      "pairSlug": "volvo-ex40-vs-kia-ev6",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "incomplete_catalog_pair"
+      ],
+      "credibilityWarnings": [],
+      "vehicleCount": 0
+    }
+  ],
+  "summary": {
+    "vehiclesWithIssues": 1,
+    "pairsNeedingReview": 12,
+    "weakExplanationCount": 0
+  }
+}

@@ -15,6 +15,8 @@ export default function DetailSeoDiscovery({
   bodyType = "",
   priceInr = 0,
   peerFamilies = [],
+  evIntelligence = null,
+  catalogMeta = null,
 }) {
   const sections = buildVehicleDiscoveryLinkSections({
     familySlug,
@@ -24,6 +26,8 @@ export default function DetailSeoDiscovery({
     bodyType,
     priceInr,
     peerFamilies,
+    evIntelligence,
+    catalogMeta,
   });
 
   if (!sections.length) {

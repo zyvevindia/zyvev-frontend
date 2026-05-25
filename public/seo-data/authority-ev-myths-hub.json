@@ -1,0 +1,219 @@
+{
+  "seoPage": {
+    "slug": "authority-ev-myths-hub",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "ev-myths-hub",
+    "title": "EV Myths vs Reality — Calm Guide for Indian Buyers | EVSavari",
+    "metaDescription": "EV Myths vs Reality — Calm Guide for Indian Buyers — practical ownership guidance for Indian buyers.",
+    "intro": "Social media amplifies extreme EV stories. This hub separates common myths from practical reality — with limitations acknowledged — so you can compare models with less anxiety.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Why myths spread",
+        "type": "introduction",
+        "paragraphs": [
+          "EVs are new to many Indian households. A single viral fire clip or one bad charging experience gets shared as if it applies to every model.",
+          "Use these short explainers before you reject — or buy — an EV based on fear alone."
+        ]
+      },
+      {
+        "id": "myth-index",
+        "title": "Explore by concern",
+        "type": "practical",
+        "links": [
+          {
+            "label": "Do batteries die quickly?",
+            "href": "/ownership-guides/myth-battery-dies-quickly"
+          },
+          {
+            "label": "Rain and flood safety",
+            "href": "/ownership-guides/myth-rain-flood-safety"
+          },
+          {
+            "label": "Fire risk",
+            "href": "/ownership-guides/myth-fire-risk"
+          },
+          {
+            "label": "Highway practicality",
+            "href": "/ownership-guides/myth-highway-practicality"
+          },
+          {
+            "label": "Apartment charging",
+            "href": "/ownership-guides/myth-apartment-charging-impossible"
+          },
+          {
+            "label": "Maintenance cost",
+            "href": "/ownership-guides/myth-maintenance-expensive"
+          },
+          {
+            "label": "Battery replacement cost",
+            "href": "/ownership-guides/myth-battery-replacement-cost"
+          },
+          {
+            "label": "Resale value",
+            "href": "/ownership-guides/myth-resale-value-loss"
+          }
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "What we will not claim",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "EVs are not perfect for every parking situation or budget. Our goal is accurate expectations — not winning an argument online."
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Next step: compare with context",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "First-time buyer guide",
+            "href": "/ownership-guides/first-time-buyers"
+          },
+          {
+            "label": "Open compare",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [],
+    "continueLearning": [
+      {
+        "step": 2,
+        "label": "Battery myth",
+        "href": "/ownership-guides/myth-battery-dies-quickly"
+      },
+      {
+        "step": 3,
+        "label": "Apartment charging myth",
+        "href": "/ownership-guides/myth-apartment-charging-impossible"
+      },
+      {
+        "step": 4,
+        "label": "Highway myth",
+        "href": "/ownership-guides/myth-highway-practicality"
+      },
+      {
+        "step": 5,
+        "label": "Compare with context",
+        "href": "/compare"
+      }
+    ],
+    "learningPathwayId": "ev_myths",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "ev-myths-hub",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-punch-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/hyundai-kona-electric"
+      },
+      {
+        "rank": 4,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/kia-ev6"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Should I believe every negative EV post?",
+        "answer": "Treat viral clips as signals to research — not final verdicts on all EVs."
+      },
+      {
+        "question": "Are EVs ready for India?",
+        "answer": "Many owners succeed in cities with planned charging — others wait until parking is solved."
+      },
+      {
+        "question": "Where to start?",
+        "answer": "Pick the myth closest to your worry, then shortlist two models to compare."
+      },
+      {
+        "question": "Is this legal or financial advice?",
+        "answer": "No — educational guidance only."
+      },
+      {
+        "question": "How does EVSavari compare?",
+        "answer": "We show tradeoffs and label estimates — not paid winners."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Beginner: how EVs work",
+            "href": "/ownership-guides/how-evs-work"
+          },
+          {
+            "label": "Charging types",
+            "href": "/charging-guides/charging-types"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/ev-myths",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/ev-myths",
+    "generatedAt": "2026-05-25T19:05:58.659Z"
+  }
+}

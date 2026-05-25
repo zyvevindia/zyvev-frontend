@@ -1,0 +1,205 @@
+{
+  "seoPage": {
+    "slug": "authority-extension-risks",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "extension-board-charging-risks",
+    "title": "Extension Board EV Charging Risks — Why Shortcuts Fail | EVSavari",
+    "metaDescription": "Extension Board EV Charging Risks — Why Shortcuts Fail — practical charging guidance for Indian buyers.",
+    "intro": "Running a portable charger through a household extension board is a common unsafe shortcut. This guide explains fire and overload risk — and safer paths for Indian homes and apartments.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "The shortcut many try",
+        "type": "introduction",
+        "paragraphs": [
+          "Long cables through cheap boards can overheat, especially under continuous EV loads. Certified wallboxes or dedicated points are designed for sustained draw."
+        ]
+      },
+      {
+        "id": "charging-safety",
+        "title": "What can go wrong",
+        "type": "charging_safety",
+        "bullets": [
+          "Underrated cable gauge and poor contacts build heat.",
+          "Shared circuits with ACs/geysers trip or overheat.",
+          "Rain exposure on indoor-rated gear raises shock risk."
+        ]
+      },
+      {
+        "id": "practical",
+        "title": "Safer alternatives",
+        "type": "practical",
+        "bullets": [
+          "Get a professional load assessment and dedicated point.",
+          "In apartments, pursue society-approved install or vetted shared points.",
+          "Until then, use reputable public AC/DC — not unsafe wiring."
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Still unsure?",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Overnight safety guide",
+            "href": "/charging-guides/overnight-safety"
+          },
+          {
+            "label": "Apartment setup",
+            "href": "/charging-guides/apartment-setup"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Home charging",
+        "href": "/charging-guides/home-charging"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "extension-board-charging-risks",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra Xev 9e",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 2,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-tiago-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen Ec3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/citroen-ec3"
+      }
+    ],
+    "tradeoffs": [
+      "Safer install has upfront cost — weigh it against fuel savings over years, not weeks.",
+      "Waiting for RWA approval is slower than a shortcut — but reduces serious risk.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "Is any extension board okay for one night?",
+        "answer": "Risk remains — EV loads are sustained, not like briefly plugging a laptop."
+      },
+      {
+        "question": "Can society ban EV charging?",
+        "answer": "Policies vary — engage RWAs with certified plans."
+      },
+      {
+        "question": "Portable charger without wallbox?",
+        "answer": "Still needs a suitable dedicated circuit — ask an electrician."
+      },
+      {
+        "question": "Public charging instead?",
+        "answer": "Often safer than unsafe home wiring until proper install exists."
+      },
+      {
+        "question": "Next step?",
+        "answer": "Read home charging guide and compare models you can charge safely."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Overnight safety",
+            "href": "/charging-guides/overnight-safety"
+          },
+          {
+            "label": "Society & RWA",
+            "href": "/ownership-guides/society-rwa"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/charging-guides/extension-board-risks",
+    "canonicalUrl": "https://evsavari.com/charging-guides/extension-board-risks",
+    "generatedAt": "2026-05-25T19:05:58.647Z"
+  }
+}

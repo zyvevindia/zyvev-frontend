@@ -1,0 +1,221 @@
+{
+  "seoPage": {
+    "slug": "authority-myth-resale-value-loss",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "myth-resale-value-loss",
+    "title": "Do EVs Lose Resale Value Quickly? Myth vs Reality | EVSavari",
+    "metaDescription": "Do EVs Lose Resale Value Quickly? Myth vs Reality — practical ownership guidance for Indian buyers.",
+    "intro": "The myth: EV resale is always terrible. The reality: the used EV market is still maturing — some models hold value well; others fall faster when new tech or charging worry dominates.",
+    "editorialSections": [
+      {
+        "id": "myth-intro",
+        "title": "The myth",
+        "type": "introduction",
+        "paragraphs": [
+          "Early adopters faced thin used markets. Today, more data exists — but EV resale still varies more than mature petrol segments."
+        ]
+      },
+      {
+        "id": "reality",
+        "title": "Practical reality",
+        "type": "practical",
+        "bullets": [
+          "Battery health documentation helps used pricing.",
+          "Popular city models with strong service may retain better.",
+          "Rapid new launches can pressure older variants."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Plan your hold period",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "If you swap cars every 3–4 years, research resale for your exact variant now — not after purchase."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "All EVs are worthless used",
+            "reality": "Demand exists for well-documented city commuters."
+          },
+          {
+            "myth": "Resale equals petrol curves",
+            "reality": "EV secondary markets are younger — expect volatility."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Ownership cost context",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Resale value guide",
+            "href": "/ownership-guides/resale-value"
+          },
+          {
+            "label": "Running cost guide",
+            "href": "/ownership-guides/running-cost"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "step": 2,
+        "label": "Battery myth",
+        "href": "/ownership-guides/myth-battery-dies-quickly"
+      },
+      {
+        "step": 3,
+        "label": "Apartment charging myth",
+        "href": "/ownership-guides/myth-apartment-charging-impossible"
+      },
+      {
+        "step": 4,
+        "label": "Highway myth",
+        "href": "/ownership-guides/myth-highway-practicality"
+      }
+    ],
+    "learningPathwayId": "ev_myths",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "myth-resale-value-loss",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-zs-ev",
+        "displayName": "MG Zs EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-zs-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/hyundai-kona-electric"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra Xuv400",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-xuv400"
+      },
+      {
+        "rank": 4,
+        "slug": "bmw-ix1",
+        "displayName": "BMW Ix1",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/bmw-ix1"
+      }
+    ],
+    "tradeoffs": [
+      "No EV removes every constraint — charging access and km pattern still decide fit.",
+      "Outcomes vary by model, city, and usage — verify warranty and service terms locally."
+    ],
+    "faq": [
+      {
+        "question": "Will I lose more than petrol?",
+        "answer": "Depends on model, km, battery perception, and local demand — research your variant."
+      },
+      {
+        "question": "Improve resale?",
+        "answer": "Service history, battery health reports, and realistic km."
+      },
+      {
+        "question": "Lease vs buy?",
+        "answer": "Leasing shifts resale risk — compare total cost."
+      },
+      {
+        "question": "Buy used instead?",
+        "answer": "See used EV buying guide — verify pack and warranty."
+      },
+      {
+        "question": "Compare?",
+        "answer": "Balance running savings vs resale uncertainty for your hold period."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Insurance & TCO",
+            "href": "/ownership-guides/insurance-tco"
+          },
+          {
+            "label": "Battery replacement myth",
+            "href": "/ownership-guides/myth-battery-replacement-cost"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/myth-resale-value-loss",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/myth-resale-value-loss",
+    "generatedAt": "2026-05-25T19:05:58.671Z"
+  }
+}

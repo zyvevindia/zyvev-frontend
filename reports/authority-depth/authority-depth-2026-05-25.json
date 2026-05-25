@@ -1,0 +1,327 @@
+{
+  "generatedAt": "2026-05-25T19:06:34.527Z",
+  "reportType": "authority-depth",
+  "depthScore": 80,
+  "concernCoverage": {
+    "score": 100,
+    "covered": [
+      "apartment_charging",
+      "office_commute",
+      "family_practicality",
+      "long_distance",
+      "first_time_hesitation",
+      "charging_anxiety",
+      "range_anxiety",
+      "battery_anxiety",
+      "resale_anxiety",
+      "safety_anxiety"
+    ],
+    "gaps": []
+  },
+  "beginnerCompleteness": {
+    "beginnerReady": 7,
+    "beginnerTotal": 8,
+    "mythsReady": 8,
+    "mythsTotal": 8,
+    "completenessPercent": 94
+  },
+  "mythClusterDepth": 72,
+  "avgTopicRelations": 1,
+  "thinClusters": [],
+  "mythPages": [
+    {
+      "id": "myth-battery-dies-quickly",
+      "path": "/ownership-guides/myth-battery-dies-quickly",
+      "routeReady": true
+    },
+    {
+      "id": "myth-rain-flood-safety",
+      "path": "/ownership-guides/myth-rain-flood-safety",
+      "routeReady": true
+    },
+    {
+      "id": "myth-fire-risk",
+      "path": "/ownership-guides/myth-fire-risk",
+      "routeReady": true
+    },
+    {
+      "id": "myth-highway-practicality",
+      "path": "/ownership-guides/myth-highway-practicality",
+      "routeReady": true
+    },
+    {
+      "id": "myth-apartment-charging-impossible",
+      "path": "/ownership-guides/myth-apartment-charging-impossible",
+      "routeReady": true
+    },
+    {
+      "id": "myth-maintenance-expensive",
+      "path": "/ownership-guides/myth-maintenance-expensive",
+      "routeReady": true
+    },
+    {
+      "id": "myth-battery-replacement-cost",
+      "path": "/ownership-guides/myth-battery-replacement-cost",
+      "routeReady": true
+    },
+    {
+      "id": "myth-resale-value-loss",
+      "path": "/ownership-guides/myth-resale-value-loss",
+      "routeReady": true
+    }
+  ],
+  "hubReady": true,
+  "topicRelations": [
+    {
+      "id": "how-evs-work",
+      "cluster": "beginner_education",
+      "path": "/ownership-guides/how-evs-work",
+      "relatedIds": [
+        "ev-charging-types-explained",
+        "myth-battery-dies-quickly",
+        "ev-ownership-for-beginners"
+      ],
+      "relatedCount": 3
+    },
+    {
+      "id": "ev-vs-petrol-running-cost",
+      "cluster": "beginner_education",
+      "path": "/ownership-guides/running-cost",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ev-maintenance-explained",
+      "cluster": "beginner_education",
+      "path": "/ownership-guides/maintenance-basics",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ev-battery-lifespan",
+      "cluster": "beginner_education",
+      "path": "/ownership-guides/battery-lifespan",
+      "relatedIds": [
+        "myth-battery-dies-quickly",
+        "myth-battery-replacement-cost",
+        "ownership-battery-health"
+      ],
+      "relatedCount": 3
+    },
+    {
+      "id": "home-charging-basics",
+      "cluster": "beginner_education",
+      "path": "/charging-guides/home-charging",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "apartment-ev-suitability",
+      "cluster": "beginner_education",
+      "path": "/ownership-guides/apartment-suitability",
+      "relatedIds": [
+        "apartment-charging-setup",
+        "myth-apartment-charging-impossible",
+        "ownership-society-rwa"
+      ],
+      "relatedCount": 3
+    },
+    {
+      "id": "ev-charging-types-explained",
+      "cluster": "beginner_education",
+      "path": "/charging-guides/charging-types",
+      "relatedIds": [
+        "home-charging-explained",
+        "fast-vs-slow-charging",
+        "myth-apartment-charging-impossible"
+      ],
+      "relatedCount": 3
+    },
+    {
+      "id": "ev-ownership-for-beginners",
+      "cluster": "beginner_education",
+      "path": "/ownership-guides/first-time-buyers",
+      "relatedIds": [
+        "how-evs-work",
+        "ev-myths-hub",
+        "apartment-ev-suitability"
+      ],
+      "relatedCount": 3
+    },
+    {
+      "id": "home-charging-explained",
+      "cluster": "charging_guides",
+      "path": "/charging-guides/home-charging",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "fast-vs-slow-charging",
+      "cluster": "charging_guides",
+      "path": "/charging-guides/fast-vs-slow",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "public-charging-guide",
+      "cluster": "charging_guides",
+      "path": "/charging-guides/public-charging",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "apartment-charging-setup",
+      "cluster": "charging_guides",
+      "path": "/charging-guides/apartment-setup",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ev-charging-cost-india",
+      "cluster": "charging_guides",
+      "path": "/ownership-guides/running-cost",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "overnight-charging-safety",
+      "cluster": "charging_guides",
+      "path": "/charging-guides/overnight-safety",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "rain-water-charging-myths",
+      "cluster": "charging_guides",
+      "path": "/ownership-guides/monsoon-driving",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "extension-board-charging-risks",
+      "cluster": "charging_guides",
+      "path": "/charging-guides/extension-board-risks",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ownership-running-cost-reality",
+      "cluster": "ownership_explainers",
+      "path": "/ownership-guides/running-cost",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ownership-highway-reality",
+      "cluster": "ownership_explainers",
+      "path": "/ownership-guides/highway-ownership",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ownership-society-rwa",
+      "cluster": "ownership_explainers",
+      "path": "/ownership-guides/society-rwa",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ownership-city-commute",
+      "cluster": "ownership_explainers",
+      "path": "/ownership-guides/city-commute",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ownership-family",
+      "cluster": "ownership_explainers",
+      "path": "/ownership-guides/family-ownership",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ownership-battery-health",
+      "cluster": "ownership_explainers",
+      "path": "/ownership-guides/battery-health",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "ev-myths-hub",
+      "cluster": "ev_myths",
+      "path": "/ownership-guides/ev-myths",
+      "relatedIds": [
+        "myth-battery-dies-quickly",
+        "myth-rain-flood-safety",
+        "myth-fire-risk",
+        "myth-highway-practicality",
+        "myth-apartment-charging-impossible",
+        "myth-maintenance-expensive",
+        "myth-battery-replacement-cost",
+        "myth-resale-value-loss"
+      ],
+      "relatedCount": 8
+    },
+    {
+      "id": "myth-battery-dies-quickly",
+      "cluster": "ev_myths",
+      "path": "/ownership-guides/myth-battery-dies-quickly",
+      "relatedIds": [
+        "ev-battery-lifespan",
+        "myth-battery-replacement-cost",
+        "myth-resale-value-loss"
+      ],
+      "relatedCount": 3
+    },
+    {
+      "id": "myth-rain-flood-safety",
+      "cluster": "ev_myths",
+      "path": "/ownership-guides/myth-rain-flood-safety",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "myth-fire-risk",
+      "cluster": "ev_myths",
+      "path": "/ownership-guides/myth-fire-risk",
+      "relatedIds": [
+        "myth-rain-flood-safety",
+        "overnight-charging-safety",
+        "extension-board-charging-risks"
+      ],
+      "relatedCount": 3
+    },
+    {
+      "id": "myth-highway-practicality",
+      "cluster": "ev_myths",
+      "path": "/ownership-guides/myth-highway-practicality",
+      "relatedIds": [
+        "ownership-highway-reality",
+        "public-charging-guide",
+        "myth-resale-value-loss"
+      ],
+      "relatedCount": 3
+    },
+    {
+      "id": "myth-apartment-charging-impossible",
+      "cluster": "ev_myths",
+      "path": "/ownership-guides/myth-apartment-charging-impossible",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "myth-maintenance-expensive",
+      "cluster": "ev_myths",
+      "path": "/ownership-guides/myth-maintenance-expensive",
+      "relatedIds": [],
+      "relatedCount": 0
+    },
+    {
+      "id": "myth-battery-replacement-cost",
+      "cluster": "ev_myths",
+      "path": "/ownership-guides/myth-battery-replacement-cost",
+      "relatedIds": [],
+      "relatedCount": 0
+    }
+  ]
+}

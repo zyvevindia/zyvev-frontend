@@ -1,0 +1,203 @@
+{
+  "seoPage": {
+    "slug": "authority-family-ownership",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "ev-family-ownership",
+    "title": "EV Ownership for Families in India — Space, Safety & Trips | EVSavari",
+    "metaDescription": "EV Ownership for Families in India — Space, Safety & Trips — practical ownership guidance for Indian buyers.",
+    "intro": "Family EV ownership adds space, safety, and weekend trip needs. This guide balances school runs with honest highway planning — not just brochure seating rows.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Family needs beyond kWh",
+        "type": "introduction",
+        "paragraphs": [
+          "Boot space, rear seat comfort, and safety features matter alongside range. Charging must fit school drops and office commutes."
+        ]
+      },
+      {
+        "id": "suitability",
+        "title": "Family suitability",
+        "type": "suitability",
+        "bullets": [
+          "Daily km within comfortable AC charging at home or work.",
+          "Weekend trips planned with DC stops where corridors are reliable.",
+          "ISOFIX and safety tech verified on the variant you buy — not another trim."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Realistic limitations",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Single-car families cannot ignore highway range — a small pack with five occupants and luggage may need more planning than marketing suggests."
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Family compare support",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Family-friendly discovery",
+            "href": "/discover/family-friendly"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Family discovery",
+        "href": "/discover/family-friendly"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "ev-family-ownership",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 2,
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/hyundai-kona-electric"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra Xuv400",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-xuv400"
+      },
+      {
+        "rank": 4,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/byd-atto-3"
+      }
+    ],
+    "tradeoffs": [
+      "Larger vehicles may be harder to park in dense cities.",
+      "Insurance and tyre costs scale with price band — budget holistically.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "Is one EV enough for a family?",
+        "answer": "Often yes in cities if charging is stable — highway-heavy families should plan carefully."
+      },
+      {
+        "question": "Child seat fit?",
+        "answer": "Test physical fit at the dealer — specs alone are not enough."
+      },
+      {
+        "question": "School bus replacement?",
+        "answer": "Works when km and timing match charging windows."
+      },
+      {
+        "question": "Two cars?",
+        "answer": "Many households keep one EV and one ICE during transition — that is normal."
+      },
+      {
+        "question": "Compare?",
+        "answer": "Use family discovery and compare boot and range bands."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Large family picks",
+            "href": "/best-evs/large-family"
+          },
+          {
+            "label": "Highway ownership",
+            "href": "/ownership-guides/highway-ownership"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/family-ownership",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/family-ownership",
+    "generatedAt": "2026-05-25T19:05:58.655Z"
+  }
+}

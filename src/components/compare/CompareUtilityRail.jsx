@@ -19,7 +19,16 @@ export default function CompareUtilityRail({
   cars = [],
 }) {
   const methodology = recommendationLogic?.methodology;
-  const authorityLinks = buildCompareAuthorityLinks(cars);
+  const compareSlug =
+    metadata?.compareSlug ||
+    (String(sourcePage || "").match(/^\/compare\/([^/?]+)/)?.[1] ?? "");
+  const authorityLinks = buildCompareAuthorityLinks(cars, compareSlug);
+  const stillUnsureLinks = authorityLinks.filter(
+    (l) =>
+      l.href?.includes("/ownership-guides/") ||
+      l.href?.includes("/charging-guides/") ||
+      l.href?.startsWith("/discover/")
+  );
   const leadNote = buildCompareToLeadConfidenceNote(metadata?.compareDepth || cars.length);
 
   return (
@@ -72,6 +81,57 @@ export default function CompareUtilityRail({
             </span>
           ))}
         </nav>
+      ) : null}
+
+      {stillUnsureLinks.length > 0 ? (
+        <div
+          style={{
+            marginTop: 14,
+            padding: "12px 14px",
+            background: "#f8fafc",
+            borderRadius: 8,
+            border: "1px solid #e2e8f0",
+          }}
+        >
+          <p
+            style={{
+              margin: "0 0 8px",
+              fontSize: "0.8rem",
+              fontWeight: 600,
+              color: "#334155",
+            }}
+          >
+            Still unsure?
+          </p>
+          <p
+            style={{
+              margin: "0 0 8px",
+              fontSize: "0.75rem",
+              color: "#64748b",
+              lineHeight: 1.5,
+            }}
+          >
+            Before you decide: read a short myth-buster or ownership explainer that matches
+            your worry (charging, apartment, highway, or battery).
+          </p>
+          <ul
+            style={{
+              margin: 0,
+              paddingLeft: "1.1rem",
+              fontSize: "0.8rem",
+              color: "#0369a1",
+            }}
+          >
+            <li style={{ marginBottom: 4, listStyle: "none", marginLeft: "-1.1rem" }}>
+              <Link to="/ownership-guides/ev-myths">EV myths vs reality hub</Link>
+            </li>
+            {stillUnsureLinks.slice(0, 4).map((link) => (
+              <li key={link.href} style={{ marginBottom: 4 }}>
+                <Link to={link.href}>{link.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       ) : null}
 
       <UsefulnessFeedback

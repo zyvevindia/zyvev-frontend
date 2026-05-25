@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-05-25T18:55:02.579Z",
+  "reportType": "authority-beginner-completeness",
+  "cluster": "beginner_education",
+  "topics": [
+    {
+      "id": "how-evs-work",
+      "title": "How EVs work",
+      "readiness": "published",
+      "canonicalPath": "/ownership-guides/how-evs-work",
+      "routeReady": true,
+      "reviewSections": 6,
+      "compareSupportRelevance": "high",
+      "complete": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "gaps": []
+    },
+    {
+      "id": "ev-vs-petrol-running-cost",
+      "title": "EV vs petrol running cost",
+      "readiness": "published",
+      "canonicalPath": "/ownership-guides/running-cost",
+      "routeReady": true,
+      "reviewSections": 6,
+      "compareSupportRelevance": "high",
+      "complete": false,
+      "editorialScore": 55,
+      "editorialOk": false,
+      "gaps": [
+        "editorial_incomplete"
+      ]
+    },
+    {
+      "id": "ev-maintenance-explained",
+      "title": "EV maintenance explained",
+      "readiness": "published",
+      "canonicalPath": "/ownership-guides/maintenance-basics",
+      "routeReady": true,
+      "reviewSections": 6,
+      "compareSupportRelevance": "medium",
+      "complete": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "gaps": []
+    },
+    {
+      "id": "ev-battery-lifespan",
+      "title": "EV battery lifespan",
+      "readiness": "published",
+      "canonicalPath": "/ownership-guides/battery-lifespan",
+      "routeReady": true,
+      "reviewSections": 6,
+      "compareSupportRelevance": "high",
+      "complete": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "gaps": []
+    },
+    {
+      "id": "home-charging-basics",
+      "title": "Can EVs be charged at home?",
+      "readiness": "published",
+      "canonicalPath": "/charging-guides/home-charging",
+      "routeReady": false,
+      "reviewSections": 6,
+      "compareSupportRelevance": "high",
+      "complete": false,
+      "editorialScore": 25,
+      "editorialOk": false,
+      "gaps": [
+        "editorial_incomplete",
+        "no_live_route"
+      ]
+    },
+    {
+      "id": "apartment-ev-suitability",
+      "title": "Is an EV suitable for apartment living?",
+      "readiness": "published",
+      "canonicalPath": "/ownership-guides/apartment-suitability",
+      "routeReady": true,
+      "reviewSections": 6,
+      "compareSupportRelevance": "high",
+      "complete": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "gaps": []
+    },
+    {
+      "id": "ev-charging-types-explained",
+      "title": "EV charging types explained",
+      "readiness": "published",
+      "canonicalPath": "/charging-guides/charging-types",
+      "routeReady": true,
+      "reviewSections": 6,
+      "compareSupportRelevance": "high",
+      "complete": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "gaps": []
+    },
+    {
+      "id": "ev-ownership-for-beginners",
+      "title": "EV ownership for beginners",
+      "readiness": "published",
+      "canonicalPath": "/ownership-guides/first-time-buyers",
+      "routeReady": true,
+      "reviewSections": 6,
+      "compareSupportRelevance": "high",
+      "complete": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "gaps": []
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "complete": 6,
+    "completenessPercent": 75,
+    "needsReview": [
+      "ev-vs-petrol-running-cost",
+      "home-charging-basics"
+    ]
+  }
+}

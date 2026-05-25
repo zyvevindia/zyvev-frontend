@@ -13,6 +13,7 @@ import {
 } from "./slugs";
 
 import { vehicleDetailPath } from "../utils/vehicleRoutes";
+import { buildDetailAuthorityLinks } from "../content/authority/internalLinks.js";
 
 function slugToLabel(slug) {
   return String(slug || "")
@@ -49,6 +50,8 @@ export function findEditorialCompareLinks(familySlug, limit = 4) {
  * @param {string} [params.brand]
  * @param {string} [params.bodyType]
  * @param {number} [params.priceInr]
+ * @param {object} [params.evIntelligence]
+ * @param {object} [params.catalogMeta]
  * @param {Array<{ familySlug: string, name?: string, brand?: string, price?: number, bodyType?: string }>} [params.peerFamilies]
  */
 export function buildVehicleDiscoveryLinkSections({
@@ -59,6 +62,8 @@ export function buildVehicleDiscoveryLinkSections({
   bodyType = "",
   priceInr = 0,
   peerFamilies = [],
+  evIntelligence = null,
+  catalogMeta = null,
 }) {
   const family = normalizeVehicleSlug(familySlug);
   const sections = [];
@@ -134,6 +139,22 @@ export function buildVehicleDiscoveryLinkSections({
 
     pick(sameBody, "Same body type", "same-body-type");
     pick(samePrice, "Similar price range", "same-price");
+  }
+
+  const authorityLinks = buildDetailAuthorityLinks({
+    evIntelligence,
+    catalogMeta,
+    familySlug: family,
+  });
+  if (authorityLinks.length) {
+    sections.push({
+      id: "authority-guides",
+      title: "EV guides & ownership",
+      links: authorityLinks.map((l) => ({
+        label: l.label,
+        href: l.href,
+      })),
+    });
   }
 
   sections.push({

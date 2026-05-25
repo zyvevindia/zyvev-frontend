@@ -1,0 +1,221 @@
+{
+  "seoPage": {
+    "slug": "authority-myth-rain-flood-safety",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "myth-rain-flood-safety",
+    "title": "Are EVs Safe in Rain and Floods? Myth vs Reality | EVSavari",
+    "metaDescription": "Are EVs Safe in Rain and Floods? Myth vs Reality — practical ownership guidance for Indian buyers.",
+    "intro": "The myth: EVs are unsafe in monsoon. The reality: roadworthy EVs meet insulation standards — but deep flooding is dangerous for any vehicle, petrol or electric.",
+    "editorialSections": [
+      {
+        "id": "myth-intro",
+        "title": "The myth",
+        "type": "introduction",
+        "paragraphs": [
+          "Rainy-season posts suggest EVs shock easily or fail in puddles. Certified high-voltage systems are designed with weather in mind — misuse still creates risk."
+        ]
+      },
+      {
+        "id": "reality",
+        "title": "Practical reality",
+        "type": "practical",
+        "bullets": [
+          "Normal rain driving is part of everyday ownership for many Indian EV users.",
+          "Avoid driving through deep, moving flood water — same guidance as petrol cars.",
+          "Charging equipment must be rated and installed for its location (covered, outdoor-rated, etc.)."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "When caution is wise",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Submerged pack damage can be serious and expensive — insurance and safety rules apply to any vehicle type."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "You cannot charge in rain",
+            "reality": "Rated outdoor gear exists — follow OEM and installer guidance."
+          },
+          {
+            "myth": "EVs always short in puddles",
+            "reality": "Roadworthy systems are tested — avoid unapproved wiring."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Related guides",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Monsoon driving",
+            "href": "/ownership-guides/monsoon-driving"
+          },
+          {
+            "label": "Overnight charging safety",
+            "href": "/charging-guides/overnight-safety"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "step": 2,
+        "label": "Battery myth",
+        "href": "/ownership-guides/myth-battery-dies-quickly"
+      },
+      {
+        "step": 3,
+        "label": "Apartment charging myth",
+        "href": "/ownership-guides/myth-apartment-charging-impossible"
+      },
+      {
+        "step": 4,
+        "label": "Highway myth",
+        "href": "/ownership-guides/myth-highway-practicality"
+      }
+    ],
+    "learningPathwayId": "ev_myths",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "myth-rain-flood-safety",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes Eqb",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mercedes-eqb"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-tiago-ev"
+      }
+    ],
+    "tradeoffs": [
+      "No EV removes every constraint — charging access and km pattern still decide fit.",
+      "Outcomes vary by model, city, and usage — verify warranty and service terms locally."
+    ],
+    "faq": [
+      {
+        "question": "Can I drive in heavy rain?",
+        "answer": "Yes with a maintained roadworthy car — avoid deep floods."
+      },
+      {
+        "question": "Is home charging safe in monsoon?",
+        "answer": "Use certified install — not ad-hoc extensions."
+      },
+      {
+        "question": "What if water enters the cabin?",
+        "answer": "Stop, assess, and follow insurer/OEM guidance — do not DIY high-voltage work."
+      },
+      {
+        "question": "Are floods different from rain?",
+        "answer": "Yes — deep flooding is a serious hazard for any vehicle."
+      },
+      {
+        "question": "Compare next?",
+        "answer": "Factor monsoon range habits when you compare range estimates."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Rain range impact",
+            "href": "/ownership-guides/rain-range"
+          },
+          {
+            "label": "Fire risk myth",
+            "href": "/ownership-guides/myth-fire-risk"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/myth-rain-flood-safety",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/myth-rain-flood-safety",
+    "generatedAt": "2026-05-25T19:05:58.662Z"
+  }
+}

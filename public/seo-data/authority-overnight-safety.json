@@ -1,0 +1,211 @@
+{
+  "seoPage": {
+    "slug": "authority-overnight-safety",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "overnight-charging-safety",
+    "title": "Overnight EV Charging Safety — Home & Society Basics | EVSavari",
+    "metaDescription": "Overnight EV Charging Safety — Home & Society Basics — practical charging guidance for Indian buyers.",
+    "intro": "Overnight AC charging is common in India. This guide covers practical safety — wiring, certified hardware, and rain — without fearmongering or unsafe shortcuts.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Why overnight AC is popular",
+        "type": "introduction",
+        "paragraphs": [
+          "Long parking windows at home or work suit AC charging — you wake up with enough km for the day without waiting at public stations."
+        ]
+      },
+      {
+        "id": "charging-safety",
+        "title": "Safety checklist",
+        "type": "charging_safety",
+        "bullets": [
+          "Dedicated circuit and earthing checked by a qualified installer.",
+          "OEM-approved or certified wallbox — avoid makeshift extension boards.",
+          "Society cabling audited before shared points go live.",
+          "Stop using damaged cables or adapters."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Rain and overnight myths",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "You cannot charge in rain",
+            "reality": "Rated outdoor equipment is designed for weather — follow install guidance."
+          },
+          {
+            "myth": "Any 15A socket is identical",
+            "reality": "Load, earthing, and cable quality vary — get professional assessment."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Learn more",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Extension board risks",
+            "href": "/charging-guides/extension-board-risks"
+          },
+          {
+            "label": "Home charging guide",
+            "href": "/charging-guides/home-charging"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Home charging",
+        "href": "/charging-guides/home-charging"
+      },
+      {
+        "label": "Apartment setup",
+        "href": "/charging-guides/apartment-setup"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "overnight-charging-safety",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/byd-atto-3"
+      },
+      {
+        "rank": 2,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes Eqb",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mercedes-eqb"
+      }
+    ],
+    "tradeoffs": [
+      "Shared society points need clear usage rules to avoid overload.",
+      "Insurance and RWA approvals may take time — start early.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "Is overnight charging safe at home?",
+        "answer": "With certified install and proper wiring, it is a mainstream pattern — not DIY guesswork."
+      },
+      {
+        "question": "Can I use a regular extension board?",
+        "answer": "Avoid makeshift setups — see extension board risk guide."
+      },
+      {
+        "question": "Society basement charging?",
+        "answer": "Requires electrical audit and agreed load limits."
+      },
+      {
+        "question": "Should I charge to 100% every night?",
+        "answer": "Follow OEM guidance — many owners use a daily ceiling unless a long trip is next day."
+      },
+      {
+        "question": "Next?",
+        "answer": "Compare models with home AC kW that matches your parking plan."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Apartment setup",
+            "href": "/charging-guides/apartment-setup"
+          },
+          {
+            "label": "Monsoon habits",
+            "href": "/ownership-guides/monsoon-driving"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/charging-guides/overnight-safety",
+    "canonicalUrl": "https://evsavari.com/charging-guides/overnight-safety",
+    "generatedAt": "2026-05-25T19:05:58.646Z"
+  }
+}

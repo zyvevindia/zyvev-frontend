@@ -1,0 +1,222 @@
+{
+  "seoPage": {
+    "slug": "authority-ev-charging-types",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "ev-charging-types-explained",
+    "title": "EV Charging Types Explained — AC, DC & What You Actually Need | EVSavari",
+    "metaDescription": "EV Charging Types Explained — AC, DC & What You Actually Need — practical charging guidance for Indian buyers.",
+    "intro": "Confused by AC slow charging, DC fast charging, and connector names? This guide explains charging types in plain language for India buyers — focused on what fits your parking and commute.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Beginner introduction",
+        "type": "introduction",
+        "paragraphs": [
+          "Charging type is about speed and location: slow AC at home or work, faster DC at public stations. Your daily need is usually solved by AC if you can park long enough."
+        ]
+      },
+      {
+        "id": "practical",
+        "title": "AC vs DC in practice",
+        "type": "practical",
+        "bullets": [
+          "AC (often 3.3–7.4 kW home): overnight top-ups for city commutes.",
+          "DC fast (public): useful for trips and emergencies — not required every day for everyone.",
+          "Connector compatibility: confirm what your shortlisted model accepts before buying."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Charging convenience realism",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "If you cannot charge where you park, daily life depends on public infrastructure — that may be improving but is not uniform in every city."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Charging myths",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "You must DC fast charge daily",
+            "reality": "Most owners rely on AC for routine km."
+          },
+          {
+            "myth": "Any socket is fine",
+            "reality": "Uncertified extension setups carry fire risk — use proper equipment."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Compare with charging in mind",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Fast vs slow charging guide",
+            "href": "/charging-guides/fast-vs-slow"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Home charging",
+        "href": "/charging-guides/home-charging"
+      },
+      {
+        "label": "Apartment setup",
+        "href": "/charging-guides/apartment-setup"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      },
+      {
+        "step": 5,
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "ev-charging-types-explained",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-curvv-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes Eqb",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mercedes-eqb"
+      },
+      {
+        "rank": 4,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/kia-ev6"
+      }
+    ],
+    "tradeoffs": [
+      "Faster on-board charging hardware can cost more — match it to real travel, not brochure peaks.",
+      "Apartment owners should read society/RWA guidance before assuming home AC.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "What is AC charging?",
+        "answer": "Alternating current charging — typical home/workplace wallboxes and many society points."
+      },
+      {
+        "question": "What is DC fast charging?",
+        "answer": "Direct current at public stations for quicker sessions — useful on highways."
+      },
+      {
+        "question": "Do I need a fast charger at home?",
+        "answer": "Usually no — many Indian commutes suit overnight AC."
+      },
+      {
+        "question": "Will the wrong plug slow me down?",
+        "answer": "Yes — verify connector and on-board charger kW on your variant."
+      },
+      {
+        "question": "Next step?",
+        "answer": "Read fast vs slow guide, then compare models with your parking situation."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Home charging explained",
+            "href": "/charging-guides/home-charging"
+          },
+          {
+            "label": "Apartment charging setup",
+            "href": "/charging-guides/apartment-setup"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/charging-guides/charging-types",
+    "canonicalUrl": "https://evsavari.com/charging-guides/charging-types",
+    "generatedAt": "2026-05-25T19:05:58.636Z"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "seoPage": {
+    "slug": "authority-myth-fire-risk",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "myth-fire-risk",
+    "title": "Do EVs Catch Fire Easily? Myth vs Reality | EVSavari",
+    "metaDescription": "Do EVs Catch Fire Easily? Myth vs Reality — practical ownership guidance for Indian buyers.",
+    "intro": "The myth: EVs are inherently fire-prone. The reality: thermal incidents get disproportionate attention; causes are often investigated case-by-case — safety still requires proper repair and charging practice.",
+    "editorialSections": [
+      {
+        "id": "myth-intro",
+        "title": "The myth",
+        "type": "introduction",
+        "paragraphs": [
+          "High-profile fire videos create fear. All cars carry energy — EV incidents are visible in media but not the whole ownership story."
+        ]
+      },
+      {
+        "id": "reality",
+        "title": "Practical reality",
+        "type": "practical",
+        "bullets": [
+          "Use authorised service for battery or high-voltage work.",
+          "Avoid damage to the pack from scrapes or unauthorised modifications.",
+          "Follow recall and software advisories from the brand."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Limitations",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "When incidents occur, causes matter — charging setup, collision damage, or defects. Blanket fear is not a buying method."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Every EV is one spark away",
+            "reality": "Millions of km are driven daily — media highlights rare events."
+          },
+          {
+            "myth": "Home charging is always the cause",
+            "reality": "Investigations vary — certified install reduces risk."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Stay calm, stay informed",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Extension board risks",
+            "href": "/charging-guides/extension-board-risks"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "step": 2,
+        "label": "Battery myth",
+        "href": "/ownership-guides/myth-battery-dies-quickly"
+      },
+      {
+        "step": 3,
+        "label": "Apartment charging myth",
+        "href": "/ownership-guides/myth-apartment-charging-impossible"
+      },
+      {
+        "step": 4,
+        "label": "Highway myth",
+        "href": "/ownership-guides/myth-highway-practicality"
+      }
+    ],
+    "learningPathwayId": "ev_myths",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "myth-fire-risk",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 2,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen Ec3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/citroen-ec3"
+      },
+      {
+        "rank": 3,
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/hyundai-kona-electric"
+      },
+      {
+        "rank": 4,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-comet-ev"
+      }
+    ],
+    "tradeoffs": [
+      "No EV removes every constraint — charging access and km pattern still decide fit.",
+      "Outcomes vary by model, city, and usage — verify warranty and service terms locally."
+    ],
+    "faq": [
+      {
+        "question": "Are EVs less safe than petrol?",
+        "answer": "Roadworthy EVs meet safety standards — risk depends on use, damage, and maintenance."
+      },
+      {
+        "question": "Can I park in sun?",
+        "answer": "Normal parking is fine — follow OEM guidance for extreme heat."
+      },
+      {
+        "question": "Should I avoid fast charging?",
+        "answer": "Use DC when needed — follow brand guidance."
+      },
+      {
+        "question": "What after a crash?",
+        "answer": "Insurer and authorised workshop assessment — do not ignore pack inspections."
+      },
+      {
+        "question": "Next?",
+        "answer": "Compare safety features on variants you actually consider buying."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Rain safety myth",
+            "href": "/ownership-guides/myth-rain-flood-safety"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/myth-fire-risk",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/myth-fire-risk",
+    "generatedAt": "2026-05-25T19:05:58.663Z"
+  }
+}

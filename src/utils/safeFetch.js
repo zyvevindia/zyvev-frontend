@@ -5,6 +5,10 @@
 import { logApiRequest } from "./apiDiagnostics.js";
 import { logSlowApiRequest } from "./routePerformance.js";
 import { devWarn } from "../launch/devDiagnostics.js";
+import {
+  isSilentTelemetryUrl,
+  postTelemetrySilently,
+} from "./telemetryClient.js";
 
 /**
  * @param {string} url
@@ -16,6 +20,7 @@ export async function safeFetchJson(url, options = {}) {
     timeoutMs = 15000,
     fallback = null,
     label = url,
+    silent = isSilentTelemetryUrl(url),
     ...fetchOptions
   } = options;
 
@@ -32,7 +37,9 @@ export async function safeFetchJson(url, options = {}) {
     const durationMs = Date.now() - started;
 
     if (!res.ok) {
-      devWarn(`API ${label}: HTTP ${res.status}`);
+      if (!silent) {
+        devWarn(`API ${label}: HTTP ${res.status}`);
+      }
       logApiRequest({
         label,
         url,
@@ -40,6 +47,7 @@ export async function safeFetchJson(url, options = {}) {
         status: res.status,
         error: `HTTP ${res.status}`,
         durationMs,
+        silent,
       });
       return {
         ok: false,
@@ -73,7 +81,9 @@ export async function safeFetchJson(url, options = {}) {
       err?.name === "AbortError"
         ? "request_timeout"
         : err?.message || "network_error";
-    devWarn(`API ${label} failed:`, message);
+    if (!silent) {
+      devWarn(`API ${label} failed:`, message);
+    }
     logApiRequest({
       label,
       url,
@@ -81,6 +91,7 @@ export async function safeFetchJson(url, options = {}) {
       status: 0,
       error: message,
       durationMs,
+      silent,
     });
     return {
       ok: false,
@@ -121,10 +132,15 @@ export async function safeFetchJsonWithRetry(url, options = {}) {
  * Fire-and-forget POST/GET — never throws; logs failures only.
  */
 export async function safeFetchFireAndForget(url, options = {}) {
+  if (isSilentTelemetryUrl(url) || options.silent) {
+    await postTelemetrySilently(url, options);
+    return;
+  }
   try {
     await safeFetchJson(url, {
       ...options,
       timeoutMs: options.timeoutMs ?? 8000,
+      silent: options.silent ?? false,
     });
   } catch {
     /* safeFetchJson does not throw */

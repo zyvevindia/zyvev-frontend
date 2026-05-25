@@ -117,6 +117,7 @@ import {
   safeFetchJsonWithRetry,
 } from "../utils/safeFetch";
 import { getSafeImage } from "../utils/imageUtils";
+import { resolveRequestableGalleryImages } from "../utils/vehicleMedia";
 import { resolveHeroFourthQuickSpec } from "../utils/heroDetailMetrics";
 
 /* =========================================================
@@ -764,15 +765,7 @@ export default function CarDetails() {
         searchParams.get("variant")
     );
 
-  const galleryImages =
-    vehicle.galleryImages?.length > 0
-
-      ? vehicle.galleryImages
-
-      : [
-          vehicle.heroImage ||
-          vehicle.image,
-        ];
+  const galleryImages = resolveRequestableGalleryImages(vehicle);
 
   const displayImage =
     selectedColor?.image ||
@@ -1145,6 +1138,8 @@ export default function CarDetails() {
               vehicle.catalogMeta?.bodyType
             }
             priceInr={activePrice}
+            evIntelligence={vehicle.evIntelligence}
+            catalogMeta={vehicle.catalogMeta}
           />
 
           <DetailDealerAssistance

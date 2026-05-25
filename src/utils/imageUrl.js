@@ -5,6 +5,7 @@ import {
   isLegacyCatalogCdnUrl,
   isRejectedCatalogMediaRef,
 } from "../media/cloudinary.js";
+import { isSpeculativeOptionalCatalogUrl } from "../media/catalogMediaAvailability.js";
 
 /**
  * Guards against symbolic media role labels used as image src
@@ -75,6 +76,7 @@ export function isManifestGuessCatalogUrl(url) {
   ) {
     return true;
   }
+  if (isSpeculativeOptionalCatalogUrl(trimmed)) return true;
   return false;
 }
 
@@ -120,6 +122,14 @@ export function sanitizeImageUrl(url, options = {}) {
   if (!resolved || isRejectedCatalogMediaRef(resolved)) return null;
   if (isBlockedCatalogDeliveryUrl(resolved)) return null;
   if (isLegacyCatalogCdnUrl(resolved)) return null;
+  if (
+    isSpeculativeOptionalCatalogUrl(resolved, {
+      catalogMeta: options.catalogMeta,
+      familySlug: options.familySlug,
+    })
+  ) {
+    return null;
+  }
   return isValidImageUrl(resolved) ? resolved : null;
 }
 
@@ -130,11 +140,28 @@ export function sanitizeImageUrl(url, options = {}) {
 export function sanitizeCarImageFields(car) {
   if (!car || typeof car !== "object") return car;
 
+  const guard = {
+    catalogMeta: car.catalogMeta,
+    familySlug:
+      car.familySlug ||
+      car.catalogMeta?.familySlug ||
+      car.catalogMeta?.slug,
+  };
+
+  const sanitizeOpts = guard;
+
   const meta = car.catalogMeta;
   const media =
     meta && typeof meta === "object" && meta.media
       ? meta.media
       : null;
+
+  const cleanGallery = (items) =>
+    Array.isArray(items)
+      ? items
+          .map((u) => sanitizeImageUrl(u, sanitizeOpts))
+          .filter(Boolean)
+      : items;
 
   const cleanMeta =
     media && typeof media === "object"
@@ -142,21 +169,30 @@ export function sanitizeCarImageFields(car) {
           ...meta,
           media: {
             ...media,
-            heroImage: sanitizeImageUrl(media.heroImage),
-            listingThumbnail: sanitizeImageUrl(media.listingThumbnail),
-            compareThumbnail: sanitizeImageUrl(media.compareThumbnail),
-            ogImage: sanitizeImageUrl(media.ogImage),
+            heroImage: sanitizeImageUrl(media.heroImage, sanitizeOpts),
+            listingThumbnail: sanitizeImageUrl(
+              media.listingThumbnail,
+              sanitizeOpts
+            ),
+            compareThumbnail: sanitizeImageUrl(
+              media.compareThumbnail,
+              sanitizeOpts
+            ),
+            ogImage: sanitizeImageUrl(media.ogImage, sanitizeOpts),
+            gallery: cleanGallery(media.gallery),
+            interior: cleanGallery(media.interior),
           },
         }
       : meta;
 
   return {
     ...car,
-    image: sanitizeImageUrl(car.image),
-    heroImage: sanitizeImageUrl(car.heroImage),
-    listingThumbnail: sanitizeImageUrl(car.listingThumbnail),
-    compareThumbnail: sanitizeImageUrl(car.compareThumbnail),
-    ogImage: sanitizeImageUrl(car.ogImage),
+    image: sanitizeImageUrl(car.image, sanitizeOpts),
+    heroImage: sanitizeImageUrl(car.heroImage, sanitizeOpts),
+    listingThumbnail: sanitizeImageUrl(car.listingThumbnail, sanitizeOpts),
+    compareThumbnail: sanitizeImageUrl(car.compareThumbnail, sanitizeOpts),
+    ogImage: sanitizeImageUrl(car.ogImage, sanitizeOpts),
+    galleryImages: cleanGallery(car.galleryImages),
     ...(cleanMeta !== meta ? { catalogMeta: cleanMeta } : {}),
   };
 }

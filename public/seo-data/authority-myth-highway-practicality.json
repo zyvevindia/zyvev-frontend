@@ -1,0 +1,225 @@
+{
+  "seoPage": {
+    "slug": "authority-myth-highway-practicality",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "myth-highway-practicality",
+    "title": "Are EVs Practical for Highways? Myth vs Reality | EVSavari",
+    "metaDescription": "Are EVs Practical for Highways? Myth vs Reality — practical ownership guidance for Indian buyers.",
+    "intro": "The myth: EVs cannot do highways. The reality: many EVs handle inter-city trips with planning — some owners rarely need highways; others should choose range and charging accordingly.",
+    "editorialSections": [
+      {
+        "id": "myth-intro",
+        "title": "The myth",
+        "type": "introduction",
+        "paragraphs": [
+          "Short clips of stranded cars ignore the many completed highway trips with planned DC stops."
+        ]
+      },
+      {
+        "id": "reality",
+        "title": "Practical reality",
+        "type": "practical",
+        "bullets": [
+          "Plan DC stops using apps — verify live status.",
+          "Carry buffer range — heat and speed affect km.",
+          "Smaller packs need more frequent stops — match car to your trip pattern."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "When highways are hard",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Sparse corridors or tight timelines can make an EV stressful — that is a fit problem, not a universal EV failure."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Brochure range equals highway range",
+            "reality": "High speed and AC load reduce km."
+          },
+          {
+            "myth": "One failed charger means EVs fail",
+            "reality": "Planning alternate stops is part of ownership."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Highway-ready compare",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Highway ownership guide",
+            "href": "/ownership-guides/highway-ownership"
+          },
+          {
+            "label": "Public charging guide",
+            "href": "/charging-guides/public-charging"
+          },
+          {
+            "label": "Highway discovery",
+            "href": "/discover/highway-evs"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "step": 2,
+        "label": "Battery myth",
+        "href": "/ownership-guides/myth-battery-dies-quickly"
+      },
+      {
+        "step": 3,
+        "label": "Apartment charging myth",
+        "href": "/ownership-guides/myth-apartment-charging-impossible"
+      },
+      {
+        "step": 5,
+        "label": "Compare with context",
+        "href": "/compare"
+      }
+    ],
+    "learningPathwayId": "ev_myths",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "myth-highway-practicality",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-zs-ev",
+        "displayName": "MG Zs EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-zs-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 3,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen Ec3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/citroen-ec3"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-curvv-ev"
+      }
+    ],
+    "tradeoffs": [
+      "No EV removes every constraint — charging access and km pattern still decide fit.",
+      "Outcomes vary by model, city, and usage — verify warranty and service terms locally."
+    ],
+    "faq": [
+      {
+        "question": "Can I do Mumbai–Pune in an EV?",
+        "answer": "Many owners do with planning — confirm charger availability on your date."
+      },
+      {
+        "question": "Do I need the biggest battery?",
+        "answer": "Only if your trips need it — city-only owners may overpay for kWh."
+      },
+      {
+        "question": "How much buffer?",
+        "answer": "Experienced owners leave margin for heat, traffic, and charger queues."
+      },
+      {
+        "question": "Family trips?",
+        "answer": "See family ownership guide for space and charging stops."
+      },
+      {
+        "question": "Compare?",
+        "answer": "Compare highway usability and DC peak kW on shortlisted models."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Fast vs slow charging",
+            "href": "/charging-guides/fast-vs-slow"
+          },
+          {
+            "label": "City commute guide",
+            "href": "/ownership-guides/city-commute"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/myth-highway-practicality",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/myth-highway-practicality",
+    "generatedAt": "2026-05-25T19:05:58.665Z"
+  }
+}

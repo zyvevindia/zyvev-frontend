@@ -1,6 +1,6 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-05-25T07:25:19.464Z",
+  "generatedAt": "2026-05-25T19:06:00.487Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
@@ -259,12 +259,6 @@
       "changefreq": "weekly"
     },
     {
-      "loc": "https://evsavari.com/ownership-guides/first-time-buyers",
-      "path": "/ownership-guides/first-time-buyers",
-      "priority": 0.8,
-      "changefreq": "weekly"
-    },
-    {
       "loc": "https://evsavari.com/ownership-guides/easiest-first-ev",
       "path": "/ownership-guides/easiest-first-ev",
       "priority": 0.8,
@@ -279,6 +273,138 @@
     {
       "loc": "https://evsavari.com/ownership-guides/apartment-parking",
       "path": "/ownership-guides/apartment-parking",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/how-evs-work",
+      "path": "/ownership-guides/how-evs-work",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/charging-guides/charging-types",
+      "path": "/charging-guides/charging-types",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/maintenance-basics",
+      "path": "/ownership-guides/maintenance-basics",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/battery-lifespan",
+      "path": "/ownership-guides/battery-lifespan",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/charging-guides/fast-vs-slow",
+      "path": "/charging-guides/fast-vs-slow",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/charging-guides/public-charging",
+      "path": "/charging-guides/public-charging",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/charging-guides/overnight-safety",
+      "path": "/charging-guides/overnight-safety",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/charging-guides/extension-board-risks",
+      "path": "/charging-guides/extension-board-risks",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/charging-guides/apartment-setup",
+      "path": "/charging-guides/apartment-setup",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/apartment-suitability",
+      "path": "/ownership-guides/apartment-suitability",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/city-commute",
+      "path": "/ownership-guides/city-commute",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/family-ownership",
+      "path": "/ownership-guides/family-ownership",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/first-time-buyers",
+      "path": "/ownership-guides/first-time-buyers",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/ev-myths",
+      "path": "/ownership-guides/ev-myths",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/myth-battery-dies-quickly",
+      "path": "/ownership-guides/myth-battery-dies-quickly",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/myth-rain-flood-safety",
+      "path": "/ownership-guides/myth-rain-flood-safety",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/myth-fire-risk",
+      "path": "/ownership-guides/myth-fire-risk",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/myth-highway-practicality",
+      "path": "/ownership-guides/myth-highway-practicality",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/myth-apartment-charging-impossible",
+      "path": "/ownership-guides/myth-apartment-charging-impossible",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/myth-maintenance-expensive",
+      "path": "/ownership-guides/myth-maintenance-expensive",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/myth-battery-replacement-cost",
+      "path": "/ownership-guides/myth-battery-replacement-cost",
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/myth-resale-value-loss",
+      "path": "/ownership-guides/myth-resale-value-loss",
       "priority": 0.8,
       "changefreq": "weekly"
     },
@@ -810,15 +936,15 @@
   "counts": {
     "static": 13,
     "vehicles": 17,
-    "discovery": 77,
+    "discovery": 98,
     "compare": 26,
-    "total": 133
+    "total": 154
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
     "static": 13,
     "cars": 17,
-    "discovery": 130,
+    "discovery": 151,
     "compare": 26
   }
 }

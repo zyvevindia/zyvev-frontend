@@ -40,10 +40,10 @@ export function buildSuitabilityInsights(car, deps = {}) {
       level: suit.city != null ? cityLevel : strongCity ? LEVEL.GOOD : LEVEL.MODERATE,
       explanation:
         suit.city >= 75
-          ? "Strong city usability scores and practical range for daily commutes."
+          ? "Well suited for daily city driving with practical range for most commutes."
           : rangeKm >= 300
-            ? "Adequate range for most urban weekday use."
-            : "Works for city use with planned charging — verify your daily km.",
+            ? "Comfortable for typical urban weekday use."
+            : "Fine for city use if you match range to your daily km and charging plan.",
     });
   }
 
@@ -94,8 +94,8 @@ export function buildSuitabilityInsights(car, deps = {}) {
     level: suit.family != null ? familyLevel : LEVEL.MODERATE,
     explanation:
       suit.family >= 75
-        ? "Practicality scores suggest good family usability in segment."
-        : "Compare boot space, rear seat comfort, and safety kit for your family size.",
+        ? "A practical pick for families — check boot space and rear-seat comfort for your routine."
+        : "Works for many families — compare boot space, rear seats, and safety features for your needs.",
   });
 
   const longDistanceLevel =

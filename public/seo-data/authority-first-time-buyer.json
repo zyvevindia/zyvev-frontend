@@ -1,0 +1,223 @@
+{
+  "seoPage": {
+    "slug": "authority-first-time-buyer",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "first-time-ev-buyer-guide",
+    "title": "First-Time EV Buyer Guide for India — Calm, Step-by-Step | EVSavari",
+    "metaDescription": "First-Time EV Buyer Guide for India — Calm, Step-by-Step — practical ownership guidance for Indian buyers.",
+    "intro": "Buying your first EV should feel informed, not rushed. This guide orders the decisions — charging, budget, range, safety — and points to compare tools without hype.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Beginner confidence",
+        "type": "introduction",
+        "paragraphs": [
+          "Start with your parking and weekly km. Only then shortlist models — specs make more sense with your real pattern."
+        ]
+      },
+      {
+        "id": "practical",
+        "title": "Step-by-step path",
+        "type": "practical",
+        "bullets": [
+          "1) Confirm charging (home, work, society, or public backup).",
+          "2) Set a realistic budget including install and insurance.",
+          "3) Shortlist two or three families, then compare variants.",
+          "4) Test drive for visibility, parking, and boot — not just 0–100 claims."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "What not to overpromise yourself",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "No EV removes traffic, society paperwork, or monsoon planning. Savings on fuel can be real but vary — model with your tariff and km."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "First-timer myths",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Buy the longest range always",
+            "reality": "Right-size range to avoid paying for unused kWh."
+          },
+          {
+            "myth": "Skip the test drive",
+            "reality": "Parking and visibility matter as much as battery size."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Still unsure?",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "How EVs work",
+            "href": "/ownership-guides/how-evs-work"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "label": "Running cost",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 5,
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "first-time-ev-buyer-guide",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 4,
+        "slug": "mg-zs-ev",
+        "displayName": "MG Zs EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-zs-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Dealer delivery timelines and variant availability change — confirm locally.",
+      "Waiting for a better pack next year can be rational if charging is not ready today.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "New vs used first EV?",
+        "answer": "New gives clearer warranty; used needs battery history — see used EV guide."
+      },
+      {
+        "question": "How many models to compare?",
+        "answer": "Two or three families keep decisions calm."
+      },
+      {
+        "question": "When to talk money?",
+        "answer": "After charging plan is clear — otherwise TCO guesses fail."
+      },
+      {
+        "question": "Finance?",
+        "answer": "Treat like any car purchase — read total cost, not EMI alone."
+      },
+      {
+        "question": "Ready to compare?",
+        "answer": "Open compare with your top two families side by side."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Easiest first EV picks",
+            "href": "/ownership-guides/easiest-first-ev"
+          },
+          {
+            "label": "Under ₹15 lakh discovery",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/first-time-buyers",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/first-time-buyers",
+    "generatedAt": "2026-05-25T19:05:58.657Z"
+  }
+}

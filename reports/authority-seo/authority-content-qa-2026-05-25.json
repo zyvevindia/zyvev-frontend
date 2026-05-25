@@ -1,0 +1,391 @@
+{
+  "generatedAt": "2026-05-25T19:05:59.947Z",
+  "reportType": "authority-content-qa",
+  "ok": true,
+  "topicCount": 22,
+  "topics": [
+    {
+      "id": "how-evs-work",
+      "contentSlug": "authority-how-evs-work",
+      "path": "/ownership-guides/how-evs-work",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 1,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "ev-charging-types-explained",
+      "contentSlug": "authority-ev-charging-types",
+      "path": "/charging-guides/charging-types",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 2,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "ev-maintenance-explained",
+      "contentSlug": "authority-ev-maintenance",
+      "path": "/ownership-guides/maintenance-basics",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 1,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "ev-battery-lifespan",
+      "contentSlug": "authority-ev-battery-lifespan",
+      "path": "/ownership-guides/battery-lifespan",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "fast-vs-slow-charging",
+      "contentSlug": "authority-fast-vs-slow",
+      "path": "/charging-guides/fast-vs-slow",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 1,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "public-charging-guide",
+      "contentSlug": "authority-public-charging",
+      "path": "/charging-guides/public-charging",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 90,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "overnight-charging-safety",
+      "contentSlug": "authority-overnight-safety",
+      "path": "/charging-guides/overnight-safety",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 90,
+      "editorialOk": true,
+      "brokenLinkCount": 2,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "extension-board-charging-risks",
+      "contentSlug": "authority-extension-risks",
+      "path": "/charging-guides/extension-board-risks",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 90,
+      "editorialOk": true,
+      "brokenLinkCount": 1,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "apartment-charging-setup",
+      "contentSlug": "authority-apartment-setup",
+      "path": "/charging-guides/apartment-setup",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 90,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "apartment-ev-suitability",
+      "contentSlug": "authority-apartment-suitability",
+      "path": "/ownership-guides/apartment-suitability",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 1,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "ev-city-commute",
+      "contentSlug": "authority-city-commute",
+      "path": "/ownership-guides/city-commute",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 90,
+      "editorialOk": true,
+      "brokenLinkCount": 1,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "ev-family-ownership",
+      "contentSlug": "authority-family-ownership",
+      "path": "/ownership-guides/family-ownership",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 90,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "first-time-ev-buyer-guide",
+      "contentSlug": "authority-first-time-buyer",
+      "path": "/ownership-guides/first-time-buyers",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 1,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "ev-myths-hub",
+      "contentSlug": "authority-ev-myths-hub",
+      "path": "/ownership-guides/ev-myths",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 75,
+      "editorialOk": false,
+      "brokenLinkCount": 0,
+      "ok": false,
+      "issues": [
+        "missing_compare_support"
+      ]
+    },
+    {
+      "id": "myth-battery-dies-quickly",
+      "contentSlug": "authority-myth-battery-dies-quickly",
+      "path": "/ownership-guides/myth-battery-dies-quickly",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "myth-rain-flood-safety",
+      "contentSlug": "authority-myth-rain-flood-safety",
+      "path": "/ownership-guides/myth-rain-flood-safety",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "myth-fire-risk",
+      "contentSlug": "authority-myth-fire-risk",
+      "path": "/ownership-guides/myth-fire-risk",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "myth-highway-practicality",
+      "contentSlug": "authority-myth-highway-practicality",
+      "path": "/ownership-guides/myth-highway-practicality",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "myth-apartment-charging-impossible",
+      "contentSlug": "authority-myth-apartment-charging-impossible",
+      "path": "/ownership-guides/myth-apartment-charging-impossible",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "myth-maintenance-expensive",
+      "contentSlug": "authority-myth-maintenance-expensive",
+      "path": "/ownership-guides/myth-maintenance-expensive",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 1,
+      "ok": true,
+      "issues": [
+        "broken_internal_links"
+      ]
+    },
+    {
+      "id": "myth-battery-replacement-cost",
+      "contentSlug": "authority-myth-battery-replacement-cost",
+      "path": "/ownership-guides/myth-battery-replacement-cost",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    },
+    {
+      "id": "myth-resale-value-loss",
+      "contentSlug": "authority-myth-resale-value-loss",
+      "path": "/ownership-guides/myth-resale-value-loss",
+      "fileExists": true,
+      "registryOk": true,
+      "editorialScore": 100,
+      "editorialOk": true,
+      "brokenLinkCount": 0,
+      "ok": true,
+      "issues": []
+    }
+  ],
+  "failures": [],
+  "warnings": [
+    {
+      "id": "broken_links",
+      "topic": "how-evs-work",
+      "links": [
+        "/charging-guides/home-charging"
+      ]
+    },
+    {
+      "id": "broken_links",
+      "topic": "ev-charging-types-explained",
+      "links": [
+        "/charging-guides/home-charging",
+        "/charging-guides/home-charging"
+      ]
+    },
+    {
+      "id": "broken_links",
+      "topic": "ev-maintenance-explained",
+      "links": [
+        "/ownership-guides/low-maintenance"
+      ]
+    },
+    {
+      "id": "broken_links",
+      "topic": "fast-vs-slow-charging",
+      "links": [
+        "/charging-guides/home-charging"
+      ]
+    },
+    {
+      "id": "broken_links",
+      "topic": "overnight-charging-safety",
+      "links": [
+        "/charging-guides/home-charging",
+        "/charging-guides/home-charging"
+      ]
+    },
+    {
+      "id": "broken_links",
+      "topic": "extension-board-charging-risks",
+      "links": [
+        "/charging-guides/home-charging"
+      ]
+    },
+    {
+      "id": "broken_links",
+      "topic": "apartment-ev-suitability",
+      "links": [
+        "/ownership-guides/apartment-living"
+      ]
+    },
+    {
+      "id": "broken_links",
+      "topic": "ev-city-commute",
+      "links": [
+        "/best-evs/city-driving"
+      ]
+    },
+    {
+      "id": "broken_links",
+      "topic": "first-time-ev-buyer-guide",
+      "links": [
+        "/ownership-guides/easiest-first-ev"
+      ]
+    },
+    {
+      "id": "editorial_incomplete",
+      "topic": "ev-myths-hub",
+      "issues": [
+        {
+          "code": "missing_compare_support",
+          "detail": 0
+        }
+      ]
+    },
+    {
+      "id": "broken_links",
+      "topic": "myth-maintenance-expensive",
+      "links": [
+        "/ownership-guides/low-maintenance"
+      ]
+    }
+  ],
+  "compareSupport": {
+    "adequate": 26,
+    "partial": 0,
+    "weak": 0
+  },
+  "summary": {
+    "filesPresent": 22,
+    "editorialPass": 21,
+    "registryPass": 22,
+    "failureCount": 0,
+    "warningCount": 11
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "generatedAt": "2026-05-25T19:06:04.438Z",
+  "reportType": "authority-quality",
+  "pageCount": 22,
+  "avgQualityScore": 95,
+  "avgInternalLinkDensity": 13,
+  "duplicatedCopy": [],
+  "pages": [
+    {
+      "id": "how-evs-work",
+      "slug": "authority-how-evs-work",
+      "editorialOk": true,
+      "qualityScore": 73,
+      "readabilityScore": 90,
+      "calmToneScore": 75,
+      "internalLinkCount": 13,
+      "issues": [
+        "unrealistic_claim"
+      ]
+    },
+    {
+      "id": "apartment-charging-setup",
+      "slug": "authority-apartment-setup",
+      "editorialOk": true,
+      "qualityScore": 83,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": [
+        "weak_faqs"
+      ]
+    },
+    {
+      "id": "ev-myths-hub",
+      "slug": "authority-ev-myths-hub",
+      "cluster": "ev_myths",
+      "editorialOk": false,
+      "qualityScore": 83,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 18,
+      "issues": [
+        "missing_compare_support",
+        "weak_faqs"
+      ]
+    },
+    {
+      "id": "ev-charging-types-explained",
+      "slug": "authority-ev-charging-types",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 13,
+      "issues": []
+    },
+    {
+      "id": "ev-maintenance-explained",
+      "slug": "authority-ev-maintenance",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "ev-battery-lifespan",
+      "slug": "authority-ev-battery-lifespan",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "fast-vs-slow-charging",
+      "slug": "authority-fast-vs-slow",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 13,
+      "issues": []
+    },
+    {
+      "id": "public-charging-guide",
+      "slug": "authority-public-charging",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "overnight-charging-safety",
+      "slug": "authority-overnight-safety",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "extension-board-charging-risks",
+      "slug": "authority-extension-risks",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "apartment-ev-suitability",
+      "slug": "authority-apartment-suitability",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "ev-city-commute",
+      "slug": "authority-city-commute",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "ev-family-ownership",
+      "slug": "authority-family-ownership",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "first-time-ev-buyer-guide",
+      "slug": "authority-first-time-buyer",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 13,
+      "issues": []
+    },
+    {
+      "id": "myth-battery-dies-quickly",
+      "slug": "authority-myth-battery-dies-quickly",
+      "cluster": "ev_myths",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 13,
+      "issues": []
+    },
+    {
+      "id": "myth-rain-flood-safety",
+      "slug": "authority-myth-rain-flood-safety",
+      "cluster": "ev_myths",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 13,
+      "issues": []
+    },
+    {
+      "id": "myth-fire-risk",
+      "slug": "authority-myth-fire-risk",
+      "cluster": "ev_myths",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "myth-highway-practicality",
+      "slug": "authority-myth-highway-practicality",
+      "cluster": "ev_myths",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 14,
+      "issues": []
+    },
+    {
+      "id": "myth-apartment-charging-impossible",
+      "slug": "authority-myth-apartment-charging-impossible",
+      "cluster": "ev_myths",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 13,
+      "issues": []
+    },
+    {
+      "id": "myth-maintenance-expensive",
+      "slug": "authority-myth-maintenance-expensive",
+      "cluster": "ev_myths",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 12,
+      "issues": []
+    },
+    {
+      "id": "myth-battery-replacement-cost",
+      "slug": "authority-myth-battery-replacement-cost",
+      "cluster": "ev_myths",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 13,
+      "issues": []
+    },
+    {
+      "id": "myth-resale-value-loss",
+      "slug": "authority-myth-resale-value-loss",
+      "cluster": "ev_myths",
+      "editorialOk": true,
+      "qualityScore": 97,
+      "readabilityScore": 90,
+      "calmToneScore": 100,
+      "internalLinkCount": 13,
+      "issues": []
+    }
+  ],
+  "failures": [],
+  "summary": {
+    "passCount": 21,
+    "hypeIssues": 0,
+    "weakFaqPages": 2
+  }
+}

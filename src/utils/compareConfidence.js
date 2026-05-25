@@ -8,6 +8,7 @@ import {
   safeFlatMap,
   safeMap,
 } from "./compareArrayUtils.js";
+import { softenCompareExplanation } from "./compareReadability.js";
 
 function coerceScore(car) {
   const composite =
@@ -61,23 +62,39 @@ export function buildCompareScoreInsight(car = {}) {
   const whyLines = [];
   if (score != null) {
     whyLines.push(
-      `Composite score ${score}/100 blends range confidence, charging practicality, and ownership signals.`
+      softenCompareExplanation(
+        `Composite score ${score}/100 blends range confidence, charging practicality, and ownership signals.`
+      )
     );
   } else {
-    whyLines.push("Score unavailable — catalog intelligence incomplete for this EV.");
+    whyLines.push(
+      softenCompareExplanation(
+        "Score unavailable — catalog intelligence incomplete for this EV."
+      )
+    );
   }
   if (topFactors.length) {
-    whyLines.push(`Top factors: ${topFactors.join(" · ")}.`);
+    whyLines.push(`Key factors: ${topFactors.join(" · ")}.`);
   }
   if (reviewed) {
-    whyLines.push("Published catalog governance supports this score band.");
+    whyLines.push(
+      softenCompareExplanation(
+        "Published catalog governance supports this score band."
+      )
+    );
   } else if (confidence === "low") {
-    whyLines.push("Treat as directional — specs may be estimated or awaiting review.");
+    whyLines.push(
+      softenCompareExplanation(
+        "Treat as directional — specs may be estimated or awaiting review."
+      )
+    );
   }
 
   if (dataQuality != null && dataQuality < 80) {
     whyLines.push(
-      "Data quality impacts score confidence — missing or estimated fields lower the band."
+      softenCompareExplanation(
+        "Data quality impacts score confidence — missing or estimated fields lower the band."
+      )
     );
   }
 

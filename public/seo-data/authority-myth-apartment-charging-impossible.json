@@ -1,0 +1,221 @@
+{
+  "seoPage": {
+    "slug": "authority-myth-apartment-charging-impossible",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "myth-apartment-charging-impossible",
+    "title": "Is EV Charging Impossible in Apartments? Myth vs Reality | EVSavari",
+    "metaDescription": "Is EV Charging Impossible in Apartments? Myth vs Reality — practical ownership guidance for Indian buyers.",
+    "intro": "The myth: apartments block EV ownership. The reality: society approvals and shared infrastructure take time — many owners use workplace or public backup while RWAs progress.",
+    "editorialSections": [
+      {
+        "id": "myth-intro",
+        "title": "The myth",
+        "type": "introduction",
+        "paragraphs": [
+          "Frustrating RWA meetings are real — but ‘impossible’ ignores societies that have approved points and owners using mixed strategies."
+        ]
+      },
+      {
+        "id": "reality",
+        "title": "Practical reality",
+        "type": "practical",
+        "bullets": [
+          "Start RWA conversations before you buy — not after.",
+          "Shared basement points with metering reduce conflict.",
+          "Workplace charging can carry weekday km for some owners."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "When to wait",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "If you have no parking, no society path, and no reliable public backup near your routine, an EV may feel harder than petrol today."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Every apartment bans EVs",
+            "reality": "Policies differ building to building."
+          },
+          {
+            "myth": "Public charging replaces home always",
+            "reality": "It can work for some — others need patience with queues."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Apartment compare support",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Apartment suitability",
+            "href": "/ownership-guides/apartment-suitability"
+          },
+          {
+            "label": "Apartment setup guide",
+            "href": "/charging-guides/apartment-setup"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "step": 2,
+        "label": "Battery myth",
+        "href": "/ownership-guides/myth-battery-dies-quickly"
+      },
+      {
+        "step": 4,
+        "label": "Highway myth",
+        "href": "/ownership-guides/myth-highway-practicality"
+      },
+      {
+        "step": 5,
+        "label": "Compare with context",
+        "href": "/compare"
+      }
+    ],
+    "learningPathwayId": "ev_myths",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "myth-apartment-charging-impossible",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 2,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen Ec3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/citroen-ec3"
+      },
+      {
+        "rank": 3,
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes Eqb",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mercedes-eqb"
+      },
+      {
+        "rank": 4,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-comet-ev"
+      }
+    ],
+    "tradeoffs": [
+      "No EV removes every constraint — charging access and km pattern still decide fit.",
+      "Outcomes vary by model, city, and usage — verify warranty and service terms locally."
+    ],
+    "faq": [
+      {
+        "question": "Should I buy before RWA approval?",
+        "answer": "Risky — get clarity on the approval path first."
+      },
+      {
+        "question": "Renters?",
+        "answer": "Get landlord/building clarity in writing."
+      },
+      {
+        "question": "Street parking?",
+        "answer": "Often the hardest — map public AC/DC near home."
+      },
+      {
+        "question": "Extension cord from window?",
+        "answer": "Avoid unsafe shortcuts — see extension board guide."
+      },
+      {
+        "question": "Compare?",
+        "answer": "Compare lower charging-stress models if public backup is your plan."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Society & RWA",
+            "href": "/ownership-guides/society-rwa"
+          },
+          {
+            "label": "Apartment discovery",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/myth-apartment-charging-impossible",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/myth-apartment-charging-impossible",
+    "generatedAt": "2026-05-25T19:05:58.666Z"
+  }
+}

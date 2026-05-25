@@ -11,6 +11,8 @@ import SeoRecommendationList from "../components/SEO/SeoRecommendationList";
 import SeoTradeoffs from "../components/SEO/SeoTradeoffs";
 import SeoFaqBlock from "../components/SEO/SeoFaqBlock";
 import SeoRelatedLinks from "../components/SEO/SeoRelatedLinks";
+import SeoAuthorityEditorial from "../components/SEO/SeoAuthorityEditorial";
+import SeoContinueLearning from "../components/SEO/SeoContinueLearning";
 
 import CompareHeroExperience from "../components/compare/CompareHeroExperience";
 import CompareGuideEditorialSections from "../components/compare/CompareGuideEditorialSections";
@@ -337,13 +339,19 @@ export default function DiscoverySeoPage({ pageType }) {
           recommendationLogic={seoPage.recommendationLogic}
         />
 
+        <SeoAuthorityEditorial
+          sections={seoPage.editorialSections}
+          compareSupportLinks={seoPage.compareSupportLinks}
+        />
+
         <MethodologyPanel
           recommendationLogic={seoPage.recommendationLogic}
           category={seoPage.category}
         />
 
         {(seoPage.category === "ownership" ||
-          seoPage.category === "city") && (
+          seoPage.category === "city" ||
+          seoPage.category === "authority") && (
           <OwnershipPracticality
             bullets={
               Array.isArray(seoPage.tradeoffs)
@@ -385,6 +393,19 @@ export default function DiscoverySeoPage({ pageType }) {
         <SeoTradeoffs tradeoffs={seoPage.tradeoffs} />
 
         <SeoFaqBlock faq={seoPage.faq} />
+
+        <SeoContinueLearning
+          steps={seoPage.continueLearning}
+          pathwayLabel={
+            seoPage.learningPathwayId === "ev_myths"
+              ? "Continue: EV myths & reality"
+              : seoPage.learningPathwayId === "charging"
+                ? "Continue: charging learning"
+                : seoPage.learningPathwayId === "ownership"
+                  ? "Continue: ownership learning"
+                  : "Continue: beginner learning"
+          }
+        />
 
         <SeoRelatedLinks sections={linkSections} />
 

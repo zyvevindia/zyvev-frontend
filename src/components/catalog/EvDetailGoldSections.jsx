@@ -16,6 +16,7 @@ import TrustConfidenceBlock from "./TrustConfidenceBlock";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
+import { formatSafetyIntelligenceCopy } from "../../intelligence/safetyMetadata.js";
 
 import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
 
@@ -315,26 +316,22 @@ export default function EvDetailGoldSections({
             <h2 id="ev-safety" className={titleClass} style={h2Style}>
               Safety & driver assistance
             </h2>
-            <p style={bodyStyle || body}>
-              {meta.safety.airbags?.count != null && (
-                <>
-                  {meta.safety.airbags.count} airbags
-                  {meta.safety.adas?.level != null
-                    ? ` · ADAS level ${meta.safety.adas.level}`
-                    : ""}
-                  {meta.safety.stability?.esc ? " · ESC" : ""}
-                  {meta.safety.stability?.hillHold ? " · Hill hold" : ""}
-                  .
-                </>
+            <ul
+              className="ev-safety-intel-list"
+              style={{
+                margin: 0,
+                paddingLeft: "1.1rem",
+                color: "#475569",
+                lineHeight: 1.55,
+                fontSize: "0.9375rem",
+              }}
+            >
+              {formatSafetyIntelligenceCopy(meta.safety).lines.map(
+                (line) => (
+                  <li key={line}>{line}</li>
+                )
               )}
-              {meta.safety.bharatNcap?.stars != null && (
-                <>
-                  {" "}
-                  Bharat NCAP: {meta.safety.bharatNcap.stars}★ (verify latest
-                  test for your variant).
-                </>
-              )}
-            </p>
+            </ul>
           </GoldSection>
         )}
 

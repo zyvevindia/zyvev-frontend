@@ -1,0 +1,203 @@
+{
+  "seoPage": {
+    "slug": "authority-apartment-setup",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "apartment-charging-setup",
+    "title": "Apartment EV Charging Setup in India — Society, Wiring & Backup | EVSavari",
+    "metaDescription": "Apartment EV Charging Setup in India — Society, Wiring & Backup — practical charging guidance for Indian buyers.",
+    "intro": "Apartment charging is a people and wiring problem as much as a car problem. This guide walks through RWA conversations, dedicated points, and realistic public backup.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Start with parking reality",
+        "type": "introduction",
+        "paragraphs": [
+          "Confirm whether you have assigned parking, shared basement points, or only street parking — each path differs."
+        ]
+      },
+      {
+        "id": "practical",
+        "title": "Setup steps that work",
+        "type": "practical",
+        "bullets": [
+          "Document load and earthing with a certified electrician.",
+          "Propose society rules: timing, billing, and maintenance.",
+          "Keep a public charging app as backup while approvals progress."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Honest limitations",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Some buildings still block installs — do not buy an EV assuming permission will arrive in a week."
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Apartment-friendly compare",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Apartment suitability guide",
+            "href": "/ownership-guides/apartment-suitability"
+          },
+          {
+            "label": "Apartment discovery",
+            "href": "/discover/apartment-living"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Apartment suitability",
+        "href": "/ownership-guides/apartment-suitability"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "apartment-charging-setup",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra Xuv400",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-xuv400"
+      },
+      {
+        "rank": 3,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/byd-atto-3"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-tiago-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Shared points need fair billing — unclear rules create conflict.",
+      "Street-parking owners face the hardest path — plan public charging honestly.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "Does every society allow wallboxes?",
+        "answer": "No — policies differ; get clarity in writing."
+      },
+      {
+        "question": "Who pays for wiring?",
+        "answer": "Varies — personal bay vs shared infrastructure."
+      },
+      {
+        "question": "Can I use a 15A socket?",
+        "answer": "Only if professionally assessed — avoid extension shortcuts."
+      },
+      {
+        "question": "Backup while waiting?",
+        "answer": "Public AC/DC near home or workplace."
+      },
+      {
+        "question": "Compare?",
+        "answer": "Compare compact EVs with lower charging stress for tight parking."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Society & RWA",
+            "href": "/ownership-guides/society-rwa"
+          },
+          {
+            "label": "Extension board risks",
+            "href": "/charging-guides/extension-board-risks"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/charging-guides/apartment-setup",
+    "canonicalUrl": "https://evsavari.com/charging-guides/apartment-setup",
+    "generatedAt": "2026-05-25T19:05:58.649Z"
+  }
+}

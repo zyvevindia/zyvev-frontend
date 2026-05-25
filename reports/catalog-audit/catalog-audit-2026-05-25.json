@@ -1,0 +1,1289 @@
+{
+  "generatedAt": "2026-05-25T17:34:59.920Z",
+  "vehicleCount": 11,
+  "vehicles": [
+    {
+      "slug": "tata-nexon-ev",
+      "familySlug": "tata-nexon-ev",
+      "name": "Nexon EV",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "tata-punch-ev",
+      "familySlug": "tata-punch-ev",
+      "name": "Punch EV",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "tata-tiago-ev",
+      "familySlug": "tata-tiago-ev",
+      "name": "Tiago EV",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "familySlug": "tata-curvv-ev",
+      "name": "Curvv EV",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "mg-comet-ev",
+      "familySlug": "mg-comet-ev",
+      "name": "Comet EV",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "missing",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "missing",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 8,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "chargingVerified",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "compareReadiness",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 3,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "mg-zs-ev",
+      "familySlug": "mg-zs-ev",
+      "name": "ZS EV",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "mahindra-be-6",
+      "familySlug": "mahindra-be-6",
+      "name": "BE 6",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "familySlug": "mahindra-xev-9e",
+      "name": "XEV 9e",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "mahindra-xuv400",
+      "familySlug": "mahindra-xuv400",
+      "name": "XUV400",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "byd-atto-3",
+      "familySlug": "byd-atto-3",
+      "name": "Atto 3",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    },
+    {
+      "slug": "hyundai-kona-electric",
+      "familySlug": "hyundai-kona-electric",
+      "name": "Kona Electric",
+      "fields": {
+        "heroImage": "not_verified",
+        "galleryCoverage": "not_verified",
+        "interiorImage": "missing",
+        "chargingImage": "missing",
+        "pricingVerified": "not_verified",
+        "variantsVerified": "present",
+        "batteryVerified": "not_verified",
+        "rangeVerified": "not_verified",
+        "chargingVerified": "not_verified",
+        "accelerationVerified": "missing",
+        "safetyMetadataPresent": "missing",
+        "compareReadiness": "present",
+        "seoReadiness": "missing"
+      },
+      "completenessPercent": 15,
+      "missing": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified",
+        "safetyMetadataPresent",
+        "seoReadiness"
+      ],
+      "notVerified": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "safetyReadiness": "missing",
+      "intelligenceIssues": 2,
+      "mediaIssues": 0
+    }
+  ],
+  "safety": {
+    "generatedAt": "2026-05-25T17:34:59.918Z",
+    "vehicles": 11,
+    "readyCount": 0,
+    "partialCount": 0,
+    "missingCount": 11,
+    "rows": [
+      {
+        "slug": "tata-nexon-ev",
+        "name": "Nexon EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "tata-punch-ev",
+        "name": "Punch EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "tata-tiago-ev",
+        "name": "Tiago EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "tata-curvv-ev",
+        "name": "Curvv EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "mg-comet-ev",
+        "name": "Comet EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "mg-zs-ev",
+        "name": "ZS EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "mahindra-be-6",
+        "name": "BE 6",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "mahindra-xev-9e",
+        "name": "XEV 9e",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "mahindra-xuv400",
+        "name": "XUV400",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "byd-atto-3",
+        "name": "Atto 3",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      },
+      {
+        "slug": "hyundai-kona-electric",
+        "name": "Kona Electric",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": false
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "missing"
+      }
+    ]
+  },
+  "summary": {
+    "avgCompletenessPercent": 14,
+    "fullyReady": 0,
+    "needsWork": 11,
+    "topGaps": [
+      {
+        "field": "interiorImage",
+        "count": 11
+      },
+      {
+        "field": "chargingImage",
+        "count": 11
+      },
+      {
+        "field": "accelerationVerified",
+        "count": 11
+      },
+      {
+        "field": "safetyMetadataPresent",
+        "count": 11
+      },
+      {
+        "field": "seoReadiness",
+        "count": 11
+      },
+      {
+        "field": "chargingVerified",
+        "count": 1
+      },
+      {
+        "field": "compareReadiness",
+        "count": 1
+      }
+    ],
+    "safetyReady": 0,
+    "safetyPartial": 0
+  },
+  "missingMedia": [
+    {
+      "slug": "tata-nexon-ev",
+      "name": "Nexon EV",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "tata-punch-ev",
+      "name": "Punch EV",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "tata-tiago-ev",
+      "name": "Tiago EV",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "name": "Curvv EV",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "mg-comet-ev",
+      "name": "Comet EV",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "mg-zs-ev",
+      "name": "ZS EV",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "mahindra-be-6",
+      "name": "BE 6",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "name": "XEV 9e",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "mahindra-xuv400",
+      "name": "XUV400",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "byd-atto-3",
+      "name": "Atto 3",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    },
+    {
+      "slug": "hyundai-kona-electric",
+      "name": "Kona Electric",
+      "heroImage": "not_verified",
+      "galleryCoverage": "not_verified",
+      "interiorImage": "missing",
+      "chargingImage": "missing",
+      "gaps": [
+        "interiorImage",
+        "chargingImage"
+      ]
+    }
+  ],
+  "incompleteSpecs": [
+    {
+      "slug": "tata-nexon-ev",
+      "name": "Nexon EV",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    },
+    {
+      "slug": "tata-punch-ev",
+      "name": "Punch EV",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    },
+    {
+      "slug": "tata-tiago-ev",
+      "name": "Tiago EV",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "name": "Curvv EV",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    },
+    {
+      "slug": "mg-comet-ev",
+      "name": "Comet EV",
+      "gaps": [
+        "chargingVerified",
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified"
+      ]
+    },
+    {
+      "slug": "mg-zs-ev",
+      "name": "ZS EV",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    },
+    {
+      "slug": "mahindra-be-6",
+      "name": "BE 6",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "name": "XEV 9e",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    },
+    {
+      "slug": "mahindra-xuv400",
+      "name": "XUV400",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    },
+    {
+      "slug": "byd-atto-3",
+      "name": "Atto 3",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    },
+    {
+      "slug": "hyundai-kona-electric",
+      "name": "Kona Electric",
+      "gaps": [
+        "accelerationVerified"
+      ],
+      "notVerified": [
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ]
+    }
+  ]
+}

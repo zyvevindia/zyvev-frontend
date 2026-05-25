@@ -1,0 +1,217 @@
+{
+  "seoPage": {
+    "slug": "authority-myth-maintenance-expensive",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "myth-maintenance-expensive",
+    "title": "Is EV Maintenance Expensive? Myth vs Reality | EVSavari",
+    "metaDescription": "Is EV Maintenance Expensive? Myth vs Reality — practical ownership guidance for Indian buyers.",
+    "intro": "The myth: EV servicing costs the same as luxury petrol bills. The reality: fewer engine items exist — tyres, brakes, filters, and software still need care.",
+    "editorialSections": [
+      {
+        "id": "myth-intro",
+        "title": "The myth",
+        "type": "introduction",
+        "paragraphs": [
+          "Dealer quotes for unfamiliar parts can look high — compare what is actually scheduled vs petrol equivalents."
+        ]
+      },
+      {
+        "id": "reality",
+        "title": "Practical reality",
+        "type": "practical",
+        "bullets": [
+          "Regen can slow brake wear — inspections still matter.",
+          "Tyre costs remain — EV weight affects wear.",
+          "Authorised workshops matter for warranty and high-voltage work."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Where costs can rise",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Out-of-warranty high-voltage repairs can be costly — read warranty before purchase."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Zero maintenance forever",
+            "reality": "Schedules are lighter, not absent."
+          },
+          {
+            "myth": "Any garage is equal",
+            "reality": "Battery-related work needs authorised capability."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Learn more",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Maintenance basics",
+            "href": "/ownership-guides/maintenance-basics"
+          },
+          {
+            "label": "Service network guide",
+            "href": "/ownership-guides/service-network"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "step": 2,
+        "label": "Battery myth",
+        "href": "/ownership-guides/myth-battery-dies-quickly"
+      },
+      {
+        "step": 3,
+        "label": "Apartment charging myth",
+        "href": "/ownership-guides/myth-apartment-charging-impossible"
+      },
+      {
+        "step": 4,
+        "label": "Highway myth",
+        "href": "/ownership-guides/myth-highway-practicality"
+      }
+    ],
+    "learningPathwayId": "ev_myths",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "myth-maintenance-expensive",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra Xev 9e",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra Be 6",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-be-6"
+      },
+      {
+        "rank": 4,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen Ec3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/citroen-ec3"
+      }
+    ],
+    "tradeoffs": [
+      "No EV removes every constraint — charging access and km pattern still decide fit.",
+      "Outcomes vary by model, city, and usage — verify warranty and service terms locally."
+    ],
+    "faq": [
+      {
+        "question": "Are EVs cheaper to maintain?",
+        "answer": "Often lower routine engine work — budget tyres and scheduled checks."
+      },
+      {
+        "question": "Software updates?",
+        "answer": "May be included or billed — ask the brand."
+      },
+      {
+        "question": "Independent garages?",
+        "answer": "Fine for some items — not for all high-voltage jobs."
+      },
+      {
+        "question": "Warranty void?",
+        "answer": "Skipping authorised service can affect claims — read terms."
+      },
+      {
+        "question": "Compare?",
+        "answer": "Factor service network in your city when comparing brands."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Low-maintenance picks",
+            "href": "/ownership-guides/low-maintenance"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/myth-maintenance-expensive",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/myth-maintenance-expensive",
+    "generatedAt": "2026-05-25T19:05:58.668Z"
+  }
+}

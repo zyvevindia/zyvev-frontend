@@ -10,7 +10,6 @@ export const SEO_PAGE_SLUGS = [
   "best-family-electric-cars",
   "best-evs-for-office-commute",
   "lowest-maintenance-electric-cars",
-  "best-evs-for-first-time-buyers",
   "best-evs-for-apartment-living",
   "best-evs-for-home-charging",
   "best-evs-for-daily-commute",

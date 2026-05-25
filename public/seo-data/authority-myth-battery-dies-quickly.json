@@ -1,0 +1,230 @@
+{
+  "seoPage": {
+    "slug": "authority-myth-battery-dies-quickly",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "myth-battery-dies-quickly",
+    "title": "Do EV Batteries Die Quickly? Myth vs Reality | EVSavari",
+    "metaDescription": "Do EV Batteries Die Quickly? Myth vs Reality — practical ownership guidance for Indian buyers.",
+    "intro": "The myth: EV batteries become useless within a few years. The reality: packs age gradually; warranties and habits matter more than viral anecdotes.",
+    "editorialSections": [
+      {
+        "id": "myth-intro",
+        "title": "The myth",
+        "type": "introduction",
+        "paragraphs": [
+          "You may hear that all EV batteries ‘die’ after three years. That generalisation ignores warranty terms, climate, and how the car is charged."
+        ]
+      },
+      {
+        "id": "reality",
+        "title": "Practical reality",
+        "type": "practical",
+        "bullets": [
+          "Gradual capacity loss is normal — it is not usually sudden total failure.",
+          "Manufacturers publish warranty thresholds — read your variant’s document.",
+          "Heat and frequent unnecessary DC fast charging can accelerate wear."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Limitations to accept",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "A 8–10 year old EV may suit low km buyers differently than a heavy highway user — inspect used packs carefully."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "All packs fail at the same rate",
+            "reality": "Chemistry, thermal management, and usage differ by model."
+          },
+          {
+            "myth": "Software fixes all degradation",
+            "reality": "Software manages health — physical ageing still occurs."
+          }
+        ]
+      },
+      {
+        "id": "beginner",
+        "title": "Beginner guidance",
+        "type": "practical",
+        "bullets": [
+          "Track your weekly km before buying kWh you will never use.",
+          "Ask the dealer for warranty transfer rules on used EVs."
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Compare with battery context",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Battery lifespan guide",
+            "href": "/ownership-guides/battery-lifespan"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "step": 3,
+        "label": "Apartment charging myth",
+        "href": "/ownership-guides/myth-apartment-charging-impossible"
+      },
+      {
+        "step": 4,
+        "label": "Highway myth",
+        "href": "/ownership-guides/myth-highway-practicality"
+      },
+      {
+        "step": 5,
+        "label": "Compare with context",
+        "href": "/compare"
+      }
+    ],
+    "learningPathwayId": "ev_myths",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "myth-battery-dies-quickly",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-curvv-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 4,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-comet-ev"
+      }
+    ],
+    "tradeoffs": [
+      "No EV removes every constraint — charging access and km pattern still decide fit.",
+      "Outcomes vary by model, city, and usage — verify warranty and service terms locally."
+    ],
+    "faq": [
+      {
+        "question": "Will my battery die in three years?",
+        "answer": "Unlikely as a sudden total failure — plan for gradual range change over years."
+      },
+      {
+        "question": "Does fast charging ruin batteries?",
+        "answer": "Occasional DC is fine for many owners — constant fast charging without need may add stress."
+      },
+      {
+        "question": "What does warranty usually cover?",
+        "answer": "Capacity or defect thresholds for a period — terms vary by brand."
+      },
+      {
+        "question": "Used EV risk?",
+        "answer": "Request service history and a drive that matches your km needs."
+      },
+      {
+        "question": "Next step?",
+        "answer": "Compare battery sizes only after your commute pattern is clear."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Battery health ownership",
+            "href": "/ownership-guides/battery-health"
+          },
+          {
+            "label": "Replacement cost myth",
+            "href": "/ownership-guides/myth-battery-replacement-cost"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/myth-battery-dies-quickly",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/myth-battery-dies-quickly",
+    "generatedAt": "2026-05-25T19:05:58.661Z"
+  }
+}

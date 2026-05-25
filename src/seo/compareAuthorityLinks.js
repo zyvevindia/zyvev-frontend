@@ -2,6 +2,8 @@
  * Compare ↔ guide authority links — controlled clusters only.
  */
 
+import { buildComparePageAuthorityLinks } from "../content/authority/internalLinks.js";
+
 const AUTHORITY_LINKS = Object.freeze([
   {
     id: "ownership_reality",
@@ -99,13 +101,30 @@ const CROSS_CLUSTER_LINKS = Object.freeze({
 /**
  * Pick 2–4 contextual guide links for a compare set (deterministic).
  * @param {object[]} cars
+ * @param {string} [compareSlug] — when set, merges Track B educational mapping
  */
-export function buildCompareAuthorityLinks(cars = []) {
+export function buildCompareAuthorityLinks(cars = [], compareSlug = "") {
   const picked = new Map();
+  const addLink = (link) => {
+    if (link?.href && !picked.has(link.href)) {
+      picked.set(link.href, {
+        id: link.id || link.href,
+        label: link.label,
+        href: link.href,
+        cluster: link.cluster || "authority",
+      });
+    }
+  };
   const add = (id) => {
     const link = AUTHORITY_LINKS.find((l) => l.id === id);
-    if (link && !picked.has(link.href)) picked.set(link.href, link);
+    if (link) addLink(link);
   };
+
+  if (compareSlug) {
+    for (const row of buildComparePageAuthorityLinks(compareSlug)) {
+      addLink(row);
+    }
+  }
 
   add("ownership_reality");
   add("charging_practicality");

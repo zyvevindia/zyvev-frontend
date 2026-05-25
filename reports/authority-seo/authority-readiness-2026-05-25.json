@@ -1,0 +1,398 @@
+{
+  "generatedAt": "2026-05-25T19:06:25.899Z",
+  "reportType": "authority-seo-readiness",
+  "architecture": {
+    "clusters": [
+      {
+        "id": "beginner_education",
+        "label": "Beginner EV Education",
+        "topicCount": 8
+      },
+      {
+        "id": "charging_guides",
+        "label": "Charging Guides",
+        "topicCount": 8
+      },
+      {
+        "id": "ev_myths",
+        "label": "EV Myths vs Reality",
+        "topicCount": 9
+      },
+      {
+        "id": "ownership_explainers",
+        "label": "Ownership Explainers",
+        "topicCount": 6
+      }
+    ],
+    "totalTopics": 31,
+    "publishedTopics": 31,
+    "structuredTopics": 0
+  },
+  "guideTargetCount": 28,
+  "coverage": {
+    "readyClusters": 3,
+    "partialClusters": 3,
+    "weakClusters": 0,
+    "avgScore": 70
+  },
+  "weakCoverageClusters": [],
+  "compareSupport": {
+    "adequate": 26,
+    "partial": 0,
+    "weak": 0
+  },
+  "weakComparePairs": [],
+  "topics": [
+    {
+      "id": "how-evs-work",
+      "title": "How EVs work",
+      "cluster": "beginner_education",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/how-evs-work",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ev-vs-petrol-running-cost",
+      "title": "EV vs petrol running cost",
+      "cluster": "beginner_education",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/running-cost",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ev-maintenance-explained",
+      "title": "EV maintenance explained",
+      "cluster": "beginner_education",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "medium",
+      "canonicalPath": "/ownership-guides/maintenance-basics",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ev-battery-lifespan",
+      "title": "EV battery lifespan",
+      "cluster": "beginner_education",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/battery-lifespan",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "home-charging-basics",
+      "title": "Can EVs be charged at home?",
+      "cluster": "beginner_education",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/charging-guides/home-charging",
+      "routeReady": false,
+      "gap": null
+    },
+    {
+      "id": "apartment-ev-suitability",
+      "title": "Is an EV suitable for apartment living?",
+      "cluster": "beginner_education",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/apartment-suitability",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ev-charging-types-explained",
+      "title": "EV charging types explained",
+      "cluster": "beginner_education",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/charging-guides/charging-types",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ev-ownership-for-beginners",
+      "title": "EV ownership for beginners",
+      "cluster": "beginner_education",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/first-time-buyers",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "home-charging-explained",
+      "title": "Home charging explained",
+      "cluster": "charging_guides",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/charging-guides/home-charging",
+      "routeReady": false,
+      "gap": null
+    },
+    {
+      "id": "fast-vs-slow-charging",
+      "title": "Fast charging vs slow charging",
+      "cluster": "charging_guides",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/charging-guides/fast-vs-slow",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "public-charging-guide",
+      "title": "Public charging guide",
+      "cluster": "charging_guides",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "medium",
+      "canonicalPath": "/charging-guides/public-charging",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "apartment-charging-setup",
+      "title": "Apartment charging setup",
+      "cluster": "charging_guides",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/charging-guides/apartment-setup",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ev-charging-cost-india",
+      "title": "EV charging cost in India",
+      "cluster": "charging_guides",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/running-cost",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "overnight-charging-safety",
+      "title": "Overnight charging safety",
+      "cluster": "charging_guides",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "medium",
+      "canonicalPath": "/charging-guides/overnight-safety",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "rain-water-charging-myths",
+      "title": "Rain & water charging myths",
+      "cluster": "charging_guides",
+      "readiness": "published",
+      "seoPriority": "p2",
+      "compareSupportRelevance": "medium",
+      "canonicalPath": "/ownership-guides/monsoon-driving",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "extension-board-charging-risks",
+      "title": "Extension board charging risks",
+      "cluster": "charging_guides",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/charging-guides/extension-board-risks",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ownership-running-cost-reality",
+      "title": "Running cost & TCO reality",
+      "cluster": "ownership_explainers",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/running-cost",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ownership-highway-reality",
+      "title": "Highway ownership reality",
+      "cluster": "ownership_explainers",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/highway-ownership",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ownership-society-rwa",
+      "title": "Society & RWA charging approvals",
+      "cluster": "ownership_explainers",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/society-rwa",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ownership-city-commute",
+      "title": "EV ownership for city commute",
+      "cluster": "ownership_explainers",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/city-commute",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ownership-family",
+      "title": "EV ownership for families",
+      "cluster": "ownership_explainers",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/family-ownership",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ownership-battery-health",
+      "title": "Battery health over years",
+      "cluster": "ownership_explainers",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "medium",
+      "canonicalPath": "/ownership-guides/battery-health",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "ev-myths-hub",
+      "title": "EV myths vs reality",
+      "cluster": "ev_myths",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/ev-myths",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "myth-battery-dies-quickly",
+      "title": "Do EV batteries die quickly?",
+      "cluster": "ev_myths",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/myth-battery-dies-quickly",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "myth-rain-flood-safety",
+      "title": "Are EVs safe in rain and floods?",
+      "cluster": "ev_myths",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/myth-rain-flood-safety",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "myth-fire-risk",
+      "title": "Do EVs catch fire easily?",
+      "cluster": "ev_myths",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/myth-fire-risk",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "myth-highway-practicality",
+      "title": "Are EVs practical for highways?",
+      "cluster": "ev_myths",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/myth-highway-practicality",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "myth-apartment-charging-impossible",
+      "title": "Is EV charging impossible in apartments?",
+      "cluster": "ev_myths",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/myth-apartment-charging-impossible",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "myth-maintenance-expensive",
+      "title": "Is EV maintenance expensive?",
+      "cluster": "ev_myths",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "medium",
+      "canonicalPath": "/ownership-guides/myth-maintenance-expensive",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "myth-battery-replacement-cost",
+      "title": "Are EV batteries extremely expensive to replace?",
+      "cluster": "ev_myths",
+      "readiness": "published",
+      "seoPriority": "p0",
+      "compareSupportRelevance": "high",
+      "canonicalPath": "/ownership-guides/myth-battery-replacement-cost",
+      "routeReady": true,
+      "gap": null
+    },
+    {
+      "id": "myth-resale-value-loss",
+      "title": "Do EVs lose resale value quickly?",
+      "cluster": "ev_myths",
+      "readiness": "published",
+      "seoPriority": "p1",
+      "compareSupportRelevance": "medium",
+      "canonicalPath": "/ownership-guides/myth-resale-value-loss",
+      "routeReady": true,
+      "gap": null
+    }
+  ],
+  "gaps": [],
+  "weakClusters": [],
+  "summary": {
+    "totalTopics": 31,
+    "publishedTopics": 31,
+    "structuredTopics": 0,
+    "gapCount": 0,
+    "compareWeakPairs": 0,
+    "avgClusterScore": 0
+  }
+}

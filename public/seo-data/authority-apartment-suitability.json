@@ -1,0 +1,218 @@
+{
+  "seoPage": {
+    "slug": "authority-apartment-suitability",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "apartment-ev-suitability",
+    "title": "Is an EV Suitable for Apartment Living in India? | EVSavari",
+    "metaDescription": "Is an EV Suitable for Apartment Living in India? — practical ownership guidance for Indian buyers.",
+    "intro": "Apartment EV ownership can work — but only if you plan charging before you fall in love with a model. This guide covers suitability, society friction, and honest limitations.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Suitability starts with parking",
+        "type": "introduction",
+        "paragraphs": [
+          "Assigned covered parking, open slots, or street parking each change how practical daily charging feels."
+        ]
+      },
+      {
+        "id": "suitability",
+        "title": "When an EV fits apartments",
+        "type": "suitability",
+        "bullets": [
+          "You can secure AC charging at home, work, or reliable nearby public AC.",
+          "Your daily km are moderate and predictable.",
+          "You accept occasional public sessions while society work completes."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "When to pause",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "If RWAs forbid charging and no workable public backup exists near your routine, an EV may feel harder than petrol — be honest before purchase."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Any EV is fine for apartments",
+            "reality": "Compact cars may park easier — charging access matters more than size alone."
+          },
+          {
+            "myth": "Public charging removes all apartment issues",
+            "reality": "Availability and time still shape daily life."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Compare with charging context",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Apartment setup guide",
+            "href": "/charging-guides/apartment-setup"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Apartment discovery",
+        "href": "/discover/apartment-living"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "apartment-ev-suitability",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "kia-ev6",
+        "displayName": "Kia Ev6",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-zs-ev",
+        "displayName": "MG Zs EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-zs-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "bmw-ix1",
+        "displayName": "BMW Ix1",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/bmw-ix1"
+      },
+      {
+        "rank": 4,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/volvo-ex40"
+      }
+    ],
+    "tradeoffs": [
+      "Society politics can delay installs months — have a backup plan.",
+      "Guest parking and valet rules may limit cable access.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "Should I ask RWA before buying?",
+        "answer": "Yes — get indicative approval paths early."
+      },
+      {
+        "question": "Is a small EV better?",
+        "answer": "Parking helps, but charging permission matters more."
+      },
+      {
+        "question": "Workplace charging?",
+        "answer": "A strong enabler — confirm reliability and policies."
+      },
+      {
+        "question": "Renters?",
+        "answer": "Get landlord/building clarity in writing."
+      },
+      {
+        "question": "Next?",
+        "answer": "Use apartment discovery and compare with charging stress in mind."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Apartment living picks",
+            "href": "/ownership-guides/apartment-living"
+          },
+          {
+            "label": "Apartment charging setup",
+            "href": "/charging-guides/apartment-setup"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/apartment-suitability",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/apartment-suitability",
+    "generatedAt": "2026-05-25T19:05:58.652Z"
+  }
+}

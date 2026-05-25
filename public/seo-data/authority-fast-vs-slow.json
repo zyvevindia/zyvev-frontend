@@ -1,0 +1,223 @@
+{
+  "seoPage": {
+    "slug": "authority-fast-vs-slow",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "fast-vs-slow-charging",
+    "title": "Fast Charging vs Slow Charging — What Indian Owners Need | EVSavari",
+    "metaDescription": "Fast Charging vs Slow Charging — What Indian Owners Need — practical charging guidance for Indian buyers.",
+    "intro": "Fast DC and slow AC solve different problems. This guide helps you choose habits that match your parking, commute, and occasional highway trips — without overbuilding home infrastructure.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Definitions without jargon overload",
+        "type": "introduction",
+        "paragraphs": [
+          "Slow charging usually means AC overnight or during work hours. Fast charging means DC sessions at public stations for quicker top-ups."
+        ]
+      },
+      {
+        "id": "practical",
+        "title": "Real-world practicality",
+        "type": "practical",
+        "bullets": [
+          "City commute under ~40–50 km/day: AC often sufficient if you park 6–8 hours.",
+          "Monthly highway leg: plan DC stops using realistic range, not brochure peaks.",
+          "Apartment without dedicated point: treat public AC/DC as backup — start RWA talks early."
+        ]
+      },
+      {
+        "id": "charging-safety",
+        "title": "Charging safety notes",
+        "type": "charging_safety",
+        "bullets": [
+          "Use certified install for home AC — avoid ad-hoc extension boards.",
+          "In rain, use equipment rated for outdoor use — follow OEM guidance."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Myths",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Maximum DC kW is all that matters",
+            "reality": "On-board limits and battery temperature still cap speed."
+          },
+          {
+            "myth": "Home must match public DC speed",
+            "reality": "Home AC is about convenience, not highway parity."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Still unsure?",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Charging types explained",
+            "href": "/charging-guides/charging-types"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Home charging",
+        "href": "/charging-guides/home-charging"
+      },
+      {
+        "label": "Extension board risks",
+        "href": "/charging-guides/extension-board-risks"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "fast-vs-slow-charging",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-tiago-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-curvv-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Paying for the fastest charging hardware may not help if your parking cannot support daily AC.",
+      "Frequent DC can cost more per kWh than home tariffs.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "How long does home AC take?",
+        "answer": "Depends on kW, battery size, and start level — think hours, not minutes."
+      },
+      {
+        "question": "When is DC worth it?",
+        "answer": "Highway legs, urgent top-ups, or when home charging is unavailable."
+      },
+      {
+        "question": "Will slow charging damage the battery?",
+        "answer": "AC overnight is a common, gentle pattern — follow OEM guidance."
+      },
+      {
+        "question": "Apartment owners?",
+        "answer": "Read apartment setup guide and society/RWA explainer."
+      },
+      {
+        "question": "Compare models?",
+        "answer": "Compare on-board AC kW and connector support on EVSavari."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Public charging guide",
+            "href": "/charging-guides/public-charging"
+          },
+          {
+            "label": "Overnight safety",
+            "href": "/charging-guides/overnight-safety"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/charging-guides/fast-vs-slow",
+    "canonicalUrl": "https://evsavari.com/charging-guides/fast-vs-slow",
+    "generatedAt": "2026-05-25T19:05:58.642Z"
+  }
+}

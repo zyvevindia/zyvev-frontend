@@ -23,6 +23,11 @@ import {
   generateBestEvsPage,
 } from "./content-generators/pages.mjs";
 import {
+  AUTHORITY_ALL_EDITORIAL_TOPICS,
+  generateAuthorityEditorialPage,
+  authorityRegistryMeta,
+} from "./content-generators/authorityPages.mjs";
+import {
   validateRegistry,
   entryFromSeoPage,
   mergeRegistryEntries,
@@ -108,8 +113,31 @@ for (const [left, right] of COMPARE_PAIRS) {
   );
 }
 
+const AUTHORITY_CANONICAL_PATHS = new Set(
+  AUTHORITY_ALL_EDITORIAL_TOPICS.map((t) => t.path)
+);
+
+// —— Authority editorial (population + myths) ——
+for (const topic of AUTHORITY_ALL_EDITORIAL_TOPICS) {
+  const page = generateAuthorityEditorialPage(topic);
+  const rel = `public/seo-data/${topic.contentSlug}.json`;
+  const meta = authorityRegistryMeta(topic, page.seoPage);
+  register(
+    entryFromSeoPage(page.seoPage, {
+      ...meta,
+      h1: meta.h1,
+    }),
+    rel,
+    page
+  );
+}
+
 // —— Ownership (15 new) ——
 for (const topic of OWNERSHIP_TOPICS) {
+  const ownershipPath = `/ownership-guides/${topic.segment}`;
+  if (AUTHORITY_CANONICAL_PATHS.has(ownershipPath)) {
+    continue;
+  }
   const page = generateOwnershipPage(topic);
   const rel = `public/seo-data/${topic.contentSlug}.json`;
   register(
@@ -166,7 +194,10 @@ if (fileExists("public/seo-data/index.json")) {
   }
 }
 
-const allEntries = mergeRegistryEntries(registry, legacyEntries);
+const filteredLegacy = legacyEntries.filter(
+  (e) => !AUTHORITY_CANONICAL_PATHS.has(e.path)
+);
+const allEntries = mergeRegistryEntries(registry, filteredLegacy);
 const validation = validateRegistry(registry);
 
 console.log(`Registry entries (generated batch): ${registry.length}`);
@@ -191,6 +222,7 @@ writeJson("public/seo-data/content-manifest.json", {
     city_charging: CITIES.length,
     compare: COMPARE_PAIRS.length,
     ownership: OWNERSHIP_TOPICS.length,
+    authority_editorial: AUTHORITY_ALL_EDITORIAL_TOPICS.length,
     best_evs: BEST_EVS_TOPICS.length,
     batch_total: registry.length,
   },

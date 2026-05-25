@@ -1,0 +1,221 @@
+{
+  "seoPage": {
+    "slug": "authority-myth-battery-replacement-cost",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "myth-battery-replacement-cost",
+    "title": "Are EV Batteries Extremely Expensive to Replace? Myth vs Reality | EVSavari",
+    "metaDescription": "Are EV Batteries Extremely Expensive to Replace? Myth vs Reality — practical ownership guidance for Indian buyers.",
+    "intro": "The myth: every owner will pay lakhs for a new pack soon. The reality: warranty covers many defect cases; out-of-warranty replacements are rare in young fleets — but quotes can be high when needed.",
+    "editorialSections": [
+      {
+        "id": "myth-intro",
+        "title": "The myth",
+        "type": "introduction",
+        "paragraphs": [
+          "Replacement headlines ignore that most owners sell or trade before needing a pack — and warranties cover many early-life issues."
+        ]
+      },
+      {
+        "id": "reality",
+        "title": "Practical reality",
+        "type": "practical",
+        "bullets": [
+          "Read warranty capacity/defect clauses for your variant.",
+          "Used EV buyers should verify pack health and remaining warranty.",
+          "Driving habits influence long-term health — see battery lifespan guide."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "If a quote appears",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Out-of-warranty pack quotes can be a large bill — that risk matters more for older high-km cars than new city commuters."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "Misconceptions",
+        "type": "misconceptions",
+        "misconceptions": [
+          {
+            "myth": "Every owner replaces battery once",
+            "reality": "Many vehicles change hands before that point."
+          },
+          {
+            "myth": "Third-party packs are always cheap",
+            "reality": "Compatibility, safety, and warranty matter — proceed carefully."
+          }
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Compare responsibly",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Battery lifespan",
+            "href": "/ownership-guides/battery-lifespan"
+          },
+          {
+            "label": "Used EV buying",
+            "href": "/ownership-guides/used-ev-buying"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      },
+      {
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "EV myths hub",
+        "href": "/ownership-guides/ev-myths"
+      },
+      {
+        "step": 2,
+        "label": "Battery myth",
+        "href": "/ownership-guides/myth-battery-dies-quickly"
+      },
+      {
+        "step": 3,
+        "label": "Apartment charging myth",
+        "href": "/ownership-guides/myth-apartment-charging-impossible"
+      },
+      {
+        "step": 4,
+        "label": "Highway myth",
+        "href": "/ownership-guides/myth-highway-practicality"
+      }
+    ],
+    "learningPathwayId": "ev_myths",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "myth-battery-replacement-cost",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/hyundai-kona-electric"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-punch-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "bmw-ix1",
+        "displayName": "BMW Ix1",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/bmw-ix1"
+      }
+    ],
+    "tradeoffs": [
+      "No EV removes every constraint — charging access and km pattern still decide fit.",
+      "Outcomes vary by model, city, and usage — verify warranty and service terms locally."
+    ],
+    "faq": [
+      {
+        "question": "Typical replacement cost?",
+        "answer": "Varies widely by model and era — ask authorised centres for your variant, not rumours."
+      },
+      {
+        "question": "Will warranty cover me?",
+        "answer": "If terms are met — yes for qualifying defects; wear may differ."
+      },
+      {
+        "question": "Can I insure pack risk?",
+        "answer": "Check policies available in your market — terms vary."
+      },
+      {
+        "question": "Buy extended warranty?",
+        "answer": "Compare cost vs how long you will keep the car."
+      },
+      {
+        "question": "Next?",
+        "answer": "Prioritise models with clear warranty language if anxiety is high."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Battery dies quickly myth",
+            "href": "/ownership-guides/myth-battery-dies-quickly"
+          },
+          {
+            "label": "Resale myth",
+            "href": "/ownership-guides/myth-resale-value-loss"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/myth-battery-replacement-cost",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/myth-battery-replacement-cost",
+    "generatedAt": "2026-05-25T19:05:58.669Z"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-05-25T18:55:03.725Z",
+  "reportType": "authority-charging-completeness",
+  "cluster": "charging_guides",
+  "taxonomy": [
+    {
+      "key": "setup",
+      "label": "Setup & installation",
+      "topics": 2,
+      "published": 1
+    },
+    {
+      "key": "speed_and_network",
+      "label": "Speed & public network",
+      "topics": 2,
+      "published": 2
+    },
+    {
+      "key": "cost_and_safety",
+      "label": "Cost & safety",
+      "topics": 4,
+      "published": 4
+    }
+  ],
+  "intentMapCount": 5,
+  "faqTemplateCount": 3,
+  "schemaType": "FAQPage",
+  "topics": [
+    {
+      "id": "home-charging-explained",
+      "title": "Home charging explained",
+      "readiness": "published",
+      "canonicalPath": "/charging-guides/home-charging",
+      "routeReady": false,
+      "inTaxonomy": true,
+      "intents": [
+        "home_charger_setup"
+      ],
+      "complete": false,
+      "editorialOk": false,
+      "editorialScore": 25,
+      "gaps": [
+        "editorial_incomplete",
+        "no_live_route"
+      ]
+    },
+    {
+      "id": "fast-vs-slow-charging",
+      "title": "Fast charging vs slow charging",
+      "readiness": "published",
+      "canonicalPath": "/charging-guides/fast-vs-slow",
+      "routeReady": true,
+      "inTaxonomy": true,
+      "intents": [
+        "charging_speed"
+      ],
+      "complete": true,
+      "editorialOk": true,
+      "editorialScore": 100,
+      "gaps": []
+    },
+    {
+      "id": "public-charging-guide",
+      "title": "Public charging guide",
+      "readiness": "published",
+      "canonicalPath": "/charging-guides/public-charging",
+      "routeReady": true,
+      "inTaxonomy": true,
+      "intents": [
+        "public_charging"
+      ],
+      "complete": true,
+      "editorialOk": true,
+      "editorialScore": 90,
+      "gaps": []
+    },
+    {
+      "id": "apartment-charging-setup",
+      "title": "Apartment charging setup",
+      "readiness": "published",
+      "canonicalPath": "/charging-guides/apartment-setup",
+      "routeReady": true,
+      "inTaxonomy": true,
+      "intents": [
+        "home_charger_setup"
+      ],
+      "complete": true,
+      "editorialOk": true,
+      "editorialScore": 90,
+      "gaps": []
+    },
+    {
+      "id": "ev-charging-cost-india",
+      "title": "EV charging cost in India",
+      "readiness": "published",
+      "canonicalPath": "/ownership-guides/running-cost",
+      "routeReady": true,
+      "inTaxonomy": true,
+      "intents": [
+        "charging_cost"
+      ],
+      "complete": false,
+      "editorialOk": false,
+      "editorialScore": 55,
+      "gaps": [
+        "editorial_incomplete"
+      ]
+    },
+    {
+      "id": "overnight-charging-safety",
+      "title": "Overnight charging safety",
+      "readiness": "published",
+      "canonicalPath": "/charging-guides/overnight-safety",
+      "routeReady": true,
+      "inTaxonomy": true,
+      "intents": [
+        "charging_safety"
+      ],
+      "complete": true,
+      "editorialOk": true,
+      "editorialScore": 90,
+      "gaps": []
+    },
+    {
+      "id": "rain-water-charging-myths",
+      "title": "Rain & water charging myths",
+      "readiness": "published",
+      "canonicalPath": "/ownership-guides/monsoon-driving",
+      "routeReady": true,
+      "inTaxonomy": true,
+      "intents": [
+        "charging_safety"
+      ],
+      "complete": false,
+      "editorialOk": false,
+      "editorialScore": 55,
+      "gaps": [
+        "editorial_incomplete"
+      ]
+    },
+    {
+      "id": "extension-board-charging-risks",
+      "title": "Extension board charging risks",
+      "readiness": "published",
+      "canonicalPath": "/charging-guides/extension-board-risks",
+      "routeReady": true,
+      "inTaxonomy": true,
+      "intents": [
+        "charging_safety"
+      ],
+      "complete": true,
+      "editorialOk": true,
+      "editorialScore": 90,
+      "gaps": []
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "complete": 5,
+    "completenessPercent": 63,
+    "needsReview": [
+      "home-charging-explained",
+      "ev-charging-cost-india",
+      "rain-water-charging-myths"
+    ]
+  }
+}

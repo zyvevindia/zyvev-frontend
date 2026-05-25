@@ -39,11 +39,11 @@ export function buildChargingPracticality(car, chargingIntel = null) {
     apartmentPracticality =
       convenience >= 65 ? "good" : "moderate";
     apartmentLabel =
-      "Apartment charging may work with society/RWA approval for an AC point";
+      "Apartment charging can work if your society allows an AC point — confirm with your RWA";
   } else {
     apartmentPracticality = "limited";
     apartmentLabel =
-      "Apartment charging likely relies on workplace or public DC — plan weekly top-ups";
+      "Without home charging, plan around workplace or nearby public DC top-ups";
   }
 
   let fastChargePracticality = UNAVAILABLE;
@@ -108,11 +108,11 @@ export function buildChargingPracticality(car, chargingIntel = null) {
     convenienceLevel,
     convenienceLevelLabel:
       convenienceLevel === "high"
-        ? "High charging convenience"
+        ? "Easy to live with day to day"
         : convenienceLevel === "medium"
-          ? "Moderate charging convenience"
+          ? "Manageable charging routine"
           : convenienceLevel === "low"
-            ? "Limited charging convenience"
+            ? "Needs more planning for charging"
             : UNAVAILABLE,
     summaryLines,
     curatedNote,

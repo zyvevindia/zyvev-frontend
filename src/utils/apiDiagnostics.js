@@ -48,9 +48,10 @@ export function logApiRequest({
   status = 0,
   error = null,
   durationMs = 0,
+  silent = false,
 } = {}) {
   if (ok) {
-    if (import.meta.env.DEV) {
+    if (import.meta.env.DEV && !silent) {
       console.info("[EVSavari API]", {
         label,
         status,
@@ -58,6 +59,10 @@ export function logApiRequest({
         url: url.slice(0, 120),
       });
     }
+    return;
+  }
+
+  if (silent && !import.meta.env.DEV) {
     return;
   }
 
@@ -79,7 +84,7 @@ export function logApiRequest({
 
   if (import.meta.env.DEV) {
     console.warn("[EVSavari API]", payload);
-  } else {
+  } else if (!silent) {
     console.warn("[EVSavari API] request failed", payload);
   }
 }

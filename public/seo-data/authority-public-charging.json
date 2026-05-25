@@ -1,0 +1,203 @@
+{
+  "seoPage": {
+    "slug": "authority-public-charging",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "public-charging-guide",
+    "title": "Public EV Charging Guide for India — Planning, Not Promises | EVSavari",
+    "metaDescription": "Public EV Charging Guide for India — Planning, Not Promises — practical charging guidance for Indian buyers.",
+    "intro": "Public charging is improving but uneven. Use this guide to plan backup and highway legs without assuming every neighbourhood has reliable DC today.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "What public charging is for",
+        "type": "introduction",
+        "paragraphs": [
+          "Think of public networks as trip insurance and apartment backup — not always a full replacement for home AC."
+        ]
+      },
+      {
+        "id": "practical",
+        "title": "Planning a session",
+        "type": "practical",
+        "bullets": [
+          "Use apps to check live status — stations can be busy or offline.",
+          "Carry the right connector/adapters your model supports.",
+          "Plan buffer time on highway days — charging plus queueing."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "Limitations to accept",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Rural corridors and smaller cities may still have gaps — verify routes before a long family trip."
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "Highway compare support",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "Highway ownership guide",
+            "href": "/ownership-guides/highway-ownership"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "Highway guidance",
+        "href": "/discover/highway-evs"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "public-charging-guide",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/hyundai-kona-electric"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra Xev 9e",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-tiago-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra Be 6",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-be-6"
+      }
+    ],
+    "tradeoffs": [
+      "DC pricing can exceed home tariffs — budget trips accordingly.",
+      "Not every listed charger fits your connector or payment app.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "Can I rely only on public charging?",
+        "answer": "Some owners do in cities — it requires patience and app discipline."
+      },
+      {
+        "question": "How do I find chargers?",
+        "answer": "Use major network apps and plan alternative stops on highways."
+      },
+      {
+        "question": "Payment failures?",
+        "answer": "Keep a backup app/account and avoid last-km range margins."
+      },
+      {
+        "question": "Apartment backup?",
+        "answer": "Pair with society charging talks — see apartment setup guide."
+      },
+      {
+        "question": "Compare?",
+        "answer": "Compare DC peak kW and connector on shortlisted models."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "Fast vs slow",
+            "href": "/charging-guides/fast-vs-slow"
+          },
+          {
+            "label": "City commute ownership",
+            "href": "/ownership-guides/city-commute"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/charging-guides/public-charging",
+    "canonicalUrl": "https://evsavari.com/charging-guides/public-charging",
+    "generatedAt": "2026-05-25T19:05:58.643Z"
+  }
+}

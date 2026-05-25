@@ -1,0 +1,204 @@
+{
+  "seoPage": {
+    "slug": "authority-city-commute",
+    "category": "authority",
+    "pageTypeId": "authority_editorial",
+    "authorityTopicId": "ev-city-commute",
+    "title": "EV Ownership for City Commute in India | EVSavari",
+    "metaDescription": "EV Ownership for City Commute in India — practical ownership guidance for Indian buyers.",
+    "intro": "City commutes favour EVs when km are predictable and charging is stable. This guide sets realistic expectations for traffic, heat, and stop-start range — without urban hype.",
+    "editorialSections": [
+      {
+        "id": "introduction",
+        "title": "Why city driving fits many EVs",
+        "type": "introduction",
+        "paragraphs": [
+          "Low speeds and regen help efficiency in traffic. Overnight AC can cover weekday km if parking allows."
+        ]
+      },
+      {
+        "id": "suitability",
+        "title": "Suitability scenarios",
+        "type": "suitability",
+        "bullets": [
+          "Office 20–50 km/day with home or workplace AC.",
+          "Mixed errands with mid-day top-ups at work.",
+          "Apartment owners with society point or trusted public AC nearby."
+        ]
+      },
+      {
+        "id": "ownership-realism",
+        "title": "City limitations",
+        "type": "ownership_realism",
+        "paragraphs": [
+          "Heat and AC use reduce range in summer — plan buffer km.",
+          "Peak-hour detours change daily use — track your real week, not one good day."
+        ]
+      },
+      {
+        "id": "compare-support",
+        "title": "City-friendly compare",
+        "type": "compare_support",
+        "links": [
+          {
+            "label": "City driving discovery",
+            "href": "/discover/city-driving"
+          },
+          {
+            "label": "Running cost guide",
+            "href": "/ownership-guides/running-cost"
+          }
+        ]
+      }
+    ],
+    "compareSupportLinks": [
+      {
+        "label": "City discovery",
+        "href": "/discover/city-driving"
+      },
+      {
+        "label": "Compare EVs",
+        "href": "/compare"
+      }
+    ],
+    "continueLearning": [
+      {
+        "step": 1,
+        "label": "How EVs work",
+        "href": "/ownership-guides/how-evs-work"
+      },
+      {
+        "step": 2,
+        "label": "Charging types explained",
+        "href": "/charging-guides/charging-types"
+      },
+      {
+        "step": 3,
+        "label": "Running cost reality",
+        "href": "/ownership-guides/running-cost"
+      },
+      {
+        "step": 4,
+        "label": "First-time buyer guide",
+        "href": "/ownership-guides/first-time-buyers"
+      }
+    ],
+    "learningPathwayId": "beginner",
+    "recommendationLogic": {
+      "category": "authority",
+      "authorityTopicId": "ev-city-commute",
+      "methodology": "Editorial authority template — calm India-focused guidance, catalog shortlist for illustration only.",
+      "tonePolicy": "well_suited_language_only",
+      "faqSchema": "FAQPage"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra Xuv400",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/mahindra-xuv400"
+      },
+      {
+        "rank": 2,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen Ec3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/citroen-ec3"
+      },
+      {
+        "rank": 3,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/byd-atto-3"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "explanation": "Example family to evaluate alongside this guide — confirm charging and price locally.",
+        "detailPath": "/cars/tata-tiago-ev"
+      }
+    ],
+    "tradeoffs": [
+      "Frequent short trips still need tyre and brake care.",
+      "Parking wars do not disappear — compact footprints may help.",
+      "Figures vary by city, tariff, and driving style — verify locally before deciding."
+    ],
+    "faq": [
+      {
+        "question": "How much range buffer for city?",
+        "answer": "Many owners keep a comfortable margin for AC use and diversions — track your week."
+      },
+      {
+        "question": "Is regen enough in traffic?",
+        "answer": "It helps efficiency — not a substitute for planning charging."
+      },
+      {
+        "question": "Office charging?",
+        "answer": "Valuable — confirm access hours and billing."
+      },
+      {
+        "question": "Highway once a month?",
+        "answer": "Read highway ownership guide before choosing a small pack."
+      },
+      {
+        "question": "Compare?",
+        "answer": "Use city discovery and compare city usability scores."
+      }
+    ],
+    "relatedLinks": [
+      {
+        "title": "Related guides",
+        "links": [
+          {
+            "label": "City driving picks",
+            "href": "/best-evs/city-driving"
+          },
+          {
+            "label": "Running cost",
+            "href": "/ownership-guides/running-cost"
+          },
+          {
+            "label": "All EV guides",
+            "href": "/guides"
+          },
+          {
+            "label": "Compare EVs",
+            "href": "/compare"
+          },
+          {
+            "label": "Browse catalog",
+            "href": "/cars"
+          }
+        ]
+      },
+      {
+        "title": "Discovery",
+        "links": [
+          {
+            "label": "EVs under ₹15 lakh",
+            "href": "/discover/under-15-lakh"
+          },
+          {
+            "label": "Apartment-friendly EVs",
+            "href": "/discover/apartment-living"
+          },
+          {
+            "label": "City driving picks",
+            "href": "/discover/city-driving"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "type": "browse_catalog",
+      "label": "Browse all EVs →",
+      "href": "/cars"
+    },
+    "canonicalPath": "/ownership-guides/city-commute",
+    "canonicalUrl": "https://evsavari.com/ownership-guides/city-commute",
+    "generatedAt": "2026-05-25T19:05:58.653Z"
+  }
+}
