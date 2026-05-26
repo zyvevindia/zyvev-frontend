@@ -2,6 +2,7 @@ import { sanitizeCarImageFields, sanitizeImageUrl } from "./imageUrl";
 import { getListingImage } from "./vehicleMedia";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { logProduction } from "./productionLog";
+import { applyVerifiedCatalogOverlay } from "../data/catalog/verified/applyVerifiedCatalogOverlay.js";
 
 export default function normalizeCar(car) {
   const cleaned = sanitizeCarImageFields(car);
@@ -18,7 +19,7 @@ export default function normalizeCar(car) {
     );
   }
 
-  return {
+  const normalized = {
     ...cleaned,
 
     _id: cleaned._id || "",
@@ -68,4 +69,6 @@ export default function normalizeCar(car) {
 
     catalogMeta: cleaned.catalogMeta || null,
   };
+
+  return applyVerifiedCatalogOverlay(normalized);
 }

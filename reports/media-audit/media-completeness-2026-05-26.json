@@ -1,0 +1,2387 @@
+{
+  "generatedAt": "2026-05-26T08:03:25.209Z",
+  "families": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "oem": "Tata",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "oem": "Tata",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "oem": "Tata",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "oem": "Tata",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "oem": "MG",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "oem": "MG",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "oem": "Mahindra",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "oem": "Mahindra",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "oem": "Mahindra",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "oem": "BYD",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "oem": "Hyundai",
+      "mediaCompletenessPercent": 75,
+      "coreCompletenessPercent": 100,
+      "optionalCompletenessPercent": 0,
+      "missingCoreRoles": [],
+      "missingOptionalRoles": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "status": "PARTIAL"
+    }
+  ],
+  "optional": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "oem": "Tata",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "oem": "Tata",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "oem": "Tata",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "oem": "Tata",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "oem": "MG",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "oem": "MG",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "oem": "Mahindra",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "oem": "Mahindra",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "oem": "Mahindra",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "oem": "BYD",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "oem": "Hyundai",
+      "roles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ],
+      "verifiedOptionalCount": 0,
+      "incompleteRoles": [
+        {
+          "key": "exterior",
+          "label": "Exterior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "exterior-1.jpg",
+            "exterior-2.jpg",
+            "exterior-3.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "interior",
+          "label": "Interior",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "interior-1.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "charging-port",
+          "label": "Charging port",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "charging-port.jpg"
+          ],
+          "runtimeRequested": false
+        },
+        {
+          "key": "og",
+          "label": "OG / social",
+          "status": "not_uploaded",
+          "missingFiles": [
+            "og"
+          ],
+          "runtimeRequested": false
+        }
+      ]
+    }
+  ],
+  "conflicts": [],
+  "byOem": [
+    {
+      "oem": "Tata",
+      "families": [
+        {
+          "familySlug": "tata-nexon-ev",
+          "oem": "Tata",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        },
+        {
+          "familySlug": "tata-punch-ev",
+          "oem": "Tata",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        },
+        {
+          "familySlug": "tata-curvv-ev",
+          "oem": "Tata",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        },
+        {
+          "familySlug": "tata-tiago-ev",
+          "oem": "Tata",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        }
+      ],
+      "avgCompleteness": 75
+    },
+    {
+      "oem": "MG",
+      "families": [
+        {
+          "familySlug": "mg-comet-ev",
+          "oem": "MG",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        },
+        {
+          "familySlug": "mg-zs-ev",
+          "oem": "MG",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        }
+      ],
+      "avgCompleteness": 75
+    },
+    {
+      "oem": "Mahindra",
+      "families": [
+        {
+          "familySlug": "mahindra-be-6",
+          "oem": "Mahindra",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        },
+        {
+          "familySlug": "mahindra-xev-9e",
+          "oem": "Mahindra",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        },
+        {
+          "familySlug": "mahindra-xuv400",
+          "oem": "Mahindra",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        }
+      ],
+      "avgCompleteness": 75
+    },
+    {
+      "oem": "BYD",
+      "families": [
+        {
+          "familySlug": "byd-atto-3",
+          "oem": "BYD",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        }
+      ],
+      "avgCompleteness": 75
+    },
+    {
+      "oem": "Hyundai",
+      "families": [
+        {
+          "familySlug": "hyundai-kona-electric",
+          "oem": "Hyundai",
+          "mediaCompletenessPercent": 75,
+          "coreCompletenessPercent": 100,
+          "optionalCompletenessPercent": 0,
+          "missingCoreRoles": [],
+          "missingOptionalRoles": [
+            "exterior",
+            "interior",
+            "charging-port",
+            "og"
+          ],
+          "status": "PARTIAL"
+        }
+      ],
+      "avgCompleteness": 75
+    }
+  ],
+  "summary": {
+    "avgMediaCompletenessPercent": 75,
+    "familiesBelow60": 0,
+    "conflictCount": 0,
+    "cloudinaryPrefix": "evsavari/catalog/families/<slug>/<role>"
+  },
+  "optionalGaps": {
+    "familiesAudited": 11,
+    "familiesWithGaps": 11,
+    "optionalAssetCatalog": [
+      "exterior-1",
+      "exterior-2",
+      "exterior-3",
+      "interior-1",
+      "charging-port",
+      "og"
+    ],
+    "byOem": [
+      {
+        "oem": "Tata",
+        "families": [
+          {
+            "familySlug": "tata-nexon-ev",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          },
+          {
+            "familySlug": "tata-punch-ev",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          },
+          {
+            "familySlug": "tata-curvv-ev",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          },
+          {
+            "familySlug": "tata-tiago-ev",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          }
+        ]
+      },
+      {
+        "oem": "MG",
+        "families": [
+          {
+            "familySlug": "mg-comet-ev",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          },
+          {
+            "familySlug": "mg-zs-ev",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          }
+        ]
+      },
+      {
+        "oem": "Mahindra",
+        "families": [
+          {
+            "familySlug": "mahindra-be-6",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          },
+          {
+            "familySlug": "mahindra-xev-9e",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          },
+          {
+            "familySlug": "mahindra-xuv400",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          }
+        ]
+      },
+      {
+        "oem": "BYD",
+        "families": [
+          {
+            "familySlug": "byd-atto-3",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          }
+        ]
+      },
+      {
+        "oem": "Hyundai",
+        "families": [
+          {
+            "familySlug": "hyundai-kona-electric",
+            "missing": [
+              "exterior",
+              "interior",
+              "charging-port",
+              "og"
+            ]
+          }
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "familySlug": "tata-nexon-ev",
+        "oem": "Tata",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "tata-punch-ev",
+        "oem": "Tata",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "tata-curvv-ev",
+        "oem": "Tata",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "tata-tiago-ev",
+        "oem": "Tata",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "mg-comet-ev",
+        "oem": "MG",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "mg-zs-ev",
+        "oem": "MG",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "mahindra-be-6",
+        "oem": "Mahindra",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "mahindra-xev-9e",
+        "oem": "Mahindra",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "mahindra-xuv400",
+        "oem": "Mahindra",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "byd-atto-3",
+        "oem": "BYD",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      },
+      {
+        "familySlug": "hyundai-kona-electric",
+        "oem": "Hyundai",
+        "roles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ],
+        "verifiedOptionalCount": 0,
+        "incompleteRoles": [
+          {
+            "key": "exterior",
+            "label": "Exterior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "exterior-1.jpg",
+              "exterior-2.jpg",
+              "exterior-3.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "interior",
+            "label": "Interior",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "interior-1.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "charging-port",
+            "label": "Charging port",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "charging-port.jpg"
+            ],
+            "runtimeRequested": false
+          },
+          {
+            "key": "og",
+            "label": "OG / social",
+            "status": "not_uploaded",
+            "missingFiles": [
+              "og"
+            ],
+            "runtimeRequested": false
+          }
+        ]
+      }
+    ],
+    "auditedAt": "2026-05-26T08:03:25.213Z"
+  }
+}

@@ -14,6 +14,18 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 export function definitionToAuditCar(def) {
   const primary = def.variants?.[0] || {};
   const chargingMeta = def.chargingMeta || {};
+  const primaryCharging = primary.chargingMeta || chargingMeta;
+  const chargingSummary = [
+    primaryCharging.acKw ? `${primaryCharging.acKw} kW AC` : null,
+    primaryCharging.dcKw ? `${primaryCharging.dcKw} kW DC` : null,
+    primaryCharging.port || null,
+    primaryCharging.dcTime10to80Minutes
+      ? `10–80% in ~${primaryCharging.dcTime10to80Minutes} min`
+      : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
   return {
     slug: def.slug,
     name: def.name,
@@ -21,6 +33,8 @@ export function definitionToAuditCar(def) {
     category: def.category,
     familySlug: def.slug,
     compareReady: def.compareReady !== false,
+    verified: def.verified === true,
+    verificationSource: def.verificationSource || null,
     startingPrice: primary.priceInr,
     price: primary.priceInr,
     range: primary.rangeKmClaimed,
@@ -29,10 +43,10 @@ export function definitionToAuditCar(def) {
       batteryPack: primary.batteryKwh
         ? `${primary.batteryKwh} kWh`
         : null,
-      chargingTime: chargingMeta.dcKw
-        ? `DC up to ${chargingMeta.dcKw} kW`
-        : null,
+      chargingTime: chargingSummary || null,
       topSpeed: primary.accel0To100 || null,
+      powerKw: primary.powerKw,
+      torqueNm: primary.torqueNm,
     },
     catalogMeta: {
       slug: def.slug,
@@ -40,14 +54,35 @@ export function definitionToAuditCar(def) {
       brandSlug: String(def.brand || "")
         .toLowerCase()
         .replace(/\s+/g, "-"),
+      verified: def.verified === true,
+      verificationSource: def.verificationSource || null,
       safety: def.safetyMeta || {},
       suitabilityScores: def.suitabilityScores || {},
       governanceStatus: def.governanceStatus || "not_verified",
       seo: def.seoMeta || {},
+      claimedRangeKm: primary.rangeKmClaimed,
+      chargingSummary,
+      chargingIntelligence: {
+        acKw: primaryCharging.acKw,
+        dcKw: primaryCharging.dcKw,
+        connectorType: primaryCharging.port,
+        dcTime10to80Minutes: primaryCharging.dcTime10to80Minutes,
+        portableChargerIncluded: primaryCharging.portableChargerIncluded,
+        homeChargingSupported: true,
+        fastChargingSupported: Boolean(primaryCharging.dcKw),
+      },
+      chargingPracticality: {
+        acFullChargeHours: primaryCharging.acTime0to100Hours,
+        dcTime10to80Minutes: primaryCharging.dcTime10to80Minutes,
+        connectorType: primaryCharging.port,
+        homeChargingSupported: true,
+        portableChargerIncluded: primaryCharging.portableChargerIncluded,
+        fastChargingSupported: Boolean(primaryCharging.dcKw),
+      },
     },
     variants: def.variants || [],
     ownershipMeta: def.ownershipMeta || {},
-    chargingMeta,
+    chargingMeta: primaryCharging,
   };
 }
 

@@ -3,6 +3,8 @@
  * Indicative specs for persistence + compare readiness; verify against OEM before campaigns.
  */
 
+import { buildTataTiagoTier1Definition } from "../../data/catalog/verified/tataTiagoEvVerified.js";
+
 /** Safety skeleton — no fabricated star ratings. */
 const PRODUCTIONIZATION_SAFETY_SKELETON = {
   bharatNcap: { status: "not_tested" },
@@ -80,33 +82,7 @@ export const TIER1_CATALOG_DEFINITIONS = [
       },
     ],
   },
-  {
-    slug: "tata-tiago-ev",
-    brand: "Tata",
-    name: "Tiago EV",
-    category: "Hatchback",
-    compareReady: true,
-    ownershipMeta: { apartmentFriendly: true, beginnerFriendly: true, cityPrimary: true },
-    chargingMeta: { acKw: 3.3, dcKw: 25, port: "CCS2" },
-    variants: [
-      {
-        slug: "xe",
-        name: "XE",
-        priceInr: 799000,
-        rangeKmClaimed: 250,
-        rangeKmRealWorld: 165,
-        batteryKwh: 19.2,
-      },
-      {
-        slug: "xt",
-        name: "XT",
-        priceInr: 949000,
-        rangeKmClaimed: 315,
-        rangeKmRealWorld: 210,
-        batteryKwh: 24,
-      },
-    ],
-  },
+  buildTataTiagoTier1Definition(),
   {
     slug: "tata-curvv-ev",
     brand: "Tata",
