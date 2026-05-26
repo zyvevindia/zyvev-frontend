@@ -14,7 +14,7 @@ export default function DetailHero({
   activePrice,
   activeRange,
   activeBattery,
-  activeCharging,
+  chargingSummary,
   fourthQuickSpec,
   category,
   galleryImages,
@@ -137,7 +137,7 @@ export default function DetailHero({
         <DetailQuickSpecs
           range={activeRange}
           battery={activeBattery}
-          charging={activeCharging}
+          chargingSummary={chargingSummary}
           fourthMetric={fourthQuickSpec}
           onScrollCharging={onScrollCharging}
         />

@@ -1,17 +1,10 @@
 export default function DetailQuickSpecs({
   range,
   battery,
-  charging,
+  chargingSummary,
   fourthMetric,
   onScrollCharging,
 }) {
-  const fourth =
-    fourthMetric ?? {
-      label: "Acceleration",
-      icon: "⏱",
-      value: "—",
-    };
-
   const items = [
     {
       icon: "⚡",
@@ -25,16 +18,20 @@ export default function DetailQuickSpecs({
     },
     {
       icon: "⚡",
-      label: "Fast charging",
-      value: charging || "—",
+      label: "Charging",
+      value: chargingSummary || "—",
       action: onScrollCharging,
-    },
-    {
-      icon: fourth.icon,
-      label: fourth.label,
-      value: fourth.value,
+      actionLabel: "View charging details →",
     },
   ];
+
+  if (fourthMetric?.value) {
+    items.push({
+      icon: fourthMetric.icon,
+      label: fourthMetric.label,
+      value: fourthMetric.value,
+    });
+  }
 
   return (
     <div className="cd-quick-specs" role="list">
@@ -46,6 +43,9 @@ export default function DetailQuickSpecs({
             </span>
             <span className="cd-quick-spec__label">{item.label}</span>
             <span className="cd-quick-spec__value">{item.value}</span>
+            {item.action && item.actionLabel ? (
+              <span className="cd-quick-spec__link">{item.actionLabel}</span>
+            ) : null}
           </>
         );
 

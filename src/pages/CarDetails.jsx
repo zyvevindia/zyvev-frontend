@@ -118,7 +118,10 @@ import {
 } from "../utils/safeFetch";
 import { getSafeImage } from "../utils/imageUtils";
 import { resolveRequestableGalleryImages } from "../utils/vehicleMedia";
-import { resolveHeroFourthQuickSpec } from "../utils/heroDetailMetrics";
+import {
+  resolveHeroFourthQuickSpec,
+  resolveHeroChargingSummary,
+} from "../utils/heroDetailMetrics";
 
 /* =========================================================
    ==================== CAR DETAILS PAGE ===================
@@ -530,8 +533,10 @@ export default function CarDetails() {
     scrollToDetailSection("assistance");
   }, []);
 
-  const scrollToCharging = useCallback(() => {
-    scrollToDetailSection("charging");
+  const scrollToChargingDetails = useCallback(() => {
+    if (!scrollToDetailSection("charging")) {
+      scrollToDetailSection("variants");
+    }
   }, []);
 
   const handleFinanceHelp = useCallback((source = "action_bar") => {
@@ -789,8 +794,7 @@ export default function CarDetails() {
   const activePrice = activeSpecs.price;
   const activeRange = activeSpecs.range;
   const activeBattery = activeSpecs.battery;
-  const activeCharging = activeSpecs.charging;
-  const topSpeed = activeSpecs.topSpeed;
+  const activeVariantForHero = selectedVariant || vehicle;
 
   const features =
     Array.isArray(vehicle.features)
@@ -894,9 +898,14 @@ export default function CarDetails() {
       : []),
   ]);
 
+  const heroChargingSummary = resolveHeroChargingSummary(
+    activeVariantForHero,
+    activeVariantForHero?.catalogMeta || vehicle.catalogMeta
+  );
+
   const heroFourthQuickSpec = resolveHeroFourthQuickSpec({
-    accelerationRaw: topSpeed,
-    catalogMeta: vehicle.catalogMeta,
+    variant: activeVariantForHero,
+    catalogMeta: activeVariantForHero?.catalogMeta || vehicle.catalogMeta,
   });
 
   const handleCompareEv = () => {
@@ -954,7 +963,7 @@ export default function CarDetails() {
             activePrice={activePrice}
             activeRange={activeRange}
             activeBattery={activeBattery}
-            activeCharging={activeCharging}
+            chargingSummary={heroChargingSummary}
             fourthQuickSpec={heroFourthQuickSpec}
             category={vehicle.category}
             galleryImages={galleryImages}
@@ -967,7 +976,7 @@ export default function CarDetails() {
             }
             onScrollEmi={scrollToEmiCalculator}
             onScrollDealer={scrollToDealer}
-            onScrollCharging={scrollToCharging}
+            onScrollCharging={scrollToChargingDetails}
           />
 
           <DetailActionBar

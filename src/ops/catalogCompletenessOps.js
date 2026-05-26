@@ -19,7 +19,10 @@ import {
 import { auditVehicleMedia } from "../utils/mediaAudit.js";
 import { LOCAL_FALLBACK_EV } from "../config/media.js";
 import { isPresent, UNAVAILABLE } from "../intelligence/governance.js";
-import { formatHeroAccelerationLabel } from "../utils/heroDetailMetrics.js";
+import {
+  formatVerifiedAccelerationDisplay,
+  parseVerifiedAcceleration,
+} from "../utils/heroDetailMetrics.js";
 
 export const COMPLETENESS_STATUS = Object.freeze({
   VERIFIED: "verified",
@@ -79,8 +82,11 @@ export function auditVehicleCompleteness(car = {}) {
     car?.specifications?.batteryPack || car?.batteryPack || null;
   const chargingSpec =
     car?.specifications?.chargingTime || car?.chargingTime || null;
-  const accel = formatHeroAccelerationLabel(
-    car?.specifications?.topSpeed
+  const accel = formatVerifiedAccelerationDisplay(
+    parseVerifiedAcceleration({
+      variant: car,
+      catalogMeta: car?.catalogMeta,
+    })
   );
 
   const variants = Array.isArray(car?.variants)
