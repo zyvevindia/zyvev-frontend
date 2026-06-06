@@ -3,6 +3,8 @@
  * Indicative specs for persistence + compare readiness; verify against OEM before campaigns.
  */
 
+import { buildTataNexonTier1Definition } from "../../data/catalog/verified/tataNexonEvVerified.js";
+import { buildTataPunchTier1Definition } from "../../data/catalog/verified/tataPunchEvVerified.js";
 import { buildTataTiagoTier1Definition } from "../../data/catalog/verified/tataTiagoEvVerified.js";
 
 /** Safety skeleton — no fabricated star ratings. */
@@ -24,64 +26,8 @@ function productionizationSeo(brand, name) {
 }
 
 export const TIER1_CATALOG_DEFINITIONS = [
-  {
-    slug: "tata-nexon-ev",
-    brand: "Tata",
-    name: "Nexon EV",
-    category: "SUV",
-    compareReady: true,
-    safetyMeta: PRODUCTIONIZATION_SAFETY_SKELETON,
-    seoMeta: productionizationSeo("Tata", "Nexon EV"),
-    ownershipMeta: { apartmentFriendly: true, highwaySuitable: true, cityPrimary: true },
-    chargingMeta: { acKw: 7.2, dcKw: 50, port: "CCS2" },
-    variants: [
-      {
-        slug: "creative-plus",
-        name: "Creative Plus",
-        priceInr: 1499000,
-        rangeKmClaimed: 465,
-        rangeKmRealWorld: 280,
-        batteryKwh: 40.5,
-      },
-      {
-        slug: "empowered-plus",
-        name: "Empowered Plus",
-        priceInr: 1799000,
-        rangeKmClaimed: 489,
-        rangeKmRealWorld: 295,
-        batteryKwh: 45,
-      },
-    ],
-  },
-  {
-    slug: "tata-punch-ev",
-    brand: "Tata",
-    name: "Punch EV",
-    category: "SUV",
-    compareReady: true,
-    safetyMeta: PRODUCTIONIZATION_SAFETY_SKELETON,
-    seoMeta: productionizationSeo("Tata", "Punch EV"),
-    ownershipMeta: { apartmentFriendly: true, compactParking: true, cityPrimary: true },
-    chargingMeta: { acKw: 3.3, dcKw: 50, port: "CCS2" },
-    variants: [
-      {
-        slug: "smart",
-        name: "Smart",
-        priceInr: 1099000,
-        rangeKmClaimed: 421,
-        rangeKmRealWorld: 250,
-        batteryKwh: 35,
-      },
-      {
-        slug: "empowered",
-        name: "Empowered",
-        priceInr: 1249000,
-        rangeKmClaimed: 421,
-        rangeKmRealWorld: 255,
-        batteryKwh: 35,
-      },
-    ],
-  },
+  buildTataNexonTier1Definition(),
+  buildTataPunchTier1Definition(),
   buildTataTiagoTier1Definition(),
   {
     slug: "tata-curvv-ev",

@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-06-05T17:17:26.467Z",
+  "workbook": "C:/Users/Nitin/OneDrive/Desktop/Zyvev/Tata_Nexon_EV_Dossier_v1.xlsx",
+  "verificationSource": "Verified Dossier",
+  "verificationOwner": "Nitin Sharma",
+  "dossierVersion": "v1",
+  "familySlug": "tata-nexon-ev",
+  "variantsIngested": 13,
+  "variantNames": [
+    "Creative+ MR",
+    "Fearless MR",
+    "Fearless+ MR",
+    "Fearless+ S MR",
+    "Empowered MR",
+    "Creative 45",
+    "Fearless 45",
+    "Empowered LR",
+    "Empowered+ 45",
+    "Empowered+ 45 Red Dark",
+    "Empowered+ A 45",
+    "Empowered+ A 45 Dark",
+    "Empowered+ A 45 Red Dark"
+  ],
+  "chargingRecordsIngested": 13,
+  "safetyRecordsIngested": 13,
+  "mediaRecordsIngested": 3,
+  "media": {
+    "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/v1780678387/heroImage_y5qmzt.jpg",
+    "compareImage": "https://res.cloudinary.com/dznvmumze/image/upload/v1780678042/compaeImage.jpg",
+    "listingImage": "https://res.cloudinary.com/dznvmumze/image/upload/v1780678067/listingImage.jpg"
+  },
+  "validation": {
+    "build": { "status": "pass" },
+    "tier1Qa": { "status": "pass", "report": "reports/tier1-productionization/tier1-qa-2026-06-05.json" },
+    "compareTrustAudit": { "status": "pass", "report": "reports/compare-quality/compare-trust-audit-2026-06-05.json" },
+    "postLaunchSmoke": {
+      "status": "partial",
+      "failure": "backend:persistence-smoke — TypeError: fetch failed (Supabase network)",
+      "passedSteps": [
+        "seo:qa",
+        "trust:smoke",
+        "soft-launch:smoke",
+        "catalog-ops:smoke",
+        "intelligence:smoke",
+        "ops:usage-learning-smoke",
+        "admin:routes-smoke",
+        "tier1:productionization",
+        "compare:trust-audit",
+        "media:completeness",
+        "tier1:qa",
+        "production:qa"
+      ]
+    }
+  }

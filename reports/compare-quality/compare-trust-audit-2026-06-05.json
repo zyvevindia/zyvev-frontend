@@ -1,0 +1,199 @@
+{
+  "generatedAt": "2026-06-05T18:06:14.745Z",
+  "cohort": [
+    "tata-nexon-ev",
+    "tata-punch-ev",
+    "tata-curvv-ev",
+    "mg-zs-ev",
+    "byd-atto-3"
+  ],
+  "vehicleScores": [
+    {
+      "slug": "tata-nexon-ev",
+      "name": "Nexon EV",
+      "score": 94,
+      "band": "strong",
+      "issues": [],
+      "warnings": []
+    },
+    {
+      "slug": "tata-punch-ev",
+      "name": "Punch EV",
+      "score": 94,
+      "band": "strong",
+      "issues": [],
+      "warnings": []
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "name": "Curvv EV",
+      "score": 94,
+      "band": "strong",
+      "issues": [],
+      "warnings": []
+    },
+    {
+      "slug": "mg-zs-ev",
+      "name": "ZS EV",
+      "score": 94,
+      "band": "strong",
+      "issues": [],
+      "warnings": []
+    },
+    {
+      "slug": "byd-atto-3",
+      "name": "Atto 3",
+      "score": 94,
+      "band": "strong",
+      "issues": [],
+      "warnings": []
+    }
+  ],
+  "pairAudits": [
+    {
+      "pairSlug": "tata-nexon-ev-vs-mg-zs-ev",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "low_confidence_scores"
+      ],
+      "trustScore": 55
+    },
+    {
+      "pairSlug": "tata-punch-ev-vs-tata-nexon-ev",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "low_confidence_scores"
+      ],
+      "trustScore": 55
+    },
+    {
+      "pairSlug": "tata-curvv-ev-vs-byd-atto-3",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "low_confidence_scores"
+      ],
+      "trustScore": 55
+    },
+    {
+      "pairSlug": "mg-zs-ev-vs-byd-atto-3",
+      "status": "NEEDS_REVIEW",
+      "issues": [
+        "low_confidence_scores"
+      ],
+      "trustScore": 55
+    }
+  ],
+  "duplicates": [
+    {
+      "phrase": "excellent for overnight home ac charging (dedicated point required)",
+      "slugs": [
+        "tata-nexon-ev",
+        "tata-punch-ev",
+        "tata-curvv-ev",
+        "mg-zs-ev",
+        "byd-atto-3"
+      ]
+    },
+    {
+      "phrase": "apartment charging can work if your society allows an ac point — confirm",
+      "slugs": [
+        "tata-nexon-ev",
+        "tata-punch-ev",
+        "tata-curvv-ev",
+        "mg-zs-ev",
+        "byd-atto-3"
+      ]
+    },
+    {
+      "phrase": "fast-charge friendly for highway and road-trip stops",
+      "slugs": [
+        "tata-nexon-ev",
+        "tata-punch-ev"
+      ]
+    },
+    {
+      "phrase": "road-trip viable with mapped dc stops — verify network along your route",
+      "slugs": [
+        "tata-nexon-ev",
+        "tata-punch-ev"
+      ]
+    },
+    {
+      "phrase": "ac home charging is supported — confirm society/rwa approval for your pa",
+      "slugs": [
+        "tata-nexon-ev",
+        "tata-punch-ev",
+        "tata-curvv-ev",
+        "mg-zs-ev",
+        "byd-atto-3"
+      ]
+    },
+    {
+      "phrase": "works for many families — compare boot space, rear seats, and safety fea",
+      "slugs": [
+        "tata-nexon-ev",
+        "tata-punch-ev",
+        "tata-curvv-ev",
+        "mg-zs-ev",
+        "byd-atto-3"
+      ]
+    },
+    {
+      "phrase": "fast dc times and flexible charging options reduce day-to-day friction.",
+      "slugs": [
+        "tata-nexon-ev",
+        "tata-punch-ev"
+      ]
+    },
+    {
+      "phrase": "comfortable for typical urban weekday use.",
+      "slugs": [
+        "tata-punch-ev",
+        "tata-curvv-ev",
+        "mg-zs-ev",
+        "byd-atto-3"
+      ]
+    },
+    {
+      "phrase": "real-world range supports highway legs with dc stops.",
+      "slugs": [
+        "tata-punch-ev",
+        "tata-curvv-ev",
+        "mg-zs-ev",
+        "byd-atto-3"
+      ]
+    },
+    {
+      "phrase": "long road trips need careful route planning around charging stops",
+      "slugs": [
+        "tata-curvv-ev",
+        "mg-zs-ev",
+        "byd-atto-3"
+      ]
+    },
+    {
+      "phrase": "feasible for planned road trips with mapped dc networks.",
+      "slugs": [
+        "tata-curvv-ev",
+        "mg-zs-ev",
+        "byd-atto-3"
+      ]
+    },
+    {
+      "phrase": "balanced charging profile — plan home or public sessions.",
+      "slugs": [
+        "tata-curvv-ev",
+        "mg-zs-ev",
+        "byd-atto-3"
+      ]
+    }
+  ],
+  "chargingInconsistency": [],
+  "summary": {
+    "avgTrustScore": 94,
+    "vehiclesNeedsWork": 0,
+    "duplicatePhraseCount": 12,
+    "chargingInconsistencyCount": 0,
+    "pairsNeedingReview": 4
+  }
+}

@@ -5,6 +5,7 @@
 import { SITE_ORIGIN } from "../config";
 
 import { extractFamilySlug } from "./modelFamily";
+import { resolveDossierSlug } from "../data/catalog/verified/resolveDossierSlug.js";
 
 export const CANONICAL_VEHICLE_PREFIX = "/cars";
 export const LEGACY_VEHICLE_PREFIX = "/car";
@@ -34,7 +35,14 @@ export function isValidVehicleSlug(slug) {
 export const LEGACY_SLUG_ALIASES = {
   "tata-nexon-ev-long-range": "tata-nexon-ev-empowered-lr",
   "tata-nexon-ev-lr": "tata-nexon-ev-empowered-lr",
+  "tata-nexon-ev-creative-plus": "tata-nexon-ev-creative-plus-mr",
 };
+
+export function resolveLegacySlugAlias(slug = "") {
+  const normalized = normalizeVehicleSlug(slug);
+  if (!normalized) return "";
+  return LEGACY_SLUG_ALIASES[normalized] || normalized;
+}
 
 export function resolveSlugCandidates(rawSlug) {
   const normalized = normalizeVehicleSlug(rawSlug);
@@ -49,8 +57,15 @@ export function resolveSlugCandidates(rawSlug) {
     candidates.push(rawLower);
   }
 
-  const alias = LEGACY_SLUG_ALIASES[normalized];
-  if (alias) candidates.push(alias);
+  const alias = resolveLegacySlugAlias(normalized);
+  if (alias && alias !== normalized) {
+    candidates.push(alias);
+  }
+
+  const dossier = resolveDossierSlug(normalized, extractFamilySlug(normalized));
+  if (dossier && dossier !== normalized) {
+    candidates.push(dossier);
+  }
 
   return [...new Set(candidates.filter(Boolean))];
 }

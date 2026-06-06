@@ -1,0 +1,561 @@
+{
+  "generatedAt": "2026-06-05T18:06:13.592Z",
+  "cohort": [
+    "tata-nexon-ev",
+    "tata-punch-ev",
+    "tata-curvv-ev",
+    "mg-zs-ev",
+    "byd-atto-3"
+  ],
+  "vehicles": [
+    {
+      "slug": "tata-nexon-ev",
+      "label": "Tata Nexon EV",
+      "name": "Nexon EV",
+      "brand": "Tata",
+      "completenessPercent": 31,
+      "missingFields": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified"
+      ],
+      "notVerifiedFields": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "missingMedia": [
+        "interiorImage",
+        "chargingImage"
+      ],
+      "missingSpecs": [
+        "accelerationVerified"
+      ],
+      "weakCompareSections": [],
+      "weakOwnershipGuidance": [],
+      "compareIssues": [],
+      "compareWarnings": [],
+      "compareTrustScore": 94,
+      "compareTrustBand": "strong",
+      "mediaCompletenessPercent": 75,
+      "missingCoreMedia": [],
+      "missingOptionalMedia": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "safetyReadiness": "partial",
+      "compareReadiness": "present",
+      "seoReadiness": "present"
+    },
+    {
+      "slug": "tata-punch-ev",
+      "label": "Tata Punch EV",
+      "name": "Punch EV",
+      "brand": "Tata",
+      "completenessPercent": 31,
+      "missingFields": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified"
+      ],
+      "notVerifiedFields": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "missingMedia": [
+        "interiorImage",
+        "chargingImage"
+      ],
+      "missingSpecs": [
+        "accelerationVerified"
+      ],
+      "weakCompareSections": [],
+      "weakOwnershipGuidance": [],
+      "compareIssues": [],
+      "compareWarnings": [],
+      "compareTrustScore": 94,
+      "compareTrustBand": "strong",
+      "mediaCompletenessPercent": 75,
+      "missingCoreMedia": [],
+      "missingOptionalMedia": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "safetyReadiness": "partial",
+      "compareReadiness": "present",
+      "seoReadiness": "present"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "label": "Tata Curvv EV",
+      "name": "Curvv EV",
+      "brand": "Tata",
+      "completenessPercent": 31,
+      "missingFields": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified"
+      ],
+      "notVerifiedFields": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "missingMedia": [
+        "interiorImage",
+        "chargingImage"
+      ],
+      "missingSpecs": [
+        "accelerationVerified"
+      ],
+      "weakCompareSections": [],
+      "weakOwnershipGuidance": [],
+      "compareIssues": [],
+      "compareWarnings": [],
+      "compareTrustScore": 94,
+      "compareTrustBand": "strong",
+      "mediaCompletenessPercent": 75,
+      "missingCoreMedia": [],
+      "missingOptionalMedia": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "safetyReadiness": "partial",
+      "compareReadiness": "present",
+      "seoReadiness": "present"
+    },
+    {
+      "slug": "mg-zs-ev",
+      "label": "MG ZS EV",
+      "name": "ZS EV",
+      "brand": "MG",
+      "completenessPercent": 31,
+      "missingFields": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified"
+      ],
+      "notVerifiedFields": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "missingMedia": [
+        "interiorImage",
+        "chargingImage"
+      ],
+      "missingSpecs": [
+        "accelerationVerified"
+      ],
+      "weakCompareSections": [],
+      "weakOwnershipGuidance": [],
+      "compareIssues": [],
+      "compareWarnings": [],
+      "compareTrustScore": 94,
+      "compareTrustBand": "strong",
+      "mediaCompletenessPercent": 75,
+      "missingCoreMedia": [],
+      "missingOptionalMedia": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "safetyReadiness": "partial",
+      "compareReadiness": "present",
+      "seoReadiness": "present"
+    },
+    {
+      "slug": "byd-atto-3",
+      "label": "BYD Atto 3",
+      "name": "Atto 3",
+      "brand": "BYD",
+      "completenessPercent": 31,
+      "missingFields": [
+        "interiorImage",
+        "chargingImage",
+        "accelerationVerified"
+      ],
+      "notVerifiedFields": [
+        "heroImage",
+        "galleryCoverage",
+        "pricingVerified",
+        "batteryVerified",
+        "rangeVerified",
+        "chargingVerified"
+      ],
+      "missingMedia": [
+        "interiorImage",
+        "chargingImage"
+      ],
+      "missingSpecs": [
+        "accelerationVerified"
+      ],
+      "weakCompareSections": [],
+      "weakOwnershipGuidance": [],
+      "compareIssues": [],
+      "compareWarnings": [],
+      "compareTrustScore": 94,
+      "compareTrustBand": "strong",
+      "mediaCompletenessPercent": 75,
+      "missingCoreMedia": [],
+      "missingOptionalMedia": [
+        "exterior",
+        "interior",
+        "charging-port",
+        "og"
+      ],
+      "safetyReadiness": "partial",
+      "compareReadiness": "present",
+      "seoReadiness": "present"
+    }
+  ],
+  "comparePairs": [
+    "tata-nexon-ev-vs-mg-zs-ev",
+    "tata-punch-ev-vs-tata-nexon-ev",
+    "tata-curvv-ev-vs-byd-atto-3",
+    "mg-zs-ev-vs-byd-atto-3"
+  ],
+  "safety": {
+    "generatedAt": "2026-06-05T18:06:13.579Z",
+    "vehicles": 5,
+    "readyCount": 2,
+    "partialCount": 3,
+    "missingCount": 0,
+    "rows": [
+      {
+        "slug": "tata-nexon-ev",
+        "name": "Nexon EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": 5,
+            "status": "verified",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": 6,
+            "status": "verified"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": 0,
+            "supported": false,
+            "status": "verified"
+          },
+          "hasData": true
+        },
+        "verifiedCount": 3,
+        "missingFields": [
+          "globalNcap",
+          "abs",
+          "esc",
+          "tractionControl"
+        ],
+        "readiness": "ready"
+      },
+      {
+        "slug": "tata-punch-ev",
+        "name": "Punch EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": 5,
+            "status": "verified",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": 5,
+            "status": "verified",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": 6,
+            "status": "verified"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": 0,
+            "supported": false,
+            "status": "verified"
+          },
+          "hasData": true
+        },
+        "verifiedCount": 4,
+        "missingFields": [
+          "abs",
+          "esc",
+          "tractionControl"
+        ],
+        "readiness": "ready"
+      },
+      {
+        "slug": "tata-curvv-ev",
+        "name": "Curvv EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "not_tested",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": true
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "partial"
+      },
+      {
+        "slug": "mg-zs-ev",
+        "name": "ZS EV",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "not_tested",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": true
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "partial"
+      },
+      {
+        "slug": "byd-atto-3",
+        "name": "Atto 3",
+        "safety": {
+          "bharatNcap": {
+            "stars": null,
+            "status": "not_tested",
+            "ratingYear": null
+          },
+          "globalNcap": {
+            "stars": null,
+            "status": "unknown",
+            "ratingYear": null
+          },
+          "airbags": {
+            "count": null,
+            "status": "unknown"
+          },
+          "abs": {
+            "value": null,
+            "status": "unknown"
+          },
+          "esc": {
+            "value": null,
+            "status": "unknown"
+          },
+          "tractionControl": {
+            "value": null,
+            "status": "unknown"
+          },
+          "adas": {
+            "level": null,
+            "status": "unknown"
+          },
+          "hasData": true
+        },
+        "verifiedCount": 0,
+        "missingFields": [
+          "bharatNcap",
+          "globalNcap",
+          "airbags",
+          "abs",
+          "esc",
+          "tractionControl",
+          "adas"
+        ],
+        "readiness": "partial"
+      }
+    ]
+  },
+  "authority": {
+    "summary": {
+      "readyClusters": 3,
+      "partialClusters": 3,
+      "weakClusters": 0,
+      "avgScore": 70
+    },
+    "weakClusters": []
+  },
+  "productionQa": {
+    "ok": true,
+    "failures": [],
+    "warnings": [
+      {
+        "id": "missing_gallery_images",
+        "detail": "5/5"
+      }
+    ]
+  },
+  "uxChecks": {
+    "stickyNavTabCount": 12,
+    "requiredTabs": [
+      "overview",
+      "variants",
+      "compare",
+      "range",
+      "charging",
+      "features",
+      "suitability",
+      "emi",
+      "faqs",
+      "reviews",
+      "related-evs",
+      "assistance"
+    ],
+    "chargingTabPresent": true,
+    "compareCtaRoutes": [
+      "/compare",
+      "/cars?compareMode=true"
+    ],
+    "detailSectionAnchors": [
+      "overview",
+      "variants",
+      "compare",
+      "range",
+      "charging",
+      "features",
+      "suitability",
+      "emi",
+      "faqs",
+      "reviews",
+      "related-evs",
+      "assistance"
+    ],
+    "status": "static_pass"
+  },
+  "summary": {
+    "avgCompletenessPercent": 31,
+    "avgCompareTrustScore": 94,
+    "avgMediaCompletenessPercent": 75,
+    "vehiclesBelow60Completeness": 5,
+    "vehiclesBelow70Trust": 0,
+    "topMissingMedia": [
+      {
+        "field": "interiorImage",
+        "count": 5
+      },
+      {
+        "field": "chargingImage",
+        "count": 5
+      }
+    ],
+    "topMissingSpecs": [
+      {
+        "field": "accelerationVerified",
+        "count": 5
+      }
+    ]
+  }
+}

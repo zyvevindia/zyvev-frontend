@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-06-06T05:21:30.059Z",
+  "familySlug": "tata-nexon-ev",
+  "variantCountBefore": 2,
+  "variantCountAfter": 13,
+  "dossierVariantSlugs": [
+    "tata-nexon-ev-creative-plus-mr",
+    "tata-nexon-ev-fearless-mr",
+    "tata-nexon-ev-fearless-plus-mr",
+    "tata-nexon-ev-fearless-plus-s-mr",
+    "tata-nexon-ev-empowered-mr",
+    "tata-nexon-ev-creative-45",
+    "tata-nexon-ev-fearless-45",
+    "tata-nexon-ev-empowered-lr",
+    "tata-nexon-ev-empowered-plus-45",
+    "tata-nexon-ev-empowered-plus-45-red-dark",
+    "tata-nexon-ev-empowered-plus-a-45",
+    "tata-nexon-ev-empowered-plus-a-45-dark",
+    "tata-nexon-ev-empowered-plus-a-45-red-dark"
+  ],
+  "variantsSectionCount": 13,
+  "compareAllVariantsCount": 13,
+  "variantComparisonTableRows": 13,
+  "slugAliasesAdded": {
+    "tata-nexon-ev-creative-plus": "tata-nexon-ev-creative-plus-mr",
+    "tata-nexon-ev-long-range": "tata-nexon-ev-empowered-lr",
+    "tata-nexon-ev-lr": "tata-nexon-ev-empowered-lr"
+  },
+  "aliasResolutionChecks": [
+    {
+      "legacy": "tata-nexon-ev-creative-plus",
+      "canonical": "tata-nexon-ev-creative-plus-mr",
+      "resolveDossierSlug": "tata-nexon-ev-creative-plus-mr",
+      "resolves": true
+    },
+    {
+      "legacy": "tata-nexon-ev-long-range",
+      "canonical": "tata-nexon-ev-empowered-lr",
+      "resolveDossierSlug": "tata-nexon-ev-empowered-lr",
+      "resolves": true
+    },
+    {
+      "legacy": "tata-nexon-ev-lr",
+      "canonical": "tata-nexon-ev-empowered-lr",
+      "resolveDossierSlug": "tata-nexon-ev-empowered-lr",
+      "resolves": true
+    }
+  ],
+  "runtimeCatalogExpansion": {
+    "backendManifestNexonSlugs": 13,
+    "targetCount": 13,
+    "expanded": true,
+    "legacyAliasFilePreserved": true
+  },
+  "phases": {
+    "phase1": {
+      "status": "pass",
+      "detail": "Verified dossier drives detail page variant list"
+    },
+    "phase2": {
+      "status": "pass",
+      "detail": "Backend tier-1 manifest Nexon slug count"
+    },
+    "phase3": {
+      "status": "pass",
+      "detail": "Legacy slug alias resolution"
+    }
+  },
+  "validation": {
+    "variantsSectionShows13": true,
+    "compareAllShows13": true,
+    "legacyUrlsResolve": true
+  }
+}

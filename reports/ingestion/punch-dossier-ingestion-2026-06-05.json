@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-06-05T18:05:41.265Z",
+  "workbook": "C:/Users/Nitin/OneDrive/Desktop/Zyvev/Tata_Punch_EV_Dossier_v1.xlsx",
+  "verificationSource": "Verified Dossier",
+  "verificationOwner": "Nitin Sharma",
+  "dossierVersion": "v1.0",
+  "familySlug": "tata-punch-ev",
+  "variantsIngested": 6,
+  "variantNames": [
+    "Smart",
+    "Smart+ 30 kWh",
+    "Smart+ 40 kWh",
+    "Adventure",
+    "Empowered",
+    "Empowered+"
+  ],
+  "chargingRecordsIngested": 6,
+  "safetyRecordsIngested": 6,
+  "mediaStatus": {
+    "verificationStatus": "verified",
+    "source": "dossier",
+    "heroImage": "https://res.cloudinary.com/dznvmumze/image/upload/v1780681716/heroImage.png",
+    "compareImage": "https://res.cloudinary.com/dznvmumze/image/upload/v1780681748/compareImage.png",
+    "listingImage": "https://res.cloudinary.com/dznvmumze/image/upload/v1780681774/listingImage-2.jpg",
+    "dossierUrlsPresent": true
+  },
+  "validation": {
+    "build": { "status": "pass" },
+    "tier1Qa": { "status": "pass" },
+    "compareTrustAudit": { "status": "pass" },
+    "postLaunchSmoke": {
+      "status": "partial",
+      "failure": "backend:persistence-smoke — TypeError: fetch failed (Supabase network)"
+    }
+  },
+  "workbookNote": "Requested Tata_Punch_EV_Dossier_v1(3).xlsx; file not on disk — ingested from Tata_Punch_EV_Dossier_v1.xlsx"
+}

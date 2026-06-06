@@ -22,6 +22,11 @@ import {
 import { logProduction } from "./productionLog";
 
 import { pickDefaultVariantForDetail } from "./variantInsights";
+import {
+  buildVerifiedDossierMarketplaceVariants,
+  hasVerifiedDossier,
+} from "../data/catalog/verified/buildVerifiedDossierVariants.js";
+import { resolveDossierSlug } from "../data/catalog/verified/resolveDossierSlug.js";
 
 const OBJECT_ID_PATTERN = /^[a-f0-9]{24}$/i;
 
@@ -174,18 +179,24 @@ export async function fetchVehicleFamilyBySlug(
   if (!requested) return null;
 
   const familySlug = extractFamilySlug(requested);
-  const catalogRaw = await fetchCatalogVehiclesForFallback(50);
-  const catalog = catalogRaw.map(normalizeCar);
-  const siblings = catalog.filter(
-    (c) => extractFamilySlug(c.slug) === familySlug
-  );
 
-  let variants = siblings;
+  let variants;
+  if (hasVerifiedDossier(familySlug)) {
+    variants = buildVerifiedDossierMarketplaceVariants(familySlug);
+  } else {
+    const catalogRaw = await fetchCatalogVehiclesForFallback(50);
+    const catalog = catalogRaw.map(normalizeCar);
+    const siblings = catalog.filter(
+      (c) => extractFamilySlug(c.slug) === familySlug
+    );
 
-  if (variants.length === 0) {
-    const single = await fetchVehicleBySlug(requested);
-    if (!single?.vehicle) return null;
-    variants = [normalizeCar(single.vehicle)];
+    variants = siblings;
+
+    if (variants.length === 0) {
+      const single = await fetchVehicleBySlug(requested);
+      if (!single?.vehicle) return null;
+      variants = [normalizeCar(single.vehicle)];
+    }
   }
 
   const families = aggregateModelFamilies(variants);
@@ -195,13 +206,18 @@ export async function fetchVehicleFamilyBySlug(
 
   if (!family) return null;
 
-  const preferredVariant =
+  const preferredRaw =
     normalizeVehicleSlug(options.variantSlug) ||
     (isVariantSlug(requested) ? requested : null);
+  const preferredVariant = preferredRaw
+    ? resolveDossierSlug(preferredRaw, familySlug)
+    : null;
 
   const selected =
     family.variants.find(
-      (v) => v.slug === preferredVariant
+      (v) =>
+        normalizeVehicleSlug(v.slug) ===
+        normalizeVehicleSlug(preferredVariant)
     ) ||
     pickDefaultVariantForDetail(family.variants) ||
     family.defaultVariant ||
@@ -225,6 +241,17 @@ export async function fetchVehicleFamilyBySlug(
 
 export async function fetchModelFamiliesForListing(limit = 50) {
   const cars = await fetchCatalogVehiclesForFallback(limit);
-  return aggregateModelFamilies(cars.map(normalizeCar));
+  const families = aggregateModelFamilies(cars.map(normalizeCar));
+
+  return families.map((family) => {
+    if (!hasVerifiedDossier(family.familySlug)) {
+      return family;
+    }
+    const dossierVariants = buildVerifiedDossierMarketplaceVariants(
+      family.familySlug
+    );
+    const [dossierFamily] = aggregateModelFamilies(dossierVariants);
+    return dossierFamily || family;
+  });
 }
 
