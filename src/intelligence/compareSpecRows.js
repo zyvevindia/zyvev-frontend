@@ -1,5 +1,9 @@
 import { ensureArray, safeSlice } from "../utils/compareArrayUtils.js";
 import { formatIndianPriceCompact } from "../utils/formatIndianPrice.js";
+import {
+  formatChargingDurationDisplay,
+  shouldFormatChargingDurationCell,
+} from "../utils/formatChargingDuration.js";
 import { formatRangeConfidenceLabel } from "./rangeConfidence.js";
 import { formatIntelligenceValue, isPresent } from "./governance.js";
 import { withVehicleIntelligence } from "./buildVehicleIntelligence.js";
@@ -243,6 +247,9 @@ export function formatCompareCellValue(raw, row) {
   }
   if (typeof raw === "number" && row.id === "claimed_range") {
     return `${raw} km`;
+  }
+  if (shouldFormatChargingDurationCell(row, raw)) {
+    return formatChargingDurationDisplay(String(raw));
   }
   return String(raw);
 }

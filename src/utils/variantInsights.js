@@ -2,6 +2,7 @@ import {
   extractFamilySlug,
   filterComparableVariants,
 } from "./modelFamily";
+import { formatChargingDurationDisplay } from "./formatChargingDuration.js";
 
 /**
  * Variant-level heuristics for trim selection UX (detail page).
@@ -260,7 +261,7 @@ export function enrichVariantsWithInsights(
         normalized.range > 0
           ? `${normalized.range} km`
           : "—",
-      displayCharging: normalized.charging,
+      displayCharging: formatChargingDurationDisplay(normalized.charging),
       displayPerformance: normalized.topSpeed,
     };
   });

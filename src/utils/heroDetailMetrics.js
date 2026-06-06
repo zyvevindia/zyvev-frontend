@@ -3,6 +3,9 @@
  */
 
 import {
+  formatChargingDurationNumber,
+} from "./formatChargingDuration.js";
+import {
   normalizeSafetyMetadata,
   SAFETY_FIELD_STATUS,
 } from "../intelligence/safetyMetadata.js";
@@ -194,9 +197,8 @@ function parseAcHoursValue(value) {
  * @param {number} hours
  */
 function formatAcHoursLabel(hours) {
-  const n = Number(hours);
-  if (!Number.isFinite(n)) return null;
-  return Number.isInteger(n) ? String(n) : n.toFixed(1);
+  const formatted = formatChargingDurationNumber(hours);
+  return formatted || null;
 }
 
 /**

@@ -17,6 +17,7 @@ import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
 import { formatSafetyIntelligenceCopy } from "../../intelligence/safetyMetadata.js";
+import { formatChargingDurationDisplay } from "../../utils/formatChargingDuration.js";
 
 import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
 
@@ -383,7 +384,9 @@ export default function EvDetailGoldSections({
               </summary>
             )}
             {meta.chargingSummary && (
-              <p style={bodyStyle || body}>{meta.chargingSummary}</p>
+              <p style={bodyStyle || body}>
+                {formatChargingDurationDisplay(meta.chargingSummary)}
+              </p>
             )}
             {meta.chargingEcosystem?.networkCompatibility?.length > 0 && (
               <p style={{ ...(bodyStyle || body), marginTop: "12px" }}>

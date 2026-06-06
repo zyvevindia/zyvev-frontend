@@ -1,5 +1,9 @@
 import { CHARGING_SPEED_CATEGORY } from "./constants.js";
 import {
+  formatChargingDurationDisplay,
+  formatChargingDurationNumber,
+} from "../utils/formatChargingDuration.js";
+import {
   inferConnectorFromText,
   isPresent,
   parseMinutesFromText,
@@ -23,14 +27,14 @@ function dcMinutesFromMeta(meta) {
 function acLabelFromMeta(meta, specsCharging) {
   const prac = meta?.chargingPracticality;
   if (prac?.acFullChargeHours != null) {
-    return `~${prac.acFullChargeHours} hrs (0–100% AC)`;
+    return `~${formatChargingDurationNumber(prac.acFullChargeHours)} hrs (0–100% AC)`;
   }
   const reality = meta?.chargingReality;
   if (reality?.acFullChargeLabel) {
-    return reality.acFullChargeLabel;
+    return formatChargingDurationDisplay(reality.acFullChargeLabel);
   }
   if (specsCharging && !/min/i.test(String(specsCharging))) {
-    return String(specsCharging);
+    return formatChargingDurationDisplay(String(specsCharging));
   }
   return UNAVAILABLE;
 }
@@ -161,8 +165,12 @@ export function buildChargingIntelligence(car) {
       ? SPEED_LABELS[speedCategory] || speedCategory
       : UNAVAILABLE,
     convenienceScore: hasData ? convenienceScore : UNAVAILABLE,
-    legacyChargingLabel: specsCharging || UNAVAILABLE,
-    catalogSummary: meta.chargingSummary || UNAVAILABLE,
+    legacyChargingLabel: specsCharging
+      ? formatChargingDurationDisplay(specsCharging)
+      : UNAVAILABLE,
+    catalogSummary: meta.chargingSummary
+      ? formatChargingDurationDisplay(meta.chargingSummary)
+      : UNAVAILABLE,
     summaryLines,
     hasData,
   };
