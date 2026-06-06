@@ -8,6 +8,12 @@ import {
   DOSSIER_VERSION,
   buildTataNexonVerifiedOverlay,
 } from "./tataNexonEvVerified.js";
+import {
+  TATA_PUNCH_FAMILY_SLUG,
+  TATA_PUNCH_FAMILY_MEDIA,
+  TATA_PUNCH_VERIFIED_VARIANTS,
+  buildTataPunchVerifiedOverlay,
+} from "./tataPunchEvVerified.js";
 
 const DOSSIER_FAMILIES = Object.freeze({
   [TATA_NEXON_FAMILY_SLUG]: {
@@ -17,6 +23,14 @@ const DOSSIER_FAMILIES = Object.freeze({
     variants: TATA_NEXON_VERIFIED_VARIANTS,
     media: TATA_NEXON_FAMILY_MEDIA,
     buildOverlay: buildTataNexonVerifiedOverlay,
+  },
+  [TATA_PUNCH_FAMILY_SLUG]: {
+    brand: "Tata",
+    familyName: "Punch EV",
+    category: "SUV",
+    variants: TATA_PUNCH_VERIFIED_VARIANTS,
+    media: TATA_PUNCH_FAMILY_MEDIA,
+    buildOverlay: buildTataPunchVerifiedOverlay,
   },
 });
 
@@ -33,6 +47,8 @@ function chargingSummary(charging) {
   if (charging.port) parts.push(charging.port);
   if (charging.dcTime10to80Minutes) {
     parts.push(`10–80% in ~${charging.dcTime10to80Minutes} min`);
+  } else if (charging.dcTime20to80Minutes) {
+    parts.push(`20–80% in ~${charging.dcTime20to80Minutes} min`);
   }
   if (charging.acTime0to100Hours) {
     parts.push(`AC 10–100% in ~${charging.acTime0to100Hours} hrs`);

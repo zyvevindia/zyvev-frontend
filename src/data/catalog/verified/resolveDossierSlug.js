@@ -1,5 +1,7 @@
 import { TATA_NEXON_FAMILY_SLUG } from "./tataNexonEvVerified.js";
+import { TATA_PUNCH_FAMILY_SLUG } from "./tataPunchEvVerified.js";
 import { resolveNexonDossierSlug } from "./nexonSlugAliases.js";
+import { resolvePunchDossierSlug } from "./punchSlugAliases.js";
 
 function normalizeVehicleSlug(slug) {
   if (slug == null || slug === "") return "";
@@ -27,6 +29,13 @@ export function resolveDossierSlug(slug = "", familySlug = "") {
     normalized.startsWith(`${TATA_NEXON_FAMILY_SLUG}-`)
   ) {
     return resolveNexonDossierSlug(normalized);
+  }
+
+  if (
+    family === TATA_PUNCH_FAMILY_SLUG ||
+    normalized.startsWith(`${TATA_PUNCH_FAMILY_SLUG}-`)
+  ) {
+    return resolvePunchDossierSlug(normalized);
   }
 
   return normalized;

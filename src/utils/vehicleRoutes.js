@@ -36,6 +36,8 @@ export const LEGACY_SLUG_ALIASES = {
   "tata-nexon-ev-long-range": "tata-nexon-ev-empowered-lr",
   "tata-nexon-ev-lr": "tata-nexon-ev-empowered-lr",
   "tata-nexon-ev-creative-plus": "tata-nexon-ev-creative-plus-mr",
+  "tata-punch-ev-smart-plus": "tata-punch-ev-smart-plus-40-kwh",
+  "tata-punch-ev-empowered-lr": "tata-punch-ev-empowered-plus",
 };
 
 export function resolveLegacySlugAlias(slug = "") {

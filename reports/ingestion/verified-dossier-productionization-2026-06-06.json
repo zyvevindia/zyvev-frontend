@@ -1,0 +1,128 @@
+{
+  "generatedAt": "2026-06-06T05:46:26.443Z",
+  "nexon": {
+    "familySlug": "tata-nexon-ev",
+    "variantCountBefore": 2,
+    "variantCountAfter": 13,
+    "dossierBridgeEnabled": true,
+    "dossierVariantSlugs": [
+      "tata-nexon-ev-creative-plus-mr",
+      "tata-nexon-ev-fearless-mr",
+      "tata-nexon-ev-fearless-plus-mr",
+      "tata-nexon-ev-fearless-plus-s-mr",
+      "tata-nexon-ev-empowered-mr",
+      "tata-nexon-ev-creative-45",
+      "tata-nexon-ev-fearless-45",
+      "tata-nexon-ev-empowered-lr",
+      "tata-nexon-ev-empowered-plus-45",
+      "tata-nexon-ev-empowered-plus-45-red-dark",
+      "tata-nexon-ev-empowered-plus-a-45",
+      "tata-nexon-ev-empowered-plus-a-45-dark",
+      "tata-nexon-ev-empowered-plus-a-45-red-dark"
+    ],
+    "variantsSectionCount": 13,
+    "compareAllVariantsCount": 13,
+    "variantComparisonTableRows": 13,
+    "slugAliasesAdded": {
+      "tata-nexon-ev-creative-plus": "tata-nexon-ev-creative-plus-mr",
+      "tata-nexon-ev-long-range": "tata-nexon-ev-empowered-lr",
+      "tata-nexon-ev-lr": "tata-nexon-ev-empowered-lr"
+    },
+    "aliasResolutionChecks": [
+      {
+        "legacy": "tata-nexon-ev-creative-plus",
+        "canonical": "tata-nexon-ev-creative-plus-mr",
+        "resolveDossierSlug": "tata-nexon-ev-creative-plus-mr",
+        "resolves": true
+      },
+      {
+        "legacy": "tata-nexon-ev-long-range",
+        "canonical": "tata-nexon-ev-empowered-lr",
+        "resolveDossierSlug": "tata-nexon-ev-empowered-lr",
+        "resolves": true
+      },
+      {
+        "legacy": "tata-nexon-ev-lr",
+        "canonical": "tata-nexon-ev-empowered-lr",
+        "resolveDossierSlug": "tata-nexon-ev-empowered-lr",
+        "resolves": true
+      }
+    ],
+    "runtimeCatalogExpansion": {
+      "backendManifestSlugs": 13,
+      "targetCount": 13,
+      "expanded": true,
+      "legacyAliasFilesPreserved": [
+        {
+          "file": "tata-nexon-ev-creative-plus.json",
+          "preserved": true
+        }
+      ]
+    },
+    "validation": {
+      "dossierBridgeEnabled": true,
+      "variantsSectionShowsAll": true,
+      "compareAllShowsAll": true,
+      "legacyUrlsResolve": true,
+      "runtimeCatalogExpanded": true
+    }
+  },
+  "punch": {
+    "familySlug": "tata-punch-ev",
+    "variantCountBefore": 2,
+    "variantCountAfter": 6,
+    "dossierBridgeEnabled": true,
+    "dossierVariantSlugs": [
+      "tata-punch-ev-smart",
+      "tata-punch-ev-smart-plus-30-kwh",
+      "tata-punch-ev-smart-plus-40-kwh",
+      "tata-punch-ev-adventure",
+      "tata-punch-ev-empowered",
+      "tata-punch-ev-empowered-plus"
+    ],
+    "variantsSectionCount": 6,
+    "compareAllVariantsCount": 6,
+    "variantComparisonTableRows": 6,
+    "slugAliasesAdded": {
+      "tata-punch-ev-smart-plus": "tata-punch-ev-smart-plus-40-kwh",
+      "tata-punch-ev-empowered-lr": "tata-punch-ev-empowered-plus"
+    },
+    "aliasResolutionChecks": [
+      {
+        "legacy": "tata-punch-ev-smart-plus",
+        "canonical": "tata-punch-ev-smart-plus-40-kwh",
+        "resolveDossierSlug": "tata-punch-ev-smart-plus-40-kwh",
+        "resolves": true
+      },
+      {
+        "legacy": "tata-punch-ev-empowered-lr",
+        "canonical": "tata-punch-ev-empowered-plus",
+        "resolveDossierSlug": "tata-punch-ev-empowered-plus",
+        "resolves": true
+      }
+    ],
+    "runtimeCatalogExpansion": {
+      "backendManifestSlugs": 6,
+      "targetCount": 6,
+      "expanded": true,
+      "legacyAliasFilesPreserved": [
+        {
+          "file": "tata-punch-ev-smart-plus.json",
+          "preserved": true
+        },
+        {
+          "file": "tata-punch-ev-empowered-lr.json",
+          "preserved": true
+        }
+      ]
+    },
+    "validation": {
+      "dossierBridgeEnabled": true,
+      "variantsSectionShowsAll": true,
+      "compareAllShowsAll": true,
+      "legacyUrlsResolve": true,
+      "runtimeCatalogExpanded": true
+    }
+  },
+  "allPass": true
+}
