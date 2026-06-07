@@ -1,6 +1,6 @@
 # Compare trust audit
 
-Generated: 2026-06-07T15:47:33.836Z
+Generated: 2026-06-07T15:54:47.531Z
 
 - **avgTrustScore**: 94
 - **vehiclesNeedsWork**: 0
@@ -9,7 +9,7 @@ Generated: 2026-06-07T15:47:33.836Z
 - **pairsNeedingReview**: 4
 # Compare trust audit
 
-Generated: 2026-06-07T15:47:33.834Z
+Generated: 2026-06-07T15:54:47.528Z
 
 - Avg trust score: **94/100**
 - Duplicate insight phrases: **12**
