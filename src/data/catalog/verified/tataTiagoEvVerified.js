@@ -1,84 +1,204 @@
 /**
- * Tata Tiago EV — verified production sheet (OEM brochure + ops review).
- * Controlled ingestion source for tier-1 definitions and runtime catalog overlay.
+ * Tata Tiago EV — verified dossier productionization (v1.0).
+ * Source: Verified Dossier — FAMILY_MASTER, VARIANTS_MASTER,
+ * CHARGING_INTELLIGENCE, SAFETY_INTELLIGENCE, SOURCES, FEATURE_TAGS.
  */
 
-export const VERIFICATION_SOURCE =
-  "OEM + verified ops review";
+import { resolveTiagoDossierSlug } from "./tiagoSlugAliases.js";
 
+export const VERIFICATION_SOURCE = "Verified Dossier";
+export const VERIFICATION_OWNER = "Nitin Sharma";
+export const DOSSIER_VERSION = "v1.0";
 export const TATA_TIAGO_FAMILY_SLUG = "tata-tiago-ev";
 
-/** @type {import('../../../intelligence/safetyMetadata.js').SAFETY_FIELD_STATUS} */
-const NOT_TESTED = "not_tested";
+export const TATA_TIAGO_FAMILY_MEDIA = Object.freeze({
+  heroImage:
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+  compareImage:
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+  listingImage:
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+  compareThumbnail:
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+  listingThumbnail:
+    "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+  verificationStatus: "verified",
+  source: "dossier",
+});
 
 export const TATA_TIAGO_VERIFIED_SAFETY = Object.freeze({
-  bharatNcap: { status: NOT_TESTED, verified: true },
-  globalNcap: { status: NOT_TESTED, verified: true },
-  airbags: { count: 6, verified: true },
-  abs: { value: true, verified: true },
-  esc: { value: true, verified: true },
-  traction_control: { value: true, verified: true },
+  bharatNcap: {
+    status: "not_tested",
+    verified: true,
+  },
+  globalNcap: {
+    status: "not_tested",
+    verified: true,
+  },
+  airbags: {
+    count: 6,
+    status: "verified",
+    verified: true,
+  },
+  abs: {
+    value: true,
+    verified: true,
+  },
+  esc: {
+    value: true,
+    verified: true,
+  },
+  traction_control: {
+    value: true,
+    verified: true,
+  },
+  tpms: {
+    value: true,
+    verified: true,
+  },
+  isofix: {
+    value: true,
+    verified: true,
+  },
+  hillAssist: {
+    value: true,
+    verified: true,
+  },
   adas: {
     level: 0,
-    status: NOT_TESTED,
     supported: false,
+    status: "verified",
     verified: true,
   },
 });
 
-/**
- * Variant-level verified records (slug matches live catalog + compare).
- */
 export const TATA_TIAGO_VERIFIED_VARIANTS = Object.freeze([
   {
-    slug: "tata-tiago-ev-xt",
-    variantSlug: "xt",
-    name: "XT",
-    trimLabel: "XT (Medium Range)",
-    priceInr: 799000,
+    slug: "tata-tiago-ev-smart-19-mr",
+    variantSlug: "smart-19-mr",
+    name: "Smart 19 MR",
+    trimLabel: "Smart 19 MR",
+    priceInr: 699000,
     batteryKwh: 19.2,
     rangeKmClaimed: 223,
-    rangeKmRealWorldMin: 168,
-    rangeKmRealWorldMax: 205,
+    rangeKmRealWorldMin: 160,
+    rangeKmRealWorldMax: 170,
     rangeStandard: "MIDC",
+    powerBhp: 61,
     powerKw: 45,
     torqueNm: 110,
-    accel0To60Sec: 6.2,
+    accel0To100Sec: 6.2,
+    bootSpaceL: 240,
+    featureTags: ["Best Value", "City EV", "Most Affordable"],
     charging: {
+      port: "CCS2",
+      portableChargerIncluded: true,
       acKw: 3.3,
       acTime0to100Hours: 6.9,
       dcKw: 25,
-      dcTime10to80Minutes: 58,
-      port: "CCS2",
-      portableChargerIncluded: true,
+      dcTime10to80Minutes: 57,
+      fastChargingSupported: true,
     },
+    safety: TATA_TIAGO_VERIFIED_SAFETY,
   },
   {
-    slug: "tata-tiago-ev-xz-plus",
-    variantSlug: "xz-plus",
-    name: "XZ+",
-    trimLabel: "XZ+ (Long Range)",
-    priceInr: 1199000,
-    batteryKwh: 24,
-    rangeKmClaimed: 293,
-    rangeKmRealWorldMin: 205,
-    rangeKmRealWorldMax: 250,
+    slug: "tata-tiago-ev-pure-plus-19-mr",
+    variantSlug: "pure-plus-19-mr",
+    name: "Pure+ 19 MR",
+    trimLabel: "Pure+ 19 MR",
+    priceInr: 799000,
+    batteryKwh: 19.2,
+    rangeKmClaimed: 226,
+    rangeKmRealWorldMin: 160,
+    rangeKmRealWorldMax: 170,
     rangeStandard: "MIDC",
+    powerBhp: 61,
+    powerKw: 45,
+    torqueNm: 110,
+    accel0To100Sec: 6.2,
+    bootSpaceL: 240,
+    featureTags: ["Daily Commuter", "Balanced Choice"],
+    charging: {
+      port: "CCS2",
+      portableChargerIncluded: true,
+      acKw: 3.3,
+      acTime0to100Hours: 6.9,
+      dcKw: 25,
+      dcTime10to80Minutes: 57,
+      fastChargingSupported: true,
+    },
+    safety: TATA_TIAGO_VERIFIED_SAFETY,
+  },
+  {
+    slug: "tata-tiago-ev-pure-plus-24-lr",
+    variantSlug: "pure-plus-24-lr",
+    name: "Pure+ 24 LR",
+    trimLabel: "Pure+ 24 LR",
+    priceInr: 849000,
+    batteryKwh: 24,
+    rangeKmClaimed: 285,
+    rangeKmRealWorldMin: 205,
+    rangeKmRealWorldMax: 215,
+    rangeStandard: "MIDC",
+    powerBhp: 75,
     powerKw: 55,
     torqueNm: 114,
-    accel0To60Sec: 5.7,
+    accel0To100Sec: 5.7,
+    bootSpaceL: 240,
+    featureTags: ["Long Range", "Recommended Pick", "Family Friendly"],
     charging: {
+      port: "CCS2",
+      portableChargerIncluded: true,
       acKw: 7.2,
       acTime0to100Hours: 8.7,
       dcKw: 25,
-      dcTime10to80Minutes: 58,
+      dcTime10to80Minutes: 57,
+      fastChargingSupported: true,
+    },
+    safety: TATA_TIAGO_VERIFIED_SAFETY,
+  },
+  {
+    slug: "tata-tiago-ev-creative-plus-24-lr",
+    variantSlug: "creative-plus-24-lr",
+    name: "Creative+ 24 LR",
+    trimLabel: "Creative+ 24 LR",
+    priceInr: 899000,
+    batteryKwh: 24,
+    rangeKmClaimed: 315,
+    rangeKmRealWorldMin: 205,
+    rangeKmRealWorldMax: 215,
+    rangeStandard: "MIDC",
+    powerBhp: 75,
+    powerKw: 55,
+    torqueNm: 114,
+    accel0To100Sec: 5.7,
+    bootSpaceL: 240,
+    featureTags: [
+      "Top Variant",
+      "Most Feature Rich",
+      "Advanced Safety",
+    ],
+    charging: {
       port: "CCS2",
       portableChargerIncluded: true,
+      acKw: 7.2,
+      acTime0to100Hours: 8.7,
+      dcKw: 25,
+      dcTime10to80Minutes: 57,
+      fastChargingSupported: true,
+    },
+    safety: {
+      ...TATA_TIAGO_VERIFIED_SAFETY,
+      camera360: {
+        value: true,
+        verified: true,
+      },
     },
   },
 ]);
 
 function chargingSummary(charging) {
+  if (!charging) return "";
   const parts = [];
   if (charging.acKw) parts.push(`${charging.acKw} kW AC`);
   if (charging.dcKw) parts.push(`${charging.dcKw} kW DC`);
@@ -92,9 +212,6 @@ function chargingSummary(charging) {
   return parts.join(" · ");
 }
 
-/**
- * Tier-1 catalog definition shape for seed + audits.
- */
 export function buildTataTiagoTier1Definition() {
   const variants = TATA_TIAGO_VERIFIED_VARIANTS.map((v) => ({
     slug: v.variantSlug,
@@ -107,23 +224,29 @@ export function buildTataTiagoTier1Definition() {
     batteryKwh: v.batteryKwh,
     powerKw: v.powerKw,
     torqueNm: v.torqueNm,
-    accel0To100: `${v.accel0To60Sec}s (0–60 km/h)`,
+    accel0To100: `${v.accel0To100Sec}s (0–100 km/h)`,
     specs: {
       drivetrain: "FWD",
       seats: 5,
+      bootSpaceL: v.bootSpaceL,
       torqueNm: v.torqueNm,
       powerKw: v.powerKw,
+      powerBhp: v.powerBhp,
     },
     compareSpecs: {
       claimedRangeKm: v.rangeKmClaimed,
       batteryKwh: v.batteryKwh,
       powerKw: v.powerKw,
+      powerBhp: v.powerBhp,
       torqueNm: v.torqueNm,
     },
     chargingMeta: v.charging,
+    safetyMeta: v.safety || TATA_TIAGO_VERIFIED_SAFETY,
+    featureTags: v.featureTags,
   }));
 
   const primary = TATA_TIAGO_VERIFIED_VARIANTS[0];
+  const charging = primary?.charging || {};
 
   return {
     slug: TATA_TIAGO_FAMILY_SLUG,
@@ -133,36 +256,37 @@ export function buildTataTiagoTier1Definition() {
     compareReady: true,
     verified: true,
     verificationSource: VERIFICATION_SOURCE,
+    verificationOwner: VERIFICATION_OWNER,
+    dossierVersion: DOSSIER_VERSION,
     governanceStatus: "verified",
     safetyMeta: TATA_TIAGO_VERIFIED_SAFETY,
+    mediaMeta: TATA_TIAGO_FAMILY_MEDIA,
     seoMeta: {
       metaTitle: "Tata Tiago EV — Price, Range & Charging | EVSavari",
       metaDescription:
-        "Compare Tata Tiago EV XT and XZ+ variants with verified MIDC range, charging times, and safety fields on EVSavari.",
+        "Compare all Tata Tiago EV variants with verified MIDC range, charging times, and safety on EVSavari.",
     },
     ownershipMeta: {
       apartmentFriendly: true,
       beginnerFriendly: true,
       cityPrimary: true,
+      compactParking: true,
     },
     chargingMeta: {
-      acKw: primary.charging.acKw,
-      dcKw: primary.charging.dcKw,
-      port: primary.charging.port,
-      acTime0to100Hours: primary.charging.acTime0to100Hours,
-      dcTime10to80Minutes: primary.charging.dcTime10to80Minutes,
+      acKw: charging.acKw,
+      dcKw: charging.dcKw,
+      port: charging.port,
+      acTime0to100Hours: charging.acTime0to100Hours,
+      dcTime10to80Minutes: charging.dcTime10to80Minutes,
     },
     variants,
   };
 }
 
-/**
- * @param {string} slug — family or variant slug
- */
 export function getTataTiagoVerifiedVariant(slug = "") {
-  const normalized = String(slug || "").toLowerCase();
-  if (normalized === TATA_TIAGO_FAMILY_SLUG) {
-    return TATA_TIAGO_VERIFIED_VARIANTS[0];
+  const normalized = resolveTiagoDossierSlug(slug);
+  if (!normalized || normalized === TATA_TIAGO_FAMILY_SLUG) {
+    return null;
   }
   return (
     TATA_TIAGO_VERIFIED_VARIANTS.find(
@@ -174,26 +298,25 @@ export function getTataTiagoVerifiedVariant(slug = "") {
   );
 }
 
-/**
- * Build catalogMeta + spec overlay for a normalized vehicle.
- * @param {object} car
- */
 export function buildTataTiagoVerifiedOverlay(car) {
   const slug = String(car?.slug || car?.catalogMeta?.slug || "").toLowerCase();
-  const variant =
-    getTataTiagoVerifiedVariant(slug) ||
-    (slug.startsWith("tata-tiago-ev")
-      ? TATA_TIAGO_VERIFIED_VARIANTS[0]
-      : null);
+  const variant = getTataTiagoVerifiedVariant(slug);
 
   if (!variant) return null;
 
-  const charging = variant.charging;
+  const charging = variant.charging || {};
+  const safety = variant.safety || TATA_TIAGO_VERIFIED_SAFETY;
+  const media = TATA_TIAGO_FAMILY_MEDIA;
 
   return {
     verified: true,
     verificationSource: VERIFICATION_SOURCE,
+    verificationOwner: VERIFICATION_OWNER,
+    dossierVersion: DOSSIER_VERSION,
     governanceStatus: "verified",
+    ...(media.heroImage ? { heroImage: media.heroImage } : {}),
+    ...(media.compareImage ? { compareThumbnail: media.compareImage } : {}),
+    ...(media.listingImage ? { listingThumbnail: media.listingImage } : {}),
     price: variant.priceInr,
     startingPrice: variant.priceInr,
     range: variant.rangeKmClaimed,
@@ -201,19 +324,30 @@ export function buildTataTiagoVerifiedOverlay(car) {
       range: variant.rangeKmClaimed,
       batteryPack: `${variant.batteryKwh} kWh`,
       chargingTime: chargingSummary(charging),
-      topSpeed: "120 km/h",
       powerKw: variant.powerKw,
+      powerBhp: variant.powerBhp,
       torqueNm: variant.torqueNm,
-      acceleration: `${variant.accel0To60Sec}s (0–60 km/h)`,
+      acceleration: `${variant.accel0To100Sec}s (0–100 km/h)`,
+      bootSpace: `${variant.bootSpaceL} L`,
+      bootSpaceL: variant.bootSpaceL,
     },
     battery: `${variant.batteryKwh} kWh`,
     chargingTime: chargingSummary(charging),
+    featureTags: variant.featureTags,
     catalogMeta: {
       verified: true,
       verificationSource: VERIFICATION_SOURCE,
+      verificationOwner: VERIFICATION_OWNER,
+      dossierVersion: DOSSIER_VERSION,
       familySlug: TATA_TIAGO_FAMILY_SLUG,
       slug: variant.slug,
-      safety: TATA_TIAGO_VERIFIED_SAFETY,
+      featureTags: variant.featureTags,
+      safety,
+      media,
+      dimensions: {
+        bootSpaceL: variant.bootSpaceL,
+        bootSpace: `${variant.bootSpaceL} L`,
+      },
       claimedRangeKm: variant.rangeKmClaimed,
       claimedRangeStandard: variant.rangeStandard,
       realWorldRangeKm: {
@@ -226,10 +360,11 @@ export function buildTataTiagoVerifiedOverlay(car) {
         acKw: charging.acKw,
         dcKw: charging.dcKw,
         connectorType: charging.port,
+        acTime0to100Hours: charging.acTime0to100Hours,
         dcTime10to80Minutes: charging.dcTime10to80Minutes,
         portableChargerIncluded: charging.portableChargerIncluded,
         homeChargingSupported: true,
-        fastChargingSupported: true,
+        fastChargingSupported: charging.fastChargingSupported,
       },
       chargingPracticality: {
         acFullChargeHours: charging.acTime0to100Hours,
@@ -237,7 +372,7 @@ export function buildTataTiagoVerifiedOverlay(car) {
         connectorType: charging.port,
         homeChargingSupported: true,
         portableChargerIncluded: charging.portableChargerIncluded,
-        fastChargingSupported: true,
+        fastChargingSupported: charging.fastChargingSupported,
       },
       chargingEcosystem: {
         homeCharging: {
@@ -252,8 +387,9 @@ export function buildTataTiagoVerifiedOverlay(car) {
       },
       performance: {
         powerKw: variant.powerKw,
+        powerBhp: variant.powerBhp,
         torqueNm: variant.torqueNm,
-        acceleration0to60: variant.accel0To60Sec,
+        acceleration0to100: variant.accel0To100Sec,
       },
     },
   };

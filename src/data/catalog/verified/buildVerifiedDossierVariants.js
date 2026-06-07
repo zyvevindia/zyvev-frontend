@@ -14,6 +14,12 @@ import {
   TATA_PUNCH_VERIFIED_VARIANTS,
   buildTataPunchVerifiedOverlay,
 } from "./tataPunchEvVerified.js";
+import {
+  TATA_TIAGO_FAMILY_SLUG,
+  TATA_TIAGO_FAMILY_MEDIA,
+  TATA_TIAGO_VERIFIED_VARIANTS,
+  buildTataTiagoVerifiedOverlay,
+} from "./tataTiagoEvVerified.js";
 
 const DOSSIER_FAMILIES = Object.freeze({
   [TATA_NEXON_FAMILY_SLUG]: {
@@ -31,6 +37,14 @@ const DOSSIER_FAMILIES = Object.freeze({
     variants: TATA_PUNCH_VERIFIED_VARIANTS,
     media: TATA_PUNCH_FAMILY_MEDIA,
     buildOverlay: buildTataPunchVerifiedOverlay,
+  },
+  [TATA_TIAGO_FAMILY_SLUG]: {
+    brand: "Tata",
+    familyName: "Tiago EV",
+    category: "Hatchback",
+    variants: TATA_TIAGO_VERIFIED_VARIANTS,
+    media: TATA_TIAGO_FAMILY_MEDIA,
+    buildOverlay: buildTataTiagoVerifiedOverlay,
   },
 });
 
@@ -93,8 +107,11 @@ export function buildVerifiedDossierMarketplaceVariants(familySlug = "") {
         batteryPack: `${variant.batteryKwh} kWh`,
         chargingTime: chargingSummary(charging),
         powerKw: variant.powerKw,
+        powerBhp: variant.powerBhp,
         torqueNm: variant.torqueNm,
         acceleration: `${variant.accel0To100Sec}s (0–100 km/h)`,
+        bootSpaceL: variant.bootSpaceL,
+        bootSpace: variant.bootSpaceL ? `${variant.bootSpaceL} L` : undefined,
       },
     };
 
@@ -109,6 +126,7 @@ export function buildVerifiedDossierMarketplaceVariants(familySlug = "") {
       slug: variant.slug,
       variantLabel: variant.trimLabel || variant.name,
       variantSlug: variant.variantSlug,
+      featureTags: variant.featureTags,
     });
   });
 }

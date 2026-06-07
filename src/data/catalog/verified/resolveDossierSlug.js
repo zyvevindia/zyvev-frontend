@@ -1,7 +1,9 @@
 import { TATA_NEXON_FAMILY_SLUG } from "./tataNexonEvVerified.js";
 import { TATA_PUNCH_FAMILY_SLUG } from "./tataPunchEvVerified.js";
+import { TATA_TIAGO_FAMILY_SLUG } from "./tataTiagoEvVerified.js";
 import { resolveNexonDossierSlug } from "./nexonSlugAliases.js";
 import { resolvePunchDossierSlug } from "./punchSlugAliases.js";
+import { resolveTiagoDossierSlug } from "./tiagoSlugAliases.js";
 
 function normalizeVehicleSlug(slug) {
   if (slug == null || slug === "") return "";
@@ -36,6 +38,13 @@ export function resolveDossierSlug(slug = "", familySlug = "") {
     normalized.startsWith(`${TATA_PUNCH_FAMILY_SLUG}-`)
   ) {
     return resolvePunchDossierSlug(normalized);
+  }
+
+  if (
+    family === TATA_TIAGO_FAMILY_SLUG ||
+    normalized.startsWith(`${TATA_TIAGO_FAMILY_SLUG}-`)
+  ) {
+    return resolveTiagoDossierSlug(normalized);
   }
 
   return normalized;

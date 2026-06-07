@@ -38,6 +38,8 @@ export const LEGACY_SLUG_ALIASES = {
   "tata-nexon-ev-creative-plus": "tata-nexon-ev-creative-plus-mr",
   "tata-punch-ev-smart-plus": "tata-punch-ev-smart-plus-40-kwh",
   "tata-punch-ev-empowered-lr": "tata-punch-ev-empowered-plus",
+  "tata-tiago-ev-xt": "tata-tiago-ev-smart-19-mr",
+  "tata-tiago-ev-xz-plus": "tata-tiago-ev-creative-plus-24-lr",
 };
 
 export function resolveLegacySlugAlias(slug = "") {

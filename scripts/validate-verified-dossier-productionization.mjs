@@ -13,8 +13,13 @@ import {
   TATA_PUNCH_FAMILY_SLUG,
   TATA_PUNCH_VERIFIED_VARIANTS,
 } from "../src/data/catalog/verified/tataPunchEvVerified.js";
+import {
+  TATA_TIAGO_FAMILY_SLUG,
+  TATA_TIAGO_VERIFIED_VARIANTS,
+} from "../src/data/catalog/verified/tataTiagoEvVerified.js";
 import { NEXON_DOSSIER_SLUG_ALIASES } from "../src/data/catalog/verified/nexonSlugAliases.js";
 import { PUNCH_DOSSIER_SLUG_ALIASES } from "../src/data/catalog/verified/punchSlugAliases.js";
+import { TIAGO_DOSSIER_SLUG_ALIASES } from "../src/data/catalog/verified/tiagoSlugAliases.js";
 import { resolveDossierSlug } from "../src/data/catalog/verified/resolveDossierSlug.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -34,6 +39,9 @@ function dossierBridgeEnabled(familySlug) {
   }
   if (familySlug === TATA_PUNCH_FAMILY_SLUG) {
     return src.includes("TATA_PUNCH_VERIFIED_VARIANTS");
+  }
+  if (familySlug === TATA_TIAGO_FAMILY_SLUG) {
+    return src.includes("TATA_TIAGO_VERIFIED_VARIANTS");
   }
   return false;
 }
@@ -121,18 +129,34 @@ export function runVerifiedDossierProductionizationValidation() {
     ],
   });
 
+  const tiago = validateFamily({
+    familySlug: TATA_TIAGO_FAMILY_SLUG,
+    familyPrefix: "tata-tiago-ev",
+    variants: TATA_TIAGO_VERIFIED_VARIANTS,
+    aliases: TIAGO_DOSSIER_SLUG_ALIASES,
+    variantCountBefore: 2,
+    legacyAliasFiles: [
+      "tata-tiago-ev-xt.json",
+      "tata-tiago-ev-xz-plus.json",
+    ],
+  });
+
   const allPass =
     nexon.validation.dossierBridgeEnabled &&
     punch.validation.dossierBridgeEnabled &&
+    tiago.validation.dossierBridgeEnabled &&
     nexon.validation.legacyUrlsResolve &&
     punch.validation.legacyUrlsResolve &&
+    tiago.validation.legacyUrlsResolve &&
     nexon.validation.variantsSectionShowsAll &&
-    punch.validation.variantsSectionShowsAll;
+    punch.validation.variantsSectionShowsAll &&
+    tiago.validation.variantsSectionShowsAll;
 
   return {
     generatedAt: new Date().toISOString(),
     nexon,
     punch,
+    tiago,
     allPass,
   };
 }
@@ -158,7 +182,7 @@ ${Object.entries(data.slugAliasesAdded)
 `;
   }
 
-  return `# Verified Dossier Productionization — Nexon + Punch
+  return `# Verified Dossier Productionization — Nexon + Punch + Tiago
 
 Generated: ${report.generatedAt}
 
@@ -166,14 +190,16 @@ ${familySection("Nexon EV", report.nexon)}
 
 ${familySection("Punch EV", report.punch)}
 
+${familySection("Tiago EV", report.tiago)}
+
 ## Validation summary
 
-| Check | Nexon | Punch |
-|-------|-------|-------|
-| Dossier bridge | ${report.nexon.validation.dossierBridgeEnabled ? "pass" : "fail"} | ${report.punch.validation.dossierBridgeEnabled ? "pass" : "fail"} |
-| Variant visibility | ${report.nexon.validation.variantsSectionShowsAll ? "pass" : "fail"} | ${report.punch.validation.variantsSectionShowsAll ? "pass" : "fail"} |
-| Legacy URLs | ${report.nexon.validation.legacyUrlsResolve ? "pass" : "fail"} | ${report.punch.validation.legacyUrlsResolve ? "pass" : "fail"} |
-| Runtime catalog | ${report.nexon.validation.runtimeCatalogExpanded ? "pass" : "pending"} | ${report.punch.validation.runtimeCatalogExpanded ? "pass" : "pending"} |
+| Check | Nexon | Punch | Tiago |
+|-------|-------|-------|-------|
+| Dossier bridge | ${report.nexon.validation.dossierBridgeEnabled ? "pass" : "fail"} | ${report.punch.validation.dossierBridgeEnabled ? "pass" : "fail"} | ${report.tiago.validation.dossierBridgeEnabled ? "pass" : "fail"} |
+| Variant visibility | ${report.nexon.validation.variantsSectionShowsAll ? "pass" : "fail"} | ${report.punch.validation.variantsSectionShowsAll ? "pass" : "fail"} | ${report.tiago.validation.variantsSectionShowsAll ? "pass" : "fail"} |
+| Legacy URLs | ${report.nexon.validation.legacyUrlsResolve ? "pass" : "fail"} | ${report.punch.validation.legacyUrlsResolve ? "pass" : "fail"} | ${report.tiago.validation.legacyUrlsResolve ? "pass" : "fail"} |
+| Runtime catalog | ${report.nexon.validation.runtimeCatalogExpanded ? "pass" : "pending"} | ${report.punch.validation.runtimeCatalogExpanded ? "pass" : "pending"} | ${report.tiago.validation.runtimeCatalogExpanded ? "pass" : "pending"} |
 `;
 }
 
@@ -196,6 +222,7 @@ async function main() {
       {
         nexon: report.nexon.validation,
         punch: report.punch.validation,
+        tiago: report.tiago.validation,
         allPass: report.allPass,
       },
       null,

@@ -240,6 +240,21 @@ export function computeVariantAwards(variants = []) {
   return awards;
 }
 
+function dossierFeatureBadges(variant) {
+  const tags =
+    variant?.catalogMeta?.featureTags ||
+    variant?.featureTags;
+  if (!Array.isArray(tags) || !tags.length) return null;
+  return tags.map((label) => ({
+    key: String(label)
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "_")
+      .replace(/^_+|_+$/g, ""),
+    label: String(label).trim(),
+  }));
+}
+
 export function enrichVariantsWithInsights(
   variants = [],
   familyFallback = null
@@ -255,10 +270,13 @@ export function enrichVariantsWithInsights(
       v,
       familyFallback
     );
+    const dossierBadges = dossierFeatureBadges(v);
 
     return {
       ...v,
-      insightBadges: (awards[v.slug] || []).map(
+      insightBadges:
+        dossierBadges ||
+        (awards[v.slug] || []).map(
         (key) => ({
           key,
           label: BEST_FOR_LABELS[key] || key,
