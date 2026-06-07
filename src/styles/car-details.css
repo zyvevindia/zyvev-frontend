@@ -164,6 +164,67 @@
   gap: 12px;
 }
 
+.cd-hero-family-metrics {
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.cd-hero-family-metrics__row {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.cd-hero-family-metrics__row dt {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.cd-hero-family-metrics__row dd {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+}
+
+.cd-hero-family-metrics__link {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: #1d4ed8;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cd-key-specs__grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px 24px;
+}
+
+.cd-key-specs__item dt {
+  margin: 0 0 4px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.cd-key-specs__item dd {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
 .cd-teaser-card {
   padding: 14px 16px;
   border-radius: 18px;

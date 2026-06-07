@@ -19,12 +19,14 @@ import CompareUtilityRail from "./CompareUtilityRail";
 import CompareTrustExplain from "./CompareTrustExplain";
 import CompareReliabilitySummary from "./CompareReliabilitySummary";
 import CompareGuideEditorialSections from "./CompareGuideEditorialSections";
+import VariantComparisonTable from "../catalog/VariantComparisonTable";
 
 const CompareBelowFoldSections = lazy(() =>
   import("../catalog/CompareBelowFoldSections")
 );
 
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
+import { extractFamilySlug } from "../../utils/modelFamily";
 import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
 import { saveCompareCars } from "../../utils/compareCarsStorage";
 import { ensureArray } from "../../utils/compareArrayUtils";
@@ -90,6 +92,8 @@ export default function CompareHeroExperience({
   usefulnessLabel,
   /** SEO payload for /compare/:slug — editorial renders once below real-world block */
   guideSeoPage = null,
+  /** When true, prefer variant-family table over generic spec matrix */
+  variantCompareSession = false,
 }) {
   const navigate = useNavigate();
   const [inquiryOpen, setInquiryOpen] = useState(false);
@@ -145,6 +149,18 @@ export default function CompareHeroExperience({
         .join("|"),
     [safeCars]
   );
+
+  const isFamilyVariantCompare = useMemo(() => {
+    if (safeCars.length < 2) return false;
+    const families = safeCars.map((car) =>
+      extractFamilySlug(car.familySlug || car.slug)
+    );
+    const unique = new Set(families.filter(Boolean));
+    return unique.size === 1;
+  }, [safeCars]);
+
+  const showVariantFamilyTable =
+    variantCompareSession || isFamilyVariantCompare;
 
   const intelligenceTrackedRef = useRef(false);
   useEffect(() => {
@@ -403,6 +419,16 @@ export default function CompareHeroExperience({
             })}
           </div>
 
+          {showVariantFamilyTable ? (
+            <VariantComparisonTable
+              id="compare-variants"
+              title="Compare all variants"
+              intro="Side-by-side specs for every trim in this model family."
+              variants={safeCars}
+              readOnly
+              showCompareAll={false}
+            />
+          ) : (
           <div className="compare-spec">
             <div className="compare-spec__header">
               <h2 className="compare-spec__title">Detailed Specifications</h2>
@@ -480,6 +506,7 @@ export default function CompareHeroExperience({
               </p>
             )}
           </div>
+          )}
 
           {intelligentCars.length >= 2 ? (
             <>

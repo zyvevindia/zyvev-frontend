@@ -2,6 +2,7 @@ import VehicleImage from "../media/VehicleImage";
 import DetailEmiTeaser from "../catalog/DetailEmiTeaser";
 import DetailDealerTeaser from "./DetailDealerTeaser";
 import DetailQuickSpecs from "./DetailQuickSpecs";
+import DetailFamilyHeroMetrics from "./DetailFamilyHeroMetrics";
 import { formatIndianPrice } from "../../utils/formatIndianPrice";
 import { getSafeImage } from "../../utils/imageUtils";
 
@@ -26,11 +27,28 @@ export default function DetailHero({
   onScrollEmi,
   onScrollDealer,
   onScrollCharging,
+  familyOverviewMode = false,
+  familyMetrics = null,
 }) {
   const subtitleParts = [];
-  if (activeVariantLabel) subtitleParts.push(activeVariantLabel);
-  if (variantCount > 1) subtitleParts.push(`${variantCount} variants`);
-  if (familyMaxRange > 0) subtitleParts.push(`Up to ${familyMaxRange} km`);
+  if (!familyOverviewMode && activeVariantLabel) {
+    subtitleParts.push(activeVariantLabel);
+  }
+  if (variantCount > 1) {
+    subtitleParts.push(
+      familyOverviewMode
+        ? `${variantCount} Variants`
+        : `${variantCount} variants`
+    );
+  }
+  if (!familyOverviewMode && familyMaxRange > 0) {
+    subtitleParts.push(`Up to ${familyMaxRange} km`);
+  }
+
+  const emiPrice =
+    familyOverviewMode && familyMetrics?.minPrice
+      ? familyMetrics.minPrice
+      : activePrice;
 
   return (
     <section className="cd-hero cd-card" aria-label="Vehicle overview">
@@ -112,35 +130,44 @@ export default function DetailHero({
           </p>
         )}
 
-        <p
-          className="cd-hero__price detail-hero-price"
-          role="button"
-          tabIndex={0}
-          onClick={onPriceClick}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") onPriceClick();
-          }}
-        >
-          {formatIndianPrice(activePrice)}
-          <span className="cd-hero__price-note">Ex-showroom</span>
-        </p>
+        {familyOverviewMode && familyMetrics ? (
+          <DetailFamilyHeroMetrics
+            metrics={familyMetrics}
+            onScrollCharging={onScrollCharging}
+          />
+        ) : (
+          <>
+            <p
+              className="cd-hero__price detail-hero-price"
+              role="button"
+              tabIndex={0}
+              onClick={onPriceClick}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") onPriceClick();
+              }}
+            >
+              {formatIndianPrice(activePrice)}
+              <span className="cd-hero__price-note">Ex-showroom</span>
+            </p>
+
+            <DetailQuickSpecs
+              range={activeRange}
+              battery={activeBattery}
+              chargingSummary={chargingSummary}
+              fourthMetric={fourthQuickSpec}
+              onScrollCharging={onScrollCharging}
+            />
+          </>
+        )}
 
         <div className="cd-hero__teasers">
           <DetailEmiTeaser
-            price={activePrice}
+            price={emiPrice}
             onOpenCalculator={onScrollEmi}
             variant="card"
           />
           <DetailDealerTeaser onOpenDealer={onScrollDealer} />
         </div>
-
-        <DetailQuickSpecs
-          range={activeRange}
-          battery={activeBattery}
-          chargingSummary={chargingSummary}
-          fourthMetric={fourthQuickSpec}
-          onScrollCharging={onScrollCharging}
-        />
       </div>
     </section>
   );

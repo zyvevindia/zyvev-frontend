@@ -79,6 +79,7 @@ import {
   scrollToDetailSection,
 } from "../utils/detailPageNav";
 import DetailDealerAssistance from "../components/car/DetailDealerAssistance";
+import DetailKeySpecifications from "../components/car/DetailKeySpecifications";
 import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
 
 import {
@@ -122,6 +123,10 @@ import {
   resolveHeroFourthQuickSpec,
   resolveHeroChargingSummary,
 } from "../utils/heroDetailMetrics";
+import {
+  buildFamilyAggregateMetrics,
+  buildVariantDetailMetrics,
+} from "../utils/familyAggregateMetrics";
 
 /* =========================================================
    ==================== CAR DETAILS PAGE ===================
@@ -763,12 +768,34 @@ export default function CarDetails() {
     familyTitle
   );
 
+  const explicitVariantSlug = normalizeVehicleSlug(
+    searchParams.get("variant")
+  );
+  const isFamilyOverviewMode =
+    comparableVariants.length > 0 && !explicitVariantSlug;
+
   const selectedVariantSlug =
     normalizeVehicleSlug(
-      selectedVariant?.slug ||
-        vehicle.slug ||
-        searchParams.get("variant")
+      explicitVariantSlug ||
+        selectedVariant?.slug ||
+        vehicle.slug
     );
+
+  const familyMetrics = isFamilyOverviewMode
+    ? buildFamilyAggregateMetrics(
+        comparableVariants,
+        familyFallbackVehicle
+      )
+    : null;
+
+  const detailMetrics = !isFamilyOverviewMode
+    ? buildVariantDetailMetrics(
+        selectedVariant || vehicle,
+        familyFallbackVehicle
+      )
+    : null;
+
+  const keySpecMetrics = familyMetrics || detailMetrics;
 
   const galleryImages = resolveRequestableGalleryImages(vehicle);
 
@@ -791,9 +818,19 @@ export default function CarDetails() {
     familyFallbackVehicle
   );
 
-  const activePrice = activeSpecs.price;
-  const activeRange = activeSpecs.range;
-  const activeBattery = activeSpecs.battery;
+  const activePrice = isFamilyOverviewMode
+    ? familyMetrics?.minPrice || activeSpecs.price
+    : activeSpecs.price;
+  const activeRange = isFamilyOverviewMode
+    ? familyMetrics?.rangeLabel
+      ? Number(
+          String(familyMetrics.rangeLabel).match(/\d+/)?.[0] || 0
+        )
+      : activeSpecs.range
+    : activeSpecs.range;
+  const activeBattery = isFamilyOverviewMode
+    ? familyMetrics?.batteryLabel || activeSpecs.battery
+    : activeSpecs.battery;
   const activeVariantForHero = selectedVariant || vehicle;
 
   const features =
@@ -888,7 +925,7 @@ export default function CarDetails() {
       name: familyTitle,
       url: canonicalVehicleUrl(familySlug),
     },
-    ...(activeVariantLabel
+    ...(explicitVariantSlug && activeVariantLabel
       ? [
           {
             name: activeVariantLabel,
@@ -951,13 +988,17 @@ export default function CarDetails() {
             brand={brandLabel}
             familySlug={familySlug}
             familyTitle={familyTitle}
-            variantLabel={activeVariantLabel}
+            variantLabel={
+              explicitVariantSlug ? activeVariantLabel : null
+            }
           />
 
           <DetailHero
             vehicle={vehicle}
             familyTitle={familyTitle}
-            activeVariantLabel={activeVariantLabel}
+            activeVariantLabel={
+              explicitVariantSlug ? activeVariantLabel : null
+            }
             variantCount={comparableVariants.length}
             familyMaxRange={familyMaxRange}
             activePrice={activePrice}
@@ -977,6 +1018,8 @@ export default function CarDetails() {
             onScrollEmi={scrollToEmiCalculator}
             onScrollDealer={scrollToDealer}
             onScrollCharging={scrollToChargingDetails}
+            familyOverviewMode={isFamilyOverviewMode}
+            familyMetrics={familyMetrics}
           />
 
           <DetailActionBar
@@ -1039,6 +1082,13 @@ export default function CarDetails() {
               </p>
             ) : null}
           </section>
+
+          {keySpecMetrics ? (
+            <DetailKeySpecifications
+              metrics={keySpecMetrics}
+              familyOverview={isFamilyOverviewMode}
+            />
+          ) : null}
 
           {enrichedVariants.length >= 1 && (
             <VariantComparisonTable

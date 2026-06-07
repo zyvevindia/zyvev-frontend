@@ -3,6 +3,12 @@ import {
   filterComparableVariants,
 } from "./modelFamily";
 import { formatChargingDurationDisplay } from "./formatChargingDuration.js";
+import {
+  extractVariantMetricValues,
+  formatVariantAcChargingDisplay,
+  formatVariantDcChargingDisplay,
+  formatVariantPowerDisplay,
+} from "./familyAggregateMetrics.js";
 
 /**
  * Variant-level heuristics for trim selection UX (detail page).
@@ -245,6 +251,10 @@ export function enrichVariantsWithInsights(
       v,
       familyFallback
     );
+    const metricValues = extractVariantMetricValues(
+      v,
+      familyFallback
+    );
 
     return {
       ...v,
@@ -262,6 +272,11 @@ export function enrichVariantsWithInsights(
           ? `${normalized.range} km`
           : "—",
       displayCharging: formatChargingDurationDisplay(normalized.charging),
+      displayDcCharging:
+        formatVariantDcChargingDisplay(metricValues) || "—",
+      displayAcCharging:
+        formatVariantAcChargingDisplay(metricValues) || "—",
+      displayPower: formatVariantPowerDisplay(metricValues) || "—",
       displayPerformance: normalized.topSpeed,
     };
   });
@@ -287,9 +302,9 @@ export function buildVariantComparisonRows(variants = []) {
     battery: v.displayBattery,
     range: numericRange(v),
     rangeLabel: v.displayRange,
-    charging: v.displayCharging,
-    performance: v.displayPerformance,
-    confidence: v.confidenceScore,
+    dcCharging: v.displayDcCharging,
+    acCharging: v.displayAcCharging,
+    power: v.displayPower,
     badges: v.insightBadges,
   }));
 }

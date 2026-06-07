@@ -3,29 +3,6 @@ import { forwardRef } from "react";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { buildVariantComparisonRows } from "../../utils/variantInsights";
 
-function ConfidenceMeter({ value }) {
-  if (value == null) {
-    return <span className="variant-comparison__confidence-na">—</span>;
-  }
-
-  const pct = Math.max(0, Math.min(100, Math.round(value)));
-  let level = "low";
-  if (pct >= 75) level = "high";
-  else if (pct >= 50) level = "medium";
-
-  return (
-    <span className="variant-comparison__confidence">
-      <span
-        className={`variant-comparison__confidence-bar variant-comparison__confidence-bar--${level}`}
-        style={{ width: `${pct}%` }}
-      />
-      <span className="variant-comparison__confidence-label">
-        {pct}%
-      </span>
-    </span>
-  );
-}
-
 function rowHighlightClass(row, isActive) {
   const classes = [];
   if (isActive) classes.push("variant-comparison__row--active");
@@ -45,11 +22,17 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
     onSelect,
     onCompareAll,
     id = "variants",
+    title = "Variants",
+    intro = "Side-by-side specs for every trim in this model family.",
+    showCompareAll = true,
+    readOnly = false,
   },
   ref
 ) {
   const rows = buildVariantComparisonRows(variants);
   if (rows.length < 1) return null;
+
+  const selectable = !readOnly && typeof onSelect === "function";
 
   return (
     <section
@@ -62,12 +45,9 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
         id={`${id}-title`}
         className="cd-section__title"
       >
-        Variants
+        {title}
       </h2>
-      <p className="cd-section__intro">
-        Side-by-side specs for every trim in this model
-        family.
-      </p>
+      <p className="cd-section__intro">{intro}</p>
 
       <div className="variant-comparison__cards">
         {rows.map((row) => {
@@ -79,21 +59,27 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
               key={row.slug}
               className={`variant-comparison-card${highlight ? ` ${highlight}` : ""}`}
             >
-              <button
-                type="button"
-                className="variant-comparison-card__select"
-                onClick={() =>
-                  onSelect?.(
-                    variants.find(
-                      (v) => v.slug === row.slug
+              {selectable ? (
+                <button
+                  type="button"
+                  className="variant-comparison-card__select"
+                  onClick={() =>
+                    onSelect?.(
+                      variants.find(
+                        (v) => v.slug === row.slug
+                      )
                     )
-                  )
-                }
-              >
+                  }
+                >
+                  <span className="variant-comparison-card__name">
+                    {row.name}
+                  </span>
+                </button>
+              ) : (
                 <span className="variant-comparison-card__name">
                   {row.name}
                 </span>
-              </button>
+              )}
               {row.badges?.length > 0 && (
                 <div className="variant-comparison__badges">
                   {row.badges.slice(0, 3).map((b) => (
@@ -134,18 +120,16 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
                   <dd>{row.rangeLabel || "—"}</dd>
                 </div>
                 <div>
-                  <dt>Charging</dt>
-                  <dd>{row.charging || "—"}</dd>
+                  <dt>DC Charging</dt>
+                  <dd>{row.dcCharging || "—"}</dd>
                 </div>
                 <div>
-                  <dt>Performance</dt>
-                  <dd>{row.performance || "—"}</dd>
+                  <dt>AC Charging</dt>
+                  <dd>{row.acCharging || "—"}</dd>
                 </div>
                 <div>
-                  <dt>Confidence</dt>
-                  <dd>
-                    <ConfidenceMeter value={row.confidence} />
-                  </dd>
+                  <dt>Power</dt>
+                  <dd>{row.power || "—"}</dd>
                 </div>
               </dl>
             </article>
@@ -161,9 +145,9 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
               <th scope="col">Price</th>
               <th scope="col">Battery</th>
               <th scope="col">Range</th>
-              <th scope="col">Charging</th>
-              <th scope="col">Performance</th>
-              <th scope="col">Confidence</th>
+              <th scope="col">DC Charging</th>
+              <th scope="col">AC Charging</th>
+              <th scope="col">Power</th>
             </tr>
           </thead>
           <tbody>
@@ -177,19 +161,23 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
                   className={rowClass}
                 >
                   <th scope="row">
-                    <button
-                      type="button"
-                      className="variant-comparison__variant-btn"
-                      onClick={() =>
-                        onSelect?.(
-                          variants.find(
-                            (v) => v.slug === row.slug
+                    {selectable ? (
+                      <button
+                        type="button"
+                        className="variant-comparison__variant-btn"
+                        onClick={() =>
+                          onSelect?.(
+                            variants.find(
+                              (v) => v.slug === row.slug
+                            )
                           )
-                        )
-                      }
-                    >
-                      {row.name}
-                    </button>
+                        }
+                      >
+                        {row.name}
+                      </button>
+                    ) : (
+                      row.name
+                    )}
                     {row.badges?.length > 0 && (
                       <span className="variant-comparison__badges">
                         {row.badges.slice(0, 3).map((b) => (
@@ -220,11 +208,9 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
                   </td>
                   <td>{row.battery || "—"}</td>
                   <td>{row.rangeLabel || "—"}</td>
-                  <td>{row.charging || "—"}</td>
-                  <td>{row.performance || "—"}</td>
-                  <td>
-                    <ConfidenceMeter value={row.confidence} />
-                  </td>
+                  <td>{row.dcCharging || "—"}</td>
+                  <td>{row.acCharging || "—"}</td>
+                  <td>{row.power || "—"}</td>
                 </tr>
               );
             })}
@@ -232,7 +218,7 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
         </table>
       </div>
 
-      {onCompareAll ? (
+      {showCompareAll && onCompareAll ? (
         <footer className="variant-comparison__footer">
           <button
             type="button"

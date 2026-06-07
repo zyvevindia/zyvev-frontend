@@ -202,6 +202,7 @@ export default function ComparePage() {
         onCarsChange={handleCarsChange}
         showClearComparison
         enableFab
+        variantCompareSession={Boolean(location.state?.variantCompareSession)}
       />
     </>
   );

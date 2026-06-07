@@ -1,0 +1,823 @@
+{
+  "generatedAt": "2026-06-07T15:47:32.712Z",
+  "checks": [
+    {
+      "id": "cohort_size",
+      "status": "pass",
+      "detail": "5/5 vehicles"
+    },
+    {
+      "id": "sticky_nav",
+      "status": "pass"
+    },
+    {
+      "id": "avg_trust",
+      "status": "pass",
+      "detail": 94
+    }
+  ],
+  "failures": [],
+  "warnings": [
+    {
+      "id": "low_catalog_completeness",
+      "slug": "tata-nexon-ev",
+      "percent": 31
+    },
+    {
+      "id": "low_catalog_completeness",
+      "slug": "tata-punch-ev",
+      "percent": 31
+    },
+    {
+      "id": "low_catalog_completeness",
+      "slug": "tata-curvv-ev",
+      "percent": 31
+    },
+    {
+      "id": "low_catalog_completeness",
+      "slug": "mg-zs-ev",
+      "percent": 31
+    },
+    {
+      "id": "low_catalog_completeness",
+      "slug": "byd-atto-3",
+      "percent": 31
+    },
+    {
+      "id": "compare_pairs_needing_review",
+      "count": 4
+    }
+  ],
+  "productionReport": {
+    "generatedAt": "2026-06-07T15:47:32.706Z",
+    "cohort": [
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-curvv-ev",
+      "mg-zs-ev",
+      "byd-atto-3"
+    ],
+    "vehicles": [
+      {
+        "slug": "tata-nexon-ev",
+        "label": "Tata Nexon EV",
+        "name": "Nexon EV",
+        "brand": "Tata",
+        "completenessPercent": 31,
+        "missingFields": [
+          "interiorImage",
+          "chargingImage",
+          "accelerationVerified"
+        ],
+        "notVerifiedFields": [
+          "heroImage",
+          "galleryCoverage",
+          "pricingVerified",
+          "batteryVerified",
+          "rangeVerified",
+          "chargingVerified"
+        ],
+        "missingMedia": [
+          "interiorImage",
+          "chargingImage"
+        ],
+        "missingSpecs": [
+          "accelerationVerified"
+        ],
+        "weakCompareSections": [],
+        "weakOwnershipGuidance": [],
+        "compareIssues": [],
+        "compareWarnings": [],
+        "compareTrustScore": 94,
+        "compareTrustBand": "strong",
+        "mediaCompletenessPercent": 75,
+        "missingCoreMedia": [],
+        "missingOptionalMedia": [
+          "exterior",
+          "interior",
+          "charging-port",
+          "og"
+        ],
+        "safetyReadiness": "partial",
+        "compareReadiness": "present",
+        "seoReadiness": "present"
+      },
+      {
+        "slug": "tata-punch-ev",
+        "label": "Tata Punch EV",
+        "name": "Punch EV",
+        "brand": "Tata",
+        "completenessPercent": 31,
+        "missingFields": [
+          "interiorImage",
+          "chargingImage",
+          "accelerationVerified"
+        ],
+        "notVerifiedFields": [
+          "heroImage",
+          "galleryCoverage",
+          "pricingVerified",
+          "batteryVerified",
+          "rangeVerified",
+          "chargingVerified"
+        ],
+        "missingMedia": [
+          "interiorImage",
+          "chargingImage"
+        ],
+        "missingSpecs": [
+          "accelerationVerified"
+        ],
+        "weakCompareSections": [],
+        "weakOwnershipGuidance": [],
+        "compareIssues": [],
+        "compareWarnings": [],
+        "compareTrustScore": 94,
+        "compareTrustBand": "strong",
+        "mediaCompletenessPercent": 75,
+        "missingCoreMedia": [],
+        "missingOptionalMedia": [
+          "exterior",
+          "interior",
+          "charging-port",
+          "og"
+        ],
+        "safetyReadiness": "partial",
+        "compareReadiness": "present",
+        "seoReadiness": "present"
+      },
+      {
+        "slug": "tata-curvv-ev",
+        "label": "Tata Curvv EV",
+        "name": "Curvv EV",
+        "brand": "Tata",
+        "completenessPercent": 31,
+        "missingFields": [
+          "interiorImage",
+          "chargingImage",
+          "accelerationVerified"
+        ],
+        "notVerifiedFields": [
+          "heroImage",
+          "galleryCoverage",
+          "pricingVerified",
+          "batteryVerified",
+          "rangeVerified",
+          "chargingVerified"
+        ],
+        "missingMedia": [
+          "interiorImage",
+          "chargingImage"
+        ],
+        "missingSpecs": [
+          "accelerationVerified"
+        ],
+        "weakCompareSections": [],
+        "weakOwnershipGuidance": [],
+        "compareIssues": [],
+        "compareWarnings": [],
+        "compareTrustScore": 94,
+        "compareTrustBand": "strong",
+        "mediaCompletenessPercent": 75,
+        "missingCoreMedia": [],
+        "missingOptionalMedia": [
+          "exterior",
+          "interior",
+          "charging-port",
+          "og"
+        ],
+        "safetyReadiness": "partial",
+        "compareReadiness": "present",
+        "seoReadiness": "present"
+      },
+      {
+        "slug": "mg-zs-ev",
+        "label": "MG ZS EV",
+        "name": "ZS EV",
+        "brand": "MG",
+        "completenessPercent": 31,
+        "missingFields": [
+          "interiorImage",
+          "chargingImage",
+          "accelerationVerified"
+        ],
+        "notVerifiedFields": [
+          "heroImage",
+          "galleryCoverage",
+          "pricingVerified",
+          "batteryVerified",
+          "rangeVerified",
+          "chargingVerified"
+        ],
+        "missingMedia": [
+          "interiorImage",
+          "chargingImage"
+        ],
+        "missingSpecs": [
+          "accelerationVerified"
+        ],
+        "weakCompareSections": [],
+        "weakOwnershipGuidance": [],
+        "compareIssues": [],
+        "compareWarnings": [],
+        "compareTrustScore": 94,
+        "compareTrustBand": "strong",
+        "mediaCompletenessPercent": 75,
+        "missingCoreMedia": [],
+        "missingOptionalMedia": [
+          "exterior",
+          "interior",
+          "charging-port",
+          "og"
+        ],
+        "safetyReadiness": "partial",
+        "compareReadiness": "present",
+        "seoReadiness": "present"
+      },
+      {
+        "slug": "byd-atto-3",
+        "label": "BYD Atto 3",
+        "name": "Atto 3",
+        "brand": "BYD",
+        "completenessPercent": 31,
+        "missingFields": [
+          "interiorImage",
+          "chargingImage",
+          "accelerationVerified"
+        ],
+        "notVerifiedFields": [
+          "heroImage",
+          "galleryCoverage",
+          "pricingVerified",
+          "batteryVerified",
+          "rangeVerified",
+          "chargingVerified"
+        ],
+        "missingMedia": [
+          "interiorImage",
+          "chargingImage"
+        ],
+        "missingSpecs": [
+          "accelerationVerified"
+        ],
+        "weakCompareSections": [],
+        "weakOwnershipGuidance": [],
+        "compareIssues": [],
+        "compareWarnings": [],
+        "compareTrustScore": 94,
+        "compareTrustBand": "strong",
+        "mediaCompletenessPercent": 75,
+        "missingCoreMedia": [],
+        "missingOptionalMedia": [
+          "exterior",
+          "interior",
+          "charging-port",
+          "og"
+        ],
+        "safetyReadiness": "partial",
+        "compareReadiness": "present",
+        "seoReadiness": "present"
+      }
+    ],
+    "comparePairs": [
+      "tata-nexon-ev-vs-mg-zs-ev",
+      "tata-punch-ev-vs-tata-nexon-ev",
+      "tata-curvv-ev-vs-byd-atto-3",
+      "mg-zs-ev-vs-byd-atto-3"
+    ],
+    "safety": {
+      "generatedAt": "2026-06-07T15:47:32.695Z",
+      "vehicles": 5,
+      "readyCount": 2,
+      "partialCount": 3,
+      "missingCount": 0,
+      "rows": [
+        {
+          "slug": "tata-nexon-ev",
+          "name": "Nexon EV",
+          "safety": {
+            "bharatNcap": {
+              "stars": 5,
+              "status": "verified",
+              "ratingYear": null
+            },
+            "globalNcap": {
+              "stars": null,
+              "status": "unknown",
+              "ratingYear": null
+            },
+            "airbags": {
+              "count": 6,
+              "status": "verified"
+            },
+            "abs": {
+              "value": null,
+              "status": "unknown"
+            },
+            "esc": {
+              "value": null,
+              "status": "unknown"
+            },
+            "tractionControl": {
+              "value": null,
+              "status": "unknown"
+            },
+            "adas": {
+              "level": 0,
+              "supported": false,
+              "status": "verified"
+            },
+            "hasData": true
+          },
+          "verifiedCount": 3,
+          "missingFields": [
+            "globalNcap",
+            "abs",
+            "esc",
+            "tractionControl"
+          ],
+          "readiness": "ready"
+        },
+        {
+          "slug": "tata-punch-ev",
+          "name": "Punch EV",
+          "safety": {
+            "bharatNcap": {
+              "stars": 5,
+              "status": "verified",
+              "ratingYear": null
+            },
+            "globalNcap": {
+              "stars": 5,
+              "status": "verified",
+              "ratingYear": null
+            },
+            "airbags": {
+              "count": 6,
+              "status": "verified"
+            },
+            "abs": {
+              "value": null,
+              "status": "unknown"
+            },
+            "esc": {
+              "value": null,
+              "status": "unknown"
+            },
+            "tractionControl": {
+              "value": null,
+              "status": "unknown"
+            },
+            "adas": {
+              "level": 0,
+              "supported": false,
+              "status": "verified"
+            },
+            "hasData": true
+          },
+          "verifiedCount": 4,
+          "missingFields": [
+            "abs",
+            "esc",
+            "tractionControl"
+          ],
+          "readiness": "ready"
+        },
+        {
+          "slug": "tata-curvv-ev",
+          "name": "Curvv EV",
+          "safety": {
+            "bharatNcap": {
+              "stars": null,
+              "status": "not_tested",
+              "ratingYear": null
+            },
+            "globalNcap": {
+              "stars": null,
+              "status": "unknown",
+              "ratingYear": null
+            },
+            "airbags": {
+              "count": null,
+              "status": "unknown"
+            },
+            "abs": {
+              "value": null,
+              "status": "unknown"
+            },
+            "esc": {
+              "value": null,
+              "status": "unknown"
+            },
+            "tractionControl": {
+              "value": null,
+              "status": "unknown"
+            },
+            "adas": {
+              "level": null,
+              "status": "unknown"
+            },
+            "hasData": true
+          },
+          "verifiedCount": 0,
+          "missingFields": [
+            "bharatNcap",
+            "globalNcap",
+            "airbags",
+            "abs",
+            "esc",
+            "tractionControl",
+            "adas"
+          ],
+          "readiness": "partial"
+        },
+        {
+          "slug": "mg-zs-ev",
+          "name": "ZS EV",
+          "safety": {
+            "bharatNcap": {
+              "stars": null,
+              "status": "not_tested",
+              "ratingYear": null
+            },
+            "globalNcap": {
+              "stars": null,
+              "status": "unknown",
+              "ratingYear": null
+            },
+            "airbags": {
+              "count": null,
+              "status": "unknown"
+            },
+            "abs": {
+              "value": null,
+              "status": "unknown"
+            },
+            "esc": {
+              "value": null,
+              "status": "unknown"
+            },
+            "tractionControl": {
+              "value": null,
+              "status": "unknown"
+            },
+            "adas": {
+              "level": null,
+              "status": "unknown"
+            },
+            "hasData": true
+          },
+          "verifiedCount": 0,
+          "missingFields": [
+            "bharatNcap",
+            "globalNcap",
+            "airbags",
+            "abs",
+            "esc",
+            "tractionControl",
+            "adas"
+          ],
+          "readiness": "partial"
+        },
+        {
+          "slug": "byd-atto-3",
+          "name": "Atto 3",
+          "safety": {
+            "bharatNcap": {
+              "stars": null,
+              "status": "not_tested",
+              "ratingYear": null
+            },
+            "globalNcap": {
+              "stars": null,
+              "status": "unknown",
+              "ratingYear": null
+            },
+            "airbags": {
+              "count": null,
+              "status": "unknown"
+            },
+            "abs": {
+              "value": null,
+              "status": "unknown"
+            },
+            "esc": {
+              "value": null,
+              "status": "unknown"
+            },
+            "tractionControl": {
+              "value": null,
+              "status": "unknown"
+            },
+            "adas": {
+              "level": null,
+              "status": "unknown"
+            },
+            "hasData": true
+          },
+          "verifiedCount": 0,
+          "missingFields": [
+            "bharatNcap",
+            "globalNcap",
+            "airbags",
+            "abs",
+            "esc",
+            "tractionControl",
+            "adas"
+          ],
+          "readiness": "partial"
+        }
+      ]
+    },
+    "authority": {
+      "summary": {
+        "readyClusters": 3,
+        "partialClusters": 3,
+        "weakClusters": 0,
+        "avgScore": 70
+      },
+      "weakClusters": []
+    },
+    "productionQa": {
+      "ok": true,
+      "failures": [],
+      "warnings": [
+        {
+          "id": "missing_gallery_images",
+          "detail": "5/5"
+        }
+      ]
+    },
+    "uxChecks": {
+      "stickyNavTabCount": 12,
+      "requiredTabs": [
+        "overview",
+        "variants",
+        "compare",
+        "range",
+        "charging",
+        "features",
+        "suitability",
+        "emi",
+        "faqs",
+        "reviews",
+        "related-evs",
+        "assistance"
+      ],
+      "chargingTabPresent": true,
+      "compareCtaRoutes": [
+        "/compare",
+        "/cars?compareMode=true"
+      ],
+      "detailSectionAnchors": [
+        "overview",
+        "variants",
+        "compare",
+        "range",
+        "charging",
+        "features",
+        "suitability",
+        "emi",
+        "faqs",
+        "reviews",
+        "related-evs",
+        "assistance"
+      ],
+      "status": "static_pass"
+    },
+    "summary": {
+      "avgCompletenessPercent": 31,
+      "avgCompareTrustScore": 94,
+      "avgMediaCompletenessPercent": 75,
+      "vehiclesBelow60Completeness": 5,
+      "vehiclesBelow70Trust": 0,
+      "topMissingMedia": [
+        {
+          "field": "interiorImage",
+          "count": 5
+        },
+        {
+          "field": "chargingImage",
+          "count": 5
+        }
+      ],
+      "topMissingSpecs": [
+        {
+          "field": "accelerationVerified",
+          "count": 5
+        }
+      ]
+    }
+  },
+  "trustReport": {
+    "generatedAt": "2026-06-07T15:47:32.712Z",
+    "cohort": [
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-curvv-ev",
+      "mg-zs-ev",
+      "byd-atto-3"
+    ],
+    "vehicleScores": [
+      {
+        "slug": "tata-nexon-ev",
+        "name": "Nexon EV",
+        "score": 94,
+        "band": "strong",
+        "issues": [],
+        "warnings": []
+      },
+      {
+        "slug": "tata-punch-ev",
+        "name": "Punch EV",
+        "score": 94,
+        "band": "strong",
+        "issues": [],
+        "warnings": []
+      },
+      {
+        "slug": "tata-curvv-ev",
+        "name": "Curvv EV",
+        "score": 94,
+        "band": "strong",
+        "issues": [],
+        "warnings": []
+      },
+      {
+        "slug": "mg-zs-ev",
+        "name": "ZS EV",
+        "score": 94,
+        "band": "strong",
+        "issues": [],
+        "warnings": []
+      },
+      {
+        "slug": "byd-atto-3",
+        "name": "Atto 3",
+        "score": 94,
+        "band": "strong",
+        "issues": [],
+        "warnings": []
+      }
+    ],
+    "pairAudits": [
+      {
+        "pairSlug": "tata-nexon-ev-vs-mg-zs-ev",
+        "status": "NEEDS_REVIEW",
+        "issues": [
+          "low_confidence_scores"
+        ],
+        "trustScore": 55
+      },
+      {
+        "pairSlug": "tata-punch-ev-vs-tata-nexon-ev",
+        "status": "NEEDS_REVIEW",
+        "issues": [
+          "low_confidence_scores"
+        ],
+        "trustScore": 55
+      },
+      {
+        "pairSlug": "tata-curvv-ev-vs-byd-atto-3",
+        "status": "NEEDS_REVIEW",
+        "issues": [
+          "low_confidence_scores"
+        ],
+        "trustScore": 55
+      },
+      {
+        "pairSlug": "mg-zs-ev-vs-byd-atto-3",
+        "status": "NEEDS_REVIEW",
+        "issues": [
+          "low_confidence_scores"
+        ],
+        "trustScore": 55
+      }
+    ],
+    "duplicates": [
+      {
+        "phrase": "excellent for overnight home ac charging (dedicated point required)",
+        "slugs": [
+          "tata-nexon-ev",
+          "tata-punch-ev",
+          "tata-curvv-ev",
+          "mg-zs-ev",
+          "byd-atto-3"
+        ]
+      },
+      {
+        "phrase": "apartment charging can work if your society allows an ac point — confirm",
+        "slugs": [
+          "tata-nexon-ev",
+          "tata-punch-ev",
+          "tata-curvv-ev",
+          "mg-zs-ev",
+          "byd-atto-3"
+        ]
+      },
+      {
+        "phrase": "fast-charge friendly for highway and road-trip stops",
+        "slugs": [
+          "tata-nexon-ev",
+          "tata-punch-ev"
+        ]
+      },
+      {
+        "phrase": "road-trip viable with mapped dc stops — verify network along your route",
+        "slugs": [
+          "tata-nexon-ev",
+          "tata-punch-ev"
+        ]
+      },
+      {
+        "phrase": "ac home charging is supported — confirm society/rwa approval for your pa",
+        "slugs": [
+          "tata-nexon-ev",
+          "tata-punch-ev",
+          "tata-curvv-ev",
+          "mg-zs-ev",
+          "byd-atto-3"
+        ]
+      },
+      {
+        "phrase": "works for many families — compare boot space, rear seats, and safety fea",
+        "slugs": [
+          "tata-nexon-ev",
+          "tata-punch-ev",
+          "tata-curvv-ev",
+          "mg-zs-ev",
+          "byd-atto-3"
+        ]
+      },
+      {
+        "phrase": "fast dc times and flexible charging options reduce day-to-day friction.",
+        "slugs": [
+          "tata-nexon-ev",
+          "tata-punch-ev"
+        ]
+      },
+      {
+        "phrase": "comfortable for typical urban weekday use.",
+        "slugs": [
+          "tata-punch-ev",
+          "tata-curvv-ev",
+          "mg-zs-ev",
+          "byd-atto-3"
+        ]
+      },
+      {
+        "phrase": "real-world range supports highway legs with dc stops.",
+        "slugs": [
+          "tata-punch-ev",
+          "tata-curvv-ev",
+          "mg-zs-ev",
+          "byd-atto-3"
+        ]
+      },
+      {
+        "phrase": "long road trips need careful route planning around charging stops",
+        "slugs": [
+          "tata-curvv-ev",
+          "mg-zs-ev",
+          "byd-atto-3"
+        ]
+      },
+      {
+        "phrase": "feasible for planned road trips with mapped dc networks.",
+        "slugs": [
+          "tata-curvv-ev",
+          "mg-zs-ev",
+          "byd-atto-3"
+        ]
+      },
+      {
+        "phrase": "balanced charging profile — plan home or public sessions.",
+        "slugs": [
+          "tata-curvv-ev",
+          "mg-zs-ev",
+          "byd-atto-3"
+        ]
+      }
+    ],
+    "chargingInconsistency": [],
+    "summary": {
+      "avgTrustScore": 94,
+      "vehiclesNeedsWork": 0,
+      "duplicatePhraseCount": 12,
+      "chargingInconsistencyCount": 0,
+      "pairsNeedingReview": 4
+    }
+  },
+  "summary": {
+    "ok": true,
+    "failureCount": 0,
+    "warningCount": 6,
+    "cohortSlugs": [
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-curvv-ev",
+      "mg-zs-ev",
+      "byd-atto-3"
+    ]
+  }
+}
