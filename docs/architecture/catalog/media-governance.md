@@ -101,13 +101,27 @@ https://cdn.evsavari.com/catalog/families/mg-comet-ev/listing-thumb
 
 **Detail:** `role: "hero"` + `role: "gallery"` on `DetailHero`.
 
-## OEM media ingestion standards
+## Media policy (2026-05-20)
 
-1. Upload to Cloudinary folder `evsavari/catalog/families/{canonical-family-slug}/`.
-2. Use extensionless asset names: `hero`, `listing-thumb`, `compare-thumb`, `og`.
-3. Register family in `PRODUCTION_FAMILY_SLUGS` only when all required assets exist.
-4. API must not store bare role strings (`hero`, `compare-thumb`) as URLs.
-5. Prefer HTTPS `res.cloudinary.com` URLs in API responses; CDN host is rewritten at runtime until fully purged from DB.
+See **[docs/catalog/media-policy.md](../../catalog/media-policy.md)**.
+
+| Tier | Families | Rule |
+|------|----------|------|
+| Legacy frozen | `tata-nexon-ev`, `tata-punch-ev` | Keep existing Cloudinary assets; do not replace during productionization |
+| Licensed standard | All other families + future EVs | Wikimedia Commons or explicitly licensed sources; attribution in `tier1-media-attribution.json`; deliver via Cloudinary only |
+
+Prohibited: OEM website hotlinks, Google Images, third-party automotive portals.
+
+## Licensed media ingestion standards
+
+1. Record attribution in `docs/operations/tier1-media-attribution.json` (source page, creator, license, credit text).
+2. Register approved ingest URL in `docs/operations/tier1-cloudinary-seed.json`.
+3. Run `npm run media:attribution-audit` then `npm run media:upload-tier1`.
+4. Upload to Cloudinary folder `evsavari/catalog/families/{canonical-family-slug}/`.
+5. Use extensionless asset names: `hero`, `listing-thumb`, `compare-thumb`, `og`.
+6. Register family in `PRODUCTION_FAMILY_SLUGS` only when all required assets exist.
+7. API must not store bare role strings (`hero`, `compare-thumb`) as URLs.
+8. Prefer HTTPS `res.cloudinary.com` URLs in API responses; CDN host is rewritten at runtime until fully purged from DB.
 
 ## API interaction (no image impact)
 

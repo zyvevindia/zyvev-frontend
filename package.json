@@ -36,6 +36,7 @@
     "backend:compare-validate": "node scripts/backend-compare-validate.mjs",
     "post-launch:smoke": "npm run seo:qa && npm run trust:smoke && npm run soft-launch:smoke && npm run catalog-ops:smoke && npm run intelligence:smoke && npm run ops:usage-learning-smoke && npm run admin:routes-smoke && npm run tier1:productionization && npm run compare:trust-audit && npm run media:completeness && npm run tier1:qa && npm run production:qa && npm run backend:persistence-smoke && npm run backend:catalog-ops-smoke && npm run backend:compare-validate",
     "ingestion:smoke": "node scripts/ingestion-smoke.mjs",
+    "media:attribution-audit": "node scripts/media-attribution-audit.mjs",
     "media:audit": "node scripts/media-audit.mjs",
     "media:verify": "node scripts/verify-media-integrity.mjs",
     "media:fix-cloudinary": "node scripts/cloudinary-fix-publicids.mjs",

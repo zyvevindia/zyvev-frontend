@@ -1,0 +1,99 @@
+{
+  "policyVersion": "2026-05-20",
+  "description": "Licensed-source attribution for tier-1 Cloudinary ingest. Every seed URL in tier1-cloudinary-seed.json must map to a record here. Legacy families (tata-nexon-ev, tata-punch-ev) are excluded — do not replace their Cloudinary assets.",
+  "sources": {
+    "2022_Tata_Tiago_EV_IB_XZ+Tech_LR_front_view.png": {
+      "sourceType": "wikimedia_commons",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+      "ingestUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+      "creator": "DriveSpark (uploaded by Depotadore)",
+      "license": "CC BY 3.0",
+      "attributionText": "Tata Tiago EV — DriveSpark / CC BY 3.0 via Wikimedia Commons",
+      "sourceNotes": "YouTube screenshot (DriveSpark) archived on Commons",
+      "verifiedAt": "2026-05-20",
+      "verifiedBy": "tiago-ev-media-sprint"
+    },
+    "2022_Tata_Tiago_XZA+_front_20230512.jpg": {
+      "sourceType": "wikimedia_commons",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:2022_Tata_Tiago_XZA%2B_front_20230512.jpg",
+      "ingestUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/2022_Tata_Tiago_XZA%2B_front_20230512.jpg/1280px-2022_Tata_Tiago_XZA%2B_front_20230512.jpg",
+      "creator": "Dairokkan9",
+      "license": "CC BY-SA 4.0",
+      "attributionText": "2022 Tata Tiago XZA+ — Dairokkan9 / CC BY-SA 4.0 via Wikimedia Commons",
+      "sourceNotes": "Facelift front view, Bengaluru — same generation body as Tiago EV",
+      "verifiedAt": "2026-05-20",
+      "verifiedBy": "tiago-ev-media-sprint"
+    },
+    "2022_Tata_Tiago_XZA+_rear_20230512.jpg": {
+      "sourceType": "wikimedia_commons",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:2022_Tata_Tiago_XZA%2B_rear_20230512.jpg",
+      "ingestUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2022_Tata_Tiago_XZA%2B_rear_20230512.jpg/1280px-2022_Tata_Tiago_XZA%2B_rear_20230512.jpg",
+      "creator": "Dairokkan9",
+      "license": "CC BY-SA 4.0",
+      "attributionText": "2022 Tata Tiago XZA+ — Dairokkan9 / CC BY-SA 4.0 via Wikimedia Commons",
+      "sourceNotes": "Facelift rear view, Bengaluru",
+      "verifiedAt": "2026-05-20",
+      "verifiedBy": "tiago-ev-media-sprint"
+    },
+    "BYD_Atto_3_1X7A6493.jpg": {
+      "sourceType": "wikimedia_commons",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:BYD_Atto_3_1X7A6493.jpg",
+      "ingestUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg",
+      "creator": "See Wikimedia Commons file page (Author field)",
+      "license": "Creative Commons — see file page",
+      "attributionText": "BYD Atto 3 — via Wikimedia Commons (see file page for author and license)",
+      "verifiedAt": "2026-05-20",
+      "verifiedBy": "media-policy-rollout"
+    },
+    "BYD_Atto_3_1X7A7105.jpg": {
+      "sourceType": "wikimedia_commons",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:BYD_Atto_3_1X7A7105.jpg",
+      "ingestUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/BYD_Atto_3_1X7A7105.jpg/1280px-BYD_Atto_3_1X7A7105.jpg",
+      "creator": "See Wikimedia Commons file page (Author field)",
+      "license": "Creative Commons — see file page",
+      "attributionText": "BYD Atto 3 — via Wikimedia Commons (see file page for author and license)",
+      "verifiedAt": "2026-05-20",
+      "verifiedBy": "media-policy-rollout"
+    },
+    "2023_Mahindra_XUV_400_EL_EV,_Ashiana_Brahmananda,_Jamshedpur,_Jharkhand,_India_(Ank_Kumar,_Infosys_Limited)_01.jpg": {
+      "sourceType": "wikimedia_commons",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:2023_Mahindra_XUV_400_EL_EV,_Ashiana_Brahmananda,_Jamshedpur,_Jharkhand,_India_(Ank_Kumar,_Infosys_Limited)_01.jpg",
+      "ingestUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg",
+      "creator": "Ank Kumar (Infosys Limited)",
+      "license": "Creative Commons — see file page",
+      "attributionText": "Mahindra XUV400 EV — photo by Ank Kumar, via Wikimedia Commons",
+      "verifiedAt": "2026-05-20",
+      "verifiedBy": "media-policy-rollout"
+    },
+    "2023_Mahindra_XUV_400_EL_EV,_Ashiana_Brahmananda,_Jamshedpur,_Jharkhand,_India_(Ank_Kumar,_Infosys_Limited)_02.jpg": {
+      "sourceType": "wikimedia_commons",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:2023_Mahindra_XUV_400_EL_EV,_Ashiana_Brahmananda,_Jamshedpur,_Jharkhand,_India_(Ank_Kumar,_Infosys_Limited)_02.jpg",
+      "ingestUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg",
+      "creator": "Ank Kumar (Infosys Limited)",
+      "license": "Creative Commons — see file page",
+      "attributionText": "Mahindra XUV400 EV — photo by Ank Kumar, via Wikimedia Commons",
+      "verifiedAt": "2026-05-20",
+      "verifiedBy": "media-policy-rollout"
+    },
+    "Mahindra_XEV_9E.jpg": {
+      "sourceType": "wikimedia_commons",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Mahindra_XEV_9E.jpg",
+      "ingestUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+      "creator": "See Wikimedia Commons file page (Author field)",
+      "license": "Creative Commons — see file page",
+      "attributionText": "Mahindra XEV 9e — via Wikimedia Commons (see file page for author and license)",
+      "verifiedAt": "2026-05-20",
+      "verifiedBy": "media-policy-rollout"
+    },
+    "Hyundai_Kona_electric_(Facelift)_–_h_11042021.jpg": {
+      "sourceType": "wikimedia_commons",
+      "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Hyundai_Kona_electric_(Facelift)_%E2%80%93_h_11042021.jpg",
+      "ingestUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+      "creator": "See Wikimedia Commons file page (Author field)",
+      "license": "Creative Commons — see file page",
+      "attributionText": "Hyundai Kona Electric — via Wikimedia Commons (see file page for author and license)",
+      "verifiedAt": "2026-05-20",
+      "verifiedBy": "media-policy-rollout"
+    }
+  }
+}

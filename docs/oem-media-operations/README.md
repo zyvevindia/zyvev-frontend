@@ -44,9 +44,12 @@ Roles: `listing` | `compare` | `hero` | `gallery` | `og`
 
 Catalog `media.assets[]` includes `attribution`, `category`, `angle`, `tags`, `variant` (light/dark). UI can surface credits in detail footer when needed.
 
+**Policy (2026-05-20):** Licensed-standard families must use Wikimedia Commons or other explicitly licensed sources with full attribution in `docs/operations/tier1-media-attribution.json`. Legacy Nexon/Punch Cloudinary assets are frozen. See [media-policy.md](../catalog/media-policy.md).
+
 ## QA
 
 - Admin: `/admin/media-qa`
+- CLI: `npm run media:attribution-audit` (licensed-source traceability)
 - CLI: `npm run media:audit` (add `--probe` for live HEAD checks)
 - Backend tier-1: `node docs/architecture/catalog/tier-1/audit-media.mjs`
 

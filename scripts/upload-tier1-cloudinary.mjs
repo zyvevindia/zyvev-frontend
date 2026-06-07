@@ -2,19 +2,33 @@
  * Upload tier-1 family media to canonical Cloudinary public IDs.
  *
  * Sources: docs/operations/tier1-cloudinary-seed.json (remote URLs).
+ * Attribution: docs/operations/tier1-media-attribution.json (required for licensed families).
  *
  * Usage:
  *   npm run media:upload-tier1 -- --dry-run
  *   npm run media:upload-tier1
  *   npm run media:upload-tier1 -- --family=tata-tiago-ev
+ *
+ * Legacy frozen families (tata-nexon-ev, tata-punch-ev) are skipped unless --force-legacy.
  */
 
 import "./lib/bootstrapEnv.mjs";
 
-import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { configureCloudinaryOrExit } from "./lib/cloudinarySdk.mjs";
+import {
+  auditMediaAttribution,
+  cloudinaryContextFromAttribution,
+  loadAttributionRegistry,
+  loadSeedManifest,
+  resolveSourceAttribution,
+  validateSourceRecord,
+} from "./lib/mediaAttribution.mjs";
+import {
+  isLegacyFrozenMediaFamily,
+  requiresLicensedAttribution,
+} from "../src/media/mediaPolicy.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -32,6 +46,7 @@ const OPTIONAL_ROLES = [
 
 const dryRun = process.argv.includes("--dry-run");
 const coreOnly = process.argv.includes("--core-only");
+const forceLegacy = process.argv.includes("--force-legacy");
 const familyArg = process.argv.find((a) => a.startsWith("--family="))?.split("=")[1];
 
 function canonicalFolder(familySlug) {
@@ -76,7 +91,26 @@ async function downloadRemoteImage(remoteUrl, retries = 4) {
   throw new Error("download failed");
 }
 
-async function uploadRole(cloudinary, familySlug, role, remoteUrl) {
+function resolveRoleAttribution(sources, familySlug, role, remoteUrl) {
+  if (!requiresLicensedAttribution(familySlug)) {
+    return null;
+  }
+  const { record } = resolveSourceAttribution(sources, remoteUrl);
+  if (!record) {
+    throw new Error(
+      `missing attribution for ${familySlug}/${role} — update tier1-media-attribution.json`
+    );
+  }
+  const missing = validateSourceRecord(record);
+  if (missing.length) {
+    throw new Error(
+      `incomplete attribution for ${familySlug}/${role}: ${missing.join(", ")}`
+    );
+  }
+  return record;
+}
+
+async function uploadRole(cloudinary, familySlug, role, remoteUrl, attribution) {
   const publicId = publicIdForRole(familySlug, role);
   const folder = canonicalFolder(familySlug);
 
@@ -84,19 +118,31 @@ async function uploadRole(cloudinary, familySlug, role, remoteUrl) {
     console.log(`  [dry-run] ${role}`);
     console.log(`    FROM: ${remoteUrl}`);
     console.log(`    TO:   public_id=${publicId}`);
+    if (attribution) {
+      console.log(`    ATTR: ${attribution.attributionText}`);
+    }
     return { role, ok: true, dryRun: true };
   }
 
   const { buffer, contentType } = await downloadRemoteImage(remoteUrl);
   const dataUri = `data:${contentType};base64,${buffer.toString("base64")}`;
 
-  const result = await cloudinary.uploader.upload(dataUri, {
+  const uploadOptions = {
     public_id: publicId,
     asset_folder: folder,
     overwrite: true,
     invalidate: true,
     resource_type: "image",
-  });
+  };
+
+  if (attribution) {
+    uploadOptions.context = cloudinaryContextFromAttribution(attribution, {
+      familySlug,
+      role,
+    });
+  }
+
+  const result = await cloudinary.uploader.upload(dataUri, uploadOptions);
 
   console.log(`  ✓ ${role} → ${result.public_id} (${result.width}x${result.height})`);
   await sleep(2500);
@@ -106,8 +152,20 @@ async function uploadRole(cloudinary, familySlug, role, remoteUrl) {
 async function main() {
   const { cloudinary, cloudName } = configureCloudinaryOrExit();
 
-  const seedPath = join(root, "docs/operations/tier1-cloudinary-seed.json");
-  const seed = JSON.parse(readFileSync(seedPath, "utf8"));
+  const seed = loadSeedManifest();
+  const registry = loadAttributionRegistry();
+  const sources = registry.sources || {};
+
+  const attributionAudit = auditMediaAttribution();
+  if (!attributionAudit.ok) {
+    console.error(
+      "Attribution registry incomplete — run npm run media:attribution-audit and fix before upload.\n"
+    );
+    for (const issue of attributionAudit.issues.filter((i) => i.severity === "error")) {
+      console.error(`  • ${issue.familySlug}/${issue.role || ""}: ${issue.message}`);
+    }
+    process.exit(1);
+  }
 
   const families = familyArg ? [familyArg] : Object.keys(seed).filter((k) => !k.startsWith("_"));
 
@@ -117,12 +175,19 @@ async function main() {
 
   let uploaded = 0;
   let failed = 0;
+  let skippedLegacy = 0;
 
   for (const familySlug of families) {
     const block = seed[familySlug];
     if (!block) {
       console.error(`No seed block for ${familySlug}`);
       process.exit(1);
+    }
+
+    if (isLegacyFrozenMediaFamily(familySlug) && !forceLegacy) {
+      console.log(`── ${familySlug} ── skipped (legacy frozen — use --force-legacy to override)`);
+      skippedLegacy += 1;
+      continue;
     }
 
     const roles = coreOnly
@@ -138,7 +203,19 @@ async function main() {
         continue;
       }
       try {
-        const result = await uploadRole(cloudinary, familySlug, role, remoteUrl);
+        const attribution = resolveRoleAttribution(
+          sources,
+          familySlug,
+          role,
+          remoteUrl
+        );
+        const result = await uploadRole(
+          cloudinary,
+          familySlug,
+          role,
+          remoteUrl,
+          attribution
+        );
         if (result.ok && !result.dryRun) uploaded += 1;
       } catch (err) {
         failed += 1;
@@ -147,7 +224,9 @@ async function main() {
     }
   }
 
-  console.log(`\nDone. Uploaded: ${uploaded}, failed/skipped: ${failed}`);
+  console.log(
+    `\nDone. Uploaded: ${uploaded}, failed: ${failed}, legacy skipped: ${skippedLegacy}`
+  );
   if (dryRun) {
     console.log("Re-run without --dry-run to apply.\n");
   }

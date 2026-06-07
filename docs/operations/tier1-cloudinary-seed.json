@@ -1,15 +1,13 @@
 {
-  "_comment": "Wikimedia Commons thumb URLs (CC-BY-SA). Replace with OEM press packs when available.",
+  "_comment": "Licensed ingest URLs only (see docs/catalog/media-policy.md). Each URL must have a matching record in tier1-media-attribution.json. Production UI uses Cloudinary — never hotlink these URLs. Legacy families tata-nexon-ev and tata-punch-ev are not in this seed — do not replace their Cloudinary assets.",
   "tata-tiago-ev": {
     "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
     "listing-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/960px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
-    "compare-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Tata_Tiago_%28115%29.JPG/1280px-Tata_Tiago_%28115%29.JPG",
+    "compare-thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
     "og": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
     "exterior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
-    "exterior-2": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Tata_Tiago_%28115%29.JPG/1280px-Tata_Tiago_%28115%29.JPG",
-    "exterior-3": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2022_Tata_Tiago_XZA%2B_rear_20230512.jpg/1280px-2022_Tata_Tiago_XZA%2B_rear_20230512.jpg",
-    "interior-1": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
-    "charging-port": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png"
+    "exterior-2": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/2022_Tata_Tiago_XZA%2B_front_20230512.jpg/1280px-2022_Tata_Tiago_XZA%2B_front_20230512.jpg",
+    "exterior-3": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2022_Tata_Tiago_XZA%2B_rear_20230512.jpg/1280px-2022_Tata_Tiago_XZA%2B_rear_20230512.jpg"
   },
   "byd-atto-3": {
     "hero": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg",
