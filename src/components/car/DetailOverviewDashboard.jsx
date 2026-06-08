@@ -95,11 +95,13 @@ export default function DetailOverviewDashboard({
   catalogMeta,
   catalogSource,
   vehicle = null,
+  familyOverviewMode = false,
 }) {
   const meta = catalogMeta;
-  const rangeIntel = vehicle
-    ? buildRangeConfidence(vehicle)
-    : buildRangeConfidence({ catalogMeta, specifications: {} });
+  const rangeIntel =
+    !familyOverviewMode && vehicle
+      ? buildRangeConfidence(vehicle)
+      : null;
   const categoryScores = buildCategoryScores(meta);
   const headlineScore = getHeadlineScore(meta, categoryScores);
   const scoreBlurb = getScoreBlurb(meta, headlineScore);

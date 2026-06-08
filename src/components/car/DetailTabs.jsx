@@ -7,8 +7,11 @@ export { DETAIL_NAV_TABS as DETAIL_TABS };
 export default function DetailTabs({
   activeId,
   onSelect,
+  excludeTabIds = [],
 }) {
   const listRef = useRef(null);
+  const hidden = new Set(excludeTabIds);
+  const tabs = DETAIL_NAV_TABS.filter((tab) => !hidden.has(tab.id));
 
   useEffect(() => {
     const activeBtn = listRef.current?.querySelector(
@@ -29,7 +32,7 @@ export default function DetailTabs({
         role="tablist"
         aria-label="Vehicle sections"
       >
-        {DETAIL_NAV_TABS.map((tab) => (
+        {tabs.map((tab) => (
           <button
             key={tab.id}
             type="button"

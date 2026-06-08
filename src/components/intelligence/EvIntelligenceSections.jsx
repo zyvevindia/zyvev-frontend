@@ -9,7 +9,6 @@ import {
 } from "../../intelligence/governance";
 import {
   formatRangeConfidenceLabel,
-  formatRangeBand,
 } from "../../intelligence/rangeConfidence";
 import TrustTransparencyPanel from "../trust/TrustTransparencyPanel";
 import { SUITABILITY_LEVEL } from "../../intelligence/suitabilityInsights";
@@ -66,6 +65,7 @@ export default function EvIntelligenceSections({
   car,
   slug = "",
   layout = "v2",
+  showRangeConfidence = true,
   sections = [
     "trust",
     "range",
@@ -115,6 +115,7 @@ export default function EvIntelligenceSections({
   } = intelligence;
 
   const show = (key) => sections.includes(key);
+  const showRangeSection = show("range") && showRangeConfidence;
   const cardClass =
     layout === "v2"
       ? "cd-section cd-card cd-content-card ev-intel-section"
@@ -171,7 +172,7 @@ export default function EvIntelligenceSections({
         />
       )}
 
-      {show("range") && range.hasData && (
+      {showRangeSection && range.hasData && (
         <section
           className={cardClass}
           id="range"
@@ -190,7 +191,7 @@ export default function EvIntelligenceSections({
             {isPresent(range.claimedRangeKm) && (
               <div className="ev-intel-range-chip">
                 <span className="ev-intel-range-chip__label">
-                  Claimed (ARAI)
+                  Claimed Range
                 </span>
                 <span className="ev-intel-range-chip__value">
                   {range.claimedRangeKm} km
@@ -200,7 +201,7 @@ export default function EvIntelligenceSections({
             {range.estimatedRealWorldKm && (
               <div className="ev-intel-range-chip ev-intel-range-chip--estimate">
                 <span className="ev-intel-range-chip__label">
-                  Est. real-world
+                  Estimated Real-World Range
                 </span>
                 <span className="ev-intel-range-chip__value">
                   {range.estimatedRealWorldKm.min}–
@@ -215,33 +216,6 @@ export default function EvIntelligenceSections({
               </span>
             </div>
           </div>
-          {(range.cityRangeKm || range.highwayRangeKm) && (
-            <div className="ev-range-usage-grid">
-              {range.cityRangeKm && (
-                <div className="ev-intel-range-chip">
-                  <span className="ev-intel-range-chip__label">
-                    Est. city
-                  </span>
-                  <span className="ev-intel-range-chip__value">
-                    {formatRangeBand(range.cityRangeKm)}
-                  </span>
-                </div>
-              )}
-              {range.highwayRangeKm && (
-                <div className="ev-intel-range-chip">
-                  <span className="ev-intel-range-chip__label">
-                    Est. highway
-                  </span>
-                  <span className="ev-intel-range-chip__value">
-                    {formatRangeBand(range.highwayRangeKm)}
-                  </span>
-                </div>
-              )}
-            </div>
-          )}
-          {range.highwayNote && (
-            <p className="ev-intel-footnote">{range.highwayNote}</p>
-          )}
           {range.seasonalNotes?.length > 0 && (
             <ul className="ev-intel-bullets">
               {range.seasonalNotes.slice(0, 3).map((note) => (

@@ -831,6 +831,11 @@ export default function CarDetails() {
     : activeSpecs.battery;
   const activeVariantForHero = selectedVariant || vehicle;
 
+  const intelligenceCar =
+    enrichedVariants.find((v) => v.slug === selectedVariantSlug) ||
+    selectedVariant ||
+    vehicle;
+
   const features =
     Array.isArray(vehicle.features)
 
@@ -1048,6 +1053,9 @@ export default function CarDetails() {
           <DetailTabs
             activeId={activeTab}
             onSelect={scrollToSection}
+            excludeTabIds={
+              isFamilyOverviewMode ? ["range"] : []
+            }
           />
 
           <section
@@ -1060,7 +1068,8 @@ export default function CarDetails() {
               features={features}
               catalogMeta={vehicle.catalogMeta}
               catalogSource={vehicle.catalogSource}
-              vehicle={vehicle}
+              vehicle={intelligenceCar}
+              familyOverviewMode={isFamilyOverviewMode}
             />
             <TrustDataStrip car={vehicle} variant="detail" />
             {vehicle ? (
@@ -1109,9 +1118,10 @@ export default function CarDetails() {
           )}
 
           <EvIntelligenceSections
-            car={vehicle}
+            car={intelligenceCar}
             slug={slug}
             layout="v2"
+            showRangeConfidence={!isFamilyOverviewMode}
             sections={[
               "range",
               "charging",
