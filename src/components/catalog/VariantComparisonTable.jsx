@@ -3,6 +3,19 @@ import { forwardRef } from "react";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { buildVariantComparisonRows } from "../../utils/variantInsights";
 
+function ChargingLines({ lines }) {
+  if (!lines?.length) return "—";
+  return (
+    <span className="variant-comparison__charging-lines">
+      {lines.map((line, index) => (
+        <span key={`${line}-${index}`} className="variant-comparison__charging-line">
+          {line}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 function rowHighlightClass(row, isActive) {
   const classes = [];
   if (isActive) classes.push("variant-comparison__row--active");
@@ -116,16 +129,18 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
                   <dd>{row.battery || "—"}</dd>
                 </div>
                 <div>
-                  <dt>Range</dt>
+                  <dt>Range (ARAI)</dt>
                   <dd>{row.rangeLabel || "—"}</dd>
                 </div>
                 <div>
-                  <dt>DC Charging</dt>
-                  <dd>{row.dcCharging || "—"}</dd>
+                  <dt>Real World Range</dt>
+                  <dd>{row.realWorldRangeLabel || "—"}</dd>
                 </div>
                 <div>
-                  <dt>AC Charging</dt>
-                  <dd>{row.acCharging || "—"}</dd>
+                  <dt>Charging</dt>
+                  <dd>
+                    <ChargingLines lines={row.chargingLines} />
+                  </dd>
                 </div>
                 <div>
                   <dt>Power</dt>
@@ -144,9 +159,9 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
               <th scope="col">Variant</th>
               <th scope="col">Price</th>
               <th scope="col">Battery</th>
-              <th scope="col">Range</th>
-              <th scope="col">DC Charging</th>
-              <th scope="col">AC Charging</th>
+              <th scope="col">Range (ARAI)</th>
+              <th scope="col">Real World Range</th>
+              <th scope="col">Charging</th>
               <th scope="col">Power</th>
             </tr>
           </thead>
@@ -208,8 +223,10 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
                   </td>
                   <td>{row.battery || "—"}</td>
                   <td>{row.rangeLabel || "—"}</td>
-                  <td>{row.dcCharging || "—"}</td>
-                  <td>{row.acCharging || "—"}</td>
+                  <td>{row.realWorldRangeLabel || "—"}</td>
+                  <td>
+                    <ChargingLines lines={row.chargingLines} />
+                  </td>
                   <td>{row.power || "—"}</td>
                 </tr>
               );

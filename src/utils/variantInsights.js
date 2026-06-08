@@ -3,6 +3,7 @@ import {
   filterComparableVariants,
 } from "./modelFamily";
 import { formatChargingDurationDisplay } from "./formatChargingDuration.js";
+import { formatRangeBand } from "../intelligence/rangeConfidence.js";
 import {
   extractVariantMetricValues,
   formatVariantAcChargingDisplay,
@@ -240,6 +241,30 @@ export function computeVariantAwards(variants = []) {
   return awards;
 }
 
+/**
+ * Verified real-world range from catalog intelligence only (no OEM estimates).
+ */
+export function formatVariantRealWorldRangeDisplay(variant) {
+  const rw = variant?.catalogMeta?.realWorldRangeKm;
+  const min = Number(rw?.min);
+  const max = Number(rw?.max);
+  if (Number.isFinite(min) && Number.isFinite(max) && min > 0 && max > 0) {
+    return formatRangeBand({ min, max });
+  }
+  return null;
+}
+
+/**
+ * Compact DC + AC charging lines for variant comparison tables.
+ * @returns {string[] | null}
+ */
+export function formatVariantCombinedChargingLines(dcCharging, acCharging) {
+  const lines = [dcCharging, acCharging].filter(
+    (line) => line && line !== "—"
+  );
+  return lines.length ? lines : null;
+}
+
 function dossierFeatureBadges(variant) {
   const tags =
     variant?.catalogMeta?.featureTags ||
@@ -294,6 +319,12 @@ export function enrichVariantsWithInsights(
         formatVariantDcChargingDisplay(metricValues) || "—",
       displayAcCharging:
         formatVariantAcChargingDisplay(metricValues) || "—",
+      displayChargingLines: formatVariantCombinedChargingLines(
+        formatVariantDcChargingDisplay(metricValues),
+        formatVariantAcChargingDisplay(metricValues)
+      ),
+      displayRealWorldRange:
+        formatVariantRealWorldRangeDisplay(v) || "—",
       displayPower: formatVariantPowerDisplay(metricValues) || "—",
       displayPerformance: normalized.topSpeed,
     };
@@ -320,8 +351,8 @@ export function buildVariantComparisonRows(variants = []) {
     battery: v.displayBattery,
     range: numericRange(v),
     rangeLabel: v.displayRange,
-    dcCharging: v.displayDcCharging,
-    acCharging: v.displayAcCharging,
+    realWorldRangeLabel: v.displayRealWorldRange,
+    chargingLines: v.displayChargingLines,
     power: v.displayPower,
     badges: v.insightBadges,
   }));

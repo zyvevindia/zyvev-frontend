@@ -455,6 +455,21 @@ button {
   color: #0f172a;
 }
 
+.variant-comparison__charging-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  white-space: nowrap;
+}
+
+.variant-comparison__charging-line {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
 .variant-comparison__scroll--desktop {
   display: none;
 }
