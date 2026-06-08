@@ -1,7 +1,4 @@
-export default function DetailKeySpecifications({
-  metrics,
-  familyOverview = true,
-}) {
+export default function DetailKeySpecifications({ metrics }) {
   if (!metrics) return null;
 
   const rows = [
@@ -25,9 +22,7 @@ export default function DetailKeySpecifications({
         Key specifications
       </h2>
       <p className="cd-section__intro">
-        {familyOverview
-          ? "Core specs across all variants in this model family."
-          : "Core specs for this variant."}
+        Core specs for this variant.
       </p>
       <dl className="cd-key-specs__grid">
         {rows.map((row) => (

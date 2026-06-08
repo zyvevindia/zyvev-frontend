@@ -795,8 +795,6 @@ export default function CarDetails() {
       )
     : null;
 
-  const keySpecMetrics = familyMetrics || detailMetrics;
-
   const galleryImages = resolveRequestableGalleryImages(vehicle);
 
   const displayImage =
@@ -1083,11 +1081,8 @@ export default function CarDetails() {
             ) : null}
           </section>
 
-          {keySpecMetrics ? (
-            <DetailKeySpecifications
-              metrics={keySpecMetrics}
-              familyOverview={isFamilyOverviewMode}
-            />
+          {!isFamilyOverviewMode && detailMetrics ? (
+            <DetailKeySpecifications metrics={detailMetrics} />
           ) : null}
 
           {enrichedVariants.length >= 1 && (
