@@ -208,8 +208,8 @@ export function formatIndianPriceRange(minInr, maxInr) {
   if (!max || min === max) {
     return formatIndianPriceCompact(min || max);
   }
-  const minLabel = formatLakhAmount(min, { decimals: 1 });
-  const maxLabel = formatLakhAmount(max, { decimals: 1 });
+  const minLabel = formatLakhAmount(min, { maxDecimals: 2 });
+  const maxLabel = formatLakhAmount(max, { maxDecimals: 2 });
   return `₹${minLabel} – ${maxLabel}`;
 }
 
