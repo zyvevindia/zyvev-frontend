@@ -259,9 +259,13 @@ export function formatVariantRealWorldRangeDisplay(variant) {
  * @returns {string[] | null}
  */
 export function formatVariantCombinedChargingLines(dcCharging, acCharging) {
-  const lines = [dcCharging, acCharging].filter(
-    (line) => line && line !== "—"
-  );
+  const lines = [];
+  if (dcCharging && dcCharging !== "—") {
+    lines.push(`DC: ${dcCharging}`);
+  }
+  if (acCharging && acCharging !== "—") {
+    lines.push(`AC: ${acCharging}`);
+  }
   return lines.length ? lines : null;
 }
 
