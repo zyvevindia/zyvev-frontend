@@ -8,6 +8,26 @@ import {
   familyCatalogUrl,
 } from "./cloudinary.js";
 import { PRODUCTION_FAMILY_SLUGS } from "./productionFamilies.js";
+import {
+  buildLocalCarMediaBlock,
+  isLocalCarMediaFamily,
+} from "./localCarMediaManifest.js";
+
+export {
+  LOCAL_CAR_MEDIA_DAY1_FAMILIES,
+  LOCAL_CAR_MEDIA_DAY2_FAMILIES,
+  LOCAL_CAR_MEDIA_DAY3_FAMILIES,
+  MEDIA_COMPLETION_P1_FAMILIES,
+  MEDIA_COMPLETION_P2_TYPES,
+  MEDIA_COMPLETION_P3_DASHBOARD_FAMILIES,
+  MEDIA_COMPLETION_SPRINT_FAMILIES,
+  LOCAL_CAR_MEDIA_FAMILIES,
+  buildLocalCarMediaBlock,
+  getLocalCarMediaTypesForFamily,
+  getLocalCarMediaUrlsForRole,
+  isLocalCarMediaFamily,
+  localCarMediaPath,
+} from "./localCarMediaManifest.js";
 
 const FAMILIES = [...PRODUCTION_FAMILY_SLUGS];
 
@@ -16,14 +36,24 @@ const FAMILIES = [...PRODUCTION_FAMILY_SLUGS];
  * probed until verified (see catalogMediaAvailability.js).
  */
 function familyMediaBlock(familySlug) {
+  const localBlock = isLocalCarMediaFamily(familySlug)
+    ? buildLocalCarMediaBlock(familySlug)
+    : null;
+
   return {
-    heroImage: familyCatalogAssetUrl(familySlug, "hero"),
-    listingThumbnail: familyCatalogAssetUrl(familySlug, "listing-thumb"),
-    compareThumbnail: familyCatalogAssetUrl(familySlug, "compare-thumb"),
-    ogImage: null,
-    gallery: [],
-    interior: [],
+    heroImage:
+      localBlock?.heroImage || familyCatalogAssetUrl(familySlug, "hero"),
+    listingThumbnail:
+      localBlock?.listingThumbnail ||
+      familyCatalogAssetUrl(familySlug, "listing-thumb"),
+    compareThumbnail:
+      localBlock?.compareThumbnail ||
+      familyCatalogAssetUrl(familySlug, "compare-thumb"),
+    ogImage: localBlock?.front || null,
+    gallery: localBlock?.gallery || [],
+    interior: localBlock?.interior ? [localBlock.interior] : [],
     charging: [],
+    local: localBlock,
   };
 }
 

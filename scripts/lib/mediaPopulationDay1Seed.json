@@ -1,0 +1,48 @@
+{
+  "_comment": "Licensed Wikimedia Commons ingest for Media Population Day 1. Converted to WebP under public/images/cars/{slug}/.",
+  "kia-ev6": {
+    "listing": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Kia_ev6_1gen_front.jpg/1280px-Kia_ev6_1gen_front.jpg",
+    "compare": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Kia-EV6-front-right.jpg/1280px-Kia-EV6-front-right.jpg",
+    "front": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Kia_ev6_1gen_front.jpg/1280px-Kia_ev6_1gen_front.jpg",
+    "rear": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Kia_ev6_1gen_back.jpg/1280px-Kia_ev6_1gen_back.jpg",
+    "side": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Kia-EV6-front-right.jpg/1280px-Kia-EV6-front-right.jpg",
+    "interior": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Kia_EV6_GT-Line_IAA_2021_1X7A0110.jpg/1280px-Kia_EV6_GT-Line_IAA_2021_1X7A0110.jpg",
+    "dashboard": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Kia_EV6_GT-Line_IAA_2021_1X7A0110.jpg/960px-Kia_EV6_GT-Line_IAA_2021_1X7A0110.jpg"
+  },
+  "bmw-ix1": {
+    "listing": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg/1280px-2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg",
+    "compare": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/2023_BMW_iX1_xDrive30_%28G11%29_IMG_7445.jpg/1280px-2023_BMW_iX1_xDrive30_%28G11%29_IMG_7445.jpg",
+    "front": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg/1280px-2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg",
+    "rear": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/2023_BMW_iX1_xDrive30_%28G11%29_IMG_7445.jpg/1280px-2023_BMW_iX1_xDrive30_%28G11%29_IMG_7445.jpg",
+    "side": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg/1280px-2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg",
+    "interior": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg/960px-2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg",
+    "dashboard": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg/960px-2023_BMW_iX1_xDrive30_%28G11%29_IMG_7444.jpg"
+  },
+  "mercedes-eqa": {
+    "listing": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg/1280px-Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg",
+    "compare": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7373.jpg/1280px-Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7373.jpg",
+    "front": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg/1280px-Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg",
+    "rear": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7373.jpg/1280px-Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7373.jpg",
+    "side": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg/1280px-Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg",
+    "interior": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg/960px-Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg",
+    "dashboard": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg/960px-Mercedes-Benz_EQA_250%2B_%28V297%29_IMG_7372.jpg"
+  },
+  "mercedes-eqb": {
+    "listing": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg/1280px-Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg",
+    "compare": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7377.jpg/1280px-Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7377.jpg",
+    "front": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg/1280px-Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg",
+    "rear": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7377.jpg/1280px-Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7377.jpg",
+    "side": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg/1280px-Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg",
+    "interior": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg/960px-Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg",
+    "dashboard": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg/960px-Mercedes-Benz_EQB_350_4MATIC_%28X243%29_IMG_7376.jpg"
+  },
+  "citroen-ec3": {
+    "listing": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Citro%C3%ABn_%C3%AB-C3_001.jpg/1280px-Citro%C3%ABn_%C3%AB-C3_001.jpg",
+    "compare": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Citro%C3%ABn_%C3%AB-C3_002.jpg/1280px-Citro%C3%ABn_%C3%AB-C3_002.jpg",
+    "front": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Citro%C3%ABn_%C3%AB-C3_001.jpg/1280px-Citro%C3%ABn_%C3%AB-C3_001.jpg",
+    "rear": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Citro%C3%ABn_%C3%AB-C3_002.jpg/1280px-Citro%C3%ABn_%C3%AB-C3_002.jpg",
+    "side": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Citro%C3%ABn_%C3%AB-C3_001.jpg/1280px-Citro%C3%ABn_%C3%AB-C3_001.jpg",
+    "interior": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Citro%C3%ABn_%C3%AB-C3_001.jpg/960px-Citro%C3%ABn_%C3%AB-C3_001.jpg",
+    "dashboard": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Citro%C3%ABn_%C3%AB-C3_001.jpg/960px-Citro%C3%ABn_%C3%AB-C3_001.jpg"
+  }
+}

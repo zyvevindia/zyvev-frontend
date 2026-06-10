@@ -67,5 +67,34 @@
     "manualCorrections": [
       "variant_table_manual"
     ]
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/mercedes-eqa/listing.webp",
+    "compareThumbnail": "/images/cars/mercedes-eqa/compare.webp",
+    "heroImage": "/images/cars/mercedes-eqa/front.webp",
+    "front": "/images/cars/mercedes-eqa/front.webp",
+    "rear": "/images/cars/mercedes-eqa/rear.webp",
+    "side": "/images/cars/mercedes-eqa/side.webp",
+    "interior": "/images/cars/mercedes-eqa/interior.webp",
+    "dashboard": "/images/cars/mercedes-eqa/dashboard.webp",
+    "gallery": [
+      "/images/cars/mercedes-eqa/front.webp",
+      "/images/cars/mercedes-eqa/rear.webp",
+      "/images/cars/mercedes-eqa/side.webp",
+      "/images/cars/mercedes-eqa/interior.webp",
+      "/images/cars/mercedes-eqa/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mercedes-eqa/front.webp",
+      "/images/cars/mercedes-eqa/rear.webp",
+      "/images/cars/mercedes-eqa/side.webp",
+      "/images/cars/mercedes-eqa/interior.webp",
+      "/images/cars/mercedes-eqa/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mercedes-eqa/interior.webp",
+      "/images/cars/mercedes-eqa/dashboard.webp"
+    ]
   }
 }

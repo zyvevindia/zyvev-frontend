@@ -60,5 +60,18 @@
       "reference_only_acquisition",
       "variant_table_manual"
     ]
+  },
+  "media": {
+    "source": "local-cars",
+    "dashboard": "/images/cars/hyundai-kona-electric/dashboard.webp",
+    "gallery": [
+      "/images/cars/hyundai-kona-electric/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/hyundai-kona-electric/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/hyundai-kona-electric/dashboard.webp"
+    ]
   }
 }

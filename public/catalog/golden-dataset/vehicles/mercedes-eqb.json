@@ -67,5 +67,34 @@
     "manualCorrections": [
       "variant_table_manual"
     ]
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/mercedes-eqb/listing.webp",
+    "compareThumbnail": "/images/cars/mercedes-eqb/compare.webp",
+    "heroImage": "/images/cars/mercedes-eqb/front.webp",
+    "front": "/images/cars/mercedes-eqb/front.webp",
+    "rear": "/images/cars/mercedes-eqb/rear.webp",
+    "side": "/images/cars/mercedes-eqb/side.webp",
+    "interior": "/images/cars/mercedes-eqb/interior.webp",
+    "dashboard": "/images/cars/mercedes-eqb/dashboard.webp",
+    "gallery": [
+      "/images/cars/mercedes-eqb/front.webp",
+      "/images/cars/mercedes-eqb/rear.webp",
+      "/images/cars/mercedes-eqb/side.webp",
+      "/images/cars/mercedes-eqb/interior.webp",
+      "/images/cars/mercedes-eqb/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mercedes-eqb/front.webp",
+      "/images/cars/mercedes-eqb/rear.webp",
+      "/images/cars/mercedes-eqb/side.webp",
+      "/images/cars/mercedes-eqb/interior.webp",
+      "/images/cars/mercedes-eqb/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mercedes-eqb/interior.webp",
+      "/images/cars/mercedes-eqb/dashboard.webp"
+    ]
   }
 }

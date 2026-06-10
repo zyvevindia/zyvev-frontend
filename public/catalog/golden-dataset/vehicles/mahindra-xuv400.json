@@ -84,5 +84,18 @@
       "variant_table_manual"
     ],
     "qualityConsolidationAt": "2026-06-10T05:01:32.182Z"
+  },
+  "media": {
+    "source": "local-cars",
+    "dashboard": "/images/cars/mahindra-xuv400/dashboard.webp",
+    "gallery": [
+      "/images/cars/mahindra-xuv400/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mahindra-xuv400/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mahindra-xuv400/dashboard.webp"
+    ]
   }
 }

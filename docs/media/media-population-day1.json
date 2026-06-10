@@ -1,0 +1,493 @@
+{
+  "version": "media-population-day1",
+  "generatedAt": "2026-06-10T10:21:55.444Z",
+  "vehiclesTargeted": [
+    "kia-ev6",
+    "bmw-ix1",
+    "mercedes-eqa",
+    "mercedes-eqb",
+    "citroen-ec3"
+  ],
+  "fallbackChain": [
+    "local-image",
+    "cloudinary",
+    "fallback-ev.svg"
+  ],
+  "localPathPattern": "/images/cars/{familySlug}/{type}.webp",
+  "fleetCoverageBeforePct": 27,
+  "fleetCoverageAfterPct": 47,
+  "fleetCoverageDeltaPct": 20,
+  "auditSummary": {
+    "fleetCoveragePct": 47,
+    "presentSlots": 82,
+    "requiredSlots": 175,
+    "byType": {
+      "listing": 16,
+      "compare": 16,
+      "front": 16,
+      "rear": 10,
+      "side": 10,
+      "interior": 9,
+      "dashboard": 5
+    },
+    "vehiclesAt100Pct": 5,
+    "vehiclesBelow50Pct": 15
+  },
+  "vehicles": [
+    {
+      "familySlug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/listing.webp",
+            "/public/images/cars/kia-ev6/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/compare.webp",
+            "/public/images/cars/kia-ev6/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/front.webp",
+            "/public/images/cars/kia-ev6/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/rear.webp",
+            "/public/images/cars/kia-ev6/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/side.webp",
+            "/public/images/cars/kia-ev6/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/interior.webp",
+            "/public/images/cars/kia-ev6/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/dashboard.webp",
+            "/public/images/cars/kia-ev6/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/listing.webp",
+            "/public/images/cars/bmw-ix1/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/compare.webp",
+            "/public/images/cars/bmw-ix1/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/front.webp",
+            "/public/images/cars/bmw-ix1/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/rear.webp",
+            "/public/images/cars/bmw-ix1/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/side.webp",
+            "/public/images/cars/bmw-ix1/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/interior.webp",
+            "/public/images/cars/bmw-ix1/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/dashboard.webp",
+            "/public/images/cars/bmw-ix1/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/listing.webp",
+            "/public/images/cars/mercedes-eqa/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/compare.webp",
+            "/public/images/cars/mercedes-eqa/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/front.webp",
+            "/public/images/cars/mercedes-eqa/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/rear.webp",
+            "/public/images/cars/mercedes-eqa/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/side.webp",
+            "/public/images/cars/mercedes-eqa/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/interior.webp",
+            "/public/images/cars/mercedes-eqa/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/dashboard.webp",
+            "/public/images/cars/mercedes-eqa/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/listing.webp",
+            "/public/images/cars/mercedes-eqb/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/compare.webp",
+            "/public/images/cars/mercedes-eqb/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/front.webp",
+            "/public/images/cars/mercedes-eqb/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/rear.webp",
+            "/public/images/cars/mercedes-eqb/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/side.webp",
+            "/public/images/cars/mercedes-eqb/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/interior.webp",
+            "/public/images/cars/mercedes-eqb/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/dashboard.webp",
+            "/public/images/cars/mercedes-eqb/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/listing.webp",
+            "/public/images/cars/citroen-ec3/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/compare.webp",
+            "/public/images/cars/citroen-ec3/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/front.webp",
+            "/public/images/cars/citroen-ec3/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/rear.webp",
+            "/public/images/cars/citroen-ec3/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/side.webp",
+            "/public/images/cars/citroen-ec3/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/interior.webp",
+            "/public/images/cars/citroen-ec3/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/dashboard.webp",
+            "/public/images/cars/citroen-ec3/dashboard.webp"
+          ]
+        }
+      }
+    }
+  ]
+}

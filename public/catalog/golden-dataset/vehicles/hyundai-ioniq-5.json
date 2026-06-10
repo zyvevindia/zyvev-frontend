@@ -68,5 +68,34 @@
       "variant_table_manual"
     ],
     "qualityConsolidationAt": "2026-06-10T05:01:32.178Z"
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/hyundai-ioniq-5/listing.webp",
+    "compareThumbnail": "/images/cars/hyundai-ioniq-5/compare.webp",
+    "heroImage": "/images/cars/hyundai-ioniq-5/front.webp",
+    "front": "/images/cars/hyundai-ioniq-5/front.webp",
+    "rear": "/images/cars/hyundai-ioniq-5/rear.webp",
+    "side": "/images/cars/hyundai-ioniq-5/side.webp",
+    "interior": "/images/cars/hyundai-ioniq-5/interior.webp",
+    "dashboard": "/images/cars/hyundai-ioniq-5/dashboard.webp",
+    "gallery": [
+      "/images/cars/hyundai-ioniq-5/front.webp",
+      "/images/cars/hyundai-ioniq-5/rear.webp",
+      "/images/cars/hyundai-ioniq-5/side.webp",
+      "/images/cars/hyundai-ioniq-5/interior.webp",
+      "/images/cars/hyundai-ioniq-5/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/hyundai-ioniq-5/front.webp",
+      "/images/cars/hyundai-ioniq-5/rear.webp",
+      "/images/cars/hyundai-ioniq-5/side.webp",
+      "/images/cars/hyundai-ioniq-5/interior.webp",
+      "/images/cars/hyundai-ioniq-5/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/hyundai-ioniq-5/interior.webp",
+      "/images/cars/hyundai-ioniq-5/dashboard.webp"
+    ]
   }
 }

@@ -1,0 +1,2387 @@
+{
+  "version": "media-audit-v1",
+  "generatedAt": "2026-06-10T11:25:38.783Z",
+  "vehicleCount": 25,
+  "requiredImageTypes": [
+    "listing",
+    "compare",
+    "front",
+    "rear",
+    "side",
+    "interior",
+    "dashboard"
+  ],
+  "sourcesInspected": [
+    "public/images/cars",
+    "public/images",
+    "local-car-manifest",
+    "cloudinary-manifest",
+    "tier1-cloudinary-seed",
+    "verified-dossier",
+    "catalog-vehicle-json"
+  ],
+  "mappingNotes": {
+    "front": "hero, exterior-1, or explicit front assets",
+    "rear": "rear, exterior-3, or explicit rear assets",
+    "side": "side, exterior-2, or explicit side assets",
+    "interior": "interior-1 or interior gallery assets",
+    "dashboard": "dashboard or interior-dashboard assets (not inferred from interior alone)"
+  },
+  "summary": {
+    "fleetCoveragePct": 100,
+    "presentSlots": 175,
+    "requiredSlots": 175,
+    "byType": {
+      "listing": 25,
+      "compare": 25,
+      "front": 25,
+      "rear": 25,
+      "side": 25,
+      "interior": 25,
+      "dashboard": 25
+    },
+    "vehiclesAt100Pct": 25,
+    "vehiclesBelow50Pct": 0
+  },
+  "vehicles": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780678067/listingImage.jpg",
+            "/images/cars/tata-nexon-ev/listing.webp",
+            "/public/images/cars/tata-nexon-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780678042/compaeImage.jpg",
+            "/images/cars/tata-nexon-ev/compare.webp",
+            "/public/images/cars/tata-nexon-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780678387/heroImage_y5qmzt.jpg",
+            "/images/cars/tata-nexon-ev/front.webp",
+            "/public/images/cars/tata-nexon-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-nexon-ev/rear.webp",
+            "/public/images/cars/tata-nexon-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-nexon-ev/side.webp",
+            "/public/images/cars/tata-nexon-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-nexon-ev/interior.webp",
+            "/public/images/cars/tata-nexon-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-nexon-ev/dashboard.webp",
+            "/public/images/cars/tata-nexon-ev/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": true
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780681774/listingImage-2.jpg",
+            "/images/cars/tata-punch-ev/listing.webp",
+            "/public/images/cars/tata-punch-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780681748/compareImage.png",
+            "/images/cars/tata-punch-ev/compare.webp",
+            "/public/images/cars/tata-punch-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780681716/heroImage.png",
+            "/images/cars/tata-punch-ev/front.webp",
+            "/public/images/cars/tata-punch-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-punch-ev/rear.webp",
+            "/public/images/cars/tata-punch-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-punch-ev/side.webp",
+            "/public/images/cars/tata-punch-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-punch-ev/interior.webp",
+            "/public/images/cars/tata-punch-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-punch-ev/dashboard.webp",
+            "/public/images/cars/tata-punch-ev/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": true
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/listing.webp",
+            "/public/images/cars/tata-curvv-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/compare.webp",
+            "/public/images/cars/tata-curvv-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/front.webp",
+            "/public/images/cars/tata-curvv-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/rear.webp",
+            "/public/images/cars/tata-curvv-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/side.webp",
+            "/public/images/cars/tata-curvv-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/interior.webp",
+            "/public/images/cars/tata-curvv-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/dashboard.webp",
+            "/public/images/cars/tata-curvv-ev/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/listing.webp",
+            "/public/images/cars/mg-windsor-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/compare.webp",
+            "/public/images/cars/mg-windsor-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/front.webp",
+            "/public/images/cars/mg-windsor-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/rear.webp",
+            "/public/images/cars/mg-windsor-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/side.webp",
+            "/public/images/cars/mg-windsor-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/interior.webp",
+            "/public/images/cars/mg-windsor-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/dashboard.webp",
+            "/public/images/cars/mg-windsor-ev/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/listing.webp",
+            "/public/images/cars/mahindra-be-6/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/compare.webp",
+            "/public/images/cars/mahindra-be-6/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/front.webp",
+            "/public/images/cars/mahindra-be-6/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/rear.webp",
+            "/public/images/cars/mahindra-be-6/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/side.webp",
+            "/public/images/cars/mahindra-be-6/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/interior.webp",
+            "/public/images/cars/mahindra-be-6/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/dashboard.webp",
+            "/public/images/cars/mahindra-be-6/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/960px-Mahindra_XEV_9E.jpg"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-xev-9e/dashboard.webp",
+            "/public/images/cars/mahindra-xev-9e/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/listing-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/960px-BYD_Atto_3_1X7A6493.jpg"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/compare-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/BYD_Atto_3_1X7A7105.jpg/1280px-BYD_Atto_3_1X7A7105.jpg"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/hero",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/BYD_Atto_3_1X7A7105.jpg/1280px-BYD_Atto_3_1X7A7105.jpg"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-atto-3/dashboard.webp",
+            "/public/images/cars/byd-atto-3/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-creta-electric/listing.webp",
+            "/public/images/cars/hyundai-creta-electric/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-creta-electric/compare.webp",
+            "/public/images/cars/hyundai-creta-electric/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-creta-electric/front.webp",
+            "/public/images/cars/hyundai-creta-electric/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-creta-electric/rear.webp",
+            "/public/images/cars/hyundai-creta-electric/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-creta-electric/side.webp",
+            "/public/images/cars/hyundai-creta-electric/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-creta-electric/interior.webp",
+            "/public/images/cars/hyundai-creta-electric/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-creta-electric/dashboard.webp",
+            "/public/images/cars/hyundai-creta-electric/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-comet-ev/rear.webp",
+            "/public/images/cars/mg-comet-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-comet-ev/side.webp",
+            "/public/images/cars/mg-comet-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-comet-ev/interior.webp",
+            "/public/images/cars/mg-comet-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-comet-ev/dashboard.webp",
+            "/public/images/cars/mg-comet-ev/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/listing.webp",
+            "/public/images/cars/hyundai-ioniq-5/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/compare.webp",
+            "/public/images/cars/hyundai-ioniq-5/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/front.webp",
+            "/public/images/cars/hyundai-ioniq-5/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/rear.webp",
+            "/public/images/cars/hyundai-ioniq-5/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/side.webp",
+            "/public/images/cars/hyundai-ioniq-5/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/interior.webp",
+            "/public/images/cars/hyundai-ioniq-5/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/dashboard.webp",
+            "/public/images/cars/hyundai-ioniq-5/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/listing.webp",
+            "/public/images/cars/kia-ev6/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/compare.webp",
+            "/public/images/cars/kia-ev6/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/front.webp",
+            "/public/images/cars/kia-ev6/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/rear.webp",
+            "/public/images/cars/kia-ev6/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/side.webp",
+            "/public/images/cars/kia-ev6/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/interior.webp",
+            "/public/images/cars/kia-ev6/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/kia-ev6/dashboard.webp",
+            "/public/images/cars/kia-ev6/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/960px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-xuv400/dashboard.webp",
+            "/public/images/cars/mahindra-xuv400/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "byd-seal",
+      "displayName": "BYD Seal",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/listing.webp",
+            "/public/images/cars/byd-seal/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/compare.webp",
+            "/public/images/cars/byd-seal/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/front.webp",
+            "/public/images/cars/byd-seal/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/rear.webp",
+            "/public/images/cars/byd-seal/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/side.webp",
+            "/public/images/cars/byd-seal/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/interior.webp",
+            "/public/images/cars/byd-seal/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/dashboard.webp",
+            "/public/images/cars/byd-seal/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/listing.webp",
+            "/public/images/cars/bmw-ix1/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/compare.webp",
+            "/public/images/cars/bmw-ix1/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/front.webp",
+            "/public/images/cars/bmw-ix1/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/rear.webp",
+            "/public/images/cars/bmw-ix1/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/side.webp",
+            "/public/images/cars/bmw-ix1/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/interior.webp",
+            "/public/images/cars/bmw-ix1/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/bmw-ix1/dashboard.webp",
+            "/public/images/cars/bmw-ix1/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/listing.webp",
+            "/public/images/cars/mercedes-eqa/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/compare.webp",
+            "/public/images/cars/mercedes-eqa/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/front.webp",
+            "/public/images/cars/mercedes-eqa/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/rear.webp",
+            "/public/images/cars/mercedes-eqa/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/side.webp",
+            "/public/images/cars/mercedes-eqa/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/interior.webp",
+            "/public/images/cars/mercedes-eqa/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqa/dashboard.webp",
+            "/public/images/cars/mercedes-eqa/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/listing.webp",
+            "/public/images/cars/mercedes-eqb/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/compare.webp",
+            "/public/images/cars/mercedes-eqb/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/front.webp",
+            "/public/images/cars/mercedes-eqb/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/rear.webp",
+            "/public/images/cars/mercedes-eqb/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/side.webp",
+            "/public/images/cars/mercedes-eqb/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/interior.webp",
+            "/public/images/cars/mercedes-eqb/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mercedes-eqb/dashboard.webp",
+            "/public/images/cars/mercedes-eqb/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/listing.webp",
+            "/public/images/cars/volvo-ex40/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/compare.webp",
+            "/public/images/cars/volvo-ex40/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/front.webp",
+            "/public/images/cars/volvo-ex40/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/rear.webp",
+            "/public/images/cars/volvo-ex40/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/side.webp",
+            "/public/images/cars/volvo-ex40/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/interior.webp",
+            "/public/images/cars/volvo-ex40/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/dashboard.webp",
+            "/public/images/cars/volvo-ex40/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/listing.webp",
+            "/public/images/cars/mini-cooper-se/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/compare.webp",
+            "/public/images/cars/mini-cooper-se/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/front.webp",
+            "/public/images/cars/mini-cooper-se/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/rear.webp",
+            "/public/images/cars/mini-cooper-se/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/side.webp",
+            "/public/images/cars/mini-cooper-se/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/interior.webp",
+            "/public/images/cars/mini-cooper-se/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/dashboard.webp",
+            "/public/images/cars/mini-cooper-se/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/listing.webp",
+            "/public/images/cars/citroen-ec3/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/compare.webp",
+            "/public/images/cars/citroen-ec3/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/front.webp",
+            "/public/images/cars/citroen-ec3/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/rear.webp",
+            "/public/images/cars/citroen-ec3/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/side.webp",
+            "/public/images/cars/citroen-ec3/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/interior.webp",
+            "/public/images/cars/citroen-ec3/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/citroen-ec3/dashboard.webp",
+            "/public/images/cars/citroen-ec3/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/listing.webp",
+            "/public/images/cars/mg-zs-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/compare.webp",
+            "/public/images/cars/mg-zs-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/front.webp",
+            "/public/images/cars/mg-zs-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/rear.webp",
+            "/public/images/cars/mg-zs-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/side.webp",
+            "/public/images/cars/mg-zs-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/interior.webp",
+            "/public/images/cars/mg-zs-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/dashboard.webp",
+            "/public/images/cars/mg-zs-ev/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/maruti-e-vitara/listing.webp",
+            "/public/images/cars/maruti-e-vitara/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/maruti-e-vitara/compare.webp",
+            "/public/images/cars/maruti-e-vitara/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/maruti-e-vitara/front.webp",
+            "/public/images/cars/maruti-e-vitara/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/maruti-e-vitara/rear.webp",
+            "/public/images/cars/maruti-e-vitara/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/maruti-e-vitara/side.webp",
+            "/public/images/cars/maruti-e-vitara/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/maruti-e-vitara/interior.webp",
+            "/public/images/cars/maruti-e-vitara/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/maruti-e-vitara/dashboard.webp",
+            "/public/images/cars/maruti-e-vitara/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/listing-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/960px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/compare-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/hero",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-kona-electric/dashboard.webp",
+            "/public/images/cars/hyundai-kona-electric/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-tigor-ev/listing.webp",
+            "/public/images/cars/tata-tigor-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-tigor-ev/compare.webp",
+            "/public/images/cars/tata-tigor-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-tigor-ev/front.webp",
+            "/public/images/cars/tata-tigor-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-tigor-ev/rear.webp",
+            "/public/images/cars/tata-tigor-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-tigor-ev/side.webp",
+            "/public/images/cars/tata-tigor-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-tigor-ev/interior.webp",
+            "/public/images/cars/tata-tigor-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-tigor-ev/dashboard.webp",
+            "/public/images/cars/tata-tigor-ev/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/960px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/2022_Tata_Tiago_XZA%2B_rear_20230512.jpg/1280px-2022_Tata_Tiago_XZA%2B_rear_20230512.jpg"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "tier1-seed"
+          ],
+          "refs": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/2022_Tata_Tiago_XZA%2B_front_20230512.jpg/1280px-2022_Tata_Tiago_XZA%2B_front_20230512.jpg"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-tiago-ev/interior.webp",
+            "/public/images/cars/tata-tiago-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-tiago-ev/dashboard.webp",
+            "/public/images/cars/tata-tiago-ev/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": true,
+      "hasVerifiedDossier": true
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-harrier-ev/listing.webp",
+            "/public/images/cars/tata-harrier-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-harrier-ev/compare.webp",
+            "/public/images/cars/tata-harrier-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-harrier-ev/front.webp",
+            "/public/images/cars/tata-harrier-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-harrier-ev/rear.webp",
+            "/public/images/cars/tata-harrier-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-harrier-ev/side.webp",
+            "/public/images/cars/tata-harrier-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-harrier-ev/interior.webp",
+            "/public/images/cars/tata-harrier-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-harrier-ev/dashboard.webp",
+            "/public/images/cars/tata-harrier-ev/dashboard.webp"
+          ]
+        }
+      },
+      "presentCount": 7,
+      "requiredCount": 7,
+      "coveragePct": 100,
+      "isProductionFamily": false,
+      "hasVerifiedDossier": false
+    }
+  ]
+}

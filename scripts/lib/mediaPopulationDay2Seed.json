@@ -1,0 +1,8 @@
+{
+  "_comment": "Optional Wikimedia ingest for Media Population Day 2. Falls back to generated WebP when fetch fails.",
+  "volvo-ex40": {},
+  "mini-cooper-se": {},
+  "mg-zs-ev": {},
+  "byd-seal": {},
+  "hyundai-ioniq-5": {}
+}

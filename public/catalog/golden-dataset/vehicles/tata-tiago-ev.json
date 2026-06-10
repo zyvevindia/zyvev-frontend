@@ -84,5 +84,22 @@
       "variant_table_manual"
     ],
     "qualityConsolidationAt": "2026-06-10T05:01:32.200Z"
+  },
+  "media": {
+    "source": "local-cars",
+    "interior": "/images/cars/tata-tiago-ev/interior.webp",
+    "dashboard": "/images/cars/tata-tiago-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/tata-tiago-ev/interior.webp",
+      "/images/cars/tata-tiago-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/tata-tiago-ev/interior.webp",
+      "/images/cars/tata-tiago-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/tata-tiago-ev/interior.webp",
+      "/images/cars/tata-tiago-ev/dashboard.webp"
+    ]
   }
 }

@@ -1,0 +1,521 @@
+{
+  "version": "media-population-day3",
+  "generatedAt": "2026-06-10T11:14:50.178Z",
+  "vehiclesTargeted": [
+    "tata-curvv-ev",
+    "tata-nexon-ev",
+    "tata-punch-ev",
+    "mg-windsor-ev",
+    "mahindra-be-6"
+  ],
+  "fallbackChain": [
+    "local-image",
+    "cloudinary",
+    "fallback-ev.svg"
+  ],
+  "localPathPattern": "/images/cars/{familySlug}/{type}.webp",
+  "fleetCoverageBeforePct": 65,
+  "fleetCoverageAfterPct": 78,
+  "fleetCoverageDeltaPct": 13,
+  "fleetCoverageTargetPct": 82,
+  "fleetCoverageTargetNote": "Day 3 adds 23 net slots (5 vehicles); remaining gap is partial tier-1 gallery (dashboard) and zero-coverage families.",
+  "vehiclesAt100Before": 10,
+  "vehiclesAt100After": 15,
+  "auditSummary": {
+    "fleetCoveragePct": 78,
+    "presentSlots": 137,
+    "requiredSlots": 175,
+    "byType": {
+      "listing": 21,
+      "compare": 21,
+      "front": 21,
+      "rear": 20,
+      "side": 20,
+      "interior": 19,
+      "dashboard": 15
+    },
+    "vehiclesAt100Pct": 15,
+    "vehiclesBelow50Pct": 5
+  },
+  "vehicles": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780678067/listingImage.jpg",
+            "/images/cars/tata-nexon-ev/listing.webp",
+            "/public/images/cars/tata-nexon-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780678042/compaeImage.jpg",
+            "/images/cars/tata-nexon-ev/compare.webp",
+            "/public/images/cars/tata-nexon-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780678387/heroImage_y5qmzt.jpg",
+            "/images/cars/tata-nexon-ev/front.webp",
+            "/public/images/cars/tata-nexon-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-nexon-ev/rear.webp",
+            "/public/images/cars/tata-nexon-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-nexon-ev/side.webp",
+            "/public/images/cars/tata-nexon-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-nexon-ev/interior.webp",
+            "/public/images/cars/tata-nexon-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-nexon-ev/dashboard.webp",
+            "/public/images/cars/tata-nexon-ev/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780681774/listingImage-2.jpg",
+            "/images/cars/tata-punch-ev/listing.webp",
+            "/public/images/cars/tata-punch-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780681748/compareImage.png",
+            "/images/cars/tata-punch-ev/compare.webp",
+            "/public/images/cars/tata-punch-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "verified-dossier",
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "https://res.cloudinary.com/dznvmumze/image/upload/v1780681716/heroImage.png",
+            "/images/cars/tata-punch-ev/front.webp",
+            "/public/images/cars/tata-punch-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-punch-ev/rear.webp",
+            "/public/images/cars/tata-punch-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-punch-ev/side.webp",
+            "/public/images/cars/tata-punch-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-punch-ev/interior.webp",
+            "/public/images/cars/tata-punch-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-punch-ev/dashboard.webp",
+            "/public/images/cars/tata-punch-ev/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/listing.webp",
+            "/public/images/cars/tata-curvv-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/compare.webp",
+            "/public/images/cars/tata-curvv-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/front.webp",
+            "/public/images/cars/tata-curvv-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/rear.webp",
+            "/public/images/cars/tata-curvv-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/side.webp",
+            "/public/images/cars/tata-curvv-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/interior.webp",
+            "/public/images/cars/tata-curvv-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/tata-curvv-ev/dashboard.webp",
+            "/public/images/cars/tata-curvv-ev/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/listing.webp",
+            "/public/images/cars/mg-windsor-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/compare.webp",
+            "/public/images/cars/mg-windsor-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/front.webp",
+            "/public/images/cars/mg-windsor-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/rear.webp",
+            "/public/images/cars/mg-windsor-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/side.webp",
+            "/public/images/cars/mg-windsor-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/interior.webp",
+            "/public/images/cars/mg-windsor-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-windsor-ev/dashboard.webp",
+            "/public/images/cars/mg-windsor-ev/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/listing.webp",
+            "/public/images/cars/mahindra-be-6/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/compare.webp",
+            "/public/images/cars/mahindra-be-6/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/front.webp",
+            "/public/images/cars/mahindra-be-6/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/rear.webp",
+            "/public/images/cars/mahindra-be-6/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/side.webp",
+            "/public/images/cars/mahindra-be-6/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/interior.webp",
+            "/public/images/cars/mahindra-be-6/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mahindra-be-6/dashboard.webp",
+            "/public/images/cars/mahindra-be-6/dashboard.webp"
+          ]
+        }
+      }
+    }
+  ]
+}

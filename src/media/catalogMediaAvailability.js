@@ -5,6 +5,7 @@
  */
 
 import { CATALOG_MEDIA_PREFIX } from "../config/media.js";
+import { isLocalCarMediaFamily } from "./localCarMediaManifest.js";
 import { isProductionFamilySlug } from "./productionFamilies.js";
 
 /** Extensionless / filename tails that must not be probed without verification. */
@@ -93,8 +94,18 @@ export function isSpeculativeOptionalCatalogUrl(url, options = {}) {
  * @param {{ catalogMeta?: object | null; familySlug?: string | null }} [options]
  * @returns {boolean}
  */
+/** Local batch imagery under public/images/cars/ (Day 1 + Day 2 families). */
+export function isLocalCarMediaUrl(url) {
+  if (!url || typeof url !== "string") return false;
+  if (!url.startsWith("/images/cars/")) return false;
+  const match = url.match(/^\/images\/cars\/([a-z0-9-]+)\//i);
+  const family = match?.[1]?.toLowerCase();
+  return Boolean(family && isLocalCarMediaFamily(family));
+}
+
 export function isRequestableCatalogMediaUrl(url, options = {}) {
   if (!url || typeof url !== "string") return false;
+  if (isLocalCarMediaUrl(url)) return true;
   if (isSpeculativeOptionalCatalogUrl(url, options)) return false;
   return true;
 }

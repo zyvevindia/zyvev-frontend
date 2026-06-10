@@ -77,5 +77,28 @@
       "variant_table_manual"
     ],
     "qualityConsolidationAt": "2026-06-10T05:01:32.175Z"
+  },
+  "media": {
+    "source": "local-cars",
+    "rear": "/images/cars/mg-comet-ev/rear.webp",
+    "side": "/images/cars/mg-comet-ev/side.webp",
+    "interior": "/images/cars/mg-comet-ev/interior.webp",
+    "dashboard": "/images/cars/mg-comet-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/mg-comet-ev/rear.webp",
+      "/images/cars/mg-comet-ev/side.webp",
+      "/images/cars/mg-comet-ev/interior.webp",
+      "/images/cars/mg-comet-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mg-comet-ev/rear.webp",
+      "/images/cars/mg-comet-ev/side.webp",
+      "/images/cars/mg-comet-ev/interior.webp",
+      "/images/cars/mg-comet-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mg-comet-ev/interior.webp",
+      "/images/cars/mg-comet-ev/dashboard.webp"
+    ]
   }
 }

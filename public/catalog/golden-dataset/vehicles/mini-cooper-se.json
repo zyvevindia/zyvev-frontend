@@ -68,5 +68,34 @@
       "variant_table_manual"
     ],
     "qualityConsolidationAt": "2026-06-10T05:01:32.188Z"
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/mini-cooper-se/listing.webp",
+    "compareThumbnail": "/images/cars/mini-cooper-se/compare.webp",
+    "heroImage": "/images/cars/mini-cooper-se/front.webp",
+    "front": "/images/cars/mini-cooper-se/front.webp",
+    "rear": "/images/cars/mini-cooper-se/rear.webp",
+    "side": "/images/cars/mini-cooper-se/side.webp",
+    "interior": "/images/cars/mini-cooper-se/interior.webp",
+    "dashboard": "/images/cars/mini-cooper-se/dashboard.webp",
+    "gallery": [
+      "/images/cars/mini-cooper-se/front.webp",
+      "/images/cars/mini-cooper-se/rear.webp",
+      "/images/cars/mini-cooper-se/side.webp",
+      "/images/cars/mini-cooper-se/interior.webp",
+      "/images/cars/mini-cooper-se/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mini-cooper-se/front.webp",
+      "/images/cars/mini-cooper-se/rear.webp",
+      "/images/cars/mini-cooper-se/side.webp",
+      "/images/cars/mini-cooper-se/interior.webp",
+      "/images/cars/mini-cooper-se/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mini-cooper-se/interior.webp",
+      "/images/cars/mini-cooper-se/dashboard.webp"
+    ]
   }
 }

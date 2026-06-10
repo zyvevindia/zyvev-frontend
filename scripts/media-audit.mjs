@@ -1,113 +1,43 @@
 /**
- * Media QA — run: npm run media:audit
- * Audits production family manifest + optional live catalog fetch.
+ * Media Audit v1 — npm run media:audit
+ *
+ * Measures image completeness for all golden-dataset catalog vehicles.
+ * Writes docs/media/media-audit-v1.md and docs/media/media-audit-v1.json
  */
 
-import "./lib/bootstrapEnv.mjs";
-
-import { readFileSync, existsSync } from "node:fs";
-import { join, dirname } from "node:path";
+import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
-  auditProductionFamilies,
-  auditVehicleMedia,
-  summarizeMediaAudit,
-  probeBrokenImages,
-} from "../src/utils/mediaAudit.js";
-import { PRODUCTION_FAMILY_SLUGS } from "../src/media/familyMediaManifest.js";
+  buildMediaAuditV1Report,
+  mediaAuditV1Markdown,
+} from "./lib/mediaAuditV1.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
-const probeLive = process.argv.includes("--probe");
+const outDir = join(root, "docs", "media");
+const jsonPath = join(outDir, "media-audit-v1.json");
+const mdPath = join(outDir, "media-audit-v1.md");
 
-function loadTier1Variants() {
-  const manifestPath = join(
-    root,
-    "../zyvev-backend/docs/architecture/catalog/tier-1/manifest.json"
-  );
-  if (!existsSync(manifestPath)) {
-    return [];
-  }
-  const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
-  const variantsDir = join(
-    root,
-    "../zyvev-backend/docs/architecture/catalog/tier-1/variants"
-  );
-  return manifest.slugs.map((slug) => {
-    const filePath = join(variantsDir, `${slug}.json`);
-    if (!existsSync(filePath)) return null;
-    const record = JSON.parse(readFileSync(filePath, "utf8"));
-    const media = record.media || {};
-    return {
-      slug,
-      brandSlug: record.identity?.brandSlug,
-      modelSlug: record.identity?.modelSlug,
-      heroImage: media.heroImage,
-      listingThumbnail: media.listingThumbnail,
-      compareThumbnail: media.compareThumbnail,
-      catalogMeta: { slug, media },
-    };
-  }).filter(Boolean);
+const report = buildMediaAuditV1Report(root);
+const markdown = mediaAuditV1Markdown(report);
+
+mkdirSync(outDir, { recursive: true });
+writeFileSync(jsonPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+writeFileSync(mdPath, markdown, "utf8");
+
+console.log("\n=== EVSavari Media Audit v1 ===\n");
+console.log(`Vehicles: ${report.vehicleCount}`);
+console.log(`Fleet coverage: ${report.summary.fleetCoveragePct}%`);
+console.log(`Vehicles at 100%: ${report.summary.vehiclesAt100Pct}`);
+console.log(`\nWrote:\n  ${mdPath}\n  ${jsonPath}\n`);
+
+for (const row of report.vehicles) {
+  const flags = ["listing", "compare", "front", "rear", "side", "interior", "dashboard"]
+    .map((t) => (row.types[t].present ? "✓" : "—"))
+    .join(" ");
+  console.log(`  ${row.displayName.padEnd(28)} ${flags}  ${row.coveragePct}%`);
 }
 
-console.log("\n=== EVSavari media audit ===\n");
-
-console.log("Production families (Cloudinary manifest):");
-for (const row of auditProductionFamilies()) {
-  const status = row.complete ? "OK" : `missing: ${row.missing.join(", ")}`;
-  console.log(`  ${row.familySlug} — ${status}`);
-}
-
-const tier1 = loadTier1Variants();
-const productionVariants = tier1.filter((v) =>
-  PRODUCTION_FAMILY_SLUGS.some(
-    (f) => v.slug === f || v.slug.startsWith(`${f}-`)
-  )
-);
-
-const vehicleAudits = productionVariants.map((car) => auditVehicleMedia(car));
-const summary = summarizeMediaAudit(vehicleAudits);
-
-console.log(`\nTier-1 production variants checked: ${vehicleAudits.length}`);
-console.log(
-  `Cloudinary-primary (hero+listing+compare): ${summary.cloudinaryReady}`
-);
-console.log(`Warnings: ${summary.warnings}  Errors: ${summary.errors}\n`);
-
-for (const issue of summary.issues) {
-  console.log(
-    `[${issue.severity.toUpperCase()}] ${issue.slug} (${issue.role}): ${issue.message}`
-  );
-}
-
-let probeFailed = false;
-
-if (probeLive) {
-  const urls = PRODUCTION_FAMILY_SLUGS.flatMap((f) => {
-    const media = auditProductionFamilies().find((r) => r.familySlug === f)?.media;
-    if (!media) return [];
-    return [media.heroImage, media.listingThumbnail, media.compareThumbnail];
-  });
-
-  console.log("\nProbing Cloudinary URLs (HEAD)...");
-  const broken = await probeBrokenImages(urls);
-  for (const row of broken) {
-    console.log(`  BROKEN ${row.status || ""} ${row.url}`);
-  }
-  if (!broken.length) {
-    console.log("  All probed production URLs responded OK.");
-  } else {
-    probeFailed = true;
-  }
-}
-
-if (summary.errors > 0 || probeFailed) {
-  process.exit(1);
-}
-
-console.log(
-  "\nTip: VehicleImage uses responsive srcsets when `responsive` is set (e.g. CarCard, compare cards). Keep fixed aspect-ratio wrappers to avoid CLS.\n"
-);
-
-console.log("\nMedia audit complete.\n");
+console.log("");

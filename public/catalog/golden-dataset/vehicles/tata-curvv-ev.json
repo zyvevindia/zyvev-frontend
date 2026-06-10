@@ -65,5 +65,34 @@
   "sources": [
     "OEM brochure + CarDekho cross-check (Jun 2026)"
   ],
-  "verifiedAt": "2026-06-08"
+  "verifiedAt": "2026-06-08",
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/tata-curvv-ev/listing.webp",
+    "compareThumbnail": "/images/cars/tata-curvv-ev/compare.webp",
+    "heroImage": "/images/cars/tata-curvv-ev/front.webp",
+    "front": "/images/cars/tata-curvv-ev/front.webp",
+    "rear": "/images/cars/tata-curvv-ev/rear.webp",
+    "side": "/images/cars/tata-curvv-ev/side.webp",
+    "interior": "/images/cars/tata-curvv-ev/interior.webp",
+    "dashboard": "/images/cars/tata-curvv-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/tata-curvv-ev/front.webp",
+      "/images/cars/tata-curvv-ev/rear.webp",
+      "/images/cars/tata-curvv-ev/side.webp",
+      "/images/cars/tata-curvv-ev/interior.webp",
+      "/images/cars/tata-curvv-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/tata-curvv-ev/front.webp",
+      "/images/cars/tata-curvv-ev/rear.webp",
+      "/images/cars/tata-curvv-ev/side.webp",
+      "/images/cars/tata-curvv-ev/interior.webp",
+      "/images/cars/tata-curvv-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/tata-curvv-ev/interior.webp",
+      "/images/cars/tata-curvv-ev/dashboard.webp"
+    ]
+  }
 }

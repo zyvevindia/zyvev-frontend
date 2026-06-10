@@ -1,0 +1,8 @@
+{
+  "_comment": "Optional Wikimedia ingest for Media Population Day 3 (high-traffic Indian EVs). Falls back to generated WebP when fetch fails.",
+  "tata-curvv-ev": {},
+  "tata-nexon-ev": {},
+  "tata-punch-ev": {},
+  "mg-windsor-ev": {},
+  "mahindra-be-6": {}
+}

@@ -1,0 +1,497 @@
+{
+  "version": "media-population-day2",
+  "generatedAt": "2026-06-10T10:56:00.019Z",
+  "vehiclesTargeted": [
+    "volvo-ex40",
+    "mini-cooper-se",
+    "mg-zs-ev",
+    "byd-seal",
+    "hyundai-ioniq-5"
+  ],
+  "fallbackChain": [
+    "local-image",
+    "cloudinary",
+    "fallback-ev.svg"
+  ],
+  "localPathPattern": "/images/cars/{familySlug}/{type}.webp",
+  "fleetCoverageBeforePct": 47,
+  "fleetCoverageAfterPct": 65,
+  "fleetCoverageDeltaPct": 18,
+  "fleetCoverageTargetPct": 70,
+  "auditSummary": {
+    "fleetCoveragePct": 65,
+    "presentSlots": 114,
+    "requiredSlots": 175,
+    "byType": {
+      "listing": 20,
+      "compare": 20,
+      "front": 20,
+      "rear": 15,
+      "side": 15,
+      "interior": 14,
+      "dashboard": 10
+    },
+    "vehiclesAt100Pct": 10,
+    "vehiclesBelow50Pct": 10
+  },
+  "vehicles": [
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/listing.webp",
+            "/public/images/cars/hyundai-ioniq-5/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/compare.webp",
+            "/public/images/cars/hyundai-ioniq-5/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/front.webp",
+            "/public/images/cars/hyundai-ioniq-5/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/rear.webp",
+            "/public/images/cars/hyundai-ioniq-5/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/side.webp",
+            "/public/images/cars/hyundai-ioniq-5/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/interior.webp",
+            "/public/images/cars/hyundai-ioniq-5/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/hyundai-ioniq-5/dashboard.webp",
+            "/public/images/cars/hyundai-ioniq-5/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "byd-seal",
+      "displayName": "BYD Seal",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/listing.webp",
+            "/public/images/cars/byd-seal/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/compare.webp",
+            "/public/images/cars/byd-seal/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/front.webp",
+            "/public/images/cars/byd-seal/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/rear.webp",
+            "/public/images/cars/byd-seal/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/side.webp",
+            "/public/images/cars/byd-seal/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/interior.webp",
+            "/public/images/cars/byd-seal/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/byd-seal/dashboard.webp",
+            "/public/images/cars/byd-seal/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/listing.webp",
+            "/public/images/cars/volvo-ex40/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/compare.webp",
+            "/public/images/cars/volvo-ex40/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/front.webp",
+            "/public/images/cars/volvo-ex40/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/rear.webp",
+            "/public/images/cars/volvo-ex40/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/side.webp",
+            "/public/images/cars/volvo-ex40/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/interior.webp",
+            "/public/images/cars/volvo-ex40/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/volvo-ex40/dashboard.webp",
+            "/public/images/cars/volvo-ex40/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/listing.webp",
+            "/public/images/cars/mini-cooper-se/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/compare.webp",
+            "/public/images/cars/mini-cooper-se/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/front.webp",
+            "/public/images/cars/mini-cooper-se/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/rear.webp",
+            "/public/images/cars/mini-cooper-se/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/side.webp",
+            "/public/images/cars/mini-cooper-se/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/interior.webp",
+            "/public/images/cars/mini-cooper-se/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mini-cooper-se/dashboard.webp",
+            "/public/images/cars/mini-cooper-se/dashboard.webp"
+          ]
+        }
+      }
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "coveragePct": 100,
+      "types": {
+        "listing": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/listing.webp",
+            "/public/images/cars/mg-zs-ev/listing.webp"
+          ]
+        },
+        "compare": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/compare.webp",
+            "/public/images/cars/mg-zs-ev/compare.webp"
+          ]
+        },
+        "front": {
+          "present": true,
+          "sources": [
+            "cloudinary-manifest",
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/front.webp",
+            "/public/images/cars/mg-zs-ev/front.webp"
+          ]
+        },
+        "rear": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/rear.webp",
+            "/public/images/cars/mg-zs-ev/rear.webp"
+          ]
+        },
+        "side": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/side.webp",
+            "/public/images/cars/mg-zs-ev/side.webp"
+          ]
+        },
+        "interior": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/interior.webp",
+            "/public/images/cars/mg-zs-ev/interior.webp"
+          ]
+        },
+        "dashboard": {
+          "present": true,
+          "sources": [
+            "local-car-manifest",
+            "catalog-vehicle-json",
+            "public-images"
+          ],
+          "refs": [
+            "/images/cars/mg-zs-ev/dashboard.webp",
+            "/public/images/cars/mg-zs-ev/dashboard.webp"
+          ]
+        }
+      }
+    }
+  ]
+}

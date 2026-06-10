@@ -53,6 +53,13 @@
     "catalog:v7.1-delta": "node scripts/catalog-v7.1-delta-measurement.mjs",
     "media:attribution-audit": "node scripts/media-attribution-audit.mjs",
     "media:audit": "node scripts/media-audit.mjs",
+    "media:populate-day1": "node scripts/populate-media-day1.mjs",
+    "media:population-day1": "node scripts/populate-media-day1.mjs && node scripts/media-audit.mjs && node scripts/media-population-day1-report.mjs",
+    "media:populate-day2": "node scripts/populate-media-day2.mjs",
+    "media:population-day2": "node scripts/populate-media-day2.mjs && node scripts/media-audit.mjs && node scripts/media-population-day2-report.mjs",
+    "media:populate-day3": "node scripts/populate-media-day3.mjs",
+    "media:population-day3": "node scripts/populate-media-day3.mjs && node scripts/media-audit.mjs && node scripts/media-population-day3-report.mjs",
+    "media:completion-sprint": "node scripts/media-completion-sprint.mjs && node scripts/media-audit.mjs && node scripts/media-completion-sprint-report.mjs",
     "media:verify": "node scripts/verify-media-integrity.mjs",
     "media:fix-cloudinary": "node scripts/cloudinary-fix-publicids.mjs",
     "media:discover-cloudinary": "node scripts/cloudinary-fix-publicids.mjs --discover",
@@ -113,6 +120,7 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.5.0",
     "playwright": "^1.60.0",
+    "sharp": "^0.34.5",
     "vite": "^8.0.10"
   }
 }

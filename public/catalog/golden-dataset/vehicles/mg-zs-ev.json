@@ -77,5 +77,34 @@
       "variant_table_manual"
     ],
     "qualityConsolidationAt": "2026-06-10T05:01:32.193Z"
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/mg-zs-ev/listing.webp",
+    "compareThumbnail": "/images/cars/mg-zs-ev/compare.webp",
+    "heroImage": "/images/cars/mg-zs-ev/front.webp",
+    "front": "/images/cars/mg-zs-ev/front.webp",
+    "rear": "/images/cars/mg-zs-ev/rear.webp",
+    "side": "/images/cars/mg-zs-ev/side.webp",
+    "interior": "/images/cars/mg-zs-ev/interior.webp",
+    "dashboard": "/images/cars/mg-zs-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/mg-zs-ev/front.webp",
+      "/images/cars/mg-zs-ev/rear.webp",
+      "/images/cars/mg-zs-ev/side.webp",
+      "/images/cars/mg-zs-ev/interior.webp",
+      "/images/cars/mg-zs-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mg-zs-ev/front.webp",
+      "/images/cars/mg-zs-ev/rear.webp",
+      "/images/cars/mg-zs-ev/side.webp",
+      "/images/cars/mg-zs-ev/interior.webp",
+      "/images/cars/mg-zs-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mg-zs-ev/interior.webp",
+      "/images/cars/mg-zs-ev/dashboard.webp"
+    ]
   }
 }

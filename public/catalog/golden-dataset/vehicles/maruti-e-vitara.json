@@ -76,5 +76,34 @@
       "variant_table_manual"
     ],
     "qualityConsolidationAt": "2026-06-10T05:01:32.196Z"
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/maruti-e-vitara/listing.webp",
+    "compareThumbnail": "/images/cars/maruti-e-vitara/compare.webp",
+    "heroImage": "/images/cars/maruti-e-vitara/front.webp",
+    "front": "/images/cars/maruti-e-vitara/front.webp",
+    "rear": "/images/cars/maruti-e-vitara/rear.webp",
+    "side": "/images/cars/maruti-e-vitara/side.webp",
+    "interior": "/images/cars/maruti-e-vitara/interior.webp",
+    "dashboard": "/images/cars/maruti-e-vitara/dashboard.webp",
+    "gallery": [
+      "/images/cars/maruti-e-vitara/front.webp",
+      "/images/cars/maruti-e-vitara/rear.webp",
+      "/images/cars/maruti-e-vitara/side.webp",
+      "/images/cars/maruti-e-vitara/interior.webp",
+      "/images/cars/maruti-e-vitara/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/maruti-e-vitara/front.webp",
+      "/images/cars/maruti-e-vitara/rear.webp",
+      "/images/cars/maruti-e-vitara/side.webp",
+      "/images/cars/maruti-e-vitara/interior.webp",
+      "/images/cars/maruti-e-vitara/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/maruti-e-vitara/interior.webp",
+      "/images/cars/maruti-e-vitara/dashboard.webp"
+    ]
   }
 }

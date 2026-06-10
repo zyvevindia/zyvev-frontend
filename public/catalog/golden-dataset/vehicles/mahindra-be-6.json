@@ -62,5 +62,34 @@
   "sources": [
     "Mahindra OEM + ZigWheels (Jun 2026)"
   ],
-  "verifiedAt": "2026-06-08"
+  "verifiedAt": "2026-06-08",
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/mahindra-be-6/listing.webp",
+    "compareThumbnail": "/images/cars/mahindra-be-6/compare.webp",
+    "heroImage": "/images/cars/mahindra-be-6/front.webp",
+    "front": "/images/cars/mahindra-be-6/front.webp",
+    "rear": "/images/cars/mahindra-be-6/rear.webp",
+    "side": "/images/cars/mahindra-be-6/side.webp",
+    "interior": "/images/cars/mahindra-be-6/interior.webp",
+    "dashboard": "/images/cars/mahindra-be-6/dashboard.webp",
+    "gallery": [
+      "/images/cars/mahindra-be-6/front.webp",
+      "/images/cars/mahindra-be-6/rear.webp",
+      "/images/cars/mahindra-be-6/side.webp",
+      "/images/cars/mahindra-be-6/interior.webp",
+      "/images/cars/mahindra-be-6/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mahindra-be-6/front.webp",
+      "/images/cars/mahindra-be-6/rear.webp",
+      "/images/cars/mahindra-be-6/side.webp",
+      "/images/cars/mahindra-be-6/interior.webp",
+      "/images/cars/mahindra-be-6/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mahindra-be-6/interior.webp",
+      "/images/cars/mahindra-be-6/dashboard.webp"
+    ]
+  }
 }

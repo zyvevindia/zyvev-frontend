@@ -62,5 +62,18 @@
   "sources": [
     "Mahindra OEM + CarDekho (Jun 2026)"
   ],
-  "verifiedAt": "2026-06-08"
+  "verifiedAt": "2026-06-08",
+  "media": {
+    "source": "local-cars",
+    "dashboard": "/images/cars/mahindra-xev-9e/dashboard.webp",
+    "gallery": [
+      "/images/cars/mahindra-xev-9e/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mahindra-xev-9e/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mahindra-xev-9e/dashboard.webp"
+    ]
+  }
 }

@@ -29,6 +29,7 @@ import {
   brandSiblingMediaUrls,
   resolveBrandKeyFromFamily,
 } from "../media/brandFallback.js";
+import { getLocalCarMediaUrlsForRole } from "../media/localCarMediaManifest.js";
 
 /** @deprecated use ROLE_ASPECT from config/media */
 export const IMAGE_ASPECT = ROLE_ASPECT;
@@ -219,6 +220,9 @@ export function buildImageFallbackChain(car, role = "listing") {
   const guard = mediaGuardOptions(car);
   const meta = car?.catalogMeta?.media || {};
   const fieldValues = pickMediaFields(car, role);
+  const localUrls = familySlug
+    ? getLocalCarMediaUrlsForRole(familySlug, role)
+    : [];
 
   const familyUrls =
     familySlug && isProductionFamilySlug(familySlug)
@@ -231,6 +235,7 @@ export function buildImageFallbackChain(car, role = "listing") {
     const brandKey = familySlug ? resolveBrandKeyFromFamily(familySlug) : null;
     return finalizeFallbackChain(
       [
+        ...localUrls,
         resolveCatalogImageUrl(car, "compare"),
         car?.compareThumbnail,
         meta.compareThumbnail,
@@ -247,6 +252,7 @@ export function buildImageFallbackChain(car, role = "listing") {
   if (role === "og") {
     const brandKey = familySlug ? resolveBrandKeyFromFamily(familySlug) : null;
     return finalizeFallbackChain([
+      ...localUrls,
       car?.ogImage,
       meta.ogImage,
       ...fieldValues,
@@ -264,6 +270,7 @@ export function buildImageFallbackChain(car, role = "listing") {
   if (role === "hero") {
     const brandKey = familySlug ? resolveBrandKeyFromFamily(familySlug) : null;
     return finalizeFallbackChain([
+      ...localUrls,
       car?.heroImage,
       meta.heroImage,
       ...fieldValues,
@@ -290,7 +297,7 @@ export function buildImageFallbackChain(car, role = "listing") {
       guard
     );
     return finalizeFallbackChain(
-      [...galleryCandidates, LOCAL_FALLBACK_EV],
+      [...localUrls, ...galleryCandidates, LOCAL_FALLBACK_EV],
       guard
     );
   }
@@ -298,6 +305,7 @@ export function buildImageFallbackChain(car, role = "listing") {
   if (role === "interior") {
     return finalizeFallbackChain(
       [
+        ...localUrls,
         ...filterRequestableMediaUrls(meta.interior || [], guard),
         ...filterRequestableMediaUrls(fieldValues, guard),
         ...filterRequestableMediaUrls(
@@ -311,6 +319,7 @@ export function buildImageFallbackChain(car, role = "listing") {
   }
 
   return finalizeFallbackChain([
+    ...localUrls,
     car?.listingThumbnail,
     meta.listingThumbnail,
     ...fieldValues,

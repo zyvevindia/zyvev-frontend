@@ -64,5 +64,18 @@
   "sources": [
     "BYD India + CarWale (Jun 2026)"
   ],
-  "verifiedAt": "2026-06-08"
+  "verifiedAt": "2026-06-08",
+  "media": {
+    "source": "local-cars",
+    "dashboard": "/images/cars/byd-atto-3/dashboard.webp",
+    "gallery": [
+      "/images/cars/byd-atto-3/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/byd-atto-3/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/byd-atto-3/dashboard.webp"
+    ]
+  }
 }

@@ -68,5 +68,34 @@
       "variant_table_manual",
       "qa_variant_refresh"
     ]
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/bmw-ix1/listing.webp",
+    "compareThumbnail": "/images/cars/bmw-ix1/compare.webp",
+    "heroImage": "/images/cars/bmw-ix1/front.webp",
+    "front": "/images/cars/bmw-ix1/front.webp",
+    "rear": "/images/cars/bmw-ix1/rear.webp",
+    "side": "/images/cars/bmw-ix1/side.webp",
+    "interior": "/images/cars/bmw-ix1/interior.webp",
+    "dashboard": "/images/cars/bmw-ix1/dashboard.webp",
+    "gallery": [
+      "/images/cars/bmw-ix1/front.webp",
+      "/images/cars/bmw-ix1/rear.webp",
+      "/images/cars/bmw-ix1/side.webp",
+      "/images/cars/bmw-ix1/interior.webp",
+      "/images/cars/bmw-ix1/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/bmw-ix1/front.webp",
+      "/images/cars/bmw-ix1/rear.webp",
+      "/images/cars/bmw-ix1/side.webp",
+      "/images/cars/bmw-ix1/interior.webp",
+      "/images/cars/bmw-ix1/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/bmw-ix1/interior.webp",
+      "/images/cars/bmw-ix1/dashboard.webp"
+    ]
   }
 }

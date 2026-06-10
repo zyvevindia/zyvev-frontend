@@ -62,5 +62,34 @@
   "sources": [
     "MG India specs + CarWale (Jun 2026)"
   ],
-  "verifiedAt": "2026-06-08"
+  "verifiedAt": "2026-06-08",
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/mg-windsor-ev/listing.webp",
+    "compareThumbnail": "/images/cars/mg-windsor-ev/compare.webp",
+    "heroImage": "/images/cars/mg-windsor-ev/front.webp",
+    "front": "/images/cars/mg-windsor-ev/front.webp",
+    "rear": "/images/cars/mg-windsor-ev/rear.webp",
+    "side": "/images/cars/mg-windsor-ev/side.webp",
+    "interior": "/images/cars/mg-windsor-ev/interior.webp",
+    "dashboard": "/images/cars/mg-windsor-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/mg-windsor-ev/front.webp",
+      "/images/cars/mg-windsor-ev/rear.webp",
+      "/images/cars/mg-windsor-ev/side.webp",
+      "/images/cars/mg-windsor-ev/interior.webp",
+      "/images/cars/mg-windsor-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mg-windsor-ev/front.webp",
+      "/images/cars/mg-windsor-ev/rear.webp",
+      "/images/cars/mg-windsor-ev/side.webp",
+      "/images/cars/mg-windsor-ev/interior.webp",
+      "/images/cars/mg-windsor-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mg-windsor-ev/interior.webp",
+      "/images/cars/mg-windsor-ev/dashboard.webp"
+    ]
+  }
 }

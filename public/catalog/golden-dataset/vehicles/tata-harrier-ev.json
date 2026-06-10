@@ -116,5 +116,34 @@
       "variant_table_manual"
     ],
     "qualityConsolidationAt": "2026-06-10T05:01:32.138Z"
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/tata-harrier-ev/listing.webp",
+    "compareThumbnail": "/images/cars/tata-harrier-ev/compare.webp",
+    "heroImage": "/images/cars/tata-harrier-ev/front.webp",
+    "front": "/images/cars/tata-harrier-ev/front.webp",
+    "rear": "/images/cars/tata-harrier-ev/rear.webp",
+    "side": "/images/cars/tata-harrier-ev/side.webp",
+    "interior": "/images/cars/tata-harrier-ev/interior.webp",
+    "dashboard": "/images/cars/tata-harrier-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/tata-harrier-ev/front.webp",
+      "/images/cars/tata-harrier-ev/rear.webp",
+      "/images/cars/tata-harrier-ev/side.webp",
+      "/images/cars/tata-harrier-ev/interior.webp",
+      "/images/cars/tata-harrier-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/tata-harrier-ev/front.webp",
+      "/images/cars/tata-harrier-ev/rear.webp",
+      "/images/cars/tata-harrier-ev/side.webp",
+      "/images/cars/tata-harrier-ev/interior.webp",
+      "/images/cars/tata-harrier-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/tata-harrier-ev/interior.webp",
+      "/images/cars/tata-harrier-ev/dashboard.webp"
+    ]
   }
 }
