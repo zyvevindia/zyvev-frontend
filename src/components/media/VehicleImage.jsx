@@ -1,7 +1,9 @@
 import {
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 
@@ -89,6 +91,23 @@ export default function VehicleImage({
   const [index, setIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [exhausted, setExhausted] = useState(chain.length === 0);
+  const imgRef = useRef(null);
+
+  const markLoadedIfComplete = useCallback((node) => {
+    if (node?.complete && node.naturalWidth > 0) {
+      setLoaded(true);
+      return true;
+    }
+    return false;
+  }, []);
+
+  const setImgRef = useCallback(
+    (node) => {
+      imgRef.current = node;
+      markLoadedIfComplete(node);
+    },
+    [markLoadedIfComplete]
+  );
 
   useEffect(() => {
     setIndex(0);
@@ -130,6 +149,10 @@ export default function VehicleImage({
     return set;
   }, [responsive, showPlaceholder, src]);
 
+  useLayoutEffect(() => {
+    markLoadedIfComplete(imgRef.current);
+  }, [src, index, markLoadedIfComplete]);
+
   const advanceFallback = useCallback(() => {
     const failedUrl = src;
     const slug = resolveMediaSlug(car);
@@ -169,15 +192,19 @@ export default function VehicleImage({
   }, [advanceFallback]);
 
   const imgBaseStyle = {
+    ...imgStyle,
     position: "absolute",
     inset: 0,
     width: "100%",
     height: "100%",
     objectFit: "cover",
     display: "block",
+    zIndex: 1,
     opacity: loaded ? 1 : 0,
-    transition: "opacity 0.35s ease",
-    ...imgStyle,
+    visibility: loaded ? "visible" : "hidden",
+    transition: [imgStyle.transition, "opacity 0.35s ease"]
+      .filter(Boolean)
+      .join(", "),
   };
 
   const imgProps = {
@@ -253,6 +280,7 @@ export default function VehicleImage({
             inset: 0,
             width: "100%",
             height: "100%",
+            zIndex: 1,
           }}
         >
           <source
@@ -267,6 +295,7 @@ export default function VehicleImage({
           />
           <img
             key={`${src}-${index}`}
+            ref={setImgRef}
             {...imgProps}
             src={responsiveSet.default}
             srcSet={responsiveSet.srcSet}
@@ -274,7 +303,7 @@ export default function VehicleImage({
           />
         </picture>
       ) : !showPlaceholder && src ? (
-        <img key={`${src}-${index}`} {...imgProps} src={src} />
+        <img key={`${src}-${index}`} ref={setImgRef} {...imgProps} src={src} />
       ) : null}
     </div>
   );
