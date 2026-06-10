@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-06-10T04:12:37.633Z",
+  "agentVersion": 1,
+  "methodology": "Simulated platform snapshots — finding detection only",
+  "aggregate": {
+    "scenariosTotal": 7,
+    "scenariosPassed": 7,
+    "detectionAccuracyPct": 100,
+    "falsePositiveRatePct": 0,
+    "autonomousActions": 0,
+    "humanApprovalRequired": true
+  },
+  "recommendation": "READY FOR ANALYTICS AGENT",
+  "scenarios": [
+    {
+      "name": "duplicate_variant",
+      "ok": true,
+      "expectedCodes": [
+        "catalog_duplicate_variant"
+      ],
+      "detectedCodes": [
+        "catalog_duplicate_variant"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "findingCount": 2
+    },
+    {
+      "name": "missing_score",
+      "ok": true,
+      "expectedCodes": [
+        "catalog_missing_score"
+      ],
+      "detectedCodes": [
+        "catalog_missing_score"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "REVIEW_REQUIRED",
+      "findingCount": 1
+    },
+    {
+      "name": "broken_seo_metadata",
+      "ok": true,
+      "expectedCodes": [
+        "seo_missing_metadata"
+      ],
+      "detectedCodes": [
+        "seo_missing_metadata"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "REVIEW_REQUIRED",
+      "findingCount": 2
+    },
+    {
+      "name": "missing_approval",
+      "ok": true,
+      "expectedCodes": [
+        "governance_missing_approval"
+      ],
+      "detectedCodes": [
+        "governance_missing_approval"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "findingCount": 1
+    },
+    {
+      "name": "registry_failure",
+      "ok": true,
+      "expectedCodes": [
+        "registry_broken_url"
+      ],
+      "detectedCodes": [
+        "registry_broken_url",
+        "registry_missing_brochure"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "findingCount": 2
+    },
+    {
+      "name": "critical_monitoring_alert",
+      "ok": true,
+      "expectedCodes": [
+        "monitoring_unresolved_critical"
+      ],
+      "detectedCodes": [
+        "monitoring_unresolved_critical"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "findingCount": 1
+    },
+    {
+      "name": "healthy_baseline",
+      "ok": true,
+      "expectedCodes": [],
+      "detectedCodes": [],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "NO_ACTION",
+      "findingCount": 0
+    }
+  ]
+}
