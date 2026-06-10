@@ -1,7 +1,6 @@
 import {
   useEffect,
   useMemo,
-  useRef,
   useState,
 } from "react";
 
@@ -12,11 +11,9 @@ import {
 import SeoHead from "../components/SEO/SeoHead";
 import { buildHomePageMeta } from "../seo/pageMetadata";
 
-import { API_URL, API_URL_MISCONFIGURED_FOR_PROD } from "../config";
+import { API_URL_MISCONFIGURED_FOR_PROD } from "../config";
 import { catalogUnavailableMessage } from "../utils/apiDiagnostics";
-import { safeFetchJsonWithRetry } from "../utils/safeFetch";
 
-import normalizeCar from "../utils/normalizeCar";
 import { UPCOMING_EV_CATALOG } from "../data/upcomingEvCatalog";
 
 import {
@@ -26,6 +23,9 @@ import {
   sortFamilies,
 } from "../utils/modelFamily";
 
+import { fetchListingCatalogVariants } from "../utils/vehicleDetailResolver.js";
+import { getCatalogBrandOptions } from "../utils/catalogListingBrands.js";
+
 
 import HomeSection from "../components/HomeSection";
 
@@ -33,6 +33,7 @@ import HomeCategoryTiles from "../components/home/HomeCategoryTiles";
 
 import {
   CatalogBodyTypeSelect,
+  CatalogBrandSelect,
   CatalogPriceSelect,
 } from "../components/discovery/CatalogFilterSelects";
 
@@ -87,7 +88,6 @@ export default function Home() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const debouncedSearch = useDebouncedValue(searchQuery, 400);
-  const lastFetchQueryRef = useRef("");
 
   useEffect(() => {
     setFilters((prev) =>
@@ -97,15 +97,24 @@ export default function Home() {
     );
   }, [debouncedSearch]);
 
+  const allFamilies = useMemo(
+    () => aggregateModelFamilies(variants),
+    [variants]
+  );
+
+  const brands = useMemo(
+    () => getCatalogBrandOptions(allFamilies),
+    [allFamilies]
+  );
+
   /* =========================================================
      =================== HOME SECTIONS DATA ==================
      ========================================================= */
 
   const families = useMemo(() => {
-    const aggregated = aggregateModelFamilies(variants);
-    const filtered = filterFamilies(aggregated, filters);
+    const filtered = filterFamilies(allFamilies, filters);
     return sortFamilies(filtered, filters.sortBy);
-  }, [variants, filters]);
+  }, [allFamilies, filters]);
 
   const featuredFamilies = useMemo(
     () =>
@@ -147,56 +156,42 @@ export default function Home() {
      ========================================================= */
 
   useEffect(() => {
-
-    const query =
-      new URLSearchParams({
-        page: 1,
-        limit: 50,
-        ...(filters.brand ? { brand: filters.brand } : {}),
-        ...(filters.search ? { search: filters.search } : {}),
-      }).toString();
-
-    if (query === lastFetchQueryRef.current) {
-      return;
-    }
-
-    lastFetchQueryRef.current = query;
-
-    setLoading(true);
-
-    setError("");
-
     let cancelled = false;
 
+    setLoading(true);
+    setError("");
+
     (async () => {
-      const catalogUrl = `${API_URL}/cars?${query}`;
+      try {
+        const normalized = await fetchListingCatalogVariants({
+          limit: 120,
+        });
 
-      const { ok, data, error, status, durationMs } =
-        await safeFetchJsonWithRetry(
-        catalogUrl,
-        { label: "homepage catalog", fallback: { cars: [] } }
-      );
+        if (cancelled) return;
 
-      if (cancelled) return;
+        if (!normalized.length) {
+          throw new Error("empty catalog");
+        }
 
-      if (!ok) {
+        setVariants(normalized);
+        setError("");
+      } catch {
+        if (cancelled) return;
         setVariants([]);
         setError(
           API_URL_MISCONFIGURED_FOR_PROD
             ? "Catalog API is misconfigured for production (localhost). Update VITE_API_URL on Vercel and redeploy."
-            : catalogUnavailableMessage({ error, status, durationMs })
+            : catalogUnavailableMessage({})
         );
-      } else {
-        setVariants((data?.cars || []).map(normalizeCar));
-        setError("");
+      } finally {
+        if (!cancelled) setLoading(false);
       }
-      setLoading(false);
     })();
 
     return () => {
       cancelled = true;
     };
-  }, [filters, fetchRetryKey]);
+  }, [fetchRetryKey]);
 
   /* =========================================================
      ======================= SAVE COMPARE ====================
@@ -353,38 +348,17 @@ export default function Home() {
               style={searchInput}
             />
 
-            <select
+            <CatalogBrandSelect
               value={filters.brand}
-
-              onChange={(e) =>
+              onChange={(brand) =>
                 setFilters({
                   ...filters,
-
-                  brand:
-                    e.target.value,
+                  brand,
                 })
               }
-
+              brands={brands}
               style={selectStyle}
-            >
-
-              <option value="">
-                All Brands
-              </option>
-
-              <option value="Tata">
-                Tata
-              </option>
-
-              <option value="MG">
-                MG
-              </option>
-
-              <option value="Mahindra">
-                Mahindra
-              </option>
-
-            </select>
+            />
 
             <CatalogPriceSelect
               value={filters.priceRange}
@@ -448,14 +422,16 @@ export default function Home() {
             <button
               style={secondaryButton}
 
-              onClick={() =>
+              onClick={() => {
+                setSearchQuery("");
                 setFilters({
                   brand: "",
                   priceRange: "",
+                  bodyType: "",
                   sortBy: "",
                   search: "",
-                })
-              }
+                });
+              }}
             >
               Reset
             </button>

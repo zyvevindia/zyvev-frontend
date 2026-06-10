@@ -59,3 +59,31 @@ export function CatalogBodyTypeSelect({
     </select>
   );
 }
+
+export function CatalogBrandSelect({
+  value,
+  onChange,
+  brands = [],
+  id = "catalog-brand",
+  style,
+  className = "",
+  allLabel = "All Brands",
+}) {
+  return (
+    <select
+      id={id}
+      value={value || ""}
+      onChange={(e) => onChange(e.target.value)}
+      aria-label="Filter by brand"
+      className={className || undefined}
+      style={{ ...selectStyle, ...style }}
+    >
+      <option value="">{allLabel}</option>
+      {brands.map((brand) => (
+        <option key={brand} value={brand}>
+          {brand}
+        </option>
+      ))}
+    </select>
+  );
+}

@@ -30,6 +30,7 @@ import { resolveDossierSlug } from "../data/catalog/verified/resolveDossierSlug.
 import {
   fetchGoldenDatasetMarketplaceVariants,
   goldenDossierToMarketplaceVariants,
+  loadBundledGoldenDatasetMarketplaceVariants,
 } from "./goldenCatalogListing.js";
 import { loadGoldenDossierByFamilySlug } from "../catalogAcquisition/benchmark/goldenLoader.js";
 
@@ -203,6 +204,10 @@ export async function fetchVehicleFamilyBySlug(
         variants = goldenDossierToMarketplaceVariants(golden.dossier).map(
           normalizeCar
         );
+      } else {
+        variants = loadBundledGoldenDatasetMarketplaceVariants().filter(
+          (c) => extractFamilySlug(c.slug) === familySlug
+        );
       }
     }
 
@@ -256,10 +261,14 @@ export async function fetchVehicleFamilyBySlug(
 export async function fetchListingCatalogVariants(options = {}) {
   const limit = options.limit ?? 120;
 
-  const [apiRaw, goldenVariants] = await Promise.all([
+  const [apiRaw, goldenFetched] = await Promise.all([
     fetchCatalogVehiclesForFallback(limit),
     fetchGoldenDatasetMarketplaceVariants(),
   ]);
+
+  const goldenVariants = goldenFetched.length
+    ? goldenFetched
+    : loadBundledGoldenDatasetMarketplaceVariants();
 
   const apiVariants = apiRaw.map(normalizeCar);
 

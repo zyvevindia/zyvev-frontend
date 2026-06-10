@@ -6,8 +6,7 @@ import JsonLd from "../components/SEO/JsonLd";
 import CarCard from "../components/CarCard";
 import CarCardSkeleton from "../components/skeletons/CarCardSkeleton";
 
-import { API_URL } from "../config";
-import normalizeCar from "../utils/normalizeCar";
+import { fetchListingCatalogVariants } from "../utils/vehicleDetailResolver.js";
 import { aggregateModelFamilies } from "../utils/modelFamily";
 import {
   getDiscoveryPreset,
@@ -18,7 +17,6 @@ import { enrichFamiliesWithIntelligence } from "../intelligence/familyIntelligen
 import { buildGuideItemListSchema } from "../seo/schema";
 import { trackDiscoveryPageEngaged, trackDiscoveryThinResults, trackTrustFaqEngaged } from "../analytics/funnel";
 import { buildTrustFaqAnchors } from "../intelligence/trustMetadata.js";
-import { safeFetchJsonWithRetry } from "../utils/safeFetch";
 
 import "../styles/ev-discovery.css";
 import "../styles/ev-trust.css";
@@ -43,14 +41,10 @@ export default function IntelligenceDiscoveryPage() {
       try {
         setLoading(true);
         setError("");
-        const res = await safeFetchJsonWithRetry(`${API_URL}/cars?limit=50`, {
-          label: "discovery_catalog",
-          timeoutMs: 18000,
-        });
-        if (!res.ok) throw new Error(res.error || "fetch failed");
-        const data = res.data;
+        const normalized = await fetchListingCatalogVariants({ limit: 120 });
         if (!cancelled) {
-          setCars((data?.cars || []).map(normalizeCar));
+          if (!normalized.length) throw new Error("empty catalog");
+          setCars(normalized);
         }
       } catch {
         if (!cancelled) {

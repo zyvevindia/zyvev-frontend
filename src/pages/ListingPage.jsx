@@ -26,6 +26,7 @@ import {
 } from "../utils/modelFamily";
 
 import { fetchListingCatalogVariants } from "../utils/vehicleDetailResolver.js";
+import { getCatalogBrandOptions } from "../utils/catalogListingBrands.js";
 
 import useCompareCars from "../hooks/useCompareCars";
 
@@ -505,16 +506,10 @@ export default function ListingPage() {
      ======================= BRANDS ==========================
      ========================================================= */
 
-  const brands = [
-
-    ...new Set(
-      (families || [])
-        .map(
-          (f) => f?.brand
-        )
-        .filter(Boolean)
-    ),
-  ];
+  const brands = useMemo(
+    () => getCatalogBrandOptions(families),
+    [families]
+  );
 
   /* =========================================================
      ======================== SEO ============================

@@ -1,5 +1,6 @@
 import {
   CatalogBodyTypeSelect,
+  CatalogBrandSelect,
   CatalogPriceSelect,
 } from "./CatalogFilterSelects";
 
@@ -68,21 +69,14 @@ export default function ListingCatalogMoreFilters({
             <label htmlFor="catalog-brand" className="listing-filter-label">
               Brand
             </label>
-            <select
+            <CatalogBrandSelect
               id="catalog-brand"
               value={brand}
-              onChange={(e) => onBrandChange(e.target.value)}
+              onChange={onBrandChange}
+              brands={brands}
               className="listing-filter-input"
               style={inputStyle}
-              aria-label="Filter by brand"
-            >
-              <option value="">All Brands</option>
-              {brands.map((b) => (
-                <option key={b} value={b}>
-                  {b}
-                </option>
-              ))}
-            </select>
+            />
           </div>
 
           <div className="listing-filter-field">
