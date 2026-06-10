@@ -124,6 +124,35 @@ const CatalogIngestionOpsPage = lazy(() =>
   import("./pages/admin/CatalogIngestionOpsPage")
 );
 
+const CatalogImportWizardPage = lazy(() =>
+  import("./pages/admin/CatalogImportWizardPage")
+);
+const VehicleCreationPage = lazy(() =>
+  import("./pages/admin/VehicleCreationPage")
+);
+const ChangeDetectionPage = lazy(() =>
+  import("./pages/admin/ChangeDetectionPage")
+);
+const AgentsDashboardPage = lazy(() =>
+  import("./pages/admin/AgentsDashboardPage")
+);
+const SeoAgentPage = lazy(() => import("./pages/admin/SeoAgentPage"));
+const MonitoringAgentPage = lazy(() =>
+  import("./pages/admin/MonitoringAgentPage")
+);
+const AuditAgentPage = lazy(() => import("./pages/admin/AuditAgentPage"));
+const AnalyticsAgentPage = lazy(() =>
+  import("./pages/admin/AnalyticsAgentPage")
+);
+
+const CatalogBenchmarkPage = lazy(() =>
+  import("./pages/admin/CatalogBenchmarkPage")
+);
+
+const CatalogAcquisitionDashboardPage = lazy(() =>
+  import("./pages/admin/CatalogAcquisitionDashboardPage")
+);
+
 const SoftLaunchOpsPage = lazy(() =>
   import("./pages/admin/SoftLaunchOpsPage")
 );
@@ -1059,6 +1088,96 @@ export default function App() {
             element={
               <PrivateRoute allowedRoles={["admin"]}>
                 <CatalogIngestionOpsPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/catalog/import"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CatalogImportWizardPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/monitoring"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <MonitoringAgentPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/audit"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <AuditAgentPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/analytics"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <AnalyticsAgentPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/seo"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <SeoAgentPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/agents"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <AgentsDashboardPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/vehicle-creation"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <VehicleCreationPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/change-detection"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <ChangeDetectionPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/catalog/benchmark"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CatalogBenchmarkPage />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/admin/catalog/acquisition"
+            element={
+              <PrivateRoute allowedRoles={["admin"]}>
+                <CatalogAcquisitionDashboardPage />
               </PrivateRoute>
             }
           />

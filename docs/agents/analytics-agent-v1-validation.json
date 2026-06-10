@@ -1,0 +1,178 @@
+{
+  "generatedAt": "2026-06-10T04:12:38.948Z",
+  "agentVersion": 1,
+  "methodology": "Simulated platform snapshots — insight detection only",
+  "aggregate": {
+    "scenariosTotal": 7,
+    "scenariosPassed": 7,
+    "detectionAccuracyPct": 100,
+    "falsePositiveRatePct": 0,
+    "autonomousActions": 0,
+    "humanApprovalRequired": true
+  },
+  "recommendation": "PLATFORM FOUNDATION COMPLETE",
+  "scenarios": [
+    {
+      "name": "catalog_growth",
+      "ok": true,
+      "expectedCodes": [
+        "catalog_growth_detected"
+      ],
+      "detectedCodes": [
+        "catalog_growth_detected",
+        "catalog_vehicle_count",
+        "catalog_variant_count",
+        "catalog_freshness_trend",
+        "score_average",
+        "score_category_leader",
+        "score_distribution",
+        "seo_pages_generated"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "STRATEGIC_OPPORTUNITY",
+      "insightCount": 11
+    },
+    {
+      "name": "seo_backlog",
+      "ok": true,
+      "expectedCodes": [
+        "seo_draft_backlog"
+      ],
+      "detectedCodes": [
+        "seo_draft_backlog",
+        "catalog_vehicle_count",
+        "catalog_variant_count",
+        "catalog_freshness_trend",
+        "score_average",
+        "score_category_leader",
+        "score_distribution",
+        "seo_pages_generated",
+        "seo_approval_rate",
+        "seo_publish_rate",
+        "seo_top_category"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "REVIEW_REQUIRED",
+      "insightCount": 13
+    },
+    {
+      "name": "ranking_shifts",
+      "ok": true,
+      "expectedCodes": [
+        "score_ranking_shift"
+      ],
+      "detectedCodes": [
+        "score_ranking_shift",
+        "catalog_vehicle_count",
+        "catalog_variant_count",
+        "catalog_freshness_trend",
+        "score_average",
+        "score_category_leader",
+        "score_distribution",
+        "seo_pages_generated"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "REVIEW_REQUIRED",
+      "insightCount": 11
+    },
+    {
+      "name": "agent_failures",
+      "ok": true,
+      "expectedCodes": [
+        "agent_failure_trend"
+      ],
+      "detectedCodes": [
+        "agent_failure_rate",
+        "agent_failure_trend",
+        "agent_success_rate",
+        "agent_approval_count",
+        "catalog_vehicle_count",
+        "catalog_variant_count",
+        "catalog_freshness_trend",
+        "score_average",
+        "score_category_leader",
+        "score_distribution",
+        "seo_pages_generated"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "REVIEW_REQUIRED",
+      "insightCount": 13
+    },
+    {
+      "name": "alert_spikes",
+      "ok": true,
+      "expectedCodes": [
+        "monitoring_alert_spike"
+      ],
+      "detectedCodes": [
+        "monitoring_alert_spike",
+        "catalog_vehicle_count",
+        "catalog_variant_count",
+        "catalog_freshness_trend",
+        "monitoring_alert_frequency",
+        "monitoring_resolution_time",
+        "score_average",
+        "score_category_leader",
+        "score_distribution",
+        "seo_pages_generated"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "REVIEW_REQUIRED",
+      "insightCount": 12
+    },
+    {
+      "name": "audit_findings",
+      "ok": true,
+      "expectedCodes": [
+        "audit_finding_trend"
+      ],
+      "detectedCodes": [
+        "audit_finding_trend",
+        "audit_critical_trend",
+        "audit_trust_history",
+        "audit_resolution_rate",
+        "catalog_vehicle_count",
+        "catalog_variant_count",
+        "catalog_freshness_trend",
+        "score_average",
+        "score_category_leader",
+        "score_distribution",
+        "seo_pages_generated"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "REVIEW_REQUIRED",
+      "insightCount": 14
+    },
+    {
+      "name": "healthy_baseline",
+      "ok": true,
+      "expectedCodes": [],
+      "detectedCodes": [
+        "catalog_vehicle_count",
+        "catalog_variant_count",
+        "catalog_freshness_trend",
+        "score_average",
+        "score_category_leader",
+        "score_distribution",
+        "seo_pages_generated"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "NO_ACTION",
+      "insightCount": 9
+    }
+  ]
+}

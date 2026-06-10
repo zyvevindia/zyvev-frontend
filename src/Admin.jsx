@@ -1227,6 +1227,41 @@ export default function Admin() {
             </Link>
 
             <Link
+              to="/admin/monitoring"
+              style={menuItem}
+            >
+              📡 Monitoring Agent v1
+            </Link>
+
+            <Link
+              to="/admin/audit"
+              style={menuItem}
+            >
+              🔎 Audit Agent v1
+            </Link>
+
+            <Link
+              to="/admin/analytics"
+              style={menuItem}
+            >
+              📊 Analytics Agent v1
+            </Link>
+
+            <Link
+              to="/admin/seo"
+              style={menuItem}
+            >
+              🔍 SEO Agent v1
+            </Link>
+
+            <Link
+              to="/admin/agents"
+              style={menuItem}
+            >
+              🤖 Agent platform
+            </Link>
+
+            <Link
               to="/admin/catalog-ingestion"
               style={menuItem}
             >
