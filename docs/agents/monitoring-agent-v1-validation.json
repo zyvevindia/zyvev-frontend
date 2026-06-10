@@ -1,0 +1,130 @@
+{
+  "generatedAt": "2026-06-10T04:12:36.257Z",
+  "agentVersion": 1,
+  "methodology": "Simulated platform snapshots — alert detection only",
+  "aggregate": {
+    "scenariosTotal": 7,
+    "scenariosPassed": 7,
+    "detectionAccuracyPct": 100,
+    "falsePositiveScenarios": 0,
+    "autonomousActions": 0,
+    "humanApprovalRequired": true
+  },
+  "recommendation": "READY FOR AUDIT AGENT",
+  "scenarios": [
+    {
+      "name": "broken_oem_url",
+      "ok": true,
+      "expectedCodes": [
+        "oem_unreachable"
+      ],
+      "detectedCodes": [
+        "oem_unreachable",
+        "registry_unverified_url",
+        "registry_missing_brochure"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "alertCount": 26
+    },
+    {
+      "name": "missing_brochure",
+      "ok": true,
+      "expectedCodes": [
+        "registry_missing_brochure"
+      ],
+      "detectedCodes": [
+        "registry_unverified_url",
+        "registry_missing_brochure"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "alertCount": 25
+    },
+    {
+      "name": "stale_score",
+      "ok": true,
+      "expectedCodes": [
+        "score_generation_stale"
+      ],
+      "detectedCodes": [
+        "registry_unverified_url",
+        "score_generation_stale",
+        "registry_missing_brochure"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "alertCount": 26
+    },
+    {
+      "name": "duplicate_seo_slug",
+      "ok": true,
+      "expectedCodes": [
+        "seo_duplicate_slug"
+      ],
+      "detectedCodes": [
+        "registry_unverified_url",
+        "seo_duplicate_slug",
+        "registry_missing_brochure",
+        "seo_unpublished_drafts"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "alertCount": 28
+    },
+    {
+      "name": "agent_failure",
+      "ok": true,
+      "expectedCodes": [
+        "agent_recent_failure"
+      ],
+      "detectedCodes": [
+        "agent_high_failure_rate",
+        "registry_unverified_url",
+        "agent_recent_failure",
+        "registry_missing_brochure"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "alertCount": 27
+    },
+    {
+      "name": "score_drift",
+      "ok": true,
+      "expectedCodes": [
+        "score_large_drift"
+      ],
+      "detectedCodes": [
+        "registry_unverified_url",
+        "score_large_drift",
+        "registry_missing_brochure"
+      ],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "BLOCKED",
+      "alertCount": 26
+    },
+    {
+      "name": "healthy_baseline",
+      "ok": true,
+      "expectedCodes": [],
+      "detectedCodes": [],
+      "expectedHit": true,
+      "noFalsePositives": true,
+      "autonomousActionsTaken": 0,
+      "recommendation": "NO_ACTION",
+      "alertCount": 0
+    }
+  ]
+}
