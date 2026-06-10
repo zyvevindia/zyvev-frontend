@@ -10,13 +10,32 @@ import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
 
 import { appendJourneyStep } from "../../buyer-intelligence/journeyBuffer";
 import { ensureArray } from "../../utils/compareArrayUtils";
+import { trackVariantRecommendationClicked } from "../../analytics/traffic";
 
-function trackSeoToDetail(targetSlug, seoPageSlug, sourcePage = "") {
+function isVariantRecommendationContext(seoPageSlug = "", item = {}) {
+  const slug = String(seoPageSlug || "").toLowerCase();
+  return (
+    Boolean(item.variantName) ||
+    slug.includes("variant") ||
+    slug.includes("-agent")
+  );
+}
+
+function trackSeoToDetail(targetSlug, seoPageSlug, sourcePage = "", item = {}) {
   appendJourneyStep({
     type: "seo_to_detail",
     seoPageSlug,
     targetSlug,
   });
+  if (isVariantRecommendationContext(seoPageSlug, item)) {
+    trackVariantRecommendationClicked({
+      targetSlug,
+      variantName: item.variantName,
+      seoPageSlug,
+      sourcePage,
+      rank: item.rank,
+    });
+  }
   trackBuyerEvent(BUYER_EVENTS.SEO_TO_DETAIL, {
     seoPageSlug,
     targetSlug,
@@ -70,7 +89,7 @@ export default function SeoRecommendationList({
                 to={vehicleDetailPath(item.slug)}
                 style={styles.titleLink}
                 onClick={() =>
-                  trackSeoToDetail(item.slug, seoPageSlug, sourcePage)
+                  trackSeoToDetail(item.slug, seoPageSlug, sourcePage, item)
                 }
               >
                 {item.displayName}

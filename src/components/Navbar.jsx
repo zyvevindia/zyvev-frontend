@@ -15,6 +15,9 @@ import {
   getCompareNavDestination,
   isCompareNavActive,
 } from "../utils/compareNav";
+import { isAuthenticated, isAdmin } from "../auth";
+
+import "../styles/catalog-listing-a11y.css";
 
 /* =========================================================
    ======================= NAVBAR ===========================
@@ -59,6 +62,14 @@ export default function Navbar() {
   const [isScrolled,
     setIsScrolled] =
     useState(false);
+
+  const [showAdminNav, setShowAdminNav] = useState(
+    () => isAuthenticated() && isAdmin()
+  );
+
+  useEffect(() => {
+    setShowAdminNav(isAuthenticated() && isAdmin());
+  }, [location.pathname]);
 
   /* =========================================================
      ===================== WINDOW RESIZE =====================
@@ -118,10 +129,33 @@ export default function Navbar() {
      ========================================================= */
 
   const isActive = (path) => {
+    if (path === "/cars") {
+      return [
+        "/cars",
+        "/popular",
+        "/latest",
+        "/upcoming",
+        "/bikes",
+        "/scooters",
+      ].includes(location.pathname);
+    }
 
-    return (
-      location.pathname === path
-    );
+    if (path === "/guides") {
+      return (
+        location.pathname === "/guides" ||
+        location.pathname.startsWith("/discover/")
+      );
+    }
+
+    if (path === "/cars#catalog-search") {
+      return (
+        location.pathname === "/cars" &&
+        (location.hash === "#catalog-search" ||
+          Boolean(location.search?.includes("search=")))
+      );
+    }
+
+    return location.pathname === path;
   };
 
   /* =========================================================
@@ -151,15 +185,35 @@ export default function Navbar() {
     },
 
     {
+      label: "Browse EVs",
+      path: "/cars",
+    },
+
+    {
       label: "Compare",
       path: compareNavPath,
       isCompare: true,
     },
 
     {
-      label: "CRM",
-      path: "/admin",
+      label: "Guides",
+      path: "/guides",
     },
+
+    {
+      label: "Search",
+      path: "/cars#catalog-search",
+      isSearch: true,
+    },
+
+    ...(showAdminNav
+      ? [
+          {
+            label: "Admin",
+            path: "/admin",
+          },
+        ]
+      : []),
   ];
 
   /* =========================================================
@@ -274,7 +328,10 @@ export default function Navbar() {
               )
             }
 
+            className="navbar-mobile-toggle"
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="main-navigation"
           >
 
             {mobileMenuOpen
@@ -299,6 +356,8 @@ export default function Navbar() {
               ? mobileNavOpen
               : {}),
           }}
+          aria-label="Main navigation"
+          id="main-navigation"
         >
 
           {navItems.map(
@@ -320,8 +379,17 @@ export default function Navbar() {
                   navigate(target);
                   return;
                 }
+                if (item.isSearch) {
+                  closeMobileMenu();
+                  navigate("/cars#catalog-search");
+                  return;
+                }
                 closeMobileMenu();
               };
+
+              const linkClassName = item.isSearch
+                ? "navbar-search-link"
+                : "navbar-nav-link";
 
               return (
 
@@ -340,9 +408,10 @@ export default function Navbar() {
 
                   onClick={handleNavClick}
 
-                  aria-label={
-                    item.label
-                  }
+                  className={linkClassName}
+
+                  aria-current={active ? "page" : undefined}
+                  aria-label={item.label}
 
                   onMouseEnter={(e) => {
 

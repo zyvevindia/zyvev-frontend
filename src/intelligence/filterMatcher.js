@@ -2,6 +2,7 @@ import {
   INTELLIGENCE_FILTER_DEFINITIONS,
   getFilterDefinition,
 } from "./filterDefinitions.js";
+import { filterCatalogFamilies } from "./catalogFilters.js";
 import { enrichFamiliesWithIntelligence } from "./familyIntelligence.js";
 
 const URL_PARAM = "intel";
@@ -72,44 +73,17 @@ export function filterEnrichedFamilies(
     brand,
     search,
     priceRange,
+    bodyType,
     intelligenceFilterIds = [],
   } = {}
 ) {
-  let list = enrichFamiliesWithIntelligence(families);
-
-  if (brand) {
-    const b = brand.toLowerCase();
-    list = list.filter((f) =>
-      (f.brand || "").toLowerCase().includes(b)
-    );
-  }
-
-  if (search) {
-    const s = search.toLowerCase();
-    list = list.filter(
-      (f) =>
-        f.familyName?.toLowerCase().includes(s) ||
-        (f.brand || "").toLowerCase().includes(s) ||
-        f.variants?.some((v) =>
-          (v.name || "").toLowerCase().includes(s)
-        )
-    );
-  }
-
-  if (priceRange === "low" || priceRange === "under_15") {
-    list = list.filter((f) => f.startingPrice < 1500000);
-  } else if (priceRange === "mid") {
-    list = list.filter(
-      (f) =>
-        f.startingPrice >= 1500000 && f.startingPrice <= 2500000
-    );
-  } else if (priceRange === "high") {
-    list = list.filter((f) => f.startingPrice > 2500000);
-  }
-
-  list = applyIntelligenceFilters(list, intelligenceFilterIds);
-
-  return list;
+  return filterCatalogFamilies(families, {
+    brand,
+    search,
+    priceRange,
+    bodyType,
+    intelligenceFilterIds,
+  });
 }
 
 export function countFamiliesMatchingFilter(families, filterId) {

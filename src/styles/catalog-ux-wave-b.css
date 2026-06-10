@@ -1,0 +1,134 @@
+.catalog-score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 1px solid #bfdbfe;
+  color: #1e3a8a;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.catalog-score-badge__score {
+  font-size: 0.82rem;
+  letter-spacing: -0.02em;
+}
+
+.catalog-score-badge__grade {
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #fff;
+}
+
+.compact-car-card__score-row,
+.car-card__score-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2px;
+}
+
+.home-category-tiles {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 40px) clamp(16px, 3vw, 24px);
+}
+
+.home-category-tiles__header {
+  margin-bottom: 18px;
+}
+
+.home-category-tiles__title {
+  margin: 0 0 6px;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+}
+
+.home-category-tiles__subtitle {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.home-category-tiles__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-category-tiles__scroll {
+  display: none;
+}
+
+.home-category-tiles__card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 16px;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  min-height: 112px;
+}
+
+.home-category-tiles__card:hover {
+  transform: translateY(-3px);
+  border-color: #bfdbfe;
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.12);
+}
+
+.home-category-tiles__icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.home-category-tiles__label {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.home-category-tiles__desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .home-category-tiles__grid {
+    display: none;
+  }
+
+  .home-category-tiles__scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .home-category-tiles__scroll .home-category-tiles__card {
+    flex: 0 0 min(78vw, 280px);
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-category-tiles__scroll .home-category-tiles__card {
+    flex-basis: min(84vw, 260px);
+  }
+}

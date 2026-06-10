@@ -44,7 +44,6 @@
   color: #1b5e20;
 }
 
-.compare-score-comparison__best {
-  font-weight: 600;
-  color: #2e7d32;
+.compare-score-comparison--compact .compare-score-comparison__title {
+  font-size: 0.9rem;
 }

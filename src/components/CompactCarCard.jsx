@@ -14,7 +14,11 @@ import { vehicleDetailPath } from "../utils/vehicleRoutes";
 
 import CatalogOwnershipChips from "./catalog/CatalogOwnershipChips";
 
+import CatalogScoreBadge from "./catalog/CatalogScoreBadge";
+
 import { pickOwnershipChips } from "../utils/ownershipReality";
+
+import "../styles/catalog-ux-wave-b.css";
 
 /* =========================================================
    ================= COMPACT CAR CARD ======================
@@ -188,6 +192,12 @@ export default function CompactCarCard({
           >
             {formatIndianPriceCompact(price)}
           </p>
+
+          {!isCompare && (
+            <div className="compact-car-card__score-row">
+              <CatalogScoreBadge vehicle={car} />
+            </div>
+          )}
 
           {!isCompare && (
             <CatalogCardTrust

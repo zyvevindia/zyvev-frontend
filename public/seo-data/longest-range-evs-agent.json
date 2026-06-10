@@ -1,0 +1,339 @@
+{
+  "seoPage": {
+    "slug": "longest-range-evs-agent",
+    "pageTypeId": "long_range",
+    "category": "usage",
+    "intro": "Longest range EVs in India — 10 EVs ranked by deterministic EVSavari range scores from verified catalog data.",
+    "recommendationLogic": {
+      "pageTypeId": "long_range",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "usage",
+      "primaryScoreKey": "range"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra XEV 9e",
+        "exShowroom": 2190000,
+        "claimedRangeKm": 656,
+        "compositeScore": 99,
+        "confidence": "high",
+        "explanation": "Ranked by range score (99/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 2,
+        "slug": "hyundai-ioniq-5",
+        "displayName": "Hyundai Ioniq 5",
+        "exShowroom": 4495000,
+        "claimedRangeKm": 690,
+        "compositeScore": 98,
+        "confidence": "high",
+        "explanation": "Ranked by range score (98/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+        "detailPath": "/cars/hyundai-ioniq-5"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-harrier-ev",
+        "displayName": "Tata Harrier EV",
+        "exShowroom": 2149000,
+        "claimedRangeKm": 627,
+        "compositeScore": 98,
+        "confidence": "high",
+        "explanation": "Ranked by range score (98/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time.",
+        "detailPath": "/cars/tata-harrier-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes-Benz EQA",
+        "exShowroom": 6775000,
+        "claimedRangeKm": 560,
+        "compositeScore": 96,
+        "confidence": "high",
+        "explanation": "Ranked by range score (96/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 5,
+        "slug": "kia-ev6",
+        "displayName": "Kia EV6",
+        "exShowroom": 6590000,
+        "claimedRangeKm": 650,
+        "compositeScore": 95,
+        "confidence": "high",
+        "explanation": "Ranked by range score (95/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 6,
+        "slug": "byd-seal",
+        "displayName": "BYD Seal",
+        "exShowroom": 4100000,
+        "claimedRangeKm": 510,
+        "compositeScore": 93,
+        "confidence": "high",
+        "explanation": "Ranked by range score (93/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/byd-seal"
+      },
+      {
+        "rank": 7,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra BE 6",
+        "exShowroom": 1890000,
+        "claimedRangeKm": 500,
+        "compositeScore": 92,
+        "confidence": "high",
+        "explanation": "Ranked by range score (92/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/mahindra-be-6"
+      },
+      {
+        "rank": 8,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo EX40",
+        "exShowroom": 5990000,
+        "claimedRangeKm": 418,
+        "compositeScore": 90,
+        "confidence": "high",
+        "explanation": "Ranked by range score (90/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 568 km claimed range and 7.3 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 150 kW DC peak and ~40 min DC time.",
+        "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 9,
+        "slug": "maruti-e-vitara",
+        "displayName": "Maruti Suzuki e Vitara",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 543,
+        "compositeScore": 90,
+        "confidence": "high",
+        "explanation": "Ranked by range score (90/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 550 km claimed range and 9.0 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 130 kW DC fast-charging capability.",
+        "detailPath": "/cars/maruti-e-vitara"
+      },
+      {
+        "rank": 10,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 521,
+        "compositeScore": 87,
+        "confidence": "high",
+        "explanation": "Ranked by range score (87/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
+        "detailPath": "/cars/byd-atto-3"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "mahindra-xev-9e",
+          "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100."
+        },
+        {
+          "slug": "hyundai-ioniq-5",
+          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100."
+        },
+        {
+          "slug": "tata-harrier-ev",
+          "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time."
+        },
+        {
+          "slug": "mercedes-eqa",
+          "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability."
+        },
+        {
+          "slug": "kia-ev6",
+          "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100."
+        },
+        {
+          "slug": "byd-seal",
+          "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
+        }
+      ]
+    },
+    "title": "Longest range EVs in India | EVSavari",
+    "metaDescription": "Ranked list of 10 EVs by range score — deterministic EVSavari rankings from verified catalog data.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "longest range evs",
+      "Mahindra XEV 9e",
+      "Hyundai Ioniq 5",
+      "Tata Harrier EV",
+      "Mercedes-Benz EQA",
+      "Kia EV6"
+    ],
+    "canonicalPath": "/best-evs/longest-range-agent",
+    "canonicalUrl": "https://evsavari.com/best-evs/longest-range-agent",
+    "generatedAt": "2026-06-10T06:29:07.745Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "longest-range-evs-agent",
+      "description": "Ranked list of 10 EVs by range score — deterministic EVSavari rankings from verified catalog data.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Mahindra XEV 9e",
+          "url": "https://evsavari.com/cars/mahindra-xev-9e"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hyundai Ioniq 5",
+          "url": "https://evsavari.com/cars/hyundai-ioniq-5"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tata Harrier EV",
+          "url": "https://evsavari.com/cars/tata-harrier-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Mercedes-Benz EQA",
+          "url": "https://evsavari.com/cars/mercedes-eqa"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Kia EV6",
+          "url": "https://evsavari.com/cars/kia-ev6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "BYD Seal",
+          "url": "https://evsavari.com/cars/byd-seal"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Mahindra BE 6",
+          "url": "https://evsavari.com/cars/mahindra-be-6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Volvo EX40",
+          "url": "https://evsavari.com/cars/volvo-ex40"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Maruti Suzuki e Vitara",
+          "url": "https://evsavari.com/cars/maruti-e-vitara"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "BYD Atto 3",
+          "url": "https://evsavari.com/cars/byd-atto-3"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Why is Mahindra XEV 9e ranked first?",
+        "answer": "Ranked by range score (99/100) from EVSavari Score Engine."
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Prioritises ARAI range and efficiency from catalog data",
+        "Helps reduce range anxiety for long-distance buyers",
+        "Useful benchmark before choosing battery size"
+      ],
+      "cons": [
+        "ARAI figures exceed typical real-world mixed driving",
+        "Larger batteries increase price and charging time",
+        "Range alone ignores charging speed and service network"
+      ],
+      "whoShouldBuy": [
+        "Inter-city drivers who want fewer charging stops",
+        "Buyers comparing battery sizes within a model line",
+        "Weekend travellers in regions with sparse chargers"
+      ],
+      "whoShouldAvoid": [
+        "City commuters who over-buy battery they rarely use",
+        "Tight-budget buyers paying for range they do not need",
+        "Those who should prioritise charging speed instead"
+      ],
+      "bestAlternative": {
+        "label": "Longest range variants",
+        "href": "/best-evs/longest-range-variants-agent",
+        "reason": "Within a family, the longest-range trim may differ — check variant-level rankings."
+      },
+      "relatedLinks": [
+        {
+          "label": "Rain & range",
+          "href": "/ownership-guides/rain-range"
+        },
+        {
+          "label": "Highway ownership",
+          "href": "/ownership-guides/highway-ownership"
+        },
+        {
+          "label": "Battery health",
+          "href": "/ownership-guides/battery-health"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Rain & range",
+            "href": "/ownership-guides/rain-range"
+          },
+          {
+            "label": "Highway ownership",
+            "href": "/ownership-guides/highway-ownership"
+          },
+          {
+            "label": "Battery health",
+            "href": "/ownership-guides/battery-health"
+          }
+        ]
+      }
+    ]
+  }
+}

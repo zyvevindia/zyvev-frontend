@@ -8,6 +8,7 @@ import {
   buildScoreMaturityHint,
 } from "../../utils/compareTrustCopy";
 import { trackTrustTooltipOpened } from "../../analytics/funnel";
+import { trackScorePanelOpened } from "../../analytics/traffic";
 import "./compare-score-insight.css";
 
 /**
@@ -43,6 +44,11 @@ export default function CompareScoreInsight({ car }) {
                 field: "compare_score",
                 familySlug: car?.slug,
                 sourcePage: "compare",
+              });
+              trackScorePanelOpened({
+                familySlug: car?.slug,
+                sourcePage: "compare",
+                panelType: "compare_score",
               });
             }
             return next;

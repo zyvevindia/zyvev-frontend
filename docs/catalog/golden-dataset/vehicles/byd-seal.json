@@ -1,0 +1,79 @@
+{
+  "id": "byd-seal",
+  "displayName": "BYD Seal",
+  "familySlug": "byd-seal",
+  "vehicle": {
+    "brand": "BYD",
+    "model": "Seal",
+    "bodyType": "SUV",
+    "familySlug": "byd-seal"
+  },
+  "fields": {
+    "brand": "BYD",
+    "model": "Seal",
+    "bodyType": "SUV",
+    "familySlug": "byd-seal",
+    "startingPrice": 4100000,
+    "topVariantPrice": 5300000,
+    "exShowroomPrice": 4100000,
+    "batteryCapacityKwh": 61,
+    "claimedRangeKm": 510,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 7,
+    "dcChargingKw": 150,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": null,
+    "airbags": 9,
+    "adas": "true",
+    "powerPs": "204",
+    "torqueNm": "310"
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": false,
+    "camera360": true,
+    "connectedCar": false,
+    "v2l": true,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "Dynamic",
+      "priceInr": 4100000,
+      "batteryKwh": 61.4,
+      "rangeKm": 510,
+      "acChargingKw": 7,
+      "dcChargingKw": 150
+    },
+    {
+      "variantName": "Premium",
+      "priceInr": 4590000,
+      "batteryKwh": 82.5,
+      "rangeKm": 650,
+      "acChargingKw": 7,
+      "dcChargingKw": 150
+    },
+    {
+      "variantName": "Performance",
+      "priceInr": 5300000,
+      "batteryKwh": 82.5,
+      "rangeKm": 580,
+      "acChargingKw": 11,
+      "dcChargingKw": 150
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.bydautoindia.com/bydseal",
+    "https://www.cardekho.com/byd/seal"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day1",
+    "pipelineConfidence": 93,
+    "manualCorrections": [
+      "variant_table_manual"
+    ]
+  }
+}

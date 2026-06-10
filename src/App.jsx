@@ -15,18 +15,16 @@ import {
   Helmet,
 } from "react-helmet-async";
 
-import Home from "./pages/Home";
-import ComparePage from "./pages/ComparePage";
-
-import {
-  trackPageView,
-} from "./utils/analytics";
 import { captureAcquisitionContext } from "./utils/acquisitionContext";
 import { logSlowRoute } from "./utils/routePerformance";
+import { trackPageView } from "./utils/analytics";
 
 /* =========================================================
    ===================== LAZY IMPORTS ======================
    ========================================================= */
+
+const Home = lazy(() => import("./pages/Home"));
+const ComparePage = lazy(() => import("./pages/ComparePage"));
 
 const Admin = lazy(() =>
   import("./Admin")

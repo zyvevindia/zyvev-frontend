@@ -4,11 +4,11 @@ import {
   RANGE_CATEGORY_TAXONOMY,
   RANGE_CATEGORY_LABELS,
   BATTERY_CAPACITY_TAXONOMY,
-  PRICE_BAND_TAXONOMY,
-  SUITABILITY_TAXONOMY,
   FEATURE_TAXONOMY,
   FEATURE_LABELS,
 } from "./taxonomy.js";
+import { matchesUnder15Lakh } from "./catalogPriceFilters.js";
+import { BODY_TYPE_FILTER_DEFINITIONS } from "./bodyTypeCatalog.js";
 import { isFastChargingFamily } from "./familyIntelligence.js";
 import { SUITABILITY_LEVEL } from "./suitabilityInsights.js";
 
@@ -134,8 +134,7 @@ export const INTELLIGENCE_FILTER_DEFINITIONS = [
     group: "budget",
     label: "Under ₹15 lakh",
     urlDefault: true,
-    match: (f) =>
-      f?.taxonomyTags?.priceBand === PRICE_BAND_TAXONOMY.UNDER_15,
+    match: (f) => matchesUnder15Lakh(f?.startingPrice),
   },
   {
     id: "ownership_affordable",
@@ -168,10 +167,12 @@ export const INTELLIGENCE_FILTER_DEFINITIONS = [
     label: FEATURE_LABELS[FEATURE_TAXONOMY.OTA],
     match: (f) => f?.taxonomyTags?.ota === true,
   },
+  ...BODY_TYPE_FILTER_DEFINITIONS,
 ];
 
 export const FILTER_GROUPS = Object.freeze([
   { id: "use_case", label: "Use case" },
+  { id: "body_type", label: "Body type" },
   { id: "charging", label: "Charging" },
   { id: "range", label: "Range" },
   { id: "budget", label: "Budget" },

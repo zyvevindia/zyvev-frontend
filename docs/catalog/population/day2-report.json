@@ -1,0 +1,228 @@
+{
+  "generatedAt": "2026-06-10T04:44:30.132Z",
+  "batch": "day2",
+  "vehicles": [
+    "bmw-ix1",
+    "mercedes-eqa",
+    "mercedes-eqb",
+    "volvo-ex40",
+    "mini-cooper-se"
+  ],
+  "results": [
+    {
+      "vehicle": "BMW iX1",
+      "familySlug": "bmw-ix1",
+      "variants": 1,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 93,
+      "score": 76,
+      "grade": "B+",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "unreachable_oem_url",
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.bmw.in/en/all-models/bmw-i/iX1/2025/bmw-ix1-highlights.html",
+        "brochureUrl": null,
+        "keywords": [
+          "ix1",
+          "bmw ix1",
+          "ix1 lwb"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/bmw/ix1"
+        ]
+      }
+    },
+    {
+      "vehicle": "Mercedes-Benz EQA",
+      "familySlug": "mercedes-eqa",
+      "variants": 2,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 96,
+      "score": 67,
+      "grade": "B",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "unreachable_oem_url",
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqa.html",
+        "brochureUrl": null,
+        "keywords": [
+          "eqa",
+          "mercedes eqa"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/mercedes-benz/eqa"
+        ]
+      }
+    },
+    {
+      "vehicle": "Mercedes-Benz EQB",
+      "familySlug": "mercedes-eqb",
+      "variants": 2,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 93,
+      "score": 49,
+      "grade": "C",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "unreachable_oem_url",
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqb.html",
+        "brochureUrl": null,
+        "keywords": [
+          "eqb",
+          "mercedes eqb"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/mercedes-benz/eqb"
+        ]
+      }
+    },
+    {
+      "vehicle": "Volvo EX40",
+      "familySlug": "volvo-ex40",
+      "variants": 2,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 92,
+      "score": 67,
+      "grade": "B",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "unreachable_oem_url",
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.volvocars.com/in/cars/ex40-electric/",
+        "brochureUrl": null,
+        "keywords": [
+          "ex40",
+          "ex 40",
+          "volvo ex40"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/volvo/ex40"
+        ]
+      }
+    },
+    {
+      "vehicle": "MINI Cooper SE",
+      "familySlug": "mini-cooper-se",
+      "variants": 2,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 92,
+      "score": 44,
+      "grade": "C",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "unreachable_oem_url",
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.mini.in/en_IN/home/range/mini-cooper-se-electric.html",
+        "brochureUrl": null,
+        "keywords": [
+          "cooper se",
+          "mini cooper",
+          "cooperse"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/mini/cooper-se"
+        ]
+      }
+    }
+  ],
+  "seoValidation": {
+    "variantSpecsChecked": 7,
+    "variantSpecsOk": 7,
+    "batchInPool": 5,
+    "variantRecommendationsPresent": false,
+    "seoMetadataGenerated": true,
+    "details": [
+      {
+        "specId": "variant-best-value-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136,
+        "rankedCount": 10
+      },
+      {
+        "specId": "variant-fastest-charging-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136,
+        "rankedCount": 10
+      },
+      {
+        "specId": "variant-longest-range-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136,
+        "rankedCount": 10
+      },
+      {
+        "specId": "variant-best-value-nexon",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      },
+      {
+        "specId": "variant-best-value-punch",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      },
+      {
+        "specId": "variant-fastest-charging-nexon",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      },
+      {
+        "specId": "variant-longest-range-punch",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      }
+    ]
+  },
+  "recommendation": "REVIEW_REQUIRED"
+}

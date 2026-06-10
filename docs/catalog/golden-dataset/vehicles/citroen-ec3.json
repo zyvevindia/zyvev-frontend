@@ -1,0 +1,88 @@
+{
+  "id": "citroen-ec3",
+  "displayName": "Citroen eC3",
+  "familySlug": "citroen-ec3",
+  "vehicle": {
+    "brand": "Citroen",
+    "model": "eC3",
+    "bodyType": "SUV",
+    "familySlug": "citroen-ec3"
+  },
+  "fields": {
+    "brand": "Citroen",
+    "model": "eC3",
+    "bodyType": "SUV",
+    "familySlug": "citroen-ec3",
+    "startingPrice": 1269000,
+    "topVariantPrice": 1399000,
+    "exShowroomPrice": 1213000,
+    "batteryCapacityKwh": 29.2,
+    "claimedRangeKm": 320,
+    "rangeTestStandard": "MIDC",
+    "acChargingKw": 3.3,
+    "dcChargingKw": null,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": null,
+    "airbags": 2,
+    "adas": null,
+    "powerPs": "57",
+    "torqueNm": "143"
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": false,
+    "v2l": false,
+    "v2v": false,
+    "adas": false
+  },
+  "variants": [
+    {
+      "variantName": "Feel Vibe",
+      "priceInr": 1269000,
+      "batteryKwh": 29.2,
+      "rangeKm": 320,
+      "acChargingKw": 3.3,
+      "dcChargingKw": null
+    },
+    {
+      "variantName": "Feel",
+      "priceInr": 1299000,
+      "batteryKwh": 29.2,
+      "rangeKm": 320,
+      "acChargingKw": 3.3,
+      "dcChargingKw": null
+    },
+    {
+      "variantName": "Shine Vibe",
+      "priceInr": 1349000,
+      "batteryKwh": 29.2,
+      "rangeKm": 320,
+      "acChargingKw": 3.3,
+      "dcChargingKw": null
+    },
+    {
+      "variantName": "Shine",
+      "priceInr": 1399000,
+      "batteryKwh": 29.2,
+      "rangeKm": 320,
+      "acChargingKw": 3.3,
+      "dcChargingKw": null
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.citroen.in/models/new-e-c3.html",
+    "https://www.cardekho.com/citroen/ec3"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day3",
+    "pipelineConfidence": 95,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.191Z"
+  }
+}

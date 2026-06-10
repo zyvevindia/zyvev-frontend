@@ -1,0 +1,211 @@
+{
+  "generatedAt": "2026-06-10T04:37:42.310Z",
+  "batch": "day1",
+  "vehicles": [
+    "mg-comet-ev",
+    "hyundai-ioniq-5",
+    "kia-ev6",
+    "mahindra-xuv400",
+    "byd-seal"
+  ],
+  "results": [
+    {
+      "vehicle": "MG Comet EV",
+      "familySlug": "mg-comet-ev",
+      "variants": 3,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 95,
+      "score": 47,
+      "grade": "C",
+      "scorePresent": true,
+      "recommendation": "REVIEW_REQUIRED",
+      "registryCheck": {
+        "ok": true,
+        "issues": [],
+        "oemUrl": "https://www.mgmotor.co.in/vehicles/comet-ev-electric-car-in-india",
+        "brochureUrl": "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Comet%20EV%20-%20Brochure.pdf",
+        "keywords": [
+          "comet",
+          "comet ev",
+          "cometev"
+        ]
+      }
+    },
+    {
+      "vehicle": "Hyundai Ioniq 5",
+      "familySlug": "hyundai-ioniq-5",
+      "variants": 2,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 95,
+      "score": 79,
+      "grade": "B+",
+      "scorePresent": true,
+      "recommendation": "REVIEW_REQUIRED",
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.hyundai.com/in/en/find-a-car/ioniq-5/highlights",
+        "brochureUrl": null,
+        "keywords": [
+          "ioniq 5",
+          "ioniq5",
+          "ioniq-5"
+        ]
+      }
+    },
+    {
+      "vehicle": "Kia EV6",
+      "familySlug": "kia-ev6",
+      "variants": 2,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 96,
+      "score": 88,
+      "grade": "A",
+      "scorePresent": true,
+      "recommendation": "REVIEW_REQUIRED",
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.kia.com/in/our-vehicles/ev6/showroom.html",
+        "brochureUrl": null,
+        "keywords": [
+          "ev6",
+          "ev 6",
+          "kia ev6"
+        ]
+      }
+    },
+    {
+      "vehicle": "Mahindra XUV400",
+      "familySlug": "mahindra-xuv400",
+      "variants": 4,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 98,
+      "score": 51,
+      "grade": "C",
+      "scorePresent": true,
+      "recommendation": "REVIEW_REQUIRED",
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "missing_brochure"
+        ],
+        "oemUrl": "https://auto.mahindra.com/suv/xuv400/X400.html",
+        "brochureUrl": null,
+        "keywords": [
+          "xuv400",
+          "xuv 400"
+        ]
+      }
+    },
+    {
+      "vehicle": "BYD Seal",
+      "familySlug": "byd-seal",
+      "variants": 3,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 93,
+      "score": 70,
+      "grade": "B+",
+      "scorePresent": true,
+      "recommendation": "REVIEW_REQUIRED",
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.bydautoindia.com/bydseal",
+        "brochureUrl": null,
+        "keywords": [
+          "seal",
+          "byd seal"
+        ]
+      }
+    }
+  ],
+  "seoValidation": {
+    "variantSpecsChecked": 7,
+    "variantSpecsOk": 7,
+    "day1InPool": 5,
+    "variantRecommendationsPresent": true,
+    "seoMetadataGenerated": true,
+    "details": [
+      {
+        "specId": "variant-best-value-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136,
+        "rankedCount": 10
+      },
+      {
+        "specId": "variant-fastest-charging-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136,
+        "rankedCount": 10
+      },
+      {
+        "specId": "variant-longest-range-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136,
+        "rankedCount": 10
+      },
+      {
+        "specId": "variant-best-value-nexon",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      },
+      {
+        "specId": "variant-best-value-punch",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      },
+      {
+        "specId": "variant-fastest-charging-nexon",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      },
+      {
+        "specId": "variant-longest-range-punch",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      }
+    ]
+  },
+  "recommendation": "REVIEW_REQUIRED"
+}

@@ -1,0 +1,82 @@
+{
+  "seoPage": {
+    "slug": "brand-mahindra",
+    "category": "brand",
+    "title": "Mahindra Electric Cars in India — Models, Prices & Guides | EVSavari",
+    "metaDescription": "Explore Mahindra electric cars in India — model families, pricing bands, range, and buyer guides on EVSavari.",
+    "canonicalPath": "/brands/mahindra",
+    "canonicalUrl": "https://evsavari.com/brands/mahindra",
+    "intro": "Mahindra offers multiple electric model families in India. Use this hub to compare Mahindra EV line-ups, trims, and ownership fit before you shortlist a test drive. Rankings use EVSavari catalog intelligence — not paid placement.",
+    "recommendationLogic": {
+      "category": "brand",
+      "methodology": "Curated links to model families and EVSavari decision guides — rankings use catalog intelligence, not paid placement."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra Xuv400",
+        "explanation": "Explore Mahindra Xuv400 specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/mahindra-xuv400"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra Be 6",
+        "explanation": "Explore Mahindra Be 6 specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/mahindra-be-6"
+      },
+      {
+        "rank": 3,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra Xev 9e",
+        "explanation": "Explore Mahindra Xev 9e specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      }
+    ],
+    "tradeoffs": [
+      "Mahindra EV buyers should compare trims and real-world range for their commute before choosing a variant.",
+      "Service network density varies by city — verify local support when shortlisting."
+    ],
+    "faq": [
+      {
+        "question": "Which Mahindra EV should I compare first?",
+        "answer": "Start with the family that matches your budget and body style, then compare variants on EVSavari."
+      },
+      {
+        "question": "Where can I compare Mahindra EV variants?",
+        "answer": "Open any family page on EVSavari to switch trims or use the compare tool for side-by-side specs."
+      }
+    ],
+    "keywords": [
+      "Mahindra electric car India",
+      "Mahindra EV",
+      "EVSavari",
+      "electric car comparison"
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Mahindra Xuv400",
+          "url": "https://evsavari.com/cars/mahindra-xuv400"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mahindra Be 6",
+          "url": "https://evsavari.com/cars/mahindra-be-6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mahindra Xev 9e",
+          "url": "https://evsavari.com/cars/mahindra-xev-9e"
+        }
+      ]
+    }
+  }
+}

@@ -52,9 +52,14 @@ if (!existsSync(robotsPath)) {
   if (robots.includes("Allow: /*?variant=")) ok("robots.txt explicitly allows ?variant=");
   else warn("robots.txt missing Allow: /*?variant= rule");
 
-  for (const block of ["/admin", "/dealer", "/seo-data/"]) {
+  for (const block of ["/admin", "/crm", "/agent", "/dealer", "/seo-data/"]) {
     if (robots.includes(`Disallow: ${block}`)) ok(`robots.txt blocks ${block}`);
     else warn(`robots.txt may not block ${block}`);
+  }
+
+  for (const allow of ["/cars", "/compare", "/guides", "/brands"]) {
+    if (robots.includes(`Allow: ${allow}`)) ok(`robots.txt allows ${allow}`);
+    else warn(`robots.txt missing explicit Allow: ${allow}`);
   }
 }
 

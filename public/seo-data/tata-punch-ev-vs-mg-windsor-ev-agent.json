@@ -1,0 +1,185 @@
+{
+  "seoPage": {
+    "slug": "tata-punch-ev-vs-mg-windsor-ev-agent",
+    "pageTypeId": "head_to_head",
+    "category": "compare",
+    "intro": "Tata Punch EV vs MG Windsor EV — side-by-side comparison using EVSavari Score Engine signals. We do not declare a universal winner; review deterministic scores and tradeoffs.",
+    "recommendationLogic": {
+      "pageTypeId": "head_to_head",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "compare",
+      "compareSlugs": [
+        "tata-punch-ev",
+        "mg-windsor-ev"
+      ]
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "exShowroom": 969000,
+        "claimedRangeKm": 468,
+        "compositeScore": 56,
+        "confidence": "medium",
+        "explanation": "Tata Punch EV — overall score 56/100. Range 468 km, from ₹9.69 L.",
+        "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time.",
+        "detailPath": "/cars/tata-punch-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-windsor-ev",
+        "displayName": "MG Windsor EV",
+        "exShowroom": 999000,
+        "claimedRangeKm": 331,
+        "compositeScore": 52,
+        "confidence": "limited",
+        "explanation": "MG Windsor EV — overall score 52/100. Range 331 km, from ₹9.99 L.",
+        "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability.",
+        "detailPath": "/cars/mg-windsor-ev"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "tata-punch-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time."
+        },
+        {
+          "slug": "mg-windsor-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability."
+        }
+      ]
+    },
+    "title": "Tata Punch EV vs MG Windsor EV | EVSavari",
+    "metaDescription": "Compare Tata Punch EV and MG Windsor EV on EVSavari — deterministic range, charging, and value signals. No paid placement.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "tata punch ev vs mg windsor ev",
+      "tata-punch-ev",
+      "mg-windsor-ev",
+      "Tata Punch EV",
+      "MG Windsor EV"
+    ],
+    "canonicalPath": "/compare/tata-punch-ev-vs-mg-windsor-ev-agent",
+    "canonicalUrl": "https://evsavari.com/compare/tata-punch-ev-vs-mg-windsor-ev-agent",
+    "generatedAt": "2026-06-10T06:29:07.736Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "tata-punch-ev-vs-mg-windsor-ev-agent",
+      "description": "Compare Tata Punch EV and MG Windsor EV on EVSavari — deterministic range, charging, and value signals. No paid placement.",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tata Punch EV",
+          "url": "https://evsavari.com/cars/tata-punch-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "MG Windsor EV",
+          "url": "https://evsavari.com/cars/mg-windsor-ev"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Which is better — Tata Punch EV or MG Windsor EV?",
+        "answer": "Neither is a universal winner. Compare range, charging, value scores, and variant pricing for your commute and parking setup."
+      },
+      {
+        "question": "Why is Tata Punch EV ranked first?",
+        "answer": "Tata Punch EV — overall score 56/100. Range 468 km, from ₹9.69 L."
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Contrasts compact Tata packaging vs MG Windsor space and features",
+        "Useful for buyers debating micro-SUV vs mid-size EV value",
+        "Score-weighted comparison reduces spec-sheet noise"
+      ],
+      "cons": [
+        "Different size classes — boot and rear seat comfort differ materially",
+        "MG and Tata service experiences vary regionally",
+        "Promotional pricing can shift value perception quickly"
+      ],
+      "whoShouldBuy": [
+        "Urban buyers choosing between compact and mid-size EVs",
+        "Families comparing Punch EV range vs Windsor cabin space",
+        "Buyers who want MG feature load vs Tata value pricing"
+      ],
+      "whoShouldAvoid": [
+        "Buyers with fixed parking length limits — measure before choosing Windsor",
+        "Those needing maximum ground clearance for rural roads",
+        "Shoppers who only need a two-seater city runabout"
+      ],
+      "bestAlternative": {
+        "label": "Punch EV vs Nexon EV",
+        "href": "/compare/tata-punch-ev-vs-tata-nexon-ev",
+        "reason": "Staying within Tata? Compare Punch against Nexon EV for a same-brand size and range trade-off."
+      },
+      "relatedLinks": [
+        {
+          "label": "Best city EVs",
+          "href": "/best-evs/city-agent"
+        },
+        {
+          "label": "MG brand hub",
+          "href": "/brands/mg"
+        },
+        {
+          "label": "Insurance & TCO",
+          "href": "/ownership-guides/insurance-tco"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Best city EVs",
+            "href": "/best-evs/city-agent"
+          },
+          {
+            "label": "MG brand hub",
+            "href": "/brands/mg"
+          },
+          {
+            "label": "Insurance & TCO",
+            "href": "/ownership-guides/insurance-tco"
+          }
+        ]
+      }
+    ]
+  }
+}

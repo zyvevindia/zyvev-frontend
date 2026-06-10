@@ -1,0 +1,56 @@
+{
+  "seoPage": {
+    "slug": "brand-volvo",
+    "category": "brand",
+    "title": "Volvo Electric Cars in India — Models, Prices & Guides | EVSavari",
+    "metaDescription": "Explore Volvo electric cars in India — model families, pricing bands, range, and buyer guides on EVSavari.",
+    "canonicalPath": "/brands/volvo",
+    "canonicalUrl": "https://evsavari.com/brands/volvo",
+    "intro": "Volvo offers multiple electric model families in India. Use this hub to compare Volvo EV line-ups, trims, and ownership fit before you shortlist a test drive. Rankings use EVSavari catalog intelligence — not paid placement.",
+    "recommendationLogic": {
+      "category": "brand",
+      "methodology": "Curated links to model families and EVSavari decision guides — rankings use catalog intelligence, not paid placement."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo Ex40",
+        "explanation": "Explore Volvo Ex40 specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/volvo-ex40"
+      }
+    ],
+    "tradeoffs": [
+      "Volvo EV buyers should compare trims and real-world range for their commute before choosing a variant.",
+      "Service network density varies by city — verify local support when shortlisting."
+    ],
+    "faq": [
+      {
+        "question": "Which Volvo EV should I compare first?",
+        "answer": "Start with the family that matches your budget and body style, then compare variants on EVSavari."
+      },
+      {
+        "question": "Where can I compare Volvo EV variants?",
+        "answer": "Open any family page on EVSavari to switch trims or use the compare tool for side-by-side specs."
+      }
+    ],
+    "keywords": [
+      "Volvo electric car India",
+      "Volvo EV",
+      "EVSavari",
+      "electric car comparison"
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Volvo Ex40",
+          "url": "https://evsavari.com/cars/volvo-ex40"
+        }
+      ]
+    }
+  }
+}

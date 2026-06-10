@@ -1,0 +1,88 @@
+{
+  "id": "tata-tigor-ev",
+  "displayName": "Tata Tigor EV",
+  "familySlug": "tata-tigor-ev",
+  "vehicle": {
+    "brand": "Tata",
+    "model": "Tigor EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-tigor-ev"
+  },
+  "fields": {
+    "brand": "Tata",
+    "model": "Tigor EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-tigor-ev",
+    "startingPrice": 1249000,
+    "topVariantPrice": 1399000,
+    "exShowroomPrice": 1249000,
+    "batteryCapacityKwh": 26,
+    "claimedRangeKm": 315,
+    "rangeTestStandard": "MIDC",
+    "acChargingKw": 3.3,
+    "dcChargingKw": 18,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": 59,
+    "airbags": 2,
+    "adas": "true",
+    "powerPs": "75",
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "XE",
+      "priceInr": 1249000,
+      "batteryKwh": 26,
+      "rangeKm": 315,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 25
+    },
+    {
+      "variantName": "XM",
+      "priceInr": 1299000,
+      "batteryKwh": 26,
+      "rangeKm": 315,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 25
+    },
+    {
+      "variantName": "XZ+",
+      "priceInr": 1364000,
+      "batteryKwh": 26,
+      "rangeKm": 315,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 25
+    },
+    {
+      "variantName": "XT",
+      "priceInr": 1399000,
+      "batteryKwh": 26,
+      "rangeKm": 315,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 25
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://ev.tatamotors.com/tigor/ev.html",
+    "https://www.cardekho.com/tata/tigor-ev"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day3",
+    "pipelineConfidence": 93,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.198Z"
+  }
+}

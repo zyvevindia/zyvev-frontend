@@ -1,0 +1,287 @@
+{
+  "seoPage": {
+    "slug": "best-evs-under-15-lakh-agent",
+    "pageTypeId": "budget_under_15",
+    "category": "usage",
+    "intro": "Best EVs under ₹15 lakh in India — 7 EVs ranked by deterministic EVSavari Best Budget EV scores from verified catalog data.",
+    "recommendationLogic": {
+      "pageTypeId": "budget_under_15",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "usage",
+      "primaryScoreKey": "budget",
+      "categoryId": "budget"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "exShowroom": 799000,
+        "claimedRangeKm": 293,
+        "compositeScore": 83,
+        "confidence": "high",
+        "explanation": "Tata Tiago EV — Best Budget EV score 83/100. Best Budget EV: 83/100 (Strong capability at the lowest entry price.)",
+        "tradeoff": "Strength from score data: budget leads this EV at 83/100. Tradeoff to weigh: Range score uses 315 km claimed range and 13.1 km/kWh efficiency.",
+        "detailPath": "/cars/tata-tiago-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "exShowroom": 969000,
+        "claimedRangeKm": 468,
+        "compositeScore": 80,
+        "confidence": "high",
+        "explanation": "Tata Punch EV — Best Budget EV score 80/100. Best Budget EV: 80/100 (Strong capability at the lowest entry price.)",
+        "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time.",
+        "detailPath": "/cars/tata-punch-ev"
+      },
+      {
+        "rank": 3,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "exShowroom": 749000,
+        "claimedRangeKm": 230,
+        "compositeScore": 79,
+        "confidence": "high",
+        "explanation": "MG Comet EV — Best Budget EV score 79/100. Best Budget EV: 79/100 (Strong capability at the lowest entry price.)",
+        "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, 360° camera, Connected car. Tradeoff to weigh: Range score uses 230 km claimed range and 13.5 km/kWh efficiency.",
+        "detailPath": "/cars/mg-comet-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "mg-windsor-ev",
+        "displayName": "MG Windsor EV",
+        "exShowroom": 999000,
+        "claimedRangeKm": 331,
+        "compositeScore": 78,
+        "confidence": "high",
+        "explanation": "MG Windsor EV — Best Budget EV score 78/100. Best Budget EV: 78/100 (Strong capability at the lowest entry price.)",
+        "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability.",
+        "detailPath": "/cars/mg-windsor-ev"
+      },
+      {
+        "rank": 5,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "exShowroom": 1249000,
+        "claimedRangeKm": 489,
+        "compositeScore": 75,
+        "confidence": "high",
+        "explanation": "Tata Nexon EV — Best Budget EV score 75/100. Best Budget EV: 75/100 (Strong capability at the lowest entry price.)",
+        "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time.",
+        "detailPath": "/cars/tata-nexon-ev"
+      },
+      {
+        "rank": 6,
+        "slug": "tata-tigor-ev",
+        "displayName": "Tata Tigor EV",
+        "exShowroom": 1249000,
+        "claimedRangeKm": 315,
+        "compositeScore": 75,
+        "confidence": "high",
+        "explanation": "Tata Tigor EV — Best Budget EV score 75/100. Best Budget EV: 75/100 (Strong capability at the lowest entry price.)",
+        "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Range score uses 315 km claimed range and 12.1 km/kWh efficiency.",
+        "detailPath": "/cars/tata-tigor-ev"
+      },
+      {
+        "rank": 7,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen eC3",
+        "exShowroom": 1269000,
+        "claimedRangeKm": 320,
+        "compositeScore": 71,
+        "confidence": "medium",
+        "explanation": "Citroen eC3 — Best Budget EV score 71/100. Best Budget EV: 71/100 (Strong capability at the lowest entry price.)",
+        "tradeoff": "Strength from score data: budget leads this EV at 71/100. Tradeoff to weigh: Range score uses 320 km claimed range and 11.0 km/kWh efficiency.",
+        "detailPath": "/cars/citroen-ec3"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "tata-tiago-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 83/100. Tradeoff to weigh: Range score uses 315 km claimed range and 13.1 km/kWh efficiency."
+        },
+        {
+          "slug": "tata-punch-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time."
+        },
+        {
+          "slug": "mg-comet-ev",
+          "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, 360° camera, Connected car. Tradeoff to weigh: Range score uses 230 km claimed range and 13.5 km/kWh efficiency."
+        },
+        {
+          "slug": "mg-windsor-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability."
+        },
+        {
+          "slug": "tata-nexon-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time."
+        },
+        {
+          "slug": "tata-tigor-ev",
+          "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Range score uses 315 km claimed range and 12.1 km/kWh efficiency."
+        }
+      ]
+    },
+    "title": "Best EVs under ₹15 lakh in India | EVSavari",
+    "metaDescription": "7 EVs well suited for this use case — led by Tata Tiago EV. Deterministic scores from EVSavari catalog intelligence.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "best evs under 15 lakh",
+      "best budget ev",
+      "Tata Tiago EV",
+      "Tata Punch EV",
+      "MG Comet EV",
+      "MG Windsor EV",
+      "Tata Nexon EV"
+    ],
+    "canonicalPath": "/best-evs/under-15-lakh-agent",
+    "canonicalUrl": "https://evsavari.com/best-evs/under-15-lakh-agent",
+    "generatedAt": "2026-06-10T06:29:07.715Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "best-evs-under-15-lakh-agent",
+      "description": "7 EVs well suited for this use case — led by Tata Tiago EV. Deterministic scores from EVSavari catalog intelligence.",
+      "numberOfItems": 7,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tata Tiago EV",
+          "url": "https://evsavari.com/cars/tata-tiago-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tata Punch EV",
+          "url": "https://evsavari.com/cars/tata-punch-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "MG Comet EV",
+          "url": "https://evsavari.com/cars/mg-comet-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "MG Windsor EV",
+          "url": "https://evsavari.com/cars/mg-windsor-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Tata Nexon EV",
+          "url": "https://evsavari.com/cars/tata-nexon-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Tata Tigor EV",
+          "url": "https://evsavari.com/cars/tata-tigor-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Citroen eC3",
+          "url": "https://evsavari.com/cars/citroen-ec3"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Why is Tata Tiago EV ranked first?",
+        "answer": "Tata Tiago EV — Best Budget EV score 83/100. Best Budget EV: 83/100 (Strong capability at the lowest entry price.)"
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Strong value EVs with verified ex-showroom prices under ₹15 lakh",
+        "Tiago EV and Punch EV offer usable range for daily Indian commutes",
+        "Lower running cost vs petrol hatchbacks at this price band"
+      ],
+      "cons": [
+        "Fast-charging infrastructure still uneven outside metro corridors",
+        "Entry trims may lack ADAS or long-range battery options",
+        "Resale data for mass-market EVs is still maturing"
+      ],
+      "whoShouldBuy": [
+        "First-time EV buyers upgrading from a petrol hatchback",
+        "City commuters with predictable daily driving under 60 km",
+        "Buyers prioritising low EMI and running cost over premium features"
+      ],
+      "whoShouldAvoid": [
+        "Frequent highway travellers needing 400+ km per day",
+        "Buyers who need three-row seating or heavy towing",
+        "Apartment owners with no society charging approval yet"
+      ],
+      "bestAlternative": {
+        "label": "Best budget EVs (broader list)",
+        "href": "/best-evs/budget-agent",
+        "reason": "If your budget is flexible up to ₹12 lakh, the dedicated budget guide compares more entry-level options side by side."
+      },
+      "relatedLinks": [
+        {
+          "label": "Best city EVs",
+          "href": "/best-evs/city-agent"
+        },
+        {
+          "label": "EV running cost guide",
+          "href": "/ownership-guides/running-cost"
+        },
+        {
+          "label": "Home charger install",
+          "href": "/ownership-guides/home-charger-install"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Best city EVs",
+            "href": "/best-evs/city-agent"
+          },
+          {
+            "label": "EV running cost guide",
+            "href": "/ownership-guides/running-cost"
+          },
+          {
+            "label": "Home charger install",
+            "href": "/ownership-guides/home-charger-install"
+          }
+        ]
+      }
+    ]
+  }
+}

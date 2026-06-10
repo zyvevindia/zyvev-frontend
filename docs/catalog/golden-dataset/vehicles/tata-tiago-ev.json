@@ -1,0 +1,88 @@
+{
+  "id": "tata-tiago-ev",
+  "displayName": "Tata Tiago EV",
+  "familySlug": "tata-tiago-ev",
+  "vehicle": {
+    "brand": "Tata",
+    "model": "Tiago EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-tiago-ev"
+  },
+  "fields": {
+    "brand": "Tata",
+    "model": "Tiago EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-tiago-ev",
+    "startingPrice": 799000,
+    "topVariantPrice": 1199000,
+    "exShowroomPrice": 799000,
+    "batteryCapacityKwh": 24,
+    "claimedRangeKm": 293,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 7.2,
+    "dcChargingKw": 30,
+    "acChargingTimeHours": "3.6",
+    "dcChargingTimeMinutes": 35,
+    "airbags": 6,
+    "adas": null,
+    "powerPs": null,
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false,
+    "adas": false
+  },
+  "variants": [
+    {
+      "variantName": "XE",
+      "priceInr": 799000,
+      "batteryKwh": 19.2,
+      "rangeKm": 250,
+      "acChargingKw": 3.3,
+      "dcChargingKw": null
+    },
+    {
+      "variantName": "XT",
+      "priceInr": 949000,
+      "batteryKwh": 24,
+      "rangeKm": 315,
+      "acChargingKw": 3.3,
+      "dcChargingKw": null
+    },
+    {
+      "variantName": "XZ+",
+      "priceInr": 1049000,
+      "batteryKwh": 24,
+      "rangeKm": 315,
+      "acChargingKw": 3.3,
+      "dcChargingKw": null
+    },
+    {
+      "variantName": "XZ+ Tech Lux",
+      "priceInr": 1199000,
+      "batteryKwh": 24,
+      "rangeKm": 315,
+      "acChargingKw": 3.3,
+      "dcChargingKw": null
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://ev.tatamotors.com/tiago/ev.html",
+    "https://www.cardekho.com/tata/tiago-ev"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day3",
+    "pipelineConfidence": 94,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.200Z"
+  }
+}

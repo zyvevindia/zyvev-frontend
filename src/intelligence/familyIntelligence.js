@@ -2,6 +2,7 @@ import { buildVehicleIntelligence } from "./buildVehicleIntelligence.js";
 import { buildEvsavariScores } from "./scoringEngine.js";
 import { scoreVehicle, toLegacyEvScores } from "../scoring/index.js";
 import { parseKwhFromText } from "./governance.js";
+import { classifyFamilyBodyType } from "./bodyTypeCatalog.js";
 import {
   classifyRangeCategory,
   classifyBatteryCapacity,
@@ -69,6 +70,7 @@ export function enrichFamilyWithIntelligence(family) {
   );
 
   const taxonomyTags = {
+    bodyType: classifyFamilyBodyType(family),
     rangeCategory: classifyRangeCategory(
       evIntelligence?.range?.claimedRangeKm ?? vehicle.specifications?.range
     ),

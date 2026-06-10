@@ -1,0 +1,71 @@
+{
+  "id": "mercedes-eqb",
+  "displayName": "Mercedes-Benz EQB",
+  "familySlug": "mercedes-eqb",
+  "vehicle": {
+    "brand": "Mercedes-Benz",
+    "model": "EQB",
+    "bodyType": "SUV",
+    "familySlug": "mercedes-eqb"
+  },
+  "fields": {
+    "brand": "Mercedes-Benz",
+    "model": "EQB",
+    "bodyType": "SUV",
+    "familySlug": "mercedes-eqb",
+    "startingPrice": 7375000,
+    "topVariantPrice": 7775000,
+    "exShowroomPrice": 7375000,
+    "batteryCapacityKwh": 68,
+    "claimedRangeKm": 447,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 11,
+    "dcChargingKw": 100,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": null,
+    "airbags": null,
+    "adas": null,
+    "powerPs": null,
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": false,
+    "ventilatedSeats": false,
+    "camera360": true,
+    "connectedCar": false,
+    "v2l": false,
+    "v2v": false,
+    "adas": false
+  },
+  "variants": [
+    {
+      "variantName": "EQB 250",
+      "priceInr": 7375000,
+      "batteryKwh": 66.5,
+      "rangeKm": 534,
+      "acChargingKw": 11,
+      "dcChargingKw": 100
+    },
+    {
+      "variantName": "EQB 350 4MATIC",
+      "priceInr": 7775000,
+      "batteryKwh": 66.5,
+      "rangeKm": 534,
+      "acChargingKw": 11,
+      "dcChargingKw": 100
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqb.html",
+    "https://www.cardekho.com/mercedes-benz/eqb"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day2",
+    "pipelineConfidence": 93,
+    "manualCorrections": [
+      "variant_table_manual"
+    ]
+  }
+}

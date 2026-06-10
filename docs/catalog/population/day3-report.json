@@ -1,0 +1,341 @@
+{
+  "generatedAt": "2026-06-10T04:55:21.910Z",
+  "batch": "day3",
+  "vehicles": [
+    "citroen-ec3",
+    "mg-zs-ev",
+    "maruti-e-vitara",
+    "hyundai-kona-electric",
+    "tata-tigor-ev",
+    "tata-tiago-ev"
+  ],
+  "planned": [
+    "tata-altroz-ev"
+  ],
+  "qaRefresh": [
+    "bmw-ix1"
+  ],
+  "catalogCount": 24,
+  "results": [
+    {
+      "vehicle": "Citroen eC3",
+      "familySlug": "citroen-ec3",
+      "variants": 4,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 95,
+      "score": 35,
+      "grade": "C",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.citroen.in/models/new-e-c3.html",
+        "brochureUrl": null,
+        "keywords": [
+          "ec3",
+          "e-c3",
+          "ë-c3",
+          "citroen ec3"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/citroen/ec3"
+        ],
+        "status": "verified"
+      },
+      "kind": "acquisition"
+    },
+    {
+      "vehicle": "MG ZS EV",
+      "familySlug": "mg-zs-ev",
+      "variants": 3,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 97,
+      "score": 65,
+      "grade": "B",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [],
+        "oemUrl": "https://www.mgmotor.co.in/vehicles/mgzsev-electric-car-in-india",
+        "brochureUrl": "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20ZSEV%20-%20Brochure.pdf",
+        "keywords": [
+          "zs ev",
+          "zsev",
+          "mg zs"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/mg/zs-ev"
+        ],
+        "status": "verified"
+      },
+      "kind": "acquisition"
+    },
+    {
+      "vehicle": "Maruti Suzuki e Vitara",
+      "familySlug": "maruti-e-vitara",
+      "variants": 3,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 96,
+      "score": 74,
+      "grade": "B+",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.nexaexperience.com/e-vitara",
+        "brochureUrl": null,
+        "keywords": [
+          "e vitara",
+          "evitara",
+          "vitara"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/maruti/e-vitara"
+        ],
+        "status": "verified"
+      },
+      "kind": "acquisition"
+    },
+    {
+      "vehicle": "Hyundai Kona Electric",
+      "familySlug": "hyundai-kona-electric",
+      "variants": 1,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "reference_only_acquisition",
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 97,
+      "score": 55,
+      "grade": "C",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "missing_brochure",
+          "redirecting_oem_url",
+          "deprecated_model"
+        ],
+        "oemUrl": "https://www.hyundai.com/in/en/find-a-car/kona-electric/highlights",
+        "brochureUrl": null,
+        "keywords": [
+          "kona",
+          "kona electric",
+          "konaelectric"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/hyundai/kona-electric"
+        ],
+        "status": "deprecated"
+      },
+      "kind": "acquisition"
+    },
+    {
+      "vehicle": "Tata Tigor EV",
+      "familySlug": "tata-tigor-ev",
+      "variants": 4,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 93,
+      "score": 46,
+      "grade": "C",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "missing_brochure"
+        ],
+        "oemUrl": "https://ev.tatamotors.com/tigor/ev.html",
+        "brochureUrl": null,
+        "keywords": [
+          "tigor",
+          "tigor ev",
+          "tigorev"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/tata/tigor-ev"
+        ],
+        "status": "verified"
+      },
+      "kind": "acquisition"
+    },
+    {
+      "vehicle": "Tata Tiago EV",
+      "familySlug": "tata-tiago-ev",
+      "variants": 4,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 94,
+      "score": 58,
+      "grade": "C",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "missing_brochure"
+        ],
+        "oemUrl": "https://ev.tatamotors.com/tiago/ev.html",
+        "brochureUrl": null,
+        "keywords": [
+          "tiago",
+          "tiago ev",
+          "tiagoev"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/tata/tiago-ev"
+        ],
+        "status": "verified"
+      },
+      "kind": "acquisition"
+    },
+    {
+      "vehicle": "Tata Altroz Ev",
+      "familySlug": "tata-altroz-ev",
+      "variants": 0,
+      "status": "NOT_IN_REGISTRY",
+      "manualCorrections": [],
+      "publishSuccess": false,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": null,
+      "score": null,
+      "grade": null,
+      "scorePresent": false,
+      "registryCheck": {
+        "ok": false,
+        "issues": [
+          "not_in_registry"
+        ],
+        "keywords": [],
+        "referenceUrls": []
+      },
+      "kind": "planned",
+      "note": "Not in source registry — skip until launch and registry entry added."
+    },
+    {
+      "vehicle": "BMW iX1",
+      "familySlug": "bmw-ix1",
+      "variants": 2,
+      "status": "PUBLISHED",
+      "manualCorrections": [
+        "variant_table_manual",
+        "qa_variant_refresh"
+      ],
+      "publishSuccess": true,
+      "missingFields": [],
+      "gateFailures": [],
+      "confidence": 93,
+      "score": 76,
+      "grade": "B+",
+      "scorePresent": true,
+      "registryCheck": {
+        "ok": true,
+        "issues": [
+          "unreachable_oem_url",
+          "missing_brochure"
+        ],
+        "oemUrl": "https://www.bmw.in/en/all-models/bmw-i/iX1/2025/bmw-ix1-highlights.html",
+        "brochureUrl": null,
+        "keywords": [
+          "ix1",
+          "bmw ix1",
+          "ix1 lwb"
+        ],
+        "referenceUrls": [
+          "https://www.cardekho.com/bmw/ix1"
+        ],
+        "status": "needs_verification"
+      },
+      "kind": "qa",
+      "note": "Variant count 1 → 2"
+    }
+  ],
+  "seoValidation": {
+    "variantSpecsChecked": 7,
+    "variantSpecsOk": 7,
+    "batchInPool": 6,
+    "variantRecommendationsPresent": false,
+    "seoMetadataGenerated": true,
+    "compareCoverage": "6/6",
+    "details": [
+      {
+        "specId": "variant-best-value-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136,
+        "rankedCount": 10
+      },
+      {
+        "specId": "variant-fastest-charging-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136,
+        "rankedCount": 10
+      },
+      {
+        "specId": "variant-longest-range-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136,
+        "rankedCount": 10
+      },
+      {
+        "specId": "variant-best-value-nexon",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      },
+      {
+        "specId": "variant-best-value-punch",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      },
+      {
+        "specId": "variant-fastest-charging-nexon",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      },
+      {
+        "specId": "variant-longest-range-punch",
+        "ok": true,
+        "metaDescriptionLen": 135,
+        "rankedCount": 1
+      }
+    ]
+  },
+  "recommendation": "REVIEW_REQUIRED"
+}

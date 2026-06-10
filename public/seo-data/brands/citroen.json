@@ -1,0 +1,56 @@
+{
+  "seoPage": {
+    "slug": "brand-citroen",
+    "category": "brand",
+    "title": "Citroen Electric Cars in India — Models, Prices & Guides | EVSavari",
+    "metaDescription": "Explore Citroen electric cars in India — model families, pricing bands, range, and buyer guides on EVSavari.",
+    "canonicalPath": "/brands/citroen",
+    "canonicalUrl": "https://evsavari.com/brands/citroen",
+    "intro": "Citroen offers multiple electric model families in India. Use this hub to compare Citroen EV line-ups, trims, and ownership fit before you shortlist a test drive. Rankings use EVSavari catalog intelligence — not paid placement.",
+    "recommendationLogic": {
+      "category": "brand",
+      "methodology": "Curated links to model families and EVSavari decision guides — rankings use catalog intelligence, not paid placement."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "citroen-ec3",
+        "displayName": "Citroen Ec3",
+        "explanation": "Explore Citroen Ec3 specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/citroen-ec3"
+      }
+    ],
+    "tradeoffs": [
+      "Citroen EV buyers should compare trims and real-world range for their commute before choosing a variant.",
+      "Service network density varies by city — verify local support when shortlisting."
+    ],
+    "faq": [
+      {
+        "question": "Which Citroen EV should I compare first?",
+        "answer": "Start with the family that matches your budget and body style, then compare variants on EVSavari."
+      },
+      {
+        "question": "Where can I compare Citroen EV variants?",
+        "answer": "Open any family page on EVSavari to switch trims or use the compare tool for side-by-side specs."
+      }
+    ],
+    "keywords": [
+      "Citroen electric car India",
+      "Citroen EV",
+      "EVSavari",
+      "electric car comparison"
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Citroen Ec3",
+          "url": "https://evsavari.com/cars/citroen-ec3"
+        }
+      ]
+    }
+  }
+}

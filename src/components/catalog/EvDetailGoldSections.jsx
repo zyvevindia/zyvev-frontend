@@ -13,6 +13,8 @@ import OwnershipRealityPanel from "./OwnershipRealityPanel";
 
 import TrustConfidenceBlock from "./TrustConfidenceBlock";
 
+import CompareRivalActions from "./CompareRivalActions";
+
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
@@ -504,41 +506,12 @@ export default function EvDetailGoldSections({
             <p style={{ ...(bodyStyle || body), marginBottom: "16px" }}>
               See how this EV stacks up against similar models on EVSavari.
             </p>
-            <div style={tagRow}>
-              {meta.compareRivals.slice(0, 4).map((rivalSlug) => (
-                <Link
-                  key={rivalSlug}
-                  to={vehicleDetailPath(rivalSlug)}
-                  style={{ ...tag, textDecoration: "none" }}
-                >
-                  {rivalSlug.replace(/-/g, " ")}
-                </Link>
-              ))}
-            </div>
-            <button
-              type="button"
-              style={{
-                marginTop: "16px",
-                padding: "12px 20px",
-                borderRadius: "12px",
-                border: "none",
-                background:
-                  "linear-gradient(135deg,#2563eb,#1d4ed8)",
-                color: "white",
-                fontWeight: "700",
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                trackBuyerEvent(BUYER_EVENTS.COMPARE_STARTED, {
-                  vehicleSlugs: meta.compareRivals?.slice(0, 4) || [],
-                  sourcePage: window.location.pathname,
-                  sessionIntent: "detail_compare_rivals",
-                });
-                window.location.href = "/compare";
-              }}
-            >
-              Open compare tool
-            </button>
+            <CompareRivalActions
+              car={car}
+              rivalSlugs={meta.compareRivals.slice(0, 5)}
+              maxRivals={5}
+              sourcePage={slug ? `/cars/${slug}` : window.location.pathname}
+            />
           </GoldSection>
         )}
 

@@ -1,0 +1,72 @@
+{
+  "id": "mini-cooper-se",
+  "displayName": "MINI Cooper SE",
+  "familySlug": "mini-cooper-se",
+  "vehicle": {
+    "brand": "MINI",
+    "model": "Cooper SE",
+    "bodyType": "SUV",
+    "familySlug": "mini-cooper-se"
+  },
+  "fields": {
+    "brand": "MINI",
+    "model": "Cooper SE",
+    "bodyType": "SUV",
+    "familySlug": "mini-cooper-se",
+    "startingPrice": 5390000,
+    "topVariantPrice": 5790000,
+    "exShowroomPrice": 5350000,
+    "batteryCapacityKwh": 54,
+    "claimedRangeKm": 230,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 11,
+    "dcChargingKw": 50,
+    "acChargingTimeHours": "0.6",
+    "dcChargingTimeMinutes": null,
+    "airbags": null,
+    "adas": null,
+    "powerPs": "181",
+    "torqueNm": "199"
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": false,
+    "camera360": true,
+    "connectedCar": false,
+    "v2l": false,
+    "v2v": false,
+    "adas": false
+  },
+  "variants": [
+    {
+      "variantName": "Classic",
+      "priceInr": 5390000,
+      "batteryKwh": 54.2,
+      "rangeKm": 402,
+      "acChargingKw": 11,
+      "dcChargingKw": 50
+    },
+    {
+      "variantName": "Signature",
+      "priceInr": 5790000,
+      "batteryKwh": 54.2,
+      "rangeKm": 402,
+      "acChargingKw": 11,
+      "dcChargingKw": 50
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.mini.in/en_IN/home/range/mini-cooper-se-electric.html",
+    "https://www.cardekho.com/mini/cooper-se"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day2",
+    "pipelineConfidence": 92,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.188Z"
+  }
+}

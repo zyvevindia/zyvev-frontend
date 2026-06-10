@@ -1,0 +1,81 @@
+{
+  "id": "mg-comet-ev",
+  "displayName": "MG Comet EV",
+  "familySlug": "mg-comet-ev",
+  "vehicle": {
+    "brand": "MG",
+    "model": "Comet EV",
+    "bodyType": "SUV",
+    "familySlug": "mg-comet-ev"
+  },
+  "fields": {
+    "brand": "MG",
+    "model": "Comet EV",
+    "bodyType": "SUV",
+    "familySlug": "mg-comet-ev",
+    "startingPrice": 749000,
+    "topVariantPrice": 949000,
+    "exShowroomPrice": 750000,
+    "batteryCapacityKwh": 17,
+    "claimedRangeKm": 230,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 7.4,
+    "dcChargingKw": 50,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": null,
+    "airbags": 2,
+    "adas": "true",
+    "powerPs": null,
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": false,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "Pace",
+      "priceInr": 749000,
+      "batteryKwh": 17.3,
+      "rangeKm": 230,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 50
+    },
+    {
+      "variantName": "Play",
+      "priceInr": 849000,
+      "batteryKwh": 17.3,
+      "rangeKm": 230,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 50
+    },
+    {
+      "variantName": "Plush",
+      "priceInr": 949000,
+      "batteryKwh": 17.3,
+      "rangeKm": 230,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 50
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.mgmotor.co.in/vehicles/comet-ev-electric-car-in-india",
+    "https://www.cardekho.com/mg/comet-ev",
+    "OEM brochure PDF"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day1",
+    "pipelineConfidence": 95,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.175Z"
+  }
+}

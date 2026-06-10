@@ -1,0 +1,72 @@
+{
+  "id": "kia-ev6",
+  "displayName": "Kia EV6",
+  "familySlug": "kia-ev6",
+  "vehicle": {
+    "brand": "Kia",
+    "model": "EV6",
+    "bodyType": "SUV",
+    "familySlug": "kia-ev6"
+  },
+  "fields": {
+    "brand": "Kia",
+    "model": "EV6",
+    "bodyType": "SUV",
+    "familySlug": "kia-ev6",
+    "startingPrice": 6590000,
+    "topVariantPrice": 7590000,
+    "exShowroomPrice": 6597937,
+    "batteryCapacityKwh": 84,
+    "claimedRangeKm": 650,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 350,
+    "dcChargingKw": 350,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": 18,
+    "airbags": 8,
+    "adas": "true",
+    "powerPs": "321",
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": true,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "GT Line",
+      "priceInr": 6590000,
+      "batteryKwh": 77.4,
+      "rangeKm": 528,
+      "acChargingKw": 11,
+      "dcChargingKw": 240
+    },
+    {
+      "variantName": "GT Line AWD",
+      "priceInr": 7590000,
+      "batteryKwh": 77.4,
+      "rangeKm": 490,
+      "acChargingKw": 11,
+      "dcChargingKw": 240
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.kia.com/in/our-vehicles/ev6/showroom.html",
+    "https://www.cardekho.com/kia/ev6"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day1",
+    "pipelineConfidence": 96,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.180Z"
+  }
+}

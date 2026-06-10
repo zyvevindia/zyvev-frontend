@@ -1,6 +1,7 @@
 import {
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 
@@ -28,6 +29,13 @@ import {
 
 import HomeSection from "../components/HomeSection";
 
+import HomeCategoryTiles from "../components/home/HomeCategoryTiles";
+
+import {
+  CatalogBodyTypeSelect,
+  CatalogPriceSelect,
+} from "../components/discovery/CatalogFilterSelects";
+
 import CompactCarCard from "../components/CompactCarCard";
 
 import UpcomingCarCard from "../components/UpcomingCarCard";
@@ -35,6 +43,10 @@ import UpcomingCarCard from "../components/UpcomingCarCard";
 import JsonLd from "../components/SEO/JsonLd";
 
 import CarCardSkeleton from "../components/skeletons/CarCardSkeleton";
+
+import useDebouncedValue from "../hooks/useDebouncedValue";
+
+import "../styles/catalog-ux-wave-b.css";
 
 /* =========================================================
    ===================== GLOBAL DATA ========================
@@ -68,9 +80,22 @@ export default function Home() {
     useState({
       brand: "",
       priceRange: "",
+      bodyType: "",
       sortBy: "",
       search: "",
     });
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const debouncedSearch = useDebouncedValue(searchQuery, 400);
+  const lastFetchQueryRef = useRef("");
+
+  useEffect(() => {
+    setFilters((prev) =>
+      prev.search === debouncedSearch
+        ? prev
+        : { ...prev, search: debouncedSearch }
+    );
+  }, [debouncedSearch]);
 
   /* =========================================================
      =================== HOME SECTIONS DATA ==================
@@ -125,10 +150,17 @@ export default function Home() {
 
     const query =
       new URLSearchParams({
-        ...filters,
         page: 1,
         limit: 50,
+        ...(filters.brand ? { brand: filters.brand } : {}),
+        ...(filters.search ? { search: filters.search } : {}),
       }).toString();
+
+    if (query === lastFetchQueryRef.current) {
+      return;
+    }
+
+    lastFetchQueryRef.current = query;
 
     setLoading(true);
 
@@ -297,6 +329,8 @@ export default function Home() {
 
         </section>
 
+        <HomeCategoryTiles />
+
         {/* ================= FILTERS ================= */}
 
         <div style={filterSection}>
@@ -304,20 +338,17 @@ export default function Home() {
           <div style={filterWrapper}>
 
             <input
-              type="text"
+              type="search"
 
               placeholder="Search by EV or brand..."
 
-              value={filters.search}
+              value={searchQuery}
 
               onChange={(e) =>
-                setFilters({
-                  ...filters,
-
-                  search:
-                    e.target.value,
-                })
+                setSearchQuery(e.target.value)
               }
+
+              aria-label="Search electric vehicles"
 
               style={searchInput}
             />
@@ -355,40 +386,27 @@ export default function Home() {
 
             </select>
 
-            <select
-              value={
-                filters.priceRange
-              }
-
-              onChange={(e) =>
+            <CatalogPriceSelect
+              value={filters.priceRange}
+              onChange={(priceRange) =>
                 setFilters({
                   ...filters,
-
-                  priceRange:
-                    e.target.value,
+                  priceRange,
                 })
               }
-
               style={selectStyle}
-            >
+            />
 
-              <option value="">
-                All Prices
-              </option>
-
-              <option value="low">
-                Below ₹10L
-              </option>
-
-              <option value="mid">
-                ₹10L - ₹20L
-              </option>
-
-              <option value="high">
-                Above ₹20L
-              </option>
-
-            </select>
+            <CatalogBodyTypeSelect
+              value={filters.bodyType}
+              onChange={(bodyType) =>
+                setFilters({
+                  ...filters,
+                  bodyType,
+                })
+              }
+              style={selectStyle}
+            />
 
             <select
               value={filters.sortBy}

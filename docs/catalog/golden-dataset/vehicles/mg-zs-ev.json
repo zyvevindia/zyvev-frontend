@@ -1,0 +1,81 @@
+{
+  "id": "mg-zs-ev",
+  "displayName": "MG ZS EV",
+  "familySlug": "mg-zs-ev",
+  "vehicle": {
+    "brand": "MG",
+    "model": "ZS EV",
+    "bodyType": "SUV",
+    "familySlug": "mg-zs-ev"
+  },
+  "fields": {
+    "brand": "MG",
+    "model": "ZS EV",
+    "bodyType": "SUV",
+    "familySlug": "mg-zs-ev",
+    "startingPrice": 1848000,
+    "topVariantPrice": 2288000,
+    "exShowroomPrice": 1898000,
+    "batteryCapacityKwh": 50.3,
+    "claimedRangeKm": 461,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 7.4,
+    "dcChargingKw": 50,
+    "acChargingTimeHours": "9",
+    "dcChargingTimeMinutes": null,
+    "airbags": 6,
+    "adas": "true",
+    "powerPs": null,
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "Excite",
+      "priceInr": 1848000,
+      "batteryKwh": 44.5,
+      "rangeKm": 461,
+      "acChargingKw": 7.4,
+      "dcChargingKw": 50
+    },
+    {
+      "variantName": "Exclusive",
+      "priceInr": 2099000,
+      "batteryKwh": 44.5,
+      "rangeKm": 461,
+      "acChargingKw": 7.4,
+      "dcChargingKw": 50
+    },
+    {
+      "variantName": "Essence",
+      "priceInr": 2288000,
+      "batteryKwh": 50.3,
+      "rangeKm": 461,
+      "acChargingKw": 7.4,
+      "dcChargingKw": 50
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.mgmotor.co.in/vehicles/mgzsev-electric-car-in-india",
+    "https://www.cardekho.com/mg/zs-ev",
+    "OEM brochure PDF"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day3",
+    "pipelineConfidence": 97,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.193Z"
+  }
+}

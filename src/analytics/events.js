@@ -5,6 +5,13 @@
 
 export const ANALYTICS_EVENTS = Object.freeze({
   PAGE_VIEW: "page_view",
+  /** Growth Phase 3 canonical GA4 events */
+  VEHICLE_VIEW: "vehicle_view",
+  COMPARE_VIEW: "compare_view",
+  SEARCH_USED: "search_used",
+  FILTER_USED: "filter_used",
+  SCORE_PANEL_OPENED: "score_panel_opened",
+  VARIANT_RECOMMENDATION_CLICKED: "variant_recommendation_clicked",
   EV_VIEWED: "ev_viewed",
   COMPARE_STARTED: "compare_started",
   COMPARE_COMPLETED: "compare_completed",

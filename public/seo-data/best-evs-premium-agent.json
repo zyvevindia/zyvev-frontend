@@ -1,0 +1,305 @@
+{
+  "seoPage": {
+    "slug": "best-evs-premium-agent",
+    "pageTypeId": "premium",
+    "category": "usage",
+    "intro": "Best premium EVs in India — 8 EVs ranked by deterministic EVSavari Best Premium EV scores from verified catalog data.",
+    "recommendationLogic": {
+      "pageTypeId": "premium",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "usage",
+      "primaryScoreKey": "premium",
+      "categoryId": "premium"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "bmw-ix1",
+        "displayName": "BMW iX1",
+        "exShowroom": 6890000,
+        "claimedRangeKm": 531,
+        "compositeScore": 96,
+        "confidence": "high",
+        "explanation": "BMW iX1 — Best Premium EV score 96/100. Best Premium EV: 96/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability.",
+        "detailPath": "/cars/bmw-ix1"
+      },
+      {
+        "rank": 2,
+        "slug": "kia-ev6",
+        "displayName": "Kia EV6",
+        "exShowroom": 6590000,
+        "claimedRangeKm": 650,
+        "compositeScore": 93,
+        "confidence": "high",
+        "explanation": "Kia EV6 — Best Premium EV score 93/100. Best Premium EV: 93/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 3,
+        "slug": "hyundai-ioniq-5",
+        "displayName": "Hyundai Ioniq 5",
+        "exShowroom": 4495000,
+        "claimedRangeKm": 690,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Hyundai Ioniq 5 — Best Premium EV score 86/100. Best Premium EV: 86/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+        "detailPath": "/cars/hyundai-ioniq-5"
+      },
+      {
+        "rank": 4,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes-Benz EQA",
+        "exShowroom": 6775000,
+        "claimedRangeKm": 560,
+        "compositeScore": 84,
+        "confidence": "high",
+        "explanation": "Mercedes-Benz EQA — Best Premium EV score 84/100. Best Premium EV: 84/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 5,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo EX40",
+        "exShowroom": 5990000,
+        "claimedRangeKm": 418,
+        "compositeScore": 75,
+        "confidence": "high",
+        "explanation": "Volvo EX40 — Best Premium EV score 75/100. Best Premium EV: 75/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 568 km claimed range and 7.3 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 150 kW DC peak and ~40 min DC time.",
+        "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 6,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 521,
+        "compositeScore": 72,
+        "confidence": "medium",
+        "explanation": "BYD Atto 3 — Best Premium EV score 72/100. Best Premium EV: 72/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
+        "detailPath": "/cars/byd-atto-3"
+      },
+      {
+        "rank": 7,
+        "slug": "byd-seal",
+        "displayName": "BYD Seal",
+        "exShowroom": 4100000,
+        "claimedRangeKm": 510,
+        "compositeScore": 72,
+        "confidence": "medium",
+        "explanation": "BYD Seal — Best Premium EV score 72/100. Best Premium EV: 72/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/byd-seal"
+      },
+      {
+        "rank": 8,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "exShowroom": 1799000,
+        "claimedRangeKm": 502,
+        "compositeScore": 71,
+        "confidence": "medium",
+        "explanation": "Tata Curvv EV — Best Premium EV score 71/100. Best Premium EV: 71/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
+        "detailPath": "/cars/tata-curvv-ev"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "bmw-ix1",
+          "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability."
+        },
+        {
+          "slug": "kia-ev6",
+          "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100."
+        },
+        {
+          "slug": "hyundai-ioniq-5",
+          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100."
+        },
+        {
+          "slug": "mercedes-eqa",
+          "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability."
+        },
+        {
+          "slug": "volvo-ex40",
+          "tradeoff": "Strength from score data: Range score uses 568 km claimed range and 7.3 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 150 kW DC peak and ~40 min DC time."
+        },
+        {
+          "slug": "byd-atto-3",
+          "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time."
+        }
+      ]
+    },
+    "title": "Best premium EVs in India | EVSavari",
+    "metaDescription": "8 EVs well suited for this use case — led by BMW iX1. Deterministic scores from EVSavari catalog intelligence.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "best evs premium",
+      "best premium ev",
+      "BMW iX1",
+      "Kia EV6",
+      "Hyundai Ioniq 5",
+      "Mercedes-Benz EQA",
+      "Volvo EX40"
+    ],
+    "canonicalPath": "/best-evs/premium-agent",
+    "canonicalUrl": "https://evsavari.com/best-evs/premium-agent",
+    "generatedAt": "2026-06-10T06:29:07.728Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "best-evs-premium-agent",
+      "description": "8 EVs well suited for this use case — led by BMW iX1. Deterministic scores from EVSavari catalog intelligence.",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "BMW iX1",
+          "url": "https://evsavari.com/cars/bmw-ix1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kia EV6",
+          "url": "https://evsavari.com/cars/kia-ev6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hyundai Ioniq 5",
+          "url": "https://evsavari.com/cars/hyundai-ioniq-5"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Mercedes-Benz EQA",
+          "url": "https://evsavari.com/cars/mercedes-eqa"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Volvo EX40",
+          "url": "https://evsavari.com/cars/volvo-ex40"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "BYD Atto 3",
+          "url": "https://evsavari.com/cars/byd-atto-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "BYD Seal",
+          "url": "https://evsavari.com/cars/byd-seal"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Tata Curvv EV",
+          "url": "https://evsavari.com/cars/tata-curvv-ev"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Why is BMW iX1 ranked first?",
+        "answer": "BMW iX1 — Best Premium EV score 96/100. Best Premium EV: 96/100 (High-end features, performance, and brand positioning.)"
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Premium EVs lead on ADAS, cabin tech, and charging speeds",
+        "Strong brand cachet and feature lists vs ICE luxury rivals",
+        "Better highway range and performance in this segment"
+      ],
+      "cons": [
+        "Higher upfront cost and insurance premiums",
+        "Service network density varies by luxury brand",
+        "Depreciation patterns still evolving for premium EVs"
+      ],
+      "whoShouldBuy": [
+        "Early adopters wanting latest tech and performance",
+        "Buyers cross-shopping luxury ICE SUVs with EV alternatives",
+        "Professionals with home charging and multi-car households"
+      ],
+      "whoShouldAvoid": [
+        "Budget-first buyers — value scores favour mass-market EVs",
+        "Buyers in cities with sparse brand service centres",
+        "Those needing maximum resale certainty today"
+      ],
+      "bestAlternative": {
+        "label": "Best luxury EVs (editorial list)",
+        "href": "/best-evs/luxury-buyers",
+        "reason": "The editorial luxury-buyers guide adds lifestyle and ownership context beyond raw scores."
+      },
+      "relatedLinks": [
+        {
+          "label": "Kia EV6 vs BYD Atto 3",
+          "href": "/compare/kia-ev6-vs-byd-atto-3"
+        },
+        {
+          "label": "Resale value guide",
+          "href": "/ownership-guides/resale-value"
+        },
+        {
+          "label": "Warranty coverage",
+          "href": "/ownership-guides/warranty-coverage"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Kia EV6 vs BYD Atto 3",
+            "href": "/compare/kia-ev6-vs-byd-atto-3"
+          },
+          {
+            "label": "Resale value guide",
+            "href": "/ownership-guides/resale-value"
+          },
+          {
+            "label": "Warranty coverage",
+            "href": "/ownership-guides/warranty-coverage"
+          }
+        ]
+      }
+    ]
+  }
+}

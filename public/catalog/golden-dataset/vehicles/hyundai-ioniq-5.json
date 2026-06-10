@@ -1,0 +1,72 @@
+{
+  "id": "hyundai-ioniq-5",
+  "displayName": "Hyundai Ioniq 5",
+  "familySlug": "hyundai-ioniq-5",
+  "vehicle": {
+    "brand": "Hyundai",
+    "model": "Ioniq 5",
+    "bodyType": "SUV",
+    "familySlug": "hyundai-ioniq-5"
+  },
+  "fields": {
+    "brand": "Hyundai",
+    "model": "Ioniq 5",
+    "bodyType": "SUV",
+    "familySlug": "hyundai-ioniq-5",
+    "startingPrice": 4495000,
+    "topVariantPrice": 5495000,
+    "exShowroomPrice": 5570000,
+    "batteryCapacityKwh": 84,
+    "claimedRangeKm": 690,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 11,
+    "dcChargingKw": 11,
+    "acChargingTimeHours": "7H 35Min-11 kW AC-(10-100%)",
+    "dcChargingTimeMinutes": 35,
+    "airbags": 6,
+    "adas": "true",
+    "powerPs": null,
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": true,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "RWD",
+      "priceInr": 4495000,
+      "batteryKwh": 58,
+      "rangeKm": 631,
+      "acChargingKw": 11,
+      "dcChargingKw": 175
+    },
+    {
+      "variantName": "AWD",
+      "priceInr": 5495000,
+      "batteryKwh": 72.6,
+      "rangeKm": 508,
+      "acChargingKw": 11,
+      "dcChargingKw": 175
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.hyundai.com/in/en/find-a-car/ioniq-5/highlights",
+    "https://www.cardekho.com/hyundai/ioniq-5"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day1",
+    "pipelineConfidence": 95,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.178Z"
+  }
+}

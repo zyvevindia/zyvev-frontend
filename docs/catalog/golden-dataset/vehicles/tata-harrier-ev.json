@@ -1,0 +1,120 @@
+{
+  "id": "tata-harrier-ev",
+  "displayName": "Tata Harrier EV",
+  "familySlug": "tata-harrier-ev",
+  "vehicle": {
+    "brand": "Tata",
+    "model": "Harrier EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-harrier-ev"
+  },
+  "fields": {
+    "brand": "Tata",
+    "model": "Harrier EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-harrier-ev",
+    "startingPrice": 2149000,
+    "topVariantPrice": 3023000,
+    "exShowroomPrice": 2149000,
+    "batteryCapacityKwh": 75,
+    "claimedRangeKm": 627,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 7.2,
+    "dcChargingKw": 100,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": 25,
+    "airbags": 6,
+    "adas": "true",
+    "powerPs": null,
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": false,
+    "connectedCar": false,
+    "v2l": true,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "Adventure 65",
+      "priceInr": 2149000,
+      "batteryKwh": 65,
+      "rangeKm": 538,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 120
+    },
+    {
+      "variantName": "Adventure S 65",
+      "priceInr": 2199000,
+      "batteryKwh": 65,
+      "rangeKm": 538,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 120
+    },
+    {
+      "variantName": "Fearless Plus 65",
+      "priceInr": 2399000,
+      "batteryKwh": 65,
+      "rangeKm": 538,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 120
+    },
+    {
+      "variantName": "Fearless Plus 75",
+      "priceInr": 2499000,
+      "batteryKwh": 75,
+      "rangeKm": 627,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 120
+    },
+    {
+      "variantName": "Fearless Plus QWD 75",
+      "priceInr": 2649000,
+      "batteryKwh": 75,
+      "rangeKm": 622,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 120
+    },
+    {
+      "variantName": "Empowered 75",
+      "priceInr": 2749000,
+      "batteryKwh": 75,
+      "rangeKm": 627,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 120
+    },
+    {
+      "variantName": "Empowered QWD 75",
+      "priceInr": 2899000,
+      "batteryKwh": 75,
+      "rangeKm": 622,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 120
+    },
+    {
+      "variantName": "Empowered QWD 75 Stealth ACFC",
+      "priceInr": 3023000,
+      "batteryKwh": 75,
+      "rangeKm": 622,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 120
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://ev.tatamotors.com/harrier/ev.html",
+    "https://www.cardekho.com/tata/harrier-ev"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "quality-sprint",
+    "pipelineConfidence": 94,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.138Z"
+  }
+}

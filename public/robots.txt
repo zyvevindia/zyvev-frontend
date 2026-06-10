@@ -4,9 +4,13 @@
 User-agent: *
 Allow: /
 
-# Admin / CRM / auth — not for public index
+# Admin / CRM / agents / auth — not for public index
 Disallow: /admin
 Disallow: /admin/
+Disallow: /crm
+Disallow: /crm/
+Disallow: /agent
+Disallow: /agent/
 Disallow: /sales
 Disallow: /sales/
 Disallow: /dealer
@@ -37,12 +41,15 @@ Disallow: /api/
 Disallow: /debug/
 
 # Allow high-value discovery paths explicitly
+Allow: /cars
 Allow: /cars/
+Allow: /compare
 Allow: /compare/
-Allow: /best-evs/
-Allow: /brands/
-Allow: /cities/
 Allow: /guides
+Allow: /guides/
+Allow: /brands/
+Allow: /best-evs/
+Allow: /cities/
 Allow: /discover/
 
 Sitemap: https://evsavari.com/sitemap.xml

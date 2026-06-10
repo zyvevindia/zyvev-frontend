@@ -1,0 +1,80 @@
+{
+  "id": "maruti-e-vitara",
+  "displayName": "Maruti Suzuki e Vitara",
+  "familySlug": "maruti-e-vitara",
+  "vehicle": {
+    "brand": "Maruti Suzuki",
+    "model": "e Vitara",
+    "bodyType": "SUV",
+    "familySlug": "maruti-e-vitara"
+  },
+  "fields": {
+    "brand": "Maruti Suzuki",
+    "model": "e Vitara",
+    "bodyType": "SUV",
+    "familySlug": "maruti-e-vitara",
+    "startingPrice": 2499000,
+    "topVariantPrice": 2899000,
+    "exShowroomPrice": 1599000,
+    "batteryCapacityKwh": 61,
+    "claimedRangeKm": 543,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 7.4,
+    "dcChargingKw": 130,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": null,
+    "airbags": "six airbags and an additional driver knee airbag",
+    "adas": "true",
+    "powerPs": null,
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": false,
+    "v2l": false,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "Zeta",
+      "priceInr": 2499000,
+      "batteryKwh": 49,
+      "rangeKm": 500,
+      "acChargingKw": 7.4,
+      "dcChargingKw": 130
+    },
+    {
+      "variantName": "Alpha",
+      "priceInr": 2699000,
+      "batteryKwh": 61,
+      "rangeKm": 550,
+      "acChargingKw": 7.4,
+      "dcChargingKw": 130
+    },
+    {
+      "variantName": "Alpha+",
+      "priceInr": 2899000,
+      "batteryKwh": 61,
+      "rangeKm": 550,
+      "acChargingKw": 7.4,
+      "dcChargingKw": 130
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.nexaexperience.com/e-vitara",
+    "https://www.cardekho.com/maruti/e-vitara"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day3",
+    "pipelineConfidence": 96,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.196Z"
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "seoPage": {
+    "slug": "top-10-evs-agent",
+    "pageTypeId": "top_composite",
+    "category": "usage",
+    "intro": "Top 10 EVs in India — 10 EVs ranked by deterministic EVSavari overall scores from verified catalog data.",
+    "recommendationLogic": {
+      "pageTypeId": "top_composite",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "usage",
+      "primaryScoreKey": "overall"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "kia-ev6",
+        "displayName": "Kia EV6",
+        "exShowroom": 6590000,
+        "claimedRangeKm": 650,
+        "compositeScore": 88,
+        "confidence": "high",
+        "explanation": "Ranked by overall score (88/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra XEV 9e",
+        "exShowroom": 2190000,
+        "claimedRangeKm": 656,
+        "compositeScore": 82,
+        "confidence": "high",
+        "explanation": "Ranked by overall score (82/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "exShowroom": 1799000,
+        "claimedRangeKm": 502,
+        "compositeScore": 81,
+        "confidence": "high",
+        "explanation": "Ranked by overall score (81/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
+        "detailPath": "/cars/tata-curvv-ev"
+      },
+      {
+        "rank": 4,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra BE 6",
+        "exShowroom": 1890000,
+        "claimedRangeKm": 500,
+        "compositeScore": 79,
+        "confidence": "high",
+        "explanation": "Ranked by overall score (79/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/mahindra-be-6"
+      },
+      {
+        "rank": 5,
+        "slug": "hyundai-ioniq-5",
+        "displayName": "Hyundai Ioniq 5",
+        "exShowroom": 4495000,
+        "claimedRangeKm": 690,
+        "compositeScore": 79,
+        "confidence": "high",
+        "explanation": "Ranked by overall score (79/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+        "detailPath": "/cars/hyundai-ioniq-5"
+      },
+      {
+        "rank": 6,
+        "slug": "tata-harrier-ev",
+        "displayName": "Tata Harrier EV",
+        "exShowroom": 2149000,
+        "claimedRangeKm": 627,
+        "compositeScore": 77,
+        "confidence": "high",
+        "explanation": "Ranked by overall score (77/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time.",
+        "detailPath": "/cars/tata-harrier-ev"
+      },
+      {
+        "rank": 7,
+        "slug": "bmw-ix1",
+        "displayName": "BMW iX1",
+        "exShowroom": 6890000,
+        "claimedRangeKm": 531,
+        "compositeScore": 76,
+        "confidence": "high",
+        "explanation": "Ranked by overall score (76/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability.",
+        "detailPath": "/cars/bmw-ix1"
+      },
+      {
+        "rank": 8,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 521,
+        "compositeScore": 74,
+        "confidence": "medium",
+        "explanation": "Ranked by overall score (74/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
+        "detailPath": "/cars/byd-atto-3"
+      },
+      {
+        "rank": 9,
+        "slug": "hyundai-creta-electric",
+        "displayName": "Hyundai Creta Electric",
+        "exShowroom": 1799000,
+        "claimedRangeKm": 390,
+        "compositeScore": 73,
+        "confidence": "medium",
+        "explanation": "Ranked by overall score (73/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Feature score includes verified: ADAS, Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/hyundai-creta-electric"
+      },
+      {
+        "rank": 10,
+        "slug": "maruti-e-vitara",
+        "displayName": "Maruti Suzuki e Vitara",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 543,
+        "compositeScore": 73,
+        "confidence": "medium",
+        "explanation": "Ranked by overall score (73/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 550 km claimed range and 9.0 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 130 kW DC fast-charging capability.",
+        "detailPath": "/cars/maruti-e-vitara"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "kia-ev6",
+          "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100."
+        },
+        {
+          "slug": "mahindra-xev-9e",
+          "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100."
+        },
+        {
+          "slug": "tata-curvv-ev",
+          "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+        },
+        {
+          "slug": "mahindra-be-6",
+          "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
+        },
+        {
+          "slug": "hyundai-ioniq-5",
+          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100."
+        },
+        {
+          "slug": "tata-harrier-ev",
+          "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time."
+        }
+      ]
+    },
+    "title": "Top 10 EVs in India | EVSavari",
+    "metaDescription": "Ranked list of 10 EVs by overall score — deterministic EVSavari rankings from verified catalog data.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "top 10 evs",
+      "Kia EV6",
+      "Mahindra XEV 9e",
+      "Tata Curvv EV",
+      "Mahindra BE 6",
+      "Hyundai Ioniq 5"
+    ],
+    "canonicalPath": "/best-evs/top-10-agent",
+    "canonicalUrl": "https://evsavari.com/best-evs/top-10-agent",
+    "generatedAt": "2026-06-10T06:29:07.742Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "top-10-evs-agent",
+      "description": "Ranked list of 10 EVs by overall score — deterministic EVSavari rankings from verified catalog data.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kia EV6",
+          "url": "https://evsavari.com/cars/kia-ev6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mahindra XEV 9e",
+          "url": "https://evsavari.com/cars/mahindra-xev-9e"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tata Curvv EV",
+          "url": "https://evsavari.com/cars/tata-curvv-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Mahindra BE 6",
+          "url": "https://evsavari.com/cars/mahindra-be-6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Hyundai Ioniq 5",
+          "url": "https://evsavari.com/cars/hyundai-ioniq-5"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Tata Harrier EV",
+          "url": "https://evsavari.com/cars/tata-harrier-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "BMW iX1",
+          "url": "https://evsavari.com/cars/bmw-ix1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "BYD Atto 3",
+          "url": "https://evsavari.com/cars/byd-atto-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Hyundai Creta Electric",
+          "url": "https://evsavari.com/cars/hyundai-creta-electric"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Maruti Suzuki e Vitara",
+          "url": "https://evsavari.com/cars/maruti-e-vitara"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Why is Kia EV6 ranked first?",
+        "answer": "Ranked by overall score (88/100) from EVSavari Score Engine."
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Composite score ranks overall capability across categories",
+        "Balanced list for buyers without a single dominant use case",
+        "Good discovery entry point for new EV researchers"
+      ],
+      "cons": [
+        "Composite ranking may not match your personal priority (range vs price)",
+        "Top 10 shifts as catalog and scores update",
+        "Does not replace trim-level or variant-specific research"
+      ],
+      "whoShouldBuy": [
+        "Researchers starting their EV shortlist from scratch",
+        "Buyers who want a balanced all-rounder before narrowing use case",
+        "Readers comparing EVSavari scores across segments"
+      ],
+      "whoShouldAvoid": [
+        "Buyers with a fixed budget band — use budget or under-15L guides",
+        "Commercial fleet buyers with specialised duty cycles",
+        "Shoppers who already know they need a micro EV only"
+      ],
+      "bestAlternative": {
+        "label": "Best family EVs",
+        "href": "/best-evs/family-agent",
+        "reason": "If you already know family use is primary, the family guide weights the right signals."
+      },
+      "relatedLinks": [
+        {
+          "label": "Best highway EVs",
+          "href": "/best-evs/highway-agent"
+        },
+        {
+          "label": "How EVs work",
+          "href": "/ownership-guides/how-evs-work"
+        },
+        {
+          "label": "Browse all EVs",
+          "href": "/cars"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Best highway EVs",
+            "href": "/best-evs/highway-agent"
+          },
+          {
+            "label": "How EVs work",
+            "href": "/ownership-guides/how-evs-work"
+          },
+          {
+            "label": "Browse all EVs",
+            "href": "/cars"
+          }
+        ]
+      }
+    ]
+  }
+}

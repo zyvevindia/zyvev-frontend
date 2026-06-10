@@ -1,0 +1,339 @@
+{
+  "seoPage": {
+    "slug": "safest-evs-agent",
+    "pageTypeId": "safety",
+    "category": "usage",
+    "intro": "Safest EVs in India — 10 EVs ranked by deterministic EVSavari safety scores from verified catalog data.",
+    "recommendationLogic": {
+      "pageTypeId": "safety",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "usage",
+      "primaryScoreKey": "safety"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "kia-ev6",
+        "displayName": "Kia EV6",
+        "exShowroom": 6590000,
+        "claimedRangeKm": 650,
+        "compositeScore": 93,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (93/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100.",
+        "detailPath": "/cars/kia-ev6"
+      },
+      {
+        "rank": 2,
+        "slug": "byd-seal",
+        "displayName": "BYD Seal",
+        "exShowroom": 4100000,
+        "claimedRangeKm": 510,
+        "compositeScore": 93,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (93/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/byd-seal"
+      },
+      {
+        "rank": 3,
+        "slug": "bmw-ix1",
+        "displayName": "BMW iX1",
+        "exShowroom": 6890000,
+        "claimedRangeKm": 531,
+        "compositeScore": 93,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (93/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability.",
+        "detailPath": "/cars/bmw-ix1"
+      },
+      {
+        "rank": 4,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "exShowroom": 1799000,
+        "claimedRangeKm": 502,
+        "compositeScore": 86,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (86/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
+        "detailPath": "/cars/tata-curvv-ev"
+      },
+      {
+        "rank": 5,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes-Benz EQA",
+        "exShowroom": 6775000,
+        "claimedRangeKm": 560,
+        "compositeScore": 85,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (85/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability.",
+        "detailPath": "/cars/mercedes-eqa"
+      },
+      {
+        "rank": 6,
+        "slug": "maruti-e-vitara",
+        "displayName": "Maruti Suzuki e Vitara",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 543,
+        "compositeScore": 85,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (85/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 550 km claimed range and 9.0 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 130 kW DC fast-charging capability.",
+        "detailPath": "/cars/maruti-e-vitara"
+      },
+      {
+        "rank": 7,
+        "slug": "volvo-ex40",
+        "displayName": "Volvo EX40",
+        "exShowroom": 5990000,
+        "claimedRangeKm": 418,
+        "compositeScore": 84,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (84/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 568 km claimed range and 7.3 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 150 kW DC peak and ~40 min DC time.",
+        "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 8,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra BE 6",
+        "exShowroom": 1890000,
+        "claimedRangeKm": 500,
+        "compositeScore": 75,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (75/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/mahindra-be-6"
+      },
+      {
+        "rank": 9,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra XEV 9e",
+        "exShowroom": 2190000,
+        "claimedRangeKm": 656,
+        "compositeScore": 75,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (75/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100.",
+        "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 10,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 521,
+        "compositeScore": 75,
+        "confidence": "high",
+        "explanation": "Ranked by safety score (75/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
+        "detailPath": "/cars/byd-atto-3"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "kia-ev6",
+          "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100."
+        },
+        {
+          "slug": "byd-seal",
+          "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
+        },
+        {
+          "slug": "bmw-ix1",
+          "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability."
+        },
+        {
+          "slug": "tata-curvv-ev",
+          "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+        },
+        {
+          "slug": "mercedes-eqa",
+          "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability."
+        },
+        {
+          "slug": "maruti-e-vitara",
+          "tradeoff": "Strength from score data: Range score uses 550 km claimed range and 9.0 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 130 kW DC fast-charging capability."
+        }
+      ]
+    },
+    "title": "Safest EVs in India | EVSavari",
+    "metaDescription": "Ranked list of 10 EVs by safety score — deterministic EVSavari rankings from verified catalog data.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "safest evs",
+      "Kia EV6",
+      "BYD Seal",
+      "BMW iX1",
+      "Tata Curvv EV",
+      "Mercedes-Benz EQA"
+    ],
+    "canonicalPath": "/best-evs/safest-agent",
+    "canonicalUrl": "https://evsavari.com/best-evs/safest-agent",
+    "generatedAt": "2026-06-10T06:29:07.748Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "safest-evs-agent",
+      "description": "Ranked list of 10 EVs by safety score — deterministic EVSavari rankings from verified catalog data.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kia EV6",
+          "url": "https://evsavari.com/cars/kia-ev6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "BYD Seal",
+          "url": "https://evsavari.com/cars/byd-seal"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "BMW iX1",
+          "url": "https://evsavari.com/cars/bmw-ix1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Tata Curvv EV",
+          "url": "https://evsavari.com/cars/tata-curvv-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Mercedes-Benz EQA",
+          "url": "https://evsavari.com/cars/mercedes-eqa"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Maruti Suzuki e Vitara",
+          "url": "https://evsavari.com/cars/maruti-e-vitara"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Volvo EX40",
+          "url": "https://evsavari.com/cars/volvo-ex40"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Mahindra BE 6",
+          "url": "https://evsavari.com/cars/mahindra-be-6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Mahindra XEV 9e",
+          "url": "https://evsavari.com/cars/mahindra-xev-9e"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "BYD Atto 3",
+          "url": "https://evsavari.com/cars/byd-atto-3"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Why is Kia EV6 ranked first?",
+        "answer": "Ranked by safety score (93/100) from EVSavari Score Engine."
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Weights safety-related signals available in catalog data",
+        "Useful for family buyers prioritising crash and ADAS features",
+        "Complements NCAP research with EVSavari scoring"
+      ],
+      "cons": [
+        "Not all models have public NCAP ratings at every trim",
+        "Safety feature availability varies by variant",
+        "Active safety depends on driver engagement and road conditions"
+      ],
+      "whoShouldBuy": [
+        "Families with young children prioritising safety tech",
+        "Buyers cross-shopping ADAS-equipped EVs",
+        "Corporate fleet managers with safety KPIs"
+      ],
+      "whoShouldAvoid": [
+        "Buyers for whom price is the only decision factor",
+        "Those buying base trims without safety packs",
+        "Shoppers who need commercial durability over passenger safety features"
+      ],
+      "bestAlternative": {
+        "label": "Best family EVs",
+        "href": "/best-evs/family-agent",
+        "reason": "Family guide blends safety with space and practicality for a fuller picture."
+      },
+      "relatedLinks": [
+        {
+          "label": "Women safety EVs",
+          "href": "/best-evs/women-safety"
+        },
+        {
+          "label": "Insurance guide",
+          "href": "/ownership-guides/insurance-tco"
+        },
+        {
+          "label": "First-time buyer guide",
+          "href": "/ownership-guides/first-time-buyer"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Women safety EVs",
+            "href": "/best-evs/women-safety"
+          },
+          {
+            "label": "Insurance guide",
+            "href": "/ownership-guides/insurance-tco"
+          },
+          {
+            "label": "First-time buyer guide",
+            "href": "/ownership-guides/first-time-buyer"
+          }
+        ]
+      }
+    ]
+  }
+}

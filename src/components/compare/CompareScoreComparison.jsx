@@ -29,7 +29,11 @@ function resolveOverall(car) {
   };
 }
 
-export default function CompareScoreComparison({ cars = [] }) {
+export default function CompareScoreComparison({
+  cars = [],
+  compact = false,
+  title = "EVSavari score comparison",
+}) {
   const list = (cars || []).filter(Boolean);
   if (list.length < 2) return null;
 
@@ -59,11 +63,13 @@ export default function CompareScoreComparison({ cars = [] }) {
 
   return (
     <section
-      className="compare-score-comparison"
+      className={`compare-score-comparison${
+        compact ? " compare-score-comparison--compact" : ""
+      }`}
       aria-labelledby="compare-score-comparison-title"
     >
       <h2 id="compare-score-comparison-title" className="compare-score-comparison__title">
-        EVSavari score comparison
+        {title}
       </h2>
       <div className="compare-score-comparison__table-wrap">
         <table className="compare-score-comparison__table">

@@ -1,0 +1,422 @@
+{
+  "generatedAt": "2026-06-10T05:01:32.300Z",
+  "catalogCount": 25,
+  "targetCount": 25,
+  "harrier": {
+    "publishSuccess": true,
+    "variants": 8,
+    "pipelineConfidence": 94,
+    "manualCorrections": [
+      "variant_table_manual"
+    ]
+  },
+  "consolidatedVehicles": 13,
+  "seoValidation": {
+    "allOk": true,
+    "specsOk": 7,
+    "specsTotal": 7,
+    "details": [
+      {
+        "specId": "variant-best-value-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136
+      },
+      {
+        "specId": "variant-fastest-charging-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136
+      },
+      {
+        "specId": "variant-longest-range-catalog",
+        "ok": true,
+        "metaDescriptionLen": 136
+      },
+      {
+        "specId": "variant-best-value-nexon",
+        "ok": true,
+        "metaDescriptionLen": 135
+      },
+      {
+        "specId": "variant-best-value-punch",
+        "ok": true,
+        "metaDescriptionLen": 135
+      },
+      {
+        "specId": "variant-fastest-charging-nexon",
+        "ok": true,
+        "metaDescriptionLen": 135
+      },
+      {
+        "specId": "variant-longest-range-punch",
+        "ok": true,
+        "metaDescriptionLen": 135
+      }
+    ]
+  },
+  "variantRecommendationCoverage": "10/25",
+  "readyCount": 3,
+  "reviewCount": 22,
+  "recommendation": "REVIEW_REQUIRED",
+  "audits": [
+    {
+      "vehicle": "BMW iX1",
+      "familySlug": "bmw-ix1",
+      "variantCount": 2,
+      "confidence": 93,
+      "score": 76,
+      "grade": "B+",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "BYD Atto 3",
+      "familySlug": "byd-atto-3",
+      "variantCount": 3,
+      "confidence": "—",
+      "score": 74,
+      "grade": "B+",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "BYD Seal",
+      "familySlug": "byd-seal",
+      "variantCount": 3,
+      "confidence": 93,
+      "score": 70,
+      "grade": "B+",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Citroen eC3",
+      "familySlug": "citroen-ec3",
+      "variantCount": 4,
+      "confidence": 95,
+      "score": 35,
+      "grade": "C",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "missing_dc_charging",
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Hyundai Creta Electric",
+      "familySlug": "hyundai-creta-electric",
+      "variantCount": 3,
+      "confidence": 85,
+      "score": 73,
+      "grade": "B+",
+      "reviewStatus": "CATALOG_READY",
+      "issues": [],
+      "fixes": [],
+      "verificationLevel": "ops_benchmark"
+    },
+    {
+      "vehicle": "Hyundai Ioniq 5",
+      "familySlug": "hyundai-ioniq-5",
+      "variantCount": 2,
+      "confidence": 95,
+      "score": 79,
+      "grade": "B+",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Hyundai Kona Electric",
+      "familySlug": "hyundai-kona-electric",
+      "variantCount": 1,
+      "confidence": 97,
+      "score": 55,
+      "grade": "C",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Kia EV6",
+      "familySlug": "kia-ev6",
+      "variantCount": 2,
+      "confidence": 96,
+      "score": 88,
+      "grade": "A",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Mahindra BE 6",
+      "familySlug": "mahindra-be-6",
+      "variantCount": 3,
+      "confidence": "—",
+      "score": 79,
+      "grade": "B+",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Mahindra XEV 9e",
+      "familySlug": "mahindra-xev-9e",
+      "variantCount": 3,
+      "confidence": "—",
+      "score": 82,
+      "grade": "A",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Mahindra XUV400",
+      "familySlug": "mahindra-xuv400",
+      "variantCount": 4,
+      "confidence": 98,
+      "score": 51,
+      "grade": "C",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Maruti Suzuki e Vitara",
+      "familySlug": "maruti-e-vitara",
+      "variantCount": 3,
+      "confidence": 96,
+      "score": 73,
+      "grade": "B+",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Mercedes-Benz EQA",
+      "familySlug": "mercedes-eqa",
+      "variantCount": 2,
+      "confidence": 96,
+      "score": 67,
+      "grade": "B",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Mercedes-Benz EQB",
+      "familySlug": "mercedes-eqb",
+      "variantCount": 2,
+      "confidence": 93,
+      "score": 49,
+      "grade": "C",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "MG Comet EV",
+      "familySlug": "mg-comet-ev",
+      "variantCount": 3,
+      "confidence": 95,
+      "score": 47,
+      "grade": "C",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "MG Windsor EV",
+      "familySlug": "mg-windsor-ev",
+      "variantCount": 3,
+      "confidence": "—",
+      "score": 52,
+      "grade": "C",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "MG ZS EV",
+      "familySlug": "mg-zs-ev",
+      "variantCount": 3,
+      "confidence": 97,
+      "score": 65,
+      "grade": "B",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "MINI Cooper SE",
+      "familySlug": "mini-cooper-se",
+      "variantCount": 2,
+      "confidence": 92,
+      "score": 44,
+      "grade": "C",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Tata Curvv EV",
+      "familySlug": "tata-curvv-ev",
+      "variantCount": 3,
+      "confidence": "—",
+      "score": 81,
+      "grade": "A",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Tata Harrier EV",
+      "familySlug": "tata-harrier-ev",
+      "variantCount": 8,
+      "confidence": 94,
+      "score": 77,
+      "grade": "B+",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Tata Nexon EV",
+      "familySlug": "tata-nexon-ev",
+      "variantCount": 13,
+      "confidence": 95,
+      "score": 54,
+      "grade": "C",
+      "reviewStatus": "CATALOG_READY",
+      "issues": [],
+      "fixes": [],
+      "verificationLevel": "verified_dossier"
+    },
+    {
+      "vehicle": "Tata Punch EV",
+      "familySlug": "tata-punch-ev",
+      "variantCount": 6,
+      "confidence": 95,
+      "score": 56,
+      "grade": "C",
+      "reviewStatus": "CATALOG_READY",
+      "issues": [],
+      "fixes": [],
+      "verificationLevel": "verified_dossier"
+    },
+    {
+      "vehicle": "Tata Tiago EV",
+      "familySlug": "tata-tiago-ev",
+      "variantCount": 4,
+      "confidence": 94,
+      "score": 58,
+      "grade": "C",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Tata Tigor EV",
+      "familySlug": "tata-tigor-ev",
+      "variantCount": 4,
+      "confidence": 93,
+      "score": 46,
+      "grade": "C",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    },
+    {
+      "vehicle": "Volvo EX40",
+      "familySlug": "volvo-ex40",
+      "variantCount": 2,
+      "confidence": 92,
+      "score": 66,
+      "grade": "B",
+      "reviewStatus": "REVIEW_REQUIRED",
+      "issues": [
+        "no_variant_recommendation",
+        "manual_review_verification"
+      ],
+      "fixes": [],
+      "verificationLevel": "manual_review"
+    }
+  ]
+}

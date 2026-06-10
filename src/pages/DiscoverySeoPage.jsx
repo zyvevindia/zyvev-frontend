@@ -13,6 +13,8 @@ import SeoFaqBlock from "../components/SEO/SeoFaqBlock";
 import SeoRelatedLinks from "../components/SEO/SeoRelatedLinks";
 import SeoAuthorityEditorial from "../components/SEO/SeoAuthorityEditorial";
 import SeoContinueLearning from "../components/SEO/SeoContinueLearning";
+import SeoEditorialDecision from "../components/SEO/SeoEditorialDecision";
+import DiscoveryBreadcrumbNav from "../components/SEO/DiscoveryBreadcrumbNav";
 
 import CompareHeroExperience from "../components/compare/CompareHeroExperience";
 import CompareGuideEditorialSections from "../components/compare/CompareGuideEditorialSections";
@@ -24,11 +26,13 @@ import { resolveDiscoveryRoute, PAGE_TYPES } from "../seo/registry";
 import { buildGuidePageMeta, stripBrandSuffix } from "../seo/meta";
 import { buildCompareGuidePageMeta } from "../seo/pageMetadata";
 import { buildDiscoveryPageSchemas } from "../seo/schema";
+import { buildDiscoveryBreadcrumbs } from "../seo/breadcrumbs";
 import { getDiscoveryLinkSections } from "../seo/internalLinks";
 import {
   trackDiscoveryPageView,
   trackCompareGuideClicked,
 } from "../content/tracking/discoveryAnalytics";
+import { trackCompareView } from "../analytics/traffic";
 import WhatsAppLeadCta from "../components/leads/WhatsAppLeadCta";
 import MethodologyPanel from "../components/trust/MethodologyPanel";
 import EditorialTransparency from "../components/trust/EditorialTransparency";
@@ -36,16 +40,6 @@ import OwnershipPracticality from "../components/trust/OwnershipPracticality";
 import ConfidenceExplainer from "../components/trust/ConfidenceExplainer";
 
 import "../styles/compare-page.css";
-
-const PAGE_TYPE_LABELS = {
-  [PAGE_TYPES.BEST_EVS]: "Best EVs",
-  [PAGE_TYPES.CHARGING_GUIDE]: "Charging",
-  [PAGE_TYPES.OWNERSHIP_GUIDE]: "Ownership",
-  [PAGE_TYPES.COMPARE_GUIDE]: "Compare",
-  [PAGE_TYPES.BRAND]: "Brands",
-  [PAGE_TYPES.CITY_EVS]: "Cities",
-  [PAGE_TYPES.CITY_CHARGING]: "Charging",
-};
 
 const editorialPageStyles = {
   page: {
@@ -137,6 +131,11 @@ export default function DiscoverySeoPage({ pageType }) {
       action: "inline_compare_experience",
       vehicleSlugs: guideCars.map((c) => c.slug).filter(Boolean),
     });
+    trackCompareView({
+      vehicleSlugs: guideCars.map((c) => c.slug).filter(Boolean),
+      sourcePage: routeContext.path || "/compare",
+      compareDepth: guideCars.length,
+    });
   }, [
     isCompareGuide,
     seoPage,
@@ -206,17 +205,14 @@ export default function DiscoverySeoPage({ pageType }) {
   const meta = isCompareGuide
     ? buildCompareGuidePageMeta(seoPage, canonical)
     : buildGuidePageMeta(seoPage, canonical);
-  const typeLabel = PAGE_TYPE_LABELS[pageType] || "Guides";
 
-  const breadcrumbs = [
-    { name: "Home", url: "/" },
-    { name: "Guides", url: "/guides" },
-    { name: typeLabel, url: "/guides" },
-    {
-      name: stripBrandSuffix(seoPage.title),
-      url: canonical,
-    },
-  ];
+  const breadcrumbs = buildDiscoveryBreadcrumbs({
+    pageType,
+    seoPage,
+    routeContext,
+    canonical,
+    stripTitle: stripBrandSuffix,
+  });
 
   const schemas = buildDiscoveryPageSchemas({
     seoPage,
@@ -243,13 +239,7 @@ export default function DiscoverySeoPage({ pageType }) {
         ))}
 
         <div className="compare-guide-page__breadcrumb-bar">
-          <nav aria-label="Breadcrumb">
-            <Link to="/">Home</Link>
-            <span> / </span>
-            <Link to="/guides">Guides</Link>
-            <span> / </span>
-            <Link to="/compare">Compare</Link>
-          </nav>
+          <DiscoveryBreadcrumbNav items={breadcrumbs} />
         </div>
 
         {guideCarsLoading ? (
@@ -324,13 +314,10 @@ export default function DiscoverySeoPage({ pageType }) {
       ))}
 
       <article style={editorialPageStyles.article}>
-        <nav style={editorialPageStyles.breadcrumb} aria-label="Breadcrumb">
-          <Link to="/">Home</Link>
-          <span> / </span>
-          <Link to="/guides">Guides</Link>
-          <span> / </span>
-          <span>{typeLabel}</span>
-        </nav>
+        <DiscoveryBreadcrumbNav
+          items={breadcrumbs}
+          includeCurrent={false}
+        />
 
         <h1 style={editorialPageStyles.h1}>{meta.h1}</h1>
 
@@ -338,6 +325,8 @@ export default function DiscoverySeoPage({ pageType }) {
           intro={seoPage.intro}
           recommendationLogic={seoPage.recommendationLogic}
         />
+
+        <SeoEditorialDecision editorial={seoPage.editorial} />
 
         <SeoAuthorityEditorial
           sections={seoPage.editorialSections}

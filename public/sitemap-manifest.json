@@ -1,84 +1,97 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-06-10T04:12:57.676Z",
+  "generatedAt": "2026-06-10T06:29:09.153Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
       "path": "/",
       "priority": 1,
-      "changefreq": "daily"
+      "changefreq": "daily",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars",
       "path": "/cars",
       "priority": 0.9,
-      "changefreq": "daily"
+      "changefreq": "daily",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare",
       "path": "/compare",
       "priority": 0.85,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/guides",
       "path": "/guides",
       "priority": 0.85,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/popular",
       "path": "/popular",
       "priority": 0.82,
-      "changefreq": "daily"
+      "changefreq": "daily",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/latest",
       "path": "/latest",
       "priority": 0.8,
-      "changefreq": "daily"
+      "changefreq": "daily",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/upcoming",
       "path": "/upcoming",
       "priority": 0.78,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/bikes",
       "path": "/bikes",
       "priority": 0.75,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/scooters",
       "path": "/scooters",
       "priority": 0.75,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/about",
       "path": "/about",
       "priority": 0.6,
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/contact",
       "path": "/contact",
       "priority": 0.6,
-      "changefreq": "monthly"
+      "changefreq": "monthly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/privacy",
       "path": "/privacy",
       "priority": 0.4,
-      "changefreq": "yearly"
+      "changefreq": "yearly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/terms",
       "path": "/terms",
       "priority": 0.4,
-      "changefreq": "yearly"
+      "changefreq": "yearly",
+      "lastmod": "2026-06-10"
     }
   ],
   "vehicles": [
@@ -86,103 +99,120 @@
       "loc": "https://evsavari.com/cars/hyundai-kona-electric",
       "path": "/cars/hyundai-kona-electric",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/mahindra-xev-9e",
       "path": "/cars/mahindra-xev-9e",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/mahindra-xuv400",
       "path": "/cars/mahindra-xuv400",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/mahindra-be-6",
       "path": "/cars/mahindra-be-6",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/tata-nexon-ev",
       "path": "/cars/tata-nexon-ev",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/tata-curvv-ev",
       "path": "/cars/tata-curvv-ev",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/tata-punch-ev",
       "path": "/cars/tata-punch-ev",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/tata-tiago-ev",
       "path": "/cars/tata-tiago-ev",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/mercedes-eqb",
       "path": "/cars/mercedes-eqb",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/mercedes-eqa",
       "path": "/cars/mercedes-eqa",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/mg-comet-ev",
       "path": "/cars/mg-comet-ev",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/citroen-ec3",
       "path": "/cars/citroen-ec3",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/volvo-ex40",
       "path": "/cars/volvo-ex40",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/byd-atto-3",
       "path": "/cars/byd-atto-3",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/mg-zs-ev",
       "path": "/cars/mg-zs-ev",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/bmw-ix1",
       "path": "/cars/bmw-ix1",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cars/kia-ev6",
       "path": "/cars/kia-ev6",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     }
   ],
   "discovery": [
@@ -190,589 +220,1261 @@
       "loc": "https://evsavari.com/guides",
       "path": "/guides",
       "priority": 0.85,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/best-evs/under-10-lakh",
       "path": "/best-evs/under-10-lakh",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/best-evs/under-20-lakh",
       "path": "/best-evs/under-20-lakh",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/best-evs/city-driving",
       "path": "/best-evs/city-driving",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/best-evs/family",
       "path": "/best-evs/family",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/best-evs/office-commute",
       "path": "/best-evs/office-commute",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/best-evs/highway-driving",
       "path": "/best-evs/highway-driving",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/best-evs/city-cars-india",
       "path": "/best-evs/city-cars-india",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/charging-guides/daily-commute",
       "path": "/charging-guides/daily-commute",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/charging-guides/home-charging",
       "path": "/charging-guides/home-charging",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/charging-guides/low-stress",
       "path": "/charging-guides/low-stress",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/low-maintenance",
       "path": "/ownership-guides/low-maintenance",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/easiest-first-ev",
       "path": "/ownership-guides/easiest-first-ev",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/apartment-living",
       "path": "/ownership-guides/apartment-living",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/apartment-parking",
       "path": "/ownership-guides/apartment-parking",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/how-evs-work",
       "path": "/ownership-guides/how-evs-work",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/charging-guides/charging-types",
       "path": "/charging-guides/charging-types",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/maintenance-basics",
       "path": "/ownership-guides/maintenance-basics",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/battery-lifespan",
       "path": "/ownership-guides/battery-lifespan",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/charging-guides/fast-vs-slow",
       "path": "/charging-guides/fast-vs-slow",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/charging-guides/public-charging",
       "path": "/charging-guides/public-charging",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/charging-guides/overnight-safety",
       "path": "/charging-guides/overnight-safety",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/charging-guides/extension-board-risks",
       "path": "/charging-guides/extension-board-risks",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/charging-guides/apartment-setup",
       "path": "/charging-guides/apartment-setup",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/apartment-suitability",
       "path": "/ownership-guides/apartment-suitability",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/city-commute",
       "path": "/ownership-guides/city-commute",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/family-ownership",
       "path": "/ownership-guides/family-ownership",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/first-time-buyers",
       "path": "/ownership-guides/first-time-buyers",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/ev-myths",
       "path": "/ownership-guides/ev-myths",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/myth-battery-dies-quickly",
       "path": "/ownership-guides/myth-battery-dies-quickly",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/myth-rain-flood-safety",
       "path": "/ownership-guides/myth-rain-flood-safety",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/myth-fire-risk",
       "path": "/ownership-guides/myth-fire-risk",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/myth-highway-practicality",
       "path": "/ownership-guides/myth-highway-practicality",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/myth-apartment-charging-impossible",
       "path": "/ownership-guides/myth-apartment-charging-impossible",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/myth-maintenance-expensive",
       "path": "/ownership-guides/myth-maintenance-expensive",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/myth-battery-replacement-cost",
       "path": "/ownership-guides/myth-battery-replacement-cost",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/ownership-guides/myth-resale-value-loss",
       "path": "/ownership-guides/myth-resale-value-loss",
       "priority": 0.8,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/nexon-ev-vs-mg-zs-ev",
       "path": "/compare/nexon-ev-vs-mg-zs-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/comet-ev-vs-tiago-ev",
       "path": "/compare/comet-ev-vs-tiago-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/brands/bmw",
+      "path": "/brands/bmw",
+      "priority": 0.78,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/brands/byd",
+      "path": "/brands/byd",
+      "priority": 0.78,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/brands/citroen",
+      "path": "/brands/citroen",
+      "priority": 0.78,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/brands/hyundai",
+      "path": "/brands/hyundai",
+      "priority": 0.78,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/brands/kia",
+      "path": "/brands/kia",
+      "priority": 0.78,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/brands/mahindra",
+      "path": "/brands/mahindra",
+      "priority": 0.78,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/brands/mercedes-benz",
+      "path": "/brands/mercedes-benz",
+      "priority": 0.78,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/brands/mg",
+      "path": "/brands/mg",
+      "priority": 0.78,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/brands/tata",
       "path": "/brands/tata",
       "priority": 0.78,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/brands/volvo",
+      "path": "/brands/volvo",
+      "priority": 0.78,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/ahmedabad/charging",
       "path": "/cities/ahmedabad/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/ahmedabad/evs",
       "path": "/cities/ahmedabad/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/bengaluru/charging",
       "path": "/cities/bengaluru/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/bengaluru/evs",
       "path": "/cities/bengaluru/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/bhopal/charging",
       "path": "/cities/bhopal/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/bhopal/evs",
       "path": "/cities/bhopal/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/chandigarh/charging",
       "path": "/cities/chandigarh/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/chandigarh/evs",
       "path": "/cities/chandigarh/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/chennai/charging",
       "path": "/cities/chennai/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/chennai/evs",
       "path": "/cities/chennai/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/coimbatore/charging",
       "path": "/cities/coimbatore/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/coimbatore/evs",
       "path": "/cities/coimbatore/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/delhi/charging",
       "path": "/cities/delhi/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/delhi/evs",
       "path": "/cities/delhi/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/gurgaon/charging",
       "path": "/cities/gurgaon/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/gurgaon/evs",
       "path": "/cities/gurgaon/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/guwahati/charging",
       "path": "/cities/guwahati/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/guwahati/evs",
       "path": "/cities/guwahati/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/hyderabad/charging",
       "path": "/cities/hyderabad/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/hyderabad/evs",
       "path": "/cities/hyderabad/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/indore/charging",
       "path": "/cities/indore/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/indore/evs",
       "path": "/cities/indore/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/jaipur/charging",
       "path": "/cities/jaipur/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/jaipur/evs",
       "path": "/cities/jaipur/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/kochi/charging",
       "path": "/cities/kochi/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/kochi/evs",
       "path": "/cities/kochi/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/kolkata/charging",
       "path": "/cities/kolkata/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/kolkata/evs",
       "path": "/cities/kolkata/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/lucknow/charging",
       "path": "/cities/lucknow/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/lucknow/evs",
       "path": "/cities/lucknow/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/ludhiana/charging",
       "path": "/cities/ludhiana/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/ludhiana/evs",
       "path": "/cities/ludhiana/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/mumbai/charging",
       "path": "/cities/mumbai/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/mumbai/evs",
       "path": "/cities/mumbai/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/nagpur/charging",
       "path": "/cities/nagpur/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/nagpur/evs",
       "path": "/cities/nagpur/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/noida/charging",
       "path": "/cities/noida/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/noida/evs",
       "path": "/cities/noida/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/patna/charging",
       "path": "/cities/patna/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/patna/evs",
       "path": "/cities/patna/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/pune/charging",
       "path": "/cities/pune/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/pune/evs",
       "path": "/cities/pune/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/surat/charging",
       "path": "/cities/surat/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/surat/evs",
       "path": "/cities/surat/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/thiruvananthapuram/charging",
       "path": "/cities/thiruvananthapuram/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/thiruvananthapuram/evs",
       "path": "/cities/thiruvananthapuram/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/vadodara/charging",
       "path": "/cities/vadodara/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/vadodara/evs",
       "path": "/cities/vadodara/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/visakhapatnam/charging",
       "path": "/cities/visakhapatnam/charging",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/cities/visakhapatnam/evs",
       "path": "/cities/visakhapatnam/evs",
       "priority": 0.76,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-punch-ev-vs-tata-nexon-ev",
+      "path": "/compare/tata-punch-ev-vs-tata-nexon-ev",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-curvv-ev-vs-tata-nexon-ev",
+      "path": "/compare/tata-curvv-ev-vs-tata-nexon-ev",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mg-zs-ev-vs-hyundai-kona-electric",
+      "path": "/compare/mg-zs-ev-vs-hyundai-kona-electric",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/byd-atto-3-vs-mg-zs-ev",
+      "path": "/compare/byd-atto-3-vs-mg-zs-ev",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-tiago-ev-vs-citroen-ec3",
+      "path": "/compare/tata-tiago-ev-vs-citroen-ec3",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mahindra-xuv400-vs-tata-nexon-ev",
+      "path": "/compare/mahindra-xuv400-vs-tata-nexon-ev",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/kia-ev6-vs-byd-atto-3",
+      "path": "/compare/kia-ev6-vs-byd-atto-3",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/bmw-ix1-vs-mercedes-eqb",
+      "path": "/compare/bmw-ix1-vs-mercedes-eqb",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mercedes-eqa-vs-bmw-ix1",
+      "path": "/compare/mercedes-eqa-vs-bmw-ix1",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/volvo-ex40-vs-kia-ev6",
+      "path": "/compare/volvo-ex40-vs-kia-ev6",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mahindra-be-6-vs-mahindra-xuv400",
+      "path": "/compare/mahindra-be-6-vs-mahindra-xuv400",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mahindra-xev-9e-vs-mahindra-be-6",
+      "path": "/compare/mahindra-xev-9e-vs-mahindra-be-6",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/hyundai-kona-electric-vs-kia-ev6",
+      "path": "/compare/hyundai-kona-electric-vs-kia-ev6",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-punch-ev-vs-mg-comet-ev",
+      "path": "/compare/tata-punch-ev-vs-mg-comet-ev",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/citroen-ec3-vs-tata-tiago-ev",
+      "path": "/compare/citroen-ec3-vs-tata-tiago-ev",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-nexon-ev-vs-tata-curvv-ev",
+      "path": "/compare/tata-nexon-ev-vs-tata-curvv-ev",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-nexon-ev-vs-mahindra-xuv400",
+      "path": "/compare/tata-nexon-ev-vs-mahindra-xuv400",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mg-zs-ev-vs-byd-atto-3",
+      "path": "/compare/mg-zs-ev-vs-byd-atto-3",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-punch-ev-vs-citroen-ec3",
+      "path": "/compare/tata-punch-ev-vs-citroen-ec3",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/hyundai-kona-electric-vs-tata-nexon-ev",
+      "path": "/compare/hyundai-kona-electric-vs-tata-nexon-ev",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mercedes-eqb-vs-volvo-ex40",
+      "path": "/compare/mercedes-eqb-vs-volvo-ex40",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/mahindra-xev-9e-vs-kia-ev6",
+      "path": "/compare/mahindra-xev-9e-vs-kia-ev6",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-curvv-ev-vs-mg-zs-ev",
+      "path": "/compare/tata-curvv-ev-vs-mg-zs-ev",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/battery-health",
+      "path": "/ownership-guides/battery-health",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/resale-value",
+      "path": "/ownership-guides/resale-value",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/warranty-coverage",
+      "path": "/ownership-guides/warranty-coverage",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/service-network",
+      "path": "/ownership-guides/service-network",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/rain-range",
+      "path": "/ownership-guides/rain-range",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/highway-ownership",
+      "path": "/ownership-guides/highway-ownership",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/used-ev-buying",
+      "path": "/ownership-guides/used-ev-buying",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/fleet-commercial",
+      "path": "/ownership-guides/fleet-commercial",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/running-cost",
+      "path": "/ownership-guides/running-cost",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/insurance-tco",
+      "path": "/ownership-guides/insurance-tco",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/tax-benefits",
+      "path": "/ownership-guides/tax-benefits",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/home-charger-install",
+      "path": "/ownership-guides/home-charger-install",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/society-rwa",
+      "path": "/ownership-guides/society-rwa",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/monsoon-driving",
+      "path": "/ownership-guides/monsoon-driving",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/ownership-guides/long-term-reliability",
+      "path": "/ownership-guides/long-term-reliability",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/weekend-trips",
+      "path": "/best-evs/weekend-trips",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/ride-hailing",
+      "path": "/best-evs/ride-hailing",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/senior-drivers",
+      "path": "/best-evs/senior-drivers",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/women-safety",
+      "path": "/best-evs/women-safety",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/large-family",
+      "path": "/best-evs/large-family",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/performance",
+      "path": "/best-evs/performance",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/tech-savvy",
+      "path": "/best-evs/tech-savvy",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/semi-urban",
+      "path": "/best-evs/semi-urban",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/college-students",
+      "path": "/best-evs/college-students",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/corporate-fleet",
+      "path": "/best-evs/corporate-fleet",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/luxury-buyers",
+      "path": "/best-evs/luxury-buyers",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/compact-parking",
+      "path": "/best-evs/compact-parking",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/long-range-highway",
+      "path": "/best-evs/long-range-highway",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/budget-lease",
+      "path": "/best-evs/budget-lease",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/taxi-commercial",
+      "path": "/best-evs/taxi-commercial",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/under-15-lakh-agent",
+      "path": "/best-evs/under-15-lakh-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/family-agent",
+      "path": "/best-evs/family-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/city-agent",
+      "path": "/best-evs/city-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/highway-agent",
+      "path": "/best-evs/highway-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/premium-agent",
+      "path": "/best-evs/premium-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/budget-agent",
+      "path": "/best-evs/budget-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-curvv-ev-vs-mahindra-be-6-agent",
+      "path": "/compare/tata-curvv-ev-vs-mahindra-be-6-agent",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-punch-ev-vs-mg-windsor-ev-agent",
+      "path": "/compare/tata-punch-ev-vs-mg-windsor-ev-agent",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/byd-atto-3-vs-hyundai-creta-electric-agent",
+      "path": "/compare/byd-atto-3-vs-hyundai-creta-electric-agent",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/top-10-agent",
+      "path": "/best-evs/top-10-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/fastest-charging-agent",
+      "path": "/best-evs/fastest-charging-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/longest-range-agent",
+      "path": "/best-evs/longest-range-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/safest-agent",
+      "path": "/best-evs/safest-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/best-value-variants-agent",
+      "path": "/best-evs/best-value-variants-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/fastest-charging-variants-agent",
+      "path": "/best-evs/fastest-charging-variants-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/longest-range-variants-agent",
+      "path": "/best-evs/longest-range-variants-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/tata-nexon-ev-best-value-variant-agent",
+      "path": "/best-evs/tata-nexon-ev-best-value-variant-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/tata-punch-ev-best-value-variant-agent",
+      "path": "/best-evs/tata-punch-ev-best-value-variant-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/tata-nexon-ev-fastest-charging-variant-agent",
+      "path": "/best-evs/tata-nexon-ev-fastest-charging-variant-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/best-evs/tata-punch-ev-longest-range-variant-agent",
+      "path": "/best-evs/tata-punch-ev-longest-range-variant-agent",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/discover/city-driving",
       "path": "/discover/city-driving",
       "priority": 0.81,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/discover/under-15-lakh",
       "path": "/discover/under-15-lakh",
       "priority": 0.81,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/discover/fastest-charging",
       "path": "/discover/fastest-charging",
       "priority": 0.81,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/discover/apartment-living",
       "path": "/discover/apartment-living",
       "priority": 0.81,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/discover/long-range",
       "path": "/discover/long-range",
       "priority": 0.81,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/discover/family-friendly",
       "path": "/discover/family-friendly",
       "priority": 0.81,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/discover/adas-equipped",
       "path": "/discover/adas-equipped",
       "priority": 0.81,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/discover/highway-evs",
       "path": "/discover/highway-evs",
       "priority": 0.81,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     }
   ],
   "compare": [
@@ -780,171 +1482,218 @@
       "loc": "https://evsavari.com/compare",
       "path": "/compare",
       "priority": 0.85,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/nexon-ev-vs-mg-zs-ev",
       "path": "/compare/nexon-ev-vs-mg-zs-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/comet-ev-vs-tiago-ev",
       "path": "/compare/comet-ev-vs-tiago-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/tata-punch-ev-vs-tata-nexon-ev",
       "path": "/compare/tata-punch-ev-vs-tata-nexon-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/tata-curvv-ev-vs-tata-nexon-ev",
       "path": "/compare/tata-curvv-ev-vs-tata-nexon-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/mg-zs-ev-vs-hyundai-kona-electric",
       "path": "/compare/mg-zs-ev-vs-hyundai-kona-electric",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/byd-atto-3-vs-mg-zs-ev",
       "path": "/compare/byd-atto-3-vs-mg-zs-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/tata-tiago-ev-vs-citroen-ec3",
       "path": "/compare/tata-tiago-ev-vs-citroen-ec3",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/mahindra-xuv400-vs-tata-nexon-ev",
       "path": "/compare/mahindra-xuv400-vs-tata-nexon-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/kia-ev6-vs-byd-atto-3",
       "path": "/compare/kia-ev6-vs-byd-atto-3",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/bmw-ix1-vs-mercedes-eqb",
       "path": "/compare/bmw-ix1-vs-mercedes-eqb",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/mercedes-eqa-vs-bmw-ix1",
       "path": "/compare/mercedes-eqa-vs-bmw-ix1",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/volvo-ex40-vs-kia-ev6",
       "path": "/compare/volvo-ex40-vs-kia-ev6",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/mahindra-be-6-vs-mahindra-xuv400",
       "path": "/compare/mahindra-be-6-vs-mahindra-xuv400",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/mahindra-xev-9e-vs-mahindra-be-6",
       "path": "/compare/mahindra-xev-9e-vs-mahindra-be-6",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/hyundai-kona-electric-vs-kia-ev6",
       "path": "/compare/hyundai-kona-electric-vs-kia-ev6",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/tata-punch-ev-vs-mg-comet-ev",
       "path": "/compare/tata-punch-ev-vs-mg-comet-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/citroen-ec3-vs-tata-tiago-ev",
       "path": "/compare/citroen-ec3-vs-tata-tiago-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/tata-nexon-ev-vs-tata-curvv-ev",
       "path": "/compare/tata-nexon-ev-vs-tata-curvv-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/tata-nexon-ev-vs-mahindra-xuv400",
       "path": "/compare/tata-nexon-ev-vs-mahindra-xuv400",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/mg-zs-ev-vs-byd-atto-3",
       "path": "/compare/mg-zs-ev-vs-byd-atto-3",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/tata-punch-ev-vs-citroen-ec3",
       "path": "/compare/tata-punch-ev-vs-citroen-ec3",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/hyundai-kona-electric-vs-tata-nexon-ev",
       "path": "/compare/hyundai-kona-electric-vs-tata-nexon-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/mercedes-eqb-vs-volvo-ex40",
       "path": "/compare/mercedes-eqb-vs-volvo-ex40",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/mahindra-xev-9e-vs-kia-ev6",
       "path": "/compare/mahindra-xev-9e-vs-kia-ev6",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     },
     {
       "loc": "https://evsavari.com/compare/tata-curvv-ev-vs-mg-zs-ev",
       "path": "/compare/tata-curvv-ev-vs-mg-zs-ev",
       "priority": 0.82,
-      "changefreq": "weekly"
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-curvv-ev-vs-mahindra-be-6-agent",
+      "path": "/compare/tata-curvv-ev-vs-mahindra-be-6-agent",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/tata-punch-ev-vs-mg-windsor-ev-agent",
+      "path": "/compare/tata-punch-ev-vs-mg-windsor-ev-agent",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/compare/byd-atto-3-vs-hyundai-creta-electric-agent",
+      "path": "/compare/byd-atto-3-vs-hyundai-creta-electric-agent",
+      "priority": 0.82,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
     }
   ],
   "counts": {
     "static": 13,
     "vehicles": 17,
-    "discovery": 98,
-    "compare": 26,
-    "total": 154
+    "discovery": 180,
+    "compare": 29,
+    "total": 239
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
     "static": 13,
     "cars": 17,
-    "discovery": 151,
-    "compare": 26
+    "discovery": 180,
+    "compare": 29
   }
 }

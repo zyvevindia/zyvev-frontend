@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-10T04:12:34.473Z",
+  "generatedAt": "2026-06-10T06:03:42.334Z",
   "agentVersion": 1,
   "methodology": "Deterministic SEO generation from golden dossiers + score engine (20 page specs)",
-  "vehiclePoolSize": 10,
+  "vehiclePoolSize": 25,
   "aggregate": {
     "pagesTarget": 20,
     "pagesGenerated": 20,
@@ -21,13 +21,13 @@
       "contentType": "buying_guide",
       "slug": "best-evs-under-15-lakh-agent",
       "ok": true,
-      "rankedCount": 4,
+      "rankedCount": 7,
       "missingFields": [],
       "metadataIssues": [],
       "recommendation": "READY",
       "title": "Best EVs under ₹15 lakh in India | EVSavari",
       "metaDescriptionLength": 116,
-      "topVehicle": "Tata Punch EV",
+      "topVehicle": "Tata Tiago EV",
       "deterministic": true
     },
     {
@@ -40,8 +40,8 @@
       "metadataIssues": [],
       "recommendation": "READY",
       "title": "Best family EVs in India | EVSavari",
-      "metaDescriptionLength": 116,
-      "topVehicle": "Tata Curvv EV",
+      "metaDescriptionLength": 110,
+      "topVehicle": "Kia EV6",
       "deterministic": true
     },
     {
@@ -54,8 +54,8 @@
       "metadataIssues": [],
       "recommendation": "READY",
       "title": "Best city EVs in India | EVSavari",
-      "metaDescriptionLength": 116,
-      "topVehicle": "Tata Curvv EV",
+      "metaDescriptionLength": 110,
+      "topVehicle": "Kia EV6",
       "deterministic": true
     },
     {
@@ -68,8 +68,8 @@
       "metadataIssues": [],
       "recommendation": "READY",
       "title": "Best highway EVs in India | EVSavari",
-      "metaDescriptionLength": 118,
-      "topVehicle": "Mahindra XEV 9e",
+      "metaDescriptionLength": 110,
+      "topVehicle": "Kia EV6",
       "deterministic": true
     },
     {
@@ -82,8 +82,8 @@
       "metadataIssues": [],
       "recommendation": "READY",
       "title": "Best premium EVs in India | EVSavari",
-      "metaDescriptionLength": 113,
-      "topVehicle": "BYD Atto 3",
+      "metaDescriptionLength": 110,
+      "topVehicle": "BMW iX1",
       "deterministic": true
     },
     {
@@ -97,7 +97,7 @@
       "recommendation": "READY",
       "title": "Best budget EVs in India | EVSavari",
       "metaDescriptionLength": 116,
-      "topVehicle": "Tata Punch EV",
+      "topVehicle": "Tata Tiago EV",
       "deterministic": true
     },
     {
@@ -153,7 +153,7 @@
       "recommendation": "READY",
       "title": "Top 10 EVs in India | EVSavari",
       "metaDescriptionLength": 100,
-      "topVehicle": "Mahindra XEV 9e",
+      "topVehicle": "Kia EV6",
       "deterministic": true
     },
     {
@@ -167,7 +167,7 @@
       "recommendation": "READY",
       "title": "Fastest charging EVs in India | EVSavari",
       "metaDescriptionLength": 101,
-      "topVehicle": "Mahindra XEV 9e",
+      "topVehicle": "Kia EV6",
       "deterministic": true
     },
     {
@@ -195,7 +195,7 @@
       "recommendation": "READY",
       "title": "Safest EVs in India | EVSavari",
       "metaDescriptionLength": 99,
-      "topVehicle": "Tata Curvv EV",
+      "topVehicle": "Kia EV6",
       "deterministic": true
     },
     {
@@ -304,12 +304,12 @@
         "slug": "best-evs-under-15-lakh-agent",
         "pageTypeId": "budget_under_15",
         "category": "usage",
-        "intro": "Best EVs under ₹15 lakh in India — 4 EVs ranked by deterministic EVSavari Best Budget EV scores from verified catalog data.",
+        "intro": "Best EVs under ₹15 lakh in India — 7 EVs ranked by deterministic EVSavari Best Budget EV scores from verified catalog data.",
         "recommendationLogic": {
           "pageTypeId": "budget_under_15",
           "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
           "tonePolicy": "well_suited_language_only",
-          "candidatePoolSize": 10,
+          "candidatePoolSize": 25,
           "source": "seo-agent-v1",
           "category": "usage",
           "primaryScoreKey": "budget",
@@ -318,6 +318,18 @@
         "rankedVehicles": [
           {
             "rank": 1,
+            "slug": "tata-tiago-ev",
+            "displayName": "Tata Tiago EV",
+            "exShowroom": 799000,
+            "claimedRangeKm": 293,
+            "compositeScore": 83,
+            "confidence": "high",
+            "explanation": "Tata Tiago EV — Best Budget EV score 83/100. Best Budget EV: 83/100 (Strong capability at the lowest entry price.)",
+            "tradeoff": "Strength from score data: budget leads this EV at 83/100. Tradeoff to weigh: Range score uses 315 km claimed range and 13.1 km/kWh efficiency.",
+            "detailPath": "/cars/tata-tiago-ev"
+          },
+          {
+            "rank": 2,
             "slug": "tata-punch-ev",
             "displayName": "Tata Punch EV",
             "exShowroom": 969000,
@@ -329,7 +341,19 @@
             "detailPath": "/cars/tata-punch-ev"
           },
           {
-            "rank": 2,
+            "rank": 3,
+            "slug": "mg-comet-ev",
+            "displayName": "MG Comet EV",
+            "exShowroom": 749000,
+            "claimedRangeKm": 230,
+            "compositeScore": 79,
+            "confidence": "high",
+            "explanation": "MG Comet EV — Best Budget EV score 79/100. Best Budget EV: 79/100 (Strong capability at the lowest entry price.)",
+            "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, 360° camera, Connected car. Tradeoff to weigh: Range score uses 230 km claimed range and 13.5 km/kWh efficiency.",
+            "detailPath": "/cars/mg-comet-ev"
+          },
+          {
+            "rank": 4,
             "slug": "mg-windsor-ev",
             "displayName": "MG Windsor EV",
             "exShowroom": 999000,
@@ -341,22 +365,34 @@
             "detailPath": "/cars/mg-windsor-ev"
           },
           {
-            "rank": 3,
+            "rank": 5,
             "slug": "tata-nexon-ev",
             "displayName": "Tata Nexon EV",
             "exShowroom": 1249000,
             "claimedRangeKm": 489,
-            "compositeScore": 76,
+            "compositeScore": 75,
             "confidence": "high",
-            "explanation": "Tata Nexon EV — Best Budget EV score 76/100. Best Budget EV: 76/100 (Strong capability at the lowest entry price.)",
-            "tradeoff": "Strength from score data: Range score based on 489 km certified range. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time.",
+            "explanation": "Tata Nexon EV — Best Budget EV score 75/100. Best Budget EV: 75/100 (Strong capability at the lowest entry price.)",
+            "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time.",
             "detailPath": "/cars/tata-nexon-ev"
           },
           {
-            "rank": 4,
+            "rank": 6,
+            "slug": "tata-tigor-ev",
+            "displayName": "Tata Tigor EV",
+            "exShowroom": 1249000,
+            "claimedRangeKm": 315,
+            "compositeScore": 75,
+            "confidence": "high",
+            "explanation": "Tata Tigor EV — Best Budget EV score 75/100. Best Budget EV: 75/100 (Strong capability at the lowest entry price.)",
+            "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Range score uses 315 km claimed range and 12.1 km/kWh efficiency.",
+            "detailPath": "/cars/tata-tigor-ev"
+          },
+          {
+            "rank": 7,
             "slug": "citroen-ec3",
             "displayName": "Citroen eC3",
-            "exShowroom": 1190000,
+            "exShowroom": 1269000,
             "claimedRangeKm": 320,
             "compositeScore": 71,
             "confidence": "medium",
@@ -369,8 +405,16 @@
           "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
           "considerations": [
             {
+              "slug": "tata-tiago-ev",
+              "tradeoff": "Strength from score data: budget leads this EV at 83/100. Tradeoff to weigh: Range score uses 315 km claimed range and 13.1 km/kWh efficiency."
+            },
+            {
               "slug": "tata-punch-ev",
               "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time."
+            },
+            {
+              "slug": "mg-comet-ev",
+              "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, 360° camera, Connected car. Tradeoff to weigh: Range score uses 230 km claimed range and 13.5 km/kWh efficiency."
             },
             {
               "slug": "mg-windsor-ev",
@@ -378,58 +422,77 @@
             },
             {
               "slug": "tata-nexon-ev",
-              "tradeoff": "Strength from score data: Range score based on 489 km certified range. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time."
+              "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time."
             },
             {
-              "slug": "citroen-ec3",
-              "tradeoff": "Strength from score data: budget leads this EV at 71/100. Tradeoff to weigh: Range score uses 320 km claimed range and 11.0 km/kWh efficiency."
+              "slug": "tata-tigor-ev",
+              "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Range score uses 315 km claimed range and 12.1 km/kWh efficiency."
             }
           ]
         },
         "title": "Best EVs under ₹15 lakh in India | EVSavari",
-        "metaDescription": "4 EVs well suited for this use case — led by Tata Punch EV. Deterministic scores from EVSavari catalog intelligence.",
+        "metaDescription": "7 EVs well suited for this use case — led by Tata Tiago EV. Deterministic scores from EVSavari catalog intelligence.",
         "keywords": [
           "electric car India",
           "EV comparison",
           "EVSavari",
           "best evs under 15 lakh",
           "best budget ev",
+          "Tata Tiago EV",
           "Tata Punch EV",
+          "MG Comet EV",
           "MG Windsor EV",
-          "Tata Nexon EV",
-          "Citroen eC3"
+          "Tata Nexon EV"
         ],
         "canonicalPath": "/best-evs/under-15-lakh-agent",
         "canonicalUrl": "https://evsavari.com/best-evs/under-15-lakh-agent",
-        "generatedAt": "2026-06-10T04:12:34.475Z",
+        "generatedAt": "2026-06-10T06:03:42.337Z",
         "structuredData": {
           "@context": "https://schema.org",
           "@type": "ItemList",
           "name": "best-evs-under-15-lakh-agent",
-          "description": "4 EVs well suited for this use case — led by Tata Punch EV. Deterministic scores from EVSavari catalog intelligence.",
-          "numberOfItems": 4,
+          "description": "7 EVs well suited for this use case — led by Tata Tiago EV. Deterministic scores from EVSavari catalog intelligence.",
+          "numberOfItems": 7,
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
+              "name": "Tata Tiago EV",
+              "url": "https://evsavari.com/cars/tata-tiago-ev"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
               "name": "Tata Punch EV",
               "url": "https://evsavari.com/cars/tata-punch-ev"
             },
             {
               "@type": "ListItem",
-              "position": 2,
+              "position": 3,
+              "name": "MG Comet EV",
+              "url": "https://evsavari.com/cars/mg-comet-ev"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
               "name": "MG Windsor EV",
               "url": "https://evsavari.com/cars/mg-windsor-ev"
             },
             {
               "@type": "ListItem",
-              "position": 3,
+              "position": 5,
               "name": "Tata Nexon EV",
               "url": "https://evsavari.com/cars/tata-nexon-ev"
             },
             {
               "@type": "ListItem",
-              "position": 4,
+              "position": 6,
+              "name": "Tata Tigor EV",
+              "url": "https://evsavari.com/cars/tata-tigor-ev"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
               "name": "Citroen eC3",
               "url": "https://evsavari.com/cars/citroen-ec3"
             }
@@ -445,8 +508,8 @@
             "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
           },
           {
-            "question": "Why is Tata Punch EV ranked first?",
-            "answer": "Tata Punch EV — Best Budget EV score 80/100. Best Budget EV: 80/100 (Strong capability at the lowest entry price.)"
+            "question": "Why is Tata Tiago EV ranked first?",
+            "answer": "Tata Tiago EV — Best Budget EV score 83/100. Best Budget EV: 83/100 (Strong capability at the lowest entry price.)"
           }
         ],
         "governance": {
@@ -469,7 +532,7 @@
           "pageTypeId": "family",
           "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
           "tonePolicy": "well_suited_language_only",
-          "candidatePoolSize": 10,
+          "candidatePoolSize": 25,
           "source": "seo-agent-v1",
           "category": "usage",
           "primaryScoreKey": "family",
@@ -478,6 +541,30 @@
         "rankedVehicles": [
           {
             "rank": 1,
+            "slug": "kia-ev6",
+            "displayName": "Kia EV6",
+            "exShowroom": 6590000,
+            "claimedRangeKm": 650,
+            "compositeScore": 96,
+            "confidence": "high",
+            "explanation": "Kia EV6 — Best Family EV score 96/100. Best Family EV: 96/100 (Boot space, safety, features, and comfort for family use.)",
+            "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100.",
+            "detailPath": "/cars/kia-ev6"
+          },
+          {
+            "rank": 2,
+            "slug": "bmw-ix1",
+            "displayName": "BMW iX1",
+            "exShowroom": 6890000,
+            "claimedRangeKm": 531,
+            "compositeScore": 93,
+            "confidence": "high",
+            "explanation": "BMW iX1 — Best Family EV score 93/100. Best Family EV: 93/100 (Boot space, safety, features, and comfort for family use.)",
+            "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability.",
+            "detailPath": "/cars/bmw-ix1"
+          },
+          {
+            "rank": 3,
             "slug": "tata-curvv-ev",
             "displayName": "Tata Curvv EV",
             "exShowroom": 1799000,
@@ -489,7 +576,19 @@
             "detailPath": "/cars/tata-curvv-ev"
           },
           {
-            "rank": 2,
+            "rank": 4,
+            "slug": "byd-seal",
+            "displayName": "BYD Seal",
+            "exShowroom": 4100000,
+            "claimedRangeKm": 510,
+            "compositeScore": 88,
+            "confidence": "high",
+            "explanation": "BYD Seal — Best Family EV score 88/100. Best Family EV: 88/100 (Boot space, safety, features, and comfort for family use.)",
+            "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+            "detailPath": "/cars/byd-seal"
+          },
+          {
+            "rank": 5,
             "slug": "mahindra-xev-9e",
             "displayName": "Mahindra XEV 9e",
             "exShowroom": 2190000,
@@ -501,7 +600,7 @@
             "detailPath": "/cars/mahindra-xev-9e"
           },
           {
-            "rank": 3,
+            "rank": 6,
             "slug": "mahindra-be-6",
             "displayName": "Mahindra BE 6",
             "exShowroom": 1890000,
@@ -513,7 +612,19 @@
             "detailPath": "/cars/mahindra-be-6"
           },
           {
-            "rank": 4,
+            "rank": 7,
+            "slug": "hyundai-ioniq-5",
+            "displayName": "Hyundai Ioniq 5",
+            "exShowroom": 4495000,
+            "claimedRangeKm": 690,
+            "compositeScore": 86,
+            "confidence": "high",
+            "explanation": "Hyundai Ioniq 5 — Best Family EV score 86/100. Best Family EV: 86/100 (Boot space, safety, features, and comfort for family use.)",
+            "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+            "detailPath": "/cars/hyundai-ioniq-5"
+          },
+          {
+            "rank": 8,
             "slug": "byd-atto-3",
             "displayName": "BYD Atto 3",
             "exShowroom": 2499000,
@@ -523,62 +634,26 @@
             "explanation": "BYD Atto 3 — Best Family EV score 86/100. Best Family EV: 86/100 (Boot space, safety, features, and comfort for family use.)",
             "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
             "detailPath": "/cars/byd-atto-3"
-          },
-          {
-            "rank": 5,
-            "slug": "hyundai-creta-electric",
-            "displayName": "Hyundai Creta Electric",
-            "exShowroom": 1799000,
-            "claimedRangeKm": 390,
-            "compositeScore": 83,
-            "confidence": "high",
-            "explanation": "Hyundai Creta Electric — Best Family EV score 83/100. Best Family EV: 83/100 (Boot space, safety, features, and comfort for family use.)",
-            "tradeoff": "Strength from score data: Feature score includes verified: ADAS, Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
-            "detailPath": "/cars/hyundai-creta-electric"
-          },
-          {
-            "rank": 6,
-            "slug": "mg-zs-ev",
-            "displayName": "MG ZS EV",
-            "exShowroom": 1899000,
-            "claimedRangeKm": 461,
-            "compositeScore": 79,
-            "confidence": "high",
-            "explanation": "MG ZS EV — Best Family EV score 79/100. Best Family EV: 79/100 (Boot space, safety, features, and comfort for family use.)",
-            "tradeoff": "Strength from score data: Safety score includes 5-star NCAP rating and 6 airbags. Tradeoff to weigh: Charging score reflects 76 kW DC peak and ~45 min DC time.",
-            "detailPath": "/cars/mg-zs-ev"
-          },
-          {
-            "rank": 7,
-            "slug": "mg-windsor-ev",
-            "displayName": "MG Windsor EV",
-            "exShowroom": 999000,
-            "claimedRangeKm": 331,
-            "compositeScore": 62,
-            "confidence": "medium",
-            "explanation": "MG Windsor EV — Best Family EV score 62/100. Best Family EV: 62/100 (Boot space, safety, features, and comfort for family use.)",
-            "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability.",
-            "detailPath": "/cars/mg-windsor-ev"
-          },
-          {
-            "rank": 8,
-            "slug": "tata-punch-ev",
-            "displayName": "Tata Punch EV",
-            "exShowroom": 969000,
-            "claimedRangeKm": 468,
-            "compositeScore": 58,
-            "confidence": "medium",
-            "explanation": "Tata Punch EV — Best Family EV score 58/100. Best Family EV: 58/100 (Boot space, safety, features, and comfort for family use.)",
-            "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time.",
-            "detailPath": "/cars/tata-punch-ev"
           }
         ],
         "tradeoffs": {
           "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
           "considerations": [
             {
+              "slug": "kia-ev6",
+              "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100."
+            },
+            {
+              "slug": "bmw-ix1",
+              "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability."
+            },
+            {
               "slug": "tata-curvv-ev",
               "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+            },
+            {
+              "slug": "byd-seal",
+              "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
             },
             {
               "slug": "mahindra-xev-9e",
@@ -587,92 +662,80 @@
             {
               "slug": "mahindra-be-6",
               "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
-            },
-            {
-              "slug": "byd-atto-3",
-              "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time."
-            },
-            {
-              "slug": "hyundai-creta-electric",
-              "tradeoff": "Strength from score data: Feature score includes verified: ADAS, Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
-            },
-            {
-              "slug": "mg-zs-ev",
-              "tradeoff": "Strength from score data: Safety score includes 5-star NCAP rating and 6 airbags. Tradeoff to weigh: Charging score reflects 76 kW DC peak and ~45 min DC time."
             }
           ]
         },
         "title": "Best family EVs in India | EVSavari",
-        "metaDescription": "8 EVs well suited for this use case — led by Tata Curvv EV. Deterministic scores from EVSavari catalog intelligence.",
+        "metaDescription": "8 EVs well suited for this use case — led by Kia EV6. Deterministic scores from EVSavari catalog intelligence.",
         "keywords": [
           "electric car India",
           "EV comparison",
           "EVSavari",
           "best evs for family",
           "best family ev",
+          "Kia EV6",
+          "BMW iX1",
           "Tata Curvv EV",
-          "Mahindra XEV 9e",
-          "Mahindra BE 6",
-          "BYD Atto 3",
-          "Hyundai Creta Electric"
+          "BYD Seal",
+          "Mahindra XEV 9e"
         ],
         "canonicalPath": "/best-evs/family-agent",
         "canonicalUrl": "https://evsavari.com/best-evs/family-agent",
-        "generatedAt": "2026-06-10T04:12:34.476Z",
+        "generatedAt": "2026-06-10T06:03:42.339Z",
         "structuredData": {
           "@context": "https://schema.org",
           "@type": "ItemList",
           "name": "best-evs-for-family-agent",
-          "description": "8 EVs well suited for this use case — led by Tata Curvv EV. Deterministic scores from EVSavari catalog intelligence.",
+          "description": "8 EVs well suited for this use case — led by Kia EV6. Deterministic scores from EVSavari catalog intelligence.",
           "numberOfItems": 8,
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
+              "name": "Kia EV6",
+              "url": "https://evsavari.com/cars/kia-ev6"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "BMW iX1",
+              "url": "https://evsavari.com/cars/bmw-ix1"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
               "name": "Tata Curvv EV",
               "url": "https://evsavari.com/cars/tata-curvv-ev"
             },
             {
               "@type": "ListItem",
-              "position": 2,
+              "position": 4,
+              "name": "BYD Seal",
+              "url": "https://evsavari.com/cars/byd-seal"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
               "name": "Mahindra XEV 9e",
               "url": "https://evsavari.com/cars/mahindra-xev-9e"
             },
             {
               "@type": "ListItem",
-              "position": 3,
+              "position": 6,
               "name": "Mahindra BE 6",
               "url": "https://evsavari.com/cars/mahindra-be-6"
             },
             {
               "@type": "ListItem",
-              "position": 4,
-              "name": "BYD Atto 3",
-              "url": "https://evsavari.com/cars/byd-atto-3"
-            },
-            {
-              "@type": "ListItem",
-              "position": 5,
-              "name": "Hyundai Creta Electric",
-              "url": "https://evsavari.com/cars/hyundai-creta-electric"
-            },
-            {
-              "@type": "ListItem",
-              "position": 6,
-              "name": "MG ZS EV",
-              "url": "https://evsavari.com/cars/mg-zs-ev"
-            },
-            {
-              "@type": "ListItem",
               "position": 7,
-              "name": "MG Windsor EV",
-              "url": "https://evsavari.com/cars/mg-windsor-ev"
+              "name": "Hyundai Ioniq 5",
+              "url": "https://evsavari.com/cars/hyundai-ioniq-5"
             },
             {
               "@type": "ListItem",
               "position": 8,
-              "name": "Tata Punch EV",
-              "url": "https://evsavari.com/cars/tata-punch-ev"
+              "name": "BYD Atto 3",
+              "url": "https://evsavari.com/cars/byd-atto-3"
             }
           ]
         },
@@ -686,8 +749,8 @@
             "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
           },
           {
-            "question": "Why is Tata Curvv EV ranked first?",
-            "answer": "Tata Curvv EV — Best Family EV score 92/100. Best Family EV: 92/100 (Boot space, safety, features, and comfort for family use.)"
+            "question": "Why is Kia EV6 ranked first?",
+            "answer": "Kia EV6 — Best Family EV score 96/100. Best Family EV: 96/100 (Boot space, safety, features, and comfort for family use.)"
           }
         ],
         "governance": {
@@ -710,7 +773,7 @@
           "pageTypeId": "city_driving",
           "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
           "tonePolicy": "well_suited_language_only",
-          "candidatePoolSize": 10,
+          "candidatePoolSize": 25,
           "source": "seo-agent-v1",
           "category": "usage",
           "primaryScoreKey": "city",
@@ -719,6 +782,18 @@
         "rankedVehicles": [
           {
             "rank": 1,
+            "slug": "kia-ev6",
+            "displayName": "Kia EV6",
+            "exShowroom": 6590000,
+            "claimedRangeKm": 650,
+            "compositeScore": 92,
+            "confidence": "high",
+            "explanation": "Kia EV6 — Best City EV score 92/100. Best City EV: 92/100 (Efficiency, compact dimensions, and home charging practicality.)",
+            "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100.",
+            "detailPath": "/cars/kia-ev6"
+          },
+          {
+            "rank": 2,
             "slug": "tata-curvv-ev",
             "displayName": "Tata Curvv EV",
             "exShowroom": 1799000,
@@ -730,7 +805,19 @@
             "detailPath": "/cars/tata-curvv-ev"
           },
           {
-            "rank": 2,
+            "rank": 3,
+            "slug": "hyundai-ioniq-5",
+            "displayName": "Hyundai Ioniq 5",
+            "exShowroom": 4495000,
+            "claimedRangeKm": 690,
+            "compositeScore": 77,
+            "confidence": "high",
+            "explanation": "Hyundai Ioniq 5 — Best City EV score 77/100. Best City EV: 77/100 (Efficiency, compact dimensions, and home charging practicality.)",
+            "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+            "detailPath": "/cars/hyundai-ioniq-5"
+          },
+          {
+            "rank": 4,
             "slug": "mahindra-xev-9e",
             "displayName": "Mahindra XEV 9e",
             "exShowroom": 2190000,
@@ -742,7 +829,7 @@
             "detailPath": "/cars/mahindra-xev-9e"
           },
           {
-            "rank": 3,
+            "rank": 5,
             "slug": "mahindra-be-6",
             "displayName": "Mahindra BE 6",
             "exShowroom": 1890000,
@@ -754,7 +841,19 @@
             "detailPath": "/cars/mahindra-be-6"
           },
           {
-            "rank": 4,
+            "rank": 6,
+            "slug": "tata-harrier-ev",
+            "displayName": "Tata Harrier EV",
+            "exShowroom": 2149000,
+            "claimedRangeKm": 627,
+            "compositeScore": 74,
+            "confidence": "medium",
+            "explanation": "Tata Harrier EV — Best City EV score 74/100. Best City EV: 74/100 (Efficiency, compact dimensions, and home charging practicality.)",
+            "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time.",
+            "detailPath": "/cars/tata-harrier-ev"
+          },
+          {
+            "rank": 7,
             "slug": "hyundai-creta-electric",
             "displayName": "Hyundai Creta Electric",
             "exShowroom": 1799000,
@@ -766,60 +865,32 @@
             "detailPath": "/cars/hyundai-creta-electric"
           },
           {
-            "rank": 5,
-            "slug": "byd-atto-3",
-            "displayName": "BYD Atto 3",
-            "exShowroom": 2499000,
-            "claimedRangeKm": 521,
-            "compositeScore": 69,
-            "confidence": "medium",
-            "explanation": "BYD Atto 3 — Best City EV score 69/100. Best City EV: 69/100 (Efficiency, compact dimensions, and home charging practicality.)",
-            "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
-            "detailPath": "/cars/byd-atto-3"
-          },
-          {
-            "rank": 6,
-            "slug": "mg-zs-ev",
-            "displayName": "MG ZS EV",
-            "exShowroom": 1899000,
-            "claimedRangeKm": 461,
-            "compositeScore": 66,
-            "confidence": "medium",
-            "explanation": "MG ZS EV — Best City EV score 66/100. Best City EV: 66/100 (Efficiency, compact dimensions, and home charging practicality.)",
-            "tradeoff": "Strength from score data: Safety score includes 5-star NCAP rating and 6 airbags. Tradeoff to weigh: Charging score reflects 76 kW DC peak and ~45 min DC time.",
-            "detailPath": "/cars/mg-zs-ev"
-          },
-          {
-            "rank": 7,
-            "slug": "citroen-ec3",
-            "displayName": "Citroen eC3",
-            "exShowroom": 1190000,
-            "claimedRangeKm": 320,
-            "compositeScore": 55,
-            "confidence": "medium",
-            "explanation": "Citroen eC3 — Best City EV score 55/100. Best City EV: 55/100 (Efficiency, compact dimensions, and home charging practicality.)",
-            "tradeoff": "Strength from score data: budget leads this EV at 71/100. Tradeoff to weigh: Range score uses 320 km claimed range and 11.0 km/kWh efficiency.",
-            "detailPath": "/cars/citroen-ec3"
-          },
-          {
             "rank": 8,
-            "slug": "mg-windsor-ev",
-            "displayName": "MG Windsor EV",
-            "exShowroom": 999000,
-            "claimedRangeKm": 331,
-            "compositeScore": 53,
-            "confidence": "limited",
-            "explanation": "MG Windsor EV — Best City EV score 53/100. Best City EV: 53/100 (Efficiency, compact dimensions, and home charging practicality.)",
-            "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability.",
-            "detailPath": "/cars/mg-windsor-ev"
+            "slug": "bmw-ix1",
+            "displayName": "BMW iX1",
+            "exShowroom": 6890000,
+            "claimedRangeKm": 531,
+            "compositeScore": 73,
+            "confidence": "medium",
+            "explanation": "BMW iX1 — Best City EV score 73/100. Best City EV: 73/100 (Efficiency, compact dimensions, and home charging practicality.)",
+            "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability.",
+            "detailPath": "/cars/bmw-ix1"
           }
         ],
         "tradeoffs": {
           "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
           "considerations": [
             {
+              "slug": "kia-ev6",
+              "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100."
+            },
+            {
               "slug": "tata-curvv-ev",
               "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+            },
+            {
+              "slug": "hyundai-ioniq-5",
+              "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100."
             },
             {
               "slug": "mahindra-xev-9e",
@@ -830,90 +901,82 @@
               "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
             },
             {
-              "slug": "hyundai-creta-electric",
-              "tradeoff": "Strength from score data: Feature score includes verified: ADAS, Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
-            },
-            {
-              "slug": "byd-atto-3",
-              "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time."
-            },
-            {
-              "slug": "mg-zs-ev",
-              "tradeoff": "Strength from score data: Safety score includes 5-star NCAP rating and 6 airbags. Tradeoff to weigh: Charging score reflects 76 kW DC peak and ~45 min DC time."
+              "slug": "tata-harrier-ev",
+              "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time."
             }
           ]
         },
         "title": "Best city EVs in India | EVSavari",
-        "metaDescription": "8 EVs well suited for this use case — led by Tata Curvv EV. Deterministic scores from EVSavari catalog intelligence.",
+        "metaDescription": "8 EVs well suited for this use case — led by Kia EV6. Deterministic scores from EVSavari catalog intelligence.",
         "keywords": [
           "electric car India",
           "EV comparison",
           "EVSavari",
           "best evs for city",
           "best city ev",
+          "Kia EV6",
           "Tata Curvv EV",
+          "Hyundai Ioniq 5",
           "Mahindra XEV 9e",
-          "Mahindra BE 6",
-          "Hyundai Creta Electric",
-          "BYD Atto 3"
+          "Mahindra BE 6"
         ],
         "canonicalPath": "/best-evs/city-agent",
         "canonicalUrl": "https://evsavari.com/best-evs/city-agent",
-        "generatedAt": "2026-06-10T04:12:34.477Z",
+        "generatedAt": "2026-06-10T06:03:42.340Z",
         "structuredData": {
           "@context": "https://schema.org",
           "@type": "ItemList",
           "name": "best-evs-for-city-agent",
-          "description": "8 EVs well suited for this use case — led by Tata Curvv EV. Deterministic scores from EVSavari catalog intelligence.",
+          "description": "8 EVs well suited for this use case — led by Kia EV6. Deterministic scores from EVSavari catalog intelligence.",
           "numberOfItems": 8,
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
+              "name": "Kia EV6",
+              "url": "https://evsavari.com/cars/kia-ev6"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
               "name": "Tata Curvv EV",
               "url": "https://evsavari.com/cars/tata-curvv-ev"
             },
             {
               "@type": "ListItem",
-              "position": 2,
+              "position": 3,
+              "name": "Hyundai Ioniq 5",
+              "url": "https://evsavari.com/cars/hyundai-ioniq-5"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
               "name": "Mahindra XEV 9e",
               "url": "https://evsavari.com/cars/mahindra-xev-9e"
             },
             {
               "@type": "ListItem",
-              "position": 3,
+              "position": 5,
               "name": "Mahindra BE 6",
               "url": "https://evsavari.com/cars/mahindra-be-6"
             },
             {
               "@type": "ListItem",
-              "position": 4,
+              "position": 6,
+              "name": "Tata Harrier EV",
+              "url": "https://evsavari.com/cars/tata-harrier-ev"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
               "name": "Hyundai Creta Electric",
               "url": "https://evsavari.com/cars/hyundai-creta-electric"
             },
             {
               "@type": "ListItem",
-              "position": 5,
-              "name": "BYD Atto 3",
-              "url": "https://evsavari.com/cars/byd-atto-3"
-            },
-            {
-              "@type": "ListItem",
-              "position": 6,
-              "name": "MG ZS EV",
-              "url": "https://evsavari.com/cars/mg-zs-ev"
-            },
-            {
-              "@type": "ListItem",
-              "position": 7,
-              "name": "Citroen eC3",
-              "url": "https://evsavari.com/cars/citroen-ec3"
-            },
-            {
-              "@type": "ListItem",
               "position": 8,
-              "name": "MG Windsor EV",
-              "url": "https://evsavari.com/cars/mg-windsor-ev"
+              "name": "BMW iX1",
+              "url": "https://evsavari.com/cars/bmw-ix1"
             }
           ]
         },
@@ -927,8 +990,8 @@
             "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
           },
           {
-            "question": "Why is Tata Curvv EV ranked first?",
-            "answer": "Tata Curvv EV — Best City EV score 78/100. Best City EV: 78/100 (Efficiency, compact dimensions, and home charging practicality.)"
+            "question": "Why is Kia EV6 ranked first?",
+            "answer": "Kia EV6 — Best City EV score 92/100. Best City EV: 92/100 (Efficiency, compact dimensions, and home charging practicality.)"
           }
         ],
         "governance": {

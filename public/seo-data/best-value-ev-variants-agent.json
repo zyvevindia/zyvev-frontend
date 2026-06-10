@@ -1,0 +1,349 @@
+{
+  "seoPage": {
+    "slug": "best-value-ev-variants-agent",
+    "pageTypeId": "variant_value",
+    "category": "usage",
+    "intro": "Best value EV variants in India — variant picks from score-engine variant analysis across 10 data-backed entries.",
+    "recommendationLogic": {
+      "pageTypeId": "variant_value",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "usage",
+      "primaryScoreKey": "composite"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV — Empowered+ A 45",
+        "exShowroom": 1729000,
+        "claimedRangeKm": 489,
+        "compositeScore": 62,
+        "confidence": "medium",
+        "explanation": "Empowered+ A 45 offers the strongest price-to-capability ratio (value score 62/100).",
+        "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time.",
+        "detailPath": "/cars/tata-nexon-ev",
+        "variantName": "Empowered+ A 45"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV — Empowered",
+        "exShowroom": 1229000,
+        "claimedRangeKm": 468,
+        "compositeScore": 65,
+        "confidence": "medium",
+        "explanation": "Empowered offers the strongest price-to-capability ratio (value score 65/100).",
+        "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time.",
+        "detailPath": "/cars/tata-punch-ev",
+        "variantName": "Empowered"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV — Empowered 55",
+        "exShowroom": 2099000,
+        "claimedRangeKm": 585,
+        "compositeScore": 77,
+        "confidence": "high",
+        "explanation": "Empowered 55 offers the strongest price-to-capability ratio (value score 77/100).",
+        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
+        "detailPath": "/cars/tata-curvv-ev",
+        "variantName": "Empowered 55"
+      },
+      {
+        "rank": 4,
+        "slug": "mg-windsor-ev",
+        "displayName": "MG Windsor EV — Excite",
+        "exShowroom": 999000,
+        "claimedRangeKm": 331,
+        "compositeScore": 56,
+        "confidence": "medium",
+        "explanation": "Excite offers the strongest price-to-capability ratio (value score 56/100).",
+        "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability.",
+        "detailPath": "/cars/mg-windsor-ev",
+        "variantName": "Excite"
+      },
+      {
+        "rank": 5,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra BE 6 — Pack Three 79",
+        "exShowroom": 2290000,
+        "claimedRangeKm": 683,
+        "compositeScore": 75,
+        "confidence": "high",
+        "explanation": "Pack Three 79 offers the strongest price-to-capability ratio (value score 75/100).",
+        "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/mahindra-be-6",
+        "variantName": "Pack Three 79"
+      },
+      {
+        "rank": 6,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra XEV 9e — Pack One 79",
+        "exShowroom": 2190000,
+        "claimedRangeKm": 656,
+        "compositeScore": 79,
+        "confidence": "high",
+        "explanation": "Pack One 79 offers the strongest price-to-capability ratio (value score 79/100).",
+        "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100.",
+        "detailPath": "/cars/mahindra-xev-9e",
+        "variantName": "Pack One 79"
+      },
+      {
+        "rank": 7,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3 — Dynamic",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 521,
+        "compositeScore": 61,
+        "confidence": "medium",
+        "explanation": "Dynamic offers the strongest price-to-capability ratio (value score 61/100).",
+        "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
+        "detailPath": "/cars/byd-atto-3",
+        "variantName": "Dynamic"
+      },
+      {
+        "rank": 8,
+        "slug": "hyundai-creta-electric",
+        "displayName": "Hyundai Creta Electric — Executive",
+        "exShowroom": 1799000,
+        "claimedRangeKm": 390,
+        "compositeScore": 66,
+        "confidence": "medium",
+        "explanation": "Executive offers the strongest price-to-capability ratio (value score 66/100).",
+        "tradeoff": "Strength from score data: Feature score includes verified: ADAS, Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/hyundai-creta-electric",
+        "variantName": "Executive"
+      },
+      {
+        "rank": 9,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV — Pace",
+        "exShowroom": 749000,
+        "claimedRangeKm": 230,
+        "compositeScore": 52,
+        "confidence": "limited",
+        "explanation": "Pace offers the strongest price-to-capability ratio (value score 52/100).",
+        "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, 360° camera, Connected car. Tradeoff to weigh: Range score uses 230 km claimed range and 13.5 km/kWh efficiency.",
+        "detailPath": "/cars/mg-comet-ev",
+        "variantName": "Pace"
+      },
+      {
+        "rank": 10,
+        "slug": "hyundai-ioniq-5",
+        "displayName": "Hyundai Ioniq 5 — RWD",
+        "exShowroom": 4495000,
+        "claimedRangeKm": 631,
+        "compositeScore": 58,
+        "confidence": "medium",
+        "explanation": "RWD offers the strongest price-to-capability ratio (value score 58/100).",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+        "detailPath": "/cars/hyundai-ioniq-5",
+        "variantName": "RWD"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "tata-nexon-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time."
+        },
+        {
+          "slug": "tata-punch-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time."
+        },
+        {
+          "slug": "tata-curvv-ev",
+          "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+        },
+        {
+          "slug": "mg-windsor-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability."
+        },
+        {
+          "slug": "mahindra-be-6",
+          "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
+        },
+        {
+          "slug": "mahindra-xev-9e",
+          "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100."
+        }
+      ]
+    },
+    "title": "Best value EV variants in India | EVSavari",
+    "metaDescription": "Variant recommendations from EVSavari Score Engine — 10 data-backed picks with transparent scoring. Human-reviewed catalog intelligence.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "best value ev variants",
+      "Tata Nexon EV — Empowered+ A 45",
+      "Tata Punch EV — Empowered",
+      "Tata Curvv EV — Empowered 55",
+      "MG Windsor EV — Excite",
+      "Mahindra BE 6 — Pack Three 79"
+    ],
+    "canonicalPath": "/best-evs/best-value-variants-agent",
+    "canonicalUrl": "https://evsavari.com/best-evs/best-value-variants-agent",
+    "generatedAt": "2026-06-10T06:29:07.750Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "best-value-ev-variants-agent",
+      "description": "Variant recommendations from EVSavari Score Engine — 10 data-backed picks with transparent scoring. Human-reviewed catalog intelligence.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tata Nexon EV — Empowered+ A 45",
+          "url": "https://evsavari.com/cars/tata-nexon-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tata Punch EV — Empowered",
+          "url": "https://evsavari.com/cars/tata-punch-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tata Curvv EV — Empowered 55",
+          "url": "https://evsavari.com/cars/tata-curvv-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "MG Windsor EV — Excite",
+          "url": "https://evsavari.com/cars/mg-windsor-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Mahindra BE 6 — Pack Three 79",
+          "url": "https://evsavari.com/cars/mahindra-be-6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Mahindra XEV 9e — Pack One 79",
+          "url": "https://evsavari.com/cars/mahindra-xev-9e"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "BYD Atto 3 — Dynamic",
+          "url": "https://evsavari.com/cars/byd-atto-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Hyundai Creta Electric — Executive",
+          "url": "https://evsavari.com/cars/hyundai-creta-electric"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "MG Comet EV — Pace",
+          "url": "https://evsavari.com/cars/mg-comet-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Hyundai Ioniq 5 — RWD",
+          "url": "https://evsavari.com/cars/hyundai-ioniq-5"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Why is Tata Nexon EV — Empowered+ A 45 ranked first?",
+        "answer": "Empowered+ A 45 offers the strongest price-to-capability ratio (value score 62/100)."
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Compares trims on price-per-range and feature value",
+        "Helps avoid overpaying for unused battery or features",
+        "Catalog-wide variant scan across tier-1 families"
+      ],
+      "cons": [
+        "Best value trim can change with discounts and facelifts",
+        "Lowest price trim may lack DC fast charge or ADAS",
+        "Stock availability varies by city and colour"
+      ],
+      "whoShouldBuy": [
+        "Buyers deciding which trim to book within a shortlisted model",
+        "Value seekers who want maximum capability per rupee",
+        "Fleet buyers standardising on cost-efficient trims"
+      ],
+      "whoShouldAvoid": [
+        "Buyers who want top-spec features regardless of price",
+        "Those who need immediate delivery of a rare trim",
+        "Shoppers who have not yet chosen the model family"
+      ],
+      "bestAlternative": {
+        "label": "Nexon EV best value variant",
+        "href": "/best-evs/tata-nexon-ev-best-value-variant-agent",
+        "reason": "If Nexon EV is on your shortlist, the single-family variant guide goes deeper."
+      },
+      "relatedLinks": [
+        {
+          "label": "Budget EVs",
+          "href": "/best-evs/budget-agent"
+        },
+        {
+          "label": "Nexon vs Curvv",
+          "href": "/compare/tata-nexon-ev-vs-tata-curvv-ev"
+        },
+        {
+          "label": "Browse EVs",
+          "href": "/cars"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Budget EVs",
+            "href": "/best-evs/budget-agent"
+          },
+          {
+            "label": "Nexon vs Curvv",
+            "href": "/compare/tata-nexon-ev-vs-tata-curvv-ev"
+          },
+          {
+            "label": "Browse EVs",
+            "href": "/cars"
+          }
+        ]
+      }
+    ]
+  }
+}

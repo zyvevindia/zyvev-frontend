@@ -1,6 +1,6 @@
 # SEO Agent v1 — Validation
 
-Generated: 2026-06-10T04:12:34.473Z
+Generated: 2026-06-10T06:03:42.334Z
 
 ## Summary
 
@@ -23,39 +23,39 @@ Generated: 2026-06-10T04:12:34.473Z
 
 ### best-ev-under-15-lakh
 - Slug: `best-evs-under-15-lakh-agent`
-- Ranked: 4
+- Ranked: 7
 - Missing: none
-- Top: Tata Punch EV
+- Top: Tata Tiago EV
 
 ### best-family-ev
 - Slug: `best-evs-for-family-agent`
 - Ranked: 8
 - Missing: none
-- Top: Tata Curvv EV
+- Top: Kia EV6
 
 ### best-city-ev
 - Slug: `best-evs-for-city-agent`
 - Ranked: 8
 - Missing: none
-- Top: Tata Curvv EV
+- Top: Kia EV6
 
 ### best-highway-ev
 - Slug: `best-evs-for-highway-agent`
 - Ranked: 8
 - Missing: none
-- Top: Mahindra XEV 9e
+- Top: Kia EV6
 
 ### best-premium-ev
 - Slug: `best-evs-premium-agent`
 - Ranked: 8
 - Missing: none
-- Top: BYD Atto 3
+- Top: BMW iX1
 
 ### best-budget-ev
 - Slug: `best-evs-budget-agent`
 - Ranked: 8
 - Missing: none
-- Top: Tata Punch EV
+- Top: Tata Tiago EV
 
 ### compare-curvv-vs-be6
 - Slug: `tata-curvv-ev-vs-mahindra-be-6-agent`
@@ -79,13 +79,13 @@ Generated: 2026-06-10T04:12:34.473Z
 - Slug: `top-10-evs-agent`
 - Ranked: 10
 - Missing: none
-- Top: Mahindra XEV 9e
+- Top: Kia EV6
 
 ### fastest-charging-evs
 - Slug: `fastest-charging-evs-agent`
 - Ranked: 10
 - Missing: none
-- Top: Mahindra XEV 9e
+- Top: Kia EV6
 
 ### longest-range-evs
 - Slug: `longest-range-evs-agent`
@@ -97,7 +97,7 @@ Generated: 2026-06-10T04:12:34.473Z
 - Slug: `safest-evs-agent`
 - Ranked: 10
 - Missing: none
-- Top: Tata Curvv EV
+- Top: Kia EV6
 
 ### variant-best-value-catalog
 - Slug: `best-value-ev-variants-agent`

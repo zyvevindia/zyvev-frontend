@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-10T04:12:56.126Z",
-  "count": 127,
+  "generatedAt": "2026-06-10T06:29:07.794Z",
+  "count": 157,
   "pages": [
     {
       "slug": "city-bengaluru-evs",
@@ -762,6 +762,186 @@
       "slug": "best-evs-for-taxi-commercial",
       "title": "Best EVs for Taxi & commercial duty in India | EVSavari",
       "canonicalPath": "/best-evs/taxi-commercial",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "brand-tata",
+      "title": "Tata Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/tata",
+      "pageType": "brand"
+    },
+    {
+      "slug": "brand-mg",
+      "title": "MG Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/mg",
+      "pageType": "brand"
+    },
+    {
+      "slug": "brand-mahindra",
+      "title": "Mahindra Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/mahindra",
+      "pageType": "brand"
+    },
+    {
+      "slug": "brand-hyundai",
+      "title": "Hyundai Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/hyundai",
+      "pageType": "brand"
+    },
+    {
+      "slug": "brand-kia",
+      "title": "Kia Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/kia",
+      "pageType": "brand"
+    },
+    {
+      "slug": "brand-byd",
+      "title": "BYD Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/byd",
+      "pageType": "brand"
+    },
+    {
+      "slug": "brand-citroen",
+      "title": "Citroen Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/citroen",
+      "pageType": "brand"
+    },
+    {
+      "slug": "brand-bmw",
+      "title": "BMW Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/bmw",
+      "pageType": "brand"
+    },
+    {
+      "slug": "brand-mercedes-benz",
+      "title": "Mercedes-Benz Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/mercedes-benz",
+      "pageType": "brand"
+    },
+    {
+      "slug": "brand-volvo",
+      "title": "Volvo Electric Cars in India — Models, Prices & Guides | EVSavari",
+      "canonicalPath": "/brands/volvo",
+      "pageType": "brand"
+    },
+    {
+      "slug": "best-evs-under-15-lakh-agent",
+      "title": "Best EVs under ₹15 lakh in India | EVSavari",
+      "canonicalPath": "/best-evs/under-15-lakh-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-family-agent",
+      "title": "Best family EVs in India | EVSavari",
+      "canonicalPath": "/best-evs/family-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-city-agent",
+      "title": "Best city EVs in India | EVSavari",
+      "canonicalPath": "/best-evs/city-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-for-highway-agent",
+      "title": "Best highway EVs in India | EVSavari",
+      "canonicalPath": "/best-evs/highway-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-premium-agent",
+      "title": "Best premium EVs in India | EVSavari",
+      "canonicalPath": "/best-evs/premium-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-evs-budget-agent",
+      "title": "Best budget EVs in India | EVSavari",
+      "canonicalPath": "/best-evs/budget-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "tata-curvv-ev-vs-mahindra-be-6-agent",
+      "title": "Tata Curvv EV vs Mahindra BE 6 | EVSavari",
+      "canonicalPath": "/compare/tata-curvv-ev-vs-mahindra-be-6-agent",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "tata-punch-ev-vs-mg-windsor-ev-agent",
+      "title": "Tata Punch EV vs MG Windsor EV | EVSavari",
+      "canonicalPath": "/compare/tata-punch-ev-vs-mg-windsor-ev-agent",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "byd-atto-3-vs-hyundai-creta-electric-agent",
+      "title": "BYD Atto 3 vs Hyundai Creta Electric | EVSavari",
+      "canonicalPath": "/compare/byd-atto-3-vs-hyundai-creta-electric-agent",
+      "pageType": "compare_guide"
+    },
+    {
+      "slug": "top-10-evs-agent",
+      "title": "Top 10 EVs in India | EVSavari",
+      "canonicalPath": "/best-evs/top-10-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "fastest-charging-evs-agent",
+      "title": "Fastest charging EVs in India | EVSavari",
+      "canonicalPath": "/best-evs/fastest-charging-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "longest-range-evs-agent",
+      "title": "Longest range EVs in India | EVSavari",
+      "canonicalPath": "/best-evs/longest-range-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "safest-evs-agent",
+      "title": "Safest EVs in India | EVSavari",
+      "canonicalPath": "/best-evs/safest-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "best-value-ev-variants-agent",
+      "title": "Best value EV variants in India | EVSavari",
+      "canonicalPath": "/best-evs/best-value-variants-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "fastest-charging-ev-variants-agent",
+      "title": "Fastest charging EV variants in India | EVSavari",
+      "canonicalPath": "/best-evs/fastest-charging-variants-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "longest-range-ev-variants-agent",
+      "title": "Longest range EV variants in India | EVSavari",
+      "canonicalPath": "/best-evs/longest-range-variants-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "tata-nexon-ev-best-value-variant-agent",
+      "title": "Best value variant — Tata Nexon EV | EVSavari",
+      "canonicalPath": "/best-evs/tata-nexon-ev-best-value-variant-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "tata-punch-ev-best-value-variant-agent",
+      "title": "Best value variant — Tata Punch EV | EVSavari",
+      "canonicalPath": "/best-evs/tata-punch-ev-best-value-variant-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "tata-nexon-ev-fastest-charging-variant-agent",
+      "title": "Fastest charging variant — Tata Nexon EV | EVSavari",
+      "canonicalPath": "/best-evs/tata-nexon-ev-fastest-charging-variant-agent",
+      "pageType": "best_evs"
+    },
+    {
+      "slug": "tata-punch-ev-longest-range-variant-agent",
+      "title": "Longest range variant — Tata Punch EV | EVSavari",
+      "canonicalPath": "/best-evs/tata-punch-ev-longest-range-variant-agent",
       "pageType": "best_evs"
     }
   ]

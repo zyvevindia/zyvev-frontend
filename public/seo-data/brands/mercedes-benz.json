@@ -1,0 +1,69 @@
+{
+  "seoPage": {
+    "slug": "brand-mercedes-benz",
+    "category": "brand",
+    "title": "Mercedes-Benz Electric Cars in India — Models, Prices & Guides | EVSavari",
+    "metaDescription": "Explore Mercedes-Benz electric cars in India — model families, pricing bands, range, and buyer guides on EVSavari.",
+    "canonicalPath": "/brands/mercedes-benz",
+    "canonicalUrl": "https://evsavari.com/brands/mercedes-benz",
+    "intro": "Mercedes-Benz offers multiple electric model families in India. Use this hub to compare Mercedes-Benz EV line-ups, trims, and ownership fit before you shortlist a test drive. Rankings use EVSavari catalog intelligence — not paid placement.",
+    "recommendationLogic": {
+      "category": "brand",
+      "methodology": "Curated links to model families and EVSavari decision guides — rankings use catalog intelligence, not paid placement."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes Eqb",
+        "explanation": "Explore Mercedes Eqb specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/mercedes-eqb"
+      },
+      {
+        "rank": 2,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes Eqa",
+        "explanation": "Explore Mercedes Eqa specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/mercedes-eqa"
+      }
+    ],
+    "tradeoffs": [
+      "Mercedes-Benz EV buyers should compare trims and real-world range for their commute before choosing a variant.",
+      "Service network density varies by city — verify local support when shortlisting."
+    ],
+    "faq": [
+      {
+        "question": "Which Mercedes-Benz EV should I compare first?",
+        "answer": "Start with the family that matches your budget and body style, then compare variants on EVSavari."
+      },
+      {
+        "question": "Where can I compare Mercedes-Benz EV variants?",
+        "answer": "Open any family page on EVSavari to switch trims or use the compare tool for side-by-side specs."
+      }
+    ],
+    "keywords": [
+      "Mercedes-Benz electric car India",
+      "Mercedes-Benz EV",
+      "EVSavari",
+      "electric car comparison"
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Mercedes Eqb",
+          "url": "https://evsavari.com/cars/mercedes-eqb"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mercedes Eqa",
+          "url": "https://evsavari.com/cars/mercedes-eqa"
+        }
+      ]
+    }
+  }
+}

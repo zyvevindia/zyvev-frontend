@@ -21,9 +21,12 @@ import { vehicleDetailPath } from "../utils/vehicleRoutes";
 
 import CatalogOwnershipChips from "./catalog/CatalogOwnershipChips";
 
+import CatalogScoreBadge from "./catalog/CatalogScoreBadge";
+
 import { pickOwnershipChips } from "../utils/ownershipReality";
 
 import "../styles/car-card-compare.css";
+import "../styles/catalog-ux-wave-b.css";
 
 import { isCarInCompareList } from "../utils/compareCarsStorage";
 
@@ -36,6 +39,7 @@ export default function CarCard({
   compareList = [],
   toggleCompare = () => {},
   compareModeActive = false,
+  eagerImage = false,
 }) {
   /* =======================================================
      ================= SAFETY FALLBACKS ====================
@@ -180,6 +184,7 @@ export default function CarCard({
           role="listing"
           alt={safeName}
           responsive
+          eager={eagerImage}
           imgClassName="car-image"
           imgStyle={imageStyle}
           wrapperStyle={{
@@ -218,6 +223,10 @@ export default function CarCard({
           <p style={priceStyle}>
             {formatIndianPriceCompact(safePrice)}
           </p>
+
+          <div className="car-card__score-row">
+            <CatalogScoreBadge vehicle={safeCar} />
+          </div>
 
           <CatalogCardTrust
             catalogMeta={safeCar.catalogMeta}

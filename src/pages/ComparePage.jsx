@@ -33,6 +33,9 @@ import {
   loadCompareCarsFromStorage,
   saveCompareCars,
 } from "../utils/compareCarsStorage";
+import { trackCompareView } from "../analytics/traffic";
+import { prefetchCompareCarsForSlugs } from "../utils/compareRivalPrefill";
+import { normalizeVehicleSlug } from "../utils/vehicleRoutes";
 import {
   ensureArray,
   normalizeCompareState,
@@ -63,8 +66,29 @@ export default function ComparePage() {
       return;
     }
 
+    const params = new URLSearchParams(location.search);
+    const carsParam = params.get("cars");
+    if (carsParam) {
+      const slugs = carsParam
+        .split(",")
+        .map((s) => normalizeVehicleSlug(s.trim()))
+        .filter(Boolean);
+
+      if (slugs.length >= 2) {
+        let cancelled = false;
+        prefetchCompareCarsForSlugs(slugs).then((list) => {
+          if (!cancelled && list.length >= 2) {
+            setCars(list);
+          }
+        });
+        return () => {
+          cancelled = true;
+        };
+      }
+    }
+
     setCars(loadCompareCarsFromStorage());
-  }, [location.key, location.state?.cars]);
+  }, [location.key, location.state?.cars, location.search]);
 
   useEffect(() => {
     const onSync = () => {
@@ -109,6 +133,15 @@ export default function ComparePage() {
   const handleCarsChange = useCallback((next) => {
     setCars(saveCompareCars(next));
   }, []);
+
+  useEffect(() => {
+    if (safeCars.length < 2) return;
+    trackCompareView({
+      vehicleSlugs: safeCars.map((c) => c.slug).filter(Boolean),
+      sourcePage: "/compare",
+      compareDepth: safeCars.length,
+    });
+  }, [safeCars]);
 
   if (safeCars.length < 2) {
     return (

@@ -12,14 +12,30 @@ import {
 import "../../styles/compare-page.css";
 
 import CompareVehicleCard from "./CompareVehicleCard";
-import CompareTrustPanel from "../catalog/CompareTrustPanel";
+import CompareMobileSpecCards from "./CompareMobileSpecCards";
+import CompareScoreStory from "./CompareScoreStory";
 import LeadInquiryModal from "../LeadInquiryModal";
 import WhatsAppLeadCta from "../leads/WhatsAppLeadCta";
 import CompareUtilityRail from "./CompareUtilityRail";
-import CompareTrustExplain from "./CompareTrustExplain";
-import CompareReliabilitySummary from "./CompareReliabilitySummary";
-import CompareGuideEditorialSections from "./CompareGuideEditorialSections";
-import VariantComparisonTable from "../catalog/VariantComparisonTable";
+
+const CompareInternalLinks = lazy(() =>
+  import("./CompareInternalLinks")
+);
+const CompareTrustExplain = lazy(() =>
+  import("./CompareTrustExplain")
+);
+const CompareReliabilitySummary = lazy(() =>
+  import("./CompareReliabilitySummary")
+);
+const CompareTrustPanel = lazy(() =>
+  import("../catalog/CompareTrustPanel")
+);
+const CompareGuideEditorialSections = lazy(() =>
+  import("./CompareGuideEditorialSections")
+);
+const VariantComparisonTable = lazy(() =>
+  import("../catalog/VariantComparisonTable")
+);
 
 const CompareBelowFoldSections = lazy(() =>
   import("../catalog/CompareBelowFoldSections")
@@ -52,25 +68,10 @@ import {
   COMPARE_PRICING_CTA_LABEL,
   WHATSAPP_CTA_LABEL,
 } from "../../utils/conversionTrustCopy";
+import { buildAllCompareBadges } from "../../utils/compareScoreBadges";
 
-function getBestValueId(cars) {
-  if (!cars?.length) return null;
-  let best = cars[0];
-  let bestScore =
-    (best.startingPrice || 1) / (best.specifications?.range || 1);
-  cars.forEach((c) => {
-    const catalogScore = c.catalogMeta?.compareValueScore;
-    const score =
-      catalogScore != null
-        ? -Number(catalogScore)
-        : (c.startingPrice || 1) /
-          (c.specifications?.range || c.range || 1);
-    if (score < bestScore) {
-      best = c;
-      bestScore = score;
-    }
-  });
-  return best._id;
+function carKey(car) {
+  return car?._id || car?.slug || null;
 }
 
 /**
@@ -133,21 +134,32 @@ export default function CompareHeroExperience({
     [safeCars]
   );
 
-  const bestId = useMemo(() => getBestValueId(intelligentCars), [intelligentCars]);
+  const compareBadges = useMemo(
+    () => buildAllCompareBadges(intelligentCars),
+    [intelligentCars]
+  );
+
+  const priceRow = useMemo(
+    () => compareSpecRows.find((row) => row.id === "price") || null,
+    [compareSpecRows]
+  );
+
+  const recommendedId = compareBadges.recommendedId;
+  const bestValueId = compareBadges.bestValueId;
 
   const primaryMongoCarId = useMemo(
     () => (safeCars[0]?._id ? String(safeCars[0]._id) : ""),
     [safeCars]
   );
 
-  const compareSlugsKey = useMemo(
-    () =>
-      safeCars
-        .map((c) => c?.slug)
-        .filter(Boolean)
-        .sort()
-        .join("|"),
+  const compareContextSlugs = useMemo(
+    () => safeCars.map((c) => c?.slug).filter(Boolean),
     [safeCars]
+  );
+
+  const compareSlugsKey = useMemo(
+    () => [...compareContextSlugs].sort().join("|"),
+    [compareContextSlugs]
   );
 
   const isFamilyVariantCompare = useMemo(() => {
@@ -327,13 +339,14 @@ export default function CompareHeroExperience({
               </p>
             ) : null}
 
-            <div className="compare-hero__actions">
+            <div className="compare-hero__actions" role="group" aria-label="Compare page actions">
               <button
                 type="button"
                 onClick={() =>
                   openInquiry("Request dealer callback", COMPARE_CALLBACK_LABEL)
                 }
                 className="compare-hero__btn compare-hero__btn--ghost"
+                aria-label="Request dealer callback for compared EVs"
               >
                 {COMPARE_CALLBACK_LABEL}
               </button>
@@ -344,6 +357,7 @@ export default function CompareHeroExperience({
                 onClick={() =>
                   openInquiry("Compare on-road quotes", COMPARE_PRICING_CTA_LABEL)
                 }
+                aria-label="Compare on-road price quotes for selected EVs"
               >
                 {COMPARE_PRICING_CTA_LABEL}
               </button>
@@ -361,6 +375,7 @@ export default function CompareHeroExperience({
                 type="button"
                 onClick={goToExploreCompare}
                 className="compare-hero__btn compare-hero__btn--ghost"
+                aria-label="Browse EV catalog to add more vehicles to compare"
               >
                 Explore More EVs
               </button>
@@ -370,6 +385,7 @@ export default function CompareHeroExperience({
                   type="button"
                   className="compare-hero__btn compare-hero__btn--primary"
                   onClick={clearComparison}
+                  aria-label="Clear all vehicles from comparison"
                 >
                   Clear Comparison
                 </button>
@@ -391,11 +407,13 @@ export default function CompareHeroExperience({
         <section className="compare-main">
           <div className={gridClass}>
             {intelligentCars.map((car, cardIndex) => {
-              const isBest = car._id === bestId;
+              const key = carKey(car);
+              const badge = compareBadges.badgeByCarId.get(key);
+              const isRecommended = key === recommendedId;
               return (
                 <div
                   key={car._id || car.slug}
-                  className={`compare-page-card${isBest ? " compare-page-card--best" : ""}`}
+                  className={`compare-page-card${isRecommended ? " compare-page-card--best" : ""}`}
                 >
                   {variant === "tool" ? (
                     <button
@@ -410,7 +428,8 @@ export default function CompareHeroExperience({
 
                   <CompareVehicleCard
                     car={car}
-                    isRecommended={isBest}
+                    compareBadge={badge}
+                    isRecommended={isRecommended}
                     eagerImage={cardIndex === 0}
                     detailHref={vehicleDetailPath(car, car._id)}
                   />
@@ -419,36 +438,67 @@ export default function CompareHeroExperience({
             })}
           </div>
 
+          <CompareScoreStory
+            cars={intelligentCars}
+            recommendedId={recommendedId}
+            bestValueId={compareBadges.bestValueId}
+            longRangeId={compareBadges.longRangeId}
+            fastChargingId={compareBadges.fastChargingId}
+          />
+
           {showVariantFamilyTable ? (
-            <VariantComparisonTable
-              id="compare-variants"
-              title="Compare all variants"
-              intro="Side-by-side specs for every trim in this model family."
-              variants={safeCars}
-              readOnly
-              showCompareAll={false}
-            />
+            <Suspense
+              fallback={
+                <div
+                  className="compare-deferred-skeleton compare-deferred-skeleton--inline"
+                  aria-busy="true"
+                  aria-label="Loading variant comparison table"
+                />
+              }
+            >
+              <VariantComparisonTable
+                id="compare-variants"
+                title="Compare all variants"
+                intro="Side-by-side specs for every trim in this model family."
+                variants={safeCars}
+                readOnly
+                showCompareAll={false}
+              />
+            </Suspense>
           ) : (
-          <div className="compare-spec">
+          <>
+          <CompareMobileSpecCards
+            cars={intelligentCars}
+            allBadgesByCarId={compareBadges.allBadgesByCarId}
+            recommendedId={recommendedId}
+            priceRow={priceRow}
+          />
+
+          <div className="compare-spec compare-spec--desktop">
             <div className="compare-spec__header">
               <h2 className="compare-spec__title">Detailed Specifications</h2>
-              <span className="compare-spec__hint">
-                Swipe horizontally on mobile
+              <span className="compare-spec__hint compare-spec__hint--desktop">
+                Full side-by-side specification matrix
               </span>
             </div>
 
             <div className="compare-spec__table-wrap">
-              <table className="compare-spec__table">
+              <table
+                className="compare-spec__table"
+                aria-label="Detailed EV specification comparison"
+              >
                 <thead>
                   <tr>
-                    <th>Specifications</th>
+                    <th scope="col">Specifications</th>
                     {safeCars.map((car) => {
-                      const isBest = car._id === bestId;
+                      const key = carKey(car);
+                      const isRecommended = key === recommendedId;
                       return (
                         <th
                           key={car._id}
+                          scope="col"
                           className={
-                            isBest ? "compare-spec__th--best" : undefined
+                            isRecommended ? "compare-spec__th--best" : undefined
                           }
                         >
                           {resolveFullDisplayName(car)}
@@ -473,9 +523,10 @@ export default function CompareHeroExperience({
                         </td>
                         {intelligentCars.map((car) => {
                           const raw = row.getRaw(car);
+                          const key = carKey(car);
                           const isBest = highlightId === car._id;
                           const isValueBest =
-                            row.id === "price" && car._id === bestId;
+                            row.id === "price" && key === bestValueId;
                           return (
                             <td
                               key={car._id}
@@ -506,18 +557,27 @@ export default function CompareHeroExperience({
               </p>
             )}
           </div>
+          </>
           )}
 
           {intelligentCars.length >= 2 ? (
-            <>
+            <Suspense
+              fallback={
+                <div
+                  className="compare-deferred-skeleton compare-deferred-skeleton--inline"
+                  aria-busy="true"
+                  aria-label="Loading trust summary"
+                />
+              }
+            >
               <CompareTrustExplain
                 cars={intelligentCars}
                 recommendedSlug={
-                  intelligentCars.find((c) => c._id === bestId)?.slug
+                  intelligentCars.find((c) => carKey(c) === recommendedId)?.slug
                 }
               />
               <CompareReliabilitySummary cars={intelligentCars} />
-            </>
+            </Suspense>
           ) : null}
 
           <CompareUtilityRail
@@ -556,13 +616,45 @@ export default function CompareHeroExperience({
 
           {variant === "tool" ? (
             <div className="compare-trust-panel">
-              <CompareTrustPanel cars={cars} />
+              <Suspense
+                fallback={
+                  <div
+                    className="compare-deferred-skeleton compare-deferred-skeleton--inline"
+                    aria-busy="true"
+                    aria-label="Loading trust panel"
+                  />
+                }
+              >
+                <CompareTrustPanel cars={cars} />
+              </Suspense>
             </div>
           ) : null}
 
           {variant === "guide" && guideSeoPage ? (
-            <CompareGuideEditorialSections seoPage={guideSeoPage} />
+            <Suspense
+              fallback={
+                <div
+                  className="compare-deferred-skeleton compare-deferred-skeleton--inline"
+                  aria-busy="true"
+                  aria-label="Loading comparison guide"
+                />
+              }
+            >
+              <CompareGuideEditorialSections seoPage={guideSeoPage} />
+            </Suspense>
           ) : null}
+
+          <Suspense
+            fallback={
+              <div
+                className="compare-deferred-skeleton compare-deferred-skeleton--inline"
+                aria-busy="true"
+                aria-label="Loading related comparisons"
+              />
+            }
+          >
+            <CompareInternalLinks contextSlugs={compareContextSlugs} />
+          </Suspense>
         </section>
       </div>
 

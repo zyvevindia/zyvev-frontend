@@ -1,0 +1,72 @@
+{
+  "id": "volvo-ex40",
+  "displayName": "Volvo EX40",
+  "familySlug": "volvo-ex40",
+  "vehicle": {
+    "brand": "Volvo",
+    "model": "EX40",
+    "bodyType": "SUV",
+    "familySlug": "volvo-ex40"
+  },
+  "fields": {
+    "brand": "Volvo",
+    "model": "EX40",
+    "bodyType": "SUV",
+    "familySlug": "volvo-ex40",
+    "startingPrice": 5990000,
+    "topVariantPrice": 6490000,
+    "exShowroomPrice": 4900000,
+    "batteryCapacityKwh": 78,
+    "claimedRangeKm": 418,
+    "rangeTestStandard": "592",
+    "acChargingKw": 11,
+    "dcChargingKw": 150,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": 40,
+    "airbags": 7,
+    "adas": "true",
+    "powerPs": "237.99",
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": false,
+    "camera360": false,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "Single Motor Extended Range",
+      "priceInr": 5990000,
+      "batteryKwh": 69,
+      "rangeKm": 568,
+      "acChargingKw": 11,
+      "dcChargingKw": 150
+    },
+    {
+      "variantName": "Twin Motor",
+      "priceInr": 6490000,
+      "batteryKwh": 69,
+      "rangeKm": 549,
+      "acChargingKw": 11,
+      "dcChargingKw": 150
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.volvocars.com/in/cars/ex40-electric/",
+    "https://www.cardekho.com/volvo/ex40"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day2",
+    "pipelineConfidence": 92,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.184Z"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "seoPage": {
+    "slug": "tata-punch-ev-best-value-variant-agent",
+    "pageTypeId": "variant_value_single",
+    "category": "usage",
+    "intro": "Best value variant — Tata Punch EV — variant picks from score-engine variant analysis across 1 data-backed entries.",
+    "recommendationLogic": {
+      "pageTypeId": "variant_value_single",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "usage",
+      "primaryScoreKey": "composite"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV — Empowered",
+        "exShowroom": 1229000,
+        "claimedRangeKm": 468,
+        "compositeScore": 65,
+        "confidence": "medium",
+        "explanation": "Empowered offers the strongest price-to-capability ratio (value score 65/100).",
+        "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time.",
+        "detailPath": "/cars/tata-punch-ev",
+        "variantName": "Empowered"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "tata-punch-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time."
+        }
+      ]
+    },
+    "title": "Best value variant — Tata Punch EV | EVSavari",
+    "metaDescription": "Variant recommendations from EVSavari Score Engine — 1 data-backed picks with transparent scoring. Human-reviewed catalog intelligence.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "tata punch ev best value variant",
+      "Tata Punch EV — Empowered"
+    ],
+    "canonicalPath": "/best-evs/tata-punch-ev-best-value-variant-agent",
+    "canonicalUrl": "https://evsavari.com/best-evs/tata-punch-ev-best-value-variant-agent",
+    "generatedAt": "2026-06-10T06:29:07.758Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "tata-punch-ev-best-value-variant-agent",
+      "description": "Variant recommendations from EVSavari Score Engine — 1 data-backed picks with transparent scoring. Human-reviewed catalog intelligence.",
+      "numberOfItems": 1,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tata Punch EV — Empowered",
+          "url": "https://evsavari.com/cars/tata-punch-ev"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Why is Tata Punch EV — Empowered ranked first?",
+        "answer": "Empowered offers the strongest price-to-capability ratio (value score 65/100)."
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Trim-level value analysis for the compact Punch EV",
+        "Helps match battery size to urban use without overspending",
+        "Uses live catalog pricing where available"
+      ],
+      "cons": [
+        "Compact boot and rear seat vs larger Nexon EV",
+        "Base trims may omit features you expect at this price",
+        "Discounts and exchange offers vary by dealer"
+      ],
+      "whoShouldBuy": [
+        "Urban buyers set on Punch EV but unsure of trim",
+        "Upgrade from Tiago EV considering space vs price",
+        "Second-car households optimising city runabout cost"
+      ],
+      "whoShouldAvoid": [
+        "Families needing regular highway trips with full luggage",
+        "Buyers who need maximum rear-seat comfort for adults",
+        "Those who prefer MG Comet for minimal parking footprint only"
+      ],
+      "bestAlternative": {
+        "label": "Punch EV vs Tiago EV",
+        "href": "/compare/tata-punch-ev-vs-tata-tiago-ev",
+        "reason": "If price is tight, compare Punch against Tiago EV before choosing a Punch trim."
+      },
+      "relatedLinks": [
+        {
+          "label": "Best city EVs",
+          "href": "/best-evs/city-agent"
+        },
+        {
+          "label": "Punch vs Windsor",
+          "href": "/compare/tata-punch-ev-vs-mg-windsor-ev-agent"
+        },
+        {
+          "label": "Punch EV detail",
+          "href": "/cars/tata-punch-ev"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Best city EVs",
+            "href": "/best-evs/city-agent"
+          },
+          {
+            "label": "Punch vs Windsor",
+            "href": "/compare/tata-punch-ev-vs-mg-windsor-ev-agent"
+          },
+          {
+            "label": "Punch EV detail",
+            "href": "/cars/tata-punch-ev"
+          }
+        ]
+      }
+    ]
+  }
+}

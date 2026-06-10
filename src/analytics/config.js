@@ -4,6 +4,10 @@
 
 const GA_ID = String(import.meta.env.VITE_GA_ID || "").trim();
 
+const GTM_ID = String(import.meta.env.VITE_GTM_ID || "").trim();
+
+const CLARITY_ID = String(import.meta.env.VITE_CLARITY_ID || "").trim();
+
 const POSTHOG_KEY = String(
   import.meta.env.VITE_POSTHOG_KEY || ""
 ).trim();
@@ -35,6 +39,8 @@ const SAMPLE_RATE = Number(
 
 export const analyticsConfig = {
   gaId: GA_ID,
+  gtmId: GTM_ID,
+  clarityId: CLARITY_ID,
   posthogKey: POSTHOG_KEY,
   posthogHost: POSTHOG_HOST,
   sentryDsn: SENTRY_DSN,
@@ -50,6 +56,14 @@ export const analyticsConfig = {
 
 export function isGa4Configured() {
   return Boolean(analyticsConfig.gaId);
+}
+
+export function isGtmConfigured() {
+  return Boolean(analyticsConfig.gtmId);
+}
+
+export function isClarityConfigured() {
+  return Boolean(analyticsConfig.clarityId);
 }
 
 export function isPostHogConfigured() {

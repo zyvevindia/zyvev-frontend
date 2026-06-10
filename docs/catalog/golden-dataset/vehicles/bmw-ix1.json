@@ -1,0 +1,72 @@
+{
+  "id": "bmw-ix1",
+  "displayName": "BMW iX1",
+  "familySlug": "bmw-ix1",
+  "vehicle": {
+    "brand": "BMW",
+    "model": "iX1",
+    "bodyType": "SUV",
+    "familySlug": "bmw-ix1"
+  },
+  "fields": {
+    "brand": "BMW",
+    "model": "iX1",
+    "bodyType": "SUV",
+    "familySlug": "bmw-ix1",
+    "startingPrice": 6890000,
+    "topVariantPrice": 7290000,
+    "exShowroomPrice": 6890000,
+    "batteryCapacityKwh": 66,
+    "claimedRangeKm": 531,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 11,
+    "dcChargingKw": 130,
+    "acChargingTimeHours": "6.5",
+    "dcChargingTimeMinutes": 30,
+    "airbags": 8,
+    "adas": "true",
+    "powerPs": null,
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": false,
+    "v2l": true,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "xDrive30 M Sport",
+      "priceInr": 6890000,
+      "batteryKwh": 64.7,
+      "rangeKm": 531,
+      "acChargingKw": 11,
+      "dcChargingKw": 130
+    },
+    {
+      "variantName": "xDrive30 M Sport (LWB)",
+      "priceInr": 7290000,
+      "batteryKwh": 64.7,
+      "rangeKm": 531,
+      "acChargingKw": 11,
+      "dcChargingKw": 130
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.bmw.in/en/all-models/bmw-i/iX1/2025/bmw-ix1-highlights.html",
+    "https://www.cardekho.com/bmw/ix1"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day3",
+    "pipelineConfidence": 93,
+    "manualCorrections": [
+      "variant_table_manual",
+      "qa_variant_refresh"
+    ]
+  }
+}

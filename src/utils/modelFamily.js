@@ -2,6 +2,7 @@ import normalizeCar from "./normalizeCar";
 import { getListingImage, getHeroImage } from "./vehicleMedia";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies";
+import { filterCatalogFamilies } from "../intelligence/catalogFilters.js";
 
 export { TIER1_MODEL_FAMILY_SLUGS };
 
@@ -267,6 +268,9 @@ export function familyToListingCard(family) {
     variantCount: family.variantCount,
     variants: family.variants,
     defaultVariant: family.defaultVariant,
+    evSavariScores: family.evSavariScores,
+    evScores: family.evScores,
+    evIntelligence: family.evIntelligence,
   };
 }
 
@@ -286,39 +290,6 @@ export function sortFamilies(families, sortBy) {
   return list;
 }
 
-export function filterFamilies(families, { brand, priceRange, search }) {
-  let list = [...families];
-
-  if (brand) {
-    const b = brand.toLowerCase();
-    list = list.filter((f) =>
-      (f.brand || "").toLowerCase().includes(b)
-    );
-  }
-
-  if (search) {
-    const s = search.toLowerCase();
-    list = list.filter(
-      (f) =>
-        f.familyName.toLowerCase().includes(s) ||
-        (f.brand || "").toLowerCase().includes(s) ||
-        f.variants.some((v) =>
-          (v.name || "").toLowerCase().includes(s)
-        )
-    );
-  }
-
-  if (priceRange === "low") {
-    list = list.filter((f) => f.startingPrice < 1000000);
-  } else if (priceRange === "mid") {
-    list = list.filter(
-      (f) =>
-        f.startingPrice >= 1000000 &&
-        f.startingPrice <= 2000000
-    );
-  } else if (priceRange === "high") {
-    list = list.filter((f) => f.startingPrice > 2000000);
-  }
-
-  return list;
+export function filterFamilies(families, options = {}) {
+  return filterCatalogFamilies(families, options);
 }

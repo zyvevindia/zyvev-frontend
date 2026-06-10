@@ -4,6 +4,8 @@ import {
   useMemo,
   useRef,
   useState,
+  lazy,
+  Suspense,
 } from "react";
 
 import { API_URL } from "../config";
@@ -16,11 +18,16 @@ import {
 
 import LeadInquiryModal from "../components/LeadInquiryModal";
 import WhatsAppLeadCta from "../components/leads/WhatsAppLeadCta";
-import EMICalculator from "../components/EMICalculator";
+
+const EMICalculator = lazy(() => import("../components/EMICalculator"));
+const VariantComparisonTable = lazy(() =>
+  import("../components/catalog/VariantComparisonTable")
+);
 
 import SeoHead from "../components/SEO/SeoHead";
 import JsonLd from "../components/SEO/JsonLd";
 import DetailSeoDiscovery from "../components/catalog/DetailSeoDiscovery";
+import CompareInternalLinks from "../components/compare/CompareInternalLinks";
 
 import CarDetailsSkeleton from "../components/skeletons/CarDetailsSkeleton";
 
@@ -44,6 +51,7 @@ import {
 } from "../utils/structuredData";
 
 import { buildVehiclePageMeta } from "../seo/pageMetadata";
+import { resolveBrandHubPath } from "../seo/breadcrumbs";
 
 import { formatIndianPrice } from "../utils/formatIndianPrice";
 
@@ -68,12 +76,13 @@ import {
 import VehicleImage from "../components/media/VehicleImage";
 import VehicleDetailNotFound from "../components/catalog/VehicleDetailNotFound";
 import NetworkErrorPanel from "../components/ui/NetworkErrorPanel";
-import VariantComparisonTable from "../components/catalog/VariantComparisonTable";
 import DetailBreadcrumbs from "../components/catalog/DetailBreadcrumbs";
 import "../styles/car-details.css";
 import DetailHero from "../components/car/DetailHero";
 import DetailActionBar from "../components/car/DetailActionBar";
 import DetailTabs from "../components/car/DetailTabs";
+import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
+import { scoreVehicle } from "../scoring/index.js";
 import {
   detailTabIdForSectionElement,
   DETAIL_OBSERVED_SECTION_IDS,
@@ -81,8 +90,6 @@ import {
 } from "../utils/detailPageNav";
 import DetailDealerAssistance from "../components/car/DetailDealerAssistance";
 import DetailKeySpecifications from "../components/car/DetailKeySpecifications";
-import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
-import { scoreVehicle } from "../scoring/index.js";
 
 import {
   applyFamilyMediaFallback,
@@ -943,9 +950,14 @@ export default function CarDetails() {
   const brandLabel =
     vehicle.brand || "EVs";
 
+  const brandHubPath = resolveBrandHubPath(brandLabel);
+
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", url: "/" },
-    { name: brandLabel, url: "/cars" },
+    {
+      name: brandLabel,
+      url: brandHubPath || "/cars",
+    },
     {
       name: familyTitle,
       url: canonicalVehicleUrl(familySlug),
@@ -1118,18 +1130,30 @@ export default function CarDetails() {
           ) : null}
 
           {enrichedVariants.length >= 1 && (
-            <VariantComparisonTable
-              ref={comparisonRef}
-              id="variants"
-              variants={enrichedVariants}
-              selectedSlug={selectedVariantSlug}
-              onSelect={handleSelectVariant}
-              onCompareAll={() =>
-                navigateVariantCompare(comparableVariants, {
-                  cleanSession: true,
-                })
+            <Suspense
+              fallback={
+                <div
+                  className="cd-section cd-card cd-content-card"
+                  aria-busy="true"
+                  aria-label="Loading variant comparison table"
+                >
+                  Loading variants…
+                </div>
               }
-            />
+            >
+              <VariantComparisonTable
+                ref={comparisonRef}
+                id="variants"
+                variants={enrichedVariants}
+                selectedSlug={selectedVariantSlug}
+                onSelect={handleSelectVariant}
+                onCompareAll={() =>
+                  navigateVariantCompare(comparableVariants, {
+                    cleanSession: true,
+                  })
+                }
+              />
+            </Suspense>
           )}
           {hasGoldExperience && (
             <EvDetailGoldSections
@@ -1169,12 +1193,20 @@ export default function CarDetails() {
                 trackPricingInteraction("emi_calculator")
               }
             >
-              <EMICalculator
-                price={activePrice}
-                onGetFinanceHelp={() =>
-                  handleFinanceHelp("emi_widget")
+              <Suspense
+                fallback={
+                  <p className="cd-section__intro" aria-busy="true">
+                    Loading EMI calculator…
+                  </p>
                 }
-              />
+              >
+                <EMICalculator
+                  price={activePrice}
+                  onGetFinanceHelp={() =>
+                    handleFinanceHelp("emi_widget")
+                  }
+                />
+              </Suspense>
             </div>
           </section>
 
@@ -1227,6 +1259,11 @@ export default function CarDetails() {
             priceInr={activePrice}
             evIntelligence={vehicle.evIntelligence}
             catalogMeta={vehicle.catalogMeta}
+          />
+
+          <CompareInternalLinks
+            contextSlugs={[familySlug]}
+            className="compare-internal-links--detail"
           />
 
           <DetailDealerAssistance

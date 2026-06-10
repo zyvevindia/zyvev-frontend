@@ -14,6 +14,7 @@ import {
   trackLeadStarted,
   trackLeadSubmitted,
 } from "../analytics/funnel";
+import { trackVehicleView } from "../analytics/traffic";
 import { devLog } from "./devDiagnostics";
 
 const LAUNCH_HOOK = "day2_launch";
@@ -152,6 +153,12 @@ export function trackLaunchCompareCompleted(payload = {}) {
 export function trackLaunchEvViewed(payload = {}) {
   trackBuyerEvent(BUYER_EVENTS.DETAIL_PAGE_VIEWED, payload);
   trackEvViewed({
+    familySlug: payload.familySlug,
+    variantSlug: payload.variantSlug,
+    sourcePage: payload.sourcePage,
+    brand: payload.brand,
+  });
+  trackVehicleView({
     familySlug: payload.familySlug,
     variantSlug: payload.variantSlug,
     sourcePage: payload.sourcePage,

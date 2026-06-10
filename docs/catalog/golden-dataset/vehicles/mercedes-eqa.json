@@ -1,0 +1,71 @@
+{
+  "id": "mercedes-eqa",
+  "displayName": "Mercedes-Benz EQA",
+  "familySlug": "mercedes-eqa",
+  "vehicle": {
+    "brand": "Mercedes-Benz",
+    "model": "EQA",
+    "bodyType": "SUV",
+    "familySlug": "mercedes-eqa"
+  },
+  "fields": {
+    "brand": "Mercedes-Benz",
+    "model": "EQA",
+    "bodyType": "SUV",
+    "familySlug": "mercedes-eqa",
+    "startingPrice": 6775000,
+    "topVariantPrice": 7195000,
+    "exShowroomPrice": 6775000,
+    "batteryCapacityKwh": 70.5,
+    "claimedRangeKm": 560,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 11,
+    "dcChargingKw": 100,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": null,
+    "airbags": null,
+    "adas": "true",
+    "powerPs": null,
+    "torqueNm": null
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": false,
+    "camera360": true,
+    "connectedCar": false,
+    "v2l": false,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "EQA 250",
+      "priceInr": 6775000,
+      "batteryKwh": 66.5,
+      "rangeKm": 560,
+      "acChargingKw": 11,
+      "dcChargingKw": 100
+    },
+    {
+      "variantName": "EQA 250+",
+      "priceInr": 7195000,
+      "batteryKwh": 70.5,
+      "rangeKm": 592,
+      "acChargingKw": 11,
+      "dcChargingKw": 100
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqa.html",
+    "https://www.cardekho.com/mercedes-benz/eqa"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day2",
+    "pipelineConfidence": 96,
+    "manualCorrections": [
+      "variant_table_manual"
+    ]
+  }
+}

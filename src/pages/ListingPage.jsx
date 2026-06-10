@@ -3,6 +3,8 @@ import {
   useMemo,
   useRef,
   useState,
+  lazy,
+  Suspense,
 } from "react";
 
 import {
@@ -36,16 +38,47 @@ import { safeFetchJsonWithRetry } from "../utils/safeFetch";
 import useCompareCars from "../hooks/useCompareCars";
 
 import EvDiscoveryFilters from "../components/discovery/EvDiscoveryFilters";
-import EvRecommendationWidget from "../components/discovery/EvRecommendationWidget";
+import CatalogPagination from "../components/catalog/CatalogPagination";
+import {
+  CatalogBodyTypeSelect,
+  CatalogPriceSelect,
+} from "../components/discovery/CatalogFilterSelects";
+
+const EvRecommendationWidget = lazy(() =>
+  import("../components/discovery/EvRecommendationWidget")
+);
+
+import useDebouncedValue from "../hooks/useDebouncedValue";
+import {
+  paginateCatalogItems,
+  parsePageFromParams,
+  getCatalogTotalPages,
+  resetPageInParams,
+} from "../utils/catalogPagination.js";
+import {
+  parseListingSearchFromParams,
+  parseListingBrandFromParams,
+  parseListingSortFromParams,
+  writeListingFiltersToParams,
+  clearListingFilterParams,
+} from "../utils/catalogListingUrl.js";
 
 import {
   filterEnrichedFamilies,
   parseIntelligenceFiltersFromParams,
   writeIntelligenceFiltersToParams,
 } from "../intelligence/filterMatcher.js";
+import {
+  parsePriceRangeFromParams,
+  writePriceRangeToParams,
+} from "../intelligence/catalogPriceFilters.js";
+import { parseBodyTypeFilterId } from "../intelligence/bodyTypeCatalog.js";
 import { trackIntelligenceFilterApplied, trackSearchZeroResults } from "../analytics/funnel";
+import { trackFilterUsed, trackSearchUsed } from "../analytics/traffic";
 
 import "../styles/ev-discovery.css";
+import "../styles/catalog-ux-wave-b.css";
+import "../styles/catalog-listing-a11y.css";
 
 import {
   resolveListingSegment,
@@ -67,7 +100,7 @@ export default function ListingPage() {
   const { category } =
     useParams();
 
-  const { pathname } =
+  const { pathname, hash } =
     useLocation();
 
   const navigate =
@@ -99,14 +132,20 @@ export default function ListingPage() {
   const [loading, setLoading] =
     useState(true);
 
-  const [search, setSearch] =
-    useState("");
+  const [search, setSearch] = useState(() =>
+    parseListingSearchFromParams(searchParams)
+  );
 
-  const [brand, setBrand] =
-    useState("");
+  const [brand, setBrand] = useState(() =>
+    parseListingBrandFromParams(searchParams)
+  );
 
-  const [sortBy, setSortBy] =
-    useState("");
+  const [sortBy, setSortBy] = useState(() =>
+    parseListingSortFromParams(searchParams)
+  );
+
+  const debouncedSearch = useDebouncedValue(search, 400);
+  const searchInputRef = useRef(null);
 
   const [error, setError] =
     useState("");
@@ -137,7 +176,7 @@ export default function ListingPage() {
         setError("");
 
         const response = await safeFetchJsonWithRetry(
-          `${API_URL}/cars?limit=50`,
+          `${API_URL}/cars?limit=120`,
           {
             label: "listing_catalog",
             timeoutMs: 18000,
@@ -207,6 +246,13 @@ export default function ListingPage() {
     [searchParams]
   );
 
+  const priceRange = useMemo(
+    () => parsePriceRangeFromParams(searchParams),
+    [searchParams]
+  );
+
+  const bodyType = searchParams.get("body") || "";
+
   useEffect(() => {
     if (!compareModeRequested) return;
     if (!listingSegment) return;
@@ -223,15 +269,76 @@ export default function ListingPage() {
     setSearchParams,
   ]);
 
+  const skipListingUrlSyncRef = useRef(false);
+
+  useEffect(() => {
+    if (skipListingUrlSyncRef.current) {
+      skipListingUrlSyncRef.current = false;
+      return;
+    }
+    setSearch(parseListingSearchFromParams(searchParams));
+    setBrand(parseListingBrandFromParams(searchParams));
+    setSortBy(parseListingSortFromParams(searchParams));
+  }, [searchParams]);
+
+  useEffect(() => {
+    setSearchParams((prev) => {
+      const next = writeListingFiltersToParams(
+        { search: debouncedSearch, brand, sort: sortBy },
+        prev
+      );
+      if (next.toString() === prev.toString()) return prev;
+      skipListingUrlSyncRef.current = true;
+      return next;
+    }, { replace: true });
+  }, [debouncedSearch, brand, sortBy, setSearchParams]);
+
+  useEffect(() => {
+    if (hash !== "#catalog-search") return;
+    const timer = setTimeout(() => {
+      searchInputRef.current?.focus();
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [hash]);
+
   const setIntelligenceFilters = (ids) => {
+    const base = resetPageInParams(searchParams);
     const next = writeIntelligenceFiltersToParams(
       ids,
-      searchParams
+      base
     );
+    next.delete("body");
     if (!compareMode && next.has("compareMode")) {
       next.delete("compareMode");
     }
     setSearchParams(next, { replace: true });
+  };
+
+  const setPriceRange = (rangeId) => {
+    const base = resetPageInParams(searchParams);
+    const next = writePriceRangeToParams(rangeId, base);
+    if (!compareMode && next.has("compareMode")) {
+      next.delete("compareMode");
+    }
+    setSearchParams(next, { replace: true });
+  };
+
+  const setBodyType = (nextBodyType) => {
+    const base = resetPageInParams(searchParams);
+    const next = new URLSearchParams(base);
+    if (nextBodyType) {
+      next.set("body", nextBodyType);
+    } else {
+      next.delete("body");
+    }
+    const intel = parseIntelligenceFiltersFromParams(next).filter(
+      (id) => !parseBodyTypeFilterId(id)
+    );
+    const merged = writeIntelligenceFiltersToParams(intel, next);
+    if (!compareMode && merged.has("compareMode")) {
+      merged.delete("compareMode");
+    }
+    setSearchParams(merged, { replace: true });
   };
 
   const families = useMemo(
@@ -243,6 +350,8 @@ export default function ListingPage() {
     let list = filterEnrichedFamilies(families, {
       brand,
       search,
+      priceRange,
+      bodyType,
       intelligenceFilterIds,
     });
 
@@ -272,6 +381,8 @@ export default function ListingPage() {
     search,
     brand,
     sortBy,
+    priceRange,
+    bodyType,
     intelligenceFilterIds,
   ]);
 
@@ -280,8 +391,10 @@ export default function ListingPage() {
       Boolean(search?.trim()) ||
       Boolean(brand) ||
       Boolean(sortBy) ||
+      Boolean(priceRange) ||
+      Boolean(bodyType) ||
       intelligenceFilterIds.length > 0,
-    [search, brand, sortBy, intelligenceFilterIds]
+    [search, brand, sortBy, priceRange, bodyType, intelligenceFilterIds]
   );
 
   const showUpcomingCatalogFallback = useMemo(
@@ -297,10 +410,83 @@ export default function ListingPage() {
     setSearch("");
     setBrand("");
     setSortBy("");
-    setIntelligenceFilters([]);
+    skipListingUrlSyncRef.current = true;
+    setSearchParams(clearListingFilterParams(searchParams), {
+      replace: true,
+    });
   };
 
+  const totalPages = useMemo(
+    () => getCatalogTotalPages(filteredFamilies.length),
+    [filteredFamilies.length]
+  );
+
+  const currentPage = useMemo(
+    () => parsePageFromParams(searchParams, totalPages),
+    [searchParams, totalPages]
+  );
+
+  const paginatedFamilies = useMemo(
+    () => paginateCatalogItems(filteredFamilies, currentPage),
+    [filteredFamilies, currentPage]
+  );
+
+  useEffect(() => {
+    if (loading) return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage, loading]);
+
   const lastSearchZeroKeyRef = useRef("");
+  const lastSearchUsedKeyRef = useRef("");
+
+  useEffect(() => {
+    if (loading || error) return;
+    const q = debouncedSearch.trim();
+    if (!q || filteredFamilies.length === 0) return;
+    const key = `${pathname}|${q}|${filteredFamilies.length}`;
+    if (lastSearchUsedKeyRef.current === key) return;
+    lastSearchUsedKeyRef.current = key;
+    trackSearchUsed({
+      query: q,
+      resultCount: filteredFamilies.length,
+      sourcePage: pathname || "/cars",
+    });
+  }, [loading, error, debouncedSearch, filteredFamilies.length, pathname]);
+
+  const lastFilterKeyRef = useRef("");
+
+  useEffect(() => {
+    if (loading) return;
+    const parts = [];
+    if (brand) parts.push(`brand:${brand}`);
+    if (sortBy && sortBy !== "default") parts.push(`sort:${sortBy}`);
+    if (priceRange) parts.push(`price:${priceRange}`);
+    if (bodyType) parts.push(`body:${bodyType}`);
+    for (const id of intelligenceFilterIds) {
+      parts.push(`intel:${id}`);
+    }
+    if (!parts.length) {
+      lastFilterKeyRef.current = "";
+      return;
+    }
+    const key = parts.join("|");
+    if (lastFilterKeyRef.current === key) return;
+    lastFilterKeyRef.current = key;
+    trackFilterUsed({
+      filterType: parts[0]?.split(":")[0] || "mixed",
+      filterValue: key.slice(0, 120),
+      activeCount: parts.length,
+      sourcePage: pathname || "/cars",
+    });
+  }, [
+    loading,
+    brand,
+    sortBy,
+    priceRange,
+    bodyType,
+    intelligenceFilterIds,
+    pathname,
+  ]);
 
   useEffect(() => {
     if (loading || error) return;
@@ -362,6 +548,7 @@ export default function ListingPage() {
       {/* ================= HERO ================= */}
 
       <section
+        className="listing-page-hero"
         style={{
           background:
             "linear-gradient(135deg,#071129,#1d4ed8)",
@@ -369,27 +556,35 @@ export default function ListingPage() {
           color: "white",
 
           padding:
-            "120px 20px 80px",
+            "clamp(72px, 14vw, 120px) clamp(16px, 4vw, 20px) clamp(48px, 10vw, 80px)",
 
           textAlign: "center",
         }}
       >
 
         <h1
+          className="listing-page-hero__title"
           style={{
-            fontSize: "52px",
+            fontSize: "clamp(1.75rem, 5vw + 0.5rem, 3.25rem)",
 
             fontWeight: "800",
 
-            marginBottom: "20px",
+            marginBottom: "clamp(12px, 2vw, 20px)",
+
+            lineHeight: 1.15,
+
+            padding: "0 clamp(8px, 3vw, 24px)",
+
+            wordBreak: "break-word",
           }}
         >
           Explore Electric Vehicles
         </h1>
 
         <p
+          className="listing-page-hero__subtitle"
           style={{
-            fontSize: "20px",
+            fontSize: "clamp(1rem, 2.2vw + 0.35rem, 1.25rem)",
 
             opacity: 0.9,
 
@@ -397,7 +592,9 @@ export default function ListingPage() {
 
             margin: "0 auto",
 
-            lineHeight: "1.7",
+            lineHeight: 1.65,
+
+            padding: "0 clamp(8px, 3vw, 16px)",
           }}
         >
           Compare premium EVs,
@@ -445,33 +642,35 @@ export default function ListingPage() {
           }}
         >
 
-          <input
-            type="text"
+          <div className="listing-filter-field">
+            <label htmlFor="catalog-search" className="listing-filter-label">
+              Search
+            </label>
+            <input
+              id="catalog-search"
+              ref={searchInputRef}
+              type="search"
+              placeholder="Search by EV or brand..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="listing-filter-input"
+              style={inputStyle}
+              aria-label="Search electric vehicles by name or brand"
+            />
+          </div>
 
-            placeholder="Search by EV or brand..."
-
-            value={search}
-
-            onChange={(e) =>
-              setSearch(
-                e.target.value
-              )
-            }
-
-            style={inputStyle}
-          />
-
-          <select
-            value={brand}
-
-            onChange={(e) =>
-              setBrand(
-                e.target.value
-              )
-            }
-
-            style={inputStyle}
-          >
+          <div className="listing-filter-field">
+            <label htmlFor="catalog-brand" className="listing-filter-label">
+              Brand
+            </label>
+            <select
+              id="catalog-brand"
+              value={brand}
+              onChange={(e) => setBrand(e.target.value)}
+              className="listing-filter-input"
+              style={inputStyle}
+              aria-label="Filter by brand"
+            >
 
             <option value="">
               All Brands
@@ -486,20 +685,43 @@ export default function ListingPage() {
                 {b}
               </option>
             ))}
+            </select>
+          </div>
 
-          </select>
+          <div className="listing-filter-field">
+            <span className="listing-filter-label">
+              Price
+            </span>
+            <CatalogPriceSelect
+              value={priceRange}
+              onChange={setPriceRange}
+              style={inputStyle}
+            />
+          </div>
 
-          <select
-            value={sortBy}
+          <div className="listing-filter-field">
+            <span className="listing-filter-label">
+              Body type
+            </span>
+            <CatalogBodyTypeSelect
+              value={bodyType}
+              onChange={setBodyType}
+              style={inputStyle}
+            />
+          </div>
 
-            onChange={(e) =>
-              setSortBy(
-                e.target.value
-              )
-            }
-
-            style={inputStyle}
-          >
+          <div className="listing-filter-field">
+            <label htmlFor="catalog-sort" className="listing-filter-label">
+              Sort
+            </label>
+            <select
+              id="catalog-sort"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="listing-filter-input"
+              style={inputStyle}
+              aria-label="Sort EV listings"
+            >
 
             <option value="">
               Sort By
@@ -516,8 +738,8 @@ export default function ListingPage() {
             <option value="range-high">
               Best Range
             </option>
-
-          </select>
+            </select>
+          </div>
 
           <EvDiscoveryFilters
             families={families}
@@ -549,10 +771,21 @@ export default function ListingPage() {
             padding: "0 20px",
           }}
         >
-          <EvRecommendationWidget
-            families={families}
-            sourcePage={pathname || "/cars"}
-          />
+          <Suspense
+            fallback={
+              <div
+                className="listing-results-status"
+                aria-busy="true"
+              >
+                Loading recommendations…
+              </div>
+            }
+          >
+            <EvRecommendationWidget
+              families={families}
+              sourcePage={pathname || "/cars"}
+            />
+          </Suspense>
         </section>
       )}
 
@@ -820,6 +1053,21 @@ export default function ListingPage() {
 
         ) : (
 
+          <>
+          {!loading && filteredFamilies.length > 0 ? (
+            <p className="listing-results-status" role="status">
+              <strong>{filteredFamilies.length}</strong> EV
+              {filteredFamilies.length === 1 ? "" : "s"} match your filters
+              {totalPages > 1 ? (
+                <>
+                  {" "}
+                  · Page <strong>{currentPage}</strong> of{" "}
+                  <strong>{totalPages}</strong>
+                </>
+              ) : null}
+            </p>
+          ) : null}
+
           <div
             style={{
               display: "grid",
@@ -831,11 +1079,9 @@ export default function ListingPage() {
             }}
           >
 
-            {filteredFamilies.map(
-              (family) => {
+            {paginatedFamilies.map(
+              (family, index) => {
                 const card = familyToListingCard(family);
-                const compareCar =
-                  family.defaultVariant || card;
 
                 return (
                   <CarCard
@@ -844,12 +1090,20 @@ export default function ListingPage() {
                     compareList={compareList}
                     toggleCompare={toggleCompare}
                     compareModeActive={compareMode}
+                    eagerImage={index < 4}
                   />
                 );
               }
             )}
 
           </div>
+
+          <CatalogPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            totalItems={filteredFamilies.length}
+          />
+          </>
         )}
 
       </section>
@@ -875,6 +1129,7 @@ export default function ListingPage() {
               floatingCompareButton
             }
             onClick={openComparePage}
+            aria-label={`Compare ${compareList.length} selected EVs`}
           >
             Compare (
             {

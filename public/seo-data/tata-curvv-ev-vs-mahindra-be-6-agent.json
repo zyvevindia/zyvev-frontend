@@ -1,0 +1,185 @@
+{
+  "seoPage": {
+    "slug": "tata-curvv-ev-vs-mahindra-be-6-agent",
+    "pageTypeId": "head_to_head",
+    "category": "compare",
+    "intro": "Tata Curvv EV vs Mahindra BE 6 — side-by-side comparison using EVSavari Score Engine signals. We do not declare a universal winner; review deterministic scores and tradeoffs.",
+    "recommendationLogic": {
+      "pageTypeId": "head_to_head",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "compare",
+      "compareSlugs": [
+        "tata-curvv-ev",
+        "mahindra-be-6"
+      ]
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "exShowroom": 1799000,
+        "claimedRangeKm": 502,
+        "compositeScore": 81,
+        "confidence": "high",
+        "explanation": "Tata Curvv EV — overall score 81/100. Range 502 km, from ₹17.99 L.",
+        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
+        "detailPath": "/cars/tata-curvv-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra BE 6",
+        "exShowroom": 1890000,
+        "claimedRangeKm": 500,
+        "compositeScore": 79,
+        "confidence": "high",
+        "explanation": "Mahindra BE 6 — overall score 79/100. Range 500 km, from ₹18.90 L.",
+        "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/mahindra-be-6"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "tata-curvv-ev",
+          "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+        },
+        {
+          "slug": "mahindra-be-6",
+          "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
+        }
+      ]
+    },
+    "title": "Tata Curvv EV vs Mahindra BE 6 | EVSavari",
+    "metaDescription": "Compare Tata Curvv EV and Mahindra Be 6 on EVSavari — deterministic range, charging, and value signals. No paid placement.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "tata curvv ev vs mahindra be 6",
+      "tata-curvv-ev",
+      "mahindra-be-6",
+      "Tata Curvv EV",
+      "Mahindra BE 6"
+    ],
+    "canonicalPath": "/compare/tata-curvv-ev-vs-mahindra-be-6-agent",
+    "canonicalUrl": "https://evsavari.com/compare/tata-curvv-ev-vs-mahindra-be-6-agent",
+    "generatedAt": "2026-06-10T06:29:07.734Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "tata-curvv-ev-vs-mahindra-be-6-agent",
+      "description": "Compare Tata Curvv EV and Mahindra Be 6 on EVSavari — deterministic range, charging, and value signals. No paid placement.",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tata Curvv EV",
+          "url": "https://evsavari.com/cars/tata-curvv-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mahindra BE 6",
+          "url": "https://evsavari.com/cars/mahindra-be-6"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Which is better — Tata Curvv EV or Mahindra Be 6?",
+        "answer": "Neither is a universal winner. Compare range, charging, value scores, and variant pricing for your commute and parking setup."
+      },
+      {
+        "question": "Why is Tata Curvv EV ranked first?",
+        "answer": "Tata Curvv EV — overall score 81/100. Range 502 km, from ₹17.99 L."
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Side-by-side score breakdown for two new-gen Indian EVs",
+        "Compares range, charging, features, and value objectively",
+        "Links to live catalog specs for both models"
+      ],
+      "cons": [
+        "Launch pricing and variant mix may change scores over time",
+        "Real-world range depends on trim and driving style",
+        "Service network experience differs by city"
+      ],
+      "whoShouldBuy": [
+        "Buyers cross-shopping new Tata and Mahindra electric crossovers",
+        "Early adopters comparing BE 6 tech vs Curvv EV packaging",
+        "Families wanting a fresh alternative to Nexon EV / XUV400"
+      ],
+      "whoShouldAvoid": [
+        "Buyers needing proven long-term resale data on both nameplates",
+        "Those prioritising the lowest possible entry price",
+        "Shoppers who need delivery within days — check waitlists"
+      ],
+      "bestAlternative": {
+        "label": "Nexon EV vs XUV400",
+        "href": "/compare/tata-nexon-ev-vs-mahindra-xuv400",
+        "reason": "If you prefer established models with more ownership feedback, compare the previous-generation rivals."
+      },
+      "relatedLinks": [
+        {
+          "label": "Tata brand hub",
+          "href": "/brands/tata"
+        },
+        {
+          "label": "Mahindra brand hub",
+          "href": "/brands/mahindra"
+        },
+        {
+          "label": "Compare hub",
+          "href": "/compare"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Tata brand hub",
+            "href": "/brands/tata"
+          },
+          {
+            "label": "Mahindra brand hub",
+            "href": "/brands/mahindra"
+          },
+          {
+            "label": "Compare hub",
+            "href": "/compare"
+          }
+        ]
+      }
+    ]
+  }
+}

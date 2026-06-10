@@ -1,0 +1,88 @@
+{
+  "id": "mahindra-xuv400",
+  "displayName": "Mahindra XUV400",
+  "familySlug": "mahindra-xuv400",
+  "vehicle": {
+    "brand": "Mahindra",
+    "model": "XUV400",
+    "bodyType": "SUV",
+    "familySlug": "mahindra-xuv400"
+  },
+  "fields": {
+    "brand": "Mahindra",
+    "model": "XUV400",
+    "bodyType": "SUV",
+    "familySlug": "mahindra-xuv400",
+    "startingPrice": 1599000,
+    "topVariantPrice": 1899000,
+    "exShowroomPrice": 1599000,
+    "batteryCapacityKwh": 39.4,
+    "claimedRangeKm": 456,
+    "rangeTestStandard": "MIDC",
+    "acChargingKw": 3.3,
+    "dcChargingKw": 50,
+    "acChargingTimeHours": null,
+    "dcChargingTimeMinutes": null,
+    "airbags": 4,
+    "adas": "true",
+    "powerPs": null,
+    "torqueNm": "310"
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": false,
+    "camera360": false,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false,
+    "adas": true
+  },
+  "variants": [
+    {
+      "variantName": "EC Pro",
+      "priceInr": 1599000,
+      "batteryKwh": 34.5,
+      "rangeKm": 375,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 50
+    },
+    {
+      "variantName": "EC",
+      "priceInr": 1699000,
+      "batteryKwh": 39.4,
+      "rangeKm": 456,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 50
+    },
+    {
+      "variantName": "EL Pro",
+      "priceInr": 1799000,
+      "batteryKwh": 39.4,
+      "rangeKm": 456,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 50
+    },
+    {
+      "variantName": "EL",
+      "priceInr": 1899000,
+      "batteryKwh": 39.4,
+      "rangeKm": 456,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 50
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "https://auto.mahindra.com/suv/xuv400/X400.html",
+    "https://www.cardekho.com/mahindra/xuv400"
+  ],
+  "verifiedAt": "2026-06-10",
+  "populationMeta": {
+    "batch": "day1",
+    "pipelineConfidence": 98,
+    "manualCorrections": [
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-10T05:01:32.182Z"
+  }
+}

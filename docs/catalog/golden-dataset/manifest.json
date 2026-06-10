@@ -1,7 +1,7 @@
 {
   "version": "golden-v1",
-  "generatedAt": "2026-06-08T17:44:00.291Z",
-  "count": 8,
+  "generatedAt": "2026-06-10T05:01:32.145Z",
+  "count": 25,
   "vehicles": [
     {
       "id": "tata-nexon-ev",
@@ -58,6 +58,125 @@
       "familySlug": "hyundai-creta-electric",
       "verificationLevel": "ops_benchmark",
       "variantCount": 3
+    },
+    {
+      "id": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "familySlug": "mg-comet-ev",
+      "verificationLevel": "manual_review",
+      "variantCount": 3
+    },
+    {
+      "id": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "familySlug": "hyundai-ioniq-5",
+      "verificationLevel": "manual_review",
+      "variantCount": 2
+    },
+    {
+      "id": "kia-ev6",
+      "displayName": "Kia EV6",
+      "familySlug": "kia-ev6",
+      "verificationLevel": "manual_review",
+      "variantCount": 2
+    },
+    {
+      "id": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "familySlug": "mahindra-xuv400",
+      "verificationLevel": "manual_review",
+      "variantCount": 4
+    },
+    {
+      "id": "byd-seal",
+      "displayName": "BYD Seal",
+      "familySlug": "byd-seal",
+      "verificationLevel": "manual_review",
+      "variantCount": 3
+    },
+    {
+      "id": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "familySlug": "bmw-ix1",
+      "verificationLevel": "manual_review",
+      "variantCount": 2
+    },
+    {
+      "id": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "familySlug": "mercedes-eqa",
+      "verificationLevel": "manual_review",
+      "variantCount": 2
+    },
+    {
+      "id": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "familySlug": "mercedes-eqb",
+      "verificationLevel": "manual_review",
+      "variantCount": 2
+    },
+    {
+      "id": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "familySlug": "volvo-ex40",
+      "verificationLevel": "manual_review",
+      "variantCount": 2
+    },
+    {
+      "id": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "familySlug": "mini-cooper-se",
+      "verificationLevel": "manual_review",
+      "variantCount": 2
+    },
+    {
+      "id": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "familySlug": "citroen-ec3",
+      "verificationLevel": "manual_review",
+      "variantCount": 4
+    },
+    {
+      "id": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "familySlug": "mg-zs-ev",
+      "verificationLevel": "manual_review",
+      "variantCount": 3
+    },
+    {
+      "id": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "familySlug": "maruti-e-vitara",
+      "verificationLevel": "manual_review",
+      "variantCount": 3
+    },
+    {
+      "id": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "familySlug": "hyundai-kona-electric",
+      "verificationLevel": "manual_review",
+      "variantCount": 1
+    },
+    {
+      "id": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "familySlug": "tata-tigor-ev",
+      "verificationLevel": "manual_review",
+      "variantCount": 4
+    },
+    {
+      "id": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "familySlug": "tata-tiago-ev",
+      "verificationLevel": "manual_review",
+      "variantCount": 4
+    },
+    {
+      "id": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "familySlug": "tata-harrier-ev",
+      "verificationLevel": "manual_review",
+      "variantCount": 8
     }
   ]
 }

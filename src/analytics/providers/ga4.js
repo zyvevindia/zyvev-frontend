@@ -1,4 +1,5 @@
-import { analyticsConfig, isGa4Configured } from "../config";
+import { analyticsConfig, isGa4Configured, isGtmConfigured } from "../config";
+import { gtmEvent } from "./gtm";
 
 let initialized = false;
 
@@ -42,17 +43,29 @@ export function initGa4() {
 }
 
 export function ga4PageView(path, title) {
+  const payload = {
+    page_path: path,
+    page_title: title || document.title,
+  };
+
+  if (isGtmConfigured()) {
+    gtmEvent("page_view", payload);
+    return;
+  }
+
   if (!window.gtag || !isGa4Configured()) {
     return;
   }
 
-  window.gtag("event", "page_view", {
-    page_path: path,
-    page_title: title || document.title,
-  });
+  window.gtag("event", "page_view", payload);
 }
 
 export function ga4Event(eventName, params = {}) {
+  if (isGtmConfigured()) {
+    gtmEvent(eventName, params);
+    return;
+  }
+
   if (!window.gtag || !isGa4Configured()) {
     return;
   }

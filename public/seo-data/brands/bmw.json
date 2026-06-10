@@ -1,0 +1,56 @@
+{
+  "seoPage": {
+    "slug": "brand-bmw",
+    "category": "brand",
+    "title": "BMW Electric Cars in India — Models, Prices & Guides | EVSavari",
+    "metaDescription": "Explore BMW electric cars in India — model families, pricing bands, range, and buyer guides on EVSavari.",
+    "canonicalPath": "/brands/bmw",
+    "canonicalUrl": "https://evsavari.com/brands/bmw",
+    "intro": "BMW offers multiple electric model families in India. Use this hub to compare BMW EV line-ups, trims, and ownership fit before you shortlist a test drive. Rankings use EVSavari catalog intelligence — not paid placement.",
+    "recommendationLogic": {
+      "category": "brand",
+      "methodology": "Curated links to model families and EVSavari decision guides — rankings use catalog intelligence, not paid placement."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "bmw-ix1",
+        "displayName": "BMW Ix1",
+        "explanation": "Explore BMW Ix1 specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/bmw-ix1"
+      }
+    ],
+    "tradeoffs": [
+      "BMW EV buyers should compare trims and real-world range for their commute before choosing a variant.",
+      "Service network density varies by city — verify local support when shortlisting."
+    ],
+    "faq": [
+      {
+        "question": "Which BMW EV should I compare first?",
+        "answer": "Start with the family that matches your budget and body style, then compare variants on EVSavari."
+      },
+      {
+        "question": "Where can I compare BMW EV variants?",
+        "answer": "Open any family page on EVSavari to switch trims or use the compare tool for side-by-side specs."
+      }
+    ],
+    "keywords": [
+      "BMW electric car India",
+      "BMW EV",
+      "EVSavari",
+      "electric car comparison"
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "BMW Ix1",
+          "url": "https://evsavari.com/cars/bmw-ix1"
+        }
+      ]
+    }
+  }
+}

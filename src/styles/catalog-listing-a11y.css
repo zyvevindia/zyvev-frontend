@@ -1,0 +1,43 @@
+/* Wave D — listing filter accessibility */
+
+.listing-filter-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.listing-filter-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-filter-input:focus-visible,
+.listing-page-hero:focus-within {
+  outline: none;
+}
+
+.listing-filter-input:focus-visible {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.listing-results-status {
+  margin: 0 0 1.25rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.listing-results-status strong {
+  color: #0f172a;
+}
+
+.navbar-nav-link:focus-visible,
+.navbar-search-link:focus-visible,
+.navbar-mobile-toggle:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}

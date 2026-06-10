@@ -3,48 +3,93 @@
     "slug": "brand-tata",
     "category": "brand",
     "title": "Tata Electric Cars in India — Models, Prices & Guides | EVSavari",
-    "metaDescription": "Explore Tata electric cars in India: Nexon EV, Punch EV, Tiago EV families, pricing bands, and buyer guides on EVSavari.",
-    "intro": "Tata dominates India's mass-market EV space with multiple model families spanning compact SUVs and hatchbacks. Use this hub to compare Tata EV line-ups, trims, and ownership fit before you shortlist a test drive.",
+    "metaDescription": "Explore Tata electric cars in India — model families, pricing bands, range, and buyer guides on EVSavari.",
+    "canonicalPath": "/brands/tata",
+    "canonicalUrl": "https://evsavari.com/brands/tata",
+    "intro": "Tata offers multiple electric model families in India. Use this hub to compare Tata EV line-ups, trims, and ownership fit before you shortlist a test drive. Rankings use EVSavari catalog intelligence — not paid placement.",
     "recommendationLogic": {
       "category": "brand",
-      "methodology": "Curated links to Tata model families and EVSavari decision guides — rankings use catalog intelligence, not paid placement."
+      "methodology": "Curated links to model families and EVSavari decision guides — rankings use catalog intelligence, not paid placement."
     },
     "rankedVehicles": [
       {
         "rank": 1,
         "slug": "tata-nexon-ev",
         "displayName": "Tata Nexon EV",
-        "explanation": "India's best-selling electric SUV family — multiple range trims for city and highway mix.",
+        "explanation": "Explore Tata Nexon EV specs, variants, and EVSavari scores on the family page.",
         "detailPath": "/cars/tata-nexon-ev"
       },
       {
         "rank": 2,
-        "slug": "tata-punch-ev",
-        "displayName": "Tata Punch EV",
-        "explanation": "Compact electric SUV with city-friendly footprint and multiple battery options.",
-        "detailPath": "/cars/tata-punch-ev"
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "explanation": "Explore Tata Curvv EV specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/tata-curvv-ev"
       },
       {
         "rank": 3,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "explanation": "Explore Tata Punch EV specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/tata-punch-ev"
+      },
+      {
+        "rank": 4,
         "slug": "tata-tiago-ev",
         "displayName": "Tata Tiago EV",
-        "explanation": "Affordable electric hatchback entry point for first-time EV buyers.",
+        "explanation": "Explore Tata Tiago EV specs, variants, and EVSavari scores on the family page.",
         "detailPath": "/cars/tata-tiago-ev"
       }
     ],
     "tradeoffs": [
-      "Tata EVs offer strong value and service network density; verify real-world range for your commute before choosing a trim.",
-      "Variant naming (LR, MR, city packs) affects range and price — compare trims on each family page."
+      "Tata EV buyers should compare trims and real-world range for their commute before choosing a variant.",
+      "Service network density varies by city — verify local support when shortlisting."
     ],
     "faq": [
       {
-        "question": "Which Tata EV is best for city driving?",
-        "answer": "Punch EV and Tiago EV score well for urban use; Nexon EV suits buyers needing more space and highway legs."
+        "question": "Which Tata EV should I compare first?",
+        "answer": "Start with the family that matches your budget and body style, then compare variants on EVSavari."
       },
       {
         "question": "Where can I compare Tata EV variants?",
-        "answer": "Open any Tata family page on EVSavari to switch trims and compare specs side-by-side."
+        "answer": "Open any family page on EVSavari to switch trims or use the compare tool for side-by-side specs."
       }
-    ]
+    ],
+    "keywords": [
+      "Tata electric car India",
+      "Tata EV",
+      "EVSavari",
+      "electric car comparison"
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tata Nexon EV",
+          "url": "https://evsavari.com/cars/tata-nexon-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tata Curvv EV",
+          "url": "https://evsavari.com/cars/tata-curvv-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tata Punch EV",
+          "url": "https://evsavari.com/cars/tata-punch-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Tata Tiago EV",
+          "url": "https://evsavari.com/cars/tata-tiago-ev"
+        }
+      ]
+    }
   }
 }

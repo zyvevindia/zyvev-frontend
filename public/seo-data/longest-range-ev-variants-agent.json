@@ -1,0 +1,349 @@
+{
+  "seoPage": {
+    "slug": "longest-range-ev-variants-agent",
+    "pageTypeId": "variant_long_range",
+    "category": "usage",
+    "intro": "Longest range EV variants in India — variant picks from score-engine variant analysis across 10 data-backed entries.",
+    "recommendationLogic": {
+      "pageTypeId": "variant_long_range",
+      "methodology": "Deterministic EVSavari Score Engine v1 — catalog fields + category rankings. No LLM. Human approval required before publish.",
+      "tonePolicy": "well_suited_language_only",
+      "candidatePoolSize": 25,
+      "source": "seo-agent-v1",
+      "category": "usage",
+      "primaryScoreKey": "composite"
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV — Creative 45",
+        "exShowroom": 1399000,
+        "claimedRangeKm": 489,
+        "compositeScore": 58,
+        "confidence": "medium",
+        "explanation": "Creative 45 delivers the highest certified range (489 km).",
+        "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time.",
+        "detailPath": "/cars/tata-nexon-ev",
+        "variantName": "Creative 45"
+      },
+      {
+        "rank": 2,
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV — Smart+ 40 kWh",
+        "exShowroom": 1089000,
+        "claimedRangeKm": 468,
+        "compositeScore": 60,
+        "confidence": "medium",
+        "explanation": "Smart+ 40 kWh delivers the highest certified range (468 km).",
+        "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time.",
+        "detailPath": "/cars/tata-punch-ev",
+        "variantName": "Smart+ 40 kWh"
+      },
+      {
+        "rank": 3,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV — Empowered 55",
+        "exShowroom": 2099000,
+        "claimedRangeKm": 585,
+        "compositeScore": 77,
+        "confidence": "high",
+        "explanation": "Empowered 55 delivers the highest certified range (585 km).",
+        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
+        "detailPath": "/cars/tata-curvv-ev",
+        "variantName": "Empowered 55"
+      },
+      {
+        "rank": 4,
+        "slug": "mg-windsor-ev",
+        "displayName": "MG Windsor EV — Excite",
+        "exShowroom": 999000,
+        "claimedRangeKm": 331,
+        "compositeScore": 56,
+        "confidence": "medium",
+        "explanation": "Excite delivers the highest certified range (331 km).",
+        "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability.",
+        "detailPath": "/cars/mg-windsor-ev",
+        "variantName": "Excite"
+      },
+      {
+        "rank": 5,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra BE 6 — Pack Three 79",
+        "exShowroom": 2290000,
+        "claimedRangeKm": 683,
+        "compositeScore": 75,
+        "confidence": "high",
+        "explanation": "Pack Three 79 delivers the highest certified range (683 km).",
+        "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/mahindra-be-6",
+        "variantName": "Pack Three 79"
+      },
+      {
+        "rank": 6,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra XEV 9e — Pack One 79",
+        "exShowroom": 2190000,
+        "claimedRangeKm": 656,
+        "compositeScore": 79,
+        "confidence": "high",
+        "explanation": "Pack One 79 delivers the highest certified range (656 km).",
+        "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100.",
+        "detailPath": "/cars/mahindra-xev-9e",
+        "variantName": "Pack One 79"
+      },
+      {
+        "rank": 7,
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3 — Dynamic",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 521,
+        "compositeScore": 61,
+        "confidence": "medium",
+        "explanation": "Dynamic delivers the highest certified range (521 km).",
+        "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
+        "detailPath": "/cars/byd-atto-3",
+        "variantName": "Dynamic"
+      },
+      {
+        "rank": 8,
+        "slug": "hyundai-creta-electric",
+        "displayName": "Hyundai Creta Electric — Signature",
+        "exShowroom": 2499000,
+        "claimedRangeKm": 473,
+        "compositeScore": 66,
+        "confidence": "medium",
+        "explanation": "Signature delivers the highest certified range (473 km).",
+        "tradeoff": "Strength from score data: Feature score includes verified: ADAS, Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/hyundai-creta-electric",
+        "variantName": "Signature"
+      },
+      {
+        "rank": 9,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV — Pace",
+        "exShowroom": 749000,
+        "claimedRangeKm": 230,
+        "compositeScore": 52,
+        "confidence": "limited",
+        "explanation": "Pace delivers the highest certified range (230 km).",
+        "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, 360° camera, Connected car. Tradeoff to weigh: Range score uses 230 km claimed range and 13.5 km/kWh efficiency.",
+        "detailPath": "/cars/mg-comet-ev",
+        "variantName": "Pace"
+      },
+      {
+        "rank": 10,
+        "slug": "hyundai-ioniq-5",
+        "displayName": "Hyundai Ioniq 5 — RWD",
+        "exShowroom": 4495000,
+        "claimedRangeKm": 631,
+        "compositeScore": 58,
+        "confidence": "medium",
+        "explanation": "RWD delivers the highest certified range (631 km).",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+        "detailPath": "/cars/hyundai-ioniq-5",
+        "variantName": "RWD"
+      }
+    ],
+    "tradeoffs": {
+      "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
+      "considerations": [
+        {
+          "slug": "tata-nexon-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time."
+        },
+        {
+          "slug": "tata-punch-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 80/100. Tradeoff to weigh: Charging score reflects 65 kW DC peak and ~26 min DC time."
+        },
+        {
+          "slug": "tata-curvv-ev",
+          "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+        },
+        {
+          "slug": "mg-windsor-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability."
+        },
+        {
+          "slug": "mahindra-be-6",
+          "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
+        },
+        {
+          "slug": "mahindra-xev-9e",
+          "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100."
+        }
+      ]
+    },
+    "title": "Longest range EV variants in India | EVSavari",
+    "metaDescription": "Variant recommendations from EVSavari Score Engine — 10 data-backed picks with transparent scoring. Human-reviewed catalog intelligence.",
+    "keywords": [
+      "electric car India",
+      "EV comparison",
+      "EVSavari",
+      "longest range ev variants",
+      "Tata Nexon EV — Creative 45",
+      "Tata Punch EV — Smart+ 40 kWh",
+      "Tata Curvv EV — Empowered 55",
+      "MG Windsor EV — Excite",
+      "Mahindra BE 6 — Pack Three 79"
+    ],
+    "canonicalPath": "/best-evs/longest-range-variants-agent",
+    "canonicalUrl": "https://evsavari.com/best-evs/longest-range-variants-agent",
+    "generatedAt": "2026-06-10T06:29:07.754Z",
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "longest-range-ev-variants-agent",
+      "description": "Variant recommendations from EVSavari Score Engine — 10 data-backed picks with transparent scoring. Human-reviewed catalog intelligence.",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tata Nexon EV — Creative 45",
+          "url": "https://evsavari.com/cars/tata-nexon-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tata Punch EV — Smart+ 40 kWh",
+          "url": "https://evsavari.com/cars/tata-punch-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tata Curvv EV — Empowered 55",
+          "url": "https://evsavari.com/cars/tata-curvv-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "MG Windsor EV — Excite",
+          "url": "https://evsavari.com/cars/mg-windsor-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Mahindra BE 6 — Pack Three 79",
+          "url": "https://evsavari.com/cars/mahindra-be-6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Mahindra XEV 9e — Pack One 79",
+          "url": "https://evsavari.com/cars/mahindra-xev-9e"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "BYD Atto 3 — Dynamic",
+          "url": "https://evsavari.com/cars/byd-atto-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Hyundai Creta Electric — Signature",
+          "url": "https://evsavari.com/cars/hyundai-creta-electric"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "MG Comet EV — Pace",
+          "url": "https://evsavari.com/cars/mg-comet-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Hyundai Ioniq 5 — RWD",
+          "url": "https://evsavari.com/cars/hyundai-ioniq-5"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "How are these rankings generated?",
+        "answer": "Rankings use deterministic EVSavari Score Engine signals from catalog data — range, charging, safety, value, and use-case scores. No LLM opinions or paid placement."
+      },
+      {
+        "question": "Are prices final?",
+        "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
+      },
+      {
+        "question": "Why is Tata Nexon EV — Creative 45 ranked first?",
+        "answer": "Creative 45 delivers the highest certified range (489 km)."
+      }
+    ],
+    "governance": {
+      "source": "seo-agent-v1",
+      "deterministic": true,
+      "llmGenerated": false,
+      "superlativesAvoided": true,
+      "humanApprovalRequired": true,
+      "humanReviewed": true,
+      "editorialEnriched": true,
+      "editorialReviewedAt": "2026-06-10"
+    },
+    "editorial": {
+      "humanReviewed": true,
+      "reviewedAt": "2026-06-10",
+      "pros": [
+        "Shows which trim delivers maximum range per family",
+        "Prevents buying a base pack when long-range trim fits budget",
+        "Uses verified battery and range fields from catalog"
+      ],
+      "cons": [
+        "Long-range trims cost more and charge slower on same charger",
+        "Real range still varies with driving and climate",
+        "Some families have minimal trim differentiation on range"
+      ],
+      "whoShouldBuy": [
+        "Buyers debating battery size within one model",
+        "Inter-city users who need the longest single-charge distance",
+        "Research-heavy shoppers before dealer negotiation"
+      ],
+      "whoShouldAvoid": [
+        "City drivers who rarely exceed 80 km per day",
+        "Budget buyers where base trim is the only option",
+        "Those who should prioritise charge speed over pack size"
+      ],
+      "bestAlternative": {
+        "label": "Punch EV longest range variant",
+        "href": "/best-evs/tata-punch-ev-longest-range-variant-agent",
+        "reason": "Compact SUV buyers should check Punch EV trim-level range before ordering."
+      },
+      "relatedLinks": [
+        {
+          "label": "Longest range EVs",
+          "href": "/best-evs/longest-range-agent"
+        },
+        {
+          "label": "Battery lifespan",
+          "href": "/ownership-guides/battery-health"
+        },
+        {
+          "label": "Punch vs Tiago EV",
+          "href": "/compare/tata-punch-ev-vs-tata-tiago-ev"
+        }
+      ]
+    },
+    "relatedLinks": [
+      {
+        "title": "Editorial picks",
+        "links": [
+          {
+            "label": "Longest range EVs",
+            "href": "/best-evs/longest-range-agent"
+          },
+          {
+            "label": "Battery lifespan",
+            "href": "/ownership-guides/battery-health"
+          },
+          {
+            "label": "Punch vs Tiago EV",
+            "href": "/compare/tata-punch-ev-vs-tata-tiago-ev"
+          }
+        ]
+      }
+    ]
+  }
+}

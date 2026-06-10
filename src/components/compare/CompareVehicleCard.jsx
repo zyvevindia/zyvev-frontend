@@ -137,6 +137,7 @@ function resolveBetterAtPills(meta, car) {
 export default function CompareVehicleCard({
   car,
   isRecommended = false,
+  compareBadge = null,
   eagerImage = false,
   detailHref,
 }) {
@@ -169,12 +170,19 @@ export default function CompareVehicleCard({
     ? resolveCatalogImageUrl(car, "compare")
     : null;
 
+  const badgeLabel =
+    compareBadge?.label ||
+    (isRecommended ? "Recommended" : null);
+  const badgeClass =
+    compareBadge?.cssClass ||
+    (isRecommended ? "compare-vehicle-card__badge--recommended" : null);
+
   if (!car || typeof car !== "object") return null;
 
   return (
     <article
       className={`compare-vehicle-card${
-        isRecommended ? " compare-vehicle-card--recommended" : ""
+        badgeLabel ? " compare-vehicle-card--recommended" : ""
       }`}
       aria-label={displayName}
     >
@@ -194,9 +202,13 @@ export default function CompareVehicleCard({
             aspectRatio: "unset",
           }}
         />
-        {isRecommended ? (
-          <span className="compare-vehicle-card__badge compare-vehicle-card__badge--recommended">
-            Recommended
+        {badgeLabel ? (
+          <span
+            className={`compare-vehicle-card__badge${
+              badgeClass ? ` ${badgeClass}` : ""
+            }`}
+          >
+            {badgeLabel}
           </span>
         ) : null}
       </div>

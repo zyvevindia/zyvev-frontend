@@ -127,23 +127,23 @@ export default function Footer() {
             />
 
             <FooterLink
+              to="/cars"
+              label="Browse EVs"
+            />
+
+            <FooterLink
               to="/compare"
-              label="Compare EVs"
+              label="Compare"
             />
 
             <FooterLink
               to="/guides"
-              label="EV Guides"
+              label="Guides"
             />
 
             <FooterLink
-              to="/popular"
-              label="Popular EVs"
-            />
-
-            <FooterLink
-              to="/upcoming"
-              label="Upcoming EVs"
+              to="/cars#catalog-search"
+              label="Search"
             />
           </div>
         </div>

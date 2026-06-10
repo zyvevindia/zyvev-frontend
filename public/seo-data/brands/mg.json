@@ -1,0 +1,69 @@
+{
+  "seoPage": {
+    "slug": "brand-mg",
+    "category": "brand",
+    "title": "MG Electric Cars in India — Models, Prices & Guides | EVSavari",
+    "metaDescription": "Explore MG electric cars in India — model families, pricing bands, range, and buyer guides on EVSavari.",
+    "canonicalPath": "/brands/mg",
+    "canonicalUrl": "https://evsavari.com/brands/mg",
+    "intro": "MG offers multiple electric model families in India. Use this hub to compare MG EV line-ups, trims, and ownership fit before you shortlist a test drive. Rankings use EVSavari catalog intelligence — not paid placement.",
+    "recommendationLogic": {
+      "category": "brand",
+      "methodology": "Curated links to model families and EVSavari decision guides — rankings use catalog intelligence, not paid placement."
+    },
+    "rankedVehicles": [
+      {
+        "rank": 1,
+        "slug": "mg-zs-ev",
+        "displayName": "MG Zs EV",
+        "explanation": "Explore MG Zs EV specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/mg-zs-ev"
+      },
+      {
+        "rank": 2,
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "explanation": "Explore MG Comet EV specs, variants, and EVSavari scores on the family page.",
+        "detailPath": "/cars/mg-comet-ev"
+      }
+    ],
+    "tradeoffs": [
+      "MG EV buyers should compare trims and real-world range for their commute before choosing a variant.",
+      "Service network density varies by city — verify local support when shortlisting."
+    ],
+    "faq": [
+      {
+        "question": "Which MG EV should I compare first?",
+        "answer": "Start with the family that matches your budget and body style, then compare variants on EVSavari."
+      },
+      {
+        "question": "Where can I compare MG EV variants?",
+        "answer": "Open any family page on EVSavari to switch trims or use the compare tool for side-by-side specs."
+      }
+    ],
+    "keywords": [
+      "MG electric car India",
+      "MG EV",
+      "EVSavari",
+      "electric car comparison"
+    ],
+    "structuredData": {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "MG Zs EV",
+          "url": "https://evsavari.com/cars/mg-zs-ev"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "MG Comet EV",
+          "url": "https://evsavari.com/cars/mg-comet-ev"
+        }
+      ]
+    }
+  }
+}

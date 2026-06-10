@@ -21,7 +21,7 @@
     "startingPrice": 1249000,
     "topVariantPrice": 1749000,
     "exShowroomPrice": 1249000,
-    "batteryCapacityKwh": null,
+    "batteryCapacityKwh": 30,
     "claimedRangeKm": 489,
     "rangeTestStandard": "MIDC",
     "acChargingKw": 7.2,
@@ -199,5 +199,8 @@
         "camera360": true
       }
     }
-  ]
+  ],
+  "populationMeta": {
+    "qualityConsolidationAt": "2026-06-10T05:01:32.166Z"
+  }
 }

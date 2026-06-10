@@ -41,6 +41,21 @@
   box-shadow: 0 6px 16px rgba(22, 163, 74, 0.28);
 }
 
+.compare-vehicle-card__badge--best-value {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28);
+}
+
+.compare-vehicle-card__badge--long-range {
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  box-shadow: 0 6px 16px rgba(13, 148, 136, 0.28);
+}
+
+.compare-vehicle-card__badge--fast-charging {
+  background: linear-gradient(135deg, #d97706, #b45309);
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.28);
+}
+
 .compare-vehicle-card__content {
   display: flex;
   flex-direction: column;
