@@ -19,19 +19,13 @@ import { buildListingPageMeta } from "../seo/pageMetadata";
 
 import CarCardSkeleton from "../components/skeletons/CarCardSkeleton";
 
-import normalizeCar from "../utils/normalizeCar";
-
 import {
   aggregateModelFamilies,
   familyToListingCard,
   sortFamilies,
 } from "../utils/modelFamily";
 
-import { API_URL } from "../config";
-
-import { saveCompareCars } from "../utils/compareCarsStorage";
-
-import { safeFetchJsonWithRetry } from "../utils/safeFetch";
+import { fetchListingCatalogVariants } from "../utils/vehicleDetailResolver.js";
 
 import useCompareCars from "../hooks/useCompareCars";
 
@@ -171,26 +165,13 @@ export default function ListingPage() {
 
         setError("");
 
-        const response = await safeFetchJsonWithRetry(
-          `${API_URL}/cars?limit=120`,
-          {
-            label: "listing_catalog",
-            timeoutMs: 18000,
-          }
-        );
+        const normalized = await fetchListingCatalogVariants({
+          limit: 120,
+        });
 
-        if (!response.ok) {
-          throw new Error(
-            response.error || "Failed to fetch EVs"
-          );
+        if (!normalized.length) {
+          throw new Error("Failed to fetch EVs");
         }
-
-        const data = response.data;
-
-        const normalized =
-          (data?.cars || []).map(
-            normalizeCar
-          );
 
         setCars(normalized);
 

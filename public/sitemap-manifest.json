@@ -1,6 +1,6 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-06-10T11:25:47.787Z",
+  "generatedAt": "2026-06-10T11:48:38.739Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
@@ -96,6 +96,13 @@
   ],
   "vehicles": [
     {
+      "loc": "https://evsavari.com/cars/hyundai-creta-electric",
+      "path": "/cars/hyundai-creta-electric",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
       "loc": "https://evsavari.com/cars/hyundai-kona-electric",
       "path": "/cars/hyundai-kona-electric",
       "priority": 0.8,
@@ -112,6 +119,34 @@
     {
       "loc": "https://evsavari.com/cars/mahindra-xuv400",
       "path": "/cars/mahindra-xuv400",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/cars/tata-harrier-ev",
+      "path": "/cars/tata-harrier-ev",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/cars/maruti-e-vitara",
+      "path": "/cars/maruti-e-vitara",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/cars/hyundai-ioniq-5",
+      "path": "/cars/hyundai-ioniq-5",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/cars/mini-cooper-se",
+      "path": "/cars/mini-cooper-se",
       "priority": 0.8,
       "changefreq": "weekly",
       "lastmod": "2026-06-10"
@@ -147,6 +182,20 @@
     {
       "loc": "https://evsavari.com/cars/tata-tiago-ev",
       "path": "/cars/tata-tiago-ev",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/cars/tata-tigor-ev",
+      "path": "/cars/tata-tigor-ev",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/cars/mg-windsor-ev",
+      "path": "/cars/mg-windsor-ev",
       "priority": 0.8,
       "changefreq": "weekly",
       "lastmod": "2026-06-10"
@@ -196,6 +245,13 @@
     {
       "loc": "https://evsavari.com/cars/mg-zs-ev",
       "path": "/cars/mg-zs-ev",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-10"
+    },
+    {
+      "loc": "https://evsavari.com/cars/byd-seal",
+      "path": "/cars/byd-seal",
       "priority": 0.8,
       "changefreq": "weekly",
       "lastmod": "2026-06-10"
@@ -1684,15 +1740,15 @@
   ],
   "counts": {
     "static": 13,
-    "vehicles": 17,
+    "vehicles": 25,
     "discovery": 180,
     "compare": 29,
-    "total": 239
+    "total": 247
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
     "static": 13,
-    "cars": 17,
+    "cars": 25,
     "discovery": 180,
     "compare": 29
   }

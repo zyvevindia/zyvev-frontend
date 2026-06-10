@@ -27,6 +27,11 @@ import {
   hasVerifiedDossier,
 } from "../data/catalog/verified/buildVerifiedDossierVariants.js";
 import { resolveDossierSlug } from "../data/catalog/verified/resolveDossierSlug.js";
+import {
+  fetchGoldenDatasetMarketplaceVariants,
+  goldenDossierToMarketplaceVariants,
+} from "./goldenCatalogListing.js";
+import { loadGoldenDossierByFamilySlug } from "../catalogAcquisition/benchmark/goldenLoader.js";
 
 const OBJECT_ID_PATTERN = /^[a-f0-9]{24}$/i;
 
@@ -193,6 +198,15 @@ export async function fetchVehicleFamilyBySlug(
     variants = siblings;
 
     if (variants.length === 0) {
+      const golden = await loadGoldenDossierByFamilySlug(familySlug);
+      if (golden?.dossier) {
+        variants = goldenDossierToMarketplaceVariants(golden.dossier).map(
+          normalizeCar
+        );
+      }
+    }
+
+    if (variants.length === 0) {
       const single = await fetchVehicleBySlug(requested);
       if (!single?.vehicle) return null;
       variants = [normalizeCar(single.vehicle)];
@@ -239,19 +253,54 @@ export async function fetchVehicleFamilyBySlug(
   };
 }
 
-export async function fetchModelFamiliesForListing(limit = 50) {
-  const cars = await fetchCatalogVehiclesForFallback(limit);
-  const families = aggregateModelFamilies(cars.map(normalizeCar));
+export async function fetchListingCatalogVariants(options = {}) {
+  const limit = options.limit ?? 120;
 
-  return families.map((family) => {
-    if (!hasVerifiedDossier(family.familySlug)) {
-      return family;
+  const [apiRaw, goldenVariants] = await Promise.all([
+    fetchCatalogVehiclesForFallback(limit),
+    fetchGoldenDatasetMarketplaceVariants(),
+  ]);
+
+  const apiVariants = apiRaw.map(normalizeCar);
+
+  const familySlugs = new Set([
+    ...goldenVariants.map((v) => extractFamilySlug(v.slug)),
+    ...apiVariants.map((v) => extractFamilySlug(v.slug)),
+  ]);
+
+  const merged = [];
+
+  for (const familySlug of familySlugs) {
+    if (!familySlug) continue;
+
+    if (hasVerifiedDossier(familySlug)) {
+      merged.push(
+        ...buildVerifiedDossierMarketplaceVariants(familySlug).map(normalizeCar)
+      );
+      continue;
     }
-    const dossierVariants = buildVerifiedDossierMarketplaceVariants(
-      family.familySlug
+
+    const apiFam = apiVariants.filter(
+      (v) => extractFamilySlug(v.slug) === familySlug
     );
-    const [dossierFamily] = aggregateModelFamilies(dossierVariants);
-    return dossierFamily || family;
-  });
+
+    if (apiFam.length > 0) {
+      merged.push(...apiFam);
+      continue;
+    }
+
+    merged.push(
+      ...goldenVariants.filter(
+        (v) => extractFamilySlug(v.slug) === familySlug
+      )
+    );
+  }
+
+  return merged;
+}
+
+export async function fetchModelFamiliesForListing(limit = 120) {
+  const variants = await fetchListingCatalogVariants({ limit });
+  return aggregateModelFamilies(variants);
 }
 
