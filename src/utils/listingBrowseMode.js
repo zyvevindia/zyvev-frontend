@@ -50,20 +50,6 @@ export function shouldFilterFamiliesByListingSegment(segment) {
 }
 
 /**
- * Recommendation widget only on open catalog discovery (/cars), not hub segments.
- * @param {{ segment: string | null, compareMode: boolean, hasFamilies: boolean }} opts
- */
-export function shouldShowListingRecommendationWidget({
-  segment,
-  compareMode,
-  hasFamilies,
-}) {
-  if (compareMode || !hasFamilies) return false;
-  if (segment) return false;
-  return true;
-}
-
-/**
  * Compare discovery allowed on /cars and browse-only hubs (e.g. /popular).
  * @param {string | null} segment
  * @param {boolean} compareModeRequested

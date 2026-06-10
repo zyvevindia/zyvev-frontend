@@ -3,8 +3,6 @@ import {
   useMemo,
   useRef,
   useState,
-  lazy,
-  Suspense,
 } from "react";
 
 import {
@@ -37,17 +35,9 @@ import { safeFetchJsonWithRetry } from "../utils/safeFetch";
 
 import useCompareCars from "../hooks/useCompareCars";
 
-import SectionErrorBoundary from "../components/errors/SectionErrorBoundary";
 import EvDiscoveryFilters from "../components/discovery/EvDiscoveryFilters";
+import ListingCatalogMoreFilters from "../components/discovery/ListingCatalogMoreFilters";
 import CatalogPagination from "../components/catalog/CatalogPagination";
-import {
-  CatalogBodyTypeSelect,
-  CatalogPriceSelect,
-} from "../components/discovery/CatalogFilterSelects";
-
-const EvRecommendationWidget = lazy(() =>
-  import("../components/discovery/EvRecommendationWidget")
-);
 
 import useDebouncedValue from "../hooks/useDebouncedValue";
 import {
@@ -84,7 +74,6 @@ import "../styles/catalog-listing-a11y.css";
 import {
   resolveListingSegment,
   shouldFilterFamiliesByListingSegment,
-  shouldShowListingRecommendationWidget,
   resolveListingCompareMode,
   isBrowseOnlyListingSegment,
   applyBrowseSegmentFamilies,
@@ -156,6 +145,12 @@ export default function ListingPage() {
 
   const [fetchRetryKey, setFetchRetryKey] =
     useState(0);
+
+  const [moreFiltersOpen, setMoreFiltersOpen] = useState(() =>
+    Boolean(parseListingBrandFromParams(searchParams)) ||
+    Boolean(parsePriceRangeFromParams(searchParams)) ||
+    Boolean(searchParams.get("body"))
+  );
 
   const {
     compareList,
@@ -417,6 +412,28 @@ export default function ListingPage() {
     });
   };
 
+  const hasActiveMoreFilters = Boolean(brand) || Boolean(priceRange) || Boolean(bodyType);
+
+  const clearMoreFilters = () => {
+    skipListingUrlSyncRef.current = true;
+    setBrand("");
+    let next = resetPageInParams(searchParams);
+    next = writeListingFiltersToParams(
+      { search: debouncedSearch, brand: "", sort: sortBy },
+      next
+    );
+    next = writePriceRangeToParams("", next);
+    next.delete("body");
+    const intel = parseIntelligenceFiltersFromParams(next).filter(
+      (id) => !parseBodyTypeFilterId(id)
+    );
+    next = writeIntelligenceFiltersToParams(intel, next);
+    if (!compareMode && next.has("compareMode")) {
+      next.delete("compareMode");
+    }
+    setSearchParams(next, { replace: true });
+  };
+
   const totalPages = useMemo(
     () => getCatalogTotalPages(filteredFamilies.length),
     [filteredFamilies.length]
@@ -609,41 +626,17 @@ export default function ListingPage() {
       {/* ================= FILTER BAR ================= */}
 
       <section
+        className="listing-filter-bar"
         style={{
           maxWidth: "1300px",
-
-          margin:
-            "-35px auto 0 auto",
-
+          margin: "-28px auto 0 auto",
           padding: "0 20px",
-
           position: "relative",
-
           zIndex: 5,
         }}
       >
-
-        <div
-          style={{
-            background: "white",
-
-            borderRadius: "24px",
-
-            padding: "25px",
-
-            display: "grid",
-
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(240px,1fr))",
-
-            gap: "20px",
-
-            boxShadow:
-              "0 10px 30px rgba(0,0,0,0.08)",
-          }}
-        >
-
-          <div className="listing-filter-field">
+        <div className="listing-filter-card">
+          <div className="listing-filter-search listing-filter-field">
             <label htmlFor="catalog-search" className="listing-filter-label">
               Search
             </label>
@@ -651,95 +644,13 @@ export default function ListingPage() {
               id="catalog-search"
               ref={searchInputRef}
               type="search"
-              placeholder="Search by EV or brand..."
+              placeholder="Search EV or brand..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="listing-filter-input"
               style={inputStyle}
               aria-label="Search electric vehicles by name or brand"
             />
-          </div>
-
-          <div className="listing-filter-field">
-            <label htmlFor="catalog-brand" className="listing-filter-label">
-              Brand
-            </label>
-            <select
-              id="catalog-brand"
-              value={brand}
-              onChange={(e) => setBrand(e.target.value)}
-              className="listing-filter-input"
-              style={inputStyle}
-              aria-label="Filter by brand"
-            >
-
-            <option value="">
-              All Brands
-            </option>
-
-            {brands.map((b) => (
-
-              <option
-                key={b}
-                value={b}
-              >
-                {b}
-              </option>
-            ))}
-            </select>
-          </div>
-
-          <div className="listing-filter-field">
-            <span className="listing-filter-label">
-              Price
-            </span>
-            <CatalogPriceSelect
-              value={priceRange}
-              onChange={setPriceRange}
-              style={inputStyle}
-            />
-          </div>
-
-          <div className="listing-filter-field">
-            <span className="listing-filter-label">
-              Body type
-            </span>
-            <CatalogBodyTypeSelect
-              value={bodyType}
-              onChange={setBodyType}
-              style={inputStyle}
-            />
-          </div>
-
-          <div className="listing-filter-field">
-            <label htmlFor="catalog-sort" className="listing-filter-label">
-              Sort
-            </label>
-            <select
-              id="catalog-sort"
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="listing-filter-input"
-              style={inputStyle}
-              aria-label="Sort EV listings"
-            >
-
-            <option value="">
-              Sort By
-            </option>
-
-            <option value="price-low">
-              Price Low to High
-            </option>
-
-            <option value="price-high">
-              Price High to Low
-            </option>
-
-            <option value="range-high">
-              Best Range
-            </option>
-            </select>
           </div>
 
           <EvDiscoveryFilters
@@ -756,41 +667,24 @@ export default function ListingPage() {
             }
           />
 
+          <ListingCatalogMoreFilters
+            moreFiltersOpen={moreFiltersOpen}
+            onToggleMoreFilters={() => setMoreFiltersOpen((v) => !v)}
+            brand={brand}
+            brands={brands}
+            onBrandChange={setBrand}
+            priceRange={priceRange}
+            onPriceRangeChange={setPriceRange}
+            bodyType={bodyType}
+            onBodyTypeChange={setBodyType}
+            onClearMoreFilters={clearMoreFilters}
+            sortBy={sortBy}
+            onSortChange={setSortBy}
+            inputStyle={inputStyle}
+            hasActiveMoreFilters={hasActiveMoreFilters}
+          />
         </div>
-
       </section>
-
-      {shouldShowListingRecommendationWidget({
-        segment: listingSegment,
-        compareMode,
-        hasFamilies: families.length > 0,
-      }) && (
-        <section
-          style={{
-            maxWidth: "1300px",
-            margin: "24px auto 0",
-            padding: "0 20px",
-          }}
-        >
-          <SectionErrorBoundary label="EV recommendations" compact>
-            <Suspense
-              fallback={
-                <div
-                  className="listing-results-status"
-                  aria-busy="true"
-                >
-                  Loading recommendations…
-                </div>
-              }
-            >
-              <EvRecommendationWidget
-                families={families}
-                sourcePage={pathname || "/cars"}
-              />
-            </Suspense>
-          </SectionErrorBoundary>
-        </section>
-      )}
 
       {compareMode && (
 
@@ -903,9 +797,7 @@ export default function ListingPage() {
       <section
         style={{
           maxWidth: "1300px",
-
-          margin: "70px auto",
-
+          margin: "32px auto 0",
           padding: compareMode ? "0 20px 84px" : "0 20px",
         }}
       >
