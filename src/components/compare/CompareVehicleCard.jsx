@@ -14,7 +14,6 @@ import {
   safeFilter,
 } from "../../utils/compareArrayUtils";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
-import { resolveCatalogImageUrl } from "../../utils/vehicleMedia";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 import {
   resolveFullDisplayName,
@@ -166,10 +165,6 @@ export default function CompareVehicleCard({
   const href =
     car && (detailHref || vehicleDetailPath(car, car._id));
 
-  const compareImageSrc = car
-    ? resolveCatalogImageUrl(car, "compare")
-    : null;
-
   const badgeLabel =
     compareBadge?.label ||
     (isRecommended ? "Recommended" : null);
@@ -189,7 +184,6 @@ export default function CompareVehicleCard({
       <div className="compare-vehicle-card__media">
         <VehicleImage
           car={car}
-          src={compareImageSrc}
           role="compare"
           alt={displayName}
           responsive

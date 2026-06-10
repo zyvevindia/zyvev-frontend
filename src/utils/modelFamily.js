@@ -251,6 +251,7 @@ export function familyToListingCard(family) {
   return {
     _id: family.familySlug,
     slug: family.familySlug,
+    familySlug: family.familySlug,
     name: family.familyName,
     brand: family.brand,
     image: family.image,

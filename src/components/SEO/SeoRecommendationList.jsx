@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 
+import VehicleImage from "../media/VehicleImage";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
+import { extractFamilySlug } from "../../utils/modelFamily";
 
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
 
@@ -56,6 +58,17 @@ function inferSeoIntent(slug) {
   return undefined;
 }
 
+function rankedItemToCar(item) {
+  const slug = item?.slug || "";
+  const familySlug = extractFamilySlug(slug) || slug;
+  return {
+    slug,
+    familySlug,
+    name: item?.displayName || slug,
+    catalogMeta: { slug, familySlug },
+  };
+}
+
 export default function SeoRecommendationList({
   rankedVehicles = [],
   isCompare = false,
@@ -83,6 +96,27 @@ export default function SeoRecommendationList({
       <ol style={styles.list}>
         {safeRanked.map((item) => (
           <li key={item.slug} style={styles.card}>
+            <div style={styles.cardRow}>
+              <div style={styles.thumb}>
+                <VehicleImage
+                  car={rankedItemToCar(item)}
+                  role="listing"
+                  mediaChannel="seo"
+                  alt={item.displayName || item.slug}
+                  imgStyle={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                  wrapperStyle={{
+                    width: "100%",
+                    height: "100%",
+                    aspectRatio: "unset",
+                  }}
+                />
+              </div>
+
+              <div style={styles.cardBody}>
             <div style={styles.header}>
               <span style={styles.rank}>#{item.rank}</span>
               <Link
@@ -123,6 +157,8 @@ export default function SeoRecommendationList({
             >
               View full details →
             </Link>
+              </div>
+            </div>
           </li>
         ))}
       </ol>
@@ -157,6 +193,23 @@ const styles = {
     borderRadius: "12px",
     padding: "1.25rem",
     background: "#fff",
+  },
+  cardRow: {
+    display: "flex",
+    gap: "1rem",
+    alignItems: "flex-start",
+  },
+  thumb: {
+    flexShrink: 0,
+    width: "112px",
+    height: "70px",
+    borderRadius: "8px",
+    overflow: "hidden",
+    background: "#f1f5f9",
+  },
+  cardBody: {
+    flex: 1,
+    minWidth: 0,
   },
   rank: {
     fontWeight: 700,

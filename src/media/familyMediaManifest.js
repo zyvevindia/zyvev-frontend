@@ -80,6 +80,7 @@ export function resolveFamilySlugFromVariantSlug(variantSlug = "") {
       return family;
     }
   }
+  if (isLocalCarMediaFamily(slug)) return slug;
   return null;
 }
 

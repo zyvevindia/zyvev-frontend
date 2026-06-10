@@ -1,0 +1,494 @@
+{
+  "generatedAt": "2026-06-10T16:36:18.478Z",
+  "phase": "media-production-phase1",
+  "goal": "Zero broken buyer-facing card images",
+  "cardSurfacesAudited": [
+    {
+      "id": "home-popular",
+      "page": "Home.jsx",
+      "section": "Most Popular / Latest / Best Range",
+      "component": "CompactCarCard",
+      "usesVehicleImage": true,
+      "role": "listing",
+      "responsive": true
+    },
+    {
+      "id": "listing-browse",
+      "page": "ListingPage.jsx",
+      "section": "Browse EVs / search results",
+      "component": "CarCard",
+      "usesVehicleImage": true,
+      "role": "listing",
+      "responsive": true
+    },
+    {
+      "id": "discovery-presets",
+      "page": "IntelligenceDiscoveryPage.jsx",
+      "section": "Smart filter discovery results",
+      "component": "CarCard",
+      "usesVehicleImage": true,
+      "role": "listing",
+      "responsive": true
+    },
+    {
+      "id": "compare-hero",
+      "page": "CompareHeroExperience.jsx",
+      "section": "Compare page columns",
+      "component": "CompareVehicleCard",
+      "usesVehicleImage": true,
+      "role": "compare",
+      "responsive": true
+    },
+    {
+      "id": "detail-not-found",
+      "page": "VehicleDetailNotFound.jsx",
+      "section": "Related EV suggestions",
+      "component": "CompactCarCard",
+      "usesVehicleImage": true,
+      "role": "listing",
+      "responsive": false
+    },
+    {
+      "id": "recommendation-widget",
+      "page": "EvRecommendationWidget.jsx",
+      "section": "Find your EV match",
+      "component": "EvRecommendationWidget",
+      "usesVehicleImage": false,
+      "role": null,
+      "note": "Text-only recommendation cards (no image slot)"
+    },
+    {
+      "id": "seo-compare-guide",
+      "page": "DiscoverySeoPage.jsx / SeoGuidePage.jsx",
+      "section": "Compare guide hero",
+      "component": "CompareVehicleCard",
+      "usesVehicleImage": true,
+      "role": "compare",
+      "responsive": true
+    },
+    {
+      "id": "upcoming-fallback",
+      "page": "ListingPage.jsx / Home.jsx",
+      "section": "Upcoming catalog fallback",
+      "component": "UpcomingCarCard",
+      "usesVehicleImage": false,
+      "role": null,
+      "note": "Static img + LOCAL_FALLBACK_EV onError (pre-launch only)"
+    }
+  ],
+  "vehicleImageSurfaces": [
+    {
+      "id": "home-popular",
+      "page": "Home.jsx",
+      "section": "Most Popular / Latest / Best Range",
+      "component": "CompactCarCard",
+      "usesVehicleImage": true,
+      "role": "listing",
+      "responsive": true
+    },
+    {
+      "id": "listing-browse",
+      "page": "ListingPage.jsx",
+      "section": "Browse EVs / search results",
+      "component": "CarCard",
+      "usesVehicleImage": true,
+      "role": "listing",
+      "responsive": true
+    },
+    {
+      "id": "discovery-presets",
+      "page": "IntelligenceDiscoveryPage.jsx",
+      "section": "Smart filter discovery results",
+      "component": "CarCard",
+      "usesVehicleImage": true,
+      "role": "listing",
+      "responsive": true
+    },
+    {
+      "id": "compare-hero",
+      "page": "CompareHeroExperience.jsx",
+      "section": "Compare page columns",
+      "component": "CompareVehicleCard",
+      "usesVehicleImage": true,
+      "role": "compare",
+      "responsive": true
+    },
+    {
+      "id": "detail-not-found",
+      "page": "VehicleDetailNotFound.jsx",
+      "section": "Related EV suggestions",
+      "component": "CompactCarCard",
+      "usesVehicleImage": true,
+      "role": "listing",
+      "responsive": false
+    },
+    {
+      "id": "seo-compare-guide",
+      "page": "DiscoverySeoPage.jsx / SeoGuidePage.jsx",
+      "section": "Compare guide hero",
+      "component": "CompareVehicleCard",
+      "usesVehicleImage": true,
+      "role": "compare",
+      "responsive": true
+    }
+  ],
+  "vehiclesVerified": [
+    "tata-harrier-ev",
+    "tata-tigor-ev",
+    "maruti-e-vitara",
+    "hyundai-creta-electric",
+    "byd-seal",
+    "hyundai-ioniq-5",
+    "mini-cooper-se",
+    "bmw-ix1",
+    "mercedes-eqa",
+    "mercedes-eqb"
+  ],
+  "vehicleResults": [
+    {
+      "slug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "listingImageUrl": "/images/cars/tata-harrier-ev/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/tata-harrier-ev/listing.webp",
+        "/images/cars/tata-harrier-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/tata-harrier-ev/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/tata-harrier-ev/compare.webp",
+        "/images/cars/tata-harrier-ev/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    },
+    {
+      "slug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "listingImageUrl": "/images/cars/tata-tigor-ev/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/tata-tigor-ev/listing.webp",
+        "/images/cars/tata-tigor-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/tata-tigor-ev/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/tata-tigor-ev/compare.webp",
+        "/images/cars/tata-tigor-ev/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    },
+    {
+      "slug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "listingImageUrl": "/images/cars/maruti-e-vitara/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/maruti-e-vitara/listing.webp",
+        "/images/cars/maruti-e-vitara/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/maruti/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/maruti-e-vitara/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/maruti-e-vitara/compare.webp",
+        "/images/cars/maruti-e-vitara/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/maruti/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    },
+    {
+      "slug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "listingImageUrl": "/images/cars/hyundai-creta-electric/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/hyundai-creta-electric/listing.webp",
+        "/images/cars/hyundai-creta-electric/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/hyundai-creta-electric/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/hyundai-creta-electric/compare.webp",
+        "/images/cars/hyundai-creta-electric/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    },
+    {
+      "slug": "byd-seal",
+      "displayName": "BYD Seal",
+      "listingImageUrl": "/images/cars/byd-seal/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/byd-seal/listing.webp",
+        "/images/cars/byd-seal/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/byd/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/byd-seal/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/byd-seal/compare.webp",
+        "/images/cars/byd-seal/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/byd/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    },
+    {
+      "slug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "listingImageUrl": "/images/cars/hyundai-ioniq-5/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/hyundai-ioniq-5/listing.webp",
+        "/images/cars/hyundai-ioniq-5/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/hyundai-ioniq-5/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/hyundai-ioniq-5/compare.webp",
+        "/images/cars/hyundai-ioniq-5/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    },
+    {
+      "slug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "listingImageUrl": "/images/cars/mini-cooper-se/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/mini-cooper-se/listing.webp",
+        "/images/cars/mini-cooper-se/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mini/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/mini-cooper-se/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/mini-cooper-se/compare.webp",
+        "/images/cars/mini-cooper-se/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mini/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    },
+    {
+      "slug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "listingImageUrl": "/images/cars/bmw-ix1/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/bmw-ix1/listing.webp",
+        "/images/cars/bmw-ix1/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/bmw/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/bmw-ix1/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/bmw-ix1/compare.webp",
+        "/images/cars/bmw-ix1/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/bmw/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    },
+    {
+      "slug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "listingImageUrl": "/images/cars/mercedes-eqa/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/mercedes-eqa/listing.webp",
+        "/images/cars/mercedes-eqa/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mercedes/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/mercedes-eqa/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/mercedes-eqa/compare.webp",
+        "/images/cars/mercedes-eqa/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mercedes/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    },
+    {
+      "slug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "listingImageUrl": "/images/cars/mercedes-eqb/listing.webp",
+      "firstSource": "local",
+      "chain": [
+        "/images/cars/mercedes-eqb/listing.webp",
+        "/images/cars/mercedes-eqb/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mercedes/logo",
+        "/fallback-ev.svg"
+      ],
+      "chainSources": [
+        "local",
+        "local",
+        "cloudinary",
+        "fallback-svg"
+      ],
+      "localListingExists": true,
+      "localListingPath": "/images/cars/mercedes-eqb/listing.webp",
+      "endsWithFallbackSvg": true,
+      "usesVehicleImage": true,
+      "broken": false,
+      "issues": [],
+      "fixed": true,
+      "compareChain": [
+        "/images/cars/mercedes-eqb/compare.webp",
+        "/images/cars/mercedes-eqb/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mercedes/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareFirstSource": "local"
+    }
+  ],
+  "summary": {
+    "surfacesAudited": 8,
+    "vehicleImageSurfaces": 6,
+    "vehiclesVerified": 10,
+    "brokenImagesFound": 0,
+    "brokenImagesFixed": 10,
+    "allVerifiedPass": true
+  },
+  "filesModified": [
+    "src/components/media/VehicleImage.jsx",
+    "scripts/lib/mediaProductionPhase1.mjs",
+    "scripts/media-production-phase1.mjs",
+    "package.json"
+  ],
+  "buildResult": {
+    "success": true,
+    "exitCode": 0,
+    "command": "npm run build"
+  },
+  "vehicleImageRules": {
+    "pictureElement": "Only when buildResponsiveSources().default is set",
+    "placeholder": "Only after all chain URLs fail (exhausted state)",
+    "devLogging": "console.warn(\"[media]\", slug, chain) in DEV",
+    "fallbackChain": "Local → Cloudinary → fallback-ev.svg"
+  }
+}

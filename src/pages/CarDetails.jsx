@@ -55,7 +55,7 @@ import { resolveBrandHubPath } from "../seo/breadcrumbs";
 
 import { formatIndianPrice } from "../utils/formatIndianPrice";
 
-import { getOgImage } from "../utils/vehicleMedia";
+import { getHeroImage, getOgImage, resolveDetailGalleryItems, resolveRequestableGalleryImages } from "../utils/vehicleMedia";
 
 import {
   fetchVehicleFamilyBySlug,
@@ -73,13 +73,12 @@ import {
   vehicleFamilyPath,
 } from "../utils/vehicleRoutes";
 
-import VehicleImage from "../components/media/VehicleImage";
+import DetailHero from "../components/car/DetailHero";
 import SectionErrorBoundary from "../components/errors/SectionErrorBoundary";
 import VehicleDetailNotFound from "../components/catalog/VehicleDetailNotFound";
 import NetworkErrorPanel from "../components/ui/NetworkErrorPanel";
 import DetailBreadcrumbs from "../components/catalog/DetailBreadcrumbs";
 import "../styles/car-details.css";
-import DetailHero from "../components/car/DetailHero";
 import DetailActionBar from "../components/car/DetailActionBar";
 import DetailTabs from "../components/car/DetailTabs";
 import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
@@ -128,7 +127,6 @@ import {
   safeFetchJsonWithRetry,
 } from "../utils/safeFetch";
 import { getSafeImage } from "../utils/imageUtils";
-import { resolveRequestableGalleryImages } from "../utils/vehicleMedia";
 import {
   resolveHeroFourthQuickSpec,
   resolveHeroChargingSummary,
@@ -437,16 +435,15 @@ export default function CarDetails() {
       setSelectedColor(null);
 
       const hero =
-        withMedia.heroImage || withMedia.image;
+        withMedia.heroImage || withMedia.image || getHeroImage(withMedia);
       if (hero) setSelectedImage(hero);
 
-      const gallery =
-        withMedia.galleryImages?.length > 0
-          ? withMedia.galleryImages
-          : [hero].filter(Boolean);
+      const galleryUrls = resolveDetailGalleryItems(withMedia)
+        .map((item) => item.src)
+        .filter(Boolean);
 
       preloadVariantGallery(
-        gallery.map((url) => getSafeImage(url))
+        galleryUrls.map((url) => getSafeImage(url))
       );
 
       setSearchParams(
@@ -604,21 +601,29 @@ export default function CarDetails() {
      ========================================================= */
 
   useEffect(() => {
+    mediaFallbackRef.current = resolveFamilyMediaFallback(
+      family || car,
+      familyVariants
+    );
+  }, [family, familyVariants, car]);
+
+  useEffect(() => {
 
     if (!car) return;
 
     const hero =
       car.heroImage ||
-      car.image;
+      car.image ||
+      getHeroImage(car);
 
     setSelectedImage(hero);
 
-    const gallery =
-      car.galleryImages?.length > 0
-        ? car.galleryImages
-        : [hero].filter(Boolean);
+    const galleryUrls = resolveDetailGalleryItems(car)
+      .map((item) => item.src)
+      .filter(Boolean);
+
     preloadVariantGallery(
-      gallery.map((url) => getSafeImage(url))
+      galleryUrls.map((url) => getSafeImage(url))
     );
 
     const match = familyVariants.find(
@@ -881,17 +886,17 @@ export default function CarDetails() {
       )
     : null;
 
+  const galleryItems = resolveDetailGalleryItems(vehicle);
   const galleryImages = resolveRequestableGalleryImages(vehicle);
 
   const displayImage =
     selectedColor?.image ||
     selectedImage ||
-    vehicle.heroImage;
+    vehicle.heroImage ||
+    getHeroImage(vehicle);
 
   const safeDisplayImage =
-    getSafeImage(
-      displayImage
-    );
+    getSafeImage(displayImage) || getHeroImage(vehicle);
 
   /* =========================================================
      ====================== VARIANT DATA =====================
@@ -1096,6 +1101,7 @@ export default function CarDetails() {
             chargingSummary={heroChargingSummary}
             fourthQuickSpec={heroFourthQuickSpec}
             category={vehicle.category}
+            galleryItems={galleryItems}
             galleryImages={galleryImages}
             selectedImage={selectedImage}
             selectedVariantSlug={selectedVariantSlug}

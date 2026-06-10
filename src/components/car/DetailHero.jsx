@@ -18,7 +18,8 @@ export default function DetailHero({
   chargingSummary,
   fourthQuickSpec,
   category,
-  galleryImages,
+  galleryItems = [],
+  galleryImages: galleryImagesProp,
   selectedImage,
   selectedVariantSlug,
   safeDisplayImage,
@@ -30,6 +31,14 @@ export default function DetailHero({
   familyOverviewMode = false,
   familyMetrics = null,
 }) {
+  const galleryItemsResolved = (
+    galleryItems.length > 0
+      ? galleryItems
+      : (galleryImagesProp || [])
+          .map((src) => (src ? { src, imageType: null } : null))
+          .filter(Boolean)
+  );
+
   const subtitleParts = [];
   if (!familyOverviewMode && activeVariantLabel) {
     subtitleParts.push(activeVariantLabel);
@@ -79,26 +88,28 @@ export default function DetailHero({
           </div>
         </div>
 
-        {galleryImages.length > 1 && (
+        {galleryItemsResolved.length > 1 && (
           <div className="cd-hero__thumbs" role="list">
-            {galleryImages.map((image, index) => {
-              const safe = getSafeImage(image);
-              const isActive = selectedImage === image;
+            {galleryItemsResolved.map((item, index) => {
+              const safe = getSafeImage(item.src);
+              if (!safe) return null;
+              const isActive = selectedImage === item.src;
               return (
                 <button
-                  key={index}
+                  key={item.imageType || `${item.src}-${index}`}
                   type="button"
                   role="listitem"
                   className={`cd-hero__thumb${isActive ? " cd-hero__thumb--active" : ""}`}
-                  onClick={() => onSelectImage(image)}
-                  aria-label={`View image ${index + 1}`}
+                  onClick={() => onSelectImage(item.src)}
+                  aria-label={`View ${item.imageType || "image"} ${index + 1}`}
                   aria-current={isActive ? "true" : undefined}
                 >
                   <VehicleImage
                     car={vehicle}
                     src={safe}
                     role="gallery"
-                    alt={`${vehicle.name} ${index + 1}`}
+                    imageType={item.imageType || undefined}
+                    alt={`${vehicle.name} ${item.imageType || index + 1}`}
                     imgStyle={{
                       width: "100%",
                       height: "100%",

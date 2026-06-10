@@ -1,0 +1,1172 @@
+{
+  "generatedAt": "2026-06-10T16:47:07.651Z",
+  "phase": "media-production-phase3",
+  "goal": "Zero broken media on compare, SEO, and related buyer surfaces",
+  "surfacesAudited": [
+    {
+      "id": "compare-page",
+      "page": "ComparePage.jsx",
+      "section": "Compare tool columns",
+      "component": "CompareVehicleCard",
+      "role": "compare",
+      "usesVehicleImage": true,
+      "chain": "compare → listing → Cloudinary → fallback-ev.svg"
+    },
+    {
+      "id": "compare-hero",
+      "page": "CompareHeroExperience.jsx",
+      "section": "Compare hero columns",
+      "component": "CompareVehicleCard",
+      "role": "compare",
+      "usesVehicleImage": true,
+      "chain": "compare → listing → Cloudinary → fallback-ev.svg"
+    },
+    {
+      "id": "compare-seo-guide",
+      "page": "DiscoverySeoPage.jsx",
+      "section": "Compare guide hero",
+      "component": "CompareVehicleCard",
+      "role": "compare",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "compare-trust-summary",
+      "page": "CompareBelowFoldSections.jsx",
+      "section": "Trust summary",
+      "component": "CompareTrustSummary",
+      "usesVehicleImage": false,
+      "note": "Text-only trust copy"
+    },
+    {
+      "id": "compare-recommendation-doubt",
+      "page": "CompareRecommendationDoubt.jsx",
+      "section": "Recommendation doubt panel",
+      "component": "CompareRecommendationDoubt",
+      "usesVehicleImage": false
+    },
+    {
+      "id": "compare-guide-editorial",
+      "page": "CompareGuideEditorialSections.jsx",
+      "section": "Editorial sections",
+      "component": "CompareGuideEditorialSections",
+      "usesVehicleImage": false
+    },
+    {
+      "id": "seo-recommendation-list",
+      "page": "SeoRecommendationList.jsx",
+      "section": "Ranked vehicle cards",
+      "component": "VehicleImage",
+      "role": "listing",
+      "mediaChannel": "seo",
+      "usesVehicleImage": true,
+      "chain": "listing → Cloudinary → fallback-ev.svg"
+    },
+    {
+      "id": "seo-discovery-page",
+      "page": "DiscoverySeoPage.jsx",
+      "section": "Discovery / compare guide body",
+      "component": "SeoRecommendationList",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "seo-guide-page",
+      "page": "SeoGuidePage.jsx",
+      "section": "Legacy guide recommendations",
+      "component": "SeoRecommendationList",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "seo-related-links",
+      "page": "SeoRelatedLinks.jsx",
+      "section": "Related page links",
+      "component": "SeoRelatedLinks",
+      "usesVehicleImage": false,
+      "note": "Text links only"
+    },
+    {
+      "id": "seo-guides-hub",
+      "page": "SeoGuidesHub.jsx",
+      "section": "Guides hub index",
+      "component": "SeoGuidesHub",
+      "usesVehicleImage": false,
+      "note": "Link index only"
+    },
+    {
+      "id": "related-detail-seo",
+      "page": "DetailSeoDiscovery.jsx",
+      "section": "Similar / related EV links",
+      "component": "DetailSeoDiscovery",
+      "usesVehicleImage": false,
+      "note": "Text links on detail page"
+    },
+    {
+      "id": "related-notfound",
+      "page": "VehicleDetailNotFound.jsx",
+      "section": "Related EV suggestions",
+      "component": "CompactCarCard",
+      "role": "listing",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "home-listing-cards",
+      "page": "Home.jsx",
+      "section": "Catalog cards",
+      "component": "CompactCarCard",
+      "role": "listing",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "browse-listing-cards",
+      "page": "ListingPage.jsx",
+      "section": "Browse / search cards",
+      "component": "CarCard",
+      "role": "listing",
+      "usesVehicleImage": true
+    }
+  ],
+  "vehicleImageSurfaces": [
+    {
+      "id": "compare-page",
+      "page": "ComparePage.jsx",
+      "section": "Compare tool columns",
+      "component": "CompareVehicleCard",
+      "role": "compare",
+      "usesVehicleImage": true,
+      "chain": "compare → listing → Cloudinary → fallback-ev.svg"
+    },
+    {
+      "id": "compare-hero",
+      "page": "CompareHeroExperience.jsx",
+      "section": "Compare hero columns",
+      "component": "CompareVehicleCard",
+      "role": "compare",
+      "usesVehicleImage": true,
+      "chain": "compare → listing → Cloudinary → fallback-ev.svg"
+    },
+    {
+      "id": "compare-seo-guide",
+      "page": "DiscoverySeoPage.jsx",
+      "section": "Compare guide hero",
+      "component": "CompareVehicleCard",
+      "role": "compare",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "seo-recommendation-list",
+      "page": "SeoRecommendationList.jsx",
+      "section": "Ranked vehicle cards",
+      "component": "VehicleImage",
+      "role": "listing",
+      "mediaChannel": "seo",
+      "usesVehicleImage": true,
+      "chain": "listing → Cloudinary → fallback-ev.svg"
+    },
+    {
+      "id": "seo-discovery-page",
+      "page": "DiscoverySeoPage.jsx",
+      "section": "Discovery / compare guide body",
+      "component": "SeoRecommendationList",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "seo-guide-page",
+      "page": "SeoGuidePage.jsx",
+      "section": "Legacy guide recommendations",
+      "component": "SeoRecommendationList",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "related-notfound",
+      "page": "VehicleDetailNotFound.jsx",
+      "section": "Related EV suggestions",
+      "component": "CompactCarCard",
+      "role": "listing",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "home-listing-cards",
+      "page": "Home.jsx",
+      "section": "Catalog cards",
+      "component": "CompactCarCard",
+      "role": "listing",
+      "usesVehicleImage": true
+    },
+    {
+      "id": "browse-listing-cards",
+      "page": "ListingPage.jsx",
+      "section": "Browse / search cards",
+      "component": "CarCard",
+      "role": "listing",
+      "usesVehicleImage": true
+    }
+  ],
+  "manualVerifiedSlugs": [
+    "tata-harrier-ev",
+    "hyundai-creta-electric",
+    "maruti-e-vitara",
+    "tata-curvv-ev",
+    "tata-nexon-ev",
+    "mahindra-be-6",
+    "mg-windsor-ev",
+    "byd-seal",
+    "bmw-ix1",
+    "mercedes-eqa"
+  ],
+  "manualVerification": [
+    {
+      "slug": "tata-harrier-ev",
+      "pass": true,
+      "listingPrimary": "/images/cars/tata-harrier-ev/listing.webp",
+      "comparePrimary": "/images/cars/tata-harrier-ev/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    },
+    {
+      "slug": "hyundai-creta-electric",
+      "pass": true,
+      "listingPrimary": "/images/cars/hyundai-creta-electric/listing.webp",
+      "comparePrimary": "/images/cars/hyundai-creta-electric/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    },
+    {
+      "slug": "maruti-e-vitara",
+      "pass": true,
+      "listingPrimary": "/images/cars/maruti-e-vitara/listing.webp",
+      "comparePrimary": "/images/cars/maruti-e-vitara/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "pass": true,
+      "listingPrimary": "/images/cars/tata-curvv-ev/listing.webp",
+      "comparePrimary": "/images/cars/tata-curvv-ev/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    },
+    {
+      "slug": "tata-nexon-ev",
+      "pass": true,
+      "listingPrimary": "/images/cars/tata-nexon-ev/listing.webp",
+      "comparePrimary": "/images/cars/tata-nexon-ev/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    },
+    {
+      "slug": "mahindra-be-6",
+      "pass": true,
+      "listingPrimary": "/images/cars/mahindra-be-6/listing.webp",
+      "comparePrimary": "/images/cars/mahindra-be-6/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "pass": true,
+      "listingPrimary": "/images/cars/mg-windsor-ev/listing.webp",
+      "comparePrimary": "/images/cars/mg-windsor-ev/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    },
+    {
+      "slug": "byd-seal",
+      "pass": true,
+      "listingPrimary": "/images/cars/byd-seal/listing.webp",
+      "comparePrimary": "/images/cars/byd-seal/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    },
+    {
+      "slug": "bmw-ix1",
+      "pass": true,
+      "listingPrimary": "/images/cars/bmw-ix1/listing.webp",
+      "comparePrimary": "/images/cars/bmw-ix1/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    },
+    {
+      "slug": "mercedes-eqa",
+      "pass": true,
+      "listingPrimary": "/images/cars/mercedes-eqa/listing.webp",
+      "comparePrimary": "/images/cars/mercedes-eqa/compare.webp",
+      "listingSource": "local",
+      "compareSource": "local"
+    }
+  ],
+  "vehicleResults": [
+    {
+      "slug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "listingPrimary": "/images/cars/tata-nexon-ev/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/tata-nexon-ev/listing.webp",
+        "/images/cars/tata-nexon-ev/front.webp",
+        "/images/cars/tata-nexon-ev/compare.webp",
+        "/images/cars/tata-punch-ev/listing.webp",
+        "/images/cars/tata-punch-ev/front.webp",
+        "/images/cars/tata-punch-ev/compare.webp",
+        "/images/cars/tata-curvv-ev/listing.webp",
+        "/images/cars/tata-curvv-ev/front.webp",
+        "/images/cars/tata-curvv-ev/compare.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/tata-nexon-ev/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/tata-nexon-ev/compare.webp",
+        "/images/cars/tata-nexon-ev/listing.webp",
+        "/images/cars/tata-nexon-ev/front.webp",
+        "/images/cars/tata-punch-ev/compare.webp",
+        "/images/cars/tata-punch-ev/listing.webp",
+        "/images/cars/tata-punch-ev/front.webp",
+        "/images/cars/tata-curvv-ev/compare.webp",
+        "/images/cars/tata-curvv-ev/listing.webp",
+        "/images/cars/tata-curvv-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/tata-nexon-ev/compare.webp",
+      "listingLocalPath": "/images/cars/tata-nexon-ev/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/tata-nexon-ev/listing.webp",
+      "getCompareThumbnail": "/images/cars/tata-nexon-ev/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "listingPrimary": "/images/cars/tata-punch-ev/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/tata-punch-ev/listing.webp",
+        "/images/cars/tata-punch-ev/front.webp",
+        "/images/cars/tata-punch-ev/compare.webp",
+        "/images/cars/tata-nexon-ev/listing.webp",
+        "/images/cars/tata-nexon-ev/front.webp",
+        "/images/cars/tata-nexon-ev/compare.webp",
+        "/images/cars/tata-curvv-ev/listing.webp",
+        "/images/cars/tata-curvv-ev/front.webp",
+        "/images/cars/tata-curvv-ev/compare.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/tata-punch-ev/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/tata-punch-ev/compare.webp",
+        "/images/cars/tata-punch-ev/listing.webp",
+        "/images/cars/tata-punch-ev/front.webp",
+        "/images/cars/tata-nexon-ev/compare.webp",
+        "/images/cars/tata-nexon-ev/listing.webp",
+        "/images/cars/tata-nexon-ev/front.webp",
+        "/images/cars/tata-curvv-ev/compare.webp",
+        "/images/cars/tata-curvv-ev/listing.webp",
+        "/images/cars/tata-curvv-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/tata-punch-ev/compare.webp",
+      "listingLocalPath": "/images/cars/tata-punch-ev/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/tata-punch-ev/listing.webp",
+      "getCompareThumbnail": "/images/cars/tata-punch-ev/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "listingPrimary": "/images/cars/tata-curvv-ev/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/tata-curvv-ev/listing.webp",
+        "/images/cars/tata-curvv-ev/front.webp",
+        "/images/cars/tata-curvv-ev/compare.webp",
+        "/images/cars/tata-nexon-ev/listing.webp",
+        "/images/cars/tata-nexon-ev/front.webp",
+        "/images/cars/tata-nexon-ev/compare.webp",
+        "/images/cars/tata-punch-ev/listing.webp",
+        "/images/cars/tata-punch-ev/front.webp",
+        "/images/cars/tata-punch-ev/compare.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/tata-curvv-ev/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/tata-curvv-ev/compare.webp",
+        "/images/cars/tata-curvv-ev/listing.webp",
+        "/images/cars/tata-curvv-ev/front.webp",
+        "/images/cars/tata-nexon-ev/compare.webp",
+        "/images/cars/tata-nexon-ev/listing.webp",
+        "/images/cars/tata-nexon-ev/front.webp",
+        "/images/cars/tata-punch-ev/compare.webp",
+        "/images/cars/tata-punch-ev/listing.webp",
+        "/images/cars/tata-punch-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/tata-curvv-ev/compare.webp",
+      "listingLocalPath": "/images/cars/tata-curvv-ev/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/tata-curvv-ev/listing.webp",
+      "getCompareThumbnail": "/images/cars/tata-curvv-ev/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "listingPrimary": "/images/cars/mg-windsor-ev/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/mg-windsor-ev/listing.webp",
+        "/images/cars/mg-windsor-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mg/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/mg-windsor-ev/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/mg-windsor-ev/compare.webp",
+        "/images/cars/mg-windsor-ev/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mg/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/mg-windsor-ev/compare.webp",
+      "listingLocalPath": "/images/cars/mg-windsor-ev/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/mg-windsor-ev/listing.webp",
+      "getCompareThumbnail": "/images/cars/mg-windsor-ev/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "listingPrimary": "/images/cars/mahindra-be-6/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/mahindra-be-6/listing.webp",
+        "/images/cars/mahindra-be-6/front.webp",
+        "/images/cars/mahindra-be-6/compare.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mahindra/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/mahindra-be-6/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/mahindra-be-6/compare.webp",
+        "/images/cars/mahindra-be-6/listing.webp",
+        "/images/cars/mahindra-be-6/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mahindra/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/mahindra-be-6/compare.webp",
+      "listingLocalPath": "/images/cars/mahindra-be-6/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/mahindra-be-6/listing.webp",
+      "getCompareThumbnail": "/images/cars/mahindra-be-6/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "listingPrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+      "listingFirstSource": "cloudinary",
+      "listingChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+        "/images/cars/mahindra-be-6/listing.webp",
+        "/images/cars/mahindra-be-6/front.webp",
+        "/images/cars/mahindra-be-6/compare.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mahindra/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+      "compareFirstSource": "cloudinary",
+      "compareChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+        "/images/cars/mahindra-be-6/compare.webp",
+        "/images/cars/mahindra-be-6/listing.webp",
+        "/images/cars/mahindra-be-6/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mahindra/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": null,
+      "listingLocalPath": null,
+      "compareLocalExists": false,
+      "listingLocalExists": false,
+      "getListingImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+      "getCompareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "listingPrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/listing-thumb",
+      "listingFirstSource": "cloudinary",
+      "listingChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/byd/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/compare-thumb",
+      "compareFirstSource": "cloudinary",
+      "compareChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/byd/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": null,
+      "listingLocalPath": null,
+      "compareLocalExists": false,
+      "listingLocalExists": false,
+      "getListingImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/listing-thumb",
+      "getCompareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/compare-thumb",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "listingPrimary": "/images/cars/hyundai-creta-electric/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/hyundai-creta-electric/listing.webp",
+        "/images/cars/hyundai-creta-electric/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/hyundai-creta-electric/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/hyundai-creta-electric/compare.webp",
+        "/images/cars/hyundai-creta-electric/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/hyundai-creta-electric/compare.webp",
+      "listingLocalPath": "/images/cars/hyundai-creta-electric/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/hyundai-creta-electric/listing.webp",
+      "getCompareThumbnail": "/images/cars/hyundai-creta-electric/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "listingPrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+      "listingFirstSource": "cloudinary",
+      "listingChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+        "/images/cars/mg-zs-ev/listing.webp",
+        "/images/cars/mg-zs-ev/front.webp",
+        "/images/cars/mg-zs-ev/compare.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mg/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+      "compareFirstSource": "cloudinary",
+      "compareChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero",
+        "/images/cars/mg-zs-ev/compare.webp",
+        "/images/cars/mg-zs-ev/listing.webp",
+        "/images/cars/mg-zs-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mg/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": null,
+      "listingLocalPath": null,
+      "compareLocalExists": false,
+      "listingLocalExists": false,
+      "getListingImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+      "getCompareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "listingPrimary": "/images/cars/hyundai-ioniq-5/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/hyundai-ioniq-5/listing.webp",
+        "/images/cars/hyundai-ioniq-5/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/hyundai-ioniq-5/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/hyundai-ioniq-5/compare.webp",
+        "/images/cars/hyundai-ioniq-5/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/hyundai-ioniq-5/compare.webp",
+      "listingLocalPath": "/images/cars/hyundai-ioniq-5/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/hyundai-ioniq-5/listing.webp",
+      "getCompareThumbnail": "/images/cars/hyundai-ioniq-5/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "listingPrimary": "/images/cars/kia-ev6/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/kia-ev6/listing.webp",
+        "/images/cars/kia-ev6/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/kia/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/kia-ev6/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/kia-ev6/compare.webp",
+        "/images/cars/kia-ev6/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/kia/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/kia-ev6/compare.webp",
+      "listingLocalPath": "/images/cars/kia-ev6/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/kia-ev6/listing.webp",
+      "getCompareThumbnail": "/images/cars/kia-ev6/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "listingPrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+      "listingFirstSource": "cloudinary",
+      "listingChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+        "/images/cars/mahindra-be-6/listing.webp",
+        "/images/cars/mahindra-be-6/front.webp",
+        "/images/cars/mahindra-be-6/compare.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mahindra/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+      "compareFirstSource": "cloudinary",
+      "compareChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
+        "/images/cars/mahindra-be-6/compare.webp",
+        "/images/cars/mahindra-be-6/listing.webp",
+        "/images/cars/mahindra-be-6/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mahindra/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": null,
+      "listingLocalPath": null,
+      "compareLocalExists": false,
+      "listingLocalExists": false,
+      "getListingImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
+      "getCompareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "byd-seal",
+      "displayName": "BYD Seal",
+      "listingPrimary": "/images/cars/byd-seal/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/byd-seal/listing.webp",
+        "/images/cars/byd-seal/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/byd/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/byd-seal/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/byd-seal/compare.webp",
+        "/images/cars/byd-seal/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/byd/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/byd-seal/compare.webp",
+      "listingLocalPath": "/images/cars/byd-seal/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/byd-seal/listing.webp",
+      "getCompareThumbnail": "/images/cars/byd-seal/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "listingPrimary": "/images/cars/bmw-ix1/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/bmw-ix1/listing.webp",
+        "/images/cars/bmw-ix1/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/bmw/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/bmw-ix1/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/bmw-ix1/compare.webp",
+        "/images/cars/bmw-ix1/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/bmw/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/bmw-ix1/compare.webp",
+      "listingLocalPath": "/images/cars/bmw-ix1/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/bmw-ix1/listing.webp",
+      "getCompareThumbnail": "/images/cars/bmw-ix1/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "listingPrimary": "/images/cars/mercedes-eqa/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/mercedes-eqa/listing.webp",
+        "/images/cars/mercedes-eqa/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mercedes/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/mercedes-eqa/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/mercedes-eqa/compare.webp",
+        "/images/cars/mercedes-eqa/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mercedes/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/mercedes-eqa/compare.webp",
+      "listingLocalPath": "/images/cars/mercedes-eqa/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/mercedes-eqa/listing.webp",
+      "getCompareThumbnail": "/images/cars/mercedes-eqa/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "listingPrimary": "/images/cars/mercedes-eqb/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/mercedes-eqb/listing.webp",
+        "/images/cars/mercedes-eqb/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mercedes/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/mercedes-eqb/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/mercedes-eqb/compare.webp",
+        "/images/cars/mercedes-eqb/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mercedes/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/mercedes-eqb/compare.webp",
+      "listingLocalPath": "/images/cars/mercedes-eqb/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/mercedes-eqb/listing.webp",
+      "getCompareThumbnail": "/images/cars/mercedes-eqb/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "listingPrimary": "/images/cars/volvo-ex40/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/volvo-ex40/listing.webp",
+        "/images/cars/volvo-ex40/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/volvo/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/volvo-ex40/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/volvo-ex40/compare.webp",
+        "/images/cars/volvo-ex40/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/volvo/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/volvo-ex40/compare.webp",
+      "listingLocalPath": "/images/cars/volvo-ex40/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/volvo-ex40/listing.webp",
+      "getCompareThumbnail": "/images/cars/volvo-ex40/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "listingPrimary": "/images/cars/mini-cooper-se/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/mini-cooper-se/listing.webp",
+        "/images/cars/mini-cooper-se/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mini/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/mini-cooper-se/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/mini-cooper-se/compare.webp",
+        "/images/cars/mini-cooper-se/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mini/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/mini-cooper-se/compare.webp",
+      "listingLocalPath": "/images/cars/mini-cooper-se/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/mini-cooper-se/listing.webp",
+      "getCompareThumbnail": "/images/cars/mini-cooper-se/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "listingPrimary": "/images/cars/citroen-ec3/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/citroen-ec3/listing.webp",
+        "/images/cars/citroen-ec3/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/citroen/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/citroen-ec3/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/citroen-ec3/compare.webp",
+        "/images/cars/citroen-ec3/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/citroen/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/citroen-ec3/compare.webp",
+      "listingLocalPath": "/images/cars/citroen-ec3/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/citroen-ec3/listing.webp",
+      "getCompareThumbnail": "/images/cars/citroen-ec3/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "listingPrimary": "/images/cars/mg-zs-ev/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/mg-zs-ev/listing.webp",
+        "/images/cars/mg-zs-ev/front.webp",
+        "/images/cars/mg-zs-ev/compare.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mg/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/mg-zs-ev/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/mg-zs-ev/compare.webp",
+        "/images/cars/mg-zs-ev/listing.webp",
+        "/images/cars/mg-zs-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/mg/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/mg-zs-ev/compare.webp",
+      "listingLocalPath": "/images/cars/mg-zs-ev/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/mg-zs-ev/listing.webp",
+      "getCompareThumbnail": "/images/cars/mg-zs-ev/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "listingPrimary": "/images/cars/maruti-e-vitara/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/maruti-e-vitara/listing.webp",
+        "/images/cars/maruti-e-vitara/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/maruti/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/maruti-e-vitara/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/maruti-e-vitara/compare.webp",
+        "/images/cars/maruti-e-vitara/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/maruti/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/maruti-e-vitara/compare.webp",
+      "listingLocalPath": "/images/cars/maruti-e-vitara/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/maruti-e-vitara/listing.webp",
+      "getCompareThumbnail": "/images/cars/maruti-e-vitara/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "listingPrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/listing-thumb",
+      "listingFirstSource": "cloudinary",
+      "listingChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/compare-thumb",
+      "compareFirstSource": "cloudinary",
+      "compareChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/hyundai/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": null,
+      "listingLocalPath": null,
+      "compareLocalExists": false,
+      "listingLocalExists": false,
+      "getListingImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/listing-thumb",
+      "getCompareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/compare-thumb",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "listingPrimary": "/images/cars/tata-tigor-ev/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/tata-tigor-ev/listing.webp",
+        "/images/cars/tata-tigor-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/tata-tigor-ev/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/tata-tigor-ev/compare.webp",
+        "/images/cars/tata-tigor-ev/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/tata-tigor-ev/compare.webp",
+      "listingLocalPath": "/images/cars/tata-tigor-ev/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/tata-tigor-ev/listing.webp",
+      "getCompareThumbnail": "/images/cars/tata-tigor-ev/compare.webp",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "listingPrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+      "listingFirstSource": "cloudinary",
+      "listingChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+        "/images/cars/tata-nexon-ev/listing.webp",
+        "/images/cars/tata-nexon-ev/front.webp",
+        "/images/cars/tata-nexon-ev/compare.webp",
+        "/images/cars/tata-punch-ev/listing.webp",
+        "/images/cars/tata-punch-ev/front.webp",
+        "/images/cars/tata-punch-ev/compare.webp",
+        "/images/cars/tata-curvv-ev/listing.webp",
+        "/images/cars/tata-curvv-ev/front.webp",
+        "/images/cars/tata-curvv-ev/compare.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+      "compareFirstSource": "cloudinary",
+      "compareChain": [
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+        "/images/cars/tata-nexon-ev/compare.webp",
+        "/images/cars/tata-nexon-ev/listing.webp",
+        "/images/cars/tata-nexon-ev/front.webp",
+        "/images/cars/tata-punch-ev/compare.webp",
+        "/images/cars/tata-punch-ev/listing.webp",
+        "/images/cars/tata-punch-ev/front.webp",
+        "/images/cars/tata-curvv-ev/compare.webp",
+        "/images/cars/tata-curvv-ev/listing.webp",
+        "/images/cars/tata-curvv-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": null,
+      "listingLocalPath": null,
+      "compareLocalExists": false,
+      "listingLocalExists": false,
+      "getListingImage": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+      "getCompareThumbnail": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
+      "issues": [],
+      "broken": false
+    },
+    {
+      "slug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "listingPrimary": "/images/cars/tata-harrier-ev/listing.webp",
+      "listingFirstSource": "local",
+      "listingChain": [
+        "/images/cars/tata-harrier-ev/listing.webp",
+        "/images/cars/tata-harrier-ev/front.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "comparePrimary": "/images/cars/tata-harrier-ev/compare.webp",
+      "compareFirstSource": "local",
+      "compareChain": [
+        "/images/cars/tata-harrier-ev/compare.webp",
+        "/images/cars/tata-harrier-ev/listing.webp",
+        "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/brands/tata/logo",
+        "/fallback-ev.svg"
+      ],
+      "compareLocalPath": "/images/cars/tata-harrier-ev/compare.webp",
+      "listingLocalPath": "/images/cars/tata-harrier-ev/listing.webp",
+      "compareLocalExists": true,
+      "listingLocalExists": true,
+      "getListingImage": "/images/cars/tata-harrier-ev/listing.webp",
+      "getCompareThumbnail": "/images/cars/tata-harrier-ev/compare.webp",
+      "issues": [],
+      "broken": false
+    }
+  ],
+  "summary": {
+    "surfacesAudited": 15,
+    "vehicleImageSurfaces": 9,
+    "vehiclesVerified": 10,
+    "goldenVehiclesChecked": 25,
+    "brokenImagesFound": 0,
+    "brokenImagesFixed": 10,
+    "allManualPass": true,
+    "allGoldenPass": true
+  },
+  "filesModified": [
+    "src/utils/vehicleMedia.js",
+    "src/components/media/VehicleImage.jsx",
+    "src/components/compare/CompareVehicleCard.jsx",
+    "src/components/SEO/SeoRecommendationList.jsx",
+    "scripts/lib/mediaProductionPhase3.mjs",
+    "scripts/media-production-phase3.mjs",
+    "package.json"
+  ],
+  "mediaRules": {
+    "compareCards": "compare.webp → listing.webp → Cloudinary → fallback-ev.svg",
+    "seoCards": "listing.webp → Cloudinary → fallback-ev.svg",
+    "placeholder": "Only after all chain URLs fail (VehicleImage exhausted)",
+    "compareLogging": "console.warn(\"[compare-media]\", slug, chain)",
+    "seoLogging": "console.warn(\"[seo-media]\", slug, chain)"
+  },
+  "buildResult": {
+    "success": true,
+    "exitCode": 0,
+    "command": "npm run build"
+  }
+}

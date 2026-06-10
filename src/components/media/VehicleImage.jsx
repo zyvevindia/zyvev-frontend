@@ -1,5 +1,6 @@
 import {
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -15,6 +16,7 @@ import { logImageFallback } from "../../launch/imageFallbackLog.js";
 import { sanitizeImageUrl } from "../../utils/imageUrl.js";
 import {
   IMAGE_ASPECT,
+  buildGalleryTypeFallbackChain,
   buildImageFallbackChain,
 } from "../../utils/vehicleMedia.js";
 
@@ -25,6 +27,16 @@ function filterValidChain(urls, role = "listing") {
   return urls
     .map((u) => sanitizeImageUrl(u, { role }))
     .filter(Boolean);
+}
+
+function resolveMediaSlug(car) {
+  return (
+    car?.familySlug ||
+    car?.slug ||
+    car?.catalogMeta?.familySlug ||
+    car?.catalogMeta?.slug ||
+    "unknown"
+  );
 }
 
 const SIZES_BY_ROLE = {
@@ -42,6 +54,8 @@ export default function VehicleImage({
   car,
   src: srcProp,
   role = "listing",
+  imageType = null,
+  mediaChannel = null,
   alt = "Electric vehicle",
   aspectRatio,
   wrapperStyle = {},
@@ -56,7 +70,9 @@ export default function VehicleImage({
     const sanitizeOpts = { role };
     const primary = sanitizeImageUrl(srcProp, sanitizeOpts);
     const base = filterValidChain(
-      buildImageFallbackChain(car, role),
+      role === "gallery" && imageType
+        ? buildGalleryTypeFallbackChain(car, imageType)
+        : buildImageFallbackChain(car, role),
       role
     );
 
@@ -68,105 +84,89 @@ export default function VehicleImage({
 
     const fallback = sanitizeImageUrl(LOCAL_FALLBACK_EV, sanitizeOpts);
     return fallback ? [fallback] : [];
-  }, [car, role, srcProp]);
+  }, [car, role, srcProp, imageType]);
 
   const [index, setIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [showPlaceholder, setShowPlaceholder] = useState(
-    chain.length === 0
-  );
+  const [exhausted, setExhausted] = useState(chain.length === 0);
 
-  const rawSrc = showPlaceholder
-    ? ""
-    : chain[Math.min(index, chain.length - 1)] || "";
-  const src = sanitizeImageUrl(rawSrc, { role }) || "";
-  const usePlaceholder = showPlaceholder || !src;
+  useEffect(() => {
+    setIndex(0);
+    setLoaded(false);
+    setExhausted(chain.length === 0);
+  }, [chain]);
+
+  useEffect(() => {
+    if (!import.meta.env.DEV) return;
+    const slug = resolveMediaSlug(car);
+    if (role === "gallery" && imageType) {
+      console.warn("[gallery-media]", slug, imageType, chain);
+      return;
+    }
+    if (role === "compare") {
+      console.warn("[compare-media]", slug, chain);
+      return;
+    }
+    if (mediaChannel === "seo") {
+      console.warn("[seo-media]", slug, chain);
+      return;
+    }
+    console.warn("[media]", slug, chain);
+  }, [car, chain, role, imageType, mediaChannel]);
+
+  const currentSrc =
+    exhausted || chain.length === 0
+      ? ""
+      : chain[Math.min(index, chain.length - 1)] || "";
+  const src = sanitizeImageUrl(currentSrc, { role }) || "";
+  const showPlaceholder = exhausted;
   const aspect = aspectRatio || IMAGE_ASPECT[role] || IMAGE_ASPECT.listing;
   const sizes = SIZES_BY_ROLE[role] || LISTING_SIZES;
 
   const responsiveSet = useMemo(() => {
-    if (!responsive || usePlaceholder || !src) return null;
-    return buildResponsiveSources(src, [480, 800, 1200]);
-  }, [responsive, usePlaceholder, src]);
+    if (!responsive || showPlaceholder || !src) return null;
+    const set = buildResponsiveSources(src, [480, 800, 1200]);
+    if (!set?.default) return null;
+    return set;
+  }, [responsive, showPlaceholder, src]);
+
+  const advanceFallback = useCallback(() => {
+    const failedUrl = src;
+    const slug = resolveMediaSlug(car);
+
+    if (index < chain.length - 1) {
+      const nextIndex = index + 1;
+      const nextUrl = chain[nextIndex];
+      if (!sanitizeImageUrl(nextUrl, { role })) {
+        setExhausted(true);
+        setLoaded(true);
+        onBroken?.(failedUrl);
+        return;
+      }
+      logImageFallback({
+        role,
+        failedUrl,
+        fallbackUrl: nextUrl,
+        slug,
+      });
+      setIndex(nextIndex);
+      setLoaded(false);
+      return;
+    }
+
+    setExhausted(true);
+    setLoaded(true);
+    onBroken?.(failedUrl);
+  }, [index, chain, onBroken, src, role, car]);
 
   const handleLoad = useCallback(() => {
     setLoaded(true);
     onLoadProp?.();
   }, [onLoadProp]);
 
-  const handleError = useCallback(
-    (event) => {
-      const failedUrl = src;
-      const slug =
-        car?.slug ||
-        car?.catalogMeta?.slug ||
-        "";
-
-      if (index < chain.length - 1) {
-        const nextUrl = chain[index + 1];
-        if (!sanitizeImageUrl(nextUrl, { role })) {
-          setShowPlaceholder(true);
-          setLoaded(true);
-          onBroken?.(failedUrl);
-          return;
-        }
-        logImageFallback({
-          role,
-          failedUrl,
-          fallbackUrl: nextUrl,
-          slug,
-        });
-        setIndex((i) => i + 1);
-        setLoaded(false);
-        return;
-      }
-
-      if (role === "compare") {
-        const local = sanitizeImageUrl(LOCAL_FALLBACK_EV, { role });
-        if (
-          local &&
-          event?.currentTarget &&
-          !event.currentTarget.src.endsWith(LOCAL_FALLBACK_EV)
-        ) {
-          logImageFallback({
-            role,
-            failedUrl,
-            fallbackUrl: local,
-            slug,
-          });
-          event.currentTarget.src = local;
-          setLoaded(false);
-          return;
-        }
-        setShowPlaceholder(true);
-        setLoaded(true);
-        onBroken?.(failedUrl);
-        return;
-      }
-
-      const img = event?.currentTarget;
-      if (
-        img &&
-        sanitizeImageUrl(LOCAL_FALLBACK_EV, { role }) &&
-        !img.src.endsWith(LOCAL_FALLBACK_EV)
-      ) {
-        logImageFallback({
-          role,
-          failedUrl,
-          fallbackUrl: LOCAL_FALLBACK_EV,
-          slug,
-        });
-        img.src = LOCAL_FALLBACK_EV;
-        setLoaded(false);
-        return;
-      }
-
-      setShowPlaceholder(true);
-      setLoaded(true);
-      onBroken?.(failedUrl);
-    },
-    [index, chain, onBroken, src, role, car]
-  );
+  const handleError = useCallback(() => {
+    advanceFallback();
+  }, [advanceFallback]);
 
   const imgBaseStyle = {
     position: "absolute",
@@ -202,13 +202,14 @@ export default function VehicleImage({
         background:
           "linear-gradient(110deg, #e2e8f0 8%, #f1f5f9 18%, #e2e8f0 33%)",
         backgroundSize: "200% 100%",
-        animation: loaded
-          ? "none"
-          : "vehicleImageShimmer 1.4s ease-in-out infinite",
+        animation:
+          loaded || showPlaceholder
+            ? "none"
+            : "vehicleImageShimmer 1.4s ease-in-out infinite",
         ...wrapperStyle,
       }}
     >
-      {!loaded && !usePlaceholder && (
+      {!loaded && !showPlaceholder && src ? (
         <span
           style={{
             position: "absolute",
@@ -218,9 +219,9 @@ export default function VehicleImage({
           }}
           aria-hidden
         />
-      )}
+      ) : null}
 
-      {usePlaceholder ? (
+      {showPlaceholder ? (
         <div
           className="vehicle-image-placeholder"
           style={{
@@ -245,7 +246,7 @@ export default function VehicleImage({
         </div>
       ) : null}
 
-      {!usePlaceholder && responsive && responsiveSet ? (
+      {!showPlaceholder && responsive && responsiveSet ? (
         <picture
           style={{
             position: "absolute",
@@ -272,7 +273,7 @@ export default function VehicleImage({
             sizes={sizes}
           />
         </picture>
-      ) : !usePlaceholder ? (
+      ) : !showPlaceholder && src ? (
         <img key={`${src}-${index}`} {...imgProps} src={src} />
       ) : null}
     </div>

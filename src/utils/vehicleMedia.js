@@ -5,6 +5,7 @@
 import { LOCAL_FALLBACK_EV, ROLE_ASPECT } from "../config/media.js";
 import {
   coerceCatalogMediaToUrl,
+  familyCatalogAssetUrl,
   familyCatalogUrl,
   isPlaceholderMediaUrl,
 } from "../media/cloudinary.js";
@@ -29,7 +30,57 @@ import {
   brandSiblingMediaUrls,
   resolveBrandKeyFromFamily,
 } from "../media/brandFallback.js";
-import { getLocalCarMediaUrlsForRole } from "../media/localCarMediaManifest.js";
+import {
+  DETAIL_GALLERY_IMAGE_TYPES,
+  getLocalCarMediaUrlsForRole,
+  localCarMediaPath,
+} from "../media/localCarMediaManifest.js";
+
+/** Audit + detail gallery slots (listing/compare are card roles, not thumbs). */
+export const GOLDEN_DETAIL_IMAGE_TYPES = Object.freeze([
+  "listing",
+  "compare",
+  ...DETAIL_GALLERY_IMAGE_TYPES,
+]);
+
+const GALLERY_CLOUDINARY_CANDIDATES = Object.freeze({
+  front: (familySlug) => [
+    familyCatalogAssetUrl(familySlug, "hero"),
+    familyCatalogUrl(familySlug, "front.webp"),
+  ],
+  rear: (familySlug) => [familyCatalogUrl(familySlug, "rear.webp")],
+  side: (familySlug) => [familyCatalogUrl(familySlug, "side.webp")],
+  interior: (familySlug) => [
+    familyCatalogUrl(familySlug, "interior.webp"),
+    familyCatalogUrl(familySlug, "interior-1.jpg"),
+  ],
+  dashboard: (familySlug) => [
+    familyCatalogUrl(familySlug, "dashboard.webp"),
+    familyCatalogUrl(familySlug, "interior-dashboard.jpg"),
+  ],
+});
+
+function galleryUrlsMatchingType(urls, imageType, guard) {
+  const type = String(imageType || "").toLowerCase();
+  const filtered = filterRequestableMediaUrls(urls, guard);
+  return filtered.filter((url) => {
+    const path = url.split("?")[0].toLowerCase();
+    if (path.includes(`/${type}.`)) return true;
+    if (type === "front" && (path.includes("/hero") || path.includes("exterior-1"))) {
+      return true;
+    }
+    if (type === "rear" && path.includes("exterior-3")) return true;
+    if (type === "side" && path.includes("exterior-2")) return true;
+    return false;
+  });
+}
+
+function familyGalleryUrlForType(familySlug, imageType) {
+  const block = getProductionFamilyMedia(familySlug);
+  const local = block?.local;
+  if (!local) return null;
+  return local[imageType] || null;
+}
 
 /** @deprecated use ROLE_ASPECT from config/media */
 export const IMAGE_ASPECT = ROLE_ASPECT;
@@ -232,13 +283,24 @@ export function buildImageFallbackChain(car, role = "listing") {
   const variantUrls = variantCdnFallbacks();
 
   if (role === "compare") {
+    const localCompare = familySlug
+      ? localCarMediaPath(familySlug, "compare")
+      : null;
+    const localListing = familySlug
+      ? localCarMediaPath(familySlug, "listing")
+      : null;
     const brandKey = familySlug ? resolveBrandKeyFromFamily(familySlug) : null;
     return finalizeFallbackChain(
       [
-        ...localUrls,
+        localCompare,
+        localListing,
         resolveCatalogImageUrl(car, "compare"),
         car?.compareThumbnail,
         meta.compareThumbnail,
+        resolveCatalogImageUrl(car, "listing"),
+        car?.listingThumbnail,
+        meta.listingThumbnail,
+        car?.image,
         ...fieldValues,
         ...familyUrls,
         ...brandSiblingMediaUrls(familySlug, "compare"),
@@ -337,17 +399,80 @@ export function buildImageFallbackChain(car, role = "listing") {
 }
 
 /**
+ * Per-type gallery fallback: local slot → Cloudinary → car gallery → fallback SVG.
+ * @param {object} car
+ * @param {string} imageType
+ * @returns {string[]}
+ */
+export function buildGalleryTypeFallbackChain(car, imageType) {
+  const guard = mediaGuardOptions(car);
+  const familySlug =
+    resolveFamilySlugFromCar(car) ||
+    resolveFamilySlugFromVariantSlug(slugFromCar(car));
+  const meta = car?.catalogMeta?.media || {};
+  const type = String(imageType || "").trim().toLowerCase();
+  const cloudinaryFn = GALLERY_CLOUDINARY_CANDIDATES[type];
+  const cloudinaryUrls = familySlug && cloudinaryFn
+    ? cloudinaryFn(familySlug)
+    : [];
+
+  const fromCar = galleryUrlsMatchingType(
+    [
+      ...(car?.galleryImages || []),
+      ...(meta.gallery || []),
+    ],
+    type,
+    guard
+  );
+
+  return finalizeFallbackChain(
+    [
+      familySlug ? localCarMediaPath(familySlug, type) : null,
+      ...cloudinaryUrls,
+      ...fromCar,
+      familySlug ? familyGalleryUrlForType(familySlug, type) : null,
+      LOCAL_FALLBACK_EV,
+    ],
+    guard
+  );
+}
+
+/**
+ * Typed gallery items for detail hero thumbnails (no empty slots).
+ * @param {object} car
+ * @returns {{ imageType: string, src: string, chain: string[] }[]}
+ */
+export function resolveDetailGalleryItems(car) {
+  if (!car || typeof car !== "object") return [];
+
+  return DETAIL_GALLERY_IMAGE_TYPES.map((imageType) => {
+    const chain = buildGalleryTypeFallbackChain(car, imageType);
+    const src = chain[0] || null;
+    if (!src) return null;
+    return { imageType, src, chain };
+  }).filter(Boolean);
+}
+
+/**
  * Gallery URLs safe to render (no speculative optional probes).
  * @param {object} car
  * @returns {string[]}
  */
 export function resolveRequestableGalleryImages(car) {
-  const hero = resolveCatalogImageUrl(car, "hero");
-  const fromCar = filterRequestableMediaUrls(
-    car?.galleryImages || [],
-    mediaGuardOptions(car)
-  );
-  if (fromCar.length > 0) return fromCar;
+  const items = resolveDetailGalleryItems(car);
+  const seen = new Set();
+  const urls = [];
+
+  for (const item of items) {
+    const clean = sanitizeImageUrl(item.src, { role: "gallery" });
+    if (!clean || seen.has(clean)) continue;
+    seen.add(clean);
+    urls.push(clean);
+  }
+
+  if (urls.length > 0) return urls;
+
+  const hero = getHeroImage(car);
   return hero ? [hero] : [];
 }
 

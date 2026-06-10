@@ -86,13 +86,15 @@ const ROLE_TO_LOCAL_TYPE = Object.freeze({
   interior: "interior",
 });
 
-const GALLERY_LOCAL_TYPES = Object.freeze([
+export const DETAIL_GALLERY_IMAGE_TYPES = Object.freeze([
   "front",
   "rear",
   "side",
   "interior",
   "dashboard",
 ]);
+
+const GALLERY_LOCAL_TYPES = DETAIL_GALLERY_IMAGE_TYPES;
 
 /**
  * Local image types populated on disk for a family (partial or full).
