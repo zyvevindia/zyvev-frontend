@@ -1,0 +1,199 @@
+{
+  "generatedAt": "2026-06-10T02:52:31.501Z",
+  "agentVersion": "v1",
+  "methodology": "Simulated mutations on golden published snapshots (10 scenarios)",
+  "confusionMatrix": {
+    "truePositive": 8,
+    "falsePositive": 0,
+    "falseNegative": 0,
+    "trueNegative": 2
+  },
+  "aggregate": {
+    "detectionAccuracyPct": 100,
+    "falsePositiveRatePct": 0,
+    "averageReviewMinutes": 2.3
+  },
+  "targets": {
+    "detectionAccuracyPct": 95,
+    "falsePositiveRatePct": 10,
+    "averageReviewMinutes": 5
+  },
+  "results": [
+    {
+      "vehicle": "Tata Nexon EV",
+      "scenarioType": "price_change",
+      "expectedChange": true,
+      "detected": true,
+      "changeCount": 1,
+      "recommendation": "REVIEW_REQUIRED",
+      "priority": "MEDIUM",
+      "reviewMinutes": 1.9,
+      "correct": true,
+      "changes": [
+        {
+          "field": "startingPrice",
+          "type": "modified",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "vehicle": "Tata Punch EV",
+      "scenarioType": "new_variant",
+      "expectedChange": true,
+      "detected": true,
+      "changeCount": 1,
+      "recommendation": "REVIEW_REQUIRED",
+      "priority": "CRITICAL",
+      "reviewMinutes": 3.9,
+      "correct": true,
+      "changes": [
+        {
+          "field": "variant:New Trim X",
+          "type": "variant_added",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    {
+      "vehicle": "Hyundai Creta Electric",
+      "scenarioType": "charging_change",
+      "expectedChange": true,
+      "detected": true,
+      "changeCount": 1,
+      "recommendation": "REVIEW_REQUIRED",
+      "priority": "MEDIUM",
+      "reviewMinutes": 1.9,
+      "correct": true,
+      "changes": [
+        {
+          "field": "dcChargingKw",
+          "type": "modified",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "vehicle": "Mahindra BE 6",
+      "scenarioType": "feature_addition",
+      "expectedChange": true,
+      "detected": true,
+      "changeCount": 1,
+      "recommendation": "REVIEW_REQUIRED",
+      "priority": "LOW",
+      "reviewMinutes": 1.9,
+      "correct": true,
+      "changes": [
+        {
+          "field": "v2v",
+          "type": "modified",
+          "severity": "LOW"
+        }
+      ]
+    },
+    {
+      "vehicle": "MG Windsor EV",
+      "scenarioType": "brochure_replacement",
+      "expectedChange": true,
+      "detected": true,
+      "changeCount": 1,
+      "recommendation": "REVIEW_REQUIRED",
+      "priority": "LOW",
+      "reviewMinutes": 1.9,
+      "correct": true,
+      "changes": [
+        {
+          "field": "brochureUrl",
+          "type": "source_changed",
+          "severity": "LOW"
+        }
+      ]
+    },
+    {
+      "vehicle": "Tata Curvv EV",
+      "scenarioType": "range_change",
+      "expectedChange": true,
+      "detected": true,
+      "changeCount": 1,
+      "recommendation": "REVIEW_REQUIRED",
+      "priority": "MEDIUM",
+      "reviewMinutes": 1.9,
+      "correct": true,
+      "changes": [
+        {
+          "field": "claimedRangeKm",
+          "type": "modified",
+          "severity": "MEDIUM"
+        }
+      ]
+    },
+    {
+      "vehicle": "Mahindra XEV 9e",
+      "scenarioType": "battery_change",
+      "expectedChange": true,
+      "detected": true,
+      "changeCount": 1,
+      "recommendation": "REVIEW_REQUIRED",
+      "priority": "CRITICAL",
+      "reviewMinutes": 3.9,
+      "correct": true,
+      "changes": [
+        {
+          "field": "batteryCapacityKwh",
+          "type": "modified",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    {
+      "vehicle": "BYD Atto 3",
+      "scenarioType": "variant_removed",
+      "expectedChange": true,
+      "detected": true,
+      "changeCount": 1,
+      "recommendation": "REVIEW_REQUIRED",
+      "priority": "CRITICAL",
+      "reviewMinutes": 3.9,
+      "correct": true,
+      "changes": [
+        {
+          "field": "variant:Dynamic",
+          "type": "variant_removed",
+          "severity": "HIGH"
+        }
+      ]
+    },
+    {
+      "vehicle": "Tata Nexon EV (no change)",
+      "scenarioType": "no_change",
+      "expectedChange": false,
+      "detected": false,
+      "changeCount": 0,
+      "recommendation": "NO_CHANGE",
+      "priority": null,
+      "reviewMinutes": 1,
+      "correct": true,
+      "changes": []
+    },
+    {
+      "vehicle": "MG Windsor EV (identical)",
+      "scenarioType": "identical_recheck",
+      "expectedChange": false,
+      "detected": false,
+      "changeCount": 0,
+      "recommendation": "NO_CHANGE",
+      "priority": null,
+      "reviewMinutes": 1,
+      "correct": true,
+      "changes": []
+    }
+  ],
+  "targetsMet": {
+    "detectionAccuracy": true,
+    "falsePositives": true,
+    "reviewEffort": true,
+    "humanApprovalMandatory": true,
+    "noAutonomousUpdates": true
+  },
+  "recommendation": "READY FOR SCORE ENGINE"
+}
