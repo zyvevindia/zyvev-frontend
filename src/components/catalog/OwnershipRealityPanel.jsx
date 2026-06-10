@@ -43,10 +43,8 @@ const note = {
 };
 
 export default function OwnershipRealityPanel({ car }) {
-  if (!hasOwnershipReality(car)) return null;
-
-  const slug =
-    car?.slug || car?.catalogMeta?.slug || "";
+  const slug = car?.slug || car?.catalogMeta?.slug || "";
+  const enabled = hasOwnershipReality(car) && Boolean(slug);
 
   const viewRef = useTrackOnView(
     BUYER_EVENTS.OWNERSHIP_PANEL_VIEWED,
@@ -58,12 +56,15 @@ export default function OwnershipRealityPanel({ car }) {
           : "",
       panel: "ownership_reality",
     },
-    Boolean(slug)
+    enabled
   );
+
+  if (!enabled) return null;
 
   const meta = car.catalogMeta;
   const range = getRangeRealitySnippet(meta);
-  const charging = pickChargingIndicators(meta);
+  const charging = pickChargingIndicators(meta) ?? [];
+  const chargingItems = Array.isArray(charging) ? charging : [];
   const trade = meta.ownershipTradeoffs;
 
   return (
@@ -95,10 +96,13 @@ export default function OwnershipRealityPanel({ car }) {
         </>
       )}
 
-      {charging.length > 0 && (
+      {chargingItems.length > 0 && (
         <p style={{ ...body, marginTop: "16px" }}>
           Charging life:{" "}
-          {charging.map((c) => c.label).join(" · ")}
+          {chargingItems
+            .map((c) => c?.label)
+            .filter(Boolean)
+            .join(" · ")}
         </p>
       )}
 

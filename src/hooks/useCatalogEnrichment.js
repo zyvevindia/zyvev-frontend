@@ -41,13 +41,15 @@ export default function useCatalogEnrichment(
     if (!shouldTry) return;
 
     let cancelled = false;
+    const controller = new AbortController();
 
     async function load() {
       setCatalogLoading(true);
 
       try {
         const res = await fetch(
-          `${API_URL}/api/catalog/variants/slug/${encodeURIComponent(slug)}`
+          `${API_URL}/api/catalog/variants/slug/${encodeURIComponent(slug)}`,
+          { signal: controller.signal }
         );
 
         if (!res.ok) {
@@ -64,7 +66,8 @@ export default function useCatalogEnrichment(
             catalogDto
           )
         );
-      } catch {
+      } catch (err) {
+        if (err?.name === "AbortError") return;
         /* keep legacy vehicle */
       } finally {
         if (!cancelled) {
@@ -77,6 +80,7 @@ export default function useCatalogEnrichment(
 
     return () => {
       cancelled = true;
+      controller.abort();
     };
   }, [slug, vehicle]);
 

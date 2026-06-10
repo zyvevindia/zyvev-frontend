@@ -13,7 +13,7 @@ export default function CompareTrustSummary({ cars = [] }) {
     if (!summary.hasData || tracked.current) return;
     tracked.current = true;
     trackCompareTrustViewed({
-      vehicleSlugs: cars.map((c) => c.slug).filter(Boolean),
+      vehicleSlugs: (cars ?? []).map((c) => c?.slug).filter(Boolean),
     });
   }, [summary.hasData, cars]);
 

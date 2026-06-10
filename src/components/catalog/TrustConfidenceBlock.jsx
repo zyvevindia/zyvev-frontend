@@ -47,10 +47,9 @@ const list = {
 };
 
 export default function TrustConfidenceBlock({ car }) {
-  if (!hasTrustIntelligence(car)) return null;
-
-  const meta = car.catalogMeta;
+  const meta = car?.catalogMeta;
   const slug = car?.slug || meta?.slug || "";
+  const enabled = hasTrustIntelligence(car) && Boolean(slug);
 
   const viewRef = useTrackOnView(
     BUYER_EVENTS.OWNERSHIP_PANEL_VIEWED,
@@ -60,19 +59,21 @@ export default function TrustConfidenceBlock({ car }) {
         typeof window !== "undefined" ? window.location.pathname : "",
       panel: "trust_confidence",
     },
-    Boolean(slug)
+    enabled
   );
 
-  const indicators = meta.trustPresentation?.indicators || [];
-  const rangeBullets = rangeRealityExpandedBullets(meta);
-  const chargeBullets = chargingPracticalityBullets(meta);
-  const ownBullets = ownershipGuidanceBullets(meta);
+  if (!enabled) return null;
+
+  const indicators = meta?.trustPresentation?.indicators ?? [];
+  const rangeBullets = rangeRealityExpandedBullets(meta ?? {});
+  const chargeBullets = chargingPracticalityBullets(meta ?? {});
+  const ownBullets = ownershipGuidanceBullets(meta ?? {});
 
   return (
     <article ref={viewRef} style={card}>
       <h2 style={h2}>Can you live with this EV?</h2>
       <p style={sub}>
-        {meta.trustPresentation?.headline ||
+        {meta?.trustPresentation?.headline ||
           "Editorial confidence guidance — not user reviews or star ratings."}
       </p>
 
@@ -81,7 +82,7 @@ export default function TrustConfidenceBlock({ car }) {
           <span
             key={ind.id}
             style={trustIndicatorStyle(ind.tone)}
-            title={meta.trustPresentation?.disclaimer}
+            title={meta?.trustPresentation?.disclaimer}
           >
             {ind.label}
           </span>

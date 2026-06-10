@@ -17,6 +17,7 @@ import CompareScoreStory from "./CompareScoreStory";
 import LeadInquiryModal from "../LeadInquiryModal";
 import WhatsAppLeadCta from "../leads/WhatsAppLeadCta";
 import CompareUtilityRail from "./CompareUtilityRail";
+import SectionErrorBoundary from "../errors/SectionErrorBoundary";
 
 const CompareInternalLinks = lazy(() =>
   import("./CompareInternalLinks")
@@ -180,7 +181,7 @@ export default function CompareHeroExperience({
     if (intelligenceTrackedRef.current) return;
     intelligenceTrackedRef.current = true;
     trackIntelligenceCompareEngaged({
-        vehicleSlugs: safeCars.map((c) => c.slug).filter(Boolean),
+        vehicleSlugs: safeCars.map((c) => c?.slug).filter(Boolean),
       sourcePage,
       rowCount: compareSpecRows.length,
     });
@@ -209,7 +210,7 @@ export default function CompareHeroExperience({
 
   useEffect(() => {
     if (safeCars.length < 2) return undefined;
-    const slugs = safeCars.map((c) => c.slug).filter(Boolean);
+    const slugs = safeCars.map((c) => c?.slug).filter(Boolean);
     const depth = safeCars.length;
     return () => {
       if (compareAbandonTracked.current || inquiryOpenRef.current) return;
@@ -364,7 +365,7 @@ export default function CompareHeroExperience({
 
               <WhatsAppLeadCta
                 sourcePage={sourcePage}
-                compareSlugs={safeCars.map((c) => c.slug).filter(Boolean)}
+                compareSlugs={safeCars.map((c) => c?.slug).filter(Boolean)}
                 vehicleName={compareVehicleLabel || "EV comparison"}
                 intent="compare"
                 label={WHATSAPP_CTA_LABEL}
@@ -447,6 +448,7 @@ export default function CompareHeroExperience({
           />
 
           {showVariantFamilyTable ? (
+            <SectionErrorBoundary label="Variant comparison" compact>
             <Suspense
               fallback={
                 <div
@@ -465,6 +467,7 @@ export default function CompareHeroExperience({
                 showCompareAll={false}
               />
             </Suspense>
+            </SectionErrorBoundary>
           ) : (
           <>
           <CompareMobileSpecCards
@@ -561,6 +564,7 @@ export default function CompareHeroExperience({
           )}
 
           {intelligentCars.length >= 2 ? (
+            <SectionErrorBoundary label="Compare trust guidance" compact>
             <Suspense
               fallback={
                 <div
@@ -578,6 +582,7 @@ export default function CompareHeroExperience({
               />
               <CompareReliabilitySummary cars={intelligentCars} />
             </Suspense>
+            </SectionErrorBoundary>
           ) : null}
 
           <CompareUtilityRail
@@ -585,7 +590,7 @@ export default function CompareHeroExperience({
             sourcePage={sourcePage}
             cars={safeCars}
             metadata={{
-              vehicleSlugs: safeCars.map((c) => c.slug).filter(Boolean),
+              vehicleSlugs: safeCars.map((c) => c?.slug).filter(Boolean),
               compareDepth: safeCars.length,
             }}
             usefulnessLabel={
@@ -597,6 +602,7 @@ export default function CompareHeroExperience({
           />
 
           <div className="compare-below-fold">
+            <SectionErrorBoundary label="Comparison insights" compact>
             <Suspense
               fallback={
                 <div
@@ -612,10 +618,12 @@ export default function CompareHeroExperience({
                 guideMode={variant === "guide"}
               />
             </Suspense>
+            </SectionErrorBoundary>
           </div>
 
           {variant === "tool" ? (
             <div className="compare-trust-panel">
+              <SectionErrorBoundary label="Trust panel" compact>
               <Suspense
                 fallback={
                   <div
@@ -627,10 +635,12 @@ export default function CompareHeroExperience({
               >
                 <CompareTrustPanel cars={cars} />
               </Suspense>
+              </SectionErrorBoundary>
             </div>
           ) : null}
 
           {variant === "guide" && guideSeoPage ? (
+            <SectionErrorBoundary label="Comparison guide" compact>
             <Suspense
               fallback={
                 <div
@@ -642,8 +652,10 @@ export default function CompareHeroExperience({
             >
               <CompareGuideEditorialSections seoPage={guideSeoPage} />
             </Suspense>
+            </SectionErrorBoundary>
           ) : null}
 
+          <SectionErrorBoundary label="Related comparisons" compact>
           <Suspense
             fallback={
               <div
@@ -655,6 +667,7 @@ export default function CompareHeroExperience({
           >
             <CompareInternalLinks contextSlugs={compareContextSlugs} />
           </Suspense>
+          </SectionErrorBoundary>
         </section>
       </div>
 

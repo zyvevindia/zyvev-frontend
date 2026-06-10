@@ -45,21 +45,41 @@ export default function CompareRecommendationDoubt({
   recommendedSlug = null,
   guidanceWasOpened = false,
 }) {
+  const safeCars = cars ?? [];
   const recommended = recommendedSlug
-    ? cars.find((c) => c.slug === recommendedSlug) || cars[0]
-    : cars[0];
+    ? safeCars.find((c) => c?.slug === recommendedSlug) || safeCars[0]
+    : safeCars[0];
 
   const [open, setOpen] = useState(false);
   const [acknowledged, setAcknowledged] = useState(false);
 
-  if (!recommended || !shouldShowRecommendationDoubt(recommended)) {
-    return null;
-  }
-
-  if (acknowledged) return null;
-
   const sourcePage =
     typeof window !== "undefined" ? window.location.pathname : "compare";
+
+  const showPanel =
+    Boolean(recommended) &&
+    shouldShowRecommendationDoubt(recommended) &&
+    !acknowledged;
+
+  useEffect(() => {
+    if (!showPanel || !guidanceWasOpened || typeof window === "undefined") {
+      return undefined;
+    }
+    const onLeave = () => {
+      trackCompareAbandonAfterGuidance({
+        vehicleSlugs: ensureArray(safeCars)
+          .map((c) => c?.slug)
+          .filter(Boolean),
+        sourcePage,
+      });
+    };
+    window.addEventListener("beforeunload", onLeave);
+    return () => window.removeEventListener("beforeunload", onLeave);
+  }, [showPanel, guidanceWasOpened, safeCars, sourcePage]);
+
+  if (!showPanel) {
+    return null;
+  }
 
   const handleHardToTell = () => {
     trackRecommendationDoubted({
@@ -74,20 +94,6 @@ export default function CompareRecommendationDoubt({
     setAcknowledged(true);
     setOpen(false);
   };
-
-  useEffect(() => {
-    if (!guidanceWasOpened || typeof window === "undefined") return undefined;
-    const onLeave = () => {
-      trackCompareAbandonAfterGuidance({
-        vehicleSlugs: ensureArray(cars)
-          .map((c) => c?.slug)
-          .filter(Boolean),
-        sourcePage,
-      });
-    };
-    window.addEventListener("beforeunload", onLeave);
-    return () => window.removeEventListener("beforeunload", onLeave);
-  }, [guidanceWasOpened, cars, sourcePage]);
 
   return (
     <div style={wrap} aria-live="polite">

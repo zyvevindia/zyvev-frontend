@@ -193,9 +193,9 @@ export default function DetailOverviewDashboard({
               Features
             </h3>
             <div className="cd-overview-dashboard__chips">
-              {features.slice(0, 8).map((item, index) => (
+              {features.slice(0, 8).map((item) => (
                 <span
-                  key={index}
+                  key={typeof item === "string" ? item : String(item)}
                   className="cd-overview-dashboard__chip"
                 >
                   ✓ {item}
@@ -241,8 +241,10 @@ export default function DetailOverviewDashboard({
                 What owners love
               </h3>
               <ul className="cd-overview-dashboard__list cd-overview-dashboard__list--pro">
-                {pros.slice(0, 4).map((item, i) => (
-                  <li key={i}>{item}</li>
+                {pros.slice(0, 4).map((item) => (
+                  <li key={typeof item === "string" ? item : String(item)}>
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -253,8 +255,10 @@ export default function DetailOverviewDashboard({
                 Honest trade-offs
               </h3>
               <ul className="cd-overview-dashboard__list cd-overview-dashboard__list--con">
-                {cons.slice(0, 4).map((item, i) => (
-                  <li key={i}>{item}</li>
+                {cons.slice(0, 4).map((item) => (
+                  <li key={typeof item === "string" ? item : String(item)}>
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>

@@ -36,14 +36,15 @@ const item = {
 const label = { fontWeight: "700", color: "#166534" };
 
 export default function CompareTrustPanel({ cars }) {
-  if (!CATALOG_INTELLIGENCE || !cars?.length) return null;
-
-  const leaders = pickCompareTrustLeaders(cars);
-  if (!leaders.length) return null;
-
+  const leaders = pickCompareTrustLeaders(cars ?? []);
   const vehicleSlugs = ensureArray(cars)
     .map((c) => c?.slug)
     .filter(Boolean);
+  const enabled =
+    CATALOG_INTELLIGENCE &&
+    Boolean(cars?.length) &&
+    leaders.length > 0 &&
+    vehicleSlugs.length >= 2;
 
   const viewRef = useTrackOnView(
     BUYER_EVENTS.SCENARIO_COMPARE_VIEWED,
@@ -52,8 +53,10 @@ export default function CompareTrustPanel({ cars }) {
       sourcePage: "/compare",
       panel: "compare_trust",
     },
-    vehicleSlugs.length >= 2
+    enabled
   );
+
+  if (!enabled) return null;
 
   return (
     <section ref={viewRef} style={wrap} aria-label="Compare trust guidance">

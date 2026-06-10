@@ -33,17 +33,18 @@ export default function CompareTrustExplain({
 }) {
   const [guidanceOpened, setGuidanceOpened] = useState(false);
 
-  if (!cars?.length) return null;
+  const safeCars = cars ?? [];
+  if (!safeCars.length) return null;
 
   const recommended = recommendedSlug
-    ? cars.find((c) => c.slug === recommendedSlug) || cars[0]
-    : cars[0];
+    ? safeCars.find((c) => c?.slug === recommendedSlug) || safeCars[0]
+    : safeCars[0];
 
   const insight = buildCompareScoreInsight(recommended);
-  const whyRecommended = buildWhyRecommendedSummary(recommended, cars);
+  const whyRecommended = buildWhyRecommendedSummary(recommended, safeCars);
   const ownershipCaveat = buildOwnershipCaveat(recommended);
-  const drivingNote = buildDrivingContextNote(cars);
-  const suitabilityLines = buildCompareSuitabilityLines(cars);
+  const drivingNote = buildDrivingContextNote(safeCars);
+  const suitabilityLines = buildCompareSuitabilityLines(safeCars);
   const realismCaveats = buildOwnershipRealismCaveats(recommended);
 
   return (
@@ -86,14 +87,14 @@ export default function CompareTrustExplain({
         onExpand={() => {
           setGuidanceOpened(true);
           trackCompareConfidenceExpanded({
-            vehicleSlugs: cars.map((c) => c.slug).filter(Boolean),
+            vehicleSlugs: safeCars.map((c) => c?.slug).filter(Boolean),
             sourcePage:
               typeof window !== "undefined" ? window.location.pathname : "",
           });
         }}
       />
       <CompareRecommendationDoubt
-        cars={cars}
+        cars={safeCars}
         recommendedSlug={recommended?.slug}
         guidanceWasOpened={guidanceOpened}
       />

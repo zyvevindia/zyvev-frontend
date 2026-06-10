@@ -16,6 +16,8 @@ import SeoContinueLearning from "../components/SEO/SeoContinueLearning";
 import SeoEditorialDecision from "../components/SEO/SeoEditorialDecision";
 import DiscoveryBreadcrumbNav from "../components/SEO/DiscoveryBreadcrumbNav";
 
+import CompareErrorBoundary from "../components/errors/CompareErrorBoundary";
+import SectionErrorBoundary from "../components/errors/SectionErrorBoundary";
 import CompareHeroExperience from "../components/compare/CompareHeroExperience";
 import CompareGuideEditorialSections from "../components/compare/CompareGuideEditorialSections";
 import CompareGuideLoading from "../components/compare/CompareGuideLoading";
@@ -235,7 +237,10 @@ export default function DiscoverySeoPage({ pageType }) {
         />
 
         {schemas.map((schema, i) => (
-          <JsonLd key={i} data={schema} />
+          <JsonLd
+            key={schema?.["@type"] || schema?.name || `schema-${i}`}
+            data={schema}
+          />
         ))}
 
         <div className="compare-guide-page__breadcrumb-bar">
@@ -245,17 +250,19 @@ export default function DiscoverySeoPage({ pageType }) {
         {guideCarsLoading ? (
           <CompareGuideLoading />
         ) : guideCars.length >= 2 ? (
-          <CompareHeroExperience
-            cars={guideCars}
-            sourcePage={discoveryPath}
-            variant="guide"
-            heroTitle={meta.h1}
-            heroBadge="EV comparison"
-            recommendationLogic={seoPage.recommendationLogic}
-            guideSeoPage={compareSeoPage}
-            showClearComparison={false}
-            enableFab
-          />
+          <CompareErrorBoundary>
+            <CompareHeroExperience
+              cars={guideCars}
+              sourcePage={discoveryPath}
+              variant="guide"
+              heroTitle={meta.h1}
+              heroBadge="EV comparison"
+              recommendationLogic={seoPage.recommendationLogic}
+              guideSeoPage={compareSeoPage}
+              showClearComparison={false}
+              enableFab
+            />
+          </CompareErrorBoundary>
         ) : (
           <>
             <div
@@ -310,7 +317,10 @@ export default function DiscoverySeoPage({ pageType }) {
       />
 
       {schemas.map((schema, i) => (
-        <JsonLd key={i} data={schema} />
+        <JsonLd
+          key={schema?.["@type"] || schema?.name || `schema-${i}`}
+          data={schema}
+        />
       ))}
 
       <article style={editorialPageStyles.article}>
@@ -326,7 +336,9 @@ export default function DiscoverySeoPage({ pageType }) {
           recommendationLogic={seoPage.recommendationLogic}
         />
 
-        <SeoEditorialDecision editorial={seoPage.editorial} />
+        <SectionErrorBoundary label="Editorial summary" compact>
+          <SeoEditorialDecision editorial={seoPage.editorial} />
+        </SectionErrorBoundary>
 
         <SeoAuthorityEditorial
           sections={seoPage.editorialSections}
@@ -350,12 +362,14 @@ export default function DiscoverySeoPage({ pageType }) {
           />
         )}
 
-        <SeoRecommendationList
-          rankedVehicles={seoPage.rankedVehicles}
-          isCompare={false}
-          seoPageSlug={seoPage.slug}
-          sourcePage={discoveryPath}
-        />
+        <SectionErrorBoundary label="Recommendations" compact>
+          <SeoRecommendationList
+            rankedVehicles={seoPage.rankedVehicles}
+            isCompare={false}
+            seoPageSlug={seoPage.slug}
+            sourcePage={discoveryPath}
+          />
+        </SectionErrorBoundary>
 
         <ConfidenceExplainer />
 

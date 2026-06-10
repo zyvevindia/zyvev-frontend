@@ -41,16 +41,15 @@ const label = {
 };
 
 export default function CompareScenarioPanel({ cars }) {
-  if (!CATALOG_INTELLIGENCE || !cars?.length) {
-    return null;
-  }
-
-  const leaders = pickScenarioLeaders(cars);
-  if (!leaders.length) return null;
-
-  const vehicleSlugs = cars
+  const leaders = pickScenarioLeaders(cars ?? []);
+  const vehicleSlugs = (cars ?? [])
     .map((c) => c?.slug || c?.catalogMeta?.slug)
     .filter(Boolean);
+  const enabled =
+    CATALOG_INTELLIGENCE &&
+    Boolean(cars?.length) &&
+    leaders.length > 0 &&
+    vehicleSlugs.length >= 2;
 
   const viewRef = useTrackOnView(
     BUYER_EVENTS.SCENARIO_COMPARE_VIEWED,
@@ -59,8 +58,10 @@ export default function CompareScenarioPanel({ cars }) {
       sourcePage: "/compare",
       compareDepth: vehicleSlugs.length,
     },
-    vehicleSlugs.length >= 2
+    enabled
   );
+
+  if (!enabled) return null;
 
   return (
     <section

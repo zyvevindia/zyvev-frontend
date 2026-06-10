@@ -74,6 +74,7 @@ import {
 } from "../utils/vehicleRoutes";
 
 import VehicleImage from "../components/media/VehicleImage";
+import SectionErrorBoundary from "../components/errors/SectionErrorBoundary";
 import VehicleDetailNotFound from "../components/catalog/VehicleDetailNotFound";
 import NetworkErrorPanel from "../components/ui/NetworkErrorPanel";
 import DetailBreadcrumbs from "../components/catalog/DetailBreadcrumbs";
@@ -368,7 +369,9 @@ export default function CarDetails() {
         });
       }
 
-      setLoading(false);
+      if (!cancelled) {
+        setLoading(false);
+      }
     }
 
     fetchCar();
@@ -709,6 +712,75 @@ export default function CarDetails() {
     return () => observer.disconnect();
   }, [displayCar, slug]);
 
+  const evSavariScores = useMemo(() => {
+    if (!displayCar || loading || catalogLoading) {
+      return null;
+    }
+
+    const vehicle = displayCar;
+    const familySlug =
+      family?.familySlug ||
+      extractFamilySlug(vehicle.slug || slug);
+    const variantOptions =
+      familyVariants.length > 0
+        ? familyVariants
+        : vehicle.variants || [];
+    const comparableVariants = filterComparableVariants(
+      variantOptions,
+      familySlug
+    );
+    const familyFallbackVehicle =
+      family?.defaultVariant ||
+      comparableVariants[0] ||
+      variantOptions[0] ||
+      vehicle;
+    const enrichedVariants = enrichVariantsWithInsights(
+      comparableVariants,
+      familyFallbackVehicle
+    );
+    const explicitVariantSlug = normalizeVehicleSlug(
+      searchParams.get("variant")
+    );
+    const isFamilyOverviewMode =
+      comparableVariants.length > 0 && !explicitVariantSlug;
+    const selectedVariantSlug = normalizeVehicleSlug(
+      explicitVariantSlug ||
+        selectedVariant?.slug ||
+        vehicle.slug
+    );
+    const intelligenceCar =
+      enrichedVariants.find((v) => v.slug === selectedVariantSlug) ||
+      selectedVariant ||
+      vehicle;
+    const familyMetrics = isFamilyOverviewMode
+      ? buildFamilyAggregateMetrics(
+          comparableVariants,
+          familyFallbackVehicle
+        )
+      : null;
+
+    const scoringSource = isFamilyOverviewMode
+      ? {
+          ...vehicle,
+          variants: comparableVariants,
+          maxRange: familyMetrics?.rangeLabel,
+        }
+      : intelligenceCar || vehicle;
+
+    return scoreVehicle(scoringSource, {
+      variants: comparableVariants.length ? comparableVariants : undefined,
+    });
+  }, [
+    displayCar,
+    loading,
+    catalogLoading,
+    family,
+    slug,
+    familyVariants,
+    selectedVariant,
+    searchParams,
+  ]);
+
   /* =========================================================
      ======================= LOADING =========================
      ========================================================= */
@@ -797,6 +869,11 @@ export default function CarDetails() {
       )
     : null;
 
+  const intelligenceCar =
+    enrichedVariants.find((v) => v.slug === selectedVariantSlug) ||
+    selectedVariant ||
+    vehicle;
+
   const detailMetrics = !isFamilyOverviewMode
     ? buildVariantDetailMetrics(
         selectedVariant || vehicle,
@@ -839,31 +916,6 @@ export default function CarDetails() {
     ? familyMetrics?.batteryLabel || activeSpecs.battery
     : activeSpecs.battery;
   const activeVariantForHero = selectedVariant || vehicle;
-
-  const intelligenceCar =
-    enrichedVariants.find((v) => v.slug === selectedVariantSlug) ||
-    selectedVariant ||
-    vehicle;
-
-  const evSavariScores = useMemo(() => {
-    if (!vehicle) return null;
-    const scoringSource = isFamilyOverviewMode
-      ? {
-          ...vehicle,
-          variants: comparableVariants,
-          maxRange: familyMetrics?.rangeLabel,
-        }
-      : intelligenceCar || vehicle;
-    return scoreVehicle(scoringSource, {
-      variants: comparableVariants.length ? comparableVariants : undefined,
-    });
-  }, [
-    vehicle,
-    intelligenceCar,
-    isFamilyOverviewMode,
-    comparableVariants,
-    familyMetrics?.rangeLabel,
-  ]);
 
   const features =
     Array.isArray(vehicle.features)
@@ -1130,53 +1182,59 @@ export default function CarDetails() {
           ) : null}
 
           {enrichedVariants.length >= 1 && (
-            <Suspense
-              fallback={
-                <div
-                  className="cd-section cd-card cd-content-card"
-                  aria-busy="true"
-                  aria-label="Loading variant comparison table"
-                >
-                  Loading variants…
-                </div>
-              }
-            >
-              <VariantComparisonTable
-                ref={comparisonRef}
-                id="variants"
-                variants={enrichedVariants}
-                selectedSlug={selectedVariantSlug}
-                onSelect={handleSelectVariant}
-                onCompareAll={() =>
-                  navigateVariantCompare(comparableVariants, {
-                    cleanSession: true,
-                  })
+            <SectionErrorBoundary label="Variant comparison" compact>
+              <Suspense
+                fallback={
+                  <div
+                    className="cd-section cd-card cd-content-card"
+                    aria-busy="true"
+                    aria-label="Loading variant comparison table"
+                  >
+                    Loading variants…
+                  </div>
                 }
-              />
-            </Suspense>
+              >
+                <VariantComparisonTable
+                  ref={comparisonRef}
+                  id="variants"
+                  variants={enrichedVariants}
+                  selectedSlug={selectedVariantSlug}
+                  onSelect={handleSelectVariant}
+                  onCompareAll={() =>
+                    navigateVariantCompare(comparableVariants, {
+                      cleanSession: true,
+                    })
+                  }
+                />
+              </Suspense>
+            </SectionErrorBoundary>
           )}
           {hasGoldExperience && (
-            <EvDetailGoldSections
-              car={vehicle}
-              slug={slug}
-              layout="v2"
-              only={["compare-rivals"]}
-            />
+            <SectionErrorBoundary label="Compare rivals" compact>
+              <EvDetailGoldSections
+                car={vehicle}
+                slug={slug}
+                layout="v2"
+                only={["compare-rivals"]}
+              />
+            </SectionErrorBoundary>
           )}
 
-          <EvIntelligenceSections
-            car={intelligenceCar}
-            slug={slug}
-            layout="v2"
-            showRangeConfidence={!isFamilyOverviewMode}
-            sections={[
-              "range",
-              "charging",
-              "ownership",
-              "features",
-              "suitability",
-            ]}
-          />
+          <SectionErrorBoundary label="EV intelligence" compact>
+            <EvIntelligenceSections
+              car={intelligenceCar}
+              slug={slug}
+              layout="v2"
+              showRangeConfidence={!isFamilyOverviewMode}
+              sections={[
+                "range",
+                "charging",
+                "ownership",
+                "features",
+                "suitability",
+              ]}
+            />
+          </SectionErrorBoundary>
 
           <section
             id="emi"
@@ -1193,30 +1251,34 @@ export default function CarDetails() {
                 trackPricingInteraction("emi_calculator")
               }
             >
-              <Suspense
-                fallback={
-                  <p className="cd-section__intro" aria-busy="true">
-                    Loading EMI calculator…
-                  </p>
-                }
-              >
-                <EMICalculator
-                  price={activePrice}
-                  onGetFinanceHelp={() =>
-                    handleFinanceHelp("emi_widget")
+              <SectionErrorBoundary label="EMI calculator" compact>
+                <Suspense
+                  fallback={
+                    <p className="cd-section__intro" aria-busy="true">
+                      Loading EMI calculator…
+                    </p>
                   }
-                />
-              </Suspense>
+                >
+                  <EMICalculator
+                    price={activePrice}
+                    onGetFinanceHelp={() =>
+                      handleFinanceHelp("emi_widget")
+                    }
+                  />
+                </Suspense>
+              </SectionErrorBoundary>
             </div>
           </section>
 
           {hasGoldExperience && (
-            <EvDetailGoldSections
-              car={vehicle}
-              slug={slug}
-              layout="v2"
-              only={["faq"]}
-            />
+            <SectionErrorBoundary label="FAQs" compact>
+              <EvDetailGoldSections
+                car={vehicle}
+                slug={slug}
+                layout="v2"
+                only={["faq"]}
+              />
+            </SectionErrorBoundary>
           )}
 
           <section
@@ -1236,8 +1298,11 @@ export default function CarDetails() {
             <section className="cd-section cd-card cd-content-card">
               <h2 className="cd-section__title">Safety</h2>
               <div className="cd-features-grid">
-                {safety.map((item, index) => (
-                  <div key={index} className="cd-feature-chip">
+                {safety.map((item) => (
+                  <div
+                    key={typeof item === "string" ? item : String(item)}
+                    className="cd-feature-chip"
+                  >
                     🛡 {item}
                   </div>
                 ))}

@@ -37,6 +37,7 @@ import { safeFetchJsonWithRetry } from "../utils/safeFetch";
 
 import useCompareCars from "../hooks/useCompareCars";
 
+import SectionErrorBoundary from "../components/errors/SectionErrorBoundary";
 import EvDiscoveryFilters from "../components/discovery/EvDiscoveryFilters";
 import CatalogPagination from "../components/catalog/CatalogPagination";
 import {
@@ -771,21 +772,23 @@ export default function ListingPage() {
             padding: "0 20px",
           }}
         >
-          <Suspense
-            fallback={
-              <div
-                className="listing-results-status"
-                aria-busy="true"
-              >
-                Loading recommendations…
-              </div>
-            }
-          >
-            <EvRecommendationWidget
-              families={families}
-              sourcePage={pathname || "/cars"}
-            />
-          </Suspense>
+          <SectionErrorBoundary label="EV recommendations" compact>
+            <Suspense
+              fallback={
+                <div
+                  className="listing-results-status"
+                  aria-busy="true"
+                >
+                  Loading recommendations…
+                </div>
+              }
+            >
+              <EvRecommendationWidget
+                families={families}
+                sourcePage={pathname || "/cars"}
+              />
+            </Suspense>
+          </SectionErrorBoundary>
         </section>
       )}
 

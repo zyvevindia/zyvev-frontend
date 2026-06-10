@@ -1,5 +1,6 @@
 import { Navigate, useParams } from "react-router-dom";
 
+import SectionErrorBoundary from "../errors/SectionErrorBoundary";
 import CarDetails from "../../pages/CarDetails";
 
 import SeoGuidePage from "../../pages/SeoGuidePage";
@@ -26,5 +27,9 @@ export default function CarsSlugRouter() {
     return <Navigate to="/cars" replace />;
   }
 
-  return <CarDetails key={normalized || slug} />;
+  return (
+    <SectionErrorBoundary label="Vehicle details">
+      <CarDetails key={normalized || slug} />
+    </SectionErrorBoundary>
+  );
 }

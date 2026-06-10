@@ -32,6 +32,7 @@ export default function EvRecommendationWidget({
   });
 
   const results = useMemo(() => {
+    if (!families?.length) return [];
     return recommendFamilies(families, priorities, { limit: 4 });
   }, [families, priorities]);
 

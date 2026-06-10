@@ -190,12 +190,12 @@ export default function EvDetailGoldSections({
     return null;
   }
 
-  const meta = car.catalogMeta;
-  const summary = meta.expertSummary || car.overview;
+  const meta = car?.catalogMeta ?? {};
+  const summary = meta.expertSummary || car?.overview;
 
   const allFaq = [
-    ...(meta.faq || []),
-    ...(meta.chargingFaq || []),
+    ...(meta.faq ?? []),
+    ...(meta.chargingFaq ?? []),
   ];
 
   const showIntelligence = hasCatalogIntelligence(car);
@@ -437,9 +437,9 @@ export default function EvDetailGoldSections({
             What owners love
           </h2>
           <ul style={{ margin: 0, paddingLeft: "20px" }}>
-            {meta.pros.map((item, i) => (
+            {(meta.pros ?? []).map((item) => (
               <li
-                key={i}
+                key={typeof item === "string" ? item : String(item)}
                 style={{ ...(bodyStyle || body), marginBottom: "8px" }}
               >
                 {item}
@@ -455,9 +455,9 @@ export default function EvDetailGoldSections({
             Honest trade-offs
           </h2>
           <ul style={{ margin: 0, paddingLeft: "20px" }}>
-            {meta.cons.map((item, i) => (
+            {(meta.cons ?? []).map((item) => (
               <li
-                key={i}
+                key={typeof item === "string" ? item : String(item)}
                 style={{ ...(bodyStyle || body), marginBottom: "8px" }}
               >
                 {item}
@@ -533,7 +533,7 @@ export default function EvDetailGoldSections({
           )}
           {allFaq.map((item, i) => (
             <details
-              key={i}
+              key={item?.question || item?.q || item?.id || `faq-${i}`}
               style={{
                 marginBottom: "12px",
                 borderBottom: "1px solid #e2e8f0",

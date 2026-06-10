@@ -17,9 +17,9 @@ export default function CatalogPagination({
   pageSize = CATALOG_PAGE_SIZE,
   buildPageHref,
 }) {
-  if (totalItems <= pageSize) return null;
-
   const location = useLocation();
+
+  if (totalItems <= pageSize) return null;
   const pages = buildPageNumberWindow(currentPage, totalPages);
 
   const hrefFor = (page) => {
