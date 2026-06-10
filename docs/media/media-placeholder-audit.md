@@ -1,6 +1,6 @@
 # Media Placeholder Audit
 
-Generated: 2026-06-10T18:21:49.773Z
+Generated: 2026-06-10T18:49:21.447Z
 
 Scans `public/images/cars/**` for batch-generated placeholder WebP assets.
 

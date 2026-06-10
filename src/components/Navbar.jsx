@@ -449,46 +449,6 @@ export default function Navbar() {
             }
           )}
 
-          {/* ================= LOGIN BUTTON ================= */}
-
-          <Link
-            to="/login"
-
-            style={{
-              ...loginButton,
-
-              ...(isMobile
-                ? mobileLoginButton
-                : {}),
-            }}
-
-            onClick={
-              closeMobileMenu
-            }
-
-            aria-label="Login"
-
-            onMouseEnter={(e) => {
-
-              e.currentTarget.style.transform =
-                "translateY(-3px) scale(1.01)";
-
-              e.currentTarget.style.boxShadow =
-                "0 18px 38px rgba(37,99,235,0.34)";
-            }}
-
-            onMouseLeave={(e) => {
-
-              e.currentTarget.style.transform =
-                "translateY(0px) scale(1)";
-
-              e.currentTarget.style.boxShadow =
-                "0 12px 28px rgba(37,99,235,0.26)";
-            }}
-          >
-            Login
-          </Link>
-
         </nav>
 
       </div>
@@ -794,43 +754,4 @@ const activeNavItem = {
 
   backdropFilter:
     "blur(8px)",
-};
-
-/* =========================================================
-   ====================== LOGIN BUTTON ======================
-   ========================================================= */
-
-const loginButton = {
-  textDecoration: "none",
-
-  background:
-    "linear-gradient(135deg, #2563eb, #1d4ed8)",
-
-  color: "white",
-
-  padding: "14px 22px",
-
-  borderRadius: "16px",
-
-  fontWeight: "700",
-
-  fontSize: "14px",
-
-  whiteSpace: "nowrap",
-
-  boxShadow:
-    "0 12px 28px rgba(37,99,235,0.26)",
-
-  transition:
-    "all 0.28s ease",
-
-  letterSpacing: "0.2px",
-
-  textAlign: "center",
-};
-
-const mobileLoginButton = {
-  width: "100%",
-
-  boxSizing: "border-box",
 };

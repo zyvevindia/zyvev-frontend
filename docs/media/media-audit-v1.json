@@ -1,6 +1,6 @@
 {
   "version": "media-audit-v1",
-  "generatedAt": "2026-06-10T11:25:38.783Z",
+  "generatedAt": "2026-06-10T18:49:32.597Z",
   "vehicleCount": 25,
   "requiredImageTypes": [
     "listing",
@@ -551,60 +551,72 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "tier1-seed",
+            "public-images"
           ],
           "refs": [
             "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/960px-Mahindra_XEV_9E.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/960px-Mahindra_XEV_9E.jpg",
+            "/public/images/cars/mahindra-xev-9e/listing.webp"
           ]
         },
         "compare": {
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "tier1-seed",
+            "public-images"
           ],
           "refs": [
             "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+            "/public/images/cars/mahindra-xev-9e/compare.webp"
           ]
         },
         "front": {
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "tier1-seed",
+            "public-images"
           ],
           "refs": [
             "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+            "/public/images/cars/mahindra-xev-9e/front.webp"
           ]
         },
         "rear": {
           "present": true,
           "sources": [
-            "tier1-seed"
+            "tier1-seed",
+            "public-images"
           ],
           "refs": [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+            "/public/images/cars/mahindra-xev-9e/rear.webp"
           ]
         },
         "side": {
           "present": true,
           "sources": [
-            "tier1-seed"
+            "tier1-seed",
+            "public-images"
           ],
           "refs": [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+            "/public/images/cars/mahindra-xev-9e/side.webp"
           ]
         },
         "interior": {
           "present": true,
           "sources": [
-            "tier1-seed"
+            "tier1-seed",
+            "public-images"
           ],
           "refs": [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
+            "/public/images/cars/mahindra-xev-9e/interior.webp"
           ]
         },
         "dashboard": {
@@ -811,28 +823,34 @@
         "listing": {
           "present": true,
           "sources": [
-            "cloudinary-manifest"
+            "cloudinary-manifest",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb"
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+            "/public/images/cars/mg-comet-ev/listing.webp"
           ]
         },
         "compare": {
           "present": true,
           "sources": [
-            "cloudinary-manifest"
+            "cloudinary-manifest",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb"
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+            "/public/images/cars/mg-comet-ev/compare.webp"
           ]
         },
         "front": {
           "present": true,
           "sources": [
-            "cloudinary-manifest"
+            "cloudinary-manifest",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero"
+            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero",
+            "/public/images/cars/mg-comet-ev/front.webp"
           ]
         },
         "rear": {

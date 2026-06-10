@@ -124,17 +124,6 @@ export default function Home() {
     [families]
   );
 
-  const latestFamilies = useMemo(
-    () =>
-      [...families]
-        .sort(
-          (a, b) =>
-            (b.createdAt || 0) - (a.createdAt || 0)
-        )
-        .slice(0, 6),
-    [families]
-  );
-
   const premiumRangeFamilies = useMemo(
     () =>
       [...families]
@@ -509,37 +498,6 @@ export default function Home() {
                   ? "Popular"
                   : "Trending"
               )
-            )
-          )}
-
-        </HomeSection>
-
-        {/* ================= LATEST ================= */}
-
-        <HomeSection
-          title="Recently Added EVs"
-
-          subtitle="Fresh electric vehicle listings recently added to EVSavari."
-
-          viewAllLink="/latest"
-        >
-
-          {loading ? (
-
-            Array.from({
-              length: 6,
-            }).map(
-              (_, index) => (
-
-                <CarCardSkeleton
-                  key={index}
-                />
-              )
-            )
-
-          ) : error ? null : (
-            latestFamilies.map((family) =>
-              renderFamilyCard(family, "New")
             )
           )}
 
