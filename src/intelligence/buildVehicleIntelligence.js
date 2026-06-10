@@ -4,6 +4,7 @@ import { buildFeatureMatrix } from "./featureMatrix.js";
 import { buildOwnershipIntelligence } from "./ownershipIntelligence.js";
 import { buildRangeConfidence } from "./rangeConfidence.js";
 import { buildEvsavariScores } from "./scoringEngine.js";
+import { scoreVehicle, toLegacyEvScores } from "../scoring/index.js";
 import { buildSuitabilityInsights } from "./suitabilityInsights.js";
 import {
   extractCurationMetadata,
@@ -111,7 +112,18 @@ export function buildVehicleIntelligence(car) {
 export function withVehicleIntelligence(car) {
   if (!car) return car;
   const intelligence = buildVehicleIntelligence(car);
-  if (!intelligence) return car;
+  const evSavariScores = scoreVehicle(car, { variants: car.variants });
+  const v1Legacy = toLegacyEvScores(evSavariScores);
+
+  if (!intelligence) {
+    if (!v1Legacy?.hasData) return car;
+    return {
+      ...car,
+      evSavariScores,
+      evScores: v1Legacy,
+    };
+  }
+
   const {
     scores,
     trust,
@@ -123,10 +135,15 @@ export function withVehicleIntelligence(car) {
     needsReview,
     ...evIntelligence
   } = intelligence;
+
   return {
     ...car,
     evIntelligence,
-    evScores: scores || buildEvsavariScores(car, evIntelligence),
+    evSavariScores,
+    evScores:
+      v1Legacy ||
+      scores ||
+      buildEvsavariScores(car, evIntelligence),
     evTrust: trust,
     evGovernance: governance,
     evFreshness: freshness,

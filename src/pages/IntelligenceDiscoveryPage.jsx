@@ -14,6 +14,7 @@ import {
   INTELLIGENCE_DISCOVERY_PRESETS,
 } from "../data/intelligenceDiscoveryPresets";
 import { rankFamiliesForPreset } from "../intelligence/discoveryRanking.js";
+import { enrichFamiliesWithIntelligence } from "../intelligence/familyIntelligence.js";
 import { buildGuideItemListSchema } from "../seo/schema";
 import { trackDiscoveryPageEngaged, trackDiscoveryThinResults, trackTrustFaqEngaged } from "../analytics/funnel";
 import { buildTrustFaqAnchors } from "../intelligence/trustMetadata.js";
@@ -71,7 +72,7 @@ export default function IntelligenceDiscoveryPage() {
   }, [presetSlug]);
 
   const families = useMemo(
-    () => aggregateModelFamilies(cars),
+    () => enrichFamiliesWithIntelligence(aggregateModelFamilies(cars)),
     [cars]
   );
 
@@ -187,7 +188,7 @@ export default function IntelligenceDiscoveryPage() {
         {!loading && ranked.length > 0 && (
           <>
             <div className="intel-discovery-grid">
-              {ranked.map(({ card, reason, score }) => (
+              {ranked.map(({ card, reason, score, grade }) => (
                 <div key={card.slug}>
                   <CarCard car={card} />
                   <p
@@ -199,7 +200,9 @@ export default function IntelligenceDiscoveryPage() {
                     }}
                   >
                     {reason}
-                    {score != null ? ` · Score ${score}/100` : ""}
+                    {score != null
+                      ? ` · Score ${score}/100${grade ? ` (${grade})` : ""}`
+                      : ""}
                   </p>
                 </div>
               ))}

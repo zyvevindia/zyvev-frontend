@@ -1,0 +1,484 @@
+{
+  "generatedAt": "2026-06-10T04:12:31.047Z",
+  "engineVersion": 1,
+  "methodology": "Deterministic score engine v1 on golden dossiers (8) + catalog fixtures (2)",
+  "validationSet": [
+    "tata-nexon-ev",
+    "tata-punch-ev",
+    "tata-curvv-ev",
+    "mahindra-be-6",
+    "mahindra-xev-9e",
+    "mg-windsor-ev",
+    "hyundai-creta-electric",
+    "byd-atto-3",
+    "mg-zs-ev",
+    "citroen-ec3"
+  ],
+  "aggregate": {
+    "vehiclesTested": 10,
+    "goldenDossiersAvailable": 8,
+    "allHaveOverallScore": true,
+    "allHaveRecommendedVariant": true,
+    "allHaveBreakdown": true,
+    "rankingStability": true,
+    "averageOverallScore": 65,
+    "scoreSpread": {
+      "min": 34,
+      "max": 82
+    }
+  },
+  "recommendation": "READY FOR SEMI-AUTONOMOUS EVSAVARI",
+  "categoryRankings": {
+    "family": [
+      {
+        "rank": 1,
+        "vehicle": "Tata Curvv EV",
+        "score": 92
+      },
+      {
+        "rank": 2,
+        "vehicle": "Mahindra XEV 9e",
+        "score": 86
+      },
+      {
+        "rank": 3,
+        "vehicle": "Mahindra BE 6",
+        "score": 86
+      }
+    ],
+    "city": [
+      {
+        "rank": 1,
+        "vehicle": "Tata Curvv EV",
+        "score": 78
+      },
+      {
+        "rank": 2,
+        "vehicle": "Mahindra XEV 9e",
+        "score": 76
+      },
+      {
+        "rank": 3,
+        "vehicle": "Mahindra BE 6",
+        "score": 74
+      }
+    ],
+    "highway": [
+      {
+        "rank": 1,
+        "vehicle": "Mahindra XEV 9e",
+        "score": 80
+      },
+      {
+        "rank": 2,
+        "vehicle": "Tata Curvv EV",
+        "score": 73
+      },
+      {
+        "rank": 3,
+        "vehicle": "Mahindra BE 6",
+        "score": 73
+      }
+    ],
+    "value": [
+      {
+        "rank": 1,
+        "vehicle": "Mahindra XEV 9e",
+        "score": 81
+      },
+      {
+        "rank": 2,
+        "vehicle": "Tata Curvv EV",
+        "score": 80
+      },
+      {
+        "rank": 3,
+        "vehicle": "Mahindra BE 6",
+        "score": 79
+      }
+    ],
+    "premium": [
+      {
+        "rank": 1,
+        "vehicle": "BYD Atto 3",
+        "score": 72
+      },
+      {
+        "rank": 2,
+        "vehicle": "Tata Curvv EV",
+        "score": 71
+      },
+      {
+        "rank": 3,
+        "vehicle": "Mahindra XEV 9e",
+        "score": 70
+      }
+    ],
+    "budget": [
+      {
+        "rank": 1,
+        "vehicle": "Tata Punch EV",
+        "score": 80
+      },
+      {
+        "rank": 2,
+        "vehicle": "Tata Curvv EV",
+        "score": 79
+      },
+      {
+        "rank": 3,
+        "vehicle": "MG Windsor EV",
+        "score": 78
+      }
+    ]
+  },
+  "results": [
+    {
+      "vehicle": "Tata Nexon EV",
+      "familySlug": "tata-nexon-ev",
+      "overallScore": 53,
+      "grade": "C",
+      "breakdownDimensions": 11,
+      "breakdown": {
+        "range": 79,
+        "charging": 33,
+        "performance": 23,
+        "feature": 38,
+        "safety": 74,
+        "value": 65,
+        "family": 58,
+        "city": 33,
+        "highway": 49,
+        "premium": 35,
+        "budget": 76
+      },
+      "recommendedVariant": "Empowered+ A 45",
+      "bestValueVariant": "Empowered+ A 45",
+      "longestRangeVariant": "Creative 45",
+      "fastestChargingVariant": "Creative 45",
+      "strengths": [
+        "Range"
+      ],
+      "weaknesses": [
+        "Charging",
+        "Performance",
+        "Features",
+        "City usability",
+        "Highway usability"
+      ],
+      "hasData": true
+    },
+    {
+      "vehicle": "Tata Punch EV",
+      "familySlug": "tata-punch-ev",
+      "overallScore": 56,
+      "grade": "C",
+      "breakdownDimensions": 11,
+      "breakdown": {
+        "range": 75,
+        "charging": 50,
+        "performance": 12,
+        "feature": 38,
+        "safety": 74,
+        "value": 69,
+        "family": 58,
+        "city": 50,
+        "highway": 51,
+        "premium": 31,
+        "budget": 80
+      },
+      "recommendedVariant": "Empowered",
+      "bestValueVariant": "Empowered",
+      "longestRangeVariant": "Smart+ 40 kWh",
+      "fastestChargingVariant": "Smart",
+      "strengths": [
+        "budget"
+      ],
+      "weaknesses": [
+        "Charging",
+        "Performance",
+        "Features",
+        "City usability",
+        "Highway usability"
+      ],
+      "hasData": true
+    },
+    {
+      "vehicle": "Tata Curvv EV",
+      "familySlug": "tata-curvv-ev",
+      "overallScore": 81,
+      "grade": "A",
+      "breakdownDimensions": 10,
+      "breakdown": {
+        "range": 86,
+        "charging": 58,
+        "performance": null,
+        "feature": 100,
+        "safety": 86,
+        "value": 80,
+        "family": 92,
+        "city": 78,
+        "highway": 73,
+        "premium": 71,
+        "budget": 79
+      },
+      "recommendedVariant": "Empowered 55",
+      "bestValueVariant": "Empowered 55",
+      "longestRangeVariant": "Empowered 55",
+      "fastestChargingVariant": "Creative 45",
+      "strengths": [
+        "Range",
+        "Features",
+        "Safety",
+        "Value",
+        "Family suitability",
+        "City usability"
+      ],
+      "weaknesses": [
+        "Charging"
+      ],
+      "hasData": true
+    },
+    {
+      "vehicle": "Mahindra BE 6",
+      "familySlug": "mahindra-be-6",
+      "overallScore": 79,
+      "grade": "B+",
+      "breakdownDimensions": 10,
+      "breakdown": {
+        "range": 92,
+        "charging": 51,
+        "performance": null,
+        "feature": 100,
+        "safety": 75,
+        "value": 79,
+        "family": 86,
+        "city": 74,
+        "highway": 73,
+        "premium": 68,
+        "budget": 77
+      },
+      "recommendedVariant": "Pack Three 79",
+      "bestValueVariant": "Pack Three 79",
+      "longestRangeVariant": "Pack Three 79",
+      "fastestChargingVariant": "Pack One 59",
+      "strengths": [
+        "Range",
+        "Features",
+        "Value",
+        "Family suitability"
+      ],
+      "weaknesses": [
+        "Charging"
+      ],
+      "hasData": true
+    },
+    {
+      "vehicle": "Mahindra XEV 9e",
+      "familySlug": "mahindra-xev-9e",
+      "overallScore": 82,
+      "grade": "A",
+      "breakdownDimensions": 10,
+      "breakdown": {
+        "range": 99,
+        "charging": 59,
+        "performance": null,
+        "feature": 100,
+        "safety": 75,
+        "value": 81,
+        "family": 86,
+        "city": 76,
+        "highway": 80,
+        "premium": 70,
+        "budget": 76
+      },
+      "recommendedVariant": "Pack One 79",
+      "bestValueVariant": "Pack One 79",
+      "longestRangeVariant": "Pack One 79",
+      "fastestChargingVariant": "Pack One 79",
+      "strengths": [
+        "Range",
+        "Features",
+        "Value",
+        "Family suitability",
+        "Highway usability"
+      ],
+      "weaknesses": [
+        "Charging"
+      ],
+      "hasData": true
+    },
+    {
+      "vehicle": "MG Windsor EV",
+      "familySlug": "mg-windsor-ev",
+      "overallScore": 52,
+      "grade": "C",
+      "breakdownDimensions": 10,
+      "breakdown": {
+        "range": 58,
+        "charging": 12,
+        "performance": null,
+        "feature": 74,
+        "safety": 52,
+        "value": 65,
+        "family": 62,
+        "city": 53,
+        "highway": 37,
+        "premium": 45,
+        "budget": 78
+      },
+      "recommendedVariant": "Excite",
+      "bestValueVariant": "Excite",
+      "longestRangeVariant": "Excite",
+      "fastestChargingVariant": "Excite",
+      "strengths": [
+        "budget"
+      ],
+      "weaknesses": [
+        "Charging",
+        "Safety",
+        "City usability",
+        "Highway usability"
+      ],
+      "hasData": true
+    },
+    {
+      "vehicle": "Hyundai Creta Electric",
+      "familySlug": "hyundai-creta-electric",
+      "overallScore": 73,
+      "grade": "B+",
+      "breakdownDimensions": 10,
+      "breakdown": {
+        "range": 74,
+        "charging": 51,
+        "performance": null,
+        "feature": 92,
+        "safety": 75,
+        "value": 74,
+        "family": 83,
+        "city": 74,
+        "highway": 63,
+        "premium": 64,
+        "budget": 75
+      },
+      "recommendedVariant": "Signature",
+      "bestValueVariant": "Executive",
+      "longestRangeVariant": "Signature",
+      "fastestChargingVariant": "Executive",
+      "strengths": [
+        "Features",
+        "Family suitability"
+      ],
+      "weaknesses": [
+        "Charging"
+      ],
+      "hasData": true
+    },
+    {
+      "vehicle": "BYD Atto 3",
+      "familySlug": "byd-atto-3",
+      "overallScore": 74,
+      "grade": "B+",
+      "breakdownDimensions": 10,
+      "breakdown": {
+        "range": 87,
+        "charging": 41,
+        "performance": null,
+        "feature": 100,
+        "safety": 75,
+        "value": 72,
+        "family": 86,
+        "city": 69,
+        "highway": 66,
+        "premium": 72,
+        "budget": 68
+      },
+      "recommendedVariant": "Dynamic",
+      "bestValueVariant": "Dynamic",
+      "longestRangeVariant": "Dynamic",
+      "fastestChargingVariant": "Dynamic",
+      "strengths": [
+        "Range",
+        "Features",
+        "Family suitability"
+      ],
+      "weaknesses": [
+        "Charging"
+      ],
+      "hasData": true
+    },
+    {
+      "vehicle": "MG ZS EV",
+      "familySlug": "mg-zs-ev",
+      "overallScore": 64,
+      "grade": "B",
+      "breakdownDimensions": 11,
+      "breakdown": {
+        "range": 76,
+        "charging": 33,
+        "performance": 36,
+        "feature": 80,
+        "safety": 86,
+        "value": 68,
+        "family": 83,
+        "city": 59,
+        "highway": 51,
+        "premium": 56,
+        "budget": 71
+      },
+      "recommendedVariant": "Exclusive",
+      "bestValueVariant": "Excite",
+      "longestRangeVariant": "Excite",
+      "fastestChargingVariant": "Excite",
+      "strengths": [
+        "Features",
+        "Safety",
+        "Family suitability"
+      ],
+      "weaknesses": [
+        "Charging",
+        "Performance",
+        "Highway usability"
+      ],
+      "hasData": true
+    },
+    {
+      "vehicle": "Citroen eC3",
+      "familySlug": "citroen-ec3",
+      "overallScore": 34,
+      "grade": "C",
+      "breakdownDimensions": 11,
+      "breakdown": {
+        "range": 53,
+        "charging": 11,
+        "performance": 7,
+        "feature": 38,
+        "safety": 16,
+        "value": 55,
+        "family": 26,
+        "city": 57,
+        "highway": 27,
+        "premium": 19,
+        "budget": 71
+      },
+      "recommendedVariant": "Live",
+      "bestValueVariant": "Live",
+      "longestRangeVariant": "Live",
+      "fastestChargingVariant": "Live",
+      "strengths": [
+        "budget"
+      ],
+      "weaknesses": [
+        "Range",
+        "Charging",
+        "Performance",
+        "Features",
+        "Safety",
+        "Value",
+        "Family suitability",
+        "Highway usability"
+      ],
+      "hasData": true
+    }
+  ]
+}

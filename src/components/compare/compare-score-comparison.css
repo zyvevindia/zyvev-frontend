@@ -1,0 +1,50 @@
+.compare-score-comparison {
+  margin: 1.5rem 0;
+}
+
+.compare-score-comparison__title {
+  font-size: 1.15rem;
+  margin: 0 0 0.75rem;
+}
+
+.compare-score-comparison__table-wrap {
+  overflow-x: auto;
+}
+
+.compare-score-comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.compare-score-comparison__table th,
+.compare-score-comparison__table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.compare-score-comparison__table thead th {
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.compare-score-comparison__overall-row th,
+.compare-score-comparison__overall-row td {
+  font-weight: 600;
+}
+
+.compare-score-comparison__grade {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.compare-score-comparison__best {
+  font-weight: 600;
+  color: #2e7d32;
+}

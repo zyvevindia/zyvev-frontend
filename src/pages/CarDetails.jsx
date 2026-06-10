@@ -1,6 +1,7 @@
 import {
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -81,6 +82,7 @@ import {
 import DetailDealerAssistance from "../components/car/DetailDealerAssistance";
 import DetailKeySpecifications from "../components/car/DetailKeySpecifications";
 import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
+import { scoreVehicle } from "../scoring/index.js";
 
 import {
   applyFamilyMediaFallback,
@@ -836,6 +838,26 @@ export default function CarDetails() {
     selectedVariant ||
     vehicle;
 
+  const evSavariScores = useMemo(() => {
+    if (!vehicle) return null;
+    const scoringSource = isFamilyOverviewMode
+      ? {
+          ...vehicle,
+          variants: comparableVariants,
+          maxRange: familyMetrics?.rangeLabel,
+        }
+      : intelligenceCar || vehicle;
+    return scoreVehicle(scoringSource, {
+      variants: comparableVariants.length ? comparableVariants : undefined,
+    });
+  }, [
+    vehicle,
+    intelligenceCar,
+    isFamilyOverviewMode,
+    comparableVariants,
+    familyMetrics?.rangeLabel,
+  ]);
+
   const features =
     Array.isArray(vehicle.features)
 
@@ -1070,6 +1092,7 @@ export default function CarDetails() {
               catalogSource={vehicle.catalogSource}
               vehicle={intelligenceCar}
               familyOverviewMode={isFamilyOverviewMode}
+              evSavariScores={evSavariScores}
             />
             <TrustDataStrip car={vehicle} variant="detail" />
             {vehicle ? (

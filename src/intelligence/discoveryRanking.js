@@ -1,17 +1,24 @@
 import { filterEnrichedFamilies } from "./filterMatcher.js";
 import { familyToListingCard } from "../utils/modelFamily.js";
 
+function subScore(family, legacyKey, v1Key) {
+  const v1 = family.evSavariScores?.breakdown?.[v1Key]?.score;
+  if (v1 != null) return v1;
+  return family.evScores?.subScores?.[legacyKey] ?? 0;
+}
+
 const SORT_KEY_MAP = {
-  cityUsability: (f) => f.evScores?.subScores?.cityUsability ?? 0,
-  highwayUsability: (f) => f.evScores?.subScores?.highwayUsability ?? 0,
-  chargingConvenience: (f) =>
-    f.evScores?.subScores?.chargingConvenience ?? 0,
-  ownershipAffordability: (f) =>
-    f.evScores?.subScores?.ownershipAffordability ?? 0,
-  technologyFeatures: (f) =>
-    f.evScores?.subScores?.technologyFeatures ?? 0,
-  practicality: (f) => f.evScores?.subScores?.practicality ?? 0,
-  composite: (f) => f.evScores?.composite ?? 0,
+  cityUsability: (f) => subScore(f, "cityUsability", "city"),
+  highwayUsability: (f) => subScore(f, "highwayUsability", "highway"),
+  chargingConvenience: (f) => subScore(f, "chargingConvenience", "charging"),
+  ownershipAffordability: (f) => subScore(f, "ownershipAffordability", "value"),
+  technologyFeatures: (f) => subScore(f, "technologyFeatures", "feature"),
+  practicality: (f) => subScore(f, "practicality", "family"),
+  range: (f) => subScore(f, "range", "range"),
+  safety: (f) => subScore(f, "safety", "safety"),
+  performance: (f) => subScore(f, "performance", "performance"),
+  composite: (f) =>
+    f.evSavariScores?.overall?.score ?? f.evScores?.composite ?? 0,
   priceLow: (f) => -(f.startingPrice || 0),
 };
 
@@ -32,7 +39,9 @@ export function rankFamiliesForPreset(families, preset) {
       family,
       card: familyToListingCard(family),
       sortScore: sortFn(family),
-      score: family.evScores?.composite,
+      score:
+        family.evSavariScores?.overall?.score ?? family.evScores?.composite,
+      grade: family.evSavariScores?.overall?.grade ?? family.evScores?.grade,
       reason: buildRankReason(family, preset),
     }))
     .sort((a, b) => b.sortScore - a.sortScore);
@@ -42,18 +51,27 @@ export function rankFamiliesForPreset(families, preset) {
 
 function buildRankReason(family, preset) {
   const sub = family.evScores?.subScores || {};
+  const v1 = family.evSavariScores?.breakdown || {};
   const sort = preset.sortBy;
-  if (sort === "cityUsability" && sub.cityUsability != null) {
-    return `City usability score ${sub.cityUsability}/100`;
+  if (sort === "cityUsability") {
+    const s = v1.city?.score ?? sub.cityUsability;
+    if (s != null) return `City usability score ${s}/100`;
   }
-  if (sort === "chargingConvenience" && sub.chargingConvenience != null) {
-    return `Charging convenience ${sub.chargingConvenience}/100`;
+  if (sort === "chargingConvenience") {
+    const s = v1.charging?.score ?? sub.chargingConvenience;
+    if (s != null) return `Charging score ${s}/100`;
   }
-  if (sort === "ownershipAffordability" && sub.ownershipAffordability != null) {
-    return `Ownership affordability ${sub.ownershipAffordability}/100`;
+  if (sort === "ownershipAffordability") {
+    const s = v1.value?.score ?? sub.ownershipAffordability;
+    if (s != null) return `Value score ${s}/100`;
   }
-  if (family.evScores?.composite != null) {
-    return `EVSavari composite ${family.evScores.composite}/100`;
+  const composite =
+    family.evSavariScores?.overall?.score ?? family.evScores?.composite;
+  if (composite != null) {
+    const grade = family.evSavariScores?.overall?.grade;
+    return grade
+      ? `EVSavari score ${composite}/100 (${grade})`
+      : `EVSavari composite ${composite}/100`;
   }
   return "Ranked by EVSavari intelligence signals";
 }

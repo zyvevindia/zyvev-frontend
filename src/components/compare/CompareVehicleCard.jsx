@@ -33,6 +33,7 @@ function coerceDisplayString(value) {
 
 function resolveEvsavariScore(car) {
   const composite =
+    car?.evSavariScores?.overall?.score ??
     car?.evScores?.composite ??
     car?.evIntelligence?.scores?.composite ??
     null;
@@ -44,6 +45,14 @@ function resolveEvsavariScore(car) {
     return Math.round(Number(catalog));
   }
   return null;
+}
+
+function resolveEvsavariGrade(car) {
+  return (
+    car?.evSavariScores?.overall?.grade ??
+    car?.evScores?.grade ??
+    null
+  );
 }
 
 function resolveStrengthLabel(meta) {
@@ -147,6 +156,7 @@ export default function CompareVehicleCard({
     car?.specifications?.batteryPack || car?.battery
   ) || "EV Battery";
   const score = car ? resolveEvsavariScore(car) : null;
+  const grade = car ? resolveEvsavariGrade(car) : null;
   const strength = resolveStrengthLabel(meta);
   const tradeoff = resolveTradeoffLabel(meta);
   const betterAtPills = car
@@ -253,6 +263,9 @@ export default function CompareVehicleCard({
           {score != null ? (
             <div className="compare-vehicle-card__score-col">
               <CompareScoreInsight car={car} />
+              {grade ? (
+                <span className="compare-vehicle-card__grade">{grade}</span>
+              ) : null}
               <ScoreCircle
                 score={score}
                 size={120}

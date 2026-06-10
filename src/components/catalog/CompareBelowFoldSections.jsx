@@ -5,6 +5,7 @@
 import CompareAdvantageSummary from "./CompareAdvantageSummary";
 import CompareTrustSummary from "./CompareTrustSummary";
 import CompareScenarioPanel from "./CompareScenarioPanel";
+import CompareScoreComparison from "../compare/CompareScoreComparison";
 
 export default function CompareBelowFoldSections({
   cars,
@@ -14,7 +15,10 @@ export default function CompareBelowFoldSections({
   return (
     <>
       {!guideMode ? (
-        <CompareAdvantageSummary cars={intelligentCars} />
+        <>
+          <CompareAdvantageSummary cars={intelligentCars} />
+          <CompareScoreComparison cars={intelligentCars} />
+        </>
       ) : null}
       <CompareTrustSummary cars={intelligentCars} />
       {!guideMode ? (

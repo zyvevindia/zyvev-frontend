@@ -1,5 +1,6 @@
 import CatalogTrustBadge from "../catalog/CatalogTrustBadge";
 import ScoreCircle from "../common/ScoreCircle";
+import EvSavariScorePanel from "../scoring/EvSavariScorePanel";
 import { formatPsychologyTag } from "../../utils/catalogExperience";
 import {
   buildRangeConfidence,
@@ -96,15 +97,20 @@ export default function DetailOverviewDashboard({
   catalogSource,
   vehicle = null,
   familyOverviewMode = false,
+  evSavariScores = null,
 }) {
   const meta = catalogMeta;
+  const v1Scores = evSavariScores || vehicle?.evSavariScores || null;
   const rangeIntel =
     !familyOverviewMode && vehicle
       ? buildRangeConfidence(vehicle)
       : null;
   const categoryScores = buildCategoryScores(meta);
-  const headlineScore = getHeadlineScore(meta, categoryScores);
-  const scoreBlurb = getScoreBlurb(meta, headlineScore);
+  const headlineScore =
+    v1Scores?.overall?.score ??
+    getHeadlineScore(meta, categoryScores);
+  const scoreBlurb =
+    v1Scores?.explanation?.summary ?? getScoreBlurb(meta, headlineScore);
   const fitTags = meta?.psychologyTags || [];
   const pros = meta?.pros || [];
   const cons = meta?.cons || [];
@@ -140,39 +146,45 @@ export default function DetailOverviewDashboard({
         )}
       </header>
 
-      {headlineScore != null && (
-        <div className="cd-overview-dashboard__score-panel">
-          <div className="cd-overview-dashboard__score-main">
-            <ScoreCircle
-              score={headlineScore}
-              className="cd-overview-dashboard__gauge"
-              valueClassName="cd-overview-dashboard__gauge-value"
-              suffixClassName="cd-overview-dashboard__gauge-suffix"
-            />
-            <div className="cd-overview-dashboard__score-copy">
-              <p className="cd-overview-dashboard__score-label">
-                EVSavari score
-              </p>
-              {scoreBlurb ? (
-                <p className="cd-overview-dashboard__score-blurb">
-                  {scoreBlurb}
+      {(headlineScore != null || v1Scores?.hasData) &&
+        (v1Scores?.hasData ? (
+          <EvSavariScorePanel
+            scores={v1Scores}
+            showVariants={!familyOverviewMode}
+          />
+        ) : (
+          <div className="cd-overview-dashboard__score-panel">
+            <div className="cd-overview-dashboard__score-main">
+              <ScoreCircle
+                score={headlineScore}
+                className="cd-overview-dashboard__gauge"
+                valueClassName="cd-overview-dashboard__gauge-value"
+                suffixClassName="cd-overview-dashboard__gauge-suffix"
+              />
+              <div className="cd-overview-dashboard__score-copy">
+                <p className="cd-overview-dashboard__score-label">
+                  EVSavari score
                 </p>
-              ) : null}
+                {scoreBlurb ? (
+                  <p className="cd-overview-dashboard__score-blurb">
+                    {scoreBlurb}
+                  </p>
+                ) : null}
+              </div>
             </div>
+            {categoryScores.length > 0 && (
+              <div className="cd-overview-dashboard__score-bars">
+                {categoryScores.map((row) => (
+                  <ScoreBar
+                    key={row.label}
+                    label={row.label}
+                    value={row.value}
+                  />
+                ))}
+              </div>
+            )}
           </div>
-          {categoryScores.length > 0 && (
-            <div className="cd-overview-dashboard__score-bars">
-              {categoryScores.map((row) => (
-                <ScoreBar
-                  key={row.label}
-                  label={row.label}
-                  value={row.value}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+        ))}
 
       <div className="cd-overview-dashboard__grid">
         {features.length > 0 && (

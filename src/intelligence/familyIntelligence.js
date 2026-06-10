@@ -1,5 +1,6 @@
 import { buildVehicleIntelligence } from "./buildVehicleIntelligence.js";
 import { buildEvsavariScores } from "./scoringEngine.js";
+import { scoreVehicle, toLegacyEvScores } from "../scoring/index.js";
 import { parseKwhFromText } from "./governance.js";
 import {
   classifyRangeCategory,
@@ -41,10 +42,26 @@ export function enrichFamilyWithIntelligence(family) {
   const bundle = buildVehicleIntelligence(vehicle);
   let evIntelligence = null;
   let evScores = null;
+  let evSavariScores = null;
+
+  const scoringVehicle = {
+    ...vehicle,
+    variants: family.variants || vehicle.variants,
+  };
+  evSavariScores = scoreVehicle(scoringVehicle, {
+    variants: family.variants,
+  });
+  const v1Legacy = toLegacyEvScores(evSavariScores);
+
   if (bundle) {
     const { scores, ...rest } = bundle;
     evIntelligence = rest;
-    evScores = scores || buildEvsavariScores(vehicle, rest);
+    evScores =
+      v1Legacy ||
+      scores ||
+      buildEvsavariScores(vehicle, rest);
+  } else if (v1Legacy) {
+    evScores = v1Legacy;
   }
 
   const batteryKwh = parseKwhFromText(
@@ -73,6 +90,7 @@ export function enrichFamilyWithIntelligence(family) {
     ...family,
     evIntelligence,
     evScores,
+    evSavariScores,
     taxonomyTags,
   };
 }
