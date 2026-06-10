@@ -13,6 +13,40 @@
   margin-bottom: 1rem;
 }
 
+.ev-score-panel__header--with-toggle {
+  margin-bottom: 0.75rem;
+}
+
+.ev-score-panel__toggle {
+  display: block;
+  width: 100%;
+  margin: 0 0 0.25rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border-subtle, rgba(0, 0, 0, 0.1));
+  border-radius: 10px;
+  background: var(--surface-muted, #f8fafc);
+  color: var(--text-primary, #0f172a);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.ev-score-panel__toggle:hover {
+  background: var(--surface-hover, #f1f5f9);
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+.ev-score-panel__toggle:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.ev-score-panel__details {
+  margin-top: 0.75rem;
+}
+
 .ev-score-panel__title {
   font-weight: 600;
   font-size: 1rem;

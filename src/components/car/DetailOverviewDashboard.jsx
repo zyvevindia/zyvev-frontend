@@ -151,6 +151,7 @@ export default function DetailOverviewDashboard({
           <EvSavariScorePanel
             scores={v1Scores}
             showVariants={!familyOverviewMode}
+            collapsibleBreakdown
           />
         ) : (
           <div className="cd-overview-dashboard__score-panel">

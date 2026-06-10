@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import ScoreCircle from "../common/ScoreCircle";
 import { DIMENSION_LABELS } from "../../scoring/scoreExplanations";
 import "./ev-savari-score-panel.css";
@@ -37,7 +39,10 @@ export default function EvSavariScorePanel({
   scores,
   compact = false,
   showVariants = true,
+  collapsibleBreakdown = false,
 }) {
+  const [breakdownExpanded, setBreakdownExpanded] = useState(false);
+
   if (!scores?.hasData && scores?.overall?.score == null) return null;
 
   const overall = scores.overall?.score;
@@ -53,9 +58,25 @@ export default function EvSavariScorePanel({
     explanation: compact ? null : breakdown[key]?.explanation,
   })).filter((row) => row.value != null);
 
+  const hasInsights =
+    !compact &&
+    (explanation.strengths?.length > 0 || explanation.weaknesses?.length > 0);
+  const hasVariants = showVariants && variants.hasData;
+  const hasCollapsibleContent =
+    bars.length > 0 || hasInsights || hasVariants;
+  const showBreakdownDetails =
+    !collapsibleBreakdown ||
+    (collapsibleBreakdown && breakdownExpanded);
+
   return (
     <div className={`ev-score-panel${compact ? " ev-score-panel--compact" : ""}`}>
-      <div className="ev-score-panel__header">
+      <div
+        className={`ev-score-panel__header${
+          collapsibleBreakdown && hasCollapsibleContent
+            ? " ev-score-panel__header--with-toggle"
+            : ""
+        }`}
+      >
         {overall != null && (
           <ScoreCircle
             score={overall}
@@ -77,6 +98,22 @@ export default function EvSavariScorePanel({
         </div>
       </div>
 
+      {collapsibleBreakdown && hasCollapsibleContent && (
+        <button
+          type="button"
+          className="ev-score-panel__toggle"
+          aria-expanded={breakdownExpanded}
+          aria-controls="ev-score-panel-breakdown"
+          onClick={() => setBreakdownExpanded((open) => !open)}
+        >
+          {breakdownExpanded
+            ? "▲ Hide score breakdown"
+            : "▼ Show score breakdown"}
+        </button>
+      )}
+
+      {showBreakdownDetails && hasCollapsibleContent && (
+        <div id="ev-score-panel-breakdown" className="ev-score-panel__details">
       {bars.length > 0 && (
         <div className="ev-score-panel__breakdown">
           {bars.map((row) => (
@@ -90,7 +127,7 @@ export default function EvSavariScorePanel({
         </div>
       )}
 
-      {!compact && (explanation.strengths?.length > 0 || explanation.weaknesses?.length > 0) && (
+      {hasInsights && (
         <div className="ev-score-panel__insights">
           {explanation.strengths?.length > 0 && (
             <div className="ev-score-panel__insight">
@@ -115,7 +152,7 @@ export default function EvSavariScorePanel({
         </div>
       )}
 
-      {showVariants && variants.hasData && (
+      {hasVariants && (
         <div className="ev-score-panel__variants">
           <h4>Variant recommendations</h4>
           <ul className="ev-score-panel__variant-list">
@@ -150,6 +187,8 @@ export default function EvSavariScorePanel({
               </li>
             ) : null}
           </ul>
+        </div>
+      )}
         </div>
       )}
     </div>
