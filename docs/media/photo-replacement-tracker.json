@@ -1,0 +1,1583 @@
+{
+  "version": "photo-replacement-v1",
+  "generatedAt": "2026-06-10T18:21:43.603Z",
+  "purpose": "Track replacement of generated/placeholder local car photos with production photography",
+  "imageTypes": [
+    "listing",
+    "compare",
+    "front",
+    "rear",
+    "side",
+    "interior",
+    "dashboard"
+  ],
+  "statusLegend": {
+    "placeholder": "Generated or seed asset — awaiting real photo replacement",
+    "in_progress": "Shoot/edit in progress",
+    "replaced": "Production photo uploaded to public/images/cars/",
+    "approved": "Ops-approved for buyer-facing use"
+  },
+  "vehicles": [
+    {
+      "slug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/hyundai-kona-electric/listing.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/hyundai-kona-electric/compare.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/hyundai-kona-electric/front.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/hyundai-kona-electric/rear.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/hyundai-kona-electric/side.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/hyundai-kona-electric/interior.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/hyundai-kona-electric/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — Hyundai Kona Electric OS PE EV Galactic Gray (3).jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/mahindra-xev-9e/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Mahindra XEV 9E.jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/mahindra-xev-9e/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 119.jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/mahindra-xev-9e/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Mahindra XEV 9E.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/mahindra-xev-9e/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 105.jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/mahindra-xev-9e/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 101.jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/mahindra-xev-9e/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 15.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/mahindra-xev-9e/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 81.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/mahindra-xuv400/listing.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/mahindra-xuv400/compare.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/mahindra-xuv400/front.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/mahindra-xuv400/rear.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/mahindra-xuv400/side.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/mahindra-xuv400/interior.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/mahindra-xuv400/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 136.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/mahindra-be-6/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Mahindra BE6 pic 1.jpg (CC0 1.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/mahindra-be-6/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Mahindra BE6 pic 2.jpg (CC0 1.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/mahindra-be-6/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Mahindra BE6 pic 1.jpg (CC0 1.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/mahindra-be-6/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Mahindra BE6 pic 2.jpg (CC0 1.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/mahindra-be-6/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Mahindra BE 6 Batman Edition.jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/mahindra-be-6/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 136.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/mahindra-be-6/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 136.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/tata-nexon-ev/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2020 Tata Nexon EV (India) front view.png (CC BY 3.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/tata-nexon-ev/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Tata Nexon EV in Hyderabad 02.jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/tata-nexon-ev/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2020 Tata Nexon EV (India) front view.png (CC BY 3.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/tata-nexon-ev/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Tata Nexon EV in Hyderabad 01.jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/tata-nexon-ev/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Tata Nexon EV in Hyderabad 02.jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/tata-nexon-ev/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/tata-nexon-ev/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/tata-curvv-ev/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2025 Tata Curvv Creative+ S Petrol (India) front view.png (CC BY 3.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/tata-curvv-ev/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2025 Tata Curvv Creative+ S Petrol (India) rear view.png (CC BY 3.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/tata-curvv-ev/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2025 Tata Curvv Creative+ S Petrol (India) front view.png (CC BY 3.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/tata-curvv-ev/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2025 Tata Curvv Creative+ S Petrol (India) rear view.png (CC BY 3.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/tata-curvv-ev/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2025 Tata Curvv Creative+ S Petrol (India) front view.png (CC BY 3.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/tata-curvv-ev/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/tata-curvv-ev/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/tata-punch-ev/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 4th International Auto Show, Bangalore (2025) 107.jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/tata-punch-ev/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Tata punch.ev.jpg (CC0 1.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/tata-punch-ev/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 4th International Auto Show, Bangalore (2025) 107.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/tata-punch-ev/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Tata punch.ev.jpg (CC0 1.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/tata-punch-ev/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — Tata punch.ev.jpg (CC0 1.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/tata-punch-ev/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/tata-punch-ev/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/tata-tiago-ev/listing.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/tata-tiago-ev/compare.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/tata-tiago-ev/front.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/tata-tiago-ev/rear.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/tata-tiago-ev/side.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/tata-tiago-ev/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/tata-tiago-ev/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/tata-tigor-ev/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — TATA Electric car on road with number plate.jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/tata-tigor-ev/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — TATA Tigor at Shillong Peak View (cropped).jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/tata-tigor-ev/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — TATA Electric car on road with number plate.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/tata-tigor-ev/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — TATA Tigor at Shillong Peak View.jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/tata-tigor-ev/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — TATA Tigor at Shillong Peak View (cropped).jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/tata-tigor-ev/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/tata-tigor-ev/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/tata-harrier-ev/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 4th International Auto Show, Bangalore (2025) 110.jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/tata-harrier-ev/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 4th International Auto Show, Bangalore (2025) 110.jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/tata-harrier-ev/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 4th International Auto Show, Bangalore (2025) 110.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/tata-harrier-ev/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 4th International Auto Show, Bangalore (2025) 110.jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/tata-harrier-ev/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 4th International Auto Show, Bangalore (2025) 110.jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/tata-harrier-ev/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/tata-harrier-ev/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 4th International Auto Show, Bangalore (2025) 215.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/mg-comet-ev/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 2023 MG Comet EV Plush (India).png (CC BY 3.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/mg-comet-ev/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — MG Comet EV side view.jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/mg-comet-ev/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 2023 MG Comet EV Plush (India).png (CC BY 3.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/mg-comet-ev/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — MG Comet EV Rear view.jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/mg-comet-ev/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — MG Comet EV side view.jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/mg-comet-ev/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — MG Comet EV Inside.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/mg-comet-ev/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — MG Comet EV Plush Interior.png (CC BY 3.0)"
+        }
+      }
+    },
+    {
+      "slug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/mg-zs-ev/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — MG ZS EV Facelift 1X7A5867.jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/mg-zs-ev/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — MG ZS EV IMG 5520.jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/mg-zs-ev/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — 2023 MG ZS EV AZS1 Essence front.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/mg-zs-ev/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — 2023 MG ZS EV AZS1 Essence rear.jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/mg-zs-ev/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — MG ZS EV in France (side).jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/mg-zs-ev/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — 2021 MG ZS EV (Indonesia) interior.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/mg-zs-ev/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — 2021 MG ZS EV (Indonesia) interior.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/mg-windsor-ev/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 01.jpg (CC0 1.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/mg-windsor-ev/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 02.jpg (CC0 1.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/mg-windsor-ev/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 01.jpg (CC0 1.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/mg-windsor-ev/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2024 Wuling Cloud EV rear view.jpg (CC0 1.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/mg-windsor-ev/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 02.jpg (CC0 1.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/mg-windsor-ev/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2024 Wuling Cloud EV Interior.jpg (CC0 1.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/mg-windsor-ev/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:40:28.220Z",
+          "notes": "Batch 1 — 2024 Wuling Cloud EV Interior.jpg (CC0 1.0)"
+        }
+      }
+    },
+    {
+      "slug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/hyundai-creta-electric/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Hyundai Creta Electric SU2 EV PE.jpg (CC BY 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/hyundai-creta-electric/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Hyundai Creta Electric SU2 EV PE (2).jpg (CC BY 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/hyundai-creta-electric/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Hyundai Creta Electric SU2 EV PE (1).jpg (CC BY 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/hyundai-creta-electric/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Hyundai Creta Electric SU2 EV PE (4).jpg (CC BY 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/hyundai-creta-electric/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Hyundai Creta Electric SU2 EV PE (cropped).jpg (CC BY 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/hyundai-creta-electric/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 2022 Hyundai Creta (SU2) 1.5AT grey interior view in Brunei.jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/hyundai-creta-electric/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 2022 Hyundai Creta (SU2) 1.5AT grey interior view in Brunei.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/hyundai-ioniq-5/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Hyundai Ioniq 5 NE Cyber Gray Metallic Test (2).jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/hyundai-ioniq-5/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Hyundai IONIQ 5 N Line NE PE Ecotronic Gray Pearl (5).jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/hyundai-ioniq-5/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Hyundai Ioniq 5 NE Phantom Black Pearl (1).jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/hyundai-ioniq-5/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — 2022 Hyundai Ioniq 5 SEL AWD in Shooting Star, rear left.jpg (CC BY-SA 3.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/hyundai-ioniq-5/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Hyundai IONIQ 5 Long Range Prestige NE Shootingstar Gray Matte (3).jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/hyundai-ioniq-5/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Hyundai IONIQ 5 Prestige NE1 PE Black Onetone (2).jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/hyundai-ioniq-5/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Hyundai IONIQ 5 Prestige NE1 PE Black Onetone (2).jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/maruti-e-vitara/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Suzuki e Vitara, Auto 2025, Zurich (20251029-P1074143).jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/maruti-e-vitara/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Suzuki e Vitara, Auto 2025, Zurich (20251029-P1074145).jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/maruti-e-vitara/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — 2025 Suzuki e Vitara front view.jpg (CC BY 3.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/maruti-e-vitara/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — The rearview of Suzuki e VITARA X (ZAA-PA2AS-TBXA-Z).jpg (CC0 1.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/maruti-e-vitara/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Suzuki e VITARA X (ZAA-PA2AS-TBXA-Z) left.jpg (CC0 1.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/maruti-e-vitara/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Suzuki e VITARA X (ZAA-PA2AS-TBXA-Z) interior.jpg (CC0 1.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/maruti-e-vitara/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:48:21.829Z",
+          "notes": "Batch 2 — Suzuki e VITARA X (ZAA-PA2AS-TBXA-Z) interior.jpg (CC0 1.0)"
+        }
+      }
+    },
+    {
+      "slug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/kia-ev6/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — 2021 Kia EV6 GT-Line S.jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/kia-ev6/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Kia EV6 GT-Line, Auto 2024, Zurich (PANA0804).jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/kia-ev6/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Kia ev6 1gen front.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/kia-ev6/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — 2022 Kia EV6 Air Long Range 2WD (Rear).jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/kia-ev6/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Kia EV6 CV white (2).jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/kia-ev6/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Kia EV6 GT-line CV1 PE Black White (1).jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/kia-ev6/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Kia EV6 GT-line CV1 PE Black White (1).jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/byd-atto-3/listing.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/byd-atto-3/compare.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/byd-atto-3/front.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/byd-atto-3/rear.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/byd-atto-3/side.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/byd-atto-3/interior.webp",
+          "status": "placeholder",
+          "replacedAt": null,
+          "notes": ""
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/byd-atto-3/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:21:15.292Z",
+          "notes": "Batch 5 — BYD Atto 3 Premium interior.jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "byd-seal",
+      "displayName": "BYD Seal",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/byd-seal/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — The frontview of BYD SEAL.jpg (CC0 1.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/byd-seal/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — BYD Seal (2024) (53958342938).jpg (CC BY 2.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/byd-seal/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — The frontview of BYD SEAL.jpg (CC0 1.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/byd-seal/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — The rearview of BYD SEAL.jpg (CC0 1.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/byd-seal/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — BYD Seal EV 03 2023 5802.jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/byd-seal/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — The interior of BYD SEAL.jpg (CC0 1.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/byd-seal/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — The interior of BYD SEAL.jpg (CC0 1.0)"
+        }
+      }
+    },
+    {
+      "slug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/bmw-ix1/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — 2022 BMW iX1.jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/bmw-ix1/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — BMW iX1 xDrive30 (U11) – h 05052024.jpg (CC BY-SA 3.0 DE)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/bmw-ix1/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — 2023-04 BMW iX1 U11 front view.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/bmw-ix1/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — 2023-04 BMW iX1 U11 rear view.jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/bmw-ix1/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — BMW U11 BEV iX1 xDrive30 M Sport Cape York Green Metallic (9).jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/bmw-ix1/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — BMW U11 BEV iX1 xDrive30 M Sport Sensatec Mocha (1).jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/bmw-ix1/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — BMW U11 BEV iX1 xDrive30 M Sport Sensatec Mocha (1).jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/mercedes-eqa/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Mercedes-Benz EQA 250 (H243) front.jpg (CC0 1.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/mercedes-eqa/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Mercedes-Benz EQA 250 (H243, 2022) (52871290034).jpg (CC BY 2.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/mercedes-eqa/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — 2021 Mercedes-Benz EQA 250 AMG Line - 66kWh (190PS) Electric - Mountain Grey - 02-2024, Front.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/mercedes-eqa/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — The rearview of Mercedes-Benz EQA 250 (H243).jpg (CC0 1.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/mercedes-eqa/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — Mercedes-Benz EQA 250 (H243).jpg (CC0 1.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/mercedes-eqa/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — The interior of Mercedes-Benz EQA 250 (H243).jpg (CC0 1.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/mercedes-eqa/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T17:56:10.943Z",
+          "notes": "Batch 3 — The interior of Mercedes-Benz EQA 250 (H243).jpg (CC0 1.0)"
+        }
+      }
+    },
+    {
+      "slug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/mercedes-eqb/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — The frontview of Mercedes-Benz EQB 250 (X243).jpg (CC0 1.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/mercedes-eqb/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2023 Mercedes-Benz EQB 350 4Matic in Mountain Gray Magno, front left.jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/mercedes-eqb/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Mercedes-Benz EQB 250 (X243) front.jpg (CC0 1.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/mercedes-eqb/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — The rearview of Mercedes-Benz EQB 250 (X243).jpg (CC0 1.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/mercedes-eqb/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Mercedes-Benz EQB 250 Progressive (X 243) – h 30062024.jpg (CC BY-SA 3.0 DE)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/mercedes-eqb/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — The interior of Mercedes-Benz EQB 250 (X243).jpg (CC0 1.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/mercedes-eqb/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — The interior of Mercedes-Benz EQB 250 (X243).jpg (CC0 1.0)"
+        }
+      }
+    },
+    {
+      "slug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/volvo-ex40/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Volvo EX40, Auto 2024, Zurich (PANA0853).jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/volvo-ex40/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Volvo EX40 Auto Zuerich 2024 DSC 6718.jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/volvo-ex40/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Volvo EX40 Ultra Twin Motor (ZAA-XE400AXCE2) front.jpg (CC0 1.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/volvo-ex40/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Volvo EX40 Ultra Twin Motor (ZAA-XE400AXCE2) rear.jpg (CC0 1.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/volvo-ex40/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Volvo EX40, Auto 2024, Zurich (PANA0988).jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/volvo-ex40/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Volvo XC40 RECHARGE Ultimate Twin Motor (ZAA-XE400AXCE) interior.jpg (CC0 1.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/volvo-ex40/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Volvo XC40 RECHARGE Ultimate Twin Motor (ZAA-XE400AXCE) interior.jpg (CC0 1.0)"
+        }
+      }
+    },
+    {
+      "slug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/mini-cooper-se/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2022 Mini Cooper SE in White Silver Metallic, front right.jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/mini-cooper-se/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Mini F56 LCI Cooper SE Electric Moonwalk Grey.jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/mini-cooper-se/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2020 Mini Cooper S Electric Level 1 Front.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/mini-cooper-se/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2020 Mini Cooper S Electric Level 1 Rear.jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/mini-cooper-se/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Mini F56 Hatch Cooper SE Electric Moonwalk Grey (4).jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/mini-cooper-se/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Mini F56 LCI Hatch Cooper SE Resolute Edition Black Pearl Light Chequered Cloth Leatherette (5).jpg (CC BY-SA 4.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/mini-cooper-se/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — Mini F56 Hatch Cooper SE Electric MINI Yours Enigmatic Black Metallic (3).jpg (CC BY-SA 4.0)"
+        }
+      }
+    },
+    {
+      "slug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "assets": {
+        "listing": {
+          "imageType": "listing",
+          "filename": "listing.webp",
+          "path": "/images/cars/citroen-ec3/listing.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2023 Citroën ë-C3 (Indonesia) front view.jpg (CC BY-SA 4.0)"
+        },
+        "compare": {
+          "imageType": "compare",
+          "filename": "compare.webp",
+          "path": "/images/cars/citroen-ec3/compare.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2024 Citroen e-C3.jpg (CC BY-SA 4.0)"
+        },
+        "front": {
+          "imageType": "front",
+          "filename": "front.webp",
+          "path": "/images/cars/citroen-ec3/front.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2023 Citroën ë-C3 (Indonesia) front view.jpg (CC BY-SA 4.0)"
+        },
+        "rear": {
+          "imageType": "rear",
+          "filename": "rear.webp",
+          "path": "/images/cars/citroen-ec3/rear.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2023 Citroën ë-C3 (Indonesia) rear view.jpg (CC BY-SA 4.0)"
+        },
+        "side": {
+          "imageType": "side",
+          "filename": "side.webp",
+          "path": "/images/cars/citroen-ec3/side.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2024 Citroen e-C3.jpg (CC BY-SA 4.0)"
+        },
+        "interior": {
+          "imageType": "interior",
+          "filename": "interior.webp",
+          "path": "/images/cars/citroen-ec3/interior.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2022 Citroën C3 Feel Puretech 110 (India) interior.png (CC BY 3.0)"
+        },
+        "dashboard": {
+          "imageType": "dashboard",
+          "filename": "dashboard.webp",
+          "path": "/images/cars/citroen-ec3/dashboard.webp",
+          "status": "replaced",
+          "replacedAt": "2026-06-10T18:12:24.260Z",
+          "notes": "Batch 4 — 2022 Citroën C3 Feel Puretech 110 (India) interior.png (CC BY 3.0)"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "vehicleCount": 25,
+    "imageTypesPerVehicle": 7,
+    "totalSlots": 175,
+    "byStatus": {
+      "placeholder": 23,
+      "in_progress": 0,
+      "replaced": 152,
+      "approved": 0
+    }
+  }
+}

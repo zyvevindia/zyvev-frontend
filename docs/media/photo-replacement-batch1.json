@@ -1,0 +1,2580 @@
+{
+  "version": "photo-replacement-batch1-v1",
+  "generatedAt": "2026-06-10T17:42:01.359Z",
+  "replacedAt": "2026-06-10T17:40:28.220Z",
+  "batch": 1,
+  "slugs": [
+    "tata-nexon-ev",
+    "tata-punch-ev",
+    "tata-curvv-ev",
+    "mg-windsor-ev",
+    "mahindra-be-6"
+  ],
+  "processing": {
+    "targetWidth": 1600,
+    "webpQuality": 82,
+    "fit": "inside"
+  },
+  "summary": {
+    "vehicleCount": 5,
+    "imagesReplaced": 35
+  },
+  "assets": [
+    {
+      "slug": "tata-nexon-ev",
+      "imageType": "listing",
+      "outPath": "public\\images\\cars\\tata-nexon-ev\\listing.webp",
+      "bytes": 158634,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/2020_Tata_Nexon_EV_(India)_front_view.png",
+      "sourceFilename": "2020 Tata Nexon EV (India) front view.png",
+      "license": "CC BY 3.0",
+      "author": "DriveSpark"
+    },
+    {
+      "slug": "tata-nexon-ev",
+      "imageType": "compare",
+      "outPath": "public\\images\\cars\\tata-nexon-ev\\compare.webp",
+      "bytes": 115050,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Tata_Nexon_EV_in_Hyderabad_02.jpg",
+      "sourceFilename": "Tata Nexon EV in Hyderabad 02.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Rajasekhar1961"
+    },
+    {
+      "slug": "tata-nexon-ev",
+      "imageType": "front",
+      "outPath": "public\\images\\cars\\tata-nexon-ev\\front.webp",
+      "bytes": 158634,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/2020_Tata_Nexon_EV_(India)_front_view.png",
+      "sourceFilename": "2020 Tata Nexon EV (India) front view.png",
+      "license": "CC BY 3.0",
+      "author": "DriveSpark"
+    },
+    {
+      "slug": "tata-nexon-ev",
+      "imageType": "rear",
+      "outPath": "public\\images\\cars\\tata-nexon-ev\\rear.webp",
+      "bytes": 65434,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Tata_Nexon_EV_in_Hyderabad_01.jpg",
+      "sourceFilename": "Tata Nexon EV in Hyderabad 01.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Rajasekhar1961"
+    },
+    {
+      "slug": "tata-nexon-ev",
+      "imageType": "side",
+      "outPath": "public\\images\\cars\\tata-nexon-ev\\side.webp",
+      "bytes": 115050,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Tata_Nexon_EV_in_Hyderabad_02.jpg",
+      "sourceFilename": "Tata Nexon EV in Hyderabad 02.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Rajasekhar1961"
+    },
+    {
+      "slug": "tata-nexon-ev",
+      "imageType": "interior",
+      "outPath": "public\\images\\cars\\tata-nexon-ev\\interior.webp",
+      "bytes": 115058,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/4th_International_Auto_Show,_Bangalore_(2025)_215.jpg",
+      "sourceFilename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "tata-nexon-ev",
+      "imageType": "dashboard",
+      "outPath": "public\\images\\cars\\tata-nexon-ev\\dashboard.webp",
+      "bytes": 71068,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/4th_International_Auto_Show,_Bangalore_(2025)_215.jpg",
+      "sourceFilename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "tata-punch-ev",
+      "imageType": "listing",
+      "outPath": "public\\images\\cars\\tata-punch-ev\\listing.webp",
+      "bytes": 177344,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/4th_International_Auto_Show,_Bangalore_(2025)_107.jpg",
+      "sourceFilename": "4th International Auto Show, Bangalore (2025) 107.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "tata-punch-ev",
+      "imageType": "compare",
+      "outPath": "public\\images\\cars\\tata-punch-ev\\compare.webp",
+      "bytes": 242206,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Tata_punch.ev.jpg",
+      "sourceFilename": "Tata punch.ev.jpg",
+      "license": "CC0 1.0",
+      "author": "VideshiBhaktNRI"
+    },
+    {
+      "slug": "tata-punch-ev",
+      "imageType": "front",
+      "outPath": "public\\images\\cars\\tata-punch-ev\\front.webp",
+      "bytes": 177344,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/4th_International_Auto_Show,_Bangalore_(2025)_107.jpg",
+      "sourceFilename": "4th International Auto Show, Bangalore (2025) 107.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "tata-punch-ev",
+      "imageType": "rear",
+      "outPath": "public\\images\\cars\\tata-punch-ev\\rear.webp",
+      "bytes": 242206,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Tata_punch.ev.jpg",
+      "sourceFilename": "Tata punch.ev.jpg",
+      "license": "CC0 1.0",
+      "author": "VideshiBhaktNRI"
+    },
+    {
+      "slug": "tata-punch-ev",
+      "imageType": "side",
+      "outPath": "public\\images\\cars\\tata-punch-ev\\side.webp",
+      "bytes": 242206,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/Tata_punch.ev.jpg",
+      "sourceFilename": "Tata punch.ev.jpg",
+      "license": "CC0 1.0",
+      "author": "VideshiBhaktNRI"
+    },
+    {
+      "slug": "tata-punch-ev",
+      "imageType": "interior",
+      "outPath": "public\\images\\cars\\tata-punch-ev\\interior.webp",
+      "bytes": 115058,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/4th_International_Auto_Show,_Bangalore_(2025)_215.jpg",
+      "sourceFilename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "tata-punch-ev",
+      "imageType": "dashboard",
+      "outPath": "public\\images\\cars\\tata-punch-ev\\dashboard.webp",
+      "bytes": 71068,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/4th_International_Auto_Show,_Bangalore_(2025)_215.jpg",
+      "sourceFilename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "imageType": "listing",
+      "outPath": "public\\images\\cars\\tata-curvv-ev\\listing.webp",
+      "bytes": 118996,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/2025_Tata_Curvv_Creative%2B_S_Petrol_(India)_front_view.png",
+      "sourceFilename": "2025 Tata Curvv Creative+ S Petrol (India) front view.png",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "imageType": "compare",
+      "outPath": "public\\images\\cars\\tata-curvv-ev\\compare.webp",
+      "bytes": 115466,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/2025_Tata_Curvv_Creative%2B_S_Petrol_(India)_rear_view.png",
+      "sourceFilename": "2025 Tata Curvv Creative+ S Petrol (India) rear view.png",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "imageType": "front",
+      "outPath": "public\\images\\cars\\tata-curvv-ev\\front.webp",
+      "bytes": 118996,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/2025_Tata_Curvv_Creative%2B_S_Petrol_(India)_front_view.png",
+      "sourceFilename": "2025 Tata Curvv Creative+ S Petrol (India) front view.png",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "imageType": "rear",
+      "outPath": "public\\images\\cars\\tata-curvv-ev\\rear.webp",
+      "bytes": 115466,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/2025_Tata_Curvv_Creative%2B_S_Petrol_(India)_rear_view.png",
+      "sourceFilename": "2025 Tata Curvv Creative+ S Petrol (India) rear view.png",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "imageType": "side",
+      "outPath": "public\\images\\cars\\tata-curvv-ev\\side.webp",
+      "bytes": 118996,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/2025_Tata_Curvv_Creative%2B_S_Petrol_(India)_front_view.png",
+      "sourceFilename": "2025 Tata Curvv Creative+ S Petrol (India) front view.png",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "imageType": "interior",
+      "outPath": "public\\images\\cars\\tata-curvv-ev\\interior.webp",
+      "bytes": 115058,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/4th_International_Auto_Show,_Bangalore_(2025)_215.jpg",
+      "sourceFilename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "imageType": "dashboard",
+      "outPath": "public\\images\\cars\\tata-curvv-ev\\dashboard.webp",
+      "bytes": 71068,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/4th_International_Auto_Show,_Bangalore_(2025)_215.jpg",
+      "sourceFilename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "imageType": "listing",
+      "outPath": "public\\images\\cars\\mg-windsor-ev\\listing.webp",
+      "bytes": 312634,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/2024_Wuling_Cloud_EV_in_Pristine_White_taken_in_Bandung,_West_Java_40173_01.jpg",
+      "sourceFilename": "2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 01.jpg",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "imageType": "compare",
+      "outPath": "public\\images\\cars\\mg-windsor-ev\\compare.webp",
+      "bytes": 286482,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/2024_Wuling_Cloud_EV_in_Pristine_White_taken_in_Bandung,_West_Java_40173_02.jpg",
+      "sourceFilename": "2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 02.jpg",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "imageType": "front",
+      "outPath": "public\\images\\cars\\mg-windsor-ev\\front.webp",
+      "bytes": 312634,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/2024_Wuling_Cloud_EV_in_Pristine_White_taken_in_Bandung,_West_Java_40173_01.jpg",
+      "sourceFilename": "2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 01.jpg",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "imageType": "rear",
+      "outPath": "public\\images\\cars\\mg-windsor-ev\\rear.webp",
+      "bytes": 152520,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/2024_Wuling_Cloud_EV_rear_view.jpg",
+      "sourceFilename": "2024 Wuling Cloud EV rear view.jpg",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "imageType": "side",
+      "outPath": "public\\images\\cars\\mg-windsor-ev\\side.webp",
+      "bytes": 286482,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/2024_Wuling_Cloud_EV_in_Pristine_White_taken_in_Bandung,_West_Java_40173_02.jpg",
+      "sourceFilename": "2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 02.jpg",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "imageType": "interior",
+      "outPath": "public\\images\\cars\\mg-windsor-ev\\interior.webp",
+      "bytes": 83736,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/2024_Wuling_Cloud_EV_Interior.jpg",
+      "sourceFilename": "2024 Wuling Cloud EV Interior.jpg",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "imageType": "dashboard",
+      "outPath": "public\\images\\cars\\mg-windsor-ev\\dashboard.webp",
+      "bytes": 45746,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/2024_Wuling_Cloud_EV_Interior.jpg",
+      "sourceFilename": "2024 Wuling Cloud EV Interior.jpg",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    {
+      "slug": "mahindra-be-6",
+      "imageType": "listing",
+      "outPath": "public\\images\\cars\\mahindra-be-6\\listing.webp",
+      "bytes": 404102,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Mahindra_BE6_pic_1.jpg",
+      "sourceFilename": "Mahindra BE6 pic 1.jpg",
+      "license": "CC0 1.0",
+      "author": "Cppfront"
+    },
+    {
+      "slug": "mahindra-be-6",
+      "imageType": "compare",
+      "outPath": "public\\images\\cars\\mahindra-be-6\\compare.webp",
+      "bytes": 395312,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/Mahindra_BE6_pic_2.jpg",
+      "sourceFilename": "Mahindra BE6 pic 2.jpg",
+      "license": "CC0 1.0",
+      "author": "Cppfront"
+    },
+    {
+      "slug": "mahindra-be-6",
+      "imageType": "front",
+      "outPath": "public\\images\\cars\\mahindra-be-6\\front.webp",
+      "bytes": 404102,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Mahindra_BE6_pic_1.jpg",
+      "sourceFilename": "Mahindra BE6 pic 1.jpg",
+      "license": "CC0 1.0",
+      "author": "Cppfront"
+    },
+    {
+      "slug": "mahindra-be-6",
+      "imageType": "rear",
+      "outPath": "public\\images\\cars\\mahindra-be-6\\rear.webp",
+      "bytes": 395312,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/Mahindra_BE6_pic_2.jpg",
+      "sourceFilename": "Mahindra BE6 pic 2.jpg",
+      "license": "CC0 1.0",
+      "author": "Cppfront"
+    },
+    {
+      "slug": "mahindra-be-6",
+      "imageType": "side",
+      "outPath": "public\\images\\cars\\mahindra-be-6\\side.webp",
+      "bytes": 214214,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/27/Mahindra_BE_6_Batman_Edition.jpg",
+      "sourceFilename": "Mahindra BE 6 Batman Edition.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "SerChevalerie"
+    },
+    {
+      "slug": "mahindra-be-6",
+      "imageType": "interior",
+      "outPath": "public\\images\\cars\\mahindra-be-6\\interior.webp",
+      "bytes": 174474,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Green_Vehicle_Expo_2025_(Bangalore_International_Exhibition_Centre)_136.jpg",
+      "sourceFilename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 136.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "mahindra-be-6",
+      "imageType": "dashboard",
+      "outPath": "public\\images\\cars\\mahindra-be-6\\dashboard.webp",
+      "bytes": 149084,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Green_Vehicle_Expo_2025_(Bangalore_International_Exhibition_Centre)_136.jpg",
+      "sourceFilename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 136.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    }
+  ],
+  "trackerSummary": {
+    "vehicleCount": 25,
+    "imageTypesPerVehicle": 7,
+    "totalSlots": 175,
+    "byStatus": {
+      "placeholder": 140,
+      "in_progress": 0,
+      "replaced": 35,
+      "approved": 0
+    }
+  },
+  "filesModified": [
+    "public/images/cars/tata-nexon-ev/listing.webp",
+    "public/images/cars/tata-nexon-ev/compare.webp",
+    "public/images/cars/tata-nexon-ev/front.webp",
+    "public/images/cars/tata-nexon-ev/rear.webp",
+    "public/images/cars/tata-nexon-ev/side.webp",
+    "public/images/cars/tata-nexon-ev/interior.webp",
+    "public/images/cars/tata-nexon-ev/dashboard.webp",
+    "public/images/cars/tata-punch-ev/listing.webp",
+    "public/images/cars/tata-punch-ev/compare.webp",
+    "public/images/cars/tata-punch-ev/front.webp",
+    "public/images/cars/tata-punch-ev/rear.webp",
+    "public/images/cars/tata-punch-ev/side.webp",
+    "public/images/cars/tata-punch-ev/interior.webp",
+    "public/images/cars/tata-punch-ev/dashboard.webp",
+    "public/images/cars/tata-curvv-ev/listing.webp",
+    "public/images/cars/tata-curvv-ev/compare.webp",
+    "public/images/cars/tata-curvv-ev/front.webp",
+    "public/images/cars/tata-curvv-ev/rear.webp",
+    "public/images/cars/tata-curvv-ev/side.webp",
+    "public/images/cars/tata-curvv-ev/interior.webp",
+    "public/images/cars/tata-curvv-ev/dashboard.webp",
+    "public/images/cars/mg-windsor-ev/listing.webp",
+    "public/images/cars/mg-windsor-ev/compare.webp",
+    "public/images/cars/mg-windsor-ev/front.webp",
+    "public/images/cars/mg-windsor-ev/rear.webp",
+    "public/images/cars/mg-windsor-ev/side.webp",
+    "public/images/cars/mg-windsor-ev/interior.webp",
+    "public/images/cars/mg-windsor-ev/dashboard.webp",
+    "public/images/cars/mahindra-be-6/listing.webp",
+    "public/images/cars/mahindra-be-6/compare.webp",
+    "public/images/cars/mahindra-be-6/front.webp",
+    "public/images/cars/mahindra-be-6/rear.webp",
+    "public/images/cars/mahindra-be-6/side.webp",
+    "public/images/cars/mahindra-be-6/interior.webp",
+    "public/images/cars/mahindra-be-6/dashboard.webp",
+    "docs/media/photo-replacement-tracker.json",
+    "docs/media/photo-replacement-tracker.md",
+    "docs/media/photo-replacement-batch1.json",
+    "docs/media/photo-replacement-batch1.md",
+    "scripts/lib/photoReplacementBatch1Seed.json",
+    "scripts/lib/photoReplacementBatch1.mjs",
+    "scripts/lib/wikimediaCommons.mjs",
+    "scripts/photo-replacement-batch1.mjs",
+    "package.json"
+  ],
+  "placeholderAudit": {
+    "generatedAt": "2026-06-10T17:41:24.407Z",
+    "audit": "media-placeholder-audit",
+    "scanRoot": "public/images/cars/**",
+    "markers": [
+      "EVSavari Media Day",
+      "Media Completion Sprint"
+    ],
+    "detection": {
+      "binaryMarkerScan": true,
+      "visualHeuristic": "WebP ≤15KB and dominant quantized color ≥50% (batch-generated placeholders)",
+      "note": "Batch label text is burned into WebP pixels; binary scan rarely matches."
+    },
+    "imageTypes": [
+      "listing",
+      "compare",
+      "front",
+      "rear",
+      "side",
+      "interior",
+      "dashboard"
+    ],
+    "summary": {
+      "vehicleCount": 25,
+      "totalImages": 143,
+      "realImages": 35,
+      "placeholderImages": 108,
+      "coveragePct": 24.5
+    },
+    "vehicles": [
+      {
+        "slug": "bmw-ix1",
+        "displayName": "BMW iX1",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/bmw-ix1/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6256,
+            "colorDominance": 0.9851
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/bmw-ix1/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6272,
+            "colorDominance": 0.9844
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/bmw-ix1/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5414,
+            "colorDominance": 0.9861
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/bmw-ix1/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5602,
+            "colorDominance": 0.9866
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/bmw-ix1/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5958,
+            "colorDominance": 0.9866
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/bmw-ix1/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5196,
+            "colorDominance": 0.9871
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/bmw-ix1/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5218,
+            "colorDominance": 0.988
+          }
+        ]
+      },
+      {
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "realImages": 0,
+        "placeholderImages": 1,
+        "totalImages": 1,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/byd-atto-3/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7654,
+            "colorDominance": 0.9812
+          }
+        ]
+      },
+      {
+        "slug": "byd-seal",
+        "displayName": "BYD Seal",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/byd-seal/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6658,
+            "colorDominance": 0.9846
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/byd-seal/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6568,
+            "colorDominance": 0.9842
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/byd-seal/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5712,
+            "colorDominance": 0.9854
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/byd-seal/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6012,
+            "colorDominance": 0.9859
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/byd-seal/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6348,
+            "colorDominance": 0.9856
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/byd-seal/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5550,
+            "colorDominance": 0.9864
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/byd-seal/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5476,
+            "colorDominance": 0.9875
+          }
+        ]
+      },
+      {
+        "slug": "citroen-ec3",
+        "displayName": "Citroen eC3",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/citroen-ec3/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7064,
+            "colorDominance": 0.9832
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/citroen-ec3/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6894,
+            "colorDominance": 0.9829
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/citroen-ec3/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6092,
+            "colorDominance": 0.9842
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/citroen-ec3/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6328,
+            "colorDominance": 0.9843
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/citroen-ec3/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6642,
+            "colorDominance": 0.9843
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/citroen-ec3/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5912,
+            "colorDominance": 0.9861
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/citroen-ec3/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5730,
+            "colorDominance": 0.9861
+          }
+        ]
+      },
+      {
+        "slug": "hyundai-creta-electric",
+        "displayName": "Hyundai Creta Electric",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/hyundai-creta-electric/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 9584,
+            "colorDominance": 0.9731
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/hyundai-creta-electric/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 9120,
+            "colorDominance": 0.9749
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/hyundai-creta-electric/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8628,
+            "colorDominance": 0.9744
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/hyundai-creta-electric/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8832,
+            "colorDominance": 0.9764
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/hyundai-creta-electric/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 9316,
+            "colorDominance": 0.9764
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/hyundai-creta-electric/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8320,
+            "colorDominance": 0.9761
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/hyundai-creta-electric/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8020,
+            "colorDominance": 0.9781
+          }
+        ]
+      },
+      {
+        "slug": "hyundai-ioniq-5",
+        "displayName": "Hyundai Ioniq 5",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/hyundai-ioniq-5/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7586,
+            "colorDominance": 0.9801
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/hyundai-ioniq-5/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7412,
+            "colorDominance": 0.9796
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/hyundai-ioniq-5/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6492,
+            "colorDominance": 0.9816
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/hyundai-ioniq-5/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6808,
+            "colorDominance": 0.9821
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/hyundai-ioniq-5/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7122,
+            "colorDominance": 0.9817
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/hyundai-ioniq-5/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6306,
+            "colorDominance": 0.9823
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/hyundai-ioniq-5/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6352,
+            "colorDominance": 0.9836
+          }
+        ]
+      },
+      {
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "realImages": 0,
+        "placeholderImages": 1,
+        "totalImages": 1,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/hyundai-kona-electric/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 9152,
+            "colorDominance": 0.9746
+          }
+        ]
+      },
+      {
+        "slug": "kia-ev6",
+        "displayName": "Kia EV6",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/kia-ev6/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6348,
+            "colorDominance": 0.9854
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/kia-ev6/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6328,
+            "colorDominance": 0.9852
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/kia-ev6/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5458,
+            "colorDominance": 0.9868
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/kia-ev6/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5788,
+            "colorDominance": 0.9872
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/kia-ev6/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6046,
+            "colorDominance": 0.9864
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/kia-ev6/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5328,
+            "colorDominance": 0.9879
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/kia-ev6/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5304,
+            "colorDominance": 0.9881
+          }
+        ]
+      },
+      {
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra BE 6",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mahindra-be-6/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 395312,
+            "colorDominance": 0.0363
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mahindra-be-6/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 149084,
+            "colorDominance": 0.1598
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mahindra-be-6/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 404102,
+            "colorDominance": 0.0438
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mahindra-be-6/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 174474,
+            "colorDominance": 0.0872
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mahindra-be-6/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 404102,
+            "colorDominance": 0.0438
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mahindra-be-6/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 395312,
+            "colorDominance": 0.0363
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mahindra-be-6/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 214214,
+            "colorDominance": 0.038
+          }
+        ]
+      },
+      {
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra XEV 9e",
+        "realImages": 0,
+        "placeholderImages": 1,
+        "totalImages": 1,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mahindra-xev-9e/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8502,
+            "colorDominance": 0.9776
+          }
+        ]
+      },
+      {
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra XUV400",
+        "realImages": 0,
+        "placeholderImages": 1,
+        "totalImages": 1,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mahindra-xuv400/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8456,
+            "colorDominance": 0.9776
+          }
+        ]
+      },
+      {
+        "slug": "maruti-e-vitara",
+        "displayName": "Maruti Suzuki e Vitara",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/maruti-e-vitara/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8194,
+            "colorDominance": 0.9786
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/maruti-e-vitara/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8058,
+            "colorDominance": 0.9789
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/maruti-e-vitara/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7238,
+            "colorDominance": 0.9797
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/maruti-e-vitara/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7546,
+            "colorDominance": 0.9806
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/maruti-e-vitara/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7912,
+            "colorDominance": 0.9808
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/maruti-e-vitara/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7012,
+            "colorDominance": 0.9806
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/maruti-e-vitara/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6870,
+            "colorDominance": 0.9824
+          }
+        ]
+      },
+      {
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes-Benz EQA",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mercedes-eqa/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7542,
+            "colorDominance": 0.9821
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mercedes-eqa/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7430,
+            "colorDominance": 0.9813
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mercedes-eqa/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6658,
+            "colorDominance": 0.9826
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mercedes-eqa/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6862,
+            "colorDominance": 0.9832
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mercedes-eqa/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7244,
+            "colorDominance": 0.982
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mercedes-eqa/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6442,
+            "colorDominance": 0.9831
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mercedes-eqa/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6332,
+            "colorDominance": 0.9839
+          }
+        ]
+      },
+      {
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes-Benz EQB",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mercedes-eqb/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7498,
+            "colorDominance": 0.982
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mercedes-eqb/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7484,
+            "colorDominance": 0.9811
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mercedes-eqb/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6626,
+            "colorDominance": 0.9821
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mercedes-eqb/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6830,
+            "colorDominance": 0.983
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mercedes-eqb/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7206,
+            "colorDominance": 0.982
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mercedes-eqb/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6428,
+            "colorDominance": 0.9829
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mercedes-eqb/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6294,
+            "colorDominance": 0.9841
+          }
+        ]
+      },
+      {
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "realImages": 0,
+        "placeholderImages": 4,
+        "totalImages": 4,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mg-comet-ev/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7886,
+            "colorDominance": 0.9802
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mg-comet-ev/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7404,
+            "colorDominance": 0.9816
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mg-comet-ev/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6824,
+            "colorDominance": 0.9804
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mg-comet-ev/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6752,
+            "colorDominance": 0.9828
+          }
+        ]
+      },
+      {
+        "slug": "mg-windsor-ev",
+        "displayName": "MG Windsor EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mg-windsor-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 286482,
+            "colorDominance": 0.0635
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mg-windsor-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 45746,
+            "colorDominance": 0.0673
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mg-windsor-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 312634,
+            "colorDominance": 0.0606
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mg-windsor-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 83736,
+            "colorDominance": 0.1067
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mg-windsor-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 312634,
+            "colorDominance": 0.0606
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mg-windsor-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 152520,
+            "colorDominance": 0.1084
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mg-windsor-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 286482,
+            "colorDominance": 0.0635
+          }
+        ]
+      },
+      {
+        "slug": "mg-zs-ev",
+        "displayName": "MG ZS EV",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mg-zs-ev/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6498,
+            "colorDominance": 0.9844
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mg-zs-ev/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6448,
+            "colorDominance": 0.9841
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mg-zs-ev/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5684,
+            "colorDominance": 0.9853
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mg-zs-ev/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5938,
+            "colorDominance": 0.9859
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mg-zs-ev/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6292,
+            "colorDominance": 0.9852
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mg-zs-ev/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5524,
+            "colorDominance": 0.9862
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mg-zs-ev/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5390,
+            "colorDominance": 0.9872
+          }
+        ]
+      },
+      {
+        "slug": "mini-cooper-se",
+        "displayName": "MINI Cooper SE",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mini-cooper-se/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7470,
+            "colorDominance": 0.981
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mini-cooper-se/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7248,
+            "colorDominance": 0.9809
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mini-cooper-se/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6558,
+            "colorDominance": 0.9822
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mini-cooper-se/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6772,
+            "colorDominance": 0.9832
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mini-cooper-se/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7192,
+            "colorDominance": 0.9824
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mini-cooper-se/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6372,
+            "colorDominance": 0.9839
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mini-cooper-se/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6204,
+            "colorDominance": 0.9842
+          }
+        ]
+      },
+      {
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-curvv-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115466,
+            "colorDominance": 0.0689
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-curvv-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 71068,
+            "colorDominance": 0.0889
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-curvv-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 118996,
+            "colorDominance": 0.0669
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-curvv-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115058,
+            "colorDominance": 0.1154
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-curvv-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 118996,
+            "colorDominance": 0.0669
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-curvv-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115466,
+            "colorDominance": 0.0689
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-curvv-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 118996,
+            "colorDominance": 0.0669
+          }
+        ]
+      },
+      {
+        "slug": "tata-harrier-ev",
+        "displayName": "Tata Harrier EV",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-harrier-ev/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8268,
+            "colorDominance": 0.9785
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-harrier-ev/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8014,
+            "colorDominance": 0.9796
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-harrier-ev/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7294,
+            "colorDominance": 0.98
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-harrier-ev/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7582,
+            "colorDominance": 0.9818
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-harrier-ev/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7964,
+            "colorDominance": 0.9801
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-harrier-ev/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7126,
+            "colorDominance": 0.9805
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-harrier-ev/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6902,
+            "colorDominance": 0.9825
+          }
+        ]
+      },
+      {
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-nexon-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115050,
+            "colorDominance": 0.1777
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-nexon-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 71068,
+            "colorDominance": 0.0889
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-nexon-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 158634,
+            "colorDominance": 0.0917
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-nexon-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115058,
+            "colorDominance": 0.1154
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-nexon-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 158634,
+            "colorDominance": 0.0917
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-nexon-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 65434,
+            "colorDominance": 0.2929
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-nexon-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115050,
+            "colorDominance": 0.1777
+          }
+        ]
+      },
+      {
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-punch-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 242206,
+            "colorDominance": 0.0461
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-punch-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 71068,
+            "colorDominance": 0.0889
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-punch-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 177344,
+            "colorDominance": 0.0969
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-punch-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115058,
+            "colorDominance": 0.1154
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-punch-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 177344,
+            "colorDominance": 0.0969
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-punch-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 242206,
+            "colorDominance": 0.0461
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-punch-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 242206,
+            "colorDominance": 0.0461
+          }
+        ]
+      },
+      {
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "realImages": 0,
+        "placeholderImages": 2,
+        "totalImages": 2,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-tiago-ev/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7942,
+            "colorDominance": 0.9803
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-tiago-ev/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7538,
+            "colorDominance": 0.9821
+          }
+        ]
+      },
+      {
+        "slug": "tata-tigor-ev",
+        "displayName": "Tata Tigor EV",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-tigor-ev/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8106,
+            "colorDominance": 0.9795
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-tigor-ev/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7854,
+            "colorDominance": 0.9802
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-tigor-ev/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7146,
+            "colorDominance": 0.9798
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-tigor-ev/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7386,
+            "colorDominance": 0.9818
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-tigor-ev/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7802,
+            "colorDominance": 0.9816
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-tigor-ev/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6956,
+            "colorDominance": 0.9814
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-tigor-ev/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6760,
+            "colorDominance": 0.9835
+          }
+        ]
+      },
+      {
+        "slug": "volvo-ex40",
+        "displayName": "Volvo EX40",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/volvo-ex40/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6862,
+            "colorDominance": 0.9836
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/volvo-ex40/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6906,
+            "colorDominance": 0.9834
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/volvo-ex40/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6010,
+            "colorDominance": 0.9842
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/volvo-ex40/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6286,
+            "colorDominance": 0.9849
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/volvo-ex40/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6638,
+            "colorDominance": 0.9846
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/volvo-ex40/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5896,
+            "colorDominance": 0.9859
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/volvo-ex40/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5766,
+            "colorDominance": 0.9864
+          }
+        ]
+      }
+    ]
+  },
+  "buildResult": {
+    "success": true,
+    "exitCode": 0,
+    "command": "npm run build"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "_comment": "Licensed Wikimedia Commons sources for Photo Replacement Sprint Batch 5 (final cleanup). Partial seeds — only slots listed are processed.",
+  "mg-zs-ev": {
+    "listing": {
+      "filename": "MG ZS EV Facelift 1X7A5867.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    },
+    "compare": {
+      "filename": "MG ZS EV IMG 5520.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    },
+    "front": {
+      "filename": "2023 MG ZS EV AZS1 Essence front.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    },
+    "rear": {
+      "filename": "2023 MG ZS EV AZS1 Essence rear.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    },
+    "side": {
+      "filename": "MG ZS EV in France (side).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    },
+    "interior": {
+      "filename": "2021 MG ZS EV (Indonesia) interior.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Andra Febrian"
+    },
+    "dashboard": {
+      "filename": "2021 MG ZS EV (Indonesia) interior.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Andra Febrian",
+      "dashboardCrop": true
+    }
+  },
+  "tata-tiago-ev": {
+    "interior": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "notes": "Tata Motors booth cabin display — closest licensed Tiago EV interior on Commons"
+    },
+    "dashboard": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "dashboardCrop": true
+    }
+  },
+  "byd-atto-3": {
+    "dashboard": {
+      "filename": "BYD Atto 3 Premium interior.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    }
+  },
+  "hyundai-kona-electric": {
+    "dashboard": {
+      "filename": "Hyundai Kona Electric OS PE EV Galactic Gray (3).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh",
+      "dashboardCrop": true
+    }
+  },
+  "mahindra-xuv400": {
+    "dashboard": {
+      "filename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 136.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "notes": "Mahindra Born Electric booth cabin — platform context for XUV400",
+      "dashboardCrop": true
+    }
+  }
+}

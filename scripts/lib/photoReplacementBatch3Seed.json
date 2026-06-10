@@ -1,0 +1,228 @@
+{
+  "_comment": "Licensed Wikimedia Commons sources for Photo Replacement Sprint Batch 3.",
+  "hyundai-ioniq-5": {
+    "listing": {
+      "filename": "Hyundai Ioniq 5 NE Cyber Gray Metallic Test (2).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "compare": {
+      "filename": "Hyundai IONIQ 5 N Line NE PE Ecotronic Gray Pearl (5).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "front": {
+      "filename": "Hyundai Ioniq 5 NE Phantom Black Pearl (1).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "rear": {
+      "filename": "2022 Hyundai Ioniq 5 SEL AWD in Shooting Star, rear left.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 3.0",
+      "author": "Mr.choppers"
+    },
+    "side": {
+      "filename": "Hyundai IONIQ 5 Long Range Prestige NE Shootingstar Gray Matte (3).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "interior": {
+      "filename": "Hyundai IONIQ 5 Prestige NE1 PE Black Onetone (2).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "dashboard": {
+      "filename": "Hyundai IONIQ 5 Prestige NE1 PE Black Onetone (2).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh",
+      "dashboardCrop": true
+    }
+  },
+  "byd-seal": {
+    "listing": {
+      "filename": "The frontview of BYD SEAL.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "compare": {
+      "filename": "BYD Seal (2024) (53958342938).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY 2.0",
+      "author": "Guillaume Vachey"
+    },
+    "front": {
+      "filename": "The frontview of BYD SEAL.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "rear": {
+      "filename": "The rearview of BYD SEAL.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "side": {
+      "filename": "BYD Seal EV 03 2023 5802.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "interior": {
+      "filename": "The interior of BYD SEAL.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "dashboard": {
+      "filename": "The interior of BYD SEAL.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima",
+      "dashboardCrop": true
+    }
+  },
+  "kia-ev6": {
+    "listing": {
+      "filename": "2021 Kia EV6 GT-Line S.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Vauxford"
+    },
+    "compare": {
+      "filename": "Kia EV6 GT-Line, Auto 2024, Zurich (PANA0804).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Matti Blume"
+    },
+    "front": {
+      "filename": "Kia ev6 1gen front.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "rear": {
+      "filename": "2022 Kia EV6 Air Long Range 2WD (Rear).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "DieselFordMondeo"
+    },
+    "side": {
+      "filename": "Kia EV6 CV white (2).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "interior": {
+      "filename": "Kia EV6 GT-line CV1 PE Black White (1).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "dashboard": {
+      "filename": "Kia EV6 GT-line CV1 PE Black White (1).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh",
+      "dashboardCrop": true
+    }
+  },
+  "bmw-ix1": {
+    "listing": {
+      "filename": "2022 BMW iX1.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "MrWalkr"
+    },
+    "compare": {
+      "filename": "BMW iX1 xDrive30 (U11) – h 05052024.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 3.0 DE",
+      "author": "M 93"
+    },
+    "front": {
+      "filename": "2023-04 BMW iX1 U11 front view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    },
+    "rear": {
+      "filename": "2023-04 BMW iX1 U11 rear view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    },
+    "side": {
+      "filename": "BMW U11 BEV iX1 xDrive30 M Sport Cape York Green Metallic (9).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "interior": {
+      "filename": "BMW U11 BEV iX1 xDrive30 M Sport Sensatec Mocha (1).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "dashboard": {
+      "filename": "BMW U11 BEV iX1 xDrive30 M Sport Sensatec Mocha (1).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh",
+      "dashboardCrop": true
+    }
+  },
+  "mercedes-eqa": {
+    "listing": {
+      "filename": "Mercedes-Benz EQA 250 (H243) front.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "compare": {
+      "filename": "Mercedes-Benz EQA 250 (H243, 2022) (52871290034).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY 2.0",
+      "author": "Guillaume Vachey"
+    },
+    "front": {
+      "filename": "2021 Mercedes-Benz EQA 250 AMG Line - 66kWh (190PS) Electric - Mountain Grey - 02-2024, Front.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Harvey Bold"
+    },
+    "rear": {
+      "filename": "The rearview of Mercedes-Benz EQA 250 (H243).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "side": {
+      "filename": "Mercedes-Benz EQA 250 (H243).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "interior": {
+      "filename": "The interior of Mercedes-Benz EQA 250 (H243).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "dashboard": {
+      "filename": "The interior of Mercedes-Benz EQA 250 (H243).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima",
+      "dashboardCrop": true
+    }
+  }
+}

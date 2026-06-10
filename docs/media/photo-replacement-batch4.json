@@ -1,0 +1,2273 @@
+{
+  "version": "photo-replacement-batch4-v1",
+  "generatedAt": "2026-06-10T18:14:06.736Z",
+  "replacedAt": "2026-06-10T18:12:24.260Z",
+  "batch": 4,
+  "slugs": [
+    "mercedes-eqb",
+    "volvo-ex40",
+    "mini-cooper-se",
+    "citroen-ec3",
+    "mahindra-xev-9e"
+  ],
+  "processing": {
+    "targetWidth": 1600,
+    "webpQuality": 82,
+    "fit": "inside"
+  },
+  "summary": {
+    "vehicleCount": 5,
+    "imagesReplaced": 35
+  },
+  "assets": [
+    {
+      "slug": "mercedes-eqb",
+      "imageType": "listing",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mercedes-eqb\\listing.webp",
+      "bytes": 157326,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/The_frontview_of_Mercedes-Benz_EQB_250_(X243).jpg",
+      "sourceFilename": "The frontview of Mercedes-Benz EQB 250 (X243).jpg",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "slug": "mercedes-eqb",
+      "imageType": "compare",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mercedes-eqb\\compare.webp",
+      "bytes": 209112,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/2023_Mercedes-Benz_EQB_350_4Matic_in_Mountain_Gray_Magno,_front_left.jpg",
+      "sourceFilename": "2023 Mercedes-Benz EQB 350 4Matic in Mountain Gray Magno, front left.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Harvey Bold"
+    },
+    {
+      "slug": "mercedes-eqb",
+      "imageType": "front",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mercedes-eqb\\front.webp",
+      "bytes": 164358,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Mercedes-Benz_EQB_250_(X243)_front.jpg",
+      "sourceFilename": "Mercedes-Benz EQB 250 (X243) front.jpg",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "slug": "mercedes-eqb",
+      "imageType": "rear",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mercedes-eqb\\rear.webp",
+      "bytes": 230704,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/The_rearview_of_Mercedes-Benz_EQB_250_(X243).jpg",
+      "sourceFilename": "The rearview of Mercedes-Benz EQB 250 (X243).jpg",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "slug": "mercedes-eqb",
+      "imageType": "side",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mercedes-eqb\\side.webp",
+      "bytes": 181132,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Mercedes-Benz_EQB_250_Progressive_(X_243)_%E2%80%93_h_30062024.jpg",
+      "sourceFilename": "Mercedes-Benz EQB 250 Progressive (X 243) – h 30062024.jpg",
+      "license": "CC BY-SA 3.0 DE",
+      "author": "M 93"
+    },
+    {
+      "slug": "mercedes-eqb",
+      "imageType": "interior",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mercedes-eqb\\interior.webp",
+      "bytes": 174038,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/The_interior_of_Mercedes-Benz_EQB_250_(X243).jpg",
+      "sourceFilename": "The interior of Mercedes-Benz EQB 250 (X243).jpg",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "slug": "mercedes-eqb",
+      "imageType": "dashboard",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mercedes-eqb\\dashboard.webp",
+      "bytes": 114192,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/The_interior_of_Mercedes-Benz_EQB_250_(X243).jpg",
+      "sourceFilename": "The interior of Mercedes-Benz EQB 250 (X243).jpg",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "slug": "volvo-ex40",
+      "imageType": "listing",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\volvo-ex40\\listing.webp",
+      "bytes": 232180,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Volvo_EX40,_Auto_2024,_Zurich_(PANA0853).jpg",
+      "sourceFilename": "Volvo EX40, Auto 2024, Zurich (PANA0853).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Matti Blume"
+    },
+    {
+      "slug": "volvo-ex40",
+      "imageType": "compare",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\volvo-ex40\\compare.webp",
+      "bytes": 182388,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Volvo_EX40_Auto_Zuerich_2024_DSC_6718.jpg",
+      "sourceFilename": "Volvo EX40 Auto Zuerich 2024 DSC 6718.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    },
+    {
+      "slug": "volvo-ex40",
+      "imageType": "front",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\volvo-ex40\\front.webp",
+      "bytes": 235862,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Volvo_EX40_Ultra_Twin_Motor_(ZAA-XE400AXCE2)_front.jpg",
+      "sourceFilename": "Volvo EX40 Ultra Twin Motor (ZAA-XE400AXCE2) front.jpg",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "slug": "volvo-ex40",
+      "imageType": "rear",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\volvo-ex40\\rear.webp",
+      "bytes": 503878,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Volvo_EX40_Ultra_Twin_Motor_(ZAA-XE400AXCE2)_rear.jpg",
+      "sourceFilename": "Volvo EX40 Ultra Twin Motor (ZAA-XE400AXCE2) rear.jpg",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "slug": "volvo-ex40",
+      "imageType": "side",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\volvo-ex40\\side.webp",
+      "bytes": 198566,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Volvo_EX40,_Auto_2024,_Zurich_(PANA0988).jpg",
+      "sourceFilename": "Volvo EX40, Auto 2024, Zurich (PANA0988).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Matti Blume"
+    },
+    {
+      "slug": "volvo-ex40",
+      "imageType": "interior",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\volvo-ex40\\interior.webp",
+      "bytes": 265426,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Volvo_XC40_RECHARGE_Ultimate_Twin_Motor_(ZAA-XE400AXCE)_interior.jpg",
+      "sourceFilename": "Volvo XC40 RECHARGE Ultimate Twin Motor (ZAA-XE400AXCE) interior.jpg",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "slug": "volvo-ex40",
+      "imageType": "dashboard",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\volvo-ex40\\dashboard.webp",
+      "bytes": 162720,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Volvo_XC40_RECHARGE_Ultimate_Twin_Motor_(ZAA-XE400AXCE)_interior.jpg",
+      "sourceFilename": "Volvo XC40 RECHARGE Ultimate Twin Motor (ZAA-XE400AXCE) interior.jpg",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    {
+      "slug": "mini-cooper-se",
+      "imageType": "listing",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mini-cooper-se\\listing.webp",
+      "bytes": 213664,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/2022_Mini_Cooper_SE_in_White_Silver_Metallic,_front_right.jpg",
+      "sourceFilename": "2022 Mini Cooper SE in White Silver Metallic, front right.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Vauxford"
+    },
+    {
+      "slug": "mini-cooper-se",
+      "imageType": "compare",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mini-cooper-se\\compare.webp",
+      "bytes": 492294,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Mini_F56_LCI_Cooper_SE_Electric_Moonwalk_Grey.jpg",
+      "sourceFilename": "Mini F56 LCI Cooper SE Electric Moonwalk Grey.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    {
+      "slug": "mini-cooper-se",
+      "imageType": "front",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mini-cooper-se\\front.webp",
+      "bytes": 174246,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/2020_Mini_Cooper_S_Electric_Level_1_Front.jpg",
+      "sourceFilename": "2020 Mini Cooper S Electric Level 1 Front.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    {
+      "slug": "mini-cooper-se",
+      "imageType": "rear",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mini-cooper-se\\rear.webp",
+      "bytes": 219416,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/2020_Mini_Cooper_S_Electric_Level_1_Rear.jpg",
+      "sourceFilename": "2020 Mini Cooper S Electric Level 1 Rear.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    {
+      "slug": "mini-cooper-se",
+      "imageType": "side",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mini-cooper-se\\side.webp",
+      "bytes": 143190,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Mini_F56_Hatch_Cooper_SE_Electric_Moonwalk_Grey_(4).jpg",
+      "sourceFilename": "Mini F56 Hatch Cooper SE Electric Moonwalk Grey (4).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    {
+      "slug": "mini-cooper-se",
+      "imageType": "interior",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mini-cooper-se\\interior.webp",
+      "bytes": 103996,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Mini_F56_LCI_Hatch_Cooper_SE_Resolute_Edition_Black_Pearl_Light_Chequered_Cloth_Leatherette_(5).jpg",
+      "sourceFilename": "Mini F56 LCI Hatch Cooper SE Resolute Edition Black Pearl Light Chequered Cloth Leatherette (5).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    {
+      "slug": "mini-cooper-se",
+      "imageType": "dashboard",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mini-cooper-se\\dashboard.webp",
+      "bytes": 102060,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Mini_F56_Hatch_Cooper_SE_Electric_MINI_Yours_Enigmatic_Black_Metallic_(3).jpg",
+      "sourceFilename": "Mini F56 Hatch Cooper SE Electric MINI Yours Enigmatic Black Metallic (3).jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    {
+      "slug": "citroen-ec3",
+      "imageType": "listing",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\citroen-ec3\\listing.webp",
+      "bytes": 135608,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/2023_Citro%C3%ABn_%C3%AB-C3_(Indonesia)_front_view.jpg",
+      "sourceFilename": "2023 Citroën ë-C3 (Indonesia) front view.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Andra Febrian"
+    },
+    {
+      "slug": "citroen-ec3",
+      "imageType": "compare",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\citroen-ec3\\compare.webp",
+      "bytes": 232270,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/2024_Citroen_e-C3.jpg",
+      "sourceFilename": "2024 Citroen e-C3.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "DriveSpark"
+    },
+    {
+      "slug": "citroen-ec3",
+      "imageType": "front",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\citroen-ec3\\front.webp",
+      "bytes": 135608,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/2023_Citro%C3%ABn_%C3%AB-C3_(Indonesia)_front_view.jpg",
+      "sourceFilename": "2023 Citroën ë-C3 (Indonesia) front view.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Andra Febrian"
+    },
+    {
+      "slug": "citroen-ec3",
+      "imageType": "rear",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\citroen-ec3\\rear.webp",
+      "bytes": 172414,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/07/2023_Citro%C3%ABn_%C3%AB-C3_(Indonesia)_rear_view.jpg",
+      "sourceFilename": "2023 Citroën ë-C3 (Indonesia) rear view.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Andra Febrian"
+    },
+    {
+      "slug": "citroen-ec3",
+      "imageType": "side",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\citroen-ec3\\side.webp",
+      "bytes": 232270,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/2024_Citroen_e-C3.jpg",
+      "sourceFilename": "2024 Citroen e-C3.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "DriveSpark"
+    },
+    {
+      "slug": "citroen-ec3",
+      "imageType": "interior",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\citroen-ec3\\interior.webp",
+      "bytes": 56962,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/2022_Citro%C3%ABn_C3_Feel_Puretech_110_(India)_interior.png",
+      "sourceFilename": "2022 Citroën C3 Feel Puretech 110 (India) interior.png",
+      "license": "CC BY 3.0",
+      "author": "DriveSpark"
+    },
+    {
+      "slug": "citroen-ec3",
+      "imageType": "dashboard",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\citroen-ec3\\dashboard.webp",
+      "bytes": 40122,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/2022_Citro%C3%ABn_C3_Feel_Puretech_110_(India)_interior.png",
+      "sourceFilename": "2022 Citroën C3 Feel Puretech 110 (India) interior.png",
+      "license": "CC BY 3.0",
+      "author": "DriveSpark"
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "imageType": "listing",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mahindra-xev-9e\\listing.webp",
+      "bytes": 451310,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Mahindra_XEV_9E.jpg",
+      "sourceFilename": "Mahindra XEV 9E.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "imageType": "compare",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mahindra-xev-9e\\compare.webp",
+      "bytes": 158386,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Green_Vehicle_Expo_2025_(Bangalore_International_Exhibition_Centre)_119.jpg",
+      "sourceFilename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 119.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "imageType": "front",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mahindra-xev-9e\\front.webp",
+      "bytes": 451310,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Mahindra_XEV_9E.jpg",
+      "sourceFilename": "Mahindra XEV 9E.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "imageType": "rear",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mahindra-xev-9e\\rear.webp",
+      "bytes": 173998,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Green_Vehicle_Expo_2025_(Bangalore_International_Exhibition_Centre)_105.jpg",
+      "sourceFilename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 105.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "imageType": "side",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mahindra-xev-9e\\side.webp",
+      "bytes": 121988,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Green_Vehicle_Expo_2025_(Bangalore_International_Exhibition_Centre)_101.jpg",
+      "sourceFilename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 101.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "imageType": "interior",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mahindra-xev-9e\\interior.webp",
+      "bytes": 119358,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Green_Vehicle_Expo_2025_(Bangalore_International_Exhibition_Centre)_15.jpg",
+      "sourceFilename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 15.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "imageType": "dashboard",
+      "outPath": "C:\\projects\\zyvev-frontend\\public\\images\\cars\\mahindra-xev-9e\\dashboard.webp",
+      "bytes": 72922,
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Green_Vehicle_Expo_2025_(Bangalore_International_Exhibition_Centre)_81.jpg",
+      "sourceFilename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 81.jpg",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    }
+  ],
+  "filesModified": [
+    "public/images/cars/mercedes-eqb/listing.webp",
+    "public/images/cars/mercedes-eqb/compare.webp",
+    "public/images/cars/mercedes-eqb/front.webp",
+    "public/images/cars/mercedes-eqb/rear.webp",
+    "public/images/cars/mercedes-eqb/side.webp",
+    "public/images/cars/mercedes-eqb/interior.webp",
+    "public/images/cars/mercedes-eqb/dashboard.webp",
+    "public/images/cars/volvo-ex40/listing.webp",
+    "public/images/cars/volvo-ex40/compare.webp",
+    "public/images/cars/volvo-ex40/front.webp",
+    "public/images/cars/volvo-ex40/rear.webp",
+    "public/images/cars/volvo-ex40/side.webp",
+    "public/images/cars/volvo-ex40/interior.webp",
+    "public/images/cars/volvo-ex40/dashboard.webp",
+    "public/images/cars/mini-cooper-se/listing.webp",
+    "public/images/cars/mini-cooper-se/compare.webp",
+    "public/images/cars/mini-cooper-se/front.webp",
+    "public/images/cars/mini-cooper-se/rear.webp",
+    "public/images/cars/mini-cooper-se/side.webp",
+    "public/images/cars/mini-cooper-se/interior.webp",
+    "public/images/cars/mini-cooper-se/dashboard.webp",
+    "public/images/cars/citroen-ec3/listing.webp",
+    "public/images/cars/citroen-ec3/compare.webp",
+    "public/images/cars/citroen-ec3/front.webp",
+    "public/images/cars/citroen-ec3/rear.webp",
+    "public/images/cars/citroen-ec3/side.webp",
+    "public/images/cars/citroen-ec3/interior.webp",
+    "public/images/cars/citroen-ec3/dashboard.webp",
+    "public/images/cars/mahindra-xev-9e/listing.webp",
+    "public/images/cars/mahindra-xev-9e/compare.webp",
+    "public/images/cars/mahindra-xev-9e/front.webp",
+    "public/images/cars/mahindra-xev-9e/rear.webp",
+    "public/images/cars/mahindra-xev-9e/side.webp",
+    "public/images/cars/mahindra-xev-9e/interior.webp",
+    "public/images/cars/mahindra-xev-9e/dashboard.webp",
+    "docs/media/photo-replacement-tracker.json",
+    "docs/media/photo-replacement-tracker.md",
+    "docs/media/photo-replacement-batch4.json",
+    "docs/media/photo-replacement-batch4.md",
+    "scripts/lib/photoReplacementBatch4Seed.json",
+    "scripts/photo-replacement-batch4.mjs",
+    "package.json"
+  ],
+  "placeholderAudit": {
+    "generatedAt": "2026-06-10T18:13:57.781Z",
+    "audit": "media-placeholder-audit",
+    "scanRoot": "public/images/cars/**",
+    "markers": [
+      "EVSavari Media Day",
+      "Media Completion Sprint"
+    ],
+    "detection": {
+      "binaryMarkerScan": true,
+      "visualHeuristic": "WebP ≤15KB and dominant quantized color ≥50% (batch-generated placeholders)",
+      "note": "Batch label text is burned into WebP pixels; binary scan rarely matches."
+    },
+    "imageTypes": [
+      "listing",
+      "compare",
+      "front",
+      "rear",
+      "side",
+      "interior",
+      "dashboard"
+    ],
+    "summary": {
+      "vehicleCount": 25,
+      "totalImages": 152,
+      "realImages": 140,
+      "placeholderImages": 12,
+      "coveragePct": 92.1
+    },
+    "vehicles": [
+      {
+        "slug": "bmw-ix1",
+        "displayName": "BMW iX1",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/bmw-ix1/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 166936,
+            "colorDominance": 0.0906
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/bmw-ix1/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 157702,
+            "colorDominance": 0.0446
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/bmw-ix1/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 92984,
+            "colorDominance": 0.1389
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/bmw-ix1/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 233722,
+            "colorDominance": 0.0903
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/bmw-ix1/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 142732,
+            "colorDominance": 0.0892
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/bmw-ix1/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 127774,
+            "colorDominance": 0.0897
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/bmw-ix1/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 327140,
+            "colorDominance": 0.0492
+          }
+        ]
+      },
+      {
+        "slug": "byd-atto-3",
+        "displayName": "BYD Atto 3",
+        "realImages": 0,
+        "placeholderImages": 1,
+        "totalImages": 1,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/byd-atto-3/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7654,
+            "colorDominance": 0.9812
+          }
+        ]
+      },
+      {
+        "slug": "byd-seal",
+        "displayName": "BYD Seal",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/byd-seal/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 205340,
+            "colorDominance": 0.0867
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/byd-seal/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 168230,
+            "colorDominance": 0.0994
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/byd-seal/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 322252,
+            "colorDominance": 0.0336
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/byd-seal/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 281444,
+            "colorDominance": 0.0882
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/byd-seal/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 322252,
+            "colorDominance": 0.0336
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/byd-seal/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 310026,
+            "colorDominance": 0.0648
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/byd-seal/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 208066,
+            "colorDominance": 0.0529
+          }
+        ]
+      },
+      {
+        "slug": "citroen-ec3",
+        "displayName": "Citroen eC3",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/citroen-ec3/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 232270,
+            "colorDominance": 0.039
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/citroen-ec3/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 40122,
+            "colorDominance": 0.2593
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/citroen-ec3/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 135608,
+            "colorDominance": 0.1214
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/citroen-ec3/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 56962,
+            "colorDominance": 0.134
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/citroen-ec3/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 135608,
+            "colorDominance": 0.1214
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/citroen-ec3/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 172414,
+            "colorDominance": 0.0649
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/citroen-ec3/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 232270,
+            "colorDominance": 0.039
+          }
+        ]
+      },
+      {
+        "slug": "hyundai-creta-electric",
+        "displayName": "Hyundai Creta Electric",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/hyundai-creta-electric/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 175820,
+            "colorDominance": 0.0803
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/hyundai-creta-electric/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 100174,
+            "colorDominance": 0.1779
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/hyundai-creta-electric/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 138944,
+            "colorDominance": 0.1101
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/hyundai-creta-electric/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 184004,
+            "colorDominance": 0.0959
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/hyundai-creta-electric/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 227144,
+            "colorDominance": 0.1268
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/hyundai-creta-electric/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 100734,
+            "colorDominance": 0.2959
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/hyundai-creta-electric/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 164352,
+            "colorDominance": 0.0631
+          }
+        ]
+      },
+      {
+        "slug": "hyundai-ioniq-5",
+        "displayName": "Hyundai Ioniq 5",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/hyundai-ioniq-5/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 242302,
+            "colorDominance": 0.0911
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/hyundai-ioniq-5/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 173758,
+            "colorDominance": 0.0834
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/hyundai-ioniq-5/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 402322,
+            "colorDominance": 0.0756
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/hyundai-ioniq-5/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 218704,
+            "colorDominance": 0.1678
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/hyundai-ioniq-5/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 156712,
+            "colorDominance": 0.1117
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/hyundai-ioniq-5/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 221534,
+            "colorDominance": 0.0415
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/hyundai-ioniq-5/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 205380,
+            "colorDominance": 0.064
+          }
+        ]
+      },
+      {
+        "slug": "hyundai-kona-electric",
+        "displayName": "Hyundai Kona Electric",
+        "realImages": 0,
+        "placeholderImages": 1,
+        "totalImages": 1,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/hyundai-kona-electric/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 9152,
+            "colorDominance": 0.9746
+          }
+        ]
+      },
+      {
+        "slug": "kia-ev6",
+        "displayName": "Kia EV6",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/kia-ev6/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 166680,
+            "colorDominance": 0.1216
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/kia-ev6/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 176754,
+            "colorDominance": 0.0866
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/kia-ev6/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 266990,
+            "colorDominance": 0.0428
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/kia-ev6/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 329982,
+            "colorDominance": 0.0959
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/kia-ev6/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 136134,
+            "colorDominance": 0.0619
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/kia-ev6/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115436,
+            "colorDominance": 0.1028
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/kia-ev6/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 103204,
+            "colorDominance": 0.0701
+          }
+        ]
+      },
+      {
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra BE 6",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mahindra-be-6/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 395312,
+            "colorDominance": 0.0363
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mahindra-be-6/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 149084,
+            "colorDominance": 0.1598
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mahindra-be-6/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 404102,
+            "colorDominance": 0.0438
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mahindra-be-6/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 174474,
+            "colorDominance": 0.0872
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mahindra-be-6/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 404102,
+            "colorDominance": 0.0438
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mahindra-be-6/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 395312,
+            "colorDominance": 0.0363
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mahindra-be-6/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 214214,
+            "colorDominance": 0.038
+          }
+        ]
+      },
+      {
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra XEV 9e",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mahindra-xev-9e/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 158386,
+            "colorDominance": 0.1716
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mahindra-xev-9e/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 72922,
+            "colorDominance": 0.1061
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mahindra-xev-9e/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 451310,
+            "colorDominance": 0.0509
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mahindra-xev-9e/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 119358,
+            "colorDominance": 0.1177
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mahindra-xev-9e/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 451310,
+            "colorDominance": 0.0509
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mahindra-xev-9e/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 173998,
+            "colorDominance": 0.0533
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mahindra-xev-9e/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 121988,
+            "colorDominance": 0.0831
+          }
+        ]
+      },
+      {
+        "slug": "mahindra-xuv400",
+        "displayName": "Mahindra XUV400",
+        "realImages": 0,
+        "placeholderImages": 1,
+        "totalImages": 1,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mahindra-xuv400/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 8456,
+            "colorDominance": 0.9776
+          }
+        ]
+      },
+      {
+        "slug": "maruti-e-vitara",
+        "displayName": "Maruti Suzuki e Vitara",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/maruti-e-vitara/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 89338,
+            "colorDominance": 0.0742
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/maruti-e-vitara/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 149610,
+            "colorDominance": 0.0687
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/maruti-e-vitara/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 93686,
+            "colorDominance": 0.0694
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/maruti-e-vitara/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 259772,
+            "colorDominance": 0.0694
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/maruti-e-vitara/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 108720,
+            "colorDominance": 0.0757
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/maruti-e-vitara/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 302416,
+            "colorDominance": 0.0379
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/maruti-e-vitara/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 206728,
+            "colorDominance": 0.0751
+          }
+        ]
+      },
+      {
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes-Benz EQA",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mercedes-eqa/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 85422,
+            "colorDominance": 0.0732
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mercedes-eqa/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 172032,
+            "colorDominance": 0.2229
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mercedes-eqa/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 182080,
+            "colorDominance": 0.0628
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mercedes-eqa/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 279218,
+            "colorDominance": 0.1646
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mercedes-eqa/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 134768,
+            "colorDominance": 0.0882
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mercedes-eqa/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 189802,
+            "colorDominance": 0.0776
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mercedes-eqa/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 155722,
+            "colorDominance": 0.0814
+          }
+        ]
+      },
+      {
+        "slug": "mercedes-eqb",
+        "displayName": "Mercedes-Benz EQB",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mercedes-eqb/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 209112,
+            "colorDominance": 0.0304
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mercedes-eqb/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 114192,
+            "colorDominance": 0.1589
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mercedes-eqb/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 164358,
+            "colorDominance": 0.0693
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mercedes-eqb/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 174038,
+            "colorDominance": 0.1673
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mercedes-eqb/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 157326,
+            "colorDominance": 0.0788
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mercedes-eqb/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 230704,
+            "colorDominance": 0.0788
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mercedes-eqb/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 181132,
+            "colorDominance": 0.0828
+          }
+        ]
+      },
+      {
+        "slug": "mg-comet-ev",
+        "displayName": "MG Comet EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mg-comet-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 307122,
+            "colorDominance": 0.0681
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mg-comet-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 26504,
+            "colorDominance": 0.0954
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mg-comet-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 69466,
+            "colorDominance": 0.0801
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mg-comet-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 299282,
+            "colorDominance": 0.0996
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mg-comet-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 69466,
+            "colorDominance": 0.0801
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mg-comet-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 328382,
+            "colorDominance": 0.0541
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mg-comet-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 307122,
+            "colorDominance": 0.0681
+          }
+        ]
+      },
+      {
+        "slug": "mg-windsor-ev",
+        "displayName": "MG Windsor EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mg-windsor-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 286482,
+            "colorDominance": 0.0635
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mg-windsor-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 45746,
+            "colorDominance": 0.0673
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mg-windsor-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 312634,
+            "colorDominance": 0.0606
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mg-windsor-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 83736,
+            "colorDominance": 0.1067
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mg-windsor-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 312634,
+            "colorDominance": 0.0606
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mg-windsor-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 152520,
+            "colorDominance": 0.1084
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mg-windsor-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 286482,
+            "colorDominance": 0.0635
+          }
+        ]
+      },
+      {
+        "slug": "mg-zs-ev",
+        "displayName": "MG ZS EV",
+        "realImages": 0,
+        "placeholderImages": 7,
+        "totalImages": 7,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mg-zs-ev/compare.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6498,
+            "colorDominance": 0.9844
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mg-zs-ev/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6448,
+            "colorDominance": 0.9841
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mg-zs-ev/front.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5684,
+            "colorDominance": 0.9853
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mg-zs-ev/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5938,
+            "colorDominance": 0.9859
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mg-zs-ev/listing.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 6292,
+            "colorDominance": 0.9852
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mg-zs-ev/rear.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5524,
+            "colorDominance": 0.9862
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mg-zs-ev/side.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 5390,
+            "colorDominance": 0.9872
+          }
+        ]
+      },
+      {
+        "slug": "mini-cooper-se",
+        "displayName": "MINI Cooper SE",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/mini-cooper-se/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 492294,
+            "colorDominance": 0.1027
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/mini-cooper-se/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 102060,
+            "colorDominance": 0.1133
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/mini-cooper-se/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 174246,
+            "colorDominance": 0.0372
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/mini-cooper-se/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 103996,
+            "colorDominance": 0.1043
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/mini-cooper-se/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 213664,
+            "colorDominance": 0.0549
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/mini-cooper-se/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 219416,
+            "colorDominance": 0.0601
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/mini-cooper-se/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 143190,
+            "colorDominance": 0.0816
+          }
+        ]
+      },
+      {
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-curvv-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115466,
+            "colorDominance": 0.0689
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-curvv-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 71068,
+            "colorDominance": 0.0889
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-curvv-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 118996,
+            "colorDominance": 0.0669
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-curvv-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115058,
+            "colorDominance": 0.1154
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-curvv-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 118996,
+            "colorDominance": 0.0669
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-curvv-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115466,
+            "colorDominance": 0.0689
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-curvv-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 118996,
+            "colorDominance": 0.0669
+          }
+        ]
+      },
+      {
+        "slug": "tata-harrier-ev",
+        "displayName": "Tata Harrier EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-harrier-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 173266,
+            "colorDominance": 0.1145
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-harrier-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 71068,
+            "colorDominance": 0.0889
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-harrier-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 173266,
+            "colorDominance": 0.1145
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-harrier-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115058,
+            "colorDominance": 0.1154
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-harrier-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 173266,
+            "colorDominance": 0.1145
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-harrier-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 173266,
+            "colorDominance": 0.1145
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-harrier-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 173266,
+            "colorDominance": 0.1145
+          }
+        ]
+      },
+      {
+        "slug": "tata-nexon-ev",
+        "displayName": "Tata Nexon EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-nexon-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115050,
+            "colorDominance": 0.1777
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-nexon-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 71068,
+            "colorDominance": 0.0889
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-nexon-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 158634,
+            "colorDominance": 0.0917
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-nexon-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115058,
+            "colorDominance": 0.1154
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-nexon-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 158634,
+            "colorDominance": 0.0917
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-nexon-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 65434,
+            "colorDominance": 0.2929
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-nexon-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115050,
+            "colorDominance": 0.1777
+          }
+        ]
+      },
+      {
+        "slug": "tata-punch-ev",
+        "displayName": "Tata Punch EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-punch-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 242206,
+            "colorDominance": 0.0461
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-punch-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 71068,
+            "colorDominance": 0.0889
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-punch-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 177344,
+            "colorDominance": 0.0969
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-punch-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115058,
+            "colorDominance": 0.1154
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-punch-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 177344,
+            "colorDominance": 0.0969
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-punch-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 242206,
+            "colorDominance": 0.0461
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-punch-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 242206,
+            "colorDominance": 0.0461
+          }
+        ]
+      },
+      {
+        "slug": "tata-tiago-ev",
+        "displayName": "Tata Tiago EV",
+        "realImages": 0,
+        "placeholderImages": 2,
+        "totalImages": 2,
+        "coveragePct": 0,
+        "assets": [
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-tiago-ev/dashboard.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7942,
+            "colorDominance": 0.9803
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-tiago-ev/interior.webp",
+            "classification": "placeholder",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [
+              "EVSavari Media Day",
+              "Media Completion Sprint"
+            ],
+            "markerNote": "Rasterized batch label (EVSavari Media Day / Media Completion Sprint)",
+            "fileSizeBytes": 7538,
+            "colorDominance": 0.9821
+          }
+        ]
+      },
+      {
+        "slug": "tata-tigor-ev",
+        "displayName": "Tata Tigor EV",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/tata-tigor-ev/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 118024,
+            "colorDominance": 0.0934
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/tata-tigor-ev/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 71068,
+            "colorDominance": 0.0889
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/tata-tigor-ev/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 211586,
+            "colorDominance": 0.0675
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/tata-tigor-ev/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 115058,
+            "colorDominance": 0.1154
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/tata-tigor-ev/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 211586,
+            "colorDominance": 0.0675
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/tata-tigor-ev/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 190332,
+            "colorDominance": 0.1254
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/tata-tigor-ev/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 118024,
+            "colorDominance": 0.0934
+          }
+        ]
+      },
+      {
+        "slug": "volvo-ex40",
+        "displayName": "Volvo EX40",
+        "realImages": 7,
+        "placeholderImages": 0,
+        "totalImages": 7,
+        "coveragePct": 100,
+        "assets": [
+          {
+            "imageType": "compare",
+            "filename": "compare.webp",
+            "path": "/images/cars/volvo-ex40/compare.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 182388,
+            "colorDominance": 0.1541
+          },
+          {
+            "imageType": "dashboard",
+            "filename": "dashboard.webp",
+            "path": "/images/cars/volvo-ex40/dashboard.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 162720,
+            "colorDominance": 0.0611
+          },
+          {
+            "imageType": "front",
+            "filename": "front.webp",
+            "path": "/images/cars/volvo-ex40/front.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 235862,
+            "colorDominance": 0.0352
+          },
+          {
+            "imageType": "interior",
+            "filename": "interior.webp",
+            "path": "/images/cars/volvo-ex40/interior.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 265426,
+            "colorDominance": 0.0809
+          },
+          {
+            "imageType": "listing",
+            "filename": "listing.webp",
+            "path": "/images/cars/volvo-ex40/listing.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 232180,
+            "colorDominance": 0.086
+          },
+          {
+            "imageType": "rear",
+            "filename": "rear.webp",
+            "path": "/images/cars/volvo-ex40/rear.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 503878,
+            "colorDominance": 0.0575
+          },
+          {
+            "imageType": "side",
+            "filename": "side.webp",
+            "path": "/images/cars/volvo-ex40/side.webp",
+            "classification": "real",
+            "detectionMethod": "visual-heuristic",
+            "markersFound": [],
+            "fileSizeBytes": 198566,
+            "colorDominance": 0.1169
+          }
+        ]
+      }
+    ]
+  },
+  "buildResult": {
+    "success": true,
+    "exitCode": 0,
+    "command": "npm run build"
+  }
+}

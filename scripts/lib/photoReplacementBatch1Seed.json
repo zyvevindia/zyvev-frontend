@@ -1,0 +1,235 @@
+{
+  "_comment": "Licensed Wikimedia Commons sources for Photo Replacement Sprint Batch 1. Filenames map to upload.wikimedia.org via MD5 path.",
+  "tata-nexon-ev": {
+    "listing": {
+      "filename": "2020 Tata Nexon EV (India) front view.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "DriveSpark"
+    },
+    "compare": {
+      "filename": "Tata Nexon EV in Hyderabad 02.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Rajasekhar1961"
+    },
+    "front": {
+      "filename": "2020 Tata Nexon EV (India) front view.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "DriveSpark"
+    },
+    "rear": {
+      "filename": "Tata Nexon EV in Hyderabad 01.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Rajasekhar1961",
+      "notes": "Rear view on road, Hyderabad"
+    },
+    "side": {
+      "filename": "Tata Nexon EV in Hyderabad 02.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Rajasekhar1961"
+    },
+    "interior": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "notes": "Tata Motors booth — cabin display"
+    },
+    "dashboard": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "dashboardCrop": true
+    }
+  },
+  "tata-punch-ev": {
+    "listing": {
+      "filename": "4th International Auto Show, Bangalore (2025) 107.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "notes": "Tata Punch EV at Bangalore Auto Show 2025"
+    },
+    "compare": {
+      "filename": "Tata punch.ev.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "VideshiBhaktNRI"
+    },
+    "front": {
+      "filename": "4th International Auto Show, Bangalore (2025) 107.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "rear": {
+      "filename": "Tata punch.ev.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "VideshiBhaktNRI"
+    },
+    "side": {
+      "filename": "Tata punch.ev.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "VideshiBhaktNRI"
+    },
+    "interior": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "dashboard": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "dashboardCrop": true
+    }
+  },
+  "tata-curvv-ev": {
+    "listing": {
+      "filename": "2025 Tata Curvv Creative+ S Petrol (India) front view.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj",
+      "notes": "Curvv EV shares body with Curvv ICE"
+    },
+    "compare": {
+      "filename": "2025 Tata Curvv Creative+ S Petrol (India) rear view.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj"
+    },
+    "front": {
+      "filename": "2025 Tata Curvv Creative+ S Petrol (India) front view.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj"
+    },
+    "rear": {
+      "filename": "2025 Tata Curvv Creative+ S Petrol (India) rear view.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj"
+    },
+    "side": {
+      "filename": "2025 Tata Curvv Creative+ S Petrol (India) front view.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "Manish Bhardwaj"
+    },
+    "interior": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "notes": "Tata Motors booth cabin — best available licensed interior"
+    },
+    "dashboard": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "dashboardCrop": true
+    }
+  },
+  "mg-windsor-ev": {
+    "listing": {
+      "filename": "2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 01.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "MoCars",
+      "notes": "MG Windsor EV is rebadged Wuling Cloud EV / Baojun Yunduo"
+    },
+    "compare": {
+      "filename": "2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 02.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    "front": {
+      "filename": "2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 01.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    "rear": {
+      "filename": "2024 Wuling Cloud EV rear view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    "side": {
+      "filename": "2024 Wuling Cloud EV in Pristine White taken in Bandung, West Java 40173 02.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    "interior": {
+      "filename": "2024 Wuling Cloud EV Interior.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "MoCars"
+    },
+    "dashboard": {
+      "filename": "2024 Wuling Cloud EV Interior.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "MoCars",
+      "dashboardCrop": true
+    }
+  },
+  "mahindra-be-6": {
+    "listing": {
+      "filename": "Mahindra BE6 pic 1.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Cppfront"
+    },
+    "compare": {
+      "filename": "Mahindra BE6 pic 2.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Cppfront"
+    },
+    "front": {
+      "filename": "Mahindra BE6 pic 1.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Cppfront"
+    },
+    "rear": {
+      "filename": "Mahindra BE6 pic 2.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Cppfront"
+    },
+    "side": {
+      "filename": "Mahindra BE 6 Batman Edition.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "SerChevalerie"
+    },
+    "interior": {
+      "filename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 136.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "notes": "Mahindra Born Electric platform booth — cabin context"
+    },
+    "dashboard": {
+      "filename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 136.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "dashboardCrop": true
+    }
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "_comment": "Licensed Wikimedia Commons sources for Photo Replacement Sprint Batch 2.",
+  "tata-harrier-ev": {
+    "listing": {
+      "filename": "4th International Auto Show, Bangalore (2025) 110.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "notes": "Tata Harrier EV at Bangalore Auto Show 2025"
+    },
+    "compare": {
+      "filename": "4th International Auto Show, Bangalore (2025) 110.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "front": {
+      "filename": "4th International Auto Show, Bangalore (2025) 110.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "rear": {
+      "filename": "4th International Auto Show, Bangalore (2025) 110.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "notes": "Only licensed Harrier EV exterior on Commons — reused for rear angle"
+    },
+    "side": {
+      "filename": "4th International Auto Show, Bangalore (2025) 110.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "interior": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "notes": "Tata Motors booth cabin display"
+    },
+    "dashboard": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "dashboardCrop": true
+    }
+  },
+  "hyundai-creta-electric": {
+    "listing": {
+      "filename": "Hyundai Creta Electric SU2 EV PE.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY 4.0",
+      "author": "Avante2025"
+    },
+    "compare": {
+      "filename": "Hyundai Creta Electric SU2 EV PE (2).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY 4.0",
+      "author": "Avante2025"
+    },
+    "front": {
+      "filename": "Hyundai Creta Electric SU2 EV PE (1).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY 4.0",
+      "author": "Avante2025"
+    },
+    "rear": {
+      "filename": "Hyundai Creta Electric SU2 EV PE (4).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY 4.0",
+      "author": "Avante2025"
+    },
+    "side": {
+      "filename": "Hyundai Creta Electric SU2 EV PE (cropped).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY 4.0",
+      "author": "Avante2025"
+    },
+    "interior": {
+      "filename": "2022 Hyundai Creta (SU2) 1.5AT grey interior view in Brunei.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "AIMHO'S REBELLION 8490s",
+      "notes": "SU2 platform cabin — closest licensed interior on Commons"
+    },
+    "dashboard": {
+      "filename": "2022 Hyundai Creta (SU2) 1.5AT grey interior view in Brunei.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "AIMHO'S REBELLION 8490s",
+      "dashboardCrop": true
+    }
+  },
+  "maruti-e-vitara": {
+    "listing": {
+      "filename": "Suzuki e Vitara, Auto 2025, Zurich (20251029-P1074143).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Matti Blume",
+      "notes": "Maruti e Vitara is the India-market Suzuki e Vitara"
+    },
+    "compare": {
+      "filename": "Suzuki e Vitara, Auto 2025, Zurich (20251029-P1074145).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Matti Blume"
+    },
+    "front": {
+      "filename": "2025 Suzuki e Vitara front view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "La Revue Automobile"
+    },
+    "rear": {
+      "filename": "The rearview of Suzuki e VITARA X (ZAA-PA2AS-TBXA-Z).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "side": {
+      "filename": "Suzuki e VITARA X (ZAA-PA2AS-TBXA-Z) left.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "interior": {
+      "filename": "Suzuki e VITARA X (ZAA-PA2AS-TBXA-Z) interior.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "dashboard": {
+      "filename": "Suzuki e VITARA X (ZAA-PA2AS-TBXA-Z) interior.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima",
+      "dashboardCrop": true
+    }
+  },
+  "tata-tigor-ev": {
+    "listing": {
+      "filename": "TATA Electric car on road with number plate.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Rajasekhar1961",
+      "notes": "Licensed Tata electric sedan on road (Hyderabad)"
+    },
+    "compare": {
+      "filename": "TATA Tigor at Shillong Peak View (cropped).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Prabhat114",
+      "notes": "Tigor body shell — shared with Tigor EV"
+    },
+    "front": {
+      "filename": "TATA Electric car on road with number plate.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Rajasekhar1961"
+    },
+    "rear": {
+      "filename": "TATA Tigor at Shillong Peak View.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Prabhat114"
+    },
+    "side": {
+      "filename": "TATA Tigor at Shillong Peak View (cropped).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Prabhat114"
+    },
+    "interior": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "dashboard": {
+      "filename": "4th International Auto Show, Bangalore (2025) 215.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "dashboardCrop": true
+    }
+  },
+  "mg-comet-ev": {
+    "listing": {
+      "filename": "2023 MG Comet EV Plush (India).png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "News18 Assam/Northeast"
+    },
+    "compare": {
+      "filename": "MG Comet EV side view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Saiphani02"
+    },
+    "front": {
+      "filename": "2023 MG Comet EV Plush (India).png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "News18 Assam/Northeast"
+    },
+    "rear": {
+      "filename": "MG Comet EV Rear view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Saiphani02"
+    },
+    "side": {
+      "filename": "MG Comet EV side view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Saiphani02"
+    },
+    "interior": {
+      "filename": "MG Comet EV Inside.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Saiphani02"
+    },
+    "dashboard": {
+      "filename": "MG Comet EV Plush Interior.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "News18 Assam/Northeast"
+    }
+  }
+}

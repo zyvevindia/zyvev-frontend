@@ -1,0 +1,231 @@
+{
+  "_comment": "Licensed Wikimedia Commons sources for Photo Replacement Sprint Batch 4.",
+  "mercedes-eqb": {
+    "listing": {
+      "filename": "The frontview of Mercedes-Benz EQB 250 (X243).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "compare": {
+      "filename": "2023 Mercedes-Benz EQB 350 4Matic in Mountain Gray Magno, front left.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Harvey Bold"
+    },
+    "front": {
+      "filename": "Mercedes-Benz EQB 250 (X243) front.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "rear": {
+      "filename": "The rearview of Mercedes-Benz EQB 250 (X243).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "side": {
+      "filename": "Mercedes-Benz EQB 250 Progressive (X 243) – h 30062024.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 3.0 DE",
+      "author": "M 93"
+    },
+    "interior": {
+      "filename": "The interior of Mercedes-Benz EQB 250 (X243).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "dashboard": {
+      "filename": "The interior of Mercedes-Benz EQB 250 (X243).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima",
+      "dashboardCrop": true
+    }
+  },
+  "volvo-ex40": {
+    "listing": {
+      "filename": "Volvo EX40, Auto 2024, Zurich (PANA0853).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Matti Blume"
+    },
+    "compare": {
+      "filename": "Volvo EX40 Auto Zuerich 2024 DSC 6718.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Alexander Migl"
+    },
+    "front": {
+      "filename": "Volvo EX40 Ultra Twin Motor (ZAA-XE400AXCE2) front.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "rear": {
+      "filename": "Volvo EX40 Ultra Twin Motor (ZAA-XE400AXCE2) rear.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima"
+    },
+    "side": {
+      "filename": "Volvo EX40, Auto 2024, Zurich (PANA0988).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Matti Blume"
+    },
+    "interior": {
+      "filename": "Volvo XC40 RECHARGE Ultimate Twin Motor (ZAA-XE400AXCE) interior.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima",
+      "notes": "XC40 Recharge cabin — same CMA platform as EX40"
+    },
+    "dashboard": {
+      "filename": "Volvo XC40 RECHARGE Ultimate Twin Motor (ZAA-XE400AXCE) interior.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC0 1.0",
+      "author": "Tokumeigakarinoaoshima",
+      "dashboardCrop": true
+    }
+  },
+  "mini-cooper-se": {
+    "listing": {
+      "filename": "2022 Mini Cooper SE in White Silver Metallic, front right.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Vauxford"
+    },
+    "compare": {
+      "filename": "Mini F56 LCI Cooper SE Electric Moonwalk Grey.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "front": {
+      "filename": "2020 Mini Cooper S Electric Level 1 Front.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "rear": {
+      "filename": "2020 Mini Cooper S Electric Level 1 Rear.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "side": {
+      "filename": "Mini F56 Hatch Cooper SE Electric Moonwalk Grey (4).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "interior": {
+      "filename": "Mini F56 LCI Hatch Cooper SE Resolute Edition Black Pearl Light Chequered Cloth Leatherette (5).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh"
+    },
+    "dashboard": {
+      "filename": "Mini F56 Hatch Cooper SE Electric MINI Yours Enigmatic Black Metallic (3).jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Damian B Oh",
+      "dashboardCrop": true
+    }
+  },
+  "citroen-ec3": {
+    "listing": {
+      "filename": "2023 Citroën ë-C3 (Indonesia) front view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Andra Febrian",
+      "notes": "India-market Citroën eC3 (CC21 platform)"
+    },
+    "compare": {
+      "filename": "2024 Citroen e-C3.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "DriveSpark"
+    },
+    "front": {
+      "filename": "2023 Citroën ë-C3 (Indonesia) front view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Andra Febrian"
+    },
+    "rear": {
+      "filename": "2023 Citroën ë-C3 (Indonesia) rear view.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Andra Febrian"
+    },
+    "side": {
+      "filename": "2024 Citroen e-C3.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "DriveSpark"
+    },
+    "interior": {
+      "filename": "2022 Citroën C3 Feel Puretech 110 (India) interior.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "DriveSpark",
+      "notes": "CC21 platform cabin — shared with Citroën eC3"
+    },
+    "dashboard": {
+      "filename": "2022 Citroën C3 Feel Puretech 110 (India) interior.png",
+      "source": "wikimedia-commons",
+      "license": "CC BY 3.0",
+      "author": "DriveSpark",
+      "dashboardCrop": true
+    }
+  },
+  "mahindra-xev-9e": {
+    "listing": {
+      "filename": "Mahindra XEV 9E.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "compare": {
+      "filename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 119.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "front": {
+      "filename": "Mahindra XEV 9E.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "rear": {
+      "filename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 105.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "side": {
+      "filename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 101.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "interior": {
+      "filename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 15.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp"
+    },
+    "dashboard": {
+      "filename": "Green Vehicle Expo 2025 (Bangalore International Exhibition Centre) 81.jpg",
+      "source": "wikimedia-commons",
+      "license": "CC BY-SA 4.0",
+      "author": "Gpkp",
+      "dashboardCrop": true
+    }
+  }
+}
