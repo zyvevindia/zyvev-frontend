@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import CatalogTrustBadge from "../catalog/CatalogTrustBadge";
 import ScoreCircle from "../common/ScoreCircle";
 import EvSavariScorePanel from "../scoring/EvSavariScorePanel";
@@ -70,6 +72,15 @@ function getHeadlineScore(meta, categoryScores) {
   return meta?.dataQualityScore ?? null;
 }
 
+function shouldUseV1ScorePanel(scores) {
+  if (!scores) return false;
+  if (scores.hasData === true) return true;
+  if (scores.overall?.score != null) return true;
+  return Object.values(scores.breakdown || {}).some(
+    (row) => row?.score != null
+  );
+}
+
 function getScoreBlurb(meta, headlineScore) {
   if (meta?.psychologyNarrative) {
     return meta.psychologyNarrative;
@@ -116,6 +127,11 @@ export default function DetailOverviewDashboard({
   const cons = meta?.cons || [];
   const showFitLife =
     fitTags.length > 0 || meta?.compareValueScore != null;
+  const useV1ScorePanel = shouldUseV1ScorePanel(v1Scores);
+  const familySlug =
+    vehicle?.familySlug || vehicle?.slug || null;
+  const [legacyBreakdownExpanded, setLegacyBreakdownExpanded] =
+    useState(false);
 
   return (
     <div className="cd-overview-dashboard">
@@ -146,12 +162,13 @@ export default function DetailOverviewDashboard({
         )}
       </header>
 
-      {(headlineScore != null || v1Scores?.hasData) &&
-        (v1Scores?.hasData ? (
+      {(headlineScore != null || useV1ScorePanel) &&
+        (useV1ScorePanel ? (
           <EvSavariScorePanel
             scores={v1Scores}
             showVariants={!familyOverviewMode}
-            collapsibleBreakdown
+            collapsibleBreakdown={true}
+            familySlug={familySlug}
           />
         ) : (
           <div className="cd-overview-dashboard__score-panel">
@@ -174,15 +191,35 @@ export default function DetailOverviewDashboard({
               </div>
             </div>
             {categoryScores.length > 0 && (
-              <div className="cd-overview-dashboard__score-bars">
-                {categoryScores.map((row) => (
-                  <ScoreBar
-                    key={row.label}
-                    label={row.label}
-                    value={row.value}
-                  />
-                ))}
-              </div>
+              <>
+                <button
+                  type="button"
+                  className="ev-score-panel__toggle cd-overview-dashboard__score-toggle"
+                  aria-expanded={legacyBreakdownExpanded}
+                  aria-controls="cd-legacy-score-breakdown"
+                  onClick={() =>
+                    setLegacyBreakdownExpanded((open) => !open)
+                  }
+                >
+                  {legacyBreakdownExpanded
+                    ? "▲ Hide score breakdown"
+                    : "▼ Show score breakdown"}
+                </button>
+                {legacyBreakdownExpanded && (
+                  <div
+                    id="cd-legacy-score-breakdown"
+                    className="cd-overview-dashboard__score-bars"
+                  >
+                    {categoryScores.map((row) => (
+                      <ScoreBar
+                        key={row.label}
+                        label={row.label}
+                        value={row.value}
+                      />
+                    ))}
+                  </div>
+                )}
+              </>
             )}
           </div>
         ))}

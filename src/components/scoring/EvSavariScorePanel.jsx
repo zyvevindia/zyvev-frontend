@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { trackScorePanelOpened } from "../../analytics/traffic";
 import ScoreCircle from "../common/ScoreCircle";
 import { DIMENSION_LABELS } from "../../scoring/scoreExplanations";
 import "./ev-savari-score-panel.css";
@@ -39,9 +40,11 @@ export default function EvSavariScorePanel({
   scores,
   compact = false,
   showVariants = true,
-  collapsibleBreakdown = false,
+  collapsibleBreakdown = !compact,
+  familySlug = null,
+  sourcePage = "car_details",
 }) {
-  const [breakdownExpanded, setBreakdownExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   if (!scores?.hasData && scores?.overall?.score == null) return null;
 
@@ -64,15 +67,28 @@ export default function EvSavariScorePanel({
   const hasVariants = showVariants && variants.hasData;
   const hasCollapsibleContent =
     bars.length > 0 || hasInsights || hasVariants;
-  const showBreakdownDetails =
-    !collapsibleBreakdown ||
-    (collapsibleBreakdown && breakdownExpanded);
+  const showCollapsibleToggle =
+    collapsibleBreakdown && hasCollapsibleContent;
+
+  function handleToggleBreakdown() {
+    setIsExpanded((open) => {
+      const next = !open;
+      if (next) {
+        trackScorePanelOpened({
+          familySlug,
+          sourcePage,
+          panelType: "detail_score_breakdown",
+        });
+      }
+      return next;
+    });
+  }
 
   return (
     <div className={`ev-score-panel${compact ? " ev-score-panel--compact" : ""}`}>
       <div
         className={`ev-score-panel__header${
-          collapsibleBreakdown && hasCollapsibleContent
+          showCollapsibleToggle
             ? " ev-score-panel__header--with-toggle"
             : ""
         }`}
@@ -98,22 +114,25 @@ export default function EvSavariScorePanel({
         </div>
       </div>
 
-      {collapsibleBreakdown && hasCollapsibleContent && (
+      {showCollapsibleToggle && (
         <button
           type="button"
           className="ev-score-panel__toggle"
-          aria-expanded={breakdownExpanded}
+          aria-expanded={isExpanded}
           aria-controls="ev-score-panel-breakdown"
-          onClick={() => setBreakdownExpanded((open) => !open)}
+          onClick={handleToggleBreakdown}
         >
-          {breakdownExpanded
+          {isExpanded
             ? "▲ Hide score breakdown"
             : "▼ Show score breakdown"}
         </button>
       )}
 
-      {showBreakdownDetails && hasCollapsibleContent && (
-        <div id="ev-score-panel-breakdown" className="ev-score-panel__details">
+      {(!collapsibleBreakdown || isExpanded) && hasCollapsibleContent && (
+        <div
+          id="ev-score-panel-breakdown"
+          className="ev-score-panel__details"
+        >
       {bars.length > 0 && (
         <div className="ev-score-panel__breakdown">
           {bars.map((row) => (
