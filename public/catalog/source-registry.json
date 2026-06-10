@@ -1,0 +1,654 @@
+[
+  {
+    "id": "tata-nexon-ev",
+    "familySlug": "tata-nexon-ev",
+    "brand": "Tata",
+    "model": "Nexon EV",
+    "officialUrl": "https://ev.tatamotors.com/nexon/ev.html",
+    "brochureUrl": null,
+    "oemDomain": "ev.tatamotors.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/tata/nexon-ev"
+    ],
+    "vehicleKeywords": [
+      "nexon",
+      "nexon ev",
+      "nexonev"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:32.888Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "tata-curvv-ev",
+    "familySlug": "tata-curvv-ev",
+    "brand": "Tata",
+    "model": "Curvv EV",
+    "officialUrl": "https://ev.tatamotors.com/curvv/ev.html",
+    "brochureUrl": null,
+    "oemDomain": "ev.tatamotors.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/tata/curvv-ev"
+    ],
+    "vehicleKeywords": [
+      "curvv",
+      "curvv ev",
+      "curvvev"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:33.070Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "tata-punch-ev",
+    "familySlug": "tata-punch-ev",
+    "brand": "Tata",
+    "model": "Punch EV",
+    "officialUrl": "https://ev.tatamotors.com/punch/ev.html",
+    "brochureUrl": null,
+    "oemDomain": "ev.tatamotors.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/tata/punch-ev"
+    ],
+    "vehicleKeywords": [
+      "punch",
+      "punch ev",
+      "punchev"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:33.238Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "tata-tiago-ev",
+    "familySlug": "tata-tiago-ev",
+    "brand": "Tata",
+    "model": "Tiago EV",
+    "officialUrl": "https://ev.tatamotors.com/tiago/ev.html",
+    "brochureUrl": null,
+    "oemDomain": "ev.tatamotors.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/tata/tiago-ev"
+    ],
+    "vehicleKeywords": [
+      "tiago",
+      "tiago ev",
+      "tiagoev"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:33.409Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "tata-harrier-ev",
+    "familySlug": "tata-harrier-ev",
+    "brand": "Tata",
+    "model": "Harrier EV",
+    "officialUrl": "https://ev.tatamotors.com/harrier/ev.html",
+    "brochureUrl": null,
+    "oemDomain": "ev.tatamotors.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/tata/harrier-ev"
+    ],
+    "vehicleKeywords": [
+      "harrier",
+      "harrier ev",
+      "harrierev"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:33.516Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "tata-tigor-ev",
+    "familySlug": "tata-tigor-ev",
+    "brand": "Tata",
+    "model": "Tigor EV",
+    "officialUrl": "https://ev.tatamotors.com/tigor/ev.html",
+    "brochureUrl": null,
+    "oemDomain": "ev.tatamotors.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/tata/tigor-ev"
+    ],
+    "vehicleKeywords": [
+      "tigor",
+      "tigor ev",
+      "tigorev"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:33.707Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "mg-comet-ev",
+    "familySlug": "mg-comet-ev",
+    "brand": "MG",
+    "model": "Comet EV",
+    "officialUrl": "https://www.mgmotor.co.in/vehicles/comet-ev-electric-car-in-india",
+    "brochureUrl": "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Comet%20EV%20-%20Brochure.pdf",
+    "oemDomain": "mgmotor.co.in",
+    "referenceUrls": [
+      "https://www.cardekho.com/mg/comet-ev"
+    ],
+    "vehicleKeywords": [
+      "comet",
+      "comet ev",
+      "cometev"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:34.357Z",
+    "flags": {
+      "missingBrochure": false,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 100,
+    "notes": "Brochure verified"
+  },
+  {
+    "id": "mg-zs-ev",
+    "familySlug": "mg-zs-ev",
+    "brand": "MG",
+    "model": "ZS EV",
+    "officialUrl": "https://www.mgmotor.co.in/vehicles/mgzsev-electric-car-in-india",
+    "brochureUrl": "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20ZSEV%20-%20Brochure.pdf",
+    "oemDomain": "mgmotor.co.in",
+    "referenceUrls": [
+      "https://www.cardekho.com/mg/zs-ev"
+    ],
+    "vehicleKeywords": [
+      "zs ev",
+      "zsev",
+      "mg zs"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:34.633Z",
+    "flags": {
+      "missingBrochure": false,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 100,
+    "notes": "Brochure verified"
+  },
+  {
+    "id": "mg-windsor-ev",
+    "familySlug": "mg-windsor-ev",
+    "brand": "MG",
+    "model": "Windsor EV",
+    "officialUrl": "https://www.mgmotor.co.in/vehicles/windsor-ev-electric-car-in-india",
+    "brochureUrl": null,
+    "oemDomain": "mgmotor.co.in",
+    "referenceUrls": [
+      "https://www.cardekho.com/mg/windsor-ev"
+    ],
+    "vehicleKeywords": [
+      "windsor",
+      "windsor ev",
+      "windsorev"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:34.773Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "mahindra-be-6",
+    "familySlug": "mahindra-be-6",
+    "brand": "Mahindra",
+    "model": "BE 6",
+    "officialUrl": "https://www.mahindraelectricsuv.com/esuv/be-6/MBE6.html",
+    "brochureUrl": "https://www.mahindraelectricsuv.com/on/demandware.static/-/Library-Sites-eSUVSharedLibrary/default/MBE6/MBE6-Brochure-Specification.pdf",
+    "oemDomain": "mahindraelectricsuv.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/mahindra/be-6"
+    ],
+    "vehicleKeywords": [
+      "be 6",
+      "be6",
+      "be-6",
+      "be6e"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:35.136Z",
+    "flags": {
+      "missingBrochure": false,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 100,
+    "notes": "Brochure verified"
+  },
+  {
+    "id": "mahindra-xev-9e",
+    "familySlug": "mahindra-xev-9e",
+    "brand": "Mahindra",
+    "model": "XEV 9e",
+    "officialUrl": "https://www.mahindraelectricsuv.com/esuv/xev-9e/MXV9.html",
+    "brochureUrl": "https://www.mahindraelectricsuv.com/on/demandware.static/-/Library-Sites-eSUVSharedLibrary/default/MXV9/XEV-9e-Brochure-Specification.pdf",
+    "oemDomain": "mahindraelectricsuv.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/mahindra/xev-9e"
+    ],
+    "vehicleKeywords": [
+      "xev 9",
+      "xev9",
+      "xev 9e",
+      "xev9e"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:35.700Z",
+    "flags": {
+      "missingBrochure": false,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 100,
+    "notes": "Brochure verified"
+  },
+  {
+    "id": "mahindra-xuv400",
+    "familySlug": "mahindra-xuv400",
+    "brand": "Mahindra",
+    "model": "XUV400",
+    "officialUrl": "https://auto.mahindra.com/suv/xuv400/X400.html",
+    "brochureUrl": null,
+    "oemDomain": "auto.mahindra.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/mahindra/xuv400"
+    ],
+    "vehicleKeywords": [
+      "xuv400",
+      "xuv 400"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:36.021Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "byd-atto-3",
+    "familySlug": "byd-atto-3",
+    "brand": "BYD",
+    "model": "Atto 3",
+    "officialUrl": "https://www.bydautoindia.com/bydatto3",
+    "brochureUrl": null,
+    "oemDomain": "bydautoindia.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/byd/atto-3"
+    ],
+    "vehicleKeywords": [
+      "atto 3",
+      "atto3",
+      "atto-3"
+    ],
+    "status": "needs_verification",
+    "lastVerifiedAt": "2026-06-09T07:06:36.928Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false,
+      "jsRenderedSource": true
+    },
+    "acquisitionReadinessScore": 50,
+    "notes": "OEM page is JS-rendered; static fetch lacks vehicle content; Brochure URL missing or invalid"
+  },
+  {
+    "id": "byd-seal",
+    "familySlug": "byd-seal",
+    "brand": "BYD",
+    "model": "Seal",
+    "officialUrl": "https://www.bydautoindia.com/bydseal",
+    "brochureUrl": null,
+    "oemDomain": "bydautoindia.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/byd/seal"
+    ],
+    "vehicleKeywords": [
+      "seal",
+      "byd seal"
+    ],
+    "status": "needs_verification",
+    "lastVerifiedAt": "2026-06-09T07:06:37.232Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false,
+      "jsRenderedSource": true
+    },
+    "acquisitionReadinessScore": 50,
+    "notes": "OEM page is JS-rendered; static fetch lacks vehicle content; Brochure URL missing or invalid"
+  },
+  {
+    "id": "hyundai-kona-electric",
+    "familySlug": "hyundai-kona-electric",
+    "brand": "Hyundai",
+    "model": "Kona Electric",
+    "officialUrl": "https://www.hyundai.com/in/en/find-a-car/kona-electric/highlights",
+    "brochureUrl": null,
+    "oemDomain": "hyundai.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/hyundai/kona-electric"
+    ],
+    "vehicleKeywords": [
+      "kona",
+      "kona electric",
+      "konaelectric"
+    ],
+    "status": "deprecated",
+    "lastVerifiedAt": "2026-06-09T07:06:38.368Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": true,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 25,
+    "notes": "Discontinued in India (Jun 2024); canonical URL now redirects to Hyundai India homepage; Redirects to https://www.hyundai.com/in/en; Brochure URL missing or invalid"
+  },
+  {
+    "id": "hyundai-creta-electric",
+    "familySlug": "hyundai-creta-electric",
+    "brand": "Hyundai",
+    "model": "Creta Electric",
+    "officialUrl": "https://www.hyundai.com/in/en/find-a-car/creta-electric/highlights",
+    "brochureUrl": "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/creta-ev.pdf",
+    "oemDomain": "hyundai.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/hyundai/creta-electric"
+    ],
+    "vehicleKeywords": [
+      "creta",
+      "creta electric",
+      "cretaev",
+      "creta ev"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:38.684Z",
+    "flags": {
+      "missingBrochure": false,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 100,
+    "notes": "Brochure verified"
+  },
+  {
+    "id": "hyundai-ioniq-5",
+    "familySlug": "hyundai-ioniq-5",
+    "brand": "Hyundai",
+    "model": "Ioniq 5",
+    "officialUrl": "https://www.hyundai.com/in/en/find-a-car/ioniq-5/highlights",
+    "brochureUrl": null,
+    "oemDomain": "hyundai.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/hyundai/ioniq-5"
+    ],
+    "vehicleKeywords": [
+      "ioniq 5",
+      "ioniq5",
+      "ioniq-5"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:39.049Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "citroen-ec3",
+    "familySlug": "citroen-ec3",
+    "brand": "Citroen",
+    "model": "eC3",
+    "officialUrl": "https://www.citroen.in/models/new-e-c3.html",
+    "brochureUrl": null,
+    "oemDomain": "citroen.in",
+    "referenceUrls": [
+      "https://www.cardekho.com/citroen/ec3"
+    ],
+    "vehicleKeywords": [
+      "ec3",
+      "e-c3",
+      "ë-c3",
+      "citroen ec3"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:39.340Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "kia-ev6",
+    "familySlug": "kia-ev6",
+    "brand": "Kia",
+    "model": "EV6",
+    "officialUrl": "https://www.kia.com/in/our-vehicles/ev6/showroom.html",
+    "brochureUrl": null,
+    "oemDomain": "kia.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/kia/ev6"
+    ],
+    "vehicleKeywords": [
+      "ev6",
+      "ev 6",
+      "kia ev6"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:06:39.580Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  },
+  {
+    "id": "bmw-ix1",
+    "familySlug": "bmw-ix1",
+    "brand": "BMW",
+    "model": "iX1",
+    "officialUrl": "https://www.bmw.in/en/all-models/bmw-i/iX1/2025/bmw-ix1-highlights.html",
+    "brochureUrl": null,
+    "oemDomain": "bmw.in",
+    "referenceUrls": [
+      "https://www.cardekho.com/bmw/ix1"
+    ],
+    "vehicleKeywords": [
+      "ix1",
+      "bmw ix1",
+      "ix1 lwb"
+    ],
+    "status": "needs_verification",
+    "lastVerifiedAt": "2026-06-09T07:07:39.588Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": true
+    },
+    "acquisitionReadinessScore": 5,
+    "notes": "Official URL unreachable (This operation was aborted); Brochure URL missing or invalid"
+  },
+  {
+    "id": "mercedes-eqa",
+    "familySlug": "mercedes-eqa",
+    "brand": "Mercedes-Benz",
+    "model": "EQA",
+    "officialUrl": "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqa.html",
+    "brochureUrl": null,
+    "oemDomain": "mercedes-benz.co.in",
+    "referenceUrls": [
+      "https://www.cardekho.com/mercedes-benz/eqa"
+    ],
+    "vehicleKeywords": [
+      "eqa",
+      "mercedes eqa"
+    ],
+    "status": "needs_verification",
+    "lastVerifiedAt": "2026-06-09T07:08:39.594Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": true
+    },
+    "acquisitionReadinessScore": 5,
+    "notes": "Official URL unreachable (This operation was aborted); Brochure URL missing or invalid"
+  },
+  {
+    "id": "mercedes-eqb",
+    "familySlug": "mercedes-eqb",
+    "brand": "Mercedes-Benz",
+    "model": "EQB",
+    "officialUrl": "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqb.html",
+    "brochureUrl": null,
+    "oemDomain": "mercedes-benz.co.in",
+    "referenceUrls": [
+      "https://www.cardekho.com/mercedes-benz/eqb"
+    ],
+    "vehicleKeywords": [
+      "eqb",
+      "mercedes eqb"
+    ],
+    "status": "needs_verification",
+    "lastVerifiedAt": "2026-06-09T07:09:39.610Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": true
+    },
+    "acquisitionReadinessScore": 5,
+    "notes": "Official URL unreachable (This operation was aborted); Brochure URL missing or invalid"
+  },
+  {
+    "id": "volvo-ex40",
+    "familySlug": "volvo-ex40",
+    "brand": "Volvo",
+    "model": "EX40",
+    "officialUrl": "https://www.volvocars.com/in/cars/ex40-electric/",
+    "brochureUrl": null,
+    "oemDomain": "volvocars.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/volvo/ex40"
+    ],
+    "vehicleKeywords": [
+      "ex40",
+      "ex 40",
+      "volvo ex40"
+    ],
+    "status": "needs_verification",
+    "lastVerifiedAt": "2026-06-09T07:09:40.087Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": true
+    },
+    "acquisitionReadinessScore": 5,
+    "notes": "Official URL unreachable (HTTP 403 Forbidden); Brochure URL missing or invalid"
+  },
+  {
+    "id": "mini-cooper-se",
+    "familySlug": "mini-cooper-se",
+    "brand": "MINI",
+    "model": "Cooper SE",
+    "officialUrl": "https://www.mini.in/en_IN/home/range/mini-cooper-se-electric.html",
+    "brochureUrl": null,
+    "oemDomain": "mini.in",
+    "referenceUrls": [
+      "https://www.cardekho.com/mini/cooper-se"
+    ],
+    "vehicleKeywords": [
+      "cooper se",
+      "mini cooper",
+      "cooperse"
+    ],
+    "status": "needs_verification",
+    "lastVerifiedAt": "2026-06-09T07:10:40.088Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": true
+    },
+    "acquisitionReadinessScore": 5,
+    "notes": "Official URL unreachable (This operation was aborted); Brochure URL missing or invalid"
+  },
+  {
+    "id": "maruti-e-vitara",
+    "familySlug": "maruti-e-vitara",
+    "brand": "Maruti Suzuki",
+    "model": "e Vitara",
+    "officialUrl": "https://www.nexaexperience.com/e-vitara",
+    "brochureUrl": null,
+    "oemDomain": "nexaexperience.com",
+    "referenceUrls": [
+      "https://www.cardekho.com/maruti/e-vitara"
+    ],
+    "vehicleKeywords": [
+      "e vitara",
+      "evitara",
+      "vitara"
+    ],
+    "status": "verified",
+    "lastVerifiedAt": "2026-06-09T07:10:40.433Z",
+    "flags": {
+      "missingBrochure": true,
+      "redirectingUrl": false,
+      "unreachableUrl": false
+    },
+    "acquisitionReadinessScore": 75,
+    "notes": "Brochure URL missing or invalid"
+  }
+]

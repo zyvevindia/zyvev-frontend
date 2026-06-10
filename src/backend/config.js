@@ -22,6 +22,10 @@ const STATIC_TABLES = Object.freeze({
   vehicleVariants: "vehicle_variants",
   vehicleMedia: "vehicle_media",
   operationalSnapshots: "operational_snapshots",
+  catalogImports: "catalog_imports",
+  catalogImportSnapshots: "catalog_import_snapshots",
+  evidenceRecords: "evidence_records",
+  catalogSourceRegistry: "catalog_source_registry",
 });
 
 const STATIC_MEDIA_ROLES = Object.freeze([

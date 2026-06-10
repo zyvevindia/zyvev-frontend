@@ -1,0 +1,203 @@
+{
+  "id": "tata-nexon-ev",
+  "displayName": "Tata Nexon EV",
+  "familySlug": "tata-nexon-ev",
+  "verifiedAt": "2026-06-08",
+  "verificationLevel": "verified_dossier",
+  "sources": [
+    "EVSavari Verified Dossier"
+  ],
+  "vehicle": {
+    "brand": "Tata",
+    "model": "Nexon EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-nexon-ev"
+  },
+  "fields": {
+    "brand": "Tata",
+    "model": "Nexon EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-nexon-ev",
+    "startingPrice": 1249000,
+    "topVariantPrice": 1749000,
+    "exShowroomPrice": 1249000,
+    "batteryCapacityKwh": null,
+    "claimedRangeKm": 489,
+    "rangeTestStandard": "MIDC",
+    "acChargingKw": 7.2,
+    "dcChargingKw": 50,
+    "acChargingTimeHours": 4.3,
+    "dcChargingTimeMinutes": 56,
+    "powerPs": 127,
+    "torqueNm": 215,
+    "airbags": 6,
+    "adas": false,
+    "ncapRating": 5
+  },
+  "features": {
+    "sunroof": false,
+    "ventilatedSeats": false,
+    "camera360": false,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false
+  },
+  "variants": [
+    {
+      "variantName": "Creative+ MR",
+      "priceInr": 1249000,
+      "batteryKwh": 30,
+      "rangeKm": 275,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 50,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Fearless MR",
+      "priceInr": 1329000,
+      "batteryKwh": 30,
+      "rangeKm": 275,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 50,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Fearless+ MR",
+      "priceInr": 1379000,
+      "batteryKwh": 30,
+      "rangeKm": 275,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 50,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Fearless+ S MR",
+      "priceInr": 1429000,
+      "batteryKwh": 30,
+      "rangeKm": 275,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 50,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Empowered MR",
+      "priceInr": 1479000,
+      "batteryKwh": 30,
+      "rangeKm": 275,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 50,
+      "features": {
+        "adas": false,
+        "camera360": true
+      }
+    },
+    {
+      "variantName": "Creative 45",
+      "priceInr": 1399000,
+      "batteryKwh": 45,
+      "rangeKm": 489,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 60,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Fearless 45",
+      "priceInr": 1499000,
+      "batteryKwh": 45,
+      "rangeKm": 489,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 60,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Empowered LR",
+      "priceInr": 1599000,
+      "batteryKwh": 45,
+      "rangeKm": 489,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 60,
+      "features": {
+        "adas": false,
+        "camera360": true
+      }
+    },
+    {
+      "variantName": "Empowered+ 45",
+      "priceInr": 1699000,
+      "batteryKwh": 45,
+      "rangeKm": 489,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 60,
+      "features": {
+        "adas": false,
+        "camera360": true
+      }
+    },
+    {
+      "variantName": "Empowered+ 45 Red Dark",
+      "priceInr": 1719000,
+      "batteryKwh": 45,
+      "rangeKm": 489,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 60,
+      "features": {
+        "adas": false,
+        "camera360": true
+      }
+    },
+    {
+      "variantName": "Empowered+ A 45",
+      "priceInr": 1729000,
+      "batteryKwh": 45,
+      "rangeKm": 489,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 60,
+      "features": {
+        "adas": true,
+        "camera360": true
+      }
+    },
+    {
+      "variantName": "Empowered+ A 45 Dark",
+      "priceInr": 1749000,
+      "batteryKwh": 45,
+      "rangeKm": 489,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 60,
+      "features": {
+        "adas": true,
+        "camera360": true
+      }
+    },
+    {
+      "variantName": "Empowered+ A 45 Red Dark",
+      "priceInr": 1749000,
+      "batteryKwh": 45,
+      "rangeKm": 489,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 60,
+      "features": {
+        "adas": true,
+        "camera360": true
+      }
+    }
+  ]
+}

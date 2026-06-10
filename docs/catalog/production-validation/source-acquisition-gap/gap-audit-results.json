@@ -1,0 +1,1043 @@
+{
+  "generatedAt": "2026-06-09T06:14:32.323Z",
+  "results": [
+    {
+      "id": "tata-curvv-ev",
+      "name": "Tata Curvv EV",
+      "oemUrl": "https://www.tatamotors.com/curvv/ev",
+      "referenceUrls": [
+        "https://www.cardekho.com/tata/curvv-ev"
+      ],
+      "urlFetches": [
+        {
+          "role": "oem",
+          "url": "https://www.tatamotors.com/curvv/ev",
+          "ok": true,
+          "contentType": "text/html; charset=UTF-8",
+          "byteLength": 62055,
+          "fetchedAt": "2026-06-09T06:10:38.104Z",
+          "htmlSavedTo": "docs\\catalog\\production-validation\\source-acquisition-gap\\html\\tata-curvv-ev\\oem.html"
+        },
+        {
+          "role": "reference",
+          "url": "https://www.cardekho.com/tata/curvv-ev",
+          "ok": true,
+          "contentType": "text/html; charset=utf-8",
+          "byteLength": 611540,
+          "fetchedAt": "2026-06-09T06:10:38.728Z",
+          "htmlSavedTo": "docs\\catalog\\production-validation\\source-acquisition-gap\\html\\tata-curvv-ev\\ref-www-cardekho-com.html"
+        }
+      ],
+      "jsAnalysis": {
+        "oem": {
+          "htmlByteLength": 62055,
+          "visibleTextLength": 1673,
+          "textToHtmlRatio": 0.027,
+          "scriptTagCount": 16,
+          "likelyJsRendered": true,
+          "hasVehicleKeywords": true,
+          "signals": [
+            "heavy script tags (16)",
+            "og:title present: \"Tata Motors | Agile, new-age & future-ready\""
+          ],
+          "visibleTextPreview": "EV Conference presentation – JLR &#8211; Tata Motors Tools --> Contact --> English --> --> Mode Light Dark Future of Mobility Our history Organisation Overview About us Our history Our leadership Our global presence Subsidiaries and other entities Innovations --> Business Commercial vehicles Passenger vehicles Electric vehicles Luxury vehicles --> Corporate Responsibility Overview Sustainability strategy --> Planet resilience Working with communities Governance ESG Archive Newsroom Overview Press releases Publications Thought leadership Media library Media contacts --> Careers Overview Life @ Tata Motors Openings @ Tata Motors Lakshya - Earn & Learn Program --> Saksham - Earn & Learn Program Kaushalya - Earn & Learn Program Early Career Program FAQs --> Tools --> Search --> Contact --> EV "
+        },
+        "references": [
+          {
+            "url": "https://www.cardekho.com/tata/curvv-ev",
+            "htmlByteLength": 611540,
+            "visibleTextLength": 31486,
+            "textToHtmlRatio": 0.051,
+            "scriptTagCount": 10,
+            "likelyJsRendered": true,
+            "hasVehicleKeywords": true,
+            "signals": [
+              "window global state blob",
+              "og:title present: \"Tata Curvv EV Price - Features, Images, Colours & Reviews\""
+            ],
+            "visibleTextPreview": "Tata Curvv EV Price - Features, Images, Colours & Reviews All New Used Ad English Login / Register NEW CARS Explore New Cars Electric Cars Tata Tiago EV Maruti Suzuki e Vitara Mahindra BE 6 Tata Punch EV Mahindra XEV 9e MG Windsor EV All Electric Cars Popular Cars Tata Tiago Tata Sierra Tata Punch Hyundai Creta Maruti Suzuki FRONX Mahindra Thar All Popular Cars Upcoming Cars New Launches Popular Brands Maruti Suzuki Cars Tata Cars Kia Cars Toyota Cars Hyundai Cars Mahindra Cars Compare Cars New Car Offers & Discounts Find Car Dealers Find EV Charging Stations Find Fuel Stations Check Fuel Prices Used cars Buy Used Cars Used Cars In Your City Ahmedabad Bangalore Chennai Delhi NCR Hyderabad Jaipur Kolkata Mumbai Pune More Cities Sell My Car Used Car Valuation Dealership Near Me News & Review"
+          }
+        ]
+      },
+      "pdfDiscovery": {
+        "allPdfHrefs": [],
+        "filteredBrochureUrls": [],
+        "rejectedByKeywordFilter": [],
+        "filterRule": "href must match /brochure|spec|download|e-brochure|ebrochure|factsheet|technical/i in resolved URL",
+        "localPdfChecked": [
+          "C:\\projects\\zyvev-frontend\\docs\\catalog\\validation-sources\\tata-curvv-ev.pdf",
+          "C:\\projects\\zyvev-frontend\\data-acquisition\\incoming\\tata-curvv-ev.pdf"
+        ],
+        "localPdfFound": false,
+        "brochurePatternsInHtml": [],
+        "whyNotFound": [
+          "No .pdf hrefs in raw HTML at all",
+          "No brochure-related strings detected in HTML",
+          "OEM page likely JS-rendered — fetch() returns shell HTML without spec content or PDF links"
+        ]
+      },
+      "acquisition": {
+        "ok": true,
+        "sourceCount": 2,
+        "errors": [],
+        "diagnostics": [
+          {
+            "step": "oem_url",
+            "ok": true
+          },
+          {
+            "step": "reference_url",
+            "url": "https://www.cardekho.com/tata/curvv-ev",
+            "ok": true
+          }
+        ],
+        "sourcesAcquired": [
+          {
+            "type": "OEM_WEBSITE",
+            "url": "https://www.tatamotors.com/curvv/ev",
+            "name": "www.tatamotors.com",
+            "contentByteLength": 62055,
+            "visibleTextLength": 1673,
+            "contentPreview": "<!doctype html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\r\n    <link rel=\"shortcut icon\" href=\"https://www.tatamotors.com/wp-content/themes/TataMotors/images/favicon.ico\"\r\n        type=\"image/x-icon\" />\r\n    <!-- <script src=\"https://kit.fontawesome.com/a7f2cf724a.js\" crossorigin=\"anonymous\"></script> -->\r\n    \r\n            <meta property=\"og:title\" content=\"Tata Motors | Agile, new-age & future-ready\" />\r\n    <meta property=\"og:description\"\r\n        content=\" Tata Motors, a USD 42 billion organization, is a leading global automobile manufacturer of cars, utility vehicles, pick-ups, trucks and buses.\" />\r\n   \r\n        <meta property=\"og:url\" content=\"https://www.tatamotors.com/\" />\r\n    <meta property=\"og:image\"\r\n        content=\"https://www.tatamotors.com/wp-content/themes/TataMotors/images/Tata-Motors-thumbnail-og.jpg\" />\r\n\t    </script>\r\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n    <link media=\"print\" onload=\"this.onload=null;this.removeAttribute('media');\"\r\n        href=\"https://fonts.googleapis.com/css2?family=Roboto&display=swap\" rel=\"stylesheet\" defer>\r\n    <!-- no-JS fallback -->\r\n    <noscript>\r\n        <link href=\"https://fonts.googleapis.com/css2?family=Roboto&display=swap\" rel=\"stylesheet\" defer>\r\n    </noscript>\r\n\t<meta name=\"keywords\" conten",
+            "metadata": {
+              "url": "https://www.tatamotors.com/curvv/ev",
+              "sourceType": "OEM_WEBSITE",
+              "fetchedAt": "2026-06-09T06:10:40.648Z",
+              "contentType": "text/html; charset=UTF-8",
+              "byteLength": 62055,
+              "method": "automated_url_fetch",
+              "ok": true,
+              "errors": []
+            }
+          },
+          {
+            "type": "TRUSTED_REFERENCE",
+            "url": "https://www.cardekho.com/tata/curvv-ev",
+            "name": "CarDekho",
+            "contentByteLength": 611540,
+            "visibleTextLength": 31486,
+            "contentPreview": "<!DOCTYPE html><html lang=\"en\" translate=\"no\"><head><meta charset=\"utf-8\"><meta name=\"google\" content=\"notranslate\"><title>Tata Curvv EV Price - Features, Images, Colours & Reviews</title><meta name=\"description\" content=\"Tata Curvv EV price starts at ₹16.99 Lakh in New Delhi. Checkout Tata Curvv EV images, reviews, colours, variants and on-road price at Cardekho.\"> <link href=\"https://staticcont.cardekho.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://stimg.cardekho.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://connect.facebook.net\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://www.googletagmanager.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://securepubads.g.doubleclick.net\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://api.connecto.io\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\">  <link rel=\"preload\" href=\"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Curvv-EV/13538/1777897776645/front-left-side-47.jpg?tr=w-664\" as=\"image\" fetchpriority=\"high\">  <link rel=\"manifest\" href=\"/manifest.json\">  <meta name=\"ROBOTS\" content=\"INDEX,FOLLOW,max-snippet:-1, max-image-preview:large\">   <link rel=\"canonical\" href=\"https://www.cardekho.com/tata/curvv-ev\">      <link rel=\"amphtml\" href=\"https://www.cardekho.com/tata/curvv-ev?amp=1\">       <meta property=\"og:title\" content=\"Tata Curvv EV Price - Features, Image",
+            "metadata": {
+              "url": "https://www.cardekho.com/tata/curvv-ev",
+              "sourceType": "TRUSTED_REFERENCE",
+              "fetchedAt": "2026-06-09T06:10:41.066Z",
+              "contentType": "text/html; charset=utf-8",
+              "byteLength": 611540,
+              "method": "automated_url_fetch",
+              "ok": true,
+              "errors": []
+            }
+          }
+        ]
+      },
+      "pipeline": {
+        "ok": true,
+        "evidenceRecordCount": 6,
+        "variantCount": 3,
+        "extractionDiagnostics": [
+          {
+            "source": "www.tatamotors.com",
+            "sourceType": "OEM_WEBSITE",
+            "ok": true,
+            "recordCount": 0,
+            "variantCount": 0,
+            "meta": {
+              "provider": "openai",
+              "model": "gpt-4o-mini",
+              "extractionMethod": "ai-openai-grounded-two-pass",
+              "fieldCount": 0,
+              "variantCount": 0,
+              "configured": true
+            }
+          },
+          {
+            "source": "CarDekho",
+            "sourceType": "TRUSTED_REFERENCE",
+            "ok": true,
+            "recordCount": 6,
+            "variantCount": 3,
+            "meta": {
+              "provider": "openai",
+              "model": "gpt-4o-mini",
+              "extractionMethod": "ai-openai-grounded-two-pass",
+              "fieldCount": 6,
+              "variantCount": 3,
+              "configured": true
+            }
+          }
+        ]
+      },
+      "evidenceRecords": [
+        {
+          "fieldName": "brand",
+          "fieldValue": "Tata",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/curvv-ev",
+          "trustScore": 80,
+          "extractionConfidence": 95,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "Tata Curvv EV price starts at ₹16.99 Lakh in New Delhi."
+        },
+        {
+          "fieldName": "startingPrice",
+          "fieldValue": "1699000",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/curvv-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "₹16.99 Lakh"
+        },
+        {
+          "fieldName": "topVariantPrice",
+          "fieldValue": "1949000",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/curvv-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "₹19,49,000"
+        },
+        {
+          "fieldName": "batteryCapacityKwh",
+          "fieldValue": "55",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/curvv-ev",
+          "trustScore": 80,
+          "extractionConfidence": 95,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "55 kWh battery pack"
+        },
+        {
+          "fieldName": "claimedRangeKm",
+          "fieldValue": "502",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/curvv-ev",
+          "trustScore": 80,
+          "extractionConfidence": 95,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "claimed range of 502 km"
+        },
+        {
+          "fieldName": "powerPs",
+          "fieldValue": "165",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/curvv-ev",
+          "trustScore": 80,
+          "extractionConfidence": 95,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "165 bhp"
+        }
+      ],
+      "variants": [
+        {
+          "variantName": "Tata Curvv EV Accomplished X 55",
+          "price": 1699000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Tata Curvv EV Empowered X 55",
+          "price": 1919000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Tata Curvv EV Empowered X 55 Dark",
+          "price": 1949000,
+          "battery": null,
+          "range": null
+        }
+      ]
+    },
+    {
+      "id": "tata-nexon-ev",
+      "name": "Tata Nexon EV",
+      "oemUrl": "https://www.tatamotors.com/nexon/ev",
+      "referenceUrls": [
+        "https://www.cardekho.com/tata/nexon-ev"
+      ],
+      "urlFetches": [
+        {
+          "role": "oem",
+          "url": "https://www.tatamotors.com/nexon/ev",
+          "ok": true,
+          "contentType": "text/html; charset=UTF-8",
+          "byteLength": 62055,
+          "fetchedAt": "2026-06-09T06:11:31.555Z",
+          "htmlSavedTo": "docs\\catalog\\production-validation\\source-acquisition-gap\\html\\tata-nexon-ev\\oem.html"
+        },
+        {
+          "role": "reference",
+          "url": "https://www.cardekho.com/tata/nexon-ev",
+          "ok": true,
+          "contentType": "text/html; charset=utf-8",
+          "byteLength": 724554,
+          "fetchedAt": "2026-06-09T06:11:32.106Z",
+          "htmlSavedTo": "docs\\catalog\\production-validation\\source-acquisition-gap\\html\\tata-nexon-ev\\ref-www-cardekho-com.html"
+        }
+      ],
+      "jsAnalysis": {
+        "oem": {
+          "htmlByteLength": 62055,
+          "visibleTextLength": 1673,
+          "textToHtmlRatio": 0.027,
+          "scriptTagCount": 16,
+          "likelyJsRendered": true,
+          "hasVehicleKeywords": true,
+          "signals": [
+            "heavy script tags (16)",
+            "og:title present: \"Tata Motors | Agile, new-age & future-ready\""
+          ],
+          "visibleTextPreview": "EV Conference presentation – JLR &#8211; Tata Motors Tools --> Contact --> English --> --> Mode Light Dark Future of Mobility Our history Organisation Overview About us Our history Our leadership Our global presence Subsidiaries and other entities Innovations --> Business Commercial vehicles Passenger vehicles Electric vehicles Luxury vehicles --> Corporate Responsibility Overview Sustainability strategy --> Planet resilience Working with communities Governance ESG Archive Newsroom Overview Press releases Publications Thought leadership Media library Media contacts --> Careers Overview Life @ Tata Motors Openings @ Tata Motors Lakshya - Earn & Learn Program --> Saksham - Earn & Learn Program Kaushalya - Earn & Learn Program Early Career Program FAQs --> Tools --> Search --> Contact --> EV "
+        },
+        "references": [
+          {
+            "url": "https://www.cardekho.com/tata/nexon-ev",
+            "htmlByteLength": 724554,
+            "visibleTextLength": 38862,
+            "textToHtmlRatio": 0.054,
+            "scriptTagCount": 10,
+            "likelyJsRendered": true,
+            "hasVehicleKeywords": true,
+            "signals": [
+              "window global state blob",
+              "og:title present: \"Tata Nexon EV Price - 465km Range, Images, Colours & Reviews | All Electric SUV\""
+            ],
+            "visibleTextPreview": "Tata Nexon EV Price - 465km Range, Images, Colours & Reviews | All Electric SUV All New Used Ad English Login / Register NEW CARS Explore New Cars Electric Cars Tata Tiago EV Maruti Suzuki e Vitara Mahindra BE 6 Tata Punch EV Mahindra XEV 9e MG Windsor EV All Electric Cars Popular Cars Tata Tiago Tata Sierra Tata Punch Hyundai Creta Maruti Suzuki FRONX Mahindra Thar All Popular Cars Upcoming Cars New Launches Popular Brands Maruti Suzuki Cars Tata Cars Kia Cars Toyota Cars Hyundai Cars Mahindra Cars Compare Cars New Car Offers & Discounts Find Car Dealers Find EV Charging Stations Find Fuel Stations Check Fuel Prices Used cars Buy Used Cars Used Cars In Your City Ahmedabad Bangalore Chennai Delhi NCR Hyderabad Jaipur Kolkata Mumbai Pune More Cities Sell My Car Used Car Valuation Dealership"
+          }
+        ]
+      },
+      "pdfDiscovery": {
+        "allPdfHrefs": [],
+        "filteredBrochureUrls": [],
+        "rejectedByKeywordFilter": [],
+        "filterRule": "href must match /brochure|spec|download|e-brochure|ebrochure|factsheet|technical/i in resolved URL",
+        "localPdfChecked": [
+          "C:\\projects\\zyvev-frontend\\docs\\catalog\\validation-sources\\tata-nexon-ev.pdf",
+          "C:\\projects\\zyvev-frontend\\data-acquisition\\incoming\\tata-nexon-ev.pdf"
+        ],
+        "localPdfFound": false,
+        "brochurePatternsInHtml": [],
+        "whyNotFound": [
+          "No .pdf hrefs in raw HTML at all",
+          "No brochure-related strings detected in HTML",
+          "OEM page likely JS-rendered — fetch() returns shell HTML without spec content or PDF links"
+        ]
+      },
+      "acquisition": {
+        "ok": true,
+        "sourceCount": 2,
+        "errors": [],
+        "diagnostics": [
+          {
+            "step": "oem_url",
+            "ok": true
+          },
+          {
+            "step": "reference_url",
+            "url": "https://www.cardekho.com/tata/nexon-ev",
+            "ok": true
+          }
+        ],
+        "sourcesAcquired": [
+          {
+            "type": "OEM_WEBSITE",
+            "url": "https://www.tatamotors.com/nexon/ev",
+            "name": "www.tatamotors.com",
+            "contentByteLength": 62055,
+            "visibleTextLength": 1673,
+            "contentPreview": "<!doctype html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\r\n    <link rel=\"shortcut icon\" href=\"https://www.tatamotors.com/wp-content/themes/TataMotors/images/favicon.ico\"\r\n        type=\"image/x-icon\" />\r\n    <!-- <script src=\"https://kit.fontawesome.com/a7f2cf724a.js\" crossorigin=\"anonymous\"></script> -->\r\n    \r\n            <meta property=\"og:title\" content=\"Tata Motors | Agile, new-age & future-ready\" />\r\n    <meta property=\"og:description\"\r\n        content=\" Tata Motors, a USD 42 billion organization, is a leading global automobile manufacturer of cars, utility vehicles, pick-ups, trucks and buses.\" />\r\n   \r\n        <meta property=\"og:url\" content=\"https://www.tatamotors.com/\" />\r\n    <meta property=\"og:image\"\r\n        content=\"https://www.tatamotors.com/wp-content/themes/TataMotors/images/Tata-Motors-thumbnail-og.jpg\" />\r\n\t    </script>\r\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n    <link media=\"print\" onload=\"this.onload=null;this.removeAttribute('media');\"\r\n        href=\"https://fonts.googleapis.com/css2?family=Roboto&display=swap\" rel=\"stylesheet\" defer>\r\n    <!-- no-JS fallback -->\r\n    <noscript>\r\n        <link href=\"https://fonts.googleapis.com/css2?family=Roboto&display=swap\" rel=\"stylesheet\" defer>\r\n    </noscript>\r\n\t<meta name=\"keywords\" conten",
+            "metadata": {
+              "url": "https://www.tatamotors.com/nexon/ev",
+              "sourceType": "OEM_WEBSITE",
+              "fetchedAt": "2026-06-09T06:11:33.699Z",
+              "contentType": "text/html; charset=UTF-8",
+              "byteLength": 62055,
+              "method": "automated_url_fetch",
+              "ok": true,
+              "errors": []
+            }
+          },
+          {
+            "type": "TRUSTED_REFERENCE",
+            "url": "https://www.cardekho.com/tata/nexon-ev",
+            "name": "CarDekho",
+            "contentByteLength": 724576,
+            "visibleTextLength": 38862,
+            "contentPreview": "<!DOCTYPE html><html lang=\"en\" translate=\"no\"><head><meta charset=\"utf-8\"><meta name=\"google\" content=\"notranslate\"><title>Tata Nexon EV Price - 465km Range, Images, Colours & Reviews | All Electric SUV</title><meta name=\"description\" content=\"Tata Nexon EV Price - Nexon EV car price starts at ₹12.49 Lakh in New Delhi (ex-showroom). Check Nexon EV top model, on-road price in India, images, colours, reviews, variants & news.\"> <link href=\"https://staticcont.cardekho.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://stimg.cardekho.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://connect.facebook.net\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://www.googletagmanager.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://securepubads.g.doubleclick.net\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://api.connecto.io\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\">  <link rel=\"preload\" href=\"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon-EV/11024/1755845297648/front-left-side-47.jpg?tr=w-664\" as=\"image\" fetchpriority=\"high\">  <link rel=\"manifest\" href=\"/manifest.json\">  <meta name=\"ROBOTS\" content=\"INDEX,FOLLOW,max-snippet:-1, max-image-preview:large\">   <link rel=\"canonical\" href=\"https://www.cardekho.com/tata/nexon-ev\">      <link rel=\"amphtml\" href=\"https://www.cardekho.com/tata/nexon-ev?amp=1\">       <meta prope",
+            "metadata": {
+              "url": "https://www.cardekho.com/tata/nexon-ev",
+              "sourceType": "TRUSTED_REFERENCE",
+              "fetchedAt": "2026-06-09T06:11:33.949Z",
+              "contentType": "text/html; charset=utf-8",
+              "byteLength": 724576,
+              "method": "automated_url_fetch",
+              "ok": true,
+              "errors": []
+            }
+          }
+        ]
+      },
+      "pipeline": {
+        "ok": true,
+        "evidenceRecordCount": 8,
+        "variantCount": 11,
+        "extractionDiagnostics": [
+          {
+            "source": "www.tatamotors.com",
+            "sourceType": "OEM_WEBSITE",
+            "ok": true,
+            "recordCount": 0,
+            "variantCount": 0,
+            "meta": {
+              "provider": "openai",
+              "model": "gpt-4o-mini",
+              "extractionMethod": "ai-openai-grounded-two-pass",
+              "fieldCount": 0,
+              "variantCount": 0,
+              "configured": true
+            }
+          },
+          {
+            "source": "CarDekho",
+            "sourceType": "TRUSTED_REFERENCE",
+            "ok": true,
+            "recordCount": 8,
+            "variantCount": 11,
+            "meta": {
+              "provider": "openai",
+              "model": "gpt-4o-mini",
+              "extractionMethod": "ai-openai-grounded-two-pass",
+              "fieldCount": 8,
+              "variantCount": 11,
+              "configured": true
+            }
+          }
+        ]
+      },
+      "evidenceRecords": [
+        {
+          "fieldName": "brand",
+          "fieldValue": "Tata",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/nexon-ev",
+          "trustScore": 80,
+          "extractionConfidence": 95,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The 2025 Tata Nexon EV is offered with two battery pack options - 30 kWh and 45kWh - with a claimed range of 275km and 4"
+        },
+        {
+          "fieldName": "model",
+          "fieldValue": "Nexon EV",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/nexon-ev",
+          "trustScore": 80,
+          "extractionConfidence": 95,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The 2025 Tata Nexon EV is offered with two battery pack options - 30 kWh and 45kWh - with a claimed range of 275km and 4"
+        },
+        {
+          "fieldName": "startingPrice",
+          "fieldValue": "1249000",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/nexon-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "Nexon EV car price starts at ₹12.49 Lakh in New Delhi (ex-showroom)."
+        },
+        {
+          "fieldName": "topVariantPrice",
+          "fieldValue": "1719000",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/nexon-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "It is priced between Rs.12.49 - 17.19 Lakh (Ex-showroom price from Ernakulam)."
+        },
+        {
+          "fieldName": "batteryCapacityKwh",
+          "fieldValue": "30",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/nexon-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The 2025 Tata Nexon EV is offered with two battery pack options - 30 kWh and 45kWh - with a claimed range of 275km and 4"
+        },
+        {
+          "fieldName": "claimedRangeKm",
+          "fieldValue": "275",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/nexon-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "with a claimed range of 275km and 489km respectively."
+        },
+        {
+          "fieldName": "acChargingKw",
+          "fieldValue": "7.2",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/nexon-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "Charging Time required to fully charge the Nexon EV - 7.2kW - 10 to 100% - 4 hrs 18 mins."
+        },
+        {
+          "fieldName": "torqueNm",
+          "fieldValue": "215",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/tata/nexon-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The Tata Nexon EV has maximum torque of 215Nm."
+        }
+      ],
+      "variants": [
+        {
+          "variantName": "Creative Plus MR",
+          "price": 1249000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Fearless MR",
+          "price": 1329000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Fearless Plus MR",
+          "price": 1379000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Creative 45",
+          "price": 1399000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Fearless Plus S MR",
+          "price": 1429000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Empowered MR",
+          "price": 1479000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Fearless 45",
+          "price": 1499000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Empowered LR",
+          "price": 1599000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Empowered Plus 45",
+          "price": 1699000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Empowered Plus A 45",
+          "price": 1729000,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Empowered Plus A 45 Dark",
+          "price": 1749000,
+          "battery": null,
+          "range": null
+        }
+      ]
+    },
+    {
+      "id": "mg-windsor-ev",
+      "name": "MG Windsor EV",
+      "oemUrl": "https://www.mgmotor.co.in/vehicles/windsor-ev",
+      "referenceUrls": [
+        "https://www.cardekho.com/mg/windsor-ev"
+      ],
+      "urlFetches": [
+        {
+          "role": "oem",
+          "url": "https://www.mgmotor.co.in/vehicles/windsor-ev",
+          "ok": false,
+          "errors": [
+            "HTTP 404 Not Found"
+          ],
+          "byteLength": 0,
+          "htmlSavedTo": null
+        },
+        {
+          "role": "reference",
+          "url": "https://www.cardekho.com/mg/windsor-ev",
+          "ok": true,
+          "contentType": "text/html; charset=utf-8",
+          "byteLength": 638531,
+          "fetchedAt": "2026-06-09T06:13:08.056Z",
+          "htmlSavedTo": "docs\\catalog\\production-validation\\source-acquisition-gap\\html\\mg-windsor-ev\\ref-www-cardekho-com.html"
+        }
+      ],
+      "jsAnalysis": {
+        "oem": null,
+        "references": [
+          {
+            "url": "https://www.cardekho.com/mg/windsor-ev",
+            "htmlByteLength": 638531,
+            "visibleTextLength": 39857,
+            "textToHtmlRatio": 0.062,
+            "scriptTagCount": 10,
+            "likelyJsRendered": true,
+            "hasVehicleKeywords": true,
+            "signals": [
+              "window global state blob",
+              "og:title present: \"MG Windsor EV Price - Features, Images, Colours & Reviews\""
+            ],
+            "visibleTextPreview": "MG Windsor EV Price - Features, Images, Colours & Reviews All New Used Ad English Login / Register NEW CARS Explore New Cars Electric Cars Tata Tiago EV Maruti Suzuki e Vitara Mahindra BE 6 Tata Punch EV Mahindra XEV 9e MG Windsor EV All Electric Cars Popular Cars Tata Tiago Tata Sierra Tata Punch Hyundai Creta Maruti Suzuki FRONX Mahindra Thar All Popular Cars Upcoming Cars New Launches Popular Brands Maruti Suzuki Cars Tata Cars Kia Cars Toyota Cars Hyundai Cars Mahindra Cars Compare Cars New Car Offers & Discounts Find Car Dealers Find EV Charging Stations Find Fuel Stations Check Fuel Prices Used cars Buy Used Cars Used Cars In Your City Ahmedabad Bangalore Chennai Delhi NCR Hyderabad Jaipur Kolkata Mumbai Pune More Cities Sell My Car Used Car Valuation Dealership Near Me News & Review"
+          }
+        ]
+      },
+      "pdfDiscovery": {
+        "allPdfHrefs": [],
+        "filteredBrochureUrls": [],
+        "rejectedByKeywordFilter": [],
+        "filterRule": "N/A — OEM fetch failed",
+        "localPdfChecked": [
+          "C:\\projects\\zyvev-frontend\\docs\\catalog\\validation-sources\\mg-windsor-ev.pdf",
+          "C:\\projects\\zyvev-frontend\\data-acquisition\\incoming\\mg-windsor-ev.pdf"
+        ],
+        "localPdfFound": false,
+        "brochurePatternsInHtml": [],
+        "whyNotFound": [
+          "OEM fetch failed: HTTP 404 Not Found"
+        ]
+      },
+      "acquisition": {
+        "ok": true,
+        "sourceCount": 1,
+        "errors": [
+          "HTTP 404 Not Found"
+        ],
+        "diagnostics": [
+          {
+            "step": "oem_url",
+            "ok": false,
+            "errors": [
+              "HTTP 404 Not Found"
+            ],
+            "metadata": {
+              "url": "https://www.mgmotor.co.in/vehicles/windsor-ev",
+              "sourceType": "OEM_WEBSITE",
+              "fetchedAt": "2026-06-09T06:13:08.140Z",
+              "contentType": null,
+              "byteLength": 0,
+              "method": "automated_url_fetch",
+              "ok": false,
+              "errors": [
+                "HTTP 404 Not Found"
+              ]
+            }
+          },
+          {
+            "step": "reference_url",
+            "url": "https://www.cardekho.com/mg/windsor-ev",
+            "ok": true
+          }
+        ],
+        "sourcesAcquired": [
+          {
+            "type": "TRUSTED_REFERENCE",
+            "url": "https://www.cardekho.com/mg/windsor-ev",
+            "name": "CarDekho",
+            "contentByteLength": 638531,
+            "visibleTextLength": 39857,
+            "contentPreview": "<!DOCTYPE html><html lang=\"en\" translate=\"no\"><head><meta charset=\"utf-8\"><meta name=\"google\" content=\"notranslate\"><title>MG Windsor EV Price - Features, Images, Colours & Reviews</title><meta name=\"description\" content=\"MG Windsor EV price starts at ₹14 Lakh in New Delhi. Checkout MG Windsor EV images, reviews, colours, variants and on-road price at Cardekho.\"> <link href=\"https://staticcont.cardekho.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://stimg.cardekho.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://connect.facebook.net\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://www.googletagmanager.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://securepubads.g.doubleclick.net\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://api.connecto.io\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\">  <link rel=\"preload\" href=\"https://stimg.cardekho.com/images/carexteriorimages/630x420/MG/Windsor-EV/11848/1755845275936/front-left-side-47.jpg?tr=w-664\" as=\"image\" fetchpriority=\"high\">  <link rel=\"manifest\" href=\"/manifest.json\">  <meta name=\"ROBOTS\" content=\"INDEX,FOLLOW,max-snippet:-1, max-image-preview:large\">   <link rel=\"canonical\" href=\"https://www.cardekho.com/mg/windsor-ev\">      <link rel=\"amphtml\" href=\"https://www.cardekho.com/mg/windsor-ev?amp=1\">       <meta property=\"og:title\" content=\"MG Windsor EV Price - Features, Images, ",
+            "metadata": {
+              "url": "https://www.cardekho.com/mg/windsor-ev",
+              "sourceType": "TRUSTED_REFERENCE",
+              "fetchedAt": "2026-06-09T06:13:08.409Z",
+              "contentType": "text/html; charset=utf-8",
+              "byteLength": 638531,
+              "method": "automated_url_fetch",
+              "ok": true,
+              "errors": []
+            }
+          }
+        ]
+      },
+      "pipeline": {
+        "ok": true,
+        "evidenceRecordCount": 4,
+        "variantCount": 5,
+        "extractionDiagnostics": [
+          {
+            "source": "CarDekho",
+            "sourceType": "TRUSTED_REFERENCE",
+            "ok": true,
+            "recordCount": 4,
+            "variantCount": 5,
+            "meta": {
+              "provider": "openai",
+              "model": "gpt-4o-mini",
+              "extractionMethod": "ai-openai-grounded-two-pass",
+              "fieldCount": 4,
+              "variantCount": 5,
+              "configured": true
+            }
+          }
+        ]
+      },
+      "evidenceRecords": [
+        {
+          "fieldName": "startingPrice",
+          "fieldValue": "1400000",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mg/windsor-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "MG Windsor EV price starts at ₹14 Lakh ex-showroom"
+        },
+        {
+          "fieldName": "batteryCapacityKwh",
+          "fieldValue": "38",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mg/windsor-ev",
+          "trustScore": 80,
+          "extractionConfidence": 85,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The battery capacity of MG Windsor EV is between 38 - 52.9 kWh, depending on the variant."
+        },
+        {
+          "fieldName": "claimedRangeKm",
+          "fieldValue": "332",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mg/windsor-ev",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The range of MG Windsor EV is 332 km."
+        },
+        {
+          "fieldName": "acChargingTimeHours",
+          "fieldValue": "7",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mg/windsor-ev",
+          "trustScore": 80,
+          "extractionConfidence": 85,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "Charging Time required to fully charge the MG Windsor EV - 7 H-7.4kW (0-100%)."
+        }
+      ],
+      "variants": [
+        {
+          "variantName": "MG Windsor EV Excite",
+          "price": 1399800,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "MG Windsor EV Exclusive",
+          "price": 1552900,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "MG Windsor EV Essence",
+          "price": 1652900,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "MG Windsor EV Exclusive Pro",
+          "price": 1737900,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "MG Windsor EV Essence Pro",
+          "price": 1849900,
+          "battery": null,
+          "range": null
+        }
+      ]
+    },
+    {
+      "id": "mahindra-be-6",
+      "name": "Mahindra BE 6",
+      "oemUrl": "https://www.mahindra.com/be6",
+      "referenceUrls": [
+        "https://www.cardekho.com/mahindra/be-6"
+      ],
+      "urlFetches": [
+        {
+          "role": "oem",
+          "url": "https://www.mahindra.com/be6",
+          "ok": false,
+          "errors": [
+            "HTTP 404 Not Found"
+          ],
+          "byteLength": 0,
+          "htmlSavedTo": null
+        },
+        {
+          "role": "reference",
+          "url": "https://www.cardekho.com/mahindra/be-6",
+          "ok": true,
+          "contentType": "text/html; charset=utf-8",
+          "byteLength": 761395,
+          "fetchedAt": "2026-06-09T06:13:49.855Z",
+          "htmlSavedTo": "docs\\catalog\\production-validation\\source-acquisition-gap\\html\\mahindra-be-6\\ref-www-cardekho-com.html"
+        }
+      ],
+      "jsAnalysis": {
+        "oem": null,
+        "references": [
+          {
+            "url": "https://www.cardekho.com/mahindra/be-6",
+            "htmlByteLength": 761395,
+            "visibleTextLength": 42989,
+            "textToHtmlRatio": 0.056,
+            "scriptTagCount": 10,
+            "likelyJsRendered": true,
+            "hasVehicleKeywords": true,
+            "signals": [
+              "window global state blob",
+              "og:title present: \"Mahindra BE 6 Price - eSUV, 500+ km Range, Images, Colours & Reviews\""
+            ],
+            "visibleTextPreview": "Mahindra BE 6 Price - eSUV, 500+ km Range, Images, Colours & Reviews All New Used Ad English Login / Register NEW CARS Explore New Cars Electric Cars Tata Tiago EV Maruti Suzuki e Vitara Mahindra BE 6 Tata Punch EV Mahindra XEV 9e MG Windsor EV All Electric Cars Popular Cars Tata Tiago Tata Sierra Tata Punch Hyundai Creta Maruti Suzuki FRONX Mahindra Thar All Popular Cars Upcoming Cars New Launches Popular Brands Maruti Suzuki Cars Tata Cars Kia Cars Toyota Cars Hyundai Cars Mahindra Cars Compare Cars New Car Offers & Discounts Find Car Dealers Find EV Charging Stations Find Fuel Stations Check Fuel Prices Used cars Buy Used Cars Used Cars In Your City Ahmedabad Bangalore Chennai Delhi NCR Hyderabad Jaipur Kolkata Mumbai Pune More Cities Sell My Car Used Car Valuation Dealership Near Me Ne"
+          }
+        ]
+      },
+      "pdfDiscovery": {
+        "allPdfHrefs": [],
+        "filteredBrochureUrls": [],
+        "rejectedByKeywordFilter": [],
+        "filterRule": "N/A — OEM fetch failed",
+        "localPdfChecked": [
+          "C:\\projects\\zyvev-frontend\\docs\\catalog\\validation-sources\\mahindra-be-6.pdf",
+          "C:\\projects\\zyvev-frontend\\data-acquisition\\incoming\\mahindra-be-6.pdf"
+        ],
+        "localPdfFound": false,
+        "brochurePatternsInHtml": [],
+        "whyNotFound": [
+          "OEM fetch failed: HTTP 404 Not Found"
+        ]
+      },
+      "acquisition": {
+        "ok": true,
+        "sourceCount": 1,
+        "errors": [
+          "HTTP 404 Not Found"
+        ],
+        "diagnostics": [
+          {
+            "step": "oem_url",
+            "ok": false,
+            "errors": [
+              "HTTP 404 Not Found"
+            ],
+            "metadata": {
+              "url": "https://www.mahindra.com/be6",
+              "sourceType": "OEM_WEBSITE",
+              "fetchedAt": "2026-06-09T06:13:49.906Z",
+              "contentType": null,
+              "byteLength": 0,
+              "method": "automated_url_fetch",
+              "ok": false,
+              "errors": [
+                "HTTP 404 Not Found"
+              ]
+            }
+          },
+          {
+            "step": "reference_url",
+            "url": "https://www.cardekho.com/mahindra/be-6",
+            "ok": true
+          }
+        ],
+        "sourcesAcquired": [
+          {
+            "type": "TRUSTED_REFERENCE",
+            "url": "https://www.cardekho.com/mahindra/be-6",
+            "name": "CarDekho",
+            "contentByteLength": 761291,
+            "visibleTextLength": 42989,
+            "contentPreview": "<!DOCTYPE html><html lang=\"en\" translate=\"no\"><head><meta charset=\"utf-8\"><meta name=\"google\" content=\"notranslate\"><title>Mahindra BE 6 Price - eSUV, 500+ km Range, Images, Colours & Reviews</title><meta name=\"description\" content=\"Mahindra BE 6 price starts at ₹18.90 Lakh in India. Checkout Mahindra BE 6 images, reviews, colours, variants and on-road price at CarDekho.\"> <link href=\"https://staticcont.cardekho.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://stimg.cardekho.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://connect.facebook.net\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://www.googletagmanager.com\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://securepubads.g.doubleclick.net\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\"><link href=\"https://api.connecto.io\" rel=\"preconnect dns-prefetch\" crossorigin=\"anonymous\">  <link rel=\"preload\" href=\"https://stimg.cardekho.com/images/carexteriorimages/630x420/Mahindra/BE-6/9263/1762423834412/front-left-side-47.jpg?tr=w-664\" as=\"image\" fetchpriority=\"high\">  <link rel=\"manifest\" href=\"/manifest.json\">  <meta name=\"ROBOTS\" content=\"INDEX,FOLLOW,max-snippet:-1, max-image-preview:large\">   <link rel=\"canonical\" href=\"https://www.cardekho.com/mahindra/be-6\">      <link rel=\"amphtml\" href=\"https://www.cardekho.com/mahindra/be-6?amp=1\">       <meta property=\"og:title\" content=\"Mahindra BE 6 Price - eSUV, 500",
+            "metadata": {
+              "url": "https://www.cardekho.com/mahindra/be-6",
+              "sourceType": "TRUSTED_REFERENCE",
+              "fetchedAt": "2026-06-09T06:13:50.231Z",
+              "contentType": "text/html; charset=utf-8",
+              "byteLength": 761291,
+              "method": "automated_url_fetch",
+              "ok": true,
+              "errors": []
+            }
+          }
+        ]
+      },
+      "pipeline": {
+        "ok": true,
+        "evidenceRecordCount": 8,
+        "variantCount": 2,
+        "extractionDiagnostics": [
+          {
+            "source": "CarDekho",
+            "sourceType": "TRUSTED_REFERENCE",
+            "ok": true,
+            "recordCount": 8,
+            "variantCount": 2,
+            "meta": {
+              "provider": "openai",
+              "model": "gpt-4o-mini",
+              "extractionMethod": "ai-openai-grounded-two-pass",
+              "fieldCount": 8,
+              "variantCount": 2,
+              "configured": true
+            }
+          }
+        ]
+      },
+      "evidenceRecords": [
+        {
+          "fieldName": "brand",
+          "fieldValue": "Mahindra",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mahindra/be-6",
+          "trustScore": 80,
+          "extractionConfidence": 98,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The battery capacity of Mahindra BE 6 is between 59 - 79 kWh, depending on the variant."
+        },
+        {
+          "fieldName": "model",
+          "fieldValue": "BE 6",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mahindra/be-6",
+          "trustScore": 80,
+          "extractionConfidence": 98,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The battery capacity of Mahindra BE 6 is between 59 - 79 kWh, depending on the variant."
+        },
+        {
+          "fieldName": "batteryCapacityKwh",
+          "fieldValue": "79",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mahindra/be-6",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The battery capacity of Mahindra BE 6 is between 59 - 79 kWh, depending on the variant."
+        },
+        {
+          "fieldName": "claimedRangeKm",
+          "fieldValue": "683",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mahindra/be-6",
+          "trustScore": 80,
+          "extractionConfidence": 98,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "The range of Mahindra BE 6 is 683 km."
+        },
+        {
+          "fieldName": "acChargingTimeHours",
+          "fieldValue": "8",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mahindra/be-6",
+          "trustScore": 80,
+          "extractionConfidence": 90,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "Charging Time required to fully charge the BE 6 - 6 / 8.7 h (11 .2kW / 7.2 kW Charger)."
+        },
+        {
+          "fieldName": "dcChargingTimeMinutes",
+          "fieldValue": "20",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mahindra/be-6",
+          "trustScore": 80,
+          "extractionConfidence": 98,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "20Min with 140 kW DC"
+        },
+        {
+          "fieldName": "powerPs",
+          "fieldValue": "282",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mahindra/be-6",
+          "trustScore": 80,
+          "extractionConfidence": 98,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "this beast owns a 282 bhp"
+        },
+        {
+          "fieldName": "torqueNm",
+          "fieldValue": "380",
+          "sourceType": "TRUSTED_REFERENCE",
+          "sourceName": "CarDekho",
+          "sourceUrl": "https://www.cardekho.com/mahindra/be-6",
+          "trustScore": 80,
+          "extractionConfidence": 98,
+          "extractionMethod": "ai-openai-grounded-two-pass",
+          "sourceSnippet": "this beast has 380 nm torque"
+        }
+      ],
+      "variants": [
+        {
+          "variantName": "Pack One",
+          "price": null,
+          "battery": null,
+          "range": null
+        },
+        {
+          "variantName": "Pack Two",
+          "price": null,
+          "battery": null,
+          "range": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4386 @@
+{
+  "generatedAt": "2026-06-09T08:03:58.930Z",
+  "targets": {
+    "coveragePct": 60,
+    "featureCoveragePct": 50,
+    "qualityGatePassRate": 50,
+    "manualCorrectionsMax": 10
+  },
+  "before": {
+    "count": 9,
+    "benchmarked": 8,
+    "avgEvidenceRecords": 8.9,
+    "avgCoveragePct": 34.5,
+    "avgFeatureCoveragePct": 0,
+    "avgPublishReadinessScore": 35.3,
+    "qualityGatePassRate": 0,
+    "avgManualCorrections": 33.1
+  },
+  "after": {
+    "count": 9,
+    "benchmarked": 8,
+    "avgEvidenceRecords": 18.5,
+    "avgCoveragePct": 74.8,
+    "avgFeatureCoveragePct": 48.2,
+    "avgPublishReadinessScore": 44.5,
+    "qualityGatePassRate": 25,
+    "avgManualCorrections": 24.6
+  },
+  "results": [
+    {
+      "id": "tata-curvv-ev",
+      "v3": {
+        "ok": true,
+        "version": "v3",
+        "evidenceRecordCount": 6,
+        "variantCount": 3,
+        "metrics": {
+          "coveragePct": 26.1,
+          "variantCoveragePct": 0,
+          "priceAccuracyPct": 0,
+          "featureCoveragePct": 0,
+          "publishReadinessScore": 18
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 36,
+        "gateFailureAnalysis": {
+          "totalIssues": 33,
+          "top10": [
+            {
+              "fieldKey": "model",
+              "gate": "required_fields",
+              "message": "Required field missing: model",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "model",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"Curvv EV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"tata-curvv-ev\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got \"1699000\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2099000, got \"1949000\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 45, got \"55\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "model",
+              "gate": "required_fields",
+              "message": "Required field missing: model",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "model",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"Curvv EV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"tata-curvv-ev\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got \"1699000\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2099000, got \"1949000\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 45, got \"55\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7.2, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6.3, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 30, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ncapRating",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 5, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Creative 45",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Creative 45",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Accomplished 45",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Accomplished 45",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Empowered 55",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Empowered 55",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": null,
+        "variantReconcile": null
+      },
+      "v6": {
+        "ok": true,
+        "version": "v6",
+        "evidenceRecordCount": 20,
+        "variantCount": 2,
+        "metrics": {
+          "coveragePct": 82.6,
+          "variantCoveragePct": 0,
+          "priceAccuracyPct": 0,
+          "featureCoveragePct": 85.7,
+          "publishReadinessScore": 43
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 18,
+        "gateFailureAnalysis": {
+          "totalIssues": 16,
+          "top10": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 2 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got \"1699000\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2099000, got \"1949000\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 45, got \"55\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got \"70\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6.3, got \"7.9\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 30, got \"40\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 2 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got \"1699000\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2099000, got \"1949000\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 45, got \"55\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got \"70\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6.3, got \"7.9\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 30, got \"40\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ncapRating",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 5, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Creative 45",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Creative 45",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Accomplished 45",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Accomplished 45",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Empowered 55",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Empowered 55",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": {
+          "brand": "Tata",
+          "model": "Curvv EV",
+          "familySlug": "tata-curvv-ev",
+          "bodyType": "SUV",
+          "confidence": 98,
+          "sources": [
+            "registry_read",
+            "oem_url",
+            "html_title"
+          ]
+        },
+        "variantReconcile": {
+          "before": 3,
+          "after": 2
+        }
+      }
+    },
+    {
+      "id": "tata-nexon-ev",
+      "v3": {
+        "ok": true,
+        "version": "v3",
+        "evidenceRecordCount": 7,
+        "variantCount": 12,
+        "metrics": {
+          "coveragePct": 29.2,
+          "variantCoveragePct": 92.3,
+          "priceAccuracyPct": 93.3,
+          "featureCoveragePct": 0,
+          "publishReadinessScore": 58
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 29,
+        "gateFailureAnalysis": {
+          "totalIssues": 29,
+          "top10": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 12 vs golden 13",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"tata-nexon-ev\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1249000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 489, got \"275\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 50, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 4.3, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 56, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 12 vs golden 13",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"tata-nexon-ev\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1249000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 489, got \"275\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 50, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 4.3, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 56, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "powerPs",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 127, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "torqueNm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 215, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ncapRating",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 5, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Empowered+ A 45 Red Dark",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Empowered+ A 45 Red Dark",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": null,
+        "variantReconcile": null
+      },
+      "v6": {
+        "ok": true,
+        "version": "v6",
+        "evidenceRecordCount": 16,
+        "variantCount": 9,
+        "metrics": {
+          "coveragePct": 58.3,
+          "variantCoveragePct": 69.2,
+          "priceAccuracyPct": 0,
+          "featureCoveragePct": 14.3,
+          "publishReadinessScore": 39
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 40,
+        "gateFailureAnalysis": {
+          "totalIssues": 29,
+          "top10": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 9 vs golden 13",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1249000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1749000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1249000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 489, got \"275\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7.2, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 50, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 4.3, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 56, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 9 vs golden 13",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1249000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1749000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1249000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 489, got \"275\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7.2, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 50, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 4.3, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 56, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "powerPs",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 127, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ncapRating",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 5, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Fearless+ S MR",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Fearless+ S MR",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Empowered+ A 45",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Empowered+ A 45",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Empowered+ A 45 Dark",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Empowered+ A 45 Dark",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Empowered+ A 45 Red Dark",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Empowered+ A 45 Red Dark",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": {
+          "brand": "Tata",
+          "model": "Nexon EV",
+          "familySlug": "tata-nexon-ev",
+          "bodyType": "SUV",
+          "confidence": 98,
+          "sources": [
+            "registry_read",
+            "oem_url",
+            "html_title"
+          ]
+        },
+        "variantReconcile": {
+          "before": 12,
+          "after": 9
+        }
+      }
+    },
+    {
+      "id": "tata-punch-ev",
+      "v3": {
+        "ok": true,
+        "version": "v3",
+        "evidenceRecordCount": 9,
+        "variantCount": 6,
+        "metrics": {
+          "coveragePct": 29.2,
+          "variantCoveragePct": 66.7,
+          "priceAccuracyPct": 14.3,
+          "featureCoveragePct": 0,
+          "publishReadinessScore": 36
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 38,
+        "gateFailureAnalysis": {
+          "totalIssues": 30,
+          "top10": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"tata-punch-ev\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1259000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 969000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7.2, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 65, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 4.5, got \"14.8\"",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"tata-punch-ev\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1259000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 969000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7.2, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 65, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 4.5, got \"14.8\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "powerPs",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 87, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "torqueNm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 154, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ncapRating",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 5, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Smart+ 30 kWh",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Smart+ 30 kWh",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Smart+ 40 kWh",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Smart+ 40 kWh",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": null,
+        "variantReconcile": null
+      },
+      "v6": {
+        "ok": true,
+        "version": "v6",
+        "evidenceRecordCount": 17,
+        "variantCount": 5,
+        "metrics": {
+          "coveragePct": 58.3,
+          "variantCoveragePct": 66.7,
+          "priceAccuracyPct": 14.3,
+          "featureCoveragePct": 14.3,
+          "publishReadinessScore": 42
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 33,
+        "gateFailureAnalysis": {
+          "totalIssues": 26,
+          "top10": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 5 vs golden 6",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1259000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 969000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7.2, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 65, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 4.5, got \"14.8\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "torqueNm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 154, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 5 vs golden 6",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1259000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 969000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7.2, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 65, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 4.5, got \"14.8\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "torqueNm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 154, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ncapRating",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 5, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Smart+ 30 kWh",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Smart+ 30 kWh",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Smart+ 40 kWh",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Smart+ 40 kWh",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": {
+          "brand": "Tata",
+          "model": "Punch EV",
+          "familySlug": "tata-punch-ev",
+          "bodyType": "SUV",
+          "confidence": 98,
+          "sources": [
+            "registry_read",
+            "oem_url",
+            "html_title"
+          ]
+        },
+        "variantReconcile": {
+          "before": 6,
+          "after": 5
+        }
+      }
+    },
+    {
+      "id": "mahindra-be-6",
+      "v3": {
+        "ok": true,
+        "version": "v3",
+        "evidenceRecordCount": 14,
+        "variantCount": 2,
+        "metrics": {
+          "coveragePct": 45,
+          "variantCoveragePct": 33.3,
+          "priceAccuracyPct": 0,
+          "featureCoveragePct": 0,
+          "publishReadinessScore": 21
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 39,
+        "gateFailureAnalysis": {
+          "totalIssues": 31,
+          "top10": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 2 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: acChargingTimeHours",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"mahindra-be-6\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1890000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2690000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1890000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 2 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: acChargingTimeHours",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"mahindra-be-6\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1890000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2690000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1890000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 500, got \"557\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 11, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Pack Three 79",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Pack Three 79",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Pack Three 79 Select",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Pack Three 79 Select",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": null,
+        "variantReconcile": null
+      },
+      "v6": {
+        "ok": true,
+        "version": "v6",
+        "evidenceRecordCount": 19,
+        "variantCount": 2,
+        "metrics": {
+          "coveragePct": 80,
+          "variantCoveragePct": 33.3,
+          "priceAccuracyPct": 0,
+          "featureCoveragePct": 42.9,
+          "publishReadinessScore": 37
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 27,
+        "gateFailureAnalysis": {
+          "totalIssues": 21,
+          "top10": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 2 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1890000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2690000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1890000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 500, got \"557\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 11, got \"7.2\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got \"140\"",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 2 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1890000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2690000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1890000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 500, got \"557\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 11, got \"7.2\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got \"140\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Pack Three 79",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Pack Three 79",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Pack Three 79 Select",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Pack Three 79 Select",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": {
+          "brand": "Mahindra",
+          "model": "BE 6",
+          "familySlug": "mahindra-be-6",
+          "bodyType": "SUV",
+          "confidence": 98,
+          "sources": [
+            "registry_read",
+            "oem_url",
+            "html_title"
+          ]
+        },
+        "variantReconcile": {
+          "before": 2,
+          "after": 2
+        }
+      }
+    },
+    {
+      "id": "mahindra-xev-9e",
+      "v3": {
+        "ok": true,
+        "version": "v3",
+        "evidenceRecordCount": 16,
+        "variantCount": 6,
+        "metrics": {
+          "coveragePct": 60,
+          "variantCoveragePct": 66.7,
+          "priceAccuracyPct": 40,
+          "featureCoveragePct": 0,
+          "publishReadinessScore": 41
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 32,
+        "gateFailureAnalysis": {
+          "totalIssues": 26,
+          "top10": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 6 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: acChargingTimeHours",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"mahindra-xev-9e\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2190000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 656, got \"500\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 175, got \"140\"",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 6 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "acChargingTimeHours",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: acChargingTimeHours",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"mahindra-xev-9e\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2190000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 656, got \"500\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 175, got \"140\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Pack Three 79 Select AWD",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Pack Three 79 Select AWD",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": null,
+        "variantReconcile": null
+      },
+      "v6": {
+        "ok": true,
+        "version": "v6",
+        "evidenceRecordCount": 22,
+        "variantCount": 3,
+        "metrics": {
+          "coveragePct": 85,
+          "variantCoveragePct": 0,
+          "priceAccuracyPct": 66.7,
+          "featureCoveragePct": 42.9,
+          "publishReadinessScore": 51
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 21,
+        "gateFailureAnalysis": {
+          "totalIssues": 17,
+          "top10": [
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2190000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 656, got \"500\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 175, got \"140\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2190000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 656, got \"500\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"MIDC\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 175, got \"140\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Pack One 79",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Pack One 79",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Pack Three 79",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Pack Three 79",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Pack Three 79 Select AWD",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Pack Three 79 Select AWD",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": {
+          "brand": "Mahindra",
+          "model": "XEV 9e",
+          "familySlug": "mahindra-xev-9e",
+          "bodyType": "SUV",
+          "confidence": 98,
+          "sources": [
+            "registry_read",
+            "oem_url",
+            "html_title"
+          ]
+        },
+        "variantReconcile": {
+          "before": 5,
+          "after": 3
+        }
+      }
+    },
+    {
+      "id": "mg-windsor-ev",
+      "v3": {
+        "ok": true,
+        "version": "v3",
+        "evidenceRecordCount": 6,
+        "variantCount": 7,
+        "metrics": {
+          "coveragePct": 25,
+          "variantCoveragePct": 100,
+          "priceAccuracyPct": 0,
+          "featureCoveragePct": 0,
+          "publishReadinessScore": 40
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 31,
+        "gateFailureAnalysis": {
+          "totalIssues": 25,
+          "top10": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 7 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"mg-windsor-ev\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 999000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1689000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 999000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7.4, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 45, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 7 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"mg-windsor-ev\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 999000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1689000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 999000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7.4, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 45, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            }
+          ]
+        },
+        "identity": null,
+        "variantReconcile": null
+      },
+      "v6": {
+        "ok": true,
+        "version": "v6",
+        "evidenceRecordCount": 25,
+        "variantCount": 2,
+        "metrics": {
+          "coveragePct": 105,
+          "variantCoveragePct": 0,
+          "priceAccuracyPct": 0,
+          "featureCoveragePct": 57.1,
+          "publishReadinessScore": 36
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 22,
+        "gateFailureAnalysis": {
+          "totalIssues": 18,
+          "top10": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 2 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 999000, got \"1399800\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1689000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 999000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 331, got \"332 km – 449 km\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 45, got \"50\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 2 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: batteryCapacityKwh",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "unresolved_conflicts",
+              "message": "Unresolved evidence conflict: claimedRangeKm",
+              "impact": 75,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 999000, got \"1399800\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1689000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 999000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 331, got \"332 km – 449 km\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 45, got \"50\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Excite",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Excite",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Exclusive",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Exclusive",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Essence",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Essence",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": {
+          "brand": "MG",
+          "model": "Windsor EV",
+          "familySlug": "mg-windsor-ev",
+          "bodyType": "SUV",
+          "confidence": 98,
+          "sources": [
+            "registry_read",
+            "oem_url",
+            "html_title"
+          ]
+        },
+        "variantReconcile": {
+          "before": 7,
+          "after": 2
+        }
+      }
+    },
+    {
+      "id": "mg-zs-ev",
+      "v3": {
+        "ok": true,
+        "version": "v3",
+        "evidenceRecordCount": 10,
+        "variantCount": 3,
+        "metrics": null,
+        "qualityGatesPassed": false,
+        "manualCorrections": null,
+        "gateFailureAnalysis": null,
+        "identity": null,
+        "variantReconcile": null
+      },
+      "v6": {
+        "ok": true,
+        "version": "v6",
+        "evidenceRecordCount": 19,
+        "variantCount": 1,
+        "metrics": null,
+        "qualityGatesPassed": false,
+        "manualCorrections": null,
+        "gateFailureAnalysis": null,
+        "identity": {
+          "brand": "MG",
+          "model": "ZS EV",
+          "familySlug": "mg-zs-ev",
+          "bodyType": "SUV",
+          "confidence": 98,
+          "sources": [
+            "registry_read",
+            "oem_url",
+            "html_title"
+          ]
+        },
+        "variantReconcile": {
+          "before": 4,
+          "after": 1
+        }
+      }
+    },
+    {
+      "id": "hyundai-creta-electric",
+      "v3": {
+        "ok": true,
+        "version": "v3",
+        "evidenceRecordCount": 6,
+        "variantCount": 5,
+        "metrics": {
+          "coveragePct": 30,
+          "variantCoveragePct": 33.3,
+          "priceAccuracyPct": 25,
+          "featureCoveragePct": 0,
+          "publishReadinessScore": 32
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 29,
+        "gateFailureAnalysis": {
+          "totalIssues": 27,
+          "top10": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 5 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"hyundai-creta-electric\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 390, got \"420\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 11, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "variant_count_mismatch",
+              "gate": "variant_count_mismatch",
+              "message": "Variant count 5 vs golden 3",
+              "impact": 85,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"hyundai-creta-electric\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 390, got \"420\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 11, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Premium",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Premium",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Signature",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Signature",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": null,
+        "variantReconcile": null
+      },
+      "v6": {
+        "ok": true,
+        "version": "v6",
+        "evidenceRecordCount": 16,
+        "variantCount": 3,
+        "metrics": {
+          "coveragePct": 70,
+          "variantCoveragePct": 33.3,
+          "priceAccuracyPct": 25,
+          "featureCoveragePct": 71.4,
+          "publishReadinessScore": 55
+        },
+        "qualityGatesPassed": true,
+        "manualCorrections": 16,
+        "gateFailureAnalysis": {
+          "totalIssues": 13,
+          "top10": [
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 390, got \"420\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 11, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 1799000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 390, got \"420\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 11, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 150, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got \"true\"",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got true",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Premium",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Premium",
+              "impact": 40,
+              "category": "variant"
+            },
+            {
+              "fieldKey": "variant:Signature",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Signature",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": {
+          "brand": "Hyundai",
+          "model": "Creta Electric",
+          "familySlug": "hyundai-creta-electric",
+          "bodyType": "SUV",
+          "confidence": 98,
+          "sources": [
+            "registry_read",
+            "oem_url",
+            "html_title"
+          ]
+        },
+        "variantReconcile": {
+          "before": 5,
+          "after": 3
+        }
+      }
+    },
+    {
+      "id": "byd-atto-3",
+      "v3": {
+        "ok": true,
+        "version": "v3",
+        "evidenceRecordCount": 7,
+        "variantCount": 3,
+        "metrics": {
+          "coveragePct": 31.8,
+          "variantCoveragePct": 66.7,
+          "priceAccuracyPct": 0,
+          "featureCoveragePct": 0,
+          "publishReadinessScore": 36
+        },
+        "qualityGatesPassed": false,
+        "manualCorrections": 31,
+        "gateFailureAnalysis": {
+          "totalIssues": 26,
+          "top10": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"byd-atto-3\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 3399000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 80, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 30, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "familySlug",
+              "gate": "required_fields",
+              "message": "Required field missing: familySlug",
+              "impact": 100,
+              "category": "quality_gate"
+            },
+            {
+              "fieldKey": "bodyType",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"SUV\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "familySlug",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"byd-atto-3\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 3399000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 80, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 30, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "sunroof",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "camera360",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "adas",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Special Edition",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Special Edition",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": null,
+        "variantReconcile": null
+      },
+      "v6": {
+        "ok": true,
+        "version": "v6",
+        "evidenceRecordCount": 13,
+        "variantCount": 3,
+        "metrics": {
+          "coveragePct": 59.1,
+          "variantCoveragePct": 66.7,
+          "priceAccuracyPct": 0,
+          "featureCoveragePct": 57.1,
+          "publishReadinessScore": 53
+        },
+        "qualityGatesPassed": true,
+        "manualCorrections": 20,
+        "gateFailureAnalysis": {
+          "totalIssues": 15,
+          "top10": [
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 3399000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 80, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 30, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            }
+          ],
+          "all": [
+            {
+              "fieldKey": "startingPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 3399000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 2499000, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected \"ARAI\", got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 7, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 80, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "dcChargingTimeMinutes",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 30, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "airbags",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected 6, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected true, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "field_incorrect",
+              "message": "Golden mismatch: expected false, got null",
+              "impact": 50,
+              "category": "benchmark"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2l",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected true, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "v2v",
+              "gate": "feature_missing",
+              "message": "Feature mismatch: expected false, got null",
+              "impact": 45,
+              "category": "feature"
+            },
+            {
+              "fieldKey": "variant:Special Edition",
+              "gate": "variant_unmatched",
+              "message": "Golden variant not matched: Special Edition",
+              "impact": 40,
+              "category": "variant"
+            }
+          ]
+        },
+        "identity": {
+          "brand": "BYD",
+          "model": "Atto 3",
+          "familySlug": "byd-atto-3",
+          "bodyType": "SUV",
+          "confidence": 98,
+          "sources": [
+            "registry_read",
+            "oem_url",
+            "html_title"
+          ]
+        },
+        "variantReconcile": {
+          "before": 3,
+          "after": 3
+        }
+      }
+    }
+  ]
+}

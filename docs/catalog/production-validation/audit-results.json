@@ -1,0 +1,474 @@
+{
+  "generatedAt": "2026-06-09T06:01:44.015Z",
+  "aggregate": {
+    "vehicleCount": 5,
+    "successCount": 5,
+    "failureCount": 0,
+    "pdfAcquiredCount": 0,
+    "avgCoveragePct": 29.5,
+    "avgVariantCoveragePct": 56.9,
+    "avgPriceAccuracyPct": 9,
+    "avgFeatureCoveragePct": 0,
+    "avgPublishReadinessScore": 29.4,
+    "avgReviewMinutes": 3,
+    "qualityGatePassRate": 0,
+    "underTenMinutesCount": 0,
+    "underTenMinutesVerdict": "No",
+    "totalManualCorrections": 179
+  },
+  "results": [
+    {
+      "id": "tata-curvv-ev",
+      "name": "Tata Curvv EV",
+      "ok": true,
+      "oemUrl": "https://www.tatamotors.com/curvv/ev",
+      "referenceUrls": [
+        "https://www.cardekho.com/tata/curvv-ev"
+      ],
+      "pdf": {
+        "ok": false,
+        "source": "none",
+        "path": null,
+        "url": null,
+        "byteLength": null,
+        "errors": [
+          "No local PDF and no discoverable OEM PDF URL"
+        ]
+      },
+      "elapsedMs": 54980,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 8,
+        "variantCount": 3,
+        "aiProvider": "openai",
+        "aiConfigured": true
+      },
+      "metrics": {
+        "fieldsExtracted": 8,
+        "fieldsExpected": 23,
+        "coveragePct": 34.8,
+        "variantCoveragePct": 0,
+        "priceAccuracyPct": 0,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 8.7,
+        "confidenceScore": 85,
+        "publishReadinessScore": 16
+      },
+      "review": {
+        "attentionCount": 2,
+        "conflictCount": 0,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 21,
+          "featureCorrections": 7,
+          "priceCorrections": 3,
+          "variantCorrections": 3,
+          "attentionFields": 2,
+          "conflictFields": 0,
+          "hallucinationCritical": 0,
+          "totalEstimated": 36
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 2,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "model",
+            "message": "Required field missing: model"
+          },
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "evaluationSummary": {
+        "fieldCorrect": 2,
+        "fieldTotal": 23,
+        "variantMatched": 0,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 3,
+        "variantCountMatch": true,
+        "priceCorrect": 0,
+        "priceTotal": 3,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "tata-nexon-ev",
+      "name": "Tata Nexon EV",
+      "ok": true,
+      "oemUrl": "https://www.tatamotors.com/nexon/ev",
+      "referenceUrls": [
+        "https://www.cardekho.com/tata/nexon-ev"
+      ],
+      "pdf": {
+        "ok": false,
+        "source": "none",
+        "path": null,
+        "url": null,
+        "byteLength": null,
+        "errors": [
+          "No local PDF and no discoverable OEM PDF URL"
+        ]
+      },
+      "elapsedMs": 80619,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 6,
+        "variantCount": 11,
+        "aiProvider": "openai",
+        "aiConfigured": true
+      },
+      "metrics": {
+        "fieldsExtracted": 6,
+        "fieldsExpected": 24,
+        "coveragePct": 25,
+        "variantCoveragePct": 84.6,
+        "priceAccuracyPct": 0,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 16.7,
+        "confidenceScore": 85,
+        "publishReadinessScore": 35
+      },
+      "review": {
+        "attentionCount": 1,
+        "conflictCount": 0,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 20,
+          "featureCorrections": 7,
+          "priceCorrections": 14,
+          "variantCorrections": 2,
+          "attentionFields": 1,
+          "conflictFields": 0,
+          "hallucinationCritical": 0,
+          "totalEstimated": 44
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 2,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          },
+          {
+            "gate": "variant_count_mismatch",
+            "message": "Variant count 11 vs golden 13",
+            "extractedCount": 11,
+            "goldenCount": 13
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "evaluationSummary": {
+        "fieldCorrect": 4,
+        "fieldTotal": 24,
+        "variantMatched": 11,
+        "variantGoldenCount": 13,
+        "variantExtractedCount": 11,
+        "variantCountMatch": false,
+        "priceCorrect": 0,
+        "priceTotal": 14,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "mahindra-be-6",
+      "name": "Mahindra BE 6",
+      "ok": true,
+      "oemUrl": "https://www.mahindra.com/be6",
+      "referenceUrls": [
+        "https://www.cardekho.com/mahindra/be-6"
+      ],
+      "pdf": {
+        "ok": false,
+        "source": "none",
+        "path": null,
+        "url": null,
+        "byteLength": null,
+        "errors": [
+          "No local PDF and no discoverable OEM PDF URL"
+        ]
+      },
+      "elapsedMs": 35969,
+      "acquisition": {
+        "sourceCount": 1,
+        "evidenceRecordCount": 6,
+        "variantCount": 2,
+        "aiProvider": "openai",
+        "aiConfigured": true
+      },
+      "metrics": {
+        "fieldsExtracted": 6,
+        "fieldsExpected": 20,
+        "coveragePct": 30,
+        "variantCoveragePct": 33.3,
+        "priceAccuracyPct": 25,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 0,
+        "confidenceScore": 85,
+        "publishReadinessScore": 23
+      },
+      "review": {
+        "attentionCount": 3,
+        "conflictCount": 0,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 20,
+          "featureCorrections": 7,
+          "priceCorrections": 3,
+          "variantCorrections": 2,
+          "attentionFields": 3,
+          "conflictFields": 0,
+          "hallucinationCritical": 0,
+          "totalEstimated": 35
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 4,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "brand",
+            "message": "Required field missing: brand"
+          },
+          {
+            "gate": "required_fields",
+            "fieldKey": "model",
+            "message": "Required field missing: model"
+          },
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          },
+          {
+            "gate": "variant_count_mismatch",
+            "message": "Variant count 2 vs golden 3",
+            "extractedCount": 2,
+            "goldenCount": 3
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "evaluationSummary": {
+        "fieldCorrect": 0,
+        "fieldTotal": 20,
+        "variantMatched": 1,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 2,
+        "variantCountMatch": false,
+        "priceCorrect": 1,
+        "priceTotal": 4,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "mg-windsor-ev",
+      "name": "MG Windsor EV",
+      "ok": true,
+      "oemUrl": "https://www.mgmotor.co.in/vehicles/windsor-ev",
+      "referenceUrls": [
+        "https://www.cardekho.com/mg/windsor-ev"
+      ],
+      "pdf": {
+        "ok": false,
+        "source": "none",
+        "path": null,
+        "url": null,
+        "byteLength": null,
+        "errors": [
+          "No local PDF and no discoverable OEM PDF URL"
+        ]
+      },
+      "elapsedMs": 45239,
+      "acquisition": {
+        "sourceCount": 1,
+        "evidenceRecordCount": 7,
+        "variantCount": 5,
+        "aiProvider": "openai",
+        "aiConfigured": true
+      },
+      "metrics": {
+        "fieldsExtracted": 7,
+        "fieldsExpected": 20,
+        "coveragePct": 35,
+        "variantCoveragePct": 100,
+        "priceAccuracyPct": 0,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 20,
+        "confidenceScore": 85,
+        "publishReadinessScore": 39
+      },
+      "review": {
+        "attentionCount": 1,
+        "conflictCount": 0,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 16,
+          "featureCorrections": 7,
+          "priceCorrections": 6,
+          "variantCorrections": 0,
+          "attentionFields": 1,
+          "conflictFields": 0,
+          "hallucinationCritical": 0,
+          "totalEstimated": 30
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 2,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          },
+          {
+            "gate": "variant_count_mismatch",
+            "message": "Variant count 5 vs golden 3",
+            "extractedCount": 5,
+            "goldenCount": 3
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "evaluationSummary": {
+        "fieldCorrect": 4,
+        "fieldTotal": 20,
+        "variantMatched": 3,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 5,
+        "variantCountMatch": false,
+        "priceCorrect": 0,
+        "priceTotal": 6,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "byd-atto-3",
+      "name": "BYD Atto 3",
+      "ok": true,
+      "oemUrl": "https://www.bydauto.co.in/atto-3",
+      "referenceUrls": [
+        "https://www.cardekho.com/byd/atto-3"
+      ],
+      "pdf": {
+        "ok": false,
+        "source": "none",
+        "path": null,
+        "url": null,
+        "byteLength": null,
+        "errors": [
+          "No local PDF and no discoverable OEM PDF URL"
+        ]
+      },
+      "elapsedMs": 92367,
+      "acquisition": {
+        "sourceCount": 1,
+        "evidenceRecordCount": 5,
+        "variantCount": 3,
+        "aiProvider": "openai",
+        "aiConfigured": true
+      },
+      "metrics": {
+        "fieldsExtracted": 5,
+        "fieldsExpected": 22,
+        "coveragePct": 22.7,
+        "variantCoveragePct": 66.7,
+        "priceAccuracyPct": 20,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 13.6,
+        "confidenceScore": 85,
+        "publishReadinessScore": 34
+      },
+      "review": {
+        "attentionCount": 3,
+        "conflictCount": 0,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 19,
+          "featureCorrections": 7,
+          "priceCorrections": 4,
+          "variantCorrections": 1,
+          "attentionFields": 3,
+          "conflictFields": 0,
+          "hallucinationCritical": 0,
+          "totalEstimated": 34
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 3,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "brand",
+            "message": "Required field missing: brand"
+          },
+          {
+            "gate": "required_fields",
+            "fieldKey": "model",
+            "message": "Required field missing: model"
+          },
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "evaluationSummary": {
+        "fieldCorrect": 3,
+        "fieldTotal": 22,
+        "variantMatched": 2,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 3,
+        "variantCountMatch": true,
+        "priceCorrect": 1,
+        "priceTotal": 5,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    }
+  ]
+}

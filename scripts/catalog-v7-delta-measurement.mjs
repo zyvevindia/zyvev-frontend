@@ -1,0 +1,378 @@
+/**
+ * v7 publish readiness delta — measure before (v6) vs after (v7).
+ * Uses source-registry.json URLs. Does not modify acquisition or registry.
+ */
+
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+import "./lib/bootstrapEnv.mjs";
+
+import { runEvidencePipelineV6 } from "../src/catalogAcquisition/evidencePipelineV6.js";
+import { runEvidencePipelineV7 } from "../src/catalogAcquisition/evidencePipelineV7.js";
+import { loadGoldenDossier } from "../src/catalogAcquisition/benchmark/goldenLoaderNode.js";
+import { runFullBenchmarkReport } from "../src/catalogAcquisition/benchmark/benchmarkReport.js";
+import { flattenExtractionDraft, ALL_SCALAR_FIELD_KEYS } from "../src/catalogAcquisition/extractionSchema.js";
+import { extractFieldValue } from "../src/catalogAcquisition/benchmark/compareUtils.js";
+import { analyzeGateFailures } from "../src/catalogAcquisition/v6/gateFailureAnalysis.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "..");
+const REGISTRY_PATH = path.join(ROOT, "public/catalog/source-registry.json");
+const OUT_DIR = path.join(ROOT, "docs/catalog/production-validation/v7-delta");
+const OUT_JSON = path.join(OUT_DIR, "v7-delta-results.json");
+const OUT_MD = path.join(OUT_DIR, "v7-delta-report.md");
+
+const VEHICLE_IDS = [
+  "tata-curvv-ev",
+  "tata-nexon-ev",
+  "tata-punch-ev",
+  "mahindra-be-6",
+  "mahindra-xev-9e",
+  "mg-windsor-ev",
+  "mg-zs-ev",
+  "hyundai-creta-electric",
+  "byd-atto-3",
+];
+
+const DEFAULT_PDF_DIRS = [
+  path.join(ROOT, "docs/catalog/validation-sources"),
+  path.join(ROOT, "data-acquisition/incoming"),
+];
+
+const V7_TARGETS = {
+  coveragePct: 80,
+  featureCoveragePct: 70,
+  qualityGatePassRate: 50,
+  manualCorrectionsMax: 10,
+  publishReadinessScore: 70,
+  priceAccuracyPct: 70,
+};
+
+function goldenExpectedFieldCount(golden) {
+  const fields = { ...(golden.fields || {}), ...(golden.features || {}) };
+  return Object.entries(fields).filter(([, v]) => v !== null && v !== undefined && v !== "").length;
+}
+
+function countExtractedFields(extractedDraft) {
+  const flat = flattenExtractionDraft(extractedDraft);
+  return ALL_SCALAR_FIELD_KEYS.filter((k) => {
+    const v = extractFieldValue(flat[k]);
+    return v !== null && v !== undefined && v !== "";
+  }).length;
+}
+
+function computePublishReadinessScore(report, pipeline) {
+  const eval_ = report.evaluation || {};
+  const gates = report.qualityGates || {};
+  const fieldAcc = (eval_.fieldAccuracy ?? 0) * 100;
+  const variantAcc = (eval_.variantAccuracy ?? 0) * 100;
+  const priceAcc = (eval_.priceAccuracy ?? 0) * 100;
+  const featureAcc = (eval_.featureAccuracy ?? 0) * 100;
+  const evidenceAvg = pipeline.confidenceScore ?? 0;
+  const gateScore = gates.passed ? 100 : Math.max(0, 100 - (gates.failureCount || 0) * 15);
+  return Math.min(
+    100,
+    Math.max(
+      0,
+      Math.round(fieldAcc * 0.25 + variantAcc * 0.2 + priceAcc * 0.2 + featureAcc * 0.15 + evidenceAvg * 0.1 + gateScore * 0.1)
+    )
+  );
+}
+
+function estimateManualCorrections(report, pipeline) {
+  const eval_ = report.evaluation || {};
+  const fieldWrong = (eval_.field?.total || 0) - (eval_.field?.correct || 0);
+  const featureWrong = (eval_.feature?.total || 0) - (eval_.feature?.correct || 0);
+  const priceWrong = (eval_.price?.total || 0) - (eval_.price?.correct || 0);
+  const variantMissing = (eval_.variant?.goldenCount || 0) - (eval_.variant?.matchedCount || 0);
+  const attention = pipeline.diagnostics?.attentionCount || 0;
+  const conflicts = pipeline.diagnostics?.conflictCount || 0;
+  const hallucinationCritical = report.hallucination?.criticalCount || 0;
+  return (
+    fieldWrong + featureWrong + priceWrong + variantMissing + attention + conflicts + hallucinationCritical
+  );
+}
+
+function findLocalPdf(vehicleId) {
+  const names = [`${vehicleId}.pdf`, `${vehicleId.replace(/-/g, "_")}.pdf`];
+  for (const dir of DEFAULT_PDF_DIRS) {
+    if (!fs.existsSync(dir)) continue;
+    for (const name of names) {
+      const p = path.join(dir, name);
+      if (fs.existsSync(p)) return fs.readFileSync(p);
+    }
+  }
+  return null;
+}
+
+async function fetchPdfBuffer(url) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 45_000);
+  try {
+    const res = await fetch(url, {
+      headers: { "User-Agent": "EVSavari-CatalogAcquisition/3.0", Accept: "application/pdf,*/*" },
+      signal: controller.signal,
+      redirect: "follow",
+    });
+    if (!res.ok) return null;
+    const buf = Buffer.from(await res.arrayBuffer());
+    if (buf.length < 1024 || !buf.slice(0, 5).toString().startsWith("%PDF")) return null;
+    return buf;
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function resolvePdf(registryEntry) {
+  const local = findLocalPdf(registryEntry.id);
+  if (local) return { buffer: local, url: null };
+  if (registryEntry.brochureUrl) {
+    const buf = await fetchPdfBuffer(registryEntry.brochureUrl);
+    if (buf) return { buffer: buf, url: registryEntry.brochureUrl };
+  }
+  return { buffer: null, url: null };
+}
+
+async function runPipeline(version, registryEntry, pdf) {
+  const params = {
+    importId: `v7-delta-${version}-${registryEntry.id}`,
+    oemUrl: registryEntry.officialUrl,
+    referenceUrls: registryEntry.referenceUrls || [],
+    pdfBuffer: pdf.buffer,
+    pdfName: pdf.buffer ? `${registryEntry.id}.pdf` : null,
+    pdfUrl: pdf.url,
+    familySlug: registryEntry.familySlug,
+    goldenId: registryEntry.id,
+  };
+
+  const pipeline =
+    version === "v7" ? await runEvidencePipelineV7(params) : await runEvidencePipelineV6(params);
+
+  if (!pipeline.ok) {
+    return { ok: false, errors: pipeline.errors, version };
+  }
+
+  let golden = null;
+  let report = null;
+  let gateAnalysis = null;
+  try {
+    golden = loadGoldenDossier(registryEntry.id);
+    const importRecord = {
+      id: params.importId,
+      extractedVehicle: pipeline.extractedVehicle,
+      reviewedVehicle: pipeline.reviewedVehicle,
+      evidenceSummary: pipeline.mergedFields,
+    };
+    report = runFullBenchmarkReport({
+      importRecord,
+      goldenDossier: golden,
+      evidenceRecords: pipeline.evidenceRecords,
+    });
+    gateAnalysis =
+      version === "v7" && pipeline.v7?.gateFailureAnalysis
+        ? pipeline.v7.gateFailureAnalysis
+        : version === "v6" && pipeline.v6?.gateFailureAnalysis
+          ? pipeline.v6.gateFailureAnalysis
+          : analyzeGateFailures({
+              qualityGates: report.qualityGates,
+              evaluation: report.evaluation,
+              importRecord,
+              goldenDossier: golden,
+            });
+  } catch {
+    /* no golden */
+  }
+
+  const expectedFields = golden ? goldenExpectedFieldCount(golden) : null;
+  const extractedFields = countExtractedFields(pipeline.extractedVehicle);
+  const coveragePct = expectedFields ? Math.round((extractedFields / expectedFields) * 1000) / 10 : null;
+
+  return {
+    ok: true,
+    version,
+    evidenceRecordCount: pipeline.diagnostics.evidenceRecordCount,
+    variantCount: pipeline.diagnostics.variantCount,
+    metrics: report
+      ? {
+          coveragePct,
+          variantCoveragePct: report.evaluation?.variantAccuracy != null
+            ? Math.round(report.evaluation.variantAccuracy * 1000) / 10
+            : null,
+          priceAccuracyPct: report.evaluation?.priceAccuracy != null
+            ? Math.round(report.evaluation.priceAccuracy * 1000) / 10
+            : null,
+          featureCoveragePct: report.evaluation?.featureAccuracy != null
+            ? Math.round(report.evaluation.featureAccuracy * 1000) / 10
+            : null,
+          publishReadinessScore: computePublishReadinessScore(report, pipeline),
+        }
+      : null,
+    qualityGatesPassed: report?.qualityGates?.passed ?? false,
+    manualCorrections: report ? estimateManualCorrections(report, pipeline) : null,
+    gateFailureAnalysis: gateAnalysis,
+    v7Meta: version === "v7" ? pipeline.v7 : null,
+    variantReconcile:
+      version === "v7"
+        ? {
+            matrix: pipeline.v7?.matrixVariantCount,
+            final: pipeline.v7?.variantCountAfterMerge,
+          }
+        : pipeline.v6
+          ? {
+              before: pipeline.v6.variantCountBeforeReconcile,
+              after: pipeline.v6.variantCountAfterReconcile,
+            }
+          : null,
+  };
+}
+
+function aggregate(rows) {
+  const ok = rows.filter((r) => r.ok && r.metrics);
+  const avg = (key) => {
+    const vals = ok.map((r) => r.metrics[key]).filter(Number.isFinite);
+    return vals.length ? Math.round((vals.reduce((a, b) => a + b, 0) / vals.length) * 10) / 10 : null;
+  };
+  return {
+    count: rows.length,
+    benchmarked: ok.length,
+    avgEvidenceRecords: ok.length
+      ? Math.round((ok.reduce((s, r) => s + r.evidenceRecordCount, 0) / ok.length) * 10) / 10
+      : null,
+    avgCoveragePct: avg("coveragePct"),
+    avgFeatureCoveragePct: avg("featureCoveragePct"),
+    avgPriceAccuracyPct: avg("priceAccuracyPct"),
+    avgPublishReadinessScore: avg("publishReadinessScore"),
+    qualityGatePassRate: ok.length
+      ? Math.round((ok.filter((r) => r.qualityGatesPassed).length / ok.length) * 1000) / 10
+      : 0,
+    avgManualCorrections: ok.length
+      ? Math.round((ok.reduce((s, r) => s + (r.manualCorrections || 0), 0) / ok.length) * 10) / 10
+      : null,
+  };
+}
+
+function delta(before, after, suffix = "", invert = false) {
+  if (!Number.isFinite(before) || !Number.isFinite(after)) return "—";
+  const d = Math.round((after - before) * 10) / 10;
+  const sign = d > 0 ? "+" : "";
+  const label = invert ? (d < 0 ? " ✓" : "") : "";
+  return `${sign}${d}${suffix}${label}`;
+}
+
+function buildMarkdown(results, beforeAgg, afterAgg) {
+  const lines = [
+    "# Catalog Acquisition v7 — Publish Readiness Delta",
+    "",
+    `Generated: ${new Date().toISOString()}`,
+    "",
+    "## Success targets vs v7",
+    "",
+    "| Target | Goal | v7 Actual | Met |",
+    "|--------|------|-----------|-----|",
+    `| Field coverage | >${V7_TARGETS.coveragePct}% | ${afterAgg.avgCoveragePct ?? "—"}% | ${(afterAgg.avgCoveragePct ?? 0) >= V7_TARGETS.coveragePct ? "✓" : "✗"} |`,
+    `| Feature coverage | >${V7_TARGETS.featureCoveragePct}% | ${afterAgg.avgFeatureCoveragePct ?? "—"}% | ${(afterAgg.avgFeatureCoveragePct ?? 0) >= V7_TARGETS.featureCoveragePct ? "✓" : "✗"} |`,
+    `| Price accuracy | >${V7_TARGETS.priceAccuracyPct}% | ${afterAgg.avgPriceAccuracyPct ?? "—"}% | ${(afterAgg.avgPriceAccuracyPct ?? 0) >= V7_TARGETS.priceAccuracyPct ? "✓" : "✗"} |`,
+    `| Quality gate pass | >${V7_TARGETS.qualityGatePassRate}% | ${afterAgg.qualityGatePassRate}% | ${afterAgg.qualityGatePassRate >= V7_TARGETS.qualityGatePassRate ? "✓" : "✗"} |`,
+    `| Manual corrections | <${V7_TARGETS.manualCorrectionsMax} | ${afterAgg.avgManualCorrections ?? "—"} | ${(afterAgg.avgManualCorrections ?? 999) < V7_TARGETS.manualCorrectionsMax ? "✓" : "✗"} |`,
+    `| Publish readiness | >${V7_TARGETS.publishReadinessScore} | ${afterAgg.avgPublishReadinessScore ?? "—"} | ${(afterAgg.avgPublishReadinessScore ?? 0) >= V7_TARGETS.publishReadinessScore ? "✓" : "✗"} |`,
+    "",
+    "## Before (v6) vs After (v7)",
+    "",
+    "| Metric | v6 | v7 | Δ |",
+    "|--------|----|----|---|",
+    `| Avg evidence records | ${beforeAgg.avgEvidenceRecords ?? "—"} | ${afterAgg.avgEvidenceRecords ?? "—"} | ${delta(beforeAgg.avgEvidenceRecords, afterAgg.avgEvidenceRecords)} |`,
+    `| Avg coverage | ${beforeAgg.avgCoveragePct ?? "—"}% | ${afterAgg.avgCoveragePct ?? "—"}% | ${delta(beforeAgg.avgCoveragePct, afterAgg.avgCoveragePct, "%")} |`,
+    `| Avg feature coverage | ${beforeAgg.avgFeatureCoveragePct ?? "—"}% | ${afterAgg.avgFeatureCoveragePct ?? "—"}% | ${delta(beforeAgg.avgFeatureCoveragePct, afterAgg.avgFeatureCoveragePct, "%")} |`,
+    `| Avg price accuracy | ${beforeAgg.avgPriceAccuracyPct ?? "—"}% | ${afterAgg.avgPriceAccuracyPct ?? "—"}% | ${delta(beforeAgg.avgPriceAccuracyPct, afterAgg.avgPriceAccuracyPct, "%")} |`,
+    `| Avg publish readiness | ${beforeAgg.avgPublishReadinessScore ?? "—"} | ${afterAgg.avgPublishReadinessScore ?? "—"} | ${delta(beforeAgg.avgPublishReadinessScore, afterAgg.avgPublishReadinessScore)} |`,
+    `| Gate pass rate | ${beforeAgg.qualityGatePassRate}% | ${afterAgg.qualityGatePassRate}% | ${delta(beforeAgg.qualityGatePassRate, afterAgg.qualityGatePassRate, "%")} |`,
+    `| Avg manual corrections | ${beforeAgg.avgManualCorrections ?? "—"} | ${afterAgg.avgManualCorrections ?? "—"} | ${delta(beforeAgg.avgManualCorrections, afterAgg.avgManualCorrections, "", true)} |`,
+    "",
+    "## Per-vehicle (v7)",
+    "",
+    "| Vehicle | v6 gates | v7 gates | v6 variants | v7 variants | v6 coverage | v7 coverage |",
+    "|---------|----------|----------|-------------|-------------|-------------|-------------|",
+  ];
+
+  for (const r of results) {
+    lines.push(
+      `| ${r.id} | ${r.v6.qualityGatesPassed ? "PASS" : "FAIL"} | ${r.v7.qualityGatesPassed ? "PASS" : "FAIL"} | ${r.v6.variantCount ?? "—"} | ${r.v7.variantCount ?? "—"} | ${r.v6.metrics?.coveragePct ?? "—"}% | ${r.v7.metrics?.coveragePct ?? "—"}% |`
+    );
+  }
+
+  lines.push("", "## Per-vehicle gate blockers (v7 top 10)", "");
+
+  for (const r of results) {
+    const analysis = r.v7?.gateFailureAnalysis;
+    if (!analysis?.top10?.length) continue;
+    lines.push(`### ${r.id}`, "");
+    for (const item of analysis.top10.slice(0, 10)) {
+      lines.push(`- **${item.fieldKey}** (${item.gate}, impact ${item.impact}): ${item.message}`);
+    }
+    lines.push("");
+  }
+
+  return lines.join("\n");
+}
+
+async function main() {
+  const onlyId = process.argv.find((a) => a.startsWith("--vehicle="))?.split("=")[1];
+  const registry = JSON.parse(fs.readFileSync(REGISTRY_PATH, "utf8"));
+  const byId = Object.fromEntries(registry.map((e) => [e.id, e]));
+  const ids = onlyId ? [onlyId] : VEHICLE_IDS;
+  const entries = ids.map((id) => byId[id]).filter(Boolean);
+
+  if (!entries.length) {
+    console.error("No registry entries for:", ids.join(", "));
+    process.exit(1);
+  }
+
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+
+  const results = [];
+  for (const entry of entries) {
+    console.log(`\n=== ${entry.id} ===`);
+    const pdf = await resolvePdf(entry);
+
+    console.log("  v6…");
+    const v6 = await runPipeline("v6", entry, pdf);
+    console.log(
+      `    evidence=${v6.evidenceRecordCount} coverage=${v6.metrics?.coveragePct ?? "n/a"}% gates=${v6.qualityGatesPassed ? "PASS" : "FAIL"}`
+    );
+
+    console.log("  v7…");
+    const v7 = await runPipeline("v7", entry, pdf);
+    console.log(
+      `    evidence=${v7.evidenceRecordCount} matrix=${v7.v7Meta?.matrixVariantCount ?? 0} variants=${v7.variantCount} coverage=${v7.metrics?.coveragePct ?? "n/a"}% features=${v7.metrics?.featureCoveragePct ?? "n/a"}% price=${v7.metrics?.priceAccuracyPct ?? "n/a"}% gates=${v7.qualityGatesPassed ? "PASS" : "FAIL"}`
+    );
+
+    results.push({ id: entry.id, v6, v7 });
+  }
+
+  const beforeAgg = aggregate(results.map((r) => r.v6));
+  const afterAgg = aggregate(results.map((r) => r.v7));
+
+  const payload = {
+    generatedAt: new Date().toISOString(),
+    targets: V7_TARGETS,
+    before: beforeAgg,
+    after: afterAgg,
+    results,
+  };
+
+  fs.writeFileSync(OUT_JSON, JSON.stringify(payload, null, 2));
+  fs.writeFileSync(OUT_MD, buildMarkdown(results, beforeAgg, afterAgg));
+
+  console.log("\n=== Delta ===");
+  console.log(JSON.stringify({ before: beforeAgg, after: afterAgg }, null, 2));
+  console.log(`\nWrote ${OUT_MD}`);
+}
+
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

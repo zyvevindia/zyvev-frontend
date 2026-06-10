@@ -56,6 +56,28 @@ export {
   buildMediaRoleMap,
 } from "./services/vehicleMediaService.js";
 
+export {
+  createCatalogImport,
+  updateCatalogImport,
+  getCatalogImport,
+  listCatalogImports,
+  insertCatalogImportSnapshot,
+  listImportSnapshots,
+} from "./services/catalogImportService.js";
+
+export {
+  insertEvidenceRecords,
+  deleteEvidenceRecordsForImport,
+  listEvidenceRecords,
+  replaceEvidenceRecords,
+} from "./services/evidenceRecordService.js";
+
+export {
+  listCatalogSourceRegistry,
+  upsertCatalogSourceRegistryEntry,
+  markRegistryNeedsVerification,
+} from "./services/catalogSourceRegistryService.js";
+
 export { touchSession, getSessionByKey } from "./services/sessionService.js";
 
 export {

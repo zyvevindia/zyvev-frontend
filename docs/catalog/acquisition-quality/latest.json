@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-06-09T06:25:00.283Z",
+  "results": [
+    {
+      "entry": {
+        "id": "tata-curvv-ev",
+        "familySlug": "tata-curvv-ev",
+        "brand": "Tata",
+        "model": "Curvv EV",
+        "officialUrl": "https://www.tatamotors.com/curvv/ev",
+        "brochureUrl": null,
+        "referenceUrls": [
+          "https://www.cardekho.com/tata/curvv-ev"
+        ],
+        "vehicleKeywords": [
+          "curvv",
+          "curvv ev",
+          "curvvev"
+        ],
+        "status": "needs_verification",
+        "lastVerifiedAt": null,
+        "notes": "Known 301 redirect to JLR conference page — update officialUrl after verification"
+      },
+      "ok": true,
+      "oemUrl": "https://www.tatamotors.com/curvv/ev",
+      "finalUrl": "https://www.tatamotors.com/events/ev-conference-presentation-jlr/",
+      "urlStatus": "invalid_source",
+      "pdfFound": false,
+      "evidenceCount": 7,
+      "acquisitionScore": 7,
+      "acquisitionFailure": true,
+      "rawHtmlSize": 0,
+      "renderedTextSize": 0,
+      "contentComparison": null,
+      "warnings": [
+        {
+          "code": "INVALID_SOURCE",
+          "message": "OEM URL rejected: invalid_source",
+          "requestedUrl": "https://www.tatamotors.com/curvv/ev",
+          "finalUrl": "https://www.tatamotors.com/events/ev-conference-presentation-jlr/",
+          "details": [
+            {
+              "code": "redirect_mismatch",
+              "message": "Redirected from /curvv/ev to /events/ev-conference-presentation-jlr — final path lacks vehicle keywords",
+              "requestedUrl": "https://www.tatamotors.com/curvv/ev",
+              "finalUrl": "https://www.tatamotors.com/events/ev-conference-presentation-jlr/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

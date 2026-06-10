@@ -1,0 +1,66 @@
+{
+  "id": "mg-windsor-ev",
+  "displayName": "MG Windsor EV",
+  "familySlug": "mg-windsor-ev",
+  "vehicle": {
+    "brand": "MG",
+    "model": "Windsor EV",
+    "bodyType": "SUV",
+    "familySlug": "mg-windsor-ev"
+  },
+  "fields": {
+    "brand": "MG",
+    "model": "Windsor EV",
+    "bodyType": "SUV",
+    "familySlug": "mg-windsor-ev",
+    "startingPrice": 999000,
+    "topVariantPrice": 1689000,
+    "exShowroomPrice": 999000,
+    "batteryCapacityKwh": 38,
+    "claimedRangeKm": 331,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 7.4,
+    "dcChargingKw": 45,
+    "airbags": 6,
+    "adas": false
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false
+  },
+  "variants": [
+    {
+      "variantName": "Excite",
+      "priceInr": 999000,
+      "batteryKwh": 38,
+      "rangeKm": 331,
+      "acChargingKw": 7.4,
+      "dcChargingKw": 45
+    },
+    {
+      "variantName": "Exclusive",
+      "priceInr": 1249000,
+      "batteryKwh": 38,
+      "rangeKm": 331,
+      "acChargingKw": 7.4,
+      "dcChargingKw": 45
+    },
+    {
+      "variantName": "Essence",
+      "priceInr": 1689000,
+      "batteryKwh": 38,
+      "rangeKm": 331,
+      "acChargingKw": 7.4,
+      "dcChargingKw": 45
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "MG India specs + CarWale (Jun 2026)"
+  ],
+  "verifiedAt": "2026-06-08"
+}

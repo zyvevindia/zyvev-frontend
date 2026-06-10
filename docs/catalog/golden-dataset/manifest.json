@@ -1,0 +1,63 @@
+{
+  "version": "golden-v1",
+  "generatedAt": "2026-06-08T17:44:00.291Z",
+  "count": 8,
+  "vehicles": [
+    {
+      "id": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "familySlug": "tata-nexon-ev",
+      "verificationLevel": "verified_dossier",
+      "variantCount": 13
+    },
+    {
+      "id": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "familySlug": "tata-punch-ev",
+      "verificationLevel": "verified_dossier",
+      "variantCount": 6
+    },
+    {
+      "id": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "familySlug": "tata-curvv-ev",
+      "verificationLevel": "manual_review",
+      "variantCount": 3
+    },
+    {
+      "id": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "familySlug": "mg-windsor-ev",
+      "verificationLevel": "manual_review",
+      "variantCount": 3
+    },
+    {
+      "id": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "familySlug": "mahindra-be-6",
+      "verificationLevel": "manual_review",
+      "variantCount": 3
+    },
+    {
+      "id": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "familySlug": "mahindra-xev-9e",
+      "verificationLevel": "manual_review",
+      "variantCount": 3
+    },
+    {
+      "id": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "familySlug": "byd-atto-3",
+      "verificationLevel": "manual_review",
+      "variantCount": 3
+    },
+    {
+      "id": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "familySlug": "hyundai-creta-electric",
+      "verificationLevel": "ops_benchmark",
+      "variantCount": 3
+    }
+  ]
+}

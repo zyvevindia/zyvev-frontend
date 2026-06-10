@@ -1,0 +1,119 @@
+{
+  "id": "tata-punch-ev",
+  "displayName": "Tata Punch EV",
+  "familySlug": "tata-punch-ev",
+  "verifiedAt": "2026-06-08",
+  "verificationLevel": "verified_dossier",
+  "sources": [
+    "EVSavari Verified Dossier"
+  ],
+  "vehicle": {
+    "brand": "Tata",
+    "model": "Punch EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-punch-ev"
+  },
+  "fields": {
+    "brand": "Tata",
+    "model": "Punch EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-punch-ev",
+    "startingPrice": 969000,
+    "topVariantPrice": 1259000,
+    "exShowroomPrice": 969000,
+    "batteryCapacityKwh": null,
+    "claimedRangeKm": 468,
+    "rangeTestStandard": "MIDC",
+    "acChargingKw": 7.2,
+    "dcChargingKw": 65,
+    "acChargingTimeHours": 4.5,
+    "dcChargingTimeMinutes": 26,
+    "powerPs": 87,
+    "torqueNm": 154,
+    "airbags": 6,
+    "adas": false,
+    "ncapRating": 5
+  },
+  "features": {
+    "sunroof": false,
+    "ventilatedSeats": false,
+    "camera360": false,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false
+  },
+  "variants": [
+    {
+      "variantName": "Smart",
+      "priceInr": 969000,
+      "batteryKwh": 30,
+      "rangeKm": 370,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 65,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Smart+ 30 kWh",
+      "priceInr": 1029000,
+      "batteryKwh": 30,
+      "rangeKm": 370,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 65,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Smart+ 40 kWh",
+      "priceInr": 1089000,
+      "batteryKwh": 40,
+      "rangeKm": 468,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 65,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Adventure",
+      "priceInr": 1159000,
+      "batteryKwh": 40,
+      "rangeKm": 468,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 65,
+      "features": {
+        "adas": false,
+        "camera360": false
+      }
+    },
+    {
+      "variantName": "Empowered",
+      "priceInr": 1229000,
+      "batteryKwh": 40,
+      "rangeKm": 468,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 65,
+      "features": {
+        "adas": true,
+        "camera360": true
+      }
+    },
+    {
+      "variantName": "Empowered+",
+      "priceInr": 1259000,
+      "batteryKwh": 40,
+      "rangeKm": 468,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 65,
+      "features": {
+        "adas": true,
+        "camera360": true
+      }
+    }
+  ]
+}

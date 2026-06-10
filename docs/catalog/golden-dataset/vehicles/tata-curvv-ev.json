@@ -1,0 +1,69 @@
+{
+  "id": "tata-curvv-ev",
+  "displayName": "Tata Curvv EV",
+  "familySlug": "tata-curvv-ev",
+  "vehicle": {
+    "brand": "Tata",
+    "model": "Curvv EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-curvv-ev"
+  },
+  "fields": {
+    "brand": "Tata",
+    "model": "Curvv EV",
+    "bodyType": "SUV",
+    "familySlug": "tata-curvv-ev",
+    "startingPrice": 1799000,
+    "topVariantPrice": 2099000,
+    "exShowroomPrice": 1799000,
+    "batteryCapacityKwh": 45,
+    "claimedRangeKm": 502,
+    "rangeTestStandard": "MIDC",
+    "acChargingKw": 7.2,
+    "dcChargingKw": 150,
+    "acChargingTimeHours": 6.3,
+    "dcChargingTimeMinutes": 30,
+    "airbags": 6,
+    "adas": true,
+    "ncapRating": 5
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": true,
+    "v2v": false
+  },
+  "variants": [
+    {
+      "variantName": "Creative 45",
+      "priceInr": 1799000,
+      "batteryKwh": 45,
+      "rangeKm": 502,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 150
+    },
+    {
+      "variantName": "Accomplished 45",
+      "priceInr": 1949000,
+      "batteryKwh": 45,
+      "rangeKm": 502,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 150
+    },
+    {
+      "variantName": "Empowered 55",
+      "priceInr": 2099000,
+      "batteryKwh": 55,
+      "rangeKm": 585,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 150
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "OEM brochure + CarDekho cross-check (Jun 2026)"
+  ],
+  "verifiedAt": "2026-06-08"
+}

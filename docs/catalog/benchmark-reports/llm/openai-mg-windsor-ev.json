@@ -1,0 +1,1008 @@
+{
+  "ok": true,
+  "providerId": "openai",
+  "goldenId": "mg-windsor-ev",
+  "goldenDisplayName": "MG Windsor EV",
+  "model": "gpt-4o-mini",
+  "elapsedMs": 24481,
+  "usage": {
+    "inputTokens": 1362,
+    "outputTokens": 821,
+    "promptTokens": 1362,
+    "completionTokens": 821,
+    "totalTokens": 2183,
+    "passCount": 2
+  },
+  "costUsd": 0.0006968999999999999,
+  "attentionCount": 3,
+  "reviewTimeEstimate": {
+    "min": 2,
+    "max": 4,
+    "label": "2–4 min"
+  },
+  "extractionMode": "grounded-two-pass",
+  "grounding": {
+    "acceptedFieldCount": 7,
+    "acceptedVariantCount": 3,
+    "rejectedCount": 0,
+    "rejected": []
+  },
+  "report": {
+    "generatedAt": "2026-06-09T05:46:34.152Z",
+    "importId": "llm-bench-openai-mg-windsor-ev",
+    "goldenId": "mg-windsor-ev",
+    "evaluation": {
+      "goldenId": "mg-windsor-ev",
+      "familySlug": "mg-windsor-ev",
+      "evaluatedAt": "2026-06-09T05:46:34.151Z",
+      "fieldAccuracy": 0.35,
+      "variantAccuracy": 1,
+      "priceAccuracy": 0.3333333333333333,
+      "featureAccuracy": 0,
+      "field": {
+        "accuracy": 0.35,
+        "correct": 7,
+        "total": 20,
+        "comparisons": [
+          {
+            "fieldKey": "brand",
+            "status": "missing",
+            "correct": false,
+            "expected": "MG",
+            "actual": null
+          },
+          {
+            "fieldKey": "model",
+            "status": "missing",
+            "correct": false,
+            "expected": "Windsor EV",
+            "actual": null
+          },
+          {
+            "fieldKey": "bodyType",
+            "status": "missing",
+            "correct": false,
+            "expected": "SUV",
+            "actual": null
+          },
+          {
+            "fieldKey": "familySlug",
+            "status": "missing",
+            "correct": false,
+            "expected": "mg-windsor-ev",
+            "actual": null
+          },
+          {
+            "fieldKey": "startingPrice",
+            "status": "correct",
+            "correct": true,
+            "expected": 999000,
+            "actual": "999000"
+          },
+          {
+            "fieldKey": "topVariantPrice",
+            "status": "correct",
+            "correct": true,
+            "expected": 1689000,
+            "actual": "1689000"
+          },
+          {
+            "fieldKey": "exShowroomPrice",
+            "status": "missing",
+            "correct": false,
+            "expected": 999000,
+            "actual": null
+          },
+          {
+            "fieldKey": "batteryCapacityKwh",
+            "status": "correct",
+            "correct": true,
+            "expected": 38,
+            "actual": "38"
+          },
+          {
+            "fieldKey": "claimedRangeKm",
+            "status": "correct",
+            "correct": true,
+            "expected": 331,
+            "actual": "331"
+          },
+          {
+            "fieldKey": "rangeTestStandard",
+            "status": "missing",
+            "correct": false,
+            "expected": "ARAI",
+            "actual": null
+          },
+          {
+            "fieldKey": "acChargingKw",
+            "status": "correct",
+            "correct": true,
+            "expected": 7.4,
+            "actual": "7.4"
+          },
+          {
+            "fieldKey": "dcChargingKw",
+            "status": "correct",
+            "correct": true,
+            "expected": 45,
+            "actual": "45"
+          },
+          {
+            "fieldKey": "airbags",
+            "status": "correct",
+            "correct": true,
+            "expected": 6,
+            "actual": "6"
+          },
+          {
+            "fieldKey": "sunroof",
+            "status": "missing",
+            "correct": false,
+            "expected": true,
+            "actual": null
+          },
+          {
+            "fieldKey": "ventilatedSeats",
+            "status": "missing",
+            "correct": false,
+            "expected": true,
+            "actual": null
+          },
+          {
+            "fieldKey": "camera360",
+            "status": "missing",
+            "correct": false,
+            "expected": true,
+            "actual": null
+          },
+          {
+            "fieldKey": "connectedCar",
+            "status": "missing",
+            "correct": false,
+            "expected": true,
+            "actual": null
+          },
+          {
+            "fieldKey": "v2l",
+            "status": "missing",
+            "correct": false,
+            "expected": false,
+            "actual": null
+          },
+          {
+            "fieldKey": "v2v",
+            "status": "missing",
+            "correct": false,
+            "expected": false,
+            "actual": null
+          },
+          {
+            "fieldKey": "adas",
+            "status": "missing",
+            "correct": false,
+            "expected": false,
+            "actual": null
+          }
+        ]
+      },
+      "variant": {
+        "accuracy": 1,
+        "matchedCount": 3,
+        "goldenCount": 3,
+        "extractedCount": 3,
+        "countMatch": true,
+        "matches": [
+          {
+            "golden": {
+              "variantName": "Excite",
+              "priceInr": 999000,
+              "batteryKwh": 38,
+              "rangeKm": 331,
+              "acChargingKw": 7.4,
+              "dcChargingKw": 45
+            },
+            "extracted": {
+              "variantName": "Excite",
+              "priceInr": null,
+              "batteryKwh": null,
+              "rangeKm": null
+            },
+            "similarity": 1,
+            "matched": true
+          },
+          {
+            "golden": {
+              "variantName": "Exclusive",
+              "priceInr": 1249000,
+              "batteryKwh": 38,
+              "rangeKm": 331,
+              "acChargingKw": 7.4,
+              "dcChargingKw": 45
+            },
+            "extracted": {
+              "variantName": "Exclusive",
+              "priceInr": null,
+              "batteryKwh": null,
+              "rangeKm": null
+            },
+            "similarity": 1,
+            "matched": true
+          },
+          {
+            "golden": {
+              "variantName": "Essence",
+              "priceInr": 1689000,
+              "batteryKwh": 38,
+              "rangeKm": 331,
+              "acChargingKw": 7.4,
+              "dcChargingKw": 45
+            },
+            "extracted": {
+              "variantName": "Essence",
+              "priceInr": null,
+              "batteryKwh": null,
+              "rangeKm": null
+            },
+            "similarity": 1,
+            "matched": true
+          }
+        ]
+      },
+      "price": {
+        "accuracy": 0.3333333333333333,
+        "correct": 2,
+        "total": 6,
+        "comparisons": [
+          {
+            "fieldKey": "startingPrice",
+            "status": "correct",
+            "correct": true,
+            "expected": 999000,
+            "actual": "999000"
+          },
+          {
+            "fieldKey": "topVariantPrice",
+            "status": "correct",
+            "correct": true,
+            "expected": 1689000,
+            "actual": "1689000"
+          },
+          {
+            "fieldKey": "exShowroomPrice",
+            "status": "missing",
+            "correct": false,
+            "expected": 999000,
+            "actual": null
+          },
+          {
+            "fieldKey": "variant:Excite:price",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 999000,
+            "actual": null
+          },
+          {
+            "fieldKey": "variant:Exclusive:price",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 1249000,
+            "actual": null
+          },
+          {
+            "fieldKey": "variant:Essence:price",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 1689000,
+            "actual": null
+          }
+        ]
+      },
+      "feature": {
+        "accuracy": 0,
+        "correct": 0,
+        "total": 7,
+        "comparisons": [
+          {
+            "fieldKey": "sunroof",
+            "status": "missing",
+            "correct": false,
+            "expected": true,
+            "actual": null
+          },
+          {
+            "fieldKey": "ventilatedSeats",
+            "status": "missing",
+            "correct": false,
+            "expected": true,
+            "actual": null
+          },
+          {
+            "fieldKey": "camera360",
+            "status": "missing",
+            "correct": false,
+            "expected": true,
+            "actual": null
+          },
+          {
+            "fieldKey": "connectedCar",
+            "status": "missing",
+            "correct": false,
+            "expected": true,
+            "actual": null
+          },
+          {
+            "fieldKey": "v2l",
+            "status": "missing",
+            "correct": false,
+            "expected": false,
+            "actual": null
+          },
+          {
+            "fieldKey": "v2v",
+            "status": "missing",
+            "correct": false,
+            "expected": false,
+            "actual": null
+          },
+          {
+            "fieldKey": "adas",
+            "status": "missing",
+            "correct": false,
+            "expected": false,
+            "actual": null
+          }
+        ]
+      },
+      "summary": {
+        "fieldCorrect": 7,
+        "fieldTotal": 20,
+        "variantMatched": 3,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 3,
+        "variantCountMatch": true,
+        "priceCorrect": 2,
+        "priceTotal": 6,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    "calibration": {
+      "generatedAt": "2026-06-09T05:46:34.151Z",
+      "goldenId": "mg-windsor-ev",
+      "bands": {
+        "95-100": {
+          "predicted": 0,
+          "correct": 0,
+          "incorrect": 0,
+          "fields": [],
+          "precision": null
+        },
+        "80-94": {
+          "predicted": 7,
+          "correct": 7,
+          "incorrect": 0,
+          "fields": [
+            {
+              "fieldKey": "startingPrice",
+              "confidence": 85,
+              "correct": true,
+              "expected": 999000,
+              "actual": "999000"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "confidence": 85,
+              "correct": true,
+              "expected": 1689000,
+              "actual": "1689000"
+            },
+            {
+              "fieldKey": "batteryCapacityKwh",
+              "confidence": 85,
+              "correct": true,
+              "expected": 38,
+              "actual": "38"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "confidence": 85,
+              "correct": true,
+              "expected": 331,
+              "actual": "331"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "confidence": 85,
+              "correct": true,
+              "expected": 7.4,
+              "actual": "7.4"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "confidence": 85,
+              "correct": true,
+              "expected": 45,
+              "actual": "45"
+            },
+            {
+              "fieldKey": "airbags",
+              "confidence": 85,
+              "correct": true,
+              "expected": 6,
+              "actual": "6"
+            }
+          ],
+          "precision": 1
+        },
+        "below-80": {
+          "predicted": 0,
+          "correct": 0,
+          "incorrect": 0,
+          "fields": [],
+          "precision": null
+        }
+      },
+      "overconfidentBands": []
+    },
+    "hallucination": {
+      "generatedAt": "2026-06-09T05:46:34.151Z",
+      "count": 0,
+      "criticalCount": 0,
+      "warningCount": 0,
+      "fields": [],
+      "publishBlocked": false
+    },
+    "evidenceCoverage": {
+      "generatedAt": "2026-06-09T05:46:34.151Z",
+      "fieldCount": 36,
+      "populatedCount": 7,
+      "averageEvidenceQuality": 82,
+      "weakAreaCount": 3,
+      "fields": [
+        {
+          "fieldKey": "brand",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "model",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "bodyType",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "familySlug",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "startingPrice",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 82,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "topVariantPrice",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 82,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "exShowroomPrice",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "batteryCapacityKwh",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 82,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "batteryChemistry",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "claimedRangeKm",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 82,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "rangeTestStandard",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "acChargingKw",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 82,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "dcChargingKw",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 82,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "acChargingTimeHours",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "dcChargingTimeMinutes",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "powerPs",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "powerKw",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "torqueNm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "airbags",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 82,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "adas",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "adasLevel",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "ncapRating",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "sunroof",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "ventilatedSeats",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "camera360",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "connectedCar",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "v2l",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "v2v",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "vehicleWarrantyYears",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "batteryWarrantyYears",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "colorOptions",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "heroImageCandidates",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "lengthMm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "widthMm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "heightMm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "wheelbaseMm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        }
+      ],
+      "weakAreas": [
+        {
+          "fieldKey": "brand",
+          "reason": "critical_missing",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "model",
+          "reason": "critical_missing",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "familySlug",
+          "reason": "critical_missing",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        }
+      ]
+    },
+    "reviewMetrics": null,
+    "qualityGates": {
+      "ok": false,
+      "passed": false,
+      "failureCount": 3,
+      "warningCount": 0,
+      "failures": [
+        {
+          "gate": "required_fields",
+          "fieldKey": "brand",
+          "message": "Required field missing: brand"
+        },
+        {
+          "gate": "required_fields",
+          "fieldKey": "model",
+          "message": "Required field missing: model"
+        },
+        {
+          "gate": "required_fields",
+          "fieldKey": "familySlug",
+          "message": "Required field missing: familySlug"
+        }
+      ],
+      "warnings": [],
+      "hallucination": {
+        "generatedAt": "2026-06-09T05:46:34.152Z",
+        "count": 0,
+        "criticalCount": 0,
+        "warningCount": 0,
+        "fields": [],
+        "publishBlocked": false
+      },
+      "checkedAt": "2026-06-09T05:46:34.152Z"
+    },
+    "failureDiagnostics": {
+      "generatedAt": "2026-06-09T05:46:34.152Z",
+      "goldenId": "mg-windsor-ev",
+      "failureCount": 13,
+      "counts": {
+        "missing_extraction": 13,
+        "wrong_extraction": 0,
+        "hallucination": 0,
+        "mapping_error": 0
+      },
+      "failures": [
+        {
+          "fieldKey": "brand",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": "MG",
+          "actual": null
+        },
+        {
+          "fieldKey": "model",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": "Windsor EV",
+          "actual": null
+        },
+        {
+          "fieldKey": "bodyType",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": "SUV",
+          "actual": null
+        },
+        {
+          "fieldKey": "familySlug",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": "mg-windsor-ev",
+          "actual": null
+        },
+        {
+          "fieldKey": "exShowroomPrice",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": 999000,
+          "actual": null
+        },
+        {
+          "fieldKey": "rangeTestStandard",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": "ARAI",
+          "actual": null
+        },
+        {
+          "fieldKey": "adas",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": false,
+          "actual": null
+        },
+        {
+          "fieldKey": "sunroof",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": true,
+          "actual": null
+        },
+        {
+          "fieldKey": "ventilatedSeats",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": true,
+          "actual": null
+        },
+        {
+          "fieldKey": "camera360",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": true,
+          "actual": null
+        },
+        {
+          "fieldKey": "connectedCar",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": true,
+          "actual": null
+        },
+        {
+          "fieldKey": "v2l",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": false,
+          "actual": null
+        },
+        {
+          "fieldKey": "v2v",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": false,
+          "actual": null
+        }
+      ],
+      "accuracy": {
+        "field": 0.35,
+        "price": 0.3333333333333333,
+        "variant": 1,
+        "feature": 0
+      },
+      "groundingRejectedCount": 0,
+      "hallucinationCount": 0
+    },
+    "grounding": {
+      "acceptedFieldCount": 7,
+      "acceptedVariantCount": 3,
+      "rejectedCount": 0,
+      "rejected": []
+    },
+    "metrics": {
+      "fieldAccuracy": 0.35,
+      "variantAccuracy": 1,
+      "priceAccuracy": 0.3333333333333333,
+      "featureAccuracy": 0
+    },
+    "attentionCount": 3,
+    "reviewTimeEstimate": {
+      "min": 2,
+      "max": 4,
+      "label": "2–4 min"
+    },
+    "providerId": "openai",
+    "model": "gpt-4o-mini",
+    "elapsedMs": 24481,
+    "extractionMode": "grounded-two-pass"
+  },
+  "metrics": {
+    "fieldAccuracy": 0.35,
+    "priceAccuracy": 0.3333333333333333,
+    "variantAccuracy": 1,
+    "featureAccuracy": 0,
+    "coverageScore": 0.19444444444444445,
+    "averageEvidenceQuality": 82,
+    "hallucinationRate": 0,
+    "hallucinationCriticalCount": 0,
+    "gatePassRate": 0,
+    "qualityGatesPassed": false,
+    "attentionCount": 3,
+    "reviewTimeEstimate": {
+      "min": 2,
+      "max": 4,
+      "label": "2–4 min"
+    }
+  }
+}

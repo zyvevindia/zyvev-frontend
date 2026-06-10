@@ -1,0 +1,66 @@
+{
+  "id": "hyundai-creta-electric",
+  "displayName": "Hyundai Creta Electric",
+  "familySlug": "hyundai-creta-electric",
+  "vehicle": {
+    "brand": "Hyundai",
+    "model": "Creta Electric",
+    "bodyType": "SUV",
+    "familySlug": "hyundai-creta-electric"
+  },
+  "fields": {
+    "brand": "Hyundai",
+    "model": "Creta Electric",
+    "bodyType": "SUV",
+    "familySlug": "hyundai-creta-electric",
+    "startingPrice": 1799000,
+    "topVariantPrice": 2499000,
+    "exShowroomPrice": 1799000,
+    "batteryCapacityKwh": 42,
+    "claimedRangeKm": 390,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 11,
+    "dcChargingKw": 150,
+    "airbags": 6,
+    "adas": true
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": false,
+    "v2v": false
+  },
+  "variants": [
+    {
+      "variantName": "Executive",
+      "priceInr": 1799000,
+      "batteryKwh": 42,
+      "rangeKm": 390,
+      "acChargingKw": 11,
+      "dcChargingKw": 150
+    },
+    {
+      "variantName": "Premium",
+      "priceInr": 2099000,
+      "batteryKwh": 42,
+      "rangeKm": 390,
+      "acChargingKw": 11,
+      "dcChargingKw": 150
+    },
+    {
+      "variantName": "Signature",
+      "priceInr": 2499000,
+      "batteryKwh": 51,
+      "rangeKm": 473,
+      "acChargingKw": 11,
+      "dcChargingKw": 150
+    }
+  ],
+  "verificationLevel": "ops_benchmark",
+  "sources": [
+    "Hyundai India launch specs estimate (Jun 2026) — review quarterly"
+  ],
+  "verifiedAt": "2026-06-08"
+}

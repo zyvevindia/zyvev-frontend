@@ -1,0 +1,68 @@
+{
+  "id": "byd-atto-3",
+  "displayName": "BYD Atto 3",
+  "familySlug": "byd-atto-3",
+  "vehicle": {
+    "brand": "BYD",
+    "model": "Atto 3",
+    "bodyType": "SUV",
+    "familySlug": "byd-atto-3"
+  },
+  "fields": {
+    "brand": "BYD",
+    "model": "Atto 3",
+    "bodyType": "SUV",
+    "familySlug": "byd-atto-3",
+    "startingPrice": 2499000,
+    "topVariantPrice": 3399000,
+    "exShowroomPrice": 2499000,
+    "batteryCapacityKwh": 60.48,
+    "claimedRangeKm": 521,
+    "rangeTestStandard": "ARAI",
+    "acChargingKw": 7,
+    "dcChargingKw": 80,
+    "acChargingTimeHours": 9.5,
+    "dcChargingTimeMinutes": 30,
+    "airbags": 6,
+    "adas": true
+  },
+  "features": {
+    "sunroof": true,
+    "ventilatedSeats": true,
+    "camera360": true,
+    "connectedCar": true,
+    "v2l": true,
+    "v2v": false
+  },
+  "variants": [
+    {
+      "variantName": "Dynamic",
+      "priceInr": 2499000,
+      "batteryKwh": 60.48,
+      "rangeKm": 521,
+      "acChargingKw": 7,
+      "dcChargingKw": 80
+    },
+    {
+      "variantName": "Superior",
+      "priceInr": 2999000,
+      "batteryKwh": 60.48,
+      "rangeKm": 521,
+      "acChargingKw": 7,
+      "dcChargingKw": 80
+    },
+    {
+      "variantName": "Special Edition",
+      "priceInr": 3399000,
+      "batteryKwh": 60.48,
+      "rangeKm": 521,
+      "acChargingKw": 7,
+      "dcChargingKw": 80
+    }
+  ],
+  "verificationLevel": "manual_review",
+  "sources": [
+    "BYD India + CarWale (Jun 2026)"
+  ],
+  "verifiedAt": "2026-06-08"
+}

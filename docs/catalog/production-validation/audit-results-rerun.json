@@ -1,0 +1,989 @@
+{
+  "generatedAt": "2026-06-09T07:29:49.696Z",
+  "registryPath": "C:\\projects\\zyvev-frontend\\public\\catalog\\source-registry.json",
+  "aggregate": {
+    "vehicleCount": 9,
+    "successCount": 9,
+    "benchmarkedCount": 8,
+    "failureCount": 0,
+    "pdfAcquiredCount": 8,
+    "oemSourceAcquiredCount": 9,
+    "avgEvidenceRecords": 9.9,
+    "avgCoveragePct": 39.3,
+    "avgVariantCoveragePct": 52.3,
+    "avgPriceAccuracyPct": 22.6,
+    "avgFeatureCoveragePct": 0,
+    "avgPublishReadinessScore": 32.8,
+    "qualityGatePassRate": 0,
+    "underTenMinutesCount": 0,
+    "totalManualCorrections": 269
+  },
+  "comparison": {
+    "overlapIds": [
+      "tata-curvv-ev",
+      "tata-nexon-ev",
+      "mahindra-be-6",
+      "mg-windsor-ev",
+      "byd-atto-3"
+    ],
+    "perVehicle": [
+      {
+        "id": "tata-curvv-ev",
+        "evidenceRecords": {
+          "before": 8,
+          "after": 7,
+          "delta": -1
+        },
+        "coveragePct": {
+          "before": 34.8,
+          "after": 30.4
+        },
+        "publishReadinessScore": {
+          "before": 16,
+          "after": 16
+        },
+        "qualityGatesPassed": {
+          "before": false,
+          "after": false
+        },
+        "pdfAcquired": {
+          "before": false,
+          "after": true
+        },
+        "oemUrl": {
+          "before": "https://www.tatamotors.com/curvv/ev",
+          "after": "https://ev.tatamotors.com/curvv/ev.html"
+        },
+        "manualCorrections": {
+          "before": 36,
+          "after": 36
+        }
+      },
+      {
+        "id": "tata-nexon-ev",
+        "evidenceRecords": {
+          "before": 6,
+          "after": 8,
+          "delta": 2
+        },
+        "coveragePct": {
+          "before": 25,
+          "after": 33.3
+        },
+        "publishReadinessScore": {
+          "before": 35,
+          "after": 56
+        },
+        "qualityGatesPassed": {
+          "before": false,
+          "after": false
+        },
+        "pdfAcquired": {
+          "before": false,
+          "after": true
+        },
+        "oemUrl": {
+          "before": "https://www.tatamotors.com/nexon/ev",
+          "after": "https://ev.tatamotors.com/nexon/ev.html"
+        },
+        "manualCorrections": {
+          "before": 44,
+          "after": 29
+        }
+      },
+      {
+        "id": "mahindra-be-6",
+        "evidenceRecords": {
+          "before": 6,
+          "after": 15,
+          "delta": 9
+        },
+        "coveragePct": {
+          "before": 30,
+          "after": 60
+        },
+        "publishReadinessScore": {
+          "before": 23,
+          "after": 24
+        },
+        "qualityGatesPassed": {
+          "before": false,
+          "after": false
+        },
+        "pdfAcquired": {
+          "before": false,
+          "after": true
+        },
+        "oemUrl": {
+          "before": "https://www.mahindra.com/be6",
+          "after": "https://www.mahindraelectricsuv.com/esuv/be-6/MBE6.html"
+        },
+        "manualCorrections": {
+          "before": 35,
+          "after": 33
+        }
+      },
+      {
+        "id": "mg-windsor-ev",
+        "evidenceRecords": {
+          "before": 7,
+          "after": 14,
+          "delta": 7
+        },
+        "coveragePct": {
+          "before": 35,
+          "after": 60
+        },
+        "publishReadinessScore": {
+          "before": 39,
+          "after": 39
+        },
+        "qualityGatesPassed": {
+          "before": false,
+          "after": false
+        },
+        "pdfAcquired": {
+          "before": false,
+          "after": true
+        },
+        "oemUrl": {
+          "before": "https://www.mgmotor.co.in/vehicles/windsor-ev",
+          "after": "https://www.mgmotor.co.in/vehicles/windsor-ev-electric-car-in-india"
+        },
+        "manualCorrections": {
+          "before": 30,
+          "after": 32
+        }
+      },
+      {
+        "id": "byd-atto-3",
+        "evidenceRecords": {
+          "before": 5,
+          "after": 5,
+          "delta": 0
+        },
+        "coveragePct": {
+          "before": 22.7,
+          "after": 22.7
+        },
+        "publishReadinessScore": {
+          "before": 34,
+          "after": 30
+        },
+        "qualityGatesPassed": {
+          "before": false,
+          "after": false
+        },
+        "pdfAcquired": {
+          "before": false,
+          "after": false
+        },
+        "oemUrl": {
+          "before": "https://www.bydauto.co.in/atto-3",
+          "after": "https://www.bydautoindia.com/bydatto3"
+        },
+        "manualCorrections": {
+          "before": 34,
+          "after": 35
+        }
+      }
+    ],
+    "aggregate": {
+      "before": {
+        "vehicleCount": 5,
+        "successCount": 5,
+        "failureCount": 0,
+        "pdfAcquiredCount": 0,
+        "avgCoveragePct": 29.5,
+        "avgVariantCoveragePct": 56.9,
+        "avgPriceAccuracyPct": 9,
+        "avgFeatureCoveragePct": 0,
+        "avgPublishReadinessScore": 29.4,
+        "avgReviewMinutes": 3,
+        "qualityGatePassRate": 0,
+        "underTenMinutesCount": 0,
+        "underTenMinutesVerdict": "No",
+        "totalManualCorrections": 179
+      },
+      "after": {
+        "vehicleCount": 5,
+        "successCount": 5,
+        "benchmarkedCount": 5,
+        "failureCount": 0,
+        "pdfAcquiredCount": 4,
+        "oemSourceAcquiredCount": 5,
+        "avgEvidenceRecords": 9.8,
+        "avgCoveragePct": 41.3,
+        "avgVariantCoveragePct": 50.3,
+        "avgPriceAccuracyPct": 25.2,
+        "avgFeatureCoveragePct": 0,
+        "avgPublishReadinessScore": 33,
+        "qualityGatePassRate": 0,
+        "underTenMinutesCount": 0,
+        "totalManualCorrections": 165
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "tata-curvv-ev",
+      "name": "Tata Curvv EV",
+      "ok": true,
+      "oemUrl": "https://ev.tatamotors.com/curvv/ev.html",
+      "brochureUrl": null,
+      "referenceUrls": [
+        "https://www.cardekho.com/tata/curvv-ev"
+      ],
+      "registryStatus": "verified",
+      "pdf": {
+        "ok": true,
+        "source": "discovered",
+        "path": null,
+        "url": "https://ev.tatamotors.com/content/dam/tml/ev/products/curvv/year-2026/ev/promoting-vc/broucher/year-2026/april/curvv-ev-dark-brochure.pdf",
+        "byteLength": 2621007
+      },
+      "elapsedMs": 75285,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 7,
+        "variantCount": 3,
+        "oemSourceAcquired": true
+      },
+      "metrics": {
+        "fieldsExtracted": 7,
+        "fieldsExpected": 23,
+        "coveragePct": 30.4,
+        "variantCoveragePct": 0,
+        "priceAccuracyPct": 0,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 8.7,
+        "publishReadinessScore": 16
+      },
+      "review": {
+        "attentionCount": 2,
+        "conflictCount": 0,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 21,
+          "featureCorrections": 7,
+          "priceCorrections": 3,
+          "variantCorrections": 3,
+          "attentionFields": 2,
+          "conflictFields": 0,
+          "hallucinationCritical": 0,
+          "totalEstimated": 36
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 2,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "model",
+            "message": "Required field missing: model"
+          },
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "goldenAvailable": true,
+      "evaluationSummary": {
+        "fieldCorrect": 2,
+        "fieldTotal": 23,
+        "variantMatched": 0,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 3,
+        "variantCountMatch": true,
+        "priceCorrect": 0,
+        "priceTotal": 3,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "tata-nexon-ev",
+      "name": "Tata Nexon EV",
+      "ok": true,
+      "oemUrl": "https://ev.tatamotors.com/nexon/ev.html",
+      "brochureUrl": null,
+      "referenceUrls": [
+        "https://www.cardekho.com/tata/nexon-ev"
+      ],
+      "registryStatus": "verified",
+      "pdf": {
+        "ok": true,
+        "source": "discovered",
+        "path": null,
+        "url": "https://ev.tatamotors.com/content/dam/tml/ev/products/nexon/year-2026/ev/promoting-vc/brochures/february/nexon-ev-brochure.pdf",
+        "byteLength": 8953010
+      },
+      "elapsedMs": 113298,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 8,
+        "variantCount": 11,
+        "oemSourceAcquired": true
+      },
+      "metrics": {
+        "fieldsExtracted": 8,
+        "fieldsExpected": 24,
+        "coveragePct": 33.3,
+        "variantCoveragePct": 84.6,
+        "priceAccuracyPct": 92.9,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 25,
+        "publishReadinessScore": 56
+      },
+      "review": {
+        "attentionCount": 1,
+        "conflictCount": 0,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 18,
+          "featureCorrections": 7,
+          "priceCorrections": 1,
+          "variantCorrections": 2,
+          "attentionFields": 1,
+          "conflictFields": 0,
+          "hallucinationCritical": 0,
+          "totalEstimated": 29
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 2,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          },
+          {
+            "gate": "variant_count_mismatch",
+            "message": "Variant count 11 vs golden 13",
+            "extractedCount": 11,
+            "goldenCount": 13
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "goldenAvailable": true,
+      "evaluationSummary": {
+        "fieldCorrect": 6,
+        "fieldTotal": 24,
+        "variantMatched": 11,
+        "variantGoldenCount": 13,
+        "variantExtractedCount": 11,
+        "variantCountMatch": false,
+        "priceCorrect": 13,
+        "priceTotal": 14,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "tata-punch-ev",
+      "name": "Tata Punch EV",
+      "ok": true,
+      "oemUrl": "https://ev.tatamotors.com/punch/ev.html",
+      "brochureUrl": null,
+      "referenceUrls": [
+        "https://www.cardekho.com/tata/punch-ev"
+      ],
+      "registryStatus": "verified",
+      "pdf": {
+        "ok": true,
+        "source": "discovered",
+        "path": null,
+        "url": "https://ev.tatamotors.com/content/dam/tml/ev/products/punch/year-2026/ev/promoting-vc/brochure/june/punch-ev-brochure-june.pdf",
+        "byteLength": 3362705
+      },
+      "elapsedMs": 89541,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 11,
+        "variantCount": 6,
+        "oemSourceAcquired": true
+      },
+      "metrics": {
+        "fieldsExtracted": 8,
+        "fieldsExpected": 24,
+        "coveragePct": 33.3,
+        "variantCoveragePct": 66.7,
+        "priceAccuracyPct": 14.3,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 25,
+        "publishReadinessScore": 35
+      },
+      "review": {
+        "attentionCount": 4,
+        "conflictCount": 2,
+        "reviewTimeEstimate": {
+          "min": 4,
+          "max": 8,
+          "label": "4–8 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 18,
+          "featureCorrections": 7,
+          "priceCorrections": 6,
+          "variantCorrections": 2,
+          "attentionFields": 4,
+          "conflictFields": 2,
+          "hallucinationCritical": 0,
+          "totalEstimated": 39
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 3,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          },
+          {
+            "gate": "unresolved_conflicts",
+            "fieldKey": "batteryCapacityKwh",
+            "message": "Unresolved evidence conflict: batteryCapacityKwh"
+          },
+          {
+            "gate": "unresolved_conflicts",
+            "fieldKey": "claimedRangeKm",
+            "message": "Unresolved evidence conflict: claimedRangeKm"
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "goldenAvailable": true,
+      "evaluationSummary": {
+        "fieldCorrect": 6,
+        "fieldTotal": 24,
+        "variantMatched": 4,
+        "variantGoldenCount": 6,
+        "variantExtractedCount": 6,
+        "variantCountMatch": true,
+        "priceCorrect": 1,
+        "priceTotal": 7,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "mahindra-be-6",
+      "name": "Mahindra BE 6",
+      "ok": true,
+      "oemUrl": "https://www.mahindraelectricsuv.com/esuv/be-6/MBE6.html",
+      "brochureUrl": "https://www.mahindraelectricsuv.com/on/demandware.static/-/Library-Sites-eSUVSharedLibrary/default/MBE6/MBE6-Brochure-Specification.pdf",
+      "referenceUrls": [
+        "https://www.cardekho.com/mahindra/be-6"
+      ],
+      "registryStatus": "verified",
+      "pdf": {
+        "ok": true,
+        "source": "registry",
+        "path": null,
+        "url": "https://www.mahindraelectricsuv.com/on/demandware.static/-/Library-Sites-eSUVSharedLibrary/default/MBE6/MBE6-Brochure-Specification.pdf",
+        "byteLength": 482618
+      },
+      "elapsedMs": 82894,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 15,
+        "variantCount": 2,
+        "oemSourceAcquired": true
+      },
+      "metrics": {
+        "fieldsExtracted": 12,
+        "fieldsExpected": 20,
+        "coveragePct": 60,
+        "variantCoveragePct": 0,
+        "priceAccuracyPct": 33.3,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 25,
+        "publishReadinessScore": 24
+      },
+      "review": {
+        "attentionCount": 4,
+        "conflictCount": 2,
+        "reviewTimeEstimate": {
+          "min": 4,
+          "max": 8,
+          "label": "4–8 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 15,
+          "featureCorrections": 7,
+          "priceCorrections": 2,
+          "variantCorrections": 3,
+          "attentionFields": 4,
+          "conflictFields": 2,
+          "hallucinationCritical": 0,
+          "totalEstimated": 33
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 4,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          },
+          {
+            "gate": "unresolved_conflicts",
+            "fieldKey": "batteryCapacityKwh",
+            "message": "Unresolved evidence conflict: batteryCapacityKwh"
+          },
+          {
+            "gate": "unresolved_conflicts",
+            "fieldKey": "claimedRangeKm",
+            "message": "Unresolved evidence conflict: claimedRangeKm"
+          },
+          {
+            "gate": "variant_count_mismatch",
+            "message": "Variant count 2 vs golden 3",
+            "extractedCount": 2,
+            "goldenCount": 3
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "goldenAvailable": true,
+      "evaluationSummary": {
+        "fieldCorrect": 5,
+        "fieldTotal": 20,
+        "variantMatched": 0,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 2,
+        "variantCountMatch": false,
+        "priceCorrect": 1,
+        "priceTotal": 3,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "mahindra-xev-9e",
+      "name": "Mahindra XEV 9e",
+      "ok": true,
+      "oemUrl": "https://www.mahindraelectricsuv.com/esuv/xev-9e/MXV9.html",
+      "brochureUrl": "https://www.mahindraelectricsuv.com/on/demandware.static/-/Library-Sites-eSUVSharedLibrary/default/MXV9/XEV-9e-Brochure-Specification.pdf",
+      "referenceUrls": [
+        "https://www.cardekho.com/mahindra/xev-9e"
+      ],
+      "registryStatus": "verified",
+      "pdf": {
+        "ok": true,
+        "source": "registry",
+        "path": null,
+        "url": "https://www.mahindraelectricsuv.com/on/demandware.static/-/Library-Sites-eSUVSharedLibrary/default/MXV9/XEV-9e-Brochure-Specification.pdf",
+        "byteLength": 1831606
+      },
+      "elapsedMs": 79595,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 14,
+        "variantCount": 5,
+        "oemSourceAcquired": true
+      },
+      "metrics": {
+        "fieldsExtracted": 10,
+        "fieldsExpected": 20,
+        "coveragePct": 50,
+        "variantCoveragePct": 66.7,
+        "priceAccuracyPct": 40,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 25,
+        "publishReadinessScore": 39
+      },
+      "review": {
+        "attentionCount": 5,
+        "conflictCount": 2,
+        "reviewTimeEstimate": {
+          "min": 4,
+          "max": 8,
+          "label": "4–8 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 15,
+          "featureCorrections": 7,
+          "priceCorrections": 3,
+          "variantCorrections": 1,
+          "attentionFields": 5,
+          "conflictFields": 2,
+          "hallucinationCritical": 0,
+          "totalEstimated": 33
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 4,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          },
+          {
+            "gate": "unresolved_conflicts",
+            "fieldKey": "claimedRangeKm",
+            "message": "Unresolved evidence conflict: claimedRangeKm"
+          },
+          {
+            "gate": "unresolved_conflicts",
+            "fieldKey": "acChargingTimeHours",
+            "message": "Unresolved evidence conflict: acChargingTimeHours"
+          },
+          {
+            "gate": "variant_count_mismatch",
+            "message": "Variant count 5 vs golden 3",
+            "extractedCount": 5,
+            "goldenCount": 3
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "goldenAvailable": true,
+      "evaluationSummary": {
+        "fieldCorrect": 5,
+        "fieldTotal": 20,
+        "variantMatched": 2,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 5,
+        "variantCountMatch": false,
+        "priceCorrect": 2,
+        "priceTotal": 5,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "mg-windsor-ev",
+      "name": "MG Windsor EV",
+      "ok": true,
+      "oemUrl": "https://www.mgmotor.co.in/vehicles/windsor-ev-electric-car-in-india",
+      "brochureUrl": null,
+      "referenceUrls": [
+        "https://www.cardekho.com/mg/windsor-ev"
+      ],
+      "registryStatus": "verified",
+      "pdf": {
+        "ok": true,
+        "source": "discovered",
+        "path": null,
+        "url": "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20Windsor%20EV%20-%20Brochure.pdf",
+        "byteLength": 18628215
+      },
+      "elapsedMs": 108080,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 14,
+        "variantCount": 7,
+        "oemSourceAcquired": true
+      },
+      "metrics": {
+        "fieldsExtracted": 12,
+        "fieldsExpected": 20,
+        "coveragePct": 60,
+        "variantCoveragePct": 100,
+        "priceAccuracyPct": 0,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 25,
+        "publishReadinessScore": 39
+      },
+      "review": {
+        "attentionCount": 3,
+        "conflictCount": 1,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 15,
+          "featureCorrections": 7,
+          "priceCorrections": 6,
+          "variantCorrections": 0,
+          "attentionFields": 3,
+          "conflictFields": 1,
+          "hallucinationCritical": 0,
+          "totalEstimated": 32
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 3,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          },
+          {
+            "gate": "unresolved_conflicts",
+            "fieldKey": "claimedRangeKm",
+            "message": "Unresolved evidence conflict: claimedRangeKm"
+          },
+          {
+            "gate": "variant_count_mismatch",
+            "message": "Variant count 7 vs golden 3",
+            "extractedCount": 7,
+            "goldenCount": 3
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "goldenAvailable": true,
+      "evaluationSummary": {
+        "fieldCorrect": 5,
+        "fieldTotal": 20,
+        "variantMatched": 3,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 7,
+        "variantCountMatch": false,
+        "priceCorrect": 0,
+        "priceTotal": 6,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "mg-zs-ev",
+      "name": "MG ZS EV",
+      "ok": true,
+      "oemUrl": "https://www.mgmotor.co.in/vehicles/mgzsev-electric-car-in-india",
+      "brochureUrl": "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20ZSEV%20-%20Brochure.pdf",
+      "referenceUrls": [
+        "https://www.cardekho.com/mg/zs-ev"
+      ],
+      "pdf": {
+        "ok": true,
+        "source": "registry",
+        "path": null,
+        "url": "https://s7ap1.scene7.com/is/content/mgmotor/mgmotor/documents/MG%20ZSEV%20-%20Brochure.pdf",
+        "byteLength": 11788361
+      },
+      "elapsedMs": 71003,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 6,
+        "variantCount": 3,
+        "oemSourceAcquired": true
+      },
+      "metrics": null,
+      "review": {
+        "attentionCount": 4
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 1,
+        "failures": [
+          {
+            "message": "No golden dossier for benchmark comparison"
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "goldenAvailable": false
+    },
+    {
+      "id": "hyundai-creta-electric",
+      "name": "Hyundai Creta Electric",
+      "ok": true,
+      "oemUrl": "https://www.hyundai.com/in/en/find-a-car/creta-electric/highlights",
+      "brochureUrl": "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/creta-ev.pdf",
+      "referenceUrls": [
+        "https://www.cardekho.com/hyundai/creta-electric"
+      ],
+      "registryStatus": "verified",
+      "pdf": {
+        "ok": true,
+        "source": "registry",
+        "path": null,
+        "url": "https://www.hyundai.com/content/dam/hyundai/in/en/data/brochure/creta-ev.pdf",
+        "byteLength": 2904368
+      },
+      "elapsedMs": 78912,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 5,
+        "variantCount": 5,
+        "oemSourceAcquired": true
+      },
+      "metrics": {
+        "fieldsExtracted": 5,
+        "fieldsExpected": 20,
+        "coveragePct": 25,
+        "variantCoveragePct": 33.3,
+        "priceAccuracyPct": 0,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 10,
+        "publishReadinessScore": 23
+      },
+      "review": {
+        "attentionCount": 1,
+        "conflictCount": 0,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 18,
+          "featureCorrections": 7,
+          "priceCorrections": 4,
+          "variantCorrections": 2,
+          "attentionFields": 1,
+          "conflictFields": 0,
+          "hallucinationCritical": 0,
+          "totalEstimated": 32
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 2,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          },
+          {
+            "gate": "variant_count_mismatch",
+            "message": "Variant count 5 vs golden 3",
+            "extractedCount": 5,
+            "goldenCount": 3
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "goldenAvailable": true,
+      "evaluationSummary": {
+        "fieldCorrect": 2,
+        "fieldTotal": 20,
+        "variantMatched": 1,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 5,
+        "variantCountMatch": false,
+        "priceCorrect": 0,
+        "priceTotal": 4,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    },
+    {
+      "id": "byd-atto-3",
+      "name": "BYD Atto 3",
+      "ok": true,
+      "oemUrl": "https://www.bydautoindia.com/bydatto3",
+      "brochureUrl": null,
+      "referenceUrls": [
+        "https://www.cardekho.com/byd/atto-3"
+      ],
+      "registryStatus": "needs_verification",
+      "pdf": {
+        "ok": false,
+        "source": "none",
+        "path": null,
+        "url": null,
+        "byteLength": null
+      },
+      "elapsedMs": 49201,
+      "acquisition": {
+        "sourceCount": 2,
+        "evidenceRecordCount": 5,
+        "variantCount": 3,
+        "oemSourceAcquired": true
+      },
+      "metrics": {
+        "fieldsExtracted": 5,
+        "fieldsExpected": 22,
+        "coveragePct": 22.7,
+        "variantCoveragePct": 66.7,
+        "priceAccuracyPct": 0,
+        "featureCoveragePct": 0,
+        "fieldAccuracyPct": 13.6,
+        "publishReadinessScore": 30
+      },
+      "review": {
+        "attentionCount": 3,
+        "conflictCount": 0,
+        "reviewTimeEstimate": {
+          "min": 2,
+          "max": 4,
+          "label": "2–4 min"
+        },
+        "manualCorrections": {
+          "fieldCorrections": 19,
+          "featureCorrections": 7,
+          "priceCorrections": 5,
+          "variantCorrections": 1,
+          "attentionFields": 3,
+          "conflictFields": 0,
+          "hallucinationCritical": 0,
+          "totalEstimated": 35
+        }
+      },
+      "qualityGates": {
+        "passed": false,
+        "failureCount": 3,
+        "failures": [
+          {
+            "gate": "required_fields",
+            "fieldKey": "brand",
+            "message": "Required field missing: brand"
+          },
+          {
+            "gate": "required_fields",
+            "fieldKey": "model",
+            "message": "Required field missing: model"
+          },
+          {
+            "gate": "required_fields",
+            "fieldKey": "familySlug",
+            "message": "Required field missing: familySlug"
+          }
+        ]
+      },
+      "publishDraftReady": false,
+      "underTenMinutes": false,
+      "goldenAvailable": true,
+      "evaluationSummary": {
+        "fieldCorrect": 3,
+        "fieldTotal": 22,
+        "variantMatched": 2,
+        "variantGoldenCount": 3,
+        "variantExtractedCount": 3,
+        "variantCountMatch": true,
+        "priceCorrect": 0,
+        "priceTotal": 5,
+        "featureCorrect": 0,
+        "featureTotal": 7
+      }
+    }
+  ]
+}

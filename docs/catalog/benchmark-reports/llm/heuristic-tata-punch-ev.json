@@ -1,0 +1,1199 @@
+{
+  "ok": true,
+  "providerId": "heuristic",
+  "goldenId": "tata-punch-ev",
+  "goldenDisplayName": "Tata Punch EV",
+  "model": "heuristic-v1-enhanced",
+  "elapsedMs": 2,
+  "costUsd": 0,
+  "attentionCount": 0,
+  "reviewTimeEstimate": {
+    "min": 2,
+    "max": 4,
+    "label": "2–4 min"
+  },
+  "extractionMode": "heuristic-v1",
+  "grounding": null,
+  "report": {
+    "generatedAt": "2026-06-09T05:45:00.635Z",
+    "importId": "llm-bench-heuristic-tata-punch-ev",
+    "goldenId": "tata-punch-ev",
+    "evaluation": {
+      "goldenId": "tata-punch-ev",
+      "familySlug": "tata-punch-ev",
+      "evaluatedAt": "2026-06-09T05:45:00.634Z",
+      "fieldAccuracy": 0.25,
+      "variantAccuracy": 0,
+      "priceAccuracy": 0,
+      "featureAccuracy": 0.14285714285714285,
+      "field": {
+        "accuracy": 0.25,
+        "correct": 6,
+        "total": 24,
+        "comparisons": [
+          {
+            "fieldKey": "brand",
+            "status": "correct",
+            "correct": true,
+            "expected": "Tata",
+            "actual": "Tata"
+          },
+          {
+            "fieldKey": "model",
+            "status": "correct",
+            "correct": true,
+            "expected": "Punch EV",
+            "actual": "Punch EV"
+          },
+          {
+            "fieldKey": "bodyType",
+            "status": "incorrect",
+            "correct": false,
+            "expected": "SUV",
+            "actual": "compact SUV"
+          },
+          {
+            "fieldKey": "familySlug",
+            "status": "correct",
+            "correct": true,
+            "expected": "tata-punch-ev",
+            "actual": "tata-punch-ev"
+          },
+          {
+            "fieldKey": "startingPrice",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 969000,
+            "actual": "999000"
+          },
+          {
+            "fieldKey": "topVariantPrice",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 1259000,
+            "actual": "999000"
+          },
+          {
+            "fieldKey": "exShowroomPrice",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 969000,
+            "actual": "999000"
+          },
+          {
+            "fieldKey": "claimedRangeKm",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 468,
+            "actual": "421"
+          },
+          {
+            "fieldKey": "rangeTestStandard",
+            "status": "correct",
+            "correct": true,
+            "expected": "MIDC",
+            "actual": "MIDC"
+          },
+          {
+            "fieldKey": "acChargingKw",
+            "status": "correct",
+            "correct": true,
+            "expected": 7.2,
+            "actual": "7.2"
+          },
+          {
+            "fieldKey": "dcChargingKw",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 65,
+            "actual": "50"
+          },
+          {
+            "fieldKey": "acChargingTimeHours",
+            "status": "missing",
+            "correct": false,
+            "expected": 4.5,
+            "actual": null
+          },
+          {
+            "fieldKey": "dcChargingTimeMinutes",
+            "status": "missing",
+            "correct": false,
+            "expected": 26,
+            "actual": null
+          },
+          {
+            "fieldKey": "powerPs",
+            "status": "missing",
+            "correct": false,
+            "expected": 87,
+            "actual": null
+          },
+          {
+            "fieldKey": "torqueNm",
+            "status": "missing",
+            "correct": false,
+            "expected": 154,
+            "actual": null
+          },
+          {
+            "fieldKey": "airbags",
+            "status": "missing",
+            "correct": false,
+            "expected": 6,
+            "actual": null
+          },
+          {
+            "fieldKey": "ncapRating",
+            "status": "missing",
+            "correct": false,
+            "expected": 5,
+            "actual": null
+          },
+          {
+            "fieldKey": "sunroof",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "ventilatedSeats",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "camera360",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "connectedCar",
+            "status": "correct",
+            "correct": true,
+            "expected": true,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "v2l",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "v2v",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "adas",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          }
+        ]
+      },
+      "variant": {
+        "accuracy": 0,
+        "matchedCount": 0,
+        "goldenCount": 6,
+        "extractedCount": 0,
+        "countMatch": false,
+        "matches": [
+          {
+            "golden": {
+              "variantName": "Smart",
+              "priceInr": 969000,
+              "batteryKwh": 30,
+              "rangeKm": 370,
+              "acChargingKw": 7.2,
+              "dcChargingKw": 65,
+              "features": {
+                "adas": false,
+                "camera360": false
+              }
+            },
+            "extracted": null,
+            "similarity": 0,
+            "matched": false
+          },
+          {
+            "golden": {
+              "variantName": "Smart+ 30 kWh",
+              "priceInr": 1029000,
+              "batteryKwh": 30,
+              "rangeKm": 370,
+              "acChargingKw": 7.2,
+              "dcChargingKw": 65,
+              "features": {
+                "adas": false,
+                "camera360": false
+              }
+            },
+            "extracted": null,
+            "similarity": 0,
+            "matched": false
+          },
+          {
+            "golden": {
+              "variantName": "Smart+ 40 kWh",
+              "priceInr": 1089000,
+              "batteryKwh": 40,
+              "rangeKm": 468,
+              "acChargingKw": 7.2,
+              "dcChargingKw": 65,
+              "features": {
+                "adas": false,
+                "camera360": false
+              }
+            },
+            "extracted": null,
+            "similarity": 0,
+            "matched": false
+          },
+          {
+            "golden": {
+              "variantName": "Adventure",
+              "priceInr": 1159000,
+              "batteryKwh": 40,
+              "rangeKm": 468,
+              "acChargingKw": 7.2,
+              "dcChargingKw": 65,
+              "features": {
+                "adas": false,
+                "camera360": false
+              }
+            },
+            "extracted": null,
+            "similarity": 0,
+            "matched": false
+          },
+          {
+            "golden": {
+              "variantName": "Empowered",
+              "priceInr": 1229000,
+              "batteryKwh": 40,
+              "rangeKm": 468,
+              "acChargingKw": 7.2,
+              "dcChargingKw": 65,
+              "features": {
+                "adas": true,
+                "camera360": true
+              }
+            },
+            "extracted": null,
+            "similarity": 0,
+            "matched": false
+          },
+          {
+            "golden": {
+              "variantName": "Empowered+",
+              "priceInr": 1259000,
+              "batteryKwh": 40,
+              "rangeKm": 468,
+              "acChargingKw": 7.2,
+              "dcChargingKw": 65,
+              "features": {
+                "adas": true,
+                "camera360": true
+              }
+            },
+            "extracted": null,
+            "similarity": 0,
+            "matched": false
+          }
+        ]
+      },
+      "price": {
+        "accuracy": 0,
+        "correct": 0,
+        "total": 3,
+        "comparisons": [
+          {
+            "fieldKey": "startingPrice",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 969000,
+            "actual": "999000"
+          },
+          {
+            "fieldKey": "topVariantPrice",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 1259000,
+            "actual": "999000"
+          },
+          {
+            "fieldKey": "exShowroomPrice",
+            "status": "incorrect",
+            "correct": false,
+            "expected": 969000,
+            "actual": "999000"
+          }
+        ]
+      },
+      "feature": {
+        "accuracy": 0.14285714285714285,
+        "correct": 1,
+        "total": 7,
+        "comparisons": [
+          {
+            "fieldKey": "sunroof",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "ventilatedSeats",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "camera360",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "connectedCar",
+            "status": "correct",
+            "correct": true,
+            "expected": true,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "v2l",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "v2v",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          },
+          {
+            "fieldKey": "adas",
+            "status": "incorrect",
+            "correct": false,
+            "expected": false,
+            "actual": "false"
+          }
+        ]
+      },
+      "summary": {
+        "fieldCorrect": 6,
+        "fieldTotal": 24,
+        "variantMatched": 0,
+        "variantGoldenCount": 6,
+        "variantExtractedCount": 0,
+        "variantCountMatch": false,
+        "priceCorrect": 0,
+        "priceTotal": 3,
+        "featureCorrect": 1,
+        "featureTotal": 7
+      }
+    },
+    "calibration": {
+      "generatedAt": "2026-06-09T05:45:00.634Z",
+      "goldenId": "tata-punch-ev",
+      "bands": {
+        "95-100": {
+          "predicted": 0,
+          "correct": 0,
+          "incorrect": 0,
+          "fields": [],
+          "precision": null
+        },
+        "80-94": {
+          "predicted": 18,
+          "correct": 6,
+          "incorrect": 12,
+          "fields": [
+            {
+              "fieldKey": "brand",
+              "confidence": 85,
+              "correct": true,
+              "expected": "Tata",
+              "actual": "Tata"
+            },
+            {
+              "fieldKey": "model",
+              "confidence": 85,
+              "correct": true,
+              "expected": "Punch EV",
+              "actual": "Punch EV"
+            },
+            {
+              "fieldKey": "bodyType",
+              "confidence": 85,
+              "correct": false,
+              "expected": "SUV",
+              "actual": "compact SUV"
+            },
+            {
+              "fieldKey": "familySlug",
+              "confidence": 85,
+              "correct": true,
+              "expected": "tata-punch-ev",
+              "actual": "tata-punch-ev"
+            },
+            {
+              "fieldKey": "startingPrice",
+              "confidence": 85,
+              "correct": false,
+              "expected": 969000,
+              "actual": "999000"
+            },
+            {
+              "fieldKey": "topVariantPrice",
+              "confidence": 85,
+              "correct": false,
+              "expected": 1259000,
+              "actual": "999000"
+            },
+            {
+              "fieldKey": "exShowroomPrice",
+              "confidence": 85,
+              "correct": false,
+              "expected": 969000,
+              "actual": "999000"
+            },
+            {
+              "fieldKey": "claimedRangeKm",
+              "confidence": 85,
+              "correct": false,
+              "expected": 468,
+              "actual": "421"
+            },
+            {
+              "fieldKey": "rangeTestStandard",
+              "confidence": 85,
+              "correct": true,
+              "expected": "MIDC",
+              "actual": "MIDC"
+            },
+            {
+              "fieldKey": "acChargingKw",
+              "confidence": 85,
+              "correct": true,
+              "expected": 7.2,
+              "actual": "7.2"
+            },
+            {
+              "fieldKey": "dcChargingKw",
+              "confidence": 85,
+              "correct": false,
+              "expected": 65,
+              "actual": "50"
+            },
+            {
+              "fieldKey": "adas",
+              "confidence": 85,
+              "correct": false,
+              "expected": false,
+              "actual": "false"
+            },
+            {
+              "fieldKey": "sunroof",
+              "confidence": 85,
+              "correct": false,
+              "expected": false,
+              "actual": "false"
+            },
+            {
+              "fieldKey": "ventilatedSeats",
+              "confidence": 85,
+              "correct": false,
+              "expected": false,
+              "actual": "false"
+            },
+            {
+              "fieldKey": "camera360",
+              "confidence": 85,
+              "correct": false,
+              "expected": false,
+              "actual": "false"
+            },
+            {
+              "fieldKey": "connectedCar",
+              "confidence": 85,
+              "correct": true,
+              "expected": true,
+              "actual": "false"
+            },
+            {
+              "fieldKey": "v2l",
+              "confidence": 85,
+              "correct": false,
+              "expected": false,
+              "actual": "false"
+            },
+            {
+              "fieldKey": "v2v",
+              "confidence": 85,
+              "correct": false,
+              "expected": false,
+              "actual": "false"
+            }
+          ],
+          "precision": 0.3333333333333333
+        },
+        "below-80": {
+          "predicted": 0,
+          "correct": 0,
+          "incorrect": 0,
+          "fields": [],
+          "precision": null
+        }
+      },
+      "overconfidentBands": [
+        "80-94"
+      ]
+    },
+    "hallucination": {
+      "generatedAt": "2026-06-09T05:45:00.634Z",
+      "count": 0,
+      "criticalCount": 0,
+      "warningCount": 0,
+      "fields": [],
+      "publishBlocked": false
+    },
+    "evidenceCoverage": {
+      "generatedAt": "2026-06-09T05:45:00.634Z",
+      "fieldCount": 36,
+      "populatedCount": 19,
+      "averageEvidenceQuality": 64,
+      "weakAreaCount": 8,
+      "fields": [
+        {
+          "fieldKey": "brand",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 75,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "model",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 75,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "bodyType",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 72,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "familySlug",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 74,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "startingPrice",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 76,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "topVariantPrice",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 75,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "exShowroomPrice",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 74,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "batteryCapacityKwh",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 76,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "batteryChemistry",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "claimedRangeKm",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 76,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "rangeTestStandard",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "acChargingKw",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 75,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "dcChargingKw",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 75,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "acChargingTimeHours",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "dcChargingTimeMinutes",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "powerPs",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "powerKw",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "torqueNm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "airbags",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "adas",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "adasLevel",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "ncapRating",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "sunroof",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "ventilatedSeats",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "camera360",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "connectedCar",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "v2l",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "v2v",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "vehicleWarrantyYears",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "batteryWarrantyYears",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "colorOptions",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "heroImageCandidates",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "lengthMm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "widthMm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "heightMm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "wheelbaseMm",
+          "sourceCount": 0,
+          "agreement": "missing",
+          "evidenceQuality": 0,
+          "confidence": 0,
+          "hasValue": false,
+          "manualReview": false
+        }
+      ],
+      "weakAreas": [
+        {
+          "fieldKey": "rangeTestStandard",
+          "reason": "low_quality",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "adas",
+          "reason": "low_quality",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "sunroof",
+          "reason": "low_quality",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "ventilatedSeats",
+          "reason": "low_quality",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "camera360",
+          "reason": "low_quality",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "connectedCar",
+          "reason": "low_quality",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "v2l",
+          "reason": "low_quality",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        },
+        {
+          "fieldKey": "v2v",
+          "reason": "low_quality",
+          "sourceCount": 1,
+          "agreement": "single_source",
+          "evidenceQuality": 48,
+          "confidence": 85,
+          "hasValue": true,
+          "manualReview": false
+        }
+      ]
+    },
+    "reviewMetrics": null,
+    "qualityGates": {
+      "ok": false,
+      "passed": false,
+      "failureCount": 1,
+      "warningCount": 0,
+      "failures": [
+        {
+          "gate": "variant_count_mismatch",
+          "message": "Variant count 0 vs golden 6",
+          "extractedCount": 0,
+          "goldenCount": 6
+        }
+      ],
+      "warnings": [],
+      "hallucination": {
+        "generatedAt": "2026-06-09T05:45:00.634Z",
+        "count": 0,
+        "criticalCount": 0,
+        "warningCount": 0,
+        "fields": [],
+        "publishBlocked": false
+      },
+      "checkedAt": "2026-06-09T05:45:00.634Z"
+    },
+    "failureDiagnostics": {
+      "generatedAt": "2026-06-09T05:45:00.635Z",
+      "goldenId": "tata-punch-ev",
+      "failureCount": 18,
+      "counts": {
+        "missing_extraction": 6,
+        "wrong_extraction": 9,
+        "hallucination": 0,
+        "mapping_error": 3
+      },
+      "failures": [
+        {
+          "fieldKey": "bodyType",
+          "failureType": "wrong_extraction",
+          "detail": "Value present but incorrect vs golden",
+          "expected": "SUV",
+          "actual": "compact SUV"
+        },
+        {
+          "fieldKey": "startingPrice",
+          "failureType": "mapping_error",
+          "detail": "Numeric value extracted but wrong mapping/normalization",
+          "expected": 969000,
+          "actual": "999000"
+        },
+        {
+          "fieldKey": "topVariantPrice",
+          "failureType": "mapping_error",
+          "detail": "Numeric value extracted but wrong mapping/normalization",
+          "expected": 1259000,
+          "actual": "999000"
+        },
+        {
+          "fieldKey": "exShowroomPrice",
+          "failureType": "wrong_extraction",
+          "detail": "Value present but incorrect vs golden",
+          "expected": 969000,
+          "actual": "999000"
+        },
+        {
+          "fieldKey": "claimedRangeKm",
+          "failureType": "mapping_error",
+          "detail": "Numeric value extracted but wrong mapping/normalization",
+          "expected": 468,
+          "actual": "421"
+        },
+        {
+          "fieldKey": "dcChargingKw",
+          "failureType": "wrong_extraction",
+          "detail": "Value present but incorrect vs golden",
+          "expected": 65,
+          "actual": "50"
+        },
+        {
+          "fieldKey": "acChargingTimeHours",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": 4.5,
+          "actual": null
+        },
+        {
+          "fieldKey": "dcChargingTimeMinutes",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": 26,
+          "actual": null
+        },
+        {
+          "fieldKey": "powerPs",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": 87,
+          "actual": null
+        },
+        {
+          "fieldKey": "torqueNm",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": 154,
+          "actual": null
+        },
+        {
+          "fieldKey": "airbags",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": 6,
+          "actual": null
+        },
+        {
+          "fieldKey": "adas",
+          "failureType": "wrong_extraction",
+          "detail": "Value present but incorrect vs golden",
+          "expected": false,
+          "actual": "false"
+        },
+        {
+          "fieldKey": "ncapRating",
+          "failureType": "missing_extraction",
+          "detail": "Value absent in extraction",
+          "expected": 5,
+          "actual": null
+        },
+        {
+          "fieldKey": "sunroof",
+          "failureType": "wrong_extraction",
+          "detail": "Value present but incorrect vs golden",
+          "expected": false,
+          "actual": "false"
+        },
+        {
+          "fieldKey": "ventilatedSeats",
+          "failureType": "wrong_extraction",
+          "detail": "Value present but incorrect vs golden",
+          "expected": false,
+          "actual": "false"
+        },
+        {
+          "fieldKey": "camera360",
+          "failureType": "wrong_extraction",
+          "detail": "Value present but incorrect vs golden",
+          "expected": false,
+          "actual": "false"
+        },
+        {
+          "fieldKey": "v2l",
+          "failureType": "wrong_extraction",
+          "detail": "Value present but incorrect vs golden",
+          "expected": false,
+          "actual": "false"
+        },
+        {
+          "fieldKey": "v2v",
+          "failureType": "wrong_extraction",
+          "detail": "Value present but incorrect vs golden",
+          "expected": false,
+          "actual": "false"
+        }
+      ],
+      "accuracy": {
+        "field": 0.25,
+        "price": 0,
+        "variant": 0,
+        "feature": 0.14285714285714285
+      },
+      "groundingRejectedCount": 0,
+      "hallucinationCount": 0
+    },
+    "grounding": null,
+    "metrics": {
+      "fieldAccuracy": 0.25,
+      "variantAccuracy": 0,
+      "priceAccuracy": 0,
+      "featureAccuracy": 0.14285714285714285
+    },
+    "attentionCount": 0,
+    "reviewTimeEstimate": {
+      "min": 2,
+      "max": 4,
+      "label": "2–4 min"
+    },
+    "providerId": "heuristic",
+    "model": "heuristic-v1-enhanced",
+    "elapsedMs": 2
+  },
+  "metrics": {
+    "fieldAccuracy": 0.25,
+    "priceAccuracy": 0,
+    "variantAccuracy": 0,
+    "featureAccuracy": 0.14285714285714285,
+    "coverageScore": 0.5277777777777778,
+    "averageEvidenceQuality": 64,
+    "hallucinationRate": 0,
+    "hallucinationCriticalCount": 0,
+    "gatePassRate": 0,
+    "qualityGatesPassed": false,
+    "attentionCount": 0,
+    "reviewTimeEstimate": {
+      "min": 2,
+      "max": 4,
+      "label": "2–4 min"
+    }
+  }
+}
