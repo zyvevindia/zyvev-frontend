@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-06-10T04:12:32.498Z",
+  "orchestratorVersion": 1,
+  "methodology": "Simulated agent runs via golden dossiers — approval workflow enforced",
+  "aggregate": {
+    "scenariosTotal": 9,
+    "scenariosPassed": 9,
+    "scenarioPassRatePct": 100,
+    "autonomousViolations": 0,
+    "humanApprovalRatePct": 100,
+    "humanApprovals": 2,
+    "rejectedActions": 1,
+    "successRatePct": 81.8,
+    "failureRatePct": 9.1,
+    "averageDurationMs": 3,
+    "executionCount": 11
+  },
+  "governance": {
+    "autonomousViolations": 0,
+    "humanApprovalRatePct": 100,
+    "passed": true
+  },
+  "recommendation": "READY FOR SEO AGENT",
+  "scenarios": [
+    {
+      "name": "score_engine:tata-nexon-ev",
+      "ok": true,
+      "durationMs": 10,
+      "executionId": "exec_1781064752468_zw26bs",
+      "status": "completed",
+      "approvalRequired": false,
+      "score": 53
+    },
+    {
+      "name": "score_engine:tata-punch-ev",
+      "ok": true,
+      "durationMs": 2,
+      "executionId": "exec_1781064752475_k4jh35",
+      "status": "completed",
+      "approvalRequired": false,
+      "score": 56
+    },
+    {
+      "name": "score_engine:mahindra-be-6",
+      "ok": true,
+      "durationMs": 1,
+      "executionId": "exec_1781064752477_lx9av5",
+      "status": "completed",
+      "approvalRequired": false,
+      "score": 79
+    },
+    {
+      "name": "vehicle_creation:workflow",
+      "ok": true,
+      "durationMs": 4,
+      "initialStatus": "waiting_for_review",
+      "blockedWithoutApproval": true,
+      "approved": true,
+      "executed": true,
+      "recommendation": "REVIEW_REQUIRED"
+    },
+    {
+      "name": "change_detection:price_mutation",
+      "ok": true,
+      "durationMs": 5,
+      "changeCount": 24,
+      "approved": true,
+      "executed": true
+    },
+    {
+      "name": "change_detection:no_change",
+      "ok": true,
+      "durationMs": 2,
+      "status": "completed",
+      "recommendation": "NO_CHANGE",
+      "completedWithoutReview": true
+    },
+    {
+      "name": "rejection:human_reject",
+      "ok": true,
+      "durationMs": 1,
+      "status": "rejected"
+    },
+    {
+      "name": "failure_recovery:missing_golden",
+      "ok": true,
+      "durationMs": 3,
+      "failedStatus": "failed",
+      "recovered": true
+    },
+    {
+      "name": "stability:score_repeat",
+      "ok": true,
+      "durationMs": 5,
+      "scoreA": 53,
+      "scoreB": 53,
+      "stable": true
+    }
+  ]
+}
