@@ -13,16 +13,16 @@
     "model": "Curvv EV",
     "bodyType": "SUV",
     "familySlug": "tata-curvv-ev",
-    "startingPrice": 1799000,
-    "topVariantPrice": 2099000,
-    "exShowroomPrice": 1799000,
-    "batteryCapacityKwh": 45,
+    "startingPrice": 1699000,
+    "topVariantPrice": 1949000,
+    "exShowroomPrice": 1699000,
+    "batteryCapacityKwh": 55,
     "claimedRangeKm": 502,
     "rangeTestStandard": "MIDC",
     "acChargingKw": 7.2,
-    "dcChargingKw": 150,
-    "acChargingTimeHours": 6.3,
-    "dcChargingTimeMinutes": 30,
+    "dcChargingKw": 70,
+    "acChargingTimeHours": 7.6,
+    "dcChargingTimeMinutes": 40,
     "airbags": 6,
     "adas": true,
     "ncapRating": 5,
@@ -36,38 +36,41 @@
     "camera360": true,
     "connectedCar": true,
     "v2l": true,
-    "v2v": false
+    "v2v": true
   },
   "variants": [
     {
-      "variantName": "Creative 45",
-      "priceInr": 1799000,
-      "batteryKwh": 45,
-      "rangeKm": 502,
-      "acChargingKw": 7.2,
-      "dcChargingKw": 150,
-      "powerPs": 150,
-      "powerKw": 110,
-      "torqueNm": 215
-    },
-    {
-      "variantName": "Accomplished 45",
-      "priceInr": 1949000,
-      "batteryKwh": 45,
-      "rangeKm": 502,
-      "acChargingKw": 7.2,
-      "dcChargingKw": 150,
-      "powerPs": 150,
-      "powerKw": 110,
-      "torqueNm": 215
-    },
-    {
-      "variantName": "Empowered 55",
-      "priceInr": 2099000,
+      "variantName": "Accomplished X55",
+      "priceInr": 1699000,
       "batteryKwh": 55,
-      "rangeKm": 585,
+      "rangeKm": 502,
       "acChargingKw": 7.2,
-      "dcChargingKw": 150,
+      "dcChargingKw": 70,
+      "dcChargingTimeMinutes": 40,
+      "powerPs": 167,
+      "powerKw": 123,
+      "torqueNm": 215
+    },
+    {
+      "variantName": "Empowered X55",
+      "priceInr": 1919000,
+      "batteryKwh": 55,
+      "rangeKm": 502,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 70,
+      "dcChargingTimeMinutes": 40,
+      "powerPs": 167,
+      "powerKw": 123,
+      "torqueNm": 215
+    },
+    {
+      "variantName": "Empowered X55 Dark",
+      "priceInr": 1949000,
+      "batteryKwh": 55,
+      "rangeKm": 502,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 70,
+      "dcChargingTimeMinutes": 40,
       "powerPs": 167,
       "powerKw": 123,
       "torqueNm": 215
@@ -75,9 +78,25 @@
   ],
   "verificationLevel": "manual_review",
   "sources": [
-    "OEM brochure + CarDekho cross-check (Jun 2026)"
+    "https://ev.tatamotors.com/curvv/ev/price.html",
+    "https://cars.tatamotors.com/article/press-release/curvv-ev-series-x-launch.html",
+    "https://www.cardekho.com/tata/curvv-ev"
   ],
-  "verifiedAt": "2026-06-08",
+  "verifiedAt": "2026-06-11",
+  "populationMeta": {
+    "batch": "curvv-series-x-correction",
+    "pipelineConfidence": 96,
+    "manualCorrections": [
+      "variant_lineup_series_x",
+      "variant_table_manual"
+    ],
+    "qualityConsolidationAt": "2026-06-11T00:00:00.000Z",
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Tata Motors Curvv.ev Series X OEM specs (123 kW / 167 PS, 70 kW DC)",
+      "sprint": "curvv-variant-correction"
+    }
+  },
   "media": {
     "source": "local-cars",
     "listingThumbnail": "/images/cars/tata-curvv-ev/listing.webp",
@@ -106,12 +125,5 @@
       "/images/cars/tata-curvv-ev/interior.webp",
       "/images/cars/tata-curvv-ev/dashboard.webp"
     ]
-  },
-  "populationMeta": {
-    "powerEnrichment": {
-      "enrichedAt": "2026-06-11",
-      "source": "Tata Motors Curvv.ev OEM specs (110 kW / 123 kW)",
-      "sprint": "variant-power-completion"
-    }
   }
 }
