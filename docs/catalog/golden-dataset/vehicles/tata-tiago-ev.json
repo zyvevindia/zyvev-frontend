@@ -13,11 +13,11 @@
     "model": "Tiago EV",
     "bodyType": "SUV",
     "familySlug": "tata-tiago-ev",
-    "startingPrice": 799000,
-    "topVariantPrice": 1199000,
-    "exShowroomPrice": 799000,
+    "startingPrice": 699000,
+    "topVariantPrice": 899000,
+    "exShowroomPrice": 699000,
     "batteryCapacityKwh": 24,
-    "claimedRangeKm": 293,
+    "claimedRangeKm": 285,
     "rangeTestStandard": "ARAI",
     "acChargingKw": 7.2,
     "dcChargingKw": 30,
@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": 35,
     "airbags": 6,
     "adas": null,
-    "powerPs": null,
-    "torqueNm": null
+    "powerPs": 75,
+    "torqueNm": 114,
+    "powerKw": 55
   },
   "features": {
     "sunroof": true,
@@ -39,36 +40,48 @@
   },
   "variants": [
     {
-      "variantName": "XE",
+      "variantName": "Smart 19 MR",
+      "priceInr": 699000,
+      "batteryKwh": 19.2,
+      "rangeKm": 226,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 25,
+      "powerPs": 61,
+      "powerKw": 45,
+      "torqueNm": 110
+    },
+    {
+      "variantName": "Pure+ 19 MR",
       "priceInr": 799000,
       "batteryKwh": 19.2,
-      "rangeKm": 250,
+      "rangeKm": 226,
       "acChargingKw": 3.3,
-      "dcChargingKw": null
+      "dcChargingKw": 25,
+      "powerPs": 61,
+      "powerKw": 45,
+      "torqueNm": 110
     },
     {
-      "variantName": "XT",
-      "priceInr": 949000,
+      "variantName": "Pure+ 24 LR",
+      "priceInr": 849000,
       "batteryKwh": 24,
-      "rangeKm": 315,
-      "acChargingKw": 3.3,
-      "dcChargingKw": null
+      "rangeKm": 285,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 25,
+      "powerPs": 75,
+      "powerKw": 55,
+      "torqueNm": 114
     },
     {
-      "variantName": "XZ+",
-      "priceInr": 1049000,
+      "variantName": "Creative+ 24 LR",
+      "priceInr": 899000,
       "batteryKwh": 24,
-      "rangeKm": 315,
-      "acChargingKw": 3.3,
-      "dcChargingKw": null
-    },
-    {
-      "variantName": "XZ+ Tech Lux",
-      "priceInr": 1199000,
-      "batteryKwh": 24,
-      "rangeKm": 315,
-      "acChargingKw": 3.3,
-      "dcChargingKw": null
+      "rangeKm": 285,
+      "acChargingKw": 7.2,
+      "dcChargingKw": 25,
+      "powerPs": 75,
+      "powerKw": 55,
+      "torqueNm": 114
     }
   ],
   "verificationLevel": "manual_review",
@@ -76,13 +89,36 @@
     "https://ev.tatamotors.com/tiago/ev.html",
     "https://www.cardekho.com/tata/tiago-ev"
   ],
-  "verifiedAt": "2026-06-10",
+  "verifiedAt": "2026-06-11",
   "populationMeta": {
-    "batch": "day3",
+    "batch": "tiago-range-correction",
     "pipelineConfidence": 94,
     "manualCorrections": [
+      "variant_range_oem_alignment",
       "variant_table_manual"
     ],
-    "qualityConsolidationAt": "2026-06-10T05:01:32.200Z"
+    "qualityConsolidationAt": "2026-06-11T00:00:00.000Z",
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Tata Motors Tiago.ev OEM + EVSavari verified dossier",
+      "sprint": "variant-power-completion"
+    }
+  },
+  "media": {
+    "source": "local-cars",
+    "interior": "/images/cars/tata-tiago-ev/interior.webp",
+    "dashboard": "/images/cars/tata-tiago-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/tata-tiago-ev/interior.webp",
+      "/images/cars/tata-tiago-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/tata-tiago-ev/interior.webp",
+      "/images/cars/tata-tiago-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/tata-tiago-ev/interior.webp",
+      "/images/cars/tata-tiago-ev/dashboard.webp"
+    ]
   }
 }

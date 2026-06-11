@@ -40,18 +40,6 @@
       },
       {
         "rank": 3,
-        "slug": "tata-curvv-ev",
-        "displayName": "Tata Curvv EV",
-        "exShowroom": 1799000,
-        "claimedRangeKm": 502,
-        "compositeScore": 81,
-        "confidence": "high",
-        "explanation": "Ranked by overall score (81/100) from EVSavari Score Engine.",
-        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
-        "detailPath": "/cars/tata-curvv-ev"
-      },
-      {
-        "rank": 4,
         "slug": "mahindra-be-6",
         "displayName": "Mahindra BE 6",
         "exShowroom": 1890000,
@@ -63,7 +51,7 @@
         "detailPath": "/cars/mahindra-be-6"
       },
       {
-        "rank": 5,
+        "rank": 4,
         "slug": "hyundai-ioniq-5",
         "displayName": "Hyundai Ioniq 5",
         "exShowroom": 4495000,
@@ -75,7 +63,7 @@
         "detailPath": "/cars/hyundai-ioniq-5"
       },
       {
-        "rank": 6,
+        "rank": 5,
         "slug": "tata-harrier-ev",
         "displayName": "Tata Harrier EV",
         "exShowroom": 2149000,
@@ -87,7 +75,7 @@
         "detailPath": "/cars/tata-harrier-ev"
       },
       {
-        "rank": 7,
+        "rank": 6,
         "slug": "bmw-ix1",
         "displayName": "BMW iX1",
         "exShowroom": 6890000,
@@ -99,7 +87,7 @@
         "detailPath": "/cars/bmw-ix1"
       },
       {
-        "rank": 8,
+        "rank": 7,
         "slug": "byd-atto-3",
         "displayName": "BYD Atto 3",
         "exShowroom": 2499000,
@@ -111,7 +99,7 @@
         "detailPath": "/cars/byd-atto-3"
       },
       {
-        "rank": 9,
+        "rank": 8,
         "slug": "hyundai-creta-electric",
         "displayName": "Hyundai Creta Electric",
         "exShowroom": 1799000,
@@ -123,7 +111,7 @@
         "detailPath": "/cars/hyundai-creta-electric"
       },
       {
-        "rank": 10,
+        "rank": 9,
         "slug": "maruti-e-vitara",
         "displayName": "Maruti Suzuki e Vitara",
         "exShowroom": 2499000,
@@ -133,6 +121,18 @@
         "explanation": "Ranked by overall score (73/100) from EVSavari Score Engine.",
         "tradeoff": "Strength from score data: Range score uses 550 km claimed range and 9.0 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 130 kW DC fast-charging capability.",
         "detailPath": "/cars/maruti-e-vitara"
+      },
+      {
+        "rank": 10,
+        "slug": "tata-curvv-ev",
+        "displayName": "Tata Curvv EV",
+        "exShowroom": 1699000,
+        "claimedRangeKm": 502,
+        "compositeScore": 70,
+        "confidence": "medium",
+        "explanation": "Ranked by overall score (70/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 502 km claimed range and 9.1 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 70 kW DC peak and ~40 min DC time.",
+        "detailPath": "/cars/tata-curvv-ev"
       }
     ],
     "tradeoffs": {
@@ -147,10 +147,6 @@
           "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100."
         },
         {
-          "slug": "tata-curvv-ev",
-          "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
-        },
-        {
           "slug": "mahindra-be-6",
           "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
         },
@@ -161,6 +157,10 @@
         {
           "slug": "tata-harrier-ev",
           "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time."
+        },
+        {
+          "slug": "bmw-ix1",
+          "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability."
         }
       ]
     },
@@ -173,13 +173,13 @@
       "top 10 evs",
       "Kia EV6",
       "Mahindra XEV 9e",
-      "Tata Curvv EV",
       "Mahindra BE 6",
-      "Hyundai Ioniq 5"
+      "Hyundai Ioniq 5",
+      "Tata Harrier EV"
     ],
     "canonicalPath": "/best-evs/top-10-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/top-10-agent",
-    "generatedAt": "2026-06-11T06:34:44.384Z",
+    "generatedAt": "2026-06-11T07:44:25.613Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -202,50 +202,50 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Tata Curvv EV",
-          "url": "https://evsavari.com/cars/tata-curvv-ev"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
           "name": "Mahindra BE 6",
           "url": "https://evsavari.com/cars/mahindra-be-6"
         },
         {
           "@type": "ListItem",
-          "position": 5,
+          "position": 4,
           "name": "Hyundai Ioniq 5",
           "url": "https://evsavari.com/cars/hyundai-ioniq-5"
         },
         {
           "@type": "ListItem",
-          "position": 6,
+          "position": 5,
           "name": "Tata Harrier EV",
           "url": "https://evsavari.com/cars/tata-harrier-ev"
         },
         {
           "@type": "ListItem",
-          "position": 7,
+          "position": 6,
           "name": "BMW iX1",
           "url": "https://evsavari.com/cars/bmw-ix1"
         },
         {
           "@type": "ListItem",
-          "position": 8,
+          "position": 7,
           "name": "BYD Atto 3",
           "url": "https://evsavari.com/cars/byd-atto-3"
         },
         {
           "@type": "ListItem",
-          "position": 9,
+          "position": 8,
           "name": "Hyundai Creta Electric",
           "url": "https://evsavari.com/cars/hyundai-creta-electric"
         },
         {
           "@type": "ListItem",
-          "position": 10,
+          "position": 9,
           "name": "Maruti Suzuki e Vitara",
           "url": "https://evsavari.com/cars/maruti-e-vitara"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Tata Curvv EV",
+          "url": "https://evsavari.com/cars/tata-curvv-ev"
         }
       ]
     },

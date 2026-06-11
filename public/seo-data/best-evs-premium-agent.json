@@ -101,15 +101,15 @@
       },
       {
         "rank": 8,
-        "slug": "tata-curvv-ev",
-        "displayName": "Tata Curvv EV",
-        "exShowroom": 1799000,
-        "claimedRangeKm": 502,
-        "compositeScore": 71,
+        "slug": "mahindra-xev-9e",
+        "displayName": "Mahindra XEV 9e",
+        "exShowroom": 2190000,
+        "claimedRangeKm": 656,
+        "compositeScore": 70,
         "confidence": "medium",
-        "explanation": "Tata Curvv EV — Best Premium EV score 71/100. Best Premium EV: 71/100 (High-end features, performance, and brand positioning.)",
-        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
-        "detailPath": "/cars/tata-curvv-ev"
+        "explanation": "Mahindra XEV 9e — Best Premium EV score 70/100. Best Premium EV: 70/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100.",
+        "detailPath": "/cars/mahindra-xev-9e"
       }
     ],
     "tradeoffs": {
@@ -157,7 +157,7 @@
     ],
     "canonicalPath": "/best-evs/premium-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/premium-agent",
-    "generatedAt": "2026-06-11T06:34:44.370Z",
+    "generatedAt": "2026-06-11T07:44:25.603Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -210,8 +210,8 @@
         {
           "@type": "ListItem",
           "position": 8,
-          "name": "Tata Curvv EV",
-          "url": "https://evsavari.com/cars/tata-curvv-ev"
+          "name": "Mahindra XEV 9e",
+          "url": "https://evsavari.com/cars/mahindra-xev-9e"
         }
       ]
     },

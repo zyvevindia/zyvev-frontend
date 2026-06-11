@@ -19,12 +19,12 @@
         "rank": 1,
         "slug": "tata-tiago-ev",
         "displayName": "Tata Tiago EV",
-        "exShowroom": 799000,
-        "claimedRangeKm": 293,
-        "compositeScore": 83,
+        "exShowroom": 699000,
+        "claimedRangeKm": 285,
+        "compositeScore": 84,
         "confidence": "high",
-        "explanation": "Tata Tiago EV — Best Budget EV score 83/100. Best Budget EV: 83/100 (Strong capability at the lowest entry price.)",
-        "tradeoff": "Strength from score data: budget leads this EV at 83/100. Tradeoff to weigh: Range score uses 315 km claimed range and 13.1 km/kWh efficiency.",
+        "explanation": "Tata Tiago EV — Best Budget EV score 84/100. Best Budget EV: 84/100 (Strong capability at the lowest entry price.)",
+        "tradeoff": "Strength from score data: budget leads this EV at 84/100. Tradeoff to weigh: Range score uses 285 km claimed range and 11.9 km/kWh efficiency.",
         "detailPath": "/cars/tata-tiago-ev"
       },
       {
@@ -105,7 +105,7 @@
       "considerations": [
         {
           "slug": "tata-tiago-ev",
-          "tradeoff": "Strength from score data: budget leads this EV at 83/100. Tradeoff to weigh: Range score uses 315 km claimed range and 13.1 km/kWh efficiency."
+          "tradeoff": "Strength from score data: budget leads this EV at 84/100. Tradeoff to weigh: Range score uses 285 km claimed range and 11.9 km/kWh efficiency."
         },
         {
           "slug": "tata-punch-ev",
@@ -145,7 +145,7 @@
     ],
     "canonicalPath": "/best-evs/under-15-lakh-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/under-15-lakh-agent",
-    "generatedAt": "2026-06-11T06:34:44.354Z",
+    "generatedAt": "2026-06-11T07:44:25.593Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -208,7 +208,7 @@
       },
       {
         "question": "Why is Tata Tiago EV ranked first?",
-        "answer": "Tata Tiago EV — Best Budget EV score 83/100. Best Budget EV: 83/100 (Strong capability at the lowest entry price.)"
+        "answer": "Tata Tiago EV — Best Budget EV score 84/100. Best Budget EV: 84/100 (Strong capability at the lowest entry price.)"
       }
     ],
     "governance": {

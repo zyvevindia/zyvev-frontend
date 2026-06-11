@@ -43,15 +43,15 @@
       {
         "rank": 3,
         "slug": "tata-curvv-ev",
-        "displayName": "Tata Curvv EV — Empowered 55",
-        "exShowroom": 2099000,
-        "claimedRangeKm": 585,
-        "compositeScore": 77,
-        "confidence": "high",
-        "explanation": "Empowered 55 offers the strongest price-to-capability ratio (value score 77/100).",
-        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
+        "displayName": "Tata Curvv EV — Accomplished X55",
+        "exShowroom": 1699000,
+        "claimedRangeKm": 502,
+        "compositeScore": 65,
+        "confidence": "medium",
+        "explanation": "Accomplished X55 offers the strongest price-to-capability ratio (value score 65/100).",
+        "tradeoff": "Strength from score data: Range score uses 502 km claimed range and 9.1 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 70 kW DC peak and ~40 min DC time.",
         "detailPath": "/cars/tata-curvv-ev",
-        "variantName": "Empowered 55"
+        "variantName": "Accomplished X55"
       },
       {
         "rank": 4,
@@ -158,7 +158,7 @@
         },
         {
           "slug": "tata-curvv-ev",
-          "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+          "tradeoff": "Strength from score data: Range score uses 502 km claimed range and 9.1 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 70 kW DC peak and ~40 min DC time."
         },
         {
           "slug": "mg-windsor-ev",
@@ -183,13 +183,13 @@
       "best value ev variants",
       "Tata Nexon EV — Empowered+ A 45",
       "Tata Punch EV — Empowered",
-      "Tata Curvv EV — Empowered 55",
+      "Tata Curvv EV — Accomplished X55",
       "MG Windsor EV — Excite",
       "Mahindra BE 6 — Pack Three 79"
     ],
     "canonicalPath": "/best-evs/best-value-variants-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/best-value-variants-agent",
-    "generatedAt": "2026-06-11T06:34:44.393Z",
+    "generatedAt": "2026-06-11T07:44:25.620Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -212,7 +212,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Tata Curvv EV — Empowered 55",
+          "name": "Tata Curvv EV — Accomplished X55",
           "url": "https://evsavari.com/cars/tata-curvv-ev"
         },
         {

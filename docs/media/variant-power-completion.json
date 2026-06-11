@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T06:19:29.071Z",
+  "generatedAt": "2026-06-11T06:48:28.838Z",
   "before": {
     "totalVehicles": 25,
     "powerComplete": 8,
@@ -571,19 +571,19 @@
       },
       "complete": true,
       "samplePower": [
-        "150 bhp",
-        "150 bhp",
+        "167 bhp",
+        "167 bhp",
         "167 bhp"
       ],
       "sampleCharging": [
-        "DC: 150 kW • 30 min | AC: 7.2 kW • 6.3 hrs",
-        "DC: 150 kW • 30 min | AC: 7.2 kW • 6.3 hrs",
-        "DC: 150 kW • 30 min | AC: 7.2 kW • 6.3 hrs"
+        "DC: 70 kW • 40 min | AC: 7.2 kW • 7.6 hrs",
+        "DC: 70 kW • 40 min | AC: 7.2 kW • 7.6 hrs",
+        "DC: 70 kW • 40 min | AC: 7.2 kW • 7.6 hrs"
       ],
       "sampleRealWorld": [
         "361–442 km",
         "361–442 km",
-        "421–515 km"
+        "361–442 km"
       ]
     },
     {

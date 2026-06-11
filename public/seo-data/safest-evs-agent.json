@@ -54,12 +54,12 @@
         "rank": 4,
         "slug": "tata-curvv-ev",
         "displayName": "Tata Curvv EV",
-        "exShowroom": 1799000,
+        "exShowroom": 1699000,
         "claimedRangeKm": 502,
         "compositeScore": 86,
         "confidence": "high",
         "explanation": "Ranked by safety score (86/100) from EVSavari Score Engine.",
-        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
+        "tradeoff": "Strength from score data: Range score uses 502 km claimed range and 9.1 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 70 kW DC peak and ~40 min DC time.",
         "detailPath": "/cars/tata-curvv-ev"
       },
       {
@@ -152,7 +152,7 @@
         },
         {
           "slug": "tata-curvv-ev",
-          "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+          "tradeoff": "Strength from score data: Range score uses 502 km claimed range and 9.1 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 70 kW DC peak and ~40 min DC time."
         },
         {
           "slug": "mercedes-eqa",
@@ -179,7 +179,7 @@
     ],
     "canonicalPath": "/best-evs/safest-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/safest-agent",
-    "generatedAt": "2026-06-11T06:34:44.391Z",
+    "generatedAt": "2026-06-11T07:44:25.618Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",

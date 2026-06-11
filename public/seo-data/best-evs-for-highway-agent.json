@@ -77,18 +77,6 @@
       },
       {
         "rank": 6,
-        "slug": "tata-curvv-ev",
-        "displayName": "Tata Curvv EV",
-        "exShowroom": 1799000,
-        "claimedRangeKm": 502,
-        "compositeScore": 73,
-        "confidence": "medium",
-        "explanation": "Tata Curvv EV — Best Highway EV score 73/100. Best Highway EV: 73/100 (Range, fast charging, and performance for long trips.)",
-        "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100.",
-        "detailPath": "/cars/tata-curvv-ev"
-      },
-      {
-        "rank": 7,
         "slug": "mahindra-be-6",
         "displayName": "Mahindra BE 6",
         "exShowroom": 1890000,
@@ -100,7 +88,7 @@
         "detailPath": "/cars/mahindra-be-6"
       },
       {
-        "rank": 8,
+        "rank": 7,
         "slug": "volvo-ex40",
         "displayName": "Volvo EX40",
         "exShowroom": 5990000,
@@ -110,6 +98,18 @@
         "explanation": "Volvo EX40 — Best Highway EV score 69/100. Best Highway EV: 69/100 (Range, fast charging, and performance for long trips.)",
         "tradeoff": "Strength from score data: Range score uses 568 km claimed range and 7.3 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 150 kW DC peak and ~40 min DC time.",
         "detailPath": "/cars/volvo-ex40"
+      },
+      {
+        "rank": 8,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes-Benz EQA",
+        "exShowroom": 6775000,
+        "claimedRangeKm": 560,
+        "compositeScore": 68,
+        "confidence": "medium",
+        "explanation": "Mercedes-Benz EQA — Best Highway EV score 68/100. Best Highway EV: 68/100 (Range, fast charging, and performance for long trips.)",
+        "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability.",
+        "detailPath": "/cars/mercedes-eqa"
       }
     ],
     "tradeoffs": {
@@ -136,8 +136,8 @@
           "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability."
         },
         {
-          "slug": "tata-curvv-ev",
-          "tradeoff": "Strength from score data: Range score uses 585 km claimed range and 13.0 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 58/100."
+          "slug": "mahindra-be-6",
+          "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
         }
       ]
     },
@@ -157,7 +157,7 @@
     ],
     "canonicalPath": "/best-evs/highway-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/highway-agent",
-    "generatedAt": "2026-06-11T06:34:44.367Z",
+    "generatedAt": "2026-06-11T07:44:25.601Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -198,20 +198,20 @@
         {
           "@type": "ListItem",
           "position": 6,
-          "name": "Tata Curvv EV",
-          "url": "https://evsavari.com/cars/tata-curvv-ev"
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
           "name": "Mahindra BE 6",
           "url": "https://evsavari.com/cars/mahindra-be-6"
         },
         {
           "@type": "ListItem",
-          "position": 8,
+          "position": 7,
           "name": "Volvo EX40",
           "url": "https://evsavari.com/cars/volvo-ex40"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Mercedes-Benz EQA",
+          "url": "https://evsavari.com/cars/mercedes-eqa"
         }
       ]
     },
