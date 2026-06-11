@@ -18,6 +18,8 @@ import CatalogScoreBadge from "./catalog/CatalogScoreBadge";
 
 import { pickOwnershipChips } from "../utils/ownershipReality";
 
+import { pickListingCardSpecChips } from "../utils/listingCardSpecs";
+
 import "../styles/catalog-ux-wave-b.css";
 
 /* =========================================================
@@ -41,15 +43,7 @@ export default function CompactCarCard({
     car.startingPrice ||
     0;
 
-  const range =
-    car.range ||
-    car.specifications?.range ||
-    0;
-
-  const battery =
-    car.battery ||
-    car.specifications?.batteryPack ||
-    "EV";
+  const specChips = pickListingCardSpecChips(car);
 
   const listingSignals = pickListingSignals(
     car,
@@ -216,23 +210,38 @@ export default function CompactCarCard({
             }
             style={specRow}
           >
-            <span
-              className={
-                isCompare ? "compact-car-card__spec" : undefined
-              }
-              style={specItem}
-            >
-              ⚡ {range} km
-            </span>
+            {specChips.rangeLabel ? (
+              <span
+                className={
+                  isCompare ? "compact-car-card__spec" : undefined
+                }
+                style={specItem}
+              >
+                ⚡ {specChips.rangeLabel}
+              </span>
+            ) : null}
 
-            <span
-              className={
-                isCompare ? "compact-car-card__spec" : undefined
-              }
-              style={specItem}
-            >
-              🔋 {battery}
-            </span>
+            {specChips.batteryLabel ? (
+              <span
+                className={
+                  isCompare ? "compact-car-card__spec" : undefined
+                }
+                style={specItem}
+              >
+                🔋 {specChips.batteryLabel}
+              </span>
+            ) : null}
+
+            {specChips.chargingLabel ? (
+              <span
+                className={
+                  isCompare ? "compact-car-card__spec" : undefined
+                }
+                style={specItem}
+              >
+                🔌 {specChips.chargingLabel}
+              </span>
+            ) : null}
           </div>
         </div>
 
@@ -261,7 +270,7 @@ export default function CompactCarCard({
 const card = {
   background: "white",
 
-  borderRadius: "26px",
+  borderRadius: "22px",
 
   overflow: "hidden",
 
@@ -297,7 +306,7 @@ const imageWrapper = {
   background:
     "linear-gradient(135deg, #e2e8f0, #f8fafc)",
 
-  aspectRatio: "16 / 10",
+  aspectRatio: "16 / 8",
 };
 
 const image = {
@@ -369,7 +378,7 @@ const badge = {
 
 const content = {
   padding:
-    "clamp(18px, 2vw, 24px)",
+    "clamp(14px, 1.6vw, 18px)",
 
   display: "flex",
 
@@ -380,7 +389,7 @@ const content = {
 
   flex: 1,
 
-  gap: "22px",
+  gap: "14px",
 
   boxSizing: "border-box",
 };
@@ -390,12 +399,12 @@ const topContent = {
 
   flexDirection: "column",
 
-  gap: "16px",
+  gap: "10px",
 };
 
 const title = {
   fontSize:
-    "clamp(19px, 2vw, 22px)",
+    "clamp(17px, 1.8vw, 20px)",
 
   fontWeight: "800",
 
@@ -424,7 +433,7 @@ const priceStyle = {
 const specRow = {
   display: "flex",
 
-  gap: "12px",
+  gap: "8px",
 
   flexWrap: "wrap",
 };
@@ -432,11 +441,11 @@ const specRow = {
 const specItem = {
   background: "#f8fafc",
 
-  padding: "10px 14px",
+  padding: "6px 10px",
 
-  borderRadius: "14px",
+  borderRadius: "10px",
 
-  fontSize: "12px",
+  fontSize: "11px",
 
   fontWeight: "700",
 
@@ -458,21 +467,21 @@ const button = {
 
   border: "none",
 
-  padding: "14px 16px",
+  padding: "11px 14px",
 
-  borderRadius: "16px",
+  borderRadius: "14px",
 
   cursor: "pointer",
 
   fontWeight: "700",
 
-  fontSize: "14px",
+  fontSize: "13px",
 
   transition:
     "all 0.28s ease",
 
   boxShadow:
-    "0 10px 24px rgba(37,99,235,0.18)",
+    "0 8px 20px rgba(37,99,235,0.16)",
 
-  minHeight: "52px",
+  minHeight: "42px",
 };

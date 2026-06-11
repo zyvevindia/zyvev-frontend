@@ -25,6 +25,8 @@ import CatalogScoreBadge from "./catalog/CatalogScoreBadge";
 
 import { pickOwnershipChips } from "../utils/ownershipReality";
 
+import { pickListingCardSpecChips } from "../utils/listingCardSpecs";
+
 import "../styles/car-card-compare.css";
 import "../styles/catalog-ux-wave-b.css";
 
@@ -53,8 +55,6 @@ export default function CarCard({
     brand,
     image,
     price,
-    range,
-    battery,
   } = safeCar;
 
   const isCompared = isCarInCompareList(
@@ -72,6 +72,8 @@ export default function CarCard({
     2
   );
 
+  const specChips = pickListingCardSpecChips(safeCar);
+
   const safeName =
     name || "Electric Vehicle";
 
@@ -82,12 +84,6 @@ export default function CarCard({
     typeof price === "number"
       ? price
       : 0;
-
-  const safeRange =
-    range || "N/A";
-
-  const safeBattery =
-    battery || "Battery";
 
   const carSlug =
     safeCar.slug;
@@ -238,25 +234,23 @@ export default function CarCard({
           {/* ================= SPECS ================= */}
 
           <div style={specRow}>
-            <div style={specBox}>
-              <span style={specLabel}>
-                Range
+            {specChips.rangeLabel ? (
+              <span style={specItem}>
+                ⚡ {specChips.rangeLabel}
               </span>
+            ) : null}
 
-              <span style={specValue}>
-                ⚡ {safeRange} km
+            {specChips.batteryLabel ? (
+              <span style={specItem}>
+                🔋 {specChips.batteryLabel}
               </span>
-            </div>
+            ) : null}
 
-            <div style={specBox}>
-              <span style={specLabel}>
-                Battery
+            {specChips.chargingLabel ? (
+              <span style={specItem}>
+                🔌 {specChips.chargingLabel}
               </span>
-
-              <span style={specValue}>
-                🔋 {safeBattery}
-              </span>
-            </div>
+            ) : null}
           </div>
         </div>
 
@@ -380,10 +374,10 @@ export default function CarCard({
 
 const card = {
   background: "white",
-  borderRadius: "28px",
+  borderRadius: "22px",
   overflow: "hidden",
   boxShadow:
-    "0 14px 40px rgba(15,23,42,0.08)",
+    "0 12px 32px rgba(15,23,42,0.07)",
   transition: "all 0.35s ease",
   display: "flex",
   flexDirection: "column",
@@ -396,7 +390,7 @@ const card = {
 const imageWrapper = {
   position: "relative",
   overflow: "hidden",
-  aspectRatio: "16 / 10",
+  aspectRatio: "16 / 8",
 };
 
 const imageStyle = {
@@ -439,22 +433,22 @@ const brandBadge = {
 };
 
 const content = {
-  padding: "24px",
+  padding: "18px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
   flex: 1,
-  gap: "24px",
+  gap: "16px",
 };
 
 const topContent = {
   display: "flex",
   flexDirection: "column",
-  gap: "18px",
+  gap: "12px",
 };
 
 const title = {
-  fontSize: "23px",
+  fontSize: "20px",
   fontWeight: "800",
   color: "#0f172a",
   margin: 0,
@@ -463,7 +457,7 @@ const title = {
 };
 
 const priceStyle = {
-  fontSize: "30px",
+  fontSize: "26px",
   fontWeight: "800",
   color: "#2563eb",
   margin: 0,
@@ -471,36 +465,19 @@ const priceStyle = {
 };
 
 const specRow = {
-  display: "grid",
-  gridTemplateColumns:
-    "repeat(2, minmax(0, 1fr))",
-  gap: "14px",
-};
-
-const specBox = {
-  background: "#f8fafc",
-  borderRadius: "16px",
-  padding: "14px",
   display: "flex",
-  flexDirection: "column",
-  border: "1px solid #e2e8f0",
-  minHeight: "78px",
-  justifyContent: "center",
+  flexWrap: "wrap",
+  gap: "8px",
 };
 
-const specLabel = {
+const specItem = {
+  background: "#f8fafc",
+  padding: "6px 10px",
+  borderRadius: "10px",
   fontSize: "11px",
-  color: "#64748b",
-  marginBottom: "8px",
-  fontWeight: "700",
-  letterSpacing: "0.5px",
-  textTransform: "uppercase",
-};
-
-const specValue = {
   fontWeight: "700",
   color: "#0f172a",
-  fontSize: "15px",
+  border: "1px solid #e2e8f0",
   lineHeight: "1.4",
 };
 
@@ -512,12 +489,12 @@ const buttonContainer = {
 
 const leadRow = {
   display: "flex",
-  gap: "10px",
-  marginTop: "10px",
+  gap: "8px",
+  marginTop: "6px",
 };
 
 const waRow = {
-  marginTop: "8px",
+  marginTop: "6px",
 };
 
 const waBtnCompact = {
@@ -528,16 +505,16 @@ const waBtnCompact = {
 
 const ctaOutline = {
   flex: 1,
-  padding: "12px 10px",
-  borderRadius: "14px",
+  padding: "10px 8px",
+  borderRadius: "12px",
   border:
     "1px solid #bfdbfe",
   background: "#f8fafc",
   color: "#1d4ed8",
   fontWeight: "700",
-  fontSize: "13px",
+  fontSize: "12px",
   cursor: "pointer",
-  minHeight: "46px",
+  minHeight: "40px",
 };
 
 const primaryButton = {
@@ -546,26 +523,26 @@ const primaryButton = {
     "linear-gradient(135deg, #2563eb, #1d4ed8)",
   color: "white",
   border: "none",
-  padding: "14px 18px",
-  borderRadius: "16px",
+  padding: "11px 14px",
+  borderRadius: "14px",
   cursor: "pointer",
   fontWeight: "700",
-  fontSize: "14px",
+  fontSize: "13px",
   transition: "all 0.28s ease",
   boxShadow:
-    "0 10px 24px rgba(37,99,235,0.22)",
-  minHeight: "52px",
+    "0 8px 20px rgba(37,99,235,0.2)",
+  minHeight: "42px",
 };
 
 const secondaryButton = {
   color: "white",
   border: "none",
-  padding: "14px 18px",
-  borderRadius: "16px",
+  padding: "11px 14px",
+  borderRadius: "14px",
   cursor: "pointer",
   fontWeight: "700",
-  fontSize: "14px",
+  fontSize: "13px",
   transition: "all 0.28s ease",
-  minWidth: "124px",
-  minHeight: "52px",
+  minWidth: "112px",
+  minHeight: "42px",
 };
