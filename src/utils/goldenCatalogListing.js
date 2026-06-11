@@ -208,6 +208,31 @@ export function goldenDossierToMarketplaceVariants(dossier) {
  * Synchronous golden listing load from bundled JSON (always available).
  * @returns {object[]}
  */
+const GOLDEN_FAMILY_SLUGS = new Set(
+  (goldenManifest.vehicles || [])
+    .map((entry) => normalizeVehicleSlug(entry.familySlug || entry.id))
+    .filter(Boolean)
+);
+
+/** @param {string} familySlug */
+export function isGoldenDatasetFamily(familySlug) {
+  const slug = normalizeVehicleSlug(familySlug);
+  return slug ? GOLDEN_FAMILY_SLUGS.has(slug) : false;
+}
+
+/**
+ * Bundled golden variants for one fleet family (build-time source of truth).
+ * @param {string} familySlug
+ * @returns {object[]}
+ */
+export function loadBundledGoldenDatasetFamilyVariants(familySlug) {
+  const slug = normalizeVehicleSlug(familySlug);
+  if (!slug || !isGoldenDatasetFamily(slug)) return [];
+  const dossier = resolveBundledGoldenDossier(slug);
+  if (!dossier) return [];
+  return goldenDossierToMarketplaceVariants(dossier).map(normalizeCar);
+}
+
 export function loadBundledGoldenDatasetMarketplaceVariants() {
   const variants = [];
 
@@ -275,7 +300,9 @@ export function mergeListingCatalogVariants(apiVariants = [], goldenVariants = [
       (v) => extractFamilySlug(v.slug) === familySlug
     );
 
-    if (apiFam.length > 0) {
+    if (isGoldenDatasetFamily(familySlug) && goldenFam.length > 0) {
+      merged.push(...goldenFam);
+    } else if (apiFam.length > 0) {
       merged.push(...apiFam);
     } else {
       merged.push(...goldenFam);

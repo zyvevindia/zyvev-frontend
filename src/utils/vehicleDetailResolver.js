@@ -30,6 +30,8 @@ import { resolveDossierSlug } from "../data/catalog/verified/resolveDossierSlug.
 import {
   fetchGoldenDatasetMarketplaceVariants,
   goldenDossierToMarketplaceVariants,
+  isGoldenDatasetFamily,
+  loadBundledGoldenDatasetFamilyVariants,
   loadBundledGoldenDatasetMarketplaceVariants,
 } from "./goldenCatalogListing.js";
 import { loadGoldenDossierByFamilySlug } from "../catalogAcquisition/benchmark/goldenLoader.js";
@@ -189,6 +191,17 @@ export async function fetchVehicleFamilyBySlug(
   let variants;
   if (hasVerifiedDossier(familySlug)) {
     variants = buildVerifiedDossierMarketplaceVariants(familySlug);
+  } else if (isGoldenDatasetFamily(familySlug)) {
+    variants = loadBundledGoldenDatasetFamilyVariants(familySlug);
+
+    if (variants.length === 0) {
+      const golden = await loadGoldenDossierByFamilySlug(familySlug);
+      if (golden?.dossier) {
+        variants = goldenDossierToMarketplaceVariants(golden.dossier).map(
+          normalizeCar
+        );
+      }
+    }
   } else {
     const catalogRaw = await fetchCatalogVehiclesForFallback(50);
     const catalog = catalogRaw.map(normalizeCar);
@@ -289,6 +302,15 @@ export async function fetchListingCatalogVariants(options = {}) {
       continue;
     }
 
+    const goldenFam = goldenVariants.filter(
+      (v) => extractFamilySlug(v.slug) === familySlug
+    );
+
+    if (isGoldenDatasetFamily(familySlug) && goldenFam.length > 0) {
+      merged.push(...goldenFam);
+      continue;
+    }
+
     const apiFam = apiVariants.filter(
       (v) => extractFamilySlug(v.slug) === familySlug
     );
@@ -298,11 +320,7 @@ export async function fetchListingCatalogVariants(options = {}) {
       continue;
     }
 
-    merged.push(
-      ...goldenVariants.filter(
-        (v) => extractFamilySlug(v.slug) === familySlug
-      )
-    );
+    merged.push(...goldenFam);
   }
 
   return merged;
