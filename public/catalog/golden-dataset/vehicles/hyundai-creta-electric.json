@@ -22,7 +22,10 @@
     "acChargingKw": 11,
     "dcChargingKw": 150,
     "airbags": 6,
-    "adas": true
+    "adas": true,
+    "powerPs": 171,
+    "powerKw": 126,
+    "torqueNm": 200
   },
   "features": {
     "sunroof": true,
@@ -39,7 +42,10 @@
       "batteryKwh": 42,
       "rangeKm": 390,
       "acChargingKw": 11,
-      "dcChargingKw": 150
+      "dcChargingKw": 150,
+      "powerPs": 135,
+      "powerKw": 99,
+      "torqueNm": 200
     },
     {
       "variantName": "Premium",
@@ -47,7 +53,10 @@
       "batteryKwh": 42,
       "rangeKm": 390,
       "acChargingKw": 11,
-      "dcChargingKw": 150
+      "dcChargingKw": 150,
+      "powerPs": 135,
+      "powerKw": 99,
+      "torqueNm": 200
     },
     {
       "variantName": "Signature",
@@ -55,7 +64,10 @@
       "batteryKwh": 51,
       "rangeKm": 473,
       "acChargingKw": 11,
-      "dcChargingKw": 150
+      "dcChargingKw": 150,
+      "powerPs": 171,
+      "powerKw": 126,
+      "torqueNm": 200
     }
   ],
   "verificationLevel": "ops_benchmark",
@@ -91,5 +103,12 @@
       "/images/cars/hyundai-creta-electric/interior.webp",
       "/images/cars/hyundai-creta-electric/dashboard.webp"
     ]
+  },
+  "populationMeta": {
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Hyundai India CRETA Electric brochure (99 kW / 126 kW motors)",
+      "sprint": "variant-power-completion"
+    }
   }
 }

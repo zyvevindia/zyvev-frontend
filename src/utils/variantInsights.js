@@ -3,7 +3,10 @@ import {
   filterComparableVariants,
 } from "./modelFamily";
 import { formatChargingDurationDisplay } from "./formatChargingDuration.js";
-import { formatRangeBand } from "../intelligence/rangeConfidence.js";
+import {
+  buildRangeConfidence,
+  formatRangeBand,
+} from "../intelligence/rangeConfidence.js";
 import {
   extractVariantMetricValues,
   formatVariantAcChargingDisplay,
@@ -42,6 +45,9 @@ function drivetrainTag(v) {
 }
 
 function chargingMinutes(v) {
+  const metrics = extractVariantMetricValues(v);
+  if (metrics.dcMinutes != null) return metrics.dcMinutes;
+
   const raw =
     v?.chargingTime ||
     v?.specifications?.chargingTime ||
@@ -243,14 +249,43 @@ export function computeVariantAwards(variants = []) {
 
 /**
  * Verified real-world range from catalog intelligence only (no OEM estimates).
+ * Falls back to efficiency-model estimate when only ARAI/MIDC claim exists.
  */
 export function formatVariantRealWorldRangeDisplay(variant) {
-  const rw = variant?.catalogMeta?.realWorldRangeKm;
-  const min = Number(rw?.min);
-  const max = Number(rw?.max);
+  const direct =
+    variant?.realWorldRangeKm ||
+    variant?.catalogMeta?.realWorldRangeKm ||
+    variant?.range?.realWorldKm ||
+    null;
+
+  const min = Number(direct?.min);
+  const max = Number(direct?.max);
   if (Number.isFinite(min) && Number.isFinite(max) && min > 0 && max > 0) {
     return formatRangeBand({ min, max });
   }
+
+  const singleKm = Number(
+    typeof direct === "number" ? direct : variant?.realWorldRangeKm
+  );
+  if (Number.isFinite(singleKm) && singleKm > 0) {
+    return `${Math.round(singleKm)} km`;
+  }
+
+  const rangeIntel = buildRangeConfidence(variant);
+  const estimated = rangeIntel?.estimatedRealWorldKm;
+  if (
+    estimated &&
+    Number.isFinite(Number(estimated.min)) &&
+    Number.isFinite(Number(estimated.max)) &&
+    estimated.min > 0 &&
+    estimated.max > 0
+  ) {
+    return formatRangeBand({
+      min: Number(estimated.min),
+      max: Number(estimated.max),
+    });
+  }
+
   return null;
 }
 

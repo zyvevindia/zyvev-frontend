@@ -112,15 +112,36 @@ export function extractVariantMetricValues(
     parseKwhFromText(meta.compareSpecs?.batteryKwh) ||
     null;
 
+  const familyMeta = familyFallback?.catalogMeta || {};
+  const familyIntel = familyMeta.chargingIntelligence || {};
+  const familyPrac = familyMeta.chargingPracticality || {};
+  const familyPerf = familyMeta.performance || {};
+
   let powerBhp =
     Number(perf.powerBhp) ||
     Number(specs.powerBhp) ||
+    Number(variant?.powerBhp) ||
+    Number(familyPerf.powerBhp) ||
     null;
+
+  const powerPs =
+    Number(variant?.powerPs) ||
+    Number(perf.powerPs) ||
+    Number(meta.powerPs) ||
+    Number(familyPerf.powerPs) ||
+    Number(familyMeta.powerPs) ||
+    null;
+
+  if (!powerBhp && Number.isFinite(powerPs) && powerPs > 0) {
+    powerBhp = Math.round(powerPs);
+  }
 
   if (!powerBhp) {
     const kw =
+      Number(variant?.powerKw) ||
       Number(perf.powerKw) ||
       Number(specs.powerKw) ||
+      Number(familyPerf.powerKw) ||
       parseKwValue(variant?.power);
     if (kw > 0) powerBhp = Math.round(kw * KW_TO_BHP);
   }
@@ -130,30 +151,51 @@ export function extractVariantMetricValues(
       specs.power ||
       specs.motorPower ||
       variant?.power ||
+      familySpecs.power ||
       "";
-    const bhpMatch = String(powerText).match(/(\d+(?:\.\d+)?)\s*bhp/i);
+    const bhpMatch = String(powerText).match(
+      /(\d+(?:\.\d+)?)\s*(?:bhp|ps)/i
+    );
     if (bhpMatch) powerBhp = Number(bhpMatch[1]);
   }
 
   const dcKw =
+    parseKwValue(variant?.dcChargingKw) ||
+    parseKwValue(specs.dcChargingKw) ||
+    parseKwValue(specs.dcFastChargingKw) ||
     parseKwValue(intel.dcKw) ||
     parseKwValue(chargingMeta.dcKw) ||
+    parseKwValue(meta.dcChargingKw) ||
+    parseKwValue(familyIntel.dcKw) ||
+    parseKwValue(familySpecs.dcChargingKw) ||
     null;
 
   const dcMinutes =
+    parseMinutesValue(variant?.dcFastChargingMinutes) ||
+    parseMinutesValue(variant?.dcChargingTimeMinutes) ||
     parseMinutesValue(intel.dcTime10to80Minutes) ||
+    parseMinutesValue(intel.dcMinutes) ||
     parseMinutesValue(prac.dcTime10to80Minutes) ||
     parseMinutesValue(intel.dcTime20to80Minutes) ||
     parseMinutesValue(prac.dcTime20to80Minutes) ||
     parseMinutesValue(chargingMeta.dcTime10to80Minutes) ||
+    parseMinutesValue(chargingMeta.dcFastChargeMinutes) ||
     parseMinutesValue(chargingMeta.dcTime20to80Minutes) ||
+    parseMinutesValue(meta.dcChargingTimeMinutes) ||
+    parseMinutesValue(familyIntel.dcTime10to80Minutes) ||
+    parseMinutesValue(familyMeta.dcChargingTimeMinutes) ||
     parseMinutesValue(variant?.chargingTime) ||
     parseMinutesValue(specs.chargingTime) ||
+    parseMinutesValue(familySpecs.chargingTime) ||
     null;
 
   const acKw =
+    parseKwValue(variant?.acChargingKw) ||
+    parseKwValue(specs.acChargingKw) ||
     parseKwValue(intel.acKw) ||
     parseKwValue(chargingMeta.acKw) ||
+    parseKwValue(familyIntel.acKw) ||
+    parseKwValue(familySpecs.acChargingKw) ||
     null;
 
   const acHours =

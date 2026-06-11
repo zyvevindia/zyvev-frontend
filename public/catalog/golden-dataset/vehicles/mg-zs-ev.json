@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": null,
     "airbags": 6,
     "adas": "true",
-    "powerPs": null,
-    "torqueNm": null
+    "powerPs": 177,
+    "torqueNm": 280,
+    "powerKw": 130
   },
   "features": {
     "sunroof": true,
@@ -44,7 +45,10 @@
       "batteryKwh": 44.5,
       "rangeKm": 461,
       "acChargingKw": 7.4,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 177,
+      "powerKw": 130,
+      "torqueNm": 280
     },
     {
       "variantName": "Exclusive",
@@ -52,7 +56,10 @@
       "batteryKwh": 44.5,
       "rangeKm": 461,
       "acChargingKw": 7.4,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 177,
+      "powerKw": 130,
+      "torqueNm": 280
     },
     {
       "variantName": "Essence",
@@ -60,7 +67,10 @@
       "batteryKwh": 50.3,
       "rangeKm": 461,
       "acChargingKw": 7.4,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 177,
+      "powerKw": 130,
+      "torqueNm": 280
     }
   ],
   "verificationLevel": "manual_review",
@@ -76,7 +86,12 @@
     "manualCorrections": [
       "variant_table_manual"
     ],
-    "qualityConsolidationAt": "2026-06-10T05:01:32.193Z"
+    "qualityConsolidationAt": "2026-06-10T05:01:32.193Z",
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "MG India ZS EV technical specifications (176.75 PS / 130 kW)",
+      "sprint": "variant-power-completion"
+    }
   },
   "media": {
     "source": "local-cars",

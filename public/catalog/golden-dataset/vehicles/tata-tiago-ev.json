@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": 35,
     "airbags": 6,
     "adas": null,
-    "powerPs": null,
-    "torqueNm": null
+    "powerPs": 75,
+    "torqueNm": 114,
+    "powerKw": 55
   },
   "features": {
     "sunroof": true,
@@ -44,7 +45,10 @@
       "batteryKwh": 19.2,
       "rangeKm": 250,
       "acChargingKw": 3.3,
-      "dcChargingKw": null
+      "dcChargingKw": null,
+      "powerPs": 61,
+      "powerKw": 45,
+      "torqueNm": 110
     },
     {
       "variantName": "XT",
@@ -52,7 +56,10 @@
       "batteryKwh": 24,
       "rangeKm": 315,
       "acChargingKw": 3.3,
-      "dcChargingKw": null
+      "dcChargingKw": null,
+      "powerPs": 75,
+      "powerKw": 55,
+      "torqueNm": 114
     },
     {
       "variantName": "XZ+",
@@ -60,7 +67,10 @@
       "batteryKwh": 24,
       "rangeKm": 315,
       "acChargingKw": 3.3,
-      "dcChargingKw": null
+      "dcChargingKw": null,
+      "powerPs": 75,
+      "powerKw": 55,
+      "torqueNm": 114
     },
     {
       "variantName": "XZ+ Tech Lux",
@@ -68,7 +78,10 @@
       "batteryKwh": 24,
       "rangeKm": 315,
       "acChargingKw": 3.3,
-      "dcChargingKw": null
+      "dcChargingKw": null,
+      "powerPs": 75,
+      "powerKw": 55,
+      "torqueNm": 114
     }
   ],
   "verificationLevel": "manual_review",
@@ -83,7 +96,12 @@
     "manualCorrections": [
       "variant_table_manual"
     ],
-    "qualityConsolidationAt": "2026-06-10T05:01:32.200Z"
+    "qualityConsolidationAt": "2026-06-10T05:01:32.200Z",
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Tata Motors Tiago.ev OEM + EVSavari verified dossier",
+      "sprint": "variant-power-completion"
+    }
   },
   "media": {
     "source": "local-cars",

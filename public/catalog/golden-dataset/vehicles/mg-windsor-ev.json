@@ -22,7 +22,10 @@
     "acChargingKw": 7.4,
     "dcChargingKw": 45,
     "airbags": 6,
-    "adas": false
+    "adas": false,
+    "powerPs": 136,
+    "powerKw": 100,
+    "torqueNm": 200
   },
   "features": {
     "sunroof": true,
@@ -39,7 +42,10 @@
       "batteryKwh": 38,
       "rangeKm": 331,
       "acChargingKw": 7.4,
-      "dcChargingKw": 45
+      "dcChargingKw": 45,
+      "powerPs": 136,
+      "powerKw": 100,
+      "torqueNm": 200
     },
     {
       "variantName": "Exclusive",
@@ -47,7 +53,10 @@
       "batteryKwh": 38,
       "rangeKm": 331,
       "acChargingKw": 7.4,
-      "dcChargingKw": 45
+      "dcChargingKw": 45,
+      "powerPs": 136,
+      "powerKw": 100,
+      "torqueNm": 200
     },
     {
       "variantName": "Essence",
@@ -55,7 +64,10 @@
       "batteryKwh": 38,
       "rangeKm": 331,
       "acChargingKw": 7.4,
-      "dcChargingKw": 45
+      "dcChargingKw": 45,
+      "powerPs": 136,
+      "powerKw": 100,
+      "torqueNm": 200
     }
   ],
   "verificationLevel": "manual_review",
@@ -91,5 +103,12 @@
       "/images/cars/mg-windsor-ev/interior.webp",
       "/images/cars/mg-windsor-ev/dashboard.webp"
     ]
+  },
+  "populationMeta": {
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "MG India Windsor EV specs (100 kW / 136 PS)",
+      "sprint": "variant-power-completion"
+    }
   }
 }

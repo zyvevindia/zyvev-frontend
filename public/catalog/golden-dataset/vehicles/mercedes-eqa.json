@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": null,
     "airbags": null,
     "adas": "true",
-    "powerPs": null,
-    "torqueNm": null
+    "powerPs": 190,
+    "torqueNm": 385,
+    "powerKw": 140
   },
   "features": {
     "sunroof": true,
@@ -44,7 +45,10 @@
       "batteryKwh": 66.5,
       "rangeKm": 560,
       "acChargingKw": 11,
-      "dcChargingKw": 100
+      "dcChargingKw": 100,
+      "powerPs": 190,
+      "powerKw": 140,
+      "torqueNm": 385
     },
     {
       "variantName": "EQA 250+",
@@ -52,7 +56,10 @@
       "batteryKwh": 70.5,
       "rangeKm": 592,
       "acChargingKw": 11,
-      "dcChargingKw": 100
+      "dcChargingKw": 100,
+      "powerPs": 190,
+      "powerKw": 140,
+      "torqueNm": 385
     }
   ],
   "verificationLevel": "manual_review",
@@ -66,7 +73,12 @@
     "pipelineConfidence": 96,
     "manualCorrections": [
       "variant_table_manual"
-    ]
+    ],
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Mercedes-Benz India EQA 250+ specifications (140 kW / 190 PS)",
+      "sprint": "variant-power-completion"
+    }
   },
   "media": {
     "source": "local-cars",

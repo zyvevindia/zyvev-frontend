@@ -43,6 +43,81 @@ function slugifyVariantName(name = "") {
     .replace(/^-+|-+$/g, "");
 }
 
+function buildGoldenChargingSummary({ acKw, dcKw, dcMinutes, acHours }) {
+  const parts = [];
+  if (dcKw) parts.push(`${dcKw} kW DC`);
+  if (dcMinutes != null) parts.push(`${dcMinutes} min`);
+  if (acKw) parts.push(`${acKw} kW AC`);
+  if (acHours != null) parts.push(`${acHours} hrs`);
+  return parts.length ? parts.join(" • ") : undefined;
+}
+
+function buildGoldenVariantCatalogMeta({
+  row,
+  fields,
+  slug,
+  familySlug,
+  media,
+  dossier,
+  rangeKm,
+}) {
+  const acKw = row.acChargingKw ?? fields.acChargingKw ?? null;
+  const dcKw = row.dcChargingKw ?? fields.dcChargingKw ?? null;
+  const dcMinutes =
+    row.dcChargingTimeMinutes ??
+    row.dcFastChargingMinutes ??
+    fields.dcChargingTimeMinutes ??
+    null;
+  const acHours = row.acChargingTimeHours ?? fields.acChargingTimeHours ?? null;
+  const powerPsRaw = row.powerPs ?? fields.powerPs ?? null;
+  const powerKwRaw = row.powerKw ?? fields.powerKw ?? null;
+  const powerPs =
+    powerPsRaw != null && Number.isFinite(Number(powerPsRaw))
+      ? Number(powerPsRaw)
+      : null;
+  const powerKw =
+    powerKwRaw != null && Number.isFinite(Number(powerKwRaw))
+      ? Number(powerKwRaw)
+      : null;
+  const torqueNmRaw = row.torqueNm ?? fields.torqueNm ?? null;
+  const torqueNm =
+    torqueNmRaw != null && Number.isFinite(Number(torqueNmRaw))
+      ? Number(torqueNmRaw)
+      : null;
+  const chargingSummary = buildGoldenChargingSummary({
+    acKw,
+    dcKw,
+    dcMinutes,
+    acHours,
+  });
+
+  return {
+    slug,
+    familySlug,
+    media,
+    verificationLevel: dossier.verificationLevel,
+    claimedRangeKm: rangeKm ?? fields.claimedRangeKm ?? null,
+    dcChargingTimeMinutes: dcMinutes,
+    chargingSummary,
+    chargingIntelligence: {
+      acKw,
+      dcKw,
+      dcTime10to80Minutes: dcMinutes,
+      acTime0to100Hours: acHours,
+    },
+    chargingPracticality: {
+      acFullChargeHours: acHours,
+      dcTime10to80Minutes: dcMinutes,
+    },
+    performance: {
+      powerPs,
+      powerKw,
+      powerBhp: powerPs != null ? Math.round(powerPs) : null,
+      torqueNm,
+    },
+  };
+}
+
 /**
  * @param {object} dossier
  * @returns {object[]}
@@ -85,6 +160,16 @@ export function goldenDossierToMarketplaceVariants(dossier) {
     const rangeKm = row.rangeKm ?? fields.claimedRangeKm;
     const price = row.priceInr ?? fields.startingPrice ?? fields.exShowroomPrice;
     const listingCreatedAt = dossierListingTimestamp(dossier);
+    const catalogMeta = buildGoldenVariantCatalogMeta({
+      row,
+      fields,
+      slug,
+      familySlug,
+      media,
+      dossier,
+      rangeKm,
+    });
+    const chargingSummary = catalogMeta.chargingSummary;
 
     return {
       _id: `golden-dataset:${familySlug}:${index}`,
@@ -104,17 +189,16 @@ export function goldenDossierToMarketplaceVariants(dossier) {
       image: media.listingThumbnail || media.heroImage || null,
       galleryImages: media.galleryImages || media.gallery || [],
       catalogSource: "golden-dataset",
-      catalogMeta: {
-        slug,
-        familySlug,
-        media,
-        verificationLevel: dossier.verificationLevel,
-      },
+      chargingTime: chargingSummary,
+      catalogMeta,
       specifications: {
         range: rangeKm,
         batteryPack: batteryKwh ? `${batteryKwh} kWh` : undefined,
-        acChargingKw: row.acChargingKw ?? fields.acChargingKw,
-        dcChargingKw: row.dcChargingKw ?? fields.dcChargingKw,
+        acChargingKw: catalogMeta.chargingIntelligence.acKw,
+        dcChargingKw: catalogMeta.chargingIntelligence.dcKw,
+        chargingTime: chargingSummary,
+        powerKw: catalogMeta.performance.powerKw,
+        powerBhp: catalogMeta.performance.powerBhp,
       },
     };
   });

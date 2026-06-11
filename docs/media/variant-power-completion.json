@@ -1,0 +1,833 @@
+{
+  "generatedAt": "2026-06-11T06:19:29.071Z",
+  "before": {
+    "totalVehicles": 25,
+    "powerComplete": 8,
+    "variantTableComplete": 8,
+    "note": "Pre-sprint: 17/25 missing Power; 8/25 fully populated (prior audit)"
+  },
+  "after": {
+    "totalVehicles": 25,
+    "fleetCompleteCount": 25,
+    "fleetCompletePct": 100,
+    "powerCompleteCount": 25,
+    "powerMissingCount": 0
+  },
+  "vehiclesWithAnyGaps": [],
+  "vehicles": [
+    {
+      "slug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "variantRows": 2,
+      "fieldsPowerPs": 313,
+      "fieldsPowerKw": 230,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "313 bhp",
+        "313 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 130 kW • 30 min | AC: 11 kW • 6.5 hrs",
+        "DC: 130 kW • 30 min | AC: 11 kW • 6.5 hrs"
+      ],
+      "sampleRealWorld": [
+        "382–467 km",
+        "382–467 km"
+      ]
+    },
+    {
+      "slug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "variantRows": 3,
+      "fieldsPowerPs": 204,
+      "fieldsPowerKw": 150,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "204 bhp",
+        "204 bhp",
+        "204 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 80 kW • 30 min | AC: 7 kW • 9.5 hrs",
+        "DC: 80 kW • 30 min | AC: 7 kW • 9.5 hrs",
+        "DC: 80 kW • 30 min | AC: 7 kW • 9.5 hrs"
+      ],
+      "sampleRealWorld": [
+        "375–458 km",
+        "375–458 km",
+        "375–458 km"
+      ]
+    },
+    {
+      "slug": "byd-seal",
+      "displayName": "BYD Seal",
+      "variantRows": 3,
+      "fieldsPowerPs": "204",
+      "fieldsPowerKw": null,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "204 bhp",
+        "204 bhp",
+        "204 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 150 kW | AC: 7 kW",
+        "DC: 150 kW | AC: 7 kW",
+        "DC: 150 kW | AC: 11 kW"
+      ],
+      "sampleRealWorld": [
+        "367–449 km",
+        "468–572 km",
+        "418–510 km"
+      ]
+    },
+    {
+      "slug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "variantRows": 4,
+      "fieldsPowerPs": "57",
+      "fieldsPowerKw": null,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "57 bhp",
+        "57 bhp",
+        "57 bhp",
+        "57 bhp"
+      ],
+      "sampleCharging": [
+        "AC: 3.3 kW",
+        "AC: 3.3 kW",
+        "AC: 3.3 kW",
+        "AC: 3.3 kW"
+      ],
+      "sampleRealWorld": [
+        "230–282 km",
+        "230–282 km",
+        "230–282 km",
+        "230–282 km"
+      ]
+    },
+    {
+      "slug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "variantRows": 3,
+      "fieldsPowerPs": 171,
+      "fieldsPowerKw": 126,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "135 bhp",
+        "135 bhp",
+        "171 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 150 kW | AC: 11 kW",
+        "DC: 150 kW | AC: 11 kW",
+        "DC: 150 kW | AC: 11 kW"
+      ],
+      "sampleRealWorld": [
+        "281–343 km",
+        "281–343 km",
+        "341–416 km"
+      ]
+    },
+    {
+      "slug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "variantRows": 2,
+      "fieldsPowerPs": 229,
+      "fieldsPowerKw": 168,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "217 bhp",
+        "325 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 175 kW • 35 min | AC: 11 kW • 7 hrs",
+        "DC: 175 kW • 35 min | AC: 11 kW • 7 hrs"
+      ],
+      "sampleRealWorld": [
+        "454–555 km",
+        "366–447 km"
+      ]
+    },
+    {
+      "slug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "variantRows": 1,
+      "fieldsPowerPs": 136,
+      "fieldsPowerKw": 100,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "136 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 100 kW | AC: 7.2 kW"
+      ],
+      "sampleRealWorld": [
+        "325–398 km"
+      ]
+    },
+    {
+      "slug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "variantRows": 2,
+      "fieldsPowerPs": "321",
+      "fieldsPowerKw": null,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "321 bhp",
+        "321 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 240 kW • 18 min | AC: 11 kW",
+        "DC: 240 kW • 18 min | AC: 11 kW"
+      ],
+      "sampleRealWorld": [
+        "380–465 km",
+        "353–431 km"
+      ]
+    },
+    {
+      "slug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "variantRows": 3,
+      "fieldsPowerPs": 286,
+      "fieldsPowerKw": 210,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "231 bhp",
+        "286 bhp",
+        "286 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 150 kW | AC: 11 kW",
+        "DC: 150 kW | AC: 11 kW",
+        "DC: 150 kW | AC: 11 kW"
+      ],
+      "sampleRealWorld": [
+        "360–440 km",
+        "492–601 km",
+        "492–601 km"
+      ]
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "variantRows": 3,
+      "fieldsPowerPs": 286,
+      "fieldsPowerKw": 210,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "286 bhp",
+        "286 bhp",
+        "286 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 175 kW | AC: 11 kW",
+        "DC: 175 kW | AC: 11 kW",
+        "DC: 175 kW | AC: 11 kW"
+      ],
+      "sampleRealWorld": [
+        "472–577 km",
+        "472–577 km",
+        "432–528 km"
+      ]
+    },
+    {
+      "slug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "variantRows": 4,
+      "fieldsPowerPs": 150,
+      "fieldsPowerKw": 110,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "150 bhp",
+        "150 bhp",
+        "150 bhp",
+        "150 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 50 kW | AC: 3.3 kW",
+        "DC: 50 kW | AC: 3.3 kW",
+        "DC: 50 kW | AC: 3.3 kW",
+        "DC: 50 kW | AC: 3.3 kW"
+      ],
+      "sampleRealWorld": [
+        "270–330 km",
+        "328–401 km",
+        "328–401 km",
+        "328–401 km"
+      ]
+    },
+    {
+      "slug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "variantRows": 3,
+      "fieldsPowerPs": 174,
+      "fieldsPowerKw": 128,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "144 bhp",
+        "174 bhp",
+        "174 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 130 kW | AC: 7.4 kW",
+        "DC: 130 kW | AC: 7.4 kW",
+        "DC: 130 kW | AC: 7.4 kW"
+      ],
+      "sampleRealWorld": [
+        "360–440 km",
+        "396–484 km",
+        "396–484 km"
+      ]
+    },
+    {
+      "slug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "variantRows": 2,
+      "fieldsPowerPs": 190,
+      "fieldsPowerKw": 140,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "190 bhp",
+        "190 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 100 kW | AC: 11 kW",
+        "DC: 100 kW | AC: 11 kW"
+      ],
+      "sampleRealWorld": [
+        "403–493 km",
+        "426–521 km"
+      ]
+    },
+    {
+      "slug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "variantRows": 2,
+      "fieldsPowerPs": 190,
+      "fieldsPowerKw": 140,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "190 bhp",
+        "292 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 100 kW | AC: 11 kW",
+        "DC: 100 kW | AC: 11 kW"
+      ],
+      "sampleRealWorld": [
+        "384–470 km",
+        "384–470 km"
+      ]
+    },
+    {
+      "slug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "variantRows": 3,
+      "fieldsPowerPs": 42,
+      "fieldsPowerKw": 31,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "42 bhp",
+        "42 bhp",
+        "42 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 50 kW | AC: 3.3 kW",
+        "DC: 50 kW | AC: 3.3 kW",
+        "DC: 50 kW | AC: 3.3 kW"
+      ],
+      "sampleRealWorld": [
+        "166–202 km",
+        "166–202 km",
+        "166–202 km"
+      ]
+    },
+    {
+      "slug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "variantRows": 3,
+      "fieldsPowerPs": 136,
+      "fieldsPowerKw": 100,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "136 bhp",
+        "136 bhp",
+        "136 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 45 kW | AC: 7.4 kW",
+        "DC: 45 kW | AC: 7.4 kW",
+        "DC: 45 kW | AC: 7.4 kW"
+      ],
+      "sampleRealWorld": [
+        "238–291 km",
+        "238–291 km",
+        "238–291 km"
+      ]
+    },
+    {
+      "slug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "variantRows": 3,
+      "fieldsPowerPs": 177,
+      "fieldsPowerKw": 130,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "177 bhp",
+        "177 bhp",
+        "177 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 50 kW | AC: 7.4 kW • 9 hrs",
+        "DC: 50 kW | AC: 7.4 kW • 9 hrs",
+        "DC: 50 kW | AC: 7.4 kW • 9 hrs"
+      ],
+      "sampleRealWorld": [
+        "332–406 km",
+        "332–406 km",
+        "332–406 km"
+      ]
+    },
+    {
+      "slug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "variantRows": 2,
+      "fieldsPowerPs": "181",
+      "fieldsPowerKw": null,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "181 bhp",
+        "181 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 50 kW | AC: 11 kW • 0.6 hrs",
+        "DC: 50 kW | AC: 11 kW • 0.6 hrs"
+      ],
+      "sampleRealWorld": [
+        "289–354 km",
+        "289–354 km"
+      ]
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "variantRows": 3,
+      "fieldsPowerPs": 167,
+      "fieldsPowerKw": 123,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "150 bhp",
+        "150 bhp",
+        "167 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 150 kW • 30 min | AC: 7.2 kW • 6.3 hrs",
+        "DC: 150 kW • 30 min | AC: 7.2 kW • 6.3 hrs",
+        "DC: 150 kW • 30 min | AC: 7.2 kW • 6.3 hrs"
+      ],
+      "sampleRealWorld": [
+        "361–442 km",
+        "361–442 km",
+        "421–515 km"
+      ]
+    },
+    {
+      "slug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "variantRows": 8,
+      "fieldsPowerPs": 238,
+      "fieldsPowerKw": 175,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "238 bhp",
+        "238 bhp",
+        "238 bhp",
+        "238 bhp",
+        "396 bhp",
+        "238 bhp",
+        "396 bhp",
+        "396 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 120 kW • 25 min | AC: 7.2 kW",
+        "DC: 120 kW • 25 min | AC: 7.2 kW",
+        "DC: 120 kW • 25 min | AC: 7.2 kW",
+        "DC: 120 kW • 25 min | AC: 7.2 kW",
+        "DC: 120 kW • 25 min | AC: 7.2 kW",
+        "DC: 120 kW • 25 min | AC: 7.2 kW",
+        "DC: 120 kW • 25 min | AC: 7.2 kW",
+        "DC: 120 kW • 25 min | AC: 7.2 kW"
+      ],
+      "sampleRealWorld": [
+        "387–473 km",
+        "387–473 km",
+        "387–473 km",
+        "451–552 km",
+        "448–547 km",
+        "451–552 km",
+        "448–547 km",
+        "448–547 km"
+      ]
+    },
+    {
+      "slug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "variantRows": 13,
+      "fieldsPowerPs": 127,
+      "fieldsPowerKw": null,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp",
+        "127 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 50 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 50 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 50 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 50 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 50 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 60 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 60 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 60 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 60 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 60 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 60 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 60 kW • 56 min | AC: 7.2 kW • 4.3 hrs",
+        "DC: 60 kW • 56 min | AC: 7.2 kW • 4.3 hrs"
+      ],
+      "sampleRealWorld": [
+        "198–242 km",
+        "198–242 km",
+        "198–242 km",
+        "198–242 km",
+        "198–242 km",
+        "352–430 km",
+        "352–430 km",
+        "352–430 km",
+        "352–430 km",
+        "352–430 km",
+        "352–430 km",
+        "352–430 km",
+        "352–430 km"
+      ]
+    },
+    {
+      "slug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "variantRows": 6,
+      "fieldsPowerPs": 87,
+      "fieldsPowerKw": null,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "87 bhp",
+        "87 bhp",
+        "87 bhp",
+        "87 bhp",
+        "87 bhp",
+        "87 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 65 kW • 26 min | AC: 7.2 kW • 4.5 hrs",
+        "DC: 65 kW • 26 min | AC: 7.2 kW • 4.5 hrs",
+        "DC: 65 kW • 26 min | AC: 7.2 kW • 4.5 hrs",
+        "DC: 65 kW • 26 min | AC: 7.2 kW • 4.5 hrs",
+        "DC: 65 kW • 26 min | AC: 7.2 kW • 4.5 hrs",
+        "DC: 65 kW • 26 min | AC: 7.2 kW • 4.5 hrs"
+      ],
+      "sampleRealWorld": [
+        "266–326 km",
+        "266–326 km",
+        "337–412 km",
+        "337–412 km",
+        "337–412 km",
+        "337–412 km"
+      ]
+    },
+    {
+      "slug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "variantRows": 4,
+      "fieldsPowerPs": 75,
+      "fieldsPowerKw": 55,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "61 bhp",
+        "75 bhp",
+        "75 bhp",
+        "75 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 30 kW • 35 min | AC: 3.3 kW • 3.6 hrs",
+        "DC: 30 kW • 35 min | AC: 3.3 kW • 3.6 hrs",
+        "DC: 30 kW • 35 min | AC: 3.3 kW • 3.6 hrs",
+        "DC: 30 kW • 35 min | AC: 3.3 kW • 3.6 hrs"
+      ],
+      "sampleRealWorld": [
+        "180–220 km",
+        "227–277 km",
+        "227–277 km",
+        "227–277 km"
+      ]
+    },
+    {
+      "slug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "variantRows": 4,
+      "fieldsPowerPs": "75",
+      "fieldsPowerKw": null,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "75 bhp",
+        "75 bhp",
+        "75 bhp",
+        "75 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 25 kW • 59 min | AC: 3.3 kW",
+        "DC: 25 kW • 59 min | AC: 3.3 kW",
+        "DC: 25 kW • 59 min | AC: 3.3 kW",
+        "DC: 25 kW • 59 min | AC: 3.3 kW"
+      ],
+      "sampleRealWorld": [
+        "227–277 km",
+        "227–277 km",
+        "227–277 km",
+        "227–277 km"
+      ]
+    },
+    {
+      "slug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "variantRows": 2,
+      "fieldsPowerPs": "237.99",
+      "fieldsPowerKw": null,
+      "gaps": {
+        "realWorldRange": 0,
+        "charging": 0,
+        "power": 0,
+        "price": 0,
+        "battery": 0,
+        "range": 0
+      },
+      "complete": true,
+      "samplePower": [
+        "238 bhp",
+        "238 bhp"
+      ],
+      "sampleCharging": [
+        "DC: 150 kW • 40 min | AC: 11 kW",
+        "DC: 150 kW • 40 min | AC: 11 kW"
+      ],
+      "sampleRealWorld": [
+        "409–500 km",
+        "395–483 km"
+      ]
+    }
+  ]
+}

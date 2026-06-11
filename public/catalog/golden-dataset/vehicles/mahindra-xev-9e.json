@@ -22,7 +22,10 @@
     "acChargingKw": 11,
     "dcChargingKw": 175,
     "airbags": 6,
-    "adas": true
+    "adas": true,
+    "powerPs": 286,
+    "powerKw": 210,
+    "torqueNm": 380
   },
   "features": {
     "sunroof": true,
@@ -39,7 +42,10 @@
       "batteryKwh": 79,
       "rangeKm": 656,
       "acChargingKw": 11,
-      "dcChargingKw": 175
+      "dcChargingKw": 175,
+      "powerPs": 286,
+      "powerKw": 210,
+      "torqueNm": 380
     },
     {
       "variantName": "Pack Three 79",
@@ -47,7 +53,10 @@
       "batteryKwh": 79,
       "rangeKm": 656,
       "acChargingKw": 11,
-      "dcChargingKw": 175
+      "dcChargingKw": 175,
+      "powerPs": 286,
+      "powerKw": 210,
+      "torqueNm": 380
     },
     {
       "variantName": "Pack Three 79 Select AWD",
@@ -55,7 +64,10 @@
       "batteryKwh": 79,
       "rangeKm": 600,
       "acChargingKw": 11,
-      "dcChargingKw": 175
+      "dcChargingKw": 175,
+      "powerPs": 286,
+      "powerKw": 210,
+      "torqueNm": 380
     }
   ],
   "verificationLevel": "manual_review",
@@ -75,5 +87,12 @@
     "interiorImages": [
       "/images/cars/mahindra-xev-9e/dashboard.webp"
     ]
+  },
+  "populationMeta": {
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Mahindra India XEV 9e specs (228–282 bhp by battery pack)",
+      "sprint": "variant-power-completion"
+    }
   }
 }

@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": null,
     "airbags": null,
     "adas": null,
-    "powerPs": null,
-    "torqueNm": null
+    "powerPs": 136,
+    "torqueNm": 395,
+    "powerKw": 100
   },
   "features": {
     "sunroof": true,
@@ -44,7 +45,10 @@
       "batteryKwh": 39.2,
       "rangeKm": 452,
       "acChargingKw": 7.2,
-      "dcChargingKw": 100
+      "dcChargingKw": 100,
+      "powerPs": 136,
+      "powerKw": 100,
+      "torqueNm": 395
     }
   ],
   "verificationLevel": "manual_review",
@@ -59,7 +63,12 @@
     "manualCorrections": [
       "reference_only_acquisition",
       "variant_table_manual"
-    ]
+    ],
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Hyundai India Kona Electric brochure (100 kW / 136 PS)",
+      "sprint": "variant-power-completion"
+    }
   },
   "media": {
     "source": "local-cars",

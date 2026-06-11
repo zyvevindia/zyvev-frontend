@@ -25,7 +25,10 @@
     "dcChargingTimeMinutes": 30,
     "airbags": 6,
     "adas": true,
-    "ncapRating": 5
+    "ncapRating": 5,
+    "powerPs": 167,
+    "powerKw": 123,
+    "torqueNm": 215
   },
   "features": {
     "sunroof": true,
@@ -42,7 +45,10 @@
       "batteryKwh": 45,
       "rangeKm": 502,
       "acChargingKw": 7.2,
-      "dcChargingKw": 150
+      "dcChargingKw": 150,
+      "powerPs": 150,
+      "powerKw": 110,
+      "torqueNm": 215
     },
     {
       "variantName": "Accomplished 45",
@@ -50,7 +56,10 @@
       "batteryKwh": 45,
       "rangeKm": 502,
       "acChargingKw": 7.2,
-      "dcChargingKw": 150
+      "dcChargingKw": 150,
+      "powerPs": 150,
+      "powerKw": 110,
+      "torqueNm": 215
     },
     {
       "variantName": "Empowered 55",
@@ -58,7 +67,10 @@
       "batteryKwh": 55,
       "rangeKm": 585,
       "acChargingKw": 7.2,
-      "dcChargingKw": 150
+      "dcChargingKw": 150,
+      "powerPs": 167,
+      "powerKw": 123,
+      "torqueNm": 215
     }
   ],
   "verificationLevel": "manual_review",
@@ -94,5 +106,12 @@
       "/images/cars/tata-curvv-ev/interior.webp",
       "/images/cars/tata-curvv-ev/dashboard.webp"
     ]
+  },
+  "populationMeta": {
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Tata Motors Curvv.ev OEM specs (110 kW / 123 kW)",
+      "sprint": "variant-power-completion"
+    }
   }
 }
