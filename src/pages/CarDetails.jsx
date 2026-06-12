@@ -4,8 +4,6 @@ import {
   useMemo,
   useRef,
   useState,
-  lazy,
-  Suspense,
 } from "react";
 
 import { API_URL } from "../config";
@@ -17,27 +15,12 @@ import {
 } from "react-router-dom";
 
 import LeadInquiryModal from "../components/LeadInquiryModal";
-import WhatsAppLeadCta from "../components/leads/WhatsAppLeadCta";
-
-const EMICalculator = lazy(() => import("../components/EMICalculator"));
-const VariantComparisonTable = lazy(() =>
-  import("../components/catalog/VariantComparisonTable")
-);
 
 import SeoHead from "../components/SEO/SeoHead";
 import JsonLd from "../components/SEO/JsonLd";
-import DetailSeoDiscovery from "../components/catalog/DetailSeoDiscovery";
 import CompareInternalLinks from "../components/compare/CompareInternalLinks";
 
 import CarDetailsSkeleton from "../components/skeletons/CarDetailsSkeleton";
-
-import EvDetailGoldSections from "../components/catalog/EvDetailGoldSections";
-import DetailOverviewDashboard from "../components/car/DetailOverviewDashboard";
-import TrustDataStrip from "../components/trust/TrustDataStrip";
-import {
-  buildDetailOwnershipExpectation,
-  buildDetailTrustMaturityNote,
-} from "../utils/ownershipTrustCopy";
 
 import useCatalogEnrichment from "../hooks/useCatalogEnrichment";
 
@@ -74,25 +57,21 @@ import {
 } from "../utils/vehicleRoutes";
 
 import DetailHero from "../components/car/DetailHero";
-import SectionErrorBoundary from "../components/errors/SectionErrorBoundary";
 import VehicleDetailNotFound from "../components/catalog/VehicleDetailNotFound";
 import NetworkErrorPanel from "../components/ui/NetworkErrorPanel";
 import DetailBreadcrumbs from "../components/catalog/DetailBreadcrumbs";
 import "../styles/car-details.css";
 import DetailActionBar from "../components/car/DetailActionBar";
 import DetailTabs from "../components/car/DetailTabs";
-import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
 import { scoreVehicle } from "../scoring/index.js";
 import {
   buildDetailPageSectionContext,
-  buildDetailPageSections,
+  buildVisibleDetailSections,
   detailTabIdForSectionElement,
   getDetailObservedSectionIds,
   scrollToDetailSection,
 } from "../utils/detailPageNav";
 import { buildVehicleIntelligence } from "../intelligence/buildVehicleIntelligence";
-import DetailDealerAssistance from "../components/car/DetailDealerAssistance";
-import DetailKeySpecifications from "../components/car/DetailKeySpecifications";
 
 import {
   applyFamilyMediaFallback,
@@ -724,7 +703,7 @@ export default function CarDetails() {
       familySlug: famSlug,
     });
 
-    return buildDetailPageSections(context);
+    return buildVisibleDetailSections(context);
   }, [
     displayCar,
     family,
@@ -1111,6 +1090,31 @@ export default function CarDetails() {
     );
   };
 
+  const detailPage = {
+    vehicle,
+    intelligenceCar,
+    slug,
+    familySlug,
+    overview,
+    overviewSupplement,
+    features,
+    evSavariScores,
+    isFamilyOverviewMode,
+    detailMetrics,
+    enrichedVariants,
+    selectedVariantSlug,
+    comparableVariants,
+    activePrice,
+    safety,
+    comparisonRef,
+    emiSectionRef,
+    handleSelectVariant,
+    navigateVariantCompare,
+    handleFinanceHelp,
+    trackPricingInteraction,
+    openInquiry,
+  };
+
   /* =========================================================
      ========================= RENDER ========================
      ========================================================= */
@@ -1212,154 +1216,18 @@ export default function CarDetails() {
             tabs={pageSections}
           />
 
-          <section
-            id="overview"
-            className="cd-section cd-card cd-content-card cd-overview-section"
-          >
-            <DetailOverviewDashboard
-              overview={overview}
-              overviewSupplement={overviewSupplement}
-              features={features}
-              catalogMeta={vehicle.catalogMeta}
-              catalogSource={vehicle.catalogSource}
-              vehicle={intelligenceCar}
-              familyOverviewMode={isFamilyOverviewMode}
-              evSavariScores={evSavariScores}
-            />
-            <TrustDataStrip car={vehicle} variant="detail" />
-            {vehicle ? (
-              <p
-                style={{
-                  fontSize: "0.85rem",
-                  color: "#64748b",
-                  lineHeight: 1.55,
-                  margin: "8px 0 0",
-                  maxWidth: 720,
-                }}
+          {pageSections.map((section) => {
+            const SectionComponent = section.Component;
+            return (
+              <section
+                key={section.id}
+                id={section.id}
+                className={section.shellClassName}
               >
-                {buildDetailOwnershipExpectation(vehicle)}
-                {buildDetailTrustMaturityNote(vehicle) ? (
-                  <> {buildDetailTrustMaturityNote(vehicle)}</>
-                ) : null}
-              </p>
-            ) : null}
-          </section>
-
-          {!isFamilyOverviewMode && detailMetrics ? (
-            <DetailKeySpecifications metrics={detailMetrics} />
-          ) : null}
-
-          {enrichedVariants.length >= 1 && (
-            <SectionErrorBoundary label="Variant comparison" compact>
-              <Suspense
-                fallback={
-                  <div
-                    className="cd-section cd-card cd-content-card"
-                    aria-busy="true"
-                    aria-label="Loading variant comparison table"
-                  >
-                    Loading variants…
-                  </div>
-                }
-              >
-                <VariantComparisonTable
-                  ref={comparisonRef}
-                  id="variants"
-                  variants={enrichedVariants}
-                  selectedSlug={selectedVariantSlug}
-                  onSelect={handleSelectVariant}
-                  onCompareAll={() =>
-                    navigateVariantCompare(comparableVariants, {
-                      cleanSession: true,
-                    })
-                  }
-                />
-              </Suspense>
-            </SectionErrorBoundary>
-          )}
-          {hasGoldExperience && (
-            <SectionErrorBoundary label="Compare rivals" compact>
-              <EvDetailGoldSections
-                car={vehicle}
-                slug={slug}
-                layout="v2"
-                only={["compare-rivals"]}
-              />
-            </SectionErrorBoundary>
-          )}
-
-          <SectionErrorBoundary label="EV intelligence" compact>
-            <EvIntelligenceSections
-              car={intelligenceCar}
-              slug={slug}
-              layout="v2"
-              showRangeConfidence={!isFamilyOverviewMode}
-              sections={[
-                "range",
-                "charging",
-                "ownership",
-                "suitability",
-              ]}
-            />
-          </SectionErrorBoundary>
-
-          <section
-            id="emi"
-            className="cd-section cd-card cd-content-card detail-emi-section"
-          >
-            <h2 className="cd-section__title">EMI</h2>
-            <p className="cd-section__intro">
-              Calculate EMI and check finance options in your city.
-            </p>
-            <div
-              ref={emiSectionRef}
-              className="detail-emi-section__inner"
-              onFocusCapture={() =>
-                trackPricingInteraction("emi_calculator")
-              }
-            >
-              <SectionErrorBoundary label="EMI calculator" compact>
-                <Suspense
-                  fallback={
-                    <p className="cd-section__intro" aria-busy="true">
-                      Loading EMI calculator…
-                    </p>
-                  }
-                >
-                  <EMICalculator
-                    price={activePrice}
-                    onGetFinanceHelp={() =>
-                      handleFinanceHelp("emi_widget")
-                    }
-                  />
-                </Suspense>
-              </SectionErrorBoundary>
-            </div>
-          </section>
-
-          {hasGoldExperience && (
-            <SectionErrorBoundary label="FAQs" compact>
-              <EvDetailGoldSections
-                car={vehicle}
-                slug={slug}
-                layout="v2"
-                only={["faq"]}
-              />
-            </SectionErrorBoundary>
-          )}
-
-          <section
-            id="reviews"
-            className="cd-section cd-card cd-content-card"
-          >
-            <h2 className="cd-section__title">Reviews</h2>
-            <p className="cd-section__intro">
-              See expert and user reviews across categories. Owner reviews
-              and ratings for this model are being curated on EVSavari.
-              Explore variant specs and compare rivals while we add verified
-              owner feedback.
-            </p>
-          </section>
+                <SectionComponent page={detailPage} />
+              </section>
+            );
+          })}
 
           {safety.length > 0 && (
             <section className="cd-section cd-card cd-content-card">
@@ -1377,48 +1245,9 @@ export default function CarDetails() {
             </section>
           )}
 
-          <DetailSeoDiscovery
-            familySlug={familySlug}
-            vehicleName={vehicle.name}
-            compareRivals={
-              vehicle.catalogMeta?.compareRivals || []
-            }
-            brand={vehicle.brand}
-            bodyType={
-              vehicle.bodyType ||
-              vehicle.catalogMeta?.bodyType
-            }
-            priceInr={activePrice}
-            evIntelligence={vehicle.evIntelligence}
-            catalogMeta={vehicle.catalogMeta}
-          />
-
           <CompareInternalLinks
             contextSlugs={[familySlug]}
             className="compare-internal-links--detail"
-          />
-
-          <DetailDealerAssistance
-            vehicle={vehicle}
-            familySlug={familySlug}
-            selectedVariantSlug={selectedVariantSlug}
-            onRequestCallback={() => {
-              trackLaunchDealerAssistance({
-                sourcePage: "car_details",
-                surface: "request_callback",
-              });
-              openInquiry(
-                "Request a callback",
-                "Request callback"
-              );
-            }}
-            onGetBestDeal={() => {
-              trackLaunchDealerAssistance({
-                sourcePage: "car_details",
-                surface: "get_best_deal",
-              });
-              openInquiry("Get the best deal", "Get best deal");
-            }}
           />
 
           <LeadInquiryModal

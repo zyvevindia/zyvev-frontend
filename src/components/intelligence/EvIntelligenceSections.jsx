@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
+import { forwardRef, useEffect, useMemo, useRef } from "react";
 
 import {
   buildVehicleIntelligence,
@@ -53,10 +53,30 @@ function useSectionViewOnce(ref, onView) {
   }, [onView]);
 }
 
+const IntelSectionShell = forwardRef(function IntelSectionShell(
+  { embedInParent, id, className, children, ...rest },
+  ref
+) {
+  if (embedInParent) {
+    return (
+      <div ref={ref} className={className} {...rest}>
+        {children}
+      </div>
+    );
+  }
+
+  return (
+    <section ref={ref} id={id} className={className} {...rest}>
+      {children}
+    </section>
+  );
+});
+
 export default function EvIntelligenceSections({
   car,
   slug = "",
   layout = "v2",
+  embedInParent = false,
   showRangeConfidence = true,
   sections = [
     "trust",
@@ -159,7 +179,8 @@ export default function EvIntelligenceSections({
       )}
 
       {showRangeSection && range.hasData && (
-        <section
+        <IntelSectionShell
+          embedInParent={embedInParent}
           className={cardClass}
           id="range"
           aria-labelledby="ev-range-confidence-title"
@@ -209,11 +230,12 @@ export default function EvIntelligenceSections({
               ))}
             </ul>
           )}
-        </section>
+        </IntelSectionShell>
       )}
 
       {show("charging") && charging.hasData && (
-        <section
+        <IntelSectionShell
+          embedInParent={embedInParent}
           ref={chargingRef}
           className={cardClass}
           id="charging"
@@ -252,13 +274,14 @@ export default function EvIntelligenceSections({
               ))}
             </ul>
           )}
-        </section>
+        </IntelSectionShell>
       )}
 
-      {chargingPracticality?.hasData && (
-        <section
+      {show("charging") && chargingPracticality?.hasData && (
+        <IntelSectionShell
+          embedInParent={embedInParent}
           ref={practicalityRef}
-          id="charging-practicality"
+          id={embedInParent ? undefined : "charging-practicality"}
           className={cardClass}
           aria-labelledby="ev-charging-practicality-title"
         >
@@ -278,14 +301,15 @@ export default function EvIntelligenceSections({
               {chargingPracticality.convenienceLevelLabel}
             </p>
           )}
-        </section>
+        </IntelSectionShell>
       )}
 
       {show("ownership") && ownership.hasData && (
-        <section
+        <IntelSectionShell
+          embedInParent={embedInParent}
           ref={ownershipRef}
           className={cardClass}
-          id="detail-ownership-intelligence"
+          id={embedInParent ? undefined : "detail-ownership-intelligence"}
           aria-labelledby="ev-ownership-intel-title"
         >
           <h2
@@ -373,11 +397,12 @@ export default function EvIntelligenceSections({
           )}
           <p className="ev-intel-footnote">{ownership.savingsDisclaimer}</p>
           <p className="ev-intel-footnote">{ownership.disclaimer}</p>
-        </section>
+        </IntelSectionShell>
       )}
 
       {show("suitability") && suitability.hasData && (
-        <section
+        <IntelSectionShell
+          embedInParent={embedInParent}
           id="suitability"
           className={cardClass}
           aria-labelledby="ev-suitability-title"
@@ -389,7 +414,7 @@ export default function EvIntelligenceSections({
             EV suitability
           </h2>
           <EvSuitabilityCardGrid insights={suitability.insights} />
-        </section>
+        </IntelSectionShell>
       )}
     </div>
   );

@@ -12,13 +12,10 @@ export default function DetailDealerAssistance({
   selectedVariantSlug,
   onRequestCallback,
   onGetBestDeal,
+  embedded = false,
 }) {
-  return (
-    <section
-      id="assistance"
-      className="cd-section cd-dealer cd-card"
-      aria-labelledby="detail-dealer-title"
-    >
+  const content = (
+    <>
       <h2 id="detail-dealer-title" className="cd-section__title">
         Dealer assistance
       </h2>
@@ -60,6 +57,22 @@ export default function DetailDealerAssistance({
           variant="secondary"
         />
       </div>
+    </>
+  );
+
+  if (embedded) {
+    return (
+      <div aria-labelledby="detail-dealer-title">{content}</div>
+    );
+  }
+
+  return (
+    <section
+      id="assistance"
+      className="cd-section cd-dealer cd-card"
+      aria-labelledby="detail-dealer-title"
+    >
+      {content}
     </section>
   );
 }

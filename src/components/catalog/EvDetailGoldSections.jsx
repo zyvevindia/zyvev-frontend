@@ -83,6 +83,7 @@ function GoldSection({
   defaultOpen = true,
   summaryTitle = "",
   summaryPreview = "",
+  embedded = false,
   children,
 }) {
   if (layout === "v2" && collapsible) {
@@ -123,6 +124,12 @@ function GoldSection({
   }
 
   if (layout === "v2") {
+    if (embedded) {
+      return (
+        <div aria-labelledby={ariaLabelledby}>{children}</div>
+      );
+    }
+
     return (
       <section
         id={id}
@@ -185,6 +192,7 @@ export default function EvDetailGoldSections({
   only = null,
   layout = "default",
   collapsibleSections = false,
+  embedded = false,
 }) {
   if (!hasCatalogExperience(car)) {
     return null;
@@ -486,7 +494,8 @@ export default function EvDetailGoldSections({
         shouldRender(only, "compare-rivals") && (
           <GoldSection
             layout={layout}
-            id={layout === "v2" ? "compare" : undefined}
+            embedded={embedded}
+            id={layout === "v2" && !embedded ? "compare" : undefined}
             ariaLabelledby="ev-compare-rivals"
             collapsible={
               collapsibleSections && layout === "v2"
@@ -518,7 +527,8 @@ export default function EvDetailGoldSections({
       {allFaq.length > 0 && shouldRender(only, "faq") && (
         <GoldSection
           layout={layout}
-          id={layout === "v2" ? "faqs" : undefined}
+          embedded={embedded}
+          id={layout === "v2" && !embedded ? "faqs" : undefined}
           ariaLabelledby="ev-faq"
           collapsible={
             collapsibleSections && layout === "v2"

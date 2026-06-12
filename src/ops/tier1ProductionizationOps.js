@@ -135,10 +135,7 @@ export function generateTier1ProductionizationReport(cars = []) {
     requiredTabs: DETAIL_SECTION_DEFS.map((t) => t.id),
     chargingTabPresent: DETAIL_SECTION_DEFS.some((t) => t.id === "charging"),
     compareCtaRoutes: ["/compare", "/cars?compareMode=true"],
-    detailSectionAnchors: DETAIL_SECTION_DEFS.flatMap((section) => [
-      section.id,
-      ...section.anchorIds,
-    ]),
+    detailSectionAnchors: DETAIL_SECTION_DEFS.map((section) => section.id),
     status: "static_pass",
   };
 

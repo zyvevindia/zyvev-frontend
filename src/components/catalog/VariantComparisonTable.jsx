@@ -35,6 +35,7 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
     onSelect,
     onCompareAll,
     id = "variants",
+    embedded = false,
     title = "Variants",
     intro = "Side-by-side specs for every trim in this model family.",
     showCompareAll = true,
@@ -47,17 +48,10 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
 
   const selectable = !readOnly && typeof onSelect === "function";
 
-  return (
-    <section
-      ref={ref}
-      id={id}
-      className="cd-section cd-card cd-content-card variant-comparison"
-      aria-labelledby={`${id}-title`}
-    >
-      <h2
-        id={`${id}-title`}
-        className="cd-section__title"
-      >
+  const titleId = `${id}-title`;
+  const body = (
+    <>
+      <h2 id={titleId} className="cd-section__title">
         {title}
       </h2>
       <p className="cd-section__intro">{intro}</p>
@@ -246,6 +240,25 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
           </button>
         </footer>
       ) : null}
+    </>
+  );
+
+  if (embedded) {
+    return (
+      <div ref={ref} aria-labelledby={titleId}>
+        {body}
+      </div>
+    );
+  }
+
+  return (
+    <section
+      ref={ref}
+      id={id}
+      className="cd-section cd-card cd-content-card variant-comparison"
+      aria-labelledby={titleId}
+    >
+      {body}
     </section>
   );
 });

@@ -40,7 +40,7 @@ export default function DetailTabs({
             className={`cd-tab${activeId === tab.id ? " cd-tab--active" : ""}`}
             onClick={() => onSelect(tab.id)}
           >
-            {tab.label}
+            {tab.title ?? tab.label}
           </button>
         ))}
       </div>

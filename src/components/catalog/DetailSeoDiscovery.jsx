@@ -17,6 +17,7 @@ export default function DetailSeoDiscovery({
   peerFamilies = [],
   evIntelligence = null,
   catalogMeta = null,
+  embedded = false,
 }) {
   const sections = buildVehicleDiscoveryLinkSections({
     familySlug,
@@ -34,12 +35,8 @@ export default function DetailSeoDiscovery({
     return null;
   }
 
-  return (
-    <section
-      id="related-evs"
-      className="cd-seo-discovery"
-      aria-labelledby="cd-seo-discovery-title"
-    >
+  const content = (
+    <>
       <h2 id="cd-seo-discovery-title" className="cd-seo-discovery__title">
         Discover related EVs
       </h2>
@@ -62,6 +59,22 @@ export default function DetailSeoDiscovery({
           </div>
         ))}
       </div>
+    </>
+  );
+
+  if (embedded) {
+    return (
+      <div aria-labelledby="cd-seo-discovery-title">{content}</div>
+    );
+  }
+
+  return (
+    <section
+      id="related-evs"
+      className="cd-seo-discovery"
+      aria-labelledby="cd-seo-discovery-title"
+    >
+      {content}
     </section>
   );
 }

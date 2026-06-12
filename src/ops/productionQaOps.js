@@ -23,14 +23,9 @@ function isFallbackUrl(url = "") {
   );
 }
 
-const REQUIRED_DETAIL_SECTION_IDS = [
-  ...new Set(
-    DETAIL_SECTION_DEFS.flatMap((section) => [
-      section.id,
-      ...section.anchorIds,
-    ])
-  ),
-];
+const REQUIRED_DETAIL_SECTION_IDS = DETAIL_SECTION_DEFS.map(
+  (section) => section.id
+);
 
 /**
  * @param {{ cars?: object[]; compareSlugs?: string[] }} [options]
