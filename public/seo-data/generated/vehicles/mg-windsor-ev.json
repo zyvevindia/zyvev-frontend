@@ -1,0 +1,42 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "mg-windsor-ev",
+    "displayName": "MG Windsor EV",
+    "brand": "MG",
+    "model": "Windsor EV",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 999000,
+      "maxInr": 1689000
+    },
+    "rangeBand": {
+      "minKm": 331,
+      "maxKm": 331
+    },
+    "maxRangeKm": 331,
+    "startingPriceInr": 999000,
+    "topVariantPriceInr": 1689000,
+    "charging": {
+      "acKw": 7.4,
+      "dcKw": 45,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "MG India specs + CarWale (Jun 2026)"
+    ],
+    "verifiedAt": "2026-06-08",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/mg-windsor-ev.json"
+  }
+}

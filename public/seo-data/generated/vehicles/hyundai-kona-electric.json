@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "hyundai-kona-electric",
+    "displayName": "Hyundai Kona Electric",
+    "brand": "Hyundai",
+    "model": "Kona Electric",
+    "bodyStyle": "SUV",
+    "variantCount": 1,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 2384000,
+      "maxInr": 2384000
+    },
+    "rangeBand": {
+      "minKm": 452,
+      "maxKm": 452
+    },
+    "maxRangeKm": 452,
+    "startingPriceInr": 2384000,
+    "topVariantPriceInr": 2384000,
+    "charging": {
+      "acKw": 7.2,
+      "dcKw": 100,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": false,
+      "hasListing": false,
+      "hasCompare": false,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.hyundai.com/in/en/find-a-car/kona-electric/highlights",
+      "https://www.cardekho.com/hyundai/kona-electric"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/hyundai-kona-electric.json"
+  }
+}

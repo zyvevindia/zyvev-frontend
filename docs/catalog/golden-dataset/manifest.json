@@ -1,182 +1,353 @@
 {
   "version": "golden-v1",
-  "generatedAt": "2026-06-10T05:01:32.145Z",
+  "generatedAt": "2026-06-11T08:18:22.025Z",
   "count": 25,
   "vehicles": [
     {
       "id": "tata-nexon-ev",
       "displayName": "Tata Nexon EV",
       "familySlug": "tata-nexon-ev",
+      "brand": "Tata",
+      "variantCount": 13,
       "verificationLevel": "verified_dossier",
-      "variantCount": 13
+      "mediaCount": 7,
+      "updatedAt": "2026-06-08",
+      "sources": [
+        "EVSavari Verified Dossier"
+      ]
     },
     {
       "id": "tata-punch-ev",
       "displayName": "Tata Punch EV",
       "familySlug": "tata-punch-ev",
+      "brand": "Tata",
+      "variantCount": 6,
       "verificationLevel": "verified_dossier",
-      "variantCount": 6
+      "mediaCount": 7,
+      "updatedAt": "2026-06-08",
+      "sources": [
+        "EVSavari Verified Dossier"
+      ]
     },
     {
       "id": "tata-curvv-ev",
       "displayName": "Tata Curvv EV",
       "familySlug": "tata-curvv-ev",
+      "brand": "Tata",
+      "variantCount": 3,
       "verificationLevel": "manual_review",
-      "variantCount": 3
+      "mediaCount": 7,
+      "updatedAt": "2026-06-11",
+      "sources": [
+        "https://ev.tatamotors.com/curvv/ev/price.html",
+        "https://cars.tatamotors.com/article/press-release/curvv-ev-series-x-launch.html",
+        "https://www.cardekho.com/tata/curvv-ev"
+      ]
     },
     {
       "id": "mg-windsor-ev",
       "displayName": "MG Windsor EV",
       "familySlug": "mg-windsor-ev",
+      "brand": "MG",
+      "variantCount": 3,
       "verificationLevel": "manual_review",
-      "variantCount": 3
+      "mediaCount": 7,
+      "updatedAt": "2026-06-08",
+      "sources": [
+        "MG India specs + CarWale (Jun 2026)"
+      ]
     },
     {
       "id": "mahindra-be-6",
       "displayName": "Mahindra BE 6",
       "familySlug": "mahindra-be-6",
+      "brand": "Mahindra",
+      "variantCount": 3,
       "verificationLevel": "manual_review",
-      "variantCount": 3
+      "mediaCount": 7,
+      "updatedAt": "2026-06-08",
+      "sources": [
+        "Mahindra OEM + ZigWheels (Jun 2026)"
+      ]
     },
     {
       "id": "mahindra-xev-9e",
       "displayName": "Mahindra XEV 9e",
       "familySlug": "mahindra-xev-9e",
+      "brand": "Mahindra",
+      "variantCount": 3,
       "verificationLevel": "manual_review",
-      "variantCount": 3
+      "mediaCount": 1,
+      "updatedAt": "2026-06-08",
+      "sources": [
+        "Mahindra OEM + CarDekho (Jun 2026)"
+      ]
     },
     {
       "id": "byd-atto-3",
       "displayName": "BYD Atto 3",
       "familySlug": "byd-atto-3",
+      "brand": "BYD",
+      "variantCount": 3,
       "verificationLevel": "manual_review",
-      "variantCount": 3
+      "mediaCount": 1,
+      "updatedAt": "2026-06-08",
+      "sources": [
+        "BYD India + CarWale (Jun 2026)"
+      ]
     },
     {
       "id": "hyundai-creta-electric",
       "displayName": "Hyundai Creta Electric",
       "familySlug": "hyundai-creta-electric",
+      "brand": "Hyundai",
+      "variantCount": 3,
       "verificationLevel": "ops_benchmark",
-      "variantCount": 3
+      "mediaCount": 7,
+      "updatedAt": "2026-06-08",
+      "sources": [
+        "Hyundai India launch specs estimate (Jun 2026) — review quarterly"
+      ]
     },
     {
       "id": "mg-comet-ev",
       "displayName": "MG Comet EV",
       "familySlug": "mg-comet-ev",
+      "brand": "MG",
+      "variantCount": 3,
       "verificationLevel": "manual_review",
-      "variantCount": 3
+      "mediaCount": 4,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.mgmotor.co.in/vehicles/comet-ev-electric-car-in-india",
+        "https://www.cardekho.com/mg/comet-ev",
+        "OEM brochure PDF"
+      ]
     },
     {
       "id": "hyundai-ioniq-5",
       "displayName": "Hyundai Ioniq 5",
       "familySlug": "hyundai-ioniq-5",
+      "brand": "Hyundai",
+      "variantCount": 2,
       "verificationLevel": "manual_review",
-      "variantCount": 2
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.hyundai.com/in/en/find-a-car/ioniq-5/highlights",
+        "https://www.cardekho.com/hyundai/ioniq-5"
+      ]
     },
     {
       "id": "kia-ev6",
       "displayName": "Kia EV6",
       "familySlug": "kia-ev6",
+      "brand": "Kia",
+      "variantCount": 2,
       "verificationLevel": "manual_review",
-      "variantCount": 2
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.kia.com/in/our-vehicles/ev6/showroom.html",
+        "https://www.cardekho.com/kia/ev6"
+      ]
     },
     {
       "id": "mahindra-xuv400",
       "displayName": "Mahindra XUV400",
       "familySlug": "mahindra-xuv400",
+      "brand": "Mahindra",
+      "variantCount": 4,
       "verificationLevel": "manual_review",
-      "variantCount": 4
+      "mediaCount": 1,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://auto.mahindra.com/suv/xuv400/X400.html",
+        "https://www.cardekho.com/mahindra/xuv400"
+      ]
     },
     {
       "id": "byd-seal",
       "displayName": "BYD Seal",
       "familySlug": "byd-seal",
+      "brand": "BYD",
+      "variantCount": 3,
       "verificationLevel": "manual_review",
-      "variantCount": 3
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.bydautoindia.com/bydseal",
+        "https://www.cardekho.com/byd/seal"
+      ]
     },
     {
       "id": "bmw-ix1",
       "displayName": "BMW iX1",
       "familySlug": "bmw-ix1",
+      "brand": "BMW",
+      "variantCount": 2,
       "verificationLevel": "manual_review",
-      "variantCount": 2
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.bmw.in/en/all-models/bmw-i/iX1/2025/bmw-ix1-highlights.html",
+        "https://www.cardekho.com/bmw/ix1"
+      ]
     },
     {
       "id": "mercedes-eqa",
       "displayName": "Mercedes-Benz EQA",
       "familySlug": "mercedes-eqa",
+      "brand": "Mercedes-Benz",
+      "variantCount": 2,
       "verificationLevel": "manual_review",
-      "variantCount": 2
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqa.html",
+        "https://www.cardekho.com/mercedes-benz/eqa"
+      ]
     },
     {
       "id": "mercedes-eqb",
       "displayName": "Mercedes-Benz EQB",
       "familySlug": "mercedes-eqb",
+      "brand": "Mercedes-Benz",
+      "variantCount": 2,
       "verificationLevel": "manual_review",
-      "variantCount": 2
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqb.html",
+        "https://www.cardekho.com/mercedes-benz/eqb"
+      ]
     },
     {
       "id": "volvo-ex40",
       "displayName": "Volvo EX40",
       "familySlug": "volvo-ex40",
+      "brand": "Volvo",
+      "variantCount": 2,
       "verificationLevel": "manual_review",
-      "variantCount": 2
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.volvocars.com/in/cars/ex40-electric/",
+        "https://www.cardekho.com/volvo/ex40"
+      ]
     },
     {
       "id": "mini-cooper-se",
       "displayName": "MINI Cooper SE",
       "familySlug": "mini-cooper-se",
+      "brand": "MINI",
+      "variantCount": 2,
       "verificationLevel": "manual_review",
-      "variantCount": 2
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.mini.in/en_IN/home/range/mini-cooper-se-electric.html",
+        "https://www.cardekho.com/mini/cooper-se"
+      ]
     },
     {
       "id": "citroen-ec3",
       "displayName": "Citroen eC3",
       "familySlug": "citroen-ec3",
+      "brand": "Citroen",
+      "variantCount": 4,
       "verificationLevel": "manual_review",
-      "variantCount": 4
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.citroen.in/models/new-e-c3.html",
+        "https://www.cardekho.com/citroen/ec3"
+      ]
     },
     {
       "id": "mg-zs-ev",
       "displayName": "MG ZS EV",
       "familySlug": "mg-zs-ev",
+      "brand": "MG",
+      "variantCount": 3,
       "verificationLevel": "manual_review",
-      "variantCount": 3
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.mgmotor.co.in/vehicles/mgzsev-electric-car-in-india",
+        "https://www.cardekho.com/mg/zs-ev",
+        "OEM brochure PDF"
+      ]
     },
     {
       "id": "maruti-e-vitara",
       "displayName": "Maruti Suzuki e Vitara",
       "familySlug": "maruti-e-vitara",
+      "brand": "Maruti Suzuki",
+      "variantCount": 3,
       "verificationLevel": "manual_review",
-      "variantCount": 3
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.nexaexperience.com/e-vitara",
+        "https://www.cardekho.com/maruti/e-vitara"
+      ]
     },
     {
       "id": "hyundai-kona-electric",
       "displayName": "Hyundai Kona Electric",
       "familySlug": "hyundai-kona-electric",
+      "brand": "Hyundai",
+      "variantCount": 1,
       "verificationLevel": "manual_review",
-      "variantCount": 1
+      "mediaCount": 1,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://www.hyundai.com/in/en/find-a-car/kona-electric/highlights",
+        "https://www.cardekho.com/hyundai/kona-electric"
+      ]
     },
     {
       "id": "tata-tigor-ev",
       "displayName": "Tata Tigor EV",
       "familySlug": "tata-tigor-ev",
+      "brand": "Tata",
+      "variantCount": 4,
       "verificationLevel": "manual_review",
-      "variantCount": 4
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://ev.tatamotors.com/tigor/ev.html",
+        "https://www.cardekho.com/tata/tigor-ev"
+      ]
     },
     {
       "id": "tata-tiago-ev",
       "displayName": "Tata Tiago EV",
       "familySlug": "tata-tiago-ev",
+      "brand": "Tata",
+      "variantCount": 4,
       "verificationLevel": "manual_review",
-      "variantCount": 4
+      "mediaCount": 2,
+      "updatedAt": "2026-06-11",
+      "sources": [
+        "https://ev.tatamotors.com/tiago/ev.html",
+        "https://www.cardekho.com/tata/tiago-ev"
+      ]
     },
     {
       "id": "tata-harrier-ev",
       "displayName": "Tata Harrier EV",
       "familySlug": "tata-harrier-ev",
+      "brand": "Tata",
+      "variantCount": 8,
       "verificationLevel": "manual_review",
-      "variantCount": 8
+      "mediaCount": 7,
+      "updatedAt": "2026-06-10",
+      "sources": [
+        "https://ev.tatamotors.com/harrier/ev.html",
+        "https://www.cardekho.com/tata/harrier-ev"
+      ]
     }
   ]
 }

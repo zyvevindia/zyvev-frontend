@@ -9,7 +9,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 
 /**
- * @param {import('../../src/backend/catalog/tier1CatalogDefinitions.js').TIER1_CATALOG_DEFINITIONS[0]} def
+ * @param {import('../../src/backend/catalog/generated/index.js').GENERATED_TIER1_DEFINITIONS[string]} def
  */
 export function definitionToAuditCar(def) {
   const primary = def.variants?.[0] || {};
@@ -97,10 +97,10 @@ export function definitionToAuditCar(def) {
 
 export async function loadTier1Definitions() {
   const url = pathToFileURL(
-    join(ROOT, "src/backend/catalog/tier1CatalogDefinitions.js")
+    join(ROOT, "src/backend/catalog/generated/index.js")
   ).href;
   const mod = await import(url);
-  return mod.TIER1_CATALOG_DEFINITIONS || [];
+  return Object.values(mod.GENERATED_TIER1_DEFINITIONS || {});
 }
 
 export async function loadCatalogCarsForAudit() {

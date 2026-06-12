@@ -1,0 +1,756 @@
+{
+  "phase": "catalog-phase6a-cutover",
+  "generatedAt": "2026-06-11T09:17:50.188Z",
+  "vehiclesAudited": 25,
+  "generatedVerifiedUsage": 25,
+  "generatedTier1Usage": 25,
+  "generatedRuntimeUsage": 50,
+  "manualFallbackCount": 0,
+  "mismatchCount": 0,
+  "manualRuntimeDriftCount": 18,
+  "manualRuntimeDrift": [
+    {
+      "field": "power",
+      "familySlug": "tata-nexon-ev",
+      "slug": "tata-nexon-ev-creative-45",
+      "generated": 94.7,
+      "manual": 105.9
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-nexon-ev",
+      "slug": "tata-nexon-ev-fearless-45",
+      "generated": 94.7,
+      "manual": 105.9
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-nexon-ev",
+      "slug": "tata-nexon-ev-empowered-lr",
+      "generated": 94.7,
+      "manual": 105.9
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-nexon-ev",
+      "slug": "tata-nexon-ev-empowered-plus-45",
+      "generated": 94.7,
+      "manual": 105.9
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-nexon-ev",
+      "slug": "tata-nexon-ev-empowered-plus-45-red-dark",
+      "generated": 94.7,
+      "manual": 105.9
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-nexon-ev",
+      "slug": "tata-nexon-ev-empowered-plus-a-45",
+      "generated": 94.7,
+      "manual": 105.9
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-nexon-ev",
+      "slug": "tata-nexon-ev-empowered-plus-a-45-dark",
+      "generated": 94.7,
+      "manual": 105.9
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-nexon-ev",
+      "slug": "tata-nexon-ev-empowered-plus-a-45-red-dark",
+      "generated": 94.7,
+      "manual": 105.9
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-punch-ev",
+      "slug": "tata-punch-ev-smart-plus-40-kwh",
+      "generated": 64.9,
+      "manual": 94.7
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-punch-ev",
+      "slug": "tata-punch-ev-adventure",
+      "generated": 64.9,
+      "manual": 94.7
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-punch-ev",
+      "slug": "tata-punch-ev-empowered",
+      "generated": 64.9,
+      "manual": 94.7
+    },
+    {
+      "field": "power",
+      "familySlug": "tata-punch-ev",
+      "slug": "tata-punch-ev-empowered-plus",
+      "generated": 64.9,
+      "manual": 94.7
+    },
+    {
+      "field": "media.hasHero",
+      "familySlug": "tata-curvv-ev",
+      "generated": true,
+      "manual": false
+    },
+    {
+      "field": "media.hasListing",
+      "familySlug": "tata-curvv-ev",
+      "generated": true,
+      "manual": false
+    },
+    {
+      "field": "media.hasCompare",
+      "familySlug": "tata-curvv-ev",
+      "generated": true,
+      "manual": false
+    },
+    {
+      "field": "media.hasHero",
+      "familySlug": "tata-tiago-ev",
+      "generated": false,
+      "manual": true
+    },
+    {
+      "field": "media.hasListing",
+      "familySlug": "tata-tiago-ev",
+      "generated": false,
+      "manual": true
+    },
+    {
+      "field": "media.hasCompare",
+      "familySlug": "tata-tiago-ev",
+      "generated": false,
+      "manual": true
+    }
+  ],
+  "fieldsCompared": [
+    "variantCount",
+    "battery",
+    "range",
+    "charging",
+    "power",
+    "torque",
+    "media",
+    "pricing"
+  ],
+  "runtimeConsumers": [
+    {
+      "id": "buildVerifiedDossierVariants.js",
+      "change": "hasVerifiedDossier / buildVerifiedDossierMarketplaceVariants prefer generated dossiers; manual rollback on missing generated."
+    },
+    {
+      "id": "backend-seed-tier1.mjs",
+      "change": "Seeds from src/backend/catalog/generated/index.js first; tier1CatalogDefinitions.js manual fallback."
+    },
+    {
+      "id": "vehicleDetailResolver.js",
+      "change": "Unchanged import surface — consumes buildVerifiedDossierVariants cutover layer."
+    }
+  ],
+  "rollbackPreserved": [
+    "src/data/catalog/verified/*",
+    "src/backend/catalog/tier1CatalogDefinitions.js"
+  ],
+  "generatedCoverage": {
+    "verifiedDossierSlugs": [
+      "bmw-ix1",
+      "byd-atto-3",
+      "byd-seal",
+      "citroen-ec3",
+      "hyundai-creta-electric",
+      "hyundai-ioniq-5",
+      "hyundai-kona-electric",
+      "kia-ev6",
+      "mahindra-be-6",
+      "mahindra-xev-9e",
+      "mahindra-xuv400",
+      "maruti-e-vitara",
+      "mercedes-eqa",
+      "mercedes-eqb",
+      "mg-comet-ev",
+      "mg-windsor-ev",
+      "mg-zs-ev",
+      "mini-cooper-se",
+      "tata-curvv-ev",
+      "tata-harrier-ev",
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-tiago-ev",
+      "tata-tigor-ev",
+      "volvo-ex40"
+    ],
+    "tier1Slugs": [
+      "bmw-ix1",
+      "byd-atto-3",
+      "byd-seal",
+      "citroen-ec3",
+      "hyundai-creta-electric",
+      "hyundai-ioniq-5",
+      "hyundai-kona-electric",
+      "kia-ev6",
+      "mahindra-be-6",
+      "mahindra-xev-9e",
+      "mahindra-xuv400",
+      "maruti-e-vitara",
+      "mercedes-eqa",
+      "mercedes-eqb",
+      "mg-comet-ev",
+      "mg-windsor-ev",
+      "mg-zs-ev",
+      "mini-cooper-se",
+      "tata-curvv-ev",
+      "tata-harrier-ev",
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-tiago-ev",
+      "tata-tigor-ev",
+      "volvo-ex40"
+    ]
+  },
+  "vehicleAudits": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": [
+        {
+          "field": "power",
+          "familySlug": "tata-nexon-ev",
+          "slug": "tata-nexon-ev-creative-45",
+          "generated": 94.7,
+          "manual": 105.9
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-nexon-ev",
+          "slug": "tata-nexon-ev-fearless-45",
+          "generated": 94.7,
+          "manual": 105.9
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-nexon-ev",
+          "slug": "tata-nexon-ev-empowered-lr",
+          "generated": 94.7,
+          "manual": 105.9
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-nexon-ev",
+          "slug": "tata-nexon-ev-empowered-plus-45",
+          "generated": 94.7,
+          "manual": 105.9
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-nexon-ev",
+          "slug": "tata-nexon-ev-empowered-plus-45-red-dark",
+          "generated": 94.7,
+          "manual": 105.9
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-nexon-ev",
+          "slug": "tata-nexon-ev-empowered-plus-a-45",
+          "generated": 94.7,
+          "manual": 105.9
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-nexon-ev",
+          "slug": "tata-nexon-ev-empowered-plus-a-45-dark",
+          "generated": 94.7,
+          "manual": 105.9
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-nexon-ev",
+          "slug": "tata-nexon-ev-empowered-plus-a-45-red-dark",
+          "generated": 94.7,
+          "manual": 105.9
+        }
+      ]
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": [
+        {
+          "field": "power",
+          "familySlug": "tata-punch-ev",
+          "slug": "tata-punch-ev-smart-plus-40-kwh",
+          "generated": 64.9,
+          "manual": 94.7
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-punch-ev",
+          "slug": "tata-punch-ev-adventure",
+          "generated": 64.9,
+          "manual": 94.7
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-punch-ev",
+          "slug": "tata-punch-ev-empowered",
+          "generated": 64.9,
+          "manual": 94.7
+        },
+        {
+          "field": "power",
+          "familySlug": "tata-punch-ev",
+          "slug": "tata-punch-ev-empowered-plus",
+          "generated": 64.9,
+          "manual": 94.7
+        }
+      ]
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": [
+        {
+          "field": "media.hasHero",
+          "familySlug": "tata-curvv-ev",
+          "generated": true,
+          "manual": false
+        },
+        {
+          "field": "media.hasListing",
+          "familySlug": "tata-curvv-ev",
+          "generated": true,
+          "manual": false
+        },
+        {
+          "field": "media.hasCompare",
+          "familySlug": "tata-curvv-ev",
+          "generated": true,
+          "manual": false
+        }
+      ]
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": false,
+        "manualStale": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": false,
+        "manualStale": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": false,
+        "manualStale": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": false,
+        "manualStale": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "kia-ev6",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": false,
+        "manualStale": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "byd-seal",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "bmw-ix1",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": false,
+        "manualStale": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": false,
+        "manualStale": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": true,
+        "manualAligned": true
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": [
+        {
+          "field": "media.hasHero",
+          "familySlug": "tata-tiago-ev",
+          "generated": false,
+          "manual": true
+        },
+        {
+          "field": "media.hasListing",
+          "familySlug": "tata-tiago-ev",
+          "generated": false,
+          "manual": true
+        },
+        {
+          "field": "media.hasCompare",
+          "familySlug": "tata-tiago-ev",
+          "generated": false,
+          "manual": true
+        }
+      ]
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "verifiedDossier": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false
+      },
+      "tier1": {
+        "hasGenerated": true,
+        "runtimeSource": "generated",
+        "manualComparable": false,
+        "manualAligned": false
+      },
+      "goldenFidelityMismatches": [],
+      "manualRuntimeDrift": []
+    }
+  ],
+  "mismatches": [],
+  "notes": [
+    "Golden manifest families continue to use goldenCatalogListing authority in vehicleDetailResolver.",
+    "Verified dossier cutover applies to non-manifest legacy branch and listing merge path.",
+    "Manual tier1 families outside MANUAL_TIER1_ALIGNED are documented as stale, not mismatch failures."
+  ]
+}

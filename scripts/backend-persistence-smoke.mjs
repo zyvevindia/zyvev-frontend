@@ -207,7 +207,7 @@ async function main() {
     if (vehicle.ok && vehicle.data) {
       ok("catalog read tata-nexon-ev (seed present)");
     } else {
-      ok("catalog read tata-nexon-ev skipped (run backend:seed-nexon-ev with service role)");
+      ok("catalog read tata-nexon-ev skipped (run backend:seed-tier1 with service role)");
     }
   } else if (LIVE) {
     ok("live test skipped (env not configured)");

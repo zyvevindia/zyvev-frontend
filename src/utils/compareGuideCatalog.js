@@ -2,7 +2,14 @@ import { API_URL } from "../config";
 import { safeFetchJsonWithRetry } from "./safeFetch";
 import normalizeCar from "./normalizeCar";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
-import { fetchVehicleBySlug } from "./vehicleDetailResolver";
+import {
+  fetchListingCatalogVariants,
+  fetchVehicleBySlug,
+} from "./vehicleDetailResolver";
+import {
+  isGoldenDatasetFamily,
+  loadBundledGoldenDatasetFamilyVariants,
+} from "./goldenCatalogListing.js";
 import {
   aggregateModelFamilies,
   extractFamilySlug,
@@ -112,11 +119,49 @@ export function rankedVehicleToCompareCar(ranked, seoPage = null) {
   return applyCompareDisplayName(stub, seoPage, slug);
 }
 
+/**
+ * Phase 2.5: golden manifest families use the same listing resolver as CarDetails.
+ * API paths apply only when the family is absent from golden manifest.
+ */
 async function fetchCatalogPool(slugs) {
-  const fetched = [];
+  const familySlugs = [
+    ...new Set(
+      slugs
+        .map((s) => normalizeVehicleSlug(extractFamilySlug(s) || s))
+        .filter(Boolean)
+    ),
+  ];
+
+  const catalogVariants = await fetchListingCatalogVariants({ limit: 120 });
+  const pool = catalogVariants.filter((c) =>
+    familySlugs.includes(extractFamilySlug(c.slug))
+  );
+
+  const coveredFamilies = new Set(
+    pool.map((c) => extractFamilySlug(c.slug))
+  );
+
+  for (const familySlug of familySlugs) {
+    if (coveredFamilies.has(familySlug)) continue;
+    if (!isGoldenDatasetFamily(familySlug)) continue;
+
+    const golden = loadBundledGoldenDatasetFamilyVariants(familySlug);
+    if (golden.length > 0) {
+      pool.push(...golden);
+      coveredFamilies.add(familySlug);
+    }
+  }
+
+  const missingFamilies = familySlugs.filter((f) => !coveredFamilies.has(f));
+  if (missingFamilies.length === 0) {
+    return pool;
+  }
+
+  const apiFamilies = missingFamilies.filter((f) => !isGoldenDatasetFamily(f));
+  const fetched = [...pool];
 
   const results = await Promise.all(
-    slugs.map((slug) => fetchVehicleBySlug(slug))
+    apiFamilies.map((slug) => fetchVehicleBySlug(slug))
   );
   for (const row of results) {
     if (row?.vehicle) fetched.push(normalizeCar(row.vehicle));
@@ -136,11 +181,17 @@ async function fetchCatalogPool(slugs) {
       subsystem: "compare-guide",
     });
     for (const c of list) {
+      const family = extractFamilySlug(c.slug);
+      if (isGoldenDatasetFamily(family)) continue;
+
       const key = normalizeVehicleSlug(c.slug);
+      const needed =
+        apiFamilies.includes(family) ||
+        missingFamilies.includes(family);
+      if (!needed) continue;
+
       if (
-        !fetched.some(
-          (m) => normalizeVehicleSlug(m.slug) === key
-        )
+        !fetched.some((m) => normalizeVehicleSlug(m.slug) === key)
       ) {
         fetched.push(c);
       }

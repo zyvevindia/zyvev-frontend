@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": null,
     "airbags": null,
     "adas": null,
-    "powerPs": null,
-    "torqueNm": null
+    "powerPs": 190,
+    "torqueNm": 385,
+    "powerKw": 140
   },
   "features": {
     "sunroof": false,
@@ -44,7 +45,10 @@
       "batteryKwh": 66.5,
       "rangeKm": 534,
       "acChargingKw": 11,
-      "dcChargingKw": 100
+      "dcChargingKw": 100,
+      "powerPs": 190,
+      "powerKw": 140,
+      "torqueNm": 385
     },
     {
       "variantName": "EQB 350 4MATIC",
@@ -52,7 +56,10 @@
       "batteryKwh": 66.5,
       "rangeKm": 534,
       "acChargingKw": 11,
-      "dcChargingKw": 100
+      "dcChargingKw": 100,
+      "powerPs": 292,
+      "powerKw": 215,
+      "torqueNm": 520
     }
   ],
   "verificationLevel": "manual_review",
@@ -66,6 +73,40 @@
     "pipelineConfidence": 93,
     "manualCorrections": [
       "variant_table_manual"
+    ],
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Mercedes-Benz India EQB specs (250+ 190 PS; 350 4MATIC 292 PS / 215 kW)",
+      "sprint": "variant-power-completion"
+    }
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/mercedes-eqb/listing.webp",
+    "compareThumbnail": "/images/cars/mercedes-eqb/compare.webp",
+    "heroImage": "/images/cars/mercedes-eqb/front.webp",
+    "front": "/images/cars/mercedes-eqb/front.webp",
+    "rear": "/images/cars/mercedes-eqb/rear.webp",
+    "side": "/images/cars/mercedes-eqb/side.webp",
+    "interior": "/images/cars/mercedes-eqb/interior.webp",
+    "dashboard": "/images/cars/mercedes-eqb/dashboard.webp",
+    "gallery": [
+      "/images/cars/mercedes-eqb/front.webp",
+      "/images/cars/mercedes-eqb/rear.webp",
+      "/images/cars/mercedes-eqb/side.webp",
+      "/images/cars/mercedes-eqb/interior.webp",
+      "/images/cars/mercedes-eqb/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mercedes-eqb/front.webp",
+      "/images/cars/mercedes-eqb/rear.webp",
+      "/images/cars/mercedes-eqb/side.webp",
+      "/images/cars/mercedes-eqb/interior.webp",
+      "/images/cars/mercedes-eqb/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mercedes-eqb/interior.webp",
+      "/images/cars/mercedes-eqb/dashboard.webp"
     ]
   }
 }

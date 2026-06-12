@@ -1,0 +1,42 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "tata-nexon-ev",
+    "displayName": "Tata Nexon EV",
+    "brand": "Tata",
+    "model": "Nexon EV",
+    "bodyStyle": "SUV",
+    "variantCount": 13,
+    "verificationLevel": "verified_dossier",
+    "priceBand": {
+      "minInr": 1249000,
+      "maxInr": 1749000
+    },
+    "rangeBand": {
+      "minKm": 275,
+      "maxKm": 489
+    },
+    "maxRangeKm": 489,
+    "startingPriceInr": 1249000,
+    "topVariantPriceInr": 1749000,
+    "charging": {
+      "acKw": 7.2,
+      "dcKw": 50,
+      "acTimeHours": 4.3,
+      "dcTimeMinutes": 56,
+      "rangeTestStandard": "MIDC"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "EVSavari Verified Dossier"
+    ],
+    "verifiedAt": "2026-06-08",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-nexon-ev.json"
+  }
+}

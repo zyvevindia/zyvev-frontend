@@ -8,6 +8,7 @@ import {
   fetchGoldenManifest,
 } from "../catalogAcquisition/benchmark/goldenLoader.js";
 import normalizeCar from "./normalizeCar.js";
+import { formatAcChargeDurationLabel } from "./formatChargingDuration.js";
 import { extractFamilySlug } from "./modelFamily.js";
 import { normalizeVehicleSlug } from "./vehicleRoutes.js";
 
@@ -44,12 +45,19 @@ function slugifyVariantName(name = "") {
 }
 
 function buildGoldenChargingSummary({ acKw, dcKw, dcMinutes, acHours }) {
-  const parts = [];
-  if (dcKw) parts.push(`${dcKw} kW DC`);
-  if (dcMinutes != null) parts.push(`${dcMinutes} min`);
-  if (acKw) parts.push(`${acKw} kW AC`);
-  if (acHours != null) parts.push(`${acHours} hrs`);
-  return parts.length ? parts.join(" • ") : undefined;
+  const segments = [];
+  const dcParts = [];
+  if (dcKw) dcParts.push(`${dcKw} kW`);
+  if (dcMinutes != null) dcParts.push(`${dcMinutes} min`);
+  if (dcParts.length) segments.push(`DC: ${dcParts.join(" • ")}`);
+
+  const acParts = [];
+  if (acKw) acParts.push(`${acKw} kW`);
+  const acLabel = formatAcChargeDurationLabel(acHours);
+  if (acLabel) acParts.push(acLabel);
+  if (acParts.length) segments.push(`AC: ${acParts.join(" • ")}`);
+
+  return segments.length ? segments.join(" · ") : undefined;
 }
 
 function buildGoldenVariantCatalogMeta({
@@ -69,16 +77,23 @@ function buildGoldenVariantCatalogMeta({
     fields.dcChargingTimeMinutes ??
     null;
   const acHours = row.acChargingTimeHours ?? fields.acChargingTimeHours ?? null;
+  const powerBhpRaw = row.powerBhp ?? fields.powerBhp ?? null;
   const powerPsRaw = row.powerPs ?? fields.powerPs ?? null;
   const powerKwRaw = row.powerKw ?? fields.powerKw ?? null;
+  const powerBhp =
+    powerBhpRaw != null && Number.isFinite(Number(powerBhpRaw))
+      ? Number(powerBhpRaw)
+      : null;
   const powerPs =
     powerPsRaw != null && Number.isFinite(Number(powerPsRaw))
       ? Number(powerPsRaw)
-      : null;
+      : powerBhp;
   const powerKw =
     powerKwRaw != null && Number.isFinite(Number(powerKwRaw))
       ? Number(powerKwRaw)
-      : null;
+      : powerBhp != null
+        ? Math.round(powerBhp * 0.7457 * 100) / 100
+        : null;
   const torqueNmRaw = row.torqueNm ?? fields.torqueNm ?? null;
   const torqueNm =
     torqueNmRaw != null && Number.isFinite(Number(torqueNmRaw))
@@ -91,12 +106,39 @@ function buildGoldenVariantCatalogMeta({
     acHours,
   });
 
+  const realWorldMin =
+    row.realWorldRangeKmMin ??
+    row.realWorldRangeKm?.min ??
+    fields.realWorldRangeKmMin ??
+    fields.realWorldRangeKm?.min ??
+    null;
+  const realWorldMax =
+    row.realWorldRangeKmMax ??
+    row.realWorldRangeKm?.max ??
+    fields.realWorldRangeKmMax ??
+    fields.realWorldRangeKm?.max ??
+    null;
+  const realWorldRangeKm =
+    realWorldMin != null || realWorldMax != null
+      ? {
+          min:
+            realWorldMin != null && Number.isFinite(Number(realWorldMin))
+              ? Number(realWorldMin)
+              : null,
+          max:
+            realWorldMax != null && Number.isFinite(Number(realWorldMax))
+              ? Number(realWorldMax)
+              : null,
+        }
+      : null;
+
   return {
     slug,
     familySlug,
     media,
     verificationLevel: dossier.verificationLevel,
     claimedRangeKm: rangeKm ?? fields.claimedRangeKm ?? null,
+    ...(realWorldRangeKm ? { realWorldRangeKm } : {}),
     dcChargingTimeMinutes: dcMinutes,
     chargingSummary,
     chargingIntelligence: {
@@ -112,7 +154,7 @@ function buildGoldenVariantCatalogMeta({
     performance: {
       powerPs,
       powerKw,
-      powerBhp: powerPs != null ? Math.round(powerPs) : null,
+      powerBhp,
       torqueNm,
     },
   };
@@ -214,10 +256,20 @@ const GOLDEN_FAMILY_SLUGS = new Set(
     .filter(Boolean)
 );
 
-/** @param {string} familySlug */
+/**
+ * True when familySlug is listed in public/catalog/golden-dataset/manifest.json.
+ * Phase 2 authority: these families always resolve from golden JSON at runtime
+ * (verified dossier and API are bypassed for variant data).
+ * @param {string} familySlug
+ */
 export function isGoldenDatasetFamily(familySlug) {
   const slug = normalizeVehicleSlug(familySlug);
   return slug ? GOLDEN_FAMILY_SLUGS.has(slug) : false;
+}
+
+/** @returns {string[]} sorted golden manifest family slugs */
+export function getGoldenManifestFamilySlugs() {
+  return [...GOLDEN_FAMILY_SLUGS].sort((a, b) => a.localeCompare(b));
 }
 
 /**

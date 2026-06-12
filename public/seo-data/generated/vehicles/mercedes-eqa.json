@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "mercedes-eqa",
+    "displayName": "Mercedes-Benz EQA",
+    "brand": "Mercedes-Benz",
+    "model": "EQA",
+    "bodyStyle": "SUV",
+    "variantCount": 2,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 6775000,
+      "maxInr": 7195000
+    },
+    "rangeBand": {
+      "minKm": 560,
+      "maxKm": 592
+    },
+    "maxRangeKm": 592,
+    "startingPriceInr": 6775000,
+    "topVariantPriceInr": 7195000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 100,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqa.html",
+      "https://www.cardekho.com/mercedes-benz/eqa"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/mercedes-eqa.json"
+  }
+}

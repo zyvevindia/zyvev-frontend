@@ -35,9 +35,9 @@
         "displayName": "MG Windsor EV",
         "exShowroom": 999000,
         "claimedRangeKm": 331,
-        "compositeScore": 52,
+        "compositeScore": 49,
         "confidence": "limited",
-        "explanation": "MG Windsor EV — overall score 52/100. Range 331 km, from ₹9.99 L.",
+        "explanation": "MG Windsor EV — overall score 49/100. Range 331 km, from ₹9.99 L.",
         "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability.",
         "detailPath": "/cars/mg-windsor-ev"
       }
@@ -69,7 +69,7 @@
     ],
     "canonicalPath": "/compare/tata-punch-ev-vs-mg-windsor-ev-agent",
     "canonicalUrl": "https://evsavari.com/compare/tata-punch-ev-vs-mg-windsor-ev-agent",
-    "generatedAt": "2026-06-11T07:44:25.609Z",
+    "generatedAt": "2026-06-12T06:44:15.498Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",

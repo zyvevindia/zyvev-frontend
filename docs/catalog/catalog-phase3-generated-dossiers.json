@@ -1,0 +1,499 @@
+{
+  "generatedAt": "2026-06-11T08:41:34.675Z",
+  "phase": 3,
+  "dependencyMap": {
+    "manualVerifiedFiles": [
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-tiago-ev"
+    ],
+    "generatedOutput": "src/data/catalog/generated/*.js",
+    "generatedIndex": "src/data/catalog/generated/index.js",
+    "runtimeConsumers": [
+      "buildVerifiedDossierVariants.js → hasVerifiedDossier / buildVerifiedDossierMarketplaceVariants",
+      "vehicleDetailResolver.js (legacy verified branch)",
+      "applyVerifiedCatalogOverlay.js → normalizeCar",
+      "tier1CatalogDefinitions.js → Supabase seed",
+      "resolveDossierSlug.js → vehicleRoutes.js"
+    ],
+    "generatedConsumers": [
+      "catalog-phase3-generated-audit.mjs (audit only — not wired to runtime yet)"
+    ]
+  },
+  "summary": {
+    "generatedDossierCount": 25,
+    "vehiclesCompared": 25,
+    "manualDossierFamilies": 3,
+    "totalMismatchCount": 0,
+    "fieldsCompared": [
+      "variantCount",
+      "pricing",
+      "range",
+      "battery",
+      "charging",
+      "power",
+      "media"
+    ]
+  },
+  "hiddenPrecedenceRules": [
+    {
+      "id": "manual-verified-dossier-runtime",
+      "location": "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "consumers": [
+        "vehicleDetailResolver.js (legacy branch)",
+        "applyVerifiedCatalogOverlay.js",
+        "tier1CatalogDefinitions.js"
+      ],
+      "phase3Status": "Still active at runtime — generated dossiers are parallel only."
+    },
+    {
+      "id": "normalize-car-overlay",
+      "location": "src/utils/normalizeCar.js → applyVerifiedCatalogOverlay",
+      "description": "Manual overlay applied during normalizeCar for Tata families.",
+      "phase3Status": "Unchanged — not wired to generated dossiers yet."
+    },
+    {
+      "id": "slug-alias-resolvers",
+      "location": "src/data/catalog/verified/*SlugAliases.js, resolveDossierSlug.js",
+      "phase3Status": "Manual slug maps remain; generated uses golden slugify rules."
+    },
+    {
+      "id": "golden-runtime-authority",
+      "location": "vehicleDetailResolver.js + compareGuideCatalog.js",
+      "phase3Status": "Production variant data uses golden JSON directly; verified JS is legacy parallel."
+    }
+  ],
+  "vehicles": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "hasManualDossier": true,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 13,
+      "manualVariantCount": 13,
+      "comparisonStatus": "manual-vs-generated",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/tata-nexon-ev.json",
+      "compareFields": [
+        "variantCount",
+        "pricing",
+        "range",
+        "battery",
+        "charging",
+        "power",
+        "media"
+      ]
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "hasManualDossier": true,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 6,
+      "manualVariantCount": 6,
+      "comparisonStatus": "manual-vs-generated",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/tata-punch-ev.json",
+      "compareFields": [
+        "variantCount",
+        "pricing",
+        "range",
+        "battery",
+        "charging",
+        "power",
+        "media"
+      ]
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/tata-curvv-ev.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/mg-windsor-ev.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/mahindra-be-6.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/mahindra-xev-9e.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/byd-atto-3.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/hyundai-creta-electric.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/mg-comet-ev.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 2,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/hyundai-ioniq-5.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 2,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/kia-ev6.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 4,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/mahindra-xuv400.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "byd-seal",
+      "displayName": "BYD Seal",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/byd-seal.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 2,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/bmw-ix1.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 2,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/mercedes-eqa.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 2,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/mercedes-eqb.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 2,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/volvo-ex40.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 2,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/mini-cooper-se.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 4,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/citroen-ec3.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/mg-zs-ev.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 3,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/maruti-e-vitara.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 1,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/hyundai-kona-electric.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 4,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/tata-tigor-ev.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "hasManualDossier": true,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 4,
+      "manualVariantCount": 4,
+      "comparisonStatus": "manual-vs-generated",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [
+        {
+          "field": "media.hasHero",
+          "note": "legacy manual CDN enrichment beyond golden canonical"
+        },
+        {
+          "field": "media.hasListing",
+          "note": "legacy manual CDN enrichment beyond golden canonical"
+        },
+        {
+          "field": "media.hasCompare",
+          "note": "legacy manual CDN enrichment beyond golden canonical"
+        }
+      ],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/tata-tiago-ev.json",
+      "compareFields": [
+        "variantCount",
+        "pricing",
+        "range",
+        "battery",
+        "charging",
+        "power",
+        "media"
+      ]
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "hasManualDossier": false,
+      "hasGeneratedDossier": true,
+      "generatedVariantCount": 8,
+      "manualVariantCount": 0,
+      "comparisonStatus": "generated-only",
+      "mismatchCount": 0,
+      "mismatches": [],
+      "mediaEnrichmentDelta": [],
+      "generatedSource": "public/catalog/golden-dataset/vehicles/tata-harrier-ev.json",
+      "compareFields": [
+        "generated-from-golden"
+      ]
+    }
+  ]
+}

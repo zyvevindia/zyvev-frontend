@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": 30,
     "airbags": 8,
     "adas": "true",
-    "powerPs": null,
-    "torqueNm": null
+    "powerPs": 313,
+    "torqueNm": 494,
+    "powerKw": 230
   },
   "features": {
     "sunroof": true,
@@ -44,7 +45,10 @@
       "batteryKwh": 64.7,
       "rangeKm": 531,
       "acChargingKw": 11,
-      "dcChargingKw": 130
+      "dcChargingKw": 130,
+      "powerPs": 313,
+      "powerKw": 230,
+      "torqueNm": 494
     },
     {
       "variantName": "xDrive30 M Sport (LWB)",
@@ -52,7 +56,10 @@
       "batteryKwh": 64.7,
       "rangeKm": 531,
       "acChargingKw": 11,
-      "dcChargingKw": 130
+      "dcChargingKw": 130,
+      "powerPs": 313,
+      "powerKw": 230,
+      "torqueNm": 494
     }
   ],
   "verificationLevel": "manual_review",
@@ -67,6 +74,40 @@
     "manualCorrections": [
       "variant_table_manual",
       "qa_variant_refresh"
+    ],
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "BMW Group iX1 xDrive30 technical specifications (313 PS / 230 kW)",
+      "sprint": "variant-power-completion"
+    }
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/bmw-ix1/listing.webp",
+    "compareThumbnail": "/images/cars/bmw-ix1/compare.webp",
+    "heroImage": "/images/cars/bmw-ix1/front.webp",
+    "front": "/images/cars/bmw-ix1/front.webp",
+    "rear": "/images/cars/bmw-ix1/rear.webp",
+    "side": "/images/cars/bmw-ix1/side.webp",
+    "interior": "/images/cars/bmw-ix1/interior.webp",
+    "dashboard": "/images/cars/bmw-ix1/dashboard.webp",
+    "gallery": [
+      "/images/cars/bmw-ix1/front.webp",
+      "/images/cars/bmw-ix1/rear.webp",
+      "/images/cars/bmw-ix1/side.webp",
+      "/images/cars/bmw-ix1/interior.webp",
+      "/images/cars/bmw-ix1/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/bmw-ix1/front.webp",
+      "/images/cars/bmw-ix1/rear.webp",
+      "/images/cars/bmw-ix1/side.webp",
+      "/images/cars/bmw-ix1/interior.webp",
+      "/images/cars/bmw-ix1/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/bmw-ix1/interior.webp",
+      "/images/cars/bmw-ix1/dashboard.webp"
     ]
   }
 }

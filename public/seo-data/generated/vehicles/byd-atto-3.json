@@ -1,0 +1,42 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "byd-atto-3",
+    "displayName": "BYD Atto 3",
+    "brand": "BYD",
+    "model": "Atto 3",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 2499000,
+      "maxInr": 3399000
+    },
+    "rangeBand": {
+      "minKm": 521,
+      "maxKm": 521
+    },
+    "maxRangeKm": 521,
+    "startingPriceInr": 2499000,
+    "topVariantPriceInr": 3399000,
+    "charging": {
+      "acKw": 7,
+      "dcKw": 80,
+      "acTimeHours": 9.5,
+      "dcTimeMinutes": 30,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": false,
+      "hasListing": false,
+      "hasCompare": false,
+      "source": "local-cars"
+    },
+    "sources": [
+      "BYD India + CarWale (Jun 2026)"
+    ],
+    "verifiedAt": "2026-06-08",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/byd-atto-3.json"
+  }
+}

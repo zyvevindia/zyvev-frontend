@@ -34,11 +34,11 @@ async function main() {
     join(ROOT, "src/backend/catalog/catalogConventions.js")
   ).href;
   const defsUrl = pathToFileURL(
-    join(ROOT, "src/backend/catalog/tier1CatalogDefinitions.js")
+    join(ROOT, "src/backend/catalog/generated/index.js")
   ).href;
 
   const { DAY3_COMPARE_PAIRS } = await import(convUrl);
-  const { getTier1Definition } = await import(defsUrl);
+  const { getGeneratedTier1Definition } = await import(defsUrl);
 
   const compareXml = readFileSync(
     join(ROOT, "public/sitemaps/compare.xml"),
@@ -52,7 +52,7 @@ async function main() {
     }
 
     for (const family of pair.families) {
-      const def = getTier1Definition(family);
+      const def = getGeneratedTier1Definition(family);
       if (!def?.compareReady) {
         fail(`${pair.label}: ${family} not compare-ready in catalog definitions`);
       }

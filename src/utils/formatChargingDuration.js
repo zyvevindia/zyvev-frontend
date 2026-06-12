@@ -37,6 +37,41 @@ export function formatChargingDurationDisplay(text) {
  * @param {{ id?: string, group?: string }} row
  * @param {unknown} raw
  */
+/**
+ * Format AC 0–100% duration as buyer-facing "9 hr 24 min" copy.
+ * @param {unknown} hours
+ * @returns {string | null}
+ */
+export function formatAcChargeDurationLabel(hours) {
+  if (hours == null || hours === "") return null;
+  const total = Number(hours);
+  if (!Number.isFinite(total) || total <= 0) return null;
+
+  const wholeHours = Math.floor(total);
+  const minutes = Math.round((total - wholeHours) * 60);
+
+  if (wholeHours > 0 && minutes > 0) {
+    return `${wholeHours} hr ${minutes} min`;
+  }
+  if (wholeHours > 0) return `${wholeHours} hr`;
+  if (minutes > 0) return `${minutes} min`;
+  return null;
+}
+
+/**
+ * @param {unknown} bhp
+ * @returns {string | null}
+ */
+export function formatPowerBhpLabel(bhp) {
+  if (bhp == null || bhp === "") return null;
+  const n = Number(bhp);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  const rounded = Math.round(n * 10) / 10;
+  return Number.isInteger(rounded)
+    ? `${rounded} bhp`
+    : `${rounded.toFixed(1)} bhp`;
+}
+
 export function shouldFormatChargingDurationCell(row, raw) {
   if (raw == null || raw === "") return false;
   if (row?.group === "charging") return true;

@@ -1,6 +1,8 @@
-import { TATA_NEXON_FAMILY_SLUG } from "./tataNexonEvVerified.js";
-import { TATA_PUNCH_FAMILY_SLUG } from "./tataPunchEvVerified.js";
-import { TATA_TIAGO_FAMILY_SLUG } from "./tataTiagoEvVerified.js";
+import {
+  TATA_NEXON_FAMILY_SLUG,
+  TATA_PUNCH_FAMILY_SLUG,
+  TATA_TIAGO_FAMILY_SLUG,
+} from "../generated/overlays/familySlugs.js";
 import { resolveNexonDossierSlug } from "./nexonSlugAliases.js";
 import { resolvePunchDossierSlug } from "./punchSlugAliases.js";
 import { resolveTiagoDossierSlug } from "./tiagoSlugAliases.js";

@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "mercedes-eqb",
+    "displayName": "Mercedes-Benz EQB",
+    "brand": "Mercedes-Benz",
+    "model": "EQB",
+    "bodyStyle": "SUV",
+    "variantCount": 2,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 7375000,
+      "maxInr": 7775000
+    },
+    "rangeBand": {
+      "minKm": 534,
+      "maxKm": 534
+    },
+    "maxRangeKm": 534,
+    "startingPriceInr": 7375000,
+    "topVariantPriceInr": 7775000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 100,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqb.html",
+      "https://www.cardekho.com/mercedes-benz/eqb"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/mercedes-eqb.json"
+  }
+}

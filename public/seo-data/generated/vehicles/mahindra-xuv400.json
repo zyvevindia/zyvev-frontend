@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "mahindra-xuv400",
+    "displayName": "Mahindra XUV400",
+    "brand": "Mahindra",
+    "model": "XUV400",
+    "bodyStyle": "SUV",
+    "variantCount": 4,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 1599000,
+      "maxInr": 1899000
+    },
+    "rangeBand": {
+      "minKm": 375,
+      "maxKm": 456
+    },
+    "maxRangeKm": 456,
+    "startingPriceInr": 1599000,
+    "topVariantPriceInr": 1899000,
+    "charging": {
+      "acKw": 3.3,
+      "dcKw": 50,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "MIDC"
+    },
+    "media": {
+      "hasHero": false,
+      "hasListing": false,
+      "hasCompare": false,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://auto.mahindra.com/suv/xuv400/X400.html",
+      "https://www.cardekho.com/mahindra/xuv400"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/mahindra-xuv400.json"
+  }
+}

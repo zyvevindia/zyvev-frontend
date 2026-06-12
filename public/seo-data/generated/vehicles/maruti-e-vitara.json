@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "maruti-e-vitara",
+    "displayName": "Maruti Suzuki e Vitara",
+    "brand": "Maruti Suzuki",
+    "model": "e Vitara",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 2499000,
+      "maxInr": 2899000
+    },
+    "rangeBand": {
+      "minKm": 500,
+      "maxKm": 550
+    },
+    "maxRangeKm": 550,
+    "startingPriceInr": 2499000,
+    "topVariantPriceInr": 2899000,
+    "charging": {
+      "acKw": 7.4,
+      "dcKw": 130,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.nexaexperience.com/e-vitara",
+      "https://www.cardekho.com/maruti/e-vitara"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/maruti-e-vitara.json"
+  }
+}

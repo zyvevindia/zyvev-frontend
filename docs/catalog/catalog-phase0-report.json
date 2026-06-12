@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-06-12T06:44:04.918Z",
+  "phase": "0+1",
+  "vehicleCount": 25,
+  "manifestCount": 25,
+  "docsPublicSync": {
+    "inSync": true,
+    "missingInDocs": [],
+    "missingInPublic": [],
+    "contentMismatches": [],
+    "publicFileCount": 26,
+    "docsFileCount": 26
+  },
+  "duplicateSlugs": [],
+  "missingFiles": [],
+  "missingMedia": [],
+  "variantCountMismatches": [],
+  "validation": {
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  }
+}

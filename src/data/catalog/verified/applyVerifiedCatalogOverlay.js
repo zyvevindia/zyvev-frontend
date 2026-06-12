@@ -1,22 +1,5 @@
 import { extractFamilySlug } from "../../../utils/modelFamily.js";
-import {
-  TATA_NEXON_FAMILY_SLUG,
-  buildTataNexonVerifiedOverlay,
-} from "./tataNexonEvVerified.js";
-import {
-  TATA_PUNCH_FAMILY_SLUG,
-  buildTataPunchVerifiedOverlay,
-} from "./tataPunchEvVerified.js";
-import {
-  TATA_TIAGO_FAMILY_SLUG,
-  buildTataTiagoVerifiedOverlay,
-} from "./tataTiagoEvVerified.js";
-
-const VERIFIED_OVERLAY_BUILDERS = Object.freeze({
-  [TATA_TIAGO_FAMILY_SLUG]: buildTataTiagoVerifiedOverlay,
-  [TATA_NEXON_FAMILY_SLUG]: buildTataNexonVerifiedOverlay,
-  [TATA_PUNCH_FAMILY_SLUG]: buildTataPunchVerifiedOverlay,
-});
+import { GENERATED_OVERLAY_BUILDERS } from "../generated/overlays/index.js";
 
 /**
  * Apply controlled verified catalog overlays (no schema changes).
@@ -30,7 +13,7 @@ export function applyVerifiedCatalogOverlay(car) {
     car.slug || car.catalogMeta?.slug || car.catalogMeta?.familySlug
   );
 
-  const buildOverlay = VERIFIED_OVERLAY_BUILDERS[family];
+  const buildOverlay = GENERATED_OVERLAY_BUILDERS[family];
   if (!buildOverlay) {
     return car;
   }

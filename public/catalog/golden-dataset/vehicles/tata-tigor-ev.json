@@ -14,18 +14,23 @@
     "bodyType": "SUV",
     "familySlug": "tata-tigor-ev",
     "startingPrice": 1249000,
-    "topVariantPrice": 1399000,
+    "topVariantPrice": 1375000,
     "exShowroomPrice": 1249000,
     "batteryCapacityKwh": 26,
     "claimedRangeKm": 315,
-    "rangeTestStandard": "MIDC",
+    "realWorldRangeKm": {
+      "min": 227,
+      "max": 277
+    },
+    "rangeTestStandard": "ARAI",
     "acChargingKw": 3.3,
-    "dcChargingKw": 18,
-    "acChargingTimeHours": null,
+    "dcChargingKw": 25,
+    "acChargingTimeHours": 9.4,
     "dcChargingTimeMinutes": 59,
     "airbags": 2,
     "adas": "true",
-    "powerPs": "75",
+    "powerBhp": 73.7,
+    "powerPs": 73.7,
     "torqueNm": null
   },
   "features": {
@@ -43,32 +48,60 @@
       "priceInr": 1249000,
       "batteryKwh": 26,
       "rangeKm": 315,
+      "realWorldRangeKm": {
+        "min": 227,
+        "max": 277
+      },
+      "powerBhp": 73.7,
       "acChargingKw": 3.3,
-      "dcChargingKw": 25
-    },
-    {
-      "variantName": "XM",
-      "priceInr": 1299000,
-      "batteryKwh": 26,
-      "rangeKm": 315,
-      "acChargingKw": 3.3,
-      "dcChargingKw": 25
-    },
-    {
-      "variantName": "XZ+",
-      "priceInr": 1364000,
-      "batteryKwh": 26,
-      "rangeKm": 315,
-      "acChargingKw": 3.3,
-      "dcChargingKw": 25
+      "dcChargingKw": 25,
+      "acChargingTimeHours": 9.4,
+      "dcChargingTimeMinutes": 59
     },
     {
       "variantName": "XT",
-      "priceInr": 1399000,
+      "priceInr": 1299000,
       "batteryKwh": 26,
       "rangeKm": 315,
+      "realWorldRangeKm": {
+        "min": 227,
+        "max": 277
+      },
+      "powerBhp": 73.7,
       "acChargingKw": 3.3,
-      "dcChargingKw": 25
+      "dcChargingKw": 25,
+      "acChargingTimeHours": 9.4,
+      "dcChargingTimeMinutes": 59
+    },
+    {
+      "variantName": "XZ+",
+      "priceInr": 1349000,
+      "batteryKwh": 26,
+      "rangeKm": 315,
+      "realWorldRangeKm": {
+        "min": 227,
+        "max": 277
+      },
+      "powerBhp": 73.7,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 25,
+      "acChargingTimeHours": 9.4,
+      "dcChargingTimeMinutes": 59
+    },
+    {
+      "variantName": "XZ+ Lux",
+      "priceInr": 1375000,
+      "batteryKwh": 26,
+      "rangeKm": 315,
+      "realWorldRangeKm": {
+        "min": 227,
+        "max": 277
+      },
+      "powerBhp": 73.7,
+      "acChargingKw": 3.3,
+      "dcChargingKw": 25,
+      "acChargingTimeHours": 9.4,
+      "dcChargingTimeMinutes": 59
     }
   ],
   "verificationLevel": "manual_review",
@@ -76,12 +109,16 @@
     "https://ev.tatamotors.com/tigor/ev.html",
     "https://www.cardekho.com/tata/tigor-ev"
   ],
-  "verifiedAt": "2026-06-10",
+  "verifiedAt": "2026-06-08",
   "populationMeta": {
     "batch": "day3",
     "pipelineConfidence": 93,
     "manualCorrections": [
-      "variant_table_manual"
+      "variant_table_manual",
+      "removed_xm_variant_2026-06-08",
+      "corrected_variant_lineup_xe_xt_xz_plus_xz_plus_lux",
+      "charging_power_specs_2026-06-08",
+      "productionization_patch_2026-06-08"
     ],
     "qualityConsolidationAt": "2026-06-10T05:01:32.198Z"
   },

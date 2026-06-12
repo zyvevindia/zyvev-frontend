@@ -1,0 +1,47 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "tata-tigor-ev",
+    "displayName": "Tata Tigor EV",
+    "brand": "Tata",
+    "model": "Tigor EV",
+    "bodyStyle": "SUV",
+    "variantCount": 4,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 1249000,
+      "maxInr": 1375000
+    },
+    "rangeBand": {
+      "minKm": 315,
+      "maxKm": 315
+    },
+    "realWorldRangeBand": {
+      "minKm": 227,
+      "maxKm": 277
+    },
+    "maxRangeKm": 315,
+    "startingPriceInr": 1249000,
+    "topVariantPriceInr": 1375000,
+    "charging": {
+      "acKw": 3.3,
+      "dcKw": 25,
+      "acTimeHours": 9.4,
+      "dcTimeMinutes": 59,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://ev.tatamotors.com/tigor/ev.html",
+      "https://www.cardekho.com/tata/tigor-ev"
+    ],
+    "verifiedAt": "2026-06-08",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-tigor-ev.json"
+  }
+}

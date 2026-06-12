@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "kia-ev6",
+    "displayName": "Kia EV6",
+    "brand": "Kia",
+    "model": "EV6",
+    "bodyStyle": "SUV",
+    "variantCount": 2,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 6590000,
+      "maxInr": 7590000
+    },
+    "rangeBand": {
+      "minKm": 490,
+      "maxKm": 528
+    },
+    "maxRangeKm": 528,
+    "startingPriceInr": 6590000,
+    "topVariantPriceInr": 7590000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 240,
+      "acTimeHours": null,
+      "dcTimeMinutes": 18,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.kia.com/in/our-vehicles/ev6/showroom.html",
+      "https://www.cardekho.com/kia/ev6"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/kia-ev6.json"
+  }
+}

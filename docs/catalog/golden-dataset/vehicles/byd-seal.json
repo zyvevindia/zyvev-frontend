@@ -75,5 +75,34 @@
     "manualCorrections": [
       "variant_table_manual"
     ]
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/byd-seal/listing.webp",
+    "compareThumbnail": "/images/cars/byd-seal/compare.webp",
+    "heroImage": "/images/cars/byd-seal/front.webp",
+    "front": "/images/cars/byd-seal/front.webp",
+    "rear": "/images/cars/byd-seal/rear.webp",
+    "side": "/images/cars/byd-seal/side.webp",
+    "interior": "/images/cars/byd-seal/interior.webp",
+    "dashboard": "/images/cars/byd-seal/dashboard.webp",
+    "gallery": [
+      "/images/cars/byd-seal/front.webp",
+      "/images/cars/byd-seal/rear.webp",
+      "/images/cars/byd-seal/side.webp",
+      "/images/cars/byd-seal/interior.webp",
+      "/images/cars/byd-seal/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/byd-seal/front.webp",
+      "/images/cars/byd-seal/rear.webp",
+      "/images/cars/byd-seal/side.webp",
+      "/images/cars/byd-seal/interior.webp",
+      "/images/cars/byd-seal/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/byd-seal/interior.webp",
+      "/images/cars/byd-seal/dashboard.webp"
+    ]
   }
 }

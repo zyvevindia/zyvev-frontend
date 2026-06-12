@@ -1,0 +1,44 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "tata-curvv-ev",
+    "displayName": "Tata Curvv EV",
+    "brand": "Tata",
+    "model": "Curvv EV",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 1699000,
+      "maxInr": 1949000
+    },
+    "rangeBand": {
+      "minKm": 502,
+      "maxKm": 502
+    },
+    "maxRangeKm": 502,
+    "startingPriceInr": 1699000,
+    "topVariantPriceInr": 1949000,
+    "charging": {
+      "acKw": 7.2,
+      "dcKw": 70,
+      "acTimeHours": 7.6,
+      "dcTimeMinutes": 40,
+      "rangeTestStandard": "MIDC"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://ev.tatamotors.com/curvv/ev/price.html",
+      "https://cars.tatamotors.com/article/press-release/curvv-ev-series-x-launch.html",
+      "https://www.cardekho.com/tata/curvv-ev"
+    ],
+    "verifiedAt": "2026-06-11",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-curvv-ev.json"
+  }
+}

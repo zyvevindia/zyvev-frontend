@@ -23,9 +23,9 @@
         "displayName": "BYD Atto 3",
         "exShowroom": 2499000,
         "claimedRangeKm": 521,
-        "compositeScore": 74,
+        "compositeScore": 71,
         "confidence": "medium",
-        "explanation": "BYD Atto 3 — overall score 74/100. Range 521 km, from ₹24.99 L.",
+        "explanation": "BYD Atto 3 — overall score 71/100. Range 521 km, from ₹24.99 L.",
         "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
         "detailPath": "/cars/byd-atto-3"
       },
@@ -35,9 +35,9 @@
         "displayName": "Hyundai Creta Electric",
         "exShowroom": 1799000,
         "claimedRangeKm": 390,
-        "compositeScore": 73,
+        "compositeScore": 68,
         "confidence": "medium",
-        "explanation": "Hyundai Creta Electric — overall score 73/100. Range 390 km, from ₹17.99 L.",
+        "explanation": "Hyundai Creta Electric — overall score 68/100. Range 390 km, from ₹17.99 L.",
         "tradeoff": "Strength from score data: Feature score includes verified: ADAS, Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
         "detailPath": "/cars/hyundai-creta-electric"
       }
@@ -69,7 +69,7 @@
     ],
     "canonicalPath": "/compare/byd-atto-3-vs-hyundai-creta-electric-agent",
     "canonicalUrl": "https://evsavari.com/compare/byd-atto-3-vs-hyundai-creta-electric-agent",
-    "generatedAt": "2026-06-11T07:44:25.611Z",
+    "generatedAt": "2026-06-12T06:44:15.500Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -106,7 +106,7 @@
       },
       {
         "question": "Why is BYD Atto 3 ranked first?",
-        "answer": "BYD Atto 3 — overall score 74/100. Range 521 km, from ₹24.99 L."
+        "answer": "BYD Atto 3 — overall score 71/100. Range 521 km, from ₹24.99 L."
       }
     ],
     "governance": {

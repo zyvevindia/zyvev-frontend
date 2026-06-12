@@ -202,5 +202,34 @@
   ],
   "populationMeta": {
     "qualityConsolidationAt": "2026-06-10T05:01:32.166Z"
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/tata-nexon-ev/listing.webp",
+    "compareThumbnail": "/images/cars/tata-nexon-ev/compare.webp",
+    "heroImage": "/images/cars/tata-nexon-ev/front.webp",
+    "front": "/images/cars/tata-nexon-ev/front.webp",
+    "rear": "/images/cars/tata-nexon-ev/rear.webp",
+    "side": "/images/cars/tata-nexon-ev/side.webp",
+    "interior": "/images/cars/tata-nexon-ev/interior.webp",
+    "dashboard": "/images/cars/tata-nexon-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/tata-nexon-ev/front.webp",
+      "/images/cars/tata-nexon-ev/rear.webp",
+      "/images/cars/tata-nexon-ev/side.webp",
+      "/images/cars/tata-nexon-ev/interior.webp",
+      "/images/cars/tata-nexon-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/tata-nexon-ev/front.webp",
+      "/images/cars/tata-nexon-ev/rear.webp",
+      "/images/cars/tata-nexon-ev/side.webp",
+      "/images/cars/tata-nexon-ev/interior.webp",
+      "/images/cars/tata-nexon-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/tata-nexon-ev/interior.webp",
+      "/images/cars/tata-nexon-ev/dashboard.webp"
+    ]
   }
 }

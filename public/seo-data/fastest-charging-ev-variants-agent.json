@@ -140,7 +140,7 @@
         "compositeScore": 58,
         "confidence": "medium",
         "explanation": "RWD has the best DC charging profile (175 kW).",
-        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: Performance score from 229 PS and 350 Nm torque.",
         "detailPath": "/cars/hyundai-ioniq-5",
         "variantName": "RWD"
       }
@@ -189,7 +189,7 @@
     ],
     "canonicalPath": "/best-evs/fastest-charging-variants-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/fastest-charging-variants-agent",
-    "generatedAt": "2026-06-11T07:44:25.622Z",
+    "generatedAt": "2026-06-12T06:44:15.510Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",

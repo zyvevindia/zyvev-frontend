@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "volvo-ex40",
+    "displayName": "Volvo EX40",
+    "brand": "Volvo",
+    "model": "EX40",
+    "bodyStyle": "SUV",
+    "variantCount": 2,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 5990000,
+      "maxInr": 6490000
+    },
+    "rangeBand": {
+      "minKm": 549,
+      "maxKm": 568
+    },
+    "maxRangeKm": 568,
+    "startingPriceInr": 5990000,
+    "topVariantPriceInr": 6490000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 150,
+      "acTimeHours": null,
+      "dcTimeMinutes": 40,
+      "rangeTestStandard": "592"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.volvocars.com/in/cars/ex40-electric/",
+      "https://www.cardekho.com/volvo/ex40"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/volvo-ex40.json"
+  }
+}

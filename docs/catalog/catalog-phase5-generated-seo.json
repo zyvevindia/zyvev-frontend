@@ -1,0 +1,2112 @@
+{
+  "phase": "catalog-phase5-generated-seo",
+  "generatedAt": "2026-06-11T08:59:07.166Z",
+  "generatedFileCount": 28,
+  "generatedPaths": [
+    "public/seo-data/generated/manifest.json",
+    "public/seo-data/generated/vehicles/bmw-ix1.json",
+    "public/seo-data/generated/vehicles/byd-atto-3.json",
+    "public/seo-data/generated/vehicles/byd-seal.json",
+    "public/seo-data/generated/vehicles/citroen-ec3.json",
+    "public/seo-data/generated/vehicles/hyundai-creta-electric.json",
+    "public/seo-data/generated/vehicles/hyundai-ioniq-5.json",
+    "public/seo-data/generated/vehicles/hyundai-kona-electric.json",
+    "public/seo-data/generated/vehicles/kia-ev6.json",
+    "public/seo-data/generated/vehicles/mahindra-be-6.json",
+    "public/seo-data/generated/vehicles/mahindra-xev-9e.json",
+    "public/seo-data/generated/vehicles/mahindra-xuv400.json",
+    "public/seo-data/generated/vehicles/maruti-e-vitara.json",
+    "public/seo-data/generated/vehicles/mercedes-eqa.json",
+    "public/seo-data/generated/vehicles/mercedes-eqb.json",
+    "public/seo-data/generated/vehicles/mg-comet-ev.json",
+    "public/seo-data/generated/vehicles/mg-windsor-ev.json",
+    "public/seo-data/generated/vehicles/mg-zs-ev.json",
+    "public/seo-data/generated/vehicles/mini-cooper-se.json",
+    "public/seo-data/generated/vehicles/tata-curvv-ev.json",
+    "public/seo-data/generated/vehicles/tata-harrier-ev.json",
+    "public/seo-data/generated/vehicles/tata-nexon-ev.json",
+    "public/seo-data/generated/vehicles/tata-punch-ev.json",
+    "public/seo-data/generated/vehicles/tata-tiago-ev.json",
+    "public/seo-data/generated/vehicles/tata-tigor-ev.json",
+    "public/seo-data/generated/vehicles/volvo-ex40.json",
+    "src/content/generated/generated/catalog-vehicles.json",
+    "src/content/generated/generated/index.js"
+  ],
+  "vehiclesAudited": 25,
+  "fieldsCompared": [
+    "familySlug",
+    "displayName",
+    "brand",
+    "priceBand",
+    "maxRangeKm",
+    "variantCount"
+  ],
+  "mismatchCount": 0,
+  "generatorMismatches": [],
+  "vehicleAudits": [
+    {
+      "familySlug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "brand": "BMW",
+      "variantCount": 2,
+      "maxRangeKm": 531,
+      "priceBand": {
+        "minInr": 6890000,
+        "maxInr": 7290000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 33
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "brand": "BYD",
+      "variantCount": 3,
+      "maxRangeKm": 521,
+      "priceBand": {
+        "minInr": 2499000,
+        "maxInr": 3399000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 33
+    },
+    {
+      "familySlug": "byd-seal",
+      "displayName": "BYD Seal",
+      "brand": "BYD",
+      "variantCount": 3,
+      "maxRangeKm": 650,
+      "priceBand": {
+        "minInr": 4100000,
+        "maxInr": 5300000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 7
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "brand": "Citroen",
+      "variantCount": 4,
+      "maxRangeKm": 320,
+      "priceBand": {
+        "minInr": 1269000,
+        "maxInr": 1399000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 25
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "brand": "Hyundai",
+      "variantCount": 3,
+      "maxRangeKm": 473,
+      "priceBand": {
+        "minInr": 1799000,
+        "maxInr": 2499000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 8
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "brand": "Hyundai",
+      "variantCount": 2,
+      "maxRangeKm": 631,
+      "priceBand": {
+        "minInr": 4495000,
+        "maxInr": 5495000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 10
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "brand": "Hyundai",
+      "variantCount": 1,
+      "maxRangeKm": 452,
+      "priceBand": {
+        "minInr": 2384000,
+        "maxInr": 2384000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 27
+    },
+    {
+      "familySlug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "brand": "Kia",
+      "variantCount": 2,
+      "maxRangeKm": 528,
+      "priceBand": {
+        "minInr": 6590000,
+        "maxInr": 7590000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 46
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "brand": "Mahindra",
+      "variantCount": 3,
+      "maxRangeKm": 683,
+      "priceBand": {
+        "minInr": 1890000,
+        "maxInr": 2690000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 32
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "brand": "Mahindra",
+      "variantCount": 3,
+      "maxRangeKm": 656,
+      "priceBand": {
+        "minInr": 2190000,
+        "maxInr": 3090000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 35
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "brand": "Mahindra",
+      "variantCount": 4,
+      "maxRangeKm": 456,
+      "priceBand": {
+        "minInr": 1599000,
+        "maxInr": 1899000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 27
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "brand": "Maruti Suzuki",
+      "variantCount": 3,
+      "maxRangeKm": 550,
+      "priceBand": {
+        "minInr": 2499000,
+        "maxInr": 2899000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 2
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "brand": "Mercedes-Benz",
+      "variantCount": 2,
+      "maxRangeKm": 592,
+      "priceBand": {
+        "minInr": 6775000,
+        "maxInr": 7195000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 28
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "brand": "Mercedes-Benz",
+      "variantCount": 2,
+      "maxRangeKm": 534,
+      "priceBand": {
+        "minInr": 7375000,
+        "maxInr": 7775000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 26
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "brand": "MG",
+      "variantCount": 3,
+      "maxRangeKm": 230,
+      "priceBand": {
+        "minInr": 749000,
+        "maxInr": 949000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 39
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "brand": "MG",
+      "variantCount": 3,
+      "maxRangeKm": 331,
+      "priceBand": {
+        "minInr": 999000,
+        "maxInr": 1689000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 6
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "brand": "MG",
+      "variantCount": 3,
+      "maxRangeKm": 461,
+      "priceBand": {
+        "minInr": 1848000,
+        "maxInr": 2288000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 28
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "brand": "MINI",
+      "variantCount": 2,
+      "maxRangeKm": 402,
+      "priceBand": {
+        "minInr": 5390000,
+        "maxInr": 5790000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 0
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "brand": "Tata",
+      "variantCount": 3,
+      "maxRangeKm": 502,
+      "priceBand": {
+        "minInr": 1699000,
+        "maxInr": 1949000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 37
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "brand": "Tata",
+      "variantCount": 8,
+      "maxRangeKm": 627,
+      "priceBand": {
+        "minInr": 2149000,
+        "maxInr": 3023000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 5
+    },
+    {
+      "familySlug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "brand": "Tata",
+      "variantCount": 13,
+      "maxRangeKm": 489,
+      "priceBand": {
+        "minInr": 1249000,
+        "maxInr": 1749000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 36
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "brand": "Tata",
+      "variantCount": 6,
+      "maxRangeKm": 468,
+      "priceBand": {
+        "minInr": 969000,
+        "maxInr": 1259000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 34
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "brand": "Tata",
+      "variantCount": 4,
+      "maxRangeKm": 285,
+      "priceBand": {
+        "minInr": 699000,
+        "maxInr": 899000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 28
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "brand": "Tata",
+      "variantCount": 4,
+      "maxRangeKm": 315,
+      "priceBand": {
+        "minInr": 1249000,
+        "maxInr": 1399000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 1
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "brand": "Volvo",
+      "variantCount": 2,
+      "maxRangeKm": 568,
+      "priceBand": {
+        "minInr": 5990000,
+        "maxInr": 6490000
+      },
+      "generatorFidelityOk": true,
+      "seoReferenceCount": 39
+    }
+  ],
+  "seoFilesScanned": 175,
+  "staleSeoFilesDiscovered": 64,
+  "staleFiles": [
+    "public/seo-data/authority-ev-charging-types.json",
+    "public/seo-data/authority-how-evs-work.json",
+    "public/seo-data/authority-myth-apartment-charging-impossible.json",
+    "public/seo-data/authority-myth-fire-risk.json",
+    "public/seo-data/authority-myth-rain-flood-safety.json",
+    "public/seo-data/authority-overnight-safety.json",
+    "public/seo-data/best-evs-budget-agent.json",
+    "public/seo-data/best-evs-for-budget-lease.json",
+    "public/seo-data/best-evs-for-city-agent.json",
+    "public/seo-data/best-evs-for-college-students.json",
+    "public/seo-data/best-evs-for-compact-parking.json",
+    "public/seo-data/best-evs-for-corporate-fleet.json",
+    "public/seo-data/best-evs-for-family-agent.json",
+    "public/seo-data/best-evs-for-highway-agent.json",
+    "public/seo-data/best-evs-for-long-range-highway.json",
+    "public/seo-data/best-evs-for-luxury-buyers.json",
+    "public/seo-data/best-evs-for-performance.json",
+    "public/seo-data/best-evs-for-semi-urban.json",
+    "public/seo-data/best-evs-for-senior-drivers.json",
+    "public/seo-data/best-evs-for-taxi-commercial.json",
+    "public/seo-data/best-evs-for-weekend-trips.json",
+    "public/seo-data/best-evs-for-women-safety.json",
+    "public/seo-data/best-evs-premium-agent.json",
+    "public/seo-data/best-value-ev-variants-agent.json",
+    "public/seo-data/bmw-ix1-vs-mercedes-eqb.json",
+    "public/seo-data/brands/mercedes-benz.json",
+    "public/seo-data/byd-atto-3-vs-hyundai-creta-electric-agent.json",
+    "public/seo-data/cities/bengaluru-evs.json",
+    "public/seo-data/cities/chandigarh-charging.json",
+    "public/seo-data/cities/chennai-charging.json",
+    "public/seo-data/cities/coimbatore-charging.json",
+    "public/seo-data/cities/gurgaon-charging.json",
+    "public/seo-data/cities/guwahati-evs.json",
+    "public/seo-data/cities/hyderabad-charging.json",
+    "public/seo-data/cities/indore-charging.json",
+    "public/seo-data/cities/jaipur-charging.json",
+    "public/seo-data/cities/jaipur-evs.json",
+    "public/seo-data/cities/kolkata-evs.json",
+    "public/seo-data/cities/ludhiana-evs.json",
+    "public/seo-data/cities/patna-charging.json",
+    "public/seo-data/cities/pune-evs.json",
+    "public/seo-data/cities/surat-charging.json",
+    "public/seo-data/cities/thiruvananthapuram-charging.json",
+    "public/seo-data/cities/vadodara-evs.json",
+    "public/seo-data/cities/visakhapatnam-evs.json",
+    "public/seo-data/fastest-charging-ev-variants-agent.json",
+    "public/seo-data/fastest-charging-evs-agent.json",
+    "public/seo-data/longest-range-ev-variants-agent.json",
+    "public/seo-data/longest-range-evs-agent.json",
+    "public/seo-data/mercedes-eqa-vs-bmw-ix1.json",
+    "public/seo-data/mercedes-eqb-vs-volvo-ex40.json",
+    "public/seo-data/ownership-battery-health.json",
+    "public/seo-data/ownership-fleet-commercial.json",
+    "public/seo-data/ownership-insurance-tco.json",
+    "public/seo-data/ownership-running-cost.json",
+    "public/seo-data/ownership-service-network.json",
+    "public/seo-data/ownership-warranty-coverage.json",
+    "public/seo-data/safest-evs-agent.json",
+    "public/seo-data/tata-curvv-ev-vs-mahindra-be-6-agent.json",
+    "public/seo-data/tata-nexon-ev-best-value-variant-agent.json",
+    "public/seo-data/tata-nexon-ev-fastest-charging-variant-agent.json",
+    "public/seo-data/tata-punch-ev-best-value-variant-agent.json",
+    "public/seo-data/tata-punch-ev-longest-range-variant-agent.json",
+    "public/seo-data/top-10-evs-agent.json"
+  ],
+  "staleFindings": [
+    {
+      "file": "public/seo-data/authority-ev-charging-types.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/authority-how-evs-work.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/authority-myth-apartment-charging-impossible.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/authority-myth-apartment-charging-impossible.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/authority-myth-fire-risk.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/authority-myth-rain-flood-safety.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/authority-myth-rain-flood-safety.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/authority-overnight-safety.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/authority-overnight-safety.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-budget-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-budget-agent.json",
+      "slug": "hyundai-creta-electric",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 390,
+          "goldenValue": 473
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-budget-lease.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-city-agent.json",
+      "slug": "kia-ev6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 650,
+          "goldenValue": 528
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-city-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 690,
+          "goldenValue": 631
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-city-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-city-agent.json",
+      "slug": "hyundai-creta-electric",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 390,
+          "goldenValue": 473
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-college-students.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-compact-parking.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-corporate-fleet.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-family-agent.json",
+      "slug": "kia-ev6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 650,
+          "goldenValue": 528
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-family-agent.json",
+      "slug": "byd-seal",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 510,
+          "goldenValue": 650
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-family-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-family-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 690,
+          "goldenValue": 631
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-highway-agent.json",
+      "slug": "kia-ev6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 650,
+          "goldenValue": 528
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-highway-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 690,
+          "goldenValue": 631
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-highway-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-highway-agent.json",
+      "slug": "volvo-ex40",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 418,
+          "goldenValue": 568
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-highway-agent.json",
+      "slug": "byd-seal",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 510,
+          "goldenValue": 650
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-long-range-highway.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-luxury-buyers.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-performance.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-semi-urban.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-senior-drivers.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-taxi-commercial.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-weekend-trips.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-for-women-safety.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-premium-agent.json",
+      "slug": "kia-ev6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 650,
+          "goldenValue": 528
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-premium-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 690,
+          "goldenValue": 631
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-premium-agent.json",
+      "slug": "volvo-ex40",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 418,
+          "goldenValue": 568
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-premium-agent.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 560,
+          "goldenValue": 592
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-premium-agent.json",
+      "slug": "byd-seal",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 510,
+          "goldenValue": 650
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-evs-premium-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "tata-nexon-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Nexon EV — Empowered+ A 45",
+          "goldenValue": "Tata Nexon EV"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 1729000,
+          "goldenValue": 1249000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "tata-punch-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Punch EV — Empowered",
+          "goldenValue": "Tata Punch EV"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 1229000,
+          "goldenValue": 969000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "tata-curvv-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Curvv EV — Accomplished X55",
+          "goldenValue": "Tata Curvv EV"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "mg-windsor-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "MG Windsor EV — Excite",
+          "goldenValue": "MG Windsor EV"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mahindra BE 6 — Pack Three 79",
+          "goldenValue": "Mahindra BE 6"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 2290000,
+          "goldenValue": 1890000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "mahindra-xev-9e",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mahindra XEV 9e — Pack One 79",
+          "goldenValue": "Mahindra XEV 9e"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "byd-atto-3",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "BYD Atto 3 — Dynamic",
+          "goldenValue": "BYD Atto 3"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "hyundai-creta-electric",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Hyundai Creta Electric — Executive",
+          "goldenValue": "Hyundai Creta Electric"
+        },
+        {
+          "field": "maxRangeKm",
+          "seoValue": 390,
+          "goldenValue": 473
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "mg-comet-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "MG Comet EV — Pace",
+          "goldenValue": "MG Comet EV"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/best-value-ev-variants-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Hyundai Ioniq 5 — RWD",
+          "goldenValue": "Hyundai Ioniq 5"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/bmw-ix1-vs-mercedes-eqb.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/brands/mercedes-benz.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/brands/mercedes-benz.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/byd-atto-3-vs-hyundai-creta-electric-agent.json",
+      "slug": "hyundai-creta-electric",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 390,
+          "goldenValue": 473
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/bengaluru-evs.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/chandigarh-charging.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/chennai-charging.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/coimbatore-charging.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/gurgaon-charging.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/guwahati-evs.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/hyderabad-charging.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/indore-charging.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/jaipur-charging.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/jaipur-evs.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/kolkata-evs.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/ludhiana-evs.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/patna-charging.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/pune-evs.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/pune-evs.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/surat-charging.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/thiruvananthapuram-charging.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/vadodara-evs.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/cities/visakhapatnam-evs.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "tata-nexon-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Nexon EV — Creative 45",
+          "goldenValue": "Tata Nexon EV"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 1399000,
+          "goldenValue": 1249000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "tata-punch-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Punch EV — Smart",
+          "goldenValue": "Tata Punch EV"
+        },
+        {
+          "field": "maxRangeKm",
+          "seoValue": 370,
+          "goldenValue": 468
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "tata-curvv-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Curvv EV — Accomplished X55",
+          "goldenValue": "Tata Curvv EV"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "mg-windsor-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "MG Windsor EV — Excite",
+          "goldenValue": "MG Windsor EV"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mahindra BE 6 — Pack One 59",
+          "goldenValue": "Mahindra BE 6"
+        },
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "mahindra-xev-9e",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mahindra XEV 9e — Pack One 79",
+          "goldenValue": "Mahindra XEV 9e"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "byd-atto-3",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "BYD Atto 3 — Dynamic",
+          "goldenValue": "BYD Atto 3"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "hyundai-creta-electric",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Hyundai Creta Electric — Executive",
+          "goldenValue": "Hyundai Creta Electric"
+        },
+        {
+          "field": "maxRangeKm",
+          "seoValue": 390,
+          "goldenValue": 473
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "mg-comet-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "MG Comet EV — Pace",
+          "goldenValue": "MG Comet EV"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-ev-variants-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Hyundai Ioniq 5 — RWD",
+          "goldenValue": "Hyundai Ioniq 5"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-evs-agent.json",
+      "slug": "kia-ev6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 650,
+          "goldenValue": 528
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-evs-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 690,
+          "goldenValue": 631
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-evs-agent.json",
+      "slug": "volvo-ex40",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 418,
+          "goldenValue": 568
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-evs-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-evs-agent.json",
+      "slug": "hyundai-creta-electric",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 390,
+          "goldenValue": 473
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/fastest-charging-evs-agent.json",
+      "slug": "byd-seal",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 510,
+          "goldenValue": 650
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "tata-nexon-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Nexon EV — Creative 45",
+          "goldenValue": "Tata Nexon EV"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 1399000,
+          "goldenValue": 1249000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "tata-punch-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Punch EV — Smart+ 40 kWh",
+          "goldenValue": "Tata Punch EV"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 1089000,
+          "goldenValue": 969000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "tata-curvv-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Curvv EV — Accomplished X55",
+          "goldenValue": "Tata Curvv EV"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "mg-windsor-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "MG Windsor EV — Excite",
+          "goldenValue": "MG Windsor EV"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mahindra BE 6 — Pack Three 79",
+          "goldenValue": "Mahindra BE 6"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 2290000,
+          "goldenValue": 1890000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "mahindra-xev-9e",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mahindra XEV 9e — Pack One 79",
+          "goldenValue": "Mahindra XEV 9e"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "byd-atto-3",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "BYD Atto 3 — Dynamic",
+          "goldenValue": "BYD Atto 3"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "hyundai-creta-electric",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Hyundai Creta Electric — Signature",
+          "goldenValue": "Hyundai Creta Electric"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 2499000,
+          "goldenValue": 1799000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "mg-comet-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "MG Comet EV — Pace",
+          "goldenValue": "MG Comet EV"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-ev-variants-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Hyundai Ioniq 5 — RWD",
+          "goldenValue": "Hyundai Ioniq 5"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-evs-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 690,
+          "goldenValue": 631
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-evs-agent.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 560,
+          "goldenValue": 592
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-evs-agent.json",
+      "slug": "kia-ev6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 650,
+          "goldenValue": 528
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-evs-agent.json",
+      "slug": "byd-seal",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 510,
+          "goldenValue": 650
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-evs-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-evs-agent.json",
+      "slug": "volvo-ex40",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 418,
+          "goldenValue": 568
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/longest-range-evs-agent.json",
+      "slug": "maruti-e-vitara",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 543,
+          "goldenValue": 550
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/mercedes-eqa-vs-bmw-ix1.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/mercedes-eqb-vs-volvo-ex40.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/ownership-battery-health.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/ownership-fleet-commercial.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/ownership-insurance-tco.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/ownership-running-cost.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/ownership-service-network.json",
+      "slug": "mercedes-eqb",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqb",
+          "goldenValue": "Mercedes-Benz EQB"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/ownership-warranty-coverage.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Mercedes Eqa",
+          "goldenValue": "Mercedes-Benz EQA"
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/safest-evs-agent.json",
+      "slug": "kia-ev6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 650,
+          "goldenValue": 528
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/safest-evs-agent.json",
+      "slug": "byd-seal",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 510,
+          "goldenValue": 650
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/safest-evs-agent.json",
+      "slug": "mercedes-eqa",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 560,
+          "goldenValue": 592
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/safest-evs-agent.json",
+      "slug": "maruti-e-vitara",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 543,
+          "goldenValue": 550
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/safest-evs-agent.json",
+      "slug": "volvo-ex40",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 418,
+          "goldenValue": 568
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/safest-evs-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/tata-curvv-ev-vs-mahindra-be-6-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/tata-nexon-ev-best-value-variant-agent.json",
+      "slug": "tata-nexon-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Nexon EV — Empowered+ A 45",
+          "goldenValue": "Tata Nexon EV"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 1729000,
+          "goldenValue": 1249000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/tata-nexon-ev-fastest-charging-variant-agent.json",
+      "slug": "tata-nexon-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Nexon EV — Creative 45",
+          "goldenValue": "Tata Nexon EV"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 1399000,
+          "goldenValue": 1249000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/tata-punch-ev-best-value-variant-agent.json",
+      "slug": "tata-punch-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Punch EV — Empowered",
+          "goldenValue": "Tata Punch EV"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 1229000,
+          "goldenValue": 969000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/tata-punch-ev-longest-range-variant-agent.json",
+      "slug": "tata-punch-ev",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "displayName",
+          "seoValue": "Tata Punch EV — Smart+ 40 kWh",
+          "goldenValue": "Tata Punch EV"
+        },
+        {
+          "field": "priceBand.minInr",
+          "seoValue": 1089000,
+          "goldenValue": 969000
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/top-10-evs-agent.json",
+      "slug": "kia-ev6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 650,
+          "goldenValue": 528
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/top-10-evs-agent.json",
+      "slug": "mahindra-be-6",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 500,
+          "goldenValue": 683
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/top-10-evs-agent.json",
+      "slug": "hyundai-ioniq-5",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 690,
+          "goldenValue": 631
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/top-10-evs-agent.json",
+      "slug": "byd-seal",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 510,
+          "goldenValue": 650
+        }
+      ]
+    },
+    {
+      "file": "public/seo-data/top-10-evs-agent.json",
+      "slug": "hyundai-creta-electric",
+      "section": "seoPage.rankedVehicles",
+      "issues": [
+        {
+          "field": "maxRangeKm",
+          "seoValue": 390,
+          "goldenValue": 473
+        }
+      ]
+    }
+  ],
+  "dependencyDiagram": "Golden JSON (public/catalog/golden-dataset/vehicles/*.json)\n        │\n        ├─► scripts/generate-content.mjs ──► public/seo-data/*.json (editorial SEO pages)\n        │                                 └─► src/content/generated/manifest.js\n        │\n        └─► scripts/generate-seo-artifacts.mjs (Phase 5 — parallel)\n                  │\n                  ├─► public/seo-data/generated/vehicles/{slug}.json\n                  ├─► public/seo-data/generated/manifest.json\n                  └─► src/content/generated/generated/\n                        ├─ catalog-vehicles.json\n                        └─ index.js\n\nRuntime consumers (unchanged in Phase 5):\n  DiscoverySeoPage ──► useDiscoveryPage ──► discoveryLoader ──► fetchSeoPage\n  SeoGuidePage ──► useSeoPage ──► fetchSeoPage ──► /seo-data/{slug}.json\n  Compare guides ──► DiscoverySeoPage + GENERATED_COMPARE_SLUGS (manifest.js)\n  SeoGuidesHub ──► CONTENT_REGISTRY_ENTRIES (manifest.js)\n  SeoRelatedLinks ──► seoPage.relatedLinks (inline in SEO JSON)\n  ComparePage ──► GENERATED_COMPARE_SLUGS (manifest.js)",
+  "notes": [
+    "Generated artifacts are parallel only — runtime still uses editorial public/seo-data/*.json and manifest.js.",
+    "Stale SEO findings are editorial pages with factual drift vs golden; they are not generator failures."
+  ]
+}

@@ -1,5 +1,5 @@
 /**
- * Build golden dataset JSON from verified dossiers (Nexon, Punch) + static benchmarks.
+ * Build golden dataset JSON from generated verified dossiers + static benchmarks.
  * Writes to docs/catalog/golden-dataset/vehicles/
  */
 
@@ -7,14 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import {
-  TATA_NEXON_FAMILY_SLUG,
-  TATA_NEXON_VERIFIED_VARIANTS,
-} from "../src/data/catalog/verified/tataNexonEvVerified.js";
-import {
-  TATA_PUNCH_FAMILY_SLUG,
-  TATA_PUNCH_VERIFIED_VARIANTS,
-} from "../src/data/catalog/verified/tataPunchEvVerified.js";
+import { loadGeneratedVerifiedDossier } from "../src/data/catalog/generated/index.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.resolve(__dirname, "../docs/catalog/golden-dataset/vehicles");
@@ -228,24 +221,38 @@ function wrapStatic(b) {
   };
 }
 
+function dossierFromGenerated(familySlug, { id, displayName, brand, model, bodyType }) {
+  const dossier = loadGeneratedVerifiedDossier(familySlug);
+  if (!dossier?.variants?.length) {
+    throw new Error(`Missing generated verified dossier for ${familySlug}`);
+  }
+
+  return buildFromVerified({
+    id,
+    displayName: dossier.displayName || displayName,
+    familySlug: dossier.familySlug || familySlug,
+    brand: dossier.brand || brand,
+    model,
+    bodyType,
+    variants: dossier.variants,
+    verificationLevel: dossier.verificationLevel || "verified_dossier",
+  });
+}
+
 const dossiers = [
-  buildFromVerified({
+  dossierFromGenerated("tata-nexon-ev", {
     id: "tata-nexon-ev",
     displayName: "Tata Nexon EV",
-    familySlug: TATA_NEXON_FAMILY_SLUG,
     brand: "Tata",
     model: "Nexon EV",
     bodyType: "SUV",
-    variants: TATA_NEXON_VERIFIED_VARIANTS,
   }),
-  buildFromVerified({
+  dossierFromGenerated("tata-punch-ev", {
     id: "tata-punch-ev",
     displayName: "Tata Punch EV",
-    familySlug: TATA_PUNCH_FAMILY_SLUG,
     brand: "Tata",
     model: "Punch EV",
     bodyType: "SUV",
-    variants: TATA_PUNCH_VERIFIED_VARIANTS,
   }),
   ...STATIC_BENCHMARKS.map(wrapStatic),
 ];

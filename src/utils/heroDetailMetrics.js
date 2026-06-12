@@ -3,6 +3,7 @@
  */
 
 import {
+  formatAcChargeDurationLabel,
   formatChargingDurationNumber,
 } from "./formatChargingDuration.js";
 import {
@@ -197,8 +198,7 @@ function parseAcHoursValue(value) {
  * @param {number} hours
  */
 function formatAcHoursLabel(hours) {
-  const formatted = formatChargingDurationNumber(hours);
-  return formatted || null;
+  return formatAcChargeDurationLabel(hours);
 }
 
 /**
@@ -244,8 +244,7 @@ export function resolveHeroChargingSummary(variant = null, catalogMeta = null) {
 
   const dcPart =
     dcMin != null ? `${Math.round(dcMin)} min` : null;
-  const acPart =
-    acMax != null ? `${formatAcHoursLabel(acMax)} hrs` : null;
+  const acPart = acMax != null ? formatAcHoursLabel(acMax) : null;
 
   if (dcPart && acPart) return `${dcPart} – ${acPart}`;
   return dcPart || acPart;

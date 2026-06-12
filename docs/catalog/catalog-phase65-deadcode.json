@@ -1,0 +1,1007 @@
+{
+  "phase": "catalog-phase65-deadcode",
+  "generatedAt": "2026-06-11T09:31:34.057Z",
+  "filesAudited": [
+    "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+    "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+    "src/data/catalog/verified/resolveDossierSlug.js",
+    "src/data/catalog/verified/nexonSlugAliases.js",
+    "src/data/catalog/verified/punchSlugAliases.js",
+    "src/data/catalog/verified/tiagoSlugAliases.js",
+    "src/data/catalog/verified/tataNexonEvVerified.js",
+    "src/data/catalog/verified/tataPunchEvVerified.js",
+    "src/data/catalog/verified/tataTiagoEvVerified.js",
+    "src/backend/catalog/tier1CatalogDefinitions.js"
+  ],
+  "dependencyGraph": "Golden JSON (public/catalog/golden-dataset/)\n  ├─► generate-verified-dossiers.mjs ──► src/data/catalog/generated/*\n  ├─► generate-tier1-definitions.mjs ──► src/backend/catalog/generated/*\n  │\n  ├─► [RUNTIME — generated primary since 6A]\n  │     buildVerifiedDossierVariants.js ──► generated/index.js (first)\n  │                                      └─► tata*EvVerified.js (rollback)\n  │     backend-seed-tier1.mjs ──► generated/index.js (first)\n  │                            └─► tier1CatalogDefinitions.js (rollback)\n  │\n  ├─► [RUNTIME — still active manual]\n  │     normalizeCar.js ──► applyVerifiedCatalogOverlay.js\n  │                      └─► buildTata*VerifiedOverlay (tata*EvVerified.js)\n  │     vehicleRoutes.js ──► resolveDossierSlug.js\n  │     vehicleDetailResolver.js ──► buildVerifiedDossierVariants.js\n  │                               └─► resolveDossierSlug.js\n  │\n  └─► [TOOLING — manual references]\n        scripts/backend-seed-tier1.mjs (fallback import)\n        scripts/backend-compare-validate.mjs\n        scripts/backend-catalog-ops-smoke.mjs\n        scripts/lib/loadCatalogForAudit.mjs\n        scripts/lib/mediaAuditV1.mjs\n        scripts/sync-*-verified-backend-catalog.mjs\n        scripts/validate-verified-dossier-productionization.mjs\n        scripts/build-golden-dataset.mjs\n        scripts/ingest-*-dossier.mjs",
+  "referenceIndex": {
+    "src/data/catalog/verified": [
+      "docs/catalog/catalog-acquisition-readiness-audit.md",
+      "docs/catalog/catalog-phase2-runtime.json",
+      "docs/catalog/catalog-phase2-runtime.md",
+      "docs/catalog/catalog-phase25-compare.json",
+      "docs/catalog/catalog-phase25-compare.md",
+      "docs/catalog/catalog-phase3-generated-dossiers.json",
+      "docs/catalog/catalog-phase3-generated-dossiers.md",
+      "docs/catalog/catalog-phase6a-cutover.json",
+      "docs/catalog/catalog-phase6a-cutover.md",
+      "reports/ingestion/nexon-dossier-ingestion-summary.md",
+      "reports/ingestion/punch-dossier-ingestion-summary.md",
+      "scripts/build-golden-dataset.mjs",
+      "scripts/catalog-phase2-runtime-audit.mjs",
+      "scripts/catalog-phase25-compare-audit.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/ingest-nexon-dossier.mjs",
+      "scripts/ingest-punch-dossier.mjs",
+      "scripts/lib/mediaAuditV1.mjs",
+      "scripts/sync-nexon-verified-backend-catalog.mjs",
+      "scripts/sync-punch-verified-backend-catalog.mjs",
+      "scripts/sync-tiago-verified-backend-catalog.mjs",
+      "scripts/validate-nexon-variant-visibility.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs"
+    ],
+    "catalog/verified/": [
+      "docs/catalog/catalog-acquisition-readiness-audit.md",
+      "docs/catalog/catalog-phase2-runtime.json",
+      "docs/catalog/catalog-phase2-runtime.md",
+      "docs/catalog/catalog-phase25-compare.json",
+      "docs/catalog/catalog-phase25-compare.md",
+      "docs/catalog/catalog-phase3-generated-dossiers.json",
+      "docs/catalog/catalog-phase3-generated-dossiers.md",
+      "docs/catalog/catalog-phase6a-cutover.json",
+      "docs/catalog/catalog-phase6a-cutover.md",
+      "reports/ingestion/nexon-dossier-ingestion-summary.md",
+      "reports/ingestion/punch-dossier-ingestion-summary.md",
+      "scripts/build-golden-dataset.mjs",
+      "scripts/catalog-phase2-runtime-audit.mjs",
+      "scripts/catalog-phase25-compare-audit.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/ingest-nexon-dossier.mjs",
+      "scripts/ingest-punch-dossier.mjs",
+      "scripts/lib/mediaAuditV1.mjs",
+      "scripts/sync-nexon-verified-backend-catalog.mjs",
+      "scripts/sync-punch-verified-backend-catalog.mjs",
+      "scripts/sync-tiago-verified-backend-catalog.mjs",
+      "scripts/validate-nexon-variant-visibility.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/backend/catalog/tier1CatalogDefinitions.js",
+      "src/utils/normalizeCar.js",
+      "src/utils/vehicleDetailResolver.js",
+      "src/utils/vehicleRoutes.js"
+    ],
+    "tier1CatalogDefinitions": [
+      "docs/catalog/catalog-phase2-runtime.json",
+      "docs/catalog/catalog-phase2-runtime.md",
+      "docs/catalog/catalog-phase3-generated-dossiers.json",
+      "docs/catalog/catalog-phase3-generated-dossiers.md",
+      "docs/catalog/catalog-phase4-generated-tier1.json",
+      "docs/catalog/catalog-phase4-generated-tier1.md",
+      "docs/catalog/catalog-phase6a-cutover.json",
+      "docs/catalog/catalog-phase6a-cutover.md",
+      "docs/catalog/tier1-catalog-operations-playbook.md",
+      "docs/infrastructure/real-production-foundation.md",
+      "docs/launch/day3-catalog-operations-readiness.md",
+      "reports/ingestion/nexon-dossier-ingestion-summary.md",
+      "scripts/backend-catalog-ops-smoke.mjs",
+      "scripts/backend-compare-validate.mjs",
+      "scripts/backend-seed-nexon-ev.mjs",
+      "scripts/backend-seed-tier1.mjs",
+      "scripts/catalog-phase2-runtime-audit.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase4-generated-tier1-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/lib/loadCatalogForAudit.mjs",
+      "src/backend/catalog/catalogSeedUtils.js"
+    ],
+    "buildVerifiedDossierVariants": [
+      "docs/catalog/catalog-phase2-runtime.json",
+      "docs/catalog/catalog-phase2-runtime.md",
+      "docs/catalog/catalog-phase25-compare.json",
+      "docs/catalog/catalog-phase25-compare.md",
+      "docs/catalog/catalog-phase3-generated-dossiers.json",
+      "docs/catalog/catalog-phase3-generated-dossiers.md",
+      "docs/catalog/catalog-phase6a-cutover.json",
+      "docs/catalog/catalog-phase6a-cutover.md",
+      "scripts/catalog-phase2-runtime-audit.mjs",
+      "scripts/catalog-phase25-compare-audit.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/utils/vehicleDetailResolver.js"
+    ],
+    "hasVerifiedDossier": [
+      "docs/catalog/catalog-phase2-runtime.json",
+      "docs/catalog/catalog-phase2-runtime.md",
+      "docs/catalog/catalog-phase25-compare.json",
+      "docs/catalog/catalog-phase25-compare.md",
+      "docs/catalog/catalog-phase3-generated-dossiers.json",
+      "docs/catalog/catalog-phase3-generated-dossiers.md",
+      "docs/catalog/catalog-phase6a-cutover.json",
+      "docs/catalog/catalog-phase6a-cutover.md",
+      "docs/media/media-audit-v1.json",
+      "scripts/catalog-phase2-runtime-audit.mjs",
+      "scripts/catalog-phase25-compare-audit.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/lib/mediaAuditV1.mjs",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/utils/vehicleDetailResolver.js"
+    ],
+    "applyVerifiedCatalogOverlay": [
+      "docs/catalog/catalog-phase3-generated-dossiers.json",
+      "docs/catalog/catalog-phase3-generated-dossiers.md",
+      "reports/ingestion/nexon-dossier-ingestion-summary.md",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+      "src/utils/normalizeCar.js"
+    ],
+    "resolveDossierSlug": [
+      "docs/catalog/catalog-phase2-runtime.json",
+      "docs/catalog/catalog-phase2-runtime.md",
+      "docs/catalog/catalog-phase3-generated-dossiers.json",
+      "docs/catalog/catalog-phase3-generated-dossiers.md",
+      "reports/ingestion/nexon-variant-visibility-2026-06-06.json",
+      "reports/ingestion/verified-dossier-productionization-2026-06-06.json",
+      "reports/ingestion/verified-dossier-productionization-2026-06-07.json",
+      "scripts/catalog-phase2-runtime-audit.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/validate-nexon-variant-visibility.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/data/catalog/verified/resolveDossierSlug.js",
+      "src/utils/vehicleDetailResolver.js",
+      "src/utils/vehicleRoutes.js"
+    ],
+    "tataNexonEvVerified": [
+      "docs/catalog/catalog-acquisition-readiness-audit.md",
+      "docs/catalog/catalog-phase4-generated-tier1.json",
+      "docs/catalog/catalog-phase4-generated-tier1.md",
+      "reports/ingestion/nexon-dossier-ingestion-summary.md",
+      "scripts/build-golden-dataset.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase4-generated-tier1-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/ingest-nexon-dossier.mjs",
+      "scripts/lib/mediaAuditV1.mjs",
+      "scripts/sync-nexon-verified-backend-catalog.mjs",
+      "scripts/validate-nexon-variant-visibility.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/backend/catalog/tier1CatalogDefinitions.js",
+      "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/data/catalog/verified/resolveDossierSlug.js"
+    ],
+    "tataPunchEvVerified": [
+      "docs/catalog/catalog-phase4-generated-tier1.json",
+      "docs/catalog/catalog-phase4-generated-tier1.md",
+      "reports/ingestion/punch-dossier-ingestion-summary.md",
+      "scripts/build-golden-dataset.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase4-generated-tier1-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/ingest-punch-dossier.mjs",
+      "scripts/lib/mediaAuditV1.mjs",
+      "scripts/sync-punch-verified-backend-catalog.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/backend/catalog/tier1CatalogDefinitions.js",
+      "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/data/catalog/verified/resolveDossierSlug.js"
+    ],
+    "tataTiagoEvVerified": [
+      "docs/catalog/catalog-phase4-generated-tier1.json",
+      "docs/catalog/catalog-phase4-generated-tier1.md",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase4-generated-tier1-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/lib/mediaAuditV1.mjs",
+      "scripts/sync-tiago-verified-backend-catalog.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/backend/catalog/tier1CatalogDefinitions.js",
+      "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/data/catalog/verified/resolveDossierSlug.js"
+    ],
+    "buildTataNexonTier1Definition": [
+      "reports/ingestion/nexon-dossier-ingestion-summary.md",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/ingest-nexon-dossier.mjs",
+      "src/backend/catalog/tier1CatalogDefinitions.js",
+      "src/data/catalog/verified/tataNexonEvVerified.js"
+    ],
+    "buildTataPunchTier1Definition": [
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/ingest-punch-dossier.mjs",
+      "src/backend/catalog/tier1CatalogDefinitions.js",
+      "src/data/catalog/verified/tataPunchEvVerified.js"
+    ],
+    "buildTataTiagoTier1Definition": [
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "src/backend/catalog/tier1CatalogDefinitions.js",
+      "src/data/catalog/verified/tataTiagoEvVerified.js"
+    ],
+    "buildTataNexonVerifiedOverlay": [
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/ingest-nexon-dossier.mjs",
+      "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/data/catalog/verified/tataNexonEvVerified.js"
+    ],
+    "buildTataPunchVerifiedOverlay": [
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/ingest-punch-dossier.mjs",
+      "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/data/catalog/verified/tataPunchEvVerified.js"
+    ],
+    "buildTataTiagoVerifiedOverlay": [
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/data/catalog/verified/tataTiagoEvVerified.js"
+    ],
+    "TATA_NEXON_VERIFIED_VARIANTS": [
+      "scripts/build-golden-dataset.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/ingest-nexon-dossier.mjs",
+      "scripts/sync-nexon-verified-backend-catalog.mjs",
+      "scripts/validate-nexon-variant-visibility.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/data/catalog/verified/tataNexonEvVerified.js"
+    ],
+    "TATA_PUNCH_VERIFIED_VARIANTS": [
+      "scripts/build-golden-dataset.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/ingest-punch-dossier.mjs",
+      "scripts/sync-punch-verified-backend-catalog.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/data/catalog/verified/tataPunchEvVerified.js"
+    ],
+    "TATA_TIAGO_VERIFIED_VARIANTS": [
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/sync-tiago-verified-backend-catalog.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "src/data/catalog/verified/tataTiagoEvVerified.js"
+    ],
+    "nexonSlugAliases": [
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/sync-nexon-verified-backend-catalog.mjs",
+      "scripts/validate-nexon-variant-visibility.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/data/catalog/verified/resolveDossierSlug.js",
+      "src/data/catalog/verified/tataNexonEvVerified.js"
+    ],
+    "punchSlugAliases": [
+      "docs/catalog/catalog-phase2-runtime.json",
+      "docs/catalog/catalog-phase2-runtime.md",
+      "scripts/catalog-phase2-runtime-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/sync-punch-verified-backend-catalog.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/data/catalog/verified/resolveDossierSlug.js",
+      "src/data/catalog/verified/tataPunchEvVerified.js"
+    ],
+    "tiagoSlugAliases": [
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/sync-tiago-verified-backend-catalog.mjs",
+      "scripts/validate-verified-dossier-productionization.mjs",
+      "src/data/catalog/verified/resolveDossierSlug.js",
+      "src/data/catalog/verified/tataTiagoEvVerified.js"
+    ],
+    "TIER1_CATALOG_DEFINITIONS": [
+      "scripts/backend-catalog-ops-smoke.mjs",
+      "scripts/backend-seed-tier1.mjs",
+      "scripts/catalog-phase4-generated-tier1-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/lib/loadCatalogForAudit.mjs",
+      "src/backend/catalog/catalogSeedUtils.js",
+      "src/backend/catalog/tier1CatalogDefinitions.js"
+    ]
+  },
+  "activeReferences": {
+    "runtime": [
+      "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+      "src/data/catalog/verified/resolveDossierSlug.js",
+      "src/utils/normalizeCar.js",
+      "src/utils/vehicleDetailResolver.js",
+      "src/utils/vehicleRoutes.js"
+    ],
+    "tooling": [
+      "scripts/backend-catalog-ops-smoke.mjs",
+      "scripts/backend-compare-validate.mjs",
+      "scripts/backend-seed-nexon-ev.mjs",
+      "scripts/backend-seed-tier1.mjs",
+      "scripts/catalog-phase2-runtime-audit.mjs",
+      "scripts/catalog-phase3-generated-audit.mjs",
+      "scripts/catalog-phase4-generated-tier1-audit.mjs",
+      "scripts/catalog-phase65-deadcode-audit.mjs",
+      "scripts/catalog-phase6a-cutover-audit.mjs",
+      "scripts/lib/loadCatalogForAudit.mjs"
+    ],
+    "count": 5
+  },
+  "classifications": [
+    {
+      "file": "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "classification": "ACTIVE",
+      "role": "Runtime cutover layer (generated first, manual rollback).",
+      "runtimeConsumers": [
+        "src/utils/vehicleDetailResolver.js"
+      ]
+    },
+    {
+      "file": "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+      "classification": "ACTIVE",
+      "role": "Tata overlay enrichment in normalizeCar pipeline.",
+      "runtimeConsumers": [
+        "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+        "src/utils/normalizeCar.js"
+      ]
+    },
+    {
+      "file": "src/data/catalog/verified/resolveDossierSlug.js",
+      "classification": "ACTIVE",
+      "role": "Variant slug alias resolution for routes and detail pages.",
+      "runtimeConsumers": [
+        "src/data/catalog/verified/resolveDossierSlug.js",
+        "src/utils/vehicleDetailResolver.js",
+        "src/utils/vehicleRoutes.js"
+      ]
+    },
+    {
+      "file": "src/data/catalog/verified/nexonSlugAliases.js",
+      "classification": "ACTIVE",
+      "role": "Nexon dossier slug aliases.",
+      "runtimeConsumers": [
+        "src/data/catalog/verified/resolveDossierSlug.js",
+        "src/data/catalog/verified/tataNexonEvVerified.js"
+      ]
+    },
+    {
+      "file": "src/data/catalog/verified/punchSlugAliases.js",
+      "classification": "ACTIVE",
+      "role": "Punch dossier slug aliases.",
+      "runtimeConsumers": [
+        "src/data/catalog/verified/resolveDossierSlug.js",
+        "src/data/catalog/verified/tataPunchEvVerified.js"
+      ]
+    },
+    {
+      "file": "src/data/catalog/verified/tiagoSlugAliases.js",
+      "classification": "ACTIVE",
+      "role": "Tiago dossier slug aliases.",
+      "runtimeConsumers": [
+        "src/data/catalog/verified/resolveDossierSlug.js",
+        "src/data/catalog/verified/tataTiagoEvVerified.js"
+      ]
+    },
+    {
+      "file": "src/data/catalog/verified/tataNexonEvVerified.js",
+      "classification": "ROLLBACK_ONLY",
+      "subsystems": {
+        "TATA_NEXON_VERIFIED_VARIANTS": "ROLLBACK_ONLY",
+        "buildTataNexonVerifiedOverlay": "ACTIVE",
+        "buildTataNexonTier1Definition": "ROLLBACK_ONLY",
+        "TATA_NEXON_FAMILY_MEDIA": "ROLLBACK_ONLY"
+      },
+      "role": "Manual Nexon dossier; overlays still active at runtime.",
+      "runtimeConsumers": [
+        "src/backend/catalog/tier1CatalogDefinitions.js",
+        "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+        "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+        "src/data/catalog/verified/resolveDossierSlug.js"
+      ],
+      "toolingConsumers": [
+        "scripts/build-golden-dataset.mjs",
+        "scripts/catalog-phase3-generated-audit.mjs",
+        "scripts/catalog-phase4-generated-tier1-audit.mjs",
+        "scripts/catalog-phase65-deadcode-audit.mjs",
+        "scripts/catalog-phase6a-cutover-audit.mjs",
+        "scripts/ingest-nexon-dossier.mjs",
+        "scripts/lib/mediaAuditV1.mjs",
+        "scripts/sync-nexon-verified-backend-catalog.mjs",
+        "scripts/validate-nexon-variant-visibility.mjs",
+        "scripts/validate-verified-dossier-productionization.mjs"
+      ]
+    },
+    {
+      "file": "src/data/catalog/verified/tataPunchEvVerified.js",
+      "classification": "ROLLBACK_ONLY",
+      "subsystems": {
+        "TATA_PUNCH_VERIFIED_VARIANTS": "ROLLBACK_ONLY",
+        "buildTataPunchVerifiedOverlay": "ACTIVE",
+        "buildTataPunchTier1Definition": "ROLLBACK_ONLY",
+        "TATA_PUNCH_FAMILY_MEDIA": "ROLLBACK_ONLY"
+      },
+      "role": "Manual Punch dossier; overlays still active at runtime.",
+      "runtimeConsumers": [
+        "src/backend/catalog/tier1CatalogDefinitions.js",
+        "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+        "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+        "src/data/catalog/verified/resolveDossierSlug.js"
+      ],
+      "toolingConsumers": [
+        "scripts/build-golden-dataset.mjs",
+        "scripts/catalog-phase3-generated-audit.mjs",
+        "scripts/catalog-phase4-generated-tier1-audit.mjs",
+        "scripts/catalog-phase65-deadcode-audit.mjs",
+        "scripts/catalog-phase6a-cutover-audit.mjs",
+        "scripts/ingest-punch-dossier.mjs",
+        "scripts/lib/mediaAuditV1.mjs",
+        "scripts/sync-punch-verified-backend-catalog.mjs",
+        "scripts/validate-verified-dossier-productionization.mjs"
+      ]
+    },
+    {
+      "file": "src/data/catalog/verified/tataTiagoEvVerified.js",
+      "classification": "ROLLBACK_ONLY",
+      "subsystems": {
+        "TATA_TIAGO_VERIFIED_VARIANTS": "ROLLBACK_ONLY",
+        "buildTataTiagoVerifiedOverlay": "ACTIVE",
+        "buildTataTiagoTier1Definition": "ROLLBACK_ONLY",
+        "TATA_TIAGO_FAMILY_MEDIA": "ROLLBACK_ONLY"
+      },
+      "role": "Manual Tiago dossier; overlays still active at runtime.",
+      "runtimeConsumers": [
+        "src/backend/catalog/tier1CatalogDefinitions.js",
+        "src/data/catalog/verified/applyVerifiedCatalogOverlay.js",
+        "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+        "src/data/catalog/verified/resolveDossierSlug.js"
+      ],
+      "toolingConsumers": [
+        "scripts/catalog-phase3-generated-audit.mjs",
+        "scripts/catalog-phase4-generated-tier1-audit.mjs",
+        "scripts/catalog-phase65-deadcode-audit.mjs",
+        "scripts/catalog-phase6a-cutover-audit.mjs",
+        "scripts/lib/mediaAuditV1.mjs",
+        "scripts/sync-tiago-verified-backend-catalog.mjs",
+        "scripts/validate-verified-dossier-productionization.mjs"
+      ]
+    },
+    {
+      "file": "src/backend/catalog/tier1CatalogDefinitions.js",
+      "classification": "ROLLBACK_ONLY",
+      "role": "Manual tier1 seed definitions (11 families); generated primary since Phase 6A.",
+      "runtimeConsumers": [],
+      "toolingConsumers": [
+        "scripts/backend-catalog-ops-smoke.mjs",
+        "scripts/backend-compare-validate.mjs",
+        "scripts/backend-seed-nexon-ev.mjs",
+        "scripts/backend-seed-tier1.mjs",
+        "scripts/catalog-phase2-runtime-audit.mjs",
+        "scripts/catalog-phase3-generated-audit.mjs",
+        "scripts/catalog-phase4-generated-tier1-audit.mjs",
+        "scripts/catalog-phase65-deadcode-audit.mjs",
+        "scripts/catalog-phase6a-cutover-audit.mjs",
+        "scripts/lib/loadCatalogForAudit.mjs"
+      ]
+    }
+  ],
+  "rollbackOnlyCount": 4,
+  "activeReferenceCount": 5,
+  "driftCount": 39,
+  "driftByField": {
+    "variantCount": 13,
+    "pricing": 5,
+    "range": 3,
+    "battery": 2,
+    "charging": 1,
+    "power": 0,
+    "torque": 0,
+    "media": 15
+  },
+  "vehicleDrift": [
+    {
+      "familySlug": "tata-curvv-ev",
+      "drift": [
+        {
+          "field": "media",
+          "familySlug": "tata-curvv-ev",
+          "aspect": "hasHero",
+          "generated": true,
+          "manual": false
+        },
+        {
+          "field": "media",
+          "familySlug": "tata-curvv-ev",
+          "aspect": "hasListing",
+          "generated": true,
+          "manual": false
+        },
+        {
+          "field": "media",
+          "familySlug": "tata-curvv-ev",
+          "aspect": "hasCompare",
+          "generated": true,
+          "manual": false
+        }
+      ]
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "drift": [
+        {
+          "field": "variantCount",
+          "familySlug": "mahindra-be-6",
+          "generated": 3,
+          "manual": 2
+        },
+        {
+          "field": "variantCount",
+          "familySlug": "mahindra-be-6",
+          "slug": "pack-one",
+          "issue": "missing in generated tier1"
+        },
+        {
+          "field": "variantCount",
+          "familySlug": "mahindra-be-6",
+          "slug": "pack-three",
+          "issue": "missing in generated tier1"
+        },
+        {
+          "field": "media",
+          "familySlug": "mahindra-be-6",
+          "aspect": "hasHero",
+          "generated": true,
+          "manual": false
+        },
+        {
+          "field": "media",
+          "familySlug": "mahindra-be-6",
+          "aspect": "hasListing",
+          "generated": true,
+          "manual": false
+        },
+        {
+          "field": "media",
+          "familySlug": "mahindra-be-6",
+          "aspect": "hasCompare",
+          "generated": true,
+          "manual": false
+        }
+      ]
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "drift": [
+        {
+          "field": "variantCount",
+          "familySlug": "mahindra-xev-9e",
+          "generated": 3,
+          "manual": 2
+        },
+        {
+          "field": "variantCount",
+          "familySlug": "mahindra-xev-9e",
+          "slug": "pack-one",
+          "issue": "missing in generated tier1"
+        },
+        {
+          "field": "variantCount",
+          "familySlug": "mahindra-xev-9e",
+          "slug": "pack-three",
+          "issue": "missing in generated tier1"
+        }
+      ]
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "drift": [
+        {
+          "field": "variantCount",
+          "familySlug": "byd-atto-3",
+          "generated": 3,
+          "manual": 2
+        },
+        {
+          "field": "range",
+          "familySlug": "byd-atto-3",
+          "slug": "dynamic",
+          "generated": 521,
+          "manual": 480
+        },
+        {
+          "field": "pricing",
+          "familySlug": "byd-atto-3",
+          "slug": "superior",
+          "generated": 2999000,
+          "manual": 3399000
+        },
+        {
+          "field": "range",
+          "familySlug": "byd-atto-3",
+          "slug": "superior",
+          "generated": 521,
+          "manual": 480
+        }
+      ]
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "drift": [
+        {
+          "field": "variantCount",
+          "familySlug": "mg-comet-ev",
+          "generated": 3,
+          "manual": 2
+        },
+        {
+          "field": "pricing",
+          "familySlug": "mg-comet-ev",
+          "slug": "play",
+          "generated": 849000,
+          "manual": 699000
+        },
+        {
+          "field": "charging",
+          "familySlug": "mg-comet-ev",
+          "slug": "play",
+          "generated": 50,
+          "manual": 0
+        },
+        {
+          "field": "variantCount",
+          "familySlug": "mg-comet-ev",
+          "slug": "play-plus",
+          "issue": "missing in generated tier1"
+        }
+      ]
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "drift": [
+        {
+          "field": "variantCount",
+          "familySlug": "mahindra-xuv400",
+          "generated": 4,
+          "manual": 2
+        },
+        {
+          "field": "pricing",
+          "familySlug": "mahindra-xuv400",
+          "slug": "el-pro",
+          "generated": 1799000,
+          "manual": 1599000
+        },
+        {
+          "field": "variantCount",
+          "familySlug": "mahindra-xuv400",
+          "slug": "el-8-5",
+          "issue": "missing in generated tier1"
+        }
+      ]
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "drift": [
+        {
+          "field": "variantCount",
+          "familySlug": "mg-zs-ev",
+          "generated": 3,
+          "manual": 2
+        },
+        {
+          "field": "pricing",
+          "familySlug": "mg-zs-ev",
+          "slug": "excite",
+          "generated": 1848000,
+          "manual": 1799000
+        },
+        {
+          "field": "battery",
+          "familySlug": "mg-zs-ev",
+          "slug": "excite",
+          "generated": 44.5,
+          "manual": 50.3
+        },
+        {
+          "field": "variantCount",
+          "familySlug": "mg-zs-ev",
+          "slug": "exclusive-plus",
+          "issue": "missing in generated tier1"
+        },
+        {
+          "field": "media",
+          "familySlug": "mg-zs-ev",
+          "aspect": "hasHero",
+          "generated": true,
+          "manual": false
+        },
+        {
+          "field": "media",
+          "familySlug": "mg-zs-ev",
+          "aspect": "hasListing",
+          "generated": true,
+          "manual": false
+        },
+        {
+          "field": "media",
+          "familySlug": "mg-zs-ev",
+          "aspect": "hasCompare",
+          "generated": true,
+          "manual": false
+        }
+      ]
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "drift": [
+        {
+          "field": "pricing",
+          "familySlug": "hyundai-kona-electric",
+          "slug": "premium",
+          "generated": 2384000,
+          "manual": 2399000
+        },
+        {
+          "field": "range",
+          "familySlug": "hyundai-kona-electric",
+          "slug": "premium",
+          "generated": 452,
+          "manual": 484
+        },
+        {
+          "field": "battery",
+          "familySlug": "hyundai-kona-electric",
+          "slug": "premium",
+          "generated": 39.2,
+          "manual": 64
+        }
+      ]
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "drift": [
+        {
+          "field": "media",
+          "familySlug": "tata-tiago-ev",
+          "aspect": "hasHero",
+          "generated": false,
+          "manual": true
+        },
+        {
+          "field": "media",
+          "familySlug": "tata-tiago-ev",
+          "aspect": "hasListing",
+          "generated": false,
+          "manual": true
+        },
+        {
+          "field": "media",
+          "familySlug": "tata-tiago-ev",
+          "aspect": "hasCompare",
+          "generated": false,
+          "manual": true
+        },
+        {
+          "field": "media",
+          "familySlug": "tata-tiago-ev",
+          "aspect": "hasHero",
+          "generated": false,
+          "manual": true
+        },
+        {
+          "field": "media",
+          "familySlug": "tata-tiago-ev",
+          "aspect": "hasListing",
+          "generated": false,
+          "manual": true
+        },
+        {
+          "field": "media",
+          "familySlug": "tata-tiago-ev",
+          "aspect": "hasCompare",
+          "generated": false,
+          "manual": true
+        }
+      ]
+    }
+  ],
+  "vehiclesWithDriftComparison": 9,
+  "generatedCoverage": {
+    "verifiedDossierSlugs": [
+      "bmw-ix1",
+      "byd-atto-3",
+      "byd-seal",
+      "citroen-ec3",
+      "hyundai-creta-electric",
+      "hyundai-ioniq-5",
+      "hyundai-kona-electric",
+      "kia-ev6",
+      "mahindra-be-6",
+      "mahindra-xev-9e",
+      "mahindra-xuv400",
+      "maruti-e-vitara",
+      "mercedes-eqa",
+      "mercedes-eqb",
+      "mg-comet-ev",
+      "mg-windsor-ev",
+      "mg-zs-ev",
+      "mini-cooper-se",
+      "tata-curvv-ev",
+      "tata-harrier-ev",
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-tiago-ev",
+      "tata-tigor-ev",
+      "volvo-ex40"
+    ],
+    "tier1Slugs": [
+      "bmw-ix1",
+      "byd-atto-3",
+      "byd-seal",
+      "citroen-ec3",
+      "hyundai-creta-electric",
+      "hyundai-ioniq-5",
+      "hyundai-kona-electric",
+      "kia-ev6",
+      "mahindra-be-6",
+      "mahindra-xev-9e",
+      "mahindra-xuv400",
+      "maruti-e-vitara",
+      "mercedes-eqa",
+      "mercedes-eqb",
+      "mg-comet-ev",
+      "mg-windsor-ev",
+      "mg-zs-ev",
+      "mini-cooper-se",
+      "tata-curvv-ev",
+      "tata-harrier-ev",
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-tiago-ev",
+      "tata-tigor-ev",
+      "volvo-ex40"
+    ],
+    "manualTier1Slugs": [
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-tiago-ev",
+      "tata-curvv-ev",
+      "mg-comet-ev",
+      "mg-zs-ev",
+      "mahindra-be-6",
+      "mahindra-xev-9e",
+      "mahindra-xuv400",
+      "byd-atto-3",
+      "hyundai-kona-electric"
+    ],
+    "manualVerifiedSlugs": [
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-tiago-ev"
+    ]
+  },
+  "safeDeletionCandidates": [
+    {
+      "file": "scripts/ingest-nexon-dossier.mjs",
+      "classification": "UNUSED",
+      "note": "Legacy manual-ingestion/validation tooling; golden + generators are canonical. Safe after confirming no CI dependency."
+    },
+    {
+      "file": "scripts/ingest-punch-dossier.mjs",
+      "classification": "UNUSED",
+      "note": "Legacy manual-ingestion/validation tooling; golden + generators are canonical. Safe after confirming no CI dependency."
+    },
+    {
+      "file": "scripts/sync-nexon-verified-backend-catalog.mjs",
+      "classification": "UNUSED",
+      "note": "Legacy manual-ingestion/validation tooling; golden + generators are canonical. Safe after confirming no CI dependency."
+    },
+    {
+      "file": "scripts/sync-punch-verified-backend-catalog.mjs",
+      "classification": "UNUSED",
+      "note": "Legacy manual-ingestion/validation tooling; golden + generators are canonical. Safe after confirming no CI dependency."
+    },
+    {
+      "file": "scripts/sync-tiago-verified-backend-catalog.mjs",
+      "classification": "UNUSED",
+      "note": "Legacy manual-ingestion/validation tooling; golden + generators are canonical. Safe after confirming no CI dependency."
+    },
+    {
+      "file": "scripts/backend-seed-nexon-ev.mjs",
+      "classification": "UNUSED",
+      "note": "Legacy manual-ingestion/validation tooling; golden + generators are canonical. Safe after confirming no CI dependency."
+    },
+    {
+      "file": "scripts/validate-nexon-variant-visibility.mjs",
+      "classification": "UNUSED",
+      "note": "Legacy manual-ingestion/validation tooling; golden + generators are canonical. Safe after confirming no CI dependency."
+    },
+    {
+      "file": "scripts/validate-verified-dossier-productionization.mjs",
+      "classification": "UNUSED",
+      "note": "Legacy manual-ingestion/validation tooling; golden + generators are canonical. Safe after confirming no CI dependency."
+    }
+  ],
+  "requiresMigration": [
+    {
+      "target": "src/data/catalog/verified/tataNexonEvVerified.js",
+      "exports": [
+        "TATA_NEXON_VERIFIED_VARIANTS",
+        "buildTataNexonTier1Definition"
+      ],
+      "migrateTo": "src/data/catalog/generated/*",
+      "blockers": [
+        "buildTataNexonVerifiedOverlay still ACTIVE in normalizeCar"
+      ]
+    },
+    {
+      "target": "src/data/catalog/verified/tataPunchEvVerified.js",
+      "exports": [
+        "TATA_PUNCH_VERIFIED_VARIANTS",
+        "buildTataPunchTier1Definition"
+      ],
+      "migrateTo": "src/data/catalog/generated/*",
+      "blockers": [
+        "buildTataPunchVerifiedOverlay still ACTIVE in normalizeCar"
+      ]
+    },
+    {
+      "target": "src/data/catalog/verified/tataTiagoEvVerified.js",
+      "exports": [
+        "TATA_TIAGO_VERIFIED_VARIANTS",
+        "buildTataTiagoTier1Definition"
+      ],
+      "migrateTo": "src/data/catalog/generated/*",
+      "blockers": [
+        "buildTataTiagoVerifiedOverlay still ACTIVE in normalizeCar"
+      ]
+    },
+    {
+      "target": "src/backend/catalog/tier1CatalogDefinitions.js",
+      "scope": "inline definitions for 7 stale families + Tata builder imports",
+      "migrateTo": "src/backend/catalog/generated/*",
+      "blockers": [
+        "backend-compare-validate.mjs uses getTier1Definition()",
+        "backend-catalog-ops-smoke.mjs iterates TIER1_CATALOG_DEFINITIONS",
+        "loadCatalogForAudit.mjs reads manual definitions"
+      ]
+    },
+    {
+      "target": "scripts/backend-compare-validate.mjs",
+      "migrateTo": "loadGeneratedTier1Definition from generated/index.js"
+    },
+    {
+      "target": "scripts/lib/loadCatalogForAudit.mjs",
+      "migrateTo": "generated tier1 index"
+    },
+    {
+      "target": "scripts/lib/mediaAuditV1.mjs",
+      "migrateTo": "golden media or generated dossier media"
+    }
+  ],
+  "requiresWrappers": [
+    {
+      "file": "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "reason": "Keep as cutover wrapper until manual rollback path is removed in Phase 7."
+    }
+  ],
+  "deadFiles": [],
+  "notes": [
+    "No files deleted in Phase 6.5.",
+    "Manual Tata overlay builders remain ACTIVE — blocks dossier file deletion.",
+    "tier1CatalogDefinitions.js rollback path unused when all 25 generated slugs present."
+  ]
+}

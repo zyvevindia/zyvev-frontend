@@ -1,0 +1,42 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "mahindra-xev-9e",
+    "displayName": "Mahindra XEV 9e",
+    "brand": "Mahindra",
+    "model": "XEV 9e",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 2190000,
+      "maxInr": 3090000
+    },
+    "rangeBand": {
+      "minKm": 600,
+      "maxKm": 656
+    },
+    "maxRangeKm": 656,
+    "startingPriceInr": 2190000,
+    "topVariantPriceInr": 3090000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 175,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "MIDC"
+    },
+    "media": {
+      "hasHero": false,
+      "hasListing": false,
+      "hasCompare": false,
+      "source": "local-cars"
+    },
+    "sources": [
+      "Mahindra OEM + CarDekho (Jun 2026)"
+    ],
+    "verifiedAt": "2026-06-08",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/mahindra-xev-9e.json"
+  }
+}

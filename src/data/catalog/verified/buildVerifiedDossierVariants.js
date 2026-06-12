@@ -1,107 +1,45 @@
 import normalizeCar from "../../../utils/normalizeCar.js";
 import {
-  TATA_NEXON_FAMILY_SLUG,
-  TATA_NEXON_FAMILY_MEDIA,
-  TATA_NEXON_VERIFIED_VARIANTS,
-  VERIFICATION_OWNER,
-  VERIFICATION_SOURCE,
-  DOSSIER_VERSION,
-  buildTataNexonVerifiedOverlay,
-} from "./tataNexonEvVerified.js";
-import {
-  TATA_PUNCH_FAMILY_SLUG,
-  TATA_PUNCH_FAMILY_MEDIA,
-  TATA_PUNCH_VERIFIED_VARIANTS,
-  buildTataPunchVerifiedOverlay,
-} from "./tataPunchEvVerified.js";
-import {
-  TATA_TIAGO_FAMILY_SLUG,
-  TATA_TIAGO_FAMILY_MEDIA,
-  TATA_TIAGO_VERIFIED_VARIANTS,
-  buildTataTiagoVerifiedOverlay,
-} from "./tataTiagoEvVerified.js";
+  hasGeneratedVerifiedDossier,
+  loadGeneratedVerifiedDossier,
+} from "../generated/index.js";
+import { chargingSummary } from "../generated/overlays/chargingSummary.js";
 
-const DOSSIER_FAMILIES = Object.freeze({
-  [TATA_NEXON_FAMILY_SLUG]: {
-    brand: "Tata",
-    familyName: "Nexon EV",
-    category: "SUV",
-    variants: TATA_NEXON_VERIFIED_VARIANTS,
-    media: TATA_NEXON_FAMILY_MEDIA,
-    buildOverlay: buildTataNexonVerifiedOverlay,
-  },
-  [TATA_PUNCH_FAMILY_SLUG]: {
-    brand: "Tata",
-    familyName: "Punch EV",
-    category: "SUV",
-    variants: TATA_PUNCH_VERIFIED_VARIANTS,
-    media: TATA_PUNCH_FAMILY_MEDIA,
-    buildOverlay: buildTataPunchVerifiedOverlay,
-  },
-  [TATA_TIAGO_FAMILY_SLUG]: {
-    brand: "Tata",
-    familyName: "Tiago EV",
-    category: "Hatchback",
-    variants: TATA_TIAGO_VERIFIED_VARIANTS,
-    media: TATA_TIAGO_FAMILY_MEDIA,
-    buildOverlay: buildTataTiagoVerifiedOverlay,
-  },
-});
+function buildMarketplaceVariantsFromDossier(familySlug, dossier) {
+  const {
+    brand,
+    familyName,
+    category,
+    variants,
+    media,
+    verificationSource,
+    verificationOwner,
+    dossierVersion,
+  } = dossier;
 
-export function hasVerifiedDossier(familySlug = "") {
-  const key = String(familySlug || "").trim().toLowerCase();
-  return Boolean(key && DOSSIER_FAMILIES[key]);
-}
-
-function chargingSummary(charging) {
-  if (!charging) return "";
-  const parts = [];
-  if (charging.acKw) parts.push(`${charging.acKw} kW AC`);
-  if (charging.dcKw) parts.push(`${charging.dcKw} kW DC`);
-  if (charging.port) parts.push(charging.port);
-  if (charging.dcTime10to80Minutes) {
-    parts.push(`10–80% in ~${charging.dcTime10to80Minutes} min`);
-  } else if (charging.dcTime20to80Minutes) {
-    parts.push(`20–80% in ~${charging.dcTime20to80Minutes} min`);
-  }
-  if (charging.acTime0to100Hours) {
-    parts.push(`AC 10–100% in ~${charging.acTime0to100Hours} hrs`);
-  }
-  return parts.join(" · ");
-}
-
-/**
- * Build normalized marketplace vehicles from verified dossier (detail + compare).
- * @param {string} familySlug
- * @returns {object[]}
- */
-export function buildVerifiedDossierMarketplaceVariants(familySlug = "") {
-  const config = DOSSIER_FAMILIES[String(familySlug || "").trim().toLowerCase()];
-  if (!config) return [];
-
-  return config.variants.map((variant) => {
+  return variants.map((variant) => {
     const charging = variant.charging || {};
     const base = {
       _id: `verified-dossier:${variant.slug}`,
       slug: variant.slug,
-      name: `${config.brand} ${config.familyName} ${variant.trimLabel || variant.name}`,
-      brand: config.brand,
-      category: config.category,
+      name: `${brand} ${familyName} ${variant.trimLabel || variant.name}`,
+      brand,
+      category,
       familySlug,
       price: variant.priceInr,
       startingPrice: variant.priceInr,
       range: variant.rangeKmClaimed,
       battery: `${variant.batteryKwh} kWh`,
       chargingTime: chargingSummary(charging),
-      heroImage: config.media.heroImage,
-      compareThumbnail: config.media.compareImage,
-      listingThumbnail: config.media.listingImage,
-      image: config.media.listingImage,
+      heroImage: media.heroImage,
+      compareThumbnail: media.compareImage,
+      listingThumbnail: media.listingImage,
+      image: media.listingImage,
       catalogSource: "verified-dossier",
       verified: true,
-      verificationSource: VERIFICATION_SOURCE,
-      verificationOwner: VERIFICATION_OWNER,
-      dossierVersion: DOSSIER_VERSION,
+      verificationSource: verificationSource || "Verified Dossier",
+      verificationOwner: verificationOwner || "EVSavari Catalog",
+      dossierVersion: dossierVersion || "generated-v1",
       specifications: {
         range: variant.rangeKmClaimed,
         batteryPack: `${variant.batteryKwh} kWh`,
@@ -109,26 +47,43 @@ export function buildVerifiedDossierMarketplaceVariants(familySlug = "") {
         powerKw: variant.powerKw,
         powerBhp: variant.powerBhp,
         torqueNm: variant.torqueNm,
-        acceleration: `${variant.accel0To100Sec}s (0–100 km/h)`,
+        acceleration: variant.accel0To100Sec
+          ? `${variant.accel0To100Sec}s (0–100 km/h)`
+          : undefined,
         bootSpaceL: variant.bootSpaceL,
         bootSpace: variant.bootSpaceL ? `${variant.bootSpaceL} L` : undefined,
       },
     };
 
-    const overlay = config.buildOverlay({
-      slug: variant.slug,
-      catalogMeta: { slug: variant.slug, familySlug },
-    });
-
     return normalizeCar({
       ...base,
-      ...overlay,
       slug: variant.slug,
       variantLabel: variant.trimLabel || variant.name,
       variantSlug: variant.variantSlug,
       featureTags: variant.featureTags,
+      catalogMeta: variant.catalogMeta || {},
     });
   });
+}
+
+export function hasVerifiedDossier(familySlug = "") {
+  const key = String(familySlug || "").trim().toLowerCase();
+  return Boolean(key && hasGeneratedVerifiedDossier(key));
+}
+
+/**
+ * Build normalized marketplace vehicles from generated verified dossiers.
+ * @param {string} familySlug
+ * @returns {object[]}
+ */
+export function buildVerifiedDossierMarketplaceVariants(familySlug = "") {
+  const key = String(familySlug || "").trim().toLowerCase();
+  if (!key) return [];
+
+  const dossier = loadGeneratedVerifiedDossier(key);
+  if (!dossier) return [];
+
+  return buildMarketplaceVariantsFromDossier(key, dossier);
 }
 
 export function getVerifiedDossierVariantCount(familySlug = "") {

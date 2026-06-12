@@ -1,4 +1,8 @@
-import { formatChargingDurationNumber } from "./formatChargingDuration.js";
+import {
+  formatAcChargeDurationLabel,
+  formatChargingDurationNumber,
+  formatPowerBhpLabel,
+} from "./formatChargingDuration.js";
 import {
   formatIndianPriceCompact,
   formatLakhAmount,
@@ -270,16 +274,14 @@ export function formatVariantAcChargingDisplay(values) {
   const parts = [];
   if (acKw) parts.push(`${formatChargingDurationNumber(acKw)} kW`);
   if (acHours != null) {
-    const hrs = formatChargingDurationNumber(acHours);
-    if (hrs) parts.push(`${hrs} hrs`);
+    const label = formatAcChargeDurationLabel(acHours);
+    if (label) parts.push(label);
   }
   return parts.length ? parts.join(" • ") : null;
 }
 
 export function formatVariantPowerDisplay(values) {
-  const bhp = values?.powerBhp;
-  if (!bhp) return null;
-  return `${Math.round(bhp)} bhp`;
+  return formatPowerBhpLabel(values?.powerBhp);
 }
 
 function aggregateChargingTimeRange(values, field) {

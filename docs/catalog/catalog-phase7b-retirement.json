@@ -1,0 +1,166 @@
+{
+  "phase": "catalog-phase7b-retirement",
+  "generatedAt": "2026-06-11T12:01:39.649Z",
+  "vehiclesAudited": 25,
+  "generatedVerifiedCount": 25,
+  "generatedTier1Count": 25,
+  "vehicleAudits": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "kia-ev6",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "byd-seal",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "bmw-ix1",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    }
+  ],
+  "runtimeManualDossierImportCount": 0,
+  "runtimeTier1ManualImportCount": 0,
+  "runtimeManualDossierImports": [],
+  "runtimeTier1ManualImports": [],
+  "fallbackCount": 0,
+  "fallbackHits": [],
+  "retiredFiles": [
+    "src/data/catalog/verified/tataNexonEvVerified.js",
+    "src/data/catalog/verified/tataPunchEvVerified.js",
+    "src/data/catalog/verified/tataTiagoEvVerified.js",
+    "src/backend/catalog/tier1CatalogDefinitions.js"
+  ],
+  "retiredScripts": [
+    "scripts/ingest-nexon-dossier.mjs",
+    "scripts/ingest-punch-dossier.mjs",
+    "scripts/sync-nexon-verified-backend-catalog.mjs",
+    "scripts/sync-punch-verified-backend-catalog.mjs",
+    "scripts/sync-tiago-verified-backend-catalog.mjs",
+    "scripts/backend-seed-nexon-ev.mjs",
+    "scripts/validate-nexon-variant-visibility.mjs",
+    "scripts/validate-verified-dossier-productionization.mjs"
+  ],
+  "retiredFilesStillPresent": [],
+  "retiredScriptsStillPresent": [],
+  "activeCodeManualReferenceCount": 0,
+  "activeCodeManualReferences": [],
+  "deadExportCount": 0,
+  "passed": true,
+  "notes": [
+    "Slug alias modules (nexonSlugAliases.js, etc.) remain — they are not manual dossier data.",
+    "Historical phase audit docs may mention retired paths; active src/ and scripts/ should not."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "hyundai-ioniq-5",
+    "displayName": "Hyundai Ioniq 5",
+    "brand": "Hyundai",
+    "model": "Ioniq 5",
+    "bodyStyle": "SUV",
+    "variantCount": 2,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 4495000,
+      "maxInr": 5495000
+    },
+    "rangeBand": {
+      "minKm": 508,
+      "maxKm": 631
+    },
+    "maxRangeKm": 631,
+    "startingPriceInr": 4495000,
+    "topVariantPriceInr": 5495000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 175,
+      "acTimeHours": null,
+      "dcTimeMinutes": 35,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.hyundai.com/in/en/find-a-car/ioniq-5/highlights",
+      "https://www.cardekho.com/hyundai/ioniq-5"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/hyundai-ioniq-5.json"
+  }
+}

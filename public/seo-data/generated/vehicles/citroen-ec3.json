@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "citroen-ec3",
+    "displayName": "Citroen eC3",
+    "brand": "Citroen",
+    "model": "eC3",
+    "bodyStyle": "SUV",
+    "variantCount": 4,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 1269000,
+      "maxInr": 1399000
+    },
+    "rangeBand": {
+      "minKm": 320,
+      "maxKm": 320
+    },
+    "maxRangeKm": 320,
+    "startingPriceInr": 1269000,
+    "topVariantPriceInr": 1399000,
+    "charging": {
+      "acKw": 3.3,
+      "dcKw": null,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "MIDC"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.citroen.in/models/new-e-c3.html",
+      "https://www.cardekho.com/citroen/ec3"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/citroen-ec3.json"
+  }
+}

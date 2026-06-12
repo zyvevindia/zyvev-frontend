@@ -1,0 +1,44 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "mg-comet-ev",
+    "displayName": "MG Comet EV",
+    "brand": "MG",
+    "model": "Comet EV",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 749000,
+      "maxInr": 949000
+    },
+    "rangeBand": {
+      "minKm": 230,
+      "maxKm": 230
+    },
+    "maxRangeKm": 230,
+    "startingPriceInr": 749000,
+    "topVariantPriceInr": 949000,
+    "charging": {
+      "acKw": 3.3,
+      "dcKw": 50,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": false,
+      "hasListing": false,
+      "hasCompare": false,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.mgmotor.co.in/vehicles/comet-ev-electric-car-in-india",
+      "https://www.cardekho.com/mg/comet-ev",
+      "OEM brochure PDF"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/mg-comet-ev.json"
+  }
+}

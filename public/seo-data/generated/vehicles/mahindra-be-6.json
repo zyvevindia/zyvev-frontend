@@ -1,0 +1,42 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "mahindra-be-6",
+    "displayName": "Mahindra BE 6",
+    "brand": "Mahindra",
+    "model": "BE 6",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 1890000,
+      "maxInr": 2690000
+    },
+    "rangeBand": {
+      "minKm": 500,
+      "maxKm": 683
+    },
+    "maxRangeKm": 683,
+    "startingPriceInr": 1890000,
+    "topVariantPriceInr": 2690000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 150,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "MIDC"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "Mahindra OEM + ZigWheels (Jun 2026)"
+    ],
+    "verifiedAt": "2026-06-08",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/mahindra-be-6.json"
+  }
+}

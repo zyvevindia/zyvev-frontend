@@ -24,7 +24,10 @@
     "acChargingTimeHours": 9.5,
     "dcChargingTimeMinutes": 30,
     "airbags": 6,
-    "adas": true
+    "adas": true,
+    "powerPs": 204,
+    "powerKw": 150,
+    "torqueNm": 310
   },
   "features": {
     "sunroof": true,
@@ -41,7 +44,10 @@
       "batteryKwh": 60.48,
       "rangeKm": 521,
       "acChargingKw": 7,
-      "dcChargingKw": 80
+      "dcChargingKw": 80,
+      "powerPs": 204,
+      "powerKw": 150,
+      "torqueNm": 310
     },
     {
       "variantName": "Superior",
@@ -49,7 +55,10 @@
       "batteryKwh": 60.48,
       "rangeKm": 521,
       "acChargingKw": 7,
-      "dcChargingKw": 80
+      "dcChargingKw": 80,
+      "powerPs": 204,
+      "powerKw": 150,
+      "torqueNm": 310
     },
     {
       "variantName": "Special Edition",
@@ -57,12 +66,35 @@
       "batteryKwh": 60.48,
       "rangeKm": 521,
       "acChargingKw": 7,
-      "dcChargingKw": 80
+      "dcChargingKw": 80,
+      "powerPs": 204,
+      "powerKw": 150,
+      "torqueNm": 310
     }
   ],
   "verificationLevel": "manual_review",
   "sources": [
     "BYD India + CarWale (Jun 2026)"
   ],
-  "verifiedAt": "2026-06-08"
+  "verifiedAt": "2026-06-08",
+  "media": {
+    "source": "local-cars",
+    "dashboard": "/images/cars/byd-atto-3/dashboard.webp",
+    "gallery": [
+      "/images/cars/byd-atto-3/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/byd-atto-3/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/byd-atto-3/dashboard.webp"
+    ]
+  },
+  "populationMeta": {
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "BYD India Atto 3 OEM brochure (150 kW / 204 PS)",
+      "sprint": "variant-power-completion"
+    }
+  }
 }

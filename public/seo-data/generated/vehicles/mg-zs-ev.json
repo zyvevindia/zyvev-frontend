@@ -1,0 +1,44 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "mg-zs-ev",
+    "displayName": "MG ZS EV",
+    "brand": "MG",
+    "model": "ZS EV",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 1848000,
+      "maxInr": 2288000
+    },
+    "rangeBand": {
+      "minKm": 461,
+      "maxKm": 461
+    },
+    "maxRangeKm": 461,
+    "startingPriceInr": 1848000,
+    "topVariantPriceInr": 2288000,
+    "charging": {
+      "acKw": 7.4,
+      "dcKw": 50,
+      "acTimeHours": 9,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.mgmotor.co.in/vehicles/mgzsev-electric-car-in-india",
+      "https://www.cardekho.com/mg/zs-ev",
+      "OEM brochure PDF"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/mg-zs-ev.json"
+  }
+}

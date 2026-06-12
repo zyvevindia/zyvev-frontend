@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "tata-tiago-ev",
+    "displayName": "Tata Tiago EV",
+    "brand": "Tata",
+    "model": "Tiago EV",
+    "bodyStyle": "SUV",
+    "variantCount": 4,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 699000,
+      "maxInr": 899000
+    },
+    "rangeBand": {
+      "minKm": 226,
+      "maxKm": 285
+    },
+    "maxRangeKm": 285,
+    "startingPriceInr": 699000,
+    "topVariantPriceInr": 899000,
+    "charging": {
+      "acKw": 3.3,
+      "dcKw": 25,
+      "acTimeHours": 3.6,
+      "dcTimeMinutes": 35,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": false,
+      "hasListing": false,
+      "hasCompare": false,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://ev.tatamotors.com/tiago/ev.html",
+      "https://www.cardekho.com/tata/tiago-ev"
+    ],
+    "verifiedAt": "2026-06-11",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-tiago-ev.json"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "tata-punch-ev",
+    "displayName": "Tata Punch EV",
+    "brand": "Tata",
+    "model": "Punch EV",
+    "bodyStyle": "SUV",
+    "variantCount": 6,
+    "verificationLevel": "verified_dossier",
+    "priceBand": {
+      "minInr": 969000,
+      "maxInr": 1259000
+    },
+    "rangeBand": {
+      "minKm": 370,
+      "maxKm": 468
+    },
+    "maxRangeKm": 468,
+    "startingPriceInr": 969000,
+    "topVariantPriceInr": 1259000,
+    "charging": {
+      "acKw": 7.2,
+      "dcKw": 65,
+      "acTimeHours": 4.5,
+      "dcTimeMinutes": 26,
+      "rangeTestStandard": "MIDC"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "EVSavari Verified Dossier"
+    ],
+    "verifiedAt": "2026-06-08",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-punch-ev.json"
+  }
+}

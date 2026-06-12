@@ -36,7 +36,7 @@
         "compositeScore": 77,
         "confidence": "high",
         "explanation": "Hyundai Ioniq 5 — Best City EV score 77/100. Best City EV: 77/100 (Efficiency, compact dimensions, and home charging practicality.)",
-        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: Performance score from 229 PS and 350 Nm torque.",
         "detailPath": "/cars/hyundai-ioniq-5"
       },
       {
@@ -121,7 +121,7 @@
         },
         {
           "slug": "hyundai-ioniq-5",
-          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100."
+          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: Performance score from 229 PS and 350 Nm torque."
         },
         {
           "slug": "mahindra-xev-9e",
@@ -157,7 +157,7 @@
     ],
     "canonicalPath": "/best-evs/city-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/city-agent",
-    "generatedAt": "2026-06-11T07:44:25.599Z",
+    "generatedAt": "2026-06-12T06:44:15.485Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",

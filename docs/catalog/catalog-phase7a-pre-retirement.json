@@ -1,0 +1,177 @@
+{
+  "phase": "catalog-phase7a-pre-retirement",
+  "generatedAt": "2026-06-11T10:08:19.212Z",
+  "vehiclesAudited": 25,
+  "generatedVerifiedCount": 25,
+  "generatedTier1Count": 25,
+  "vehicleAudits": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "kia-ev6",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "byd-seal",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "bmw-ix1",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "hasGeneratedVerified": true,
+      "hasGeneratedTier1": true
+    }
+  ],
+  "runtimeManualDossierImportCount": 0,
+  "runtimeTier1ManualImportCount": 0,
+  "runtimeManualDossierImports": [],
+  "runtimeTier1ManualImports": [],
+  "fallbackCount": 0,
+  "fallbackHits": [],
+  "toolingTier1ManualImports": [
+    "scripts/backend-seed-nexon-ev.mjs"
+  ],
+  "toolingManualDossierImports": [
+    {
+      "file": "scripts/build-golden-dataset.mjs",
+      "pattern": "tataNexonEvVerified"
+    },
+    {
+      "file": "scripts/build-golden-dataset.mjs",
+      "pattern": "tataPunchEvVerified"
+    },
+    {
+      "file": "scripts/build-golden-dataset.mjs",
+      "pattern": "TATA_NEXON_VERIFIED_VARIANTS"
+    },
+    {
+      "file": "scripts/build-golden-dataset.mjs",
+      "pattern": "TATA_PUNCH_VERIFIED_VARIANTS"
+    }
+  ],
+  "remainingManualReferences": [
+    "src/data/catalog/verified/tataNexonEvVerified.js (on disk, not runtime)",
+    "src/data/catalog/verified/tataPunchEvVerified.js (on disk, not runtime)",
+    "src/data/catalog/verified/tataTiagoEvVerified.js (on disk, not runtime)",
+    "src/backend/catalog/tier1CatalogDefinitions.js (on disk, not runtime)"
+  ],
+  "migrations": [
+    "applyVerifiedCatalogOverlay.js → generated/overlays",
+    "resolveDossierSlug.js → generated/overlays/familySlugs.js",
+    "buildVerifiedDossierVariants.js → generated dossiers only",
+    "backend-seed-tier1.mjs → generated tier1 only"
+  ],
+  "notes": [
+    "Manual files retained for Phase 7B retirement.",
+    "Slug alias modules remain active (not manual dossier data files)."
+  ]
+}

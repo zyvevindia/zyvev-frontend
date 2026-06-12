@@ -35,9 +35,9 @@
         "displayName": "Mahindra BE 6",
         "exShowroom": 1890000,
         "claimedRangeKm": 500,
-        "compositeScore": 79,
+        "compositeScore": 77,
         "confidence": "high",
-        "explanation": "Mahindra BE 6 — overall score 79/100. Range 500 km, from ₹18.90 L.",
+        "explanation": "Mahindra BE 6 — overall score 77/100. Range 500 km, from ₹18.90 L.",
         "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
         "detailPath": "/cars/mahindra-be-6"
       }
@@ -69,7 +69,7 @@
     ],
     "canonicalPath": "/compare/tata-curvv-ev-vs-mahindra-be-6-agent",
     "canonicalUrl": "https://evsavari.com/compare/tata-curvv-ev-vs-mahindra-be-6-agent",
-    "generatedAt": "2026-06-11T07:44:25.607Z",
+    "generatedAt": "2026-06-12T06:44:15.496Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",

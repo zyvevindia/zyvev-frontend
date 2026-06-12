@@ -16,7 +16,7 @@ const TABLES = {
 
 /**
  * @param {import('@supabase/supabase-js').SupabaseClient} supabase
- * @param {import('./tier1CatalogDefinitions.js').TIER1_CATALOG_DEFINITIONS[0]} definition
+ * @param {import('./generated/index.js').GENERATED_TIER1_DEFINITIONS[string]} definition
  * @param {{ seedPhase?: string; cloudName?: string }} [opts]
  */
 export async function seedCatalogVehicle(supabase, definition, opts = {}) {

@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": 25,
     "airbags": 6,
     "adas": "true",
-    "powerPs": null,
-    "torqueNm": null
+    "powerPs": 238,
+    "torqueNm": 315,
+    "powerKw": 175
   },
   "features": {
     "sunroof": true,
@@ -44,7 +45,10 @@
       "batteryKwh": 65,
       "rangeKm": 538,
       "acChargingKw": 7.2,
-      "dcChargingKw": 120
+      "dcChargingKw": 120,
+      "powerPs": 238,
+      "powerKw": 175,
+      "torqueNm": 315
     },
     {
       "variantName": "Adventure S 65",
@@ -52,7 +56,10 @@
       "batteryKwh": 65,
       "rangeKm": 538,
       "acChargingKw": 7.2,
-      "dcChargingKw": 120
+      "dcChargingKw": 120,
+      "powerPs": 238,
+      "powerKw": 175,
+      "torqueNm": 315
     },
     {
       "variantName": "Fearless Plus 65",
@@ -60,7 +67,10 @@
       "batteryKwh": 65,
       "rangeKm": 538,
       "acChargingKw": 7.2,
-      "dcChargingKw": 120
+      "dcChargingKw": 120,
+      "powerPs": 238,
+      "powerKw": 175,
+      "torqueNm": 315
     },
     {
       "variantName": "Fearless Plus 75",
@@ -68,7 +78,10 @@
       "batteryKwh": 75,
       "rangeKm": 627,
       "acChargingKw": 7.2,
-      "dcChargingKw": 120
+      "dcChargingKw": 120,
+      "powerPs": 238,
+      "powerKw": 175,
+      "torqueNm": 315
     },
     {
       "variantName": "Fearless Plus QWD 75",
@@ -76,7 +89,10 @@
       "batteryKwh": 75,
       "rangeKm": 622,
       "acChargingKw": 7.2,
-      "dcChargingKw": 120
+      "dcChargingKw": 120,
+      "powerPs": 396,
+      "powerKw": 291,
+      "torqueNm": 504
     },
     {
       "variantName": "Empowered 75",
@@ -84,7 +100,10 @@
       "batteryKwh": 75,
       "rangeKm": 627,
       "acChargingKw": 7.2,
-      "dcChargingKw": 120
+      "dcChargingKw": 120,
+      "powerPs": 238,
+      "powerKw": 175,
+      "torqueNm": 315
     },
     {
       "variantName": "Empowered QWD 75",
@@ -92,7 +111,10 @@
       "batteryKwh": 75,
       "rangeKm": 622,
       "acChargingKw": 7.2,
-      "dcChargingKw": 120
+      "dcChargingKw": 120,
+      "powerPs": 396,
+      "powerKw": 291,
+      "torqueNm": 504
     },
     {
       "variantName": "Empowered QWD 75 Stealth ACFC",
@@ -100,7 +122,10 @@
       "batteryKwh": 75,
       "rangeKm": 622,
       "acChargingKw": 7.2,
-      "dcChargingKw": 120
+      "dcChargingKw": 120,
+      "powerPs": 396,
+      "powerKw": 291,
+      "torqueNm": 504
     }
   ],
   "verificationLevel": "manual_review",
@@ -115,6 +140,40 @@
     "manualCorrections": [
       "variant_table_manual"
     ],
-    "qualityConsolidationAt": "2026-06-10T05:01:32.138Z"
+    "qualityConsolidationAt": "2026-06-10T05:01:32.138Z",
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Tata Motors Harrier.ev product note (RWD 238 PS; QWD 158+238 PS cumulative)",
+      "sprint": "variant-power-completion"
+    }
+  },
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/tata-harrier-ev/listing.webp",
+    "compareThumbnail": "/images/cars/tata-harrier-ev/compare.webp",
+    "heroImage": "/images/cars/tata-harrier-ev/front.webp",
+    "front": "/images/cars/tata-harrier-ev/front.webp",
+    "rear": "/images/cars/tata-harrier-ev/rear.webp",
+    "side": "/images/cars/tata-harrier-ev/side.webp",
+    "interior": "/images/cars/tata-harrier-ev/interior.webp",
+    "dashboard": "/images/cars/tata-harrier-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/tata-harrier-ev/front.webp",
+      "/images/cars/tata-harrier-ev/rear.webp",
+      "/images/cars/tata-harrier-ev/side.webp",
+      "/images/cars/tata-harrier-ev/interior.webp",
+      "/images/cars/tata-harrier-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/tata-harrier-ev/front.webp",
+      "/images/cars/tata-harrier-ev/rear.webp",
+      "/images/cars/tata-harrier-ev/side.webp",
+      "/images/cars/tata-harrier-ev/interior.webp",
+      "/images/cars/tata-harrier-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/tata-harrier-ev/interior.webp",
+      "/images/cars/tata-harrier-ev/dashboard.webp"
+    ]
   }
 }

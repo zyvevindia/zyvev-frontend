@@ -1,0 +1,1309 @@
+{
+  "generatedAt": "2026-06-11T08:24:45.841Z",
+  "phase": 2,
+  "resolverPrecedence": {
+    "before": [
+      "1. hasVerifiedDossier (Nexon, Punch, Tiago)",
+      "2. isGoldenDatasetFamily → bundled golden",
+      "3. API /cars siblings",
+      "4. golden async fallback",
+      "5. single-slug API fetch"
+    ],
+    "after": [
+      "1. isGoldenDatasetFamily → golden ALWAYS wins (25 manifest families)",
+      "2. hasVerifiedDossier (only if ∉ golden manifest)",
+      "3. API /cars siblings",
+      "4. golden async fallback",
+      "5. single-slug API fetch"
+    ]
+  },
+  "runtimeFlow": {
+    "carDetails": "CarDetails → fetchVehicleFamilyBySlug → authority chain",
+    "listingPage": "ListingPage/Home/IntelligenceDiscovery → fetchListingCatalogVariants → per-family merge",
+    "comparePage": "ComparePage → compareCarsStorage OR useCompareGuideCars → compareGuideCatalog (API)",
+    "discoverySeo": "DiscoverySeoPage → useCompareGuideCars → compareGuideCatalog (API)",
+    "seoPages": "Static seo-data JSON — not routed through vehicleDetailResolver"
+  },
+  "summary": {
+    "vehicleCount": 25,
+    "goldenAuthorityCount": 25,
+    "apiFallbackCount": 0,
+    "verifiedDossierBypassedCount": 3,
+    "fleetMismatches": 25
+  },
+  "hiddenPrecedenceRules": [
+    {
+      "id": "verified-dossier-override",
+      "location": "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "description": "hasVerifiedDossier() + buildVerifiedDossierMarketplaceVariants() for Nexon, Punch, Tiago.",
+      "phase2Status": "Bypassed when isGoldenDatasetFamily() is true (all three are in golden manifest).",
+      "removed": false
+    },
+    {
+      "id": "detail-api-first-non-golden",
+      "location": "src/utils/vehicleDetailResolver.js → fetchVehicleFamilyBySlug",
+      "description": "Non-golden families: API /cars pool first, then golden async fallback, then single-slug fetch.",
+      "phase2Status": "Unchanged for families outside golden manifest.",
+      "removed": false
+    },
+    {
+      "id": "fetch-vehicle-by-slug-api",
+      "location": "src/utils/vehicleDetailResolver.js → fetchVehicleBySlug",
+      "description": "Slug resolution tries /cars/slug then /api/catalog/variants/slug before Mongo id lookup.",
+      "phase2Status": "Still used for non-family flows; CarDetails uses fetchVehicleFamilyBySlug instead.",
+      "removed": false
+    },
+    {
+      "id": "compare-guide-api-first",
+      "location": "src/utils/compareGuideCatalog.js → fetchCatalogPool",
+      "description": "Compare SEO + rival prefill: fetchVehicleBySlug per slug, then /cars?limit=120 pool. No golden manifest authority.",
+      "phase2Status": "Known divergence from detail/listing — compare cards may use API when golden differs.",
+      "removed": false
+    },
+    {
+      "id": "merge-listing-verified-fallback",
+      "location": "src/utils/vehicleDetailResolver.js → fetchListingCatalogVariants",
+      "description": "hasVerifiedDossier branch remains after golden check for hypothetical non-manifest verified families.",
+      "phase2Status": "Dead path for current 25-vehicle fleet (all verified families are in manifest).",
+      "removed": false
+    },
+    {
+      "id": "golden-loader-node-docs-path",
+      "location": "src/catalogAcquisition/benchmark/goldenLoaderNode.js",
+      "description": "SEO/agent scripts read docs/catalog/golden-dataset (mirrored from public).",
+      "phase2Status": "Build-time bundle uses public/; Node agents use docs/ mirror.",
+      "removed": false
+    },
+    {
+      "id": "build-golden-from-verified",
+      "location": "scripts/build-golden-dataset.mjs",
+      "description": "Legacy script writes verified dossiers into docs golden JSON (inverted flow).",
+      "phase2Status": "Superseded by catalog:generate-manifest + public canonical editing.",
+      "removed": false
+    },
+    {
+      "id": "tier1-supabase-seed",
+      "location": "src/backend/catalog/tier1CatalogDefinitions.js",
+      "description": "Supabase seed defines 11 tier-1 families separately from golden manifest.",
+      "phase2Status": "Backend persistence only; not used for marketplace variant resolution.",
+      "removed": false
+    },
+    {
+      "id": "slug-alias-exceptions",
+      "location": "src/utils/vehicleRoutes.js, src/data/catalog/verified/punchSlugAliases.js",
+      "description": "Legacy slug aliases for Nexon/Punch/Tiago variant URLs.",
+      "phase2Status": "Still applied in fetchVehicleFamilyBySlug via resolveDossierSlug.",
+      "removed": false
+    }
+  ],
+  "fleetMismatches": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "kia-ev6",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "byd-seal",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "bmw-ix1",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "type": "detail-vs-compare",
+      "detail": "golden-dataset",
+      "compare": "api-compare-guide",
+      "message": "CarDetails/listing use golden; compare guide path still API-first."
+    }
+  ],
+  "vehicles": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "verificationLevel": "verified_dossier",
+      "manifestVariantCount": 13,
+      "goldenVariantCount": 13,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": true,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset",
+            "verified-dossier-bypassed"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": true,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset",
+            "verified-dossier-bypassed"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "verificationLevel": "verified_dossier",
+      "manifestVariantCount": 6,
+      "goldenVariantCount": 6,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": true,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset",
+            "verified-dossier-bypassed"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": true,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset",
+            "verified-dossier-bypassed"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "verificationLevel": "ops_benchmark",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 2,
+      "goldenVariantCount": 2,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 2,
+      "goldenVariantCount": 2,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 4,
+      "goldenVariantCount": 4,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "byd-seal",
+      "displayName": "BYD Seal",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 2,
+      "goldenVariantCount": 2,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 2,
+      "goldenVariantCount": 2,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 2,
+      "goldenVariantCount": 2,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 2,
+      "goldenVariantCount": 2,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 2,
+      "goldenVariantCount": 2,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 4,
+      "goldenVariantCount": 4,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 3,
+      "goldenVariantCount": 3,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 1,
+      "goldenVariantCount": 1,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 4,
+      "goldenVariantCount": 4,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 4,
+      "goldenVariantCount": 4,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": true,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset",
+            "verified-dossier-bypassed"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": true,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset",
+            "verified-dossier-bypassed"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "verificationLevel": "manual_review",
+      "manifestVariantCount": 8,
+      "goldenVariantCount": 8,
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "verifiedParticipated": false,
+          "apiFallback": false,
+          "runtimeSources": [
+            "golden-dataset"
+          ],
+          "path": "fetchListingCatalogVariants"
+        },
+        "compare": {
+          "primarySource": "api-compare-guide",
+          "goldenWon": false,
+          "verifiedParticipated": false,
+          "apiFallback": true,
+          "runtimeSources": [
+            "fetchVehicleBySlug",
+            "api-cars-pool",
+            "seo-ranked-stub"
+          ],
+          "note": "Diverges from detail/listing — compareGuideCatalog does not use golden authority yet."
+        }
+      }
+    }
+  ]
+}

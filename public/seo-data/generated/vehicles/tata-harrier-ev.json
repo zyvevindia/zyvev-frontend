@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "tata-harrier-ev",
+    "displayName": "Tata Harrier EV",
+    "brand": "Tata",
+    "model": "Harrier EV",
+    "bodyStyle": "SUV",
+    "variantCount": 8,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 2149000,
+      "maxInr": 3023000
+    },
+    "rangeBand": {
+      "minKm": 538,
+      "maxKm": 627
+    },
+    "maxRangeKm": 627,
+    "startingPriceInr": 2149000,
+    "topVariantPriceInr": 3023000,
+    "charging": {
+      "acKw": 7.2,
+      "dcKw": 120,
+      "acTimeHours": null,
+      "dcTimeMinutes": 25,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://ev.tatamotors.com/harrier/ev.html",
+      "https://www.cardekho.com/tata/harrier-ev"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-harrier-ev.json"
+  }
+}

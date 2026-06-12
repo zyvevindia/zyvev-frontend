@@ -14,9 +14,7 @@ import {
   isLocalCarMediaFamily,
   LOCAL_CAR_IMAGE_TYPES,
 } from "../../src/media/localCarMediaManifest.js";
-import { TATA_NEXON_FAMILY_MEDIA } from "../../src/data/catalog/verified/tataNexonEvVerified.js";
-import { TATA_PUNCH_FAMILY_MEDIA } from "../../src/data/catalog/verified/tataPunchEvVerified.js";
-import { TATA_TIAGO_FAMILY_MEDIA } from "../../src/data/catalog/verified/tataTiagoEvVerified.js";
+import { loadGeneratedVerifiedDossier } from "../../src/data/catalog/generated/index.js";
 
 export const AUDIT_IMAGE_TYPES = Object.freeze([
   "listing",
@@ -29,9 +27,9 @@ export const AUDIT_IMAGE_TYPES = Object.freeze([
 ]);
 
 const VERIFIED_FAMILY_MEDIA = Object.freeze({
-  "tata-nexon-ev": TATA_NEXON_FAMILY_MEDIA,
-  "tata-punch-ev": TATA_PUNCH_FAMILY_MEDIA,
-  "tata-tiago-ev": TATA_TIAGO_FAMILY_MEDIA,
+  "tata-nexon-ev": loadGeneratedVerifiedDossier("tata-nexon-ev")?.media || null,
+  "tata-punch-ev": loadGeneratedVerifiedDossier("tata-punch-ev")?.media || null,
+  "tata-tiago-ev": loadGeneratedVerifiedDossier("tata-tiago-ev")?.media || null,
 });
 
 /** Canonical seed / ops role → audit column. */

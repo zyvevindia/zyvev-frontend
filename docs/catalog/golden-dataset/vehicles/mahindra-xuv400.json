@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": null,
     "airbags": 4,
     "adas": "true",
-    "powerPs": null,
-    "torqueNm": "310"
+    "powerPs": 150,
+    "torqueNm": 310,
+    "powerKw": 110
   },
   "features": {
     "sunroof": true,
@@ -44,7 +45,10 @@
       "batteryKwh": 34.5,
       "rangeKm": 375,
       "acChargingKw": 3.3,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 150,
+      "powerKw": 110,
+      "torqueNm": 310
     },
     {
       "variantName": "EC",
@@ -52,7 +56,10 @@
       "batteryKwh": 39.4,
       "rangeKm": 456,
       "acChargingKw": 3.3,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 150,
+      "powerKw": 110,
+      "torqueNm": 310
     },
     {
       "variantName": "EL Pro",
@@ -60,7 +67,10 @@
       "batteryKwh": 39.4,
       "rangeKm": 456,
       "acChargingKw": 3.3,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 150,
+      "powerKw": 110,
+      "torqueNm": 310
     },
     {
       "variantName": "EL",
@@ -68,7 +78,10 @@
       "batteryKwh": 39.4,
       "rangeKm": 456,
       "acChargingKw": 3.3,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 150,
+      "powerKw": 110,
+      "torqueNm": 310
     }
   ],
   "verificationLevel": "manual_review",
@@ -83,6 +96,24 @@
     "manualCorrections": [
       "variant_table_manual"
     ],
-    "qualityConsolidationAt": "2026-06-10T05:01:32.182Z"
+    "qualityConsolidationAt": "2026-06-10T05:01:32.182Z",
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Mahindra XUV400 Pro press release (110 kW / 150 PS)",
+      "sprint": "variant-power-completion"
+    }
+  },
+  "media": {
+    "source": "local-cars",
+    "dashboard": "/images/cars/mahindra-xuv400/dashboard.webp",
+    "gallery": [
+      "/images/cars/mahindra-xuv400/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mahindra-xuv400/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mahindra-xuv400/dashboard.webp"
+    ]
   }
 }

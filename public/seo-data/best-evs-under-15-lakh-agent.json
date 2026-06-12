@@ -65,6 +65,18 @@
       },
       {
         "rank": 5,
+        "slug": "tata-tigor-ev",
+        "displayName": "Tata Tigor EV",
+        "exShowroom": 1249000,
+        "claimedRangeKm": 315,
+        "compositeScore": 76,
+        "confidence": "high",
+        "explanation": "Tata Tigor EV — Best Budget EV score 76/100. Best Budget EV: 76/100 (Strong capability at the lowest entry price.)",
+        "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Range score uses 315 km claimed range and 12.1 km/kWh efficiency.",
+        "detailPath": "/cars/tata-tigor-ev"
+      },
+      {
+        "rank": 6,
         "slug": "tata-nexon-ev",
         "displayName": "Tata Nexon EV",
         "exShowroom": 1249000,
@@ -74,18 +86,6 @@
         "explanation": "Tata Nexon EV — Best Budget EV score 75/100. Best Budget EV: 75/100 (Strong capability at the lowest entry price.)",
         "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time.",
         "detailPath": "/cars/tata-nexon-ev"
-      },
-      {
-        "rank": 6,
-        "slug": "tata-tigor-ev",
-        "displayName": "Tata Tigor EV",
-        "exShowroom": 1249000,
-        "claimedRangeKm": 315,
-        "compositeScore": 75,
-        "confidence": "high",
-        "explanation": "Tata Tigor EV — Best Budget EV score 75/100. Best Budget EV: 75/100 (Strong capability at the lowest entry price.)",
-        "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Range score uses 315 km claimed range and 12.1 km/kWh efficiency.",
-        "detailPath": "/cars/tata-tigor-ev"
       },
       {
         "rank": 7,
@@ -120,12 +120,12 @@
           "tradeoff": "Strength from score data: budget leads this EV at 78/100. Tradeoff to weigh: Charging score weighted on 45 kW DC fast-charging capability."
         },
         {
-          "slug": "tata-nexon-ev",
-          "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time."
-        },
-        {
           "slug": "tata-tigor-ev",
           "tradeoff": "Strength from score data: Feature score includes verified: Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Range score uses 315 km claimed range and 12.1 km/kWh efficiency."
+        },
+        {
+          "slug": "tata-nexon-ev",
+          "tradeoff": "Strength from score data: budget leads this EV at 75/100. Tradeoff to weigh: Charging score reflects 60 kW DC peak and ~56 min DC time."
         }
       ]
     },
@@ -141,11 +141,11 @@
       "Tata Punch EV",
       "MG Comet EV",
       "MG Windsor EV",
-      "Tata Nexon EV"
+      "Tata Tigor EV"
     ],
     "canonicalPath": "/best-evs/under-15-lakh-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/under-15-lakh-agent",
-    "generatedAt": "2026-06-11T07:44:25.593Z",
+    "generatedAt": "2026-06-12T06:44:15.478Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -180,14 +180,14 @@
         {
           "@type": "ListItem",
           "position": 5,
-          "name": "Tata Nexon EV",
-          "url": "https://evsavari.com/cars/tata-nexon-ev"
+          "name": "Tata Tigor EV",
+          "url": "https://evsavari.com/cars/tata-tigor-ev"
         },
         {
           "@type": "ListItem",
           "position": 6,
-          "name": "Tata Tigor EV",
-          "url": "https://evsavari.com/cars/tata-tigor-ev"
+          "name": "Tata Nexon EV",
+          "url": "https://evsavari.com/cars/tata-nexon-ev"
         },
         {
           "@type": "ListItem",

@@ -29,42 +29,30 @@
       },
       {
         "rank": 2,
-        "slug": "hyundai-ioniq-5",
-        "displayName": "Hyundai Ioniq 5",
-        "exShowroom": 4495000,
-        "claimedRangeKm": 690,
-        "compositeScore": 82,
-        "confidence": "high",
-        "explanation": "Hyundai Ioniq 5 — Best Highway EV score 82/100. Best Highway EV: 82/100 (Range, fast charging, and performance for long trips.)",
-        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
-        "detailPath": "/cars/hyundai-ioniq-5"
-      },
-      {
-        "rank": 3,
         "slug": "mahindra-xev-9e",
         "displayName": "Mahindra XEV 9e",
         "exShowroom": 2190000,
         "claimedRangeKm": 656,
-        "compositeScore": 80,
+        "compositeScore": 76,
         "confidence": "high",
-        "explanation": "Mahindra XEV 9e — Best Highway EV score 80/100. Best Highway EV: 80/100 (Range, fast charging, and performance for long trips.)",
+        "explanation": "Mahindra XEV 9e — Best Highway EV score 76/100. Best Highway EV: 76/100 (Range, fast charging, and performance for long trips.)",
         "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100.",
         "detailPath": "/cars/mahindra-xev-9e"
       },
       {
-        "rank": 4,
-        "slug": "tata-harrier-ev",
-        "displayName": "Tata Harrier EV",
-        "exShowroom": 2149000,
-        "claimedRangeKm": 627,
-        "compositeScore": 77,
-        "confidence": "high",
-        "explanation": "Tata Harrier EV — Best Highway EV score 77/100. Best Highway EV: 77/100 (Range, fast charging, and performance for long trips.)",
-        "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time.",
-        "detailPath": "/cars/tata-harrier-ev"
+        "rank": 3,
+        "slug": "hyundai-ioniq-5",
+        "displayName": "Hyundai Ioniq 5",
+        "exShowroom": 4495000,
+        "claimedRangeKm": 690,
+        "compositeScore": 74,
+        "confidence": "medium",
+        "explanation": "Hyundai Ioniq 5 — Best Highway EV score 74/100. Best Highway EV: 74/100 (Range, fast charging, and performance for long trips.)",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: Performance score from 229 PS and 350 Nm torque.",
+        "detailPath": "/cars/hyundai-ioniq-5"
       },
       {
-        "rank": 5,
+        "rank": 4,
         "slug": "bmw-ix1",
         "displayName": "BMW iX1",
         "exShowroom": 6890000,
@@ -76,16 +64,28 @@
         "detailPath": "/cars/bmw-ix1"
       },
       {
-        "rank": 6,
+        "rank": 5,
         "slug": "mahindra-be-6",
         "displayName": "Mahindra BE 6",
         "exShowroom": 1890000,
         "claimedRangeKm": 500,
-        "compositeScore": 73,
+        "compositeScore": 70,
         "confidence": "medium",
-        "explanation": "Mahindra BE 6 — Best Highway EV score 73/100. Best Highway EV: 73/100 (Range, fast charging, and performance for long trips.)",
+        "explanation": "Mahindra BE 6 — Best Highway EV score 70/100. Best Highway EV: 70/100 (Range, fast charging, and performance for long trips.)",
         "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
         "detailPath": "/cars/mahindra-be-6"
+      },
+      {
+        "rank": 6,
+        "slug": "tata-harrier-ev",
+        "displayName": "Tata Harrier EV",
+        "exShowroom": 2149000,
+        "claimedRangeKm": 627,
+        "compositeScore": 70,
+        "confidence": "medium",
+        "explanation": "Tata Harrier EV — Best Highway EV score 70/100. Best Highway EV: 70/100 (Range, fast charging, and performance for long trips.)",
+        "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time.",
+        "detailPath": "/cars/tata-harrier-ev"
       },
       {
         "rank": 7,
@@ -101,15 +101,15 @@
       },
       {
         "rank": 8,
-        "slug": "mercedes-eqa",
-        "displayName": "Mercedes-Benz EQA",
-        "exShowroom": 6775000,
-        "claimedRangeKm": 560,
-        "compositeScore": 68,
+        "slug": "byd-seal",
+        "displayName": "BYD Seal",
+        "exShowroom": 4100000,
+        "claimedRangeKm": 510,
+        "compositeScore": 63,
         "confidence": "medium",
-        "explanation": "Mercedes-Benz EQA — Best Highway EV score 68/100. Best Highway EV: 68/100 (Range, fast charging, and performance for long trips.)",
-        "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability.",
-        "detailPath": "/cars/mercedes-eqa"
+        "explanation": "BYD Seal — Best Highway EV score 63/100. Best Highway EV: 63/100 (Range, fast charging, and performance for long trips.)",
+        "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/byd-seal"
       }
     ],
     "tradeoffs": {
@@ -120,16 +120,12 @@
           "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100."
         },
         {
-          "slug": "hyundai-ioniq-5",
-          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100."
-        },
-        {
           "slug": "mahindra-xev-9e",
           "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100."
         },
         {
-          "slug": "tata-harrier-ev",
-          "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time."
+          "slug": "hyundai-ioniq-5",
+          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: Performance score from 229 PS and 350 Nm torque."
         },
         {
           "slug": "bmw-ix1",
@@ -138,6 +134,10 @@
         {
           "slug": "mahindra-be-6",
           "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
+        },
+        {
+          "slug": "tata-harrier-ev",
+          "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time."
         }
       ]
     },
@@ -150,14 +150,14 @@
       "best evs for highway",
       "best highway ev",
       "Kia EV6",
-      "Hyundai Ioniq 5",
       "Mahindra XEV 9e",
-      "Tata Harrier EV",
-      "BMW iX1"
+      "Hyundai Ioniq 5",
+      "BMW iX1",
+      "Mahindra BE 6"
     ],
     "canonicalPath": "/best-evs/highway-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/highway-agent",
-    "generatedAt": "2026-06-11T07:44:25.601Z",
+    "generatedAt": "2026-06-12T06:44:15.488Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -174,32 +174,32 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Hyundai Ioniq 5",
-          "url": "https://evsavari.com/cars/hyundai-ioniq-5"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
           "name": "Mahindra XEV 9e",
           "url": "https://evsavari.com/cars/mahindra-xev-9e"
         },
         {
           "@type": "ListItem",
-          "position": 4,
-          "name": "Tata Harrier EV",
-          "url": "https://evsavari.com/cars/tata-harrier-ev"
+          "position": 3,
+          "name": "Hyundai Ioniq 5",
+          "url": "https://evsavari.com/cars/hyundai-ioniq-5"
         },
         {
           "@type": "ListItem",
-          "position": 5,
+          "position": 4,
           "name": "BMW iX1",
           "url": "https://evsavari.com/cars/bmw-ix1"
         },
         {
           "@type": "ListItem",
-          "position": 6,
+          "position": 5,
           "name": "Mahindra BE 6",
           "url": "https://evsavari.com/cars/mahindra-be-6"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Tata Harrier EV",
+          "url": "https://evsavari.com/cars/tata-harrier-ev"
         },
         {
           "@type": "ListItem",
@@ -210,8 +210,8 @@
         {
           "@type": "ListItem",
           "position": 8,
-          "name": "Mercedes-Benz EQA",
-          "url": "https://evsavari.com/cars/mercedes-eqa"
+          "name": "BYD Seal",
+          "url": "https://evsavari.com/cars/byd-seal"
         }
       ]
     },

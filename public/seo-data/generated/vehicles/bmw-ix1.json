@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "bmw-ix1",
+    "displayName": "BMW iX1",
+    "brand": "BMW",
+    "model": "iX1",
+    "bodyStyle": "SUV",
+    "variantCount": 2,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 6890000,
+      "maxInr": 7290000
+    },
+    "rangeBand": {
+      "minKm": 531,
+      "maxKm": 531
+    },
+    "maxRangeKm": 531,
+    "startingPriceInr": 6890000,
+    "topVariantPriceInr": 7290000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 130,
+      "acTimeHours": 6.5,
+      "dcTimeMinutes": 30,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.bmw.in/en/all-models/bmw-i/iX1/2025/bmw-ix1-highlights.html",
+      "https://www.cardekho.com/bmw/ix1"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/bmw-ix1.json"
+  }
+}

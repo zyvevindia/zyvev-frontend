@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "byd-seal",
+    "displayName": "BYD Seal",
+    "brand": "BYD",
+    "model": "Seal",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 4100000,
+      "maxInr": 5300000
+    },
+    "rangeBand": {
+      "minKm": 510,
+      "maxKm": 650
+    },
+    "maxRangeKm": 650,
+    "startingPriceInr": 4100000,
+    "topVariantPriceInr": 5300000,
+    "charging": {
+      "acKw": 7,
+      "dcKw": 150,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.bydautoindia.com/bydseal",
+      "https://www.cardekho.com/byd/seal"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/byd-seal.json"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "hyundai-creta-electric",
+    "displayName": "Hyundai Creta Electric",
+    "brand": "Hyundai",
+    "model": "Creta Electric",
+    "bodyStyle": "SUV",
+    "variantCount": 3,
+    "verificationLevel": "ops_benchmark",
+    "priceBand": {
+      "minInr": 1799000,
+      "maxInr": 2499000
+    },
+    "rangeBand": {
+      "minKm": 390,
+      "maxKm": 473
+    },
+    "maxRangeKm": 473,
+    "startingPriceInr": 1799000,
+    "topVariantPriceInr": 2499000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 150,
+      "acTimeHours": null,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "Hyundai India launch specs estimate (Jun 2026) — review quarterly"
+    ],
+    "verifiedAt": "2026-06-08",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/hyundai-creta-electric.json"
+  }
+}

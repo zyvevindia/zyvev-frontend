@@ -17,18 +17,6 @@
     "rankedVehicles": [
       {
         "rank": 1,
-        "slug": "bmw-ix1",
-        "displayName": "BMW iX1",
-        "exShowroom": 6890000,
-        "claimedRangeKm": 531,
-        "compositeScore": 96,
-        "confidence": "high",
-        "explanation": "BMW iX1 — Best Premium EV score 96/100. Best Premium EV: 96/100 (High-end features, performance, and brand positioning.)",
-        "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability.",
-        "detailPath": "/cars/bmw-ix1"
-      },
-      {
-        "rank": 2,
         "slug": "kia-ev6",
         "displayName": "Kia EV6",
         "exShowroom": 6590000,
@@ -40,31 +28,31 @@
         "detailPath": "/cars/kia-ev6"
       },
       {
+        "rank": 2,
+        "slug": "bmw-ix1",
+        "displayName": "BMW iX1",
+        "exShowroom": 6890000,
+        "claimedRangeKm": 531,
+        "compositeScore": 90,
+        "confidence": "high",
+        "explanation": "BMW iX1 — Best Premium EV score 90/100. Best Premium EV: 90/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability.",
+        "detailPath": "/cars/bmw-ix1"
+      },
+      {
         "rank": 3,
         "slug": "hyundai-ioniq-5",
         "displayName": "Hyundai Ioniq 5",
         "exShowroom": 4495000,
         "claimedRangeKm": 690,
-        "compositeScore": 86,
+        "compositeScore": 77,
         "confidence": "high",
-        "explanation": "Hyundai Ioniq 5 — Best Premium EV score 86/100. Best Premium EV: 86/100 (High-end features, performance, and brand positioning.)",
-        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+        "explanation": "Hyundai Ioniq 5 — Best Premium EV score 77/100. Best Premium EV: 77/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: Performance score from 229 PS and 350 Nm torque.",
         "detailPath": "/cars/hyundai-ioniq-5"
       },
       {
         "rank": 4,
-        "slug": "mercedes-eqa",
-        "displayName": "Mercedes-Benz EQA",
-        "exShowroom": 6775000,
-        "claimedRangeKm": 560,
-        "compositeScore": 84,
-        "confidence": "high",
-        "explanation": "Mercedes-Benz EQA — Best Premium EV score 84/100. Best Premium EV: 84/100 (High-end features, performance, and brand positioning.)",
-        "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability.",
-        "detailPath": "/cars/mercedes-eqa"
-      },
-      {
-        "rank": 5,
         "slug": "volvo-ex40",
         "displayName": "Volvo EX40",
         "exShowroom": 5990000,
@@ -76,19 +64,19 @@
         "detailPath": "/cars/volvo-ex40"
       },
       {
-        "rank": 6,
-        "slug": "byd-atto-3",
-        "displayName": "BYD Atto 3",
-        "exShowroom": 2499000,
-        "claimedRangeKm": 521,
-        "compositeScore": 72,
-        "confidence": "medium",
-        "explanation": "BYD Atto 3 — Best Premium EV score 72/100. Best Premium EV: 72/100 (High-end features, performance, and brand positioning.)",
-        "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
-        "detailPath": "/cars/byd-atto-3"
+        "rank": 5,
+        "slug": "mercedes-eqa",
+        "displayName": "Mercedes-Benz EQA",
+        "exShowroom": 6775000,
+        "claimedRangeKm": 560,
+        "compositeScore": 75,
+        "confidence": "high",
+        "explanation": "Mercedes-Benz EQA — Best Premium EV score 75/100. Best Premium EV: 75/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability.",
+        "detailPath": "/cars/mercedes-eqa"
       },
       {
-        "rank": 7,
+        "rank": 6,
         "slug": "byd-seal",
         "displayName": "BYD Seal",
         "exShowroom": 4100000,
@@ -100,82 +88,94 @@
         "detailPath": "/cars/byd-seal"
       },
       {
-        "rank": 8,
+        "rank": 7,
         "slug": "mahindra-xev-9e",
         "displayName": "Mahindra XEV 9e",
         "exShowroom": 2190000,
         "claimedRangeKm": 656,
-        "compositeScore": 70,
+        "compositeScore": 68,
         "confidence": "medium",
-        "explanation": "Mahindra XEV 9e — Best Premium EV score 70/100. Best Premium EV: 70/100 (High-end features, performance, and brand positioning.)",
+        "explanation": "Mahindra XEV 9e — Best Premium EV score 68/100. Best Premium EV: 68/100 (High-end features, performance, and brand positioning.)",
         "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100.",
         "detailPath": "/cars/mahindra-xev-9e"
+      },
+      {
+        "rank": 8,
+        "slug": "mahindra-be-6",
+        "displayName": "Mahindra BE 6",
+        "exShowroom": 1890000,
+        "claimedRangeKm": 500,
+        "compositeScore": 67,
+        "confidence": "medium",
+        "explanation": "Mahindra BE 6 — Best Premium EV score 67/100. Best Premium EV: 67/100 (High-end features, performance, and brand positioning.)",
+        "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/mahindra-be-6"
       }
     ],
     "tradeoffs": {
       "summary": "Every recommendation uses deterministic EVSavari scores from catalog data — not LLM opinions or paid placement.",
       "considerations": [
         {
-          "slug": "bmw-ix1",
-          "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability."
-        },
-        {
           "slug": "kia-ev6",
           "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 7.7 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 35/100."
         },
         {
-          "slug": "hyundai-ioniq-5",
-          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100."
+          "slug": "bmw-ix1",
+          "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability."
         },
         {
-          "slug": "mercedes-eqa",
-          "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability."
+          "slug": "hyundai-ioniq-5",
+          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: Performance score from 229 PS and 350 Nm torque."
         },
         {
           "slug": "volvo-ex40",
           "tradeoff": "Strength from score data: Range score uses 568 km claimed range and 7.3 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 150 kW DC peak and ~40 min DC time."
         },
         {
-          "slug": "byd-atto-3",
-          "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time."
+          "slug": "mercedes-eqa",
+          "tradeoff": "Strength from score data: Range score uses 592 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 100 kW DC fast-charging capability."
+        },
+        {
+          "slug": "byd-seal",
+          "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability."
         }
       ]
     },
     "title": "Best premium EVs in India | EVSavari",
-    "metaDescription": "8 EVs well suited for this use case — led by BMW iX1. Deterministic scores from EVSavari catalog intelligence.",
+    "metaDescription": "8 EVs well suited for this use case — led by Kia EV6. Deterministic scores from EVSavari catalog intelligence.",
     "keywords": [
       "electric car India",
       "EV comparison",
       "EVSavari",
       "best evs premium",
       "best premium ev",
-      "BMW iX1",
       "Kia EV6",
+      "BMW iX1",
       "Hyundai Ioniq 5",
-      "Mercedes-Benz EQA",
-      "Volvo EX40"
+      "Volvo EX40",
+      "Mercedes-Benz EQA"
     ],
     "canonicalPath": "/best-evs/premium-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/premium-agent",
-    "generatedAt": "2026-06-11T07:44:25.603Z",
+    "generatedAt": "2026-06-12T06:44:15.491Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "best-evs-premium-agent",
-      "description": "8 EVs well suited for this use case — led by BMW iX1. Deterministic scores from EVSavari catalog intelligence.",
+      "description": "8 EVs well suited for this use case — led by Kia EV6. Deterministic scores from EVSavari catalog intelligence.",
       "numberOfItems": 8,
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "BMW iX1",
-          "url": "https://evsavari.com/cars/bmw-ix1"
+          "name": "Kia EV6",
+          "url": "https://evsavari.com/cars/kia-ev6"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Kia EV6",
-          "url": "https://evsavari.com/cars/kia-ev6"
+          "name": "BMW iX1",
+          "url": "https://evsavari.com/cars/bmw-ix1"
         },
         {
           "@type": "ListItem",
@@ -186,32 +186,32 @@
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "Mercedes-Benz EQA",
-          "url": "https://evsavari.com/cars/mercedes-eqa"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
           "name": "Volvo EX40",
           "url": "https://evsavari.com/cars/volvo-ex40"
         },
         {
           "@type": "ListItem",
-          "position": 6,
-          "name": "BYD Atto 3",
-          "url": "https://evsavari.com/cars/byd-atto-3"
+          "position": 5,
+          "name": "Mercedes-Benz EQA",
+          "url": "https://evsavari.com/cars/mercedes-eqa"
         },
         {
           "@type": "ListItem",
-          "position": 7,
+          "position": 6,
           "name": "BYD Seal",
           "url": "https://evsavari.com/cars/byd-seal"
         },
         {
           "@type": "ListItem",
-          "position": 8,
+          "position": 7,
           "name": "Mahindra XEV 9e",
           "url": "https://evsavari.com/cars/mahindra-xev-9e"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Mahindra BE 6",
+          "url": "https://evsavari.com/cars/mahindra-be-6"
         }
       ]
     },
@@ -225,8 +225,8 @@
         "answer": "Ex-showroom prices are indicative from catalog data. Confirm on-road quotes with dealers in your city."
       },
       {
-        "question": "Why is BMW iX1 ranked first?",
-        "answer": "BMW iX1 — Best Premium EV score 96/100. Best Premium EV: 96/100 (High-end features, performance, and brand positioning.)"
+        "question": "Why is Kia EV6 ranked first?",
+        "answer": "Kia EV6 — Best Premium EV score 93/100. Best Premium EV: 93/100 (High-end features, performance, and brand positioning.)"
       }
     ],
     "governance": {

@@ -32,9 +32,9 @@
         "displayName": "Mahindra XEV 9e",
         "exShowroom": 2190000,
         "claimedRangeKm": 656,
-        "compositeScore": 82,
+        "compositeScore": 80,
         "confidence": "high",
-        "explanation": "Ranked by overall score (82/100) from EVSavari Score Engine.",
+        "explanation": "Ranked by overall score (80/100) from EVSavari Score Engine.",
         "tradeoff": "Strength from score data: Range score uses 656 km claimed range and 8.3 km/kWh efficiency. Tradeoff to weigh: Charging is the weakest area at 59/100.",
         "detailPath": "/cars/mahindra-xev-9e"
       },
@@ -44,9 +44,9 @@
         "displayName": "Mahindra BE 6",
         "exShowroom": 1890000,
         "claimedRangeKm": 500,
-        "compositeScore": 79,
+        "compositeScore": 77,
         "confidence": "high",
-        "explanation": "Ranked by overall score (79/100) from EVSavari Score Engine.",
+        "explanation": "Ranked by overall score (77/100) from EVSavari Score Engine.",
         "tradeoff": "Strength from score data: Range score uses 683 km claimed range and 11.6 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
         "detailPath": "/cars/mahindra-be-6"
       },
@@ -56,26 +56,14 @@
         "displayName": "Hyundai Ioniq 5",
         "exShowroom": 4495000,
         "claimedRangeKm": 690,
-        "compositeScore": 79,
+        "compositeScore": 76,
         "confidence": "high",
-        "explanation": "Ranked by overall score (79/100) from EVSavari Score Engine.",
-        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100.",
+        "explanation": "Ranked by overall score (76/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: Performance score from 229 PS and 350 Nm torque.",
         "detailPath": "/cars/hyundai-ioniq-5"
       },
       {
         "rank": 5,
-        "slug": "tata-harrier-ev",
-        "displayName": "Tata Harrier EV",
-        "exShowroom": 2149000,
-        "claimedRangeKm": 627,
-        "compositeScore": 77,
-        "confidence": "high",
-        "explanation": "Ranked by overall score (77/100) from EVSavari Score Engine.",
-        "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time.",
-        "detailPath": "/cars/tata-harrier-ev"
-      },
-      {
-        "rank": 6,
         "slug": "bmw-ix1",
         "displayName": "BMW iX1",
         "exShowroom": 6890000,
@@ -87,43 +75,31 @@
         "detailPath": "/cars/bmw-ix1"
       },
       {
+        "rank": 6,
+        "slug": "tata-harrier-ev",
+        "displayName": "Tata Harrier EV",
+        "exShowroom": 2149000,
+        "claimedRangeKm": 627,
+        "compositeScore": 73,
+        "confidence": "medium",
+        "explanation": "Ranked by overall score (73/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time.",
+        "detailPath": "/cars/tata-harrier-ev"
+      },
+      {
         "rank": 7,
         "slug": "byd-atto-3",
         "displayName": "BYD Atto 3",
         "exShowroom": 2499000,
         "claimedRangeKm": 521,
-        "compositeScore": 74,
+        "compositeScore": 71,
         "confidence": "medium",
-        "explanation": "Ranked by overall score (74/100) from EVSavari Score Engine.",
+        "explanation": "Ranked by overall score (71/100) from EVSavari Score Engine.",
         "tradeoff": "Strength from score data: Range score uses 521 km claimed range and 8.6 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 80 kW DC peak and ~30 min DC time.",
         "detailPath": "/cars/byd-atto-3"
       },
       {
         "rank": 8,
-        "slug": "hyundai-creta-electric",
-        "displayName": "Hyundai Creta Electric",
-        "exShowroom": 1799000,
-        "claimedRangeKm": 390,
-        "compositeScore": 73,
-        "confidence": "medium",
-        "explanation": "Ranked by overall score (73/100) from EVSavari Score Engine.",
-        "tradeoff": "Strength from score data: Feature score includes verified: ADAS, Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
-        "detailPath": "/cars/hyundai-creta-electric"
-      },
-      {
-        "rank": 9,
-        "slug": "maruti-e-vitara",
-        "displayName": "Maruti Suzuki e Vitara",
-        "exShowroom": 2499000,
-        "claimedRangeKm": 543,
-        "compositeScore": 73,
-        "confidence": "medium",
-        "explanation": "Ranked by overall score (73/100) from EVSavari Score Engine.",
-        "tradeoff": "Strength from score data: Range score uses 550 km claimed range and 9.0 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 130 kW DC fast-charging capability.",
-        "detailPath": "/cars/maruti-e-vitara"
-      },
-      {
-        "rank": 10,
         "slug": "tata-curvv-ev",
         "displayName": "Tata Curvv EV",
         "exShowroom": 1699000,
@@ -133,6 +109,30 @@
         "explanation": "Ranked by overall score (70/100) from EVSavari Score Engine.",
         "tradeoff": "Strength from score data: Range score uses 502 km claimed range and 9.1 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 70 kW DC peak and ~40 min DC time.",
         "detailPath": "/cars/tata-curvv-ev"
+      },
+      {
+        "rank": 9,
+        "slug": "byd-seal",
+        "displayName": "BYD Seal",
+        "exShowroom": 4100000,
+        "claimedRangeKm": 510,
+        "compositeScore": 70,
+        "confidence": "medium",
+        "explanation": "Ranked by overall score (70/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Range score uses 650 km claimed range and 10.7 km/kWh efficiency. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/byd-seal"
+      },
+      {
+        "rank": 10,
+        "slug": "hyundai-creta-electric",
+        "displayName": "Hyundai Creta Electric",
+        "exShowroom": 1799000,
+        "claimedRangeKm": 390,
+        "compositeScore": 68,
+        "confidence": "medium",
+        "explanation": "Ranked by overall score (68/100) from EVSavari Score Engine.",
+        "tradeoff": "Strength from score data: Feature score includes verified: ADAS, Panoramic sunroof, Ventilated seats, 360° camera, Connected car. Tradeoff to weigh: Charging score weighted on 150 kW DC fast-charging capability.",
+        "detailPath": "/cars/hyundai-creta-electric"
       }
     ],
     "tradeoffs": {
@@ -152,15 +152,15 @@
         },
         {
           "slug": "hyundai-ioniq-5",
-          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: budget is the weakest area at 45/100."
-        },
-        {
-          "slug": "tata-harrier-ev",
-          "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time."
+          "tradeoff": "Strength from score data: Range score uses 690 km claimed range and 8.2 km/kWh efficiency. Tradeoff to weigh: Performance score from 229 PS and 350 Nm torque."
         },
         {
           "slug": "bmw-ix1",
           "tradeoff": "Strength from score data: Range score uses 531 km claimed range and 8.0 km/kWh efficiency. Tradeoff to weigh: Value score balances ₹68.90 L entry price against range, features, and charging capability."
+        },
+        {
+          "slug": "tata-harrier-ev",
+          "tradeoff": "Strength from score data: Range score uses 627 km claimed range and 8.4 km/kWh efficiency. Tradeoff to weigh: Charging score reflects 120 kW DC peak and ~25 min DC time."
         }
       ]
     },
@@ -175,11 +175,11 @@
       "Mahindra XEV 9e",
       "Mahindra BE 6",
       "Hyundai Ioniq 5",
-      "Tata Harrier EV"
+      "BMW iX1"
     ],
     "canonicalPath": "/best-evs/top-10-agent",
     "canonicalUrl": "https://evsavari.com/best-evs/top-10-agent",
-    "generatedAt": "2026-06-11T07:44:25.613Z",
+    "generatedAt": "2026-06-12T06:44:15.502Z",
     "structuredData": {
       "@context": "https://schema.org",
       "@type": "ItemList",
@@ -214,14 +214,14 @@
         {
           "@type": "ListItem",
           "position": 5,
-          "name": "Tata Harrier EV",
-          "url": "https://evsavari.com/cars/tata-harrier-ev"
+          "name": "BMW iX1",
+          "url": "https://evsavari.com/cars/bmw-ix1"
         },
         {
           "@type": "ListItem",
           "position": 6,
-          "name": "BMW iX1",
-          "url": "https://evsavari.com/cars/bmw-ix1"
+          "name": "Tata Harrier EV",
+          "url": "https://evsavari.com/cars/tata-harrier-ev"
         },
         {
           "@type": "ListItem",
@@ -232,20 +232,20 @@
         {
           "@type": "ListItem",
           "position": 8,
-          "name": "Hyundai Creta Electric",
-          "url": "https://evsavari.com/cars/hyundai-creta-electric"
+          "name": "Tata Curvv EV",
+          "url": "https://evsavari.com/cars/tata-curvv-ev"
         },
         {
           "@type": "ListItem",
           "position": 9,
-          "name": "Maruti Suzuki e Vitara",
-          "url": "https://evsavari.com/cars/maruti-e-vitara"
+          "name": "BYD Seal",
+          "url": "https://evsavari.com/cars/byd-seal"
         },
         {
           "@type": "ListItem",
           "position": 10,
-          "name": "Tata Curvv EV",
-          "url": "https://evsavari.com/cars/tata-curvv-ev"
+          "name": "Hyundai Creta Electric",
+          "url": "https://evsavari.com/cars/hyundai-creta-electric"
         }
       ]
     },

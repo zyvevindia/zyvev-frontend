@@ -3,7 +3,7 @@
  * Requires: VITE_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (scripts only).
  *
  * Run:
- *   npm run backend:seed-tier1              # all 11 families
+ *   npm run backend:seed-tier1              # all generated families
  *   npm run backend:seed-tier1 -- --only=tata-punch-ev
  *   npm run backend:seed-tier1 -- --skip=tata-nexon-ev
  */
@@ -58,8 +58,8 @@ async function main() {
   const seedUrl = pathToFileURL(
     join(ROOT, "src/backend/catalog/catalogSeedUtils.js")
   ).href;
-  const defsUrl = pathToFileURL(
-    join(ROOT, "src/backend/catalog/tier1CatalogDefinitions.js")
+  const generatedDefsUrl = pathToFileURL(
+    join(ROOT, "src/backend/catalog/generated/index.js")
   ).href;
   const convUrl = pathToFileURL(
     join(ROOT, "src/backend/catalog/catalogConventions.js")
@@ -69,7 +69,10 @@ async function main() {
     adminUrl
   );
   const { seedCatalogVehicle } = await import(seedUrl);
-  const { TIER1_CATALOG_DEFINITIONS } = await import(defsUrl);
+  const {
+    loadGeneratedTier1Definition,
+    listGeneratedTier1DefinitionSlugs,
+  } = await import(generatedDefsUrl);
   const { CATALOG_CONVENTIONS } = await import(convUrl);
 
   if (!isSupabaseAdminConfigured()) {
@@ -78,20 +81,28 @@ async function main() {
 
   const only = parseListArg("--only");
   const skip = new Set(parseListArg("--skip") || []);
+  const order = CATALOG_CONVENTIONS.onboardingSequence;
+  let definitions;
 
-  let definitions = TIER1_CATALOG_DEFINITIONS;
   if (only?.length) {
     definitions = only.map((slug) => {
-      const def = TIER1_CATALOG_DEFINITIONS.find((d) => d.slug === slug);
-      if (!def) fail(`unknown family slug: ${slug}`);
+      const def = loadGeneratedTier1Definition(slug);
+      if (!def) fail(`unknown family slug (no generated tier1): ${slug}`);
       return def;
     });
   } else {
-    const order = CATALOG_CONVENTIONS.onboardingSequence;
-    definitions = [...TIER1_CATALOG_DEFINITIONS].sort(
-      (a, b) => order.indexOf(a.slug) - order.indexOf(b.slug)
-    );
-    definitions = definitions.filter((d) => !skip.has(d.slug));
+    definitions = listGeneratedTier1DefinitionSlugs()
+      .filter((slug) => !skip.has(slug))
+      .sort((a, b) => {
+        const ai = order.indexOf(a);
+        const bi = order.indexOf(b);
+        if (ai === -1 && bi === -1) return a.localeCompare(b);
+        if (ai === -1) return 1;
+        if (bi === -1) return -1;
+        return ai - bi;
+      })
+      .map((slug) => loadGeneratedTier1Definition(slug))
+      .filter(Boolean);
   }
 
   const supabase = getSupabaseAdminClient();

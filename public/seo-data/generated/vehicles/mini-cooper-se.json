@@ -1,0 +1,43 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "catalogMeta": {
+    "familySlug": "mini-cooper-se",
+    "displayName": "MINI Cooper SE",
+    "brand": "MINI",
+    "model": "Cooper SE",
+    "bodyStyle": "SUV",
+    "variantCount": 2,
+    "verificationLevel": "manual_review",
+    "priceBand": {
+      "minInr": 5390000,
+      "maxInr": 5790000
+    },
+    "rangeBand": {
+      "minKm": 402,
+      "maxKm": 402
+    },
+    "maxRangeKm": 402,
+    "startingPriceInr": 5390000,
+    "topVariantPriceInr": 5790000,
+    "charging": {
+      "acKw": 11,
+      "dcKw": 50,
+      "acTimeHours": 0.6,
+      "dcTimeMinutes": null,
+      "rangeTestStandard": "ARAI"
+    },
+    "media": {
+      "hasHero": true,
+      "hasListing": true,
+      "hasCompare": true,
+      "source": "local-cars"
+    },
+    "sources": [
+      "https://www.mini.in/en_IN/home/range/mini-cooper-se-electric.html",
+      "https://www.cardekho.com/mini/cooper-se"
+    ],
+    "verifiedAt": "2026-06-10",
+    "generatedFrom": "public/catalog/golden-dataset/vehicles/mini-cooper-se.json"
+  }
+}

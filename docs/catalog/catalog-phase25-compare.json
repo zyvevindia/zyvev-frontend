@@ -1,0 +1,1637 @@
+{
+  "generatedAt": "2026-06-11T08:28:21.768Z",
+  "phase": "2.5",
+  "comparePrecedence": {
+    "before": [
+      "1. fetchVehicleBySlug per compare slug",
+      "2. /cars?limit=120 API pool",
+      "3. pickCompareCarForFamily from API pool",
+      "4. SEO rankedVehicles stub fallback"
+    ],
+    "after": [
+      "1. fetchListingCatalogVariants (golden-first, same as listing)",
+      "2. loadBundledGoldenDatasetFamilyVariants for missing golden families",
+      "3. fetchVehicleBySlug + API pool only for families ∉ golden manifest",
+      "4. pickCompareCarForFamily from unified pool",
+      "5. SEO rankedVehicles stub fallback"
+    ]
+  },
+  "runtimeFlow": {
+    "comparePage": "ComparePage → compareCarsStorage OR prefetchCompareCarsForSlugs → fetchCatalogCarsForCompareSlugs",
+    "compareHero": "CompareHeroExperience → cars prop from parent (storage / guide / URL ?cars=)",
+    "compareVehicleCard": "CompareVehicleCard → car object from parent list",
+    "seoCompareGuides": "DiscoverySeoPage / compare guides → useCompareGuideCars → fetchCatalogCarsForCompareSlugs",
+    "resolverEntry": "compareGuideCatalog.js → fetchCatalogPool → fetchListingCatalogVariants"
+  },
+  "summary": {
+    "vehicleCount": 25,
+    "goldenCompareResolutionCount": 25,
+    "apiFallbackCount": 0,
+    "detailVsCompareMismatches": 0,
+    "totalFleetMismatches": 0
+  },
+  "hiddenPrecedenceRules": [
+    {
+      "id": "compare-seo-ranked-stub-fallback",
+      "location": "src/utils/compareGuideCatalog.js → mergeRankedWithCatalogCars",
+      "description": "When catalog pool misses a slug, rankedVehicles SEO stub is used (static seo-data fields).",
+      "phase25Status": "Unchanged — last resort after golden + API catalog load.",
+      "removed": false
+    },
+    {
+      "id": "compare-storage-hydration",
+      "location": "src/utils/compareCarsStorage.js, ComparePage",
+      "description": "ComparePage may render cars from localStorage without re-fetching resolver.",
+      "phase25Status": "Stale storage possible until user re-opens compare via guide or ?cars= prefetch.",
+      "removed": false
+    },
+    {
+      "id": "fetch-vehicle-by-slug-api",
+      "location": "src/utils/vehicleDetailResolver.js → fetchVehicleBySlug",
+      "description": "/cars/slug and catalog API chain for non-golden compare families.",
+      "phase25Status": "Used only when family ∉ golden manifest.",
+      "removed": false
+    },
+    {
+      "id": "verified-dossier-loader",
+      "location": "src/data/catalog/verified/buildVerifiedDossierVariants.js",
+      "description": "hasVerifiedDossier for Nexon, Punch, Tiago.",
+      "phase25Status": "Bypassed via fetchListingCatalogVariants golden-first path (compare uses same).",
+      "removed": false
+    },
+    {
+      "id": "slug-aliases",
+      "location": "src/utils/vehicleRoutes.js",
+      "description": "Legacy variant slug aliases for Tata families.",
+      "phase25Status": "Applied in detail resolver; compare uses family slug picks.",
+      "removed": false
+    },
+    {
+      "id": "pick-default-variant",
+      "location": "src/utils/compareGuideCatalog.js → pickCompareCarForFamily",
+      "description": "Compare card picks default variant via pickDefaultVariantForDetail (same as listing rep).",
+      "phase25Status": "Unchanged selection logic; source pool now golden-aligned.",
+      "removed": false
+    },
+    {
+      "id": "apply-compare-display-name",
+      "location": "src/utils/compareGuideCatalog.js → applyCompareDisplayName",
+      "description": "SEO ranked displayName may overlay catalog car name for guides.",
+      "phase25Status": "Display name only; underlying specs from golden/API pool.",
+      "removed": false
+    }
+  ],
+  "fleetMismatches": [],
+  "vehicles": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": true,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": true,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "byd-seal",
+      "displayName": "BYD Seal",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": true,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "inGoldenManifest": true,
+      "sources": {
+        "detail": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchVehicleFamilyBySlug",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "listing": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "variantComparisonTable": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "CarDetails familyVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        },
+        "compare": {
+          "primarySource": "golden-dataset",
+          "goldenWon": true,
+          "apiFallback": false,
+          "verifiedParticipated": false,
+          "runtimeSources": [
+            "compareGuideCatalog → fetchListingCatalogVariants",
+            "fetchListingCatalogVariants",
+            "golden-dataset"
+          ]
+        }
+      },
+      "compare": {
+        "primarySource": "golden-dataset",
+        "goldenWon": true,
+        "apiFallback": false,
+        "verifiedParticipated": false,
+        "runtimeSources": [
+          "compareGuideCatalog → fetchListingCatalogVariants",
+          "fetchListingCatalogVariants",
+          "golden-dataset"
+        ]
+      }
+    }
+  ]
+}

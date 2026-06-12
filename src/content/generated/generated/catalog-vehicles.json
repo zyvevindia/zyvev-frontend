@@ -1,0 +1,982 @@
+{
+  "version": "seo-catalog-v1",
+  "generatedAt": "2026-06-12T06:44:03.349Z",
+  "count": 25,
+  "vehicles": [
+    {
+      "familySlug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "brand": "BMW",
+      "model": "iX1",
+      "bodyStyle": "SUV",
+      "variantCount": 2,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 6890000,
+        "maxInr": 7290000
+      },
+      "rangeBand": {
+        "minKm": 531,
+        "maxKm": 531
+      },
+      "maxRangeKm": 531,
+      "startingPriceInr": 6890000,
+      "topVariantPriceInr": 7290000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 130,
+        "acTimeHours": 6.5,
+        "dcTimeMinutes": 30,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.bmw.in/en/all-models/bmw-i/iX1/2025/bmw-ix1-highlights.html",
+        "https://www.cardekho.com/bmw/ix1"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/bmw-ix1.json"
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "brand": "BYD",
+      "model": "Atto 3",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 2499000,
+        "maxInr": 3399000
+      },
+      "rangeBand": {
+        "minKm": 521,
+        "maxKm": 521
+      },
+      "maxRangeKm": 521,
+      "startingPriceInr": 2499000,
+      "topVariantPriceInr": 3399000,
+      "charging": {
+        "acKw": 7,
+        "dcKw": 80,
+        "acTimeHours": 9.5,
+        "dcTimeMinutes": 30,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": false,
+        "hasListing": false,
+        "hasCompare": false,
+        "source": "local-cars"
+      },
+      "sources": [
+        "BYD India + CarWale (Jun 2026)"
+      ],
+      "verifiedAt": "2026-06-08",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/byd-atto-3.json"
+    },
+    {
+      "familySlug": "byd-seal",
+      "displayName": "BYD Seal",
+      "brand": "BYD",
+      "model": "Seal",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 4100000,
+        "maxInr": 5300000
+      },
+      "rangeBand": {
+        "minKm": 510,
+        "maxKm": 650
+      },
+      "maxRangeKm": 650,
+      "startingPriceInr": 4100000,
+      "topVariantPriceInr": 5300000,
+      "charging": {
+        "acKw": 7,
+        "dcKw": 150,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.bydautoindia.com/bydseal",
+        "https://www.cardekho.com/byd/seal"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/byd-seal.json"
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "brand": "Citroen",
+      "model": "eC3",
+      "bodyStyle": "SUV",
+      "variantCount": 4,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 1269000,
+        "maxInr": 1399000
+      },
+      "rangeBand": {
+        "minKm": 320,
+        "maxKm": 320
+      },
+      "maxRangeKm": 320,
+      "startingPriceInr": 1269000,
+      "topVariantPriceInr": 1399000,
+      "charging": {
+        "acKw": 3.3,
+        "dcKw": null,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "MIDC"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.citroen.in/models/new-e-c3.html",
+        "https://www.cardekho.com/citroen/ec3"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/citroen-ec3.json"
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "brand": "Hyundai",
+      "model": "Creta Electric",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "ops_benchmark",
+      "priceBand": {
+        "minInr": 1799000,
+        "maxInr": 2499000
+      },
+      "rangeBand": {
+        "minKm": 390,
+        "maxKm": 473
+      },
+      "maxRangeKm": 473,
+      "startingPriceInr": 1799000,
+      "topVariantPriceInr": 2499000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 150,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "Hyundai India launch specs estimate (Jun 2026) — review quarterly"
+      ],
+      "verifiedAt": "2026-06-08",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/hyundai-creta-electric.json"
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "brand": "Hyundai",
+      "model": "Ioniq 5",
+      "bodyStyle": "SUV",
+      "variantCount": 2,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 4495000,
+        "maxInr": 5495000
+      },
+      "rangeBand": {
+        "minKm": 508,
+        "maxKm": 631
+      },
+      "maxRangeKm": 631,
+      "startingPriceInr": 4495000,
+      "topVariantPriceInr": 5495000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 175,
+        "acTimeHours": null,
+        "dcTimeMinutes": 35,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.hyundai.com/in/en/find-a-car/ioniq-5/highlights",
+        "https://www.cardekho.com/hyundai/ioniq-5"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/hyundai-ioniq-5.json"
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "brand": "Hyundai",
+      "model": "Kona Electric",
+      "bodyStyle": "SUV",
+      "variantCount": 1,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 2384000,
+        "maxInr": 2384000
+      },
+      "rangeBand": {
+        "minKm": 452,
+        "maxKm": 452
+      },
+      "maxRangeKm": 452,
+      "startingPriceInr": 2384000,
+      "topVariantPriceInr": 2384000,
+      "charging": {
+        "acKw": 7.2,
+        "dcKw": 100,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": false,
+        "hasListing": false,
+        "hasCompare": false,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.hyundai.com/in/en/find-a-car/kona-electric/highlights",
+        "https://www.cardekho.com/hyundai/kona-electric"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/hyundai-kona-electric.json"
+    },
+    {
+      "familySlug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "brand": "Kia",
+      "model": "EV6",
+      "bodyStyle": "SUV",
+      "variantCount": 2,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 6590000,
+        "maxInr": 7590000
+      },
+      "rangeBand": {
+        "minKm": 490,
+        "maxKm": 528
+      },
+      "maxRangeKm": 528,
+      "startingPriceInr": 6590000,
+      "topVariantPriceInr": 7590000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 240,
+        "acTimeHours": null,
+        "dcTimeMinutes": 18,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.kia.com/in/our-vehicles/ev6/showroom.html",
+        "https://www.cardekho.com/kia/ev6"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/kia-ev6.json"
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "brand": "Mahindra",
+      "model": "BE 6",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 1890000,
+        "maxInr": 2690000
+      },
+      "rangeBand": {
+        "minKm": 500,
+        "maxKm": 683
+      },
+      "maxRangeKm": 683,
+      "startingPriceInr": 1890000,
+      "topVariantPriceInr": 2690000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 150,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "MIDC"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "Mahindra OEM + ZigWheels (Jun 2026)"
+      ],
+      "verifiedAt": "2026-06-08",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/mahindra-be-6.json"
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "brand": "Mahindra",
+      "model": "XEV 9e",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 2190000,
+        "maxInr": 3090000
+      },
+      "rangeBand": {
+        "minKm": 600,
+        "maxKm": 656
+      },
+      "maxRangeKm": 656,
+      "startingPriceInr": 2190000,
+      "topVariantPriceInr": 3090000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 175,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "MIDC"
+      },
+      "media": {
+        "hasHero": false,
+        "hasListing": false,
+        "hasCompare": false,
+        "source": "local-cars"
+      },
+      "sources": [
+        "Mahindra OEM + CarDekho (Jun 2026)"
+      ],
+      "verifiedAt": "2026-06-08",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/mahindra-xev-9e.json"
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "brand": "Mahindra",
+      "model": "XUV400",
+      "bodyStyle": "SUV",
+      "variantCount": 4,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 1599000,
+        "maxInr": 1899000
+      },
+      "rangeBand": {
+        "minKm": 375,
+        "maxKm": 456
+      },
+      "maxRangeKm": 456,
+      "startingPriceInr": 1599000,
+      "topVariantPriceInr": 1899000,
+      "charging": {
+        "acKw": 3.3,
+        "dcKw": 50,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "MIDC"
+      },
+      "media": {
+        "hasHero": false,
+        "hasListing": false,
+        "hasCompare": false,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://auto.mahindra.com/suv/xuv400/X400.html",
+        "https://www.cardekho.com/mahindra/xuv400"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/mahindra-xuv400.json"
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "brand": "Maruti Suzuki",
+      "model": "e Vitara",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 2499000,
+        "maxInr": 2899000
+      },
+      "rangeBand": {
+        "minKm": 500,
+        "maxKm": 550
+      },
+      "maxRangeKm": 550,
+      "startingPriceInr": 2499000,
+      "topVariantPriceInr": 2899000,
+      "charging": {
+        "acKw": 7.4,
+        "dcKw": 130,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.nexaexperience.com/e-vitara",
+        "https://www.cardekho.com/maruti/e-vitara"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/maruti-e-vitara.json"
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "brand": "Mercedes-Benz",
+      "model": "EQA",
+      "bodyStyle": "SUV",
+      "variantCount": 2,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 6775000,
+        "maxInr": 7195000
+      },
+      "rangeBand": {
+        "minKm": 560,
+        "maxKm": 592
+      },
+      "maxRangeKm": 592,
+      "startingPriceInr": 6775000,
+      "topVariantPriceInr": 7195000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 100,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqa.html",
+        "https://www.cardekho.com/mercedes-benz/eqa"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/mercedes-eqa.json"
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "brand": "Mercedes-Benz",
+      "model": "EQB",
+      "bodyStyle": "SUV",
+      "variantCount": 2,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 7375000,
+        "maxInr": 7775000
+      },
+      "rangeBand": {
+        "minKm": 534,
+        "maxKm": 534
+      },
+      "maxRangeKm": 534,
+      "startingPriceInr": 7375000,
+      "topVariantPriceInr": 7775000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 100,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.mercedes-benz.co.in/en/passenger-cars/models/suv/eqb.html",
+        "https://www.cardekho.com/mercedes-benz/eqb"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/mercedes-eqb.json"
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "brand": "MG",
+      "model": "Comet EV",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 749000,
+        "maxInr": 949000
+      },
+      "rangeBand": {
+        "minKm": 230,
+        "maxKm": 230
+      },
+      "maxRangeKm": 230,
+      "startingPriceInr": 749000,
+      "topVariantPriceInr": 949000,
+      "charging": {
+        "acKw": 3.3,
+        "dcKw": 50,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": false,
+        "hasListing": false,
+        "hasCompare": false,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.mgmotor.co.in/vehicles/comet-ev-electric-car-in-india",
+        "https://www.cardekho.com/mg/comet-ev",
+        "OEM brochure PDF"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/mg-comet-ev.json"
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "brand": "MG",
+      "model": "Windsor EV",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 999000,
+        "maxInr": 1689000
+      },
+      "rangeBand": {
+        "minKm": 331,
+        "maxKm": 331
+      },
+      "maxRangeKm": 331,
+      "startingPriceInr": 999000,
+      "topVariantPriceInr": 1689000,
+      "charging": {
+        "acKw": 7.4,
+        "dcKw": 45,
+        "acTimeHours": null,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "MG India specs + CarWale (Jun 2026)"
+      ],
+      "verifiedAt": "2026-06-08",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/mg-windsor-ev.json"
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "brand": "MG",
+      "model": "ZS EV",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 1848000,
+        "maxInr": 2288000
+      },
+      "rangeBand": {
+        "minKm": 461,
+        "maxKm": 461
+      },
+      "maxRangeKm": 461,
+      "startingPriceInr": 1848000,
+      "topVariantPriceInr": 2288000,
+      "charging": {
+        "acKw": 7.4,
+        "dcKw": 50,
+        "acTimeHours": 9,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.mgmotor.co.in/vehicles/mgzsev-electric-car-in-india",
+        "https://www.cardekho.com/mg/zs-ev",
+        "OEM brochure PDF"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/mg-zs-ev.json"
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "brand": "MINI",
+      "model": "Cooper SE",
+      "bodyStyle": "SUV",
+      "variantCount": 2,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 5390000,
+        "maxInr": 5790000
+      },
+      "rangeBand": {
+        "minKm": 402,
+        "maxKm": 402
+      },
+      "maxRangeKm": 402,
+      "startingPriceInr": 5390000,
+      "topVariantPriceInr": 5790000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 50,
+        "acTimeHours": 0.6,
+        "dcTimeMinutes": null,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.mini.in/en_IN/home/range/mini-cooper-se-electric.html",
+        "https://www.cardekho.com/mini/cooper-se"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/mini-cooper-se.json"
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "brand": "Tata",
+      "model": "Curvv EV",
+      "bodyStyle": "SUV",
+      "variantCount": 3,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 1699000,
+        "maxInr": 1949000
+      },
+      "rangeBand": {
+        "minKm": 502,
+        "maxKm": 502
+      },
+      "maxRangeKm": 502,
+      "startingPriceInr": 1699000,
+      "topVariantPriceInr": 1949000,
+      "charging": {
+        "acKw": 7.2,
+        "dcKw": 70,
+        "acTimeHours": 7.6,
+        "dcTimeMinutes": 40,
+        "rangeTestStandard": "MIDC"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://ev.tatamotors.com/curvv/ev/price.html",
+        "https://cars.tatamotors.com/article/press-release/curvv-ev-series-x-launch.html",
+        "https://www.cardekho.com/tata/curvv-ev"
+      ],
+      "verifiedAt": "2026-06-11",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-curvv-ev.json"
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "brand": "Tata",
+      "model": "Harrier EV",
+      "bodyStyle": "SUV",
+      "variantCount": 8,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 2149000,
+        "maxInr": 3023000
+      },
+      "rangeBand": {
+        "minKm": 538,
+        "maxKm": 627
+      },
+      "maxRangeKm": 627,
+      "startingPriceInr": 2149000,
+      "topVariantPriceInr": 3023000,
+      "charging": {
+        "acKw": 7.2,
+        "dcKw": 120,
+        "acTimeHours": null,
+        "dcTimeMinutes": 25,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://ev.tatamotors.com/harrier/ev.html",
+        "https://www.cardekho.com/tata/harrier-ev"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-harrier-ev.json"
+    },
+    {
+      "familySlug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "brand": "Tata",
+      "model": "Nexon EV",
+      "bodyStyle": "SUV",
+      "variantCount": 13,
+      "verificationLevel": "verified_dossier",
+      "priceBand": {
+        "minInr": 1249000,
+        "maxInr": 1749000
+      },
+      "rangeBand": {
+        "minKm": 275,
+        "maxKm": 489
+      },
+      "maxRangeKm": 489,
+      "startingPriceInr": 1249000,
+      "topVariantPriceInr": 1749000,
+      "charging": {
+        "acKw": 7.2,
+        "dcKw": 50,
+        "acTimeHours": 4.3,
+        "dcTimeMinutes": 56,
+        "rangeTestStandard": "MIDC"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "EVSavari Verified Dossier"
+      ],
+      "verifiedAt": "2026-06-08",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-nexon-ev.json"
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "brand": "Tata",
+      "model": "Punch EV",
+      "bodyStyle": "SUV",
+      "variantCount": 6,
+      "verificationLevel": "verified_dossier",
+      "priceBand": {
+        "minInr": 969000,
+        "maxInr": 1259000
+      },
+      "rangeBand": {
+        "minKm": 370,
+        "maxKm": 468
+      },
+      "maxRangeKm": 468,
+      "startingPriceInr": 969000,
+      "topVariantPriceInr": 1259000,
+      "charging": {
+        "acKw": 7.2,
+        "dcKw": 65,
+        "acTimeHours": 4.5,
+        "dcTimeMinutes": 26,
+        "rangeTestStandard": "MIDC"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "EVSavari Verified Dossier"
+      ],
+      "verifiedAt": "2026-06-08",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-punch-ev.json"
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "brand": "Tata",
+      "model": "Tiago EV",
+      "bodyStyle": "SUV",
+      "variantCount": 4,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 699000,
+        "maxInr": 899000
+      },
+      "rangeBand": {
+        "minKm": 226,
+        "maxKm": 285
+      },
+      "maxRangeKm": 285,
+      "startingPriceInr": 699000,
+      "topVariantPriceInr": 899000,
+      "charging": {
+        "acKw": 3.3,
+        "dcKw": 25,
+        "acTimeHours": 3.6,
+        "dcTimeMinutes": 35,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": false,
+        "hasListing": false,
+        "hasCompare": false,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://ev.tatamotors.com/tiago/ev.html",
+        "https://www.cardekho.com/tata/tiago-ev"
+      ],
+      "verifiedAt": "2026-06-11",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-tiago-ev.json"
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "brand": "Tata",
+      "model": "Tigor EV",
+      "bodyStyle": "SUV",
+      "variantCount": 4,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 1249000,
+        "maxInr": 1375000
+      },
+      "rangeBand": {
+        "minKm": 315,
+        "maxKm": 315
+      },
+      "realWorldRangeBand": {
+        "minKm": 227,
+        "maxKm": 277
+      },
+      "maxRangeKm": 315,
+      "startingPriceInr": 1249000,
+      "topVariantPriceInr": 1375000,
+      "charging": {
+        "acKw": 3.3,
+        "dcKw": 25,
+        "acTimeHours": 9.4,
+        "dcTimeMinutes": 59,
+        "rangeTestStandard": "ARAI"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://ev.tatamotors.com/tigor/ev.html",
+        "https://www.cardekho.com/tata/tigor-ev"
+      ],
+      "verifiedAt": "2026-06-08",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/tata-tigor-ev.json"
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "brand": "Volvo",
+      "model": "EX40",
+      "bodyStyle": "SUV",
+      "variantCount": 2,
+      "verificationLevel": "manual_review",
+      "priceBand": {
+        "minInr": 5990000,
+        "maxInr": 6490000
+      },
+      "rangeBand": {
+        "minKm": 549,
+        "maxKm": 568
+      },
+      "maxRangeKm": 568,
+      "startingPriceInr": 5990000,
+      "topVariantPriceInr": 6490000,
+      "charging": {
+        "acKw": 11,
+        "dcKw": 150,
+        "acTimeHours": null,
+        "dcTimeMinutes": 40,
+        "rangeTestStandard": "592"
+      },
+      "media": {
+        "hasHero": true,
+        "hasListing": true,
+        "hasCompare": true,
+        "source": "local-cars"
+      },
+      "sources": [
+        "https://www.volvocars.com/in/cars/ex40-electric/",
+        "https://www.cardekho.com/volvo/ex40"
+      ],
+      "verifiedAt": "2026-06-10",
+      "generatedFrom": "public/catalog/golden-dataset/vehicles/volvo-ex40.json"
+    }
+  ]
+}

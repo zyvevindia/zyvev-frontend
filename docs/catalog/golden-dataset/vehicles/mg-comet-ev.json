@@ -25,8 +25,9 @@
     "dcChargingTimeMinutes": null,
     "airbags": 2,
     "adas": "true",
-    "powerPs": null,
-    "torqueNm": null
+    "powerPs": 42,
+    "torqueNm": 110,
+    "powerKw": 31
   },
   "features": {
     "sunroof": true,
@@ -44,7 +45,10 @@
       "batteryKwh": 17.3,
       "rangeKm": 230,
       "acChargingKw": 3.3,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 42,
+      "powerKw": 31,
+      "torqueNm": 110
     },
     {
       "variantName": "Play",
@@ -52,7 +56,10 @@
       "batteryKwh": 17.3,
       "rangeKm": 230,
       "acChargingKw": 3.3,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 42,
+      "powerKw": 31,
+      "torqueNm": 110
     },
     {
       "variantName": "Plush",
@@ -60,7 +67,10 @@
       "batteryKwh": 17.3,
       "rangeKm": 230,
       "acChargingKw": 3.3,
-      "dcChargingKw": 50
+      "dcChargingKw": 50,
+      "powerPs": 42,
+      "powerKw": 31,
+      "torqueNm": 110
     }
   ],
   "verificationLevel": "manual_review",
@@ -76,6 +86,34 @@
     "manualCorrections": [
       "variant_table_manual"
     ],
-    "qualityConsolidationAt": "2026-06-10T05:01:32.175Z"
+    "qualityConsolidationAt": "2026-06-10T05:01:32.175Z",
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "MG India Comet EV brochure (42 PS / 31 kW)",
+      "sprint": "variant-power-completion"
+    }
+  },
+  "media": {
+    "source": "local-cars",
+    "rear": "/images/cars/mg-comet-ev/rear.webp",
+    "side": "/images/cars/mg-comet-ev/side.webp",
+    "interior": "/images/cars/mg-comet-ev/interior.webp",
+    "dashboard": "/images/cars/mg-comet-ev/dashboard.webp",
+    "gallery": [
+      "/images/cars/mg-comet-ev/rear.webp",
+      "/images/cars/mg-comet-ev/side.webp",
+      "/images/cars/mg-comet-ev/interior.webp",
+      "/images/cars/mg-comet-ev/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mg-comet-ev/rear.webp",
+      "/images/cars/mg-comet-ev/side.webp",
+      "/images/cars/mg-comet-ev/interior.webp",
+      "/images/cars/mg-comet-ev/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mg-comet-ev/interior.webp",
+      "/images/cars/mg-comet-ev/dashboard.webp"
+    ]
   }
 }

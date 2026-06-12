@@ -28,7 +28,7 @@ async function main() {
     join(ROOT, "src/backend/catalog/catalogConventions.js")
   ).href;
   const defsUrl = pathToFileURL(
-    join(ROOT, "src/backend/catalog/tier1CatalogDefinitions.js")
+    join(ROOT, "src/backend/catalog/generated/index.js")
   ).href;
   const tier1Url = pathToFileURL(join(ROOT, "src/ops/tier1Families.js")).href;
   const prodUrl = pathToFileURL(
@@ -42,26 +42,27 @@ async function main() {
     cloudinaryPublicId,
     cloudinaryUrl,
   } = await import(convUrl);
-  const { TIER1_CATALOG_DEFINITIONS, listTier1Slugs } = await import(defsUrl);
+  const {
+    GENERATED_TIER1_DEFINITIONS,
+    listGeneratedTier1DefinitionSlugs,
+  } = await import(defsUrl);
   const { TIER1_FAMILY_SLUGS } = await import(tier1Url);
   const { PRODUCTION_FAMILY_SLUGS } = await import(prodUrl);
 
-  const defSlugs = listTier1Slugs();
-  if (defSlugs.length !== TIER1_FAMILY_SLUGS.length) {
-    fail(
-      `definition count ${defSlugs.length} != tier1Families ${TIER1_FAMILY_SLUGS.length}`
-    );
-  }
-
+  const defSlugs = listGeneratedTier1DefinitionSlugs();
   for (const slug of TIER1_FAMILY_SLUGS) {
-    if (!defSlugs.includes(slug)) fail(`missing catalog definition: ${slug}`);
+    if (!defSlugs.includes(slug)) {
+      fail(`missing generated tier1 definition: ${slug}`);
+    }
     if (!PRODUCTION_FAMILY_SLUGS.includes(slug)) {
       fail(`missing productionFamilies entry: ${slug}`);
     }
   }
-  ok(`tier-1 alignment: ${defSlugs.length} families`);
+  ok(
+    `tier-1 alignment: ${TIER1_FAMILY_SLUGS.length} day3 families in ${defSlugs.length} generated definitions`
+  );
 
-  for (const def of TIER1_CATALOG_DEFINITIONS) {
+  for (const def of Object.values(GENERATED_TIER1_DEFINITIONS)) {
     if (!validateFamilySlug(def.slug)) fail(`invalid slug: ${def.slug}`);
     if (!def.variants?.length) fail(`${def.slug}: no variants`);
     for (const v of def.variants) {

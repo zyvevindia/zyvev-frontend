@@ -22,7 +22,10 @@
     "acChargingKw": 11,
     "dcChargingKw": 150,
     "airbags": 6,
-    "adas": true
+    "adas": true,
+    "powerPs": 286,
+    "powerKw": 210,
+    "torqueNm": 380
   },
   "features": {
     "sunroof": true,
@@ -39,7 +42,10 @@
       "batteryKwh": 59,
       "rangeKm": 500,
       "acChargingKw": 11,
-      "dcChargingKw": 150
+      "dcChargingKw": 150,
+      "powerPs": 231,
+      "powerKw": 170,
+      "torqueNm": 380
     },
     {
       "variantName": "Pack Three 79",
@@ -47,7 +53,10 @@
       "batteryKwh": 79,
       "rangeKm": 683,
       "acChargingKw": 11,
-      "dcChargingKw": 150
+      "dcChargingKw": 150,
+      "powerPs": 286,
+      "powerKw": 210,
+      "torqueNm": 380
     },
     {
       "variantName": "Pack Three 79 Select",
@@ -55,12 +64,51 @@
       "batteryKwh": 79,
       "rangeKm": 683,
       "acChargingKw": 11,
-      "dcChargingKw": 150
+      "dcChargingKw": 150,
+      "powerPs": 286,
+      "powerKw": 210,
+      "torqueNm": 380
     }
   ],
   "verificationLevel": "manual_review",
   "sources": [
     "Mahindra OEM + ZigWheels (Jun 2026)"
   ],
-  "verifiedAt": "2026-06-08"
+  "verifiedAt": "2026-06-08",
+  "media": {
+    "source": "local-cars",
+    "listingThumbnail": "/images/cars/mahindra-be-6/listing.webp",
+    "compareThumbnail": "/images/cars/mahindra-be-6/compare.webp",
+    "heroImage": "/images/cars/mahindra-be-6/front.webp",
+    "front": "/images/cars/mahindra-be-6/front.webp",
+    "rear": "/images/cars/mahindra-be-6/rear.webp",
+    "side": "/images/cars/mahindra-be-6/side.webp",
+    "interior": "/images/cars/mahindra-be-6/interior.webp",
+    "dashboard": "/images/cars/mahindra-be-6/dashboard.webp",
+    "gallery": [
+      "/images/cars/mahindra-be-6/front.webp",
+      "/images/cars/mahindra-be-6/rear.webp",
+      "/images/cars/mahindra-be-6/side.webp",
+      "/images/cars/mahindra-be-6/interior.webp",
+      "/images/cars/mahindra-be-6/dashboard.webp"
+    ],
+    "galleryImages": [
+      "/images/cars/mahindra-be-6/front.webp",
+      "/images/cars/mahindra-be-6/rear.webp",
+      "/images/cars/mahindra-be-6/side.webp",
+      "/images/cars/mahindra-be-6/interior.webp",
+      "/images/cars/mahindra-be-6/dashboard.webp"
+    ],
+    "interiorImages": [
+      "/images/cars/mahindra-be-6/interior.webp",
+      "/images/cars/mahindra-be-6/dashboard.webp"
+    ]
+  },
+  "populationMeta": {
+    "powerEnrichment": {
+      "enrichedAt": "2026-06-11",
+      "source": "Mahindra India BE 6 launch specs (170 kW / 210 kW rear motor)",
+      "sprint": "variant-power-completion"
+    }
+  }
 }

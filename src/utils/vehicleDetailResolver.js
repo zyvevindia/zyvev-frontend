@@ -38,6 +38,27 @@ import { loadGoldenDossierByFamilySlug } from "../catalogAcquisition/benchmark/g
 
 const OBJECT_ID_PATTERN = /^[a-f0-9]{24}$/i;
 
+/**
+ * Phase 2 authority: families in golden manifest always use public golden JSON.
+ * Verified dossier and API paths apply only when the family is absent from manifest.
+ * @param {string} familySlug
+ * @returns {Promise<object[]>}
+ */
+async function loadGoldenAuthorityFamilyVariants(familySlug) {
+  let variants = loadBundledGoldenDatasetFamilyVariants(familySlug);
+
+  if (variants.length === 0) {
+    const golden = await loadGoldenDossierByFamilySlug(familySlug);
+    if (golden?.dossier) {
+      variants = goldenDossierToMarketplaceVariants(golden.dossier).map(
+        normalizeCar
+      );
+    }
+  }
+
+  return variants;
+}
+
 function vehicleFromCatalogDto(dto) {
   if (!dto) return null;
   if (dto.marketplace) return dto.marketplace;
@@ -189,19 +210,10 @@ export async function fetchVehicleFamilyBySlug(
   const familySlug = extractFamilySlug(requested);
 
   let variants;
-  if (hasVerifiedDossier(familySlug)) {
+  if (isGoldenDatasetFamily(familySlug)) {
+    variants = await loadGoldenAuthorityFamilyVariants(familySlug);
+  } else if (hasVerifiedDossier(familySlug)) {
     variants = buildVerifiedDossierMarketplaceVariants(familySlug);
-  } else if (isGoldenDatasetFamily(familySlug)) {
-    variants = loadBundledGoldenDatasetFamilyVariants(familySlug);
-
-    if (variants.length === 0) {
-      const golden = await loadGoldenDossierByFamilySlug(familySlug);
-      if (golden?.dossier) {
-        variants = goldenDossierToMarketplaceVariants(golden.dossier).map(
-          normalizeCar
-        );
-      }
-    }
   } else {
     const catalogRaw = await fetchCatalogVehiclesForFallback(50);
     const catalog = catalogRaw.map(normalizeCar);
@@ -295,6 +307,21 @@ export async function fetchListingCatalogVariants(options = {}) {
   for (const familySlug of familySlugs) {
     if (!familySlug) continue;
 
+    if (isGoldenDatasetFamily(familySlug)) {
+      const goldenFam = goldenVariants.filter(
+        (v) => extractFamilySlug(v.slug) === familySlug
+      );
+      const familyVariants =
+        goldenFam.length > 0
+          ? goldenFam
+          : loadBundledGoldenDatasetFamilyVariants(familySlug);
+
+      if (familyVariants.length > 0) {
+        merged.push(...familyVariants);
+        continue;
+      }
+    }
+
     if (hasVerifiedDossier(familySlug)) {
       merged.push(
         ...buildVerifiedDossierMarketplaceVariants(familySlug).map(normalizeCar)
@@ -305,11 +332,6 @@ export async function fetchListingCatalogVariants(options = {}) {
     const goldenFam = goldenVariants.filter(
       (v) => extractFamilySlug(v.slug) === familySlug
     );
-
-    if (isGoldenDatasetFamily(familySlug) && goldenFam.length > 0) {
-      merged.push(...goldenFam);
-      continue;
-    }
 
     const apiFam = apiVariants.filter(
       (v) => extractFamilySlug(v.slug) === familySlug
