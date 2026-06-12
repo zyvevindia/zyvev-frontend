@@ -406,29 +406,6 @@ export default function CompareHeroExperience({
         </section>
 
         <section className="compare-main">
-          {showVariantFamilyTable ? (
-            <SectionErrorBoundary label="Variant comparison" compact>
-              <Suspense
-                fallback={
-                  <div
-                    className="compare-deferred-skeleton compare-deferred-skeleton--inline"
-                    aria-busy="true"
-                    aria-label="Loading variant comparison table"
-                  />
-                }
-              >
-                <VariantComparisonTable
-                  embedded
-                  hideHeader
-                  variants={safeCars}
-                  readOnly
-                  showCompareAll={false}
-                />
-              </Suspense>
-            </SectionErrorBoundary>
-          ) : null}
-
-          {!showVariantFamilyTable ? (
           <div className={gridClass}>
             {intelligentCars.map((car, cardIndex) => {
               const key = carKey(car);
@@ -461,9 +438,7 @@ export default function CompareHeroExperience({
               );
             })}
           </div>
-          ) : null}
 
-          {!showVariantFamilyTable ? (
           <CompareScoreStory
             cars={intelligentCars}
             recommendedId={recommendedId}
@@ -471,6 +446,27 @@ export default function CompareHeroExperience({
             longRangeId={compareBadges.longRangeId}
             fastChargingId={compareBadges.fastChargingId}
           />
+
+          {showVariantFamilyTable ? (
+            <SectionErrorBoundary label="Variant comparison" compact>
+              <Suspense
+                fallback={
+                  <div
+                    className="compare-deferred-skeleton compare-deferred-skeleton--inline"
+                    aria-busy="true"
+                    aria-label="Loading variant comparison table"
+                  />
+                }
+              >
+                <VariantComparisonTable
+                  embedded
+                  hideHeader
+                  variants={safeCars}
+                  readOnly
+                  showCompareAll={false}
+                />
+              </Suspense>
+            </SectionErrorBoundary>
           ) : null}
 
           {!showVariantFamilyTable ? (
