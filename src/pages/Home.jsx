@@ -23,6 +23,15 @@ import {
   sortFamilies,
 } from "../utils/modelFamily";
 
+import {
+  buildChargingSectionCandidates,
+  buildCitySectionCandidates,
+  buildDiverseHomeSections,
+  buildPopularSectionCandidates,
+  buildRangeSectionCandidates,
+  buildValueSectionCandidates,
+} from "../utils/homeSectionDiversity";
+
 import { fetchListingCatalogVariants } from "../utils/vehicleDetailResolver.js";
 import { getCatalogBrandOptions } from "../utils/catalogListingBrands.js";
 
@@ -116,29 +125,36 @@ export default function Home() {
     return sortFamilies(filtered, filters.sortBy);
   }, [allFamilies, filters]);
 
-  const featuredFamilies = useMemo(
-    () =>
-      [...families]
-        .filter((f) => f.isFeatured)
-        .slice(0, 6),
-    [families]
-  );
+  const homeSectionFamilies = useMemo(() => {
+    return buildDiverseHomeSections([
+      {
+        id: "popular",
+        candidates: buildPopularSectionCandidates(families),
+      },
+      {
+        id: "range",
+        candidates: buildRangeSectionCandidates(families),
+      },
+      {
+        id: "value",
+        candidates: buildValueSectionCandidates(families),
+      },
+      {
+        id: "charging",
+        candidates: buildChargingSectionCandidates(families),
+      },
+      {
+        id: "city",
+        candidates: buildCitySectionCandidates(families),
+      },
+    ]);
+  }, [families]);
 
-  const premiumRangeFamilies = useMemo(
-    () =>
-      [...families]
-        .sort((a, b) => b.maxRange - a.maxRange)
-        .slice(0, 6),
-    [families]
-  );
-
-  const popularFamilies = useMemo(
-    () =>
-      featuredFamilies.length > 0
-        ? featuredFamilies
-        : families.slice(0, 6),
-    [featuredFamilies, families]
-  );
+  const popularFamilies = homeSectionFamilies.popular;
+  const premiumRangeFamilies = homeSectionFamilies.range;
+  const bestValueFamilies = homeSectionFamilies.value;
+  const fastChargingFamilies = homeSectionFamilies.charging;
+  const cityFamilies = homeSectionFamilies.city;
 
   /* =========================================================
      ======================= FETCH CARS ======================
@@ -527,6 +543,93 @@ export default function Home() {
           ) : error ? null : (
             premiumRangeFamilies.map((family) =>
               renderFamilyCard(family, "Long Range")
+            )
+          )}
+
+        </HomeSection>
+
+        {/* ================= BEST VALUE ================= */}
+
+        <HomeSection
+          title="Best Value EVs"
+
+          subtitle="Strong price-to-capability ratios from EVSavari value scores."
+        >
+
+          {loading ? (
+
+            Array.from({
+              length: 6,
+            }).map(
+              (_, index) => (
+
+                <CarCardSkeleton
+                  key={index}
+                />
+              )
+            )
+
+          ) : error ? null : (
+            bestValueFamilies.map((family) =>
+              renderFamilyCard(family, "Best Value")
+            )
+          )}
+
+        </HomeSection>
+
+        {/* ================= FAST CHARGING ================= */}
+
+        <HomeSection
+          title="Fast Charging EVs"
+
+          subtitle="Electric cars with the quickest charging convenience scores."
+        >
+
+          {loading ? (
+
+            Array.from({
+              length: 6,
+            }).map(
+              (_, index) => (
+
+                <CarCardSkeleton
+                  key={index}
+                />
+              )
+            )
+
+          ) : error ? null : (
+            fastChargingFamilies.map((family) =>
+              renderFamilyCard(family, "Fast Charge")
+            )
+          )}
+
+        </HomeSection>
+
+        {/* ================= CITY ================= */}
+
+        <HomeSection
+          title="City EVs"
+
+          subtitle="Practical picks for daily urban commutes and parking."
+        >
+
+          {loading ? (
+
+            Array.from({
+              length: 6,
+            }).map(
+              (_, index) => (
+
+                <CarCardSkeleton
+                  key={index}
+                />
+              )
+            )
+
+          ) : error ? null : (
+            cityFamilies.map((family) =>
+              renderFamilyCard(family, "City Use")
             )
           )}
 
