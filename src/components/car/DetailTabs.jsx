@@ -1,17 +1,15 @@
 import { useEffect, useRef } from "react";
 
-import { DETAIL_NAV_TABS } from "../../utils/detailPageNav";
+import { DETAIL_SECTION_DEFS } from "../../utils/detailPageNav";
 
-export { DETAIL_NAV_TABS as DETAIL_TABS };
+export { DETAIL_SECTION_DEFS as DETAIL_TABS };
 
 export default function DetailTabs({
   activeId,
   onSelect,
-  excludeTabIds = [],
+  tabs = [],
 }) {
   const listRef = useRef(null);
-  const hidden = new Set(excludeTabIds);
-  const tabs = DETAIL_NAV_TABS.filter((tab) => !hidden.has(tab.id));
 
   useEffect(() => {
     const activeBtn = listRef.current?.querySelector(

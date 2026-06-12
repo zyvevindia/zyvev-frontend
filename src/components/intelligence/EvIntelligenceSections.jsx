@@ -15,7 +15,6 @@ import EvSuitabilityCardGrid from "./EvSuitabilityCardGrid";
 import {
   trackChargingGuideOpened,
   trackChargingPracticalityViewed,
-  trackFeatureComparisonViewed,
   trackOwnershipGuideOpened,
 } from "../../analytics/funnel";
 import "../../styles/ev-trust.css";
@@ -64,7 +63,6 @@ export default function EvIntelligenceSections({
     "range",
     "charging",
     "ownership",
-    "features",
     "suitability",
   ],
 }) {
@@ -76,7 +74,6 @@ export default function EvIntelligenceSections({
   const chargingRef = useRef(null);
   const practicalityRef = useRef(null);
   const ownershipRef = useRef(null);
-  const featuresRef = useRef(null);
 
   useSectionViewOnce(chargingRef, () =>
     trackChargingGuideOpened({ familySlug: slug, sourcePage: "car_detail" })
@@ -90,9 +87,6 @@ export default function EvIntelligenceSections({
   useSectionViewOnce(ownershipRef, () =>
     trackOwnershipGuideOpened({ familySlug: slug, sourcePage: "car_detail" })
   );
-  useSectionViewOnce(featuresRef, () =>
-    trackFeatureComparisonViewed({ familySlug: slug, sourcePage: "car_detail" })
-  );
 
   if (!intelligence) return null;
 
@@ -101,7 +95,6 @@ export default function EvIntelligenceSections({
     chargingPracticality,
     ownership,
     range,
-    features,
     suitability,
     trust,
     curation,
@@ -380,29 +373,6 @@ export default function EvIntelligenceSections({
           )}
           <p className="ev-intel-footnote">{ownership.savingsDisclaimer}</p>
           <p className="ev-intel-footnote">{ownership.disclaimer}</p>
-        </section>
-      )}
-
-      {show("features") && features.hasData && (
-        <section
-          ref={featuresRef}
-          id="features"
-          className={cardClass}
-          aria-labelledby="ev-features-intel-title"
-        >
-          <h2
-            id="ev-features-intel-title"
-            className="cd-section__title"
-          >
-            Feature intelligence
-          </h2>
-          <div className="ev-intel-tags">
-            {features.highlights.map((h) => (
-              <span key={h} className="ev-intel-tag ev-intel-tag--feature">
-                {h}
-              </span>
-            ))}
-          </div>
         </section>
       )}
 

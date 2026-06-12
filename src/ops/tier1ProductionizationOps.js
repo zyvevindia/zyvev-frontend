@@ -22,7 +22,7 @@ import {
   defaultProductionizationComparePairs,
   filterProductionizationCars,
 } from "./tier1ProductionizationFocus.js";
-import { DETAIL_NAV_TABS } from "../utils/detailPageNav.js";
+import { DETAIL_SECTION_DEFS } from "../utils/detailPageNav.js";
 
 const MEDIA_FIELD_KEYS = [
   "heroImage",
@@ -131,24 +131,14 @@ export function generateTier1ProductionizationReport(cars = []) {
   });
 
   const uxChecks = {
-    stickyNavTabCount: DETAIL_NAV_TABS.length,
-    requiredTabs: DETAIL_NAV_TABS.map((t) => t.id),
-    chargingTabPresent: DETAIL_NAV_TABS.some((t) => t.id === "charging"),
+    stickyNavTabCount: DETAIL_SECTION_DEFS.length,
+    requiredTabs: DETAIL_SECTION_DEFS.map((t) => t.id),
+    chargingTabPresent: DETAIL_SECTION_DEFS.some((t) => t.id === "charging"),
     compareCtaRoutes: ["/compare", "/cars?compareMode=true"],
-    detailSectionAnchors: [
-      "overview",
-      "variants",
-      "compare",
-      "range",
-      "charging",
-      "features",
-      "suitability",
-      "emi",
-      "faqs",
-      "reviews",
-      "related-evs",
-      "assistance",
-    ],
+    detailSectionAnchors: DETAIL_SECTION_DEFS.flatMap((section) => [
+      section.id,
+      ...section.anchorIds,
+    ]),
     status: "static_pass",
   };
 

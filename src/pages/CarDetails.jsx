@@ -84,10 +84,13 @@ import DetailTabs from "../components/car/DetailTabs";
 import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
 import { scoreVehicle } from "../scoring/index.js";
 import {
+  buildDetailPageSectionContext,
+  buildDetailPageSections,
   detailTabIdForSectionElement,
-  DETAIL_OBSERVED_SECTION_IDS,
+  getDetailObservedSectionIds,
   scrollToDetailSection,
 } from "../utils/detailPageNav";
+import { buildVehicleIntelligence } from "../intelligence/buildVehicleIntelligence";
 import DetailDealerAssistance from "../components/car/DetailDealerAssistance";
 import DetailKeySpecifications from "../components/car/DetailKeySpecifications";
 
@@ -679,8 +682,68 @@ export default function CarDetails() {
     });
   }, [displayCar, loading, slug, family?.familySlug]);
 
+  const pageSections = useMemo(() => {
+    if (!displayCar) return [];
+
+    const vehicle = displayCar;
+    const famSlug =
+      family?.familySlug ||
+      extractFamilySlug(vehicle.slug || slug);
+    const variantOptions =
+      familyVariants.length > 0
+        ? familyVariants
+        : vehicle.variants || [];
+    const comparable = filterComparableVariants(variantOptions, famSlug);
+    const fallback =
+      family?.defaultVariant ||
+      comparable[0] ||
+      variantOptions[0] ||
+      vehicle;
+    const enriched = enrichVariantsWithInsights(comparable, fallback);
+    const explicitVariantSlug = normalizeVehicleSlug(
+      searchParams.get("variant")
+    );
+    const familyOverview =
+      comparable.length > 0 && !explicitVariantSlug;
+    const selectedVarSlug = normalizeVehicleSlug(
+      explicitVariantSlug ||
+        selectedVariant?.slug ||
+        vehicle.slug
+    );
+    const intelCar =
+      enriched.find((v) => v.slug === selectedVarSlug) ||
+      selectedVariant ||
+      vehicle;
+    const intelligence = buildVehicleIntelligence(intelCar);
+    const context = buildDetailPageSectionContext({
+      enrichedVariantsCount: enriched.length,
+      isFamilyOverviewMode: familyOverview,
+      vehicle,
+      hasGoldExperience,
+      intelligence,
+      familySlug: famSlug,
+    });
+
+    return buildDetailPageSections(context);
+  }, [
+    displayCar,
+    family,
+    familyVariants,
+    slug,
+    searchParams,
+    selectedVariant,
+    hasGoldExperience,
+  ]);
+
   useEffect(() => {
-    if (!displayCar) return;
+    if (!pageSections.length) return;
+    if (!pageSections.some((section) => section.id === activeTab)) {
+      setActiveTab(pageSections[0].id);
+    }
+  }, [pageSections, activeTab]);
+
+  useEffect(() => {
+    if (!displayCar || !pageSections.length) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -695,7 +758,8 @@ export default function CarDetails() {
 
         for (const entry of visible) {
           const tabId = detailTabIdForSectionElement(
-            entry.target?.id
+            entry.target?.id,
+            pageSections
           );
           if (tabId) {
             setActiveTab(tabId);
@@ -709,13 +773,13 @@ export default function CarDetails() {
       }
     );
 
-    DETAIL_OBSERVED_SECTION_IDS.forEach((id) => {
+    getDetailObservedSectionIds(pageSections).forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
-  }, [displayCar, slug]);
+  }, [displayCar, slug, pageSections]);
 
   const evSavariScores = useMemo(() => {
     if (!displayCar || loading || catalogLoading) {
@@ -1145,9 +1209,7 @@ export default function CarDetails() {
           <DetailTabs
             activeId={activeTab}
             onSelect={scrollToSection}
-            excludeTabIds={
-              isFamilyOverviewMode ? ["range"] : []
-            }
+            tabs={pageSections}
           />
 
           <section
@@ -1236,7 +1298,6 @@ export default function CarDetails() {
                 "range",
                 "charging",
                 "ownership",
-                "features",
                 "suitability",
               ]}
             />

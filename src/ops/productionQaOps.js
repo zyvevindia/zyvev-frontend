@@ -2,10 +2,7 @@
  * Production QA audit — runtime readiness checks (static + catalog-derived).
  */
 
-import {
-  DETAIL_NAV_TABS,
-  DETAIL_OBSERVED_SECTION_IDS,
-} from "../utils/detailPageNav.js";
+import { DETAIL_SECTION_DEFS } from "../utils/detailPageNav.js";
 import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
 import { LOCAL_FALLBACK_EV } from "../config/media.js";
 import {
@@ -27,10 +24,12 @@ function isFallbackUrl(url = "") {
 }
 
 const REQUIRED_DETAIL_SECTION_IDS = [
-  ...new Set([
-    ...DETAIL_NAV_TABS.map((t) => t.id),
-    ...DETAIL_OBSERVED_SECTION_IDS,
-  ]),
+  ...new Set(
+    DETAIL_SECTION_DEFS.flatMap((section) => [
+      section.id,
+      ...section.anchorIds,
+    ])
+  ),
 ];
 
 /**
@@ -57,10 +56,10 @@ export function runProductionQaAudit(options = {}) {
     warnings.push({ id, detail });
   }
 
-  if (DETAIL_NAV_TABS.length >= 10) {
-    pass("sticky_nav_tabs_defined", `${DETAIL_NAV_TABS.length} tabs`);
+  if (DETAIL_SECTION_DEFS.length >= 8) {
+    pass("sticky_nav_sections_defined", `${DETAIL_SECTION_DEFS.length} sections`);
   } else {
-    fail("sticky_nav_tabs_defined", "insufficient tabs");
+    fail("sticky_nav_sections_defined", "insufficient sections");
   }
 
   if (REQUIRED_DETAIL_SECTION_IDS.includes("charging")) {
@@ -69,9 +68,12 @@ export function runProductionQaAudit(options = {}) {
     fail("charging_section_id_missing");
   }
 
-  for (const tab of DETAIL_NAV_TABS) {
-    if (!REQUIRED_DETAIL_SECTION_IDS.includes(tab.id) && tab.id !== "related-evs") {
-      warn("tab_without_observed_id", tab.id);
+  for (const section of DETAIL_SECTION_DEFS) {
+    if (
+      !REQUIRED_DETAIL_SECTION_IDS.includes(section.id) &&
+      section.id !== "related-evs"
+    ) {
+      warn("section_without_anchor_id", section.id);
     }
   }
 
