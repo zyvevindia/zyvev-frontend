@@ -34,10 +34,6 @@ const CompareTrustPanel = lazy(() =>
 const CompareGuideEditorialSections = lazy(() =>
   import("./CompareGuideEditorialSections")
 );
-const VariantComparisonTable = lazy(() =>
-  import("../catalog/VariantComparisonTable")
-);
-
 const CompareBelowFoldSections = lazy(() =>
   import("../catalog/CompareBelowFoldSections")
 );
@@ -172,8 +168,8 @@ export default function CompareHeroExperience({
     return unique.size === 1;
   }, [safeCars]);
 
-  const showVariantFamilyTable =
-    variantCompareSession || isFamilyVariantCompare;
+  const showCrossModelSpecs =
+    !variantCompareSession && !isFamilyVariantCompare;
 
   const intelligenceTrackedRef = useRef(false);
   useEffect(() => {
@@ -447,29 +443,7 @@ export default function CompareHeroExperience({
             fastChargingId={compareBadges.fastChargingId}
           />
 
-          {showVariantFamilyTable ? (
-            <SectionErrorBoundary label="Variant comparison" compact>
-              <Suspense
-                fallback={
-                  <div
-                    className="compare-deferred-skeleton compare-deferred-skeleton--inline"
-                    aria-busy="true"
-                    aria-label="Loading variant comparison table"
-                  />
-                }
-              >
-                <VariantComparisonTable
-                  embedded
-                  hideHeader
-                  variants={safeCars}
-                  readOnly
-                  showCompareAll={false}
-                />
-              </Suspense>
-            </SectionErrorBoundary>
-          ) : null}
-
-          {!showVariantFamilyTable ? (
+          {showCrossModelSpecs ? (
           <>
           <CompareMobileSpecCards
             cars={intelligentCars}
