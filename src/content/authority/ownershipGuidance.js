@@ -96,7 +96,7 @@ export const OWNERSHIP_USAGE_SCENARIOS = Object.freeze([
       familyFriendly: true,
       highwayFriendly: false,
     },
-    discoveryPath: "/discover/under-15-lakh",
+    discoveryPath: "/discover/budget-evs",
     topicIds: ["how-evs-work", "ev-ownership-for-beginners"],
   },
 ]);

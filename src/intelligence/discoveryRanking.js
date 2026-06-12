@@ -25,11 +25,19 @@ const SORT_KEY_MAP = {
 /**
  * Rank families for an intelligence discovery preset.
  */
-export function rankFamiliesForPreset(families, preset) {
+export function rankFamiliesForPreset(families, preset, options = {}) {
   if (!preset) return [];
 
+  const { search = "", extraFilterIds = [] } = options;
+
+  const filterIds = [
+    ...(preset.intelligenceFilterIds || []),
+    ...extraFilterIds,
+  ];
+
   const filtered = filterEnrichedFamilies(families, {
-    intelligenceFilterIds: preset.intelligenceFilterIds || [],
+    intelligenceFilterIds: filterIds,
+    search: search.trim() || undefined,
   });
 
   const sortFn = SORT_KEY_MAP[preset.sortBy] || SORT_KEY_MAP.composite;

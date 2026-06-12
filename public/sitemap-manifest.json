@@ -1,6 +1,6 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-06-12T15:43:34.940Z",
+  "generatedAt": "2026-06-12T15:55:52.736Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
@@ -1477,6 +1477,13 @@
       "lastmod": "2026-06-12"
     },
     {
+      "loc": "https://evsavari.com/discover/budget-evs",
+      "path": "/discover/budget-evs",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-12"
+    },
+    {
       "loc": "https://evsavari.com/discover/city-driving",
       "path": "/discover/city-driving",
       "priority": 0.81,
@@ -1755,15 +1762,15 @@
   "counts": {
     "static": 13,
     "vehicles": 25,
-    "discovery": 182,
+    "discovery": 183,
     "compare": 29,
-    "total": 249
+    "total": 250
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
     "static": 13,
     "cars": 25,
-    "discovery": 182,
+    "discovery": 183,
     "compare": 29
   }
 }

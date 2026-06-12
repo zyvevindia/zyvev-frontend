@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 import SeoHead from "../components/SEO/SeoHead";
 import JsonLd from "../components/SEO/JsonLd";
 import CarCard from "../components/CarCard";
 import CarCardSkeleton from "../components/skeletons/CarCardSkeleton";
+import DiscoveryPageSearch from "../components/discovery/DiscoveryPageSearch";
+import BudgetPriceFilterChips from "../components/discovery/BudgetPriceFilterChips";
 
 import { fetchListingCatalogVariants } from "../utils/vehicleDetailResolver.js";
 import { aggregateModelFamilies } from "../utils/modelFamily";
@@ -12,27 +14,76 @@ import {
   getDiscoveryPreset,
   INTELLIGENCE_DISCOVERY_PRESETS,
 } from "../data/intelligenceDiscoveryPresets";
+import {
+  BUDGET_DISCOVERY_PRICE_PARAM,
+  BUDGET_LEGACY_PRESET_TO_PRICE,
+  parseBudgetPriceFilterId,
+  getBudgetPriceFilterOption,
+} from "../data/budgetDiscoveryFilters";
 import { rankFamiliesForPreset } from "../intelligence/discoveryRanking.js";
 import { enrichFamiliesWithIntelligence } from "../intelligence/familyIntelligence.js";
 import { buildGuideItemListSchema } from "../seo/schema";
-import { trackDiscoveryPageEngaged, trackDiscoveryThinResults, trackTrustFaqEngaged } from "../analytics/funnel";
+import {
+  trackDiscoveryPageEngaged,
+  trackDiscoveryThinResults,
+  trackTrustFaqEngaged,
+} from "../analytics/funnel";
 import { buildTrustFaqAnchors } from "../intelligence/trustMetadata.js";
+import useDebouncedValue from "../hooks/useDebouncedValue";
 
 import "../styles/ev-discovery.css";
 import "../styles/ev-trust.css";
+import "../styles/catalog-listing-a11y.css";
 
 const SITE_ORIGIN =
   import.meta.env.VITE_SITE_ORIGIN || "https://evsavari.com";
 
+const BUDGET_HUB_SLUG = "budget-evs";
+const NAV_OFFSET_PX = 88;
+
 export default function IntelligenceDiscoveryPage() {
   const { presetSlug } = useParams();
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const preset = getDiscoveryPreset(presetSlug);
 
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [search, setSearch] = useState("");
+  const [intelHighlight, setIntelHighlight] = useState(false);
   const thinSignalSentRef = useRef(false);
+  const intelHighlightTimerRef = useRef(null);
+
+  const debouncedSearch = useDebouncedValue(search, 400);
+
+  const isBudgetHub = preset?.slug === BUDGET_HUB_SLUG;
+  const showBudgetFilters = Boolean(preset?.budgetPriceFilters);
+
+  const budgetPriceId = useMemo(() => {
+    if (!showBudgetFilters) return "all";
+    if (isBudgetHub) {
+      return parseBudgetPriceFilterId(
+        searchParams.get(BUDGET_DISCOVERY_PRICE_PARAM)
+      );
+    }
+    return BUDGET_LEGACY_PRESET_TO_PRICE[preset?.slug] || "all";
+  }, [showBudgetFilters, isBudgetHub, searchParams, preset?.slug]);
+
+  useEffect(() => {
+    if (!preset?.redirectToBudgetHub) return;
+    const price =
+      BUDGET_LEGACY_PRESET_TO_PRICE[preset.slug] || "all";
+    const next = new URLSearchParams();
+    if (price !== "all") {
+      next.set(BUDGET_DISCOVERY_PRICE_PARAM, price);
+    }
+    const query = next.toString();
+    navigate(
+      `/discover/${BUDGET_HUB_SLUG}${query ? `?${query}` : ""}`,
+      { replace: true }
+    );
+  }, [preset, navigate]);
 
   useEffect(() => {
     let cancelled = false;
@@ -63,7 +114,16 @@ export default function IntelligenceDiscoveryPage() {
 
   useEffect(() => {
     thinSignalSentRef.current = false;
-  }, [presetSlug]);
+  }, [presetSlug, budgetPriceId, debouncedSearch]);
+
+  useEffect(
+    () => () => {
+      if (intelHighlightTimerRef.current) {
+        window.clearTimeout(intelHighlightTimerRef.current);
+      }
+    },
+    []
+  );
 
   const families = useMemo(
     () => enrichFamiliesWithIntelligence(aggregateModelFamilies(cars)),
@@ -71,12 +131,27 @@ export default function IntelligenceDiscoveryPage() {
   );
 
   const ranked = useMemo(() => {
-    if (!preset) return [];
-    return rankFamiliesForPreset(families, preset);
-  }, [families, preset]);
+    if (!preset || preset.redirectToBudgetHub) return [];
+
+    const extraFilterIds = showBudgetFilters
+      ? getBudgetPriceFilterOption(budgetPriceId).filterIds
+      : [];
+
+    return rankFamiliesForPreset(families, preset, {
+      search: preset.enableSearch ? debouncedSearch : "",
+      extraFilterIds: isBudgetHub ? extraFilterIds : [],
+    });
+  }, [
+    families,
+    preset,
+    showBudgetFilters,
+    budgetPriceId,
+    debouncedSearch,
+    isBudgetHub,
+  ]);
 
   useEffect(() => {
-    if (!preset || loading) return;
+    if (!preset || preset.redirectToBudgetHub || loading) return;
     trackDiscoveryPageEngaged({
       presetSlug: preset.slug,
       resultCount: ranked.length,
@@ -84,7 +159,7 @@ export default function IntelligenceDiscoveryPage() {
   }, [preset, loading, ranked.length]);
 
   useEffect(() => {
-    if (!preset || loading) return;
+    if (!preset || preset.redirectToBudgetHub || loading) return;
     const min = preset.minResults ?? 1;
     if (ranked.length >= min) return;
     if (thinSignalSentRef.current) return;
@@ -95,6 +170,38 @@ export default function IntelligenceDiscoveryPage() {
       minResults: min,
     });
   }, [preset, loading, ranked.length]);
+
+  const handleBudgetPriceChange = (nextId) => {
+    if (!isBudgetHub) {
+      navigate(`/discover/${BUDGET_HUB_SLUG}?${BUDGET_DISCOVERY_PRICE_PARAM}=${nextId}`);
+      return;
+    }
+
+    const next = new URLSearchParams(searchParams);
+    if (nextId === "all") {
+      next.delete(BUDGET_DISCOVERY_PRICE_PARAM);
+    } else {
+      next.set(BUDGET_DISCOVERY_PRICE_PARAM, nextId);
+    }
+    setSearchParams(next, { replace: true });
+  };
+
+  const scrollToMoreIntelligence = () => {
+    const target = document.getElementById("more-ev-intelligence");
+    if (!target) return;
+
+    const top =
+      target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET_PX;
+    window.scrollTo({ top, behavior: "smooth" });
+
+    setIntelHighlight(true);
+    if (intelHighlightTimerRef.current) {
+      window.clearTimeout(intelHighlightTimerRef.current);
+    }
+    intelHighlightTimerRef.current = window.setTimeout(() => {
+      setIntelHighlight(false);
+    }, 2000);
+  };
 
   if (!preset) {
     return (
@@ -118,12 +225,27 @@ export default function IntelligenceDiscoveryPage() {
     );
   }
 
+  if (preset.redirectToBudgetHub) {
+    return (
+      <div className="intel-discovery-page">
+        <div className="intel-discovery-body">
+          <div className="intel-discovery-grid">
+            {[1, 2, 3].map((i) => (
+              <CarCardSkeleton key={i} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const canonical = `${SITE_ORIGIN}${preset.path}`;
   const meta = {
     title: preset.title,
     description: preset.description,
     canonical,
-    robots: ranked.length >= (preset.minResults || 1) ? "index, follow" : "noindex, follow",
+    robots:
+      ranked.length >= (preset.minResults || 1) ? "index, follow" : "noindex, follow",
   };
 
   const itemListSchema = buildGuideItemListSchema(
@@ -137,10 +259,13 @@ export default function IntelligenceDiscoveryPage() {
     preset.h1
   );
 
-  const relatedPresets = Object.values(
-    INTELLIGENCE_DISCOVERY_PRESETS
-  )
-    .filter((p) => p.slug !== preset.slug)
+  const relatedPresets = Object.values(INTELLIGENCE_DISCOVERY_PRESETS)
+    .filter(
+      (p) =>
+        p.slug !== preset.slug &&
+        !p.redirectToBudgetHub &&
+        p.slug !== BUDGET_HUB_SLUG
+    )
     .slice(0, 6);
 
   const trustFaq = buildTrustFaqAnchors();
@@ -153,7 +278,7 @@ export default function IntelligenceDiscoveryPage() {
       <header className="intel-discovery-hero">
         <h1>{preset.h1}</h1>
         <p>{preset.description}</p>
-        <p style={{ marginTop: 16, fontSize: "0.875rem", opacity: 0.85 }}>
+        <p className="intel-discovery-hero__note">
           Rankings use EVSavari intelligence scores — refreshed as catalog data
           is reviewed. Stale or unreviewed models are flagged on detail pages.
           Not paid placements.
@@ -161,6 +286,24 @@ export default function IntelligenceDiscoveryPage() {
       </header>
 
       <div className="intel-discovery-body">
+        {preset.enableSearch || showBudgetFilters ? (
+          <div
+            id="discovery-search"
+            className="intel-discovery-toolbar listing-filter-card"
+          >
+            {preset.enableSearch ? (
+              <DiscoveryPageSearch value={search} onChange={setSearch} />
+            ) : null}
+
+            {showBudgetFilters ? (
+              <BudgetPriceFilterChips
+                activeId={budgetPriceId}
+                onChange={handleBudgetPriceChange}
+              />
+            ) : null}
+          </div>
+        ) : null}
+
         {loading && (
           <div className="intel-discovery-grid">
             {[1, 2, 3].map((i) => (
@@ -173,7 +316,9 @@ export default function IntelligenceDiscoveryPage() {
 
         {!loading && ranked.length === 0 && (
           <p>
-            Not enough verified data to rank this list yet.{" "}
+            {debouncedSearch.trim()
+              ? "No EVs match your search. Try another name or clear filters."
+              : "Not enough verified data to rank this list yet."}{" "}
             <Link to="/cars">Browse all EVs</Link> or try{" "}
             <Link to="/guides">buying guides</Link>.
           </p>
@@ -181,11 +326,23 @@ export default function IntelligenceDiscoveryPage() {
 
         {!loading && ranked.length > 0 && (
           <>
-            {preset.sortLabel ? (
-              <p className="intel-discovery-sort-label">
-                Sorted by: {preset.sortLabel}
-              </p>
-            ) : null}
+            <div className="intel-discovery-meta-row">
+              {preset.sortLabel ? (
+                <p className="intel-discovery-sort-label">
+                  Sorted by: {preset.sortLabel}
+                </p>
+              ) : (
+                <span />
+              )}
+              <button
+                type="button"
+                className="intel-discovery-intel-jump"
+                onClick={scrollToMoreIntelligence}
+              >
+                More EV Intelligence ↓
+              </button>
+            </div>
+
             <div className="intel-discovery-grid">
               {ranked.map(({ card }) => (
                 <CarCard
@@ -196,7 +353,7 @@ export default function IntelligenceDiscoveryPage() {
               ))}
             </div>
 
-            <div style={{ marginTop: 24, textAlign: "center" }}>
+            <div className="intel-discovery-compare-cta">
               <button
                 type="button"
                 className="ev-discovery-filter-chip ev-discovery-filter-chip--active"
@@ -212,20 +369,18 @@ export default function IntelligenceDiscoveryPage() {
         )}
 
         {preset.faq?.length > 0 && (
-          <section style={{ marginTop: 32 }}>
+          <section className="intel-discovery-faq">
             <h2 className="cd-section__title">FAQs</h2>
             {preset.faq.map((item) => (
-              <details key={item.q} style={{ marginBottom: 12 }}>
-                <summary style={{ fontWeight: 700, cursor: "pointer" }}>
-                  {item.q}
-                </summary>
-                <p style={{ color: "#64748b", lineHeight: 1.6 }}>{item.a}</p>
+              <details key={item.q} className="intel-discovery-faq__item">
+                <summary>{item.q}</summary>
+                <p>{item.a}</p>
               </details>
             ))}
           </section>
         )}
 
-        <section className="ev-trust-panel" style={{ marginTop: 32 }}>
+        <section className="ev-trust-panel intel-discovery-trust">
           <h2 className="cd-section__title">How we estimate EV data</h2>
           <p className="ev-trust-panel__intro">
             Rankings and specs use deterministic EVSavari intelligence — bands
@@ -250,7 +405,7 @@ export default function IntelligenceDiscoveryPage() {
               </details>
             ))}
           </div>
-          <nav style={{ marginTop: 16, fontSize: "0.875rem" }}>
+          <nav className="intel-discovery-trust__links">
             <Link to="/guides/ownership-running-cost">Running cost guide</Link>
             {" · "}
             <Link to="/guides/ownership-home-charger-install">
@@ -261,7 +416,13 @@ export default function IntelligenceDiscoveryPage() {
           </nav>
         </section>
 
-        <nav className="intel-discovery-links" aria-label="Related discovery">
+        <nav
+          id="more-ev-intelligence"
+          className={`intel-discovery-links${
+            intelHighlight ? " intel-discovery-links--highlight" : ""
+          }`}
+          aria-label="Related discovery"
+        >
           <h2>More EV intelligence</h2>
           <ul>
             {relatedPresets.map((p) => (

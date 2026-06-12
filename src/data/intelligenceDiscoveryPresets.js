@@ -4,6 +4,21 @@
  */
 
 export const INTELLIGENCE_DISCOVERY_PRESETS = Object.freeze({
+  "budget-evs": {
+    slug: "budget-evs",
+    path: "/discover/budget-evs",
+    title: "Budget electric cars in India — compare all EVs by price",
+    h1: "Budget EVs",
+    description:
+      "Browse every electric car on EVSavari sorted by ex-showroom price — from entry-level hatchbacks to premium models. Filter by budget band or search by name.",
+    intelligenceFilterIds: [],
+    sortBy: "priceLow",
+    sortLabel: "Price (Low → High)",
+    showValueScore: true,
+    enableSearch: true,
+    budgetPriceFilters: true,
+    minResults: 1,
+  },
   "city-driving": {
     slug: "city-driving",
     path: "/discover/city-driving",
@@ -36,6 +51,8 @@ export const INTELLIGENCE_DISCOVERY_PRESETS = Object.freeze({
     sortBy: "priceLow",
     sortLabel: "Price (Low → High)",
     showValueScore: true,
+    budgetPriceFilters: true,
+    redirectToBudgetHub: true,
     minResults: 2,
   },
   "under-15-lakh": {
@@ -49,6 +66,8 @@ export const INTELLIGENCE_DISCOVERY_PRESETS = Object.freeze({
     sortBy: "priceLow",
     sortLabel: "Price (Low → High)",
     showValueScore: true,
+    budgetPriceFilters: true,
+    redirectToBudgetHub: true,
     minResults: 2,
   },
   "under-20-lakh": {
@@ -62,6 +81,8 @@ export const INTELLIGENCE_DISCOVERY_PRESETS = Object.freeze({
     sortBy: "priceLow",
     sortLabel: "Price (Low → High)",
     showValueScore: true,
+    budgetPriceFilters: true,
+    redirectToBudgetHub: true,
     minResults: 2,
   },
   "fastest-charging": {

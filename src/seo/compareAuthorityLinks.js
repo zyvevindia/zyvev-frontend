@@ -44,7 +44,7 @@ const AUTHORITY_LINKS = Object.freeze([
   {
     id: "beginner",
     label: "First-time EV buyer tips",
-    href: "/discover/under-15-lakh",
+    href: "/discover/budget-evs",
     cluster: "beginner",
   },
   {
@@ -68,7 +68,7 @@ const AUTHORITY_LINKS = Object.freeze([
   {
     id: "buying_decision",
     label: "EV buying decision guide",
-    href: "/discover/under-15-lakh",
+    href: "/discover/budget-evs",
     cluster: "beginner",
   },
   {

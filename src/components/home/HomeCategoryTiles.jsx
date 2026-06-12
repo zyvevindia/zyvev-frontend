@@ -24,7 +24,7 @@ export const HOME_DISCOVERY_TILES = Object.freeze([
   {
     id: "budget",
     label: "Budget EVs",
-    path: "/discover/under-15-lakh",
+    path: "/discover/budget-evs",
     icon: "💰",
   },
   {
