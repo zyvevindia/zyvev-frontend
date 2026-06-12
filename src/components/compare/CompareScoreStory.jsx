@@ -1,5 +1,4 @@
 import CompareScoreComparison from "./CompareScoreComparison";
-import ScoreCircle from "../common/ScoreCircle";
 import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
 import { COMPARE_BADGE_TYPES } from "../../utils/compareScoreBadges";
 
@@ -74,15 +73,15 @@ export default function CompareScoreStory({
           EVSavari score comparison
         </h2>
         <p className="compare-score-story__intro">
-          Overall scores, grades, and standout strengths — before you dive into
-          full specifications.
+          Standout strengths, trade-offs, and dimension scores — before you dive
+          into full specifications.
         </p>
       </header>
 
       <div className="compare-score-story__grid">
         {list.map((car) => {
           const key = carKey(car);
-          const { score, grade, strengths, weaknesses } = resolveOverall(car);
+          const { strengths, weaknesses } = resolveOverall(car);
           const extraBadges = resolveExtraBadges(key, badgeMeta);
           const topStrengths = strengths.slice(0, 2);
           const topWeaknesses = weaknesses.slice(0, 2);
@@ -99,28 +98,6 @@ export default function CompareScoreStory({
               <h3 className="compare-score-story__name">
                 {resolveFullDisplayName(car)}
               </h3>
-
-              {score != null ? (
-                <div className="compare-score-story__score-block">
-                  <ScoreCircle
-                    score={Math.round(Number(score))}
-                    size={96}
-                    className="compare-score-story__gauge"
-                    valueClassName="compare-score-story__gauge-value"
-                    suffixClassName="compare-score-story__gauge-suffix"
-                  />
-                  <div className="compare-score-story__score-meta">
-                    <span className="compare-score-story__score-label">
-                      Overall score
-                    </span>
-                    {grade ? (
-                      <span className="compare-score-story__grade">
-                        Grade {grade}
-                      </span>
-                    ) : null}
-                  </div>
-                </div>
-              ) : null}
 
               {extraBadges.length > 0 ? (
                 <ul
