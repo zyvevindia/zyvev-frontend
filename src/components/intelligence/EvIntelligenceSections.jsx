@@ -11,7 +11,7 @@ import {
   formatRangeConfidenceLabel,
 } from "../../intelligence/rangeConfidence";
 import TrustTransparencyPanel from "../trust/TrustTransparencyPanel";
-import { SUITABILITY_LEVEL } from "../../intelligence/suitabilityInsights";
+import EvSuitabilityCardGrid from "./EvSuitabilityCardGrid";
 import {
   trackChargingGuideOpened,
   trackChargingPracticalityViewed,
@@ -21,13 +21,6 @@ import {
 import "../../styles/ev-trust.css";
 
 import "../../styles/ev-intelligence.css";
-
-const LEVEL_CLASS = {
-  [SUITABILITY_LEVEL.STRONG]: "ev-intel-level--strong",
-  [SUITABILITY_LEVEL.GOOD]: "ev-intel-level--good",
-  [SUITABILITY_LEVEL.MODERATE]: "ev-intel-level--moderate",
-  [SUITABILITY_LEVEL.LIMITED]: "ev-intel-level--limited",
-};
 
 function GridItem({ label, value, estimated = false }) {
   if (!isPresent(value)) return null;
@@ -425,21 +418,7 @@ export default function EvIntelligenceSections({
           >
             EV suitability
           </h2>
-          <ul className="ev-intel-insights">
-            {suitability.insights.map((insight) => (
-              <li
-                key={insight.id}
-                className={`ev-intel-insight ${LEVEL_CLASS[insight.level] || ""}`}
-              >
-                <span className="ev-intel-insight__title">
-                  {insight.title}
-                </span>
-                <p className="ev-intel-insight__text">
-                  {insight.explanation}
-                </p>
-              </li>
-            ))}
-          </ul>
+          <EvSuitabilityCardGrid insights={suitability.insights} />
         </section>
       )}
     </div>

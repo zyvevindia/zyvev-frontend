@@ -118,51 +118,157 @@
   line-height: 1.5;
 }
 
-.ev-intel-insights {
+/* EV Suitability — responsive card grid */
+.ev-suitability-grid {
   list-style: none;
-  margin: 12px 0 0;
+  margin: 20px 0 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
-.ev-intel-insight {
-  padding: 14px 16px;
-  border-radius: 14px;
+.ev-suitability-grid__item {
+  display: flex;
+  min-height: 0;
+}
+
+.ev-suitability-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  min-height: 160px;
+  padding: 20px 20px 20px 18px;
+  border-radius: 20px;
   border: 1px solid #e2e8f0;
   background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.ev-intel-insight__title {
-  display: block;
+.ev-suitability-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.ev-suitability-card:focus {
+  outline: none;
+}
+
+.ev-suitability-card:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.ev-suitability-card__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.ev-suitability-card__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.ev-suitability-card__body {
+  flex: 1;
+  min-width: 0;
+  padding-right: 72px;
+}
+
+.ev-suitability-card__title {
+  margin: 0 0 8px;
+  font-size: 1rem;
   font-weight: 700;
-  font-size: 0.9375rem;
+  line-height: 1.3;
   color: #0f172a;
-  margin-bottom: 4px;
 }
 
-.ev-intel-insight__text {
+.ev-suitability-card__text {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
   color: #64748b;
-  line-height: 1.55;
 }
 
-.ev-intel-level--strong {
-  border-left: 3px solid #16a34a;
+.ev-suitability-card__badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
-.ev-intel-level--good {
-  border-left: 3px solid #2563eb;
+.ev-suitability-card--ideal .ev-suitability-card__icon {
+  background: #dbeafe;
+  color: #1d4ed8;
 }
 
-.ev-intel-level--moderate {
-  border-left: 3px solid #d97706;
+.ev-suitability-card--ideal .ev-suitability-card__badge {
+  background: #dbeafe;
+  color: #1d4ed8;
 }
 
-.ev-intel-level--limited {
-  border-left: 3px solid #94a3b8;
+.ev-suitability-card--good .ev-suitability-card__icon {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.ev-suitability-card--good .ev-suitability-card__badge {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.ev-suitability-card--moderate .ev-suitability-card__icon {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.ev-suitability-card--moderate .ev-suitability-card__badge {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.ev-suitability-card--limited .ev-suitability-card__icon {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.ev-suitability-card--limited .ev-suitability-card__badge {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+@media (min-width: 640px) {
+  .ev-suitability-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ev-suitability-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .ev-suitability-card {
+    min-height: 170px;
+  }
 }
 
 .compare-spec__estimate-hint {
