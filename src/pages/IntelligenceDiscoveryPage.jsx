@@ -181,24 +181,18 @@ export default function IntelligenceDiscoveryPage() {
 
         {!loading && ranked.length > 0 && (
           <>
+            {preset.sortLabel ? (
+              <p className="intel-discovery-sort-label">
+                Sorted by: {preset.sortLabel}
+              </p>
+            ) : null}
             <div className="intel-discovery-grid">
-              {ranked.map(({ card, reason, score, grade }) => (
-                <div key={card.slug}>
-                  <CarCard car={card} />
-                  <p
-                    style={{
-                      fontSize: "0.8125rem",
-                      color: "#64748b",
-                      marginTop: 8,
-                      padding: "0 4px",
-                    }}
-                  >
-                    {reason}
-                    {score != null
-                      ? ` · Score ${score}/100${grade ? ` (${grade})` : ""}`
-                      : ""}
-                  </p>
-                </div>
+              {ranked.map(({ card }) => (
+                <CarCard
+                  key={card.slug}
+                  car={card}
+                  showValueScore={Boolean(preset.showValueScore)}
+                />
               ))}
             </div>
 

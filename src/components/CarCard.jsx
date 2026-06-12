@@ -42,6 +42,7 @@ export default function CarCard({
   toggleCompare = () => {},
   compareModeActive = false,
   eagerImage = false,
+  showValueScore = false,
 }) {
   /* =======================================================
      ================= SAFETY FALLBACKS ====================
@@ -221,7 +222,10 @@ export default function CarCard({
           </p>
 
           <div className="car-card__score-row">
-            <CatalogScoreBadge vehicle={safeCar} />
+            <CatalogScoreBadge
+              vehicle={safeCar}
+              showValueScore={showValueScore}
+            />
           </div>
 
           <CatalogCardTrust

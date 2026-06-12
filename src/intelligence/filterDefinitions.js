@@ -130,11 +130,29 @@ export const INTELLIGENCE_FILTER_DEFINITIONS = [
       f?.taxonomyTags?.batteryCategory === BATTERY_CAPACITY_TAXONOMY.LARGE,
   },
   {
+    id: "price_under_10",
+    group: "budget",
+    label: "Under ₹10 lakh",
+    match: (f) => {
+      const price = Number(f?.startingPrice) || 0;
+      return price > 0 && price <= 999_999;
+    },
+  },
+  {
     id: "price_under_15",
     group: "budget",
     label: "Under ₹15 lakh",
     urlDefault: true,
     match: (f) => matchesUnder15Lakh(f?.startingPrice),
+  },
+  {
+    id: "price_under_20",
+    group: "budget",
+    label: "Under ₹20 lakh",
+    match: (f) => {
+      const price = Number(f?.startingPrice) || 0;
+      return price > 0 && price <= 2_000_000;
+    },
   },
   {
     id: "ownership_affordable",

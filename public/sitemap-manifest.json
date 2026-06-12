@@ -1,6 +1,6 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-06-12T09:17:54.674Z",
+  "generatedAt": "2026-06-12T15:43:34.940Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
@@ -1484,8 +1484,22 @@
       "lastmod": "2026-06-12"
     },
     {
+      "loc": "https://evsavari.com/discover/under-10-lakh",
+      "path": "/discover/under-10-lakh",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-12"
+    },
+    {
       "loc": "https://evsavari.com/discover/under-15-lakh",
       "path": "/discover/under-15-lakh",
+      "priority": 0.81,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-12"
+    },
+    {
+      "loc": "https://evsavari.com/discover/under-20-lakh",
+      "path": "/discover/under-20-lakh",
       "priority": 0.81,
       "changefreq": "weekly",
       "lastmod": "2026-06-12"
@@ -1741,15 +1755,15 @@
   "counts": {
     "static": 13,
     "vehicles": 25,
-    "discovery": 180,
+    "discovery": 182,
     "compare": 29,
-    "total": 247
+    "total": 249
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
     "static": 13,
     "cars": 25,
-    "discovery": 180,
+    "discovery": 182,
     "compare": 29
   }
 }

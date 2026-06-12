@@ -1,3 +1,10 @@
+.catalog-score-badge-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
 .catalog-score-badge {
   display: inline-flex;
   align-items: center;
@@ -10,6 +17,21 @@
   font-weight: 700;
   line-height: 1;
   white-space: nowrap;
+}
+
+.catalog-score-badge--value,
+.catalog-score-badge--value-only {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+  border-color: #6ee7b7;
+  color: #065f46;
+}
+
+.catalog-score-badge__label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .catalog-score-badge__score {
