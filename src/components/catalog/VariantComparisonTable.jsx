@@ -36,6 +36,7 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
     onCompareAll,
     id = "variants",
     embedded = false,
+    hideHeader = false,
     title = "Variants",
     intro = "Side-by-side specs for every trim in this model family.",
     showCompareAll = true,
@@ -51,10 +52,14 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
   const titleId = `${id}-title`;
   const body = (
     <>
-      <h2 id={titleId} className="cd-section__title">
-        {title}
-      </h2>
-      <p className="cd-section__intro">{intro}</p>
+      {!hideHeader ? (
+        <>
+          <h2 id={titleId} className="cd-section__title">
+            {title}
+          </h2>
+          <p className="cd-section__intro">{intro}</p>
+        </>
+      ) : null}
 
       <div className="variant-comparison__cards">
         {rows.map((row) => {
@@ -243,9 +248,17 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
     </>
   );
 
+  const a11yProps = hideHeader
+    ? { "aria-label": "Variant comparison" }
+    : { "aria-labelledby": titleId };
+
   if (embedded) {
     return (
-      <div ref={ref} aria-labelledby={titleId}>
+      <div
+        ref={ref}
+        className="variant-comparison variant-comparison--embedded"
+        {...a11yProps}
+      >
         {body}
       </div>
     );
@@ -256,7 +269,7 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
       ref={ref}
       id={id}
       className="cd-section cd-card cd-content-card variant-comparison"
-      aria-labelledby={titleId}
+      {...a11yProps}
     >
       {body}
     </section>

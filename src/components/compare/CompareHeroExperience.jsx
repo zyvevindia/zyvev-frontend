@@ -406,6 +406,29 @@ export default function CompareHeroExperience({
         </section>
 
         <section className="compare-main">
+          {showVariantFamilyTable ? (
+            <SectionErrorBoundary label="Variant comparison" compact>
+              <Suspense
+                fallback={
+                  <div
+                    className="compare-deferred-skeleton compare-deferred-skeleton--inline"
+                    aria-busy="true"
+                    aria-label="Loading variant comparison table"
+                  />
+                }
+              >
+                <VariantComparisonTable
+                  embedded
+                  hideHeader
+                  variants={safeCars}
+                  readOnly
+                  showCompareAll={false}
+                />
+              </Suspense>
+            </SectionErrorBoundary>
+          ) : null}
+
+          {!showVariantFamilyTable ? (
           <div className={gridClass}>
             {intelligentCars.map((car, cardIndex) => {
               const key = carKey(car);
@@ -438,7 +461,9 @@ export default function CompareHeroExperience({
               );
             })}
           </div>
+          ) : null}
 
+          {!showVariantFamilyTable ? (
           <CompareScoreStory
             cars={intelligentCars}
             recommendedId={recommendedId}
@@ -446,29 +471,9 @@ export default function CompareHeroExperience({
             longRangeId={compareBadges.longRangeId}
             fastChargingId={compareBadges.fastChargingId}
           />
+          ) : null}
 
-          {showVariantFamilyTable ? (
-            <SectionErrorBoundary label="Variant comparison" compact>
-            <Suspense
-              fallback={
-                <div
-                  className="compare-deferred-skeleton compare-deferred-skeleton--inline"
-                  aria-busy="true"
-                  aria-label="Loading variant comparison table"
-                />
-              }
-            >
-              <VariantComparisonTable
-                id="compare-variants"
-                title="Compare all variants"
-                intro="Side-by-side specs for every trim in this model family."
-                variants={safeCars}
-                readOnly
-                showCompareAll={false}
-              />
-            </Suspense>
-            </SectionErrorBoundary>
-          ) : (
+          {!showVariantFamilyTable ? (
           <>
           <CompareMobileSpecCards
             cars={intelligentCars}
@@ -561,7 +566,7 @@ export default function CompareHeroExperience({
             )}
           </div>
           </>
-          )}
+          ) : null}
 
           {intelligentCars.length >= 2 ? (
             <SectionErrorBoundary label="Compare trust guidance" compact>

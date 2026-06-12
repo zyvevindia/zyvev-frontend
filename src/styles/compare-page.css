@@ -129,6 +129,14 @@
   padding: 28px clamp(16px, 3vw, 28px) 64px;
 }
 
+.compare-main .variant-comparison--embedded {
+  margin-top: 0;
+}
+
+.compare-main .variant-comparison--embedded .variant-comparison__cards {
+  margin-top: 0;
+}
+
 /* —— Card grid —— */
 
 .compare-page-grid {
