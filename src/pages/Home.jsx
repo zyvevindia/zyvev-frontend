@@ -24,12 +24,8 @@ import {
 } from "../utils/modelFamily";
 
 import {
-  buildChargingSectionCandidates,
-  buildCitySectionCandidates,
-  buildDiverseHomeSections,
-  buildPopularSectionCandidates,
-  buildRangeSectionCandidates,
-  buildValueSectionCandidates,
+  buildHomepageSectionLayout,
+  HOME_INTELLIGENCE_SECTION_DEFS,
 } from "../utils/homeSectionDiversity";
 
 import { fetchListingCatalogVariants } from "../utils/vehicleDetailResolver.js";
@@ -125,36 +121,22 @@ export default function Home() {
     return sortFamilies(filtered, filters.sortBy);
   }, [allFamilies, filters]);
 
-  const homeSectionFamilies = useMemo(() => {
-    return buildDiverseHomeSections([
-      {
-        id: "popular",
-        candidates: buildPopularSectionCandidates(families),
-      },
-      {
-        id: "range",
-        candidates: buildRangeSectionCandidates(families),
-      },
-      {
-        id: "value",
-        candidates: buildValueSectionCandidates(families),
-      },
-      {
-        id: "charging",
-        candidates: buildChargingSectionCandidates(families),
-      },
-      {
-        id: "city",
-        candidates: buildCitySectionCandidates(families),
-      },
-    ]);
-  }, [families]);
+  const homepageLayout = useMemo(
+    () => buildHomepageSectionLayout(families),
+    [families]
+  );
 
-  const popularFamilies = homeSectionFamilies.popular;
-  const premiumRangeFamilies = homeSectionFamilies.range;
-  const bestValueFamilies = homeSectionFamilies.value;
-  const fastChargingFamilies = homeSectionFamilies.charging;
-  const cityFamilies = homeSectionFamilies.city;
+  const resolveSectionBadge = (section, family) => {
+    if (!section.badge) return undefined;
+    return typeof section.badge === "function"
+      ? section.badge(family)
+      : section.badge;
+  };
+
+  const renderSectionCards = (section) =>
+    section.families.map((family) =>
+      renderFamilyCard(family, resolveSectionBadge(section, family))
+    );
 
   /* =========================================================
      ======================= FETCH CARS ======================
@@ -483,157 +465,33 @@ export default function Home() {
             </div>
           )}
 
-        {/* ================= POPULAR ================= */}
+        {/* ================= FILTERED / CURATED EV SECTIONS ================= */}
 
-        <HomeSection
-          title="Most Popular EVs"
-
-          subtitle="Explore India's most loved and trending electric vehicles."
-
-          viewAllLink="/popular"
-        >
-
-          {loading ? (
-
-            Array.from({
-              length: 6,
-            }).map(
-              (_, index) => (
-
-                <CarCardSkeleton
-                  key={index}
-                />
-              )
-            )
-
-          ) : error ? null : (
-            popularFamilies.map((family) =>
-              renderFamilyCard(
-                family,
-                family.isFeatured
-                  ? "Popular"
-                  : "Trending"
-              )
-            )
-          )}
-
-        </HomeSection>
-
-        {/* ================= LONG RANGE ================= */}
-
-        <HomeSection
-          title="Best Range EVs"
-
-          subtitle="Electric vehicles offering the highest driving range in India."
-        >
-
-          {loading ? (
-
-            Array.from({
-              length: 6,
-            }).map(
-              (_, index) => (
-
-                <CarCardSkeleton
-                  key={index}
-                />
-              )
-            )
-
-          ) : error ? null : (
-            premiumRangeFamilies.map((family) =>
-              renderFamilyCard(family, "Long Range")
-            )
-          )}
-
-        </HomeSection>
-
-        {/* ================= BEST VALUE ================= */}
-
-        <HomeSection
-          title="Best Value EVs"
-
-          subtitle="Strong price-to-capability ratios from EVSavari value scores."
-        >
-
-          {loading ? (
-
-            Array.from({
-              length: 6,
-            }).map(
-              (_, index) => (
-
-                <CarCardSkeleton
-                  key={index}
-                />
-              )
-            )
-
-          ) : error ? null : (
-            bestValueFamilies.map((family) =>
-              renderFamilyCard(family, "Best Value")
-            )
-          )}
-
-        </HomeSection>
-
-        {/* ================= FAST CHARGING ================= */}
-
-        <HomeSection
-          title="Fast Charging EVs"
-
-          subtitle="Electric cars with the quickest charging convenience scores."
-        >
-
-          {loading ? (
-
-            Array.from({
-              length: 6,
-            }).map(
-              (_, index) => (
-
-                <CarCardSkeleton
-                  key={index}
-                />
-              )
-            )
-
-          ) : error ? null : (
-            fastChargingFamilies.map((family) =>
-              renderFamilyCard(family, "Fast Charge")
-            )
-          )}
-
-        </HomeSection>
-
-        {/* ================= CITY ================= */}
-
-        <HomeSection
-          title="City EVs"
-
-          subtitle="Practical picks for daily urban commutes and parking."
-        >
-
-          {loading ? (
-
-            Array.from({
-              length: 6,
-            }).map(
-              (_, index) => (
-
-                <CarCardSkeleton
-                  key={index}
-                />
-              )
-            )
-
-          ) : error ? null : (
-            cityFamilies.map((family) =>
-              renderFamilyCard(family, "City Use")
-            )
-          )}
-
-        </HomeSection>
+        {loading
+          ? HOME_INTELLIGENCE_SECTION_DEFS.map((def) => (
+              <HomeSection
+                key={def.id}
+                title={def.title}
+                subtitle={def.subtitle}
+                viewAllLink={def.viewAllLink}
+              >
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <CarCardSkeleton key={index} />
+                ))}
+              </HomeSection>
+            ))
+          : error
+            ? null
+            : homepageLayout.sections.map((section) => (
+                <HomeSection
+                  key={section.id}
+                  title={section.title}
+                  subtitle={section.subtitle}
+                  viewAllLink={section.viewAllLink}
+                >
+                  {renderSectionCards(section)}
+                </HomeSection>
+              ))}
 
         {/* ================= UPCOMING ================= */}
 
