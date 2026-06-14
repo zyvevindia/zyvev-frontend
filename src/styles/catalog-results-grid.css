@@ -1,0 +1,56 @@
+/* Catalog / discovery EV card grids — capped width, centered small result sets */
+
+.catalog-results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 2.5vw, 30px);
+  width: 100%;
+  align-items: stretch;
+}
+
+@media (min-width: 641px) {
+  .catalog-results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog-results-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .catalog-results-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.catalog-results-grid > * {
+  width: 100%;
+  max-width: 420px;
+  justify-self: start;
+}
+
+@media (max-width: 640px) {
+  .catalog-results-grid > * {
+    max-width: none;
+    justify-self: stretch;
+  }
+}
+
+@media (min-width: 641px) {
+  .catalog-results-grid--compact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .catalog-results-grid--compact > * {
+    flex: 0 1 420px;
+    max-width: 420px;
+    width: 100%;
+    justify-self: auto;
+  }
+}

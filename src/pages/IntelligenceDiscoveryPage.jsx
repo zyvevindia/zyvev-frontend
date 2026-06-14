@@ -5,6 +5,7 @@ import SeoHead from "../components/SEO/SeoHead";
 import JsonLd from "../components/SEO/JsonLd";
 import CarCard from "../components/CarCard";
 import CarCardSkeleton from "../components/skeletons/CarCardSkeleton";
+import CatalogResultsGrid from "../components/catalog/CatalogResultsGrid";
 import DiscoveryPageSearch from "../components/discovery/DiscoveryPageSearch";
 import BudgetPriceFilterChips from "../components/discovery/BudgetPriceFilterChips";
 
@@ -231,11 +232,11 @@ export default function IntelligenceDiscoveryPage() {
     return (
       <div className="intel-discovery-page">
         <div className="intel-discovery-body">
-          <div className="intel-discovery-grid">
+          <CatalogResultsGrid count={3}>
             {[1, 2, 3].map((i) => (
               <CarCardSkeleton key={i} />
             ))}
-          </div>
+          </CatalogResultsGrid>
         </div>
       </div>
     );
@@ -307,11 +308,11 @@ export default function IntelligenceDiscoveryPage() {
         ) : null}
 
         {loading && (
-          <div className="intel-discovery-grid">
+          <CatalogResultsGrid count={3}>
             {[1, 2, 3].map((i) => (
               <CarCardSkeleton key={i} />
             ))}
-          </div>
+          </CatalogResultsGrid>
         )}
 
         {error && <p>{error}</p>}
@@ -349,7 +350,7 @@ export default function IntelligenceDiscoveryPage() {
               </button>
             </div>
 
-            <div className="intel-discovery-grid">
+            <CatalogResultsGrid count={ranked.length}>
               {ranked.map(({ card }) => (
                 <CarCard
                   key={card.slug}
@@ -357,7 +358,7 @@ export default function IntelligenceDiscoveryPage() {
                   showValueScore={Boolean(preset.showValueScore)}
                 />
               ))}
-            </div>
+            </CatalogResultsGrid>
 
             <div className="intel-discovery-compare-cta">
               <button

@@ -31,6 +31,7 @@ import { getCatalogBrandOptions } from "../utils/catalogListingBrands.js";
 import useCompareCars from "../hooks/useCompareCars";
 
 import ListingCatalogMoreFilters from "../components/discovery/ListingCatalogMoreFilters";
+import CatalogResultsGrid from "../components/catalog/CatalogResultsGrid";
 import CatalogPagination from "../components/catalog/CatalogPagination";
 
 import useDebouncedValue from "../hooks/useDebouncedValue";
@@ -744,16 +745,7 @@ export default function ListingPage() {
 
         {loading ? (
 
-          <div
-            style={{
-              display: "grid",
-
-              gridTemplateColumns:
-                "repeat(auto-fit,minmax(320px,1fr))",
-
-              gap: "30px",
-            }}
-          >
+          <CatalogResultsGrid count={6}>
 
             {Array.from({
               length: 6,
@@ -764,7 +756,7 @@ export default function ListingPage() {
               />
             ))}
 
-          </div>
+          </CatalogResultsGrid>
 
         ) : error ? (
 
@@ -799,18 +791,11 @@ export default function ListingPage() {
 
         ) : showUpcomingCatalogFallback ? (
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns:
-                "repeat(auto-fit,minmax(320px,1fr))",
-              gap: "30px",
-            }}
-          >
+          <CatalogResultsGrid count={UPCOMING_EV_CATALOG.length}>
             {UPCOMING_EV_CATALOG.map((car) => (
               <UpcomingCarCard key={car._id} car={car} />
             ))}
-          </div>
+          </CatalogResultsGrid>
 
         ) : filteredFamilies.length ===
           0 ? (
@@ -903,16 +888,7 @@ export default function ListingPage() {
             </p>
           ) : null}
 
-          <div
-            style={{
-              display: "grid",
-
-              gridTemplateColumns:
-                "repeat(auto-fit,minmax(320px,1fr))",
-
-              gap: "30px",
-            }}
-          >
+          <CatalogResultsGrid count={paginatedFamilies.length}>
 
             {paginatedFamilies.map(
               (family, index) => {
@@ -931,7 +907,7 @@ export default function ListingPage() {
               }
             )}
 
-          </div>
+          </CatalogResultsGrid>
 
           <CatalogPagination
             currentPage={currentPage}

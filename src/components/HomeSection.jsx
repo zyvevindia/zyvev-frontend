@@ -1,5 +1,7 @@
 import { Children } from "react";
 
+import CatalogResultsGrid from "./catalog/CatalogResultsGrid";
+
 /* =========================================================
    ==================== HOME SECTION =======================
    ========================================================= */
@@ -102,9 +104,11 @@ export default function HomeSection({
           ) : (
             /* ================= CONTENT ================= */
 
-            <div style={content}>
+            <CatalogResultsGrid
+              count={Children.toArray(children).filter(Boolean).length}
+            >
               {children}
-            </div>
+            </CatalogResultsGrid>
           )}
         </>
       )}
@@ -212,35 +216,6 @@ const viewAllButton = {
 
   minHeight: "48px",
 };
-
-const content = {
-  display: "grid",
-
-  /* =====================================================
-     Premium Responsive Marketplace Grid
-     ===================================================== */
-
-  gridTemplateColumns:
-    "repeat(auto-fit, minmax(280px, 1fr))",
-
-  /* =====================================================
-     Better Desktop Rhythm
-     ===================================================== */
-
-  gap: "28px",
-
-  /* =====================================================
-     Equal Height Alignment
-     ===================================================== */
-
-  alignItems: "stretch",
-
-  width: "100%",
-};
-
-/* =========================================================
-   ==================== LOADING STATE ======================
-   ========================================================= */
 
 const loadingWrapper = {
   minHeight: "320px",
