@@ -47,6 +47,10 @@
   margin-top: 0.75rem;
 }
 
+.ev-score-panel__score-explanation {
+  margin: 0.75rem 0 0.25rem;
+}
+
 .ev-score-panel__title {
   font-weight: 600;
   font-size: 1rem;

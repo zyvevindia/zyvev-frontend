@@ -3,6 +3,7 @@ import { useState } from "react";
 import CatalogTrustBadge from "../catalog/CatalogTrustBadge";
 import ScoreCircle from "../common/ScoreCircle";
 import EvSavariScorePanel from "../scoring/EvSavariScorePanel";
+import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses";
 import { formatPsychologyTag } from "../../utils/catalogExperience";
 import {
   buildRangeConfidence,
@@ -166,6 +167,7 @@ export default function DetailOverviewDashboard({
         (useV1ScorePanel ? (
           <EvSavariScorePanel
             scores={v1Scores}
+            vehicle={vehicle}
             showVariants={!familyOverviewMode}
             collapsibleBreakdown={true}
             familySlug={familySlug}
@@ -223,6 +225,10 @@ export default function DetailOverviewDashboard({
             )}
           </div>
         ))}
+
+      {vehicle && !useV1ScorePanel ? (
+        <ScoreStrengthsWeaknesses vehicle={vehicle} layout="card" />
+      ) : null}
 
       <div className="cd-overview-dashboard__grid">
         {features.length > 0 && (

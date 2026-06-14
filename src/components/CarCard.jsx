@@ -24,6 +24,8 @@ import CatalogOwnershipChips from "./catalog/CatalogOwnershipChips";
 
 import CatalogScoreBadge from "./catalog/CatalogScoreBadge";
 
+import ScoreStrengthsWeaknesses from "./scoring/ScoreStrengthsWeaknesses";
+
 import { pickOwnershipChips } from "../utils/ownershipReality";
 
 import { pickListingCardSpecChips } from "../utils/listingCardSpecs";
@@ -242,6 +244,12 @@ export default function CarCard({
               showValueScore={showValueScore}
             />
           </div>
+
+          <ScoreStrengthsWeaknesses
+            vehicle={safeCar}
+            variant="compact"
+            layout="card"
+          />
 
           <CatalogCardTrust
             catalogMeta={safeCar.catalogMeta}

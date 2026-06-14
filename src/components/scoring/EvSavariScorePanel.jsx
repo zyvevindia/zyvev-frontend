@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { trackScorePanelOpened } from "../../analytics/traffic";
 import ScoreCircle from "../common/ScoreCircle";
+import ScoreStrengthsWeaknesses from "./ScoreStrengthsWeaknesses";
 import { DIMENSION_LABELS } from "../../scoring/scoreExplanations";
 import "./ev-savari-score-panel.css";
 
@@ -38,6 +39,7 @@ const BREAKDOWN_ORDER = [
 
 export default function EvSavariScorePanel({
   scores,
+  vehicle = null,
   compact = false,
   showVariants = true,
   collapsibleBreakdown = !compact,
@@ -61,12 +63,8 @@ export default function EvSavariScorePanel({
     explanation: compact ? null : breakdown[key]?.explanation,
   })).filter((row) => row.value != null);
 
-  const hasInsights =
-    !compact &&
-    (explanation.strengths?.length > 0 || explanation.weaknesses?.length > 0);
   const hasVariants = showVariants && variants.hasData;
-  const hasCollapsibleContent =
-    bars.length > 0 || hasInsights || hasVariants;
+  const hasCollapsibleContent = bars.length > 0 || hasVariants;
   const showCollapsibleToggle =
     collapsibleBreakdown && hasCollapsibleContent;
 
@@ -114,6 +112,15 @@ export default function EvSavariScorePanel({
         </div>
       </div>
 
+      {vehicle ? (
+        <ScoreStrengthsWeaknesses
+          vehicle={vehicle}
+          variant={compact ? "compact" : "default"}
+          layout="inline"
+          className="ev-score-panel__score-explanation"
+        />
+      ) : null}
+
       {showCollapsibleToggle && (
         <button
           type="button"
@@ -143,31 +150,6 @@ export default function EvSavariScorePanel({
               explanation={row.explanation}
             />
           ))}
-        </div>
-      )}
-
-      {hasInsights && (
-        <div className="ev-score-panel__insights">
-          {explanation.strengths?.length > 0 && (
-            <div className="ev-score-panel__insight">
-              <h4>Strengths</h4>
-              <ul>
-                {explanation.strengths.slice(0, 4).map((item, i) => (
-                  <li key={i}>{item.reason}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {explanation.weaknesses?.length > 0 && (
-            <div className="ev-score-panel__insight ev-score-panel__insight--weak">
-              <h4>Weaknesses</h4>
-              <ul>
-                {explanation.weaknesses.slice(0, 4).map((item, i) => (
-                  <li key={i}>{item.reason}</li>
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
       )}
 

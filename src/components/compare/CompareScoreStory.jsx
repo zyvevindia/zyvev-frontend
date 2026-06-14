@@ -1,4 +1,5 @@
 import CompareScoreComparison from "./CompareScoreComparison";
+import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses";
 import { buildVehicleVariantDisplayName } from "../../utils/vehicleDisplayName";
 import { COMPARE_BADGE_TYPES } from "../../utils/compareScoreBadges";
 
@@ -16,8 +17,6 @@ function resolveOverall(car) {
       car?.evScores?.composite ??
       null,
     grade: scores?.overall?.grade ?? car?.evScores?.grade ?? null,
-    strengths: scores?.explanation?.strengths ?? [],
-    weaknesses: scores?.explanation?.weaknesses ?? [],
   };
 }
 
@@ -81,10 +80,7 @@ export default function CompareScoreStory({
       <div className="compare-score-story__grid">
         {list.map((car) => {
           const key = carKey(car);
-          const { strengths, weaknesses } = resolveOverall(car);
           const extraBadges = resolveExtraBadges(key, badgeMeta);
-          const topStrengths = strengths.slice(0, 2);
-          const topWeaknesses = weaknesses.slice(0, 2);
 
           return (
             <article
@@ -116,47 +112,11 @@ export default function CompareScoreStory({
                 </ul>
               ) : null}
 
-              {topStrengths.length > 0 ? (
-                <div className="compare-score-story__list-block">
-                  <h4 className="compare-score-story__list-title">
-                    Strengths
-                  </h4>
-                  <ul className="compare-score-story__list compare-score-story__list--strengths">
-                    {topStrengths.map((item) => (
-                      <li key={item.dimension || item.label}>
-                        <strong>{item.label}</strong>
-                        {item.reason ? (
-                          <span className="compare-score-story__list-detail">
-                            {" "}
-                            — {item.reason}
-                          </span>
-                        ) : null}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-
-              {topWeaknesses.length > 0 ? (
-                <div className="compare-score-story__list-block">
-                  <h4 className="compare-score-story__list-title">
-                    Weaknesses
-                  </h4>
-                  <ul className="compare-score-story__list compare-score-story__list--weaknesses">
-                    {topWeaknesses.map((item) => (
-                      <li key={item.dimension || item.label}>
-                        <strong>{item.label}</strong>
-                        {item.reason ? (
-                          <span className="compare-score-story__list-detail">
-                            {" "}
-                            — {item.reason}
-                          </span>
-                        ) : null}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
+              <ScoreStrengthsWeaknesses
+                vehicle={car}
+                variant="compact"
+                layout="inline"
+              />
             </article>
           );
         })}
