@@ -232,6 +232,32 @@ export {
   resolveApartmentSuitabilityConfidenceLabel,
 } from "./confidenceRules.js";
 
+export { buildFamilyScore, buildFamilyContext } from "./buildFamilyScore.js";
+
+export {
+  FAMILY_SCORE_WEIGHTS,
+  FAMILY_SUITABILITY_LABELS,
+  SEGMENT_BOOT_SPACE_DEFAULTS_L,
+  MICRO_EV_BOOT_SPACE_DEFAULT_L,
+  MICRO_EV_BATTERY_KWH_THRESHOLD,
+} from "./constants.js";
+
+export {
+  bootSpaceLitersToFamilyScore,
+  batteryKwhToFamilyScore,
+  realWorldRangeKmToFamilyScore,
+  dimensionsToFamilyScore,
+  resolveFamilySegmentBonus,
+  resolveCatalogTrustFamilyBonus,
+  resolveSegmentBootSpaceDefault,
+  resolveFamilyBootSpace,
+  combineFamilyScoreComponents,
+  finalizeFamilyScore,
+  resolveFamilySuitabilityLabel,
+  buildFamilyScoreComponents,
+  computeFamilyScore,
+} from "./familyRules.js";
+
 export { formatRangeBand } from "./rangeConfidence.js";
 
 export {

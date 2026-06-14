@@ -171,3 +171,25 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  * @property {ConfidenceLabel} highwayConfidence
  * @property {ConfidenceLabel} apartmentSuitability
  */
+
+/**
+ * @typedef {Object} FamilyScoreContext
+ * @property {string|null} segment
+ * @property {number|null} batteryKwh
+ * @property {boolean} isMicroEv
+ * @property {number|null} bootSpaceL
+ * @property {boolean} bootSpaceEstimated
+ * @property {number|null} realWorldRangeKmMid
+ * @property {number|null} highwayScore
+ * @property {number|null} overallScore
+ * @property {number|null} safetyScore
+ * @property {number|null} lengthMm
+ * @property {number|null} widthMm
+ * @property {number|null} wheelbaseMm
+ */
+
+/**
+ * @typedef {Object} FamilyScoreResult
+ * @property {number} score 0–100 family suitability score (higher is better)
+ * @property {string} label Human-readable family suitability tier
+ */

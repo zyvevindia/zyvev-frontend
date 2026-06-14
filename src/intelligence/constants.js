@@ -80,6 +80,40 @@ export const APARTMENT_SUITABILITY_ASSUMPTIONS = Object.freeze({
   batteryScoreWeight: 0.2,
 });
 
+/** Family suitability score label tiers (score is 0–100, higher is better) */
+export const FAMILY_SUITABILITY_LABELS = Object.freeze([
+  { min: 80, label: "Excellent family EV" },
+  { min: 65, label: "Good family EV" },
+  { min: 50, label: "Moderate family EV" },
+  { min: 0, label: "Better for individual use" },
+]);
+
+/** Composite weights for family suitability scoring */
+export const FAMILY_SCORE_WEIGHTS = Object.freeze({
+  bootSpace: 0.22,
+  realWorldRange: 0.22,
+  battery: 0.18,
+  dimensions: 0.16,
+  highway: 0.12,
+  overall: 0.1,
+  safety: 0.06,
+});
+
+/** Segment boot-space defaults (litres) when OEM data is missing */
+export const SEGMENT_BOOT_SPACE_DEFAULTS_L = Object.freeze({
+  hatchback: 165,
+  compact_suv: 350,
+  suv: 395,
+  sedan: 430,
+  luxury_suv: 470,
+  coupe_suv: 360,
+  mpv: 540,
+});
+
+/** Micro EV boot default when battery pack is very small */
+export const MICRO_EV_BOOT_SPACE_DEFAULT_L = 165;
+export const MICRO_EV_BATTERY_KWH_THRESHOLD = 20;
+
 export const RANGE_CONFIDENCE_THRESHOLDS = Object.freeze({
   highMinScore: 80,
   mediumMinScore: 55,
