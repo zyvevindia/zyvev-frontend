@@ -6,6 +6,7 @@ import EvSavariScorePanel from "../scoring/EvSavariScorePanel";
 import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses";
 import RecommendationInsightsCard from "../scoring/RecommendationInsightsCard";
 import PersonaChips from "../scoring/PersonaChips";
+import OwnershipIntelligenceCard from "../scoring/OwnershipIntelligenceCard";
 import { formatPsychologyTag } from "../../utils/catalogExperience";
 import {
   buildRangeConfidence,
@@ -237,6 +238,10 @@ export default function DetailOverviewDashboard({
       ) : null}
 
       {vehicle ? <PersonaChips vehicle={vehicle} layout="card" /> : null}
+
+      {vehicle ? (
+        <OwnershipIntelligenceCard vehicle={vehicle} layout="card" />
+      ) : null}
 
       <div className="cd-overview-dashboard__grid">
         {features.length > 0 && (

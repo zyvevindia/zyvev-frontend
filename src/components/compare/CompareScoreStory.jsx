@@ -2,6 +2,7 @@ import CompareScoreComparison from "./CompareScoreComparison";
 import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses";
 import RecommendationInsightsCard from "../scoring/RecommendationInsightsCard";
 import PersonaChips from "../scoring/PersonaChips";
+import OwnershipIntelligenceCard from "../scoring/OwnershipIntelligenceCard";
 import { buildVehicleVariantDisplayName } from "../../utils/vehicleDisplayName";
 import { COMPARE_BADGE_TYPES } from "../../utils/compareScoreBadges";
 
@@ -127,6 +128,12 @@ export default function CompareScoreStory({
               />
 
               <PersonaChips vehicle={car} variant="compact" layout="inline" />
+
+              <OwnershipIntelligenceCard
+                vehicle={car}
+                variant="compact"
+                layout="inline"
+              />
             </article>
           );
         })}
