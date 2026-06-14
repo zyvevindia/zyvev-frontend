@@ -1,18 +1,7 @@
 import { Link } from "react-router-dom";
 
 import ScoreCircle from "../common/ScoreCircle";
-import CompareScoreInsight from "./CompareScoreInsight";
-import TrustDataStrip from "../trust/TrustDataStrip";
 import VehicleImage from "../media/VehicleImage";
-import {
-  dedupeComparePills,
-} from "../../utils/compareConfidence";
-import {
-  ensureArray,
-  safeMap,
-  safeSlice,
-  safeFilter,
-} from "../../utils/compareArrayUtils";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 import {
@@ -20,6 +9,8 @@ import {
   preserveOemCasing,
 } from "../../utils/vehicleDisplayName";
 import "./compare-vehicle-card.css";
+
+const COMPARE_SCORE_GAUGE_SIZE = 76;
 
 function coerceDisplayString(value) {
   if (value == null) return "";
@@ -54,83 +45,14 @@ function resolveEvsavariGrade(car) {
   );
 }
 
-function resolveStrengthLabel(meta) {
-  if (!meta || typeof meta !== "object") return null;
-  const picks = meta.comparePicks;
-  const label =
-    coerceDisplayString(picks?.strongestAdvantageLabel) ||
-    coerceDisplayString(meta.strongestAdvantages?.[0]?.label) ||
-    (typeof meta.strongestAdvantages?.[0] === "string"
-      ? coerceDisplayString(meta.strongestAdvantages[0])
-      : "");
-  return label || null;
-}
-
-function resolveTradeoffLabel(meta) {
-  if (!meta || typeof meta !== "object") return null;
-  const picks = meta.comparePicks;
-  const label =
-    coerceDisplayString(picks?.biggestWeaknessLabel) ||
-    coerceDisplayString(meta.compareNarrative?.tradeoffSummary) ||
-    coerceDisplayString(meta.weakestAreas?.[0]?.label) ||
-    (typeof meta.weakestAreas?.[0] === "string"
-      ? coerceDisplayString(meta.weakestAreas[0])
-      : "");
-  return label || null;
-}
-
-function resolveBetterAtPills(meta, car) {
-  if (!meta || typeof meta !== "object") return [];
-
-  const fromAdvantages = safeMap(
-    meta.strongestAdvantages,
-    (item) => {
-      if (typeof item === "string") return item;
-      return item?.label || item?.title || item?.id || "";
-    },
-    { label: "strongestAdvantages", subsystem: "compare-card" }
-  ).filter(Boolean);
-
-  if (fromAdvantages.length > 0) {
-    return safeSlice(fromAdvantages, 0, 4, { subsystem: "compare-card" });
-  }
-
-  const pick = meta?.comparePicks?.strongestAdvantageLabel;
-  if (pick) return [pick];
-
-  const pros = ensureArray(meta?.pros, { label: "pros", subsystem: "compare-card" });
-  if (pros.length > 0) {
-    return safeSlice(pros, 0, 3, { subsystem: "compare-card" });
-  }
-
-  const explanations = ensureArray(car?.evScores?.explanations, {
-    label: "evScores.explanations",
-    subsystem: "compare-card",
-  });
-  if (explanations.length > 0) {
-    return safeSlice(
-      safeMap(explanations, (row) => row?.label || row?.text || "", {
-        subsystem: "compare-card",
-      }).filter(Boolean),
-      0,
-      3,
-      { subsystem: "compare-card" }
-    );
-  }
-
-  const fromSuitability = safeFilter(
-    car?.evIntelligence?.suitability?.insights,
-    (i) => i.level === "strong" || i.level === "good",
-    { label: "suitability.insights", subsystem: "compare-card" }
-  )
-    .map((i) => i.title || i.shortLabel || i.id)
-    .filter(Boolean);
-
-  return safeSlice(fromSuitability, 0, 3, { subsystem: "compare-card" });
+function formatGradeLabel(grade) {
+  const value = coerceDisplayString(grade);
+  if (!value) return null;
+  return /^grade\b/i.test(value) ? value : `Grade ${value}`;
 }
 
 /**
- * Premium compare column card — circular EVSavari score + “This EV is better at” box.
+ * Premium compare column card — compact layout with horizontal EVSavari score.
  * Sole renderer for /compare and /compare/:slug vehicle columns.
  */
 export default function CompareVehicleCard({
@@ -142,10 +64,6 @@ export default function CompareVehicleCard({
 }) {
   const displayName = car ? buildVehicleVariantDisplayName(car) : "Unknown EV";
 
-  const meta =
-    car && typeof car.catalogMeta === "object" && car.catalogMeta
-      ? car.catalogMeta
-      : {};
   const price = Number(car?.startingPrice ?? car?.price) || 0;
   const range =
     Number(car?.specifications?.range ?? car?.range) || 0;
@@ -153,12 +71,7 @@ export default function CompareVehicleCard({
     car?.specifications?.batteryPack || car?.battery
   ) || "EV Battery";
   const score = car ? resolveEvsavariScore(car) : null;
-  const grade = car ? resolveEvsavariGrade(car) : null;
-  const strength = resolveStrengthLabel(meta);
-  const tradeoff = resolveTradeoffLabel(meta);
-  const betterAtPills = car
-    ? dedupeComparePills(resolveBetterAtPills(meta, car))
-    : [];
+  const gradeLabel = car ? formatGradeLabel(resolveEvsavariGrade(car)) : null;
   const href =
     car && (detailHref || vehicleDetailPath(car, car._id));
 
@@ -205,84 +118,47 @@ export default function CompareVehicleCard({
       </div>
 
       <div className="compare-vehicle-card__content">
-        <h3 className="compare-vehicle-card__title">
-          {preserveOemCasing(displayName) || "Unknown EV"}
-        </h3>
-        <p className="compare-vehicle-card__price">
-          {formatIndianPriceCompact(price)}
-        </p>
+        <div className="compare-vehicle-card__main">
+          <h3 className="compare-vehicle-card__title">
+            {preserveOemCasing(displayName) || "Unknown EV"}
+          </h3>
+          <p className="compare-vehicle-card__price">
+            {formatIndianPriceCompact(price)}
+          </p>
 
-        <TrustDataStrip car={car} variant="compare" />
-
-        <div className="compare-vehicle-card__specs">
-          <span className="compare-vehicle-card__spec">⚡ {range} km</span>
-          <span className="compare-vehicle-card__spec">🔋 {battery}</span>
+          <div className="compare-vehicle-card__specs">
+            <span className="compare-vehicle-card__spec">⚡ {range} km</span>
+            <span className="compare-vehicle-card__spec">🔋 {battery}</span>
+          </div>
         </div>
 
-        <div className="compare-vehicle-card__insight-row">
-          <div className="compare-vehicle-card__insights">
-            {strength ? (
-              <p className="compare-vehicle-card__line">
-                <span className="compare-vehicle-card__line-label compare-vehicle-card__line-label--strength">
-                  Strength
-                </span>
-                {": "}
-                {strength}
-              </p>
-            ) : null}
-
-            {tradeoff ? (
-              <p className="compare-vehicle-card__line">
-                <span className="compare-vehicle-card__line-label compare-vehicle-card__line-label--tradeoff">
-                  Trade-off
-                </span>
-                {": "}
-                {tradeoff}
-              </p>
-            ) : null}
-
-            {betterAtPills.length > 0 ? (
-              <div className="compare-vehicle-card__better-at">
-                <p className="compare-vehicle-card__better-at-title">
-                  This EV is better at
-                </p>
-                <div className="compare-vehicle-card__pills">
-                  {betterAtPills.map((pill) => (
-                    <span key={pill} className="compare-vehicle-card__pill">
-                      <span
-                        className="compare-vehicle-card__pill-icon"
-                        aria-hidden
-                      >
-                        ✓
-                      </span>
-                      {pill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ) : null}
-          </div>
-
+        <div className="compare-vehicle-card__footer">
           {score != null ? (
-            <div className="compare-vehicle-card__score-col">
-              <CompareScoreInsight car={car} />
-              {grade ? (
-                <span className="compare-vehicle-card__grade">{grade}</span>
-              ) : null}
-              <ScoreCircle
-                score={score}
-                size={120}
-                className="compare-vehicle-card__gauge"
-                valueClassName="compare-vehicle-card__gauge-value"
-                suffixClassName="compare-vehicle-card__gauge-suffix"
-              />
+            <div className="compare-vehicle-card__score-row">
+              <span className="compare-vehicle-card__score-title">
+                EVSavari Score
+              </span>
+              <div className="compare-vehicle-card__score-meta">
+                <ScoreCircle
+                  score={score}
+                  size={COMPARE_SCORE_GAUGE_SIZE}
+                  className="compare-vehicle-card__gauge"
+                  valueClassName="compare-vehicle-card__gauge-value"
+                  suffixClassName="compare-vehicle-card__gauge-suffix"
+                />
+                {gradeLabel ? (
+                  <span className="compare-vehicle-card__grade">
+                    {gradeLabel}
+                  </span>
+                ) : null}
+              </div>
             </div>
           ) : null}
-        </div>
 
-        <Link to={href} className="compare-vehicle-card__cta">
-          View Details
-        </Link>
+          <Link to={href} className="compare-vehicle-card__cta">
+            View Details
+          </Link>
+        </div>
       </div>
     </article>
   );

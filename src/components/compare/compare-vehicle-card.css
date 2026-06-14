@@ -60,13 +60,19 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 14px 16px 16px;
-  gap: 12px;
+  padding: 12px 14px 14px;
+  gap: 10px;
+}
+
+.compare-vehicle-card__main {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .compare-vehicle-card__title {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 800;
   color: #0f172a;
   line-height: 1.25;
@@ -75,7 +81,7 @@
 
 .compare-vehicle-card__price {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: 1.28rem;
   font-weight: 800;
   color: #2563eb;
   letter-spacing: -0.03em;
@@ -88,7 +94,7 @@
 }
 
 .compare-vehicle-card__spec {
-  padding: 6px 10px;
+  padding: 5px 9px;
   border-radius: 8px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
@@ -97,115 +103,55 @@
   color: #0f172a;
 }
 
-.compare-vehicle-card__insight-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.compare-vehicle-card__insights {
-  flex: 1 1 0;
-  min-width: 0;
+.compare-vehicle-card__footer {
+  margin-top: 2px;
+  padding-top: 10px;
+  border-top: 1px solid #e8edf3;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
-.compare-vehicle-card__line {
+.compare-vehicle-card__score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.compare-vehicle-card__score-title {
   margin: 0;
-  font-size: 0.78rem;
-  line-height: 1.45;
-  color: #475569;
-}
-
-.compare-vehicle-card__line-label {
-  font-weight: 800;
-}
-
-.compare-vehicle-card__line-label--strength {
-  color: #047857;
-}
-
-.compare-vehicle-card__line-label--tradeoff {
-  color: #b45309;
-}
-
-.compare-vehicle-card__better-at {
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-}
-
-.compare-vehicle-card__better-at-title {
-  margin: 0 0 8px;
   font-size: 0.72rem;
   font-weight: 800;
-  color: #166534;
-  letter-spacing: 0.01em;
-}
-
-.compare-vehicle-card__pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.compare-vehicle-card__pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 5px 10px;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid #86efac;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: #14532d;
+  letter-spacing: 0.02em;
+  color: #1d4ed8;
   line-height: 1.2;
-}
-
-.compare-vehicle-card__pill-icon {
-  color: #16a34a;
-  font-size: 0.75rem;
-  line-height: 1;
-}
-
-.compare-vehicle-card__score-col {
   flex: 0 0 auto;
+}
+
+.compare-vehicle-card__score-meta {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  text-align: center;
+  gap: 10px;
+  flex: 0 0 auto;
 }
 
 .compare-vehicle-card__grade {
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  padding: 0.1rem 0.4rem;
-  border-radius: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
   background: #e8f5e9;
   color: #1b5e20;
-}
-
-.compare-vehicle-card__score-label {
-  margin: 0;
-  font-size: 0.62rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #1d4ed8;
-  line-height: 1.2;
-  max-width: 7rem;
+  white-space: nowrap;
 }
 
 .compare-vehicle-card__gauge.score-circle {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 76px;
+  height: 76px;
   flex-shrink: 0;
-  filter: drop-shadow(0 8px 20px rgba(21, 128, 61, 0.18));
+  filter: drop-shadow(0 4px 12px rgba(21, 128, 61, 0.14));
 }
 
 .compare-vehicle-card__gauge .score-circle__svg {
@@ -227,7 +173,7 @@
 }
 
 .compare-vehicle-card__gauge .compare-vehicle-card__gauge-value {
-  font-size: 1.75rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: #0f172a;
   line-height: 1;
@@ -235,10 +181,10 @@
 }
 
 .compare-vehicle-card__gauge .compare-vehicle-card__gauge-suffix {
-  font-size: 0.7rem;
+  font-size: 0.58rem;
   font-weight: 700;
   color: #64748b;
-  margin: 2px 0 0;
+  margin: 1px 0 0;
   line-height: 1;
 }
 
@@ -247,9 +193,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 42px;
-  margin-top: auto;
-  padding: 10px 14px;
+  min-height: 40px;
+  padding: 9px 14px;
   border-radius: 12px;
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: #fff;
@@ -266,55 +211,25 @@
 
 @media (max-width: 768px) {
   .compare-vehicle-card__content {
-    gap: 14px;
-    padding: 12px 14px 14px;
-  }
-
-  .compare-vehicle-card__insight-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-  }
-
-  .compare-vehicle-card__insights {
-    gap: 10px;
-  }
-
-  .compare-vehicle-card__better-at {
-    margin-bottom: 0;
-  }
-
-  .compare-vehicle-card__score-col {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
     gap: 8px;
-    margin-top: 4px;
-    padding-top: 4px;
+    padding: 10px 12px 12px;
   }
 
-  .compare-vehicle-card__score-label {
-    max-width: none;
-    text-align: center;
+  .compare-vehicle-card__footer {
+    padding-top: 8px;
+    gap: 8px;
+  }
+
+  .compare-vehicle-card__score-row {
+    gap: 8px;
   }
 
   .compare-vehicle-card__gauge.score-circle {
-    width: 88px !important;
-    height: 88px !important;
-    filter: drop-shadow(0 6px 14px rgba(21, 128, 61, 0.16));
+    width: 72px !important;
+    height: 72px !important;
   }
 
   .compare-vehicle-card__gauge .compare-vehicle-card__gauge-value {
-    font-size: 1.35rem;
-  }
-
-  .compare-vehicle-card__gauge .compare-vehicle-card__gauge-suffix {
-    font-size: 0.62rem;
-    margin-top: 1px;
-  }
-
-  .compare-vehicle-card__cta {
-    margin-top: 10px;
+    font-size: 1.05rem;
   }
 }
