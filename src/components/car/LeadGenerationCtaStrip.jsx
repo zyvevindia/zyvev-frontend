@@ -25,7 +25,7 @@ export default function LeadGenerationCtaStrip({
 
       <button
         type="button"
-        className="lead-cta-strip__btn lead-cta-strip__btn--secondary"
+        className="lead-cta-strip__btn lead-cta-strip__btn--deal"
         onClick={onGetBestDeal}
       >
         Get Best Deal
@@ -33,7 +33,7 @@ export default function LeadGenerationCtaStrip({
 
       <button
         type="button"
-        className="lead-cta-strip__btn lead-cta-strip__btn--text"
+        className="lead-cta-strip__btn lead-cta-strip__btn--secondary"
         onClick={onRequestCallback}
       >
         Request Call Back
@@ -41,7 +41,7 @@ export default function LeadGenerationCtaStrip({
 
       <button
         type="button"
-        className="lead-cta-strip__btn lead-cta-strip__btn--text"
+        className="lead-cta-strip__btn lead-cta-strip__btn--secondary"
         onClick={onGetDealerAssistance}
       >
         Get Dealer Assistance

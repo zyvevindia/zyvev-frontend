@@ -1222,6 +1222,7 @@ export default function CarDetails() {
               });
               scrollToDealer();
             }}
+            onCompare={handleCompareEv}
           />
 
           <DetailActionBar

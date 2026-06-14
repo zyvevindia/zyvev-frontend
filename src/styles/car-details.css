@@ -48,26 +48,26 @@
 
 .cd-hero.cd-card {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 28px;
-  padding: 24px;
-  margin-bottom: 20px;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  gap: 22px;
+  padding: 20px 22px;
+  margin-bottom: 16px;
 }
 
 .cd-hero__media {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   min-width: 0;
 }
 
 .cd-hero__frame {
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
   background: #f8fafc;
   border: 1px solid #e8edf3;
   aspect-ratio: 16 / 10;
-  max-height: 340px;
+  max-height: 320px;
 }
 
 .cd-hero__frame .detail-hero-image-wrap,
@@ -79,17 +79,19 @@
 
 .cd-hero__thumbs {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   overflow-x: auto;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
   scrollbar-width: thin;
 }
 
 .cd-hero__thumb {
-  flex: 0 0 72px;
-  height: 52px;
+  flex: 0 0 calc((100% - 5 * 8px) / 6);
+  min-width: 52px;
+  max-width: 68px;
+  height: 48px;
   padding: 0;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   border: 2px solid #e8edf3;
   background: #fff;
@@ -109,8 +111,21 @@
 .cd-hero__info {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
   min-width: 0;
+}
+
+.cd-hero__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cd-hero__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.65rem;
 }
 
 .cd-hero__badge {
@@ -126,20 +141,121 @@
   letter-spacing: 0.04em;
 }
 
+.cd-hero__verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.28rem 0.62rem;
+  border-radius: 999px;
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  color: #047857;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cd-hero__verified-badge::before {
+  content: "✓";
+  font-size: 0.62rem;
+}
+
 .cd-hero__title {
   margin: 0;
-  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.72rem);
   font-weight: 800;
   color: #0f172a;
-  line-height: 1.15;
+  line-height: 1.12;
   letter-spacing: -0.03em;
 }
 
 .cd-hero__subtitle {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: #64748b;
-  line-height: 1.5;
+  line-height: 1.45;
+}
+
+.cd-hero__cta-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.cd-hero__explore-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  padding: 0.82rem 1rem;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.25;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.28);
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cd-hero__explore-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.32);
+}
+
+.cd-hero__explore-btn:active {
+  transform: translateY(1px);
+}
+
+.cd-hero__compare-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0.82rem 1rem;
+  border-radius: 14px;
+  border: 1.5px solid #2563eb;
+  background: #fff;
+  color: #2563eb;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cd-hero__compare-btn:hover {
+  background: #eff6ff;
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+}
+
+.cd-hero__scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: -0.15rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #15803d;
+}
+
+.cd-hero__scroll-hint span[aria-hidden] {
+  font-size: 0.68rem;
 }
 
 .cd-hero__price {
@@ -161,7 +277,8 @@
 .cd-hero__teasers {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 0.15rem;
 }
 
 .cd-hero-family-metrics {
@@ -1129,11 +1246,20 @@
 @media (max-width: 960px) {
   .cd-hero.cd-card {
     grid-template-columns: 1fr;
-    padding: 18px;
+    padding: 16px;
+    gap: 16px;
   }
 
   .cd-hero__frame {
-    max-height: 280px;
+    max-height: 260px;
+  }
+
+  .cd-hero__cta-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cd-hero__compare-btn {
+    width: 100%;
   }
 
   .cd-hero__teasers {

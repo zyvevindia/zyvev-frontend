@@ -1,5 +1,3 @@
-import { scrollToDetailSection } from "../../utils/detailPageNav.js";
-
 import "./hero-summary.css";
 
 function SummaryCard({ label, value, className = "" }) {
@@ -39,38 +37,17 @@ export default function HeroSummary({ summary = null }) {
   }
 
   const variantLabel =
-    variantCount === 1
-      ? "1 variant available"
-      : `${variantCount} variants available`;
-
-  function handleExploreVariants() {
-    scrollToDetailSection("variants");
-  }
+    variantCount === 1 ? "1 variant" : `${variantCount} variants`;
 
   return (
     <div className="hero-summary">
       <div className="hero-summary__grid">
-        <SummaryCard label="Price" value={priceRange} />
-        <SummaryCard label="Real-world range" value={realWorldRange} />
-        <SummaryCard label="Battery" value={batteryRange} />
-        <SummaryCard label="Power" value={powerRange} />
-        <SummaryCard label="Charging" value={chargingRange} />
-
-        {variantCount > 0 ? (
-          <article className="hero-summary__card hero-summary__card--variants">
-            <div>
-              <p className="hero-summary__label">Variants</p>
-              <p className="hero-summary__value">{variantLabel}</p>
-            </div>
-            <button
-              type="button"
-              className="hero-summary__link"
-              onClick={handleExploreVariants}
-            >
-              Explore all {variantCount} variants →
-            </button>
-          </article>
-        ) : null}
+        <SummaryCard label="Price Range" value={priceRange} />
+        <SummaryCard label="Real-world Range" value={realWorldRange} />
+        <SummaryCard label="Battery Range" value={batteryRange} />
+        <SummaryCard label="Power Range" value={powerRange} />
+        <SummaryCard label="Charging Range" value={chargingRange} />
+        <SummaryCard label="Variants Available" value={variantCount > 0 ? variantLabel : null} />
       </div>
     </div>
   );

@@ -6,6 +6,23 @@ import EvSavariVerdictHeader from "./EvSavariVerdictHeader";
 import LeadGenerationCtaStrip from "./LeadGenerationCtaStrip";
 import PersonaBestForHero from "./PersonaBestForHero";
 import { getSafeImage } from "../../utils/imageUtils";
+import { scrollToDetailSection } from "../../utils/detailPageNav.js";
+
+function resolveVerifiedBadge(vehicle) {
+  const meta = vehicle?.catalogMeta;
+  if (!meta) return false;
+
+  if (meta.governanceStatus === "published") {
+    return true;
+  }
+
+  const score = meta.dataQualityScore;
+  return (
+    vehicle?.catalogSource === "master" &&
+    score != null &&
+    score >= 85
+  );
+}
 
 export default function DetailHero({
   vehicle,
@@ -28,6 +45,7 @@ export default function DetailHero({
   onGetBestDeal = () => {},
   onRequestCallback = () => {},
   onGetDealerAssistance = () => {},
+  onCompare = () => {},
 }) {
   const galleryItemsResolved = (
     galleryItems.length > 0
@@ -38,6 +56,9 @@ export default function DetailHero({
   );
 
   const subtitleParts = [];
+  if (category && category !== "Electric Vehicle") {
+    subtitleParts.push(category);
+  }
   if (activeVariantLabel) {
     subtitleParts.push(activeVariantLabel);
   }
@@ -50,6 +71,14 @@ export default function DetailHero({
     vehicle?.startingPrice ||
     vehicle?.price ||
     0;
+
+  const resolvedVariantCount =
+    heroSummary?.variantCount || variantCount || 0;
+  const showVerified = resolveVerifiedBadge(vehicle);
+
+  function handleExploreVariants() {
+    scrollToDetailSection("variants");
+  }
 
   return (
     <section className="cd-hero cd-card" aria-label="Vehicle overview">
@@ -121,21 +150,51 @@ export default function DetailHero({
       </div>
 
       <div className="cd-hero__info">
-        <span className="cd-hero__badge">
-          {category || "Electric Vehicle"}
-        </span>
+        <div className="cd-hero__head">
+          <div className="cd-hero__title-row">
+            <h1 className="cd-hero__title">{familyTitle}</h1>
+            {showVerified ? (
+              <span className="cd-hero__verified-badge">
+                Verified
+              </span>
+            ) : null}
+          </div>
 
-        <h1 className="cd-hero__title">{familyTitle}</h1>
-
-        {subtitleParts.length > 0 && (
-          <p className="cd-hero__subtitle">
-            {subtitleParts.join(" · ")}
-          </p>
-        )}
-
-        <EvSavariVerdictHeader verdict={evSavariVerdict} />
+          {subtitleParts.length > 0 && (
+            <p className="cd-hero__subtitle">
+              {subtitleParts.join(" · ")}
+            </p>
+          )}
+        </div>
 
         <HeroSummary summary={heroSummary} />
+
+        {resolvedVariantCount > 0 ? (
+          <div className="cd-hero__cta-row">
+            <button
+              type="button"
+              className="cd-hero__explore-btn"
+              onClick={handleExploreVariants}
+            >
+              Explore {resolvedVariantCount} Variant
+              {resolvedVariantCount === 1 ? "" : "s"} ↓
+            </button>
+            <button
+              type="button"
+              className="cd-hero__compare-btn"
+              onClick={onCompare}
+            >
+              Add to Compare
+            </button>
+          </div>
+        ) : null}
+
+        {resolvedVariantCount > 0 ? (
+          <p className="cd-hero__scroll-hint">
+            <span aria-hidden>✓</span>
+            Scroll down to see all variants and compare
+          </p>
+        ) : null}
 
         <LeadGenerationCtaStrip
           onBookTestDrive={onBookTestDrive}
@@ -145,6 +204,8 @@ export default function DetailHero({
         />
 
         <PersonaBestForHero vehicle={intelligenceVehicle || vehicle} />
+
+        <EvSavariVerdictHeader verdict={evSavariVerdict} />
 
         <div className="cd-hero__teasers">
           <DetailEmiTeaser
