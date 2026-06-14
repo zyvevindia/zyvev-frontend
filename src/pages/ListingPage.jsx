@@ -30,7 +30,6 @@ import { getCatalogBrandOptions } from "../utils/catalogListingBrands.js";
 
 import useCompareCars from "../hooks/useCompareCars";
 
-import EvDiscoveryFilters from "../components/discovery/EvDiscoveryFilters";
 import ListingCatalogMoreFilters from "../components/discovery/ListingCatalogMoreFilters";
 import CatalogPagination from "../components/catalog/CatalogPagination";
 
@@ -59,7 +58,7 @@ import {
   writePriceRangeToParams,
 } from "../intelligence/catalogPriceFilters.js";
 import { parseBodyTypeFilterId } from "../intelligence/bodyTypeCatalog.js";
-import { trackIntelligenceFilterApplied, trackSearchZeroResults } from "../analytics/funnel";
+import { trackSearchZeroResults } from "../analytics/funnel";
 import { trackFilterUsed, trackSearchUsed } from "../analytics/traffic";
 
 import "../styles/ev-discovery.css";
@@ -140,12 +139,6 @@ export default function ListingPage() {
 
   const [fetchRetryKey, setFetchRetryKey] =
     useState(0);
-
-  const [moreFiltersOpen, setMoreFiltersOpen] = useState(() =>
-    Boolean(parseListingBrandFromParams(searchParams)) ||
-    Boolean(parsePriceRangeFromParams(searchParams)) ||
-    Boolean(searchParams.get("body"))
-  );
 
   const {
     compareList,
@@ -278,19 +271,6 @@ export default function ListingPage() {
     }, 100);
     return () => clearTimeout(timer);
   }, [hash]);
-
-  const setIntelligenceFilters = (ids) => {
-    const base = resetPageInParams(searchParams);
-    const next = writeIntelligenceFiltersToParams(
-      ids,
-      base
-    );
-    next.delete("body");
-    if (!compareMode && next.has("compareMode")) {
-      next.delete("compareMode");
-    }
-    setSearchParams(next, { replace: true });
-  };
 
   const setPriceRange = (rangeId) => {
     const base = resetPageInParams(searchParams);
@@ -611,7 +591,7 @@ export default function ListingPage() {
           zIndex: 5,
         }}
       >
-        <div className="listing-filter-card">
+        <div className="listing-filter-card listing-filter-toolbar">
           <div className="listing-filter-search listing-filter-field">
             <label htmlFor="catalog-search" className="listing-filter-label">
               Search
@@ -629,23 +609,7 @@ export default function ListingPage() {
             />
           </div>
 
-          <EvDiscoveryFilters
-            families={families}
-            activeFilterIds={intelligenceFilterIds}
-            onChange={setIntelligenceFilters}
-            onFilterToggleAnalytics={(filterId, active) =>
-              trackIntelligenceFilterApplied({
-                filterId,
-                active,
-                sourcePage: pathname || "/cars",
-                activeCount: intelligenceFilterIds.length,
-              })
-            }
-          />
-
           <ListingCatalogMoreFilters
-            moreFiltersOpen={moreFiltersOpen}
-            onToggleMoreFilters={() => setMoreFiltersOpen((v) => !v)}
             brand={brand}
             brands={brands}
             onBrandChange={setBrand}
@@ -653,11 +617,11 @@ export default function ListingPage() {
             onPriceRangeChange={setPriceRange}
             bodyType={bodyType}
             onBodyTypeChange={setBodyType}
-            onClearMoreFilters={clearMoreFilters}
+            onClearFilters={clearMoreFilters}
             sortBy={sortBy}
             onSortChange={setSortBy}
             inputStyle={inputStyle}
-            hasActiveMoreFilters={hasActiveMoreFilters}
+            hasActiveFilters={hasActiveMoreFilters}
           />
         </div>
       </section>
