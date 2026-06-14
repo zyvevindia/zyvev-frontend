@@ -113,3 +113,23 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  * @property {number} score 0–100 apartment suitability score (higher is better)
  * @property {string} label Human-readable apartment living tier
  */
+
+/**
+ * @typedef {Object} RecommendationContext
+ * @property {number|null} cityScore
+ * @property {number|null} highwayScore
+ * @property {number|null} highwayConfidenceScore
+ * @property {number|null} highwayPersonaScore
+ * @property {number|null} apartmentScore
+ * @property {number|null} ownershipCostScore
+ * @property {number|null} valueScore
+ * @property {number|null} chargingPracticalityScore
+ * @property {number|null} overallScore
+ * @property {number|null} highwayPlanningRangeKm
+ */
+
+/**
+ * @typedef {Object} RecommendationEngineResult
+ * @property {string[]} bestFor Up to 4 persona labels
+ * @property {string[]} avoidFor Up to 2 caution labels
+ */

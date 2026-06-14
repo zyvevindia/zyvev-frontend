@@ -193,6 +193,18 @@ export {
   APARTMENT_SUITABILITY_ASSUMPTIONS,
 } from "./constants.js";
 
+export {
+  buildRecommendationEngine,
+  buildRecommendationContext,
+} from "./buildRecommendationEngine.js";
+
+export {
+  RECOMMENDATION_BEST_FOR_RULES,
+  RECOMMENDATION_AVOID_FOR_RULES,
+  RECOMMENDATION_LIMITS,
+  applyRecommendationRules,
+} from "./recommendationRules.js";
+
 export { formatRangeBand } from "./rangeConfidence.js";
 
 export {
