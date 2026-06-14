@@ -37,7 +37,6 @@ import HomeSection from "../components/HomeSection";
 import HomeCategoryTiles from "../components/home/HomeCategoryTiles";
 
 import {
-  CatalogBodyTypeSelect,
   CatalogBrandSelect,
   CatalogPriceSelect,
 } from "../components/discovery/CatalogFilterSelects";
@@ -86,7 +85,6 @@ export default function Home() {
     useState({
       brand: "",
       priceRange: "",
-      bodyType: "",
       sortBy: "",
       search: "",
     });
@@ -358,17 +356,6 @@ export default function Home() {
               style={selectStyle}
             />
 
-            <CatalogBodyTypeSelect
-              value={filters.bodyType}
-              onChange={(bodyType) =>
-                setFilters({
-                  ...filters,
-                  bodyType,
-                })
-              }
-              style={selectStyle}
-            />
-
             <select
               value={filters.sortBy}
 
@@ -414,7 +401,6 @@ export default function Home() {
                 setFilters({
                   brand: "",
                   priceRange: "",
-                  bodyType: "",
                   sortBy: "",
                   search: "",
                 });

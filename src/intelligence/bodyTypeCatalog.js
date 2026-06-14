@@ -2,6 +2,9 @@
  * Body-type taxonomy and classification for catalog filters.
  */
 
+/** @see docs/roadmap/body-type-filter.md */
+export const BODY_TYPE_FILTER_ENABLED = false;
+
 export const BODY_TYPE_IDS = Object.freeze([
   "hatchback",
   "sedan",

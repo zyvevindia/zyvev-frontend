@@ -2,6 +2,10 @@ import {
   INTELLIGENCE_FILTER_DEFINITIONS,
   getFilterDefinition,
 } from "./filterDefinitions.js";
+import {
+  BODY_TYPE_FILTER_ENABLED,
+  parseBodyTypeFilterId,
+} from "./bodyTypeCatalog.js";
 import { filterCatalogFamilies } from "./catalogFilters.js";
 import { enrichFamiliesWithIntelligence } from "./familyIntelligence.js";
 
@@ -22,7 +26,11 @@ export function parseIntelligenceFiltersFromParams(searchParams) {
         .map((s) => s.trim())
         .filter(Boolean)
     ),
-  ].filter((id) => getFilterDefinition(id));
+  ].filter((id) => {
+    if (!getFilterDefinition(id)) return false;
+    if (!BODY_TYPE_FILTER_ENABLED && parseBodyTypeFilterId(id)) return false;
+    return true;
+  });
 }
 
 /**
@@ -95,9 +103,33 @@ export function countFamiliesMatchingFilter(families, filterId) {
 
 export function getAvailableFiltersForFamilies(families) {
   const enriched = enrichFamiliesWithIntelligence(families);
-  return INTELLIGENCE_FILTER_DEFINITIONS.filter((def) =>
-    enriched.some((f) => def.match(f))
-  );
+  return INTELLIGENCE_FILTER_DEFINITIONS.filter((def) => {
+    if (!BODY_TYPE_FILTER_ENABLED && def.group === "body_type") return false;
+    return enriched.some((f) => def.match(f));
+  });
+}
+
+export function stripRetiredBodyTypeParams(searchParams) {
+  if (BODY_TYPE_FILTER_ENABLED) {
+    return { params: searchParams, changed: false };
+  }
+
+  let next = new URLSearchParams(searchParams);
+  let changed = false;
+
+  if (next.has("body")) {
+    next.delete("body");
+    changed = true;
+  }
+
+  const intel = parseIntelligenceFiltersFromParams(next);
+  const cleaned = intel.filter((id) => !parseBodyTypeFilterId(id));
+  if (cleaned.length !== intel.length) {
+    next = writeIntelligenceFiltersToParams(cleaned, next);
+    changed = true;
+  }
+
+  return { params: next, changed };
 }
 
 export { URL_PARAM as INTELLIGENCE_FILTER_URL_PARAM };

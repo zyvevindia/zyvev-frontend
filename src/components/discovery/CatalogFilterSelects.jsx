@@ -36,6 +36,10 @@ export function CatalogPriceSelect({ value, onChange, id = "catalog-price", styl
   );
 }
 
+/**
+ * Body type dropdown — kept for future re-enable. See docs/roadmap/body-type-filter.md
+ * @deprecated UI retired while BODY_TYPE_FILTER_ENABLED is false
+ */
 export function CatalogBodyTypeSelect({
   value,
   onChange,

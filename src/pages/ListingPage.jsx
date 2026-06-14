@@ -52,13 +52,12 @@ import {
 import {
   filterEnrichedFamilies,
   parseIntelligenceFiltersFromParams,
-  writeIntelligenceFiltersToParams,
+  stripRetiredBodyTypeParams,
 } from "../intelligence/filterMatcher.js";
 import {
   parsePriceRangeFromParams,
   writePriceRangeToParams,
 } from "../intelligence/catalogPriceFilters.js";
-import { parseBodyTypeFilterId } from "../intelligence/bodyTypeCatalog.js";
 import { trackSearchZeroResults } from "../analytics/funnel";
 import { trackFilterUsed, trackSearchUsed } from "../analytics/traffic";
 
@@ -223,8 +222,6 @@ export default function ListingPage() {
     [searchParams]
   );
 
-  const bodyType = searchParams.get("body") || "";
-
   useEffect(() => {
     if (!compareModeRequested) return;
     if (!listingSegment) return;
@@ -242,6 +239,13 @@ export default function ListingPage() {
   ]);
 
   const skipListingUrlSyncRef = useRef(false);
+
+  useEffect(() => {
+    const { params: next, changed } = stripRetiredBodyTypeParams(searchParams);
+    if (!changed) return;
+    skipListingUrlSyncRef.current = true;
+    setSearchParams(next, { replace: true });
+  }, [searchParams, setSearchParams]);
 
   useEffect(() => {
     if (skipListingUrlSyncRef.current) {
@@ -282,24 +286,6 @@ export default function ListingPage() {
     setSearchParams(next, { replace: true });
   };
 
-  const setBodyType = (nextBodyType) => {
-    const base = resetPageInParams(searchParams);
-    const next = new URLSearchParams(base);
-    if (nextBodyType) {
-      next.set("body", nextBodyType);
-    } else {
-      next.delete("body");
-    }
-    const intel = parseIntelligenceFiltersFromParams(next).filter(
-      (id) => !parseBodyTypeFilterId(id)
-    );
-    const merged = writeIntelligenceFiltersToParams(intel, next);
-    if (!compareMode && merged.has("compareMode")) {
-      merged.delete("compareMode");
-    }
-    setSearchParams(merged, { replace: true });
-  };
-
   const families = useMemo(
     () => aggregateModelFamilies(cars),
     [cars]
@@ -310,7 +296,6 @@ export default function ListingPage() {
       brand,
       search,
       priceRange,
-      bodyType,
       intelligenceFilterIds,
     });
 
@@ -341,7 +326,6 @@ export default function ListingPage() {
     brand,
     sortBy,
     priceRange,
-    bodyType,
     intelligenceFilterIds,
   ]);
 
@@ -351,9 +335,8 @@ export default function ListingPage() {
       Boolean(brand) ||
       Boolean(sortBy) ||
       Boolean(priceRange) ||
-      Boolean(bodyType) ||
       intelligenceFilterIds.length > 0,
-    [search, brand, sortBy, priceRange, bodyType, intelligenceFilterIds]
+    [search, brand, sortBy, priceRange, intelligenceFilterIds]
   );
 
   const showUpcomingCatalogFallback = useMemo(
@@ -375,7 +358,7 @@ export default function ListingPage() {
     });
   };
 
-  const hasActiveMoreFilters = Boolean(brand) || Boolean(priceRange) || Boolean(bodyType);
+  const hasActiveMoreFilters = Boolean(brand) || Boolean(priceRange);
 
   const clearMoreFilters = () => {
     skipListingUrlSyncRef.current = true;
@@ -386,11 +369,7 @@ export default function ListingPage() {
       next
     );
     next = writePriceRangeToParams("", next);
-    next.delete("body");
-    const intel = parseIntelligenceFiltersFromParams(next).filter(
-      (id) => !parseBodyTypeFilterId(id)
-    );
-    next = writeIntelligenceFiltersToParams(intel, next);
+    next = stripRetiredBodyTypeParams(next).params;
     if (!compareMode && next.has("compareMode")) {
       next.delete("compareMode");
     }
@@ -442,7 +421,6 @@ export default function ListingPage() {
     if (brand) parts.push(`brand:${brand}`);
     if (sortBy && sortBy !== "default") parts.push(`sort:${sortBy}`);
     if (priceRange) parts.push(`price:${priceRange}`);
-    if (bodyType) parts.push(`body:${bodyType}`);
     for (const id of intelligenceFilterIds) {
       parts.push(`intel:${id}`);
     }
@@ -464,7 +442,6 @@ export default function ListingPage() {
     brand,
     sortBy,
     priceRange,
-    bodyType,
     intelligenceFilterIds,
     pathname,
   ]);
@@ -616,8 +593,6 @@ export default function ListingPage() {
             onBrandChange={setBrand}
             priceRange={priceRange}
             onPriceRangeChange={setPriceRange}
-            bodyType={bodyType}
-            onBodyTypeChange={setBodyType}
             onClearFilters={clearMoreFilters}
             sortBy={sortBy}
             onSortChange={setSortBy}

@@ -8,6 +8,7 @@ import {
 } from "./catalogPriceFilters.js";
 import {
   applyBodyTypeFilter,
+  BODY_TYPE_FILTER_ENABLED,
   parseBodyTypeFilterId,
 } from "./bodyTypeCatalog.js";
 import { applyIntelligenceFilters } from "./filterMatcher.js";
@@ -22,7 +23,7 @@ export function filterCatalogFamilies(
     brand,
     search,
     priceRange,
-    bodyType,
+    bodyType: _bodyType,
     intelligenceFilterIds = [],
   } = {}
 ) {
@@ -52,19 +53,21 @@ export function filterCatalogFamilies(
     list = applyCatalogPriceFilter(list, normalizedPrice);
   }
 
-  if (bodyType) {
-    list = applyBodyTypeFilter(list, bodyType);
+  if (BODY_TYPE_FILTER_ENABLED && _bodyType) {
+    list = applyBodyTypeFilter(list, _bodyType);
   }
 
-  const bodyFromIntel = intelligenceFilterIds
-    .map(parseBodyTypeFilterId)
-    .filter(Boolean);
-  if (bodyFromIntel.length) {
-    list = list.filter((f) =>
-      bodyFromIntel.some((id) =>
-        applyBodyTypeFilter([f], id).length > 0
-      )
-    );
+  if (BODY_TYPE_FILTER_ENABLED) {
+    const bodyFromIntel = intelligenceFilterIds
+      .map(parseBodyTypeFilterId)
+      .filter(Boolean);
+    if (bodyFromIntel.length) {
+      list = list.filter((f) =>
+        bodyFromIntel.some((id) =>
+          applyBodyTypeFilter([f], id).length > 0
+        )
+      );
+    }
   }
 
   const nonBodyIntel = intelligenceFilterIds.filter(

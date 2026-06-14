@@ -1,11 +1,10 @@
 import {
-  CatalogBodyTypeSelect,
   CatalogBrandSelect,
   CatalogPriceSelect,
 } from "./CatalogFilterSelects";
 
 /**
- * Inline brand / price / body-type / sort controls for the catalog listing toolbar.
+ * Inline brand / price / sort controls for the catalog listing toolbar.
  */
 export default function ListingCatalogMoreFilters({
   brand,
@@ -13,8 +12,6 @@ export default function ListingCatalogMoreFilters({
   onBrandChange,
   priceRange,
   onPriceRangeChange,
-  bodyType,
-  onBodyTypeChange,
   onClearFilters,
   sortBy,
   onSortChange,
@@ -42,15 +39,6 @@ export default function ListingCatalogMoreFilters({
         <CatalogPriceSelect
           value={priceRange}
           onChange={onPriceRangeChange}
-          style={inputStyle}
-        />
-      </div>
-
-      <div className="listing-filter-field">
-        <span className="listing-filter-label">Body Type</span>
-        <CatalogBodyTypeSelect
-          value={bodyType}
-          onChange={onBodyTypeChange}
           style={inputStyle}
         />
       </div>
