@@ -5,6 +5,7 @@ import DetailSeoDiscovery from "../components/catalog/DetailSeoDiscovery";
 import DetailOverviewDashboard from "../components/car/DetailOverviewDashboard";
 import DetailDealerAssistance from "../components/car/DetailDealerAssistance";
 import DetailKeySpecifications from "../components/car/DetailKeySpecifications";
+import { scrollToDetailSection } from "../utils/detailPageNav.js";
 import TrustDataStrip from "../components/trust/TrustDataStrip";
 import SectionErrorBoundary from "../components/errors/SectionErrorBoundary";
 import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
@@ -80,11 +81,10 @@ export function DetailVariantsSection({ page }) {
           variants={page.enrichedVariants}
           selectedSlug={page.selectedVariantSlug}
           onSelect={page.handleSelectVariant}
-          onCompareAll={() =>
-            page.navigateVariantCompare(page.comparableVariants, {
-              cleanSession: true,
-            })
-          }
+          onCompareAll={() => scrollToDetailSection("compare")}
+          onAddToCompare={page.handleCompareEv}
+          onToggleCompare={page.toggleVariantCompare}
+          compareList={page.compareList}
         />
       </Suspense>
     </SectionErrorBoundary>

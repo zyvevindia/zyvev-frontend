@@ -23,6 +23,7 @@ import CompareInternalLinks from "../components/compare/CompareInternalLinks";
 import CarDetailsSkeleton from "../components/skeletons/CarDetailsSkeleton";
 
 import useCatalogEnrichment from "../hooks/useCatalogEnrichment";
+import useCompareCars from "../hooks/useCompareCars";
 
 import {
   buildFaqSchema,
@@ -138,6 +139,8 @@ export default function CarDetails() {
 
   const navigate =
     useNavigate();
+
+  const { compareList, toggleCompare } = useCompareCars();
 
   const [car, setCar] =
     useState(null);
@@ -1130,6 +1133,9 @@ export default function CarDetails() {
     trackPricingInteraction,
     openInquiry,
     navigate,
+    toggleVariantCompare: toggleCompare,
+    compareList,
+    handleCompareEv,
     peopleAlsoCompare: detailSectionContext?.peopleAlsoCompare ?? {
       comparisons: [],
     },
