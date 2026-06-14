@@ -213,6 +213,25 @@ export {
   PREMIUM_PRICE_THRESHOLD_INR,
 } from "./personaRules.js";
 
+export {
+  buildConfidenceLabels,
+  buildConfidenceContext,
+  CONFIDENCE_LABELS,
+} from "./buildConfidenceLabels.js";
+
+export {
+  applyConfidenceRules,
+  combineConfidenceLabels,
+  minConfidenceLabel,
+  CONFIDENCE_LABEL_ORDER,
+  resolveOverallConfidenceLabel,
+  resolveRangeConfidenceLabel,
+  resolveOwnershipConfidenceLabel,
+  resolveChargingPracticalityConfidenceLabel,
+  resolveHighwayConfidenceConfidenceLabel,
+  resolveApartmentSuitabilityConfidenceLabel,
+} from "./confidenceRules.js";
+
 export { formatRangeBand } from "./rangeConfidence.js";
 
 export {

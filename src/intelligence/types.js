@@ -145,3 +145,29 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  * @typedef {Object} PersonaEngineResult
  * @property {string[]} personas Up to 5 persona labels, priority sorted
  */
+
+/**
+ * @typedef {'verified' | 'partial' | 'estimated' | 'directional' | 'reviewPending'} ConfidenceLabel
+ */
+
+/**
+ * @typedef {Object} ConfidenceContext
+ * @property {boolean} hasVehicle
+ * @property {object|null} vehicle
+ * @property {object} rangeIntel
+ * @property {import("./types.js").OwnershipCostContext} ownershipCtx
+ * @property {import("./types.js").ChargingPracticalityContext} chargingCtx
+ * @property {import("./types.js").HighwayConfidenceContext} highwayCtx
+ * @property {import("./types.js").ApartmentSuitabilityContext} apartmentCtx
+ * @property {import("./types.js").ScoreExplanationContext} scoreCtx
+ */
+
+/**
+ * @typedef {Object} ConfidenceEngineResult
+ * @property {ConfidenceLabel} overall
+ * @property {ConfidenceLabel} range
+ * @property {ConfidenceLabel} ownership
+ * @property {ConfidenceLabel} chargingPracticality
+ * @property {ConfidenceLabel} highwayConfidence
+ * @property {ConfidenceLabel} apartmentSuitability
+ */
