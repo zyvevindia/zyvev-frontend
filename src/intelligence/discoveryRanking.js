@@ -22,13 +22,50 @@ const SORT_KEY_MAP = {
   priceLow: (f) => -(f.startingPrice || 0),
 };
 
+const DEFAULT_FALLBACK_SORT_CHAIN = Object.freeze([
+  "practicality",
+  "ownershipAffordability",
+  "composite",
+]);
+
+function pickFallbackSortBy(families, sortChain = DEFAULT_FALLBACK_SORT_CHAIN) {
+  for (const key of sortChain) {
+    const sortFn = SORT_KEY_MAP[key];
+    if (!sortFn) continue;
+    if (families.some((family) => sortFn(family) > 0)) {
+      return key;
+    }
+  }
+  return "composite";
+}
+
+function rankFamilyPool(families, sortBy, preset) {
+  const sortFn = SORT_KEY_MAP[sortBy] || SORT_KEY_MAP.composite;
+
+  return [...families]
+    .map((family) => ({
+      family,
+      card: familyToListingCard(family),
+      sortScore: sortFn(family),
+      score:
+        family.evSavariScores?.overall?.score ?? family.evScores?.composite,
+      grade: family.evSavariScores?.overall?.grade ?? family.evScores?.grade,
+      reason: buildRankReason(family, { ...preset, sortBy }),
+    }))
+    .sort((a, b) => b.sortScore - a.sortScore);
+}
+
 /**
  * Rank families for an intelligence discovery preset.
+ * @returns {{ ranked: object[], fallbackNotice: string|null }}
  */
 export function rankFamiliesForPreset(families, preset, options = {}) {
-  if (!preset) return [];
+  if (!preset) {
+    return { ranked: [], fallbackNotice: null };
+  }
 
   const { search = "", extraFilterIds = [] } = options;
+  const searchTerm = search.trim() || undefined;
 
   const filterIds = [
     ...(preset.intelligenceFilterIds || []),
@@ -37,24 +74,33 @@ export function rankFamiliesForPreset(families, preset, options = {}) {
 
   const filtered = filterEnrichedFamilies(families, {
     intelligenceFilterIds: filterIds,
-    search: search.trim() || undefined,
+    search: searchTerm,
   });
 
-  const sortFn = SORT_KEY_MAP[preset.sortBy] || SORT_KEY_MAP.composite;
+  if (filtered.length > 0) {
+    return {
+      ranked: rankFamilyPool(filtered, preset.sortBy, preset),
+      fallbackNotice: null,
+    };
+  }
 
-  const ranked = [...filtered]
-    .map((family) => ({
-      family,
-      card: familyToListingCard(family),
-      sortScore: sortFn(family),
-      score:
-        family.evSavariScores?.overall?.score ?? family.evScores?.composite,
-      grade: family.evSavariScores?.overall?.grade ?? family.evScores?.grade,
-      reason: buildRankReason(family, preset),
-    }))
-    .sort((a, b) => b.sortScore - a.sortScore);
+  if (!families.length || searchTerm) {
+    return { ranked: [], fallbackNotice: null };
+  }
 
-  return ranked;
+  if (!preset.enableEmptyFallback) {
+    return { ranked: [], fallbackNotice: null };
+  }
+
+  const fallbackSortBy = pickFallbackSortBy(
+    families,
+    preset.fallbackSortChain || DEFAULT_FALLBACK_SORT_CHAIN
+  );
+
+  return {
+    ranked: rankFamilyPool(families, fallbackSortBy, preset),
+    fallbackNotice: preset.emptyFallbackNotice || null,
+  };
 }
 
 function buildRankReason(family, preset) {

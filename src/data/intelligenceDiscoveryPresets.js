@@ -127,7 +127,11 @@ export const INTELLIGENCE_DISCOVERY_PRESETS = Object.freeze({
       "Practical family EVs ranked by suitability and ownership signals — compare trims on EVSavari.",
     intelligenceFilterIds: ["family_friendly"],
     sortBy: "practicality",
-    minResults: 2,
+    enableEmptyFallback: true,
+    fallbackSortChain: ["practicality", "ownershipAffordability", "composite"],
+    emptyFallbackNotice:
+      "We're still improving family-focused rankings. Showing the best available EVs while more family-specific data is verified.",
+    minResults: 1,
   },
   "adas-equipped": {
     slug: "adas-equipped",

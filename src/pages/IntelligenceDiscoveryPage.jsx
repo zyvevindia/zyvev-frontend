@@ -130,8 +130,10 @@ export default function IntelligenceDiscoveryPage() {
     [cars]
   );
 
-  const ranked = useMemo(() => {
-    if (!preset || preset.redirectToBudgetHub) return [];
+  const { ranked, fallbackNotice } = useMemo(() => {
+    if (!preset || preset.redirectToBudgetHub) {
+      return { ranked: [], fallbackNotice: null };
+    }
 
     const extraFilterIds = showBudgetFilters
       ? getBudgetPriceFilterOption(budgetPriceId).filterIds
@@ -326,6 +328,10 @@ export default function IntelligenceDiscoveryPage() {
 
         {!loading && ranked.length > 0 && (
           <>
+            {fallbackNotice ? (
+              <p className="intel-discovery-fallback-notice">{fallbackNotice}</p>
+            ) : null}
+
             <div className="intel-discovery-meta-row">
               {preset.sortLabel ? (
                 <p className="intel-discovery-sort-label">
