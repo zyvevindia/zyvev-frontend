@@ -98,3 +98,18 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  * @property {number} score 0–100 highway confidence score (higher is better)
  * @property {string} label Human-readable highway travel tier
  */
+
+/**
+ * @typedef {Object} ApartmentSuitabilityContext
+ * @property {number|null} batteryKwh
+ * @property {number|null} acChargingHours
+ * @property {number|null} cityScore
+ * @property {boolean} acTimeEstimated
+ * @property {boolean} cityScoreEstimated
+ */
+
+/**
+ * @typedef {Object} ApartmentSuitabilityScoreResult
+ * @property {number} score 0–100 apartment suitability score (higher is better)
+ * @property {string} label Human-readable apartment living tier
+ */

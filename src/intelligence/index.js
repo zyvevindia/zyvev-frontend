@@ -179,6 +179,20 @@ export {
   HIGHWAY_CONFIDENCE_ASSUMPTIONS,
 } from "./constants.js";
 
+export {
+  buildApartmentScore,
+  buildApartmentContext,
+  apartmentBatteryKwhToScore,
+  resolveApartmentCityScore,
+  combineApartmentSuitabilityScore,
+  resolveApartmentSuitabilityLabel,
+} from "./buildApartmentScore.js";
+
+export {
+  APARTMENT_SUITABILITY_LABELS,
+  APARTMENT_SUITABILITY_ASSUMPTIONS,
+} from "./constants.js";
+
 export { formatRangeBand } from "./rangeConfidence.js";
 
 export {

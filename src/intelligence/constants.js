@@ -65,6 +65,21 @@ export const HIGHWAY_CONFIDENCE_ASSUMPTIONS = Object.freeze({
   batteryScoreWeight: 0.15,
 });
 
+/** Apartment suitability score label tiers (score is 0–100, higher is better) */
+export const APARTMENT_SUITABILITY_LABELS = Object.freeze([
+  { min: 80, label: "Excellent apartment EV" },
+  { min: 65, label: "Good apartment EV" },
+  { min: 50, label: "Moderate apartment EV" },
+  { min: 0, label: "Better with dedicated charging" },
+]);
+
+/** Composite weights for apartment suitability scoring */
+export const APARTMENT_SUITABILITY_ASSUMPTIONS = Object.freeze({
+  acScoreWeight: 0.45,
+  cityScoreWeight: 0.35,
+  batteryScoreWeight: 0.2,
+});
+
 export const RANGE_CONFIDENCE_THRESHOLDS = Object.freeze({
   highMinScore: 80,
   mediumMinScore: 55,
