@@ -201,6 +201,7 @@ export default function CompactCarCard({
               vehicle={car}
               variant="compact"
               layout="card"
+              showWeaknesses={false}
             />
           )}
 

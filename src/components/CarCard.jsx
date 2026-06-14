@@ -252,6 +252,7 @@ export default function CarCard({
             vehicle={safeCar}
             variant="compact"
             layout="card"
+            showWeaknesses={false}
           />
 
           <PersonaChips vehicle={safeCar} variant="compact" layout="card" />

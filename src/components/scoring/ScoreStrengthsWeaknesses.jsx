@@ -23,7 +23,8 @@ function normalizeExplanation(explanation) {
 
 /**
  * Compact, reusable strengths & weaknesses from buildScoreExplanation().
- * Use on detail pages, compare, discovery cards, and recommendation surfaces.
+ * Use on detail pages, compare, and EV Intelligence (full mode).
+ * Pass showWeaknesses={false} on browse/discovery card surfaces.
  */
 export default function ScoreStrengthsWeaknesses({
   vehicle = null,
@@ -32,6 +33,7 @@ export default function ScoreStrengthsWeaknesses({
   layout = "card",
   maxStrengths = SCORE_EXPLANATION_LIMITS.maxStrengths,
   maxWeaknesses = SCORE_EXPLANATION_LIMITS.maxWeaknesses,
+  showWeaknesses = true,
   className = "",
   id = undefined,
 }) {
@@ -46,7 +48,9 @@ export default function ScoreStrengthsWeaknesses({
   }, [vehicle, explanation]);
 
   const strengths = resolved.strengths.slice(0, maxStrengths);
-  const weaknesses = resolved.weaknesses.slice(0, maxWeaknesses);
+  const weaknesses = showWeaknesses
+    ? resolved.weaknesses.slice(0, maxWeaknesses)
+    : [];
 
   if (!strengths.length && !weaknesses.length) {
     return null;
@@ -86,7 +90,7 @@ export default function ScoreStrengthsWeaknesses({
         </div>
       ) : null}
 
-      {weaknesses.length > 0 ? (
+      {showWeaknesses && weaknesses.length > 0 ? (
         <div className="score-sw__block">
           <h4 className="score-sw__heading">Weaknesses</h4>
           <ul className="score-sw__list">
