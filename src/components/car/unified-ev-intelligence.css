@@ -1,0 +1,145 @@
+.unified-ev-intelligence {
+  margin-top: 24px;
+}
+
+.unified-ev-intelligence__header {
+  margin-bottom: 16px;
+}
+
+.unified-ev-intelligence__title {
+  margin-bottom: 8px;
+}
+
+.unified-ev-intelligence__subtitle {
+  margin: 0;
+  max-width: 720px;
+}
+
+.unified-ev-intelligence__grid {
+  column-count: 2;
+  column-gap: 14px;
+}
+
+.unified-ev-intelligence__item {
+  break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.unified-ev-intelligence__item-title {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #475569;
+}
+
+.unified-ev-intelligence__card {
+  margin: 0;
+}
+
+.unified-ev-intelligence__item.unified-ev-intelligence__card {
+  break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.unified-ev-intelligence__item .unified-ev-intelligence__card.recommendation-insights--card,
+.unified-ev-intelligence__item .unified-ev-intelligence__card.score-sw--card,
+.unified-ev-intelligence__item .unified-ev-intelligence__card.persona-chips--card {
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.unified-ev-intelligence__card--suppress-subheading
+  .recommendation-insights__heading,
+.unified-ev-intelligence__item--strengths
+  .unified-ev-intelligence__card--suppress-subheading
+  .score-sw__heading {
+  display: none;
+}
+
+.unified-ev-intelligence__tradeoffs {
+  margin-top: 8px;
+}
+
+.unified-ev-intelligence__tradeoffs-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #2563eb;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.unified-ev-intelligence__tradeoffs-toggle:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.unified-ev-intelligence__tradeoffs-toggle:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.unified-ev-intelligence__tradeoffs-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.unified-ev-intelligence__tradeoffs-panel .unified-ev-intelligence__card {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+@media (max-width: 900px) {
+  .unified-ev-intelligence__grid {
+    column-count: 1;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .unified-ev-intelligence__grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1101px) {
+  .unified-ev-intelligence__grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .unified-ev-intelligence__item {
+    padding: 14px;
+  }
+}

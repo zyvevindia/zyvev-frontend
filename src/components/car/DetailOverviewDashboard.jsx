@@ -3,14 +3,7 @@ import { useState } from "react";
 import CatalogTrustBadge from "../catalog/CatalogTrustBadge";
 import ScoreCircle from "../common/ScoreCircle";
 import EvSavariScorePanel from "../scoring/EvSavariScorePanel";
-import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses";
-import RecommendationInsightsCard from "../scoring/RecommendationInsightsCard";
-import PersonaChips from "../scoring/PersonaChips";
-import OwnershipIntelligenceCard from "../scoring/OwnershipIntelligenceCard";
-import ChargingIntelligenceCard from "../scoring/ChargingIntelligenceCard";
-import HighwayConfidenceCard from "../scoring/HighwayConfidenceCard";
-import FamilyIntelligenceCard from "../scoring/FamilyIntelligenceCard";
-import ServiceConfidenceCard from "../scoring/ServiceConfidenceCard";
+import UnifiedEvIntelligenceSection from "./UnifiedEvIntelligenceSection";
 import { formatPsychologyTag } from "../../utils/catalogExperience";
 import {
   buildRangeConfidence,
@@ -233,42 +226,11 @@ export default function DetailOverviewDashboard({
           </div>
         ))}
 
-      {vehicle && !useV1ScorePanel ? (
-        <ScoreStrengthsWeaknesses vehicle={vehicle} layout="card" />
-      ) : null}
-
-      {!familyOverviewMode && vehicle ? (
-        <div
-          id="ev-intelligence"
-          className="cd-ev-intelligence-anchor"
-          aria-hidden="true"
+      {vehicle ? (
+        <UnifiedEvIntelligenceSection
+          vehicle={vehicle}
+          showAnchor={!familyOverviewMode}
         />
-      ) : null}
-
-      {vehicle ? (
-        <RecommendationInsightsCard vehicle={vehicle} layout="card" />
-      ) : null}
-
-      {vehicle ? <PersonaChips vehicle={vehicle} layout="card" /> : null}
-
-      {vehicle ? (
-        <OwnershipIntelligenceCard vehicle={vehicle} layout="card" />
-      ) : null}
-
-      {vehicle ? (
-        <ChargingIntelligenceCard vehicle={vehicle} layout="card" />
-      ) : null}
-
-      {vehicle ? (
-        <HighwayConfidenceCard vehicle={vehicle} layout="card" />
-      ) : null}
-
-      {vehicle ? (
-        <FamilyIntelligenceCard vehicle={vehicle} layout="card" />
-      ) : null}
-
-      {vehicle ? (
-        <ServiceConfidenceCard vehicle={vehicle} layout="card" />
       ) : null}
 
       <div className="cd-overview-dashboard__grid">
