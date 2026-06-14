@@ -30,6 +30,14 @@ import { getCatalogBrandOptions } from "../utils/catalogListingBrands.js";
 
 import useCompareCars from "../hooks/useCompareCars";
 
+import {
+  areCompareListsEqual,
+  COMPARE_LIMIT_MESSAGE,
+  loadCompareCarsFromStorage,
+  saveCompareCars,
+  sanitizeCompareList,
+} from "../utils/compareCarsStorage";
+
 import ListingCatalogMoreFilters from "../components/discovery/ListingCatalogMoreFilters";
 import CatalogResultsGrid from "../components/catalog/CatalogResultsGrid";
 import CatalogPagination from "../components/catalog/CatalogPagination";
@@ -142,6 +150,7 @@ export default function ListingPage() {
 
   const {
     compareList,
+    setCompareList,
     toggleCompare: toggleCompareCar,
   } = useCompareCars();
 
@@ -192,9 +201,7 @@ export default function ListingPage() {
     const { limitReached } = toggleCompareCar(car);
 
     if (limitReached) {
-      setCompareHint(
-        "You can compare up to 3 EVs. Remove one to add another."
-      );
+      setCompareHint(COMPARE_LIMIT_MESSAGE);
       return;
     }
 
@@ -202,11 +209,27 @@ export default function ListingPage() {
   };
 
   const openComparePage = () => {
-    const list = saveCompareCars(compareList);
+    const list = sanitizeCompareList(compareList);
+
+    if (list.length < 2) {
+      setCompareHint("Select at least two EVs to start comparison.");
+      return;
+    }
+
+    saveCompareCars(list);
     navigate("/compare", {
       state: { cars: list },
     });
   };
+
+  useEffect(() => {
+    if (!compareMode) return;
+
+    const stored = loadCompareCarsFromStorage();
+    if (!stored.length || areCompareListsEqual(compareList, stored)) return;
+
+    setCompareList(stored);
+  }, [compareMode, compareList, setCompareList]);
 
   /* =========================================================
      ===================== FILTERED DATA =====================

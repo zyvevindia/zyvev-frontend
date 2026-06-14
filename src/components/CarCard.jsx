@@ -1,4 +1,5 @@
 import {
+  useMemo,
   useState,
 } from "react";
 
@@ -30,7 +31,7 @@ import { pickListingCardSpecChips } from "../utils/listingCardSpecs";
 import "../styles/car-card-compare.css";
 import "../styles/catalog-ux-wave-b.css";
 
-import { isCarInCompareList } from "../utils/compareCarsStorage";
+import { isCarInCompareList, MAX_COMPARE_CARS } from "../utils/compareCarsStorage";
 
 /* =========================================================
    ====================== CAR CARD ==========================
@@ -58,10 +59,24 @@ export default function CarCard({
     price,
   } = safeCar;
 
-  const isCompared = isCarInCompareList(
-    compareList,
-    safeCar.defaultVariant || safeCar
+  const compareTarget = useMemo(
+    () => ({
+      ...(safeCar.defaultVariant || safeCar),
+      brand: safeCar.brand || safeCar.defaultVariant?.brand,
+      familySlug: safeCar.familySlug || safeCar.slug,
+      displayName:
+        safeCar.name ||
+        safeCar.displayName ||
+        safeCar.defaultVariant?.displayName,
+    }),
+    [safeCar]
   );
+
+  const isCompared = isCarInCompareList(compareList, compareTarget);
+  const compareAtLimit =
+    compareModeActive &&
+    compareList.length >= MAX_COMPARE_CARS &&
+    !isCompared;
 
   const listingSignals = pickListingSignals(
     safeCar,
@@ -284,21 +299,24 @@ export default function CarCard({
                 isCompared
                   ? "car-card__compare-btn--selected"
                   : "",
-                compareModeActive && !isCompared
-                  ? "car-card__compare-btn--hint"
-                  : "",
+                compareAtLimit
+                  ? "car-card__compare-btn--limit"
+                  : compareModeActive && !isCompared
+                    ? "car-card__compare-btn--hint"
+                    : "",
               ]
                 .filter(Boolean)
                 .join(" ")}
               style={secondaryButton}
-              onClick={() =>
-                toggleCompare(
-                  safeCar.defaultVariant ||
-                    safeCar
-                )
-              }
+              disabled={compareAtLimit}
+              aria-pressed={isCompared}
+              onClick={() => toggleCompare(compareTarget)}
             >
-              {isCompared ? "✓ Comparing" : "Compare"}
+              {isCompared
+                ? "✓ Selected"
+                : compareAtLimit
+                  ? "Limit reached"
+                  : "Compare"}
             </button>
           ) : null}
         </div>

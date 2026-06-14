@@ -372,9 +372,9 @@ export default function CompareHeroExperience({
                 type="button"
                 onClick={goToExploreCompare}
                 className="compare-hero__btn compare-hero__btn--ghost"
-                aria-label="Browse EV catalog to add more vehicles to compare"
+                aria-label="Add more EVs from the catalog to this comparison"
               >
-                Explore More EVs
+                Add More EVs
               </button>
 
               {showClearComparison && variant === "tool" ? (

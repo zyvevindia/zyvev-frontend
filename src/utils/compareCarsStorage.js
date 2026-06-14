@@ -5,9 +5,18 @@
 import { sanitizeImageUrl } from "./imageUrl";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
 import { resolveFullDisplayName } from "./vehicleDisplayName";
+import { extractFamilySlug } from "./modelFamily.js";
 import { ensureArray } from "./compareArrayUtils.js";
 
 export const COMPARE_CARS_STORAGE_KEY = "compareCars";
+
+/** @deprecated Use MAX_COMPARE_CARS */
+export const MAX_COMPARE_VEHICLES = 3;
+
+export const MAX_COMPARE_CARS = MAX_COMPARE_VEHICLES;
+
+export const COMPARE_LIMIT_MESSAGE =
+  "You can compare up to 3 EVs at a time. Remove one vehicle before adding another.";
 
 /** Legacy localStorage keys from older builds */
 const LEGACY_COMPARE_STORAGE_KEYS = [
@@ -19,8 +28,6 @@ const LEGACY_COMPARE_STORAGE_KEYS = [
 ];
 
 export const COMPARE_CARS_SYNC_EVENT = "evsavari:compare-cars-sync";
-
-export const MAX_COMPARE_CARS = 3;
 
 let lastPersistedSerialized = null;
 
@@ -39,6 +46,27 @@ export function getCompareCarKey(car) {
   return id ? `id:${id}` : "";
 }
 
+function getCompareFamilySlug(car) {
+  if (!car || typeof car !== "object") return "";
+  return normalizeVehicleSlug(
+    car.familySlug || extractFamilySlug(car.slug || "")
+  );
+}
+
+export function carsMatchCompareSelection(left, right) {
+  const a = sanitizeCompareCar(left) || left;
+  const b = sanitizeCompareCar(right) || right;
+  if (!a || !b) return false;
+
+  const keyA = getCompareCarKey(a);
+  const keyB = getCompareCarKey(b);
+  if (keyA && keyB && keyA === keyB) return true;
+
+  const familyA = getCompareFamilySlug(a);
+  const familyB = getCompareFamilySlug(b);
+  return Boolean(familyA && familyB && familyA === familyB);
+}
+
 /**
  * Strip non-serializable / nested data before persistence.
  */
@@ -54,13 +82,23 @@ export function sanitizeCompareCar(car) {
 
   const specs = car.specifications || {};
   const name = resolveFullDisplayName(car);
+  const familySlug = String(
+    car.familySlug || extractFamilySlug(car.slug || "") || ""
+  ).trim();
 
   return {
     _id: id || slug,
     slug: slug || id,
-    familySlug: String(car.familySlug || slug || "").trim(),
+    familySlug,
     name,
     fullDisplayName: name,
+    displayName: car.displayName || car.familyName || "",
+    variantName:
+      car.variantName ||
+      car.trimLabel ||
+      car.variantLabel ||
+      car.catalogMeta?.variantName ||
+      "",
     brand: car.brand || "",
     image: sanitizeImageUrl(car.image),
     heroImage: sanitizeImageUrl(car.heroImage),
@@ -121,11 +159,11 @@ export function areCompareListsEqual(a, b) {
 }
 
 export function isCarInCompareList(list, car) {
-  const key = getCompareCarKey(sanitizeCompareCar(car) || car);
-  if (!key) return false;
+  const clean = sanitizeCompareCar(car) || car;
+  if (!clean) return false;
 
-  return sanitizeCompareList(list).some(
-    (item) => getCompareCarKey(item) === key
+  return sanitizeCompareList(list).some((item) =>
+    carsMatchCompareSelection(item, clean)
   );
 }
 
@@ -260,15 +298,14 @@ export function toggleCompareInList(
     return { list: current, limitReached: false };
   }
 
-  const key = getCompareCarKey(incoming);
-  const exists = current.some(
-    (item) => getCompareCarKey(item) === key
+  const exists = current.some((item) =>
+    carsMatchCompareSelection(item, incoming)
   );
 
   if (exists) {
     return {
       list: current.filter(
-        (item) => getCompareCarKey(item) !== key
+        (item) => !carsMatchCompareSelection(item, incoming)
       ),
       limitReached: false,
     };
