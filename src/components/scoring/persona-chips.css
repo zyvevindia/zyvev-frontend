@@ -1,0 +1,34 @@
+.persona-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.persona-chips--compact {
+  gap: 0.3rem;
+}
+
+.persona-chips__chip {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: #334155;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  white-space: nowrap;
+}
+
+.persona-chips--compact .persona-chips__chip {
+  padding: 0.18rem 0.48rem;
+  font-size: 0.62rem;
+}
+
+.persona-chips--card {
+  margin-top: 0.15rem;
+}

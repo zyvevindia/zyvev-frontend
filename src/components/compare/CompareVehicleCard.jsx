@@ -8,6 +8,7 @@ import {
   buildVehicleVariantDisplayName,
   preserveOemCasing,
 } from "../../utils/vehicleDisplayName";
+import PersonaChips from "../scoring/PersonaChips";
 import "./compare-vehicle-card.css";
 
 const COMPARE_SCORE_GAUGE_SIZE = 76;
@@ -130,6 +131,8 @@ export default function CompareVehicleCard({
             <span className="compare-vehicle-card__spec">⚡ {range} km</span>
             <span className="compare-vehicle-card__spec">🔋 {battery}</span>
           </div>
+
+          <PersonaChips vehicle={car} variant="compact" layout="inline" />
         </div>
 
         <div className="compare-vehicle-card__footer">

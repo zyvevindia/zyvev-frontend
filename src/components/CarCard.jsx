@@ -25,6 +25,7 @@ import CatalogOwnershipChips from "./catalog/CatalogOwnershipChips";
 import CatalogScoreBadge from "./catalog/CatalogScoreBadge";
 
 import ScoreStrengthsWeaknesses from "./scoring/ScoreStrengthsWeaknesses";
+import PersonaChips from "./scoring/PersonaChips";
 
 import { pickOwnershipChips } from "../utils/ownershipReality";
 
@@ -250,6 +251,8 @@ export default function CarCard({
             variant="compact"
             layout="card"
           />
+
+          <PersonaChips vehicle={safeCar} variant="compact" layout="card" />
 
           <CatalogCardTrust
             catalogMeta={safeCar.catalogMeta}

@@ -17,6 +17,7 @@ import CatalogOwnershipChips from "./catalog/CatalogOwnershipChips";
 import CatalogScoreBadge from "./catalog/CatalogScoreBadge";
 
 import ScoreStrengthsWeaknesses from "./scoring/ScoreStrengthsWeaknesses";
+import PersonaChips from "./scoring/PersonaChips";
 
 import { pickOwnershipChips } from "../utils/ownershipReality";
 
@@ -201,6 +202,10 @@ export default function CompactCarCard({
               variant="compact"
               layout="card"
             />
+          )}
+
+          {!isCompare && (
+            <PersonaChips vehicle={car} variant="compact" layout="card" />
           )}
 
           {!isCompare && (
