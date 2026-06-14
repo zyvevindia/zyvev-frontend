@@ -133,3 +133,15 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  * @property {string[]} bestFor Up to 4 persona labels
  * @property {string[]} avoidFor Up to 2 caution labels
  */
+
+/**
+ * @typedef {RecommendationContext & {
+ *   premiumScore: number|null,
+ *   startingPrice: number|null
+ * }} PersonaContext
+ */
+
+/**
+ * @typedef {Object} PersonaEngineResult
+ * @property {string[]} personas Up to 5 persona labels, priority sorted
+ */

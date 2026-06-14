@@ -205,6 +205,14 @@ export {
   applyRecommendationRules,
 } from "./recommendationRules.js";
 
+export { buildPersonas, buildPersonaContext } from "./buildPersonas.js";
+
+export {
+  PERSONA_RULES,
+  PERSONA_LIMITS,
+  PREMIUM_PRICE_THRESHOLD_INR,
+} from "./personaRules.js";
+
 export { formatRangeBand } from "./rangeConfidence.js";
 
 export {
