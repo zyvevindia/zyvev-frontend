@@ -237,6 +237,14 @@ export default function DetailOverviewDashboard({
         <ScoreStrengthsWeaknesses vehicle={vehicle} layout="card" />
       ) : null}
 
+      {!familyOverviewMode && vehicle ? (
+        <div
+          id="ev-intelligence"
+          className="cd-ev-intelligence-anchor"
+          aria-hidden="true"
+        />
+      ) : null}
+
       {vehicle ? (
         <RecommendationInsightsCard vehicle={vehicle} layout="card" />
       ) : null}

@@ -8,6 +8,9 @@ import DetailKeySpecifications from "../components/car/DetailKeySpecifications";
 import TrustDataStrip from "../components/trust/TrustDataStrip";
 import SectionErrorBoundary from "../components/errors/SectionErrorBoundary";
 import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
+import PeopleAlsoCompareSection from "../components/car/PeopleAlsoCompareSection";
+import SimilarEvsSection from "../components/car/SimilarEvsSection";
+import PopularAmongSimilarBuyersSection from "../components/car/PopularAmongSimilarBuyersSection";
 import {
   buildDetailOwnershipExpectation,
   buildDetailTrustMaturityNote,
@@ -98,6 +101,46 @@ export function DetailCompareSection({ page }) {
         embedded
         only={["compare-rivals"]}
       />
+    </SectionErrorBoundary>
+  );
+}
+
+export function DetailPeopleAlsoCompareSection({ page }) {
+  const comparisons = page.peopleAlsoCompare?.comparisons || [];
+
+  if (!comparisons.length) return null;
+
+  return (
+    <SectionErrorBoundary label="People also compare" compact>
+      <PeopleAlsoCompareSection
+        currentVehicle={page.intelligenceCar || page.vehicle}
+        comparisons={comparisons}
+        navigate={page.navigate}
+      />
+    </SectionErrorBoundary>
+  );
+}
+
+export function DetailSimilarEvsSection({ page }) {
+  const similarVehicles = page.similarEvs?.similarVehicles || [];
+
+  if (!similarVehicles.length) return null;
+
+  return (
+    <SectionErrorBoundary label="Similar EVs" compact>
+      <SimilarEvsSection similarVehicles={similarVehicles} />
+    </SectionErrorBoundary>
+  );
+}
+
+export function DetailPopularAmongSimilarBuyersSection({ page }) {
+  const vehicles = page.popularAmongSimilarBuyers?.vehicles || [];
+
+  if (!vehicles.length) return null;
+
+  return (
+    <SectionErrorBoundary label="Popular among similar buyers" compact>
+      <PopularAmongSimilarBuyersSection vehicles={vehicles} />
     </SectionErrorBoundary>
   );
 }

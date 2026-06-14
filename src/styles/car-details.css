@@ -466,8 +466,17 @@
 .cd-seo-discovery[id],
 .variant-comparison[id],
 .ev-intel-section[id],
-.cd-collapsible-section[id] {
+.cd-collapsible-section[id],
+#ev-intelligence {
   scroll-margin-top: var(--cd-detail-scroll-margin, 148px);
+}
+
+.cd-ev-intelligence-anchor {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 /* —— Tabs —— */
@@ -476,6 +485,9 @@
   position: sticky;
   top: 0;
   z-index: 40;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
   background: rgba(248, 250, 252, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #e8edf3;
@@ -485,6 +497,8 @@
 
 .cd-tabs {
   display: flex;
+  flex: 1;
+  min-width: 0;
   gap: 4px;
   overflow-x: auto;
   scrollbar-width: none;
@@ -510,6 +524,32 @@
 .cd-tab--active {
   color: #2563eb;
   border-bottom-color: #2563eb;
+}
+
+.cd-tab--cta {
+  flex: 0 0 auto;
+  align-self: center;
+  margin: 8px 0 6px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.28);
+}
+
+.cd-tab--cta:hover {
+  background: #1d4ed8;
+}
+
+.cd-tab--cta:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
 /* —— Variants table —— */

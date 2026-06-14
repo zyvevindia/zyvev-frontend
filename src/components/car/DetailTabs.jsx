@@ -1,15 +1,13 @@
 import { useEffect, useRef } from "react";
 
-import { DETAIL_SECTION_DEFS } from "../../utils/detailPageNav";
-
-export { DETAIL_SECTION_DEFS as DETAIL_TABS };
-
 export default function DetailTabs({
   activeId,
   onSelect,
   tabs = [],
 }) {
   const listRef = useRef(null);
+  const scrollTabs = tabs.filter((tab) => !tab.cta);
+  const ctaTab = tabs.find((tab) => tab.cta);
 
   useEffect(() => {
     const activeBtn = listRef.current?.querySelector(
@@ -30,7 +28,7 @@ export default function DetailTabs({
         role="tablist"
         aria-label="Vehicle sections"
       >
-        {tabs.map((tab) => (
+        {scrollTabs.map((tab) => (
           <button
             key={tab.id}
             type="button"
@@ -44,6 +42,16 @@ export default function DetailTabs({
           </button>
         ))}
       </div>
+      {ctaTab ? (
+        <button
+          type="button"
+          className="cd-tab cd-tab--cta"
+          data-tab-id={ctaTab.id}
+          onClick={() => onSelect(ctaTab.id)}
+        >
+          {ctaTab.title ?? ctaTab.label}
+        </button>
+      ) : null}
     </div>
   );
 }

@@ -1,0 +1,54 @@
+.popular-similar-buyers__intro {
+  margin-bottom: 16px;
+}
+
+.popular-similar-buyers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.popular-similar-buyers__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 112px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.popular-similar-buyers__card-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+}
+
+.popular-similar-buyers__cta {
+  align-self: flex-start;
+  color: #2563eb;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.popular-similar-buyers__cta:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.popular-similar-buyers__cta:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .popular-similar-buyers__grid {
+    grid-template-columns: 1fr;
+  }
+}

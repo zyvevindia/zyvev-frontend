@@ -237,6 +237,31 @@ export {
 export { buildFamilyScore, buildFamilyContext } from "./buildFamilyScore.js";
 
 export {
+  buildHeroSummary,
+  resolveHeroSummaryVariants,
+} from "./buildHeroSummary.js";
+
+export {
+  buildEvSavariVerdict,
+  buildVerdictContext,
+} from "./buildEvSavariVerdict.js";
+
+export { buildPeopleAlsoCompare } from "./buildPeopleAlsoCompare.js";
+
+export { buildSimilarEvs } from "./buildSimilarEvs.js";
+
+export { buildPopularAmongSimilarBuyers } from "./buildPopularAmongSimilarBuyers.js";
+
+export {
+  VERDICT_HEADLINE_RULES,
+  VERDICT_BEST_FOR_PHRASES,
+  VERDICT_CAUTION_RULES,
+  resolveVerdictHeadline,
+  buildVerdictSummary,
+  joinVerdictPhrases,
+} from "./evSavariVerdictRules.js";
+
+export {
   FAMILY_SCORE_WEIGHTS,
   FAMILY_SUITABILITY_LABELS,
   SEGMENT_BOOT_SPACE_DEFAULTS_L,

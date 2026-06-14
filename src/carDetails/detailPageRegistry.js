@@ -1,4 +1,7 @@
 import { buildVehicleDiscoveryLinkSections } from "../seo/vehicleInternalLinks.js";
+import { buildPeopleAlsoCompare } from "../intelligence/buildPeopleAlsoCompare.js";
+import { buildSimilarEvs } from "../intelligence/buildSimilarEvs.js";
+import { buildPopularAmongSimilarBuyers } from "../intelligence/buildPopularAmongSimilarBuyers.js";
 import {
   DetailAssistanceSection,
   DetailChargingSection,
@@ -6,9 +9,12 @@ import {
   DetailEmiSection,
   DetailFaqsSection,
   DetailOverviewSection,
+  DetailPeopleAlsoCompareSection,
+  DetailPopularAmongSimilarBuyersSection,
   DetailRangeSection,
   DetailRelatedEvsSection,
   DetailReviewsSection,
+  DetailSimilarEvsSection,
   DetailSuitabilitySection,
   DetailVariantsSection,
 } from "./detailPageSections.jsx";
@@ -18,7 +24,11 @@ import {
  * @property {boolean} hasOverview
  * @property {boolean} hasVariants
  * @property {boolean} hasCompare
+ * @property {boolean} hasPeopleAlsoCompare
+ * @property {boolean} hasSimilarEvs
+ * @property {boolean} hasPopularAmongSimilarBuyers
  * @property {boolean} hasRange
+ * @property {boolean} hasOwnership
  * @property {boolean} hasCharging
  * @property {boolean} hasSuitability
  * @property {boolean} hasEmi
@@ -52,6 +62,27 @@ export const DETAIL_SECTION_DEFS = [
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasCompare,
     Component: DetailCompareSection,
+  },
+  {
+    id: "people-also-compare",
+    title: "People also compare",
+    shellClassName: "cd-section cd-card cd-content-card",
+    condition: (ctx) => ctx.hasPeopleAlsoCompare,
+    Component: DetailPeopleAlsoCompareSection,
+  },
+  {
+    id: "similar-evs",
+    title: "Similar EVs",
+    shellClassName: "cd-section cd-card cd-content-card",
+    condition: (ctx) => ctx.hasSimilarEvs,
+    Component: DetailSimilarEvsSection,
+  },
+  {
+    id: "popular-among-similar-buyers",
+    title: "Popular Among Similar Buyers",
+    shellClassName: "cd-section cd-card cd-content-card",
+    condition: (ctx) => ctx.hasPopularAmongSimilarBuyers,
+    Component: DetailPopularAmongSimilarBuyersSection,
   },
   {
     id: "range",
@@ -120,12 +151,28 @@ export function buildDetailPageSectionContext({
   enrichedVariantsCount = 0,
   isFamilyOverviewMode = false,
   vehicle = null,
+  comparisonVehicle = null,
   hasGoldExperience = false,
   intelligence = null,
   familySlug = "",
 }) {
   const meta = vehicle?.catalogMeta ?? {};
   const allFaq = [...(meta.faq ?? []), ...(meta.chargingFaq ?? [])];
+  const peopleAlsoCompare = buildPeopleAlsoCompare(
+    comparisonVehicle || vehicle
+  );
+  const similarEvs = buildSimilarEvs(comparisonVehicle || vehicle, {
+    excludeSlugs: peopleAlsoCompare.comparisons.map((item) => item.slug),
+  });
+  const popularAmongSimilarBuyers = buildPopularAmongSimilarBuyers(
+    comparisonVehicle || vehicle,
+    {
+      excludeSlugs: [
+        ...peopleAlsoCompare.comparisons.map((item) => item.slug),
+        ...similarEvs.similarVehicles.map((item) => item.slug),
+      ],
+    }
+  );
 
   const discoverySections = buildVehicleDiscoveryLinkSections({
     familySlug,
@@ -145,7 +192,13 @@ export function buildDetailPageSectionContext({
       hasGoldExperience &&
       Array.isArray(meta.compareRivals) &&
       meta.compareRivals.length > 0,
+    hasPeopleAlsoCompare: peopleAlsoCompare.comparisons.length > 0,
+    hasSimilarEvs: similarEvs.similarVehicles.length > 0,
+    hasPopularAmongSimilarBuyers:
+      popularAmongSimilarBuyers.vehicles.length > 0,
     hasRange: !isFamilyOverviewMode && Boolean(intelligence?.range?.hasData),
+    hasOwnership:
+      !isFamilyOverviewMode && Boolean(intelligence?.hasAnyData),
     hasCharging: Boolean(
       intelligence?.charging?.hasData ||
         intelligence?.chargingPracticality?.hasData ||
@@ -157,6 +210,9 @@ export function buildDetailPageSectionContext({
     hasReviews: true,
     hasRelatedEvs: discoverySections.length > 0,
     hasAssistance: true,
+    peopleAlsoCompare,
+    similarEvs,
+    popularAmongSimilarBuyers,
   };
 }
 

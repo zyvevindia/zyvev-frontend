@@ -1,9 +1,10 @@
 import VehicleImage from "../media/VehicleImage";
 import DetailEmiTeaser from "../catalog/DetailEmiTeaser";
 import DetailDealerTeaser from "./DetailDealerTeaser";
-import DetailQuickSpecs from "./DetailQuickSpecs";
-import DetailFamilyHeroMetrics from "./DetailFamilyHeroMetrics";
-import { formatIndianPrice } from "../../utils/formatIndianPrice";
+import HeroSummary from "./HeroSummary";
+import EvSavariVerdictHeader from "./EvSavariVerdictHeader";
+import LeadGenerationCtaStrip from "./LeadGenerationCtaStrip";
+import PersonaBestForHero from "./PersonaBestForHero";
 import { getSafeImage } from "../../utils/imageUtils";
 
 export default function DetailHero({
@@ -11,12 +12,9 @@ export default function DetailHero({
   familyTitle,
   activeVariantLabel,
   variantCount,
-  familyMaxRange,
-  activePrice,
-  activeRange,
-  activeBattery,
-  chargingSummary,
-  fourthQuickSpec,
+  heroSummary = null,
+  evSavariVerdict = null,
+  intelligenceVehicle = null,
   category,
   galleryItems = [],
   galleryImages: galleryImagesProp,
@@ -24,12 +22,12 @@ export default function DetailHero({
   selectedVariantSlug,
   safeDisplayImage,
   onSelectImage,
-  onPriceClick,
   onScrollEmi,
   onScrollDealer,
-  onScrollCharging,
-  familyOverviewMode = false,
-  familyMetrics = null,
+  onBookTestDrive = () => {},
+  onGetBestDeal = () => {},
+  onRequestCallback = () => {},
+  onGetDealerAssistance = () => {},
 }) {
   const galleryItemsResolved = (
     galleryItems.length > 0
@@ -40,24 +38,18 @@ export default function DetailHero({
   );
 
   const subtitleParts = [];
-  if (!familyOverviewMode && activeVariantLabel) {
+  if (activeVariantLabel) {
     subtitleParts.push(activeVariantLabel);
   }
-  if (variantCount > 1) {
-    subtitleParts.push(
-      familyOverviewMode
-        ? `${variantCount} Variants`
-        : `${variantCount} variants`
-    );
-  }
-  if (!familyOverviewMode && familyMaxRange > 0) {
-    subtitleParts.push(`Up to ${familyMaxRange} km`);
+  if (variantCount > 1 && !heroSummary) {
+    subtitleParts.push(`${variantCount} variants`);
   }
 
   const emiPrice =
-    familyOverviewMode && familyMetrics?.minPrice
-      ? familyMetrics.minPrice
-      : activePrice;
+    heroSummary?.minPriceInr ||
+    vehicle?.startingPrice ||
+    vehicle?.price ||
+    0;
 
   return (
     <section className="cd-hero cd-card" aria-label="Vehicle overview">
@@ -141,35 +133,18 @@ export default function DetailHero({
           </p>
         )}
 
-        {familyOverviewMode && familyMetrics ? (
-          <DetailFamilyHeroMetrics
-            metrics={familyMetrics}
-            onScrollCharging={onScrollCharging}
-          />
-        ) : (
-          <>
-            <p
-              className="cd-hero__price detail-hero-price"
-              role="button"
-              tabIndex={0}
-              onClick={onPriceClick}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") onPriceClick();
-              }}
-            >
-              {formatIndianPrice(activePrice)}
-              <span className="cd-hero__price-note">Ex-showroom</span>
-            </p>
+        <EvSavariVerdictHeader verdict={evSavariVerdict} />
 
-            <DetailQuickSpecs
-              range={activeRange}
-              battery={activeBattery}
-              chargingSummary={chargingSummary}
-              fourthMetric={fourthQuickSpec}
-              onScrollCharging={onScrollCharging}
-            />
-          </>
-        )}
+        <HeroSummary summary={heroSummary} />
+
+        <LeadGenerationCtaStrip
+          onBookTestDrive={onBookTestDrive}
+          onGetBestDeal={onGetBestDeal}
+          onRequestCallback={onRequestCallback}
+          onGetDealerAssistance={onGetDealerAssistance}
+        />
+
+        <PersonaBestForHero vehicle={intelligenceVehicle || vehicle} />
 
         <div className="cd-hero__teasers">
           <DetailEmiTeaser

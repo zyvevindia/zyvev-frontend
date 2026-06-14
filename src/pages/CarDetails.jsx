@@ -67,11 +67,14 @@ import { scoreVehicle } from "../scoring/index.js";
 import {
   buildDetailPageSectionContext,
   buildVisibleDetailSections,
+  buildVisibleDetailNavTabs,
   detailTabIdForSectionElement,
-  getDetailObservedSectionIds,
+  getDetailNavObserveIds,
   scrollToDetailSection,
 } from "../utils/detailPageNav";
 import { buildVehicleIntelligence } from "../intelligence/buildVehicleIntelligence";
+import { buildHeroSummary } from "../intelligence/buildHeroSummary.js";
+import { buildEvSavariVerdict } from "../intelligence/buildEvSavariVerdict.js";
 
 import {
   applyFamilyMediaFallback,
@@ -109,10 +112,6 @@ import {
   safeFetchJsonWithRetry,
 } from "../utils/safeFetch";
 import { getSafeImage } from "../utils/imageUtils";
-import {
-  resolveHeroFourthQuickSpec,
-  resolveHeroChargingSummary,
-} from "../utils/heroDetailMetrics";
 import {
   buildFamilyAggregateMetrics,
   buildVariantDetailMetrics,
@@ -562,11 +561,6 @@ export default function CarDetails() {
     setInquiryOpen(true);
   }, [getVariantAnalyticsContext, slug]);
 
-  const scrollToSection = useCallback((sectionId) => {
-    setActiveTab(sectionId);
-    scrollToDetailSection(sectionId);
-  }, []);
-
   const openTestDrive = useCallback(() => {
     setTestDriveOpen(true);
     trackVariantEvent(
@@ -661,8 +655,8 @@ export default function CarDetails() {
     });
   }, [displayCar, loading, slug, family?.familySlug]);
 
-  const pageSections = useMemo(() => {
-    if (!displayCar) return [];
+  const detailSectionContext = useMemo(() => {
+    if (!displayCar) return null;
 
     const vehicle = displayCar;
     const famSlug =
@@ -694,16 +688,16 @@ export default function CarDetails() {
       selectedVariant ||
       vehicle;
     const intelligence = buildVehicleIntelligence(intelCar);
-    const context = buildDetailPageSectionContext({
+
+    return buildDetailPageSectionContext({
       enrichedVariantsCount: enriched.length,
       isFamilyOverviewMode: familyOverview,
       vehicle,
+      comparisonVehicle: intelCar,
       hasGoldExperience,
       intelligence,
       familySlug: famSlug,
     });
-
-    return buildVisibleDetailSections(context);
   }, [
     displayCar,
     family,
@@ -714,15 +708,44 @@ export default function CarDetails() {
     hasGoldExperience,
   ]);
 
-  useEffect(() => {
-    if (!pageSections.length) return;
-    if (!pageSections.some((section) => section.id === activeTab)) {
-      setActiveTab(pageSections[0].id);
-    }
-  }, [pageSections, activeTab]);
+  const pageSections = useMemo(() => {
+    if (!detailSectionContext) return [];
+    return buildVisibleDetailSections(detailSectionContext);
+  }, [detailSectionContext]);
+
+  const pageNavTabs = useMemo(() => {
+    if (!detailSectionContext) return [];
+    return buildVisibleDetailNavTabs(detailSectionContext);
+  }, [detailSectionContext]);
+
+  const handleNavSelect = useCallback(
+    (tabId) => {
+      const tab = pageNavTabs.find((item) => item.id === tabId);
+      if (!tab) return;
+
+      if (tab.action === "test-drive") {
+        openTestDrive();
+        return;
+      }
+
+      if (tab.scrollTarget) {
+        setActiveTab(tabId);
+        scrollToDetailSection(tab.scrollTarget);
+      }
+    },
+    [pageNavTabs, openTestDrive]
+  );
 
   useEffect(() => {
-    if (!displayCar || !pageSections.length) return;
+    if (!pageNavTabs.length) return;
+    const sectionTabs = pageNavTabs.filter((tab) => !tab.cta);
+    if (!sectionTabs.some((tab) => tab.id === activeTab)) {
+      setActiveTab(sectionTabs[0]?.id ?? "overview");
+    }
+  }, [pageNavTabs, activeTab]);
+
+  useEffect(() => {
+    if (!displayCar || !pageNavTabs.length) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -738,7 +761,7 @@ export default function CarDetails() {
         for (const entry of visible) {
           const tabId = detailTabIdForSectionElement(
             entry.target?.id,
-            pageSections
+            pageNavTabs
           );
           if (tabId) {
             setActiveTab(tabId);
@@ -752,13 +775,13 @@ export default function CarDetails() {
       }
     );
 
-    getDetailObservedSectionIds(pageSections).forEach((id) => {
+    getDetailNavObserveIds(pageNavTabs).forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
-  }, [displayCar, slug, pageSections]);
+  }, [displayCar, slug, pageNavTabs]);
 
   const evSavariScores = useMemo(() => {
     if (!displayCar || loading || catalogLoading) {
@@ -917,6 +940,20 @@ export default function CarDetails() {
       )
     : null;
 
+  const heroSummary = buildHeroSummary({
+    ...vehicle,
+    variants: comparableVariants.length ? comparableVariants : undefined,
+    defaultVariant: familyFallbackVehicle,
+  });
+
+  const heroIntelligenceVehicle = {
+    ...vehicle,
+    variants: comparableVariants.length ? comparableVariants : undefined,
+    defaultVariant: familyFallbackVehicle,
+  };
+
+  const evSavariVerdict = buildEvSavariVerdict(heroIntelligenceVehicle);
+
   const intelligenceCar =
     enrichedVariants.find((v) => v.slug === selectedVariantSlug) ||
     selectedVariant ||
@@ -953,17 +990,6 @@ export default function CarDetails() {
   const activePrice = isFamilyOverviewMode
     ? familyMetrics?.minPrice || activeSpecs.price
     : activeSpecs.price;
-  const activeRange = isFamilyOverviewMode
-    ? familyMetrics?.rangeLabel
-      ? Number(
-          String(familyMetrics.rangeLabel).match(/\d+/)?.[0] || 0
-        )
-      : activeSpecs.range
-    : activeSpecs.range;
-  const activeBattery = isFamilyOverviewMode
-    ? familyMetrics?.batteryLabel || activeSpecs.battery
-    : activeSpecs.battery;
-  const activeVariantForHero = selectedVariant || vehicle;
 
   const features =
     Array.isArray(vehicle.features)
@@ -1072,16 +1098,6 @@ export default function CarDetails() {
       : []),
   ]);
 
-  const heroChargingSummary = resolveHeroChargingSummary(
-    activeVariantForHero,
-    activeVariantForHero?.catalogMeta || vehicle.catalogMeta
-  );
-
-  const heroFourthQuickSpec = resolveHeroFourthQuickSpec({
-    variant: activeVariantForHero,
-    catalogMeta: activeVariantForHero?.catalogMeta || vehicle.catalogMeta,
-  });
-
   const handleCompareEv = () => {
     navigateVariantCompare(
       comparableVariants.length > 0
@@ -1113,6 +1129,16 @@ export default function CarDetails() {
     handleFinanceHelp,
     trackPricingInteraction,
     openInquiry,
+    navigate,
+    peopleAlsoCompare: detailSectionContext?.peopleAlsoCompare ?? {
+      comparisons: [],
+    },
+    similarEvs: detailSectionContext?.similarEvs ?? {
+      similarVehicles: [],
+    },
+    popularAmongSimilarBuyers: detailSectionContext?.popularAmongSimilarBuyers ?? {
+      vehicles: [],
+    },
   };
 
   /* =========================================================
@@ -1162,12 +1188,9 @@ export default function CarDetails() {
               explicitVariantSlug ? activeVariantLabel : null
             }
             variantCount={comparableVariants.length}
-            familyMaxRange={familyMaxRange}
-            activePrice={activePrice}
-            activeRange={activeRange}
-            activeBattery={activeBattery}
-            chargingSummary={heroChargingSummary}
-            fourthQuickSpec={heroFourthQuickSpec}
+            heroSummary={heroSummary}
+            evSavariVerdict={evSavariVerdict}
+            intelligenceVehicle={heroIntelligenceVehicle}
             category={vehicle.category}
             galleryItems={galleryItems}
             galleryImages={galleryImages}
@@ -1175,14 +1198,30 @@ export default function CarDetails() {
             selectedVariantSlug={selectedVariantSlug}
             safeDisplayImage={safeDisplayImage}
             onSelectImage={setSelectedImage}
-            onPriceClick={() =>
-              trackPricingInteraction("price_display")
-            }
             onScrollEmi={scrollToEmiCalculator}
             onScrollDealer={scrollToDealer}
-            onScrollCharging={scrollToChargingDetails}
-            familyOverviewMode={isFamilyOverviewMode}
-            familyMetrics={familyMetrics}
+            onBookTestDrive={openTestDrive}
+            onGetBestDeal={() => {
+              trackLaunchDealerAssistance({
+                sourcePage: "car_details",
+                surface: "hero_get_best_deal",
+              });
+              openInquiry("Get the best deal", "Get best deal");
+            }}
+            onRequestCallback={() => {
+              trackLaunchDealerAssistance({
+                sourcePage: "car_details",
+                surface: "hero_request_callback",
+              });
+              openInquiry("Request a callback", "Request callback");
+            }}
+            onGetDealerAssistance={() => {
+              trackLaunchDealerAssistance({
+                sourcePage: "car_details",
+                surface: "hero_dealer_assistance",
+              });
+              scrollToDealer();
+            }}
           />
 
           <DetailActionBar
@@ -1212,8 +1251,8 @@ export default function CarDetails() {
 
           <DetailTabs
             activeId={activeTab}
-            onSelect={scrollToSection}
-            tabs={pageSections}
+            onSelect={handleNavSelect}
+            tabs={pageNavTabs}
           />
 
           {pageSections.map((section) => {

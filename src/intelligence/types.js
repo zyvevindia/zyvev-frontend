@@ -147,6 +147,30 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  */
 
 /**
+ * @typedef {Object} VerdictContext
+ * @property {string[]} personas
+ * @property {string[]} bestFor
+ * @property {string[]} avoidFor
+ * @property {(label: string) => boolean} hasPersona
+ * @property {boolean} excellentOwnership
+ * @property {boolean} goodOwnership
+ * @property {boolean} strongHighway
+ * @property {boolean} moderateHighway
+ * @property {boolean} weakHighway
+ * @property {boolean} strongApartment
+ * @property {boolean} strongFamily
+ * @property {boolean} strongCity
+ * @property {boolean} avoidsHighway
+ * @property {boolean} avoidsRemote
+ */
+
+/**
+ * @typedef {Object} EvSavariVerdictResult
+ * @property {string|null} headline
+ * @property {string|null} summary
+ */
+
+/**
  * @typedef {'verified' | 'partial' | 'estimated' | 'directional' | 'reviewPending'} ConfidenceLabel
  */
 
