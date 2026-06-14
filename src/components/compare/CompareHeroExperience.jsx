@@ -40,7 +40,7 @@ const CompareBelowFoldSections = lazy(() =>
 
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 import { extractFamilySlug } from "../../utils/modelFamily";
-import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
+import { buildVehicleVariantDisplayName } from "../../utils/vehicleDisplayName";
 import { saveCompareCars } from "../../utils/compareCarsStorage";
 import { ensureArray } from "../../utils/compareArrayUtils";
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
@@ -116,7 +116,7 @@ export default function CompareHeroExperience({
   const compareVehicleLabel = useMemo(
     () =>
       safeCars
-        .map((c) => resolveFullDisplayName(c))
+        .map((c) => buildVehicleVariantDisplayName(c))
         .filter(Boolean)
         .join(" vs "),
     [safeCars]
@@ -479,7 +479,7 @@ export default function CompareHeroExperience({
                             isRecommended ? "compare-spec__th--best" : undefined
                           }
                         >
-                          {resolveFullDisplayName(car)}
+                          {buildVehicleVariantDisplayName(car)}
                         </th>
                       );
                     })}

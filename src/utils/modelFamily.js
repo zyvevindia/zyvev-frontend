@@ -82,7 +82,8 @@ export function formatFamilyName(familySlug, brandLabel = "") {
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 
-  const brand = brandLabel
+  const brand = brandLabel &&
+    !/^ev brand$/i.test(String(brandLabel).trim())
     ? String(brandLabel).trim()
     : slug.split("-")[0].charAt(0).toUpperCase() +
       slug.split("-")[0].slice(1);

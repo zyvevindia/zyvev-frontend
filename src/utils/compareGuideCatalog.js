@@ -17,7 +17,7 @@ import {
 import { pickDefaultVariantForDetail } from "./variantInsights";
 import { sanitizeImageUrl } from "./imageUrl";
 import { resolveCatalogImageUrl } from "./vehicleMedia";
-import { resolveFullDisplayName } from "./vehicleDisplayName";
+import { buildVehicleVariantDisplayName } from "./vehicleDisplayName";
 import { ensureArray, safeMap } from "./compareArrayUtils.js";
 
 /**
@@ -46,8 +46,8 @@ function orderCarsBySlugs(cars, slugOrder) {
       byFamily.set(family, car);
       continue;
     }
-    const existingName = resolveFullDisplayName(existing);
-    const nextName = resolveFullDisplayName(car);
+    const existingName = buildVehicleVariantDisplayName(existing);
+    const nextName = buildVehicleVariantDisplayName(car);
     if (nextName.length > existingName.length) {
       byFamily.set(family, car);
     }
@@ -80,13 +80,8 @@ function pickCompareCarForFamily(pool, familySlug) {
   });
 }
 
-function applyCompareDisplayName(car, seoPage, familySlug) {
-  const ranked = seoPage?.rankedVehicles?.find(
-    (v) => normalizeVehicleSlug(v.slug) === normalizeVehicleSlug(familySlug)
-  );
-  const name = resolveFullDisplayName(car, {
-    seoDisplayName: ranked?.displayName,
-  });
+function applyCompareDisplayName(car, _seoPage, familySlug) {
+  const name = buildVehicleVariantDisplayName(car);
   const family = normalizeVehicleSlug(familySlug);
   const compareImage = resolveCatalogImageUrl(car, "compare");
 

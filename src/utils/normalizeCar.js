@@ -26,7 +26,7 @@ export default function normalizeCar(car) {
 
     name: cleaned.name || "Unknown EV",
 
-    brand: cleaned.brand || "EV Brand",
+    brand: cleaned.brand || "",
 
     heroImage: cleaned.heroImage || cleaned.image || null,
 

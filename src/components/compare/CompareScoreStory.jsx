@@ -1,5 +1,5 @@
 import CompareScoreComparison from "./CompareScoreComparison";
-import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
+import { buildVehicleVariantDisplayName } from "../../utils/vehicleDisplayName";
 import { COMPARE_BADGE_TYPES } from "../../utils/compareScoreBadges";
 
 import "./compare-score-story.css";
@@ -96,7 +96,7 @@ export default function CompareScoreStory({
               }`}
             >
               <h3 className="compare-score-story__name">
-                {resolveFullDisplayName(car)}
+                {buildVehicleVariantDisplayName(car)}
               </h3>
 
               {extraBadges.length > 0 ? (

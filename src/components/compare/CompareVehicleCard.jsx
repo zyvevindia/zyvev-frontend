@@ -16,7 +16,7 @@ import {
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 import {
-  resolveFullDisplayName,
+  buildVehicleVariantDisplayName,
   preserveOemCasing,
 } from "../../utils/vehicleDisplayName";
 import "./compare-vehicle-card.css";
@@ -140,10 +140,7 @@ export default function CompareVehicleCard({
   eagerImage = false,
   detailHref,
 }) {
-  const displayName = car
-    ? coerceDisplayString(car.fullDisplayName) ||
-      resolveFullDisplayName(car)
-    : "Unknown EV";
+  const displayName = car ? buildVehicleVariantDisplayName(car) : "Unknown EV";
 
   const meta =
     car && typeof car.catalogMeta === "object" && car.catalogMeta

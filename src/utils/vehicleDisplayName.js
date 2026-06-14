@@ -18,6 +18,13 @@ const OEM_WORDS = {
   volvo: "Volvo",
 };
 
+const METADATA_BRAND_LABELS = new Set([
+  "ev brand",
+  "unknown",
+  "unknown ev",
+  "ev",
+]);
+
 /**
  * Preserve OEM tokens (MG, BYD, EV) — avoid naive title-case on acronyms.
  */
@@ -41,20 +48,168 @@ function coerceDisplayString(value) {
   return "";
 }
 
+export function isMetadataBrandLabel(value) {
+  const normalized = coerceDisplayString(value).toLowerCase();
+  return !normalized || METADATA_BRAND_LABELS.has(normalized);
+}
+
+function containsMetadataBrandPrefix(name) {
+  return /^ev brand\b/i.test(coerceDisplayString(name));
+}
+
 function isFullVehicleName(name) {
   const n = String(name || "").trim();
   if (!n || n.length < 8) return false;
+  if (containsMetadataBrandPrefix(n)) return false;
   if (/\bEV\b/i.test(n)) return true;
   return n.split(/\s+/).filter(Boolean).length >= 3;
 }
 
 function pickBestName(candidates) {
-  const list = [...new Set(candidates.map((s) => String(s || "").trim()).filter(Boolean))];
+  const list = [
+    ...new Set(
+      candidates
+        .map((s) => String(s || "").trim())
+        .filter(Boolean)
+        .filter((name) => !containsMetadataBrandPrefix(name))
+    ),
+  ];
   if (!list.length) return "";
 
   const full = list.filter(isFullVehicleName);
   const pool = full.length ? full : list;
   return pool.sort((a, b) => b.length - a.length)[0];
+}
+
+function brandFromSlug(rawSlug = "") {
+  const familySlug = extractFamilySlug(rawSlug);
+  if (!familySlug) return "";
+
+  const first = familySlug.split("-")[0];
+  if (!first) return "";
+  return preserveOemCasing(
+    first.charAt(0).toUpperCase() + first.slice(1)
+  );
+}
+
+/**
+ * Real OEM brand — never returns catalog metadata labels like "EV Brand".
+ */
+export function resolveVehicleBrand(vehicle) {
+  if (!vehicle) return "";
+
+  const candidates = [
+    vehicle.brand,
+    vehicle.catalogMeta?.brand,
+    vehicle.catalogMeta?.manufacturer,
+  ];
+
+  for (const candidate of candidates) {
+    const brand = coerceDisplayString(candidate);
+    if (brand && !isMetadataBrandLabel(brand)) {
+      return preserveOemCasing(brand);
+    }
+  }
+
+  return brandFromSlug(vehicle.familySlug || vehicle.slug || "");
+}
+
+function resolveModelTitleFromSlug(rawSlug = "") {
+  const slug = normalizeVehicleSlug(extractFamilySlug(rawSlug) || rawSlug);
+  if (!slug) return "";
+
+  const modelPart = slug.replace(/^[a-z]+-/, "");
+  if (!modelPart) return "";
+
+  const modelTitle = modelPart
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return preserveOemCasing(modelTitle);
+}
+
+function stripBrandPrefix(name, brand) {
+  const value = coerceDisplayString(name);
+  const resolvedBrand = coerceDisplayString(brand);
+  if (!value || !resolvedBrand) return value;
+
+  const valueLower = value.toLowerCase();
+  const brandLower = resolvedBrand.toLowerCase();
+  if (valueLower.startsWith(`${brandLower} `)) {
+    return value.slice(resolvedBrand.length).trim();
+  }
+  if (valueLower.startsWith("ev brand ")) {
+    return value.slice("ev brand".length).trim();
+  }
+  return value;
+}
+
+/**
+ * Model/family label without OEM brand prefix (e.g. "Tiago EV", "Comet EV").
+ */
+export function resolveVehicleModelDisplayName(vehicle) {
+  if (!vehicle) return "";
+
+  const brand = resolveVehicleBrand(vehicle);
+  const candidates = [
+    vehicle.displayName,
+    vehicle.familyName,
+    vehicle.catalogMeta?.displayName,
+    vehicle.catalogMeta?.marketplaceDisplayName,
+  ];
+
+  for (const candidate of candidates) {
+    let name = coerceDisplayString(candidate);
+    if (!name) continue;
+    name = stripBrandPrefix(name, brand);
+    if (name && !isMetadataBrandLabel(name)) {
+      return preserveOemCasing(name);
+    }
+  }
+
+  const familySlug = extractFamilySlug(
+    vehicle.familySlug || vehicle.slug || ""
+  );
+  if (familySlug) {
+    return resolveModelTitleFromSlug(familySlug);
+  }
+
+  return "";
+}
+
+function resolveVariantName(vehicle, variant = null) {
+  return coerceDisplayString(
+    variant?.variantName ||
+      variant?.trimLabel ||
+      variant?.variantLabel ||
+      vehicle?.variantName ||
+      vehicle?.trimLabel ||
+      vehicle?.variantLabel ||
+      vehicle?.catalogMeta?.variantName ||
+      vehicle?.catalogMeta?.trimLabel
+  );
+}
+
+/**
+ * Canonical compare/listing title: brand + displayName + variantName.
+ */
+export function buildVehicleVariantDisplayName(vehicle, variant = null) {
+  if (!vehicle) return "";
+
+  const brand = resolveVehicleBrand(vehicle);
+  const displayName = resolveVehicleModelDisplayName(vehicle);
+  const variantName = resolveVariantName(vehicle, variant);
+
+  const composed = [brand, displayName, variantName]
+    .filter(Boolean)
+    .join(" ");
+
+  if (composed) {
+    return preserveOemCasing(composed);
+  }
+
+  return preserveOemCasing(coerceDisplayString(vehicle.name));
 }
 
 /**
@@ -100,20 +255,14 @@ function resolveFamilyDisplayName(car) {
     car.familySlug || car.slug || ""
   );
   if (familySlug) {
-    return formatFamilyName(familySlug, car.brand);
+    return formatFamilyName(familySlug, resolveVehicleBrand(car));
   }
 
   return fromFields;
 }
 
 function resolveVariantTrim(car, catalogName = "") {
-  const explicit = coerceDisplayString(
-    car.variantName ||
-      car.trimLabel ||
-      car.variantLabel ||
-      car.catalogMeta?.variantName ||
-      car.catalogMeta?.trimLabel
-  );
+  const explicit = resolveVariantName(car);
   if (explicit) return explicit;
 
   const catalog = coerceDisplayString(catalogName || car.name);
@@ -126,7 +275,7 @@ function resolveVariantTrim(car, catalogName = "") {
     return catalog.slice(family.length).trim();
   }
 
-  const brand = coerceDisplayString(car.brand);
+  const brand = resolveVehicleBrand(car);
   if (brand && catalogLower.startsWith(brand.toLowerCase())) {
     return catalog.slice(brand.length).trim();
   }
@@ -154,6 +303,11 @@ function composeFamilyAndVariantName(familyName, variantTrim) {
  */
 export function resolveFullDisplayName(car, options = {}) {
   if (!car) return options.seoDisplayName || "Electric vehicle";
+
+  const composed = buildVehicleVariantDisplayName(car);
+  if (composed && isFullVehicleName(composed)) {
+    return composed;
+  }
 
   const seoDisplayName = options.seoDisplayName?.trim();
   const explicit = pickBestName([
@@ -195,6 +349,10 @@ export function resolveFullDisplayName(car, options = {}) {
       );
     }
     return preserveOemCasing(explicit);
+  }
+
+  if (composed) {
+    return composed;
   }
 
   const slug = normalizeVehicleSlug(car.slug || car.familySlug);

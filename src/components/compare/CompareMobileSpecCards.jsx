@@ -1,6 +1,6 @@
 import ScoreCircle from "../common/ScoreCircle";
 import { formatIndianPriceCompact } from "../../utils/formatIndianPrice";
-import { resolveFullDisplayName } from "../../utils/vehicleDisplayName";
+import { buildVehicleVariantDisplayName } from "../../utils/vehicleDisplayName";
 import { formatCompareCellValue } from "../../intelligence/compareSpecRows";
 import { formatChargingDurationDisplay } from "../../utils/formatChargingDuration";
 
@@ -105,11 +105,11 @@ export default function CompareMobileSpecCards({
               className={`compare-mobile-spec__card${
                 isRecommended ? " compare-mobile-spec__card--recommended" : ""
               }`}
-              aria-label={`${resolveFullDisplayName(car)} specifications`}
+              aria-label={`${buildVehicleVariantDisplayName(car)} specifications`}
             >
               <header className="compare-mobile-spec__card-head">
                 <h3 className="compare-mobile-spec__name">
-                  {resolveFullDisplayName(car)}
+                  {buildVehicleVariantDisplayName(car)}
                 </h3>
                 {badges.length > 0 ? (
                   <div className="compare-mobile-spec__badges">

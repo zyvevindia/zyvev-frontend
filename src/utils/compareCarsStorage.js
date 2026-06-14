@@ -4,7 +4,7 @@
 
 import { sanitizeImageUrl } from "./imageUrl";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
-import { resolveFullDisplayName } from "./vehicleDisplayName";
+import { buildVehicleVariantDisplayName } from "./vehicleDisplayName";
 import { extractFamilySlug } from "./modelFamily.js";
 import { ensureArray } from "./compareArrayUtils.js";
 
@@ -81,7 +81,7 @@ export function sanitizeCompareCar(car) {
   if (!slug && !id) return null;
 
   const specs = car.specifications || {};
-  const name = resolveFullDisplayName(car);
+  const name = buildVehicleVariantDisplayName(car);
   const familySlug = String(
     car.familySlug || extractFamilySlug(car.slug || "") || ""
   ).trim();
@@ -99,7 +99,10 @@ export function sanitizeCompareCar(car) {
       car.variantLabel ||
       car.catalogMeta?.variantName ||
       "",
-    brand: car.brand || "",
+    brand:
+      car.brand && !/^ev brand$/i.test(String(car.brand).trim())
+        ? car.brand
+        : "",
     image: sanitizeImageUrl(car.image),
     heroImage: sanitizeImageUrl(car.heroImage),
     listingThumbnail: sanitizeImageUrl(car.listingThumbnail),

@@ -1,6 +1,6 @@
 import { extractFamilySlug } from "./modelFamily";
 import { normalizeVehicleSlug } from "./vehicleRoutes";
-import { resolveFullDisplayName } from "./vehicleDisplayName";
+import { buildVehicleVariantDisplayName } from "./vehicleDisplayName";
 import { ensureArray, safeMap } from "./compareArrayUtils.js";
 
 function buildNameMap(guideCars) {
@@ -8,7 +8,7 @@ function buildNameMap(guideCars) {
   for (const car of ensureArray(guideCars, { subsystem: "compare-seo" })) {
     const family = normalizeVehicleSlug(extractFamilySlug(car.slug));
     if (!family) continue;
-    map.set(family, car.fullDisplayName || resolveFullDisplayName(car));
+    map.set(family, car.fullDisplayName || buildVehicleVariantDisplayName(car));
   }
   return map;
 }
@@ -37,9 +37,8 @@ export function enrichCompareSeoPage(seoPage, guideCars) {
     const family = normalizeVehicleSlug(rv.slug);
     const displayName =
       nameByFamily.get(family) ||
-      resolveFullDisplayName(
+      buildVehicleVariantDisplayName(
         { name: rv.displayName, slug: rv.slug },
-        { seoDisplayName: rv.displayName }
       );
     return { ...rv, displayName };
   });
