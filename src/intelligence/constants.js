@@ -50,6 +50,21 @@ export const CHARGING_PRACTICALITY_ASSUMPTIONS = Object.freeze({
   dcScoreWeight: 0.58,
 });
 
+/** Highway confidence score label tiers (score is 0–100, higher is better) */
+export const HIGHWAY_CONFIDENCE_LABELS = Object.freeze([
+  { min: 80, label: "Confident highway travel" },
+  { min: 65, label: "Good highway capability" },
+  { min: 50, label: "Moderate highway capability" },
+  { min: 0, label: "Better suited to city driving" },
+]);
+
+/** Composite weights for highway confidence scoring */
+export const HIGHWAY_CONFIDENCE_ASSUMPTIONS = Object.freeze({
+  rangeScoreWeight: 0.5,
+  dcScoreWeight: 0.35,
+  batteryScoreWeight: 0.15,
+});
+
 export const RANGE_CONFIDENCE_THRESHOLDS = Object.freeze({
   highMinScore: 80,
   mediumMinScore: 55,

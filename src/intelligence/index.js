@@ -164,6 +164,21 @@ export {
   resolveChargingPracticalityLabel,
 } from "./buildChargingPracticalityScore.js";
 
+export {
+  buildHighwayConfidenceScore,
+  buildHighwayConfidenceContext,
+  resolveHighwayPlanningRangeKm,
+  highwayPlanningRangeToScore,
+  highwayBatteryKwhToScore,
+  combineHighwayConfidenceScore,
+  resolveHighwayConfidenceLabel,
+} from "./buildHighwayConfidenceScore.js";
+
+export {
+  HIGHWAY_CONFIDENCE_LABELS,
+  HIGHWAY_CONFIDENCE_ASSUMPTIONS,
+} from "./constants.js";
+
 export { formatRangeBand } from "./rangeConfidence.js";
 
 export {

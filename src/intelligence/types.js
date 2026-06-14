@@ -82,3 +82,19 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  * @property {string} acChargingExperience Overnight / home AC summary
  * @property {string} dcChargingExperience Highway / fast DC summary
  */
+
+/**
+ * @typedef {Object} HighwayConfidenceContext
+ * @property {number|null} highwayPlanningRangeKm Conservative highway range for trip planning
+ * @property {number|null} realWorldRangeKmMid Midpoint of mixed real-world range when available
+ * @property {number|null} dcChargingMinutes
+ * @property {number|null} batteryKwh
+ * @property {boolean} rangeEstimated
+ * @property {boolean} dcTimeEstimated
+ */
+
+/**
+ * @typedef {Object} HighwayConfidenceScoreResult
+ * @property {number} score 0–100 highway confidence score (higher is better)
+ * @property {string} label Human-readable highway travel tier
+ */
