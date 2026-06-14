@@ -5,9 +5,6 @@
 /** Compare hub primary callback label */
 export const COMPARE_CALLBACK_LABEL = "Request a dealer callback";
 
-/** Compare hub secondary pricing CTA */
-export const COMPARE_PRICING_CTA_LABEL = "Compare on-road quotes";
-
 /** WhatsApp — practical, not salesy */
 export const WHATSAPP_CTA_LABEL = "Chat on WhatsApp";
 

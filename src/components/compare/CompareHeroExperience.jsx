@@ -62,7 +62,6 @@ import {
 import { attachScrollDepthTracker } from "../../utils/scrollDepthTracker";
 import {
   COMPARE_CALLBACK_LABEL,
-  COMPARE_PRICING_CTA_LABEL,
   WHATSAPP_CTA_LABEL,
 } from "../../utils/conversionTrustCopy";
 import { buildAllCompareBadges } from "../../utils/compareScoreBadges";
@@ -346,17 +345,6 @@ export default function CompareHeroExperience({
                 aria-label="Request dealer callback for compared EVs"
               >
                 {COMPARE_CALLBACK_LABEL}
-              </button>
-
-              <button
-                type="button"
-                className="compare-hero__btn compare-hero__btn--ghost"
-                onClick={() =>
-                  openInquiry("Compare on-road quotes", COMPARE_PRICING_CTA_LABEL)
-                }
-                aria-label="Compare on-road price quotes for selected EVs"
-              >
-                {COMPARE_PRICING_CTA_LABEL}
               </button>
 
               <WhatsAppLeadCta
