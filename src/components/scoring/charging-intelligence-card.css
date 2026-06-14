@@ -1,0 +1,58 @@
+.charging-intelligence {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.charging-intelligence__heading {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.charging-intelligence--compact .charging-intelligence__heading {
+  font-size: 0.62rem;
+}
+
+.charging-intelligence__label {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+}
+
+.charging-intelligence--compact .charging-intelligence__label {
+  font-size: 0.82rem;
+}
+
+.charging-intelligence__detail {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: #334155;
+}
+
+.charging-intelligence--compact .charging-intelligence__detail {
+  font-size: 0.74rem;
+}
+
+.charging-intelligence--card {
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e8edf3;
+}
+
+.charging-intelligence--card.charging-intelligence--compact {
+  padding: 0.5rem 0.6rem;
+}
+
+.charging-intelligence--inline {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
