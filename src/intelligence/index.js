@@ -147,7 +147,22 @@ export {
 export {
   OWNERSHIP_COST_CONSERVATIVE_EFFICIENCY_FACTOR,
   OWNERSHIP_COST_LABELS,
+  CHARGING_PRACTICALITY_LABELS,
+  CHARGING_PRACTICALITY_ASSUMPTIONS,
 } from "./constants.js";
+
+export {
+  buildChargingPracticalityScore,
+  buildChargingPracticalityContext,
+  estimateAcChargingHours,
+  estimateDcChargingMinutes,
+  resolveAcChargingExperience,
+  resolveDcChargingExperience,
+  acChargingHoursToScore,
+  dcChargingMinutesToScore,
+  combineChargingPracticalityScore,
+  resolveChargingPracticalityLabel,
+} from "./buildChargingPracticalityScore.js";
 
 export { formatRangeBand } from "./rangeConfidence.js";
 

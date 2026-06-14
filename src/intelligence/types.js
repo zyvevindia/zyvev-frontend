@@ -63,3 +63,22 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  * @property {number} costPerKmMax Planning ₹/km (blended tariff, conservative efficiency)
  * @property {string} label Human-readable ownership cost tier
  */
+
+/**
+ * @typedef {Object} ChargingPracticalityContext
+ * @property {number|null} batteryKwh
+ * @property {number|null} acChargingHours
+ * @property {number|null} dcChargingMinutes
+ * @property {number|null} acChargingKw
+ * @property {number|null} dcChargingKw
+ * @property {boolean} acTimeEstimated
+ * @property {boolean} dcTimeEstimated
+ */
+
+/**
+ * @typedef {Object} ChargingPracticalityScoreResult
+ * @property {number} score 0–100 charging practicality score (higher is better)
+ * @property {string} label Human-readable charging tier
+ * @property {string} acChargingExperience Overnight / home AC summary
+ * @property {string} dcChargingExperience Highway / fast DC summary
+ */

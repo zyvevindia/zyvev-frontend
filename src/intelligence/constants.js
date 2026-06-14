@@ -32,6 +32,24 @@ export const OWNERSHIP_COST_LABELS = Object.freeze([
   { min: 0, label: "Higher ownership cost" },
 ]);
 
+/** Charging practicality score label tiers (score is 0–100, higher is better) */
+export const CHARGING_PRACTICALITY_LABELS = Object.freeze([
+  { min: 80, label: "Convenient charging" },
+  { min: 65, label: "Good charging experience" },
+  { min: 50, label: "Moderate charging experience" },
+  { min: 0, label: "Slower charging experience" },
+]);
+
+/** Planning assumptions for estimating charge times from battery + kW */
+export const CHARGING_PRACTICALITY_ASSUMPTIONS = Object.freeze({
+  acChargingEfficiency: 0.9,
+  dcChargingEfficiency: 0.85,
+  /** SOC window for DC 10–80% sessions */
+  dcSocWindow: 0.7,
+  acScoreWeight: 0.42,
+  dcScoreWeight: 0.58,
+});
+
 export const RANGE_CONFIDENCE_THRESHOLDS = Object.freeze({
   highMinScore: 80,
   mediumMinScore: 55,
