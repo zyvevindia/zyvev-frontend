@@ -451,6 +451,11 @@
   .unified-ev-intelligence__experience-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .unified-ev-intelligence--hero .unified-ev-intelligence__top-row,
+  .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -463,36 +468,37 @@
     gap: 16px;
   }
 
+  /* Hero column (~40%): single-column cards so all intelligence stays visible */
+  .unified-ev-intelligence--hero .unified-ev-intelligence__header {
+    margin-bottom: 12px;
+  }
+
   .unified-ev-intelligence--hero .unified-ev-intelligence__top-row {
-    margin-bottom: 14px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__experience-block {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px 16px;
-    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
-    display: contents;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__our-take {
     margin-bottom: 0;
-    align-self: stretch;
-    grid-column: 2 / -1;
-  }
-
-  .unified-ev-intelligence--hero
-    .unified-ev-intelligence__experience-card:nth-child(5) {
-    grid-column: 1;
-    grid-row: 2;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__collapsible-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__collapsible {

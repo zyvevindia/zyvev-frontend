@@ -1199,7 +1199,6 @@ export default function CarDetails() {
             evSavariVerdict={evSavariVerdict}
             intelligenceVehicle={heroIntelligenceVehicle}
             familyOverviewMode={isFamilyOverviewMode}
-            showEvIntelligence={detailSectionContext?.hasEvIntelligence}
             category={vehicle.category}
             galleryItems={galleryItems}
             galleryImages={galleryImages}

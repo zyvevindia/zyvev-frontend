@@ -2,6 +2,7 @@ import { buildVehicleDiscoveryLinkSections } from "../seo/vehicleInternalLinks.j
 import { buildPeopleAlsoCompare } from "../intelligence/buildPeopleAlsoCompare.js";
 import { buildSimilarEvs } from "../intelligence/buildSimilarEvs.js";
 import { buildPopularAmongSimilarBuyers } from "../intelligence/buildPopularAmongSimilarBuyers.js";
+import { vehicleHasUnifiedEvIntelligence } from "../components/car/UnifiedEvIntelligenceSection.jsx";
 import {
   DetailAssistanceSection,
   DetailChargingSection,
@@ -247,7 +248,8 @@ export function buildDetailPageSectionContext({
   });
 
   const hasEvIntelligence =
-    !isFamilyOverviewMode && Boolean(intelligence?.hasAnyData);
+    !isFamilyOverviewMode &&
+    vehicleHasUnifiedEvIntelligence(comparisonVehicle || vehicle);
 
   return {
     hasOverview: true,

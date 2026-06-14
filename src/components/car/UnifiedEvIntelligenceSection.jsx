@@ -74,6 +74,27 @@ function hasAvoidFor(vehicle) {
   return (buildRecommendationEngine(vehicle).avoidFor || []).length > 0;
 }
 
+/** Whether UnifiedEvIntelligenceSection has any cards to render for this vehicle. */
+export function vehicleHasUnifiedEvIntelligence(vehicle) {
+  if (!vehicle) return false;
+
+  const verdict = buildEvSavariVerdict(vehicle);
+
+  return (
+    hasBestFor(vehicle) ||
+    hasPersonas(vehicle) ||
+    hasStrengths(vehicle) ||
+    hasWeaknesses(vehicle) ||
+    hasAvoidFor(vehicle) ||
+    Boolean(buildOwnershipCostScore(vehicle)) ||
+    Boolean(buildChargingPracticalityScore(vehicle)) ||
+    Boolean(buildHighwayConfidenceScore(vehicle)) ||
+    Boolean(buildFamilyScore(vehicle)) ||
+    Boolean(buildServiceNetworkScore(vehicle)) ||
+    Boolean(verdict?.headline || verdict?.summary)
+  );
+}
+
 function formatCostPerKmRange(min, max) {
   const fmt = (n) => {
     const rounded = Math.round(n * 10) / 10;

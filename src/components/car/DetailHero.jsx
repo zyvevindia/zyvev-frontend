@@ -5,7 +5,9 @@ import HeroSummary from "./HeroSummary";
 import EvSavariVerdictHeader from "./EvSavariVerdictHeader";
 import LeadGenerationCtaStrip from "./LeadGenerationCtaStrip";
 import PersonaBestForHero from "./PersonaBestForHero";
-import UnifiedEvIntelligenceSection from "./UnifiedEvIntelligenceSection";
+import UnifiedEvIntelligenceSection, {
+  vehicleHasUnifiedEvIntelligence,
+} from "./UnifiedEvIntelligenceSection";
 import { getSafeImage } from "../../utils/imageUtils";
 import { scrollToDetailSection } from "../../utils/detailPageNav.js";
 
@@ -34,7 +36,6 @@ export default function DetailHero({
   evSavariVerdict = null,
   intelligenceVehicle = null,
   familyOverviewMode = false,
-  showEvIntelligence = false,
   category,
   galleryItems = [],
   galleryImages: galleryImagesProp,
@@ -79,6 +80,10 @@ export default function DetailHero({
     heroSummary?.variantCount || variantCount || 0;
   const showVerified = resolveVerifiedBadge(vehicle);
   const intelVehicle = intelligenceVehicle || vehicle;
+  const showIntelligence =
+    !familyOverviewMode &&
+    intelVehicle &&
+    vehicleHasUnifiedEvIntelligence(intelVehicle);
 
   function handleExploreVariants() {
     scrollToDetailSection("variants");
@@ -152,6 +157,15 @@ export default function DetailHero({
               })}
             </div>
           )}
+
+          {showIntelligence ? (
+            <div className="cd-hero__intelligence">
+              <UnifiedEvIntelligenceSection
+                vehicle={intelVehicle}
+                layout="hero"
+              />
+            </div>
+          ) : null}
         </div>
 
         <div className="cd-hero__info">
@@ -221,15 +235,6 @@ export default function DetailHero({
             <DetailDealerTeaser onOpenDealer={onScrollDealer} />
           </div>
         </div>
-
-        {showEvIntelligence && !familyOverviewMode && intelVehicle ? (
-          <div className="cd-hero__intelligence">
-            <UnifiedEvIntelligenceSection
-              vehicle={intelVehicle}
-              layout="hero"
-            />
-          </div>
-        ) : null}
       </div>
     </section>
   );

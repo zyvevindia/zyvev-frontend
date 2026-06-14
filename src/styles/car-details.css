@@ -59,9 +59,7 @@
 .cd-hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-  grid-template-areas:
-    "media info"
-    "intel intel";
+  grid-template-areas: "media info";
   gap: 20px 28px;
   align-items: start;
 }
@@ -70,7 +68,7 @@
   grid-area: media;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
 }
 
@@ -83,8 +81,9 @@
 }
 
 .cd-hero__intelligence {
-  grid-area: intel;
+  flex: 1 1 auto;
   min-width: 0;
+  margin-top: 2px;
 }
 
 .cd-hero__frame {
@@ -1280,10 +1279,7 @@
 
   .cd-hero__grid {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "media"
-      "info"
-      "intel";
+    grid-template-areas: "media" "info";
     gap: 16px;
   }
 
