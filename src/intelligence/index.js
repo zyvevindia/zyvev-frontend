@@ -117,6 +117,24 @@ export { buildChargingPracticality } from "./chargingPracticality.js";
 
 export { buildCompareTrustSummary } from "./compareTrustSummary.js";
 
+export {
+  buildScoreExplanation,
+  buildScoreExplanationContext,
+  resolveScoreExplanationConfidence,
+} from "./buildScoreExplanation.js";
+
+export {
+  STRENGTH_RULES,
+  WEAKNESS_RULES,
+  applyScoreExplanationRules,
+  evaluateScoreExplanationRules,
+  SCORE_EXPLANATION_LIMITS,
+} from "./scoreExplanationRules.js";
+
+export {
+  SCORE_EXPLANATION_CONFIDENCE,
+} from "./types.js";
+
 export { formatRangeBand } from "./rangeConfidence.js";
 
 export {
