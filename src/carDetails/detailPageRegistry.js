@@ -22,6 +22,7 @@ import {
 /**
  * @typedef {object} DetailPageSectionContext
  * @property {boolean} hasOverview
+ * @property {boolean} hasEvIntelligence
  * @property {boolean} hasVariants
  * @property {boolean} hasCompare
  * @property {boolean} hasPeopleAlsoCompare
@@ -38,19 +39,54 @@ import {
  * @property {boolean} hasAssistance
  */
 
-/** Schema-driven section registry — single source of truth. */
+/** Sticky nav CTA — appended after registry-driven section tabs. */
+export const DETAIL_NAV_CTA_TAB = {
+  id: "book-test-drive",
+  title: "Book Test Drive",
+  action: "test-drive",
+  cta: true,
+};
+
+/**
+ * Schema-driven section registry — single source of truth for sections and nav.
+ * @type {Array<{
+ *   id: string,
+ *   title: string,
+ *   nav?: boolean,
+ *   navOrder?: number,
+ *   navTitle?: string,
+ *   shellClassName?: string,
+ *   placement?: "hero" | "page",
+ *   condition: (ctx: DetailPageSectionContext) => boolean,
+ *   Component?: Function,
+ * }>}
+ */
 export const DETAIL_SECTION_DEFS = [
   {
     id: "overview",
     title: "Overview",
+    nav: true,
+    navOrder: 10,
+    placement: "page",
     shellClassName:
       "cd-section cd-card cd-content-card cd-overview-section",
     condition: (ctx) => ctx.hasOverview,
     Component: DetailOverviewSection,
   },
   {
+    id: "ev-intelligence",
+    title: "EV Intelligence",
+    nav: true,
+    navOrder: 20,
+    placement: "hero",
+    condition: (ctx) => ctx.hasEvIntelligence,
+  },
+  {
     id: "variants",
     title: "Variants",
+    nav: true,
+    navOrder: 30,
+    placement: "page",
     shellClassName:
       "cd-section cd-card cd-content-card variant-comparison",
     condition: (ctx) => ctx.hasVariants,
@@ -59,13 +95,27 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "compare",
     title: "Compare",
+    placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasCompare,
     Component: DetailCompareSection,
   },
   {
+    id: "charging",
+    title: "Charging",
+    nav: true,
+    navOrder: 40,
+    placement: "page",
+    shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
+    condition: (ctx) => ctx.hasCharging,
+    Component: DetailChargingSection,
+  },
+  {
     id: "people-also-compare",
-    title: "People also compare",
+    title: "People Also Compare",
+    nav: true,
+    navOrder: 50,
+    placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasPeopleAlsoCompare,
     Component: DetailPeopleAlsoCompareSection,
@@ -73,6 +123,9 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "similar-evs",
     title: "Similar EVs",
+    nav: true,
+    navOrder: 60,
+    placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasSimilarEvs,
     Component: DetailSimilarEvsSection,
@@ -80,6 +133,10 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "popular-among-similar-buyers",
     title: "Popular Among Similar Buyers",
+    nav: true,
+    navOrder: 70,
+    navTitle: "Popular Buyers",
+    placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasPopularAmongSimilarBuyers,
     Component: DetailPopularAmongSimilarBuyersSection,
@@ -87,20 +144,15 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "range",
     title: "Range",
+    placement: "page",
     shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
     condition: (ctx) => ctx.hasRange,
     Component: DetailRangeSection,
   },
   {
-    id: "charging",
-    title: "Charging",
-    shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
-    condition: (ctx) => ctx.hasCharging,
-    Component: DetailChargingSection,
-  },
-  {
     id: "suitability",
     title: "Suitability",
+    placement: "page",
     shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
     condition: (ctx) => ctx.hasSuitability,
     Component: DetailSuitabilitySection,
@@ -108,27 +160,35 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "emi",
     title: "EMI",
+    placement: "page",
     shellClassName: "cd-section cd-card cd-content-card detail-emi-section",
     condition: (ctx) => ctx.hasEmi,
     Component: DetailEmiSection,
   },
   {
-    id: "faqs",
-    title: "FAQs",
-    shellClassName: "cd-section cd-card cd-content-card",
-    condition: (ctx) => ctx.hasFaqs,
-    Component: DetailFaqsSection,
-  },
-  {
     id: "reviews",
     title: "Reviews",
+    nav: true,
+    navOrder: 80,
+    placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasReviews,
     Component: DetailReviewsSection,
   },
   {
+    id: "faqs",
+    title: "FAQs",
+    nav: true,
+    navOrder: 90,
+    placement: "page",
+    shellClassName: "cd-section cd-card cd-content-card",
+    condition: (ctx) => ctx.hasFaqs,
+    Component: DetailFaqsSection,
+  },
+  {
     id: "related-evs",
     title: "Related EVs",
+    placement: "page",
     shellClassName: "cd-seo-discovery",
     condition: (ctx) => ctx.hasRelatedEvs,
     Component: DetailRelatedEvsSection,
@@ -136,6 +196,7 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "assistance",
     title: "Assistance",
+    placement: "page",
     shellClassName: "cd-section cd-dealer cd-card",
     condition: (ctx) => ctx.hasAssistance,
     Component: DetailAssistanceSection,
@@ -185,8 +246,12 @@ export function buildDetailPageSectionContext({
     catalogMeta: meta,
   });
 
+  const hasEvIntelligence =
+    !isFamilyOverviewMode && Boolean(intelligence?.hasAnyData);
+
   return {
     hasOverview: true,
+    hasEvIntelligence,
     hasVariants: enrichedVariantsCount >= 1,
     hasCompare:
       hasGoldExperience &&
@@ -197,8 +262,7 @@ export function buildDetailPageSectionContext({
     hasPopularAmongSimilarBuyers:
       popularAmongSimilarBuyers.vehicles.length > 0,
     hasRange: !isFamilyOverviewMode && Boolean(intelligence?.range?.hasData),
-    hasOwnership:
-      !isFamilyOverviewMode && Boolean(intelligence?.hasAnyData),
+    hasOwnership: hasEvIntelligence,
     hasCharging: Boolean(
       intelligence?.charging?.hasData ||
         intelligence?.chargingPracticality?.hasData ||
@@ -221,14 +285,33 @@ export function buildDetailPageSectionContext({
  * @returns {Array<{ id: string, title: string, shellClassName: string, Component: Function }>}
  */
 export function buildVisibleDetailSections(context) {
-  return DETAIL_SECTION_DEFS.filter((def) => def.condition(context)).map(
-    ({ id, title, shellClassName, Component }) => ({
+  return DETAIL_SECTION_DEFS.filter(
+    (def) => def.Component && def.condition(context)
+  ).map(({ id, title, shellClassName, Component }) => ({
+    id,
+    title,
+    shellClassName,
+    Component,
+  }));
+}
+
+/**
+ * Sticky nav tabs derived from the section registry.
+ * @param {DetailPageSectionContext} context
+ * @returns {Array<{ id: string, title: string, scrollTarget?: string, action?: string, cta?: boolean }>}
+ */
+export function buildVisibleDetailNavTabs(context) {
+  const sectionTabs = DETAIL_SECTION_DEFS.filter(
+    (def) => def.nav && def.condition(context)
+  )
+    .sort((a, b) => (a.navOrder ?? 999) - (b.navOrder ?? 999))
+    .map(({ id, title, navTitle }) => ({
       id,
-      title,
-      shellClassName,
-      Component,
-    })
-  );
+      title: navTitle ?? title,
+      scrollTarget: id,
+    }));
+
+  return [...sectionTabs, { ...DETAIL_NAV_CTA_TAB }];
 }
 
 /** @deprecated Use buildVisibleDetailSections */

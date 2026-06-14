@@ -2,6 +2,52 @@
   margin-top: 28px;
 }
 
+.unified-ev-intelligence--hero {
+  margin-top: 0;
+}
+
+.unified-ev-intelligence--hero .unified-ev-intelligence__header {
+  margin-bottom: 14px;
+}
+
+.unified-ev-intelligence--hero .unified-ev-intelligence__subtitle {
+  margin-bottom: 0;
+}
+
+.unified-ev-intelligence--hero .unified-ev-intelligence__top-card,
+.unified-ev-intelligence--hero .unified-ev-intelligence__experience-card {
+  padding: 0.95rem 1rem 0.85rem;
+}
+
+.unified-ev-intelligence--hero .unified-ev-intelligence__top-card-body,
+.unified-ev-intelligence--hero .unified-ev-intelligence__experience-body {
+  gap: 0.28rem;
+}
+
+.unified-ev-intelligence--hero .unified-ev-intelligence__experience-support {
+  margin-top: 0;
+}
+
+.unified-ev-intelligence--hero .unified-ev-intelligence__experience-support li,
+.unified-ev-intelligence--hero .unified-ev-intelligence__insights-inline .recommendation-insights__item,
+.unified-ev-intelligence--hero .unified-ev-intelligence__insights-inline .score-sw__item {
+  font-size: 0.84rem;
+  line-height: 1.38;
+}
+
+.unified-ev-intelligence__collapsible-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.unified-ev-intelligence__experience-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
 /* —— Header —— */
 
 .unified-ev-intelligence__header {
@@ -415,6 +461,42 @@
 
   .unified-ev-intelligence__experience-grid {
     gap: 16px;
+  }
+
+  .unified-ev-intelligence--hero .unified-ev-intelligence__top-row {
+    margin-bottom: 14px;
+  }
+
+  .unified-ev-intelligence--hero .unified-ev-intelligence__experience-block {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px 16px;
+    margin-bottom: 14px;
+  }
+
+  .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
+    display: contents;
+  }
+
+  .unified-ev-intelligence--hero .unified-ev-intelligence__our-take {
+    margin-bottom: 0;
+    align-self: stretch;
+    grid-column: 2 / -1;
+  }
+
+  .unified-ev-intelligence--hero
+    .unified-ev-intelligence__experience-card:nth-child(5) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .unified-ev-intelligence--hero .unified-ev-intelligence__collapsible-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .unified-ev-intelligence--hero .unified-ev-intelligence__collapsible {
+    margin-bottom: 0;
   }
 }
 

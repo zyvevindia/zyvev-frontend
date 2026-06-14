@@ -5,9 +5,11 @@
 
 export {
   DETAIL_SECTION_DEFS,
+  DETAIL_NAV_CTA_TAB,
   buildDetailPageSectionContext,
   buildDetailPageSections,
   buildVisibleDetailSections,
+  buildVisibleDetailNavTabs,
 } from "../carDetails/detailPageRegistry.js";
 
 import { DETAIL_SECTION_DEFS } from "../carDetails/detailPageRegistry.js";
@@ -15,68 +17,21 @@ import { DETAIL_SECTION_DEFS } from "../carDetails/detailPageRegistry.js";
 /** Sticky site header + detail tab bar (px) */
 export const DETAIL_SCROLL_OFFSET_PX = 148;
 
-/** Decision-centric sticky nav — order and scroll targets. */
-export const DETAIL_NAV_TAB_DEFS = [
-  {
-    id: "overview",
-    title: "Overview",
-    scrollTarget: "overview",
-    visible: (ctx) => ctx.hasOverview,
-  },
-  {
-    id: "variants",
-    title: "Variants",
-    scrollTarget: "variants",
-    visible: (ctx) => ctx.hasVariants,
-  },
-  {
-    id: "ownership",
-    title: "Ownership",
-    scrollTarget: "ev-intelligence",
-    visible: (ctx) => ctx.hasOwnership,
-  },
-  {
-    id: "charging",
-    title: "Charging",
-    scrollTarget: "charging",
-    visible: (ctx) => ctx.hasCharging,
-  },
-  {
-    id: "compare",
-    title: "Compare",
-    scrollTarget: "compare",
-    visible: (ctx) => ctx.hasCompare,
-  },
-  {
-    id: "reviews",
-    title: "Reviews",
-    scrollTarget: "reviews",
-    visible: (ctx) => ctx.hasReviews,
-  },
-];
-
-export const DETAIL_NAV_CTA_TAB = {
-  id: "book-test-drive",
-  title: "Book Test Drive",
-  action: "test-drive",
-  cta: true,
-};
-
 /**
- * @param {import("../carDetails/detailPageRegistry.js").DetailPageSectionContext} context
- * @returns {Array<{ id: string, title: string, scrollTarget?: string, action?: string, cta?: boolean }>}
+ * @deprecated Nav tabs are generated from DETAIL_SECTION_DEFS via buildVisibleDetailNavTabs().
  */
-export function buildVisibleDetailNavTabs(context) {
-  const sectionTabs = DETAIL_NAV_TAB_DEFS.filter((def) =>
-    def.visible(context)
-  ).map(({ id, title, scrollTarget }) => ({
+export const DETAIL_NAV_TAB_DEFS = DETAIL_SECTION_DEFS.filter((def) => def.nav).map(
+  ({ id, title, navTitle, navOrder }) => ({
     id,
-    title,
-    scrollTarget,
-  }));
-
-  return [...sectionTabs, { ...DETAIL_NAV_CTA_TAB }];
-}
+    title: navTitle ?? title,
+    scrollTarget: id,
+    navOrder,
+    visible: (ctx) => {
+      const def = DETAIL_SECTION_DEFS.find((section) => section.id === id);
+      return def ? def.condition(ctx) : false;
+    },
+  })
+);
 
 /**
  * @param {Array<{ scrollTarget?: string }>} navTabs
@@ -88,7 +43,7 @@ export function getDetailNavObserveIds(navTabs = []) {
     .filter((id) => typeof id === "string" && id.length > 0);
 }
 
-/** @deprecated Use buildVisibleDetailSections() for runtime tabs. */
+/** @deprecated Use buildVisibleDetailNavTabs() for runtime tabs. */
 export const DETAIL_NAV_TABS = DETAIL_SECTION_DEFS.map(({ id, title }) => ({
   id,
   label: title,

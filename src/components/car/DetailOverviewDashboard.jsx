@@ -3,7 +3,6 @@ import { useState } from "react";
 import CatalogTrustBadge from "../catalog/CatalogTrustBadge";
 import ScoreCircle from "../common/ScoreCircle";
 import EvSavariScorePanel from "../scoring/EvSavariScorePanel";
-import UnifiedEvIntelligenceSection from "./UnifiedEvIntelligenceSection";
 import { formatPsychologyTag } from "../../utils/catalogExperience";
 import {
   buildRangeConfidence,
@@ -225,13 +224,6 @@ export default function DetailOverviewDashboard({
             )}
           </div>
         ))}
-
-      {vehicle ? (
-        <UnifiedEvIntelligenceSection
-          vehicle={vehicle}
-          showAnchor={!familyOverviewMode}
-        />
-      ) : null}
 
       <div className="cd-overview-dashboard__grid">
         {features.length > 0 && (

@@ -258,7 +258,7 @@ function CollapsiblePanel({
  */
 export default function UnifiedEvIntelligenceSection({
   vehicle = null,
-  showAnchor = true,
+  layout = "default",
 }) {
   const [tradeOffsOpen, setTradeOffsOpen] = useState(false);
   const [avoidIfOpen, setAvoidIfOpen] = useState(false);
@@ -325,7 +325,13 @@ export default function UnifiedEvIntelligenceSection({
 
   return (
     <section
-      className="unified-ev-intelligence"
+      id="ev-intelligence"
+      className={[
+        "unified-ev-intelligence",
+        layout === "hero" ? "unified-ev-intelligence--hero" : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
       aria-labelledby="unified-ev-intelligence-title"
     >
       <header className="unified-ev-intelligence__header">
@@ -349,14 +355,6 @@ export default function UnifiedEvIntelligenceSection({
           How we calculate
         </button>
       </header>
-
-      {showAnchor ? (
-        <div
-          id="ev-intelligence"
-          className="cd-ev-intelligence-anchor"
-          aria-hidden="true"
-        />
-      ) : null}
 
       <div className="unified-ev-intelligence__top-row">
         {showBestFor ? (
@@ -398,7 +396,8 @@ export default function UnifiedEvIntelligenceSection({
         ) : null}
       </div>
 
-      <div className="unified-ev-intelligence__experience-grid">
+      <div className="unified-ev-intelligence__experience-block">
+        <div className="unified-ev-intelligence__experience-grid">
         {ownershipData ? (
           <PremiumExperienceCard
             icon={ICONS.ownership}
@@ -483,10 +482,12 @@ export default function UnifiedEvIntelligenceSection({
             </p>
           </PremiumExperienceCard>
         ) : null}
+        </div>
+
+        <OurTakePanel verdict={verdict} />
       </div>
 
-      <OurTakePanel verdict={verdict} />
-
+      <div className="unified-ev-intelligence__collapsible-row">
       {showTradeOffs ? (
         <CollapsiblePanel
           title="Trade-offs (Not Dealbreakers)"
@@ -530,6 +531,7 @@ export default function UnifiedEvIntelligenceSection({
           />
         </CollapsiblePanel>
       ) : null}
+      </div>
     </section>
   );
 }

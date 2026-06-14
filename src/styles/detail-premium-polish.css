@@ -84,10 +84,14 @@
   box-shadow: var(--cd-shadow-card);
 }
 
+.cd-page .unified-ev-intelligence {
+  margin-top: 0;
+}
+
 .cd-page .cd-hero.cd-card {
   margin-bottom: 28px;
   padding: 22px 24px;
-  gap: 24px;
+  gap: unset;
 }
 
 .cd-page .cd-content-card {
