@@ -1,0 +1,47 @@
+.service-confidence {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.service-confidence__heading {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.service-confidence--compact .service-confidence__heading {
+  font-size: 0.62rem;
+}
+
+.service-confidence__label {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+}
+
+.service-confidence--compact .service-confidence__label {
+  font-size: 0.82rem;
+}
+
+.service-confidence--card {
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e8edf3;
+}
+
+.service-confidence--card.service-confidence--compact {
+  padding: 0.5rem 0.6rem;
+}
+
+.service-confidence--inline {
+  padding: 0;
+  border: none;
+  background: transparent;
+}

@@ -6,6 +6,7 @@ import OwnershipIntelligenceCard from "../scoring/OwnershipIntelligenceCard";
 import ChargingIntelligenceCard from "../scoring/ChargingIntelligenceCard";
 import HighwayConfidenceCard from "../scoring/HighwayConfidenceCard";
 import FamilyIntelligenceCard from "../scoring/FamilyIntelligenceCard";
+import ServiceConfidenceCard from "../scoring/ServiceConfidenceCard";
 import { buildVehicleVariantDisplayName } from "../../utils/vehicleDisplayName";
 import { COMPARE_BADGE_TYPES } from "../../utils/compareScoreBadges";
 
@@ -151,6 +152,12 @@ export default function CompareScoreStory({
               />
 
               <FamilyIntelligenceCard
+                vehicle={car}
+                variant="compact"
+                layout="inline"
+              />
+
+              <ServiceConfidenceCard
                 vehicle={car}
                 variant="compact"
                 layout="inline"
