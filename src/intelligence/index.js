@@ -135,6 +135,20 @@ export {
   SCORE_EXPLANATION_CONFIDENCE,
 } from "./types.js";
 
+export {
+  buildOwnershipCostScore,
+  buildOwnershipCostContext,
+  resolveOwnershipEfficiency,
+  resolveOwnershipElectricityAssumptions,
+  ownershipCostPerKmToScore,
+  resolveOwnershipCostLabel,
+} from "./buildOwnershipCostScore.js";
+
+export {
+  OWNERSHIP_COST_CONSERVATIVE_EFFICIENCY_FACTOR,
+  OWNERSHIP_COST_LABELS,
+} from "./constants.js";
+
 export { formatRangeBand } from "./rangeConfidence.js";
 
 export {

@@ -21,6 +21,17 @@ export const OWNERSHIP_ASSUMPTIONS = Object.freeze({
   defaultServiceIntervalMonths: 12,
 });
 
+/** Real-world efficiency derating for conservative ₹/km upper band */
+export const OWNERSHIP_COST_CONSERVATIVE_EFFICIENCY_FACTOR = 0.865;
+
+/** Ownership cost score label tiers (score is 0–100, higher is better) */
+export const OWNERSHIP_COST_LABELS = Object.freeze([
+  { min: 80, label: "Excellent ownership cost" },
+  { min: 65, label: "Good ownership cost" },
+  { min: 50, label: "Moderate ownership cost" },
+  { min: 0, label: "Higher ownership cost" },
+]);
+
 export const RANGE_CONFIDENCE_THRESHOLDS = Object.freeze({
   highMinScore: 80,
   mediumMinScore: 55,
