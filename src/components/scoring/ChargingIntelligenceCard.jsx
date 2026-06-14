@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 import { buildChargingPracticalityScore } from "../../intelligence/buildChargingPracticalityScore.js";
 
+import ConfidenceBadge from "./ConfidenceBadge.jsx";
 import "./charging-intelligence-card.css";
 
 function isUnavailableExperience(text) {
@@ -48,6 +49,7 @@ function normalizeChargingPracticality(chargingPracticality) {
 export default function ChargingIntelligenceCard({
   vehicle = null,
   chargingPracticality = null,
+  confidenceLabels = null,
   variant = "default",
   layout = "card",
   className = "",
@@ -93,6 +95,12 @@ export default function ChargingIntelligenceCard({
           {resolved.dcChargingExperience}
         </p>
       ) : null}
+      <ConfidenceBadge
+        vehicle={vehicle}
+        confidenceLabels={confidenceLabels}
+        dimension="chargingPracticality"
+        variant={variant === "compact" ? "compact" : "default"}
+      />
     </div>
   );
 }

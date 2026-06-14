@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 import { buildHighwayConfidenceScore } from "../../intelligence/buildHighwayConfidenceScore.js";
 
+import ConfidenceBadge from "./ConfidenceBadge.jsx";
 import "./highway-confidence-card.css";
 
 function normalizeHighwayConfidence(highwayConfidence) {
@@ -22,6 +23,7 @@ function normalizeHighwayConfidence(highwayConfidence) {
 export default function HighwayConfidenceCard({
   vehicle = null,
   highwayConfidence = null,
+  confidenceLabels = null,
   variant = "default",
   layout = "card",
   className = "",
@@ -55,6 +57,12 @@ export default function HighwayConfidenceCard({
     <div className={rootClass} id={id}>
       <h4 className="highway-confidence__heading">{title}</h4>
       <p className="highway-confidence__label">{resolved.label}</p>
+      <ConfidenceBadge
+        vehicle={vehicle}
+        confidenceLabels={confidenceLabels}
+        dimension="highwayConfidence"
+        variant={variant === "compact" ? "compact" : "default"}
+      />
     </div>
   );
 }

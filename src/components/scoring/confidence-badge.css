@@ -1,0 +1,49 @@
+.confidence-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 0.2rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  border: 1px solid transparent;
+}
+
+.confidence-badge--compact {
+  margin-top: 0.15rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.58rem;
+}
+
+.confidence-badge--verified {
+  color: #166534;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.confidence-badge--partial {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.confidence-badge--estimated {
+  color: #b45309;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.confidence-badge--directional {
+  color: #475569;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.confidence-badge--reviewPending {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}

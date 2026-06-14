@@ -3,6 +3,7 @@ import { useState } from "react";
 import { trackScorePanelOpened } from "../../analytics/traffic";
 import ScoreCircle from "../common/ScoreCircle";
 import ScoreStrengthsWeaknesses from "./ScoreStrengthsWeaknesses";
+import ConfidenceBadge from "./ConfidenceBadge.jsx";
 import { DIMENSION_LABELS } from "../../scoring/scoreExplanations";
 import "./ev-savari-score-panel.css";
 
@@ -108,6 +109,13 @@ export default function EvSavariScorePanel({
           </p>
           {explanation.summary ? (
             <p className="ev-score-panel__summary">{explanation.summary}</p>
+          ) : null}
+          {vehicle ? (
+            <ConfidenceBadge
+              vehicle={vehicle}
+              dimension="overall"
+              variant={compact ? "compact" : "default"}
+            />
           ) : null}
         </div>
       </div>

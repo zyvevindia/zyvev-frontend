@@ -230,6 +230,8 @@ export {
   resolveChargingPracticalityConfidenceLabel,
   resolveHighwayConfidenceConfidenceLabel,
   resolveApartmentSuitabilityConfidenceLabel,
+  resolveFamilySuitabilityConfidenceLabel,
+  resolveServiceNetworkConfidenceLabel,
 } from "./confidenceRules.js";
 
 export { buildFamilyScore, buildFamilyContext } from "./buildFamilyScore.js";

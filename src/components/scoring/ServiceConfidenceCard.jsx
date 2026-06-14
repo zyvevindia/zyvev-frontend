@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 import { buildServiceNetworkScore } from "../../intelligence/buildServiceNetworkScore.js";
 
+import ConfidenceBadge from "./ConfidenceBadge.jsx";
 import "./service-confidence-card.css";
 
 function normalizeServiceNetworkScore(serviceNetworkScore) {
@@ -22,6 +23,7 @@ function normalizeServiceNetworkScore(serviceNetworkScore) {
 export default function ServiceConfidenceCard({
   vehicle = null,
   serviceNetworkScore = null,
+  confidenceLabels = null,
   variant = "default",
   layout = "card",
   className = "",
@@ -55,6 +57,12 @@ export default function ServiceConfidenceCard({
     <div className={rootClass} id={id}>
       <h4 className="service-confidence__heading">{title}</h4>
       <p className="service-confidence__label">{resolved.label}</p>
+      <ConfidenceBadge
+        vehicle={vehicle}
+        confidenceLabels={confidenceLabels}
+        dimension="serviceNetwork"
+        variant={variant === "compact" ? "compact" : "default"}
+      />
     </div>
   );
 }

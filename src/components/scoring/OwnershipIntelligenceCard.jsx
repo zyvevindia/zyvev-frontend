@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 import { buildOwnershipCostScore } from "../../intelligence/buildOwnershipCostScore.js";
 
+import ConfidenceBadge from "./ConfidenceBadge.jsx";
 import "./ownership-intelligence-card.css";
 
 function normalizeOwnershipCost(ownershipCost) {
@@ -45,6 +46,7 @@ function formatCostPerKmRange(costPerKmMin, costPerKmMax) {
 export default function OwnershipIntelligenceCard({
   vehicle = null,
   ownershipCost = null,
+  confidenceLabels = null,
   variant = "default",
   layout = "card",
   className = "",
@@ -81,6 +83,12 @@ export default function OwnershipIntelligenceCard({
       <p className="ownership-intelligence__range">
         {formatCostPerKmRange(resolved.costPerKmMin, resolved.costPerKmMax)}
       </p>
+      <ConfidenceBadge
+        vehicle={vehicle}
+        confidenceLabels={confidenceLabels}
+        dimension="ownership"
+        variant={variant === "compact" ? "compact" : "default"}
+      />
     </div>
   );
 }

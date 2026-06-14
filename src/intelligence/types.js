@@ -170,6 +170,8 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  * @property {ConfidenceLabel} chargingPracticality
  * @property {ConfidenceLabel} highwayConfidence
  * @property {ConfidenceLabel} apartmentSuitability
+ * @property {ConfidenceLabel} familySuitability
+ * @property {ConfidenceLabel} serviceNetwork
  */
 
 /**

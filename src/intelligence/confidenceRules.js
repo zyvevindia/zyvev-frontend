@@ -1,5 +1,6 @@
 import { CONFIDENCE_LEVELS, RANGE_SOURCES } from "./constants.js";
 import { isPresent } from "./governance.js";
+import { resolveServiceNetworkBrandScore } from "./serviceNetworkRules.js";
 
 /** @typedef {import("./types.js").ConfidenceLabel} ConfidenceLabel */
 /** @typedef {import("./types.js").ConfidenceContext} ConfidenceContext */
@@ -251,6 +252,35 @@ export function resolveApartmentSuitabilityConfidenceLabel(ctx) {
 
 /**
  * @param {ConfidenceContext} ctx
+ * @returns {ConfidenceLabel}
+ */
+export function resolveFamilySuitabilityConfidenceLabel(ctx) {
+  if (!ctx.hasVehicle) return CONFIDENCE_LABELS.REVIEW_PENDING;
+
+  return CONFIDENCE_LABELS.DIRECTIONAL;
+}
+
+/**
+ * @param {ConfidenceContext} ctx
+ * @returns {ConfidenceLabel}
+ */
+export function resolveServiceNetworkConfidenceLabel(ctx) {
+  if (!ctx.hasVehicle) return CONFIDENCE_LABELS.REVIEW_PENDING;
+
+  const brand =
+    ctx.vehicle?.brand ||
+    ctx.vehicle?.catalogMeta?.brand ||
+    ctx.vehicle?.manufacturer;
+
+  if (resolveServiceNetworkBrandScore(brand) != null) {
+    return CONFIDENCE_LABELS.PARTIAL;
+  }
+
+  return CONFIDENCE_LABELS.ESTIMATED;
+}
+
+/**
+ * @param {ConfidenceContext} ctx
  * @returns {import("./types.js").ConfidenceEngineResult}
  */
 export function applyConfidenceRules(ctx) {
@@ -261,5 +291,7 @@ export function applyConfidenceRules(ctx) {
     chargingPracticality: resolveChargingPracticalityConfidenceLabel(ctx),
     highwayConfidence: resolveHighwayConfidenceConfidenceLabel(ctx),
     apartmentSuitability: resolveApartmentSuitabilityConfidenceLabel(ctx),
+    familySuitability: resolveFamilySuitabilityConfidenceLabel(ctx),
+    serviceNetwork: resolveServiceNetworkConfidenceLabel(ctx),
   };
 }

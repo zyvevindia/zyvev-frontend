@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 import { buildFamilyScore } from "../../intelligence/buildFamilyScore.js";
 
+import ConfidenceBadge from "./ConfidenceBadge.jsx";
 import "./family-intelligence-card.css";
 
 function normalizeFamilyScore(familyScore) {
@@ -22,6 +23,7 @@ function normalizeFamilyScore(familyScore) {
 export default function FamilyIntelligenceCard({
   vehicle = null,
   familyScore = null,
+  confidenceLabels = null,
   variant = "default",
   layout = "card",
   className = "",
@@ -55,6 +57,12 @@ export default function FamilyIntelligenceCard({
     <div className={rootClass} id={id}>
       <h4 className="family-intelligence__heading">{title}</h4>
       <p className="family-intelligence__label">{resolved.label}</p>
+      <ConfidenceBadge
+        vehicle={vehicle}
+        confidenceLabels={confidenceLabels}
+        dimension="familySuitability"
+        variant={variant === "compact" ? "compact" : "default"}
+      />
     </div>
   );
 }
