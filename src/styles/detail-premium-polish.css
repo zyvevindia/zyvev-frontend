@@ -1,0 +1,297 @@
+/* Phase 12D.9I.1 — Final premium polish pass */
+
+.cd-page {
+  --cd-radius-xl: 20px;
+  --cd-radius-lg: 18px;
+  --cd-radius-btn: 14px;
+  --cd-border-subtle: 1px solid #eef2f7;
+  --cd-shadow-card:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 8px 28px rgba(15, 23, 42, 0.05);
+  --cd-shadow-card-hover:
+    0 2px 4px rgba(15, 23, 42, 0.05),
+    0 12px 32px rgba(15, 23, 42, 0.07);
+  --cd-space-section: 36px;
+  --cd-space-card-gap: 16px;
+  --cd-pad-card: 24px;
+  --cd-pad-card-inner: 20px;
+  --cd-text-page: clamp(1.42rem, 2.4vw, 1.78rem);
+  --cd-text-section: 1.22rem;
+  --cd-text-card: 0.95rem;
+  --cd-text-body: 0.9rem;
+  --cd-text-caption: 0.7rem;
+  --cd-leading-body: 1.68;
+}
+
+/* —— Typography hierarchy —— */
+
+.cd-page .cd-hero__title {
+  font-size: var(--cd-text-page);
+  line-height: 1.14;
+}
+
+.cd-page .cd-section__title {
+  font-size: var(--cd-text-section);
+  font-weight: 800;
+  line-height: 1.28;
+  margin-bottom: 10px;
+}
+
+.cd-page .cd-section__intro {
+  font-size: var(--cd-text-body);
+  line-height: var(--cd-leading-body);
+  margin-bottom: 22px;
+}
+
+.cd-page .unified-ev-intelligence__title.cd-section__title {
+  margin-bottom: 8px;
+}
+
+.cd-page .variant-comparison--premium .variant-comparison__title.cd-section__title {
+  margin-bottom: 8px;
+}
+
+.cd-page .variant-comparison--premium .variant-comparison__intro {
+  line-height: var(--cd-leading-body);
+}
+
+.cd-page .people-also-compare__card-title,
+.cd-page .similar-evs__card-title,
+.cd-page .popular-similar-buyers__card-title,
+.cd-page .unified-ev-intelligence__experience-metric {
+  font-size: var(--cd-text-card);
+  line-height: 1.42;
+}
+
+.cd-page .cd-overview-dashboard__score-blurb,
+.cd-page .cd-overview-dashboard__list li,
+.cd-page .ev-verdict-header__summary,
+.cd-page .unified-ev-intelligence__experience-detail,
+.cd-page .unified-ev-intelligence__our-take-summary {
+  line-height: var(--cd-leading-body);
+}
+
+.cd-page .unified-ev-intelligence__card-confidence .confidence-badge,
+.cd-page .unified-ev-intelligence__card-confidence .confidence-badge--compact {
+  font-size: var(--cd-text-caption);
+}
+
+/* —— Card system —— */
+
+.cd-page .cd-card {
+  border-radius: var(--cd-radius-xl);
+  border: var(--cd-border-subtle);
+  box-shadow: var(--cd-shadow-card);
+}
+
+.cd-page .cd-hero.cd-card {
+  margin-bottom: 28px;
+  padding: 22px 24px;
+  gap: 24px;
+}
+
+.cd-page .cd-content-card {
+  padding: var(--cd-pad-card) clamp(20px, 2.5vw, 28px);
+}
+
+.cd-page .cd-overview-section.cd-content-card {
+  padding: var(--cd-pad-card) clamp(20px, 2.5vw, 26px);
+}
+
+.cd-page .cd-teaser-card {
+  border-radius: var(--cd-radius-lg);
+  border: var(--cd-border-subtle);
+  box-shadow: none;
+  background: #fff;
+  padding: 16px 18px;
+}
+
+.cd-page .hero-summary__card {
+  border-radius: var(--cd-radius-lg);
+  border: var(--cd-border-subtle);
+  box-shadow: var(--cd-shadow-card);
+  padding: 0.82rem 0.9rem;
+}
+
+.cd-page .persona-best-for-hero {
+  border-radius: var(--cd-radius-xl);
+  border: var(--cd-border-subtle);
+  box-shadow: var(--cd-shadow-card);
+  padding: 1.15rem 1.2rem;
+}
+
+.cd-page .cd-overview-dashboard__panel,
+.cd-page .cd-overview-dashboard__insight-card {
+  border-radius: var(--cd-radius-lg);
+  border: var(--cd-border-subtle);
+  box-shadow: var(--cd-shadow-card);
+}
+
+.cd-page .cd-overview-dashboard__score-panel {
+  border-radius: var(--cd-radius-lg);
+  border: var(--cd-border-subtle);
+  box-shadow: var(--cd-shadow-card);
+  background: #fff;
+}
+
+/* —— Section rhythm —— */
+
+.cd-page .cd-section {
+  margin-bottom: var(--cd-space-section);
+  min-width: 0;
+}
+
+.cd-page .cd-overview-section.cd-section {
+  margin-bottom: var(--cd-space-section);
+}
+
+.cd-page .cd-overview-dashboard {
+  gap: 20px;
+}
+
+.cd-page .unified-ev-intelligence {
+  margin-top: 32px;
+}
+
+.cd-page .unified-ev-intelligence__top-row,
+.cd-page .unified-ev-intelligence__experience-grid {
+  gap: var(--cd-space-card-gap);
+}
+
+.cd-page .unified-ev-intelligence__header {
+  margin-bottom: 22px;
+}
+
+/* —— Recommendation loops —— */
+
+.cd-page .people-also-compare__intro,
+.cd-page .similar-evs__intro,
+.cd-page .popular-similar-buyers__intro {
+  margin-bottom: 20px;
+  line-height: var(--cd-leading-body);
+}
+
+.cd-page .people-also-compare__grid,
+.cd-page .similar-evs__grid,
+.cd-page .popular-similar-buyers__grid {
+  gap: var(--cd-space-card-gap);
+}
+
+.cd-page .people-also-compare__card,
+.cd-page .similar-evs__card,
+.cd-page .popular-similar-buyers__card {
+  border-radius: var(--cd-radius-xl);
+  border: var(--cd-border-subtle);
+  box-shadow: var(--cd-shadow-card);
+  padding: var(--cd-pad-card-inner);
+  min-height: 120px;
+  gap: 14px;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cd-page .people-also-compare__card:hover,
+.cd-page .similar-evs__card:hover,
+.cd-page .popular-similar-buyers__card:hover {
+  box-shadow: var(--cd-shadow-card-hover);
+}
+
+/* —— Reduce visual noise —— */
+
+.cd-page .cd-action-bar-wrap {
+  background: #fff;
+  border: var(--cd-border-subtle);
+  box-shadow: var(--cd-shadow-card);
+  border-radius: var(--cd-radius-lg);
+  padding: 16px clamp(14px, 2vw, 22px);
+  margin-bottom: var(--cd-space-section);
+}
+
+.cd-page .cd-action-bar__btn {
+  border-radius: var(--cd-radius-btn);
+  border: var(--cd-border-subtle);
+  box-shadow: none;
+}
+
+.cd-page .cd-action-bar__btn:hover {
+  box-shadow: var(--cd-shadow-card);
+  transform: none;
+}
+
+.cd-page .cd-action-bar__btn--primary {
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.16);
+}
+
+.cd-page .cd-action-bar__btn--primary:hover {
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2);
+}
+
+.cd-page .unified-ev-intelligence__our-take {
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
+}
+
+.cd-page .unified-ev-intelligence__collapsible-panel {
+  border: var(--cd-border-subtle);
+  box-shadow: none;
+}
+
+/* —— Icon consistency —— */
+
+.cd-page .unified-ev-intelligence__experience-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.cd-page .unified-ev-intelligence__experience-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cd-page .unified-ev-intelligence__our-take-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.cd-page .unified-ev-intelligence__our-take-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* —— Button consistency —— */
+
+.cd-page .cd-hero__explore-btn,
+.cd-page .cd-hero__compare-btn,
+.cd-page .lead-cta-strip__btn,
+.cd-page .cd-sticky-bar__btn,
+.cd-page .variant-comparison--premium .variant-comparison__header-action {
+  border-radius: var(--cd-radius-btn);
+}
+
+.cd-page .cd-sticky-bar__btn--compare {
+  border-width: 1.5px;
+}
+
+.cd-page .cd-sticky-bar__panel {
+  border: var(--cd-border-subtle);
+  box-shadow: 0 -4px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* —— Responsive —— */
+
+@media (max-width: 768px) {
+  .cd-page {
+    --cd-space-section: 28px;
+    --cd-pad-card: 20px;
+  }
+
+  .cd-page .cd-hero.cd-card {
+    padding: 18px;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .cd-page .cd-action-bar-wrap {
+    margin-bottom: 28px;
+  }
+}
