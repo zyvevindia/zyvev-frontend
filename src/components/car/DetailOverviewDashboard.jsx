@@ -4,6 +4,7 @@ import CatalogTrustBadge from "../catalog/CatalogTrustBadge";
 import ScoreCircle from "../common/ScoreCircle";
 import EvSavariScorePanel from "../scoring/EvSavariScorePanel";
 import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses";
+import RecommendationInsightsCard from "../scoring/RecommendationInsightsCard";
 import { formatPsychologyTag } from "../../utils/catalogExperience";
 import {
   buildRangeConfidence,
@@ -228,6 +229,10 @@ export default function DetailOverviewDashboard({
 
       {vehicle && !useV1ScorePanel ? (
         <ScoreStrengthsWeaknesses vehicle={vehicle} layout="card" />
+      ) : null}
+
+      {vehicle ? (
+        <RecommendationInsightsCard vehicle={vehicle} layout="card" />
       ) : null}
 
       <div className="cd-overview-dashboard__grid">

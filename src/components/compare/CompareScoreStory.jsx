@@ -1,5 +1,6 @@
 import CompareScoreComparison from "./CompareScoreComparison";
 import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses";
+import RecommendationInsightsCard from "../scoring/RecommendationInsightsCard";
 import { buildVehicleVariantDisplayName } from "../../utils/vehicleDisplayName";
 import { COMPARE_BADGE_TYPES } from "../../utils/compareScoreBadges";
 
@@ -113,6 +114,12 @@ export default function CompareScoreStory({
               ) : null}
 
               <ScoreStrengthsWeaknesses
+                vehicle={car}
+                variant="compact"
+                layout="inline"
+              />
+
+              <RecommendationInsightsCard
                 vehicle={car}
                 variant="compact"
                 layout="inline"
