@@ -258,6 +258,24 @@ export {
   computeFamilyScore,
 } from "./familyRules.js";
 
+export {
+  buildServiceNetworkScore,
+  buildServiceNetworkContext,
+  resolveServiceNetworkBrand,
+} from "./buildServiceNetworkScore.js";
+
+export {
+  SERVICE_NETWORK_LABELS,
+  SERVICE_NETWORK_TIERS,
+  SERVICE_NETWORK_BRAND_ALIASES,
+  SERVICE_NETWORK_DEFAULT_SCORE,
+  normalizeServiceNetworkBrand,
+  resolveServiceNetworkBrandScore,
+  resolveServiceNetworkLabel,
+  computeServiceNetworkScore,
+  applyServiceNetworkRules,
+} from "./serviceNetworkRules.js";
+
 export { formatRangeBand } from "./rangeConfidence.js";
 
 export {

@@ -193,3 +193,14 @@ export const SCORE_EXPLANATION_LIMITS = Object.freeze({
  * @property {number} score 0–100 family suitability score (higher is better)
  * @property {string} label Human-readable family suitability tier
  */
+
+/**
+ * @typedef {Object} ServiceNetworkContext
+ * @property {string|null} brand Normalized OEM brand
+ */
+
+/**
+ * @typedef {Object} ServiceNetworkScoreResult
+ * @property {number} score 0–100 service network confidence (higher is better)
+ * @property {string} label Human-readable service reach tier
+ */
