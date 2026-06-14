@@ -5,9 +5,8 @@ import HeroSummary from "./HeroSummary";
 import EvSavariVerdictHeader from "./EvSavariVerdictHeader";
 import LeadGenerationCtaStrip from "./LeadGenerationCtaStrip";
 import PersonaBestForHero from "./PersonaBestForHero";
-import UnifiedEvIntelligenceSection, {
-  vehicleHasUnifiedEvIntelligence,
-} from "./UnifiedEvIntelligenceSection";
+import UnifiedEvIntelligenceSection from "./UnifiedEvIntelligenceSection";
+import { vehicleHasUnifiedEvIntelligence } from "../../intelligence/unifiedEvIntelligenceVisibility.js";
 import { getSafeImage } from "../../utils/imageUtils";
 import { scrollToDetailSection } from "../../utils/detailPageNav.js";
 
@@ -36,6 +35,7 @@ export default function DetailHero({
   evSavariVerdict = null,
   intelligenceVehicle = null,
   familyOverviewMode = false,
+  evSavariScores = null,
   category,
   galleryItems = [],
   galleryImages: galleryImagesProp,
@@ -83,7 +83,7 @@ export default function DetailHero({
   const showIntelligence =
     !familyOverviewMode &&
     intelVehicle &&
-    vehicleHasUnifiedEvIntelligence(intelVehicle);
+    vehicleHasUnifiedEvIntelligence(intelVehicle, evSavariScores);
 
   function handleExploreVariants() {
     scrollToDetailSection("variants");
@@ -163,6 +163,9 @@ export default function DetailHero({
               <UnifiedEvIntelligenceSection
                 vehicle={intelVehicle}
                 layout="hero"
+                evSavariScores={evSavariScores}
+                catalogMeta={intelVehicle?.catalogMeta}
+                familyOverviewMode={familyOverviewMode}
               />
             </div>
           ) : null}

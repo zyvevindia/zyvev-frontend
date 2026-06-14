@@ -14,6 +14,7 @@ import RecommendationInsightsCard from "../scoring/RecommendationInsightsCard.js
 import PersonaChips from "../scoring/PersonaChips.jsx";
 import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses.jsx";
 import ConfidenceBadge from "../scoring/ConfidenceBadge.jsx";
+import EvIntelligenceScorePanel from "./EvIntelligenceScorePanel.jsx";
 
 import "./unified-ev-intelligence.css";
 
@@ -72,27 +73,6 @@ function hasWeaknesses(vehicle) {
 
 function hasAvoidFor(vehicle) {
   return (buildRecommendationEngine(vehicle).avoidFor || []).length > 0;
-}
-
-/** Whether UnifiedEvIntelligenceSection has any cards to render for this vehicle. */
-export function vehicleHasUnifiedEvIntelligence(vehicle) {
-  if (!vehicle) return false;
-
-  const verdict = buildEvSavariVerdict(vehicle);
-
-  return (
-    hasBestFor(vehicle) ||
-    hasPersonas(vehicle) ||
-    hasStrengths(vehicle) ||
-    hasWeaknesses(vehicle) ||
-    hasAvoidFor(vehicle) ||
-    Boolean(buildOwnershipCostScore(vehicle)) ||
-    Boolean(buildChargingPracticalityScore(vehicle)) ||
-    Boolean(buildHighwayConfidenceScore(vehicle)) ||
-    Boolean(buildFamilyScore(vehicle)) ||
-    Boolean(buildServiceNetworkScore(vehicle)) ||
-    Boolean(verdict?.headline || verdict?.summary)
-  );
 }
 
 function formatCostPerKmRange(min, max) {
@@ -280,6 +260,9 @@ function CollapsiblePanel({
 export default function UnifiedEvIntelligenceSection({
   vehicle = null,
   layout = "default",
+  evSavariScores = null,
+  catalogMeta = null,
+  familyOverviewMode = false,
 }) {
   const [tradeOffsOpen, setTradeOffsOpen] = useState(false);
   const [avoidIfOpen, setAvoidIfOpen] = useState(false);
@@ -376,6 +359,14 @@ export default function UnifiedEvIntelligenceSection({
           How we calculate
         </button>
       </header>
+
+      <EvIntelligenceScorePanel
+        vehicle={vehicle}
+        evSavariScores={evSavariScores}
+        catalogMeta={catalogMeta}
+        familyOverviewMode={familyOverviewMode}
+        compact={layout === "hero"}
+      />
 
       <div className="unified-ev-intelligence__top-row">
         {showBestFor ? (

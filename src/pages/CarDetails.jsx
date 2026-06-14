@@ -136,7 +136,7 @@ export default function CarDetails() {
   const mediaFallbackRef = useRef(null);
 
   const [activeTab, setActiveTab] =
-    useState("overview");
+    useState("ev-intelligence");
 
   const navigate =
     useNavigate();
@@ -744,7 +744,7 @@ export default function CarDetails() {
     if (!pageNavTabs.length) return;
     const sectionTabs = pageNavTabs.filter((tab) => !tab.cta);
     if (!sectionTabs.some((tab) => tab.id === activeTab)) {
-      setActiveTab(sectionTabs[0]?.id ?? "overview");
+      setActiveTab(sectionTabs[0]?.id ?? "ev-intelligence");
     }
   }, [pageNavTabs, activeTab]);
 
@@ -1199,6 +1199,7 @@ export default function CarDetails() {
             evSavariVerdict={evSavariVerdict}
             intelligenceVehicle={heroIntelligenceVehicle}
             familyOverviewMode={isFamilyOverviewMode}
+            evSavariScores={evSavariScores}
             category={vehicle.category}
             galleryItems={galleryItems}
             galleryImages={galleryImages}

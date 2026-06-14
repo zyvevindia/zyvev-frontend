@@ -2,14 +2,13 @@ import { buildVehicleDiscoveryLinkSections } from "../seo/vehicleInternalLinks.j
 import { buildPeopleAlsoCompare } from "../intelligence/buildPeopleAlsoCompare.js";
 import { buildSimilarEvs } from "../intelligence/buildSimilarEvs.js";
 import { buildPopularAmongSimilarBuyers } from "../intelligence/buildPopularAmongSimilarBuyers.js";
-import { vehicleHasUnifiedEvIntelligence } from "../components/car/UnifiedEvIntelligenceSection.jsx";
+import { vehicleHasUnifiedEvIntelligence } from "../intelligence/unifiedEvIntelligenceVisibility.js";
 import {
   DetailAssistanceSection,
   DetailChargingSection,
   DetailCompareSection,
   DetailEmiSection,
   DetailFaqsSection,
-  DetailOverviewSection,
   DetailPeopleAlsoCompareSection,
   DetailPopularAmongSimilarBuyersSection,
   DetailRangeSection,
@@ -22,7 +21,6 @@ import {
 
 /**
  * @typedef {object} DetailPageSectionContext
- * @property {boolean} hasOverview
  * @property {boolean} hasEvIntelligence
  * @property {boolean} hasVariants
  * @property {boolean} hasCompare
@@ -64,21 +62,10 @@ export const DETAIL_NAV_CTA_TAB = {
  */
 export const DETAIL_SECTION_DEFS = [
   {
-    id: "overview",
-    title: "Overview",
-    nav: true,
-    navOrder: 10,
-    placement: "page",
-    shellClassName:
-      "cd-section cd-card cd-content-card cd-overview-section",
-    condition: (ctx) => ctx.hasOverview,
-    Component: DetailOverviewSection,
-  },
-  {
     id: "ev-intelligence",
     title: "EV Intelligence",
     nav: true,
-    navOrder: 20,
+    navOrder: 10,
     placement: "hero",
     condition: (ctx) => ctx.hasEvIntelligence,
   },
@@ -86,7 +73,7 @@ export const DETAIL_SECTION_DEFS = [
     id: "variants",
     title: "Variants",
     nav: true,
-    navOrder: 30,
+    navOrder: 20,
     placement: "page",
     shellClassName:
       "cd-section cd-card cd-content-card variant-comparison",
@@ -105,17 +92,17 @@ export const DETAIL_SECTION_DEFS = [
     id: "charging",
     title: "Charging",
     nav: true,
-    navOrder: 40,
+    navOrder: 30,
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
-    condition: (ctx) => ctx.hasCharging,
+    condition: (ctx) => ctx.hasDedicatedChargingSection,
     Component: DetailChargingSection,
   },
   {
     id: "people-also-compare",
     title: "People Also Compare",
     nav: true,
-    navOrder: 50,
+    navOrder: 40,
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasPeopleAlsoCompare,
@@ -125,7 +112,7 @@ export const DETAIL_SECTION_DEFS = [
     id: "similar-evs",
     title: "Similar EVs",
     nav: true,
-    navOrder: 60,
+    navOrder: 50,
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasSimilarEvs,
@@ -135,7 +122,7 @@ export const DETAIL_SECTION_DEFS = [
     id: "popular-among-similar-buyers",
     title: "Popular Among Similar Buyers",
     nav: true,
-    navOrder: 70,
+    navOrder: 60,
     navTitle: "Popular Buyers",
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
@@ -170,7 +157,7 @@ export const DETAIL_SECTION_DEFS = [
     id: "reviews",
     title: "Reviews",
     nav: true,
-    navOrder: 80,
+    navOrder: 70,
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasReviews,
@@ -180,7 +167,7 @@ export const DETAIL_SECTION_DEFS = [
     id: "faqs",
     title: "FAQs",
     nav: true,
-    navOrder: 90,
+    navOrder: 80,
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasFaqs,
@@ -247,13 +234,23 @@ export function buildDetailPageSectionContext({
     catalogMeta: meta,
   });
 
+  const intelVehicle = comparisonVehicle || vehicle;
   const hasEvIntelligence =
     !isFamilyOverviewMode &&
-    vehicleHasUnifiedEvIntelligence(comparisonVehicle || vehicle);
+    vehicleHasUnifiedEvIntelligence(intelVehicle);
+
+  const hasDedicatedChargingSection =
+    !isFamilyOverviewMode &&
+    !hasEvIntelligence &&
+    Boolean(
+      intelligence?.charging?.hasData ||
+        intelligence?.chargingPracticality?.hasData ||
+        intelligence?.ownership?.hasData
+    );
 
   return {
-    hasOverview: true,
     hasEvIntelligence,
+    hasDedicatedChargingSection,
     hasVariants: enrichedVariantsCount >= 1,
     hasCompare:
       hasGoldExperience &&
@@ -263,14 +260,14 @@ export function buildDetailPageSectionContext({
     hasSimilarEvs: similarEvs.similarVehicles.length > 0,
     hasPopularAmongSimilarBuyers:
       popularAmongSimilarBuyers.vehicles.length > 0,
-    hasRange: !isFamilyOverviewMode && Boolean(intelligence?.range?.hasData),
+    hasRange:
+      !isFamilyOverviewMode &&
+      Boolean(intelligence?.range?.hasData) &&
+      !hasEvIntelligence,
     hasOwnership: hasEvIntelligence,
-    hasCharging: Boolean(
-      intelligence?.charging?.hasData ||
-        intelligence?.chargingPracticality?.hasData ||
-        intelligence?.ownership?.hasData
-    ),
-    hasSuitability: Boolean(intelligence?.suitability?.hasData),
+    hasCharging: hasDedicatedChargingSection,
+    hasSuitability:
+      Boolean(intelligence?.suitability?.hasData) && !hasEvIntelligence,
     hasEmi: true,
     hasFaqs: hasGoldExperience && allFaq.length > 0,
     hasReviews: true,

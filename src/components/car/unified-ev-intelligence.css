@@ -6,6 +6,23 @@
   margin-top: 0;
 }
 
+.unified-ev-intelligence__score-block {
+  margin-bottom: 14px;
+}
+
+.unified-ev-intelligence__score-block--compact {
+  margin-bottom: 12px;
+}
+
+.unified-ev-intelligence__score-block--compact .cd-overview-dashboard__score-panel {
+  padding: 14px 16px;
+  gap: 14px;
+}
+
+.unified-ev-intelligence__score-block--compact .ev-savari-score-panel {
+  padding: 0;
+}
+
 .unified-ev-intelligence--hero .unified-ev-intelligence__header {
   margin-bottom: 14px;
 }

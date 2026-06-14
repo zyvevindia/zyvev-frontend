@@ -58,18 +58,19 @@
 
 .cd-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
   grid-template-areas: "media info";
-  gap: 20px 28px;
-  align-items: start;
+  gap: 18px 28px;
+  align-items: stretch;
 }
 
 .cd-hero__media {
   grid-area: media;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   min-width: 0;
+  align-self: stretch;
 }
 
 .cd-hero__info {
@@ -83,7 +84,7 @@
 .cd-hero__intelligence {
   flex: 1 1 auto;
   min-width: 0;
-  margin-top: 2px;
+  margin-top: 0;
 }
 
 .cd-hero__frame {
