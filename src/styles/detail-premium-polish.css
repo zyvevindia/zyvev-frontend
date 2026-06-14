@@ -11,8 +11,8 @@
   --cd-shadow-card-hover:
     0 2px 4px rgba(15, 23, 42, 0.05),
     0 12px 32px rgba(15, 23, 42, 0.07);
-  --cd-space-section: 36px;
-  --cd-space-card-gap: 16px;
+  --cd-space-section: 40px;
+  --cd-space-card-gap: 18px;
   --cd-pad-card: 24px;
   --cd-pad-card-inner: 20px;
   --cd-text-page: clamp(1.42rem, 2.4vw, 1.78rem);
@@ -153,7 +153,7 @@
   gap: 20px;
 }
 
-.cd-page .unified-ev-intelligence {
+.cd-page .unified-ev-intelligence:not(.unified-ev-intelligence--hero) {
   margin-top: 32px;
 }
 

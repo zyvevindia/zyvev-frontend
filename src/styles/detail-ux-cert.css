@@ -1,0 +1,151 @@
+/* Phase 12D.9K.1 — UX certification & layout stabilization */
+
+.cd-page {
+  --cd-hero-col-gap: 28px;
+  --cd-hero-row-gap: 14px;
+}
+
+/* —— Hero balance —— */
+
+.cd-hero.cd-card {
+  padding: 24px 26px;
+  margin-bottom: var(--cd-space-section);
+}
+
+.cd-hero__grid {
+  column-gap: var(--cd-hero-col-gap);
+  row-gap: var(--cd-hero-row-gap);
+}
+
+.cd-hero__intelligence .unified-ev-intelligence--hero {
+  width: 100%;
+}
+
+.cd-hero__intelligence .unified-ev-intelligence__score-block {
+  margin-bottom: 16px;
+}
+
+/* —— Intelligence advisor dashboard —— */
+
+.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__top-card,
+.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__experience-card {
+  border-radius: var(--cd-radius-xl);
+  box-shadow: var(--cd-shadow-card);
+}
+
+.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
+  gap: var(--cd-space-card-gap);
+}
+
+.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__top-row {
+  gap: var(--cd-space-card-gap);
+}
+
+.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__our-take {
+  padding: 1.15rem 1.2rem;
+}
+
+/* —— Desktop widths (1280–1440) —— */
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .cd-shell {
+    padding-inline: clamp(20px, 2.4vw, 28px);
+  }
+
+  .cd-hero__grid {
+    column-gap: 24px;
+  }
+
+  .cd-hero__frame {
+    max-height: 268px;
+  }
+}
+
+@media (min-width: 961px) and (max-width: 1279px) {
+  .cd-hero__grid {
+    column-gap: 22px;
+  }
+
+  .cd-hero__frame {
+    max-height: 252px;
+  }
+
+  .cd-hero__teasers {
+    gap: 10px;
+  }
+}
+
+/* —— Tablet (768–1024) —— */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .cd-hero.cd-card {
+    padding: 20px 22px;
+  }
+
+  .cd-hero__frame {
+    max-height: 300px;
+  }
+
+  .cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__top-row,
+  .cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 769px) {
+  .cd-hero__cta-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cd-hero__compare-btn {
+    width: 100%;
+  }
+}
+
+/* —— Mobile (375–430) —— */
+
+@media (max-width: 768px) {
+  .cd-hero.cd-card {
+    padding: 18px;
+    margin-bottom: 28px;
+  }
+
+  .cd-hero__info {
+    gap: 14px;
+  }
+
+  .cd-hero__frame {
+    max-height: 240px;
+  }
+
+  .cd-hero__teasers {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__top-card,
+  .cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__experience-card {
+    min-height: 0;
+    padding: 1rem 1.05rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .cd-shell {
+    padding-inline: 14px;
+  }
+
+  .cd-hero.cd-card {
+    padding: 16px;
+  }
+
+  .cd-hero__title-row {
+    gap: 0.45rem 0.55rem;
+  }
+
+  .cd-hero__explore-btn,
+  .cd-hero__compare-btn {
+    min-height: 48px;
+    font-size: 0.88rem;
+  }
+}

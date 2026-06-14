@@ -158,17 +158,6 @@ export default function DetailHero({
             </div>
           )}
 
-          {showIntelligence ? (
-            <div className="cd-hero__intelligence">
-              <UnifiedEvIntelligenceSection
-                vehicle={intelVehicle}
-                layout="hero"
-                evSavariScores={evSavariScores}
-                catalogMeta={intelVehicle?.catalogMeta}
-                familyOverviewMode={familyOverviewMode}
-              />
-            </div>
-          ) : null}
         </div>
 
         <div className="cd-hero__info">
@@ -238,6 +227,18 @@ export default function DetailHero({
             <DetailDealerTeaser onOpenDealer={onScrollDealer} />
           </div>
         </div>
+
+        {showIntelligence ? (
+          <div className="cd-hero__intelligence">
+            <UnifiedEvIntelligenceSection
+              vehicle={intelVehicle}
+              layout="hero"
+              evSavariScores={evSavariScores}
+              catalogMeta={intelVehicle?.catalogMeta}
+              familyOverviewMode={familyOverviewMode}
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   );

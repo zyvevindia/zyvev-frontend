@@ -1,6 +1,7 @@
 /* EVSavari Car Details — layout system */
 
 @import "./detail-premium-polish.css";
+@import "./detail-ux-cert.css";
 
 .cd-page {
   min-height: 100vh;
@@ -60,8 +61,14 @@
   display: grid;
   grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
   grid-template-areas: "media info";
-  gap: 18px 28px;
-  align-items: stretch;
+  gap: 14px 28px;
+  align-items: start;
+}
+
+.cd-hero__grid:has(.cd-hero__intelligence) {
+  grid-template-areas:
+    "media info"
+    "intel info";
 }
 
 .cd-hero__media {
@@ -70,19 +77,20 @@
   flex-direction: column;
   gap: 10px;
   min-width: 0;
-  align-self: stretch;
+  align-self: start;
 }
 
 .cd-hero__info {
   grid-area: info;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
+  align-self: start;
 }
 
 .cd-hero__intelligence {
-  flex: 1 1 auto;
+  grid-area: intel;
   min-width: 0;
   margin-top: 0;
 }
@@ -93,7 +101,7 @@
   background: #f8fafc;
   border: 1px solid #e8edf3;
   aspect-ratio: 16 / 10;
-  max-height: 320px;
+  max-height: 280px;
 }
 
 .cd-hero__frame .detail-hero-image-wrap,
@@ -296,8 +304,8 @@
 .cd-hero__teasers {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 0.15rem;
+  gap: 12px;
+  margin-top: 0.25rem;
 }
 
 .cd-hero-family-metrics {
@@ -1280,8 +1288,12 @@
 
   .cd-hero__grid {
     grid-template-columns: 1fr;
-    grid-template-areas: "media" "info";
+    grid-template-areas: "media" "info" "intel";
     gap: 16px;
+  }
+
+  .cd-hero__grid:not(:has(.cd-hero__intelligence)) {
+    grid-template-areas: "media" "info";
   }
 
   .cd-hero__frame {

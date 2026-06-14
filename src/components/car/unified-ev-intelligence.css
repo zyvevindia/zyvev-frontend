@@ -33,7 +33,8 @@
 
 .unified-ev-intelligence--hero .unified-ev-intelligence__top-card,
 .unified-ev-intelligence--hero .unified-ev-intelligence__experience-card {
-  padding: 0.95rem 1rem 0.85rem;
+  padding: 1.1rem 1.15rem 1rem;
+  min-height: 92px;
 }
 
 .unified-ev-intelligence--hero .unified-ev-intelligence__top-card-body,
@@ -485,28 +486,28 @@
     gap: 16px;
   }
 
-  /* Hero column (~40%): single-column cards so all intelligence stays visible */
+  /* Hero left column: single-column advisor stack with premium spacing */
   .unified-ev-intelligence--hero .unified-ev-intelligence__header {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__top-row {
     grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 14px;
+    margin-bottom: 14px;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__experience-block {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 14px;
+    margin-bottom: 14px;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 14px;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__our-take {
@@ -515,7 +516,7 @@
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__collapsible-row {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 14px;
   }
 
   .unified-ev-intelligence--hero .unified-ev-intelligence__collapsible {

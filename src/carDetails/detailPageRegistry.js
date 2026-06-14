@@ -83,6 +83,7 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "compare",
     title: "Compare",
+    renderOnPage: false,
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card",
     condition: (ctx) => ctx.hasCompare,
@@ -132,6 +133,7 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "range",
     title: "Range",
+    renderOnPage: false,
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
     condition: (ctx) => ctx.hasRange,
@@ -140,6 +142,7 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "suitability",
     title: "Suitability",
+    renderOnPage: false,
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
     condition: (ctx) => ctx.hasSuitability,
@@ -176,6 +179,7 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "related-evs",
     title: "Related EVs",
+    renderOnPage: false,
     placement: "page",
     shellClassName: "cd-seo-discovery",
     condition: (ctx) => ctx.hasRelatedEvs,
@@ -285,7 +289,10 @@ export function buildDetailPageSectionContext({
  */
 export function buildVisibleDetailSections(context) {
   return DETAIL_SECTION_DEFS.filter(
-    (def) => def.Component && def.condition(context)
+    (def) =>
+      def.Component &&
+      def.renderOnPage !== false &&
+      def.condition(context)
   ).map(({ id, title, shellClassName, Component }) => ({
     id,
     title,
@@ -295,9 +302,8 @@ export function buildVisibleDetailSections(context) {
 }
 
 /**
- * Sticky nav tabs derived from the section registry.
- * @param {DetailPageSectionContext} context
- * @returns {Array<{ id: string, title: string, scrollTarget?: string, action?: string, cta?: boolean }>}
+ * Nav tabs — strictly registry-driven; only sections with nav: true.
+ * Hero EV Intelligence uses id scroll target without a page shell.
  */
 export function buildVisibleDetailNavTabs(context) {
   const sectionTabs = DETAIL_SECTION_DEFS.filter(
