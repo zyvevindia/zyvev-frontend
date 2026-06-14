@@ -356,6 +356,9 @@ export default function IntelligenceDiscoveryPage() {
                   key={card.slug}
                   car={card}
                   showValueScore={Boolean(preset.showValueScore)}
+                  showFamilyIntelligence={(
+                    preset.intelligenceFilterIds || []
+                  ).includes("family_friendly")}
                 />
               ))}
             </CatalogResultsGrid>

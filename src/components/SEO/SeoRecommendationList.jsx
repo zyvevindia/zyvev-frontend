@@ -13,6 +13,7 @@ import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
 import { appendJourneyStep } from "../../buyer-intelligence/journeyBuffer";
 import { ensureArray } from "../../utils/compareArrayUtils";
 import { trackVariantRecommendationClicked } from "../../analytics/traffic";
+import FamilyIntelligenceCard from "../scoring/FamilyIntelligenceCard";
 
 function isVariantRecommendationContext(seoPageSlug = "", item = {}) {
   const slug = String(seoPageSlug || "").toLowerCase();
@@ -58,14 +59,23 @@ function inferSeoIntent(slug) {
   return undefined;
 }
 
+function isFamilyDiscoveryPage(seoPageSlug = "") {
+  const slug = String(seoPageSlug || "").toLowerCase();
+  return slug.includes("family") || slug.includes("large-family");
+}
+
 function rankedItemToCar(item) {
   const slug = item?.slug || "";
   const familySlug = extractFamilySlug(slug) || slug;
   return {
-    slug,
+    slug: familySlug,
     familySlug,
     name: item?.displayName || slug,
-    catalogMeta: { slug, familySlug },
+    catalogMeta: {
+      slug: familySlug,
+      familySlug,
+      claimedRangeKm: item?.claimedRangeKm ?? null,
+    },
   };
 }
 
@@ -76,6 +86,7 @@ export default function SeoRecommendationList({
   sourcePage = "",
 }) {
   const safeRanked = ensureArray(rankedVehicles);
+  const showFamilyIntelligence = isFamilyDiscoveryPage(seoPageSlug);
 
   if (!safeRanked.length) {
     return (
@@ -147,6 +158,14 @@ export default function SeoRecommendationList({
 
             <p style={styles.explanation}>{item.explanation}</p>
             <p style={styles.tradeoff}>{item.tradeoff}</p>
+
+            {showFamilyIntelligence ? (
+              <FamilyIntelligenceCard
+                vehicle={rankedItemToCar(item)}
+                variant="compact"
+                layout="inline"
+              />
+            ) : null}
 
             <Link
               to={vehicleDetailPath(item.slug)}

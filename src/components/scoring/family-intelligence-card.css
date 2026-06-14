@@ -1,0 +1,47 @@
+.family-intelligence {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.family-intelligence__heading {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.family-intelligence--compact .family-intelligence__heading {
+  font-size: 0.62rem;
+}
+
+.family-intelligence__label {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+}
+
+.family-intelligence--compact .family-intelligence__label {
+  font-size: 0.82rem;
+}
+
+.family-intelligence--card {
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e8edf3;
+}
+
+.family-intelligence--card.family-intelligence--compact {
+  padding: 0.5rem 0.6rem;
+}
+
+.family-intelligence--inline {
+  padding: 0;
+  border: none;
+  background: transparent;
+}

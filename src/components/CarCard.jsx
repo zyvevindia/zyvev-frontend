@@ -26,6 +26,7 @@ import CatalogScoreBadge from "./catalog/CatalogScoreBadge";
 
 import ScoreStrengthsWeaknesses from "./scoring/ScoreStrengthsWeaknesses";
 import PersonaChips from "./scoring/PersonaChips";
+import FamilyIntelligenceCard from "./scoring/FamilyIntelligenceCard";
 
 import { pickOwnershipChips } from "../utils/ownershipReality";
 
@@ -47,6 +48,7 @@ export default function CarCard({
   compareModeActive = false,
   eagerImage = false,
   showValueScore = false,
+  showFamilyIntelligence = false,
 }) {
   /* =======================================================
      ================= SAFETY FALLBACKS ====================
@@ -253,6 +255,14 @@ export default function CarCard({
           />
 
           <PersonaChips vehicle={safeCar} variant="compact" layout="card" />
+
+          {showFamilyIntelligence ? (
+            <FamilyIntelligenceCard
+              vehicle={safeCar}
+              variant="compact"
+              layout="card"
+            />
+          ) : null}
 
           <CatalogCardTrust
             catalogMeta={safeCar.catalogMeta}

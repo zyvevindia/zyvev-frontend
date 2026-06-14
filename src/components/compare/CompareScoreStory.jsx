@@ -5,6 +5,7 @@ import PersonaChips from "../scoring/PersonaChips";
 import OwnershipIntelligenceCard from "../scoring/OwnershipIntelligenceCard";
 import ChargingIntelligenceCard from "../scoring/ChargingIntelligenceCard";
 import HighwayConfidenceCard from "../scoring/HighwayConfidenceCard";
+import FamilyIntelligenceCard from "../scoring/FamilyIntelligenceCard";
 import { buildVehicleVariantDisplayName } from "../../utils/vehicleDisplayName";
 import { COMPARE_BADGE_TYPES } from "../../utils/compareScoreBadges";
 
@@ -144,6 +145,12 @@ export default function CompareScoreStory({
               />
 
               <HighwayConfidenceCard
+                vehicle={car}
+                variant="compact"
+                layout="inline"
+              />
+
+              <FamilyIntelligenceCard
                 vehicle={car}
                 variant="compact"
                 layout="inline"

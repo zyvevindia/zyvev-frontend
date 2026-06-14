@@ -9,6 +9,7 @@ import PersonaChips from "../scoring/PersonaChips";
 import OwnershipIntelligenceCard from "../scoring/OwnershipIntelligenceCard";
 import ChargingIntelligenceCard from "../scoring/ChargingIntelligenceCard";
 import HighwayConfidenceCard from "../scoring/HighwayConfidenceCard";
+import FamilyIntelligenceCard from "../scoring/FamilyIntelligenceCard";
 import { formatPsychologyTag } from "../../utils/catalogExperience";
 import {
   buildRangeConfidence,
@@ -251,6 +252,10 @@ export default function DetailOverviewDashboard({
 
       {vehicle ? (
         <HighwayConfidenceCard vehicle={vehicle} layout="card" />
+      ) : null}
+
+      {vehicle ? (
+        <FamilyIntelligenceCard vehicle={vehicle} layout="card" />
       ) : null}
 
       <div className="cd-overview-dashboard__grid">
