@@ -63,6 +63,7 @@ import NetworkErrorPanel from "../components/ui/NetworkErrorPanel";
 import DetailBreadcrumbs from "../components/catalog/DetailBreadcrumbs";
 import "../styles/car-details.css";
 import DetailActionBar from "../components/car/DetailActionBar";
+import StickyBottomActionBar from "../components/car/StickyBottomActionBar";
 import DetailTabs from "../components/car/DetailTabs";
 import { scoreVehicle } from "../scoring/index.js";
 import {
@@ -1334,6 +1335,19 @@ export default function CarDetails() {
             }}
           />
         </div>
+
+        <StickyBottomActionBar
+          onBookTestDrive={openTestDrive}
+          onGetBestDeal={() => {
+            trackLaunchDealerAssistance({
+              sourcePage: "car_details",
+              surface: "sticky_bar_get_best_deal",
+            });
+            openInquiry("Get the best deal", "Get best deal");
+          }}
+          onCompare={handleCompareEv}
+          compareCount={compareList.length}
+        />
       </div>
 
     </>
