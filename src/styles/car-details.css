@@ -2,6 +2,7 @@
 
 @import "./detail-premium-polish.css";
 @import "./detail-ux-cert.css";
+@import "./detail-premium-restoration.css";
 
 .cd-page {
   min-height: 100vh;
@@ -10,7 +11,7 @@
 }
 
 .cd-shell {
-  max-width: 1480px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 0 clamp(16px, 3vw, 32px);
 }
@@ -78,7 +79,7 @@
   grid-area: info;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   min-width: 0;
   align-self: start;
 }
@@ -88,12 +89,13 @@
 }
 
 .cd-hero__frame {
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
   background: #f8fafc;
   border: 1px solid #e8edf3;
-  aspect-ratio: 16 / 10;
-  max-height: 280px;
+  min-height: 340px;
+  max-height: 380px;
+  height: clamp(340px, 36vw, 380px);
 }
 
 .cd-hero__frame .detail-hero-image-wrap,
@@ -137,7 +139,8 @@
 .cd-hero__head {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.35rem;
+  margin-bottom: 20px;
 }
 
 .cd-hero__title-row {
@@ -164,12 +167,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.28rem 0.62rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  background: #ecfdf5;
-  border: 1px solid #6ee7b7;
-  color: #047857;
-  font-size: 0.68rem;
+  background: #fff;
+  border: 1.5px solid #22c55e;
+  color: #15803d;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -183,18 +186,18 @@
 
 .cd-hero__title {
   margin: 0;
-  font-size: clamp(1.35rem, 2.2vw, 1.72rem);
+  font-size: 2.25rem;
   font-weight: 800;
   color: #0f172a;
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
 }
 
 .cd-hero__subtitle {
   margin: 0;
-  font-size: 0.84rem;
+  font-size: 1rem;
   color: #64748b;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .cd-hero__cta-row {
@@ -209,7 +212,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 50px;
+  min-height: 56px;
   padding: 0.82rem 1rem;
   border: none;
   border-radius: 14px;
@@ -239,7 +242,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 50px;
+  min-height: 56px;
   padding: 0.82rem 1rem;
   border-radius: 14px;
   border: 1.5px solid #2563eb;
@@ -1285,7 +1288,10 @@
   }
 
   .cd-hero__frame {
-    max-height: 260px;
+    min-height: 0;
+    max-height: none;
+    height: auto;
+    aspect-ratio: 16 / 10;
   }
 
   .cd-hero__cta-row {

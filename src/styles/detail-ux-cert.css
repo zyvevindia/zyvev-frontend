@@ -56,25 +56,17 @@
   }
 
   .cd-hero__grid {
-    column-gap: 24px;
-  }
-
-  .cd-hero__frame {
-    max-height: 268px;
+    column-gap: 28px;
   }
 }
 
 @media (min-width: 961px) and (max-width: 1279px) {
   .cd-hero__grid {
-    column-gap: 22px;
-  }
-
-  .cd-hero__frame {
-    max-height: 252px;
+    column-gap: 24px;
   }
 
   .cd-hero__teasers {
-    gap: 10px;
+    gap: 12px;
   }
 }
 
@@ -82,11 +74,7 @@
 
 @media (max-width: 1024px) and (min-width: 769px) {
   .cd-hero.cd-card {
-    padding: 20px 22px;
-  }
-
-  .cd-hero__frame {
-    max-height: 300px;
+    padding: 22px 24px;
   }
 }
 
@@ -110,10 +98,6 @@
 
   .cd-hero__info {
     gap: 14px;
-  }
-
-  .cd-hero__frame {
-    max-height: 240px;
   }
 
   .cd-hero__teasers {

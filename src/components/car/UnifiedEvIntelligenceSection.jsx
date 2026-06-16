@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import { buildRecommendationEngine } from "../../intelligence/buildRecommendationEngine.js";
 import { buildScoreExplanation } from "../../intelligence/buildScoreExplanation.js";
@@ -215,42 +215,19 @@ function OurTakePanel({ verdict }) {
   );
 }
 
-function CollapsiblePanel({
-  title,
-  tone,
-  isOpen,
-  onToggle,
-  panelId,
-  children,
-}) {
+function StaticInsightPanel({ title, tone, children }) {
   if (!children) return null;
 
   return (
-    <div
+    <article
       className={[
-        "unified-ev-intelligence__collapsible",
-        `unified-ev-intelligence__collapsible--${tone}`,
+        "unified-ev-intelligence__static-panel",
+        `unified-ev-intelligence__static-panel--${tone}`,
       ].join(" ")}
     >
-      <button
-        type="button"
-        className="unified-ev-intelligence__collapsible-toggle"
-        aria-expanded={isOpen}
-        aria-controls={panelId}
-        onClick={onToggle}
-      >
-        <span>{title}</span>
-        <span className="unified-ev-intelligence__collapsible-chevron" aria-hidden>
-          {isOpen ? "▲" : "▼"}
-        </span>
-      </button>
-
-      {isOpen ? (
-        <div id={panelId} className="unified-ev-intelligence__collapsible-panel">
-          {children}
-        </div>
-      ) : null}
-    </div>
+      <h3 className="unified-ev-intelligence__static-panel-title">{title}</h3>
+      <div className="unified-ev-intelligence__static-panel-body">{children}</div>
+    </article>
   );
 }
 
@@ -264,9 +241,6 @@ export default function UnifiedEvIntelligenceSection({
   catalogMeta = null,
   familyOverviewMode = false,
 }) {
-  const [tradeOffsOpen, setTradeOffsOpen] = useState(false);
-  const [avoidIfOpen, setAvoidIfOpen] = useState(false);
-
   const verdict = useMemo(
     () => (vehicle ? buildEvSavariVerdict(vehicle) : null),
     [vehicle]
@@ -493,20 +467,14 @@ export default function UnifiedEvIntelligenceSection({
             </p>
           </PremiumExperienceCard>
         ) : null}
-        </div>
 
         <OurTakePanel verdict={verdict} />
+        </div>
       </div>
 
-      <div className="unified-ev-intelligence__collapsible-row">
+      <div className="unified-ev-intelligence__bottom-row">
       {showTradeOffs ? (
-        <CollapsiblePanel
-          title="Trade-offs (Not Dealbreakers)"
-          tone="tradeoffs"
-          isOpen={tradeOffsOpen}
-          onToggle={() => setTradeOffsOpen((open) => !open)}
-          panelId="unified-ev-intelligence-tradeoffs"
-        >
+        <StaticInsightPanel title="Trade-offs (Not Dealbreakers)" tone="tradeoffs">
           <ScoreStrengthsWeaknesses
             vehicle={vehicle}
             layout="inline"
@@ -518,17 +486,11 @@ export default function UnifiedEvIntelligenceSection({
             label={scoreConfidence}
             className="unified-ev-intelligence__card-confidence"
           />
-        </CollapsiblePanel>
+        </StaticInsightPanel>
       ) : null}
 
       {showAvoidIf ? (
-        <CollapsiblePanel
-          title="Avoid If"
-          tone="avoid"
-          isOpen={avoidIfOpen}
-          onToggle={() => setAvoidIfOpen((open) => !open)}
-          panelId="unified-ev-intelligence-avoid"
-        >
+        <StaticInsightPanel title="Avoid If" tone="avoid">
           <RecommendationInsightsCard
             vehicle={vehicle}
             layout="inline"
@@ -540,7 +502,7 @@ export default function UnifiedEvIntelligenceSection({
             vehicle={vehicle}
             className="unified-ev-intelligence__card-confidence"
           />
-        </CollapsiblePanel>
+        </StaticInsightPanel>
       ) : null}
       </div>
     </div>

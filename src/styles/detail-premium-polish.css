@@ -20,21 +20,16 @@
   --cd-text-card: 0.95rem;
   --cd-text-body: 0.9rem;
   --cd-text-caption: 0.7rem;
-  --cd-leading-body: 1.68;
+  --cd-leading-body: 1.7;
 }
 
 /* —— Typography hierarchy —— */
 
-.cd-page .cd-hero__title {
-  font-size: var(--cd-text-page);
-  line-height: 1.14;
-}
-
 .cd-page .cd-section__title {
-  font-size: var(--cd-text-section);
+  font-size: 1.75rem;
   font-weight: 800;
-  line-height: 1.28;
-  margin-bottom: 10px;
+  line-height: 1.22;
+  margin-bottom: 12px;
 }
 
 .cd-page .cd-section__intro {
@@ -114,7 +109,8 @@
   border-radius: var(--cd-radius-lg);
   border: var(--cd-border-subtle);
   box-shadow: var(--cd-shadow-card);
-  padding: 0.82rem 0.9rem;
+  padding: 18px;
+  min-height: 92px;
 }
 
 .cd-page .persona-best-for-hero {

@@ -53,17 +53,73 @@
   line-height: 1.38;
 }
 
-.unified-ev-intelligence__collapsible-row {
+.unified-ev-intelligence__collapsible-row,
+.unified-ev-intelligence__bottom-row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 18px;
+  margin-top: 4px;
+}
+
+.unified-ev-intelligence__static-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 100%;
+  padding: 1.25rem 1.3rem;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid #eef2f7;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.unified-ev-intelligence__static-panel--tradeoffs {
+  border-color: #fed7aa;
+  background: #fffaf5;
+}
+
+.unified-ev-intelligence__static-panel--avoid {
+  border-color: #fecaca;
+  background: #fffafa;
+}
+
+.unified-ev-intelligence__static-panel-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+}
+
+.unified-ev-intelligence__static-panel--tradeoffs
+  .unified-ev-intelligence__static-panel-title {
+  color: #c2410c;
+}
+
+.unified-ev-intelligence__static-panel--avoid
+  .unified-ev-intelligence__static-panel-title {
+  color: #b91c1c;
+}
+
+.unified-ev-intelligence__static-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.unified-ev-intelligence__static-panel-body
+  .score-sw__item--weakness
+  .score-sw__icon {
+  color: #ea580c;
 }
 
 .unified-ev-intelligence__experience-block {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 18px;
+  margin-bottom: 18px;
 }
 
 /* —— Header —— */
@@ -146,11 +202,11 @@
 
 .unified-ev-intelligence__top-card-title {
   margin: 0;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: #334155;
 }
 
 .unified-ev-intelligence__top-card-body {
@@ -251,11 +307,11 @@
 
 .unified-ev-intelligence__experience-title {
   margin: 0;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: #334155;
 }
 
 .unified-ev-intelligence__experience-label {
@@ -312,12 +368,13 @@
   grid-template-columns: auto minmax(0, 1fr);
   gap: 16px;
   align-items: flex-start;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   padding: 1.25rem 1.3rem;
   border-radius: 20px;
   background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
   border: 1px solid #a7f3d0;
   box-shadow: 0 4px 20px rgba(16, 185, 129, 0.08);
+  min-height: 100%;
 }
 
 .unified-ev-intelligence__our-take-icon {
@@ -479,48 +536,16 @@
 @media (min-width: 1024px) {
   .unified-ev-intelligence__top-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+    gap: 18px;
   }
 
   .unified-ev-intelligence__experience-grid {
-    gap: 16px;
+    gap: 18px;
   }
 
-  /* Hero left column: single-column advisor stack with premium spacing */
-  .unified-ev-intelligence--hero .unified-ev-intelligence__header {
-    margin-bottom: 16px;
-  }
-
-  .unified-ev-intelligence--hero .unified-ev-intelligence__top-row {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
-  .unified-ev-intelligence--hero .unified-ev-intelligence__experience-block {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
-  .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .unified-ev-intelligence--hero .unified-ev-intelligence__our-take {
-    margin-bottom: 0;
-  }
-
-  .unified-ev-intelligence--hero .unified-ev-intelligence__collapsible-row {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .unified-ev-intelligence--hero .unified-ev-intelligence__collapsible {
-    margin-bottom: 0;
+  .unified-ev-intelligence__bottom-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
   }
 }
 

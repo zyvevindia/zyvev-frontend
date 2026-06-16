@@ -1,0 +1,269 @@
+/* Phase 12D.9K.3 — Premium restoration pass */
+
+.cd-page {
+  --cd-shell-max: 1360px;
+  --cd-shadow-premium:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+  --cd-leading-premium: 1.7;
+}
+
+.cd-shell {
+  max-width: var(--cd-shell-max);
+}
+
+/* —— Typography —— */
+
+.cd-page .cd-section__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+
+.cd-page .cd-section__intro {
+  font-size: 1rem;
+  line-height: var(--cd-leading-premium);
+}
+
+.cd-page .unified-ev-intelligence__title.cd-section__title {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+
+.cd-page .unified-ev-intelligence__top-card-title,
+.cd-page .unified-ev-intelligence__experience-title,
+.cd-page .unified-ev-intelligence__static-panel-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: #334155;
+}
+
+.cd-page .unified-ev-intelligence__our-take-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+/* —— Hero premium layout —— */
+
+.cd-page .cd-hero.cd-card {
+  padding: 28px 30px;
+  margin-bottom: 24px;
+}
+
+.cd-page .cd-hero__grid {
+  gap: 20px 32px;
+}
+
+.cd-page .cd-hero__info {
+  gap: 16px;
+}
+
+.cd-page .cd-hero__head {
+  gap: 0.35rem;
+  margin-bottom: 4px;
+}
+
+.cd-page .cd-hero__title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.cd-page .cd-hero__subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.cd-page .cd-hero__title-row {
+  margin-bottom: 20px;
+}
+
+.cd-page .cd-hero__verified-badge {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: #fff;
+  border: 1.5px solid #22c55e;
+  color: #15803d;
+}
+
+.cd-page .cd-hero__frame {
+  min-height: 340px;
+  max-height: 380px;
+  height: clamp(340px, 36vw, 380px);
+  aspect-ratio: unset;
+  border-radius: 20px;
+}
+
+.cd-page .cd-hero__thumbs {
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.cd-page .cd-hero__thumb {
+  flex: 0 0 calc((100% - 5 * 10px) / 6);
+  min-width: 56px;
+  max-width: 72px;
+  height: 52px;
+  border-radius: 12px;
+}
+
+.cd-page .cd-hero__explore-btn,
+.cd-page .cd-hero__compare-btn {
+  min-height: 56px;
+  font-size: 0.95rem;
+  border-radius: 16px;
+}
+
+.cd-page .cd-hero__cta-row {
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.cd-page .cd-hero__scroll-hint {
+  font-size: 0.78rem;
+  margin-top: 2px;
+}
+
+.cd-page .cd-hero__teasers {
+  gap: 14px;
+  margin-top: 4px;
+}
+
+/* —— EV Intelligence centerpiece —— */
+
+.cd-page .cd-ev-intelligence-section {
+  margin-bottom: 36px;
+  padding: 28px clamp(22px, 2.5vw, 32px);
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__header {
+  margin-bottom: 28px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__score-block {
+  margin-bottom: 22px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row {
+  margin-bottom: 20px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-block {
+  margin-bottom: 20px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid {
+  margin-bottom: 0;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take {
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* —— Premium card system —— */
+
+.cd-page .cd-card,
+.cd-page .hero-summary__card,
+.cd-page .unified-ev-intelligence__top-card,
+.cd-page .unified-ev-intelligence__experience-card,
+.cd-page .unified-ev-intelligence__static-panel,
+.cd-page .people-also-compare__card,
+.cd-page .similar-evs__card,
+.cd-page .popular-similar-buyers__card {
+  box-shadow: var(--cd-shadow-premium);
+}
+
+/* —— Desktop optimization —— */
+
+@media (min-width: 1280px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1440px) {
+  .cd-shell {
+    padding-inline: 32px;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 961px) {
+  .cd-page .cd-hero__frame {
+    min-height: 320px;
+    max-height: 360px;
+    height: 340px;
+  }
+
+  .cd-page .cd-hero__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cd-page .cd-hero__title {
+    font-size: clamp(1.65rem, 4vw, 2rem);
+  }
+
+  .cd-page .cd-hero__frame {
+    min-height: 280px;
+    max-height: 320px;
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .cd-page .cd-section__title,
+  .cd-page .unified-ev-intelligence__title.cd-section__title {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cd-page .cd-hero.cd-card {
+    padding: 20px;
+  }
+
+  .cd-page .cd-hero__title-row {
+    margin-bottom: 14px;
+  }
+
+  .cd-page .cd-ev-intelligence-section {
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 390px) {
+  .cd-page .cd-hero__title {
+    font-size: 1.55rem;
+  }
+
+  .cd-page .cd-hero__explore-btn,
+  .cd-page .cd-hero__compare-btn {
+    min-height: 52px;
+  }
+}

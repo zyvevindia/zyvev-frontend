@@ -12,16 +12,12 @@ function resolveVerifiedBadge(vehicle) {
   const meta = vehicle?.catalogMeta;
   if (!meta) return false;
 
-  if (meta.governanceStatus === "published") {
+  if (meta.published === true || meta.governanceStatus === "published") {
     return true;
   }
 
-  const score = meta.dataQualityScore;
-  return (
-    vehicle?.catalogSource === "master" &&
-    score != null &&
-    score >= 85
-  );
+  const qualityScore = meta.qualityScore ?? meta.dataQualityScore;
+  return qualityScore != null && qualityScore >= 85;
 }
 
 export default function DetailHero({
