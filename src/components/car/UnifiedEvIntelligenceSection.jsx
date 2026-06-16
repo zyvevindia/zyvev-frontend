@@ -2,7 +2,6 @@ import { useMemo } from "react";
 
 import { buildRecommendationEngine } from "../../intelligence/buildRecommendationEngine.js";
 import { buildScoreExplanation } from "../../intelligence/buildScoreExplanation.js";
-import { buildPersonas } from "../../intelligence/buildPersonas.js";
 import { buildEvSavariVerdict } from "../../intelligence/buildEvSavariVerdict.js";
 import { buildOwnershipCostScore } from "../../intelligence/buildOwnershipCostScore.js";
 import { buildChargingPracticalityScore } from "../../intelligence/buildChargingPracticalityScore.js";
@@ -11,7 +10,6 @@ import { buildFamilyScore, buildFamilyContext } from "../../intelligence/buildFa
 import { buildServiceNetworkScore, resolveServiceNetworkBrand } from "../../intelligence/buildServiceNetworkScore.js";
 import { scrollToDetailSection } from "../../utils/detailPageNav.js";
 import RecommendationInsightsCard from "../scoring/RecommendationInsightsCard.jsx";
-import PersonaChips from "../scoring/PersonaChips.jsx";
 import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses.jsx";
 import ConfidenceBadge from "../scoring/ConfidenceBadge.jsx";
 import EvIntelligenceScorePanel from "./EvIntelligenceScorePanel.jsx";
@@ -54,14 +52,6 @@ const ICONS = {
     </svg>
   ),
 };
-
-function hasPersonas(vehicle) {
-  return (buildPersonas(vehicle).personas || []).length > 0;
-}
-
-function hasBestFor(vehicle) {
-  return (buildRecommendationEngine(vehicle).bestFor || []).length > 0;
-}
 
 function hasStrengths(vehicle) {
   return (buildScoreExplanation(vehicle).strengths || []).length > 0;
@@ -276,14 +266,6 @@ export default function UnifiedEvIntelligenceSection({
     [vehicle]
   );
 
-  const showBestFor = useMemo(
-    () => Boolean(vehicle && hasBestFor(vehicle)),
-    [vehicle]
-  );
-  const showPersonality = useMemo(
-    () => Boolean(vehicle && hasPersonas(vehicle)),
-    [vehicle]
-  );
   const showStrengths = useMemo(
     () => Boolean(vehicle && hasStrengths(vehicle)),
     [vehicle]
@@ -341,29 +323,7 @@ export default function UnifiedEvIntelligenceSection({
         compact={layout === "hero"}
       />
 
-      <div className="unified-ev-intelligence__top-row">
-        {showBestFor ? (
-          <PremiumTopCard title="Best For" vehicle={vehicle}>
-            <RecommendationInsightsCard
-              vehicle={vehicle}
-              layout="inline"
-              maxAvoidFor={0}
-              className="unified-ev-intelligence__insights-inline"
-            />
-          </PremiumTopCard>
-        ) : null}
-
-        {showPersonality ? (
-          <PremiumTopCard title="EV Personality" vehicle={vehicle}>
-            <PersonaChips
-              vehicle={vehicle}
-              layout="inline"
-              className="unified-ev-intelligence__persona-chips"
-              ariaLabel="EV personality"
-            />
-          </PremiumTopCard>
-        ) : null}
-
+      <div className="unified-ev-intelligence__strengths-row">
         {showStrengths ? (
           <PremiumTopCard
             title="Why Owners Like It"
@@ -382,7 +342,7 @@ export default function UnifiedEvIntelligenceSection({
       </div>
 
       <div className="unified-ev-intelligence__experience-block">
-        <div className="unified-ev-intelligence__experience-grid">
+        <div className="unified-ev-intelligence__experience-grid unified-ev-intelligence__experience-grid--triple">
         {ownershipData ? (
           <PremiumExperienceCard
             icon={ICONS.ownership}
@@ -439,7 +399,9 @@ export default function UnifiedEvIntelligenceSection({
             </p>
           </PremiumExperienceCard>
         ) : null}
+        </div>
 
+        <div className="unified-ev-intelligence__experience-grid unified-ev-intelligence__experience-grid--dual">
         {familyData ? (
           <PremiumExperienceCard
             icon={ICONS.family}
@@ -467,9 +429,9 @@ export default function UnifiedEvIntelligenceSection({
             </p>
           </PremiumExperienceCard>
         ) : null}
+        </div>
 
         <OurTakePanel verdict={verdict} />
-        </div>
       </div>
 
       <div className="unified-ev-intelligence__bottom-row">

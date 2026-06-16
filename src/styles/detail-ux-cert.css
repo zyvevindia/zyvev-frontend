@@ -20,7 +20,7 @@
 
 .cd-ev-intelligence-section {
   margin-top: 0;
-  margin-bottom: var(--cd-space-section);
+  margin-bottom: 32px;
   scroll-margin-top: 120px;
 }
 
@@ -28,24 +28,50 @@
   margin-top: 0;
 }
 
-.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card,
-.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card {
-  border-radius: var(--cd-radius-xl);
-  box-shadow: var(--cd-shadow-card);
-  min-height: 108px;
-}
-
-.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
-.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid {
-  gap: var(--cd-space-card-gap);
-}
-
-.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take {
-  padding: 1.15rem 1.2rem;
+.cd-page .cd-ev-intelligence-section {
+  margin-bottom: 32px;
+  padding: 24px clamp(20px, 2.5vw, 28px);
 }
 
 .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__header {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__score-block {
+  margin-bottom: 16px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+  margin-bottom: 14px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-block {
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card {
+  border-radius: 20px;
+  box-shadow: var(--cd-shadow-card);
+  min-height: 130px;
+  max-height: 170px;
+  padding: 1rem 1.1rem;
+  overflow: hidden;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel {
+  min-height: 130px;
+  max-height: 170px;
+  padding: 1rem 1.1rem;
+  overflow: hidden;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+  gap: 14px;
 }
 
 /* —— Desktop widths (1280–1440) —— */

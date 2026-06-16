@@ -147,6 +147,10 @@ export default function DetailHero({
             </div>
           )}
 
+          <div className="cd-hero__media-stack">
+            <PersonaBestForHero vehicle={intelVehicle} />
+            <EvSavariVerdictHeader verdict={evSavariVerdict} />
+          </div>
         </div>
 
         <div className="cd-hero__info">
@@ -202,10 +206,6 @@ export default function DetailHero({
             onRequestCallback={onRequestCallback}
             onGetDealerAssistance={onGetDealerAssistance}
           />
-
-          <PersonaBestForHero vehicle={intelVehicle} />
-
-          <EvSavariVerdictHeader verdict={evSavariVerdict} />
 
           <div className="cd-hero__teasers">
             <div id="emi" className="cd-hero__teaser-anchor">

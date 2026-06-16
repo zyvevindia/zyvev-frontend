@@ -118,8 +118,22 @@
 .unified-ev-intelligence__experience-block {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  margin-bottom: 18px;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.unified-ev-intelligence__experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.unified-ev-intelligence__experience-grid--triple {
+  grid-template-columns: 1fr;
+}
+
+.unified-ev-intelligence__experience-grid--dual {
+  grid-template-columns: 1fr;
 }
 
 /* —— Header —— */
@@ -179,11 +193,12 @@
 
 /* —— Top row —— */
 
-.unified-ev-intelligence__top-row {
+.unified-ev-intelligence__top-row,
+.unified-ev-intelligence__strengths-row {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .unified-ev-intelligence__top-card {
@@ -265,7 +280,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .unified-ev-intelligence__experience-card {
@@ -534,18 +549,26 @@
 }
 
 @media (min-width: 1024px) {
+  .unified-ev-intelligence__experience-grid--triple {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .unified-ev-intelligence__experience-grid--dual {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .unified-ev-intelligence__top-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 18px;
   }
 
   .unified-ev-intelligence__experience-grid {
-    gap: 18px;
+    gap: 14px;
   }
 
   .unified-ev-intelligence__bottom-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 14px;
   }
 }
 

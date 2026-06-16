@@ -11,7 +11,7 @@
   --cd-shadow-card-hover:
     0 2px 4px rgba(15, 23, 42, 0.05),
     0 12px 32px rgba(15, 23, 42, 0.07);
-  --cd-space-section: 40px;
+  --cd-space-section: 32px;
   --cd-space-card-gap: 18px;
   --cd-pad-card: 24px;
   --cd-pad-card-inner: 20px;
@@ -84,8 +84,8 @@
 }
 
 .cd-page .cd-hero.cd-card {
-  margin-bottom: 28px;
-  padding: 22px 24px;
+  margin-bottom: 32px;
+  padding: 28px 30px;
   gap: unset;
 }
 
@@ -205,7 +205,7 @@
   box-shadow: var(--cd-shadow-card);
   border-radius: var(--cd-radius-lg);
   padding: 16px clamp(14px, 2vw, 22px);
-  margin-bottom: var(--cd-space-section);
+  margin-bottom: 32px;
 }
 
 .cd-page .cd-action-bar__btn {

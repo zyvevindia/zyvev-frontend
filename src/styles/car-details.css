@@ -18,7 +18,7 @@
 
 .cd-section {
   scroll-margin-top: 120px;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .cd-section__title {
@@ -55,7 +55,7 @@
 
 .cd-hero.cd-card {
   padding: 22px 24px;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .cd-hero__grid {
@@ -70,9 +70,25 @@
   grid-area: media;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
   align-self: start;
+}
+
+.cd-hero__media-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cd-hero__media-stack .persona-best-for-hero {
+  margin: 0;
+}
+
+.cd-hero__media-stack .ev-verdict-header {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .cd-hero__info {
