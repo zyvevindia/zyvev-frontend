@@ -717,6 +717,16 @@ export default function CarDetails() {
     return buildVisibleDetailSections(detailSectionContext);
   }, [detailSectionContext]);
 
+  const evIntelligenceSection = useMemo(
+    () => pageSections.find((section) => section.id === "ev-intelligence") ?? null,
+    [pageSections]
+  );
+
+  const mainPageSections = useMemo(
+    () => pageSections.filter((section) => section.id !== "ev-intelligence"),
+    [pageSections]
+  );
+
   const pageNavTabs = useMemo(() => {
     if (!detailSectionContext) return [];
     return buildVisibleDetailNavTabs(detailSectionContext);
@@ -1199,7 +1209,6 @@ export default function CarDetails() {
             evSavariVerdict={evSavariVerdict}
             intelligenceVehicle={heroIntelligenceVehicle}
             familyOverviewMode={isFamilyOverviewMode}
-            evSavariScores={evSavariScores}
             category={vehicle.category}
             galleryItems={galleryItems}
             galleryImages={galleryImages}
@@ -1234,6 +1243,16 @@ export default function CarDetails() {
             onCompare={handleCompareEv}
           />
 
+          {evIntelligenceSection ? (
+            <section
+              key="ev-intelligence"
+              id="ev-intelligence"
+              className={evIntelligenceSection.shellClassName}
+            >
+              <evIntelligenceSection.Component page={detailPage} />
+            </section>
+          ) : null}
+
           <DetailActionBar
             onEmi={scrollToEmiCalculator}
             onDealer={scrollToDealer}
@@ -1265,7 +1284,7 @@ export default function CarDetails() {
             tabs={pageNavTabs}
           />
 
-          {pageSections.map((section) => {
+          {mainPageSections.map((section) => {
             const SectionComponent = section.Component;
             return (
               <section

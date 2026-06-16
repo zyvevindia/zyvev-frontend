@@ -8,6 +8,7 @@ import {
   DetailChargingSection,
   DetailCompareSection,
   DetailEmiSection,
+  DetailEvIntelligenceSection,
   DetailFaqsSection,
   DetailPeopleAlsoCompareSection,
   DetailPopularAmongSimilarBuyersSection,
@@ -66,8 +67,11 @@ export const DETAIL_SECTION_DEFS = [
     title: "EV Intelligence",
     nav: true,
     navOrder: 10,
-    placement: "hero",
+    placement: "page",
+    shellClassName:
+      "cd-section cd-card cd-content-card cd-ev-intelligence-section",
     condition: (ctx) => ctx.hasEvIntelligence,
+    Component: DetailEvIntelligenceSection,
   },
   {
     id: "variants",
@@ -151,6 +155,7 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "emi",
     title: "EMI",
+    renderOnPage: false,
     placement: "page",
     shellClassName: "cd-section cd-card cd-content-card detail-emi-section",
     condition: (ctx) => ctx.hasEmi,
@@ -188,6 +193,7 @@ export const DETAIL_SECTION_DEFS = [
   {
     id: "assistance",
     title: "Assistance",
+    renderOnPage: false,
     placement: "page",
     shellClassName: "cd-section cd-dealer cd-card",
     condition: (ctx) => ctx.hasAssistance,

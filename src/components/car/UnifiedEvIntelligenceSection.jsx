@@ -328,8 +328,7 @@ export default function UnifiedEvIntelligenceSection({
   }
 
   return (
-    <section
-      id="ev-intelligence"
+    <div
       className={[
         "unified-ev-intelligence",
         layout === "hero" ? "unified-ev-intelligence--hero" : "",
@@ -544,6 +543,6 @@ export default function UnifiedEvIntelligenceSection({
         </CollapsiblePanel>
       ) : null}
       </div>
-    </section>
+    </div>
   );
 }

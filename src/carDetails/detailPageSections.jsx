@@ -9,6 +9,7 @@ import { scrollToDetailSection } from "../utils/detailPageNav.js";
 import TrustDataStrip from "../components/trust/TrustDataStrip";
 import SectionErrorBoundary from "../components/errors/SectionErrorBoundary";
 import EvIntelligenceSections from "../components/intelligence/EvIntelligenceSections";
+import UnifiedEvIntelligenceSection from "../components/car/UnifiedEvIntelligenceSection";
 import PeopleAlsoCompareSection from "../components/car/PeopleAlsoCompareSection";
 import SimilarEvsSection from "../components/car/SimilarEvsSection";
 import PopularAmongSimilarBuyersSection from "../components/car/PopularAmongSimilarBuyersSection";
@@ -62,6 +63,21 @@ export function DetailOverviewSection({ page }) {
         <DetailKeySpecifications metrics={page.detailMetrics} />
       ) : null}
     </>
+  );
+}
+
+export function DetailEvIntelligenceSection({ page }) {
+  const { intelligenceCar, isFamilyOverviewMode, evSavariScores } = page;
+
+  return (
+    <SectionErrorBoundary label="EV Intelligence" compact>
+      <UnifiedEvIntelligenceSection
+        vehicle={intelligenceCar}
+        evSavariScores={evSavariScores}
+        catalogMeta={intelligenceCar?.catalogMeta}
+        familyOverviewMode={isFamilyOverviewMode}
+      />
+    </SectionErrorBoundary>
   );
 }
 

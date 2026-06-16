@@ -1,4 +1,4 @@
-/* Phase 12D.9K.1 — UX certification & layout stabilization */
+/* Phase 12D.9K — UX certification & approved layout restoration */
 
 .cd-page {
   --cd-hero-col-gap: 28px;
@@ -9,7 +9,6 @@
 
 .cd-hero.cd-card {
   padding: 24px 26px;
-  margin-bottom: var(--cd-space-section);
 }
 
 .cd-hero__grid {
@@ -17,32 +16,36 @@
   row-gap: var(--cd-hero-row-gap);
 }
 
-.cd-hero__intelligence .unified-ev-intelligence--hero {
-  width: 100%;
+/* —— EV Intelligence centerpiece (full-width below hero) —— */
+
+.cd-ev-intelligence-section {
+  margin-top: 0;
+  margin-bottom: var(--cd-space-section);
+  scroll-margin-top: 120px;
 }
 
-.cd-hero__intelligence .unified-ev-intelligence__score-block {
-  margin-bottom: 16px;
+.cd-ev-intelligence-section .unified-ev-intelligence {
+  margin-top: 0;
 }
 
-/* —— Intelligence advisor dashboard —— */
-
-.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__top-card,
-.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__experience-card {
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card {
   border-radius: var(--cd-radius-xl);
   box-shadow: var(--cd-shadow-card);
+  min-height: 108px;
 }
 
-.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid {
   gap: var(--cd-space-card-gap);
 }
 
-.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__top-row {
-  gap: var(--cd-space-card-gap);
-}
-
-.cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__our-take {
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take {
   padding: 1.15rem 1.2rem;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__header {
+  margin-bottom: 24px;
 }
 
 /* —— Desktop widths (1280–1440) —— */
@@ -85,11 +88,6 @@
   .cd-hero__frame {
     max-height: 300px;
   }
-
-  .cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__top-row,
-  .cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
-    gap: 16px;
-  }
 }
 
 @media (max-width: 900px) and (min-width: 769px) {
@@ -107,7 +105,7 @@
 @media (max-width: 768px) {
   .cd-hero.cd-card {
     padding: 18px;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
 
   .cd-hero__info {
@@ -123,8 +121,8 @@
     gap: 12px;
   }
 
-  .cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__top-card,
-  .cd-page .unified-ev-intelligence--hero .unified-ev-intelligence__experience-card {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card {
     min-height: 0;
     padding: 1rem 1.05rem;
   }

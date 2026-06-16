@@ -5,8 +5,6 @@ import HeroSummary from "./HeroSummary";
 import EvSavariVerdictHeader from "./EvSavariVerdictHeader";
 import LeadGenerationCtaStrip from "./LeadGenerationCtaStrip";
 import PersonaBestForHero from "./PersonaBestForHero";
-import UnifiedEvIntelligenceSection from "./UnifiedEvIntelligenceSection";
-import { vehicleHasUnifiedEvIntelligence } from "../../intelligence/unifiedEvIntelligenceVisibility.js";
 import { getSafeImage } from "../../utils/imageUtils";
 import { scrollToDetailSection } from "../../utils/detailPageNav.js";
 
@@ -35,7 +33,6 @@ export default function DetailHero({
   evSavariVerdict = null,
   intelligenceVehicle = null,
   familyOverviewMode = false,
-  evSavariScores = null,
   category,
   galleryItems = [],
   galleryImages: galleryImagesProp,
@@ -80,10 +77,6 @@ export default function DetailHero({
     heroSummary?.variantCount || variantCount || 0;
   const showVerified = resolveVerifiedBadge(vehicle);
   const intelVehicle = intelligenceVehicle || vehicle;
-  const showIntelligence =
-    !familyOverviewMode &&
-    intelVehicle &&
-    vehicleHasUnifiedEvIntelligence(intelVehicle, evSavariScores);
 
   function handleExploreVariants() {
     scrollToDetailSection("variants");
@@ -219,26 +212,18 @@ export default function DetailHero({
           <EvSavariVerdictHeader verdict={evSavariVerdict} />
 
           <div className="cd-hero__teasers">
-            <DetailEmiTeaser
-              price={emiPrice}
-              onOpenCalculator={onScrollEmi}
-              variant="card"
-            />
-            <DetailDealerTeaser onOpenDealer={onScrollDealer} />
+            <div id="emi" className="cd-hero__teaser-anchor">
+              <DetailEmiTeaser
+                price={emiPrice}
+                onOpenCalculator={onScrollEmi}
+                variant="card"
+              />
+            </div>
+            <div id="assistance" className="cd-hero__teaser-anchor">
+              <DetailDealerTeaser onOpenDealer={onScrollDealer} />
+            </div>
           </div>
         </div>
-
-        {showIntelligence ? (
-          <div className="cd-hero__intelligence">
-            <UnifiedEvIntelligenceSection
-              vehicle={intelVehicle}
-              layout="hero"
-              evSavariScores={evSavariScores}
-              catalogMeta={intelVehicle?.catalogMeta}
-              familyOverviewMode={familyOverviewMode}
-            />
-          </div>
-        ) : null}
       </div>
     </section>
   );
