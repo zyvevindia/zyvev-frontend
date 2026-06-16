@@ -1,0 +1,313 @@
+/* Phase 12D.9K.8 — Final visual polish (presentation only) */
+
+.cd-page {
+  --cd-space-section: 36px;
+  --cd-intel-card-radius: 20px;
+  --cd-intel-card-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+  --cd-intel-card-pad: 1.35rem 1.42rem;
+  --cd-intel-title-size: 1.18rem;
+  --cd-intel-title-weight: 700;
+  --cd-intel-body-leading: 1.56;
+  --cd-intel-bullet-gap: 0.62rem;
+}
+
+/* —— Vertical rhythm (32–40px between major blocks; hero untouched) —— */
+
+.cd-page .cd-section {
+  margin-bottom: var(--cd-space-section);
+}
+
+.cd-page .cd-ev-intelligence-section.cd-section {
+  margin-bottom: var(--cd-space-section);
+}
+
+.cd-page .cd-action-bar-wrap {
+  margin-bottom: var(--cd-space-section);
+}
+
+.cd-page .cd-tabs-wrap {
+  margin-bottom: var(--cd-space-section);
+}
+
+/* —— Section + card typography —— */
+
+.cd-page .cd-section__title {
+  line-height: 1.24;
+  margin-bottom: 10px;
+}
+
+.cd-page .cd-section__intro {
+  line-height: 1.62;
+  margin-bottom: 18px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__title.cd-section__title {
+  font-size: 1.88rem;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__header {
+  margin-bottom: 26px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__score-block {
+  margin-bottom: 22px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+  margin-bottom: 22px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-block {
+  gap: 22px;
+  margin-bottom: 0;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+  gap: 22px;
+  margin-top: 22px;
+}
+
+/* —— EV Intelligence card system (consistent radius, shadow, padding) —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__why-owners-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__score-block--intelligence
+  .ev-score-panel--intelligence,
+.cd-page .cd-ev-intelligence-section .cd-overview-dashboard__score-panel--intelligence {
+  border-radius: var(--cd-intel-card-radius);
+  box-shadow: var(--cd-intel-card-shadow);
+  border: 1px solid #eef2f7;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__why-owners-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel {
+  min-height: 168px;
+  padding: var(--cd-intel-card-pad);
+  overflow: visible;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card-title,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-title,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel-title {
+  font-size: var(--cd-intel-title-size);
+  font-weight: var(--cd-intel-title-weight);
+  line-height: 1.36;
+  letter-spacing: -0.015em;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-body,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card-body,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel-body {
+  gap: 0.6rem;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-detail,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-metric,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-support li,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__insights-inline--why-owners
+  .score-sw__item,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel
+  .score-sw__item,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel
+  .recommendation-insights__item {
+  line-height: var(--cd-intel-body-leading);
+}
+
+.cd-page .cd-ev-intelligence-section .score-sw__list,
+.cd-page .cd-ev-intelligence-section .recommendation-insights__list {
+  gap: var(--cd-intel-bullet-gap);
+}
+
+/* —— Confidence badge placement —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__card-confidence {
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__card-confidence .confidence-badge,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__card-confidence
+  .confidence-badge--compact {
+  margin-top: 0;
+  padding: 0.2rem 0.58rem;
+  font-size: 0.68rem;
+  line-height: 1.28;
+  letter-spacing: 0.02em;
+}
+
+/* —— Score summary card (premium, not compressed) —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__score-block--intelligence
+  .ev-score-panel--intelligence,
+.cd-page .cd-ev-intelligence-section .cd-overview-dashboard__score-panel--intelligence {
+  min-height: 84px;
+  max-height: 100px;
+  padding: 15px 22px;
+  gap: 16px 22px;
+}
+
+.cd-page .cd-ev-intelligence-section .ev-score-panel--intelligence .ev-score-panel__gauge,
+.cd-page .cd-ev-intelligence-section .cd-overview-dashboard__score-panel--intelligence
+  .cd-overview-dashboard__gauge {
+  width: 60px;
+  height: 60px;
+}
+
+.cd-page .cd-ev-intelligence-section .ev-score-panel--intelligence .ev-score-panel__summary,
+.cd-page .cd-ev-intelligence-section .cd-overview-dashboard__score-panel--intelligence
+  .cd-overview-dashboard__score-blurb {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.cd-page .cd-ev-intelligence-section .ev-score-panel--intelligence .score-sw__item,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__score-strengths .score-sw__item {
+  font-size: 0.8rem;
+  line-height: 1.42;
+}
+
+/* —— Our Take aligned with card system —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take {
+  border-radius: var(--cd-intel-card-radius);
+  padding: var(--cd-intel-card-pad);
+  min-height: 168px;
+  gap: 18px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take-title {
+  font-size: var(--cd-intel-title-size);
+  font-weight: var(--cd-intel-title-weight);
+  letter-spacing: -0.015em;
+  text-transform: none;
+  color: #047857;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take-summary {
+  line-height: var(--cd-intel-body-leading);
+}
+
+/* —— Grid alignment —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+  gap: 22px;
+  align-items: stretch;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__why-owners-card {
+  height: 100%;
+}
+
+.cd-page .cd-ev-intelligence-section,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence {
+  min-width: 0;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-label,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-detail,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take-headline,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take-summary {
+  overflow-wrap: anywhere;
+}
+
+/* —— Recommendation loop section rhythm —— */
+
+.cd-page .people-also-compare__intro,
+.cd-page .similar-evs__intro,
+.cd-page .popular-similar-buyers__intro {
+  margin-bottom: 18px;
+  line-height: 1.62;
+}
+
+/* —— Responsive QA —— */
+
+@media (min-width: 1024px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--triple {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--dual,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1280px) and (min-width: 901px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__score-block--intelligence
+    .ev-score-panel--intelligence,
+  .cd-page .cd-ev-intelligence-section .cd-overview-dashboard__score-panel--intelligence {
+    grid-template-columns: auto minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__title.cd-section__title {
+    font-size: 1.62rem;
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--triple {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .cd-page {
+    --cd-space-section: 32px;
+  }
+
+  .cd-page .cd-ev-intelligence-section {
+    padding: 20px 14px;
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--triple,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--dual,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__why-owners-card,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take {
+    min-height: 0;
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__score-block--intelligence
+    .ev-score-panel--intelligence,
+  .cd-page .cd-ev-intelligence-section .cd-overview-dashboard__score-panel--intelligence {
+    min-height: 84px;
+    max-height: none;
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .cd-page .cd-ev-intelligence-section {
+    padding: 18px 12px;
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__title.cd-section__title {
+    font-size: 1.48rem;
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__how-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__insights-inline--why-owners
+    .score-sw__item {
+    font-size: 0.9rem;
+  }
+}

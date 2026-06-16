@@ -4,6 +4,7 @@
 @import "./detail-ux-cert.css";
 @import "./detail-premium-restoration.css";
 @import "./detail-premium-k7.css";
+@import "./detail-premium-k8.css";
 
 .cd-page {
   min-height: 100vh;
