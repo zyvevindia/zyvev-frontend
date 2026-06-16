@@ -1,26 +1,6 @@
-import { useState } from "react";
-
 import ScoreCircle from "../common/ScoreCircle";
 import EvSavariScorePanel from "../scoring/EvSavariScorePanel";
-
-function ScoreBar({ label, value }) {
-  if (value == null) return null;
-  const pct = Math.min(100, Math.max(0, Math.round(value)));
-  return (
-    <div className="cd-overview-score-bar">
-      <div className="cd-overview-score-bar__head">
-        <span>{label}</span>
-        <span>{pct}/100</span>
-      </div>
-      <div className="cd-overview-score-bar__track">
-        <div
-          className="cd-overview-score-bar__fill"
-          style={{ width: `${pct}%` }}
-        />
-      </div>
-    </div>
-  );
-}
+import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses";
 
 function buildCategoryScores(meta) {
   if (!meta) return [];
@@ -111,6 +91,7 @@ export default function EvIntelligenceScorePanel({
   catalogMeta = null,
   familyOverviewMode = false,
   compact = false,
+  intelligenceCompact = false,
 }) {
   const meta = catalogMeta || vehicle?.catalogMeta;
   const v1Scores = evSavariScores || vehicle?.evSavariScores || null;
@@ -121,8 +102,7 @@ export default function EvIntelligenceScorePanel({
     v1Scores?.explanation?.summary ?? getScoreBlurb(meta, headlineScore);
   const useV1ScorePanel = shouldUseV1ScorePanel(v1Scores);
   const familySlug = vehicle?.familySlug || vehicle?.slug || null;
-  const [legacyBreakdownExpanded, setLegacyBreakdownExpanded] =
-    useState(false);
+  const useIntelligenceLayout = intelligenceCompact || compact;
 
   if (headlineScore == null && !useV1ScorePanel) {
     return null;
@@ -132,6 +112,9 @@ export default function EvIntelligenceScorePanel({
     <div
       className={[
         "unified-ev-intelligence__score-block",
+        useIntelligenceLayout
+          ? "unified-ev-intelligence__score-block--intelligence"
+          : "",
         compact ? "unified-ev-intelligence__score-block--compact" : "",
       ]
         .filter(Boolean)
@@ -142,60 +125,44 @@ export default function EvIntelligenceScorePanel({
           scores={v1Scores}
           vehicle={vehicle}
           showVariants={!familyOverviewMode}
-          collapsibleBreakdown={true}
+          compact={useIntelligenceLayout}
+          intelligenceCompact={intelligenceCompact}
+          collapsibleBreakdown={false}
+          showBreakdown={false}
           familySlug={familySlug}
         />
       ) : (
-        <div className="cd-overview-dashboard__score-panel">
-          <div className="cd-overview-dashboard__score-main">
-            <ScoreCircle
-              score={headlineScore}
-              className="cd-overview-dashboard__gauge"
-              valueClassName="cd-overview-dashboard__gauge-value"
-              suffixClassName="cd-overview-dashboard__gauge-suffix"
-            />
-            <div className="cd-overview-dashboard__score-copy">
-              <p className="cd-overview-dashboard__score-label">
-                EVSavari score
-              </p>
-              {scoreBlurb ? (
-                <p className="cd-overview-dashboard__score-blurb">
-                  {scoreBlurb}
+        <div className="cd-overview-dashboard__score-panel cd-overview-dashboard__score-panel--intelligence">
+          <div className="cd-overview-dashboard__score-intelligence-row">
+            <div className="cd-overview-dashboard__score-main">
+              <ScoreCircle
+                score={headlineScore}
+                className="cd-overview-dashboard__gauge"
+                valueClassName="cd-overview-dashboard__gauge-value"
+                suffixClassName="cd-overview-dashboard__gauge-suffix"
+              />
+              <div className="cd-overview-dashboard__score-copy">
+                <p className="cd-overview-dashboard__score-label">
+                  EVSavari score
                 </p>
-              ) : null}
+                {scoreBlurb ? (
+                  <p className="cd-overview-dashboard__score-blurb">
+                    {scoreBlurb}
+                  </p>
+                ) : null}
+              </div>
             </div>
+            {vehicle ? (
+              <ScoreStrengthsWeaknesses
+                vehicle={vehicle}
+                layout="inline"
+                variant="compact"
+                maxStrengths={2}
+                maxWeaknesses={2}
+                className="unified-ev-intelligence__score-strengths"
+              />
+            ) : null}
           </div>
-          {categoryScores.length > 0 && (
-            <>
-              <button
-                type="button"
-                className="ev-score-panel__toggle cd-overview-dashboard__score-toggle"
-                aria-expanded={legacyBreakdownExpanded}
-                aria-controls="unified-ev-intelligence-score-breakdown"
-                onClick={() =>
-                  setLegacyBreakdownExpanded((open) => !open)
-                }
-              >
-                {legacyBreakdownExpanded
-                  ? "▲ Hide score breakdown"
-                  : "▼ Show score breakdown"}
-              </button>
-              {legacyBreakdownExpanded && (
-                <div
-                  id="unified-ev-intelligence-score-breakdown"
-                  className="cd-overview-dashboard__score-bars"
-                >
-                  {categoryScores.map((row) => (
-                    <ScoreBar
-                      key={row.label}
-                      label={row.label}
-                      value={row.value}
-                    />
-                  ))}
-                </div>
-              )}
-            </>
-          )}
         </div>
       )}
     </div>

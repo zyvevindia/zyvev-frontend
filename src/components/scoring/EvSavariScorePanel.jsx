@@ -42,8 +42,10 @@ export default function EvSavariScorePanel({
   scores,
   vehicle = null,
   compact = false,
+  intelligenceCompact = false,
   showVariants = true,
   collapsibleBreakdown = !compact,
+  showBreakdown = true,
   familySlug = null,
   sourcePage = "car_details",
 }) {
@@ -67,7 +69,7 @@ export default function EvSavariScorePanel({
   const hasVariants = showVariants && variants.hasData;
   const hasCollapsibleContent = bars.length > 0 || hasVariants;
   const showCollapsibleToggle =
-    collapsibleBreakdown && hasCollapsibleContent;
+    showBreakdown && collapsibleBreakdown && hasCollapsibleContent;
 
   function handleToggleBreakdown() {
     setIsExpanded((open) => {
@@ -83,14 +85,30 @@ export default function EvSavariScorePanel({
     });
   }
 
+  const panelClass = [
+    "ev-score-panel",
+    compact ? "ev-score-panel--compact" : "",
+    intelligenceCompact ? "ev-score-panel--intelligence" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const strengthsProps = intelligenceCompact
+    ? { maxStrengths: 2, maxWeaknesses: 2, variant: "compact" }
+    : {
+        variant: compact ? "compact" : "default",
+      };
+
   return (
-    <div className={`ev-score-panel${compact ? " ev-score-panel--compact" : ""}`}>
+    <div className={panelClass}>
       <div
-        className={`ev-score-panel__header${
-          showCollapsibleToggle
-            ? " ev-score-panel__header--with-toggle"
-            : ""
-        }`}
+        className={[
+          intelligenceCompact ? "ev-score-panel__intelligence-row" : "",
+          "ev-score-panel__header",
+          showCollapsibleToggle ? "ev-score-panel__header--with-toggle" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
       >
         {overall != null && (
           <ScoreCircle
@@ -110,7 +128,7 @@ export default function EvSavariScorePanel({
           {explanation.summary ? (
             <p className="ev-score-panel__summary">{explanation.summary}</p>
           ) : null}
-          {vehicle ? (
+          {vehicle && !intelligenceCompact ? (
             <ConfidenceBadge
               vehicle={vehicle}
               dimension="overall"
@@ -118,14 +136,24 @@ export default function EvSavariScorePanel({
             />
           ) : null}
         </div>
+
+        {vehicle && intelligenceCompact ? (
+          <ScoreStrengthsWeaknesses
+            vehicle={vehicle}
+            layout="inline"
+            showWeaknesses={true}
+            className="ev-score-panel__score-explanation"
+            {...strengthsProps}
+          />
+        ) : null}
       </div>
 
-      {vehicle ? (
+      {vehicle && !intelligenceCompact ? (
         <ScoreStrengthsWeaknesses
           vehicle={vehicle}
-          variant={compact ? "compact" : "default"}
           layout="inline"
           className="ev-score-panel__score-explanation"
+          {...strengthsProps}
         />
       ) : null}
 
@@ -143,7 +171,9 @@ export default function EvSavariScorePanel({
         </button>
       )}
 
-      {(!collapsibleBreakdown || isExpanded) && hasCollapsibleContent && (
+      {showBreakdown &&
+        (!collapsibleBreakdown || isExpanded) &&
+        hasCollapsibleContent && (
         <div
           id="ev-score-panel-breakdown"
           className="ev-score-panel__details"

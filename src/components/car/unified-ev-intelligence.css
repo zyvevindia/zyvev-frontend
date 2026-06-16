@@ -204,9 +204,9 @@
 .unified-ev-intelligence__top-card {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   min-height: 100%;
-  padding: 1.15rem 1.2rem 1rem;
+  padding: 1.25rem 1.35rem 1.15rem;
   border-radius: 20px;
   background: #fff;
   border: 1px solid #eef2f7;
@@ -217,7 +217,7 @@
 
 .unified-ev-intelligence__top-card-title {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   text-transform: none;
@@ -249,9 +249,9 @@
 
 .unified-ev-intelligence__insights-inline .recommendation-insights__item,
 .unified-ev-intelligence__insights-inline .score-sw__item {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .unified-ev-intelligence__insights-inline--avoid
@@ -288,7 +288,7 @@
   grid-template-columns: auto minmax(0, 1fr);
   gap: 14px;
   align-items: flex-start;
-  padding: 1.15rem 1.2rem 1rem;
+  padding: 1.2rem 1.3rem 1.1rem;
   border-radius: 20px;
   background: #fff;
   border: 1px solid #eef2f7;
@@ -316,13 +316,13 @@
 .unified-ev-intelligence__experience-body {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.45rem;
   min-width: 0;
 }
 
 .unified-ev-intelligence__experience-title {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   text-transform: none;

@@ -50,20 +50,28 @@
   margin-bottom: 14px;
 }
 
-.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card {
+  border-radius: 20px;
+  box-shadow: var(--cd-shadow-card);
+  min-height: 150px;
+  max-height: none;
+  padding: 1.25rem 1.35rem;
+  overflow: visible;
+}
+
 .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card {
   border-radius: 20px;
   box-shadow: var(--cd-shadow-card);
-  min-height: 130px;
-  max-height: 170px;
-  padding: 1rem 1.1rem;
+  min-height: 150px;
+  max-height: 180px;
+  padding: 1.2rem 1.3rem;
   overflow: hidden;
 }
 
 .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel {
-  min-height: 130px;
-  max-height: 170px;
-  padding: 1rem 1.1rem;
+  min-height: 150px;
+  max-height: 180px;
+  padding: 1.2rem 1.3rem;
   overflow: hidden;
 }
 

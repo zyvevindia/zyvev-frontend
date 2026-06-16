@@ -301,10 +301,12 @@ export default function UnifiedEvIntelligenceSection({
           >
             EV Intelligence
           </h2>
-          <p className="cd-section__intro unified-ev-intelligence__subtitle">
-            Actionable insights to help you decide whether this EV is right for
-            you.
-          </p>
+          {layout === "hero" ? (
+            <p className="cd-section__intro unified-ev-intelligence__subtitle">
+              Actionable insights to help you decide whether this EV is right for
+              you.
+            </p>
+          ) : null}
         </div>
         <button
           type="button"
@@ -321,6 +323,7 @@ export default function UnifiedEvIntelligenceSection({
         catalogMeta={catalogMeta}
         familyOverviewMode={familyOverviewMode}
         compact={layout === "hero"}
+        intelligenceCompact={layout !== "hero"}
       />
 
       <div className="unified-ev-intelligence__strengths-row">
