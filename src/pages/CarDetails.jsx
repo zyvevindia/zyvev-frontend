@@ -70,6 +70,7 @@ import {
   buildDetailPageSectionContext,
   buildVisibleDetailSections,
   buildVisibleDetailNavTabs,
+  DETAIL_SECTION_DEFS,
   detailTabIdForSectionElement,
   getDetailNavObserveIds,
   scrollToDetailSection,
@@ -659,6 +660,75 @@ export default function CarDetails() {
     });
   }, [displayCar, loading, slug, family?.familySlug]);
 
+  const evSavariScores = useMemo(() => {
+    if (!displayCar || loading || catalogLoading) {
+      return null;
+    }
+
+    const vehicle = displayCar;
+    const familySlug =
+      family?.familySlug ||
+      extractFamilySlug(vehicle.slug || slug);
+    const variantOptions =
+      familyVariants.length > 0
+        ? familyVariants
+        : vehicle.variants || [];
+    const comparableVariants = filterComparableVariants(
+      variantOptions,
+      familySlug
+    );
+    const familyFallbackVehicle =
+      family?.defaultVariant ||
+      comparableVariants[0] ||
+      variantOptions[0] ||
+      vehicle;
+    const enrichedVariants = enrichVariantsWithInsights(
+      comparableVariants,
+      familyFallbackVehicle
+    );
+    const explicitVariantSlug = normalizeVehicleSlug(
+      searchParams.get("variant")
+    );
+    const isFamilyOverviewMode =
+      comparableVariants.length > 0 && !explicitVariantSlug;
+    const selectedVariantSlug = normalizeVehicleSlug(
+      explicitVariantSlug ||
+        selectedVariant?.slug ||
+        vehicle.slug
+    );
+    const intelligenceCar =
+      enrichedVariants.find((v) => v.slug === selectedVariantSlug) ||
+      selectedVariant ||
+      vehicle;
+    const familyMetrics = isFamilyOverviewMode
+      ? buildFamilyAggregateMetrics(
+          comparableVariants,
+          familyFallbackVehicle
+        )
+      : null;
+
+    const scoringSource = isFamilyOverviewMode
+      ? {
+          ...vehicle,
+          variants: comparableVariants,
+          maxRange: familyMetrics?.rangeLabel,
+        }
+      : intelligenceCar || vehicle;
+
+    return scoreVehicle(scoringSource, {
+      variants: comparableVariants.length ? comparableVariants : undefined,
+    });
+  }, [
+    displayCar,
+    loading,
+    catalogLoading,
+    family,
+    slug,
+    familyVariants,
+    selectedVariant,
+    searchParams,
+  ]);
+
   const detailSectionContext = useMemo(() => {
     if (!displayCar) return null;
 
@@ -701,6 +771,7 @@ export default function CarDetails() {
       hasGoldExperience,
       intelligence,
       familySlug: famSlug,
+      evSavariScores,
     });
   }, [
     displayCar,
@@ -710,6 +781,7 @@ export default function CarDetails() {
     searchParams,
     selectedVariant,
     hasGoldExperience,
+    evSavariScores,
   ]);
 
   const pageSections = useMemo(() => {
@@ -717,10 +789,12 @@ export default function CarDetails() {
     return buildVisibleDetailSections(detailSectionContext);
   }, [detailSectionContext]);
 
-  const evIntelligenceSection = useMemo(
-    () => pageSections.find((section) => section.id === "ev-intelligence") ?? null,
-    [pageSections]
-  );
+  const evIntelligenceSection = useMemo(() => {
+    if (!detailSectionContext?.hasEvIntelligence) return null;
+    return (
+      DETAIL_SECTION_DEFS.find((def) => def.id === "ev-intelligence") ?? null
+    );
+  }, [detailSectionContext?.hasEvIntelligence]);
 
   const mainPageSections = useMemo(
     () => pageSections.filter((section) => section.id !== "ev-intelligence"),
@@ -796,75 +870,6 @@ export default function CarDetails() {
 
     return () => observer.disconnect();
   }, [displayCar, slug, pageNavTabs]);
-
-  const evSavariScores = useMemo(() => {
-    if (!displayCar || loading || catalogLoading) {
-      return null;
-    }
-
-    const vehicle = displayCar;
-    const familySlug =
-      family?.familySlug ||
-      extractFamilySlug(vehicle.slug || slug);
-    const variantOptions =
-      familyVariants.length > 0
-        ? familyVariants
-        : vehicle.variants || [];
-    const comparableVariants = filterComparableVariants(
-      variantOptions,
-      familySlug
-    );
-    const familyFallbackVehicle =
-      family?.defaultVariant ||
-      comparableVariants[0] ||
-      variantOptions[0] ||
-      vehicle;
-    const enrichedVariants = enrichVariantsWithInsights(
-      comparableVariants,
-      familyFallbackVehicle
-    );
-    const explicitVariantSlug = normalizeVehicleSlug(
-      searchParams.get("variant")
-    );
-    const isFamilyOverviewMode =
-      comparableVariants.length > 0 && !explicitVariantSlug;
-    const selectedVariantSlug = normalizeVehicleSlug(
-      explicitVariantSlug ||
-        selectedVariant?.slug ||
-        vehicle.slug
-    );
-    const intelligenceCar =
-      enrichedVariants.find((v) => v.slug === selectedVariantSlug) ||
-      selectedVariant ||
-      vehicle;
-    const familyMetrics = isFamilyOverviewMode
-      ? buildFamilyAggregateMetrics(
-          comparableVariants,
-          familyFallbackVehicle
-        )
-      : null;
-
-    const scoringSource = isFamilyOverviewMode
-      ? {
-          ...vehicle,
-          variants: comparableVariants,
-          maxRange: familyMetrics?.rangeLabel,
-        }
-      : intelligenceCar || vehicle;
-
-    return scoreVehicle(scoringSource, {
-      variants: comparableVariants.length ? comparableVariants : undefined,
-    });
-  }, [
-    displayCar,
-    loading,
-    catalogLoading,
-    family,
-    slug,
-    familyVariants,
-    selectedVariant,
-    searchParams,
-  ]);
 
   /* =========================================================
      ======================= LOADING =========================

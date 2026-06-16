@@ -214,6 +214,7 @@ export function buildDetailPageSectionContext({
   hasGoldExperience = false,
   intelligence = null,
   familySlug = "",
+  evSavariScores = null,
 }) {
   const meta = vehicle?.catalogMeta ?? {};
   const allFaq = [...(meta.faq ?? []), ...(meta.chargingFaq ?? [])];
@@ -245,9 +246,10 @@ export function buildDetailPageSectionContext({
   });
 
   const intelVehicle = comparisonVehicle || vehicle;
-  const hasEvIntelligence =
-    !isFamilyOverviewMode &&
-    vehicleHasUnifiedEvIntelligence(intelVehicle);
+  const hasEvIntelligence = vehicleHasUnifiedEvIntelligence(
+    intelVehicle,
+    evSavariScores
+  );
 
   const hasDedicatedChargingSection =
     !isFamilyOverviewMode &&
