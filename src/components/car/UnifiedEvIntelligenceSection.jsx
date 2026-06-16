@@ -53,8 +53,23 @@ const ICONS = {
   ),
 };
 
-function hasStrengths(vehicle) {
-  return (buildScoreExplanation(vehicle).strengths || []).length > 0;
+function resolveStrengthExplanation(vehicle, evSavariScores = null) {
+  if (!vehicle) return null;
+
+  const built = buildScoreExplanation(vehicle);
+  if ((built.strengths || []).length > 0) {
+    return built;
+  }
+
+  const scoreStrengths = evSavariScores?.explanation?.strengths;
+  if (Array.isArray(scoreStrengths) && scoreStrengths.length > 0) {
+    return {
+      ...built,
+      strengths: scoreStrengths.filter(Boolean),
+    };
+  }
+
+  return built;
 }
 
 function hasWeaknesses(vehicle) {
@@ -266,10 +281,16 @@ export default function UnifiedEvIntelligenceSection({
     [vehicle]
   );
 
-  const showStrengths = useMemo(
-    () => Boolean(vehicle && hasStrengths(vehicle)),
-    [vehicle]
+  const strengthExplanation = useMemo(
+    () => resolveStrengthExplanation(vehicle, evSavariScores),
+    [vehicle, evSavariScores]
   );
+
+  const showWhyOwnersCard = useMemo(
+    () => (strengthExplanation?.strengths || []).length > 0,
+    [strengthExplanation]
+  );
+
   const showTradeOffs = useMemo(
     () => Boolean(vehicle && hasWeaknesses(vehicle)),
     [vehicle]
@@ -327,18 +348,19 @@ export default function UnifiedEvIntelligenceSection({
       />
 
       <div className="unified-ev-intelligence__strengths-row">
-        {showStrengths ? (
+        {showWhyOwnersCard ? (
           <PremiumTopCard
             title="Why Owners Like It"
             vehicle={vehicle}
             confidenceLabel={scoreConfidence}
+            className="unified-ev-intelligence__why-owners-card"
           >
             <ScoreStrengthsWeaknesses
-              vehicle={vehicle}
+              explanation={strengthExplanation}
               layout="inline"
               showWeaknesses={false}
               maxStrengths={4}
-              className="unified-ev-intelligence__insights-inline"
+              className="unified-ev-intelligence__insights-inline unified-ev-intelligence__insights-inline--why-owners"
             />
           </PremiumTopCard>
         ) : null}
