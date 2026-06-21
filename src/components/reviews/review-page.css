@@ -89,7 +89,6 @@
 }
 
 .review-page__section-card,
-.review-page__pros-cons-card,
 .review-page__verdict-card {
   padding: var(--review-card-pad);
   border-radius: var(--review-card-radius);
@@ -127,35 +126,6 @@
 .review-page__verdict-copy {
   color: #065f46;
   font-weight: 500;
-}
-
-.review-page__pros-cons-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-
-.review-page__pros-cons-item {
-  position: relative;
-  padding-left: 1.1rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #475569;
-}
-
-.review-page__pros-cons-item::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #64748b;
-  font-weight: 700;
-}
-
-.review-page__pros-cons-empty {
-  color: #64748b;
 }
 
 .review-page__state {

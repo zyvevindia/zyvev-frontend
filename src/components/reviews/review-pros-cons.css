@@ -1,0 +1,121 @@
+.review-pros-cons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100%;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 6px 18px rgba(15, 23, 42, 0.05);
+}
+
+.review-pros-cons--pros {
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  border-color: #bbf7d0;
+}
+
+.review-pros-cons--cons {
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);
+  border-color: #fde68a;
+}
+
+.review-pros-cons__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-pros-cons__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.review-pros-cons--pros .review-pros-cons__icon {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.review-pros-cons--cons .review-pros-cons__icon {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.review-pros-cons__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.review-pros-cons--pros .review-pros-cons__title {
+  color: #166534;
+}
+
+.review-pros-cons--cons .review-pros-cons__title {
+  color: #92400e;
+}
+
+.review-pros-cons__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.review-pros-cons__item {
+  position: relative;
+  padding-left: 0.95rem;
+  font-size: 0.93rem;
+  line-height: 1.58;
+  color: #334155;
+}
+
+.review-pros-cons__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+}
+
+.review-pros-cons--pros .review-pros-cons__item::before {
+  background: #22c55e;
+}
+
+.review-pros-cons--cons .review-pros-cons__item::before {
+  background: #f59e0b;
+}
+
+.review-pros-cons__empty {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.58;
+  color: #64748b;
+}
+
+@media (min-width: 768px) {
+  .review-pros-cons {
+    padding: 18px 20px;
+  }
+}
+
+@media (max-width: 639px) {
+  .review-pros-cons {
+    padding: 16px;
+  }
+}
