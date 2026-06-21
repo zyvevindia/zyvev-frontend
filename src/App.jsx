@@ -82,6 +82,10 @@ const CostPerKmPage = lazy(() =>
   import("./pages/CostPerKmPage")
 );
 
+const TcoCalculatorPage = lazy(() =>
+  import("./pages/TcoCalculatorPage")
+);
+
 const SalesAnalytics = lazy(() =>
   import("./pages/SalesAnalytics")
 );
@@ -491,6 +495,11 @@ export default function App() {
           <Route
             path="/tools/cost-per-km"
             element={<CostPerKmPage />}
+          />
+
+          <Route
+            path="/tools/tco"
+            element={<TcoCalculatorPage />}
           />
 
           <Route
