@@ -86,6 +86,10 @@ const TcoCalculatorPage = lazy(() =>
   import("./pages/TcoCalculatorPage")
 );
 
+const PetrolSavingsPage = lazy(() =>
+  import("./pages/PetrolSavingsPage")
+);
+
 const SalesAnalytics = lazy(() =>
   import("./pages/SalesAnalytics")
 );
@@ -500,6 +504,11 @@ export default function App() {
           <Route
             path="/tools/tco"
             element={<TcoCalculatorPage />}
+          />
+
+          <Route
+            path="/tools/savings-vs-petrol"
+            element={<PetrolSavingsPage />}
           />
 
           <Route

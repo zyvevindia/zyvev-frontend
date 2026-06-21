@@ -1,0 +1,412 @@
+.petrol-savings-page {
+  --savings-max: 1120px;
+  --savings-radius: 20px;
+  --savings-pad: 22px;
+  --savings-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.petrol-savings-page__hero {
+  margin-bottom: 24px;
+  padding: var(--savings-pad);
+  border-radius: var(--savings-radius);
+  background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+  border: 1px solid #bbf7d0;
+  box-shadow: var(--savings-shadow);
+}
+
+.petrol-savings-page__title {
+  margin: 0 0 8px;
+  font-size: clamp(1.65rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.petrol-savings-page__subtitle {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 0.97rem;
+  line-height: 1.72;
+  color: #475569;
+}
+
+.petrol-savings-page__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.petrol-savings-page__results {
+  display: grid;
+  gap: 16px;
+}
+
+.petrol-savings-form,
+.petrol-savings-result,
+.petrol-savings-chart,
+.petrol-savings-page__insight {
+  padding: var(--savings-pad);
+  border-radius: var(--savings-radius);
+  background: #fff;
+  border: 1px solid #eef2f7;
+  box-shadow: var(--savings-shadow);
+}
+
+.petrol-savings-form {
+  display: grid;
+  gap: 16px;
+}
+
+.petrol-savings-form__field {
+  display: grid;
+  gap: 8px;
+}
+
+.petrol-savings-form__label-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.petrol-savings-form__label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.petrol-savings-form__value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.petrol-savings-form__select,
+.petrol-savings-form__input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+  color: #0f172a;
+}
+
+.petrol-savings-form__input--readonly {
+  background: #f8fafc;
+  color: #475569;
+}
+
+.petrol-savings-form__range {
+  width: 100%;
+  accent-color: #0f766e;
+}
+
+.petrol-savings-form__hint,
+.petrol-savings-form__note {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.petrol-savings-result {
+  border-width: 1px;
+}
+
+.petrol-savings-result--green {
+  border-color: #a7f3d0;
+  background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%);
+}
+
+.petrol-savings-result--amber {
+  border-color: #fde68a;
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);
+}
+
+.petrol-savings-result--red {
+  border-color: #fecaca;
+  background: linear-gradient(180deg, #fef2f2 0%, #ffffff 100%);
+}
+
+.petrol-savings-result__eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.petrol-savings-result__compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.petrol-savings-result__compare-item {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.petrol-savings-result__compare-item--ev {
+  border: 1px solid #a7f3d0;
+}
+
+.petrol-savings-result__compare-item--petrol {
+  border: 1px solid #e2e8f0;
+}
+
+.petrol-savings-result__compare-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.petrol-savings-result__compare-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.petrol-savings-result__savings {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.petrol-savings-result__savings-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #64748b;
+}
+
+.petrol-savings-result--green .petrol-savings-result__savings-value {
+  color: #047857;
+}
+
+.petrol-savings-result--amber .petrol-savings-result__savings-value {
+  color: #b45309;
+}
+
+.petrol-savings-result--red .petrol-savings-result__savings-value {
+  color: #b91c1c;
+}
+
+.petrol-savings-result__savings-value {
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.petrol-savings-result__savings-pct {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.petrol-savings-result__break-even {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.petrol-savings-result__meta-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.petrol-savings-result__meta-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.petrol-savings-chart__title {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.petrol-savings-chart__totals {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.petrol-savings-chart__total-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.petrol-savings-chart__total-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.petrol-savings-chart__total-value {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.petrol-savings-chart__total-track {
+  height: 12px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  overflow: hidden;
+}
+
+.petrol-savings-chart__total-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.petrol-savings-chart__total-fill--ev {
+  background: #0f766e;
+}
+
+.petrol-savings-chart__total-fill--petrol {
+  background: #64748b;
+}
+
+.petrol-savings-chart__stacked-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.petrol-savings-chart__stacked-title {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.petrol-savings-chart__stacked-bar {
+  display: flex;
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #e2e8f0;
+  margin-bottom: 10px;
+}
+
+.petrol-savings-chart__stacked-segment {
+  min-width: 2px;
+  height: 100%;
+}
+
+.petrol-savings-chart__legend {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.petrol-savings-chart__legend-item {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.84rem;
+  color: #475569;
+}
+
+.petrol-savings-chart__legend-item span:last-child {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.petrol-savings-chart__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.petrol-savings-page__insight-title {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.petrol-savings-page__insight-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.petrol-savings-page__insight-list li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.97rem;
+  line-height: 1.72;
+  color: #475569;
+}
+
+.petrol-savings-page__insight-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: #0f766e;
+}
+
+@media (min-width: 640px) {
+  .petrol-savings-chart__stacked-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .petrol-savings-page__layout {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: start;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .petrol-savings-page__hero {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 389px) {
+  .petrol-savings-result__compare-grid,
+  .petrol-savings-result__break-even {
+    grid-template-columns: 1fr;
+  }
+}
