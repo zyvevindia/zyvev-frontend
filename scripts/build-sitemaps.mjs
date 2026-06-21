@@ -16,6 +16,7 @@ import {
   buildDiscoveryGuideSitemapEntries,
   buildCompareGuideSitemapEntries,
   buildIntelligenceDiscoverySitemapEntries,
+  buildOwnershipSitemapEntries,
 } from "../src/seo/sitemap.js";
 import { GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH } from "../src/seo/legacyCanonicalMap.js";
 
@@ -248,6 +249,7 @@ Allow: /brands/
 Allow: /best-evs/
 Allow: /cities/
 Allow: /discover/
+Allow: /ownership/
 
 Sitemap: ${SITE_ORIGIN}/sitemap.xml
 `;
@@ -292,12 +294,17 @@ const compareEntries = buildCompareGuideSitemapEntries(SITE_ORIGIN, {
   ...e,
   lastmod: e.lastmod || lastmodByPath[e.path] || manifestGeneratedAt,
 }));
+const ownershipEntries = buildOwnershipSitemapEntries(SITE_ORIGIN).map((e) => ({
+  ...e,
+  lastmod: lastmodByPath[e.path] || DEFAULT_LASTMOD,
+}));
 
 writeFileSync(join(sitemapsDir, "static.xml"), urlsetXml(staticEntries));
 writeFileSync(join(sitemapsDir, "cars.xml"), urlsetXml(vehicleEntries));
 writeFileSync(join(sitemapsDir, "reviews.xml"), urlsetXml(reviewEntries));
 writeFileSync(join(sitemapsDir, "seo-pages.xml"), urlsetXml(discoveryEntries));
 writeFileSync(join(sitemapsDir, "compare.xml"), urlsetXml(compareEntries));
+writeFileSync(join(sitemapsDir, "ownership.xml"), urlsetXml(ownershipEntries));
 
 writeFileSync(
   join(publicDir, "sitemap.xml"),
@@ -307,6 +314,7 @@ writeFileSync(
     "reviews.xml",
     "seo-pages.xml",
     "compare.xml",
+    "ownership.xml",
   ])
 );
 
@@ -321,18 +329,21 @@ writeFileSync(
       reviews: reviewEntries,
       discovery: discoveryEntries,
       compare: compareEntries,
+      ownership: ownershipEntries,
       counts: {
         static: staticEntries.length,
         vehicles: vehicleEntries.length,
         reviews: reviewEntries.length,
         discovery: discoveryEntries.length,
         compare: compareEntries.length,
+        ownership: ownershipEntries.length,
         total:
           staticEntries.length +
           vehicleEntries.length +
           reviewEntries.length +
           discoveryEntries.length +
-          compareEntries.length,
+          compareEntries.length +
+          ownershipEntries.length,
       },
       legacyGuideUrlsExcluded: true,
       sitemapFiles: {
@@ -341,6 +352,7 @@ writeFileSync(
         reviews: reviewEntries.length,
         discovery: discoveryEntries.length,
         compare: compareEntries.length,
+        ownership: ownershipEntries.length,
       },
     },
     null,
@@ -355,7 +367,8 @@ const total =
   vehicleEntries.length +
   reviewEntries.length +
   discoveryEntries.length +
-  compareEntries.length;
+  compareEntries.length +
+  ownershipEntries.length;
 
 console.log(`Sitemaps generated (${SITE_ORIGIN})`);
 console.log(`  static.xml:     ${staticEntries.length} URLs`);
@@ -363,5 +376,6 @@ console.log(`  cars.xml:       ${vehicleEntries.length} URLs (family slugs only)
 console.log(`  reviews.xml:    ${reviewEntries.length} URLs (editorial reviews)`);
 console.log(`  seo-pages.xml:  ${discoveryEntries.length} URLs (discovery canonical)`);
 console.log(`  compare.xml:    ${compareEntries.length} URLs`);
+console.log(`  ownership.xml:  ${ownershipEntries.length} URLs (programmatic ownership)`);
 console.log(`  Total indexed:  ${total} URLs`);
 console.log(`  robots.txt updated`);

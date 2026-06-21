@@ -51,5 +51,6 @@ Allow: /brands/
 Allow: /best-evs/
 Allow: /cities/
 Allow: /discover/
+Allow: /ownership/
 
 Sitemap: https://evsavari.com/sitemap.xml

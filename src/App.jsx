@@ -94,6 +94,22 @@ const EmiCalculatorPage = lazy(() =>
   import("./pages/EmiCalculatorPage")
 );
 
+const RunningCostOwnershipPage = lazy(() =>
+  import("./pages/ownership/RunningCostPage.jsx")
+);
+
+const OwnershipCostPage = lazy(() =>
+  import("./pages/ownership/OwnershipCostPage.jsx")
+);
+
+const PetrolSavingsOwnershipPage = lazy(() =>
+  import("./pages/ownership/PetrolSavingsOwnershipPage.jsx")
+);
+
+const EmiOwnershipPage = lazy(() =>
+  import("./pages/ownership/EmiOwnershipPage.jsx")
+);
+
 const SalesAnalytics = lazy(() =>
   import("./pages/SalesAnalytics")
 );
@@ -567,6 +583,26 @@ export default function App() {
           <Route
             path="/cities/:city/charging"
             element={<CityChargingDiscoveryPage />}
+          />
+
+          <Route
+            path="/ownership/:slug/running-cost"
+            element={<RunningCostOwnershipPage />}
+          />
+
+          <Route
+            path="/ownership/:slug/tco"
+            element={<OwnershipCostPage />}
+          />
+
+          <Route
+            path="/ownership/:slug/petrol-savings"
+            element={<PetrolSavingsOwnershipPage />}
+          />
+
+          <Route
+            path="/ownership/:slug/emi"
+            element={<EmiOwnershipPage />}
           />
 
           <Route

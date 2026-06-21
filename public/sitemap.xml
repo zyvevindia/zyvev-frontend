@@ -20,4 +20,8 @@
     <loc>https://evsavari.com/sitemaps/compare.xml</loc>
     <lastmod>2026-06-21</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://evsavari.com/sitemaps/ownership.xml</loc>
+    <lastmod>2026-06-21</lastmod>
+  </sitemap>
 </sitemapindex>

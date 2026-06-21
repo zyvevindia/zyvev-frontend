@@ -152,6 +152,37 @@ export function buildReviewSitemapEntries(
   );
 }
 
+/** Programmatic ownership page path segments (keep in sync with ownershipRoutes.js). */
+const OWNERSHIP_SITEMAP_SEGMENTS = Object.freeze([
+  "running-cost",
+  "tco",
+  "petrol-savings",
+  "emi",
+]);
+
+/**
+ * Programmatic ownership calculator pages — /ownership/:slug/:pageType
+ */
+export function buildOwnershipSitemapEntries(
+  siteOrigin = DEFAULT_SITE_ORIGIN
+) {
+  const entries = [];
+
+  for (const familySlug of TIER1_MODEL_FAMILY_SLUGS) {
+    for (const segment of OWNERSHIP_SITEMAP_SEGMENTS) {
+      entries.push(
+        entry(`/ownership/${familySlug}/${segment}`, {
+          priority: 0.74,
+          changefreq: "weekly",
+          siteOrigin,
+        })
+      );
+    }
+  }
+
+  return uniqueEntries(entries);
+}
+
 /**
  * Editorial compare guides — /compare/:slug
  */

@@ -1,6 +1,6 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-06-21T06:18:27.320Z",
+  "generatedAt": "2026-06-21T13:30:53.778Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
@@ -1936,13 +1936,716 @@
       "lastmod": "2026-06-21"
     }
   ],
+  "ownership": [
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-creta-electric/running-cost",
+      "path": "/ownership/hyundai-creta-electric/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-creta-electric/tco",
+      "path": "/ownership/hyundai-creta-electric/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-creta-electric/petrol-savings",
+      "path": "/ownership/hyundai-creta-electric/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-creta-electric/emi",
+      "path": "/ownership/hyundai-creta-electric/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-kona-electric/running-cost",
+      "path": "/ownership/hyundai-kona-electric/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-kona-electric/tco",
+      "path": "/ownership/hyundai-kona-electric/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-kona-electric/petrol-savings",
+      "path": "/ownership/hyundai-kona-electric/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-kona-electric/emi",
+      "path": "/ownership/hyundai-kona-electric/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xev-9e/running-cost",
+      "path": "/ownership/mahindra-xev-9e/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xev-9e/tco",
+      "path": "/ownership/mahindra-xev-9e/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xev-9e/petrol-savings",
+      "path": "/ownership/mahindra-xev-9e/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xev-9e/emi",
+      "path": "/ownership/mahindra-xev-9e/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xuv400/running-cost",
+      "path": "/ownership/mahindra-xuv400/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xuv400/tco",
+      "path": "/ownership/mahindra-xuv400/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xuv400/petrol-savings",
+      "path": "/ownership/mahindra-xuv400/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xuv400/emi",
+      "path": "/ownership/mahindra-xuv400/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-harrier-ev/running-cost",
+      "path": "/ownership/tata-harrier-ev/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-harrier-ev/tco",
+      "path": "/ownership/tata-harrier-ev/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-harrier-ev/petrol-savings",
+      "path": "/ownership/tata-harrier-ev/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-harrier-ev/emi",
+      "path": "/ownership/tata-harrier-ev/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/maruti-e-vitara/running-cost",
+      "path": "/ownership/maruti-e-vitara/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/maruti-e-vitara/tco",
+      "path": "/ownership/maruti-e-vitara/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/maruti-e-vitara/petrol-savings",
+      "path": "/ownership/maruti-e-vitara/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/maruti-e-vitara/emi",
+      "path": "/ownership/maruti-e-vitara/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-ioniq-5/running-cost",
+      "path": "/ownership/hyundai-ioniq-5/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-ioniq-5/tco",
+      "path": "/ownership/hyundai-ioniq-5/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-ioniq-5/petrol-savings",
+      "path": "/ownership/hyundai-ioniq-5/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-ioniq-5/emi",
+      "path": "/ownership/hyundai-ioniq-5/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mini-cooper-se/running-cost",
+      "path": "/ownership/mini-cooper-se/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mini-cooper-se/tco",
+      "path": "/ownership/mini-cooper-se/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mini-cooper-se/petrol-savings",
+      "path": "/ownership/mini-cooper-se/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mini-cooper-se/emi",
+      "path": "/ownership/mini-cooper-se/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-be-6/running-cost",
+      "path": "/ownership/mahindra-be-6/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-be-6/tco",
+      "path": "/ownership/mahindra-be-6/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-be-6/petrol-savings",
+      "path": "/ownership/mahindra-be-6/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-be-6/emi",
+      "path": "/ownership/mahindra-be-6/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-nexon-ev/running-cost",
+      "path": "/ownership/tata-nexon-ev/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-nexon-ev/tco",
+      "path": "/ownership/tata-nexon-ev/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-nexon-ev/petrol-savings",
+      "path": "/ownership/tata-nexon-ev/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-nexon-ev/emi",
+      "path": "/ownership/tata-nexon-ev/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-curvv-ev/running-cost",
+      "path": "/ownership/tata-curvv-ev/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-curvv-ev/tco",
+      "path": "/ownership/tata-curvv-ev/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-curvv-ev/petrol-savings",
+      "path": "/ownership/tata-curvv-ev/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-curvv-ev/emi",
+      "path": "/ownership/tata-curvv-ev/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-punch-ev/running-cost",
+      "path": "/ownership/tata-punch-ev/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-punch-ev/tco",
+      "path": "/ownership/tata-punch-ev/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-punch-ev/petrol-savings",
+      "path": "/ownership/tata-punch-ev/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-punch-ev/emi",
+      "path": "/ownership/tata-punch-ev/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tiago-ev/running-cost",
+      "path": "/ownership/tata-tiago-ev/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tiago-ev/tco",
+      "path": "/ownership/tata-tiago-ev/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tiago-ev/petrol-savings",
+      "path": "/ownership/tata-tiago-ev/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tiago-ev/emi",
+      "path": "/ownership/tata-tiago-ev/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tigor-ev/running-cost",
+      "path": "/ownership/tata-tigor-ev/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tigor-ev/tco",
+      "path": "/ownership/tata-tigor-ev/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tigor-ev/petrol-savings",
+      "path": "/ownership/tata-tigor-ev/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tigor-ev/emi",
+      "path": "/ownership/tata-tigor-ev/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-windsor-ev/running-cost",
+      "path": "/ownership/mg-windsor-ev/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-windsor-ev/tco",
+      "path": "/ownership/mg-windsor-ev/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-windsor-ev/petrol-savings",
+      "path": "/ownership/mg-windsor-ev/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-windsor-ev/emi",
+      "path": "/ownership/mg-windsor-ev/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqb/running-cost",
+      "path": "/ownership/mercedes-eqb/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqb/tco",
+      "path": "/ownership/mercedes-eqb/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqb/petrol-savings",
+      "path": "/ownership/mercedes-eqb/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqb/emi",
+      "path": "/ownership/mercedes-eqb/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqa/running-cost",
+      "path": "/ownership/mercedes-eqa/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqa/tco",
+      "path": "/ownership/mercedes-eqa/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqa/petrol-savings",
+      "path": "/ownership/mercedes-eqa/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqa/emi",
+      "path": "/ownership/mercedes-eqa/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-comet-ev/running-cost",
+      "path": "/ownership/mg-comet-ev/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-comet-ev/tco",
+      "path": "/ownership/mg-comet-ev/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-comet-ev/petrol-savings",
+      "path": "/ownership/mg-comet-ev/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-comet-ev/emi",
+      "path": "/ownership/mg-comet-ev/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/citroen-ec3/running-cost",
+      "path": "/ownership/citroen-ec3/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/citroen-ec3/tco",
+      "path": "/ownership/citroen-ec3/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/citroen-ec3/petrol-savings",
+      "path": "/ownership/citroen-ec3/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/citroen-ec3/emi",
+      "path": "/ownership/citroen-ec3/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/volvo-ex40/running-cost",
+      "path": "/ownership/volvo-ex40/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/volvo-ex40/tco",
+      "path": "/ownership/volvo-ex40/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/volvo-ex40/petrol-savings",
+      "path": "/ownership/volvo-ex40/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/volvo-ex40/emi",
+      "path": "/ownership/volvo-ex40/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-atto-3/running-cost",
+      "path": "/ownership/byd-atto-3/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-atto-3/tco",
+      "path": "/ownership/byd-atto-3/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-atto-3/petrol-savings",
+      "path": "/ownership/byd-atto-3/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-atto-3/emi",
+      "path": "/ownership/byd-atto-3/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-zs-ev/running-cost",
+      "path": "/ownership/mg-zs-ev/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-zs-ev/tco",
+      "path": "/ownership/mg-zs-ev/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-zs-ev/petrol-savings",
+      "path": "/ownership/mg-zs-ev/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-zs-ev/emi",
+      "path": "/ownership/mg-zs-ev/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-seal/running-cost",
+      "path": "/ownership/byd-seal/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-seal/tco",
+      "path": "/ownership/byd-seal/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-seal/petrol-savings",
+      "path": "/ownership/byd-seal/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-seal/emi",
+      "path": "/ownership/byd-seal/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/bmw-ix1/running-cost",
+      "path": "/ownership/bmw-ix1/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/bmw-ix1/tco",
+      "path": "/ownership/bmw-ix1/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/bmw-ix1/petrol-savings",
+      "path": "/ownership/bmw-ix1/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/bmw-ix1/emi",
+      "path": "/ownership/bmw-ix1/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/kia-ev6/running-cost",
+      "path": "/ownership/kia-ev6/running-cost",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/kia-ev6/tco",
+      "path": "/ownership/kia-ev6/tco",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/kia-ev6/petrol-savings",
+      "path": "/ownership/kia-ev6/petrol-savings",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/kia-ev6/emi",
+      "path": "/ownership/kia-ev6/emi",
+      "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    }
+  ],
   "counts": {
     "static": 13,
     "vehicles": 25,
     "reviews": 25,
     "discovery": 183,
     "compare": 29,
-    "total": 275
+    "ownership": 100,
+    "total": 375
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
@@ -1950,6 +2653,7 @@
     "cars": 25,
     "reviews": 25,
     "discovery": 183,
-    "compare": 29
+    "compare": 29,
+    "ownership": 100
   }
 }
