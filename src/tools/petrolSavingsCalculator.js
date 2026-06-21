@@ -210,26 +210,72 @@ export function calculateBreakEvenDistance(
   const evRate = parseNumber(evRunningCostPerKm) || 0;
   const runningDiff = petrolRate - evRate;
 
-  if (extra <= 0) return 0;
   if (runningDiff <= 0) return null;
+  if (extra <= 0) return null;
 
   return Math.round(extra / runningDiff);
 }
 
 /**
- * @param {number|null|undefined} breakEvenKm
- * @param {number} annualKm
+ * Resolve break-even distance for ownership comparison.
+ * When EV is already cheaper over the chosen horizon, use total planned km.
+ * @param {{
+ *   savingsInr: number,
+ *   annualKm: number,
+ *   ownershipYears: number,
+ *   extraPurchaseCostInr: number,
+ *   petrolRunningCostPerKm: number,
+ *   evRunningCostPerKm: number,
+ * }} params
  * @returns {number|null}
  */
-export function calculateBreakEvenYears(breakEvenKm, annualKm) {
-  const km = parseNumber(breakEvenKm);
+export function resolveOwnershipBreakEvenKm({
+  savingsInr,
+  annualKm,
+  ownershipYears,
+  extraPurchaseCostInr,
+  petrolRunningCostPerKm,
+  evRunningCostPerKm,
+}) {
   const annual = clampTcoValue(
     annualKm,
     PETROL_SAVINGS_BOUNDS.annualKmMin,
     PETROL_SAVINGS_BOUNDS.annualKmMax
   );
-  if (km == null || annual <= 0) return null;
-  return Math.round((km / annual) * 10) / 10;
+  const years = clampTcoValue(
+    ownershipYears,
+    PETROL_SAVINGS_BOUNDS.ownershipYearsMin,
+    PETROL_SAVINGS_BOUNDS.ownershipYearsMax
+  );
+  const totalKm = annual * years;
+
+  if (totalKm <= 0) return null;
+
+  if ((parseNumber(savingsInr) || 0) > 0) {
+    return totalKm;
+  }
+
+  const runningBreakEvenKm = calculateBreakEvenDistance(
+    extraPurchaseCostInr,
+    petrolRunningCostPerKm,
+    evRunningCostPerKm
+  );
+
+  if (runningBreakEvenKm == null) {
+    return null;
+  }
+
+  return runningBreakEvenKm;
+}
+
+/**
+ * @param {number|null|undefined} km
+ * @returns {string}
+ */
+export function formatBreakEvenNumber(km) {
+  const value = parseNumber(km);
+  if (value == null) return "—";
+  return Math.round(value).toLocaleString("en-IN");
 }
 
 /**
@@ -279,6 +325,12 @@ export function calculatePetrolSavings(input = {}) {
       PETROL_SAVINGS_BOUNDS.residualPctMin,
       PETROL_SAVINGS_BOUNDS.residualPctMax
     ),
+    insurancePerYear:
+      input.evInsurancePerYear ??
+      deriveDefaultInsurancePerYear(
+        evPriceInr,
+        PETROL_SAVINGS_DEFAULTS.evInsuranceRatePerYear
+      ),
   });
 
   const petrol = calculatePetrolOwnershipCost({
@@ -289,6 +341,12 @@ export function calculatePetrolSavings(input = {}) {
     petrolEfficiencyKmPerL: input.petrolEfficiencyKmPerL,
     petrolMaintenancePerKm: input.petrolMaintenancePerKm,
     petrolResidualPct: input.petrolResidualPct,
+    insurancePerYear:
+      input.petrolInsurancePerYear ??
+      deriveDefaultInsurancePerYear(
+        petrolVehiclePriceInr,
+        PETROL_SAVINGS_DEFAULTS.petrolInsuranceRatePerYear
+      ),
   });
 
   const savings = calculateOwnershipSavings(
@@ -304,13 +362,14 @@ export function calculatePetrolSavings(input = {}) {
 
   const petrolRunningCostPerKm = petrol.petrolCostPerKm;
   const extraPurchaseCostInr = evPriceInr - petrolVehiclePriceInr;
-  const breakEvenKm = calculateBreakEvenDistance(
+  const breakEvenKm = resolveOwnershipBreakEvenKm({
+    savingsInr: savings.savingsInr,
+    annualKm: ev.annualKm,
+    ownershipYears: ev.ownershipYears,
     extraPurchaseCostInr,
     petrolRunningCostPerKm,
-    evRunningCostPerKm
-  );
-
-  const breakEvenYears = calculateBreakEvenYears(breakEvenKm, ev.annualKm);
+    evRunningCostPerKm,
+  });
 
   const runningSavingsInr = roundCurrency(
     petrol.fuelInr +
@@ -327,7 +386,6 @@ export function calculatePetrolSavings(input = {}) {
     savingsPct: savings.savingsPct,
     tone: savings.tone,
     breakEvenKm,
-    breakEvenYears,
     runningSavingsInr,
     evRunningCostPerKm,
     petrolRunningCostPerKm,
@@ -361,7 +419,6 @@ export function calculatePetrolSavings(input = {}) {
  * @property {number} savingsPct
  * @property {"green"|"amber"|"red"} tone
  * @property {number|null} breakEvenKm
- * @property {number|null} breakEvenYears
  * @property {number} runningSavingsInr
  * @property {number} evRunningCostPerKm
  * @property {number} petrolRunningCostPerKm
@@ -373,44 +430,26 @@ export function calculatePetrolSavings(input = {}) {
  */
 export function generatePetrolSavingsInsights(result) {
   const insights = [];
-  const {
-    savingsInr,
-    savingsPct,
-    ownershipYears,
-    breakEvenYears,
-    runningSavingsInr,
-    ev,
-    petrol,
-  } = result;
+  const { savingsInr, breakEvenKm, ev, petrol } = result;
   const years = ev?.ownershipYears ?? petrol?.ownershipYears ?? 5;
+
+  if (breakEvenKm != null && breakEvenKm > 0) {
+    insights.push(
+      `Based on your annual running, the EV becomes cheaper than an equivalent petrol vehicle after approximately ${formatBreakEvenNumber(breakEvenKm)} km of ownership.`
+    );
+  }
 
   if (Math.abs(savingsInr) >= 1000) {
     const absLakh = formatTcoLakh(Math.abs(savingsInr)).replace("₹", "");
     if (savingsInr >= 0) {
       insights.push(
-        `You save approximately ₹${absLakh} over ${years} years.`
+        `You save approximately ₹${absLakh} over ${years} years at these assumptions.`
       );
     } else {
       insights.push(
         `The EV costs approximately ₹${absLakh} more than petrol over ${years} years at these assumptions.`
       );
     }
-  }
-
-  if (runningSavingsInr > 0 && Math.abs(savingsPct) >= 1) {
-    insights.push("Most savings come from lower running costs.");
-  }
-
-  if (
-    breakEvenYears != null &&
-    breakEvenYears > 0 &&
-    breakEvenYears <= years + 2
-  ) {
-    insights.push(
-      `Break-even occurs after roughly ${breakEvenYears} years.`
-    );
-  } else if (savingsInr > 0 && breakEvenYears === 0) {
-    insights.push("Running costs alone already favour the EV from day one.");
   }
 
   if (!insights.length) {
@@ -429,11 +468,7 @@ export function generatePetrolSavingsInsights(result) {
 export function formatBreakEvenDistance(km) {
   const value = parseNumber(km);
   if (value == null) return "—";
-  if (value === 0) return "Immediate";
-  if (value >= 1000) {
-    return `${(value / 1000).toFixed(1)}k km`;
-  }
-  return `${Math.round(value).toLocaleString("en-IN")} km`;
+  return `${formatBreakEvenNumber(value)} km`;
 }
 
 function roundCurrency(value) {

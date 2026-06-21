@@ -16,7 +16,8 @@ export const PETROL_SAVINGS_DEFAULTS = Object.freeze({
   petrolMaintenancePerKm: 1.5,
   evResidualPct: 50,
   petrolResidualPct: 45,
-  insuranceRatePerYear: 0.015,
+  evInsuranceRatePerYear: 0.015,
+  petrolInsuranceRatePerYear: 0.0125,
 });
 
 export const PETROL_SAVINGS_BOUNDS = Object.freeze({

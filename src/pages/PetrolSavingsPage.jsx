@@ -348,7 +348,6 @@ export default function PetrolSavingsPage() {
               savingsPct={result.savingsPct}
               tone={result.tone}
               breakEvenKm={result.breakEvenKm}
-              breakEvenYears={result.breakEvenYears}
               ownershipYears={result.ev.ownershipYears}
             />
 

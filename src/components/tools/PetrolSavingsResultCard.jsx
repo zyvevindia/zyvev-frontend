@@ -11,7 +11,6 @@ import { formatTcoLakh } from "../../tools/tcoCalculator.js";
  *   savingsPct: number,
  *   tone: "green" | "amber" | "red",
  *   breakEvenKm: number|null,
- *   breakEvenYears: number|null,
  *   ownershipYears: number,
  * }} props
  */
@@ -22,7 +21,6 @@ export default function PetrolSavingsResultCard({
   savingsPct,
   tone,
   breakEvenKm,
-  breakEvenYears,
   ownershipYears,
 }) {
   return (
@@ -66,22 +64,10 @@ export default function PetrolSavingsResultCard({
       </div>
 
       <div className="petrol-savings-result__break-even">
-        <div>
-          <span className="petrol-savings-result__meta-label">Break-even distance</span>
-          <strong className="petrol-savings-result__meta-value">
-            {breakEvenKm == null ? "Not reached" : formatBreakEvenDistance(breakEvenKm)}
-          </strong>
-        </div>
-        <div>
-          <span className="petrol-savings-result__meta-label">Break-even years</span>
-          <strong className="petrol-savings-result__meta-value">
-            {breakEvenYears == null
-              ? "—"
-              : breakEvenYears === 0
-                ? "Immediate"
-                : `${breakEvenYears} years`}
-          </strong>
-        </div>
+        <span className="petrol-savings-result__meta-label">Break-even distance</span>
+        <strong className="petrol-savings-result__meta-value">
+          {breakEvenKm == null ? "Not reached" : formatBreakEvenDistance(breakEvenKm)}
+        </strong>
       </div>
     </article>
   );
