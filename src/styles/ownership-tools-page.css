@@ -1,0 +1,200 @@
+.ownership-tools-page {
+  --tools-page-max: 1120px;
+  --tools-card-radius: 20px;
+  --tools-card-pad: 22px;
+  --tools-card-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+  --tools-section-gap: 28px;
+  --tools-body-size: 0.97rem;
+  --tools-body-leading: 1.72;
+  min-height: 60vh;
+  padding: 24px 16px 56px;
+  background: #f8fafc;
+}
+
+.ownership-tools-page__inner {
+  max-width: var(--tools-page-max);
+  margin: 0 auto;
+}
+
+.ownership-tools-page__crumb {
+  margin: 0 0 16px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.ownership-tools-page__crumb a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ownership-tools-page__crumb a:hover {
+  text-decoration: underline;
+}
+
+.ownership-tools-page__hero {
+  margin-bottom: var(--tools-section-gap);
+  padding: var(--tools-card-pad);
+  border-radius: var(--tools-card-radius);
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--tools-card-shadow);
+}
+
+.ownership-tools-page__title {
+  margin: 0 0 10px;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.ownership-tools-page__subtitle {
+  margin: 0;
+  max-width: 52ch;
+  font-size: var(--tools-body-size);
+  line-height: var(--tools-body-leading);
+  color: #475569;
+}
+
+.ownership-tools-page__calculators {
+  margin-bottom: calc(var(--tools-section-gap) + 8px);
+}
+
+.ownership-tools-page__tool-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.ownership-tools-page__tool-card,
+.ownership-tools-page__benefit-card,
+.ownership-tools-page__placeholder-card {
+  padding: var(--tools-card-pad);
+  border-radius: var(--tools-card-radius);
+  background: #fff;
+  border: 1px solid #eef2f7;
+  box-shadow: var(--tools-card-shadow);
+}
+
+.ownership-tools-page__tool-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.ownership-tools-page__tool-title,
+.ownership-tools-page__benefit-title {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: #1e293b;
+}
+
+.ownership-tools-page__tool-copy,
+.ownership-tools-page__benefit-copy {
+  margin: 0 0 16px;
+  flex: 1;
+  font-size: var(--tools-body-size);
+  line-height: var(--tools-body-leading);
+  color: #475569;
+}
+
+.ownership-tools-page__tool-link {
+  align-self: flex-start;
+  color: #0f766e;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.ownership-tools-page__tool-link:hover {
+  color: #115e59;
+  text-decoration: underline;
+}
+
+.ownership-tools-page__benefits-title {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: #0f172a;
+}
+
+.ownership-tools-page__benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.ownership-tools-page__benefit-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.ownership-tools-page__benefit-copy {
+  margin: 0;
+}
+
+.ownership-tools-page--placeholder .ownership-tools-page__placeholder-card {
+  max-width: 640px;
+}
+
+.ownership-tools-page__placeholder-note {
+  margin: 0 0 18px;
+  font-size: var(--tools-body-size);
+  line-height: var(--tools-body-leading);
+  color: #64748b;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 640px) {
+  .ownership-tools-page__tool-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .ownership-tools-page__benefits-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ownership-tools-page {
+    padding: 32px 24px 64px;
+  }
+
+  .ownership-tools-page__tool-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .ownership-tools-page__hero {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 639px) {
+  .ownership-tools-page__benefits-grid {
+    gap: 12px;
+  }
+}

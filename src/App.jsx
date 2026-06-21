@@ -70,6 +70,14 @@ const ReviewPage = lazy(() =>
   import("./pages/ReviewPage")
 );
 
+const OwnershipToolsPage = lazy(() =>
+  import("./pages/OwnershipToolsPage")
+);
+
+const OwnershipToolPlaceholder = lazy(() =>
+  import("./pages/OwnershipToolPlaceholder")
+);
+
 const SalesAnalytics = lazy(() =>
   import("./pages/SalesAnalytics")
 );
@@ -469,6 +477,16 @@ export default function App() {
           <Route
             path="/guides"
             element={<SeoGuidesHub />}
+          />
+
+          <Route
+            path="/tools"
+            element={<OwnershipToolsPage />}
+          />
+
+          <Route
+            path="/tools/:toolId"
+            element={<OwnershipToolPlaceholder />}
           />
 
           <Route

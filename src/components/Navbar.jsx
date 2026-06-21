@@ -147,6 +147,13 @@ export default function Navbar() {
       );
     }
 
+    if (path === "/tools") {
+      return (
+        location.pathname === "/tools" ||
+        location.pathname.startsWith("/tools/")
+      );
+    }
+
     if (path === "/cars#catalog-search") {
       return (
         location.pathname === "/cars" &&
@@ -193,6 +200,11 @@ export default function Navbar() {
       label: "Compare",
       path: compareNavPath,
       isCompare: true,
+    },
+
+    {
+      label: "Tools",
+      path: "/tools",
     },
 
     {
