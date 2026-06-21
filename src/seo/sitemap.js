@@ -5,6 +5,7 @@
 import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies.js";
 import { INTELLIGENCE_DISCOVERY_PRESETS } from "../data/intelligenceDiscoveryPresets.js";
 import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
+import { buildReviewSlug } from "../reviews/reviewRoutes.js";
 
 import { GUIDE_CONTENT_SLUG_TO_CANONICAL_PATH } from "./legacyCanonicalMap.js";
 
@@ -137,6 +138,21 @@ export function buildVehicleFamilySitemapEntries(
 }
 
 /**
+ * Editorial vehicle review pages — /reviews/:vehicleSlug-review
+ */
+export function buildReviewSitemapEntries(
+  siteOrigin = DEFAULT_SITE_ORIGIN
+) {
+  return TIER1_MODEL_FAMILY_SLUGS.map((familySlug) =>
+    entry(`/reviews/${buildReviewSlug(familySlug)}`, {
+      priority: 0.77,
+      changefreq: "weekly",
+      siteOrigin,
+    })
+  );
+}
+
+/**
  * Editorial compare guides — /compare/:slug
  */
 export function buildCompareGuideSitemapEntries(
@@ -174,6 +190,7 @@ export function buildFullSitemapManifest(
 ) {
   const staticEntries = buildStaticSitemapEntries(siteOrigin);
   const vehicleEntries = buildVehicleFamilySitemapEntries(siteOrigin);
+  const reviewEntries = buildReviewSitemapEntries(siteOrigin);
   const discoveryEntries = buildDiscoveryGuideSitemapEntries(
     siteOrigin,
     extras
@@ -192,16 +209,19 @@ export function buildFullSitemapManifest(
     generatedAt: new Date().toISOString(),
     static: staticEntries,
     vehicles: vehicleEntries,
+    reviews: reviewEntries,
     discovery: mergedDiscovery,
     compare: compareEntries,
     counts: {
       static: staticEntries.length,
       vehicles: vehicleEntries.length,
+      reviews: reviewEntries.length,
       discovery: mergedDiscovery.length,
       compare: compareEntries.length,
       total:
         staticEntries.length +
         vehicleEntries.length +
+        reviewEntries.length +
         mergedDiscovery.length +
         compareEntries.length,
     },

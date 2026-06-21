@@ -1,6 +1,6 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-06-21T05:42:41.569Z",
+  "generatedAt": "2026-06-21T06:18:27.320Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
@@ -267,6 +267,183 @@
       "loc": "https://evsavari.com/cars/kia-ev6",
       "path": "/cars/kia-ev6",
       "priority": 0.8,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    }
+  ],
+  "reviews": [
+    {
+      "loc": "https://evsavari.com/reviews/hyundai-creta-electric-review",
+      "path": "/reviews/hyundai-creta-electric-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/hyundai-kona-electric-review",
+      "path": "/reviews/hyundai-kona-electric-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/mahindra-xev-9e-review",
+      "path": "/reviews/mahindra-xev-9e-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/mahindra-xuv400-review",
+      "path": "/reviews/mahindra-xuv400-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/tata-harrier-ev-review",
+      "path": "/reviews/tata-harrier-ev-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/maruti-e-vitara-review",
+      "path": "/reviews/maruti-e-vitara-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/hyundai-ioniq-5-review",
+      "path": "/reviews/hyundai-ioniq-5-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/mini-cooper-se-review",
+      "path": "/reviews/mini-cooper-se-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/mahindra-be-6-review",
+      "path": "/reviews/mahindra-be-6-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/tata-nexon-ev-review",
+      "path": "/reviews/tata-nexon-ev-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/tata-curvv-ev-review",
+      "path": "/reviews/tata-curvv-ev-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/tata-punch-ev-review",
+      "path": "/reviews/tata-punch-ev-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/tata-tiago-ev-review",
+      "path": "/reviews/tata-tiago-ev-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/tata-tigor-ev-review",
+      "path": "/reviews/tata-tigor-ev-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/mg-windsor-ev-review",
+      "path": "/reviews/mg-windsor-ev-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/mercedes-eqb-review",
+      "path": "/reviews/mercedes-eqb-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/mercedes-eqa-review",
+      "path": "/reviews/mercedes-eqa-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/mg-comet-ev-review",
+      "path": "/reviews/mg-comet-ev-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/citroen-ec3-review",
+      "path": "/reviews/citroen-ec3-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/volvo-ex40-review",
+      "path": "/reviews/volvo-ex40-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/byd-atto-3-review",
+      "path": "/reviews/byd-atto-3-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/mg-zs-ev-review",
+      "path": "/reviews/mg-zs-ev-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/byd-seal-review",
+      "path": "/reviews/byd-seal-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/bmw-ix1-review",
+      "path": "/reviews/bmw-ix1-review",
+      "priority": 0.77,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-21"
+    },
+    {
+      "loc": "https://evsavari.com/reviews/kia-ev6-review",
+      "path": "/reviews/kia-ev6-review",
+      "priority": 0.77,
       "changefreq": "weekly",
       "lastmod": "2026-06-21"
     }
@@ -1762,14 +1939,16 @@
   "counts": {
     "static": 13,
     "vehicles": 25,
+    "reviews": 25,
     "discovery": 183,
     "compare": 29,
-    "total": 250
+    "total": 275
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
     "static": 13,
     "cars": 25,
+    "reviews": 25,
     "discovery": 183,
     "compare": 29
   }

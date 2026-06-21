@@ -12,6 +12,7 @@ import { fileURLToPath } from "node:url";
 import {
   buildStaticSitemapEntries,
   buildVehicleFamilySitemapEntries,
+  buildReviewSitemapEntries,
   buildDiscoveryGuideSitemapEntries,
   buildCompareGuideSitemapEntries,
   buildIntelligenceDiscoverySitemapEntries,
@@ -275,6 +276,10 @@ const vehicleEntries = buildVehicleFamilySitemapEntries(SITE_ORIGIN).map((e) => 
   ...e,
   lastmod: lastmodByPath[e.path] || DEFAULT_LASTMOD,
 }));
+const reviewEntries = buildReviewSitemapEntries(SITE_ORIGIN).map((e) => ({
+  ...e,
+  lastmod: lastmodByPath[e.path] || DEFAULT_LASTMOD,
+}));
 const discoveryEntries = mergeDiscoveryEntries(
   buildDiscoveryGuideSitemapEntries(SITE_ORIGIN, extras),
   SITE_ORIGIN,
@@ -290,12 +295,19 @@ const compareEntries = buildCompareGuideSitemapEntries(SITE_ORIGIN, {
 
 writeFileSync(join(sitemapsDir, "static.xml"), urlsetXml(staticEntries));
 writeFileSync(join(sitemapsDir, "cars.xml"), urlsetXml(vehicleEntries));
+writeFileSync(join(sitemapsDir, "reviews.xml"), urlsetXml(reviewEntries));
 writeFileSync(join(sitemapsDir, "seo-pages.xml"), urlsetXml(discoveryEntries));
 writeFileSync(join(sitemapsDir, "compare.xml"), urlsetXml(compareEntries));
 
 writeFileSync(
   join(publicDir, "sitemap.xml"),
-  sitemapIndexXml(["static.xml", "cars.xml", "seo-pages.xml", "compare.xml"])
+  sitemapIndexXml([
+    "static.xml",
+    "cars.xml",
+    "reviews.xml",
+    "seo-pages.xml",
+    "compare.xml",
+  ])
 );
 
 writeFileSync(
@@ -306,16 +318,19 @@ writeFileSync(
       generatedAt: new Date().toISOString(),
       static: staticEntries,
       vehicles: vehicleEntries,
+      reviews: reviewEntries,
       discovery: discoveryEntries,
       compare: compareEntries,
       counts: {
         static: staticEntries.length,
         vehicles: vehicleEntries.length,
+        reviews: reviewEntries.length,
         discovery: discoveryEntries.length,
         compare: compareEntries.length,
         total:
           staticEntries.length +
           vehicleEntries.length +
+          reviewEntries.length +
           discoveryEntries.length +
           compareEntries.length,
       },
@@ -323,6 +338,7 @@ writeFileSync(
       sitemapFiles: {
         static: staticEntries.length,
         cars: vehicleEntries.length,
+        reviews: reviewEntries.length,
         discovery: discoveryEntries.length,
         compare: compareEntries.length,
       },
@@ -337,12 +353,14 @@ writeFileSync(join(publicDir, "robots.txt"), buildRobotsTxt());
 const total =
   staticEntries.length +
   vehicleEntries.length +
+  reviewEntries.length +
   discoveryEntries.length +
   compareEntries.length;
 
 console.log(`Sitemaps generated (${SITE_ORIGIN})`);
 console.log(`  static.xml:     ${staticEntries.length} URLs`);
 console.log(`  cars.xml:       ${vehicleEntries.length} URLs (family slugs only)`);
+console.log(`  reviews.xml:    ${reviewEntries.length} URLs (editorial reviews)`);
 console.log(`  seo-pages.xml:  ${discoveryEntries.length} URLs (discovery canonical)`);
 console.log(`  compare.xml:    ${compareEntries.length} URLs`);
 console.log(`  Total indexed:  ${total} URLs`);

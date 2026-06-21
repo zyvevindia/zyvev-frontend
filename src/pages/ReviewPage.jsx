@@ -2,16 +2,22 @@ import { useEffect, useMemo, useState } from "react";
 
 import { Link, Navigate, useParams } from "react-router-dom";
 
+import SEO from "../components/SEO/SEO.jsx";
+import JsonLd from "../components/SEO/JsonLd.jsx";
 import ReviewHeader from "../components/reviews/ReviewHeader.jsx";
 import ReviewProsConsCard from "../components/reviews/ReviewProsConsCard.jsx";
 import ReviewSectionCard from "../components/reviews/ReviewSectionCard.jsx";
 import ReviewVerdictCard from "../components/reviews/ReviewVerdictCard.jsx";
+import { buildReviewPageMeta } from "../seo/reviewPageMetadata.js";
+import { buildReviewPageSchemas } from "../seo/reviewSchema.js";
 import { buildVehicleReview } from "../reviews/buildVehicleReview.js";
 import {
   buildReviewSlug,
   resolveVehicleSlugFromReviewSlug,
 } from "../reviews/reviewRoutes.js";
 import { fetchVehicleFamilyBySlug } from "../utils/vehicleDetailResolver.js";
+import { getHeroImage, getOgImage } from "../utils/vehicleMedia.js";
+import { resolveVehicleDisplayName } from "../reviews/reviewBuilderUtils.js";
 
 import "../components/reviews/review-page.css";
 
@@ -121,8 +127,36 @@ export default function ReviewPage() {
     return <Navigate to={`/reviews/${canonicalSlug}`} replace />;
   }
 
+  const vehicleName = resolveVehicleDisplayName(intelligenceVehicle);
+  const canonicalUrl = canonicalReviewUrl(review.vehicleSlug);
+  const ogImage = getOgImage(vehicle) || getHeroImage(vehicle);
+  const meta = buildReviewPageMeta({
+    vehicleName,
+    vehicleSlug: review.vehicleSlug,
+    image: ogImage,
+  });
+  const schemas = buildReviewPageSchemas({
+    review,
+    vehicle,
+    canonicalUrl: meta.canonical,
+    image: ogImage,
+  });
+
   return (
     <div className="review-page">
+      <SEO
+        title={meta.title}
+        description={meta.description}
+        keywords={meta.keywords}
+        canonical={meta.canonical}
+        image={meta.image}
+        type={meta.ogType}
+        robots={meta.robots}
+      />
+      {schemas.map((schema, index) => (
+        <JsonLd key={index} data={schema} />
+      ))}
+
       <div className="review-page__inner">
         <ReviewHeader review={review} vehicle={vehicle} />
 

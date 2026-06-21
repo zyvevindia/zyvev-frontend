@@ -2,7 +2,7 @@
  * Review page route helpers — slug resolution and canonical paths.
  */
 
-import { SITE_ORIGIN } from "../config.js";
+export const REVIEW_SITE_ORIGIN_DEFAULT = "https://evsavari.com";
 
 const REVIEW_SLUG_SUFFIX = "-review";
 
@@ -45,7 +45,10 @@ export function reviewPagePath(reviewSlug) {
  * @param {string} [siteOrigin]
  * @returns {string}
  */
-export function canonicalReviewUrl(vehicleSlug, siteOrigin = SITE_ORIGIN) {
+export function canonicalReviewUrl(
+  vehicleSlug,
+  siteOrigin = REVIEW_SITE_ORIGIN_DEFAULT
+) {
   const path = reviewPagePath(buildReviewSlug(vehicleSlug));
   return `${String(siteOrigin).replace(/\/$/, "")}${path}`;
 }

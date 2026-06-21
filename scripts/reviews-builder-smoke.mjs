@@ -7,6 +7,13 @@ import { findGoldenDossierByFamilySlug } from "../src/catalogAcquisition/benchma
 import { buildReviewContext } from "../src/reviews/buildReviewContext.js";
 import { buildVehicleReview } from "../src/reviews/buildVehicleReview.js";
 import { REVIEW_CONFIDENCE, REVIEW_LIMITS } from "../src/reviews/constants.js";
+import {
+  buildReviewSlug,
+  canonicalReviewUrl,
+  reviewPagePath,
+  REVIEW_SITE_ORIGIN_DEFAULT,
+} from "../src/reviews/reviewRoutes.js";
+import { buildReviewSitemapEntries } from "../src/seo/sitemap.js";
 
 const VALIDATION_SLUGS = [
   "tata-nexon-ev",
@@ -86,6 +93,24 @@ for (const slug of VALIDATION_SLUGS) {
   const hasProsOrCons =
     (context.strengths?.length ?? 0) > 0 || (context.weaknesses?.length ?? 0) > 0;
   assert(`${slug} pros or cons populate`, hasProsOrCons);
+
+  const reviewSlug = buildReviewSlug(slug);
+  assert(`${slug} review route slug`, reviewPagePath(reviewSlug) === `/reviews/${reviewSlug}`);
+  assert(
+    `${slug} seo canonical path`,
+    canonicalReviewUrl(slug, REVIEW_SITE_ORIGIN_DEFAULT).endsWith(
+      `/reviews/${reviewSlug}`
+    )
+  );
+}
+
+const sitemapEntries = buildReviewSitemapEntries();
+assert("review sitemap entries", sitemapEntries.length >= VALIDATION_SLUGS.length);
+for (const slug of VALIDATION_SLUGS) {
+  assert(
+    `${slug} in review sitemap`,
+    sitemapEntries.some((entry) => entry.path === `/reviews/${buildReviewSlug(slug)}`)
+  );
 }
 
 const sparseReview = buildVehicleReview({ slug: "sparse-ev", name: "Sparse EV" });

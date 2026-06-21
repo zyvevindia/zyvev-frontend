@@ -22,3 +22,10 @@ export {
 
 export { buildReviewContext } from "./buildReviewContext.js";
 export { buildVehicleReview } from "./buildVehicleReview.js";
+
+export {
+  buildReviewSlug,
+  resolveVehicleSlugFromReviewSlug,
+  reviewPagePath,
+  canonicalReviewUrl,
+} from "./reviewRoutes.js";
