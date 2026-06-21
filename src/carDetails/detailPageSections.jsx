@@ -111,7 +111,10 @@ export function DetailVariantsSection({ page }) {
 export function DetailOwnershipToolsSection({ page }) {
   return (
     <SectionErrorBoundary label="Ownership tools" compact>
-      <VehicleOwnershipToolsSection familySlug={page.familySlug} />
+      <VehicleOwnershipToolsSection
+        familySlug={page.familySlug}
+        vehicle={page.intelligenceCar || page.vehicle}
+      />
     </SectionErrorBoundary>
   );
 }
