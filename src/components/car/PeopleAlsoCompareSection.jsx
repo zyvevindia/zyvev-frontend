@@ -4,6 +4,9 @@ import { startCompareWithSingleRival } from "../../utils/compareRivalPrefill";
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
 import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
 
+import OwnershipToolSecondaryLink from "../tools/OwnershipToolSecondaryLink.jsx";
+
+import "../tools/vehicle-ownership-tools.css";
 import "./people-also-compare.css";
 
 export default function PeopleAlsoCompareSection({
@@ -55,14 +58,23 @@ export default function PeopleAlsoCompareSection({
         {comparisons.map((item) => (
           <article key={item.slug} className="people-also-compare__card">
             <h3 className="people-also-compare__card-title">{item.title}</h3>
-            <button
-              type="button"
-              className="people-also-compare__cta"
-              disabled={loadingSlug != null}
-              onClick={() => handleCompare(item.slug)}
-            >
-              {loadingSlug === item.slug ? "Opening…" : "Compare →"}
-            </button>
+            <div className="recommendation-loop-card__actions">
+              <button
+                type="button"
+                className="people-also-compare__cta"
+                disabled={loadingSlug != null}
+                onClick={() => handleCompare(item.slug)}
+              >
+                {loadingSlug === item.slug ? "Opening…" : "Compare →"}
+              </button>
+              <OwnershipToolSecondaryLink
+                toolKey="tco"
+                vehicleSlug={item.slug}
+                className="ownership-tool-link--muted"
+              >
+                Ownership cost →
+              </OwnershipToolSecondaryLink>
+            </div>
           </article>
         ))}
       </div>

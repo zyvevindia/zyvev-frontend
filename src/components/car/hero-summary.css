@@ -41,6 +41,26 @@
   letter-spacing: -0.02em;
 }
 
+.hero-summary__tool-link {
+  margin-top: 2px;
+  color: #2563eb;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.hero-summary__tool-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.hero-summary__tool-link:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 @media (min-width: 768px) {
   .hero-summary__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));

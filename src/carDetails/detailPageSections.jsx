@@ -95,6 +95,7 @@ export function DetailVariantsSection({ page }) {
         <VariantComparisonTable
           ref={page.comparisonRef}
           embedded
+          familySlug={page.familySlug}
           variants={page.enrichedVariants}
           selectedSlug={page.selectedVariantSlug}
           onSelect={page.handleSelectVariant}

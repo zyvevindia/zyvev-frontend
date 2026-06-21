@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
+import OwnershipToolSecondaryLink from "../tools/OwnershipToolSecondaryLink.jsx";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 
+import "../tools/vehicle-ownership-tools.css";
 import "./similar-evs.css";
 
 export default function SimilarEvsSection({ similarVehicles = [] }) {
@@ -20,12 +22,21 @@ export default function SimilarEvsSection({ similarVehicles = [] }) {
         {similarVehicles.map((item) => (
           <article key={item.slug} className="similar-evs__card">
             <h3 className="similar-evs__card-title">{item.title}</h3>
-            <Link
-              to={vehicleDetailPath(item.slug)}
-              className="similar-evs__cta"
-            >
-              View details →
-            </Link>
+            <div className="recommendation-loop-card__actions">
+              <Link
+                to={vehicleDetailPath(item.slug)}
+                className="similar-evs__cta"
+              >
+                View details →
+              </Link>
+              <OwnershipToolSecondaryLink
+                toolKey="tco"
+                vehicleSlug={item.slug}
+                className="ownership-tool-link--muted"
+              >
+                Ownership cost →
+              </OwnershipToolSecondaryLink>
+            </div>
           </article>
         ))}
       </div>

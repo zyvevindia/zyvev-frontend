@@ -1,4 +1,8 @@
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
+
+import { buildOwnershipToolHref } from "../../tools/ownershipToolLinks.js";
+import { normalizeVehicleSlug } from "../../utils/vehicleRoutes.js";
 
 function estimateMonthlyEmi(
   price,
@@ -31,7 +35,11 @@ export default function DetailEmiTeaser({
   price,
   onOpenCalculator,
   variant = "default",
+  familySlug = "",
 }) {
+  const slug = normalizeVehicleSlug(familySlug);
+  const emiToolHref = slug ? buildOwnershipToolHref("emi", slug) : null;
+
   const emi = useMemo(() => {
     const down = Math.round(Number(price) * 0.2);
     return estimateMonthlyEmi(price, down);
@@ -49,13 +57,19 @@ export default function DetailEmiTeaser({
         <span className="cd-teaser-card__hint">
           20% down · 9% · 5 years
         </span>
-        <button
-          type="button"
-          className="cd-teaser-card__link"
-          onClick={onOpenCalculator}
-        >
-          Calculate EMI →
-        </button>
+        {emiToolHref ? (
+          <Link to={emiToolHref} className="cd-teaser-card__link">
+            Calculate EMI →
+          </Link>
+        ) : (
+          <button
+            type="button"
+            className="cd-teaser-card__link"
+            onClick={onOpenCalculator}
+          >
+            Calculate EMI →
+          </button>
+        )}
       </div>
     );
   }

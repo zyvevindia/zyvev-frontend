@@ -1,10 +1,14 @@
 import { forwardRef, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 
+import { buildOwnershipToolHref } from "../../tools/ownershipToolLinks.js";
+import { normalizeVehicleSlug } from "../../utils/vehicleRoutes.js";
 import { formatIndianPriceCompact, formatLakhAmount } from "../../utils/formatIndianPrice";
 import { buildVariantComparisonRows } from "../../utils/variantInsights";
 import { scrollToDetailSection } from "../../utils/detailPageNav.js";
 import { carsMatchCompareSelection } from "../../utils/compareCarsStorage.js";
 
+import "../tools/vehicle-ownership-tools.css";
 import "./variant-comparison-premium.css";
 
 const INITIAL_VISIBLE = 3;
@@ -177,6 +181,7 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
     intro,
     showCompareAll = true,
     readOnly = false,
+    familySlug = "",
   },
   ref
 ) {
@@ -554,6 +559,23 @@ const VariantComparisonTable = forwardRef(function VariantComparisonTable(
           All insights are based on verified data and real-world estimates.
         </span>
       </div>
+
+      {normalizeVehicleSlug(familySlug) ? (
+        <div className="variant-comparison__ownership-links">
+          <Link
+            to={buildOwnershipToolHref("tco", familySlug)}
+            className="ownership-tool-link"
+          >
+            Estimate ownership cost →
+          </Link>
+          <Link
+            to={buildOwnershipToolHref("cost-per-km", familySlug)}
+            className="ownership-tool-link"
+          >
+            Calculate running cost →
+          </Link>
+        </div>
+      ) : null}
     </>
   );
 

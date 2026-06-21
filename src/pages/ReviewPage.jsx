@@ -12,6 +12,7 @@ import ReviewInternalLinks from "../components/reviews/ReviewInternalLinks.jsx";
 import ReviewProsConsCard from "../components/reviews/ReviewProsConsCard.jsx";
 import ReviewSectionCard from "../components/reviews/ReviewSectionCard.jsx";
 import ReviewVerdictCard from "../components/reviews/ReviewVerdictCard.jsx";
+import OwnershipToolsMiniCard from "../components/tools/OwnershipToolsMiniCard.jsx";
 import { buildReviewPageMeta } from "../seo/reviewPageMetadata.js";
 import { buildReviewPageSchemas } from "../seo/reviewSchema.js";
 import { buildVehicleReview } from "../reviews/buildVehicleReview.js";
@@ -22,6 +23,8 @@ import {
 import { resolveReviewFamilyName } from "../reviews/reviewBuilderUtils.js";
 import { fetchVehicleFamilyBySlug } from "../utils/vehicleDetailResolver.js";
 import { getHeroImage, getOgImage } from "../utils/vehicleMedia.js";
+
+import "../components/tools/vehicle-ownership-tools.css";
 
 import "../components/reviews/review-page.css";
 
@@ -211,6 +214,7 @@ export default function ReviewPage() {
           />
 
           <ReviewVerdictCard verdict={review.finalVerdict} />
+          <OwnershipToolsMiniCard vehicleSlug={review.vehicleSlug} />
         </div>
 
         <ReviewAlternativesSection vehicle={intelligenceVehicle} />

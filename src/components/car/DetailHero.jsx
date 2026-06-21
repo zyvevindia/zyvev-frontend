@@ -69,6 +69,9 @@ export default function DetailHero({
     vehicle?.price ||
     0;
 
+  const familySlug =
+    vehicle?.familySlug || vehicle?.slug || "";
+
   const resolvedVariantCount =
     heroSummary?.variantCount || variantCount || 0;
   const showVerified = resolveVerifiedBadge(vehicle);
@@ -171,7 +174,7 @@ export default function DetailHero({
             )}
           </div>
 
-          <HeroSummary summary={heroSummary} />
+          <HeroSummary summary={heroSummary} familySlug={familySlug} />
 
           {resolvedVariantCount > 0 ? (
             <div className="cd-hero__cta-row">
@@ -213,6 +216,7 @@ export default function DetailHero({
                 price={emiPrice}
                 onOpenCalculator={onScrollEmi}
                 variant="card"
+                familySlug={familySlug}
               />
             </div>
             <div id="assistance" className="cd-hero__teaser-anchor">

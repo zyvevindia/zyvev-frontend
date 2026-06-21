@@ -14,6 +14,8 @@ import RecommendationInsightsCard from "../scoring/RecommendationInsightsCard.js
 import PersonaChips from "../scoring/PersonaChips.jsx";
 import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses.jsx";
 import ConfidenceBadge from "../scoring/ConfidenceBadge.jsx";
+import OwnershipToolIntelLinks from "../tools/OwnershipToolIntelLinks.jsx";
+import { normalizeVehicleSlug } from "../../utils/vehicleRoutes.js";
 
 import { normalizeInsightLabels } from "../../utils/normalizeInsightLabels.js";
 
@@ -360,6 +362,10 @@ export default function UnifiedEvIntelligenceSection({
     [vehicle, evSavariScores]
   );
 
+  const familySlug = normalizeVehicleSlug(
+    vehicle?.familySlug || vehicle?.slug || ""
+  );
+
   const showBestFor = useMemo(
     () => Boolean(vehicle && hasBestFor(vehicle)),
     [vehicle]
@@ -563,7 +569,10 @@ export default function UnifiedEvIntelligenceSection({
           </PremiumExperienceCard>
         ) : null}
 
-        <OurTakePanel verdict={verdict} />
+        <div className="unified-ev-intelligence__our-take-wrap">
+          <OurTakePanel verdict={verdict} />
+          <OwnershipToolIntelLinks vehicleSlug={familySlug} />
+        </div>
         </div>
       </div>
 

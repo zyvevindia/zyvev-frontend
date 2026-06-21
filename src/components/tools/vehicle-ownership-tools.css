@@ -197,3 +197,143 @@
   justify-content: space-between;
   align-items: center;
 }
+
+/* —— Phase 13C.3 deep links —— */
+
+.ownership-tool-link {
+  display: inline-flex;
+  align-items: center;
+  color: #2563eb;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ownership-tool-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.ownership-tool-link:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.ownership-tool-link--muted {
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.ownership-tool-link--muted:hover {
+  color: #2563eb;
+}
+
+.ownership-tool-intel-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  padding: 2px 4px 0;
+}
+
+.unified-ev-intelligence__our-take-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100%;
+}
+
+.ownership-tools-mini {
+  padding: 20px;
+  border: 1px solid #eef2f7;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 8px 28px rgba(15, 23, 42, 0.05);
+}
+
+.ownership-tools-mini__title {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+}
+
+.ownership-tools-mini__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ownership-tools-mini__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ownership-tools-mini__btn:hover {
+  background: #1d4ed8;
+  color: #fff;
+}
+
+.ownership-tools-mini__btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.variant-comparison__ownership-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #eef2f7;
+}
+
+.recommendation-loop-card__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 639px) {
+  .ownership-tool-intel-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .ownership-tools-mini__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-loop-card__actions {
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .ownership-tools-mini__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
