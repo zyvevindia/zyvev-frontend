@@ -28,6 +28,7 @@ export {
   resolveVehicleSlugFromReviewSlug,
   reviewPagePath,
   canonicalReviewUrl,
+  isEditorialReviewAvailable,
 } from "./reviewRoutes.js";
 
 export {

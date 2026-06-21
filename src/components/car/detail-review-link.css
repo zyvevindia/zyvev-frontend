@@ -1,0 +1,24 @@
+.detail-review-link {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 12px;
+}
+
+.detail-review-link__cta {
+  color: #0f766e;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.detail-review-link__cta:hover {
+  color: #115e59;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .detail-review-link {
+    justify-content: flex-start;
+  }
+}

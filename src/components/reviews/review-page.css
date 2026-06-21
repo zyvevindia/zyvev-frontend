@@ -397,3 +397,45 @@
     width: 100%;
   }
 }
+
+.review-page__alternatives {
+  display: grid;
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.review-page__alternatives .similar-evs,
+.review-page__alternatives .people-also-compare {
+  margin: 0;
+}
+
+.review-page__internal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.review-page__internal-link {
+  color: #0f766e;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.review-page__internal-link:hover {
+  color: #115e59;
+  text-decoration: underline;
+}
+
+.review-page__internal-link--secondary {
+  color: #475569;
+  font-weight: 500;
+}
+
+.review-page__internal-link--secondary:hover {
+  color: #334155;
+}

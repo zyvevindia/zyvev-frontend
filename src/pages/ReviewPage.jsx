@@ -4,9 +4,11 @@ import { Link, Navigate, useParams } from "react-router-dom";
 
 import SEO from "../components/SEO/SEO.jsx";
 import JsonLd from "../components/SEO/JsonLd.jsx";
+import ReviewAlternativesSection from "../components/reviews/ReviewAlternativesSection.jsx";
 import ReviewAudienceCard from "../components/reviews/ReviewAudienceCard.jsx";
 import ReviewEvSavariVerdictCard from "../components/reviews/ReviewEvSavariVerdictCard.jsx";
 import ReviewHero from "../components/reviews/ReviewHero.jsx";
+import ReviewInternalLinks from "../components/reviews/ReviewInternalLinks.jsx";
 import ReviewProsConsCard from "../components/reviews/ReviewProsConsCard.jsx";
 import ReviewSectionCard from "../components/reviews/ReviewSectionCard.jsx";
 import ReviewVerdictCard from "../components/reviews/ReviewVerdictCard.jsx";
@@ -210,6 +212,13 @@ export default function ReviewPage() {
 
           <ReviewVerdictCard verdict={review.finalVerdict} />
         </div>
+
+        <ReviewAlternativesSection vehicle={intelligenceVehicle} />
+
+        <ReviewInternalLinks
+          vehicleSlug={review.vehicleSlug}
+          familyName={familyName}
+        />
       </div>
     </div>
   );

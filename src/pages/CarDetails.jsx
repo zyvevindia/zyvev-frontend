@@ -19,6 +19,7 @@ import LeadInquiryModal from "../components/LeadInquiryModal";
 import SeoHead from "../components/SEO/SeoHead";
 import JsonLd from "../components/SEO/JsonLd";
 import CompareInternalLinks from "../components/compare/CompareInternalLinks";
+import DetailReviewLink from "../components/car/DetailReviewLink";
 
 import CarDetailsSkeleton from "../components/skeletons/CarDetailsSkeleton";
 
@@ -1282,6 +1283,8 @@ export default function CarDetails() {
             onFinanceHelp={() => handleFinanceHelp("action_bar")}
             onCompare={handleCompareEv}
           />
+
+          <DetailReviewLink familySlug={familySlug} />
 
           <DetailTabs
             activeId={activeTab}

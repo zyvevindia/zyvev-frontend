@@ -89,7 +89,7 @@ export default function ReviewHero({
                 to={vehicleFamilyPath(vehicleSlug)}
                 className="review-page__btn review-page__btn--primary"
               >
-                View specs and variants
+                View specifications and variants →
               </Link>
             ) : null}
             {vehicleSlug ? (
@@ -97,7 +97,7 @@ export default function ReviewHero({
                 to={vehicleFamilyPath(vehicleSlug)}
                 className="review-page__btn review-page__btn--secondary"
               >
-                Back to vehicle page
+                Return to vehicle page →
               </Link>
             ) : null}
           </div>

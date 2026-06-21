@@ -38,7 +38,8 @@ export function buildReviewPageSchemas({
   const breadcrumbs = [
     { name: "Home", url: "/" },
     { name: "Electric Cars", url: "/cars" },
-    { name: review.title, url: canonicalUrl },
+    { name: vehicleName, url: vehicleFamilyPath(review.vehicleSlug) },
+    { name: "Review", url: canonicalUrl },
   ];
 
   schemas.push(buildBreadcrumbSchema(breadcrumbs, siteOrigin));
