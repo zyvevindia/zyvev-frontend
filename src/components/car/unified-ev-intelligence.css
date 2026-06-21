@@ -46,7 +46,7 @@
   margin-top: 0;
 }
 
-.unified-ev-intelligence--hero .unified-ev-intelligence__experience-support li,
+.unified-ev-intelligence--hero .unified-ev-intelligence__experience-support,
 .unified-ev-intelligence--hero .unified-ev-intelligence__insights-inline .recommendation-insights__item,
 .unified-ev-intelligence--hero .unified-ev-intelligence__insights-inline .score-sw__item {
   font-size: 0.84rem;
@@ -57,16 +57,16 @@
 .unified-ev-intelligence__bottom-row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
-  margin-top: 4px;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .unified-ev-intelligence__static-panel {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
   min-height: 100%;
-  padding: 1.25rem 1.3rem;
+  padding: 20px;
   border-radius: 20px;
   background: #fff;
   border: 1px solid #eef2f7;
@@ -103,10 +103,17 @@
   color: #b91c1c;
 }
 
+.unified-ev-intelligence__static-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .unified-ev-intelligence__static-panel-body {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
 }
 
 .unified-ev-intelligence__static-panel-body
@@ -118,22 +125,30 @@
 .unified-ev-intelligence__experience-block {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 14px;
+  gap: 20px;
+  margin-bottom: 0;
 }
 
 .unified-ev-intelligence__experience-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 20px;
 }
 
 .unified-ev-intelligence__experience-grid--triple {
   grid-template-columns: 1fr;
 }
 
+.unified-ev-intelligence__experience-grid--quad {
+  grid-template-columns: 1fr;
+}
+
 .unified-ev-intelligence__experience-grid--dual {
   grid-template-columns: 1fr;
+}
+
+.unified-ev-intelligence__service-take-row {
+  align-items: stretch;
 }
 
 /* —— Header —— */
@@ -197,16 +212,16 @@
 .unified-ev-intelligence__strengths-row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
-  margin-bottom: 14px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .unified-ev-intelligence__top-card {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 8px;
   min-height: 100%;
-  padding: 1.25rem 1.35rem 1.15rem;
+  padding: 20px;
   border-radius: 20px;
   background: #fff;
   border: 1px solid #eef2f7;
@@ -215,9 +230,18 @@
     0 8px 24px rgba(15, 23, 42, 0.05);
 }
 
+.unified-ev-intelligence__top-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .unified-ev-intelligence__top-card-title {
   margin: 0;
-  font-size: 1.15rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   text-transform: none;
@@ -228,11 +252,13 @@
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 6px;
 }
 
 .unified-ev-intelligence__card-confidence {
-  margin-top: auto;
+  margin-top: 0;
+  flex: 0 0 auto;
+  align-self: center;
 }
 
 /* Inline insight overrides */
@@ -244,14 +270,14 @@
 
 .unified-ev-intelligence__insights-inline .recommendation-insights__list,
 .unified-ev-intelligence__insights-inline .score-sw__list {
-  gap: 0.42rem;
+  gap: 0.6rem;
 }
 
 .unified-ev-intelligence__insights-inline .recommendation-insights__item,
 .unified-ev-intelligence__insights-inline .score-sw__item {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .unified-ev-intelligence__insights-inline--avoid
@@ -279,16 +305,18 @@
 .unified-ev-intelligence__experience-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 20px;
   margin-bottom: 0;
 }
 
 .unified-ev-intelligence__experience-card {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 14px;
-  align-items: flex-start;
-  padding: 1.2rem 1.3rem 1.1rem;
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 6px;
+  align-items: start;
+  padding: 20px;
   border-radius: 20px;
   background: #fff;
   border: 1px solid #eef2f7;
@@ -303,6 +331,8 @@
   justify-content: center;
   width: 44px;
   height: 44px;
+  grid-column: 1;
+  grid-row: 1;
   border-radius: 14px;
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
   color: #2563eb;
@@ -316,13 +346,37 @@
 .unified-ev-intelligence__experience-body {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 4px;
+  grid-column: 1 / -1;
+  grid-row: 2;
   min-width: 0;
+}
+
+.unified-ev-intelligence__experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.unified-ev-intelligence__experience-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.unified-ev-intelligence__experience-footer
+  .unified-ev-intelligence__card-confidence {
+  margin-left: auto;
 }
 
 .unified-ev-intelligence__experience-title {
   margin: 0;
-  font-size: 1.15rem;
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   text-transform: none;
@@ -331,42 +385,36 @@
 
 .unified-ev-intelligence__experience-label {
   margin: 0;
-  font-size: clamp(1rem, 2vw, 1.12rem);
+  font-size: 0.95rem;
   font-weight: 800;
-  line-height: 1.3;
+  line-height: 1.6;
   letter-spacing: -0.02em;
   color: #2563eb;
 }
 
 .unified-ev-intelligence__experience-metric {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.6;
   color: #0f172a;
 }
 
 .unified-ev-intelligence__experience-detail {
   margin: 0;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.6;
   color: #475569;
 }
 
 .unified-ev-intelligence__experience-support {
-  list-style: none;
-  margin: 0.15rem 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.22rem;
-}
-
-.unified-ev-intelligence__experience-support li {
-  font-size: 0.82rem;
+  margin: 0;
+  flex: 1 1 12rem;
+  min-width: 0;
+  font-size: 0.95rem;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.6;
   color: #64748b;
 }
 
@@ -380,11 +428,13 @@
 
 .unified-ev-intelligence__our-take {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 16px;
-  align-items: flex-start;
+  grid-template-columns: 48px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 6px;
+  align-items: start;
   margin-bottom: 0;
-  padding: 1.25rem 1.3rem;
+  padding: 20px;
   border-radius: 20px;
   background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
   border: 1px solid #a7f3d0;
@@ -398,6 +448,8 @@
   justify-content: center;
   width: 48px;
   height: 48px;
+  grid-column: 1;
+  grid-row: 1;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.72);
   color: #047857;
@@ -408,38 +460,26 @@
   height: 26px;
 }
 
-.unified-ev-intelligence__our-take-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  min-width: 0;
-}
-
 .unified-ev-intelligence__our-take-title {
   margin: 0;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: none;
   color: #047857;
 }
 
-.unified-ev-intelligence__our-take-headline {
+.unified-ev-intelligence__our-take-copy {
   margin: 0;
-  font-size: clamp(1.05rem, 2.2vw, 1.22rem);
-  font-weight: 800;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-  color: #064e3b;
-}
-
-.unified-ev-intelligence__our-take-summary {
-  margin: 0;
-  font-size: 0.92rem;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  font-size: 0.95rem;
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.6;
   color: #065f46;
-  max-width: 62ch;
+  max-width: none;
 }
 
 /* —— Collapsible panels —— */
@@ -542,6 +582,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .unified-ev-intelligence__experience-grid--quad {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .unified-ev-intelligence--hero .unified-ev-intelligence__top-row,
   .unified-ev-intelligence--hero .unified-ev-intelligence__experience-grid {
     grid-template-columns: 1fr;
@@ -553,42 +597,33 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .unified-ev-intelligence__experience-grid--quad {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .unified-ev-intelligence__experience-grid--dual {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .unified-ev-intelligence__top-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: 20px;
   }
 
   .unified-ev-intelligence__experience-grid {
-    gap: 14px;
+    gap: 20px;
   }
 
   .unified-ev-intelligence__bottom-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    gap: 20px;
   }
 }
 
 @media (max-width: 639px) {
-  .unified-ev-intelligence__header {
-    margin-bottom: 16px;
-  }
-
   .unified-ev-intelligence__how-btn {
     width: 100%;
     justify-content: center;
     text-align: center;
-  }
-
-  .unified-ev-intelligence__top-card,
-  .unified-ev-intelligence__experience-card {
-    padding: 1rem;
-  }
-
-  .unified-ev-intelligence__our-take {
-    padding: 1rem;
   }
 }

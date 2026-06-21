@@ -1,0 +1,42 @@
+/* Phase 12D.9K.12A — Compact recommendation loop cards (presentation only) */
+
+.cd-page .people-also-compare__card,
+.cd-page .similar-evs__card,
+.cd-page .popular-similar-buyers__card {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 100px;
+}
+
+.cd-page .people-also-compare__card-title,
+.cd-page .similar-evs__card-title,
+.cd-page .popular-similar-buyers__card-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.cd-page .people-also-compare__cta,
+.cd-page .similar-evs__cta,
+.cd-page .popular-similar-buyers__cta {
+  flex: 0 0 auto;
+  align-self: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .cd-page .people-also-compare__card,
+  .cd-page .similar-evs__card,
+  .cd-page .popular-similar-buyers__card {
+    min-height: 90px;
+  }
+}
+
+@media (max-width: 639px) {
+  .cd-page .people-also-compare__card,
+  .cd-page .similar-evs__card,
+  .cd-page .popular-similar-buyers__card {
+    min-height: 80px;
+  }
+}

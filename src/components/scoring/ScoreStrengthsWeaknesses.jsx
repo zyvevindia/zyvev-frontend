@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 import { buildScoreExplanation } from "../../intelligence/buildScoreExplanation.js";
 import { SCORE_EXPLANATION_LIMITS } from "../../intelligence/types.js";
+import { normalizeInsightLabels } from "../../utils/normalizeInsightLabels.js";
 
 import "./score-strengths-weaknesses.css";
 
@@ -11,12 +12,8 @@ function normalizeExplanation(explanation) {
   }
 
   return {
-    strengths: Array.isArray(explanation.strengths)
-      ? explanation.strengths.filter(Boolean)
-      : [],
-    weaknesses: Array.isArray(explanation.weaknesses)
-      ? explanation.weaknesses.filter(Boolean)
-      : [],
+    strengths: normalizeInsightLabels(explanation.strengths),
+    weaknesses: normalizeInsightLabels(explanation.weaknesses),
     confidence: explanation.confidence || "verified",
   };
 }

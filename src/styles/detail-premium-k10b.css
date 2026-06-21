@@ -1,0 +1,150 @@
+/* Phase 12D.9K.10B — EV Intelligence card proportions (presentation only) */
+
+.cd-page {
+  --cd-intel-card-radius: 20px;
+  --cd-intel-card-pad: 20px;
+  --cd-intel-card-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+  --cd-intel-top-min-h: 150px;
+  --cd-intel-experience-min-h: 160px;
+  --cd-intel-service-take-min-h: 160px;
+  --cd-intel-tradeoff-min-h: 140px;
+}
+
+/* —— Tighter section rhythm —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__header {
+  margin-bottom: 20px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+  margin-bottom: 20px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-block {
+  gap: 20px;
+  margin-bottom: 0;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+  gap: 20px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+  margin-top: 20px;
+}
+
+/* —— Shared card shell: 20px radius, padding, shadow —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__why-owners-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__best-for-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__personality-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take {
+  border-radius: var(--cd-intel-card-radius);
+  padding: var(--cd-intel-card-pad);
+  box-shadow: var(--cd-intel-card-shadow);
+}
+
+/* —— Row 1: top insight cards —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__why-owners-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__best-for-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__personality-card {
+  min-height: var(--cd-intel-top-min-h);
+  gap: 10px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card-body {
+  gap: 0.4rem;
+}
+
+/* —— Row 2: experience quad —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--quad
+  .unified-ev-intelligence__experience-card {
+  min-height: var(--cd-intel-experience-min-h);
+}
+
+/* —— Row 3: service + our take —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__service-take-row
+  .unified-ev-intelligence__experience-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__service-take-row
+  .unified-ev-intelligence__our-take {
+  min-height: var(--cd-intel-service-take-min-h);
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take {
+  gap: 14px;
+  box-shadow: var(--cd-intel-card-shadow);
+}
+
+/* —— Row 4: trade-offs + avoid —— */
+
+.cd-page .cd-ev-intelligence-section
+  .unified-ev-intelligence__static-panel--tradeoffs {
+  min-height: var(--cd-intel-tradeoff-min-h);
+  gap: 10px;
+}
+
+.cd-page .cd-ev-intelligence-section
+  .unified-ev-intelligence__static-panel--avoid {
+  min-height: var(--cd-intel-tradeoff-min-h);
+  gap: 10px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel-body {
+  gap: 10px;
+}
+
+/* —— Equal heights within each grid row —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row {
+  align-items: stretch;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__why-owners-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__best-for-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__personality-card,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-body {
+  gap: 0.4rem;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__card-confidence {
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__why-owners-card,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__best-for-card,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__personality-card,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--quad
+    .unified-ev-intelligence__experience-card,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__service-take-row
+    .unified-ev-intelligence__experience-card,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__service-take-row
+    .unified-ev-intelligence__our-take,
+  .cd-page .cd-ev-intelligence-section
+    .unified-ev-intelligence__static-panel--tradeoffs,
+  .cd-page .cd-ev-intelligence-section
+    .unified-ev-intelligence__static-panel--avoid {
+    min-height: 0;
+  }
+}

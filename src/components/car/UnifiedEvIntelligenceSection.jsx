@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 import { buildRecommendationEngine } from "../../intelligence/buildRecommendationEngine.js";
 import { buildScoreExplanation } from "../../intelligence/buildScoreExplanation.js";
+import { buildPersonas } from "../../intelligence/buildPersonas.js";
 import { buildEvSavariVerdict } from "../../intelligence/buildEvSavariVerdict.js";
 import { buildOwnershipCostScore } from "../../intelligence/buildOwnershipCostScore.js";
 import { buildChargingPracticalityScore } from "../../intelligence/buildChargingPracticalityScore.js";
@@ -10,9 +11,11 @@ import { buildFamilyScore, buildFamilyContext } from "../../intelligence/buildFa
 import { buildServiceNetworkScore, resolveServiceNetworkBrand } from "../../intelligence/buildServiceNetworkScore.js";
 import { scrollToDetailSection } from "../../utils/detailPageNav.js";
 import RecommendationInsightsCard from "../scoring/RecommendationInsightsCard.jsx";
+import PersonaChips from "../scoring/PersonaChips.jsx";
 import ScoreStrengthsWeaknesses from "../scoring/ScoreStrengthsWeaknesses.jsx";
 import ConfidenceBadge from "../scoring/ConfidenceBadge.jsx";
-import EvIntelligenceScorePanel from "./EvIntelligenceScorePanel.jsx";
+
+import { normalizeInsightLabels } from "../../utils/normalizeInsightLabels.js";
 
 import "./unified-ev-intelligence.css";
 
@@ -53,46 +56,94 @@ const ICONS = {
   ),
 };
 
+function safeIntelligenceBuild(buildFn) {
+  try {
+    return buildFn();
+  } catch {
+    return null;
+  }
+}
+
+function hasBestFor(vehicle) {
+  const recommendation = safeIntelligenceBuild(() =>
+    buildRecommendationEngine(vehicle)
+  );
+  return (recommendation?.bestFor ?? []).filter(Boolean).length > 0;
+}
+
+function hasPersonas(vehicle) {
+  const personaResult = safeIntelligenceBuild(() => buildPersonas(vehicle));
+  return (personaResult?.personas ?? []).length > 0;
+}
+
 function resolveStrengthExplanation(vehicle, evSavariScores = null) {
   if (!vehicle) return null;
 
-  const built = buildScoreExplanation(vehicle);
-  if ((built.strengths || []).length > 0) {
-    return built;
-  }
-
-  const scoreStrengths = evSavariScores?.explanation?.strengths;
-  if (Array.isArray(scoreStrengths) && scoreStrengths.length > 0) {
+  const built = safeIntelligenceBuild(() => buildScoreExplanation(vehicle)) ?? {
+    strengths: [],
+    weaknesses: [],
+    confidence: "",
+  };
+  const builtStrengths = normalizeInsightLabels(built.strengths);
+  if (builtStrengths.length > 0) {
     return {
       ...built,
-      strengths: scoreStrengths.filter(Boolean),
+      strengths: builtStrengths,
+      weaknesses: normalizeInsightLabels(built.weaknesses),
     };
   }
 
-  return built;
+  const scoreStrengths = normalizeInsightLabels(
+    evSavariScores?.explanation?.strengths
+  );
+  if (scoreStrengths.length > 0) {
+    return {
+      ...built,
+      strengths: scoreStrengths,
+      weaknesses: normalizeInsightLabels(built.weaknesses),
+    };
+  }
+
+  return {
+    ...built,
+    strengths: builtStrengths,
+    weaknesses: normalizeInsightLabels(built.weaknesses),
+  };
 }
 
 function hasWeaknesses(vehicle) {
-  return (buildScoreExplanation(vehicle).weaknesses || []).length > 0;
+  const explanation = safeIntelligenceBuild(() => buildScoreExplanation(vehicle));
+  return normalizeInsightLabels(explanation?.weaknesses).length > 0;
 }
 
 function hasAvoidFor(vehicle) {
-  return (buildRecommendationEngine(vehicle).avoidFor || []).length > 0;
+  const recommendation = safeIntelligenceBuild(() =>
+    buildRecommendationEngine(vehicle)
+  );
+  return (recommendation?.avoidFor ?? []).filter(Boolean).length > 0;
 }
 
 function formatCostPerKmRange(min, max) {
   const fmt = (n) => {
-    const rounded = Math.round(n * 10) / 10;
+    const value = Number(n);
+    if (!Number.isFinite(value)) return null;
+    const rounded = Math.round(value * 10) / 10;
     return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
   };
-  return `₹${fmt(min)}–${fmt(max)}/km`;
+  const minLabel = fmt(min);
+  const maxLabel = fmt(max);
+  if (minLabel == null && maxLabel == null) return "";
+  if (minLabel != null && maxLabel != null) {
+    return `₹${minLabel}–${maxLabel}/km`;
+  }
+  return `₹${minLabel ?? maxLabel}/km`;
 }
 
 function buildHighwaySupportLines(vehicle) {
-  const ctx = buildHighwayConfidenceContext(vehicle);
+  const ctx = safeIntelligenceBuild(() => buildHighwayConfidenceContext(vehicle));
   const lines = [];
 
-  if (ctx.highwayPlanningRangeKm) {
+  if (ctx?.highwayPlanningRangeKm) {
     lines.push(
       `Good range for inter-city trips (~${Math.round(ctx.highwayPlanningRangeKm)} km planning range).`
     );
@@ -105,10 +156,10 @@ function buildHighwaySupportLines(vehicle) {
 }
 
 function buildFamilySupportLines(vehicle) {
-  const ctx = buildFamilyContext(vehicle);
+  const ctx = safeIntelligenceBuild(() => buildFamilyContext(vehicle));
   const lines = ["Comfortable for 4–5 adults"];
 
-  if (ctx.bootSpaceL) {
+  if (ctx?.bootSpaceL) {
     lines.push(`Good boot space (~${Math.round(ctx.bootSpaceL)}L).`);
   } else {
     lines.push("Good boot space.");
@@ -118,7 +169,7 @@ function buildFamilySupportLines(vehicle) {
 }
 
 function buildServiceSupportLines(vehicle) {
-  const brand = resolveServiceNetworkBrand(vehicle);
+  const brand = safeIntelligenceBuild(() => resolveServiceNetworkBrand(vehicle));
   const lines = [];
 
   if (brand) {
@@ -127,6 +178,10 @@ function buildServiceSupportLines(vehicle) {
 
   lines.push("Wide service network.");
   return lines;
+}
+
+function joinSupportLines(lines = []) {
+  return lines.filter(Boolean).join(" ");
 }
 
 function PremiumTopCard({
@@ -144,20 +199,22 @@ function PremiumTopCard({
         .filter(Boolean)
         .join(" ")}
     >
-      <h3 className="unified-ev-intelligence__top-card-title">{title}</h3>
+      <div className="unified-ev-intelligence__top-card-head">
+        <h3 className="unified-ev-intelligence__top-card-title">{title}</h3>
+        {confidenceLabel ? (
+          <ConfidenceBadge
+            label={confidenceLabel}
+            className="unified-ev-intelligence__card-confidence"
+          />
+        ) : (
+          <ConfidenceBadge
+            vehicle={vehicle}
+            dimension="overall"
+            className="unified-ev-intelligence__card-confidence"
+          />
+        )}
+      </div>
       <div className="unified-ev-intelligence__top-card-body">{children}</div>
-      {confidenceLabel ? (
-        <ConfidenceBadge
-          label={confidenceLabel}
-          className="unified-ev-intelligence__card-confidence"
-        />
-      ) : (
-        <ConfidenceBadge
-          vehicle={vehicle}
-          dimension="overall"
-          className="unified-ev-intelligence__card-confidence"
-        />
-      )}
     </article>
   );
 }
@@ -172,55 +229,50 @@ function PremiumExperienceCard({
 }) {
   if (!children) return null;
 
+  const supportCopy = joinSupportLines(supportLines);
+
   return (
     <article className="unified-ev-intelligence__experience-card">
       <div className="unified-ev-intelligence__experience-icon">{icon}</div>
+      <h3 className="unified-ev-intelligence__experience-title">{title}</h3>
       <div className="unified-ev-intelligence__experience-body">
-        <h3 className="unified-ev-intelligence__experience-title">{title}</h3>
-        {children}
-        {supportLines.length > 0 ? (
-          <ul className="unified-ev-intelligence__experience-support">
-            {supportLines.map((line) => (
-              <li key={line}>{line}</li>
-            ))}
-          </ul>
-        ) : null}
-        <ConfidenceBadge
-          vehicle={vehicle}
-          dimension={confidenceDimension}
-          className="unified-ev-intelligence__card-confidence"
-        />
+        <div className="unified-ev-intelligence__experience-content">{children}</div>
+        <div className="unified-ev-intelligence__experience-footer">
+          {supportCopy ? (
+            <p className="unified-ev-intelligence__experience-support">
+              {supportCopy}
+            </p>
+          ) : null}
+          <ConfidenceBadge
+            vehicle={vehicle}
+            dimension={confidenceDimension}
+            className="unified-ev-intelligence__card-confidence"
+          />
+        </div>
       </div>
     </article>
   );
 }
 
 function OurTakePanel({ verdict }) {
-  if (!verdict?.headline && !verdict?.summary) {
+  const headline = verdict?.headline ?? "";
+  const summary = verdict?.summary ?? "";
+  const copy = [headline, summary].filter(Boolean).join(" ");
+
+  if (!copy) {
     return null;
   }
 
   return (
     <article className="unified-ev-intelligence__our-take">
       <div className="unified-ev-intelligence__our-take-icon">{ICONS.shield}</div>
-      <div className="unified-ev-intelligence__our-take-copy">
-        <h3 className="unified-ev-intelligence__our-take-title">Our Take</h3>
-        {verdict.headline ? (
-          <p className="unified-ev-intelligence__our-take-headline">
-            {verdict.headline}
-          </p>
-        ) : null}
-        {verdict.summary ? (
-          <p className="unified-ev-intelligence__our-take-summary">
-            {verdict.summary}
-          </p>
-        ) : null}
-      </div>
+      <h3 className="unified-ev-intelligence__our-take-title">Our Take</h3>
+      <p className="unified-ev-intelligence__our-take-copy">{copy}</p>
     </article>
   );
 }
 
-function StaticInsightPanel({ title, tone, children }) {
+function StaticInsightPanel({ title, tone, children, confidence = null }) {
   if (!children) return null;
 
   return (
@@ -230,7 +282,10 @@ function StaticInsightPanel({ title, tone, children }) {
         `unified-ev-intelligence__static-panel--${tone}`,
       ].join(" ")}
     >
-      <h3 className="unified-ev-intelligence__static-panel-title">{title}</h3>
+      <div className="unified-ev-intelligence__static-panel-head">
+        <h3 className="unified-ev-intelligence__static-panel-title">{title}</h3>
+        {confidence}
+      </div>
       <div className="unified-ev-intelligence__static-panel-body">{children}</div>
     </article>
   );
@@ -243,41 +298,60 @@ export default function UnifiedEvIntelligenceSection({
   vehicle = null,
   layout = "default",
   evSavariScores = null,
-  catalogMeta = null,
-  familyOverviewMode = false,
+  catalogMeta: _catalogMeta = null,
+  familyOverviewMode: _familyOverviewMode = false,
 }) {
   const verdict = useMemo(
-    () => (vehicle ? buildEvSavariVerdict(vehicle) : null),
+    () =>
+      vehicle
+        ? safeIntelligenceBuild(() => buildEvSavariVerdict(vehicle))
+        : null,
     [vehicle]
   );
 
   const scoreConfidence = useMemo(() => {
     if (!vehicle) return null;
-    return buildScoreExplanation(vehicle).confidence || null;
+    const explanation = safeIntelligenceBuild(() =>
+      buildScoreExplanation(vehicle)
+    );
+    return explanation?.confidence ?? null;
   }, [vehicle]);
 
   const ownershipData = useMemo(
-    () => (vehicle ? buildOwnershipCostScore(vehicle) : null),
+    () =>
+      vehicle
+        ? safeIntelligenceBuild(() => buildOwnershipCostScore(vehicle))
+        : null,
     [vehicle]
   );
 
   const chargingData = useMemo(
-    () => (vehicle ? buildChargingPracticalityScore(vehicle) : null),
+    () =>
+      vehicle
+        ? safeIntelligenceBuild(() => buildChargingPracticalityScore(vehicle))
+        : null,
     [vehicle]
   );
 
   const highwayData = useMemo(
-    () => (vehicle ? buildHighwayConfidenceScore(vehicle) : null),
+    () =>
+      vehicle
+        ? safeIntelligenceBuild(() => buildHighwayConfidenceScore(vehicle))
+        : null,
     [vehicle]
   );
 
   const familyData = useMemo(
-    () => (vehicle ? buildFamilyScore(vehicle) : null),
+    () =>
+      vehicle ? safeIntelligenceBuild(() => buildFamilyScore(vehicle)) : null,
     [vehicle]
   );
 
   const serviceData = useMemo(
-    () => (vehicle ? buildServiceNetworkScore(vehicle) : null),
+    () =>
+      vehicle
+        ? safeIntelligenceBuild(() => buildServiceNetworkScore(vehicle))
+        : null,
     [vehicle]
   );
 
@@ -286,8 +360,16 @@ export default function UnifiedEvIntelligenceSection({
     [vehicle, evSavariScores]
   );
 
+  const showBestFor = useMemo(
+    () => Boolean(vehicle && hasBestFor(vehicle)),
+    [vehicle]
+  );
+  const showPersonality = useMemo(
+    () => Boolean(vehicle && hasPersonas(vehicle)),
+    [vehicle]
+  );
   const showWhyOwnersCard = useMemo(
-    () => (strengthExplanation?.strengths || []).length > 0,
+    () => normalizeInsightLabels(strengthExplanation?.strengths).length > 0,
     [strengthExplanation]
   );
 
@@ -338,16 +420,37 @@ export default function UnifiedEvIntelligenceSection({
         </button>
       </header>
 
-      <EvIntelligenceScorePanel
-        vehicle={vehicle}
-        evSavariScores={evSavariScores}
-        catalogMeta={catalogMeta}
-        familyOverviewMode={familyOverviewMode}
-        compact={layout === "hero"}
-        intelligenceCompact={layout !== "hero"}
-      />
+      <div className="unified-ev-intelligence__top-row">
+        {showBestFor ? (
+          <PremiumTopCard
+            title="Best For"
+            vehicle={vehicle}
+            className="unified-ev-intelligence__best-for-card"
+          >
+            <RecommendationInsightsCard
+              vehicle={vehicle}
+              layout="inline"
+              maxAvoidFor={0}
+              className="unified-ev-intelligence__insights-inline"
+            />
+          </PremiumTopCard>
+        ) : null}
 
-      <div className="unified-ev-intelligence__strengths-row">
+        {showPersonality ? (
+          <PremiumTopCard
+            title="EV Personality"
+            vehicle={vehicle}
+            className="unified-ev-intelligence__personality-card"
+          >
+            <PersonaChips
+              vehicle={vehicle}
+              layout="inline"
+              className="unified-ev-intelligence__persona-chips"
+              ariaLabel="EV personality"
+            />
+          </PremiumTopCard>
+        ) : null}
+
         {showWhyOwnersCard ? (
           <PremiumTopCard
             title="Why Owners Like It"
@@ -367,8 +470,8 @@ export default function UnifiedEvIntelligenceSection({
       </div>
 
       <div className="unified-ev-intelligence__experience-block">
-        <div className="unified-ev-intelligence__experience-grid unified-ev-intelligence__experience-grid--triple">
-        {ownershipData ? (
+        <div className="unified-ev-intelligence__experience-grid unified-ev-intelligence__experience-grid--quad">
+        {ownershipData?.label ? (
           <PremiumExperienceCard
             icon={ICONS.ownership}
             title="Ownership Experience"
@@ -379,16 +482,21 @@ export default function UnifiedEvIntelligenceSection({
             <p className="unified-ev-intelligence__experience-label">
               {ownershipData.label}
             </p>
-            <p className="unified-ev-intelligence__experience-metric">
-              {formatCostPerKmRange(
-                ownershipData.costPerKmMin,
-                ownershipData.costPerKmMax
-              )}
-            </p>
+            {formatCostPerKmRange(
+              ownershipData.costPerKmMin,
+              ownershipData.costPerKmMax
+            ) ? (
+              <p className="unified-ev-intelligence__experience-metric">
+                {formatCostPerKmRange(
+                  ownershipData.costPerKmMin,
+                  ownershipData.costPerKmMax
+                )}
+              </p>
+            ) : null}
           </PremiumExperienceCard>
         ) : null}
 
-        {chargingData ? (
+        {chargingData?.label ? (
           <PremiumExperienceCard
             icon={ICONS.charging}
             title="Charging Experience"
@@ -411,7 +519,7 @@ export default function UnifiedEvIntelligenceSection({
           </PremiumExperienceCard>
         ) : null}
 
-        {highwayData ? (
+        {highwayData?.label ? (
           <PremiumExperienceCard
             icon={ICONS.highway}
             title="Long-distance Travel"
@@ -424,10 +532,8 @@ export default function UnifiedEvIntelligenceSection({
             </p>
           </PremiumExperienceCard>
         ) : null}
-        </div>
 
-        <div className="unified-ev-intelligence__experience-grid unified-ev-intelligence__experience-grid--dual">
-        {familyData ? (
+        {familyData?.label ? (
           <PremiumExperienceCard
             icon={ICONS.family}
             title="Family Suitability"
@@ -440,8 +546,10 @@ export default function UnifiedEvIntelligenceSection({
             </p>
           </PremiumExperienceCard>
         ) : null}
+        </div>
 
-        {serviceData ? (
+        <div className="unified-ev-intelligence__experience-grid unified-ev-intelligence__experience-grid--dual unified-ev-intelligence__service-take-row">
+        {serviceData?.label ? (
           <PremiumExperienceCard
             icon={ICONS.service}
             title="Service Confidence"
@@ -454,14 +562,23 @@ export default function UnifiedEvIntelligenceSection({
             </p>
           </PremiumExperienceCard>
         ) : null}
-        </div>
 
         <OurTakePanel verdict={verdict} />
+        </div>
       </div>
 
       <div className="unified-ev-intelligence__bottom-row">
       {showTradeOffs ? (
-        <StaticInsightPanel title="Trade-offs (Not Dealbreakers)" tone="tradeoffs">
+        <StaticInsightPanel
+          title="Trade-offs (Not Dealbreakers)"
+          tone="tradeoffs"
+          confidence={
+            <ConfidenceBadge
+              label={scoreConfidence}
+              className="unified-ev-intelligence__card-confidence"
+            />
+          }
+        >
           <ScoreStrengthsWeaknesses
             vehicle={vehicle}
             layout="inline"
@@ -469,25 +586,26 @@ export default function UnifiedEvIntelligenceSection({
             maxStrengths={0}
             className="unified-ev-intelligence__insights-inline"
           />
-          <ConfidenceBadge
-            label={scoreConfidence}
-            className="unified-ev-intelligence__card-confidence"
-          />
         </StaticInsightPanel>
       ) : null}
 
       {showAvoidIf ? (
-        <StaticInsightPanel title="Avoid If" tone="avoid">
+        <StaticInsightPanel
+          title="Avoid If"
+          tone="avoid"
+          confidence={
+            <ConfidenceBadge
+              dimension="overall"
+              vehicle={vehicle}
+              className="unified-ev-intelligence__card-confidence"
+            />
+          }
+        >
           <RecommendationInsightsCard
             vehicle={vehicle}
             layout="inline"
             maxBestFor={0}
             className="unified-ev-intelligence__insights-inline unified-ev-intelligence__insights-inline--avoid"
-          />
-          <ConfidenceBadge
-            dimension="overall"
-            vehicle={vehicle}
-            className="unified-ev-intelligence__card-confidence"
           />
         </StaticInsightPanel>
       ) : null}

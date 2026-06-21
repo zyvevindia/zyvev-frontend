@@ -1,0 +1,114 @@
+/* Phase 12D.9K.10C — EV Intelligence typography (presentation only) */
+
+.cd-page {
+  --cd-intel-section-title-size: 2rem;
+  --cd-intel-section-title-weight: 800;
+  --cd-intel-card-title-size: 1.1rem;
+  --cd-intel-card-title-weight: 700;
+  --cd-intel-body-size: 0.95rem;
+  --cd-intel-body-leading: 1.6;
+  --cd-intel-bullet-gap: 0.6rem;
+}
+
+/* —— Section title —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__title.cd-section__title {
+  font-size: var(--cd-intel-section-title-size);
+  font-weight: var(--cd-intel-section-title-weight);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+/* —— Card titles —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card-title,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-title,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel-title,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take-title {
+  font-size: var(--cd-intel-card-title-size);
+  font-weight: var(--cd-intel-card-title-weight);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+/* —— Body copy —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-label,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-detail,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-metric,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-support,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take-copy,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__insights-inline
+  .score-sw__item,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__insights-inline
+  .recommendation-insights__item,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__persona-chips
+  .persona-chips__chip {
+  font-size: var(--cd-intel-body-size);
+  line-height: var(--cd-intel-body-leading);
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-label {
+  font-weight: 700;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__our-take-copy {
+  font-weight: 500;
+}
+
+/* —— Confidence badge: inline with title or footer —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-card-head,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__static-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__card-confidence {
+  margin-top: 0;
+  align-self: center;
+  padding-top: 0;
+}
+
+.cd-page .cd-ev-intelligence-section .score-sw__list,
+.cd-page .cd-ev-intelligence-section .recommendation-insights__list,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__insights-inline
+  .score-sw__list,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__insights-inline
+  .recommendation-insights__list {
+  gap: var(--cd-intel-bullet-gap);
+}
+
+/* —— Confidence badge pill sizing —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__card-confidence
+  .confidence-badge,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__card-confidence
+  .confidence-badge--compact {
+  margin-top: 0;
+  padding: 0.14rem 0.48rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 1024px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__title.cd-section__title {
+    font-size: var(--cd-intel-section-title-size);
+  }
+}
+
+@media (max-width: 390px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__title.cd-section__title {
+    font-size: 1.75rem;
+  }
+}

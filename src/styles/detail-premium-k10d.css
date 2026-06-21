@@ -1,0 +1,94 @@
+/* Phase 12D.9K.10D — EV Intelligence vertical rhythm (presentation only) */
+
+.cd-page {
+  --cd-intel-section-pad: 24px;
+  --cd-intel-header-space: 20px;
+  --cd-intel-row-gap: 20px;
+  --cd-intel-grid-gap: 20px;
+}
+
+/* —— Section shell —— */
+
+.cd-page .cd-ev-intelligence-section {
+  padding: var(--cd-intel-section-pad);
+}
+
+/* —— Header spacing —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__header {
+  margin-bottom: var(--cd-intel-header-space);
+}
+
+/* —— Row rhythm (between major blocks) —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+  margin-bottom: var(--cd-intel-row-gap);
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-block {
+  gap: var(--cd-intel-row-gap);
+  margin-bottom: 0;
+}
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+  margin-top: var(--cd-intel-row-gap);
+}
+
+/* —— Grid gaps —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+  gap: var(--cd-intel-grid-gap);
+}
+
+/* —— Responsive columns: mobile 1 / tablet 2 / desktop 3 (top row) —— */
+
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
+.cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__top-row,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__strengths-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--quad {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--dual,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--quad {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--dual,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--quad,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__experience-grid--dual,
+  .cd-page .cd-ev-intelligence-section .unified-ev-intelligence__bottom-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,10 +1,9 @@
 /* EVSavari Car Details — layout system */
 
-@import "./detail-premium-polish.css";
-@import "./detail-ux-cert.css";
-@import "./detail-premium-restoration.css";
-@import "./detail-premium-k7.css";
-@import "./detail-premium-k8.css";
+@import url("./detail-premium-polish.css");
+@import url("./detail-ux-cert.css");
+@import url("./detail-premium-restoration.css");
+@import url("./detail-premium-k8.css");
 
 .cd-page {
   min-height: 100vh;

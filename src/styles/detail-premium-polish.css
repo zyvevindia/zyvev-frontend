@@ -184,8 +184,7 @@
   border: var(--cd-border-subtle);
   box-shadow: var(--cd-shadow-card);
   padding: var(--cd-pad-card-inner);
-  min-height: 120px;
-  gap: 14px;
+  gap: 12px;
   transition:
     box-shadow 0.2s ease,
     transform 0.2s ease;
