@@ -19,3 +19,6 @@ export {
   getReviewByVehicleSlug,
   listReviews,
 } from "./reviewRegistry.js";
+
+export { buildReviewContext } from "./buildReviewContext.js";
+export { buildVehicleReview } from "./buildVehicleReview.js";
