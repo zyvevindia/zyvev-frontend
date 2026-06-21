@@ -90,6 +90,10 @@ const PetrolSavingsPage = lazy(() =>
   import("./pages/PetrolSavingsPage")
 );
 
+const EmiCalculatorPage = lazy(() =>
+  import("./pages/EmiCalculatorPage")
+);
+
 const SalesAnalytics = lazy(() =>
   import("./pages/SalesAnalytics")
 );
@@ -509,6 +513,11 @@ export default function App() {
           <Route
             path="/tools/savings-vs-petrol"
             element={<PetrolSavingsPage />}
+          />
+
+          <Route
+            path="/tools/emi"
+            element={<EmiCalculatorPage />}
           />
 
           <Route
