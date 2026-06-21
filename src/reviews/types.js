@@ -61,6 +61,17 @@
  * @property {ReviewSection} serviceExperience
  * @property {ReviewVerdict} finalVerdict
  * @property {ReviewConfidence} confidence
+ * @property {string} [familyName]
+ * @property {string[]} [whoShouldBuy]
+ * @property {string[]} [whoShouldAvoid]
+ * @property {ReviewEvSavariVerdict} [evSavariVerdict]
+ */
+
+/**
+ * @typedef {Object} ReviewEvSavariVerdict
+ * @property {string} label
+ * @property {string[]} bestFor
+ * @property {string[]} considerations
  */
 
 export {};

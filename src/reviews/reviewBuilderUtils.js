@@ -2,6 +2,8 @@
  * Shared helpers for review intelligence builders.
  */
 
+import { extractFamilySlug, formatFamilyName } from "../utils/modelFamily.js";
+import { resolveVehicleBrand } from "../utils/vehicleDisplayName.js";
 import { buildConfidenceLabels } from "../intelligence/buildConfidenceLabels.js";
 import { CONFIDENCE_LABELS } from "../intelligence/confidenceRules.js";
 import { REVIEW_CONFIDENCE } from "./constants.js";
@@ -62,9 +64,40 @@ export function resolveVehicleSlug(vehicle) {
 
 /**
  * @param {object|null|undefined} vehicle
+ * @param {string} [familySlugOverride]
+ * @returns {string}
+ */
+export function resolveReviewFamilyName(vehicle, familySlugOverride = "") {
+  const slug =
+    familySlugOverride ||
+    extractFamilySlug(resolveVehicleSlug(vehicle)) ||
+    resolveVehicleSlug(vehicle);
+
+  if (!slug) return "Electric vehicle";
+
+  const brand = resolveVehicleBrand({
+    ...(vehicle || {}),
+    familySlug: slug,
+    slug,
+  });
+
+  return formatFamilyName(slug, brand);
+}
+
+/**
+ * @param {object|null|undefined} vehicle
  * @returns {string}
  */
 export function resolveVehicleDisplayName(vehicle) {
+  return resolveReviewFamilyName(vehicle);
+}
+
+/**
+ * @deprecated Prefer resolveReviewFamilyName for review surfaces.
+ * @param {object|null|undefined} vehicle
+ * @returns {string}
+ */
+export function resolveVehicleVariantDisplayName(vehicle) {
   if (!vehicle || typeof vehicle !== "object") return "EV";
 
   return (

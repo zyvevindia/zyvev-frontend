@@ -4,7 +4,9 @@ import { Link, Navigate, useParams } from "react-router-dom";
 
 import SEO from "../components/SEO/SEO.jsx";
 import JsonLd from "../components/SEO/JsonLd.jsx";
-import ReviewHeader from "../components/reviews/ReviewHeader.jsx";
+import ReviewAudienceCard from "../components/reviews/ReviewAudienceCard.jsx";
+import ReviewEvSavariVerdictCard from "../components/reviews/ReviewEvSavariVerdictCard.jsx";
+import ReviewHero from "../components/reviews/ReviewHero.jsx";
 import ReviewProsConsCard from "../components/reviews/ReviewProsConsCard.jsx";
 import ReviewSectionCard from "../components/reviews/ReviewSectionCard.jsx";
 import ReviewVerdictCard from "../components/reviews/ReviewVerdictCard.jsx";
@@ -15,9 +17,9 @@ import {
   buildReviewSlug,
   resolveVehicleSlugFromReviewSlug,
 } from "../reviews/reviewRoutes.js";
+import { resolveReviewFamilyName } from "../reviews/reviewBuilderUtils.js";
 import { fetchVehicleFamilyBySlug } from "../utils/vehicleDetailResolver.js";
 import { getHeroImage, getOgImage } from "../utils/vehicleMedia.js";
-import { resolveVehicleDisplayName } from "../reviews/reviewBuilderUtils.js";
 
 import "../components/reviews/review-page.css";
 
@@ -127,17 +129,16 @@ export default function ReviewPage() {
     return <Navigate to={`/reviews/${canonicalSlug}`} replace />;
   }
 
-  const vehicleName = resolveVehicleDisplayName(intelligenceVehicle);
-  const canonicalUrl = canonicalReviewUrl(review.vehicleSlug);
+  const familyName = resolveReviewFamilyName(intelligenceVehicle, review.vehicleSlug);
   const ogImage = getOgImage(vehicle) || getHeroImage(vehicle);
   const meta = buildReviewPageMeta({
-    vehicleName,
+    vehicleName: familyName,
     vehicleSlug: review.vehicleSlug,
     image: ogImage,
   });
   const schemas = buildReviewPageSchemas({
     review,
-    vehicle,
+    vehicle: { ...vehicle, name: familyName, displayName: familyName },
     canonicalUrl: meta.canonical,
     image: ogImage,
   });
@@ -158,13 +159,29 @@ export default function ReviewPage() {
       ))}
 
       <div className="review-page__inner">
-        <ReviewHeader review={review} vehicle={vehicle} />
+        <ReviewHero
+          review={review}
+          vehicle={vehicle}
+          intelligenceVehicle={intelligenceVehicle}
+          variants={variants}
+        />
 
         <div className="review-page__grid">
-          <ReviewSectionCard title="Overview" body={review.overview?.body} />
+          <ReviewEvSavariVerdictCard verdict={review.evSavariVerdict} />
 
           <ReviewProsConsCard variant="pros" items={review.pros} />
           <ReviewProsConsCard variant="cons" items={review.cons} />
+
+          <ReviewAudienceCard
+            title="Who should buy this EV"
+            items={review.whoShouldBuy}
+            tone="positive"
+          />
+          <ReviewAudienceCard
+            title="Who should avoid this EV"
+            items={review.whoShouldAvoid}
+            tone="neutral"
+          />
 
           <ReviewSectionCard
             title="City Driving"

@@ -1,12 +1,14 @@
 .review-page {
   --review-page-max: 1120px;
   --review-card-radius: 20px;
-  --review-card-pad: 20px;
+  --review-card-pad: 22px;
   --review-card-shadow:
     0 1px 2px rgba(15, 23, 42, 0.04),
     0 8px 24px rgba(15, 23, 42, 0.06);
-  --review-section-gap: 20px;
-  padding: 24px 16px 48px;
+  --review-section-gap: 18px;
+  --review-body-size: 0.97rem;
+  --review-body-leading: 1.72;
+  padding: 24px 16px 56px;
 }
 
 .review-page__inner {
@@ -15,12 +17,115 @@
 }
 
 .review-page__hero {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   padding: 24px;
   border-radius: var(--review-card-radius);
   background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
   border: 1px solid #e2e8f0;
   box-shadow: var(--review-card-shadow);
+}
+
+.review-page__hero--premium {
+  padding: 22px;
+}
+
+.review-page__hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.review-page__hero-media {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+}
+
+.review-page__hero-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.review-page__intro--overview {
+  margin-top: 12px;
+  font-size: var(--review-body-size);
+  line-height: var(--review-body-leading);
+}
+
+.review-page__hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.review-page__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.62rem 1rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.review-page__btn--primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.review-page__btn--primary:hover {
+  background: #1d4ed8;
+}
+
+.review-page__btn--secondary {
+  background: #fff;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+
+.review-page__btn--secondary:hover {
+  background: #f8fafc;
+}
+
+.review-page__hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.review-page__hero-metrics-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.review-page__hero-metrics-row dt {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.review-page__hero-metrics-row dd {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
 }
 
 .review-page__eyebrow {
@@ -89,7 +194,9 @@
 }
 
 .review-page__section-card,
-.review-page__verdict-card {
+.review-page__verdict-card,
+.review-page__audience-card,
+.review-page__ev-verdict-card {
   padding: var(--review-card-pad);
   border-radius: var(--review-card-radius);
   background: #fff;
@@ -98,19 +205,19 @@
 }
 
 .review-page__section-title {
-  margin: 0 0 10px;
-  font-size: 1.1rem;
+  margin: 0 0 8px;
+  font-size: 1.12rem;
   font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
-  color: #334155;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+  color: #1e293b;
 }
 
 .review-page__section-body,
 .review-page__verdict-copy {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-size: var(--review-body-size);
+  line-height: var(--review-body-leading);
   color: #475569;
 }
 
@@ -126,6 +233,91 @@
 .review-page__verdict-copy {
   color: #065f46;
   font-weight: 500;
+}
+
+.review-page__audience-card--positive {
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  border-color: #bbf7d0;
+}
+
+.review-page__audience-card--neutral {
+  background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);
+  border-color: #fde68a;
+}
+
+.review-page__audience-list,
+.review-page__ev-verdict-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.48rem;
+}
+
+.review-page__audience-item,
+.review-page__ev-verdict-list li {
+  position: relative;
+  padding-left: 0.95rem;
+  font-size: var(--review-body-size);
+  line-height: var(--review-body-leading);
+  color: #334155;
+}
+
+.review-page__audience-item::before,
+.review-page__ev-verdict-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 999px;
+  background: #22c55e;
+}
+
+.review-page__audience-card--neutral .review-page__audience-item::before {
+  background: #f59e0b;
+}
+
+.review-page__ev-verdict-card {
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  border-color: #bfdbfe;
+}
+
+.review-page__ev-verdict-eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+
+.review-page__ev-verdict-label {
+  margin: 0 0 14px;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.review-page__ev-verdict-block + .review-page__ev-verdict-block {
+  margin-top: 14px;
+}
+
+.review-page__ev-verdict-subtitle {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.review-page__ev-verdict-list--considerations li::before {
+  background: #f59e0b;
 }
 
 .review-page__state {
@@ -154,22 +346,54 @@
 
 @media (min-width: 768px) {
   .review-page {
-    padding: 32px 24px 56px;
+    padding: 32px 24px 64px;
+  }
+
+  .review-page__hero-grid {
+    grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .review-page__hero-metrics {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .review-page__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
   }
 
   .review-page__hero,
-  .review-page__section-card:first-child,
+  .review-page__ev-verdict-card,
   .review-page__verdict-card {
     grid-column: 1 / -1;
   }
 }
 
 @media (min-width: 1024px) {
-  .review-page__hero {
-    padding: 28px 32px;
+  .review-page__hero--premium {
+    padding: 28px;
+  }
+
+  .review-page__hero-grid {
+    grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 389px) {
+  .review-page {
+    padding: 18px 12px 48px;
+  }
+
+  .review-page__hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .review-page__hero-actions {
+    flex-direction: column;
+  }
+
+  .review-page__btn {
+    width: 100%;
   }
 }
