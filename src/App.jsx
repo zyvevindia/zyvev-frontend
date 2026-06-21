@@ -66,6 +66,10 @@ const CarDetails = lazy(() =>
   import("./pages/CarDetails")
 );
 
+const ReviewPage = lazy(() =>
+  import("./pages/ReviewPage")
+);
+
 const SalesAnalytics = lazy(() =>
   import("./pages/SalesAnalytics")
 );
@@ -514,6 +518,11 @@ export default function App() {
           <Route
             path="/cars/:slug"
             element={<CarsSlugRouter />}
+          />
+
+          <Route
+            path="/reviews/:slug"
+            element={<ReviewPage />}
           />
 
           <Route
