@@ -20,6 +20,7 @@ import {
   resolveReviewConfidence,
   safeReviewBuild,
 } from "./reviewBuilderUtils.js";
+import { dedupeReviewItems } from "./reviewTextUtils.js";
 
 /**
  * @typedef {Object} ReviewContext
@@ -67,12 +68,12 @@ export function buildReviewContext(vehicle) {
     confidence: "",
   });
 
-  const strengths = normalizeInsightLabels(explanation?.strengths).slice(
-    0,
+  const strengths = dedupeReviewItems(
+    normalizeInsightLabels(explanation?.strengths),
     REVIEW_LIMITS.maxPros
   );
-  const weaknesses = normalizeInsightLabels(explanation?.weaknesses).slice(
-    0,
+  const weaknesses = dedupeReviewItems(
+    normalizeInsightLabels(explanation?.weaknesses),
     REVIEW_LIMITS.maxCons
   );
 

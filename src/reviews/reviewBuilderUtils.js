@@ -2,11 +2,98 @@
  * Shared helpers for review intelligence builders.
  */
 
-import { extractFamilySlug, formatFamilyName } from "../utils/modelFamily.js";
-import { resolveVehicleBrand } from "../utils/vehicleDisplayName.js";
+import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies.js";
 import { buildConfidenceLabels } from "../intelligence/buildConfidenceLabels.js";
 import { CONFIDENCE_LABELS } from "../intelligence/confidenceRules.js";
 import { REVIEW_CONFIDENCE } from "./constants.js";
+
+/**
+ * @param {string|null|undefined} slug
+ * @returns {string}
+ */
+function normalizeReviewSlug(slug) {
+  if (slug == null || slug === "") return "";
+  return String(slug)
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+/**
+ * @param {object|null|undefined} vehicle
+ * @param {string} slug
+ * @returns {string}
+ */
+function resolveReviewBrand(vehicle, slug) {
+  const candidates = [
+    vehicle?.brand,
+    vehicle?.catalogMeta?.brand,
+    vehicle?.catalogMeta?.manufacturer,
+  ];
+
+  for (const candidate of candidates) {
+    const brand = String(candidate || "").trim();
+    if (brand && !/^ev brand$/i.test(brand)) {
+      return brand;
+    }
+  }
+
+  const segment = slug.split("-")[0] || "";
+  return segment ? segment.charAt(0).toUpperCase() + segment.slice(1) : "";
+}
+
+/**
+ * @param {string} rawSlug
+ * @returns {string}
+ */
+function extractFamilySlug(rawSlug) {
+  const slug = normalizeReviewSlug(rawSlug);
+  if (!slug) return "";
+
+  if (TIER1_MODEL_FAMILY_SLUGS.includes(slug)) {
+    return slug;
+  }
+
+  for (const family of TIER1_MODEL_FAMILY_SLUGS) {
+    if (slug.startsWith(`${family}-`)) {
+      return family;
+    }
+  }
+
+  return slug;
+}
+
+/**
+ * @param {string} familySlug
+ * @param {string} [brandLabel]
+ * @returns {string}
+ */
+function formatFamilyName(familySlug, brandLabel = "") {
+  const slug = normalizeReviewSlug(familySlug);
+  if (!slug) return "Electric Vehicle";
+
+  const family = TIER1_MODEL_FAMILY_SLUGS.find(
+    (item) => item === slug || slug.startsWith(`${item}-`)
+  );
+  const modelPart = family
+    ? family.replace(/^[a-z]+-/, "")
+    : slug.replace(/^[a-z]+-/, "");
+
+  const modelTitle = modelPart
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  const brand =
+    brandLabel && !/^ev brand$/i.test(String(brandLabel).trim())
+      ? String(brandLabel).trim()
+      : slug.split("-")[0].charAt(0).toUpperCase() + slug.split("-")[0].slice(1);
+
+  return `${brand} ${modelTitle}`.trim();
+}
 
 /**
  * @template T
@@ -75,11 +162,14 @@ export function resolveReviewFamilyName(vehicle, familySlugOverride = "") {
 
   if (!slug) return "Electric vehicle";
 
-  const brand = resolveVehicleBrand({
-    ...(vehicle || {}),
-    familySlug: slug,
-    slug,
-  });
+  const brand = resolveReviewBrand(
+    {
+      ...(vehicle || {}),
+      familySlug: slug,
+      slug,
+    },
+    slug
+  );
 
   return formatFamilyName(slug, brand);
 }

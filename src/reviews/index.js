@@ -29,3 +29,11 @@ export {
   reviewPagePath,
   canonicalReviewUrl,
 } from "./reviewRoutes.js";
+
+export {
+  buildNaturalSentence,
+  dedupeReviewItems,
+  joinFragmentsNaturally,
+  normalizeReviewText,
+  reviewSectionBodyOrFallback,
+} from "./reviewTextUtils.js";

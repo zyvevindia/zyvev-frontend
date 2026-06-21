@@ -23,6 +23,18 @@ import {
 } from "./reviewTextUtils.js";
 
 /** @type {Record<string, string>} */
+const VERDICT_SUMMARY_BY_PERSONA = {
+  "City EV": "Excellent city EV with very low running costs.",
+  "Value EV": "Great value EV with sensible everyday running costs.",
+  "Highway EV": "Strong highway EV suited for inter-city travel.",
+  "Long-distance EV": "Strong highway EV suited for inter-city travel.",
+  "Family EV": "Balanced family EV with practical charging.",
+  "Apartment EV": "Practical apartment EV with convenient home charging.",
+  "First EV": "Well-rounded first EV with balanced everyday capability.",
+  "Premium EV": "Premium everyday EV with confident ownership appeal.",
+};
+
+/** @type {Record<string, string>} */
 const PERSONA_VERDICT_LABELS = {
   "City EV": "Excellent city EV",
   "Value EV": "Great value EV",
@@ -251,13 +263,20 @@ function buildServiceExperienceCopy(ctx, vehicle) {
  */
 function buildVerdictSummaryCopy(ctx) {
   const personas = ctx.personas?.personas ?? [];
-  const label = resolveQualitativeVerdictLabel(personas);
   const verdict = ctx.verdict;
 
   if (verdict?.summary) {
     return normalizeReviewText(verdict.summary);
   }
 
+  for (const persona of personas) {
+    const mapped = VERDICT_SUMMARY_BY_PERSONA[persona];
+    if (mapped) {
+      return mapped;
+    }
+  }
+
+  const label = resolveQualitativeVerdictLabel(personas);
   const bestFor = mapFriendlyLabels(ctx.recommendation?.bestFor ?? [], BEST_FOR_FRIENDLY);
   if (bestFor.length) {
     return buildNaturalSentence(

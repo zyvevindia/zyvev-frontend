@@ -1,4 +1,5 @@
 import { REVIEW_LIMITS } from "../../reviews/constants.js";
+import { dedupeReviewItems } from "../../reviews/reviewTextUtils.js";
 
 import "./review-pros-cons.css";
 
@@ -10,10 +11,11 @@ export default function ReviewProsConsCard({ variant, items = [] }) {
   const title = isPros ? "Pros" : "Things to consider";
   const icon = isPros ? "✓" : "⚠";
   const limit = isPros ? REVIEW_LIMITS.maxPros : REVIEW_LIMITS.maxCons;
-  const limitedItems = items.slice(0, limit);
-  const emptyCopy = isPros
-    ? "No standout strengths surfaced from current intelligence data."
-    : "No major trade-offs flagged from current intelligence data.";
+  const limitedItems = dedupeReviewItems(items, limit);
+
+  if (!limitedItems.length) {
+    return null;
+  }
 
   return (
     <article
@@ -37,9 +39,7 @@ export default function ReviewProsConsCard({ variant, items = [] }) {
             </li>
           ))}
         </ul>
-      ) : (
-        <p className="review-pros-cons__empty">{emptyCopy}</p>
-      )}
+      ) : null}
     </article>
   );
 }
