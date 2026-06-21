@@ -78,6 +78,10 @@ const OwnershipToolPlaceholder = lazy(() =>
   import("./pages/OwnershipToolPlaceholder")
 );
 
+const CostPerKmPage = lazy(() =>
+  import("./pages/CostPerKmPage")
+);
+
 const SalesAnalytics = lazy(() =>
   import("./pages/SalesAnalytics")
 );
@@ -482,6 +486,11 @@ export default function App() {
           <Route
             path="/tools"
             element={<OwnershipToolsPage />}
+          />
+
+          <Route
+            path="/tools/cost-per-km"
+            element={<CostPerKmPage />}
           />
 
           <Route

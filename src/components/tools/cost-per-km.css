@@ -1,0 +1,240 @@
+.cost-per-km-page {
+  --cost-per-km-max: 1120px;
+  --cost-per-km-radius: 20px;
+  --cost-per-km-pad: 22px;
+  --cost-per-km-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.cost-per-km-page__hero {
+  margin-bottom: 24px;
+  padding: var(--cost-per-km-pad);
+  border-radius: var(--cost-per-km-radius);
+  background: linear-gradient(135deg, #f8fafc 0%, #ecfdf5 100%);
+  border: 1px solid #d1fae5;
+  box-shadow: var(--cost-per-km-shadow);
+}
+
+.cost-per-km-page__title {
+  margin: 0 0 8px;
+  font-size: clamp(1.65rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.cost-per-km-page__subtitle {
+  margin: 0;
+  max-width: 58ch;
+  font-size: 0.97rem;
+  line-height: 1.72;
+  color: #475569;
+}
+
+.cost-per-km-page__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.cost-per-km-form,
+.cost-per-km-result,
+.cost-per-km-page__panel {
+  padding: var(--cost-per-km-pad);
+  border-radius: var(--cost-per-km-radius);
+  background: #fff;
+  border: 1px solid #eef2f7;
+  box-shadow: var(--cost-per-km-shadow);
+}
+
+.cost-per-km-form {
+  display: grid;
+  gap: 18px;
+}
+
+.cost-per-km-form__field {
+  display: grid;
+  gap: 8px;
+}
+
+.cost-per-km-form__label-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cost-per-km-form__label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.cost-per-km-form__value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.cost-per-km-form__select,
+.cost-per-km-form__input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+  color: #0f172a;
+}
+
+.cost-per-km-form__input--readonly {
+  background: #f8fafc;
+  color: #475569;
+}
+
+.cost-per-km-form__range {
+  width: 100%;
+  accent-color: #0f766e;
+}
+
+.cost-per-km-form__hint {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.cost-per-km-result__eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.cost-per-km-result__metric {
+  display: grid;
+  gap: 4px;
+}
+
+.cost-per-km-result__metric--primary {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cost-per-km-result__metric-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.cost-per-km-result__metric-value {
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.cost-per-km-result__metric-note {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+.cost-per-km-result__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.cost-per-km-result__savings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.cost-per-km-result__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cost-per-km-result__chip--low {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.cost-per-km-result__chip--moderate {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.cost-per-km-result__chip--high {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.cost-per-km-page__panel-title {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.cost-per-km-page__panel-copy {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.72;
+  color: #475569;
+}
+
+.cost-per-km-page__comparison {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cost-per-km-page__comparison li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+@media (min-width: 640px) {
+  .cost-per-km-result__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (min-width: 960px) {
+  .cost-per-km-page__layout {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: start;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cost-per-km-page__hero {
+    padding: 28px;
+  }
+}
