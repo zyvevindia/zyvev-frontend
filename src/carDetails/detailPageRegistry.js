@@ -10,6 +10,7 @@ import {
   DetailEmiSection,
   DetailEvIntelligenceSection,
   DetailFaqsSection,
+  DetailOwnershipToolsSection,
   DetailPeopleAlsoCompareSection,
   DetailPopularAmongSimilarBuyersSection,
   DetailRangeSection,
@@ -24,6 +25,7 @@ import {
  * @typedef {object} DetailPageSectionContext
  * @property {boolean} hasEvIntelligence
  * @property {boolean} hasVariants
+ * @property {boolean} hasOwnershipTools
  * @property {boolean} hasCompare
  * @property {boolean} hasPeopleAlsoCompare
  * @property {boolean} hasSimilarEvs
@@ -83,6 +85,15 @@ export const DETAIL_SECTION_DEFS = [
       "cd-section cd-card cd-content-card variant-comparison",
     condition: (ctx) => ctx.hasVariants,
     Component: DetailVariantsSection,
+  },
+  {
+    id: "ownership-tools",
+    title: "Ownership Tools",
+    nav: false,
+    placement: "page",
+    shellClassName: "cd-section cd-card cd-content-card",
+    condition: (ctx) => ctx.hasOwnershipTools,
+    Component: DetailOwnershipToolsSection,
   },
   {
     id: "compare",
@@ -264,6 +275,7 @@ export function buildDetailPageSectionContext({
     hasEvIntelligence,
     hasDedicatedChargingSection,
     hasVariants: enrichedVariantsCount >= 1,
+    hasOwnershipTools: Boolean(familySlug),
     hasCompare:
       hasGoldExperience &&
       Array.isArray(meta.compareRivals) &&

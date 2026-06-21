@@ -13,6 +13,7 @@ import UnifiedEvIntelligenceSection from "../components/car/UnifiedEvIntelligenc
 import PeopleAlsoCompareSection from "../components/car/PeopleAlsoCompareSection";
 import SimilarEvsSection from "../components/car/SimilarEvsSection";
 import PopularAmongSimilarBuyersSection from "../components/car/PopularAmongSimilarBuyersSection";
+import VehicleOwnershipToolsSection from "../components/tools/VehicleOwnershipToolsSection.jsx";
 import {
   buildDetailOwnershipExpectation,
   buildDetailTrustMaturityNote,
@@ -103,6 +104,14 @@ export function DetailVariantsSection({ page }) {
           compareList={page.compareList}
         />
       </Suspense>
+    </SectionErrorBoundary>
+  );
+}
+
+export function DetailOwnershipToolsSection({ page }) {
+  return (
+    <SectionErrorBoundary label="Ownership tools" compact>
+      <VehicleOwnershipToolsSection familySlug={page.familySlug} />
     </SectionErrorBoundary>
   );
 }
