@@ -29,7 +29,7 @@ export default function RunningCostPage({
   questionType = null,
 }) {
   const { slug: routeSlug } = useParams();
-  const { vehicleSlug, vehicle, familyName, loading, error, isValidSlug } =
+  const { vehicleSlug, vehicle, variants, familyName, loading, error, isValidSlug } =
     useOwnershipPageVehicle(routeSlug);
 
   const [homeTariffInr, setHomeTariffInr] = useState(
@@ -53,7 +53,7 @@ export default function RunningCostPage({
 
   useEffect(() => {
     if (!vehicle) return;
-    applyVehicleEfficiency(vehicle, variants);
+    applyVehicleEfficiency(vehicle, variants ?? []);
   }, [vehicle, variants, applyVehicleEfficiency]);
 
   const calculation = useMemo(
