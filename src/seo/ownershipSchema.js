@@ -5,6 +5,9 @@
 import { SITE_ORIGIN } from "../config.js";
 import { buildOwnershipFaqSchemaItems } from "../ownership/buildOwnershipFaqs.js";
 import {
+  OWNERSHIP_HUB_PATH,
+} from "../pages/ownership/ownershipHubConstants.js";
+import {
   OWNERSHIP_PAGE_CONFIG,
   ownershipPagePath,
 } from "../pages/ownership/ownershipRoutes.js";
@@ -63,7 +66,7 @@ export function buildOwnershipPageSchemas({
 
   const breadcrumbs = [
     { name: "Home", url: "/" },
-    { name: "Ownership", url: "/tools" },
+    { name: "Ownership", url: OWNERSHIP_HUB_PATH },
     { name: vehicleName, url: vehicleFamilyPath(vehicleSlug) },
     { name: pageLabel, url: ownershipPagePath(vehicleSlug, pageType) },
   ];

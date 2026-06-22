@@ -11,6 +11,10 @@ import { getHeroImage, getOgImage } from "../../utils/vehicleMedia.js";
 import { vehicleFamilyPath } from "../../utils/vehicleRoutes.js";
 
 import {
+  OWNERSHIP_HUB_PATH,
+  OWNERSHIP_VEHICLE_INDEX_PATH,
+} from "./ownershipHubConstants.js";
+import {
   OWNERSHIP_PAGE_CONFIG,
   buildOwnershipPageNavLinks,
 } from "./ownershipRoutes.js";
@@ -114,7 +118,7 @@ export default function OwnershipPageLayout({
         <nav className="ownership-page__crumb" aria-label="Breadcrumb">
           <Link to="/">Home</Link>
           <span aria-hidden="true"> / </span>
-          <Link to="/tools">Ownership</Link>
+          <Link to={OWNERSHIP_HUB_PATH}>Ownership</Link>
           <span aria-hidden="true"> / </span>
           <Link to={vehicleFamilyPath(vehicleSlug)}>{familyName}</Link>
           <span aria-hidden="true"> / </span>
@@ -214,6 +218,18 @@ export default function OwnershipPageLayout({
                 {link.label}
               </Link>
             ))}
+            <Link to={OWNERSHIP_HUB_PATH} className="ownership-page__related-link">
+              Ownership hub →
+            </Link>
+            <Link
+              to={OWNERSHIP_VEHICLE_INDEX_PATH}
+              className="ownership-page__related-link"
+            >
+              Vehicle ownership index →
+            </Link>
+            <Link to="/tools" className="ownership-page__related-link">
+              Tools hub →
+            </Link>
           </div>
         </nav>
       </div>

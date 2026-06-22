@@ -166,7 +166,18 @@ const OWNERSHIP_SITEMAP_SEGMENTS = Object.freeze([
 export function buildOwnershipSitemapEntries(
   siteOrigin = DEFAULT_SITE_ORIGIN
 ) {
-  const entries = [];
+  const entries = [
+    entry("/ownership", {
+      priority: 0.8,
+      changefreq: "weekly",
+      siteOrigin,
+    }),
+    entry("/ownership/vehicles", {
+      priority: 0.8,
+      changefreq: "weekly",
+      siteOrigin,
+    }),
+  ];
 
   for (const familySlug of TIER1_MODEL_FAMILY_SLUGS) {
     for (const segment of OWNERSHIP_SITEMAP_SEGMENTS) {

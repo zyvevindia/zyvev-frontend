@@ -110,6 +110,14 @@ const EmiOwnershipPage = lazy(() =>
   import("./pages/ownership/EmiOwnershipPage.jsx")
 );
 
+const OwnershipHubPage = lazy(() =>
+  import("./pages/ownership/OwnershipHubPage.jsx")
+);
+
+const OwnershipVehicleIndexPage = lazy(() =>
+  import("./pages/ownership/OwnershipVehicleIndexPage.jsx")
+);
+
 const SalesAnalytics = lazy(() =>
   import("./pages/SalesAnalytics")
 );
@@ -583,6 +591,16 @@ export default function App() {
           <Route
             path="/cities/:city/charging"
             element={<CityChargingDiscoveryPage />}
+          />
+
+          <Route
+            path="/ownership"
+            element={<OwnershipHubPage />}
+          />
+
+          <Route
+            path="/ownership/vehicles"
+            element={<OwnershipVehicleIndexPage />}
           />
 
           <Route
