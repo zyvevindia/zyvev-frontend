@@ -4,8 +4,7 @@
 
 import { SITE_ORIGIN } from "../config.js";
 import { buildOwnershipFaqSchemaItems } from "../ownership/buildOwnershipFaqs.js";
-import { OWNERSHIP_HUB_PATH } from "../pages/ownership/ownershipHubConstants.js";
-import { ownershipPagePath } from "../pages/ownership/ownershipRoutes.js";
+import { buildOwnershipVehicleTopicBreadcrumbs } from "../ownership/ownershipBreadcrumbs.js";
 import {
   OWNERSHIP_QUESTION_CONFIG,
   formatOwnershipQuestionTitle,
@@ -86,15 +85,11 @@ export function buildOwnershipQuestionPageSchemas({
   );
   const schemas = [];
 
-  const breadcrumbs = [
-    { name: "Home", url: "/" },
-    { name: "Ownership", url: OWNERSHIP_HUB_PATH },
-    { name: vehicleName, url: vehicleFamilyPath(vehicleSlug) },
-    {
-      name: config?.breadcrumbLabel || "Ownership",
-      url: ownershipQuestionPagePath(vehicleSlug, questionType),
-    },
-  ];
+  const breadcrumbs = buildOwnershipVehicleTopicBreadcrumbs({
+    vehicleName,
+    pageLabel: config?.breadcrumbLabel || "Ownership",
+    pagePath: ownershipQuestionPagePath(vehicleSlug, questionType),
+  });
 
   schemas.push(buildBreadcrumbSchema(breadcrumbs, siteOrigin));
 

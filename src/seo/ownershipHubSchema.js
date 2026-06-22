@@ -4,12 +4,16 @@
 
 import { SITE_ORIGIN } from "../config.js";
 import {
+  buildOwnershipHubBreadcrumbs,
+  buildOwnershipVehicleIndexBreadcrumbs,
+} from "../ownership/ownershipBreadcrumbs.js";
+import {
   OWNERSHIP_HUB_PATH,
   OWNERSHIP_HUB_SECTIONS,
   OWNERSHIP_VEHICLE_INDEX_PATH,
 } from "../pages/ownership/ownershipHubConstants.js";
 import { vehicleFamilyPath } from "../utils/vehicleRoutes.js";
-import { buildBreadcrumbSchema, buildVehicleSchema } from "./schema.js";
+import { buildBreadcrumbSchema } from "./schema.js";
 
 /**
  * @param {{
@@ -95,13 +99,7 @@ export function buildOwnershipHubSchemas(siteOrigin = SITE_ORIGIN) {
     "Understand running costs, ownership costs, petrol savings, and EMI before buying an electric car in India.";
 
   const schemas = [
-    buildBreadcrumbSchema(
-      [
-        { name: "Home", url: "/" },
-        { name: "Ownership", url: OWNERSHIP_HUB_PATH },
-      ],
-      siteOrigin
-    ),
+    buildBreadcrumbSchema(buildOwnershipHubBreadcrumbs(), siteOrigin),
     buildCollectionPageSchema({
       name: "EV Ownership Guides and Calculators",
       description: metaDescription,
@@ -131,20 +129,11 @@ export function buildOwnershipVehicleIndexSchemas(
   families = [],
   siteOrigin = SITE_ORIGIN
 ) {
-  const origin = String(siteOrigin).replace(/\/$/, "");
-  const canonicalUrl = `${origin}${OWNERSHIP_VEHICLE_INDEX_PATH}`;
   const metaDescription =
     "Browse running cost, ownership cost, petrol savings, and EMI estimates for every major EV model family on EVSavari.";
 
   const schemas = [
-    buildBreadcrumbSchema(
-      [
-        { name: "Home", url: "/" },
-        { name: "Ownership", url: OWNERSHIP_HUB_PATH },
-        { name: "Vehicle Ownership", url: OWNERSHIP_VEHICLE_INDEX_PATH },
-      ],
-      siteOrigin
-    ),
+    buildBreadcrumbSchema(buildOwnershipVehicleIndexBreadcrumbs(), siteOrigin),
     buildCollectionPageSchema({
       name: "Electric Vehicle Ownership Cost Guides",
       description: metaDescription,
@@ -161,21 +150,6 @@ export function buildOwnershipVehicleIndexSchemas(
       siteOrigin
     ),
   ];
-
-  for (const family of families.slice(0, 25)) {
-    const vehicleSchema = buildVehicleSchema({
-      name: family.familyName || family.familySlug,
-      brand: family.brand,
-      slug: family.familySlug,
-      priceInr: family.startingPrice,
-      images: family.image ? [family.image] : [],
-      siteOrigin,
-    });
-    if (vehicleSchema) {
-      vehicleSchema.url = `${origin}${vehicleFamilyPath(family.familySlug)}`;
-      schemas.push(vehicleSchema);
-    }
-  }
 
   return schemas.filter(Boolean);
 }

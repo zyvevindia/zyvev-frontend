@@ -4,9 +4,7 @@
 
 import { SITE_ORIGIN } from "../config.js";
 import { buildOwnershipFaqSchemaItems } from "../ownership/buildOwnershipFaqs.js";
-import {
-  OWNERSHIP_HUB_PATH,
-} from "../pages/ownership/ownershipHubConstants.js";
+import { buildOwnershipVehicleTopicBreadcrumbs } from "../ownership/ownershipBreadcrumbs.js";
 import {
   OWNERSHIP_PAGE_CONFIG,
   ownershipPagePath,
@@ -64,12 +62,11 @@ export function buildOwnershipPageSchemas({
   const schemas = [];
   const pageLabel = config?.breadcrumbLabel || "Ownership";
 
-  const breadcrumbs = [
-    { name: "Home", url: "/" },
-    { name: "Ownership", url: OWNERSHIP_HUB_PATH },
-    { name: vehicleName, url: vehicleFamilyPath(vehicleSlug) },
-    { name: pageLabel, url: ownershipPagePath(vehicleSlug, pageType) },
-  ];
+  const breadcrumbs = buildOwnershipVehicleTopicBreadcrumbs({
+    vehicleName,
+    pageLabel,
+    pagePath: ownershipPagePath(vehicleSlug, pageType),
+  });
 
   schemas.push(buildBreadcrumbSchema(breadcrumbs, siteOrigin));
 

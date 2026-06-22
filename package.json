@@ -19,6 +19,7 @@
     "prebuild": "npm run content:generate && npm run build:sitemaps",
     "lint": "eslint .",
     "seo:qa": "node scripts/seo-qa.mjs",
+    "ownership:seo-audit": "node scripts/ownership-seo-audit.mjs",
     "seo:foundation": "node scripts/seo-foundation-smoke.mjs",
     "ops:analytics-smoke": "node scripts/ops-analytics-smoke.mjs",
     "intelligence:smoke": "node scripts/intelligence-smoke.mjs",

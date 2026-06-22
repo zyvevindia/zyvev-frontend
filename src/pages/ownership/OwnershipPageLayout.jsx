@@ -5,6 +5,7 @@ import OwnershipQuickAnswerCard from "../../components/ownership/OwnershipQuickA
 import VehicleImage from "../../components/media/VehicleImage.jsx";
 import SEO from "../../components/SEO/SEO.jsx";
 import JsonLd from "../../components/SEO/JsonLd.jsx";
+import { buildOwnershipVehicleTopicBreadcrumbs } from "../../ownership/ownershipBreadcrumbs.js";
 import { buildReviewSlug, isEditorialReviewAvailable, reviewPagePath } from "../../reviews/reviewRoutes.js";
 import { buildOwnershipPageMeta } from "../../seo/ownershipPageMetadata.js";
 import { buildOwnershipPageSchemas, canonicalOwnershipUrl } from "../../seo/ownershipSchema.js";
@@ -26,6 +27,8 @@ import {
   OWNERSHIP_QUESTION_CONFIG,
   buildOwnershipQuestionNavLinks,
   formatOwnershipQuestionTitle,
+  ownershipQuestionPagePath,
+  resolveQuestionTypeFromPageType,
 } from "./ownershipQuestionRoutes.js";
 
 import "../../components/reviews/review-page.css";
@@ -109,6 +112,16 @@ export default function OwnershipPageLayout({
   const breadcrumbLabel = isQuestionPage
     ? questionConfig.breadcrumbLabel
     : config.breadcrumbLabel;
+  const breadcrumbs = buildOwnershipVehicleTopicBreadcrumbs({
+    vehicleName: familyName,
+    pageLabel: breadcrumbLabel,
+    pagePath: isQuestionPage
+      ? ownershipQuestionPagePath(vehicleSlug, questionType)
+      : ownershipPagePath(vehicleSlug, pageType),
+  });
+  const pairedQuestionType = !isQuestionPage
+    ? resolveQuestionTypeFromPageType(pageType)
+    : null;
 
   if (error === "not_found") {
     return (
@@ -160,13 +173,16 @@ export default function OwnershipPageLayout({
 
       <div className="ownership-page__inner">
         <nav className="ownership-page__crumb" aria-label="Breadcrumb">
-          <Link to="/">Home</Link>
-          <span aria-hidden="true"> / </span>
-          <Link to={OWNERSHIP_HUB_PATH}>Ownership</Link>
-          <span aria-hidden="true"> / </span>
-          <Link to={vehicleFamilyPath(vehicleSlug)}>{familyName}</Link>
-          <span aria-hidden="true"> / </span>
-          <span>{breadcrumbLabel}</span>
+          {breadcrumbs.map((crumb, index) => (
+            <span key={crumb.url}>
+              {index > 0 ? <span aria-hidden="true"> / </span> : null}
+              {index < breadcrumbs.length - 1 ? (
+                <Link to={crumb.url}>{crumb.name}</Link>
+              ) : (
+                <span>{crumb.name}</span>
+              )}
+            </span>
+          ))}
         </nav>
 
         <header className="ownership-page__hero review-page__hero review-page__hero--premium">
@@ -213,6 +229,9 @@ export default function OwnershipPageLayout({
                   className="ownership-page__hero-link"
                 >
                   Vehicle index →
+                </Link>
+                <Link to="/tools" className="ownership-page__hero-link">
+                  Tools hub →
                 </Link>
               </div>
             </div>
@@ -300,6 +319,13 @@ export default function OwnershipPageLayout({
                 className="ownership-page__related-link"
               >
                 Standard {config.navLabel.toLowerCase()} page →
+              </Link>
+            ) : pairedQuestionType ? (
+              <Link
+                to={ownershipQuestionPagePath(vehicleSlug, pairedQuestionType)}
+                className="ownership-page__related-link"
+              >
+                Question format →
               </Link>
             ) : null}
             <Link to={OWNERSHIP_HUB_PATH} className="ownership-page__related-link">

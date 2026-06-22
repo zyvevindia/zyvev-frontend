@@ -1,14 +1,21 @@
 import {
+  OWNERSHIP_HUB_PATH,
+  OWNERSHIP_VEHICLE_INDEX_PATH,
+} from "../../ownership/ownershipBreadcrumbs.js";
+import {
   OWNERSHIP_PAGE_TYPES,
   ownershipPagePath,
 } from "./ownershipRoutes.js";
+import {
+  OWNERSHIP_QUESTION_TYPES,
+  ownershipQuestionPagePath,
+} from "./ownershipQuestionRoutes.js";
+
+export { OWNERSHIP_HUB_PATH, OWNERSHIP_VEHICLE_INDEX_PATH };
 
 /** @typedef {{ label: string, href: string }} OwnershipHubExampleLink */
 
 /** @typedef {{ id: string, title: string, description: string, toolPath: string, toolLabel: string, exampleLinks: OwnershipHubExampleLink[] }} OwnershipHubSection */
-
-export const OWNERSHIP_HUB_PATH = "/ownership";
-export const OWNERSHIP_VEHICLE_INDEX_PATH = "/ownership/vehicles";
 
 /** @type {OwnershipHubSection[]} */
 export const OWNERSHIP_HUB_SECTIONS = Object.freeze([
@@ -28,6 +35,13 @@ export const OWNERSHIP_HUB_SECTIONS = Object.freeze([
         label: "BYD Seal running cost",
         href: ownershipPagePath("byd-seal", OWNERSHIP_PAGE_TYPES.RUNNING_COST),
       },
+      {
+        label: "How much does Nexon EV cost to run?",
+        href: ownershipQuestionPagePath(
+          "tata-nexon-ev",
+          OWNERSHIP_QUESTION_TYPES.HOW_MUCH_TO_RUN
+        ),
+      },
     ],
   },
   {
@@ -45,6 +59,13 @@ export const OWNERSHIP_HUB_SECTIONS = Object.freeze([
       {
         label: "Mahindra BE 6 ownership cost",
         href: ownershipPagePath("mahindra-be-6", OWNERSHIP_PAGE_TYPES.TCO),
+      },
+      {
+        label: "What is Nexon EV ownership cost?",
+        href: ownershipQuestionPagePath(
+          "tata-nexon-ev",
+          OWNERSHIP_QUESTION_TYPES.OWNERSHIP_COST
+        ),
       },
     ],
   },
@@ -67,6 +88,13 @@ export const OWNERSHIP_HUB_SECTIONS = Object.freeze([
         label: "MG Comet EV petrol savings",
         href: ownershipPagePath("mg-comet-ev", OWNERSHIP_PAGE_TYPES.PETROL_SAVINGS),
       },
+      {
+        label: "How much can Nexon EV save?",
+        href: ownershipQuestionPagePath(
+          "tata-nexon-ev",
+          OWNERSHIP_QUESTION_TYPES.HOW_MUCH_SAVE
+        ),
+      },
     ],
   },
   {
@@ -84,6 +112,13 @@ export const OWNERSHIP_HUB_SECTIONS = Object.freeze([
       {
         label: "BYD Seal EMI",
         href: ownershipPagePath("byd-seal", OWNERSHIP_PAGE_TYPES.EMI),
+      },
+      {
+        label: "What is the Nexon EV EMI?",
+        href: ownershipQuestionPagePath(
+          "tata-nexon-ev",
+          OWNERSHIP_QUESTION_TYPES.EMI_CALCULATOR
+        ),
       },
     ],
   },

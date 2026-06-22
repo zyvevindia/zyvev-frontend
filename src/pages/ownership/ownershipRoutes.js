@@ -42,7 +42,7 @@ export const OWNERSHIP_PAGE_CONFIG = Object.freeze({
   [OWNERSHIP_PAGE_TYPES.EMI]: {
     pathSegment: "emi",
     breadcrumbLabel: "EMI calculator",
-    titleSuffix: "EMI Calculator",
+    titleSuffix: "EMI",
     navLabel: "EMI",
     subtitle:
       "Estimate monthly loan EMI and total finance outflow for this EV.",

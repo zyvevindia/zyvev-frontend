@@ -85,6 +85,24 @@ export function resolveOwnershipPageTypeFromQuestion(questionType) {
   return OWNERSHIP_QUESTION_CONFIG[questionType]?.pageType || null;
 }
 
+/** @type {Record<import("./ownershipRoutes.js").OwnershipPageType, OwnershipQuestionType>} */
+const PAGE_TYPE_TO_QUESTION_TYPE = Object.freeze(
+  Object.fromEntries(
+    Object.entries(OWNERSHIP_QUESTION_CONFIG).map(([questionType, config]) => [
+      config.pageType,
+      questionType,
+    ])
+  )
+);
+
+/**
+ * @param {import("./ownershipRoutes.js").OwnershipPageType} pageType
+ * @returns {OwnershipQuestionType|null}
+ */
+export function resolveQuestionTypeFromPageType(pageType) {
+  return PAGE_TYPE_TO_QUESTION_TYPE[pageType] || null;
+}
+
 /**
  * @param {string} vehicleSlug
  * @returns {boolean}
