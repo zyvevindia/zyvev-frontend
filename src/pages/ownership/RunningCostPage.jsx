@@ -16,12 +16,18 @@ import { COST_PER_KM_DEFAULTS } from "../../tools/costPerKmDefaults.js";
 
 import OwnershipPageLayout from "./OwnershipPageLayout.jsx";
 import { OWNERSHIP_PAGE_TYPES } from "./ownershipRoutes.js";
+import {
+  buildOwnershipQuestionShortAnswer,
+  formatOwnershipQuestionQuickAnswer,
+} from "./ownershipQuestionSummaries.js";
 import { buildOwnershipSummaryText } from "./ownershipPageSummaries.js";
 import { useOwnershipPageVehicle } from "./useOwnershipPageVehicle.js";
 
 import "../../components/tools/cost-per-km.css";
 
-export default function RunningCostPage() {
+export default function RunningCostPage({
+  questionType = null,
+}) {
   const { slug: routeSlug } = useParams();
   const { vehicleSlug, vehicle, familyName, loading, error, isValidSlug } =
     useOwnershipPageVehicle(routeSlug);
@@ -75,11 +81,21 @@ export default function RunningCostPage() {
     [calculation.costPerKm]
   );
 
-  const summaryText = buildOwnershipSummaryText(
-    OWNERSHIP_PAGE_TYPES.RUNNING_COST,
-    familyName,
-    { costPerKm: calculation.costPerKm }
-  );
+  const summaryText = questionType
+    ? buildOwnershipQuestionShortAnswer(questionType, familyName, {
+        costPerKm: calculation.costPerKm,
+      })
+    : buildOwnershipSummaryText(
+        OWNERSHIP_PAGE_TYPES.RUNNING_COST,
+        familyName,
+        { costPerKm: calculation.costPerKm }
+      );
+
+  const quickAnswerValue = questionType
+    ? formatOwnershipQuestionQuickAnswer(questionType, {
+        costPerKm: calculation.costPerKm,
+      })
+    : "";
 
   const vehicleOption = useMemo(
     () =>
@@ -96,6 +112,7 @@ export default function RunningCostPage() {
         vehicleSlug={vehicleSlug}
         familyName={familyName || "Electric vehicle"}
         error="not_found"
+        questionType={questionType}
       />
     );
   }
@@ -109,6 +126,8 @@ export default function RunningCostPage() {
       summaryText={summaryText}
       loading={loading}
       error={error}
+      questionType={questionType}
+      quickAnswerValue={quickAnswerValue}
     >
       <div className="cost-per-km-page__layout">
         <CostPerKmForm

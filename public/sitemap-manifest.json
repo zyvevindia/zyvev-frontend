@@ -1,6 +1,6 @@
 {
   "siteOrigin": "https://evsavari.com",
-  "generatedAt": "2026-06-22T02:54:49.483Z",
+  "generatedAt": "2026-06-22T03:34:32.013Z",
   "static": [
     {
       "loc": "https://evsavari.com/",
@@ -1980,6 +1980,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/hyundai-creta-electric/how-much-does-it-cost-to-run",
+      "path": "/ownership/hyundai-creta-electric/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-creta-electric/ownership-cost",
+      "path": "/ownership/hyundai-creta-electric/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-creta-electric/how-much-can-you-save",
+      "path": "/ownership/hyundai-creta-electric/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-creta-electric/emi-calculator",
+      "path": "/ownership/hyundai-creta-electric/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/hyundai-kona-electric/running-cost",
       "path": "/ownership/hyundai-kona-electric/running-cost",
       "priority": 0.74,
@@ -2004,6 +2032,34 @@
       "loc": "https://evsavari.com/ownership/hyundai-kona-electric/emi",
       "path": "/ownership/hyundai-kona-electric/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-kona-electric/how-much-does-it-cost-to-run",
+      "path": "/ownership/hyundai-kona-electric/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-kona-electric/ownership-cost",
+      "path": "/ownership/hyundai-kona-electric/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-kona-electric/how-much-can-you-save",
+      "path": "/ownership/hyundai-kona-electric/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-kona-electric/emi-calculator",
+      "path": "/ownership/hyundai-kona-electric/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2036,6 +2092,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/mahindra-xev-9e/how-much-does-it-cost-to-run",
+      "path": "/ownership/mahindra-xev-9e/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xev-9e/ownership-cost",
+      "path": "/ownership/mahindra-xev-9e/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xev-9e/how-much-can-you-save",
+      "path": "/ownership/mahindra-xev-9e/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xev-9e/emi-calculator",
+      "path": "/ownership/mahindra-xev-9e/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/mahindra-xuv400/running-cost",
       "path": "/ownership/mahindra-xuv400/running-cost",
       "priority": 0.74,
@@ -2060,6 +2144,34 @@
       "loc": "https://evsavari.com/ownership/mahindra-xuv400/emi",
       "path": "/ownership/mahindra-xuv400/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xuv400/how-much-does-it-cost-to-run",
+      "path": "/ownership/mahindra-xuv400/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xuv400/ownership-cost",
+      "path": "/ownership/mahindra-xuv400/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xuv400/how-much-can-you-save",
+      "path": "/ownership/mahindra-xuv400/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-xuv400/emi-calculator",
+      "path": "/ownership/mahindra-xuv400/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2092,6 +2204,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/tata-harrier-ev/how-much-does-it-cost-to-run",
+      "path": "/ownership/tata-harrier-ev/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-harrier-ev/ownership-cost",
+      "path": "/ownership/tata-harrier-ev/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-harrier-ev/how-much-can-you-save",
+      "path": "/ownership/tata-harrier-ev/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-harrier-ev/emi-calculator",
+      "path": "/ownership/tata-harrier-ev/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/maruti-e-vitara/running-cost",
       "path": "/ownership/maruti-e-vitara/running-cost",
       "priority": 0.74,
@@ -2116,6 +2256,34 @@
       "loc": "https://evsavari.com/ownership/maruti-e-vitara/emi",
       "path": "/ownership/maruti-e-vitara/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/maruti-e-vitara/how-much-does-it-cost-to-run",
+      "path": "/ownership/maruti-e-vitara/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/maruti-e-vitara/ownership-cost",
+      "path": "/ownership/maruti-e-vitara/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/maruti-e-vitara/how-much-can-you-save",
+      "path": "/ownership/maruti-e-vitara/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/maruti-e-vitara/emi-calculator",
+      "path": "/ownership/maruti-e-vitara/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2148,6 +2316,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/hyundai-ioniq-5/how-much-does-it-cost-to-run",
+      "path": "/ownership/hyundai-ioniq-5/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-ioniq-5/ownership-cost",
+      "path": "/ownership/hyundai-ioniq-5/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-ioniq-5/how-much-can-you-save",
+      "path": "/ownership/hyundai-ioniq-5/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/hyundai-ioniq-5/emi-calculator",
+      "path": "/ownership/hyundai-ioniq-5/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/mini-cooper-se/running-cost",
       "path": "/ownership/mini-cooper-se/running-cost",
       "priority": 0.74,
@@ -2172,6 +2368,34 @@
       "loc": "https://evsavari.com/ownership/mini-cooper-se/emi",
       "path": "/ownership/mini-cooper-se/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mini-cooper-se/how-much-does-it-cost-to-run",
+      "path": "/ownership/mini-cooper-se/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mini-cooper-se/ownership-cost",
+      "path": "/ownership/mini-cooper-se/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mini-cooper-se/how-much-can-you-save",
+      "path": "/ownership/mini-cooper-se/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mini-cooper-se/emi-calculator",
+      "path": "/ownership/mini-cooper-se/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2204,6 +2428,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/mahindra-be-6/how-much-does-it-cost-to-run",
+      "path": "/ownership/mahindra-be-6/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-be-6/ownership-cost",
+      "path": "/ownership/mahindra-be-6/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-be-6/how-much-can-you-save",
+      "path": "/ownership/mahindra-be-6/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mahindra-be-6/emi-calculator",
+      "path": "/ownership/mahindra-be-6/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/tata-nexon-ev/running-cost",
       "path": "/ownership/tata-nexon-ev/running-cost",
       "priority": 0.74,
@@ -2228,6 +2480,34 @@
       "loc": "https://evsavari.com/ownership/tata-nexon-ev/emi",
       "path": "/ownership/tata-nexon-ev/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-nexon-ev/how-much-does-it-cost-to-run",
+      "path": "/ownership/tata-nexon-ev/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-nexon-ev/ownership-cost",
+      "path": "/ownership/tata-nexon-ev/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-nexon-ev/how-much-can-you-save",
+      "path": "/ownership/tata-nexon-ev/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-nexon-ev/emi-calculator",
+      "path": "/ownership/tata-nexon-ev/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2260,6 +2540,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/tata-curvv-ev/how-much-does-it-cost-to-run",
+      "path": "/ownership/tata-curvv-ev/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-curvv-ev/ownership-cost",
+      "path": "/ownership/tata-curvv-ev/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-curvv-ev/how-much-can-you-save",
+      "path": "/ownership/tata-curvv-ev/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-curvv-ev/emi-calculator",
+      "path": "/ownership/tata-curvv-ev/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/tata-punch-ev/running-cost",
       "path": "/ownership/tata-punch-ev/running-cost",
       "priority": 0.74,
@@ -2284,6 +2592,34 @@
       "loc": "https://evsavari.com/ownership/tata-punch-ev/emi",
       "path": "/ownership/tata-punch-ev/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-punch-ev/how-much-does-it-cost-to-run",
+      "path": "/ownership/tata-punch-ev/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-punch-ev/ownership-cost",
+      "path": "/ownership/tata-punch-ev/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-punch-ev/how-much-can-you-save",
+      "path": "/ownership/tata-punch-ev/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-punch-ev/emi-calculator",
+      "path": "/ownership/tata-punch-ev/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2316,6 +2652,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/tata-tiago-ev/how-much-does-it-cost-to-run",
+      "path": "/ownership/tata-tiago-ev/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tiago-ev/ownership-cost",
+      "path": "/ownership/tata-tiago-ev/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tiago-ev/how-much-can-you-save",
+      "path": "/ownership/tata-tiago-ev/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tiago-ev/emi-calculator",
+      "path": "/ownership/tata-tiago-ev/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/tata-tigor-ev/running-cost",
       "path": "/ownership/tata-tigor-ev/running-cost",
       "priority": 0.74,
@@ -2340,6 +2704,34 @@
       "loc": "https://evsavari.com/ownership/tata-tigor-ev/emi",
       "path": "/ownership/tata-tigor-ev/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tigor-ev/how-much-does-it-cost-to-run",
+      "path": "/ownership/tata-tigor-ev/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tigor-ev/ownership-cost",
+      "path": "/ownership/tata-tigor-ev/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tigor-ev/how-much-can-you-save",
+      "path": "/ownership/tata-tigor-ev/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/tata-tigor-ev/emi-calculator",
+      "path": "/ownership/tata-tigor-ev/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2372,6 +2764,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/mg-windsor-ev/how-much-does-it-cost-to-run",
+      "path": "/ownership/mg-windsor-ev/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-windsor-ev/ownership-cost",
+      "path": "/ownership/mg-windsor-ev/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-windsor-ev/how-much-can-you-save",
+      "path": "/ownership/mg-windsor-ev/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-windsor-ev/emi-calculator",
+      "path": "/ownership/mg-windsor-ev/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/mercedes-eqb/running-cost",
       "path": "/ownership/mercedes-eqb/running-cost",
       "priority": 0.74,
@@ -2396,6 +2816,34 @@
       "loc": "https://evsavari.com/ownership/mercedes-eqb/emi",
       "path": "/ownership/mercedes-eqb/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqb/how-much-does-it-cost-to-run",
+      "path": "/ownership/mercedes-eqb/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqb/ownership-cost",
+      "path": "/ownership/mercedes-eqb/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqb/how-much-can-you-save",
+      "path": "/ownership/mercedes-eqb/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqb/emi-calculator",
+      "path": "/ownership/mercedes-eqb/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2428,6 +2876,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/mercedes-eqa/how-much-does-it-cost-to-run",
+      "path": "/ownership/mercedes-eqa/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqa/ownership-cost",
+      "path": "/ownership/mercedes-eqa/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqa/how-much-can-you-save",
+      "path": "/ownership/mercedes-eqa/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mercedes-eqa/emi-calculator",
+      "path": "/ownership/mercedes-eqa/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/mg-comet-ev/running-cost",
       "path": "/ownership/mg-comet-ev/running-cost",
       "priority": 0.74,
@@ -2452,6 +2928,34 @@
       "loc": "https://evsavari.com/ownership/mg-comet-ev/emi",
       "path": "/ownership/mg-comet-ev/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-comet-ev/how-much-does-it-cost-to-run",
+      "path": "/ownership/mg-comet-ev/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-comet-ev/ownership-cost",
+      "path": "/ownership/mg-comet-ev/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-comet-ev/how-much-can-you-save",
+      "path": "/ownership/mg-comet-ev/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-comet-ev/emi-calculator",
+      "path": "/ownership/mg-comet-ev/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2484,6 +2988,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/citroen-ec3/how-much-does-it-cost-to-run",
+      "path": "/ownership/citroen-ec3/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/citroen-ec3/ownership-cost",
+      "path": "/ownership/citroen-ec3/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/citroen-ec3/how-much-can-you-save",
+      "path": "/ownership/citroen-ec3/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/citroen-ec3/emi-calculator",
+      "path": "/ownership/citroen-ec3/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/volvo-ex40/running-cost",
       "path": "/ownership/volvo-ex40/running-cost",
       "priority": 0.74,
@@ -2508,6 +3040,34 @@
       "loc": "https://evsavari.com/ownership/volvo-ex40/emi",
       "path": "/ownership/volvo-ex40/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/volvo-ex40/how-much-does-it-cost-to-run",
+      "path": "/ownership/volvo-ex40/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/volvo-ex40/ownership-cost",
+      "path": "/ownership/volvo-ex40/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/volvo-ex40/how-much-can-you-save",
+      "path": "/ownership/volvo-ex40/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/volvo-ex40/emi-calculator",
+      "path": "/ownership/volvo-ex40/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2540,6 +3100,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/byd-atto-3/how-much-does-it-cost-to-run",
+      "path": "/ownership/byd-atto-3/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-atto-3/ownership-cost",
+      "path": "/ownership/byd-atto-3/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-atto-3/how-much-can-you-save",
+      "path": "/ownership/byd-atto-3/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-atto-3/emi-calculator",
+      "path": "/ownership/byd-atto-3/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/mg-zs-ev/running-cost",
       "path": "/ownership/mg-zs-ev/running-cost",
       "priority": 0.74,
@@ -2564,6 +3152,34 @@
       "loc": "https://evsavari.com/ownership/mg-zs-ev/emi",
       "path": "/ownership/mg-zs-ev/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-zs-ev/how-much-does-it-cost-to-run",
+      "path": "/ownership/mg-zs-ev/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-zs-ev/ownership-cost",
+      "path": "/ownership/mg-zs-ev/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-zs-ev/how-much-can-you-save",
+      "path": "/ownership/mg-zs-ev/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/mg-zs-ev/emi-calculator",
+      "path": "/ownership/mg-zs-ev/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2596,6 +3212,34 @@
       "lastmod": "2026-06-22"
     },
     {
+      "loc": "https://evsavari.com/ownership/byd-seal/how-much-does-it-cost-to-run",
+      "path": "/ownership/byd-seal/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-seal/ownership-cost",
+      "path": "/ownership/byd-seal/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-seal/how-much-can-you-save",
+      "path": "/ownership/byd-seal/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/byd-seal/emi-calculator",
+      "path": "/ownership/byd-seal/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
       "loc": "https://evsavari.com/ownership/bmw-ix1/running-cost",
       "path": "/ownership/bmw-ix1/running-cost",
       "priority": 0.74,
@@ -2620,6 +3264,34 @@
       "loc": "https://evsavari.com/ownership/bmw-ix1/emi",
       "path": "/ownership/bmw-ix1/emi",
       "priority": 0.74,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/bmw-ix1/how-much-does-it-cost-to-run",
+      "path": "/ownership/bmw-ix1/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/bmw-ix1/ownership-cost",
+      "path": "/ownership/bmw-ix1/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/bmw-ix1/how-much-can-you-save",
+      "path": "/ownership/bmw-ix1/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/bmw-ix1/emi-calculator",
+      "path": "/ownership/bmw-ix1/emi-calculator",
+      "priority": 0.75,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
     },
@@ -2650,6 +3322,34 @@
       "priority": 0.74,
       "changefreq": "weekly",
       "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/kia-ev6/how-much-does-it-cost-to-run",
+      "path": "/ownership/kia-ev6/how-much-does-it-cost-to-run",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/kia-ev6/ownership-cost",
+      "path": "/ownership/kia-ev6/ownership-cost",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/kia-ev6/how-much-can-you-save",
+      "path": "/ownership/kia-ev6/how-much-can-you-save",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
+    },
+    {
+      "loc": "https://evsavari.com/ownership/kia-ev6/emi-calculator",
+      "path": "/ownership/kia-ev6/emi-calculator",
+      "priority": 0.75,
+      "changefreq": "weekly",
+      "lastmod": "2026-06-22"
     }
   ],
   "counts": {
@@ -2658,8 +3358,8 @@
     "reviews": 25,
     "discovery": 183,
     "compare": 29,
-    "ownership": 102,
-    "total": 377
+    "ownership": 202,
+    "total": 477
   },
   "legacyGuideUrlsExcluded": true,
   "sitemapFiles": {
@@ -2668,6 +3368,6 @@
     "reviews": 25,
     "discovery": 183,
     "compare": 29,
-    "ownership": 102
+    "ownership": 202
   }
 }

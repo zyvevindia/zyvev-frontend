@@ -110,6 +110,22 @@ const EmiOwnershipPage = lazy(() =>
   import("./pages/ownership/EmiOwnershipPage.jsx")
 );
 
+const RunningCostQuestionPage = lazy(() =>
+  import("./pages/ownership/RunningCostQuestionPage.jsx")
+);
+
+const OwnershipCostQuestionPage = lazy(() =>
+  import("./pages/ownership/OwnershipCostQuestionPage.jsx")
+);
+
+const PetrolSavingsQuestionPage = lazy(() =>
+  import("./pages/ownership/PetrolSavingsQuestionPage.jsx")
+);
+
+const EmiQuestionPage = lazy(() =>
+  import("./pages/ownership/EmiQuestionPage.jsx")
+);
+
 const OwnershipHubPage = lazy(() =>
   import("./pages/ownership/OwnershipHubPage.jsx")
 );
@@ -601,6 +617,26 @@ export default function App() {
           <Route
             path="/ownership/vehicles"
             element={<OwnershipVehicleIndexPage />}
+          />
+
+          <Route
+            path="/ownership/:slug/how-much-does-it-cost-to-run"
+            element={<RunningCostQuestionPage />}
+          />
+
+          <Route
+            path="/ownership/:slug/ownership-cost"
+            element={<OwnershipCostQuestionPage />}
+          />
+
+          <Route
+            path="/ownership/:slug/how-much-can-you-save"
+            element={<PetrolSavingsQuestionPage />}
+          />
+
+          <Route
+            path="/ownership/:slug/emi-calculator"
+            element={<EmiQuestionPage />}
           />
 
           <Route

@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 
 import OwnershipFaqSection from "../../components/ownership/OwnershipFaqSection.jsx";
+import OwnershipQuickAnswerCard from "../../components/ownership/OwnershipQuickAnswerCard.jsx";
 import VehicleImage from "../../components/media/VehicleImage.jsx";
 import SEO from "../../components/SEO/SEO.jsx";
 import JsonLd from "../../components/SEO/JsonLd.jsx";
 import { buildReviewSlug, isEditorialReviewAvailable, reviewPagePath } from "../../reviews/reviewRoutes.js";
 import { buildOwnershipPageMeta } from "../../seo/ownershipPageMetadata.js";
 import { buildOwnershipPageSchemas, canonicalOwnershipUrl } from "../../seo/ownershipSchema.js";
+import { buildOwnershipQuestionMeta } from "../../seo/ownershipQuestionMetadata.js";
+import { buildOwnershipQuestionPageSchemas, canonicalOwnershipQuestionUrl } from "../../seo/ownershipQuestionSchema.js";
 import { getHeroImage, getOgImage } from "../../utils/vehicleMedia.js";
 import { vehicleFamilyPath } from "../../utils/vehicleRoutes.js";
 
@@ -17,7 +20,13 @@ import {
 import {
   OWNERSHIP_PAGE_CONFIG,
   buildOwnershipPageNavLinks,
+  ownershipPagePath,
 } from "./ownershipRoutes.js";
+import {
+  OWNERSHIP_QUESTION_CONFIG,
+  buildOwnershipQuestionNavLinks,
+  formatOwnershipQuestionTitle,
+} from "./ownershipQuestionRoutes.js";
 
 import "../../components/reviews/review-page.css";
 import "./ownership-page.css";
@@ -31,6 +40,8 @@ import "./ownership-page.css";
  *   summaryText?: string,
  *   loading?: boolean,
  *   error?: "not_found"|"load_failed"|null,
+ *   questionType?: import("./ownershipQuestionRoutes.js").OwnershipQuestionType|null,
+ *   quickAnswerValue?: string,
  *   children?: import("react").ReactNode,
  * }} props
  */
@@ -42,29 +53,62 @@ export default function OwnershipPageLayout({
   summaryText = "",
   loading = false,
   error = null,
+  questionType = null,
+  quickAnswerValue = "",
   children,
 }) {
   const config = OWNERSHIP_PAGE_CONFIG[pageType];
-  const title = `${familyName} ${config.titleSuffix}`;
+  const questionConfig = questionType
+    ? OWNERSHIP_QUESTION_CONFIG[questionType]
+    : null;
+  const isQuestionPage = Boolean(questionType && questionConfig);
+  const title = isQuestionPage
+    ? formatOwnershipQuestionTitle(questionConfig.titleTemplate, familyName)
+    : `${familyName} ${config.titleSuffix}`;
   const imageSrc = getHeroImage(vehicle) || getOgImage(vehicle);
-  const meta = buildOwnershipPageMeta({
-    vehicleName: familyName,
-    vehicleSlug,
-    pageType,
-    image: imageSrc,
-  });
-  const canonical = canonicalOwnershipUrl(vehicleSlug, pageType);
-  const schemas = buildOwnershipPageSchemas({
-    pageType,
-    vehicleSlug,
-    vehicleName: familyName,
-    vehicle,
-    canonicalUrl: canonical,
-    image: imageSrc,
-    summaryText,
-  });
-  const ownershipLinks = buildOwnershipPageNavLinks(vehicleSlug, pageType);
+  const meta = isQuestionPage
+    ? buildOwnershipQuestionMeta({
+        vehicleName: familyName,
+        vehicleSlug,
+        questionType,
+        image: imageSrc,
+        shortAnswer: summaryText,
+      })
+    : buildOwnershipPageMeta({
+        vehicleName: familyName,
+        vehicleSlug,
+        pageType,
+        image: imageSrc,
+      });
+  const canonical = isQuestionPage
+    ? canonicalOwnershipQuestionUrl(vehicleSlug, questionType)
+    : canonicalOwnershipUrl(vehicleSlug, pageType);
+  const schemas = isQuestionPage
+    ? buildOwnershipQuestionPageSchemas({
+        questionType,
+        vehicleSlug,
+        vehicleName: familyName,
+        vehicle,
+        canonicalUrl: canonical,
+        image: imageSrc,
+        shortAnswer: summaryText,
+      })
+    : buildOwnershipPageSchemas({
+        pageType,
+        vehicleSlug,
+        vehicleName: familyName,
+        vehicle,
+        canonicalUrl: canonical,
+        image: imageSrc,
+        summaryText,
+      });
+  const ownershipLinks = isQuestionPage
+    ? buildOwnershipQuestionNavLinks(vehicleSlug, questionType)
+    : buildOwnershipPageNavLinks(vehicleSlug, pageType);
   const showReviewLink = isEditorialReviewAvailable(vehicleSlug);
+  const breadcrumbLabel = isQuestionPage
+    ? questionConfig.breadcrumbLabel
+    : config.breadcrumbLabel;
 
   if (error === "not_found") {
     return (
@@ -122,7 +166,7 @@ export default function OwnershipPageLayout({
           <span aria-hidden="true"> / </span>
           <Link to={vehicleFamilyPath(vehicleSlug)}>{familyName}</Link>
           <span aria-hidden="true"> / </span>
-          <span>{config.breadcrumbLabel}</span>
+          <span>{breadcrumbLabel}</span>
         </nav>
 
         <header className="ownership-page__hero review-page__hero review-page__hero--premium">
@@ -161,6 +205,15 @@ export default function OwnershipPageLayout({
                     Review →
                   </Link>
                 ) : null}
+                <Link to={OWNERSHIP_HUB_PATH} className="ownership-page__hero-link">
+                  Ownership hub →
+                </Link>
+                <Link
+                  to={OWNERSHIP_VEHICLE_INDEX_PATH}
+                  className="ownership-page__hero-link"
+                >
+                  Vehicle index →
+                </Link>
               </div>
             </div>
           </div>
@@ -172,9 +225,32 @@ export default function OwnershipPageLayout({
           </p>
         ) : (
           <>
+            {isQuestionPage && summaryText ? (
+              <section
+                className="ownership-page__summary ownership-page__summary--question"
+                aria-labelledby="ownership-page-short-answer-title"
+              >
+                <h2
+                  id="ownership-page-short-answer-title"
+                  className="ownership-page__summary-title"
+                >
+                  Short answer
+                </h2>
+                <p className="ownership-page__summary-copy">{summaryText}</p>
+              </section>
+            ) : null}
+
+            {isQuestionPage ? (
+              <OwnershipQuickAnswerCard
+                label={questionConfig.quickAnswerLabel}
+                value={quickAnswerValue}
+                loading={loading}
+              />
+            ) : null}
+
             <div className="ownership-page__calculator">{children}</div>
 
-            {summaryText ? (
+            {!isQuestionPage && summaryText ? (
               <section
                 className="ownership-page__summary"
                 aria-labelledby="ownership-page-summary-title"
@@ -218,6 +294,14 @@ export default function OwnershipPageLayout({
                 {link.label}
               </Link>
             ))}
+            {isQuestionPage ? (
+              <Link
+                to={ownershipPagePath(vehicleSlug, pageType)}
+                className="ownership-page__related-link"
+              >
+                Standard {config.navLabel.toLowerCase()} page →
+              </Link>
+            ) : null}
             <Link to={OWNERSHIP_HUB_PATH} className="ownership-page__related-link">
               Ownership hub →
             </Link>

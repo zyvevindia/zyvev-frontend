@@ -19,12 +19,18 @@ import { TCO_BOUNDS, TCO_DEFAULTS } from "../../tools/tcoDefaults.js";
 
 import OwnershipPageLayout from "./OwnershipPageLayout.jsx";
 import { OWNERSHIP_PAGE_TYPES } from "./ownershipRoutes.js";
+import {
+  buildOwnershipQuestionShortAnswer,
+  formatOwnershipQuestionQuickAnswer,
+} from "./ownershipQuestionSummaries.js";
 import { buildOwnershipSummaryText } from "./ownershipPageSummaries.js";
 import { useOwnershipPageVehicle } from "./useOwnershipPageVehicle.js";
 
 import "../../components/tools/tco-calculator.css";
 
-export default function OwnershipCostPage() {
+export default function OwnershipCostPage({
+  questionType = null,
+}) {
   const { slug: routeSlug } = useParams();
   const { vehicleSlug, vehicle, variants, familyName, loading, error, isValidSlug } =
     useOwnershipPageVehicle(routeSlug);
@@ -120,15 +126,27 @@ export default function OwnershipCostPage() {
     ]
   );
 
-  const summaryText = buildOwnershipSummaryText(
-    OWNERSHIP_PAGE_TYPES.TCO,
-    familyName,
-    {
-      totalOwnershipCostInr: result.totalOwnershipCostInr,
-      annualKm,
-      ownershipYears,
-    }
-  );
+  const summaryText = questionType
+    ? buildOwnershipQuestionShortAnswer(questionType, familyName, {
+        totalOwnershipCostInr: result.totalOwnershipCostInr,
+        annualKm,
+        ownershipYears,
+      })
+    : buildOwnershipSummaryText(
+        OWNERSHIP_PAGE_TYPES.TCO,
+        familyName,
+        {
+          totalOwnershipCostInr: result.totalOwnershipCostInr,
+          annualKm,
+          ownershipYears,
+        }
+      );
+
+  const quickAnswerValue = questionType
+    ? formatOwnershipQuestionQuickAnswer(questionType, {
+        totalOwnershipCostInr: result.totalOwnershipCostInr,
+      })
+    : "";
 
   const vehicleOption = useMemo(
     () =>
@@ -145,6 +163,7 @@ export default function OwnershipCostPage() {
         vehicleSlug={vehicleSlug}
         familyName={familyName || "Electric vehicle"}
         error="not_found"
+        questionType={questionType}
       />
     );
   }
@@ -158,6 +177,8 @@ export default function OwnershipCostPage() {
       summaryText={summaryText}
       loading={loading}
       error={error}
+      questionType={questionType}
+      quickAnswerValue={quickAnswerValue}
     >
       <div className="tco-page__layout">
         <TcoForm

@@ -21,12 +21,18 @@ import {
 
 import OwnershipPageLayout from "./OwnershipPageLayout.jsx";
 import { OWNERSHIP_PAGE_TYPES } from "./ownershipRoutes.js";
+import {
+  buildOwnershipQuestionShortAnswer,
+  formatOwnershipQuestionQuickAnswer,
+} from "./ownershipQuestionSummaries.js";
 import { buildOwnershipSummaryText } from "./ownershipPageSummaries.js";
 import { useOwnershipPageVehicle } from "./useOwnershipPageVehicle.js";
 
 import "../../components/tools/petrol-savings.css";
 
-export default function PetrolSavingsOwnershipPage() {
+export default function PetrolSavingsOwnershipPage({
+  questionType = null,
+}) {
   const { slug: routeSlug } = useParams();
   const { vehicleSlug, vehicle, variants, familyName, loading, error, isValidSlug } =
     useOwnershipPageVehicle(routeSlug);
@@ -123,11 +129,21 @@ export default function PetrolSavingsOwnershipPage() {
     ]
   );
 
-  const summaryText = buildOwnershipSummaryText(
-    OWNERSHIP_PAGE_TYPES.PETROL_SAVINGS,
-    familyName,
-    { savingsInr: result.savingsInr }
-  );
+  const summaryText = questionType
+    ? buildOwnershipQuestionShortAnswer(questionType, familyName, {
+        savingsInr: result.savingsInr,
+      })
+    : buildOwnershipSummaryText(
+        OWNERSHIP_PAGE_TYPES.PETROL_SAVINGS,
+        familyName,
+        { savingsInr: result.savingsInr }
+      );
+
+  const quickAnswerValue = questionType
+    ? formatOwnershipQuestionQuickAnswer(questionType, {
+        savingsInr: result.savingsInr,
+      })
+    : "";
 
   const vehicleOption = useMemo(
     () =>
@@ -144,6 +160,7 @@ export default function PetrolSavingsOwnershipPage() {
         vehicleSlug={vehicleSlug}
         familyName={familyName || "Electric vehicle"}
         error="not_found"
+        questionType={questionType}
       />
     );
   }
@@ -157,6 +174,8 @@ export default function PetrolSavingsOwnershipPage() {
       summaryText={summaryText}
       loading={loading}
       error={error}
+      questionType={questionType}
+      quickAnswerValue={quickAnswerValue}
     >
       <div className="petrol-savings-page__layout">
         <PetrolSavingsForm

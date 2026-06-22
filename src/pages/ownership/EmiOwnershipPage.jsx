@@ -13,12 +13,18 @@ import { EMI_BOUNDS, EMI_DEFAULTS } from "../../tools/emiDefaults.js";
 
 import OwnershipPageLayout from "./OwnershipPageLayout.jsx";
 import { OWNERSHIP_PAGE_TYPES } from "./ownershipRoutes.js";
+import {
+  buildOwnershipQuestionShortAnswer,
+  formatOwnershipQuestionQuickAnswer,
+} from "./ownershipQuestionSummaries.js";
 import { buildOwnershipSummaryText } from "./ownershipPageSummaries.js";
 import { useOwnershipPageVehicle } from "./useOwnershipPageVehicle.js";
 
 import "../../components/tools/emi-calculator.css";
 
-export default function EmiOwnershipPage() {
+export default function EmiOwnershipPage({
+  questionType = null,
+}) {
   const { slug: routeSlug } = useParams();
   const { vehicleSlug, vehicle, familyName, loading, error, isValidSlug } =
     useOwnershipPageVehicle(routeSlug);
@@ -88,14 +94,25 @@ export default function EmiOwnershipPage() {
     ]
   );
 
-  const summaryText = buildOwnershipSummaryText(
-    OWNERSHIP_PAGE_TYPES.EMI,
-    familyName,
-    {
-      emiInr: result.monthlyEmi,
-      downPaymentPct,
-    }
-  );
+  const summaryText = questionType
+    ? buildOwnershipQuestionShortAnswer(questionType, familyName, {
+        emiInr: result.monthlyEmi,
+        downPaymentPct,
+      })
+    : buildOwnershipSummaryText(
+        OWNERSHIP_PAGE_TYPES.EMI,
+        familyName,
+        {
+          emiInr: result.monthlyEmi,
+          downPaymentPct,
+        }
+      );
+
+  const quickAnswerValue = questionType
+    ? formatOwnershipQuestionQuickAnswer(questionType, {
+        emiInr: result.monthlyEmi,
+      })
+    : "";
 
   const vehicleOption = useMemo(
     () =>
@@ -112,6 +129,7 @@ export default function EmiOwnershipPage() {
         vehicleSlug={vehicleSlug}
         familyName={familyName || "Electric vehicle"}
         error="not_found"
+        questionType={questionType}
       />
     );
   }
@@ -125,6 +143,8 @@ export default function EmiOwnershipPage() {
       summaryText={summaryText}
       loading={loading}
       error={error}
+      questionType={questionType}
+      quickAnswerValue={quickAnswerValue}
     >
       <div className="emi-page__layout">
         <EmiForm

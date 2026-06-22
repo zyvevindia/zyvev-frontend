@@ -160,6 +160,14 @@ const OWNERSHIP_SITEMAP_SEGMENTS = Object.freeze([
   "emi",
 ]);
 
+/** Question-based ownership page path segments (keep in sync with ownershipQuestionRoutes.js). */
+const OWNERSHIP_QUESTION_SITEMAP_SEGMENTS = Object.freeze([
+  "how-much-does-it-cost-to-run",
+  "ownership-cost",
+  "how-much-can-you-save",
+  "emi-calculator",
+]);
+
 /**
  * Programmatic ownership calculator pages — /ownership/:slug/:pageType
  */
@@ -184,6 +192,16 @@ export function buildOwnershipSitemapEntries(
       entries.push(
         entry(`/ownership/${familySlug}/${segment}`, {
           priority: 0.74,
+          changefreq: "weekly",
+          siteOrigin,
+        })
+      );
+    }
+
+    for (const segment of OWNERSHIP_QUESTION_SITEMAP_SEGMENTS) {
+      entries.push(
+        entry(`/ownership/${familySlug}/${segment}`, {
+          priority: 0.75,
           changefreq: "weekly",
           siteOrigin,
         })

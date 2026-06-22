@@ -94,6 +94,37 @@
   color: #475569;
 }
 
+.ownership-page__summary--question {
+  margin-bottom: 16px;
+}
+
+.ownership-page__quick-answer {
+  margin-bottom: 20px;
+  padding: 20px 22px;
+  border-radius: var(--ownership-card-radius);
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--ownership-card-shadow);
+  text-align: center;
+}
+
+.ownership-page__quick-answer-label {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.ownership-page__quick-answer-value {
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+}
+
 .ownership-page__related {
   padding: 20px 22px;
   border-radius: var(--ownership-card-radius);
