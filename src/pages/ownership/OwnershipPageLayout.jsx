@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import OwnershipFaqSection from "../../components/ownership/OwnershipFaqSection.jsx";
 import VehicleImage from "../../components/media/VehicleImage.jsx";
 import SEO from "../../components/SEO/SEO.jsx";
 import JsonLd from "../../components/SEO/JsonLd.jsx";
@@ -183,6 +184,13 @@ export default function OwnershipPageLayout({
                 <p className="ownership-page__summary-copy">{summaryText}</p>
               </section>
             ) : null}
+
+            <OwnershipFaqSection
+              pageType={pageType}
+              vehicleSlug={vehicleSlug}
+              vehicleName={familyName}
+              summaryText={summaryText}
+            />
           </>
         )}
 
