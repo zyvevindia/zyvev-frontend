@@ -2,9 +2,9 @@
  * Canonical vehicle detail routing — /cars/:slug
  */
 
-import { SITE_ORIGIN } from "../config";
+import { SITE_ORIGIN } from "../config.js";
 
-import { extractFamilySlug } from "./modelFamily";
+import { extractFamilySlug } from "./modelFamily.js";
 import { resolveDossierSlug } from "../data/catalog/verified/resolveDossierSlug.js";
 
 export const CANONICAL_VEHICLE_PREFIX = "/cars";

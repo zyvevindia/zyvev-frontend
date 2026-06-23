@@ -2,11 +2,11 @@
  * Unified canonical URL builders for all discovery page types.
  */
 
-import { SITE_ORIGIN } from "../config";
+import { SITE_ORIGIN } from "../config.js";
 
-import { canonicalVehicleUrl } from "../utils/vehicleRoutes";
+import { canonicalVehicleUrl } from "../utils/vehicleRoutes.js";
 
-import { canonicalSeoPageUrl } from "../utils/seoRoutes";
+import { canonicalSeoPageUrl } from "../utils/seoRoutes.js";
 
 export { SITE_ORIGIN };
 

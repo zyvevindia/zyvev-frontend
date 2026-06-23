@@ -295,7 +295,9 @@ export function detectMediaRoleConflicts(families = PRODUCTION_FAMILY_SLUGS) {
     const seen = new Map();
     for (const [key, value] of Object.entries(media)) {
       const urls = Array.isArray(value) ? value : [value];
-      for (const url of urls.filter(Boolean)) {
+      for (const url of urls.filter(
+        (entry) => typeof entry === "string" && Boolean(entry)
+      )) {
         const pathKey = url.split("/upload/").pop()?.split("?")[0] || url;
         if (seen.has(pathKey) && seen.get(pathKey) !== key) {
           conflicts.push({

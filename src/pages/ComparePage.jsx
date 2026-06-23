@@ -25,7 +25,7 @@ import {
 
 import CompareHeroExperience from "../components/compare/CompareHeroExperience";
 
-import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest";
+import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
 import { compareGuidePath } from "../seo/slugs";
 
 import {

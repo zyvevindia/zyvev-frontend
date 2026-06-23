@@ -2,8 +2,8 @@
  * SEO decision page routing — /cars/:slug when slug is reserved.
  */
 
-import { SITE_ORIGIN } from "../config";
-import { SEO_SLUG_SET } from "../data/seoPageSlugs";
+import { SITE_ORIGIN } from "../config.js";
+import { SEO_SLUG_SET } from "../data/seoPageSlugs.js";
 
 export const SEO_PAGE_PREFIX = "/cars";
 

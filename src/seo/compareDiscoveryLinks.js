@@ -2,12 +2,12 @@
  * Curated compare pair links for SEO discovery (compare + detail pages).
  */
 
-import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest";
+import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
 import {
   buildComparePairSlug,
   compareGuidePath,
   normalizeVehicleSlug,
-} from "./slugs";
+} from "./slugs.js";
 
 /** Editorial priority pairs — shown when relevant or as defaults. */
 export const CURATED_COMPARE_PAIRS = Object.freeze([

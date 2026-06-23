@@ -10,9 +10,9 @@ export {
   vehicleFamilyPath,
   vehicleDetailPath,
   canonicalVehicleUrl,
-} from "../utils/vehicleRoutes";
+} from "../utils/vehicleRoutes.js";
 
-export { normalizeSegment } from "./slugMap";
+export { normalizeSegment } from "./slugMap.js";
 
 /**
  * Normalize compare guide slug (editorial /compare/:slug pages).

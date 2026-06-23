@@ -2,7 +2,7 @@
  * Production QA audit — runtime readiness checks (static + catalog-derived).
  */
 
-import { DETAIL_SECTION_DEFS } from "../utils/detailPageNav.js";
+import { DETAIL_SECTION_DEFS } from "../carDetails/detailPageSectionDefs.js";
 import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
 import { LOCAL_FALLBACK_EV } from "../config/media.js";
 import {

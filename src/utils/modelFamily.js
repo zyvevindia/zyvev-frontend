@@ -1,7 +1,7 @@
-import normalizeCar from "./normalizeCar";
-import { getListingImage, getHeroImage } from "./vehicleMedia";
-import { normalizeVehicleSlug } from "./vehicleRoutes";
-import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies";
+import normalizeCar from "./normalizeCar.js";
+import { getListingImage, getHeroImage } from "./vehicleMedia.js";
+import { normalizeVehicleSlug } from "./vehicleRoutes.js";
+import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies.js";
 import { filterCatalogFamilies } from "../intelligence/catalogFilters.js";
 
 export { TIER1_MODEL_FAMILY_SLUGS };

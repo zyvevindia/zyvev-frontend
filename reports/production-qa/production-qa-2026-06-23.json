@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-06-23T19:59:23.846Z",
+  "checks": [
+    {
+      "id": "sticky_nav_sections_defined",
+      "status": "pass",
+      "detail": "15 sections"
+    },
+    {
+      "id": "charging_section_id_present",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "compare_deep_link_shape",
+      "status": "pass",
+      "detail": "28 slugs checked"
+    },
+    {
+      "id": "hero_images_resolved",
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "gallery_coverage_acceptable",
+      "status": "pass",
+      "detail": "0 thin galleries"
+    },
+    {
+      "id": "placeholder_usage_bounded",
+      "status": "pass",
+      "detail": "0 full-fallback"
+    },
+    {
+      "id": "media_role_conflicts",
+      "status": "warn",
+      "detail": "17 families"
+    }
+  ],
+  "failures": [],
+  "warnings": [
+    {
+      "id": "media_role_conflicts",
+      "detail": "17 families"
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "warnings": 1,
+    "ok": true
+  },
+  "requiredDetailSectionIds": [
+    "ev-intelligence",
+    "variants",
+    "ownership-tools",
+    "compare",
+    "charging",
+    "people-also-compare",
+    "similar-evs",
+    "popular-among-similar-buyers",
+    "range",
+    "suitability",
+    "emi",
+    "reviews",
+    "faqs",
+    "related-evs",
+    "assistance"
+  ]
+}

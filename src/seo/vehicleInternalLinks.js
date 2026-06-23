@@ -2,17 +2,17 @@
  * Internal linking for vehicle detail pages — crawlable, premium UX.
  */
 
-import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest";
+import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
 
-import { canonicalCompareGuideUrl } from "./canonical";
+import { canonicalCompareGuideUrl } from "./canonical.js";
 
 import {
   buildComparePairSlug,
   compareGuidePath,
   normalizeVehicleSlug,
-} from "./slugs";
+} from "./slugs.js";
 
-import { vehicleDetailPath } from "../utils/vehicleRoutes";
+import { vehicleDetailPath } from "../utils/vehicleRoutes.js";
 import { buildDetailAuthorityLinks } from "../content/authority/internalLinks.js";
 
 function slugToLabel(slug) {

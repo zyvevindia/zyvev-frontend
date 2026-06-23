@@ -1,7 +1,7 @@
-import { sanitizeCarImageFields, sanitizeImageUrl } from "./imageUrl";
-import { getListingImage } from "./vehicleMedia";
-import { normalizeVehicleSlug } from "./vehicleRoutes";
-import { logProduction } from "./productionLog";
+import { sanitizeCarImageFields, sanitizeImageUrl } from "./imageUrl.js";
+import { getListingImage } from "./vehicleMedia.js";
+import { normalizeVehicleSlug } from "./vehicleRoutes.js";
+import { logProduction } from "./productionLog.js";
 import { applyVerifiedCatalogOverlay } from "../data/catalog/verified/applyVerifiedCatalogOverlay.js";
 
 export default function normalizeCar(car) {

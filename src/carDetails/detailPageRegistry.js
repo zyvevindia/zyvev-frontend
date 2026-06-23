@@ -4,6 +4,10 @@ import { buildSimilarEvs } from "../intelligence/buildSimilarEvs.js";
 import { buildPopularAmongSimilarBuyers } from "../intelligence/buildPopularAmongSimilarBuyers.js";
 import { vehicleHasUnifiedEvIntelligence } from "../intelligence/unifiedEvIntelligenceVisibility.js";
 import {
+  DETAIL_NAV_CTA_TAB,
+  DETAIL_SECTION_DEFS as DETAIL_SECTION_DEFS_BASE,
+} from "./detailPageSectionDefs.js";
+import {
   DetailAssistanceSection,
   DetailChargingSection,
   DetailCompareSection,
@@ -21,196 +25,32 @@ import {
   DetailVariantsSection,
 } from "./detailPageSections.jsx";
 
-/**
- * @typedef {object} DetailPageSectionContext
- * @property {boolean} hasEvIntelligence
- * @property {boolean} hasVariants
- * @property {boolean} hasOwnershipTools
- * @property {boolean} hasCompare
- * @property {boolean} hasPeopleAlsoCompare
- * @property {boolean} hasSimilarEvs
- * @property {boolean} hasPopularAmongSimilarBuyers
- * @property {boolean} hasRange
- * @property {boolean} hasOwnership
- * @property {boolean} hasCharging
- * @property {boolean} hasSuitability
- * @property {boolean} hasEmi
- * @property {boolean} hasFaqs
- * @property {boolean} hasReviews
- * @property {boolean} hasRelatedEvs
- * @property {boolean} hasAssistance
- */
+/** @typedef {import("./detailPageSectionDefs.js").DetailPageSectionContext} DetailPageSectionContext */
 
-/** Sticky nav CTA — appended after registry-driven section tabs. */
-export const DETAIL_NAV_CTA_TAB = {
-  id: "book-test-drive",
-  title: "Book Test Drive",
-  action: "test-drive",
-  cta: true,
+const DETAIL_SECTION_COMPONENTS = {
+  "ev-intelligence": DetailEvIntelligenceSection,
+  variants: DetailVariantsSection,
+  "ownership-tools": DetailOwnershipToolsSection,
+  compare: DetailCompareSection,
+  charging: DetailChargingSection,
+  "people-also-compare": DetailPeopleAlsoCompareSection,
+  "similar-evs": DetailSimilarEvsSection,
+  "popular-among-similar-buyers": DetailPopularAmongSimilarBuyersSection,
+  range: DetailRangeSection,
+  suitability: DetailSuitabilitySection,
+  emi: DetailEmiSection,
+  reviews: DetailReviewsSection,
+  faqs: DetailFaqsSection,
+  "related-evs": DetailRelatedEvsSection,
+  assistance: DetailAssistanceSection,
 };
 
-/**
- * Schema-driven section registry — single source of truth for sections and nav.
- * @type {Array<{
- *   id: string,
- *   title: string,
- *   nav?: boolean,
- *   navOrder?: number,
- *   navTitle?: string,
- *   shellClassName?: string,
- *   placement?: "hero" | "page",
- *   condition: (ctx: DetailPageSectionContext) => boolean,
- *   Component?: Function,
- * }>}
- */
-export const DETAIL_SECTION_DEFS = [
-  {
-    id: "ev-intelligence",
-    title: "EV Intelligence",
-    nav: true,
-    navOrder: 10,
-    placement: "page",
-    shellClassName:
-      "cd-section cd-card cd-content-card cd-ev-intelligence-section",
-    condition: (ctx) => ctx.hasEvIntelligence,
-    Component: DetailEvIntelligenceSection,
-  },
-  {
-    id: "variants",
-    title: "Variants",
-    nav: true,
-    navOrder: 20,
-    placement: "page",
-    shellClassName:
-      "cd-section cd-card cd-content-card variant-comparison",
-    condition: (ctx) => ctx.hasVariants,
-    Component: DetailVariantsSection,
-  },
-  {
-    id: "ownership-tools",
-    title: "Ownership Tools",
-    nav: false,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card",
-    condition: (ctx) => ctx.hasOwnershipTools,
-    Component: DetailOwnershipToolsSection,
-  },
-  {
-    id: "compare",
-    title: "Compare",
-    renderOnPage: false,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card",
-    condition: (ctx) => ctx.hasCompare,
-    Component: DetailCompareSection,
-  },
-  {
-    id: "charging",
-    title: "Charging",
-    nav: true,
-    navOrder: 30,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
-    condition: (ctx) => ctx.hasDedicatedChargingSection,
-    Component: DetailChargingSection,
-  },
-  {
-    id: "people-also-compare",
-    title: "People Also Compare",
-    nav: true,
-    navOrder: 40,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card",
-    condition: (ctx) => ctx.hasPeopleAlsoCompare,
-    Component: DetailPeopleAlsoCompareSection,
-  },
-  {
-    id: "similar-evs",
-    title: "Similar EVs",
-    nav: true,
-    navOrder: 50,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card",
-    condition: (ctx) => ctx.hasSimilarEvs,
-    Component: DetailSimilarEvsSection,
-  },
-  {
-    id: "popular-among-similar-buyers",
-    title: "Popular Among Similar Buyers",
-    nav: true,
-    navOrder: 60,
-    navTitle: "Popular Buyers",
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card",
-    condition: (ctx) => ctx.hasPopularAmongSimilarBuyers,
-    Component: DetailPopularAmongSimilarBuyersSection,
-  },
-  {
-    id: "range",
-    title: "Range",
-    renderOnPage: false,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
-    condition: (ctx) => ctx.hasRange,
-    Component: DetailRangeSection,
-  },
-  {
-    id: "suitability",
-    title: "Suitability",
-    renderOnPage: false,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card ev-intel-section",
-    condition: (ctx) => ctx.hasSuitability,
-    Component: DetailSuitabilitySection,
-  },
-  {
-    id: "emi",
-    title: "EMI",
-    renderOnPage: false,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card detail-emi-section",
-    condition: (ctx) => ctx.hasEmi,
-    Component: DetailEmiSection,
-  },
-  {
-    id: "reviews",
-    title: "Reviews",
-    nav: true,
-    navOrder: 70,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card",
-    condition: (ctx) => ctx.hasReviews,
-    Component: DetailReviewsSection,
-  },
-  {
-    id: "faqs",
-    title: "FAQs",
-    nav: true,
-    navOrder: 80,
-    placement: "page",
-    shellClassName: "cd-section cd-card cd-content-card",
-    condition: (ctx) => ctx.hasFaqs,
-    Component: DetailFaqsSection,
-  },
-  {
-    id: "related-evs",
-    title: "Related EVs",
-    renderOnPage: false,
-    placement: "page",
-    shellClassName: "cd-seo-discovery",
-    condition: (ctx) => ctx.hasRelatedEvs,
-    Component: DetailRelatedEvsSection,
-  },
-  {
-    id: "assistance",
-    title: "Assistance",
-    renderOnPage: false,
-    placement: "page",
-    shellClassName: "cd-section cd-dealer cd-card",
-    condition: (ctx) => ctx.hasAssistance,
-    Component: DetailAssistanceSection,
-  },
-];
+export { DETAIL_NAV_CTA_TAB };
+
+export const DETAIL_SECTION_DEFS = DETAIL_SECTION_DEFS_BASE.map((def) => ({
+  ...def,
+  Component: DETAIL_SECTION_COMPONENTS[def.id],
+}));
 
 /**
  * Build visibility context from vehicle + intelligence state.
