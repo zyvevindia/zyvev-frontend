@@ -4,6 +4,7 @@ import { ANALYTICS_EVENTS } from "../../analytics/events.js";
 import { trackAnalytics } from "../../analytics/track.js";
 import ScoreConfidenceCard from "./ScoreConfidenceCard.jsx";
 import ScorePersonaCard from "./ScorePersonaCard.jsx";
+import { compactPerspectiveSummary } from "./perspectiveDisplayUtils.js";
 import { useScore2Profile } from "./useScore2Profile.js";
 import { formatScoreTierLabel } from "./score2DisplayUtils.js";
 import "./score2.css";
@@ -90,19 +91,28 @@ export default function ScorePerspectiveCard({
 
   const { score, recommendation, confidence, explanation } = profile;
   const isToolsVariant = variant === "tools";
+  const isMiniVariant = variant === "mini";
+  const isRichLayout = !isToolsVariant && !isMiniVariant;
   const strengths = (explanation.strengths || []).slice(0, maxStrengths);
   const bestFor = showBestFor ? (explanation.bestFor || []).slice(0, maxBestFor) : [];
-  const summaryText =
-    oneLineSummary || isToolsVariant
-      ? firstSentence(explanation.summary)
-      : explanation.summary;
+
+  const summaryText = (() => {
+    if (oneLineSummary || isToolsVariant) {
+      return firstSentence(explanation.summary);
+    }
+    if (isRichLayout) {
+      return compactPerspectiveSummary(explanation.summary);
+    }
+    return explanation.summary;
+  })();
 
   const rootClass = [
     "score2-perspective",
     shellClassName,
+    isRichLayout ? "score2-perspective--rich" : "",
     variant === "compact" ? "score2-perspective--compact" : "",
-    variant === "mini" ? "score2-perspective--mini" : "",
-    variant === "tools" ? "score2-perspective--tools" : "",
+    isMiniVariant ? "score2-perspective--mini" : "",
+    isToolsVariant ? "score2-perspective--tools" : "",
     className,
   ]
     .filter(Boolean)
@@ -142,47 +152,89 @@ export default function ScorePerspectiveCard({
       ) : (
         <>
           <div className="score2-perspective__header">
-            <div className="score2-perspective__heading-block">
-              <p className="score2-perspective__eyebrow">{title}</p>
-              {score.overall ? (
-                <span
-                  className={`score2-perspective__tier score2-perspective__tier--${score.overall}`}
-                >
-                  {formatScoreTierLabel(score.overall)}
-                </span>
-              ) : null}
-            </div>
+            <p className="score2-perspective__eyebrow">{title}</p>
+            {score.overall ? (
+              <span
+                className={`score2-perspective__tier score2-perspective__tier--${score.overall}`}
+              >
+                {formatScoreTierLabel(score.overall)}
+              </span>
+            ) : null}
           </div>
 
           {summaryText ? (
-            <p className="score2-perspective__summary">{summaryText}</p>
+            <p
+              className={[
+                "score2-perspective__summary",
+                isRichLayout ? "score2-perspective__summary--compact-copy" : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+            >
+              {summaryText}
+            </p>
           ) : null}
 
-          {showStrengths && strengths.length ? (
-            <div className="score2-perspective__block">
-              <h3 className="score2-perspective__block-title">Strengths</h3>
-              <ul className="score2-perspective__list">
-                {strengths.map((item) => (
-                  <li key={item} className="score2-perspective__list-item">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+          {isRichLayout ? (
+            <div className="score2-perspective__fit-row">
+              {showStrengths && strengths.length ? (
+                <div className="score2-perspective__block">
+                  <h3 className="score2-perspective__block-title">Strengths</h3>
+                  <ul className="score2-perspective__list score2-perspective__list--checks">
+                    {strengths.map((item) => (
+                      <li
+                        key={item}
+                        className="score2-perspective__list-item score2-perspective__list-item--check"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
 
-          {bestFor.length ? (
-            <div className="score2-perspective__block">
-              <h3 className="score2-perspective__block-title">Best for</h3>
-              <ul className="score2-perspective__tags">
-                {bestFor.map((item) => (
-                  <li key={item} className="score2-perspective__tag">
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              {bestFor.length ? (
+                <div className="score2-perspective__block">
+                  <h3 className="score2-perspective__block-title">Best for</h3>
+                  <ul className="score2-perspective__tags">
+                    {bestFor.map((item) => (
+                      <li key={item} className="score2-perspective__tag">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
-          ) : null}
+          ) : (
+            <>
+              {showStrengths && strengths.length ? (
+                <div className="score2-perspective__block">
+                  <h3 className="score2-perspective__block-title">Strengths</h3>
+                  <ul className="score2-perspective__list">
+                    {strengths.map((item) => (
+                      <li key={item} className="score2-perspective__list-item">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {bestFor.length ? (
+                <div className="score2-perspective__block">
+                  <h3 className="score2-perspective__block-title">Best for</h3>
+                  <ul className="score2-perspective__tags">
+                    {bestFor.map((item) => (
+                      <li key={item} className="score2-perspective__tag">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </>
+          )}
         </>
       )}
 
