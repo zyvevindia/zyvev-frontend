@@ -6,6 +6,14 @@ import {
   PETROL_SAVINGS_BOUNDS,
   PETROL_SAVINGS_DEFAULTS,
 } from "../../tools/petrolSavingsDefaults.js";
+import {
+  formatEfficiency,
+  formatElectricityTariff,
+  formatFuelEfficiency,
+  formatPercentage,
+  formatCostPerKm,
+  formatPetrolPricePerLitre,
+} from "../../utils/numberFormatters.js";
 
 /**
  * @param {object} props
@@ -124,7 +132,7 @@ export default function PetrolSavingsForm({
           <label className="petrol-savings-form__label" htmlFor="savings-tariff">
             Electricity tariff (₹/kWh)
           </label>
-          <span className="petrol-savings-form__value">₹{homeTariffInr}</span>
+          <span className="petrol-savings-form__value">{formatElectricityTariff(homeTariffInr)}</span>
         </div>
         <input
           id="savings-tariff"
@@ -143,7 +151,7 @@ export default function PetrolSavingsForm({
           <label className="petrol-savings-form__label" htmlFor="savings-home-pct">
             Home charging
           </label>
-          <span className="petrol-savings-form__value">{homeChargingPct}%</span>
+          <span className="petrol-savings-form__value">{formatPercentage(homeChargingPct)}</span>
         </div>
         <input
           id="savings-home-pct"
@@ -166,7 +174,7 @@ export default function PetrolSavingsForm({
           className="petrol-savings-form__input petrol-savings-form__input--readonly"
           type="text"
           readOnly
-          value={`${publicChargingPct}%`}
+          value={formatPercentage(publicChargingPct)}
         />
       </div>
 
@@ -175,7 +183,7 @@ export default function PetrolSavingsForm({
           <label className="petrol-savings-form__label" htmlFor="savings-efficiency">
             EV efficiency (km/kWh)
           </label>
-          <span className="petrol-savings-form__value">{efficiencyKmPerKwh} km/kWh</span>
+          <span className="petrol-savings-form__value">{formatEfficiency(efficiencyKmPerKwh)}</span>
         </div>
         <input
           id="savings-efficiency"
@@ -190,7 +198,7 @@ export default function PetrolSavingsForm({
         <p className="petrol-savings-form__hint">
           {efficiencyFromVehicle
             ? "Prefilled from real-world or claimed efficiency."
-            : `Default ${COST_PER_KM_DEFAULTS.efficiencyKmPerKwh} km/kWh when no vehicle is selected.`}
+            : `Default ${formatEfficiency(COST_PER_KM_DEFAULTS.efficiencyKmPerKwh)} when no vehicle is selected.`}
         </p>
       </div>
 
@@ -199,7 +207,7 @@ export default function PetrolSavingsForm({
           <label className="petrol-savings-form__label" htmlFor="savings-petrol-price">
             Petrol price (₹/litre)
           </label>
-          <span className="petrol-savings-form__value">₹{petrolPricePerLitre}</span>
+          <span className="petrol-savings-form__value">{formatPetrolPricePerLitre(petrolPricePerLitre)}</span>
         </div>
         <input
           id="savings-petrol-price"
@@ -222,7 +230,7 @@ export default function PetrolSavingsForm({
             Petrol efficiency (km/l)
           </label>
           <span className="petrol-savings-form__value">
-            {petrolEfficiencyKmPerL} km/l
+            {formatFuelEfficiency(petrolEfficiencyKmPerL)}
           </span>
         </div>
         <input
@@ -240,10 +248,10 @@ export default function PetrolSavingsForm({
       </div>
 
       <p className="petrol-savings-form__note">
-        Maintenance defaults: EV ₹{PETROL_SAVINGS_DEFAULTS.evMaintenancePerKm}/km,
-        petrol ₹{PETROL_SAVINGS_DEFAULTS.petrolMaintenancePerKm}/km. Residual
-        defaults: EV {PETROL_SAVINGS_DEFAULTS.evResidualPct}%, petrol{" "}
-        {PETROL_SAVINGS_DEFAULTS.petrolResidualPct}%.
+        Maintenance defaults: EV {formatCostPerKm(PETROL_SAVINGS_DEFAULTS.evMaintenancePerKm)},
+        petrol {formatCostPerKm(PETROL_SAVINGS_DEFAULTS.petrolMaintenancePerKm)}. Residual
+        defaults: EV {formatPercentage(PETROL_SAVINGS_DEFAULTS.evResidualPct)}, petrol{" "}
+        {formatPercentage(PETROL_SAVINGS_DEFAULTS.petrolResidualPct)}.
       </p>
     </form>
   );

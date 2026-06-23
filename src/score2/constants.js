@@ -8,7 +8,7 @@
 /** @typedef {typeof SCORE_TIERS[keyof typeof SCORE_TIERS]} ScoreTier */
 export const SCORE_TIERS = Object.freeze({
   EXCELLENT: "excellent",
-  STRONG: "strong",
+  GOOD: "good",
   MODERATE: "moderate",
   LIMITED: "limited",
   INSUFFICIENT: "insufficient",
@@ -64,6 +64,6 @@ export const EXPLANATION_LIST_FIELDS = Object.freeze([
 export const SCORE2_MODULE_VERSION = "2.0.0-alpha";
 
 export const SCORE2_REGISTRY_STATUS = Object.freeze({
-  /** Registry exists but contains no vehicle profiles yet (Phase 14A.1). */
-  EMPTY: "empty",
+  /** Profiles materialize on first registry lookup. */
+  LAZY: "lazy",
 });

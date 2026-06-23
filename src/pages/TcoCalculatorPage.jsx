@@ -5,6 +5,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import TcoBreakdownChart from "../components/tools/TcoBreakdownChart.jsx";
 import TcoForm from "../components/tools/TcoForm.jsx";
 import TcoResultCard from "../components/tools/TcoResultCard.jsx";
+import Score2ToolsPerspective from "../components/score2/Score2ToolsPerspective.jsx";
 import SEO from "../components/SEO/SEO.jsx";
 import JsonLd from "../components/SEO/JsonLd.jsx";
 import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies.js";
@@ -361,6 +362,7 @@ export default function TcoCalculatorPage() {
           />
 
           <div className="tco-page__results">
+            <Score2ToolsPerspective vehicleSlug={vehicleSlug} />
             <TcoResultCard
               totalOwnershipCostInr={result.totalOwnershipCostInr}
               ownershipCostPerKm={result.ownershipCostPerKm}

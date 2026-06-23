@@ -5,7 +5,6 @@
  * They must not be collapsed into a single rating or composite number.
  *
  * @typedef {import("./constants.js").ScoreTier} ScoreTier
- * @typedef {import("./constants.js").RecommendationFit} RecommendationFit
  * @typedef {import("./constants.js").ConfidenceLevel} ConfidenceLevel
  */
 
@@ -28,11 +27,11 @@
  * Independent from numeric or tier scores; answers "should I consider this?"
  *
  * @typedef {Object} RecommendationProfile
- * @property {RecommendationFit} cityBuyer
- * @property {RecommendationFit} familyBuyer
- * @property {RecommendationFit} highwayBuyer
- * @property {RecommendationFit} budgetBuyer
- * @property {RecommendationFit} premiumBuyer
+ * @property {ScoreTier} cityBuyer
+ * @property {ScoreTier} familyBuyer
+ * @property {ScoreTier} highwayBuyer
+ * @property {ScoreTier} budgetBuyer
+ * @property {ScoreTier} premiumBuyer
  */
 
 /**
@@ -50,6 +49,19 @@
  */
 
 /**
+ * Confidence narrative lines keyed by score dimension.
+ *
+ * @typedef {Object} ConfidenceNarratives
+ * @property {string} overall
+ * @property {string} ownership
+ * @property {string} charging
+ * @property {string} highway
+ * @property {string} family
+ * @property {string} service
+ * @property {string} value
+ */
+
+/**
  * Human-readable decision guidance derived from score and recommendation layers.
  * Strengths and weaknesses describe trade-offs; bestFor and avoidIf guide intent.
  *
@@ -59,6 +71,12 @@
  * @property {string[]} bestFor
  * @property {string[]} avoidIf
  * @property {string} summary
+ * @property {string} cityNarrative
+ * @property {string} familyNarrative
+ * @property {string} highwayNarrative
+ * @property {string} budgetNarrative
+ * @property {string} premiumNarrative
+ * @property {ConfidenceNarratives} confidenceNarratives
  */
 
 /**

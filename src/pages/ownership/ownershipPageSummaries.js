@@ -1,5 +1,6 @@
 import { formatCostPerKmRate } from "../../tools/costPerKmCalculator.js";
 import { formatTcoLakh } from "../../tools/tcoCalculator.js";
+import { formatCurrencyAmount, formatPercentage } from "../../utils/numberFormatters.js";
 import { TCO_DEFAULTS } from "../../tools/tcoDefaults.js";
 import { PETROL_SAVINGS_DEFAULTS } from "../../tools/petrolSavingsDefaults.js";
 import { EMI_DEFAULTS } from "../../tools/emiDefaults.js";
@@ -59,8 +60,7 @@ export function buildEmiSummary(
   downPaymentPct = EMI_DEFAULTS.downPaymentPct
 ) {
   const name = vehicleName || "This EV";
-  const emiLabel = Math.round(emiInr).toLocaleString("en-IN");
-  return `With a down payment of ${downPaymentPct}%, estimated EMI for ${name} is approximately ₹${emiLabel} per month.`;
+  return `With a down payment of ${formatPercentage(downPaymentPct)}, estimated EMI for ${name} is approximately ${formatCurrencyAmount(emiInr)} per month.`;
 }
 
 /**

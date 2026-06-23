@@ -2,6 +2,7 @@ import {
   formatBreakEvenDistance,
 } from "../../tools/petrolSavingsCalculator.js";
 import { formatTcoLakh } from "../../tools/tcoCalculator.js";
+import { formatPercentage } from "../../utils/numberFormatters.js";
 
 /**
  * @param {{
@@ -59,7 +60,7 @@ export default function PetrolSavingsResultCard({
         </strong>
         <span className="petrol-savings-result__savings-pct">
           {savingsPct >= 0 ? "+" : ""}
-          {savingsPct.toFixed(1)}% vs petrol
+          {formatPercentage(savingsPct)} vs petrol
         </span>
       </div>
 

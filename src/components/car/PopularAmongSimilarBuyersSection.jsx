@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import Score2QualitativeBadge from "../score2/Score2QualitativeBadge.jsx";
 import OwnershipToolSecondaryLink from "../tools/OwnershipToolSecondaryLink.jsx";
 import { vehicleDetailPath } from "../../utils/vehicleRoutes";
 
@@ -24,7 +25,10 @@ export default function PopularAmongSimilarBuyersSection({ vehicles = [] }) {
       <div className="popular-similar-buyers__grid">
         {vehicles.map((item) => (
           <article key={item.slug} className="popular-similar-buyers__card">
-            <h3 className="popular-similar-buyers__card-title">{item.title}</h3>
+            <h3 className="popular-similar-buyers__card-title">
+              <span>{item.title}</span>
+              <Score2QualitativeBadge familySlug={item.slug} />
+            </h3>
             <div className="recommendation-loop-card__actions">
               <Link
                 to={vehicleDetailPath(item.slug)}

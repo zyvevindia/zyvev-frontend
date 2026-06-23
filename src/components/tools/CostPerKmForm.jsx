@@ -2,6 +2,11 @@ import {
   COST_PER_KM_BOUNDS,
   COST_PER_KM_DEFAULTS,
 } from "../../tools/costPerKmDefaults.js";
+import {
+  formatEfficiency,
+  formatElectricityTariff,
+  formatPercentage,
+} from "../../utils/numberFormatters.js";
 
 /**
  * @param {{
@@ -60,7 +65,7 @@ export default function CostPerKmForm({
           <label className="cost-per-km-form__label" htmlFor="cost-per-km-tariff">
             Electricity tariff (₹/kWh)
           </label>
-          <span className="cost-per-km-form__value">₹{homeTariffInr}</span>
+          <span className="cost-per-km-form__value">{formatElectricityTariff(homeTariffInr)}</span>
         </div>
         <input
           id="cost-per-km-tariff"
@@ -79,7 +84,7 @@ export default function CostPerKmForm({
           <label className="cost-per-km-form__label" htmlFor="cost-per-km-home-pct">
             Home charging
           </label>
-          <span className="cost-per-km-form__value">{homeChargingPct}%</span>
+          <span className="cost-per-km-form__value">{formatPercentage(homeChargingPct)}</span>
         </div>
         <input
           id="cost-per-km-home-pct"
@@ -102,7 +107,7 @@ export default function CostPerKmForm({
           className="cost-per-km-form__input cost-per-km-form__input--readonly"
           type="text"
           readOnly
-          value={`${publicChargingPct}%`}
+          value={formatPercentage(publicChargingPct)}
           aria-live="polite"
         />
         <p className="cost-per-km-form__hint">
@@ -115,7 +120,7 @@ export default function CostPerKmForm({
           <label className="cost-per-km-form__label" htmlFor="cost-per-km-efficiency">
             Vehicle efficiency (km/kWh)
           </label>
-          <span className="cost-per-km-form__value">{efficiencyKmPerKwh} km/kWh</span>
+          <span className="cost-per-km-form__value">{formatEfficiency(efficiencyKmPerKwh)}</span>
         </div>
         <input
           id="cost-per-km-efficiency"
@@ -130,7 +135,7 @@ export default function CostPerKmForm({
         <p className="cost-per-km-form__hint">
           {efficiencyFromVehicle
             ? "Prefilled from this vehicle's real-world efficiency. Adjust if needed."
-            : `Default is ${COST_PER_KM_DEFAULTS.efficiencyKmPerKwh} km/kWh when no vehicle is selected.`}
+            : `Default is ${formatEfficiency(COST_PER_KM_DEFAULTS.efficiencyKmPerKwh)} when no vehicle is selected.`}
         </p>
       </div>
     </form>

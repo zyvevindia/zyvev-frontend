@@ -5,6 +5,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import PetrolSavingsChart from "../components/tools/PetrolSavingsChart.jsx";
 import PetrolSavingsForm from "../components/tools/PetrolSavingsForm.jsx";
 import PetrolSavingsResultCard from "../components/tools/PetrolSavingsResultCard.jsx";
+import Score2ToolsPerspective from "../components/score2/Score2ToolsPerspective.jsx";
 import SEO from "../components/SEO/SEO.jsx";
 import JsonLd from "../components/SEO/JsonLd.jsx";
 import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies.js";
@@ -341,6 +342,7 @@ export default function PetrolSavingsPage() {
           />
 
           <div className="petrol-savings-page__results">
+            <Score2ToolsPerspective vehicleSlug={vehicleSlug} />
             <PetrolSavingsResultCard
               evTotalInr={result.ev.totalOwnershipCostInr}
               petrolTotalInr={result.petrol.totalOwnershipCostInr}

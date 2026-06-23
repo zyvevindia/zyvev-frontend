@@ -3,6 +3,11 @@ import {
   COST_PER_KM_DEFAULTS,
 } from "../../tools/costPerKmDefaults.js";
 import { TCO_BOUNDS, TCO_DEFAULTS } from "../../tools/tcoDefaults.js";
+import {
+  formatEfficiency,
+  formatElectricityTariff,
+  formatPercentage,
+} from "../../utils/numberFormatters.js";
 
 /**
  * @param {{
@@ -145,7 +150,7 @@ export default function TcoForm({
           <label className="tco-form__label" htmlFor="tco-tariff">
             Electricity tariff (₹/kWh)
           </label>
-          <span className="tco-form__value">₹{homeTariffInr}</span>
+          <span className="tco-form__value">{formatElectricityTariff(homeTariffInr)}</span>
         </div>
         <input
           id="tco-tariff"
@@ -164,7 +169,7 @@ export default function TcoForm({
           <label className="tco-form__label" htmlFor="tco-home-pct">
             Home charging
           </label>
-          <span className="tco-form__value">{homeChargingPct}%</span>
+          <span className="tco-form__value">{formatPercentage(homeChargingPct)}</span>
         </div>
         <input
           id="tco-home-pct"
@@ -187,7 +192,7 @@ export default function TcoForm({
           className="tco-form__input tco-form__input--readonly"
           type="text"
           readOnly
-          value={`${publicChargingPct}%`}
+          value={formatPercentage(publicChargingPct)}
         />
       </div>
 
@@ -196,7 +201,7 @@ export default function TcoForm({
           <label className="tco-form__label" htmlFor="tco-efficiency">
             Vehicle efficiency (km/kWh)
           </label>
-          <span className="tco-form__value">{efficiencyKmPerKwh} km/kWh</span>
+          <span className="tco-form__value">{formatEfficiency(efficiencyKmPerKwh)}</span>
         </div>
         <input
           id="tco-efficiency"
@@ -211,7 +216,7 @@ export default function TcoForm({
         <p className="tco-form__hint">
           {efficiencyFromVehicle
             ? "Prefilled from real-world or claimed efficiency."
-            : `Default ${COST_PER_KM_DEFAULTS.efficiencyKmPerKwh} km/kWh when no vehicle is selected.`}
+            : `Default ${formatEfficiency(COST_PER_KM_DEFAULTS.efficiencyKmPerKwh)} when no vehicle is selected.`}
         </p>
       </div>
 
@@ -230,7 +235,7 @@ export default function TcoForm({
           onChange={(event) => onInsuranceChange(Number(event.target.value))}
         />
         <p className="tco-form__hint">
-          Default is {TCO_DEFAULTS.insuranceRatePerYear * 100}% of vehicle price
+          Default is {formatPercentage(TCO_DEFAULTS.insuranceRatePerYear * 100)} of vehicle price
           per year.
         </p>
       </div>
@@ -256,7 +261,9 @@ export default function TcoForm({
           <label className="tco-form__label" htmlFor="tco-residual">
             Residual value
           </label>
-          <span className="tco-form__value">{residualValuePct}% retained</span>
+          <span className="tco-form__value">
+            {formatPercentage(residualValuePct)} retained
+          </span>
         </div>
         <input
           id="tco-residual"

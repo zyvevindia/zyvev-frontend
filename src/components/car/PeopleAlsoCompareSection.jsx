@@ -5,6 +5,7 @@ import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
 import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
 
 import OwnershipToolSecondaryLink from "../tools/OwnershipToolSecondaryLink.jsx";
+import Score2QualitativeBadge from "../score2/Score2QualitativeBadge.jsx";
 
 import "../tools/vehicle-ownership-tools.css";
 import "./people-also-compare.css";
@@ -57,7 +58,10 @@ export default function PeopleAlsoCompareSection({
       <div className="people-also-compare__grid">
         {comparisons.map((item) => (
           <article key={item.slug} className="people-also-compare__card">
-            <h3 className="people-also-compare__card-title">{item.title}</h3>
+            <h3 className="people-also-compare__card-title">
+              <span>{item.title}</span>
+              <Score2QualitativeBadge familySlug={item.slug} />
+            </h3>
             <div className="recommendation-loop-card__actions">
               <button
                 type="button"

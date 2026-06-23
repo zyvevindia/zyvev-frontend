@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 
 import CostPerKmForm from "../components/tools/CostPerKmForm.jsx";
 import CostPerKmResultCard from "../components/tools/CostPerKmResultCard.jsx";
+import Score2ToolsPerspective from "../components/score2/Score2ToolsPerspective.jsx";
 import SEO from "../components/SEO/SEO.jsx";
 import JsonLd from "../components/SEO/JsonLd.jsx";
 import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies.js";
@@ -21,6 +22,7 @@ import {
   COST_PER_KM_DEFAULTS,
   COST_PER_KM_ICE_REFERENCE,
 } from "../tools/costPerKmDefaults.js";
+import { formatElectricityTariff } from "../utils/numberFormatters.js";
 import { fetchListingCatalogVariants, fetchVehicleFamilyBySlug } from "../utils/vehicleDetailResolver.js";
 import { aggregateModelFamilies } from "../utils/modelFamily.js";
 import { normalizeVehicleSlug } from "../utils/vehicleRoutes.js";
@@ -228,12 +230,15 @@ export default function CostPerKmPage() {
             onVehicleChange={handleVehicleChange}
           />
 
-          <CostPerKmResultCard
+          <div className="cost-per-km-page__results">
+            <Score2ToolsPerspective vehicleSlug={vehicleSlug} />
+            <CostPerKmResultCard
             costPerKm={calculation.costPerKm}
             monthlyCost={monthlyCost}
             yearlyCost={yearlyCost}
             savingsTier={savingsTier}
           />
+          </div>
         </div>
 
         <section className="cost-per-km-page__panel" aria-labelledby="cost-per-km-explanation">
@@ -244,8 +249,8 @@ export default function CostPerKmPage() {
             Based on your charging mix and efficiency
             {selectedVehicleName ? ` for the ${selectedVehicleName}` : ""}, this
             EV costs approximately {formatCostPerKmRate(calculation.costPerKm)} to
-            run. Your blended electricity rate is about ₹
-            {calculation.effectiveRateInr.toFixed(2)}/kWh after weighting home and
+            run. Your blended electricity rate is about{" "}
+            {formatElectricityTariff(calculation.effectiveRateInr)} after weighting home and
             public charging.
           </p>
         </section>

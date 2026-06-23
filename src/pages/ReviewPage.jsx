@@ -12,7 +12,9 @@ import ReviewInternalLinks from "../components/reviews/ReviewInternalLinks.jsx";
 import ReviewProsConsCard from "../components/reviews/ReviewProsConsCard.jsx";
 import ReviewSectionCard from "../components/reviews/ReviewSectionCard.jsx";
 import ReviewVerdictCard from "../components/reviews/ReviewVerdictCard.jsx";
+import ScorePerspectiveCard from "../components/score2/ScorePerspectiveCard.jsx";
 import OwnershipToolsMiniCard from "../components/tools/OwnershipToolsMiniCard.jsx";
+import { ANALYTICS_EVENTS } from "../analytics/events.js";
 import { buildReviewPageMeta } from "../seo/reviewPageMetadata.js";
 import { buildReviewPageSchemas } from "../seo/reviewSchema.js";
 import { buildVehicleReview } from "../reviews/buildVehicleReview.js";
@@ -169,6 +171,15 @@ export default function ReviewPage() {
           vehicle={vehicle}
           intelligenceVehicle={intelligenceVehicle}
           variants={variants}
+        />
+
+        <ScorePerspectiveCard
+          familySlug={review.vehicleSlug}
+          variant="compact"
+          showExpand={false}
+          analyticsViewEvent={ANALYTICS_EVENTS.SCORE2_VIEW_REVIEW}
+          analyticsSource="review"
+          className="review-page__perspective"
         />
 
         <div className="review-page__grid">

@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import OwnershipFaqSection from "../../components/ownership/OwnershipFaqSection.jsx";
 import OwnershipQuickAnswerCard from "../../components/ownership/OwnershipQuickAnswerCard.jsx";
 import VehicleImage from "../../components/media/VehicleImage.jsx";
+import ScorePerspectiveCard from "../../components/score2/ScorePerspectiveCard.jsx";
 import SEO from "../../components/SEO/SEO.jsx";
 import JsonLd from "../../components/SEO/JsonLd.jsx";
+import { ANALYTICS_EVENTS } from "../../analytics/events.js";
 import { buildOwnershipVehicleTopicBreadcrumbs } from "../../ownership/ownershipBreadcrumbs.js";
 import { buildReviewSlug, isEditorialReviewAvailable, reviewPagePath } from "../../reviews/reviewRoutes.js";
 import { buildOwnershipPageMeta } from "../../seo/ownershipPageMetadata.js";
@@ -20,6 +22,7 @@ import {
 } from "./ownershipHubConstants.js";
 import {
   OWNERSHIP_PAGE_CONFIG,
+  OWNERSHIP_PAGE_TYPES,
   buildOwnershipPageNavLinks,
   ownershipPagePath,
 } from "./ownershipRoutes.js";
@@ -32,7 +35,16 @@ import {
 } from "./ownershipQuestionRoutes.js";
 
 import "../../components/reviews/review-page.css";
+import "../../components/score2/score2.css";
 import "./ownership-page.css";
+
+/** @type {ReadonlySet<string>} */
+const SCORE2_OWNERSHIP_PAGE_TYPES = new Set([
+  OWNERSHIP_PAGE_TYPES.RUNNING_COST,
+  OWNERSHIP_PAGE_TYPES.TCO,
+  OWNERSHIP_PAGE_TYPES.PETROL_SAVINGS,
+  OWNERSHIP_PAGE_TYPES.EMI,
+]);
 
 /**
  * @param {{
@@ -65,6 +77,8 @@ export default function OwnershipPageLayout({
     ? OWNERSHIP_QUESTION_CONFIG[questionType]
     : null;
   const isQuestionPage = Boolean(questionType && questionConfig);
+  const showScore2Perspective =
+    SCORE2_OWNERSHIP_PAGE_TYPES.has(pageType) && Boolean(vehicleSlug);
   const title = isQuestionPage
     ? formatOwnershipQuestionTitle(questionConfig.titleTemplate, familyName)
     : `${familyName} ${config.titleSuffix}`;
@@ -264,6 +278,19 @@ export default function OwnershipPageLayout({
                 label={questionConfig.quickAnswerLabel}
                 value={quickAnswerValue}
                 loading={loading}
+              />
+            ) : null}
+
+            {showScore2Perspective ? (
+              <ScorePerspectiveCard
+                familySlug={vehicleSlug}
+                variant="mini"
+                oneLineSummary
+                showExpand={false}
+                showStrengths={false}
+                analyticsViewEvent={ANALYTICS_EVENTS.SCORE2_VIEW_OWNERSHIP}
+                analyticsSource={`ownership_${pageType}`}
+                className="ownership-page__score2-perspective"
               />
             ) : null}
 

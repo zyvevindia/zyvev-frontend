@@ -1,5 +1,6 @@
 import { formatCostPerKmRate } from "../../tools/costPerKmCalculator.js";
 import { formatTcoLakh } from "../../tools/tcoCalculator.js";
+import { formatCurrencyAmount } from "../../utils/numberFormatters.js";
 import { buildOwnershipSummaryText } from "./ownershipPageSummaries.js";
 import { resolveOwnershipPageTypeFromQuestion } from "./ownershipQuestionRoutes.js";
 
@@ -36,9 +37,9 @@ export function formatOwnershipQuestionQuickAnswer(questionType, values = {}) {
       return savings < 0 ? `-${label}` : label;
     }
     case "emi-calculator": {
-      const emi = Math.round(values.emiInr || 0);
+      const emi = values.emiInr || 0;
       return emi > 0
-        ? `₹${emi.toLocaleString("en-IN")}/month`
+        ? `${formatCurrencyAmount(emi)}/month`
         : "—";
     }
     default:

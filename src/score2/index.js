@@ -56,3 +56,20 @@ export {
   getVehicleScoreProfile,
   listVehicleScoreProfiles,
 } from "./scoreRegistry.js";
+
+export { getVehicleScoreProfileAsync } from "./getVehicleScoreProfileAsync.js";
+
+export { buildVehicleScoreProfile } from "./buildVehicleScoreProfile.js";
+export { loadIntelligenceCarForSlug } from "./loadIntelligenceCar.js";
+export { applyCalibration, FAMILY_GOOD_MINIMUM_SLUGS, isMicroEv } from "./calibrationRules.js";
+export { enrichProfileExplanation } from "./enrichProfileExplanation.js";
+export {
+  buildStrengths,
+  buildWeaknesses,
+  buildBestFor,
+  buildAvoidIf,
+  buildSummary,
+} from "./explanationBuilders.js";
+export { buildNarrativeSummary } from "./buildNarrativeSummary.js";
+export { buildPersonaNarratives } from "./buildPersonaNarratives.js";
+export { buildConfidenceNarratives } from "./buildConfidenceNarratives.js";

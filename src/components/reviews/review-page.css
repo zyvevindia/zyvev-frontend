@@ -193,6 +193,10 @@
   gap: var(--review-section-gap);
 }
 
+.review-page__perspective {
+  margin-bottom: var(--review-section-gap);
+}
+
 .review-page__section-card,
 .review-page__verdict-card,
 .review-page__audience-card,

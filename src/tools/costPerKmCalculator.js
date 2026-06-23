@@ -2,6 +2,11 @@ import { buildRangeConfidence } from "../intelligence/rangeConfidence.js";
 import { resolveOwnershipEfficiency } from "../intelligence/buildOwnershipCostScore.js";
 import { computeEfficiencyKmPerKwh } from "../scoring/scoreNormalization.js";
 import {
+  formatCostPerKm,
+  formatCurrencyAmount,
+  formatCurrencyLakh,
+} from "../utils/numberFormatters.js";
+import {
   COST_PER_KM_BOUNDS,
   COST_PER_KM_DEFAULTS,
   COST_PER_KM_PUBLIC_MULTIPLIER,
@@ -241,9 +246,7 @@ export function resolveCostPerKmSavingsTier(costPerKm) {
  * @returns {string}
  */
 export function formatCostPerKmRate(value) {
-  const rate = parseNumber(value);
-  if (rate == null) return "—";
-  return `₹${rate.toFixed(2)}/km`;
+  return formatCostPerKm(value);
 }
 
 /**
@@ -251,9 +254,7 @@ export function formatCostPerKmRate(value) {
  * @returns {string}
  */
 export function formatOwnershipToolInr(value) {
-  const amount = parseNumber(value);
-  if (amount == null) return "—";
-  return `₹${Math.round(amount).toLocaleString("en-IN")}`;
+  return formatCurrencyAmount(value);
 }
 
 function roundCostPerKm(value) {

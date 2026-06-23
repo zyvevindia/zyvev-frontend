@@ -94,6 +94,10 @@ const EmiCalculatorPage = lazy(() =>
   import("./pages/EmiCalculatorPage")
 );
 
+const Score2PlaygroundPage = lazy(() =>
+  import("./pages/Score2PlaygroundPage")
+);
+
 const RunningCostOwnershipPage = lazy(() =>
   import("./pages/ownership/RunningCostPage.jsx")
 );
@@ -558,6 +562,11 @@ export default function App() {
           <Route
             path="/tools/emi"
             element={<EmiCalculatorPage />}
+          />
+
+          <Route
+            path="/playground/score2"
+            element={<Score2PlaygroundPage />}
           />
 
           <Route

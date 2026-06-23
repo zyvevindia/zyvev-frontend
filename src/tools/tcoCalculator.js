@@ -1,5 +1,10 @@
 import { calculateCostPerKm } from "./costPerKmCalculator.js";
 import { TCO_BOUNDS, TCO_DEFAULTS } from "./tcoDefaults.js";
+import {
+  formatCostPerKm,
+  formatCurrencyAmount,
+  formatCurrencyLakh,
+} from "../utils/numberFormatters.js";
 
 /**
  * @param {unknown} value
@@ -395,13 +400,7 @@ export function generateTcoOwnershipInsights(result) {
  * @returns {string}
  */
 export function formatTcoLakh(inr) {
-  const amount = parseNumber(inr);
-  if (amount == null) return "—";
-  const lakh = amount / 100000;
-  if (lakh >= 100) {
-    return `₹${(lakh / 100).toFixed(2)} Cr`;
-  }
-  return `₹${lakh.toFixed(2)} lakh`;
+  return formatCurrencyLakh(inr);
 }
 
 /**
@@ -409,9 +408,7 @@ export function formatTcoLakh(inr) {
  * @returns {string}
  */
 export function formatTcoInr(inr) {
-  const amount = parseNumber(inr);
-  if (amount == null) return "—";
-  return `₹${Math.round(amount).toLocaleString("en-IN")}`;
+  return formatCurrencyAmount(inr);
 }
 
 /**
@@ -419,9 +416,7 @@ export function formatTcoInr(inr) {
  * @returns {string}
  */
 export function formatTcoPerKm(value) {
-  const rate = parseNumber(value);
-  if (rate == null) return "—";
-  return `₹${rate.toFixed(2)}/km`;
+  return formatCostPerKm(value);
 }
 
 function roundCurrency(value) {

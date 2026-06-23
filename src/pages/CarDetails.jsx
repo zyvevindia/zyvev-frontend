@@ -20,6 +20,7 @@ import SeoHead from "../components/SEO/SeoHead";
 import JsonLd from "../components/SEO/JsonLd";
 import CompareInternalLinks from "../components/compare/CompareInternalLinks";
 import DetailReviewLink from "../components/car/DetailReviewLink";
+import ScorePerspectiveCard from "../components/score2/ScorePerspectiveCard.jsx";
 
 import CarDetailsSkeleton from "../components/skeletons/CarDetailsSkeleton";
 
@@ -1248,6 +1249,8 @@ export default function CarDetails() {
             }}
             onCompare={handleCompareEv}
           />
+
+          <ScorePerspectiveCard familySlug={familySlug} />
 
           {evIntelligenceSection ? (
             <section

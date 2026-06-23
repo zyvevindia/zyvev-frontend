@@ -5,6 +5,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import EmiBreakdownChart from "../components/tools/EmiBreakdownChart.jsx";
 import EmiForm from "../components/tools/EmiForm.jsx";
 import EmiResultCard from "../components/tools/EmiResultCard.jsx";
+import Score2ToolsPerspective from "../components/score2/Score2ToolsPerspective.jsx";
 import SEO from "../components/SEO/SEO.jsx";
 import JsonLd from "../components/SEO/JsonLd.jsx";
 import { TIER1_MODEL_FAMILY_SLUGS } from "../data/tier1ModelFamilies.js";
@@ -300,6 +301,7 @@ export default function EmiCalculatorPage() {
           />
 
           <div className="emi-page__results">
+            <Score2ToolsPerspective vehicleSlug={vehicleSlug} />
             <EmiResultCard
               monthlyEmi={result.monthlyEmi}
               loanAmountInr={result.loanAmountInr}
