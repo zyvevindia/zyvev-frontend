@@ -1,0 +1,1468 @@
+{
+  "generatedAt": "2026-06-24T02:50:31.613Z",
+  "version": "1.0.0-alpha",
+  "stats": {
+    "matrixCount": 720,
+    "contradictoryCount": 25,
+    "budgetAnomalyCount": 0,
+    "contradictoryNoRecs": 0
+  },
+  "readiness": {
+    "archetypeCoverage": "PASS",
+    "budgetAlignment": "PASS",
+    "contradictoryHandling": "PASS",
+    "recommendationDiversity": "WARNING",
+    "narrativeQuality": "PASS",
+    "overall": "WARNING"
+  },
+  "budgetBands": {
+    "under_15l": {
+      "scenarios": 180,
+      "anomalies": [],
+      "emptyStrong": 72,
+      "avgStrongCount": 4.2
+    },
+    "range_15_20l": {
+      "scenarios": 180,
+      "anomalies": [],
+      "emptyStrong": 72,
+      "avgStrongCount": 5.57
+    },
+    "range_20_30l": {
+      "scenarios": 180,
+      "anomalies": [],
+      "emptyStrong": 54,
+      "avgStrongCount": 7.37
+    },
+    "range_30l_plus": {
+      "scenarios": 180,
+      "anomalies": [],
+      "emptyStrong": 132,
+      "avgStrongCount": 1.87
+    }
+  },
+  "contradictory": [
+    {
+      "id": "contradiction-1",
+      "title": "Budget <15L + Large Family + Highway + Public + Premium",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "under_15l",
+          "label": "<15L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "large_family",
+          "label": "Large Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "public",
+          "label": "Public"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "premium_experience",
+          "label": "Premium Experience"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 14,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-2",
+      "title": "Budget 30L+ + Single + City + Home + Running Cost",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_30l_plus",
+          "label": "30L+"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "city",
+          "label": "City"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "single",
+          "label": "Single"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "home",
+          "label": "Home"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "running_cost",
+          "label": "Running Cost"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 8,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-3",
+      "title": "Apartment + Highway + Family + <15L",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "under_15l",
+          "label": "<15L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "family",
+          "label": "Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "apartment",
+          "label": "Apartment"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "family_practicality",
+          "label": "Family Practicality"
+        }
+      },
+      "strongCount": 10,
+      "goodCount": 4,
+      "followUpCount": 6,
+      "flags": [],
+      "anomalies": [],
+      "topStrong": [
+        "BYD Atto 3",
+        "Curvv EV",
+        "Hyundai Creta Electric",
+        "Hyundai Kona Electric",
+        "Mahindra XUV400"
+      ]
+    },
+    {
+      "id": "contradiction-4",
+      "title": "Premium priority on budget band <15L",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "under_15l",
+          "label": "<15L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "city",
+          "label": "City"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "single",
+          "label": "Single"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "home",
+          "label": "Home"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "premium_experience",
+          "label": "Premium Experience"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 14,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-5",
+      "title": "Large family on 30L+ with running-cost priority",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_30l_plus",
+          "label": "30L+"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "mixed",
+          "label": "Mixed"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "large_family",
+          "label": "Large Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "home",
+          "label": "Home"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "running_cost",
+          "label": "Running Cost"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 8,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-6",
+      "title": "Highway usage with apartment charging and value focus",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_15_20l",
+          "label": "15–20L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "couple",
+          "label": "Couple"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "apartment",
+          "label": "Apartment"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "value",
+          "label": "Value"
+        }
+      },
+      "strongCount": 10,
+      "goodCount": 7,
+      "followUpCount": 6,
+      "flags": [],
+      "anomalies": [],
+      "topStrong": [
+        "BE 6",
+        "BYD Atto 3",
+        "Citroen eC3",
+        "Curvv EV",
+        "Hyundai Creta Electric"
+      ]
+    },
+    {
+      "id": "contradiction-7",
+      "title": "City commuter profile with 30L+ budget",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_30l_plus",
+          "label": "30L+"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "city",
+          "label": "City"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "single",
+          "label": "Single"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "apartment",
+          "label": "Apartment"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "value",
+          "label": "Value"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 8,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-8",
+      "title": "Public charging + premium + large family + 20–30L",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_20_30l",
+          "label": "20–30L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "mixed",
+          "label": "Mixed"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "large_family",
+          "label": "Large Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "public",
+          "label": "Public"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "premium_experience",
+          "label": "Premium Experience"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 25,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-9",
+      "title": "Highway capability on <15L with single buyer",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "under_15l",
+          "label": "<15L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "single",
+          "label": "Single"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "public",
+          "label": "Public"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "highway_capability",
+          "label": "Highway Capability"
+        }
+      },
+      "strongCount": 7,
+      "goodCount": 7,
+      "followUpCount": 6,
+      "flags": [],
+      "anomalies": [],
+      "topStrong": [
+        "BYD Atto 3",
+        "Citroen eC3",
+        "Curvv EV",
+        "Hyundai Creta Electric",
+        "Maruti Suzuki e Vitara"
+      ]
+    },
+    {
+      "id": "contradiction-10",
+      "title": "Running cost priority with premium budget and highway",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_30l_plus",
+          "label": "30L+"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "couple",
+          "label": "Couple"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "home",
+          "label": "Home"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "running_cost",
+          "label": "Running Cost"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 8,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-11",
+      "title": "Value focus with large family and 30L+ budget",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_30l_plus",
+          "label": "30L+"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "mixed",
+          "label": "Mixed"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "large_family",
+          "label": "Large Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "home",
+          "label": "Home"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "value",
+          "label": "Value"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 8,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-12",
+      "title": "Family practicality on <15L with city usage",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "under_15l",
+          "label": "<15L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "city",
+          "label": "City"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "family",
+          "label": "Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "apartment",
+          "label": "Apartment"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "family_practicality",
+          "label": "Family Practicality"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 14,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-13",
+      "title": "Highway capability with 30L+ and apartment charging",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_30l_plus",
+          "label": "30L+"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "single",
+          "label": "Single"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "apartment",
+          "label": "Apartment"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "highway_capability",
+          "label": "Highway Capability"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 8,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-14",
+      "title": "Premium experience on 20–30L with public charging",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_20_30l",
+          "label": "20–30L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "single",
+          "label": "Single"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "public",
+          "label": "Public"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "premium_experience",
+          "label": "Premium Experience"
+        }
+      },
+      "strongCount": 7,
+      "goodCount": 18,
+      "followUpCount": 6,
+      "flags": [],
+      "anomalies": [],
+      "topStrong": [
+        "Bmw iX1",
+        "BYD Seal",
+        "Ioniq 5",
+        "Kia EV6",
+        "Mercedes-Benz EQA"
+      ]
+    },
+    {
+      "id": "contradiction-15",
+      "title": "Large family value seeker on 15–20L",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_15_20l",
+          "label": "15–20L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "mixed",
+          "label": "Mixed"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "large_family",
+          "label": "Large Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "public",
+          "label": "Public"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "value",
+          "label": "Value"
+        }
+      },
+      "strongCount": 8,
+      "goodCount": 9,
+      "followUpCount": 6,
+      "flags": [],
+      "anomalies": [],
+      "topStrong": [
+        "BE 6",
+        "BYD Atto 3",
+        "Curvv EV",
+        "Hyundai Creta Electric",
+        "Mahindra XEV 9e"
+      ]
+    },
+    {
+      "id": "contradiction-16",
+      "title": "Single city buyer with 30L+ and family practicality",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_30l_plus",
+          "label": "30L+"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "city",
+          "label": "City"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "single",
+          "label": "Single"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "home",
+          "label": "Home"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "family_practicality",
+          "label": "Family Practicality"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 8,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-17",
+      "title": "Couple highway traveller on <15L budget",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "under_15l",
+          "label": "<15L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "couple",
+          "label": "Couple"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "home",
+          "label": "Home"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "highway_capability",
+          "label": "Highway Capability"
+        }
+      },
+      "strongCount": 7,
+      "goodCount": 7,
+      "followUpCount": 6,
+      "flags": [],
+      "anomalies": [],
+      "topStrong": [
+        "BYD Atto 3",
+        "Citroen eC3",
+        "Curvv EV",
+        "Hyundai Creta Electric",
+        "Maruti Suzuki e Vitara"
+      ]
+    },
+    {
+      "id": "contradiction-18",
+      "title": "Apartment + premium + <15L",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "under_15l",
+          "label": "<15L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "city",
+          "label": "City"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "couple",
+          "label": "Couple"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "apartment",
+          "label": "Apartment"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "premium_experience",
+          "label": "Premium Experience"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 14,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-19",
+      "title": "Public charging running-cost buyer on 30L+",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_30l_plus",
+          "label": "30L+"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "city",
+          "label": "City"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "family",
+          "label": "Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "public",
+          "label": "Public"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "running_cost",
+          "label": "Running Cost"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 8,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-20",
+      "title": "Mixed usage large family on 30L+ with value priority",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_30l_plus",
+          "label": "30L+"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "mixed",
+          "label": "Mixed"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "large_family",
+          "label": "Large Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "public",
+          "label": "Public"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "value",
+          "label": "Value"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 8,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-21",
+      "title": "Highway premium on 15–20L with home charging",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_15_20l",
+          "label": "15–20L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "single",
+          "label": "Single"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "home",
+          "label": "Home"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "premium_experience",
+          "label": "Premium Experience"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 17,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-22",
+      "title": "City large family on 20–30L with running cost",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_20_30l",
+          "label": "20–30L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "city",
+          "label": "City"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "large_family",
+          "label": "Large Family"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "apartment",
+          "label": "Apartment"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "running_cost",
+          "label": "Running Cost"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 25,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-23",
+      "title": "Couple mixed usage premium on <15L",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "under_15l",
+          "label": "<15L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "mixed",
+          "label": "Mixed"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "couple",
+          "label": "Couple"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "public",
+          "label": "Public"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "premium_experience",
+          "label": "Premium Experience"
+        }
+      },
+      "strongCount": 0,
+      "goodCount": 14,
+      "followUpCount": 2,
+      "flags": [
+        "no_strong_matches"
+      ],
+      "anomalies": [],
+      "topStrong": []
+    },
+    {
+      "id": "contradiction-24",
+      "title": "Mixed usage with premium priority on 20–30L",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_20_30l",
+          "label": "20–30L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "mixed",
+          "label": "Mixed"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "couple",
+          "label": "Couple"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "home",
+          "label": "Home"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "premium_experience",
+          "label": "Premium Experience"
+        }
+      },
+      "strongCount": 7,
+      "goodCount": 18,
+      "followUpCount": 6,
+      "flags": [],
+      "anomalies": [],
+      "topStrong": [
+        "Bmw iX1",
+        "BYD Seal",
+        "Ioniq 5",
+        "Kia EV6",
+        "Mercedes-Benz EQA"
+      ]
+    },
+    {
+      "id": "contradiction-25",
+      "title": "Single highway on 20–30L with apartment charging",
+      "answers": {
+        "budget": {
+          "questionId": "budget",
+          "optionId": "range_20_30l",
+          "label": "20–30L"
+        },
+        "usage": {
+          "questionId": "usage",
+          "optionId": "highway",
+          "label": "Highway"
+        },
+        "family": {
+          "questionId": "family",
+          "optionId": "single",
+          "label": "Single"
+        },
+        "charging": {
+          "questionId": "charging",
+          "optionId": "apartment",
+          "label": "Apartment"
+        },
+        "priority": {
+          "questionId": "priority",
+          "optionId": "highway_capability",
+          "label": "Highway Capability"
+        }
+      },
+      "strongCount": 10,
+      "goodCount": 15,
+      "followUpCount": 6,
+      "flags": [],
+      "anomalies": [],
+      "topStrong": [
+        "BE 6",
+        "BYD Atto 3",
+        "Citroen eC3",
+        "Curvv EV",
+        "Hyundai Creta Electric"
+      ]
+    }
+  ],
+  "diversity": {
+    "table": [
+      {
+        "slug": "byd-atto-3",
+        "name": "BYD Atto",
+        "strong": 252,
+        "good": 288,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "tata-curvv-ev",
+        "name": "Curvv EV",
+        "strong": 252,
+        "good": 288,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "hyundai-creta-electric",
+        "name": "Hyundai Creta Electric",
+        "strong": 252,
+        "good": 288,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "maruti-e-vitara",
+        "name": "Maruti Vitara",
+        "strong": 252,
+        "good": 288,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "tata-harrier-ev",
+        "name": "Tata Harrier EV",
+        "strong": 252,
+        "good": 288,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "mahindra-be-6",
+        "name": "BE 6",
+        "strong": 168,
+        "good": 192,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "mahindra-xev-9e",
+        "name": "Mahindra Xev 9e",
+        "strong": 168,
+        "good": 192,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "tata-nexon-ev",
+        "name": "Nexon EV",
+        "strong": 168,
+        "good": 192,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "hyundai-kona-electric",
+        "name": "Hyundai Kona Electric",
+        "strong": 144,
+        "good": 396,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "mahindra-xuv400",
+        "name": "Mahindra Xuv400",
+        "strong": 144,
+        "good": 396,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "mg-windsor-ev",
+        "name": "MG Windsor EV",
+        "strong": 144,
+        "good": 396,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "mg-zs-ev",
+        "name": "MG Zs EV",
+        "strong": 144,
+        "good": 396,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "tata-tigor-ev",
+        "name": "Tata Tigor EV",
+        "strong": 144,
+        "good": 396,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "bmw-ix1",
+        "name": "Bmw Ix1",
+        "strong": 96,
+        "good": 264,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "byd-seal",
+        "name": "BYD Seal",
+        "strong": 96,
+        "good": 264,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "hyundai-ioniq-5",
+        "name": "Ioniq 5",
+        "strong": 96,
+        "good": 264,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "kia-ev6",
+        "name": "Kia Ev6 EV",
+        "strong": 96,
+        "good": 264,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "mercedes-eqa",
+        "name": "Mercedes Eqa",
+        "strong": 96,
+        "good": 264,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "mercedes-eqb",
+        "name": "Mercedes Eqb",
+        "strong": 96,
+        "good": 264,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "tata-punch-ev",
+        "name": "Tata Punch EV",
+        "strong": 96,
+        "good": 444,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "volvo-ex40",
+        "name": "Volvo Ex40",
+        "strong": 96,
+        "good": 264,
+        "worth": 360,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "citroen-ec3",
+        "name": "Citroen Ec3",
+        "strong": 72,
+        "good": 468,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "tata-tiago-ev",
+        "name": "Tiago EV",
+        "strong": 72,
+        "good": 468,
+        "worth": 180,
+        "weak": 0,
+        "insufficient": 0
+      },
+      {
+        "slug": "mg-comet-ev",
+        "name": "Comet EV",
+        "strong": 24,
+        "good": 492,
+        "worth": 170,
+        "weak": 34,
+        "insufficient": 0
+      },
+      {
+        "slug": "mini-cooper-se",
+        "name": "Mini Cooper Se",
+        "strong": 0,
+        "good": 360,
+        "worth": 276,
+        "weak": 84,
+        "insufficient": 0
+      }
+    ],
+    "neverRecommended": [
+      "mini-cooper-se"
+    ],
+    "overRecommended": []
+  },
+  "quality": {
+    "repetitiveHeadlines": [
+      {
+        "headline": "Strong choice for families.",
+        "count": 6480
+      },
+      {
+        "headline": "Capable choice for regular highway travel.",
+        "count": 2640
+      },
+      {
+        "headline": "Excellent choice for families.",
+        "count": 2160
+      },
+      {
+        "headline": "A workable option for family buyers.",
+        "count": 1728
+      },
+      {
+        "headline": "Limited premium appeal for discerning buyers.",
+        "count": 1224
+      },
+      {
+        "headline": "Excellent value for budget-conscious buyers.",
+        "count": 768
+      },
+      {
+        "headline": "Limited value at this price point.",
+        "count": 732
+      },
+      {
+        "headline": "Strong value for budget-conscious buyers.",
+        "count": 576
+      }
+    ],
+    "repetitiveSummaries": [
+      {
+        "summary": "This EV aligns with buyers focused on practicality. Broad service support and family-friendly packaging make it a compelling choice for households needing a versatile EV.",
+        "count": 9072
+      },
+      {
+        "summary": "This EV aligns with buyers focused on range + charging. Range confidence and highway usability make it a sensible option for drivers who travel longer distances regularly.",
+        "count": 2280
+      },
+      {
+        "summary": "This EV aligns with buyers focused on purchase value. Sensible purchase value and ownership economics make it a thoughtful choice for cost-conscious buyers.",
+        "count": 1344
+      },
+      {
+        "summary": "This EV aligns with buyers focused on luxury + performance. Premium buyers may want to compare refinement and ownership experience against alternatives.",
+        "count": 1008
+      },
+      {
+        "summary": "This EV aligns with buyers focused on purchase value. Budget-focused buyers should compare purchase price and ownership costs closely.",
+        "count": 636
+      },
+      {
+        "summary": "The BE 6 balances practicality with highway usability. Broad service support and family-friendly packaging make it a compelling choice for households needing a versatile EV.",
+        "count": 432
+      },
+      {
+        "summary": "The BYD Seal delivers premium comfort, strong range, and confident long-distance capability. Broad service support and family-friendly packaging make it a compelling choice for households needing a versatile EV.",
+        "count": 432
+      },
+      {
+        "summary": "The Nexon EV balances practicality with highway usability. Broad service support and family-friendly packaging make it a compelling choice for households needing a versatile EV.",
+        "count": 432
+      }
+    ],
+    "issues": [],
+    "missingStrengths": 0,
+    "missingTradeOffs": 0
+  },
+  "anomalies": [
+    "Budget <15L + Large Family + Highway + Public + Premium: no_strong_matches",
+    "Budget 30L+ + Single + City + Home + Running Cost: no_strong_matches",
+    "Premium priority on budget band <15L: no_strong_matches",
+    "Large family on 30L+ with running-cost priority: no_strong_matches",
+    "City commuter profile with 30L+ budget: no_strong_matches",
+    "Public charging + premium + large family + 20–30L: no_strong_matches",
+    "Running cost priority with premium budget and highway: no_strong_matches",
+    "Value focus with large family and 30L+ budget: no_strong_matches",
+    "Family practicality on <15L with city usage: no_strong_matches",
+    "Highway capability with 30L+ and apartment charging: no_strong_matches",
+    "Single city buyer with 30L+ and family practicality: no_strong_matches",
+    "Apartment + premium + <15L: no_strong_matches",
+    "Public charging running-cost buyer on 30L+: no_strong_matches",
+    "Mixed usage large family on 30L+ with value priority: no_strong_matches",
+    "Highway premium on 15–20L with home charging: no_strong_matches",
+    "City large family on 20–30L with running cost: no_strong_matches",
+    "Couple mixed usage premium on <15L: no_strong_matches"
+  ],
+  "suggestions": [
+    "Review 1 tier-1 vehicle(s) that never appear in strong matches across the full matrix.",
+    "Add headline variation or scenario-aware phrasing in a future narrative polish pass."
+  ],
+  "archetypeFocused": {
+    "city-commuter": {
+      "title": "City Commuter",
+      "emptyBuckets": {
+        "strong": false,
+        "good": false,
+        "worth": false,
+        "weak": false
+      },
+      "strongCount": 2,
+      "goodCount": 12,
+      "weakCount": 1
+    },
+    "family-buyer": {
+      "title": "Family Buyer",
+      "emptyBuckets": {
+        "strong": false,
+        "good": false,
+        "worth": false,
+        "weak": true
+      },
+      "strongCount": 8,
+      "goodCount": 16,
+      "weakCount": 0
+    },
+    "highway-traveller": {
+      "title": "Highway Traveller",
+      "emptyBuckets": {
+        "strong": false,
+        "good": false,
+        "worth": true,
+        "weak": true
+      },
+      "strongCount": 10,
+      "goodCount": 15,
+      "weakCount": 0
+    },
+    "apartment-owner": {
+      "title": "Apartment Owner",
+      "emptyBuckets": {
+        "strong": false,
+        "good": false,
+        "worth": false,
+        "weak": false
+      },
+      "strongCount": 2,
+      "goodCount": 15,
+      "weakCount": 1
+    },
+    "budget-buyer": {
+      "title": "Budget Buyer",
+      "emptyBuckets": {
+        "strong": false,
+        "good": false,
+        "worth": false,
+        "weak": true
+      },
+      "strongCount": 2,
+      "goodCount": 12,
+      "weakCount": 0
+    },
+    "premium-buyer": {
+      "title": "Premium Buyer",
+      "emptyBuckets": {
+        "strong": false,
+        "good": false,
+        "worth": false,
+        "weak": true
+      },
+      "strongCount": 7,
+      "goodCount": 1,
+      "weakCount": 0
+    },
+    "first-time-ev-buyer": {
+      "title": "First-time EV Buyer",
+      "emptyBuckets": {
+        "strong": false,
+        "good": false,
+        "worth": false,
+        "weak": false
+      },
+      "strongCount": 7,
+      "goodCount": 10,
+      "weakCount": 1
+    }
+  }
+}

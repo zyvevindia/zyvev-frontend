@@ -98,6 +98,18 @@ const Score2PlaygroundPage = lazy(() =>
   import("./pages/Score2PlaygroundPage")
 );
 
+const AssistantPlaygroundPage = lazy(() =>
+  import("./pages/AssistantPlaygroundPage.jsx")
+);
+
+const BuyerAssistantPage = lazy(() =>
+  import("./pages/BuyerAssistantPage.jsx")
+);
+
+const AssistantShortlistPage = lazy(() =>
+  import("./pages/AssistantShortlistPage.jsx")
+);
+
 const RunningCostOwnershipPage = lazy(() =>
   import("./pages/ownership/RunningCostPage.jsx")
 );
@@ -568,6 +580,15 @@ export default function App() {
             path="/playground/score2"
             element={<Score2PlaygroundPage />}
           />
+
+          <Route
+            path="/playground/assistant"
+            element={<AssistantPlaygroundPage />}
+          />
+
+          <Route path="/assistant" element={<BuyerAssistantPage />} />
+
+          <Route path="/assistant/shortlist" element={<AssistantShortlistPage />} />
 
           <Route
             path="/tools/:toolId"
