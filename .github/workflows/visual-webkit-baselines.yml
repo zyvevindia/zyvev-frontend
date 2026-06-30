@@ -1,0 +1,47 @@
+# Deprecated — use "Visual Linux baselines" workflow instead.
+# This workflow remains as a WebKit-only shortcut; full canonical bootstrap uses
+# .github/workflows/visual-linux-baselines.yml (Chromium + Firefox + WebKit).
+
+name: Visual WebKit baselines
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-webkit-snapshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Production build
+        run: npm run build
+        env:
+          VITE_API_URL: https://evsavari-api.onrender.com
+          VITE_GA_ID: G-E2ETEST
+
+      - run: npx playwright install --with-deps webkit
+
+      - name: Update WebKit visual baselines
+        run: npm run test:visual:update:webkit
+        env:
+          CI: "1"
+          PLAYWRIGHT_SKIP_BUILD: "1"
+
+      - name: Verify WebKit baseline count
+        run: node scripts/verify-visual-baselines.mjs --require-webkit
+
+      - name: Upload WebKit snapshot PNGs
+        uses: actions/upload-artifact@v4
+        with:
+          name: webkit-visual-snapshots
+          path: tests/visual/public-pages.spec.js-snapshots/*webkit*.png
+          retention-days: 14
