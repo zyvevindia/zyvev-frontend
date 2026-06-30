@@ -121,7 +121,9 @@ export default defineConfig({
     colorScheme: "light",
   },
 
-  projects: [...functionalProjects, ...visualProjects],
+  projects: includeVisual
+    ? [...functionalProjects, ...visualProjects]
+    : functionalProjects,
 
   webServer: {
     command: `npm run preview -- --port ${PORT} --host 0.0.0.0`,

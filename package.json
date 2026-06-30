@@ -124,7 +124,7 @@
     "launch:validate": "node scripts/launch-validate.mjs",
     "check:api": "node scripts/check-local-api.mjs",
     "preview": "vite preview",
-    "test:e2e": "playwright test --project=chromium --project=firefox --project=webkit --project=responsive-desktop-chrome --project=responsive-iphone-14 --project=responsive-pixel-7 --project=responsive-ipad-air",
+    "test:e2e": "node scripts/run-functional-playwright.mjs",
     "test:routes": "playwright test tests/routes",
     "test:assistant": "playwright test tests/assistant",
     "test:shortlist": "playwright test tests/assistant/shortlist.spec.js tests/assistant/shortlist-limit.spec.js",

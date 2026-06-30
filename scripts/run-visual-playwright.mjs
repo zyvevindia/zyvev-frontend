@@ -7,40 +7,15 @@ import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { getVisualProjectNames } from "../tests/helpers/playwrightProjects.js";
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-
-const ALL_VISUAL_PROJECTS = [
-  "visual-chromium",
-  "visual-firefox",
-  "visual-webkit",
-  "visual-laptop-chromium",
-  "visual-laptop-firefox",
-  "visual-laptop-webkit",
-  "visual-tablet-chromium",
-  "visual-tablet-firefox",
-  "visual-tablet-webkit",
-  "visual-mobile-chromium",
-  "visual-mobile-firefox",
-  "visual-mobile-webkit",
-];
-
-const WEBKIT_VISUAL_PROJECTS = [
-  "visual-webkit",
-  "visual-laptop-webkit",
-  "visual-tablet-webkit",
-  "visual-mobile-webkit",
-];
 
 const args = process.argv.slice(2);
 const updateSnapshots = args.includes("--update-snapshots");
 const webkitOnly = args.includes("--webkit-only");
 
-const projects =
-  webkitOnly
-    ? WEBKIT_VISUAL_PROJECTS
-    : process.platform === "win32"
-      ? ALL_VISUAL_PROJECTS.filter((name) => !name.includes("webkit"))
-      : ALL_VISUAL_PROJECTS;
+const projects = getVisualProjectNames(process.platform, { webkitOnly });
 
 const playwrightArgs = [
   "playwright",
