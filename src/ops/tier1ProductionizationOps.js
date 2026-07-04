@@ -22,7 +22,7 @@ import {
   defaultProductionizationComparePairs,
   filterProductionizationCars,
 } from "./tier1ProductionizationFocus.js";
-import { DETAIL_SECTION_DEFS } from "../utils/detailPageNav.js";
+import { DETAIL_SECTION_DEFS } from "../carDetails/detailPageSectionDefs.js";
 
 const MEDIA_FIELD_KEYS = [
   "heroImage",
