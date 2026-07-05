@@ -21,6 +21,7 @@ import {
   buildGalleryTypeFallbackChain,
   buildImageFallbackChain,
 } from "../../utils/vehicleMedia.js";
+import { isVisualRegressionMode } from "../../utils/visualRegressionMode.js";
 
 const PLACEHOLDER_LABEL = "EV image coming soon";
 
@@ -92,6 +93,8 @@ export default function VehicleImage({
   const [loaded, setLoaded] = useState(false);
   const [exhausted, setExhausted] = useState(chain.length === 0);
   const imgRef = useRef(null);
+  const visualMode = isVisualRegressionMode();
+  const loadEager = eager || visualMode;
 
   const markLoadedIfComplete = useCallback((node) => {
     if (node?.complete && node.naturalWidth > 0) {
@@ -101,12 +104,36 @@ export default function VehicleImage({
     return false;
   }, []);
 
+  const confirmVisualDecode = useCallback(
+    async (node) => {
+      if (!visualMode || !node || exhausted) return;
+      if (markLoadedIfComplete(node)) return;
+
+      try {
+        if (typeof node.decode === "function") {
+          await node.decode();
+        }
+      } catch {
+        return;
+      }
+
+      if (node.complete && node.naturalWidth > 0) {
+        setLoaded(true);
+      }
+    },
+    [visualMode, markLoadedIfComplete, exhausted]
+  );
+
   const setImgRef = useCallback(
     (node) => {
       imgRef.current = node;
-      markLoadedIfComplete(node);
+      if (!node) return;
+      if (markLoadedIfComplete(node)) return;
+      if (visualMode) {
+        void confirmVisualDecode(node);
+      }
     },
-    [markLoadedIfComplete]
+    [markLoadedIfComplete, visualMode, confirmVisualDecode]
   );
 
   useEffect(() => {
@@ -150,8 +177,13 @@ export default function VehicleImage({
   }, [responsive, showPlaceholder, src]);
 
   useLayoutEffect(() => {
-    markLoadedIfComplete(imgRef.current);
-  }, [src, index, markLoadedIfComplete]);
+    const node = imgRef.current;
+    if (!node || exhausted || !src) return;
+    if (markLoadedIfComplete(node)) return;
+    if (visualMode) {
+      void confirmVisualDecode(node);
+    }
+  }, [src, index, exhausted, visualMode, markLoadedIfComplete, confirmVisualDecode]);
 
   const advanceFallback = useCallback(() => {
     const failedUrl = src;
@@ -211,9 +243,9 @@ export default function VehicleImage({
     className: imgClassName,
     alt,
     style: imgBaseStyle,
-    loading: eager ? "eager" : "lazy",
-    decoding: "async",
-    fetchPriority: eager ? "high" : "auto",
+    loading: loadEager ? "eager" : "lazy",
+    decoding: visualMode ? "sync" : "async",
+    fetchPriority: loadEager ? "high" : "auto",
     draggable: false,
     onLoad: handleLoad,
     onError: handleError,

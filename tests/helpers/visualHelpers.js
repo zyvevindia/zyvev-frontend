@@ -57,6 +57,8 @@ export async function prepareVisualPage(page) {
   await installCatalogApiStub(page);
 
   await page.addInitScript(() => {
+    window.__EVSAVARI_VISUAL_REGRESSION__ = true;
+
     try {
       sessionStorage.setItem("evsavari-soft-launch-banner-dismissed", "1");
     } catch {
