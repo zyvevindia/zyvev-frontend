@@ -1,0 +1,14 @@
+﻿2026-07-02T12:52:07.1004340Z ##[group]Run npm run ingestion:smoke
+2026-07-02T12:52:07.1005063Z [36;1mnpm run ingestion:smoke[0m
+2026-07-02T12:52:07.1036442Z shell: /usr/bin/bash -e {0}
+2026-07-02T12:52:07.1036697Z ##[endgroup]
+2026-07-02T12:52:07.1996708Z 
+2026-07-02T12:52:07.1997473Z > evsavari-frontend@0.0.0 ingestion:smoke
+2026-07-02T12:52:07.1997884Z > node scripts/ingestion-smoke.mjs
+2026-07-02T12:52:07.1998078Z 
+2026-07-02T12:52:07.2479646Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:07.2482046Z 
+2026-07-02T12:52:07.2482512Z === ingestion:smoke ===
+2026-07-02T12:52:07.2482786Z 
+2026-07-02T12:52:07.2502208Z OK: ingestion schema + pipeline + diff shape
+2026-07-02T12:52:07.2502724Z 

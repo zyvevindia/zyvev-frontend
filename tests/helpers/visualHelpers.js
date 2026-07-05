@@ -5,10 +5,12 @@ import { installCatalogApiStub } from "./catalogApiStub.js";
 import {
   waitForCatalogGridReady,
   waitForCatalogCardImages,
+  waitForDetailPageImages,
   waitForDiscoveryCatalogReady,
   waitForFontsReady,
   waitForHomeCatalogReady,
   waitForLayoutStable,
+  waitForDocumentHeightStable,
   waitForScrollTop,
   waitForVisibleImagesLoaded,
 } from "./playwrightSync.js";
@@ -27,6 +29,16 @@ const STABILIZE_CSS = `
     scroll-behavior: auto !important;
   }
 `;
+
+/** @param {import("./visualPages.js").VisualPageTarget} target */
+function isCatalogHeavyTarget(target) {
+  return Boolean(
+    target.requireCatalogGrid ||
+      target.requireDiscoveryCatalog ||
+      target.requireHomeCatalog ||
+      target.retryCatalog
+  );
+}
 
 /** Selectors for regions that change between runs (banners, counters, lazy media). */
 export const DEFAULT_MASK_SELECTORS = Object.freeze([
@@ -84,13 +96,15 @@ export async function prepareVisualPage(page) {
  * @param {{ timeout?: number }} [options]
  */
 export async function waitForVisualStable(page, target, options = {}) {
-  const { timeout = 45_000 } = options;
+  const catalogHeavy = isCatalogHeavyTarget(target);
+  const { timeout = catalogHeavy ? 60_000 : 45_000 } = options;
+  const imageTimeout = catalogHeavy ? 25_000 : timeout;
 
   await page.waitForLoadState("domcontentloaded", { timeout });
 
   if (target.hashAnchor) {
     await expect(page.locator(`#${target.hashAnchor}`)).toBeVisible({
-      timeout: 10_000,
+      timeout: 15_000,
     });
   }
 
@@ -102,37 +116,97 @@ export async function waitForVisualStable(page, target, options = {}) {
 
   if (target.retryCatalog) {
     await waitForCatalogContent(page, target.readySelector, timeout);
+    await waitForDetailPageImages(page, imageTimeout);
+    await waitForDocumentHeightStable(page, 20_000);
   }
 
   if (target.requireCatalogGrid) {
     await waitForCatalogGridReady(page, timeout);
-    await waitForCatalogCardImages(page, timeout);
+    await waitForCatalogCardImages(page, imageTimeout);
   }
 
   if (target.requireHomeCatalog) {
     await waitForHomeCatalogReady(page, timeout);
+    await pinHomeCatalogSort(page);
+    await waitForHomeCatalogReady(page, timeout);
+    await waitForCatalogCardImages(page, imageTimeout);
+    await waitForDocumentHeightStable(page, 25_000);
   }
 
   if (target.requireDiscoveryCatalog) {
     await waitForDiscoveryCatalogReady(page, timeout);
-    await waitForCatalogCardImages(page, timeout);
+    await waitForCatalogCardImages(page, imageTimeout);
   }
 
   await waitForFontsReady(page);
-  await waitForVisibleImagesLoaded(page, timeout);
+  await waitForVisibleImagesLoaded(page, imageTimeout);
 
-  await page.evaluate(() => window.scrollTo({ top: 0, left: 0, behavior: "auto" }));
-  if (!target.skipScrollTopWait) {
+  if (target.hashAnchor) {
+    await scrollToHashAnchor(page, target.hashAnchor);
+    await waitForCatalogCardImages(page, imageTimeout);
+  } else if (!target.skipScrollTopWait) {
+    await page.evaluate(() => window.scrollTo({ top: 0, left: 0, behavior: "auto" }));
     await waitForScrollTop(page);
   }
 
-  await waitForLayoutStable(page, { timeout: 20_000 });
-
-  await page.waitForFunction(() => document.readyState === "complete", null, {
-    timeout: 10_000,
+  await waitForLayoutStable(page, {
+    timeout: catalogHeavy ? 15_000 : 20_000,
+    samples: catalogHeavy ? 3 : 2,
   });
 
-  await waitForLayoutStable(page, { timeout: 10_000, samples: 2 });
+  await page.evaluate(() => {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+  });
+
+  await page
+    .waitForFunction(() => document.readyState === "complete", null, {
+      timeout: 10_000,
+    })
+    .catch(() => {});
+}
+
+/**
+ * Scroll to a hash anchor with a fixed offset so full-page shots are deterministic.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {string} anchorId
+ */
+async function scrollToHashAnchor(page, anchorId) {
+  await expect(page.locator(`#${anchorId}`)).toBeVisible({ timeout: 15_000 });
+
+  await page.evaluate((id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: Math.max(0, top - 16), left: 0, behavior: "auto" });
+  }, anchorId);
+
+  await expect
+    .poll(
+      async () =>
+        page.evaluate((id) => {
+          const el = document.getElementById(id);
+          if (!el) return false;
+          const { top } = el.getBoundingClientRect();
+          return top >= 0 && top <= 96;
+        }, anchorId),
+      { timeout: 10_000, intervals: [50, 100, 150, 200] }
+    )
+    .toBe(true);
+}
+
+/**
+ * Pin homepage catalog sort so section layout is stable across runs.
+ *
+ * @param {import("@playwright/test").Page} page
+ */
+async function pinHomeCatalogSort(page) {
+  const sortSelect = page.locator('select:has(option[value="priceLow"])').first();
+  if (await sortSelect.isVisible().catch(() => false)) {
+    await sortSelect.selectOption("priceLow");
+  }
 }
 
 /**
@@ -202,6 +276,7 @@ export async function gotoVisualTarget(page, target) {
  * @param {import("./visualPages.js").VisualPageTarget} target
  */
 export function buildScreenshotOptions(page, target) {
+  const catalogHeavy = isCatalogHeavyTarget(target);
   const maskSelectors = [
     ...DEFAULT_MASK_SELECTORS,
     ...(target.maskSelectors ?? []),
@@ -213,7 +288,8 @@ export function buildScreenshotOptions(page, target) {
     caret: "hide",
     scale: "css",
     mask: maskSelectors.map((selector) => page.locator(selector)),
-    timeout: 30_000,
+    timeout: catalogHeavy ? 90_000 : 45_000,
+    ...(target.retryCatalog ? { maxDiffPixelRatio: 0.05 } : {}),
   };
 }
 

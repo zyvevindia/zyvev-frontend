@@ -1,0 +1,235 @@
+﻿2026-07-02T12:52:04.1069432Z ##[group]Run npm run post-launch:smoke
+2026-07-02T12:52:04.1069783Z [36;1mnpm run post-launch:smoke[0m
+2026-07-02T12:52:04.1102308Z shell: /usr/bin/bash -e {0}
+2026-07-02T12:52:04.1102568Z ##[endgroup]
+2026-07-02T12:52:04.2086580Z 
+2026-07-02T12:52:04.2087380Z > evsavari-frontend@0.0.0 post-launch:smoke
+2026-07-02T12:52:04.2091623Z > npm run seo:qa && npm run trust:smoke && npm run soft-launch:smoke && npm run catalog-ops:smoke && npm run intelligence:smoke && npm run ops:usage-learning-smoke && npm run admin:routes-smoke && npm run tier1:productionization && npm run compare:trust-audit && npm run media:completeness && npm run tier1:qa && npm run production:qa && npm run backend:persistence-smoke && npm run backend:catalog-ops-smoke && npm run backend:compare-validate
+2026-07-02T12:52:04.2094838Z 
+2026-07-02T12:52:04.3095191Z 
+2026-07-02T12:52:04.3096201Z > evsavari-frontend@0.0.0 seo:qa
+2026-07-02T12:52:04.3096812Z > node scripts/seo-qa.mjs
+2026-07-02T12:52:04.3097116Z 
+2026-07-02T12:52:04.3553334Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:04.3752197Z SEO QA: 172 pages | 0 errors | 0 warnings
+2026-07-02T12:52:04.3753026Z   Discovery sitemap paths: 172 | Legacy canonical guides: 38
+2026-07-02T12:52:04.4956678Z 
+2026-07-02T12:52:04.4957453Z > evsavari-frontend@0.0.0 trust:smoke
+2026-07-02T12:52:04.4958192Z > node scripts/trust-layer-smoke.mjs
+2026-07-02T12:52:04.4958569Z 
+2026-07-02T12:52:04.5598940Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:04.5774243Z OK: intelligence bundle v3
+2026-07-02T12:52:04.5774957Z OK: range has claimed
+2026-07-02T12:52:04.5775427Z OK: real-world band
+2026-07-02T12:52:04.5775893Z OK: range confidence source
+2026-07-02T12:52:04.5776386Z OK: estimate method
+2026-07-02T12:52:04.5776816Z OK: confidence explanation
+2026-07-02T12:52:04.5777304Z OK: city/highway bands
+2026-07-02T12:52:04.5777771Z OK: charging practicality
+2026-07-02T12:52:04.5780732Z OK: trust bundle
+2026-07-02T12:52:04.5781236Z OK: governance audit partial
+2026-07-02T12:52:04.5782882Z OK: practicality summary lines
+2026-07-02T12:52:04.5783409Z OK: curation reviewed
+2026-07-02T12:52:04.5784859Z OK: curation range override
+2026-07-02T12:52:04.5826303Z OK: compare trust summary
+2026-07-02T12:52:04.5826855Z OK: compare trust range rows
+2026-07-02T12:52:04.5827374Z OK: compare validation safe
+2026-07-02T12:52:04.5827855Z OK: audit partial safe
+2026-07-02T12:52:04.5828318Z OK: trust FAQ anchors
+2026-07-02T12:52:04.5828587Z 
+2026-07-02T12:52:04.5828890Z All trust-layer smoke checks passed.
+2026-07-02T12:52:04.6916081Z 
+2026-07-02T12:52:04.6916860Z > evsavari-frontend@0.0.0 soft-launch:smoke
+2026-07-02T12:52:04.6917792Z > node scripts/soft-launch-smoke.mjs
+2026-07-02T12:52:04.6918319Z 
+2026-07-02T12:52:04.7586161Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:04.7593365Z OK: lead routing plan
+2026-07-02T12:52:04.7593881Z OK: routing log
+2026-07-02T12:52:04.7632326Z OK: content ops summary
+2026-07-02T12:52:04.7632874Z OK: content ops block
+2026-07-02T12:52:04.7633384Z OK: analytics compare abandoned
+2026-07-02T12:52:04.7633876Z OK: analytics usefulness
+2026-07-02T12:52:04.7634359Z OK: analytics lead abandon
+2026-07-02T12:52:04.7634990Z 
+2026-07-02T12:52:04.7635662Z All soft-launch smoke checks passed.
+2026-07-02T12:52:04.8663276Z 
+2026-07-02T12:52:04.8664268Z > evsavari-frontend@0.0.0 catalog-ops:smoke
+2026-07-02T12:52:04.8665131Z > node scripts/catalog-ops-smoke.mjs
+2026-07-02T12:52:04.8665460Z 
+2026-07-02T12:52:04.9328328Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:04.9507712Z OK: bundle v3
+2026-07-02T12:52:04.9508577Z OK: freshness on bundle
+2026-07-02T12:52:04.9509104Z OK: transparency on bundle
+2026-07-02T12:52:04.9509648Z OK: fresh state when verified
+2026-07-02T12:52:04.9510145Z OK: freshness score category
+2026-07-02T12:52:04.9510648Z OK: confidence adjusted
+2026-07-02T12:52:04.9512207Z OK: snapshot price
+2026-07-02T12:52:04.9517143Z OK: detect price/range change
+2026-07-02T12:52:04.9519186Z OK: has pricing or major change
+2026-07-02T12:52:04.9520435Z OK: curation reviewed
+2026-07-02T12:52:04.9520819Z OK: review priority
+2026-07-02T12:52:04.9523106Z OK: transparency notes or badges
+2026-07-02T12:52:04.9536225Z OK: audit summary
+2026-07-02T12:52:04.9552429Z OK: ops summary totals
+2026-07-02T12:52:04.9553085Z 
+2026-07-02T12:52:04.9553506Z All catalog-ops smoke checks passed.
+2026-07-02T12:52:05.0592296Z 
+2026-07-02T12:52:05.0593313Z > evsavari-frontend@0.0.0 intelligence:smoke
+2026-07-02T12:52:05.0593999Z > node scripts/intelligence-smoke.mjs
+2026-07-02T12:52:05.0594325Z 
+2026-07-02T12:52:05.1180686Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:05.1356517Z OK: builds intelligence bundle
+2026-07-02T12:52:05.1357268Z OK: charging has data
+2026-07-02T12:52:05.1357944Z OK: range has real-world band
+2026-07-02T12:52:05.1358511Z OK: ownership estimates present
+2026-07-02T12:52:05.1358973Z OK: features highlights
+2026-07-02T12:52:05.1359386Z OK: suitability insights
+2026-07-02T12:52:05.1364488Z OK: sparse car still builds intel
+2026-07-02T12:52:05.1405268Z OK: compare rows generated
+2026-07-02T12:52:05.1407353Z OK: includes DC charging row
+2026-07-02T12:52:05.1407657Z 
+2026-07-02T12:52:05.1407863Z Intelligence smoke passed.
+2026-07-02T12:52:05.2437668Z 
+2026-07-02T12:52:05.2438355Z > evsavari-frontend@0.0.0 ops:usage-learning-smoke
+2026-07-02T12:52:05.2439172Z > node scripts/ops-usage-learning-smoke.mjs
+2026-07-02T12:52:05.2439623Z 
+2026-07-02T12:52:05.3078009Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:05.3269978Z ops:usage-learning-smoke OK
+2026-07-02T12:52:05.4341207Z 
+2026-07-02T12:52:05.4341804Z > evsavari-frontend@0.0.0 admin:routes-smoke
+2026-07-02T12:52:05.4342554Z > node scripts/admin-routes-smoke.mjs
+2026-07-02T12:52:05.4342946Z 
+2026-07-02T12:52:05.4773250Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:05.4878729Z admin-routes-smoke OK (9 paths, 5 lazy chunks)
+2026-07-02T12:52:05.5914470Z 
+2026-07-02T12:52:05.5915560Z > evsavari-frontend@0.0.0 tier1:productionization
+2026-07-02T12:52:05.5916436Z > node scripts/tier1-productionization.mjs
+2026-07-02T12:52:05.5917306Z 
+2026-07-02T12:52:05.6351766Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:05.7161049Z 
+2026-07-02T12:52:05.7161526Z Tier-1 productionization report:
+2026-07-02T12:52:05.7162764Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/tier1-productionization/tier1-productionization-2026-07-02.json
+2026-07-02T12:52:05.7164835Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/tier1-productionization/tier1-productionization-2026-07-02.md
+2026-07-02T12:52:05.7165826Z 
+2026-07-02T12:52:05.7166001Z {
+2026-07-02T12:52:05.7166442Z   "avgCompletenessPercent": 35,
+2026-07-02T12:52:05.7166928Z   "avgCompareTrustScore": 94,
+2026-07-02T12:52:05.7167487Z   "avgMediaCompletenessPercent": 15,
+2026-07-02T12:52:05.7168109Z   "vehiclesBelow60Completeness": 5,
+2026-07-02T12:52:05.7168644Z   "vehiclesBelow70Trust": 0,
+2026-07-02T12:52:05.7169101Z   "topMissingMedia": [
+2026-07-02T12:52:05.7169497Z     {
+2026-07-02T12:52:05.7169936Z       "field": "chargingImage",
+2026-07-02T12:52:05.7170385Z       "count": 5
+2026-07-02T12:52:05.7170752Z     },
+2026-07-02T12:52:05.7171083Z     {
+2026-07-02T12:52:05.7171483Z       "field": "interiorImage",
+2026-07-02T12:52:05.7171928Z       "count": 1
+2026-07-02T12:52:05.7172283Z     }
+2026-07-02T12:52:05.7172616Z   ],
+2026-07-02T12:52:05.7172997Z   "topMissingSpecs": [
+2026-07-02T12:52:05.7173425Z     {
+2026-07-02T12:52:05.7173878Z       "field": "accelerationVerified",
+2026-07-02T12:52:05.7174400Z       "count": 5
+2026-07-02T12:52:05.7175000Z     }
+2026-07-02T12:52:05.7175330Z   ]
+2026-07-02T12:52:05.7175653Z }
+2026-07-02T12:52:05.8191689Z 
+2026-07-02T12:52:05.8192515Z > evsavari-frontend@0.0.0 compare:trust-audit
+2026-07-02T12:52:05.8193303Z > node scripts/compare-trust-audit.mjs
+2026-07-02T12:52:05.8194048Z 
+2026-07-02T12:52:05.8629500Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:05.9063481Z 
+2026-07-02T12:52:05.9063924Z Compare trust audit:
+2026-07-02T12:52:05.9065391Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/compare-quality/compare-trust-audit-2026-07-02.json
+2026-07-02T12:52:05.9066991Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/compare-quality/compare-trust-audit-2026-07-02.md
+2026-07-02T12:52:05.9067828Z 
+2026-07-02T12:52:06.0097617Z 
+2026-07-02T12:52:06.0098463Z > evsavari-frontend@0.0.0 media:completeness
+2026-07-02T12:52:06.0099431Z > node scripts/media-completeness.mjs
+2026-07-02T12:52:06.0099921Z 
+2026-07-02T12:52:06.0538521Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:06.0751800Z 
+2026-07-02T12:52:06.0752092Z Media completeness:
+2026-07-02T12:52:06.0753172Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/media-audit/media-completeness-2026-07-02.json
+2026-07-02T12:52:06.0754884Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/media-audit/media-completeness-2026-07-02.md
+2026-07-02T12:52:06.0755805Z 
+2026-07-02T12:52:06.0756094Z {
+2026-07-02T12:52:06.0756555Z   "avgMediaCompletenessPercent": 41,
+2026-07-02T12:52:06.0757185Z   "familiesBelow60": 5,
+2026-07-02T12:52:06.0757671Z   "conflictCount": 17,
+2026-07-02T12:52:06.0758393Z   "cloudinaryPrefix": "evsavari/catalog/families/<slug>/<role>"
+2026-07-02T12:52:06.0759140Z }
+2026-07-02T12:52:06.1767037Z 
+2026-07-02T12:52:06.1767628Z > evsavari-frontend@0.0.0 tier1:qa
+2026-07-02T12:52:06.1768697Z > node scripts/tier1-qa.mjs
+2026-07-02T12:52:06.1769156Z 
+2026-07-02T12:52:06.2188509Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:06.3069751Z 
+2026-07-02T12:52:06.3070200Z Tier-1 QA:
+2026-07-02T12:52:06.3071374Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/tier1-productionization/tier1-qa-2026-07-02.json
+2026-07-02T12:52:06.3072847Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/tier1-productionization/tier1-qa-2026-07-02.md
+2026-07-02T12:52:06.3073692Z 
+2026-07-02T12:52:06.3073943Z PASS: tier-1 QA (structural)
+2026-07-02T12:52:06.4095102Z 
+2026-07-02T12:52:06.4095813Z > evsavari-frontend@0.0.0 production:qa
+2026-07-02T12:52:06.4096470Z > node scripts/production-qa.mjs
+2026-07-02T12:52:06.4096771Z 
+2026-07-02T12:52:06.4530063Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:06.5405114Z 
+2026-07-02T12:52:06.5458273Z Production QA:
+2026-07-02T12:52:06.5459368Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/production-qa/production-qa-2026-07-02.json
+2026-07-02T12:52:06.5460843Z   /home/runner/work/zyvev-frontend/zyvev-frontend/reports/production-qa/production-qa-2026-07-02.md
+2026-07-02T12:52:06.5461661Z 
+2026-07-02T12:52:06.5462026Z PASS: production QA checks
+2026-07-02T12:52:06.6510583Z 
+2026-07-02T12:52:06.6511163Z > evsavari-frontend@0.0.0 backend:persistence-smoke
+2026-07-02T12:52:06.6512227Z > node scripts/backend-persistence-smoke.mjs
+2026-07-02T12:52:06.6512716Z 
+2026-07-02T12:52:06.6962111Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:06.6965759Z 
+2026-07-02T12:52:06.6966047Z === backend persistence smoke ===
+2026-07-02T12:52:06.6966368Z 
+2026-07-02T12:52:06.6999727Z OK: env loaded: .env
+2026-07-02T12:52:06.7005589Z OK: runtime process.env VITE_SUPABASE_URL=MISSING
+2026-07-02T12:52:06.7006338Z OK: backend file structure
+2026-07-02T12:52:06.7007106Z OK: schema defines 9 foundation tables
+2026-07-02T12:52:06.7007997Z OK: read policies migration present
+2026-07-02T12:52:06.7016794Z OK: @supabase/supabase-js installed
+2026-07-02T12:52:06.7498791Z OK: Supabase env not set — graceful idle mode
+2026-07-02T12:52:06.7518592Z OK: no service role in frontend env
+2026-07-02T12:52:06.7519197Z OK: Supabase not configured — persistence layer idle
+2026-07-02T12:52:06.7519447Z 
+2026-07-02T12:52:06.7519604Z backend-persistence-smoke passed
+2026-07-02T12:52:06.7519796Z 
+2026-07-02T12:52:06.8515852Z 
+2026-07-02T12:52:06.8516514Z > evsavari-frontend@0.0.0 backend:catalog-ops-smoke
+2026-07-02T12:52:06.8517281Z > node scripts/backend-catalog-ops-smoke.mjs
+2026-07-02T12:52:06.8517644Z 
+2026-07-02T12:52:06.8966754Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:06.8973545Z 
+2026-07-02T12:52:06.8973985Z === Catalog Operations Smoke ===
+2026-07-02T12:52:06.8974726Z 
+2026-07-02T12:52:06.9119346Z OK: tier-1 alignment: 11 day3 families in 25 generated definitions
+2026-07-02T12:52:06.9123844Z OK: normalization + media role conventions
+2026-07-02T12:52:06.9125312Z OK: day3 compare pairs defined (4); sitemap hits 4
+2026-07-02T12:52:06.9126199Z OK: offline mode (add --live for Supabase catalog read-back)
+2026-07-02T12:52:06.9126654Z 
+2026-07-02T12:52:06.9126931Z backend-catalog-ops-smoke passed
+2026-07-02T12:52:06.9127234Z 
+2026-07-02T12:52:07.0244113Z 
+2026-07-02T12:52:07.0245014Z > evsavari-frontend@0.0.0 backend:compare-validate
+2026-07-02T12:52:07.0245857Z > node scripts/backend-compare-validate.mjs
+2026-07-02T12:52:07.0246283Z 
+2026-07-02T12:52:07.0666198Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:07.0669470Z 
+2026-07-02T12:52:07.0669793Z === Compare Validation (Day 3) ===
+2026-07-02T12:52:07.0670119Z 
+2026-07-02T12:52:07.0813546Z OK: Nexon EV vs Punch EV: seo present (minimal) at tata-punch-ev-vs-tata-nexon-ev.json
+2026-07-02T12:52:07.0814994Z OK: Nexon EV vs Curvv EV: seo present (minimal) at tata-nexon-ev-vs-tata-curvv-ev.json
+2026-07-02T12:52:07.0816100Z OK: MG Comet vs Tiago EV: seo present (minimal) at comet-ev-vs-tiago-ev.json
+2026-07-02T12:52:07.0817214Z OK: BE 6 vs XEV 9e: seo present (minimal) at mahindra-xev-9e-vs-mahindra-be-6.json
+2026-07-02T12:52:07.0818011Z OK: 4 day3 compare pairs validated
+2026-07-02T12:52:07.0818321Z 
+2026-07-02T12:52:07.0818574Z backend-compare-validate passed
+2026-07-02T12:52:07.0818877Z 

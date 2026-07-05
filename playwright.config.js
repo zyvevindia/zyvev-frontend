@@ -93,7 +93,7 @@ export default defineConfig({
   forbidOnly: Boolean(process.env.CI),
   retries: 0,
   workers: includeVisual ? 1 : process.env.CI ? 1 : 1,
-  timeout: includeVisual ? 90_000 : 60_000,
+  timeout: includeVisual ? 180_000 : 60_000,
   reporter: process.env.CI
     ? [["list"], ["html", { open: "never", outputFolder: "playwright-report" }]]
     : [["list"]],

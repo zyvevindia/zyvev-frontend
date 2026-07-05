@@ -1,0 +1,361 @@
+﻿2026-07-02T12:52:01.6233092Z ##[group]Run npm run build
+2026-07-02T12:52:01.6233408Z [36;1mnpm run build[0m
+2026-07-02T12:52:01.6266571Z shell: /usr/bin/bash -e {0}
+2026-07-02T12:52:01.6266840Z env:
+2026-07-02T12:52:01.6267093Z   VITE_API_URL: https://evsavari-api.onrender.com
+2026-07-02T12:52:01.6267418Z   VITE_GA_ID: G-E2ETEST
+2026-07-02T12:52:01.6267657Z ##[endgroup]
+2026-07-02T12:52:01.7228013Z 
+2026-07-02T12:52:01.7228629Z > evsavari-frontend@0.0.0 prebuild
+2026-07-02T12:52:01.7229287Z > npm run content:generate && npm run build:sitemaps
+2026-07-02T12:52:01.7229615Z 
+2026-07-02T12:52:01.8199867Z 
+2026-07-02T12:52:01.8200782Z > evsavari-frontend@0.0.0 content:generate
+2026-07-02T12:52:01.8201560Z > node scripts/generate-content.mjs
+2026-07-02T12:52:01.8201918Z 
+2026-07-02T12:52:01.8760607Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:01.8775865Z Generating SEO content batch…
+2026-07-02T12:52:01.8776246Z 
+2026-07-02T12:52:01.9564565Z Registry entries (generated batch): 157
+2026-07-02T12:52:01.9565273Z Legacy index entries: 16
+2026-07-02T12:52:01.9565771Z Registry validation passed (no duplicate paths/titles/H1s in batch).
+2026-07-02T12:52:01.9566091Z 
+2026-07-02T12:52:01.9583387Z Wrote public/seo-data/content-manifest.json
+2026-07-02T12:52:01.9584355Z Wrote public/seo-data/discovery-index.json
+2026-07-02T12:52:01.9585454Z Wrote src/content/generated/manifest.js
+2026-07-02T12:52:01.9585865Z 
+2026-07-02T12:52:01.9586380Z Done. Run: npm run build:sitemaps && npm run seo:qa
+2026-07-02T12:52:02.0575202Z 
+2026-07-02T12:52:02.0575854Z > evsavari-frontend@0.0.0 build:sitemaps
+2026-07-02T12:52:02.0576304Z > node scripts/build-sitemaps.mjs
+2026-07-02T12:52:02.0576505Z 
+2026-07-02T12:52:02.1033154Z bootstrap-env: cwd=/home/runner/work/zyvev-frontend/zyvev-frontend root=/home/runner/work/zyvev-frontend/zyvev-frontend .env=/home/runner/work/zyvev-frontend/zyvev-frontend/.env .env.local=(missing) VITE_SUPABASE_URL=MISSING VITE_SUPABASE_ANON_KEY=MISSING SUPABASE_SERVICE_ROLE_KEY=MISSING CLOUDINARY_URL=MISSING parsed=.env:1keys
+2026-07-02T12:52:02.1110215Z Sitemaps generated (https://evsavari.com)
+2026-07-02T12:52:02.1111310Z   static.xml:     13 URLs
+2026-07-02T12:52:02.1112241Z   cars.xml:       25 URLs (family slugs only)
+2026-07-02T12:52:02.1112988Z   reviews.xml:    25 URLs (editorial reviews)
+2026-07-02T12:52:02.1113683Z   seo-pages.xml:  183 URLs (discovery canonical)
+2026-07-02T12:52:02.1114248Z   compare.xml:    29 URLs
+2026-07-02T12:52:02.1115064Z   ownership.xml:  202 URLs (programmatic ownership)
+2026-07-02T12:52:02.1115647Z   Total indexed:  477 URLs
+2026-07-02T12:52:02.1116094Z   robots.txt updated
+2026-07-02T12:52:02.1231159Z 
+2026-07-02T12:52:02.1231543Z > evsavari-frontend@0.0.0 build
+2026-07-02T12:52:02.1232004Z > vite build
+2026-07-02T12:52:02.1232245Z 
+2026-07-02T12:52:02.4314337Z [36mvite v8.0.10 [32mbuilding client environment for production...[36m[39m
+2026-07-02T12:52:02.4481066Z [2K
+2026-07-02T12:52:02.7421657Z [33m[plugin rolldown:vite-resolve] Module "node:url" has been externalized for browser compatibility, imported by "/home/runner/work/zyvev-frontend/zyvev-frontend/src/catalogAcquisition/benchmark/goldenLoaderNode.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+2026-07-02T12:52:02.7431492Z [33m[plugin rolldown:vite-resolve] Module "node:fs" has been externalized for browser compatibility, imported by "/home/runner/work/zyvev-frontend/zyvev-frontend/src/catalogAcquisition/benchmark/goldenLoaderNode.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+2026-07-02T12:52:02.7458686Z [33m[plugin rolldown:vite-resolve] Module "node:path" has been externalized for browser compatibility, imported by "/home/runner/work/zyvev-frontend/zyvev-frontend/src/catalogAcquisition/benchmark/goldenLoaderNode.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+2026-07-02T12:52:02.7488456Z [33m[plugin rolldown:vite-resolve] Module "node:url" has been externalized for browser compatibility, imported by "/home/runner/work/zyvev-frontend/zyvev-frontend/src/catalogAcquisition/sourceRegistry/registryLoader.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+2026-07-02T12:52:02.7518252Z [33m[plugin rolldown:vite-resolve] Module "node:fs" has been externalized for browser compatibility, imported by "/home/runner/work/zyvev-frontend/zyvev-frontend/src/catalogAcquisition/sourceRegistry/registryLoader.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+2026-07-02T12:52:02.7548509Z [33m[plugin rolldown:vite-resolve] Module "node:path" has been externalized for browser compatibility, imported by "/home/runner/work/zyvev-frontend/zyvev-frontend/src/catalogAcquisition/sourceRegistry/registryLoader.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+2026-07-02T12:52:02.8956569Z [33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+2026-07-02T12:52:02.8975697Z 349 |  }
+2026-07-02T12:52:02.8976069Z 350 |  
+2026-07-02T12:52:02.8976582Z 351 |  .cd-hero-family-metrics__link {
+2026-07-02T12:52:02.8977146Z     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-07-02T12:52:02.8977855Z 352 |    padding: 0;
+2026-07-02T12:52:02.8978220Z     |  ^^^^^^^^^^
+2026-07-02T12:52:02.8978788Z 353 |    border: none;[39m
+2026-07-02T12:52:02.9035786Z [33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+2026-07-02T12:52:02.9036504Z 350 |  
+2026-07-02T12:52:02.9036995Z 351 |  .cd-hero-family-metrics__link {
+2026-07-02T12:52:02.9037365Z 352 |    padding: 0;
+2026-07-02T12:52:02.9037587Z     |  ^^^^^^^^^^^^^
+2026-07-02T12:52:02.9037810Z 353 |    border: none;
+2026-07-02T12:52:02.9038019Z     |  ^^^^^^^^^^^^^^^
+2026-07-02T12:52:02.9038252Z 354 |    background: none;
+2026-07-02T12:52:02.9038553Z     |  ^^^^^^^^^^^^[39m
+2026-07-02T12:52:02.9039551Z [33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+2026-07-02T12:52:02.9040337Z 351 |  .cd-hero-family-metrics__link {
+2026-07-02T12:52:02.9040899Z 352 |    padding: 0;
+2026-07-02T12:52:02.9041403Z 353 |    border: none;
+2026-07-02T12:52:02.9041880Z     |  ^^^^^^^^^^^^^^^
+2026-07-02T12:52:02.9055746Z 354 |    background: none;
+2026-07-02T12:52:02.9056375Z     |  ^^^^^^^^^^^^^^^^^^^
+2026-07-02T12:52:02.9056945Z 355 |    font: inherit;
+2026-07-02T12:52:02.9057591Z     |  ^^^^^^[39m
+2026-07-02T12:52:02.9065701Z [33m[vite:css][postcss] @import must precede all other statements (besides @charset or empty @layer)
+2026-07-02T12:52:02.9066367Z 352 |    padding: 0;
+2026-07-02T12:52:02.9066970Z 353 |    border: none;
+2026-07-02T12:52:02.9067581Z 354 |    background: none;
+2026-07-02T12:52:02.9067993Z     |  ^^^^^^^^^^^^^^^^^^^
+2026-07-02T12:52:02.9068394Z 355 |    font: inherit;
+2026-07-02T12:52:02.9068756Z     |  ^^^^^^^^^^^^^^^^
+2026-07-02T12:52:02.9069141Z 356 |    color: #1d4ed8;
+2026-07-02T12:52:02.9069606Z     |  ^^^^^[39m
+2026-07-02T12:52:02.9152306Z transforming...✓ 1628 modules transformed.
+2026-07-02T12:52:03.3732100Z rendering chunks...
+2026-07-02T12:52:04.0165757Z computing gzip size...
+2026-07-02T12:52:04.0399009Z dist/index.html                                            5.73 kB │ gzip:   1.20 kB
+2026-07-02T12:52:04.0400234Z dist/assets/CompareReliabilitySummary-Grj3jGJo.css         0.22 kB │ gzip:   0.17 kB
+2026-07-02T12:52:04.0401371Z dist/assets/CarCard-DQuHUD3Y.css                           0.51 kB │ gzip:   0.26 kB
+2026-07-02T12:52:04.0402469Z dist/assets/useDebouncedValue-DyFJTjru.css                 0.76 kB │ gzip:   0.29 kB
+2026-07-02T12:52:04.0403903Z dist/assets/CompareInternalLinks-CDHoWbG7.css              1.17 kB │ gzip:   0.50 kB
+2026-07-02T12:52:04.0405126Z dist/assets/ListingPage-jqMLHL8U.css                       1.31 kB │ gzip:   0.51 kB
+2026-07-02T12:52:04.0406186Z dist/assets/ReviewPage-DX_XSFBB.css                        1.70 kB │ gzip:   0.61 kB
+2026-07-02T12:52:04.0407245Z dist/assets/catalog-ux-wave-b-b8rDz0zP.css                 2.20 kB │ gzip:   0.82 kB
+2026-07-02T12:52:04.0408330Z dist/assets/AssistantPlaygroundPage-Bq_Xg-u5.css           2.86 kB │ gzip:   0.84 kB
+2026-07-02T12:52:04.0409424Z dist/assets/ownership-tools-page-B_0HSgTm.css              3.42 kB │ gzip:   0.98 kB
+2026-07-02T12:52:04.0410474Z dist/assets/cost-per-km-E7lvFE_z.css                       3.52 kB │ gzip:   1.02 kB
+2026-07-02T12:52:04.0411505Z dist/assets/tco-calculator-BImaZ7sf.css                    3.77 kB │ gzip:   1.13 kB
+2026-07-02T12:52:04.0412549Z dist/assets/emi-calculator-I2MQM8Ac.css                    3.93 kB │ gzip:   1.17 kB
+2026-07-02T12:52:04.0413647Z dist/assets/EMICalculator-pls7sy29.css                     4.06 kB │ gzip:   1.23 kB
+2026-07-02T12:52:04.0414778Z dist/assets/ev-trust-B3EvFbRx.css                          4.14 kB │ gzip:   1.18 kB
+2026-07-02T12:52:04.0415831Z dist/assets/ownership-hub-BTH-Wpg9.css                     4.25 kB │ gzip:   1.03 kB
+2026-07-02T12:52:04.0416894Z dist/assets/useOwnershipPageVehicle-DCNKmtRK.css           4.25 kB │ gzip:   1.09 kB
+2026-07-02T12:52:04.0417965Z dist/assets/ev-discovery-DOPzVmHI.css                      5.80 kB │ gzip:   1.52 kB
+2026-07-02T12:52:04.0419020Z dist/assets/petrol-savings-DiLdLHaT.css                    6.24 kB │ gzip:   1.46 kB
+2026-07-02T12:52:04.0420063Z dist/assets/SimilarEvsSection-BtvyhWzn.css                 7.46 kB │ gzip:   1.37 kB
+2026-07-02T12:52:04.0421096Z dist/assets/review-page-Bh8bW6dr.css                       7.46 kB │ gzip:   1.83 kB
+2026-07-02T12:52:04.0422111Z dist/assets/CarDetails-cYt-EcP0.css                        7.51 kB │ gzip:   1.85 kB
+2026-07-02T12:52:04.0423189Z dist/assets/VariantComparisonTable-BBqFfWze.css            8.81 kB │ gzip:   1.75 kB
+2026-07-02T12:52:04.0424208Z dist/assets/score2-BAgIZztY.css                           10.42 kB │ gzip:   2.25 kB
+2026-07-02T12:52:04.0425709Z dist/assets/index-COXweTBJ.css                            54.16 kB │ gzip:   9.51 kB
+2026-07-02T12:52:04.0426933Z dist/assets/detailPageNav-B-2_IDS8.css                    77.30 kB │ gzip:  10.90 kB
+2026-07-02T12:52:04.0428267Z dist/assets/devDiagnostics-UOpLBWFl.js                     0.05 kB │ gzip:   0.06 kB
+2026-07-02T12:52:04.0429613Z dist/assets/routeObservability-B_Q9Kwcc.js                 0.08 kB │ gzip:   0.07 kB
+2026-07-02T12:52:04.0430909Z dist/assets/__vite-browser-external-Br_7psWM.js            0.10 kB │ gzip:   0.11 kB
+2026-07-02T12:52:04.0432172Z dist/assets/imageUtils-Fwn6mn6L.js                         0.13 kB │ gzip:   0.13 kB
+2026-07-02T12:52:04.0432992Z dist/assets/productionLog-B4zZiJmk.js                      0.21 kB │ gzip:   0.18 kB
+2026-07-02T12:52:04.0433720Z dist/assets/EmiQuestionPage-BuKrPkT7.js                    0.23 kB │ gzip:   0.20 kB
+2026-07-02T12:52:04.0434996Z dist/assets/RunningCostQuestionPage-nBGi_4Z-.js            0.23 kB │ gzip:   0.20 kB
+2026-07-02T12:52:04.0436121Z dist/assets/OwnershipCostQuestionPage-B3BWjVQj.js          0.23 kB │ gzip:   0.20 kB
+2026-07-02T12:52:04.0436866Z dist/assets/PetrolSavingsQuestionPage-DHRvZw1O.js          0.24 kB │ gzip:   0.20 kB
+2026-07-02T12:52:04.0437845Z dist/assets/compareHydration-CjjY9zyh.js                   0.25 kB │ gzip:   0.19 kB
+2026-07-02T12:52:04.0438562Z dist/assets/LegacyCarRedirect-Crc0vRf0.js                  0.26 kB │ gzip:   0.21 kB
+2026-07-02T12:52:04.0439264Z dist/assets/ownershipToolLinks-COGjybxy.js                 0.28 kB │ gzip:   0.22 kB
+2026-07-02T12:52:04.0439980Z dist/assets/buildMetadata-DZ0BfavP.js                      0.31 kB │ gzip:   0.26 kB
+2026-07-02T12:52:04.0440688Z dist/assets/CompareReliabilitySummary-B1I8OS4_.js          0.36 kB │ gzip:   0.25 kB
+2026-07-02T12:52:04.0441549Z dist/assets/publicBetaTier1-CQTwCzbs.js                    0.41 kB │ gzip:   0.22 kB
+2026-07-02T12:52:04.0442262Z dist/assets/Score2ToolsPerspective-eO39nThg.js             0.42 kB │ gzip:   0.30 kB
+2026-07-02T12:52:04.0442973Z dist/assets/staleHighTrafficOps-4w9FJvBp.js                0.44 kB │ gzip:   0.28 kB
+2026-07-02T12:52:04.0443661Z dist/assets/csvExport-CDBBxqNm.js                          0.46 kB │ gzip:   0.33 kB
+2026-07-02T12:52:04.0444355Z dist/assets/useTrackOnView-CVXwXz3Y.js                     0.52 kB │ gzip:   0.33 kB
+2026-07-02T12:52:04.0445312Z dist/assets/trafficObservationOps-C8G4Q73u.js              0.55 kB │ gzip:   0.30 kB
+2026-07-02T12:52:04.0446016Z dist/assets/leadPipeline-DGhOzGvm.js                       0.56 kB │ gzip:   0.30 kB
+2026-07-02T12:52:04.0446737Z dist/assets/config-CNRQ919p.js                             0.57 kB │ gzip:   0.35 kB
+2026-07-02T12:52:04.0447403Z dist/assets/goldenLoaderNode-C_9lw_2l.js                   0.64 kB │ gzip:   0.40 kB
+2026-07-02T12:52:04.0448100Z dist/assets/PrivateRoute-DFYmBOLS.js                       0.65 kB │ gzip:   0.33 kB
+2026-07-02T12:52:04.0448782Z dist/assets/adminOpsStyles-CJdghdCy.js                     0.66 kB │ gzip:   0.43 kB
+2026-07-02T12:52:04.0449474Z dist/assets/rolldown-runtime-Bnw7wDfq.js                   0.69 kB │ gzip:   0.42 kB
+2026-07-02T12:52:04.0450135Z dist/assets/config-C2WNb4n8.js                             0.72 kB │ gzip:   0.45 kB
+2026-07-02T12:52:04.0450799Z dist/assets/emiDefaults-BZAMDCL1.js                        0.72 kB │ gzip:   0.36 kB
+2026-07-02T12:52:04.0451918Z dist/assets/CompareGuideEditorialSections-CX4G1inc.js      0.73 kB │ gzip:   0.36 kB
+2026-07-02T12:52:04.0452685Z dist/assets/reviewRoutes-DPxHP1ww.js                       0.73 kB │ gzip:   0.37 kB
+2026-07-02T12:52:04.0453382Z dist/assets/useCompareCars-BZQ4I2kx.js                     0.79 kB │ gzip:   0.45 kB
+2026-07-02T12:52:04.0454077Z dist/assets/formatIndianPrice-AwA_Ljet.js                  0.85 kB │ gzip:   0.44 kB
+2026-07-02T12:52:04.0455119Z dist/assets/media-CobUDLA7.js                              0.92 kB │ gzip:   0.52 kB
+2026-07-02T12:52:04.0484923Z dist/assets/vehicleCreationStore-DuditJcx.js               0.93 kB │ gzip:   0.51 kB
+2026-07-02T12:52:04.0486266Z dist/assets/changeDetectionStore-CsBOzlXm.js               0.99 kB │ gzip:   0.52 kB
+2026-07-02T12:52:04.0487232Z dist/assets/petrolSavingsDefaults-CVzHVVCS.js              1.00 kB │ gzip:   0.44 kB
+2026-07-02T12:52:04.0487967Z dist/assets/contentOpsAudit-CsS_fYlb.js                    1.01 kB │ gzip:   0.60 kB
+2026-07-02T12:52:04.0488667Z dist/assets/ownershipToolRoutes-Ttw9J5-W.js                1.03 kB │ gzip:   0.51 kB
+2026-07-02T12:52:04.0489405Z dist/assets/seoIndexingDiscipline-BjKRLPcT.js              1.05 kB │ gzip:   0.58 kB
+2026-07-02T12:52:04.0490157Z dist/assets/healthCheck-Cobgd8QV.js                        1.06 kB │ gzip:   0.61 kB
+2026-07-02T12:52:04.0490850Z dist/assets/compareArrayUtils-CEzU77d2.js                  1.13 kB │ gzip:   0.55 kB
+2026-07-02T12:52:04.0491540Z dist/assets/auditStore-MR5rBhXM.js                         1.14 kB │ gzip:   0.60 kB
+2026-07-02T12:52:04.0492210Z dist/assets/adminExportApi-Dcwi9xE6.js                     1.19 kB │ gzip:   0.68 kB
+2026-07-02T12:52:04.0492894Z dist/assets/seoTractionOps-CEZddI7A.js                     1.22 kB │ gzip:   0.57 kB
+2026-07-02T12:52:04.0493587Z dist/assets/compareRivalPrefill-ExrZvnyw.js                1.23 kB │ gzip:   0.61 kB
+2026-07-02T12:52:04.0494740Z dist/assets/acquisitionContext-IL98-tyK.js                 1.31 kB │ gzip:   0.65 kB
+2026-07-02T12:52:04.0495468Z dist/assets/postLaunchOpsContext-7aWp3tt_.js               1.32 kB │ gzip:   0.75 kB
+2026-07-02T12:52:04.0496178Z dist/assets/agentExecutionLog-IJxoUC6S.js                  1.32 kB │ gzip:   0.66 kB
+2026-07-02T12:52:04.0496872Z dist/assets/trustIntelligence-1XDzF3mn.js                  1.33 kB │ gzip:   0.73 kB
+2026-07-02T12:52:04.0497523Z dist/assets/qa-BBZ7Fsmk.js                                 1.37 kB │ gzip:   0.61 kB
+2026-07-02T12:52:04.0498367Z dist/assets/catalogIntelligence-DNlklm0f.js                1.37 kB │ gzip:   0.46 kB
+2026-07-02T12:52:04.0499064Z dist/assets/MarketHealthPage-BXaPns5z.js                   1.38 kB │ gzip:   0.67 kB
+2026-07-02T12:52:04.0499771Z dist/assets/OwnershipToolPlaceholder-KPLVAd4R.js           1.43 kB │ gzip:   0.57 kB
+2026-07-02T12:52:04.0500501Z dist/assets/CompareTrustPanel-BlZ0eXix.js                  1.44 kB │ gzip:   0.85 kB
+2026-07-02T12:52:04.0501188Z dist/assets/seoStore-pAJfZCEL.js                           1.46 kB │ gzip:   0.70 kB
+2026-07-02T12:52:04.0501872Z dist/assets/monitoringStore-BqUk7ghb.js                    1.47 kB │ gzip:   0.67 kB
+2026-07-02T12:52:04.0502567Z dist/assets/OpsExportActions-BIErwn-4.js                   1.49 kB │ gzip:   0.80 kB
+2026-07-02T12:52:04.0503260Z dist/assets/seoOpportunityOps-BdlLs7GU.js                  1.49 kB │ gzip:   0.71 kB
+2026-07-02T12:52:04.0503979Z dist/assets/PublicBetaPage-sUxsy0q9.js                     1.59 kB │ gzip:   0.76 kB
+2026-07-02T12:52:04.0505167Z dist/assets/editorialStyles-1oRnppVg.js                    1.59 kB │ gzip:   0.75 kB
+2026-07-02T12:52:04.0505933Z dist/assets/EditorialLayout-YmAsDODl.js                    1.60 kB │ gzip:   0.66 kB
+2026-07-02T12:52:04.0506634Z dist/assets/useDebouncedValue-N3tPS3ik.js                  1.67 kB │ gzip:   0.80 kB
+2026-07-02T12:52:04.0507335Z dist/assets/MarketLearningPage-DDK9_fxr.js                 1.68 kB │ gzip:   0.80 kB
+2026-07-02T12:52:04.0508043Z dist/assets/SeoOpportunitiesPage-B1-EeUpA.js               1.76 kB │ gzip:   0.93 kB
+2026-07-02T12:52:04.0508743Z dist/assets/conversionQualityOps-DtOoPk_1.js               1.92 kB │ gzip:   0.98 kB
+2026-07-02T12:52:04.0509533Z dist/assets/LeadQualityPage-BXmrV6kd.js                    1.95 kB │ gzip:   0.80 kB
+2026-07-02T12:52:04.0530092Z dist/assets/BetaWeeklySummarySection-CWhPLTna.js           1.95 kB │ gzip:   0.82 kB
+2026-07-02T12:52:04.0530889Z dist/assets/ownershipReality-BbUMOmKk.js                   2.01 kB │ gzip:   0.93 kB
+2026-07-02T12:52:04.0531626Z dist/assets/buildHeroSummary-DlwbJlAW.js                   2.01 kB │ gzip:   0.94 kB
+2026-07-02T12:52:04.0532312Z dist/assets/score2-fNTpxzzd.js                             2.02 kB │ gzip:   1.06 kB
+2026-07-02T12:52:04.0532982Z dist/assets/RunningCostPage-Cl-t4qsZ.js                    2.02 kB │ gzip:   0.93 kB
+2026-07-02T12:52:04.0533690Z dist/assets/compareCalibrationOps-DAnol4aD.js              2.05 kB │ gzip:   1.06 kB
+2026-07-02T12:52:04.0534665Z dist/assets/ConversionQualityPage-CSqIjNKJ.js              2.07 kB │ gzip:   0.98 kB
+2026-07-02T12:52:04.0535764Z dist/assets/reviewBuilderUtils-QB2LZXKk.js                 2.07 kB │ gzip:   1.05 kB
+2026-07-02T12:52:04.0536500Z dist/assets/CompareQualityPage-C0KROk4m.js                 2.14 kB │ gzip:   1.05 kB
+2026-07-02T12:52:04.0537338Z dist/assets/PerformanceLearningPage-GjZrnIi3.js            2.20 kB │ gzip:   1.02 kB
+2026-07-02T12:52:04.0538281Z dist/assets/compareImprovementOps-BHdeMX2d.js              2.22 kB │ gzip:   1.06 kB
+2026-07-02T12:52:04.0539011Z dist/assets/FeedbackLearningPage-DRInRqBx.js               2.24 kB │ gzip:   0.91 kB
+2026-07-02T12:52:04.0539727Z dist/assets/operationalConfidenceOps-BgAttA9O.js           2.26 kB │ gzip:   1.16 kB
+2026-07-02T12:52:04.0540433Z dist/assets/CatalogFreshnessPage-CAqqll01.js               2.27 kB │ gzip:   1.11 kB
+2026-07-02T12:52:04.0541135Z dist/assets/CompareCalibrationPage-CbcKZwA-.js             2.31 kB │ gzip:   1.09 kB
+2026-07-02T12:52:04.0543011Z dist/assets/editorialApi-B_txSQCr.js                       2.33 kB │ gzip:   0.85 kB
+2026-07-02T12:52:04.0543843Z dist/assets/CatalogIntelligencePage-B-r-DQDw.js            2.42 kB │ gzip:   1.09 kB
+2026-07-02T12:52:04.0545634Z dist/assets/tier1MediaHealth-CO7TZqtR.js                   2.44 kB │ gzip:   1.02 kB
+2026-07-02T12:52:04.0547779Z dist/assets/PremiumJourneysPage-DZqdzEir.js                2.45 kB │ gzip:   1.16 kB
+2026-07-02T12:52:04.0548899Z dist/assets/ownership-hub-DuTCzY6X.js                      2.47 kB │ gzip:   0.97 kB
+2026-07-02T12:52:04.0550205Z dist/assets/systemStatus-BfFzYoL1.js                       2.48 kB │ gzip:   1.19 kB
+2026-07-02T12:52:04.0551197Z dist/assets/OwnershipToolsPage-DzATFgfy.js                 2.49 kB │ gzip:   0.79 kB
+2026-07-02T12:52:04.0552233Z dist/assets/feedbackPrioritizationOps-B9JWBhPQ.js          2.52 kB │ gzip:   1.20 kB
+2026-07-02T12:52:04.0553277Z dist/assets/useAssistantShortlist-tpQleJ3f.js              2.52 kB │ gzip:   1.12 kB
+2026-07-02T12:52:04.0554307Z dist/assets/OwnershipHubPage-DCk9pKB-.js                   2.56 kB │ gzip:   0.86 kB
+2026-07-02T12:52:04.0555535Z dist/assets/authorityDepthOps-DCPea-bT.js                  2.56 kB │ gzip:   1.15 kB
+2026-07-02T12:52:04.0556588Z dist/assets/CompareInternalLinks-CnmXkW39.js               2.58 kB │ gzip:   1.24 kB
+2026-07-02T12:52:04.0557650Z dist/assets/ingestionTelemetry-_2-OVSRQ.js                 2.65 kB │ gzip:   1.26 kB
+2026-07-02T12:52:04.0558874Z dist/assets/EmiOwnershipPage-BXjw5ZZI.js                   2.68 kB │ gzip:   1.07 kB
+2026-07-02T12:52:04.0560281Z dist/assets/compareQualityOps-Be9zzrI6.js                  2.68 kB │ gzip:   1.25 kB
+2026-07-02T12:52:04.0561359Z dist/assets/ConversionInsightsPage-NZZ7USrG.js             2.68 kB │ gzip:   1.23 kB
+2026-07-02T12:52:04.0562425Z dist/assets/RecommendationRealismPage-CWKICh_L.js          2.73 kB │ gzip:   1.18 kB
+2026-07-02T12:52:04.0563484Z dist/assets/DealerLogin-W11clSnp.js                        2.75 kB │ gzip:   1.32 kB
+2026-07-02T12:52:04.0564707Z dist/assets/OwnershipAuthorityPage-BaBbmpas.js             2.77 kB │ gzip:   1.16 kB
+2026-07-02T12:52:04.0565756Z dist/assets/assistantShortlist-BlXiBF_a.js                 2.80 kB │ gzip:   1.17 kB
+2026-07-02T12:52:04.0566735Z dist/assets/opsAuditLog-BcPadif5.js                        2.82 kB │ gzip:   1.27 kB
+2026-07-02T12:52:04.0567724Z dist/assets/mediaStagingOps-CDE8OJGw.js                    2.88 kB │ gzip:   1.32 kB
+2026-07-02T12:52:04.0568721Z dist/assets/NotificationBell-DRsxcISH.js                   2.88 kB │ gzip:   1.30 kB
+2026-07-02T12:52:04.0569726Z dist/assets/legacyCanonicalMap-CAX4aJRC.js                 2.88 kB │ gzip:   0.82 kB
+2026-07-02T12:52:04.0570750Z dist/assets/conversionInsightsOps--nRXsc22.js              2.92 kB │ gzip:   1.34 kB
+2026-07-02T12:52:04.0571811Z dist/assets/PremiumOwnershipJourneysPage-7Sr0jtWP.js       2.94 kB │ gzip:   1.28 kB
+2026-07-02T12:52:04.0572872Z dist/assets/premiumJourneyOps-N7H21PLz.js                  2.97 kB │ gzip:   1.48 kB
+2026-07-02T12:52:04.0573903Z dist/assets/LaunchReadinessPage-DuZWtyee.js                3.00 kB │ gzip:   1.16 kB
+2026-07-02T12:52:04.0575142Z dist/assets/catalogFreshnessAutomation-BS9_bBSl.js         3.02 kB │ gzip:   1.30 kB
+2026-07-02T12:52:04.0576169Z dist/assets/ObservationsPage-ByUESD3A.js                   3.02 kB │ gzip:   1.17 kB
+2026-07-02T12:52:04.0577121Z dist/assets/Login-Be4K_ztJ.js                              3.07 kB │ gzip:   1.40 kB
+2026-07-02T12:52:04.0578150Z dist/assets/trafficIntelligenceApi-CrREqnoX.js             3.09 kB │ gzip:   1.21 kB
+2026-07-02T12:52:04.0579237Z dist/assets/BehavioralIntelligencePage-TQIIQ8dE.js         3.12 kB │ gzip:   1.33 kB
+2026-07-02T12:52:04.0580270Z dist/assets/ComparePage-q9L2eypA.js                        3.14 kB │ gzip:   1.52 kB
+2026-07-02T12:52:04.0581260Z dist/assets/StagedPublishPage-CVaDx47f.js                  3.26 kB │ gzip:   1.16 kB
+2026-07-02T12:52:04.0582266Z dist/assets/catalogHealthScore-C1QCrdi-.js                 3.28 kB │ gzip:   1.56 kB
+2026-07-02T12:52:04.0583888Z dist/assets/TrustFeedbackPage-DJTIO3-7.js                  3.33 kB │ gzip:   1.33 kB
+2026-07-02T12:52:04.0585552Z dist/assets/PetrolSavingsOwnershipPage-yXLKbxHP.js         3.34 kB │ gzip:   1.29 kB
+2026-07-02T12:52:04.0586822Z dist/assets/compareTrustCopy-ZgxWdDZk.js                   3.38 kB │ gzip:   1.58 kB
+2026-07-02T12:52:04.0587550Z dist/assets/catalogExperience-9xztQnOJ.js                  3.44 kB │ gzip:   1.50 kB
+2026-07-02T12:52:04.0588246Z dist/assets/OwnershipCostPage-2BaV55hn.js                  3.50 kB │ gzip:   1.34 kB
+2026-07-02T12:52:04.0589145Z dist/assets/OpsSnapshotPage-5NvSe3gk.js                    3.52 kB │ gzip:   1.43 kB
+2026-07-02T12:52:04.0589855Z dist/assets/RecommendationMaturityPage-6iukvT4b.js         3.54 kB │ gzip:   1.38 kB
+2026-07-02T12:52:04.0590571Z dist/assets/ownershipAuthorityOps-B2SSyBvX.js              3.55 kB │ gzip:   1.45 kB
+2026-07-02T12:52:04.0591271Z dist/assets/UserInsightsPage-CQoDeeWI.js                   3.59 kB │ gzip:   1.63 kB
+2026-07-02T12:52:04.0591977Z dist/assets/SoftLaunchMonitorPage-DbX_x4SM.js              3.60 kB │ gzip:   1.53 kB
+2026-07-02T12:52:04.0592728Z dist/assets/BehavioralTrustPage-Bl-1raZ1.js                3.68 kB │ gzip:   1.48 kB
+2026-07-02T12:52:04.0593429Z dist/assets/costPerKmCalculator-BBQH55o2.js                3.69 kB │ gzip:   1.37 kB
+2026-07-02T12:52:04.0594136Z dist/assets/HighIntentJourneysPage-twJZM6L3.js             3.77 kB │ gzip:   1.71 kB
+2026-07-02T12:52:04.0595492Z dist/assets/AssistantShortlistPage-BZXwJsoT.js             3.80 kB │ gzip:   1.33 kB
+2026-07-02T12:52:04.0596846Z dist/assets/CompareTrustExplain-bNXc2ule.js                3.81 kB │ gzip:   1.63 kB
+2026-07-02T12:52:04.0597968Z dist/assets/MediaStagingPage-DWqs6Ypw.js                   3.86 kB │ gzip:   1.45 kB
+2026-07-02T12:52:04.0598697Z dist/assets/recommendationRealismOps-CLmkry5e.js           3.89 kB │ gzip:   1.69 kB
+2026-07-02T12:52:04.0599407Z dist/assets/compareConfidence-CvBkRJup.js                  3.89 kB │ gzip:   1.69 kB
+2026-07-02T12:52:04.0600100Z dist/assets/catalogAudit-2t1iMCKR.js                       3.94 kB │ gzip:   1.61 kB
+2026-07-02T12:52:04.0600799Z dist/assets/OwnershipIntelligencePage-D1dLXAtU.js          4.01 kB │ gzip:   1.51 kB
+2026-07-02T12:52:04.0601517Z dist/assets/OwnershipGuidanceStrip-Dif0uElp.js             4.05 kB │ gzip:   1.78 kB
+2026-07-02T12:52:04.0602219Z dist/assets/PostLaunchAdminShell-DrC_Q_U0.js               4.05 kB │ gzip:   1.50 kB
+2026-07-02T12:52:04.0602918Z dist/assets/EditorialDashboard-DTCi2IHc.js                 4.25 kB │ gzip:   1.63 kB
+2026-07-02T12:52:04.0603620Z dist/assets/Score2PlaygroundPage-j24IHFgi.js               4.32 kB │ gzip:   1.42 kB
+2026-07-02T12:52:04.0604312Z dist/assets/SeoGuidesHub-BUnZbsIF.js                       4.39 kB │ gzip:   1.47 kB
+2026-07-02T12:52:04.0605363Z dist/assets/OwnershipVehicleIndexPage-DsFsjS_6.js          4.44 kB │ gzip:   1.56 kB
+2026-07-02T12:52:04.0606071Z dist/assets/tcoCalculator-IwNL7gWg.js                      4.48 kB │ gzip:   1.45 kB
+2026-07-02T12:52:04.0606752Z dist/assets/CostPerKmPage-DfTq_RGL.js                      4.52 kB │ gzip:   1.78 kB
+2026-07-02T12:52:04.0607440Z dist/assets/EmiCalculatorPage-BHWG9rNz.js                  4.56 kB │ gzip:   1.78 kB
+2026-07-02T12:52:04.0608131Z dist/assets/CatalogOpsPage-CVdDzqhY.js                     4.75 kB │ gzip:   1.67 kB
+2026-07-02T12:52:04.0608811Z dist/assets/cost-per-km-BgKc0jjY.js                        4.80 kB │ gzip:   1.17 kB
+2026-07-02T12:52:04.0609488Z dist/assets/CoveragePage-CmfA08br.js                       4.87 kB │ gzip:   1.48 kB
+2026-07-02T12:52:04.0610176Z dist/assets/CompactCarCard-D1uLIkhe.js                     4.90 kB │ gzip:   1.83 kB
+2026-07-02T12:52:04.0610889Z dist/assets/intelligenceDiscoveryPresets-kPuMhR-K.js       4.90 kB │ gzip:   1.52 kB
+2026-07-02T12:52:04.0611596Z dist/assets/EMICalculator-BEu_HA70.js                      4.97 kB │ gzip:   1.46 kB
+2026-07-02T12:52:04.0612269Z dist/assets/UpcomingCarCard-foZbw_9O.js                    5.11 kB │ gzip:   1.93 kB
+2026-07-02T12:52:04.0613154Z dist/assets/MediaQaPage-INIaBPVg.js                        5.16 kB │ gzip:   2.05 kB
+2026-07-02T12:52:04.0613873Z dist/assets/TrustedConversionsPage-BDJnqARW.js             5.17 kB │ gzip:   1.83 kB
+2026-07-02T12:52:04.0615048Z dist/assets/catalogIntelligenceOps-DurSpppG.js             5.20 kB │ gzip:   2.10 kB
+2026-07-02T12:52:04.0615823Z dist/assets/ownershipHubConstants-C-NfwnQx.js              5.31 kB │ gzip:   1.64 kB
+2026-07-02T12:52:04.0616534Z dist/assets/CarsSlugRouter-B60CvDsy.js                     5.33 kB │ gzip:   2.34 kB
+2026-07-02T12:52:04.0617378Z dist/assets/DealerSignup-NV8cR91B.js                       5.42 kB │ gzip:   2.12 kB
+2026-07-02T12:52:04.0618075Z dist/assets/ownershipRealismOps-CEI1uPMM.js                5.42 kB │ gzip:   2.26 kB
+2026-07-02T12:52:04.0618786Z dist/assets/PetrolSavingsPage-CxMjsu2r.js                  5.46 kB │ gzip:   2.02 kB
+2026-07-02T12:52:04.0619481Z dist/assets/TcoCalculatorPage-leAC_Kxk.js                  5.55 kB │ gzip:   2.08 kB
+2026-07-02T12:52:04.0620191Z dist/assets/DealerApplicationsPage-DBMFtAuu.js             5.56 kB │ gzip:   2.17 kB
+2026-07-02T12:52:04.0620899Z dist/assets/trustQualityOps-Bk1FHO-E.js                    5.68 kB │ gzip:   2.49 kB
+2026-07-02T12:52:04.0621601Z dist/assets/Tier1ExperiencePage-B9giiqrr.js                5.71 kB │ gzip:   2.53 kB
+2026-07-02T12:52:04.0622303Z dist/assets/LaunchChecklistPage-DixyeaN5.js                5.79 kB │ gzip:   2.54 kB
+2026-07-02T12:52:04.0623038Z dist/assets/premiumOwnershipJourneyOps-CtCe6lyE.js         6.05 kB │ gzip:   2.37 kB
+2026-07-02T12:52:04.0623751Z dist/assets/LeadTimeline-BFAqqdQ6.js                       6.08 kB │ gzip:   2.45 kB
+2026-07-02T12:52:04.0624636Z dist/assets/compareUtils-DEkO8zoo.js                       6.18 kB │ gzip:   2.21 kB
+2026-07-02T12:52:04.0625364Z dist/assets/SystemStatusPage-VnXQ67xb.js                   6.21 kB │ gzip:   2.00 kB
+2026-07-02T12:52:04.0626038Z dist/assets/CarCard-CuM6MW3P.js                            6.31 kB │ gzip:   2.41 kB
+2026-07-02T12:52:04.0626730Z dist/assets/userSuitabilityOps-DDGBoBkh.js                 6.34 kB │ gzip:   2.54 kB
+2026-07-02T12:52:04.0627461Z dist/assets/CatalogAcquisitionDashboardPage-C5ytNvt8.js    6.37 kB │ gzip:   2.17 kB
+2026-07-02T12:52:04.0628182Z dist/assets/catalog-ux-wave-b-BaEIel8W.js                  6.46 kB │ gzip:   2.50 kB
+2026-07-02T12:52:04.0628877Z dist/assets/CatalogHealthPage-CYej1PiI.js                  6.53 kB │ gzip:   2.11 kB
+2026-07-02T12:52:04.0629562Z dist/assets/validators-BKOy-ybd.js                         6.56 kB │ gzip:   2.95 kB
+2026-07-02T12:52:04.0630253Z dist/assets/CatalogBenchmarkPage-CImC1IlZ.js               7.21 kB │ gzip:   2.11 kB
+2026-07-02T12:52:04.0630945Z dist/assets/opsHealthApi-BIweS9AH.js                       7.31 kB │ gzip:   2.74 kB
+2026-07-02T12:52:04.0631642Z dist/assets/ScorePerspectiveCard-gsp81DBY.js               7.41 kB │ gzip:   2.17 kB
+2026-07-02T12:52:04.0632340Z dist/assets/LaunchStatusPage-DhWDLlLA.js                   7.51 kB │ gzip:   2.91 kB
+2026-07-02T12:52:04.0633021Z dist/assets/mediaAudit-CizNdM2F.js                         7.54 kB │ gzip:   2.85 kB
+2026-07-02T12:52:04.0633693Z dist/assets/SeoAuthorityPage-CDuGycuI.js                   7.66 kB │ gzip:   1.92 kB
+2026-07-02T12:52:04.0634345Z dist/assets/Users-CdxFgLBa.js                              8.06 kB │ gzip:   2.82 kB
+2026-07-02T12:52:04.0635315Z dist/assets/SoftLaunchOpsPage-afFnGmKf.js                  8.08 kB │ gzip:   2.80 kB
+2026-07-02T12:52:04.0636036Z dist/assets/ConversionRefinementPage-DMHpqDKP.js           8.66 kB │ gzip:   1.90 kB
+2026-07-02T12:52:04.0636764Z dist/assets/trustedConversionOps-omyEngt9.js               8.92 kB │ gzip:   3.49 kB
+2026-07-02T12:52:04.0637479Z dist/assets/recommendationMaturityOps-CBR12Q8W.js          8.97 kB │ gzip:   3.23 kB
+2026-07-02T12:52:04.0638184Z dist/assets/tco-calculator-BTtDbQd6.js                     9.00 kB │ gzip:   2.05 kB
+2026-07-02T12:52:04.0638894Z dist/assets/AssistantPlaygroundPage-AG2mGRW2.js            9.25 kB │ gzip:   2.01 kB
+2026-07-02T12:52:04.0640703Z dist/assets/CompareBelowFoldSections-CKvRtNbi.js           9.39 kB │ gzip:   3.22 kB
+2026-07-02T12:52:04.0641538Z dist/assets/seoAuthorityOps-DzS9mEIr.js                    9.84 kB │ gzip:   3.13 kB
+2026-07-02T12:52:04.0642235Z dist/assets/emi-calculator-UVxE3Vt8.js                     9.84 kB │ gzip:   2.67 kB
+2026-07-02T12:52:04.0642941Z dist/assets/contentUsefulnessOps-4jcqpqZt.js               9.88 kB │ gzip:   3.35 kB
+2026-07-02T12:52:04.0643648Z dist/assets/JobDetailPage-DXRyIDRf.js                     10.33 kB │ gzip:   3.30 kB
+2026-07-02T12:52:04.0645333Z dist/assets/VariantComparisonTable-Bp5FHqNG.js            10.64 kB │ gzip:   3.22 kB
+2026-07-02T12:52:04.0646087Z dist/assets/OpsDisciplineHubPage-4geNY3-I.js              11.40 kB │ gzip:   4.19 kB
+2026-07-02T12:52:04.0646815Z dist/assets/IntelligenceDiscoveryPage-aEErt5iJ.js         11.61 kB │ gzip:   4.18 kB
+2026-07-02T12:52:04.0647521Z dist/assets/KanbanBoard-C1TXiDFH.js                       11.73 kB │ gzip:   3.78 kB
+2026-07-02T12:52:04.0648217Z dist/assets/OperationalQaPage-Df0OksVz.js                 12.48 kB │ gzip:   4.31 kB
+2026-07-02T12:52:04.0648915Z dist/assets/ChangeDetectionPage-BFJSrWVx.js               13.04 kB │ gzip:   4.11 kB
+2026-07-02T12:52:04.0649642Z dist/assets/RecommendationRefinementPage-DkxU4N-E.js      13.15 kB │ gzip:   2.50 kB
+2026-07-02T12:52:04.0650362Z dist/assets/behavioralTrustOps-DGQ72jja.js                13.19 kB │ gzip:   3.91 kB
+2026-07-02T12:52:04.0651069Z dist/assets/changeDetectionAgent-HqkAndUK.js              13.67 kB │ gzip:   4.42 kB
+2026-07-02T12:52:04.0651748Z dist/assets/Home-BBAsYVmr.js                              13.83 kB │ gzip:   4.92 kB
+2026-07-02T12:52:04.0652404Z dist/assets/benchmarkReport-CHmX1D1s.js                   14.07 kB │ gzip:   5.07 kB
+2026-07-02T12:52:04.0653090Z dist/assets/petrol-savings-LUPMzn4d.js                    14.85 kB │ gzip:   3.57 kB
+2026-07-02T12:52:04.0653787Z dist/assets/vehicleCreationAgent-D6A3K7CG.js              14.98 kB │ gzip:   4.94 kB
+2026-07-02T12:52:04.0654691Z dist/assets/BuyerAssistantPage-CYcnKT4r.js                15.07 kB │ gzip:   4.08 kB
+2026-07-02T12:52:04.0655400Z dist/assets/SalesDashboard-DlZnMvMQ.js                    15.20 kB │ gzip:   4.08 kB
+2026-07-02T12:52:04.0656081Z dist/assets/MediaHealthPage-BfBWIhTC.js                   15.52 kB │ gzip:   3.20 kB
+2026-07-02T12:52:04.0656750Z dist/assets/ListingPage-BQHKPX9y.js                       16.02 kB │ gzip:   5.60 kB
+2026-07-02T12:52:04.0657435Z dist/assets/authorityDistributionOps-Cm_4S51W.js          16.43 kB │ gzip:   4.78 kB
+2026-07-02T12:52:04.0658170Z dist/assets/CatalogImportWizardPage-DSsoQ7Ui.js           16.62 kB │ gzip:   5.35 kB
+2026-07-02T12:52:04.0658892Z dist/assets/RealUsageLearningPage-CVKsVIQs.js             16.75 kB │ gzip:   4.98 kB
+2026-07-02T12:52:04.0659594Z dist/assets/ContentUsefulnessPage-ClbnfqEj.js             17.66 kB │ gzip:   2.68 kB
+2026-07-02T12:52:04.0660324Z dist/assets/materializeVehicleScoreProfile-BVZEEQrh.js    18.46 kB │ gzip:   6.13 kB
+2026-07-02T12:52:04.0661061Z dist/assets/useOwnershipPageVehicle-pSb1xmtM.js           18.71 kB │ gzip:   5.84 kB
+2026-07-02T12:52:04.0661763Z dist/assets/ReviewPage-Bl1kRZWJ.js                        18.94 kB │ gzip:   6.25 kB
+2026-07-02T12:52:04.0662438Z dist/assets/scoring-TeERzrD6.js                           19.57 kB │ gzip:   6.27 kB
+2026-07-02T12:52:04.0663136Z dist/assets/DealerDashboard-NqulDaMu.js                   21.18 kB │ gzip:   6.08 kB
+2026-07-02T12:52:04.0663833Z dist/assets/AgentsDashboardPage-D9NDhU_9.js               22.62 kB │ gzip:   7.00 kB
+2026-07-02T12:52:04.0664713Z dist/assets/scoringEngine-xO_13O4h.js                     22.63 kB │ gzip:   8.68 kB
+2026-07-02T12:52:04.0665425Z dist/assets/TrafficIntelligencePage-CtJEeldz.js           22.97 kB │ gzip:   5.04 kB
+2026-07-02T12:52:04.0666124Z dist/assets/AuditAgentPage-DL_Ugcz1.js                    23.20 kB │ gzip:   7.18 kB
+2026-07-02T12:52:04.0666818Z dist/assets/MonitoringAgentPage-NF6ByLrD.js               24.78 kB │ gzip:   7.75 kB
+2026-07-02T12:52:04.0667722Z dist/assets/CatalogIngestionOpsPage-BX1C_Xjh.js           25.11 kB │ gzip:   8.48 kB
+2026-07-02T12:52:04.0668455Z dist/assets/VehicleCreationPage-CMq83z6k.js               25.19 kB │ gzip:   6.84 kB
+2026-07-02T12:52:04.0669177Z dist/assets/recommendationRefinementOps-DeC8yu4Z.js       25.36 kB │ gzip:   7.70 kB
+2026-07-02T12:52:04.0669880Z dist/assets/SeoAgentPage-C5k8d6dc.js                      26.72 kB │ gzip:   8.20 kB
+2026-07-02T12:52:04.0670571Z dist/assets/AnalyticsAgentPage-VBdYezOK.js                28.39 kB │ gzip:   8.43 kB
+2026-07-02T12:52:04.0671386Z dist/assets/Admin-CLiLbKb8.js                             34.08 kB │ gzip:   9.05 kB
+2026-07-02T12:52:04.0672038Z dist/assets/CarDetails-CKM27C3M.js                        37.19 kB │ gzip:  11.57 kB
+2026-07-02T12:52:04.0672726Z dist/assets/PublicBetaOpsPage-fVmMbaNi.js                 37.41 kB │ gzip:   8.12 kB
+2026-07-02T12:52:04.0673434Z dist/assets/catalogImportApi-BqH-PvFP.js                  43.48 kB │ gzip:  14.12 kB
+2026-07-02T12:52:04.0674118Z dist/assets/manifest-Bp77cvBq.js                          62.14 kB │ gzip:   7.37 kB
+2026-07-02T12:52:04.0675071Z dist/assets/betaStabilizationOps-DvOLRHC3.js              63.16 kB │ gzip:  13.10 kB
+2026-07-02T12:52:04.0675792Z dist/assets/detailPageNav-BzcPCz60.js                     71.99 kB │ gzip:  19.35 kB
+2026-07-02T12:52:04.0676495Z dist/assets/buildProfileInsights-Cejug0M1.js              79.74 kB │ gzip:  20.75 kB
+2026-07-02T12:52:04.0677207Z dist/assets/SimilarEvsSection-BsgVVuT-.js                 87.08 kB │ gzip:  10.14 kB
+2026-07-02T12:52:04.0677871Z dist/assets/react-BpOrghXw.js                            260.38 kB │ gzip:  84.53 kB
+2026-07-02T12:52:04.0678532Z dist/assets/SalesAnalytics-BvBAIjpV.js                   357.73 kB │ gzip: 107.51 kB
+2026-07-02T12:52:04.0679189Z dist/assets/index-CRuiL_pn.js                            734.97 kB │ gzip: 183.38 kB
+2026-07-02T12:52:04.0679478Z 
+2026-07-02T12:52:04.0679666Z [32m✓ built in 1.61s[39m

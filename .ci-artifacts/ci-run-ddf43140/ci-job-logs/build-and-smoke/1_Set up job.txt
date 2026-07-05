@@ -1,0 +1,33 @@
+﻿2026-07-02T12:51:52.1142691Z Current runner version: '2.335.1'
+2026-07-02T12:51:52.1177219Z ##[group]Runner Image Provisioner
+2026-07-02T12:51:52.1178580Z Hosted Compute Agent
+2026-07-02T12:51:52.1179603Z Version: 20260624.560
+2026-07-02T12:51:52.1180618Z Commit: 925d229a51159bc391ae97e54a2dd1fe20af789d
+2026-07-02T12:51:52.1181910Z Build Date: 2026-06-24T18:26:47Z
+2026-07-02T12:51:52.1183132Z Worker ID: {7e6e742f-ef36-4fbb-a6f4-79ecf75868bf}
+2026-07-02T12:51:52.1184390Z Azure Region: eastus
+2026-07-02T12:51:52.1185752Z ##[endgroup]
+2026-07-02T12:51:52.1188310Z ##[group]Operating System
+2026-07-02T12:51:52.1189459Z Ubuntu
+2026-07-02T12:51:52.1190385Z 24.04.4
+2026-07-02T12:51:52.1191338Z LTS
+2026-07-02T12:51:52.1192140Z ##[endgroup]
+2026-07-02T12:51:52.1193050Z ##[group]Runner Image
+2026-07-02T12:51:52.1194147Z Image: ubuntu-24.04
+2026-07-02T12:51:52.1195371Z Version: 20260628.225.1
+2026-07-02T12:51:52.1197374Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260628.225/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-02T12:51:52.1200331Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260628.225
+2026-07-02T12:51:52.1202027Z ##[endgroup]
+2026-07-02T12:51:52.1204001Z ##[group]GITHUB_TOKEN Permissions
+2026-07-02T12:51:52.1207318Z Contents: read
+2026-07-02T12:51:52.1208256Z Metadata: read
+2026-07-02T12:51:52.1209255Z Packages: read
+2026-07-02T12:51:52.1210249Z ##[endgroup]
+2026-07-02T12:51:52.1213173Z Secret source: Actions
+2026-07-02T12:51:52.1214393Z Prepare workflow directory
+2026-07-02T12:51:52.1679332Z Prepare all required actions
+2026-07-02T12:51:52.1735421Z Getting action download info
+2026-07-02T12:51:52.3959493Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-07-02T12:51:52.5029774Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-07-02T12:51:52.5867706Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-07-02T12:51:52.7939090Z Complete job name: build-and-smoke

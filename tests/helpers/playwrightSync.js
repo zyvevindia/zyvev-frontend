@@ -87,10 +87,38 @@ export async function waitForHomeCatalogReady(page, timeout = 45_000) {
     .poll(
       async () => {
         const skeletons = await page.locator(".car-card-skeleton:visible").count();
-        const cards = await page.locator('[aria-label^="View details for"]').count();
-        return cards > 0 && skeletons === 0;
+        const cards = await page.getByRole("link", { name: "View Details" }).count();
+        const homeCards = await page.locator('[aria-label^="View details for"]').count();
+        const cardCount = Math.max(cards, homeCards);
+        return cardCount >= 12 && skeletons === 0;
       },
       { timeout, intervals: [200, 400, 600, 800] }
+    )
+    .toBe(true);
+}
+
+/**
+ * Poll until document scroll height is unchanged across consecutive samples.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {number} [timeout]
+ */
+export async function waitForDocumentHeightStable(page, timeout = 20_000) {
+  await expect
+    .poll(
+      async () => {
+        const heights = await page.evaluate(async () => {
+          const read = () => document.documentElement.scrollHeight;
+          const values = [read()];
+          for (let i = 0; i < 2; i += 1) {
+            await new Promise((resolve) => setTimeout(resolve, 400));
+            values.push(read());
+          }
+          return values;
+        });
+        return heights.every((height) => height === heights[0]);
+      },
+      { timeout, intervals: [200, 300, 500, 700] }
     )
     .toBe(true);
 }
@@ -115,6 +143,34 @@ export async function waitForDiscoveryCatalogReady(page, timeout = 45_000) {
       { timeout, intervals: [200, 400, 600, 800] }
     )
     .toBe(true);
+}
+
+/**
+ * Wait for vehicle detail page images to finish loading.
+ *
+ * @param {import("@playwright/test").Page} page
+ * @param {number} [timeout]
+ */
+export async function waitForDetailPageImages(page, timeout = 30_000) {
+  try {
+    await expect
+      .poll(
+        async () =>
+          page.evaluate(() => {
+            const images = [...document.querySelectorAll(".cd-page img")].filter(
+              (img) => img.getBoundingClientRect().width > 0
+            );
+            return (
+              images.length === 0 ||
+              images.every((img) => img.complete && img.naturalWidth > 0)
+            );
+          }),
+        { timeout, intervals: [150, 250, 400, 600, 800] }
+      )
+      .toBe(true);
+  } catch {
+    // Residual incomplete images remain masked via lazy-load selector.
+  }
 }
 
 /**

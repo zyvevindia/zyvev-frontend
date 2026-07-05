@@ -16,7 +16,7 @@ export const VISUAL_PUBLIC_PAGES = Object.freeze([
   },
   {
     id: "ev-listing",
-    path: "/cars",
+    path: "/cars?sort=price-low",
     label: "EV Listing",
     readySelector: ".catalog-results-grid",
     requireCatalogGrid: true,
@@ -43,7 +43,7 @@ export const VISUAL_PUBLIC_PAGES = Object.freeze([
   },
   {
     id: "search",
-    path: "/cars",
+    path: "/cars?sort=price-low",
     label: "Search",
     readySelector: "#catalog-search",
     requireCatalogGrid: true,
