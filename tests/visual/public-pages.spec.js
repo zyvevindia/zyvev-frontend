@@ -5,6 +5,7 @@ import {
   gotoVisualTarget,
   buildScreenshotOptions,
   visualSnapshotName,
+  assertPrimaryVehicleImagesReady,
 } from "../helpers/visualHelpers.js";
 
 /** Device label derived from Playwright project name. */
@@ -30,6 +31,8 @@ test.describe("Visual regression — public pages", () => {
       const deviceLabel = resolveDeviceLabel(testInfo.project.name);
       const browserName = resolveBrowserName(testInfo.project.name);
       const snapshotName = visualSnapshotName(target.id, deviceLabel, browserName);
+
+      await assertPrimaryVehicleImagesReady(page);
 
       await expect(page).toHaveScreenshot(`${snapshotName}.png`, {
         ...buildScreenshotOptions(page, target),

@@ -1,5 +1,9 @@
 import { expect } from "@playwright/test";
 
+import {
+  PRIMARY_MEDIA_STATE,
+  PRIMARY_MEDIA_STATE_ATTR,
+} from "../../src/media/primaryMediaState.js";
 import { assertHealthyPage } from "./assertHealthyPage.js";
 import { installCatalogApiStub } from "./catalogApiStub.js";
 import {
@@ -308,4 +312,52 @@ export function visualSnapshotName(pageId, deviceLabel, browserName) {
     parts.push(browserName);
   }
   return parts.join("-");
+}
+
+/**
+ * Fail visual tests when any VehicleImage primary asset (chain index 0) did not load.
+ * Fallback rendering must not satisfy this check.
+ *
+ * @param {import("@playwright/test").Page} page
+ */
+export async function assertPrimaryVehicleImagesReady(page) {
+  const failures = await page.evaluate(
+    ({ attr, loadedState }) => {
+      const results = [];
+      document.querySelectorAll(`[${attr}]`).forEach((el) => {
+        const state = el.getAttribute(attr);
+        if (state === loadedState) return;
+
+        const article = el.closest("article[aria-label]");
+        const vehicle =
+          article?.getAttribute("aria-label") ||
+          el.querySelector("img[alt]")?.getAttribute("alt") ||
+          "unknown vehicle";
+
+        results.push({
+          vehicle,
+          state: state || "missing",
+          page: `${window.location.pathname}${window.location.hash}`,
+        });
+      });
+      return results;
+    },
+    {
+      attr: PRIMARY_MEDIA_STATE_ATTR,
+      loadedState: PRIMARY_MEDIA_STATE.LOADED,
+    }
+  );
+
+  const message =
+    failures.length > 0
+      ? [
+          "Primary media verification failed (fallback rendering does not satisfy visual correctness):",
+          ...failures.map(
+            (entry) =>
+              `  - ${entry.vehicle} on ${entry.page}: ${PRIMARY_MEDIA_STATE_ATTR}="${entry.state}"`
+          ),
+        ].join("\n")
+      : "Primary media verification failed";
+
+  expect(failures, message).toEqual([]);
 }
