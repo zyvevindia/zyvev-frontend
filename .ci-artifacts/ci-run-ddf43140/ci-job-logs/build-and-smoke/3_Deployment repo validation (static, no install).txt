@@ -1,0 +1,21 @@
+﻿2026-07-02T12:51:54.2275366Z ##[group]Run node scripts/deployment-repo-validation.mjs
+2026-07-02T12:51:54.2277342Z [36;1mnode scripts/deployment-repo-validation.mjs[0m
+2026-07-02T12:51:54.2428007Z shell: /usr/bin/bash -e {0}
+2026-07-02T12:51:54.2429267Z ##[endgroup]
+2026-07-02T12:51:54.3933391Z 
+2026-07-02T12:51:54.3934925Z === EVSavari deployment repo validation (static) ===
+2026-07-02T12:51:54.3936397Z 
+2026-07-02T12:51:54.3938260Z ✅ vercel.json present + SPA rewrite
+2026-07-02T12:51:54.3940182Z ✅ vercel.json: www → apex redirect configured
+2026-07-02T12:51:54.3941637Z ✅ CI: post-launch:smoke
+2026-07-02T12:51:54.3942716Z ✅ CI: ingestion:smoke
+2026-07-02T12:51:54.3943758Z ✅ CI: production build
+2026-07-02T12:51:54.3945406Z ✅ robots.txt: Sitemap directive
+2026-07-02T12:51:54.3949095Z ✅ index.html: SPA #root
+2026-07-02T12:51:54.3951554Z ✅ package.json: deploy:smoke
+2026-07-02T12:51:54.3953767Z ✅ package.json: post-launch:smoke
+2026-07-02T12:51:54.3956630Z ✅ src/config.js: APP domain evsavari.com
+2026-07-02T12:51:54.3959747Z ✅ docs/deploy/examples/render-backend.service.yaml present
+2026-07-02T12:51:54.3961880Z 
+2026-07-02T12:51:54.3963124Z All static checks passed (11).
+2026-07-02T12:51:54.3964741Z 

@@ -19,6 +19,7 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 import { ReportIssueProvider } from "./components/feedback/ReportIssueProvider";
 
 import "./index.css";
+import "./styles/assistant.css";
 
 import { activateBackendPersistence } from "./backend/activation.js";
 import { getUsageSessionId } from "./ops/usageLearningBuffer.js";

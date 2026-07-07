@@ -1,0 +1,1332 @@
+﻿2026-07-02T12:52:45.4831859Z ##[group]Run npm run test:e2e
+2026-07-02T12:52:45.4832388Z [36;1mnpm run test:e2e[0m
+2026-07-02T12:52:45.4880999Z shell: /usr/bin/bash -e {0}
+2026-07-02T12:52:45.4881437Z env:
+2026-07-02T12:52:45.4881732Z   CI: 1
+2026-07-02T12:52:45.4882061Z   PLAYWRIGHT_SKIP_BUILD: 1
+2026-07-02T12:52:45.4882466Z ##[endgroup]
+2026-07-02T12:52:45.5869699Z 
+2026-07-02T12:52:45.5870106Z > evsavari-frontend@0.0.0 test:e2e
+2026-07-02T12:52:45.5870785Z > node scripts/run-functional-playwright.mjs
+2026-07-02T12:52:45.5871027Z 
+2026-07-02T12:52:47.2197183Z 
+2026-07-02T12:52:47.2197868Z Running 98 tests using 1 worker
+2026-07-02T12:52:47.2222549Z 
+2026-07-02T12:52:53.4611756Z   ✘   1 [chromium] › tests/assistant/analytics.spec.js:24:3 › Assistant analytics events › registers assistant analytics events and fires handlers during journeys (5.6s)
+2026-07-02T12:52:59.6326226Z   ✘   2 [chromium] › tests/assistant/assistant-flow.spec.js:13:3 › Assistant journey flows › Scenario 1 — family value buyer sees strong matches (5.6s)
+2026-07-02T12:53:05.8471588Z   ✘   3 [chromium] › tests/assistant/assistant-flow.spec.js:24:3 › Assistant journey flows › Scenario 2 — budget city commuter sees affordable EVs (5.6s)
+2026-07-02T12:53:12.0134194Z   ✘   4 [chromium] › tests/assistant/assistant-flow.spec.js:30:3 › Assistant journey flows › Scenario 3 — premium highway buyer sees premium EVs (5.6s)
+2026-07-02T12:53:18.1552927Z   ✘   5 [chromium] › tests/assistant/restart-flow.spec.js:14:3 › Assistant restart flow › restart clears answers and returns to the first question (5.6s)
+2026-07-02T12:53:24.4602926Z   ✘   6 [chromium] › tests/assistant/shortlist-limit.spec.js:20:3 › Assistant shortlist limits › prevents adding a sixth vehicle and avoids duplicates (5.7s)
+2026-07-02T12:53:30.8470037Z   ✘   7 [chromium] › tests/assistant/shortlist.spec.js:21:3 › Assistant shortlist › add, persist, and remove a shortlisted vehicle (5.8s)
+2026-07-02T12:53:37.0497149Z   ✘   8 [chromium] › tests/compare/compare-links.spec.js:12:3 › Assistant compare links › opens compare guide with editorial comparison content (5.6s)
+2026-07-02T12:53:40.9612020Z   ✓   9 [chromium] › tests/journeys/vehicle-review-ownership.spec.js:8:3 › Vehicle review to ownership journey › navigates homepage → detail → review → ownership for Tata Nexon EV (3.4s)
+2026-07-02T12:53:46.4899097Z   ✘  10 [chromium] › tests/ownership/ownership-links.spec.js:11:3 › Assistant ownership links › opens ownership calculators from assistant results (5.5s)
+2026-07-02T12:53:47.5186330Z   ✓  11 [chromium] › tests/routes/core-routes.spec.js:17:5 › Core routes › homepage (/) loads without error boundary (475ms)
+2026-07-02T12:53:47.8692475Z   ✓  12 [chromium] › tests/routes/core-routes.spec.js:17:5 › Core routes › buyer assistant (/assistant) loads without error boundary (336ms)
+2026-07-02T12:53:48.1877014Z   ✓  13 [chromium] › tests/routes/core-routes.spec.js:17:5 › Core routes › assistant shortlist (/assistant/shortlist) loads without error boundary (306ms)
+2026-07-02T12:53:48.5157318Z   ✓  14 [chromium] › tests/routes/core-routes.spec.js:17:5 › Core routes › assistant playground (/playground/assistant) loads without error boundary (316ms)
+2026-07-02T12:53:48.8899261Z   ✓  15 [chromium] › tests/routes/core-routes.spec.js:17:5 › Core routes › vehicle detail (/cars/tata-nexon-ev) loads without error boundary (361ms)
+2026-07-02T12:53:49.2188080Z   ✓  16 [chromium] › tests/routes/core-routes.spec.js:17:5 › Core routes › vehicle review (/reviews/tata-nexon-ev-review) loads without error boundary (316ms)
+2026-07-02T12:53:49.5525149Z   ✓  17 [chromium] › tests/routes/core-routes.spec.js:17:5 › Core routes › ownership running cost (/ownership/tata-nexon-ev/running-cost) loads without error boundary (321ms)
+2026-07-02T12:53:49.9191703Z   ✓  18 [chromium] › tests/smoke/homepage.spec.js:6:3 › Homepage smoke › homepage loads with title and no error boundary (351ms)
+2026-07-02T12:53:57.6093336Z   ✘  19 [firefox] › tests/assistant/analytics.spec.js:24:3 › Assistant analytics events › registers assistant analytics events and fires handlers during journeys (6.4s)
+2026-07-02T12:54:05.0784108Z   ✘  20 [firefox] › tests/assistant/assistant-flow.spec.js:13:3 › Assistant journey flows › Scenario 1 — family value buyer sees strong matches (6.3s)
+2026-07-02T12:54:12.5883353Z   ✘  21 [firefox] › tests/assistant/assistant-flow.spec.js:24:3 › Assistant journey flows › Scenario 2 — budget city commuter sees affordable EVs (6.3s)
+2026-07-02T12:54:20.0793802Z   ✘  22 [firefox] › tests/assistant/assistant-flow.spec.js:30:3 › Assistant journey flows › Scenario 3 — premium highway buyer sees premium EVs (6.3s)
+2026-07-02T12:54:27.5610131Z   ✘  23 [firefox] › tests/assistant/restart-flow.spec.js:14:3 › Assistant restart flow › restart clears answers and returns to the first question (6.3s)
+2026-07-02T12:54:35.3632808Z   ✘  24 [firefox] › tests/assistant/shortlist-limit.spec.js:20:3 › Assistant shortlist limits › prevents adding a sixth vehicle and avoids duplicates (6.6s)
+2026-07-02T12:54:43.2139951Z   ✘  25 [firefox] › tests/assistant/shortlist.spec.js:21:3 › Assistant shortlist › add, persist, and remove a shortlisted vehicle (6.7s)
+2026-07-02T12:54:50.7072124Z   ✘  26 [firefox] › tests/compare/compare-links.spec.js:12:3 › Assistant compare links › opens compare guide with editorial comparison content (6.3s)
+2026-07-02T12:54:54.7638143Z   ✓  27 [firefox] › tests/journeys/vehicle-review-ownership.spec.js:8:3 › Vehicle review to ownership journey › navigates homepage → detail → review → ownership for Tata Nexon EV (3.2s)
+2026-07-02T12:55:00.6992780Z   ✘  28 [firefox] › tests/ownership/ownership-links.spec.js:11:3 › Assistant ownership links › opens ownership calculators from assistant results (5.6s)
+2026-07-02T12:55:02.9186489Z   ✓  29 [firefox] › tests/routes/core-routes.spec.js:17:5 › Core routes › homepage (/) loads without error boundary (1.4s)
+2026-07-02T12:55:03.5608657Z   ✓  30 [firefox] › tests/routes/core-routes.spec.js:17:5 › Core routes › buyer assistant (/assistant) loads without error boundary (615ms)
+2026-07-02T12:55:04.1293248Z   ✓  31 [firefox] › tests/routes/core-routes.spec.js:17:5 › Core routes › assistant shortlist (/assistant/shortlist) loads without error boundary (556ms)
+2026-07-02T12:55:04.6742566Z   ✓  32 [firefox] › tests/routes/core-routes.spec.js:17:5 › Core routes › assistant playground (/playground/assistant) loads without error boundary (533ms)
+2026-07-02T12:55:05.3166217Z   ✓  33 [firefox] › tests/routes/core-routes.spec.js:17:5 › Core routes › vehicle detail (/cars/tata-nexon-ev) loads without error boundary (626ms)
+2026-07-02T12:55:05.8284314Z   ✓  34 [firefox] › tests/routes/core-routes.spec.js:17:5 › Core routes › vehicle review (/reviews/tata-nexon-ev-review) loads without error boundary (499ms)
+2026-07-02T12:55:06.4066648Z   ✓  35 [firefox] › tests/routes/core-routes.spec.js:17:5 › Core routes › ownership running cost (/ownership/tata-nexon-ev/running-cost) loads without error boundary (561ms)
+2026-07-02T12:55:07.0293322Z   ✓  36 [firefox] › tests/smoke/homepage.spec.js:6:3 › Homepage smoke › homepage loads with title and no error boundary (606ms)
+2026-07-02T12:55:19.3818333Z   ✘  37 [webkit] › tests/assistant/analytics.spec.js:24:3 › Assistant analytics events › registers assistant analytics events and fires handlers during journeys (10.8s)
+2026-07-02T12:55:25.9064225Z   ✘  38 [webkit] › tests/assistant/assistant-flow.spec.js:13:3 › Assistant journey flows › Scenario 1 — family value buyer sees strong matches (5.9s)
+2026-07-02T12:55:50.3466185Z   ✘  39 [webkit] › tests/assistant/assistant-flow.spec.js:24:3 › Assistant journey flows › Scenario 2 — budget city commuter sees affordable EVs (5.9s)
+2026-07-02T12:55:56.9181551Z   ✘  40 [webkit] › tests/assistant/assistant-flow.spec.js:30:3 › Assistant journey flows › Scenario 3 — premium highway buyer sees premium EVs (5.9s)
+2026-07-02T12:56:21.0076740Z   ✘  41 [webkit] › tests/assistant/restart-flow.spec.js:14:3 › Assistant restart flow › restart clears answers and returns to the first question (5.9s)
+2026-07-02T12:56:45.4296793Z   ✘  42 [webkit] › tests/assistant/shortlist-limit.spec.js:20:3 › Assistant shortlist limits › prevents adding a sixth vehicle and avoids duplicates (6.1s)
+2026-07-02T12:56:52.1907547Z   ✘  43 [webkit] › tests/assistant/shortlist.spec.js:21:3 › Assistant shortlist › add, persist, and remove a shortlisted vehicle (6.1s)
+2026-07-02T12:57:16.3788892Z   ✘  44 [webkit] › tests/compare/compare-links.spec.js:12:3 › Assistant compare links › opens compare guide with editorial comparison content (5.9s)
+2026-07-02T12:57:27.5761497Z   ✓  45 [webkit] › tests/journeys/vehicle-review-ownership.spec.js:8:3 › Vehicle review to ownership journey › navigates homepage → detail → review → ownership for Tata Nexon EV (10.7s)
+2026-07-02T12:57:33.5455109Z   ✘  46 [webkit] › tests/ownership/ownership-links.spec.js:11:3 › Assistant ownership links › opens ownership calculators from assistant results (5.8s)
+2026-07-02T12:57:39.6532288Z   ✓  47 [webkit] › tests/routes/core-routes.spec.js:17:5 › Core routes › homepage (/) loads without error boundary (5.6s)
+2026-07-02T12:57:40.4285605Z   ✓  48 [webkit] › tests/routes/core-routes.spec.js:17:5 › Core routes › buyer assistant (/assistant) loads without error boundary (754ms)
+2026-07-02T12:57:41.3776904Z   ✓  49 [webkit] › tests/routes/core-routes.spec.js:17:5 › Core routes › assistant shortlist (/assistant/shortlist) loads without error boundary (931ms)
+2026-07-02T12:57:42.1640430Z   ✓  50 [webkit] › tests/routes/core-routes.spec.js:17:5 › Core routes › assistant playground (/playground/assistant) loads without error boundary (771ms)
+2026-07-02T12:57:43.1126181Z   ✓  51 [webkit] › tests/routes/core-routes.spec.js:17:5 › Core routes › vehicle detail (/cars/tata-nexon-ev) loads without error boundary (928ms)
+2026-07-02T12:57:43.8979579Z   ✓  52 [webkit] › tests/routes/core-routes.spec.js:17:5 › Core routes › vehicle review (/reviews/tata-nexon-ev-review) loads without error boundary (770ms)
+2026-07-02T12:57:44.7013659Z   ✓  53 [webkit] › tests/routes/core-routes.spec.js:17:5 › Core routes › ownership running cost (/ownership/tata-nexon-ev/running-cost) loads without error boundary (785ms)
+2026-07-02T12:57:45.5030747Z   ✓  54 [webkit] › tests/smoke/homepage.spec.js:6:3 › Homepage smoke › homepage loads with title and no error boundary (781ms)
+2026-07-02T12:57:51.7950726Z   ✘  55 [responsive-desktop-chrome] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout (5.6s)
+2026-07-02T12:57:53.1732936Z   ✓  56 [responsive-desktop-chrome] › tests/responsive/responsive-ownership.spec.js:7:3 › Responsive ownership calculators › running-cost calculator remains accessible on device viewports (835ms)
+2026-07-02T12:57:53.9921146Z   ✓  57 [responsive-desktop-chrome] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › homepage (/) has no responsive layout issues (800ms)
+2026-07-02T12:57:54.7082092Z   ✓  58 [responsive-desktop-chrome] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › buyer assistant (/assistant) has no responsive layout issues (701ms)
+2026-07-02T12:57:55.2796777Z   ✓  59 [responsive-desktop-chrome] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › assistant shortlist (/assistant/shortlist) has no responsive layout issues (558ms)
+2026-07-02T12:57:56.6032224Z   ✓  60 [responsive-desktop-chrome] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › vehicle detail (/cars/tata-nexon-ev) has no responsive layout issues (1.3s)
+2026-07-02T12:57:57.4238954Z   ✓  61 [responsive-desktop-chrome] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › vehicle review (/reviews/tata-nexon-ev-review) has no responsive layout issues (806ms)
+2026-07-02T12:57:58.1587681Z   ✓  62 [responsive-desktop-chrome] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › ownership running cost (/ownership/tata-nexon-ev/running-cost) has no responsive layout issues (721ms)
+2026-07-02T12:57:59.5145152Z   ✓  63 [responsive-desktop-chrome] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › compare guide (/compare/tata-nexon-ev-vs-mahindra-xuv400) has no responsive layout issues (1.3s)
+2026-07-02T12:58:00.8565112Z   ✓  64 [responsive-desktop-chrome] › tests/responsive/responsive-score2.spec.js:7:3 › Responsive Score2 perspective › EVSavari Perspective is visible and readable on vehicle detail (1.3s)
+2026-07-02T12:58:06.4741833Z   ✘  65 [responsive-desktop-chrome] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports (5.6s)
+2026-07-02T12:58:12.9262330Z   ✘  66 [responsive-iphone-14] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout (5.8s)
+2026-07-02T12:58:14.8334157Z   ✓  67 [responsive-iphone-14] › tests/responsive/responsive-ownership.spec.js:7:3 › Responsive ownership calculators › running-cost calculator remains accessible on device viewports (1.4s)
+2026-07-02T12:58:16.4662748Z   ✓  68 [responsive-iphone-14] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › homepage (/) has no responsive layout issues (1.6s)
+2026-07-02T12:58:17.5739524Z   ✓  69 [responsive-iphone-14] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › buyer assistant (/assistant) has no responsive layout issues (1.1s)
+2026-07-02T12:58:18.5873430Z   ✓  70 [responsive-iphone-14] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › assistant shortlist (/assistant/shortlist) has no responsive layout issues (993ms)
+2026-07-02T12:58:21.1547083Z   ✓  71 [responsive-iphone-14] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › vehicle detail (/cars/tata-nexon-ev) has no responsive layout issues (2.5s)
+2026-07-02T12:58:23.7264641Z   ✓  72 [responsive-iphone-14] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › vehicle review (/reviews/tata-nexon-ev-review) has no responsive layout issues (2.5s)
+2026-07-02T12:58:25.4517488Z   ✓  73 [responsive-iphone-14] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › ownership running cost (/ownership/tata-nexon-ev/running-cost) has no responsive layout issues (1.7s)
+2026-07-02T12:58:29.6827096Z   ✓  74 [responsive-iphone-14] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › compare guide (/compare/tata-nexon-ev-vs-mahindra-xuv400) has no responsive layout issues (4.2s)
+2026-07-02T12:58:32.3357048Z   ✓  75 [responsive-iphone-14] › tests/responsive/responsive-score2.spec.js:7:3 › Responsive Score2 perspective › EVSavari Perspective is visible and readable on vehicle detail (2.6s)
+2026-07-02T12:58:55.3444871Z   ✘  76 [responsive-iphone-14] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports (7.0s)
+2026-07-02T12:59:01.7998734Z   ✘  77 [responsive-pixel-7] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout (5.9s)
+2026-07-02T12:59:03.4556378Z   ✓  78 [responsive-pixel-7] › tests/responsive/responsive-ownership.spec.js:7:3 › Responsive ownership calculators › running-cost calculator remains accessible on device viewports (1.1s)
+2026-07-02T12:59:04.5186255Z   ✓  79 [responsive-pixel-7] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › homepage (/) has no responsive layout issues (1.0s)
+2026-07-02T12:59:05.5115639Z   ✓  80 [responsive-pixel-7] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › buyer assistant (/assistant) has no responsive layout issues (979ms)
+2026-07-02T12:59:06.2924196Z   ✓  81 [responsive-pixel-7] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › assistant shortlist (/assistant/shortlist) has no responsive layout issues (767ms)
+2026-07-02T12:59:07.8006014Z   ✓  82 [responsive-pixel-7] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › vehicle detail (/cars/tata-nexon-ev) has no responsive layout issues (1.5s)
+2026-07-02T12:59:08.9299546Z   ✓  83 [responsive-pixel-7] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › vehicle review (/reviews/tata-nexon-ev-review) has no responsive layout issues (1.1s)
+2026-07-02T12:59:09.9630655Z   ✓  84 [responsive-pixel-7] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › ownership running cost (/ownership/tata-nexon-ev/running-cost) has no responsive layout issues (1.0s)
+2026-07-02T12:59:12.0727514Z   ✓  85 [responsive-pixel-7] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › compare guide (/compare/tata-nexon-ev-vs-mahindra-xuv400) has no responsive layout issues (2.1s)
+2026-07-02T12:59:13.6152078Z   ✓  86 [responsive-pixel-7] › tests/responsive/responsive-score2.spec.js:7:3 › Responsive Score2 perspective › EVSavari Perspective is visible and readable on vehicle detail (1.5s)
+2026-07-02T12:59:19.5200644Z   ✘  87 [responsive-pixel-7] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports (5.9s)
+2026-07-02T12:59:25.6745796Z   ✘  88 [responsive-ipad-air] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout (5.6s)
+2026-07-02T12:59:27.0696381Z   ✓  89 [responsive-ipad-air] › tests/responsive/responsive-ownership.spec.js:7:3 › Responsive ownership calculators › running-cost calculator remains accessible on device viewports (851ms)
+2026-07-02T12:59:27.8696278Z   ✓  90 [responsive-ipad-air] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › homepage (/) has no responsive layout issues (783ms)
+2026-07-02T12:59:28.5995262Z   ✓  91 [responsive-ipad-air] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › buyer assistant (/assistant) has no responsive layout issues (715ms)
+2026-07-02T12:59:29.1911060Z   ✓  92 [responsive-ipad-air] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › assistant shortlist (/assistant/shortlist) has no responsive layout issues (578ms)
+2026-07-02T12:59:30.5150346Z   ✓  93 [responsive-ipad-air] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › vehicle detail (/cars/tata-nexon-ev) has no responsive layout issues (1.3s)
+2026-07-02T12:59:31.3401629Z   ✓  94 [responsive-ipad-air] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › vehicle review (/reviews/tata-nexon-ev-review) has no responsive layout issues (810ms)
+2026-07-02T12:59:32.0906763Z   ✓  95 [responsive-ipad-air] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › ownership running cost (/ownership/tata-nexon-ev/running-cost) has no responsive layout issues (737ms)
+2026-07-02T12:59:33.4085824Z   ✓  96 [responsive-ipad-air] › tests/responsive/responsive-pages.spec.js:10:5 › Responsive core pages › compare guide (/compare/tata-nexon-ev-vs-mahindra-xuv400) has no responsive layout issues (1.3s)
+2026-07-02T12:59:34.3926122Z   ✓  97 [responsive-ipad-air] › tests/responsive/responsive-score2.spec.js:7:3 › Responsive Score2 perspective › EVSavari Perspective is visible and readable on vehicle detail (968ms)
+2026-07-02T12:59:40.0117077Z   ✘  98 [responsive-ipad-air] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports (5.6s)
+2026-07-02T12:59:40.0409642Z 
+2026-07-02T12:59:40.0464918Z 
+2026-07-02T12:59:40.0466236Z   1) [chromium] › tests/assistant/analytics.spec.js:24:3 › Assistant analytics events › registers assistant analytics events and fires handlers during journeys 
+2026-07-02T12:59:40.0466966Z 
+2026-07-02T12:59:40.0467428Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0485215Z 
+2026-07-02T12:59:40.0485790Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0486289Z     Expected: visible
+2026-07-02T12:59:40.0486661Z     Timeout: 5000ms
+2026-07-02T12:59:40.0487446Z     Error: element(s) not found
+2026-07-02T12:59:40.0487738Z 
+2026-07-02T12:59:40.0487893Z     Call log:
+2026-07-02T12:59:40.0488423Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0489015Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0489377Z 
+2026-07-02T12:59:40.0489389Z 
+2026-07-02T12:59:40.0489722Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0490077Z 
+2026-07-02T12:59:40.0490443Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0491134Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0491859Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0492631Z          |                                                 ^
+2026-07-02T12:59:40.0493145Z       41 |   await expect(
+2026-07-02T12:59:40.0493917Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0494945Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0496044Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0497723Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/analytics.spec.js:32:5
+2026-07-02T12:59:40.0498389Z 
+2026-07-02T12:59:40.0499181Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0500547Z     test-results/assistant-analytics-Assist-046a5-es-handlers-during-journeys-chromium/test-failed-1.png
+2026-07-02T12:59:40.0501824Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0502111Z 
+2026-07-02T12:59:40.0502573Z     Error Context: test-results/assistant-analytics-Assist-046a5-es-handlers-during-journeys-chromium/error-context.md
+2026-07-02T12:59:40.0503083Z 
+2026-07-02T12:59:40.0503702Z   2) [chromium] › tests/assistant/assistant-flow.spec.js:13:3 › Assistant journey flows › Scenario 1 — family value buyer sees strong matches 
+2026-07-02T12:59:40.0504220Z 
+2026-07-02T12:59:40.0504391Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0504832Z 
+2026-07-02T12:59:40.0504986Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0505268Z     Expected: visible
+2026-07-02T12:59:40.0505479Z     Timeout: 5000ms
+2026-07-02T12:59:40.0505718Z     Error: element(s) not found
+2026-07-02T12:59:40.0505873Z 
+2026-07-02T12:59:40.0505974Z     Call log:
+2026-07-02T12:59:40.0506232Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0506576Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0506774Z 
+2026-07-02T12:59:40.0506781Z 
+2026-07-02T12:59:40.0506910Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0507093Z 
+2026-07-02T12:59:40.0507289Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0507665Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0508067Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0508648Z          |                                                 ^
+2026-07-02T12:59:40.0508938Z       41 |   await expect(
+2026-07-02T12:59:40.0509361Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0509785Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0510381Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0511243Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0512104Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0512912Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/assistant-flow.spec.js:14:5
+2026-07-02T12:59:40.0513296Z 
+2026-07-02T12:59:40.0513728Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0514902Z     test-results/assistant-assistant-flow-A-ade1d-e-buyer-sees-strong-matches-chromium/test-failed-1.png
+2026-07-02T12:59:40.0515730Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0516008Z 
+2026-07-02T12:59:40.0516469Z     Error Context: test-results/assistant-assistant-flow-A-ade1d-e-buyer-sees-strong-matches-chromium/error-context.md
+2026-07-02T12:59:40.0516967Z 
+2026-07-02T12:59:40.0517565Z   3) [chromium] › tests/assistant/assistant-flow.spec.js:24:3 › Assistant journey flows › Scenario 2 — budget city commuter sees affordable EVs 
+2026-07-02T12:59:40.0518071Z 
+2026-07-02T12:59:40.0518221Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0518424Z 
+2026-07-02T12:59:40.0518557Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0518831Z     Expected: visible
+2026-07-02T12:59:40.0519058Z     Timeout: 5000ms
+2026-07-02T12:59:40.0519289Z     Error: element(s) not found
+2026-07-02T12:59:40.0519457Z 
+2026-07-02T12:59:40.0519538Z     Call log:
+2026-07-02T12:59:40.0519787Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0520126Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0520326Z 
+2026-07-02T12:59:40.0520332Z 
+2026-07-02T12:59:40.0520461Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0520645Z 
+2026-07-02T12:59:40.0520838Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0521225Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0521629Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0522038Z          |                                                 ^
+2026-07-02T12:59:40.0522316Z       41 |   await expect(
+2026-07-02T12:59:40.0522735Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0523156Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0523744Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0524851Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0525737Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0526544Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/assistant-flow.spec.js:25:5
+2026-07-02T12:59:40.0526928Z 
+2026-07-02T12:59:40.0527326Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0528072Z     test-results/assistant-assistant-flow-A-f14b4-ommuter-sees-affordable-EVs-chromium/test-failed-1.png
+2026-07-02T12:59:40.0528861Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0529653Z 
+2026-07-02T12:59:40.0530151Z     Error Context: test-results/assistant-assistant-flow-A-f14b4-ommuter-sees-affordable-EVs-chromium/error-context.md
+2026-07-02T12:59:40.0530651Z 
+2026-07-02T12:59:40.0531251Z   4) [chromium] › tests/assistant/assistant-flow.spec.js:30:3 › Assistant journey flows › Scenario 3 — premium highway buyer sees premium EVs 
+2026-07-02T12:59:40.0531759Z 
+2026-07-02T12:59:40.0531907Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0532109Z 
+2026-07-02T12:59:40.0532244Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0532513Z     Expected: visible
+2026-07-02T12:59:40.0532724Z     Timeout: 5000ms
+2026-07-02T12:59:40.0532952Z     Error: element(s) not found
+2026-07-02T12:59:40.0533111Z 
+2026-07-02T12:59:40.0533189Z     Call log:
+2026-07-02T12:59:40.0533449Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0533783Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0533989Z 
+2026-07-02T12:59:40.0533995Z 
+2026-07-02T12:59:40.0534128Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0534687Z 
+2026-07-02T12:59:40.0534979Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0535361Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0535762Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0536168Z          |                                                 ^
+2026-07-02T12:59:40.0536441Z       41 |   await expect(
+2026-07-02T12:59:40.0536854Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0537264Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0537850Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0538710Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0539842Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0540667Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/assistant-flow.spec.js:31:5
+2026-07-02T12:59:40.0541049Z 
+2026-07-02T12:59:40.0541462Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0542200Z     test-results/assistant-assistant-flow-A-8deb8-hway-buyer-sees-premium-EVs-chromium/test-failed-1.png
+2026-07-02T12:59:40.0542988Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0543262Z 
+2026-07-02T12:59:40.0543737Z     Error Context: test-results/assistant-assistant-flow-A-8deb8-hway-buyer-sees-premium-EVs-chromium/error-context.md
+2026-07-02T12:59:40.0544230Z 
+2026-07-02T12:59:40.0545382Z   5) [chromium] › tests/assistant/restart-flow.spec.js:14:3 › Assistant restart flow › restart clears answers and returns to the first question 
+2026-07-02T12:59:40.0546105Z 
+2026-07-02T12:59:40.0546265Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0546467Z 
+2026-07-02T12:59:40.0546599Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0546864Z     Expected: visible
+2026-07-02T12:59:40.0547078Z     Timeout: 5000ms
+2026-07-02T12:59:40.0547306Z     Error: element(s) not found
+2026-07-02T12:59:40.0547461Z 
+2026-07-02T12:59:40.0547537Z     Call log:
+2026-07-02T12:59:40.0547786Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0548125Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0548317Z 
+2026-07-02T12:59:40.0548324Z 
+2026-07-02T12:59:40.0548460Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0548639Z 
+2026-07-02T12:59:40.0548836Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0549206Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0549609Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0550026Z          |                                                 ^
+2026-07-02T12:59:40.0550302Z       41 |   await expect(
+2026-07-02T12:59:40.0550722Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0551137Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0551727Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0552585Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0553452Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0554245Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/restart-flow.spec.js:15:5
+2026-07-02T12:59:40.0555131Z 
+2026-07-02T12:59:40.0555572Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0556473Z     test-results/assistant-restart-flow-Ass-3e7d1-turns-to-the-first-question-chromium/test-failed-1.png
+2026-07-02T12:59:40.0557264Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0557533Z 
+2026-07-02T12:59:40.0557990Z     Error Context: test-results/assistant-restart-flow-Ass-3e7d1-turns-to-the-first-question-chromium/error-context.md
+2026-07-02T12:59:40.0558476Z 
+2026-07-02T12:59:40.0559097Z   6) [chromium] › tests/assistant/shortlist-limit.spec.js:20:3 › Assistant shortlist limits › prevents adding a sixth vehicle and avoids duplicates 
+2026-07-02T12:59:40.0559631Z 
+2026-07-02T12:59:40.0559776Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0559984Z 
+2026-07-02T12:59:40.0560113Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0560394Z     Expected: visible
+2026-07-02T12:59:40.0560603Z     Timeout: 5000ms
+2026-07-02T12:59:40.0560846Z     Error: element(s) not found
+2026-07-02T12:59:40.0561004Z 
+2026-07-02T12:59:40.0561079Z     Call log:
+2026-07-02T12:59:40.0561330Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0561666Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0561864Z 
+2026-07-02T12:59:40.0561870Z 
+2026-07-02T12:59:40.0562000Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0562221Z 
+2026-07-02T12:59:40.0562418Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0562790Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0563190Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0563598Z          |                                                 ^
+2026-07-02T12:59:40.0563897Z       41 |   await expect(
+2026-07-02T12:59:40.0564332Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0565233Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0565991Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0566869Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0567744Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0568573Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/shortlist-limit.spec.js:21:5
+2026-07-02T12:59:40.0568958Z 
+2026-07-02T12:59:40.0569405Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0570159Z     test-results/assistant-shortlist-limit--4aae4-hicle-and-avoids-duplicates-chromium/test-failed-1.png
+2026-07-02T12:59:40.0570963Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0571395Z 
+2026-07-02T12:59:40.0571867Z     Error Context: test-results/assistant-shortlist-limit--4aae4-hicle-and-avoids-duplicates-chromium/error-context.md
+2026-07-02T12:59:40.0572362Z 
+2026-07-02T12:59:40.0572898Z   7) [chromium] › tests/assistant/shortlist.spec.js:21:3 › Assistant shortlist › add, persist, and remove a shortlisted vehicle 
+2026-07-02T12:59:40.0573596Z 
+2026-07-02T12:59:40.0573764Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0573978Z 
+2026-07-02T12:59:40.0574105Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0574382Z     Expected: visible
+2026-07-02T12:59:40.0574928Z     Timeout: 5000ms
+2026-07-02T12:59:40.0575171Z     Error: element(s) not found
+2026-07-02T12:59:40.0575329Z 
+2026-07-02T12:59:40.0575411Z     Call log:
+2026-07-02T12:59:40.0575667Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0576007Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0576228Z 
+2026-07-02T12:59:40.0576235Z 
+2026-07-02T12:59:40.0576373Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0576565Z 
+2026-07-02T12:59:40.0576764Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0577143Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0577547Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0577959Z          |                                                 ^
+2026-07-02T12:59:40.0578241Z       41 |   await expect(
+2026-07-02T12:59:40.0578662Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0579081Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0579673Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0580534Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0581716Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0582535Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/shortlist.spec.js:22:5
+2026-07-02T12:59:40.0582897Z 
+2026-07-02T12:59:40.0583317Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0584063Z     test-results/assistant-shortlist-Assist-06007-emove-a-shortlisted-vehicle-chromium/test-failed-1.png
+2026-07-02T12:59:40.0585053Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0585335Z 
+2026-07-02T12:59:40.0585790Z     Error Context: test-results/assistant-shortlist-Assist-06007-emove-a-shortlisted-vehicle-chromium/error-context.md
+2026-07-02T12:59:40.0586471Z 
+2026-07-02T12:59:40.0587289Z   8) [chromium] › tests/compare/compare-links.spec.js:12:3 › Assistant compare links › opens compare guide with editorial comparison content 
+2026-07-02T12:59:40.0587998Z 
+2026-07-02T12:59:40.0588151Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0588364Z 
+2026-07-02T12:59:40.0588493Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0588761Z     Expected: visible
+2026-07-02T12:59:40.0588978Z     Timeout: 5000ms
+2026-07-02T12:59:40.0589213Z     Error: element(s) not found
+2026-07-02T12:59:40.0589366Z 
+2026-07-02T12:59:40.0589447Z     Call log:
+2026-07-02T12:59:40.0589700Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0590041Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0590242Z 
+2026-07-02T12:59:40.0590249Z 
+2026-07-02T12:59:40.0590377Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0590564Z 
+2026-07-02T12:59:40.0590759Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0591135Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0591548Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0592139Z          |                                                 ^
+2026-07-02T12:59:40.0592422Z       41 |   await expect(
+2026-07-02T12:59:40.0592843Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0593282Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0593883Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0595019Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0595899Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0596705Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/compare/compare-links.spec.js:13:5
+2026-07-02T12:59:40.0597433Z 
+2026-07-02T12:59:40.0597876Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0598644Z     test-results/compare-compare-links-Assi-58add-ditorial-comparison-content-chromium/test-failed-1.png
+2026-07-02T12:59:40.0599436Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0599713Z 
+2026-07-02T12:59:40.0600175Z     Error Context: test-results/compare-compare-links-Assi-58add-ditorial-comparison-content-chromium/error-context.md
+2026-07-02T12:59:40.0600681Z 
+2026-07-02T12:59:40.0601284Z   9) [chromium] › tests/ownership/ownership-links.spec.js:11:3 › Assistant ownership links › opens ownership calculators from assistant results 
+2026-07-02T12:59:40.0601800Z 
+2026-07-02T12:59:40.0601953Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0602156Z 
+2026-07-02T12:59:40.0602291Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0602723Z     Expected: visible
+2026-07-02T12:59:40.0602934Z     Timeout: 5000ms
+2026-07-02T12:59:40.0603188Z     Error: element(s) not found
+2026-07-02T12:59:40.0614156Z 
+2026-07-02T12:59:40.0614288Z     Call log:
+2026-07-02T12:59:40.0614879Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0615273Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0615488Z 
+2026-07-02T12:59:40.0615495Z 
+2026-07-02T12:59:40.0615637Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0615836Z 
+2026-07-02T12:59:40.0616033Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0616671Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0617205Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0617634Z          |                                                 ^
+2026-07-02T12:59:40.0617932Z       41 |   await expect(
+2026-07-02T12:59:40.0618380Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0619011Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0619626Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0620505Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0621372Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0622193Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/ownership/ownership-links.spec.js:12:5
+2026-07-02T12:59:40.0622586Z 
+2026-07-02T12:59:40.0623038Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0623867Z     test-results/ownership-ownership-links--c6f85-tors-from-assistant-results-chromium/test-failed-1.png
+2026-07-02T12:59:40.0625280Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0625593Z 
+2026-07-02T12:59:40.0626079Z     Error Context: test-results/ownership-ownership-links--c6f85-tors-from-assistant-results-chromium/error-context.md
+2026-07-02T12:59:40.0626589Z 
+2026-07-02T12:59:40.0627259Z   10) [firefox] › tests/assistant/analytics.spec.js:24:3 › Assistant analytics events › registers assistant analytics events and fires handlers during journeys 
+2026-07-02T12:59:40.0627836Z 
+2026-07-02T12:59:40.0627982Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0628193Z 
+2026-07-02T12:59:40.0628328Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0628601Z     Expected: visible
+2026-07-02T12:59:40.0628816Z     Timeout: 5000ms
+2026-07-02T12:59:40.0629046Z     Error: element(s) not found
+2026-07-02T12:59:40.0629207Z 
+2026-07-02T12:59:40.0629283Z     Call log:
+2026-07-02T12:59:40.0629539Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0629902Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0630111Z 
+2026-07-02T12:59:40.0630118Z 
+2026-07-02T12:59:40.0630254Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0630441Z 
+2026-07-02T12:59:40.0630642Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0631472Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0632020Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0632446Z          |                                                 ^
+2026-07-02T12:59:40.0632744Z       41 |   await expect(
+2026-07-02T12:59:40.0633173Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0633606Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0634205Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0635421Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/analytics.spec.js:32:5
+2026-07-02T12:59:40.0635802Z 
+2026-07-02T12:59:40.0636234Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0636986Z     test-results/assistant-analytics-Assist-046a5-es-handlers-during-journeys-firefox/test-failed-1.png
+2026-07-02T12:59:40.0637771Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0638049Z 
+2026-07-02T12:59:40.0638505Z     Error Context: test-results/assistant-analytics-Assist-046a5-es-handlers-during-journeys-firefox/error-context.md
+2026-07-02T12:59:40.0639007Z 
+2026-07-02T12:59:40.0639591Z   11) [firefox] › tests/assistant/assistant-flow.spec.js:13:3 › Assistant journey flows › Scenario 1 — family value buyer sees strong matches 
+2026-07-02T12:59:40.0640098Z 
+2026-07-02T12:59:40.0640251Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0640472Z 
+2026-07-02T12:59:40.0640606Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0641026Z     Expected: visible
+2026-07-02T12:59:40.0641237Z     Timeout: 5000ms
+2026-07-02T12:59:40.0641471Z     Error: element(s) not found
+2026-07-02T12:59:40.0641632Z 
+2026-07-02T12:59:40.0641715Z     Call log:
+2026-07-02T12:59:40.0641969Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0642312Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0642513Z 
+2026-07-02T12:59:40.0642519Z 
+2026-07-02T12:59:40.0642648Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0642836Z 
+2026-07-02T12:59:40.0643026Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0643491Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0643899Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0644309Z          |                                                 ^
+2026-07-02T12:59:40.0645036Z       41 |   await expect(
+2026-07-02T12:59:40.0645525Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0645959Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0646564Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0647445Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0648325Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0649139Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/assistant-flow.spec.js:14:5
+2026-07-02T12:59:40.0649530Z 
+2026-07-02T12:59:40.0649946Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0650699Z     test-results/assistant-assistant-flow-A-ade1d-e-buyer-sees-strong-matches-firefox/test-failed-1.png
+2026-07-02T12:59:40.0651500Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0651778Z 
+2026-07-02T12:59:40.0652644Z     Error Context: test-results/assistant-assistant-flow-A-ade1d-e-buyer-sees-strong-matches-firefox/error-context.md
+2026-07-02T12:59:40.0653161Z 
+2026-07-02T12:59:40.0653775Z   12) [firefox] › tests/assistant/assistant-flow.spec.js:24:3 › Assistant journey flows › Scenario 2 — budget city commuter sees affordable EVs 
+2026-07-02T12:59:40.0654297Z 
+2026-07-02T12:59:40.0654657Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0654928Z 
+2026-07-02T12:59:40.0655072Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0655349Z     Expected: visible
+2026-07-02T12:59:40.0655561Z     Timeout: 5000ms
+2026-07-02T12:59:40.0655795Z     Error: element(s) not found
+2026-07-02T12:59:40.0655956Z 
+2026-07-02T12:59:40.0656032Z     Call log:
+2026-07-02T12:59:40.0656466Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0657269Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0657479Z 
+2026-07-02T12:59:40.0657486Z 
+2026-07-02T12:59:40.0657622Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0657810Z 
+2026-07-02T12:59:40.0658004Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0658384Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0658788Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0659202Z          |                                                 ^
+2026-07-02T12:59:40.0659480Z       41 |   await expect(
+2026-07-02T12:59:40.0659901Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0660320Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0660915Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0661833Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0662706Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0663526Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/assistant-flow.spec.js:25:5
+2026-07-02T12:59:40.0663914Z 
+2026-07-02T12:59:40.0664790Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0665680Z     test-results/assistant-assistant-flow-A-f14b4-ommuter-sees-affordable-EVs-firefox/test-failed-1.png
+2026-07-02T12:59:40.0666485Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0666760Z 
+2026-07-02T12:59:40.0667226Z     Error Context: test-results/assistant-assistant-flow-A-f14b4-ommuter-sees-affordable-EVs-firefox/error-context.md
+2026-07-02T12:59:40.0667740Z 
+2026-07-02T12:59:40.0668334Z   13) [firefox] › tests/assistant/assistant-flow.spec.js:30:3 › Assistant journey flows › Scenario 3 — premium highway buyer sees premium EVs 
+2026-07-02T12:59:40.0668848Z 
+2026-07-02T12:59:40.0669002Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0669207Z 
+2026-07-02T12:59:40.0669336Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0669605Z     Expected: visible
+2026-07-02T12:59:40.0669820Z     Timeout: 5000ms
+2026-07-02T12:59:40.0670049Z     Error: element(s) not found
+2026-07-02T12:59:40.0670211Z 
+2026-07-02T12:59:40.0670288Z     Call log:
+2026-07-02T12:59:40.0670541Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0670885Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0671082Z 
+2026-07-02T12:59:40.0671088Z 
+2026-07-02T12:59:40.0671219Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0671402Z 
+2026-07-02T12:59:40.0671757Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0672144Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0672545Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0672961Z          |                                                 ^
+2026-07-02T12:59:40.0673244Z       41 |   await expect(
+2026-07-02T12:59:40.0673666Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0674145Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0675712Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0676623Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0677515Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0678345Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/assistant-flow.spec.js:31:5
+2026-07-02T12:59:40.0678883Z 
+2026-07-02T12:59:40.0679315Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0680057Z     test-results/assistant-assistant-flow-A-8deb8-hway-buyer-sees-premium-EVs-firefox/test-failed-1.png
+2026-07-02T12:59:40.0680848Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0681118Z 
+2026-07-02T12:59:40.0681579Z     Error Context: test-results/assistant-assistant-flow-A-8deb8-hway-buyer-sees-premium-EVs-firefox/error-context.md
+2026-07-02T12:59:40.0682072Z 
+2026-07-02T12:59:40.0682664Z   14) [firefox] › tests/assistant/restart-flow.spec.js:14:3 › Assistant restart flow › restart clears answers and returns to the first question 
+2026-07-02T12:59:40.0683181Z 
+2026-07-02T12:59:40.0683326Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0683548Z 
+2026-07-02T12:59:40.0683678Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0683960Z     Expected: visible
+2026-07-02T12:59:40.0684170Z     Timeout: 5000ms
+2026-07-02T12:59:40.0684606Z     Error: element(s) not found
+2026-07-02T12:59:40.0684820Z 
+2026-07-02T12:59:40.0684905Z     Call log:
+2026-07-02T12:59:40.0685157Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0685493Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0685692Z 
+2026-07-02T12:59:40.0685698Z 
+2026-07-02T12:59:40.0685837Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0686019Z 
+2026-07-02T12:59:40.0686217Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0686591Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0686982Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0687397Z          |                                                 ^
+2026-07-02T12:59:40.0687687Z       41 |   await expect(
+2026-07-02T12:59:40.0688125Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0688551Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0689151Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0690024Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0690903Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0691711Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/restart-flow.spec.js:15:5
+2026-07-02T12:59:40.0692258Z 
+2026-07-02T12:59:40.0692806Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0693737Z     test-results/assistant-restart-flow-Ass-3e7d1-turns-to-the-first-question-firefox/test-failed-1.png
+2026-07-02T12:59:40.0694701Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0694989Z 
+2026-07-02T12:59:40.0695456Z     Error Context: test-results/assistant-restart-flow-Ass-3e7d1-turns-to-the-first-question-firefox/error-context.md
+2026-07-02T12:59:40.0695946Z 
+2026-07-02T12:59:40.0696566Z   15) [firefox] › tests/assistant/shortlist-limit.spec.js:20:3 › Assistant shortlist limits › prevents adding a sixth vehicle and avoids duplicates 
+2026-07-02T12:59:40.0697107Z 
+2026-07-02T12:59:40.0697253Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0697463Z 
+2026-07-02T12:59:40.0697599Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0697872Z     Expected: visible
+2026-07-02T12:59:40.0698085Z     Timeout: 5000ms
+2026-07-02T12:59:40.0698316Z     Error: element(s) not found
+2026-07-02T12:59:40.0698490Z 
+2026-07-02T12:59:40.0698567Z     Call log:
+2026-07-02T12:59:40.0698818Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0699313Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0699519Z 
+2026-07-02T12:59:40.0699525Z 
+2026-07-02T12:59:40.0699655Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0699836Z 
+2026-07-02T12:59:40.0700035Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0700410Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0700812Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0701220Z          |                                                 ^
+2026-07-02T12:59:40.0701507Z       41 |   await expect(
+2026-07-02T12:59:40.0701925Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0702344Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0702933Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0704375Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0705412Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0706235Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/shortlist-limit.spec.js:21:5
+2026-07-02T12:59:40.0706621Z 
+2026-07-02T12:59:40.0707040Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0707776Z     test-results/assistant-shortlist-limit--4aae4-hicle-and-avoids-duplicates-firefox/test-failed-1.png
+2026-07-02T12:59:40.0708553Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0708829Z 
+2026-07-02T12:59:40.0709288Z     Error Context: test-results/assistant-shortlist-limit--4aae4-hicle-and-avoids-duplicates-firefox/error-context.md
+2026-07-02T12:59:40.0709952Z 
+2026-07-02T12:59:40.0710487Z   16) [firefox] › tests/assistant/shortlist.spec.js:21:3 › Assistant shortlist › add, persist, and remove a shortlisted vehicle 
+2026-07-02T12:59:40.0710954Z 
+2026-07-02T12:59:40.0711100Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0711309Z 
+2026-07-02T12:59:40.0711435Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0711710Z     Expected: visible
+2026-07-02T12:59:40.0711918Z     Timeout: 5000ms
+2026-07-02T12:59:40.0712149Z     Error: element(s) not found
+2026-07-02T12:59:40.0712302Z 
+2026-07-02T12:59:40.0712384Z     Call log:
+2026-07-02T12:59:40.0712636Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0712975Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0713174Z 
+2026-07-02T12:59:40.0713180Z 
+2026-07-02T12:59:40.0713311Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0713504Z 
+2026-07-02T12:59:40.0713700Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0714238Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0714843Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0715687Z          |                                                 ^
+2026-07-02T12:59:40.0715982Z       41 |   await expect(
+2026-07-02T12:59:40.0716411Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0716832Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0717424Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0718292Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0719163Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0719970Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/shortlist.spec.js:22:5
+2026-07-02T12:59:40.0720340Z 
+2026-07-02T12:59:40.0720758Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0721501Z     test-results/assistant-shortlist-Assist-06007-emove-a-shortlisted-vehicle-firefox/test-failed-1.png
+2026-07-02T12:59:40.0722282Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0722558Z 
+2026-07-02T12:59:40.0723012Z     Error Context: test-results/assistant-shortlist-Assist-06007-emove-a-shortlisted-vehicle-firefox/error-context.md
+2026-07-02T12:59:40.0723507Z 
+2026-07-02T12:59:40.0724099Z   17) [firefox] › tests/compare/compare-links.spec.js:12:3 › Assistant compare links › opens compare guide with editorial comparison content 
+2026-07-02T12:59:40.0724850Z 
+2026-07-02T12:59:40.0725127Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0725503Z 
+2026-07-02T12:59:40.0725876Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0726199Z     Expected: visible
+2026-07-02T12:59:40.0726416Z     Timeout: 5000ms
+2026-07-02T12:59:40.0726659Z     Error: element(s) not found
+2026-07-02T12:59:40.0726813Z 
+2026-07-02T12:59:40.0726894Z     Call log:
+2026-07-02T12:59:40.0727147Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0727491Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0727694Z 
+2026-07-02T12:59:40.0727699Z 
+2026-07-02T12:59:40.0727827Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0728014Z 
+2026-07-02T12:59:40.0728210Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0728585Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0728984Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0729397Z          |                                                 ^
+2026-07-02T12:59:40.0729883Z       41 |   await expect(
+2026-07-02T12:59:40.0730316Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0730738Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0731341Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0732205Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0733076Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0733879Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/compare/compare-links.spec.js:13:5
+2026-07-02T12:59:40.0734256Z 
+2026-07-02T12:59:40.0734832Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0735596Z     test-results/compare-compare-links-Assi-58add-ditorial-comparison-content-firefox/test-failed-1.png
+2026-07-02T12:59:40.0736521Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0736798Z 
+2026-07-02T12:59:40.0737577Z     Error Context: test-results/compare-compare-links-Assi-58add-ditorial-comparison-content-firefox/error-context.md
+2026-07-02T12:59:40.0738092Z 
+2026-07-02T12:59:40.0738710Z   18) [firefox] › tests/ownership/ownership-links.spec.js:11:3 › Assistant ownership links › opens ownership calculators from assistant results 
+2026-07-02T12:59:40.0739231Z 
+2026-07-02T12:59:40.0739381Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0739584Z 
+2026-07-02T12:59:40.0739712Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0739979Z     Expected: visible
+2026-07-02T12:59:40.0740188Z     Timeout: 5000ms
+2026-07-02T12:59:40.0740415Z     Error: element(s) not found
+2026-07-02T12:59:40.0740591Z 
+2026-07-02T12:59:40.0740672Z     Call log:
+2026-07-02T12:59:40.0740922Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0741351Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0741638Z 
+2026-07-02T12:59:40.0741646Z 
+2026-07-02T12:59:40.0741777Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0741969Z 
+2026-07-02T12:59:40.0742164Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0742545Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0742942Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0743352Z          |                                                 ^
+2026-07-02T12:59:40.0743633Z       41 |   await expect(
+2026-07-02T12:59:40.0744055Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0744735Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0745343Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0746384Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.0747263Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.0748091Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/ownership/ownership-links.spec.js:12:5
+2026-07-02T12:59:40.0748482Z 
+2026-07-02T12:59:40.0748894Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0749634Z     test-results/ownership-ownership-links--c6f85-tors-from-assistant-results-firefox/test-failed-1.png
+2026-07-02T12:59:40.0750412Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0750690Z 
+2026-07-02T12:59:40.0751160Z     Error Context: test-results/ownership-ownership-links--c6f85-tors-from-assistant-results-firefox/error-context.md
+2026-07-02T12:59:40.0751796Z 
+2026-07-02T12:59:40.0752451Z   19) [webkit] › tests/assistant/analytics.spec.js:24:3 › Assistant analytics events › registers assistant analytics events and fires handlers during journeys 
+2026-07-02T12:59:40.0753027Z 
+2026-07-02T12:59:40.0753173Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.0753374Z 
+2026-07-02T12:59:40.0753503Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.0753770Z     Expected: visible
+2026-07-02T12:59:40.0753980Z     Timeout: 5000ms
+2026-07-02T12:59:40.0754218Z     Error: element(s) not found
+2026-07-02T12:59:40.0754378Z 
+2026-07-02T12:59:40.0754719Z     Call log:
+2026-07-02T12:59:40.0755109Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.0755459Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.0755660Z 
+2026-07-02T12:59:40.0755667Z 
+2026-07-02T12:59:40.0755803Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.0756004Z 
+2026-07-02T12:59:40.0756195Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.0756581Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.0756985Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.0757392Z          |                                                 ^
+2026-07-02T12:59:40.0757675Z       41 |   await expect(
+2026-07-02T12:59:40.0758098Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.0758517Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.0759110Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.0759904Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/analytics.spec.js:32:5
+2026-07-02T12:59:40.0760301Z 
+2026-07-02T12:59:40.0760716Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0761465Z     test-results/assistant-analytics-Assist-046a5-es-handlers-during-journeys-webkit/test-failed-1.png
+2026-07-02T12:59:40.0762245Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.0762516Z 
+2026-07-02T12:59:40.0762972Z     Error Context: test-results/assistant-analytics-Assist-046a5-es-handlers-during-journeys-webkit/error-context.md
+2026-07-02T12:59:40.0763464Z 
+2026-07-02T12:59:40.1186353Z   20) [webkit] › tests/assistant/assistant-flow.spec.js:13:3 › Assistant journey flows › Scenario 1 — family value buyer sees strong matches 
+2026-07-02T12:59:40.1195039Z 
+2026-07-02T12:59:40.1195507Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1196078Z 
+2026-07-02T12:59:40.1196732Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1197356Z     Expected: visible
+2026-07-02T12:59:40.1197873Z     Timeout: 5000ms
+2026-07-02T12:59:40.1198766Z     Error: element(s) not found
+2026-07-02T12:59:40.1199193Z 
+2026-07-02T12:59:40.1199506Z     Call log:
+2026-07-02T12:59:40.1200097Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1200843Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1201353Z 
+2026-07-02T12:59:40.1201520Z 
+2026-07-02T12:59:40.1201893Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1202371Z 
+2026-07-02T12:59:40.1202866Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1203662Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1204772Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1205678Z          |                                                 ^
+2026-07-02T12:59:40.1206320Z       41 |   await expect(
+2026-07-02T12:59:40.1207207Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1208093Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1209294Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1211208Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1212893Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1214644Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/assistant-flow.spec.js:14:5
+2026-07-02T12:59:40.1215507Z 
+2026-07-02T12:59:40.1216425Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1217898Z     test-results/assistant-assistant-flow-A-ade1d-e-buyer-sees-strong-matches-webkit/test-failed-1.png
+2026-07-02T12:59:40.1219446Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1220110Z 
+2026-07-02T12:59:40.1221068Z     Error Context: test-results/assistant-assistant-flow-A-ade1d-e-buyer-sees-strong-matches-webkit/error-context.md
+2026-07-02T12:59:40.1222109Z 
+2026-07-02T12:59:40.1223381Z   21) [webkit] › tests/assistant/assistant-flow.spec.js:24:3 › Assistant journey flows › Scenario 2 — budget city commuter sees affordable EVs 
+2026-07-02T12:59:40.1224609Z 
+2026-07-02T12:59:40.1225045Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1225829Z 
+2026-07-02T12:59:40.1226217Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1226833Z     Expected: visible
+2026-07-02T12:59:40.1227360Z     Timeout: 5000ms
+2026-07-02T12:59:40.1227917Z     Error: element(s) not found
+2026-07-02T12:59:40.1228347Z 
+2026-07-02T12:59:40.1228641Z     Call log:
+2026-07-02T12:59:40.1229224Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1229960Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1230453Z 
+2026-07-02T12:59:40.1230636Z 
+2026-07-02T12:59:40.1231019Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1231516Z 
+2026-07-02T12:59:40.1232007Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1232793Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1233633Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1234673Z          |                                                 ^
+2026-07-02T12:59:40.1235338Z       41 |   await expect(
+2026-07-02T12:59:40.1236226Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1237106Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1238279Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1239949Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1241941Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1243542Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/assistant-flow.spec.js:25:5
+2026-07-02T12:59:40.1244372Z 
+2026-07-02T12:59:40.1245430Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1246910Z     test-results/assistant-assistant-flow-A-f14b4-ommuter-sees-affordable-EVs-webkit/test-failed-1.png
+2026-07-02T12:59:40.1248472Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1249124Z 
+2026-07-02T12:59:40.1250093Z     Error Context: test-results/assistant-assistant-flow-A-f14b4-ommuter-sees-affordable-EVs-webkit/error-context.md
+2026-07-02T12:59:40.1251110Z 
+2026-07-02T12:59:40.1252430Z   22) [webkit] › tests/assistant/assistant-flow.spec.js:30:3 › Assistant journey flows › Scenario 3 — premium highway buyer sees premium EVs 
+2026-07-02T12:59:40.1253557Z 
+2026-07-02T12:59:40.1254181Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1254913Z 
+2026-07-02T12:59:40.1255297Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1255915Z     Expected: visible
+2026-07-02T12:59:40.1256428Z     Timeout: 5000ms
+2026-07-02T12:59:40.1256971Z     Error: element(s) not found
+2026-07-02T12:59:40.1257391Z 
+2026-07-02T12:59:40.1257683Z     Call log:
+2026-07-02T12:59:40.1258271Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1259015Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1259513Z 
+2026-07-02T12:59:40.1259678Z 
+2026-07-02T12:59:40.1260061Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1260534Z 
+2026-07-02T12:59:40.1261020Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1261815Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1262666Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1263548Z          |                                                 ^
+2026-07-02T12:59:40.1264185Z       41 |   await expect(
+2026-07-02T12:59:40.1265361Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1266251Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1267448Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1269135Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1270850Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1272445Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/assistant-flow.spec.js:31:5
+2026-07-02T12:59:40.1273281Z 
+2026-07-02T12:59:40.1274347Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1276015Z     test-results/assistant-assistant-flow-A-8deb8-hway-buyer-sees-premium-EVs-webkit/test-failed-1.png
+2026-07-02T12:59:40.1277547Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1278184Z 
+2026-07-02T12:59:40.1279223Z     Error Context: test-results/assistant-assistant-flow-A-8deb8-hway-buyer-sees-premium-EVs-webkit/error-context.md
+2026-07-02T12:59:40.1280252Z 
+2026-07-02T12:59:40.1281470Z   23) [webkit] › tests/assistant/restart-flow.spec.js:14:3 › Assistant restart flow › restart clears answers and returns to the first question 
+2026-07-02T12:59:40.1282526Z 
+2026-07-02T12:59:40.1282947Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1283467Z 
+2026-07-02T12:59:40.1283846Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1284638Z     Expected: visible
+2026-07-02T12:59:40.1285460Z     Timeout: 5000ms
+2026-07-02T12:59:40.1286544Z     Error: element(s) not found
+2026-07-02T12:59:40.1287200Z 
+2026-07-02T12:59:40.1287504Z     Call log:
+2026-07-02T12:59:40.1288098Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1288863Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1289388Z 
+2026-07-02T12:59:40.1289554Z 
+2026-07-02T12:59:40.1289941Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1290426Z 
+2026-07-02T12:59:40.1290928Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1291746Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1292666Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1293565Z          |                                                 ^
+2026-07-02T12:59:40.1294254Z       41 |   await expect(
+2026-07-02T12:59:40.1295353Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1296243Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1297438Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1299131Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1300870Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1302556Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/restart-flow.spec.js:15:5
+2026-07-02T12:59:40.1303396Z 
+2026-07-02T12:59:40.1304284Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1305965Z     test-results/assistant-restart-flow-Ass-3e7d1-turns-to-the-first-question-webkit/test-failed-1.png
+2026-07-02T12:59:40.1307478Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1307997Z 
+2026-07-02T12:59:40.1308878Z     Error Context: test-results/assistant-restart-flow-Ass-3e7d1-turns-to-the-first-question-webkit/error-context.md
+2026-07-02T12:59:40.1309398Z 
+2026-07-02T12:59:40.1310060Z   24) [webkit] › tests/assistant/shortlist-limit.spec.js:20:3 › Assistant shortlist limits › prevents adding a sixth vehicle and avoids duplicates 
+2026-07-02T12:59:40.1310601Z 
+2026-07-02T12:59:40.1310754Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1310967Z 
+2026-07-02T12:59:40.1311103Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1311429Z     Expected: visible
+2026-07-02T12:59:40.1311646Z     Timeout: 5000ms
+2026-07-02T12:59:40.1311909Z     Error: element(s) not found
+2026-07-02T12:59:40.1312110Z 
+2026-07-02T12:59:40.1312245Z     Call log:
+2026-07-02T12:59:40.1312702Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1313302Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1313892Z 
+2026-07-02T12:59:40.1313903Z 
+2026-07-02T12:59:40.1314132Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1314782Z 
+2026-07-02T12:59:40.1315142Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1315777Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1316443Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1317130Z          |                                                 ^
+2026-07-02T12:59:40.1317588Z       41 |   await expect(
+2026-07-02T12:59:40.1318316Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1319023Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1320057Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1321571Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1323123Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1324937Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/shortlist-limit.spec.js:21:5
+2026-07-02T12:59:40.1325620Z 
+2026-07-02T12:59:40.1326325Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1327592Z     test-results/assistant-shortlist-limit--4aae4-hicle-and-avoids-duplicates-webkit/test-failed-1.png
+2026-07-02T12:59:40.1328949Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1329401Z 
+2026-07-02T12:59:40.1330170Z     Error Context: test-results/assistant-shortlist-limit--4aae4-hicle-and-avoids-duplicates-webkit/error-context.md
+2026-07-02T12:59:40.1330999Z 
+2026-07-02T12:59:40.1331904Z   25) [webkit] › tests/assistant/shortlist.spec.js:21:3 › Assistant shortlist › add, persist, and remove a shortlisted vehicle 
+2026-07-02T12:59:40.1332738Z 
+2026-07-02T12:59:40.1332983Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1333322Z 
+2026-07-02T12:59:40.1333536Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1333974Z     Expected: visible
+2026-07-02T12:59:40.1334318Z     Timeout: 5000ms
+2026-07-02T12:59:40.1334876Z     Error: element(s) not found
+2026-07-02T12:59:40.1335140Z 
+2026-07-02T12:59:40.1335259Z     Call log:
+2026-07-02T12:59:40.1335680Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1336248Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1336589Z 
+2026-07-02T12:59:40.1336598Z 
+2026-07-02T12:59:40.1336811Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1337117Z 
+2026-07-02T12:59:40.1337449Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1338079Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1338947Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1339631Z          |                                                 ^
+2026-07-02T12:59:40.1340099Z       41 |   await expect(
+2026-07-02T12:59:40.1340824Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1341523Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1343204Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1344863Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1346351Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1347695Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/assistant/shortlist.spec.js:22:5
+2026-07-02T12:59:40.1348325Z 
+2026-07-02T12:59:40.1349040Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1350504Z     test-results/assistant-shortlist-Assist-06007-emove-a-shortlisted-vehicle-webkit/test-failed-1.png
+2026-07-02T12:59:40.1351870Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1352357Z 
+2026-07-02T12:59:40.1353156Z     Error Context: test-results/assistant-shortlist-Assist-06007-emove-a-shortlisted-vehicle-webkit/error-context.md
+2026-07-02T12:59:40.1353994Z 
+2026-07-02T12:59:40.1355212Z   26) [webkit] › tests/compare/compare-links.spec.js:12:3 › Assistant compare links › opens compare guide with editorial comparison content 
+2026-07-02T12:59:40.1356116Z 
+2026-07-02T12:59:40.1356372Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1356734Z 
+2026-07-02T12:59:40.1356930Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1357366Z     Expected: visible
+2026-07-02T12:59:40.1357726Z     Timeout: 5000ms
+2026-07-02T12:59:40.1358082Z     Error: element(s) not found
+2026-07-02T12:59:40.1358337Z 
+2026-07-02T12:59:40.1358462Z     Call log:
+2026-07-02T12:59:40.1358870Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1359431Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1359755Z 
+2026-07-02T12:59:40.1359764Z 
+2026-07-02T12:59:40.1359984Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1360290Z 
+2026-07-02T12:59:40.1360625Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1361244Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1361920Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1362589Z          |                                                 ^
+2026-07-02T12:59:40.1363048Z       41 |   await expect(
+2026-07-02T12:59:40.1363770Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1364652Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1365685Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1367145Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1368673Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1370070Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/compare/compare-links.spec.js:13:5
+2026-07-02T12:59:40.1370711Z 
+2026-07-02T12:59:40.1371400Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1372691Z     test-results/compare-compare-links-Assi-58add-ditorial-comparison-content-webkit/test-failed-1.png
+2026-07-02T12:59:40.1374045Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1374962Z 
+2026-07-02T12:59:40.1375798Z     Error Context: test-results/compare-compare-links-Assi-58add-ditorial-comparison-content-webkit/error-context.md
+2026-07-02T12:59:40.1376668Z 
+2026-07-02T12:59:40.1377737Z   27) [webkit] › tests/ownership/ownership-links.spec.js:11:3 › Assistant ownership links › opens ownership calculators from assistant results 
+2026-07-02T12:59:40.1378668Z 
+2026-07-02T12:59:40.1378926Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1379279Z 
+2026-07-02T12:59:40.1379488Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1379918Z     Expected: visible
+2026-07-02T12:59:40.1380255Z     Timeout: 5000ms
+2026-07-02T12:59:40.1380862Z     Error: element(s) not found
+2026-07-02T12:59:40.1381133Z 
+2026-07-02T12:59:40.1381265Z     Call log:
+2026-07-02T12:59:40.1381683Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1382276Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1382631Z 
+2026-07-02T12:59:40.1382640Z 
+2026-07-02T12:59:40.1382850Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1383352Z 
+2026-07-02T12:59:40.1383686Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1384306Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1385188Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1385875Z          |                                                 ^
+2026-07-02T12:59:40.1386335Z       41 |   await expect(
+2026-07-02T12:59:40.1387056Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1387769Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1388809Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1390315Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1391894Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1393329Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/ownership/ownership-links.spec.js:12:5
+2026-07-02T12:59:40.1393970Z 
+2026-07-02T12:59:40.1394846Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1396133Z     test-results/ownership-ownership-links--c6f85-tors-from-assistant-results-webkit/test-failed-1.png
+2026-07-02T12:59:40.1397694Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1398178Z 
+2026-07-02T12:59:40.1398974Z     Error Context: test-results/ownership-ownership-links--c6f85-tors-from-assistant-results-webkit/error-context.md
+2026-07-02T12:59:40.1399823Z 
+2026-07-02T12:59:40.1401165Z   28) [responsive-desktop-chrome] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout 
+2026-07-02T12:59:40.1402517Z 
+2026-07-02T12:59:40.1402769Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1403121Z 
+2026-07-02T12:59:40.1403333Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1403767Z     Expected: visible
+2026-07-02T12:59:40.1404103Z     Timeout: 5000ms
+2026-07-02T12:59:40.1404660Z     Error: element(s) not found
+2026-07-02T12:59:40.1404932Z 
+2026-07-02T12:59:40.1405067Z     Call log:
+2026-07-02T12:59:40.1405486Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1406260Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1406610Z 
+2026-07-02T12:59:40.1406620Z 
+2026-07-02T12:59:40.1406841Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1407163Z 
+2026-07-02T12:59:40.1407480Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1408118Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1408801Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1409491Z          |                                                 ^
+2026-07-02T12:59:40.1409944Z       41 |   await expect(
+2026-07-02T12:59:40.1410653Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1411353Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1412366Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1413851Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1415936Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/responsive/responsive-assistant.spec.js:19:5
+2026-07-02T12:59:40.1416699Z 
+2026-07-02T12:59:40.1417461Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1418977Z     test-results/responsive-responsive-assi-2bade-with-readable-mobile-layout-responsive-desktop-chrome/test-failed-1.png
+2026-07-02T12:59:40.1420748Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1421206Z 
+2026-07-02T12:59:40.1422207Z     Error Context: test-results/responsive-responsive-assi-2bade-with-readable-mobile-layout-responsive-desktop-chrome/error-context.md
+2026-07-02T12:59:40.1423230Z 
+2026-07-02T12:59:40.1424874Z   29) [responsive-desktop-chrome] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports 
+2026-07-02T12:59:40.1426039Z 
+2026-07-02T12:59:40.1426295Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1426638Z 
+2026-07-02T12:59:40.1426846Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1427287Z     Expected: visible
+2026-07-02T12:59:40.1427645Z     Timeout: 5000ms
+2026-07-02T12:59:40.1428014Z     Error: element(s) not found
+2026-07-02T12:59:40.1428287Z 
+2026-07-02T12:59:40.1428407Z     Call log:
+2026-07-02T12:59:40.1428814Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1429384Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1429720Z 
+2026-07-02T12:59:40.1429728Z 
+2026-07-02T12:59:40.1429956Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1430266Z 
+2026-07-02T12:59:40.1430590Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1431219Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1431893Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1432577Z          |                                                 ^
+2026-07-02T12:59:40.1433040Z       41 |   await expect(
+2026-07-02T12:59:40.1433766Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1434842Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1435863Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1437375Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1438896Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1440370Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/responsive/responsive-shortlist.spec.js:26:5
+2026-07-02T12:59:40.1441072Z 
+2026-07-02T12:59:40.1441769Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1443229Z     test-results/responsive-responsive-shor-13473-n-usable-on-small-viewports-responsive-desktop-chrome/test-failed-1.png
+2026-07-02T12:59:40.1444943Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1445670Z 
+2026-07-02T12:59:40.1446659Z     Error Context: test-results/responsive-responsive-shor-13473-n-usable-on-small-viewports-responsive-desktop-chrome/error-context.md
+2026-07-02T12:59:40.1447674Z 
+2026-07-02T12:59:40.1448949Z   30) [responsive-iphone-14] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout 
+2026-07-02T12:59:40.1450018Z 
+2026-07-02T12:59:40.1450257Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1450605Z 
+2026-07-02T12:59:40.1450825Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1451252Z     Expected: visible
+2026-07-02T12:59:40.1451596Z     Timeout: 5000ms
+2026-07-02T12:59:40.1451963Z     Error: element(s) not found
+2026-07-02T12:59:40.1452216Z 
+2026-07-02T12:59:40.1452335Z     Call log:
+2026-07-02T12:59:40.1452744Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1453325Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1453659Z 
+2026-07-02T12:59:40.1453677Z 
+2026-07-02T12:59:40.1453889Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1454202Z 
+2026-07-02T12:59:40.1454775Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1455415Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1456090Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1456762Z          |                                                 ^
+2026-07-02T12:59:40.1457227Z       41 |   await expect(
+2026-07-02T12:59:40.1457936Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1458642Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1459656Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1461151Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1462567Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/responsive/responsive-assistant.spec.js:19:5
+2026-07-02T12:59:40.1463281Z 
+2026-07-02T12:59:40.1463977Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1465798Z     test-results/responsive-responsive-assi-2bade-with-readable-mobile-layout-responsive-iphone-14/test-failed-1.png
+2026-07-02T12:59:40.1467305Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1467779Z 
+2026-07-02T12:59:40.1468736Z     Error Context: test-results/responsive-responsive-assi-2bade-with-readable-mobile-layout-responsive-iphone-14/error-context.md
+2026-07-02T12:59:40.1469707Z 
+2026-07-02T12:59:40.1471054Z   31) [responsive-iphone-14] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports 
+2026-07-02T12:59:40.1472408Z 
+2026-07-02T12:59:40.1472644Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1472993Z 
+2026-07-02T12:59:40.1473205Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1473640Z     Expected: visible
+2026-07-02T12:59:40.1473979Z     Timeout: 5000ms
+2026-07-02T12:59:40.1474351Z     Error: element(s) not found
+2026-07-02T12:59:40.1474815Z 
+2026-07-02T12:59:40.1474954Z     Call log:
+2026-07-02T12:59:40.1475384Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1475971Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1476314Z 
+2026-07-02T12:59:40.1476322Z 
+2026-07-02T12:59:40.1476538Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1476854Z 
+2026-07-02T12:59:40.1477182Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1477813Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1478515Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1479386Z          |                                                 ^
+2026-07-02T12:59:40.1479850Z       41 |   await expect(
+2026-07-02T12:59:40.1480579Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1481297Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1482310Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1483812Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1485539Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1487030Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/responsive/responsive-shortlist.spec.js:26:5
+2026-07-02T12:59:40.1487747Z 
+2026-07-02T12:59:40.1488459Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1489877Z     test-results/responsive-responsive-shor-13473-n-usable-on-small-viewports-responsive-iphone-14/test-failed-1.png
+2026-07-02T12:59:40.1491458Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1491939Z 
+2026-07-02T12:59:40.1492836Z     Error Context: test-results/responsive-responsive-shor-13473-n-usable-on-small-viewports-responsive-iphone-14/error-context.md
+2026-07-02T12:59:40.1493784Z 
+2026-07-02T12:59:40.1495177Z   32) [responsive-pixel-7] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout 
+2026-07-02T12:59:40.1496231Z 
+2026-07-02T12:59:40.1496484Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1496922Z 
+2026-07-02T12:59:40.1497128Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1497801Z     Expected: visible
+2026-07-02T12:59:40.1498155Z     Timeout: 5000ms
+2026-07-02T12:59:40.1498555Z     Error: element(s) not found
+2026-07-02T12:59:40.1498819Z 
+2026-07-02T12:59:40.1498952Z     Call log:
+2026-07-02T12:59:40.1499376Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1499959Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1500292Z 
+2026-07-02T12:59:40.1500300Z 
+2026-07-02T12:59:40.1500509Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1500818Z 
+2026-07-02T12:59:40.1501138Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1501746Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1502388Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1503039Z          |                                                 ^
+2026-07-02T12:59:40.1503487Z       41 |   await expect(
+2026-07-02T12:59:40.1504185Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1505257Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1506283Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1507772Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1509199Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/responsive/responsive-assistant.spec.js:19:5
+2026-07-02T12:59:40.1509694Z 
+2026-07-02T12:59:40.1510377Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1511362Z     test-results/responsive-responsive-assi-2bade-with-readable-mobile-layout-responsive-pixel-7/test-failed-1.png
+2026-07-02T12:59:40.1512232Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1512534Z 
+2026-07-02T12:59:40.1513055Z     Error Context: test-results/responsive-responsive-assi-2bade-with-readable-mobile-layout-responsive-pixel-7/error-context.md
+2026-07-02T12:59:40.1513635Z 
+2026-07-02T12:59:40.1514391Z   33) [responsive-pixel-7] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports 
+2026-07-02T12:59:40.1515285Z 
+2026-07-02T12:59:40.1515446Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1515651Z 
+2026-07-02T12:59:40.1515783Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1516052Z     Expected: visible
+2026-07-02T12:59:40.1516266Z     Timeout: 5000ms
+2026-07-02T12:59:40.1516502Z     Error: element(s) not found
+2026-07-02T12:59:40.1516660Z 
+2026-07-02T12:59:40.1516741Z     Call log:
+2026-07-02T12:59:40.1516994Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1517337Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1517542Z 
+2026-07-02T12:59:40.1517548Z 
+2026-07-02T12:59:40.1517685Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1517880Z 
+2026-07-02T12:59:40.1518072Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1518451Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1518857Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1519262Z          |                                                 ^
+2026-07-02T12:59:40.1519577Z       41 |   await expect(
+2026-07-02T12:59:40.1520003Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1520424Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1521017Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1521881Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1522945Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1523819Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/responsive/responsive-shortlist.spec.js:26:5
+2026-07-02T12:59:40.1524238Z 
+2026-07-02T12:59:40.1524867Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1525872Z     test-results/responsive-responsive-shor-13473-n-usable-on-small-viewports-responsive-pixel-7/test-failed-1.png
+2026-07-02T12:59:40.1527327Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1527803Z 
+2026-07-02T12:59:40.1528734Z     Error Context: test-results/responsive-responsive-shor-13473-n-usable-on-small-viewports-responsive-pixel-7/error-context.md
+2026-07-02T12:59:40.1529724Z 
+2026-07-02T12:59:40.1531010Z   34) [responsive-ipad-air] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout 
+2026-07-02T12:59:40.1532305Z 
+2026-07-02T12:59:40.1532558Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1532904Z 
+2026-07-02T12:59:40.1533122Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1533575Z     Expected: visible
+2026-07-02T12:59:40.1533927Z     Timeout: 5000ms
+2026-07-02T12:59:40.1534306Z     Error: element(s) not found
+2026-07-02T12:59:40.1534796Z 
+2026-07-02T12:59:40.1534927Z     Call log:
+2026-07-02T12:59:40.1535357Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1535950Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1536289Z 
+2026-07-02T12:59:40.1536297Z 
+2026-07-02T12:59:40.1536521Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1536838Z 
+2026-07-02T12:59:40.1537379Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1538221Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1539055Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1540037Z          |                                                 ^
+2026-07-02T12:59:40.1540691Z       41 |   await expect(
+2026-07-02T12:59:40.1541602Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1542462Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1543570Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1545464Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1562040Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/responsive/responsive-assistant.spec.js:19:5
+2026-07-02T12:59:40.1562780Z 
+2026-07-02T12:59:40.1563560Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1565259Z     test-results/responsive-responsive-assi-2bade-with-readable-mobile-layout-responsive-ipad-air/test-failed-1.png
+2026-07-02T12:59:40.1566832Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1567331Z 
+2026-07-02T12:59:40.1568215Z     Error Context: test-results/responsive-responsive-assi-2bade-with-readable-mobile-layout-responsive-ipad-air/error-context.md
+2026-07-02T12:59:40.1569137Z 
+2026-07-02T12:59:40.1570421Z   35) [responsive-ipad-air] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports 
+2026-07-02T12:59:40.1571570Z 
+2026-07-02T12:59:40.1571825Z     Error: expect(locator).toBeVisible() failed
+2026-07-02T12:59:40.1572173Z 
+2026-07-02T12:59:40.1572394Z     Locator: locator('.assistant-page')
+2026-07-02T12:59:40.1572852Z     Expected: visible
+2026-07-02T12:59:40.1573203Z     Timeout: 5000ms
+2026-07-02T12:59:40.1573811Z     Error: element(s) not found
+2026-07-02T12:59:40.1574233Z 
+2026-07-02T12:59:40.1574368Z     Call log:
+2026-07-02T12:59:40.1574975Z       - Expect "toBeVisible" with timeout 5000ms
+2026-07-02T12:59:40.1575552Z       - waiting for locator('.assistant-page')
+2026-07-02T12:59:40.1575867Z 
+2026-07-02T12:59:40.1575882Z 
+2026-07-02T12:59:40.1576092Z        at helpers/assistantHelpers.js:40
+2026-07-02T12:59:40.1576397Z 
+2026-07-02T12:59:40.1576721Z       38 | export async function waitForAssistantWelcome(page) {
+2026-07-02T12:59:40.1577324Z       39 |   await assertHealthyPage(page);
+2026-07-02T12:59:40.1578021Z     > 40 |   await expect(page.locator(".assistant-page")).toBeVisible();
+2026-07-02T12:59:40.1578722Z          |                                                 ^
+2026-07-02T12:59:40.1579204Z       41 |   await expect(
+2026-07-02T12:59:40.1579945Z       42 |     page.getByRole("heading", { name: "Find EVs that match how you actually drive" })
+2026-07-02T12:59:40.1580675Z       43 |   ).toBeVisible();
+2026-07-02T12:59:40.1581691Z         at waitForAssistantWelcome (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:40:49)
+2026-07-02T12:59:40.1583153Z         at startAssistant (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:58:3)
+2026-07-02T12:59:40.1584863Z         at completeAssistantToResults (/home/runner/work/zyvev-frontend/zyvev-frontend/tests/helpers/assistantHelpers.js:86:3)
+2026-07-02T12:59:40.1586333Z         at /home/runner/work/zyvev-frontend/zyvev-frontend/tests/responsive/responsive-shortlist.spec.js:26:5
+2026-07-02T12:59:40.1587036Z 
+2026-07-02T12:59:40.1587704Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1589081Z     test-results/responsive-responsive-shor-13473-n-usable-on-small-viewports-responsive-ipad-air/test-failed-1.png
+2026-07-02T12:59:40.1590533Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-07-02T12:59:40.1591009Z 
+2026-07-02T12:59:40.1591971Z     Error Context: test-results/responsive-responsive-shor-13473-n-usable-on-small-viewports-responsive-ipad-air/error-context.md
+2026-07-02T12:59:40.1592910Z 
+2026-07-02T12:59:40.1593032Z   35 failed
+2026-07-02T12:59:40.1594356Z     [chromium] › tests/assistant/analytics.spec.js:24:3 › Assistant analytics events › registers assistant analytics events and fires handlers during journeys 
+2026-07-02T12:59:40.1596508Z     [chromium] › tests/assistant/assistant-flow.spec.js:13:3 › Assistant journey flows › Scenario 1 — family value buyer sees strong matches 
+2026-07-02T12:59:40.1598365Z     [chromium] › tests/assistant/assistant-flow.spec.js:24:3 › Assistant journey flows › Scenario 2 — budget city commuter sees affordable EVs 
+2026-07-02T12:59:40.1600219Z     [chromium] › tests/assistant/assistant-flow.spec.js:30:3 › Assistant journey flows › Scenario 3 — premium highway buyer sees premium EVs 
+2026-07-02T12:59:40.1602255Z     [chromium] › tests/assistant/restart-flow.spec.js:14:3 › Assistant restart flow › restart clears answers and returns to the first question 
+2026-07-02T12:59:40.1604362Z     [chromium] › tests/assistant/shortlist-limit.spec.js:20:3 › Assistant shortlist limits › prevents adding a sixth vehicle and avoids duplicates 
+2026-07-02T12:59:40.1606411Z     [chromium] › tests/assistant/shortlist.spec.js:21:3 › Assistant shortlist › add, persist, and remove a shortlisted vehicle 
+2026-07-02T12:59:40.1608161Z     [chromium] › tests/compare/compare-links.spec.js:12:3 › Assistant compare links › opens compare guide with editorial comparison content 
+2026-07-02T12:59:40.1610116Z     [chromium] › tests/ownership/ownership-links.spec.js:11:3 › Assistant ownership links › opens ownership calculators from assistant results 
+2026-07-02T12:59:40.1612242Z     [firefox] › tests/assistant/analytics.spec.js:24:3 › Assistant analytics events › registers assistant analytics events and fires handlers during journeys 
+2026-07-02T12:59:40.1614214Z     [firefox] › tests/assistant/assistant-flow.spec.js:13:3 › Assistant journey flows › Scenario 1 — family value buyer sees strong matches 
+2026-07-02T12:59:40.1616489Z     [firefox] › tests/assistant/assistant-flow.spec.js:24:3 › Assistant journey flows › Scenario 2 — budget city commuter sees affordable EVs 
+2026-07-02T12:59:40.1618428Z     [firefox] › tests/assistant/assistant-flow.spec.js:30:3 › Assistant journey flows › Scenario 3 — premium highway buyer sees premium EVs 
+2026-07-02T12:59:40.1620357Z     [firefox] › tests/assistant/restart-flow.spec.js:14:3 › Assistant restart flow › restart clears answers and returns to the first question 
+2026-07-02T12:59:40.1622336Z     [firefox] › tests/assistant/shortlist-limit.spec.js:20:3 › Assistant shortlist limits › prevents adding a sixth vehicle and avoids duplicates 
+2026-07-02T12:59:40.1624133Z     [firefox] › tests/assistant/shortlist.spec.js:21:3 › Assistant shortlist › add, persist, and remove a shortlisted vehicle 
+2026-07-02T12:59:40.1626097Z     [firefox] › tests/compare/compare-links.spec.js:12:3 › Assistant compare links › opens compare guide with editorial comparison content 
+2026-07-02T12:59:40.1628067Z     [firefox] › tests/ownership/ownership-links.spec.js:11:3 › Assistant ownership links › opens ownership calculators from assistant results 
+2026-07-02T12:59:40.1630045Z     [webkit] › tests/assistant/analytics.spec.js:24:3 › Assistant analytics events › registers assistant analytics events and fires handlers during journeys 
+2026-07-02T12:59:40.1632049Z     [webkit] › tests/assistant/assistant-flow.spec.js:13:3 › Assistant journey flows › Scenario 1 — family value buyer sees strong matches 
+2026-07-02T12:59:40.1633894Z     [webkit] › tests/assistant/assistant-flow.spec.js:24:3 › Assistant journey flows › Scenario 2 — budget city commuter sees affordable EVs 
+2026-07-02T12:59:40.1635875Z     [webkit] › tests/assistant/assistant-flow.spec.js:30:3 › Assistant journey flows › Scenario 3 — premium highway buyer sees premium EVs 
+2026-07-02T12:59:40.1637748Z     [webkit] › tests/assistant/restart-flow.spec.js:14:3 › Assistant restart flow › restart clears answers and returns to the first question 
+2026-07-02T12:59:40.1639704Z     [webkit] › tests/assistant/shortlist-limit.spec.js:20:3 › Assistant shortlist limits › prevents adding a sixth vehicle and avoids duplicates 
+2026-07-02T12:59:40.1641582Z     [webkit] › tests/assistant/shortlist.spec.js:21:3 › Assistant shortlist › add, persist, and remove a shortlisted vehicle 
+2026-07-02T12:59:40.1643395Z     [webkit] › tests/compare/compare-links.spec.js:12:3 › Assistant compare links › opens compare guide with editorial comparison content 
+2026-07-02T12:59:40.1645392Z     [webkit] › tests/ownership/ownership-links.spec.js:11:3 › Assistant ownership links › opens ownership calculators from assistant results 
+2026-07-02T12:59:40.1647668Z     [responsive-desktop-chrome] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout 
+2026-07-02T12:59:40.1650367Z     [responsive-desktop-chrome] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports 
+2026-07-02T12:59:40.1652859Z     [responsive-iphone-14] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout 
+2026-07-02T12:59:40.1655362Z     [responsive-iphone-14] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports 
+2026-07-02T12:59:40.1657756Z     [responsive-pixel-7] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout 
+2026-07-02T12:59:40.1659681Z     [responsive-pixel-7] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports 
+2026-07-02T12:59:40.1661717Z     [responsive-ipad-air] › tests/responsive/responsive-assistant.spec.js:18:3 › Responsive assistant journey › completes assistant flow with readable mobile layout 
+2026-07-02T12:59:40.1664703Z     [responsive-ipad-air] › tests/responsive/responsive-shortlist.spec.js:25:3 › Responsive assistant shortlist › drawer and shortlist page remain usable on small viewports 
+2026-07-02T12:59:40.1666150Z   63 passed (6.9m)
+2026-07-02T12:59:40.1865987Z ##[error]Process completed with exit code 1.

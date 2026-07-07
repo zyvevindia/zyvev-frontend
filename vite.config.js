@@ -1,8 +1,36 @@
 import { execSync } from "node:child_process";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 
 import react from "@vitejs/plugin-react";
 import { catalogV3AcquireDevPlugin } from "./scripts/lib/catalogV3AcquireDevPlugin.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const GOLDEN_LOADER_BROWSER_SYNC = path.resolve(
+  __dirname,
+  "src/catalogAcquisition/benchmark/goldenLoaderBrowserSync.js"
+);
+const REGISTRY_LOADER_BROWSER_STUB = path.resolve(
+  __dirname,
+  "src/catalogAcquisition/sourceRegistry/registryLoaderBrowserStub.js"
+);
+
+function browserGoldenLoaderPlugin() {
+  return {
+    name: "evsavari-browser-golden-loader",
+    enforce: "pre",
+    resolveId(source) {
+      if (source.endsWith("goldenLoaderNode.js")) {
+        return GOLDEN_LOADER_BROWSER_SYNC;
+      }
+      if (source.endsWith("registryLoaderNode.js")) {
+        return REGISTRY_LOADER_BROWSER_STUB;
+      }
+      return null;
+    },
+  };
+}
 
 function resolveBuildCommit() {
   try {
@@ -20,6 +48,7 @@ const RELEASE_VERSION = process.env.npm_package_version || "0.0.0";
 
 export default defineConfig(({ command }) => ({
   plugins: [
+    browserGoldenLoaderPlugin(),
     react(),
     ...(command === "serve" ? [catalogV3AcquireDevPlugin()] : []),
   ],

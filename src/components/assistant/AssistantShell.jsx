@@ -1,5 +1,3 @@
-import "../../styles/assistant.css";
-
 export default function AssistantShell({ children }) {
   return (
     <main className="assistant-page">

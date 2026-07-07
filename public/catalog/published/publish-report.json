@@ -1,0 +1,15 @@
+{
+  "publishedAt": "2026-07-05T19:31:29.388Z",
+  "publisherVersion": "0.1.0-phase0",
+  "phase": "phase-0-foundation",
+  "runtimeConnected": false,
+  "snapshotId": "2026-07-05T19-31-29-364Z-e79ed8d60a68",
+  "artifactDirectory": "C:\\projects\\zyvev-frontend\\public\\catalog\\published\\",
+  "validation": {
+    "valid": true,
+    "errorCount": 0,
+    "warningCount": 0
+  },
+  "parity": true,
+  "durationMs": 220
+}

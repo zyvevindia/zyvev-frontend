@@ -1,0 +1,89 @@
+﻿2026-07-02T12:51:52.8708312Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-07-02T12:51:52.8716886Z ##[group]Run actions/checkout@v4
+2026-07-02T12:51:52.8717643Z with:
+2026-07-02T12:51:52.8718094Z   repository: zyvevindia/zyvev-frontend
+2026-07-02T12:51:52.8722364Z   token: ***
+2026-07-02T12:51:52.8722790Z   ssh-strict: true
+2026-07-02T12:51:52.8723230Z   ssh-user: git
+2026-07-02T12:51:52.8723670Z   persist-credentials: true
+2026-07-02T12:51:52.8724149Z   clean: true
+2026-07-02T12:51:52.8724776Z   sparse-checkout-cone-mode: true
+2026-07-02T12:51:52.8725296Z   fetch-depth: 1
+2026-07-02T12:51:52.8725721Z   fetch-tags: false
+2026-07-02T12:51:52.8726160Z   show-progress: true
+2026-07-02T12:51:52.8726649Z   lfs: false
+2026-07-02T12:51:52.8727052Z   submodules: false
+2026-07-02T12:51:52.8727521Z   set-safe-directory: true
+2026-07-02T12:51:52.8728250Z ##[endgroup]
+2026-07-02T12:51:52.9733115Z Syncing repository: zyvevindia/zyvev-frontend
+2026-07-02T12:51:52.9736009Z ##[group]Getting Git version info
+2026-07-02T12:51:52.9737573Z Working directory is '/home/runner/work/zyvev-frontend/zyvev-frontend'
+2026-07-02T12:51:52.9739319Z [command]/usr/bin/git version
+2026-07-02T12:51:52.9822475Z git version 2.54.0
+2026-07-02T12:51:52.9846837Z ##[endgroup]
+2026-07-02T12:51:52.9863506Z Temporarily overriding HOME='/home/runner/work/_temp/960cb241-44d2-4373-a444-5299594a4ebe' before making global git config changes
+2026-07-02T12:51:52.9866497Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-02T12:51:52.9869446Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/zyvev-frontend/zyvev-frontend
+2026-07-02T12:51:52.9917313Z Deleting the contents of '/home/runner/work/zyvev-frontend/zyvev-frontend'
+2026-07-02T12:51:52.9922356Z ##[group]Initializing the repository
+2026-07-02T12:51:52.9927581Z [command]/usr/bin/git init /home/runner/work/zyvev-frontend/zyvev-frontend
+2026-07-02T12:51:53.0019668Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-02T12:51:53.0021196Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-02T12:51:53.0022866Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-02T12:51:53.0024173Z hint: call:
+2026-07-02T12:51:53.0025491Z hint:
+2026-07-02T12:51:53.0026290Z hint: 	git config --global init.defaultBranch <name>
+2026-07-02T12:51:53.0026920Z hint:
+2026-07-02T12:51:53.0027489Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-02T12:51:53.0028413Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-02T12:51:53.0029182Z hint:
+2026-07-02T12:51:53.0029588Z hint: 	git branch -m <name>
+2026-07-02T12:51:53.0030088Z hint:
+2026-07-02T12:51:53.0030720Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-02T12:51:53.0031794Z Initialized empty Git repository in /home/runner/work/zyvev-frontend/zyvev-frontend/.git/
+2026-07-02T12:51:53.0046903Z [command]/usr/bin/git remote add origin https://github.com/zyvevindia/zyvev-frontend
+2026-07-02T12:51:53.0116780Z ##[endgroup]
+2026-07-02T12:51:53.0118072Z ##[group]Disabling automatic garbage collection
+2026-07-02T12:51:53.0120110Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-02T12:51:53.0153113Z ##[endgroup]
+2026-07-02T12:51:53.0153902Z ##[group]Setting up auth
+2026-07-02T12:51:53.0161734Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-02T12:51:53.0201723Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-02T12:51:53.0555694Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-02T12:51:53.0603652Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-02T12:51:53.0863204Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-02T12:51:53.0901115Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-02T12:51:53.1143199Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-02T12:51:53.1187921Z ##[endgroup]
+2026-07-02T12:51:53.1188980Z ##[group]Fetching the repository
+2026-07-02T12:51:53.1201742Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +72f567eb2ad32383b5f657da22529a6a9cf251be:refs/remotes/pull/1/merge
+2026-07-02T12:51:54.0076650Z From https://github.com/zyvevindia/zyvev-frontend
+2026-07-02T12:51:54.0078993Z  * [new ref]         72f567eb2ad32383b5f657da22529a6a9cf251be -> pull/1/merge
+2026-07-02T12:51:54.0112188Z ##[endgroup]
+2026-07-02T12:51:54.0114004Z ##[group]Determining the checkout info
+2026-07-02T12:51:54.0116047Z ##[endgroup]
+2026-07-02T12:51:54.0119503Z [command]/usr/bin/git sparse-checkout disable
+2026-07-02T12:51:54.0235636Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-02T12:51:54.0240206Z ##[group]Checking out the ref
+2026-07-02T12:51:54.0242393Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1/merge
+2026-07-02T12:51:54.1931839Z Note: switching to 'refs/remotes/pull/1/merge'.
+2026-07-02T12:51:54.1933080Z 
+2026-07-02T12:51:54.1933850Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-07-02T12:51:54.1936494Z changes and commit them, and you can discard any commits you make in this
+2026-07-02T12:51:54.1938628Z state without impacting any branches by switching back to a branch.
+2026-07-02T12:51:54.1939649Z 
+2026-07-02T12:51:54.1940361Z If you want to create a new branch to retain commits you create, you may
+2026-07-02T12:51:54.1941928Z do so (now or later) by using -c with the switch command. Example:
+2026-07-02T12:51:54.1942831Z 
+2026-07-02T12:51:54.1943218Z   git switch -c <new-branch-name>
+2026-07-02T12:51:54.1943883Z 
+2026-07-02T12:51:54.1944565Z Or undo this operation with:
+2026-07-02T12:51:54.1945367Z 
+2026-07-02T12:51:54.1945870Z   git switch -
+2026-07-02T12:51:54.1946596Z 
+2026-07-02T12:51:54.1947545Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-07-02T12:51:54.1949081Z 
+2026-07-02T12:51:54.1950872Z HEAD is now at 72f567e Merge ddf431408100f34b2f8cab74caba072d4a8f756d into 9ee250a92ef37f5142d5a81eed712fb8ae0e978d
+2026-07-02T12:51:54.1956457Z ##[endgroup]
+2026-07-02T12:51:54.1996180Z [command]/usr/bin/git log -1 --format=%H
+2026-07-02T12:51:54.2022260Z 72f567eb2ad32383b5f657da22529a6a9cf251be

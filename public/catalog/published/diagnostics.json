@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-07-05T19:31:29.389Z",
+  "publisherVersion": "0.1.0-phase0",
+  "runtimeConnected": false,
+  "phase": "phase-0-foundation",
+  "featureFlags": {
+    "CATALOG_PUBLISHER_ENABLED": false,
+    "CATALOG_PUBLISHER_STRICT": false,
+    "CATALOG_SNAPSHOT_RUNTIME": false,
+    "CATALOG_SHADOW_MODE": false
+  },
+  "timing": {
+    "publishDurationMs": 220
+  },
+  "input": {
+    "goldenManifestVersion": "golden-v1",
+    "goldenFamilyCount": 25,
+    "inputAuthority": "golden-dataset"
+  },
+  "output": {
+    "snapshotId": "2026-07-05T19-31-29-364Z-e79ed8d60a68",
+    "familyCount": 25,
+    "variantCount": 88,
+    "uniqueBrands": 12,
+    "familySlugs": [
+      "bmw-ix1",
+      "byd-atto-3",
+      "byd-seal",
+      "citroen-ec3",
+      "hyundai-creta-electric",
+      "hyundai-ioniq-5",
+      "hyundai-kona-electric",
+      "kia-ev6",
+      "mahindra-be-6",
+      "mahindra-xev-9e",
+      "mahindra-xuv400",
+      "maruti-e-vitara",
+      "mercedes-eqa",
+      "mercedes-eqb",
+      "mg-comet-ev",
+      "mg-windsor-ev",
+      "mg-zs-ev",
+      "mini-cooper-se",
+      "tata-curvv-ev",
+      "tata-harrier-ev",
+      "tata-nexon-ev",
+      "tata-punch-ev",
+      "tata-tiago-ev",
+      "tata-tigor-ev",
+      "volvo-ex40"
+    ]
+  },
+  "validation": {
+    "valid": true,
+    "errorCount": 0,
+    "warningCount": 0
+  },
+  "parity": {
+    "goldenBaselineParity": true,
+    "mismatchCount": 0,
+    "missingInSnapshot": 0
+  },
+  "health": {
+    "publishReady": true,
+    "blockedByRuntimeMigration": false
+  }
+}
