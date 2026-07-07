@@ -235,23 +235,28 @@ async function main() {
     fail(`catalog/published/manifest.json: ${errMsg(e)}`);
   }
 
-  // Frontend health (Vercel serverless)
-  try {
-    const { res, text } = await getText(`${SITE}/api/health`);
-    if (!res.ok) fail(`Frontend /api/health HTTP ${res.status}`);
-    else {
+  // Frontend health — static rewrite (/api/health → /health.json) with direct fallback
+  let healthOk = false;
+  for (const healthUrl of [`${SITE}/api/health`, `${SITE}/health.json`]) {
+    try {
+      const { res, text } = await getText(healthUrl);
+      if (!res.ok) continue;
       let body;
       try {
         body = JSON.parse(text);
       } catch {
         body = null;
       }
-      if (!body?.ok) fail("Frontend /api/health: ok !== true");
-      else pass(`Frontend /api/health (${res.status}, commit ${body.commit || "?"})`);
+      if (body?.ok) {
+        pass(`Frontend health (${res.status}) via ${healthUrl.replace(SITE, "")}`);
+        healthOk = true;
+        break;
+      }
+    } catch {
+      /* try next */
     }
-  } catch (e) {
-    fail(`Frontend /api/health: ${errMsg(e)}`);
   }
+  if (!healthOk) fail("Frontend health: /api/health and /health.json both failed");
 
   // Vehicle detail + listing surfaces (SPA shell)
   for (const [path, label] of [
