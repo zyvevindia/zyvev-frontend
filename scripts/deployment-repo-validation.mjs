@@ -102,10 +102,10 @@ function main() {
     }
   }
 
-  if (!existsSync(join(root, "api/health.js"))) {
-    fail("api/health.js missing — frontend health endpoint required for PCS");
+  if (!existsSync(join(root, "public/health.json"))) {
+    fail("public/health.json missing — static frontend health probe");
   } else {
-    pass("api/health.js present (Vercel liveness)");
+    pass("public/health.json present (static /api/health rewrite)");
   }
 
   if (ci && !/catalog:certify:strict/.test(ci)) {
