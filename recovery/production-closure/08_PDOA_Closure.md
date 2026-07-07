@@ -9,7 +9,7 @@
 
 | PDOA Finding | PCS-01 Status | Evidence |
 |---|---|---|
-| Catalog snapshot 404 on prod | **Resolved** (pending deploy) | Committed `public/catalog/published/`; smoke gate added |
+| Catalog snapshot 404 on prod | **Resolved** | ✅ 200 live — `main` `7deae21d` |
 | `catalog:certify --strict` not in CI | **Resolved** | `ci.yml` + `catalog:certify:strict` |
 | `deploy:smoke` not automated | **Partially Resolved** | `production-verify.yml` |
 | No frontend health endpoint | **Resolved** (pending deploy) | `api/health.js` |

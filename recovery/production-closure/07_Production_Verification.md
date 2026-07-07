@@ -27,14 +27,21 @@
 
 ---
 
-## Post-PCS Expected (after git push + Vercel deploy)
+## Post-PCS Verified (2026-07-07, `main` @ `5aa82146`)
 
-| Surface | Expected | Verified |
+| Surface | URL | Status |
 |---|---|---|
-| Catalog manifest | ✅ 200 + valid JSON | ⏳ Run after deploy |
-| Frontend `/api/health` | ✅ 200 `{ ok: true }` | ⏳ Run after deploy |
-| Dealer portal shell | ✅ 200 | ⏳ In deploy:smoke |
-| All pre-PCS passing checks | ✅ | ⏳ Run after deploy |
+| **Catalog manifest** | `https://evsavari.com/catalog/published/manifest.json` | ✅ **200** (25 families) |
+| Frontend health | `https://evsavari.com/api/health` | ✅ **200** (static rewrite) |
+| Homepage | `https://evsavari.com/` | ✅ 200 |
+| Vehicle detail | `https://evsavari.com/cars/tata-nexon-ev` | ✅ 200 |
+| Listing | `https://evsavari.com/cars` | ✅ 200 |
+| Compare / discover | `/compare`, `/discover/city-driving` | ✅ 200 |
+| Dealer portal | `/dealer/login` | ✅ 200 |
+| Admin shell | `/admin` | ✅ 200 |
+| API | `GET /cars?limit=1` | ✅ 200 |
+| API health | `/health` | ⚠️ 404 (backend — optional) |
+| deploy:smoke | `npm run deploy:smoke` | ✅ **18/18 required checks** |
 
 ---
 
