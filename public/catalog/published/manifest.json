@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2026-07-05T19-31-29-364Z-e79ed8d60a68",
+  "publishedAt": "2026-07-05T19:31:29.364Z",
+  "publisherVersion": "0.1.0-phase0",
+  "familyCount": 25,
+  "variantCount": 88,
+  "families": [
+    {
+      "familySlug": "bmw-ix1",
+      "displayName": "BMW iX1",
+      "brand": "BMW",
+      "variantCount": 2
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "displayName": "BYD Atto 3",
+      "brand": "BYD",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "byd-seal",
+      "displayName": "BYD Seal",
+      "brand": "BYD",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "citroen-ec3",
+      "displayName": "Citroen eC3",
+      "brand": "Citroen",
+      "variantCount": 4
+    },
+    {
+      "familySlug": "hyundai-creta-electric",
+      "displayName": "Hyundai Creta Electric",
+      "brand": "Hyundai",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "hyundai-ioniq-5",
+      "displayName": "Hyundai Ioniq 5",
+      "brand": "Hyundai",
+      "variantCount": 2
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "displayName": "Hyundai Kona Electric",
+      "brand": "Hyundai",
+      "variantCount": 1
+    },
+    {
+      "familySlug": "kia-ev6",
+      "displayName": "Kia EV6",
+      "brand": "Kia",
+      "variantCount": 2
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "displayName": "Mahindra BE 6",
+      "brand": "Mahindra",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "displayName": "Mahindra XEV 9e",
+      "brand": "Mahindra",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "displayName": "Mahindra XUV400",
+      "brand": "Mahindra",
+      "variantCount": 4
+    },
+    {
+      "familySlug": "maruti-e-vitara",
+      "displayName": "Maruti Suzuki e Vitara",
+      "brand": "Maruti Suzuki",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "mercedes-eqa",
+      "displayName": "Mercedes-Benz EQA",
+      "brand": "Mercedes-Benz",
+      "variantCount": 2
+    },
+    {
+      "familySlug": "mercedes-eqb",
+      "displayName": "Mercedes-Benz EQB",
+      "brand": "Mercedes-Benz",
+      "variantCount": 2
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "displayName": "MG Comet EV",
+      "brand": "MG",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "mg-windsor-ev",
+      "displayName": "MG Windsor EV",
+      "brand": "MG",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "displayName": "MG ZS EV",
+      "brand": "MG",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "mini-cooper-se",
+      "displayName": "MINI Cooper SE",
+      "brand": "MINI",
+      "variantCount": 2
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "displayName": "Tata Curvv EV",
+      "brand": "Tata",
+      "variantCount": 3
+    },
+    {
+      "familySlug": "tata-harrier-ev",
+      "displayName": "Tata Harrier EV",
+      "brand": "Tata",
+      "variantCount": 8
+    },
+    {
+      "familySlug": "tata-nexon-ev",
+      "displayName": "Tata Nexon EV",
+      "brand": "Tata",
+      "variantCount": 13
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "displayName": "Tata Punch EV",
+      "brand": "Tata",
+      "variantCount": 6
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "displayName": "Tata Tiago EV",
+      "brand": "Tata",
+      "variantCount": 4
+    },
+    {
+      "familySlug": "tata-tigor-ev",
+      "displayName": "Tata Tigor EV",
+      "brand": "Tata",
+      "variantCount": 4
+    },
+    {
+      "familySlug": "volvo-ex40",
+      "displayName": "Volvo EX40",
+      "brand": "Volvo",
+      "variantCount": 2
+    }
+  ]
+}

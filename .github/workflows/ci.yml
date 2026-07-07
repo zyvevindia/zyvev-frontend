@@ -43,6 +43,22 @@ jobs:
           VITE_API_URL: https://evsavari-api.onrender.com
           VITE_GA_ID: G-E2ETEST
 
+      - name: Media verification (certification gate)
+        run: npm run media:verify
+        env:
+          CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+
+      - name: Catalog certification (strict gate)
+        run: npm run catalog:certify:strict
+
+      - name: Upload catalog certification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-certification-reports
+          path: reports/catalog-certification/
+          retention-days: 14
+
       - name: Post-launch smoke suite (SEO QA, trust, soft-launch, catalog-ops, intelligence, usage-learning)
         run: npm run post-launch:smoke
 
@@ -58,8 +74,25 @@ jobs:
           CI: "1"
           PLAYWRIGHT_SKIP_BUILD: "1"
 
-      - name: Verify visual baseline inventory (Linux canonical set required)
-        run: node scripts/verify-visual-baselines.mjs --require-webkit
+      - name: Visual baseline governance validation
+        run: npm run visual:baseline:validate:strict
+
+      - name: Visual baseline governance unit tests
+        run: npm run visual:baseline:test
+
+      - name: Visual certification evidence
+        run: npm run visual:certification:strict
+        env:
+          CI: "1"
+          PLAYWRIGHT_SKIP_BUILD: "1"
+
+      - name: Upload visual certification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-certification-reports
+          path: reports/visual/
+          retention-days: 14
 
       - name: Visual regression (Playwright)
         run: npm run test:visual

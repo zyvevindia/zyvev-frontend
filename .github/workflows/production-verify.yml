@@ -1,0 +1,55 @@
+# PCS-01 — Post-deploy production verification against live URLs.
+# Runs on push to main/master (after Vercel deploy window) and on schedule.
+
+name: Production Verify
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: production-verify-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Wait for Vercel production deploy
+        if: github.event_name == 'push'
+        run: sleep 120
+
+      - name: Production deploy smoke (live URLs)
+        run: npm run deploy:smoke
+        env:
+          EVSAVARI_SITE_ORIGIN: https://evsavari.com
+          EVSAVARI_API_URL: https://evsavari-api.onrender.com
+          EVSAVARI_CLOUDINARY_NAME: dznvmumze
+
+      - name: Upload smoke log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-smoke-failure-${{ github.run_id }}
+          path: |
+            scripts/deploy-smoke.mjs
+          retention-days: 7

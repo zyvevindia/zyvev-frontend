@@ -84,6 +84,36 @@ function main() {
     pass("docs/deploy/examples/render-backend.service.yaml present");
   else fail("Render example blueprint missing or incomplete");
 
+  const publishedManifest = join(root, "public/catalog/published/manifest.json");
+  if (!existsSync(publishedManifest)) {
+    fail("public/catalog/published/manifest.json missing — run npm run catalog:publish");
+  } else {
+    try {
+      const manifest = JSON.parse(read("public/catalog/published/manifest.json"));
+      if (!manifest.snapshotId || !manifest.familyCount) {
+        fail("catalog published manifest.json: missing snapshotId or familyCount");
+      } else {
+        pass(
+          `catalog published manifest (${manifest.familyCount} families, snapshot ${String(manifest.snapshotId).slice(0, 24)}…)`
+        );
+      }
+    } catch {
+      fail("catalog published manifest.json: invalid JSON");
+    }
+  }
+
+  if (!existsSync(join(root, "api/health.js"))) {
+    fail("api/health.js missing — frontend health endpoint required for PCS");
+  } else {
+    pass("api/health.js present (Vercel liveness)");
+  }
+
+  if (ci && !/catalog:certify:strict/.test(ci)) {
+    fail("CI: catalog:certify:strict not wired");
+  } else if (ci) {
+    pass("CI: catalog:certify:strict");
+  }
+
   console.log("");
   if (issues.length) {
     console.log("Failures:\n", issues.map((m) => ` - ${m}`).join("\n"));
