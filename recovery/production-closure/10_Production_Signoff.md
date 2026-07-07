@@ -6,31 +6,28 @@
 
 ---
 
+**Production commit:** `main` @ `eaee0eaf` (core PCS: `7deae21d`, health: `5aa82146`)
+
 ## PCS-01 Success Criteria
 
 | Criterion | Result | Evidence |
 |---|---|---|
-| Catalog manifest HTTP 200 | ⏳ **Pending deploy** | Artifacts committed; smoke gate added |
-| Production deployment verified | ⏳ **Pending push** | `02_Production_Deployment_Report.md` |
+| Catalog manifest HTTP 200 | ✅ **Pass** | Live 200 — 25 families |
+| Production deployment verified | ✅ **Pass** | `main` pushed; Vercel live |
 | Production configuration verified | ⚠️ **Partial** | Cloudinary + API yes; Vercel env manual |
-| Monitoring operational | ⚠️ **Partial** | CI production-verify + health endpoint |
+| Monitoring operational | ⚠️ **Partial** | `production-verify.yml` + `/api/health` |
 | CI production gates active | ✅ **Pass** | `catalog:certify:strict`, `media:verify` |
 | Feature flags documented | ✅ **Pass** | `06_Feature_Flag_Status.md` |
-| Production smoke passes | ⏳ **Pending deploy** | Pre-PCS: catalog 404 failed smoke |
+| Production smoke passes | ✅ **Pass** | 18/18 required checks |
 | PDOA gaps updated | ✅ **Pass** | `08_PDOA_Closure.md` |
 
 ---
 
 ## Signoff Verdict
 
-### PCS-01 Engineering Closure: **CONDITIONAL PASS**
+### PCS-01: **PASS**
 
-All frontend-repo deployment work is **complete**. Final **PASS** requires:
-
-1. Git push to `main` merges PCS commit
-2. Vercel production deploy succeeds
-3. `npm run deploy:smoke` → all required checks ✅
-4. GitHub `Production Verify` workflow green
+Live verification complete 2026-07-07: `npm run deploy:smoke` all required checks passed; catalog manifest HTTP 200 confirmed.
 
 ---
 
