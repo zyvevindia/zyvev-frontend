@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2026-07-05T19-31-29-364Z-e79ed8d60a68",
+  "publishedAt": "2026-07-05T19:31:29.364Z",
+  "buildCommit": "73c032a1",
+  "familyCount": 25,
+  "variantCount": 88,
+  "publisherVersion": "0.1.0-phase0",
+  "sourceManifestHash": "e79ed8d60a687686b874a915af889153d302ec815cf1256cd733e54cbf006ec3",
+  "inputAuthority": "golden-dataset",
+  "runtimeConnected": false,
+  "featureFlags": {
+    "CATALOG_SNAPSHOT_RUNTIME": false
+  }
+}

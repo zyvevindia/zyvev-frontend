@@ -19,7 +19,7 @@ concurrency:
 jobs:
   build-and-smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 60
 
     steps:
       - name: Checkout
@@ -39,6 +39,25 @@ jobs:
 
       - name: Production build (Vite + SEO artifacts)
         run: npm run build
+        env:
+          VITE_API_URL: https://evsavari-api.onrender.com
+          VITE_GA_ID: G-E2ETEST
+
+      - name: Media verification (certification gate)
+        run: npm run media:verify
+        env:
+          CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+
+      - name: Catalog certification (strict gate)
+        run: npm run catalog:certify:strict
+
+      - name: Upload catalog certification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catalog-certification-reports
+          path: reports/catalog-certification/
+          retention-days: 14
 
       - name: Post-launch smoke suite (SEO QA, trust, soft-launch, catalog-ops, intelligence, usage-learning)
         run: npm run post-launch:smoke

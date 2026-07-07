@@ -209,6 +209,66 @@ async function main() {
     fail(`content-manifest: ${errMsg(e)}`);
   }
 
+  // Catalog published snapshot (PCS-01 gate — static /public/catalog/published/)
+  try {
+    const { res, text } = await getText(`${SITE}/catalog/published/manifest.json`);
+    if (!res.ok) {
+      fail(
+        `catalog/published/manifest.json HTTP ${res.status} — commit public/catalog/published/ and redeploy`
+      );
+    } else {
+      let manifest;
+      try {
+        manifest = JSON.parse(text);
+      } catch {
+        manifest = null;
+      }
+      if (!manifest?.snapshotId || !manifest?.familyCount) {
+        fail("catalog/published/manifest.json: unexpected JSON shape");
+      } else {
+        pass(
+          `catalog/published/manifest.json (${res.status}, ${manifest.familyCount} families)`
+        );
+      }
+    }
+  } catch (e) {
+    fail(`catalog/published/manifest.json: ${errMsg(e)}`);
+  }
+
+  // Frontend health (Vercel serverless)
+  try {
+    const { res, text } = await getText(`${SITE}/api/health`);
+    if (!res.ok) fail(`Frontend /api/health HTTP ${res.status}`);
+    else {
+      let body;
+      try {
+        body = JSON.parse(text);
+      } catch {
+        body = null;
+      }
+      if (!body?.ok) fail("Frontend /api/health: ok !== true");
+      else pass(`Frontend /api/health (${res.status}, commit ${body.commit || "?"})`);
+    }
+  } catch (e) {
+    fail(`Frontend /api/health: ${errMsg(e)}`);
+  }
+
+  // Vehicle detail + listing surfaces (SPA shell)
+  for (const [path, label] of [
+    ["/cars/tata-nexon-ev", "vehicle detail"],
+    ["/cars", "listing hub"],
+    ["/dealer/login", "dealer portal shell"],
+  ]) {
+    try {
+      const { res, text } = await getText(`${SITE}${path}`);
+      if (!res.ok) fail(`${path} HTTP ${res.status} [${label}]`);
+      else if (!/<html/i.test(text)) fail(`${path} not HTML [${label}]`);
+      else pass(`${path} SPA shell (${res.status}) [${label}]`);
+    } catch (e) {
+      fail(`${path}: ${errMsg(e)} [${label}]`);
+    }
+  }
+
   // API catalog
   try {
     const { res, text } = await getText(`${API_URL}/cars?limit=1`);
