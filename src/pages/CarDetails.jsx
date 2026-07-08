@@ -58,6 +58,7 @@ import {
   normalizeVehicleSlug,
   vehicleFamilyPath,
 } from "../utils/vehicleRoutes";
+import { buildOwnershipToolHref } from "../tools/ownershipToolLinks.js";
 
 import DetailHero from "../components/car/DetailHero";
 import VehicleDetailNotFound from "../components/catalog/VehicleDetailNotFound";
@@ -524,16 +525,34 @@ export default function CarDetails() {
 
   const scrollToEmiCalculator = useCallback(() => {
     trackPricingInteraction("emi_scroll_cta");
+    const vehicleSlug = normalizeVehicleSlug(
+      family?.familySlug || extractFamilySlug(slug || car?.slug || "")
+    );
+    if (vehicleSlug) {
+      navigate(buildOwnershipToolHref("emi", vehicleSlug));
+      return;
+    }
     scrollToDetailSection("emi");
-  }, [trackPricingInteraction]);
+  }, [trackPricingInteraction, family, slug, car, navigate]);
 
-  const scrollToDealer = useCallback(() => {
+  const openDealerAssistance = useCallback(() => {
     trackLaunchDealerAssistance({
       sourcePage: "car_details",
-      surface: "scroll_to_dealer",
+      surface: "dealer_assistance",
     });
-    scrollToDetailSection("assistance");
-  }, []);
+    setInquiryHeadline("Get dealer assistance");
+    setInquirySubmit("Get dealer assistance");
+    setInquirySubtitle("");
+    setInquiryLeadMetadata({
+      intent: "dealer_assistance",
+      source: "dealer_assistance_cta",
+    });
+    setInquiryOpen(true);
+    trackVariantEvent(BUYER_EVENTS.LEAD_CTA_INITIATED, {
+      ...getVariantAnalyticsContext(),
+      extra: { cta: "Get dealer assistance" },
+    });
+  }, [getVariantAnalyticsContext]);
 
   const scrollToChargingDetails = useCallback(() => {
     if (!scrollToDetailSection("charging")) {
@@ -1224,7 +1243,7 @@ export default function CarDetails() {
             safeDisplayImage={safeDisplayImage}
             onSelectImage={setSelectedImage}
             onScrollEmi={scrollToEmiCalculator}
-            onScrollDealer={scrollToDealer}
+            onScrollDealer={openDealerAssistance}
             onBookTestDrive={openTestDrive}
             onGetBestDeal={() => {
               trackLaunchDealerAssistance({
@@ -1245,7 +1264,7 @@ export default function CarDetails() {
                 sourcePage: "car_details",
                 surface: "hero_dealer_assistance",
               });
-              scrollToDealer();
+              openDealerAssistance();
             }}
             onCompare={handleCompareEv}
           />
@@ -1264,7 +1283,7 @@ export default function CarDetails() {
 
           <DetailActionBar
             onEmi={scrollToEmiCalculator}
-            onDealer={scrollToDealer}
+            onDealer={openDealerAssistance}
             onRequestCallback={() => {
               trackLaunchDealerAssistance({
                 sourcePage: "car_details",

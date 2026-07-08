@@ -49,6 +49,7 @@ export default function CarCard({
   eagerImage = false,
   showValueScore = false,
   showFamilyIntelligence = false,
+  onLeadInquiry = null,
 }) {
   /* =======================================================
      ================= SAFETY FALLBACKS ====================
@@ -134,6 +135,14 @@ export default function CarCard({
     headline,
     submit
   ) => {
+    if (typeof onLeadInquiry === "function") {
+      onLeadInquiry({
+        headline,
+        submitLabel: submit,
+        car: safeCar,
+      });
+      return;
+    }
 
     setInquiryHeadline(
       headline
@@ -385,29 +394,31 @@ export default function CarCard({
       </div>
     </div>
 
-      <LeadInquiryModal
-        isOpen={inquiryOpen}
-        onClose={() =>
-          setInquiryOpen(
-            false
-          )
-        }
-        sourcePage="listing_card"
-        modelName={`${safeBrand} ${safeName}`.trim()}
-        vehicleName={`${safeBrand} ${safeName}`.trim()}
-        vehicleId={
-          String(
-            carSlug || _id || ""
-          )
-        }
-        mongoCarId={
-          _id
-            ? String(_id)
-            : ""
-        }
-        headline={inquiryHeadline}
-        submitLabel={inquirySubmit}
-      />
+      {!onLeadInquiry ? (
+        <LeadInquiryModal
+          isOpen={inquiryOpen}
+          onClose={() =>
+            setInquiryOpen(
+              false
+            )
+          }
+          sourcePage="listing_card"
+          modelName={`${safeBrand} ${safeName}`.trim()}
+          vehicleName={`${safeBrand} ${safeName}`.trim()}
+          vehicleId={
+            String(
+              carSlug || _id || ""
+            )
+          }
+          mongoCarId={
+            _id
+              ? String(_id)
+              : ""
+          }
+          headline={inquiryHeadline}
+          submitLabel={inquirySubmit}
+        />
+      ) : null}
     </>
   );
 }

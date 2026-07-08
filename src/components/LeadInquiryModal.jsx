@@ -4,6 +4,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { createPortal } from "react-dom";
 
 import { submitBuyerLead } from "../services/leadSubmitApi";
 import { trackLeadFormAbandoned } from "../analytics/funnel";
@@ -538,8 +539,7 @@ export default function LeadInquiryModal({
      ========================= RENDER =========================
      ========================================================= */
 
-  return (
-
+  const modal = (
     <div
       style={{ ...overlay, alignItems: overlayAlignItems }}
       role="dialog"
@@ -985,6 +985,8 @@ export default function LeadInquiryModal({
 
     </div>
   );
+
+  return createPortal(modal, document.body);
 }
 
 /* =========================================================
@@ -999,6 +1001,7 @@ const overlay = {
     "rgba(15,23,42,0.55)",
   display: "flex",
   justifyContent: "center",
+  minHeight: "100%",
   padding:
     "clamp(12px, 4vw, 24px)",
   paddingTop: "max(12px, env(safe-area-inset-top, 0px))",
@@ -1011,6 +1014,7 @@ const modalCard = {
   position: "relative",
   width: "100%",
   maxWidth: "520px",
+  margin: "auto",
   maxHeight: "92vh",
   overflowY: "auto",
   background: colors.surface,

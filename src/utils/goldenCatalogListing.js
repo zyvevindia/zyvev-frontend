@@ -10,6 +10,7 @@ import {
 import normalizeCar from "./normalizeCar.js";
 import { formatAcChargeDurationLabel } from "./formatChargingDuration.js";
 import { extractFamilySlug } from "./modelFamily.js";
+import { getHeroImage, getListingImage } from "./vehicleMedia.js";
 import { normalizeVehicleSlug } from "./vehicleRoutes.js";
 
 /** Build-time bundle of all golden dossiers (no runtime fetch required). */
@@ -242,6 +243,16 @@ export function goldenDossierToMarketplaceVariants(dossier) {
         powerKw: catalogMeta.performance.powerKw,
         powerBhp: catalogMeta.performance.powerBhp,
       },
+    };
+  }).map((variant) => {
+    const listingImage = getListingImage(variant);
+    const heroImage = getHeroImage(variant);
+    return {
+      ...variant,
+      image: listingImage || variant.image,
+      heroImage: heroImage || variant.heroImage,
+      listingThumbnail: listingImage || variant.listingThumbnail,
+      compareThumbnail: variant.compareThumbnail || null,
     };
   });
 }

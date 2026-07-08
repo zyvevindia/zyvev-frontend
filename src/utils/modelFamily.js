@@ -249,7 +249,7 @@ export function aggregateModelFamilies(cars) {
  * Card-shaped object for listing/home components.
  */
 export function familyToListingCard(family) {
-  return {
+  const card = {
     _id: family.familySlug,
     slug: family.familySlug,
     familySlug: family.familySlug,
@@ -273,6 +273,16 @@ export function familyToListingCard(family) {
     evSavariScores: family.evSavariScores,
     evScores: family.evScores,
     evIntelligence: family.evIntelligence,
+  };
+
+  const listingImage = getListingImage(card);
+  const heroImage = getHeroImage(card);
+
+  return {
+    ...card,
+    image: listingImage || card.image,
+    heroImage: heroImage || card.heroImage,
+    listingThumbnail: listingImage || card.listingThumbnail,
   };
 }
 

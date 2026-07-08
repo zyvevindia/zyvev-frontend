@@ -3,6 +3,7 @@ import {
   useMemo,
   useRef,
   useState,
+  useCallback,
 } from "react";
 
 import {
@@ -14,6 +15,7 @@ import {
 } from "react-router-dom";
 
 import CarCard from "../components/CarCard";
+import LeadInquiryModal from "../components/LeadInquiryModal";
 import SeoHead from "../components/SEO/SeoHead";
 import { buildListingPageMeta } from "../seo/pageMetadata";
 
@@ -153,6 +155,21 @@ export default function ListingPage() {
     setCompareList,
     toggleCompare: toggleCompareCar,
   } = useCompareCars();
+
+  const [inquiryOpen, setInquiryOpen] = useState(false);
+  const [inquiryHeadline, setInquiryHeadline] = useState("Request a callback");
+  const [inquirySubmit, setInquirySubmit] = useState("Request callback");
+  const [inquiryCar, setInquiryCar] = useState(null);
+
+  const openListingInquiry = useCallback(
+    ({ headline, submitLabel, car: cardCar }) => {
+      setInquiryHeadline(headline);
+      setInquirySubmit(submitLabel);
+      setInquiryCar(cardCar || null);
+      setInquiryOpen(true);
+    },
+    []
+  );
 
   /* =========================================================
      ======================= FETCH CARS ======================
@@ -900,6 +917,7 @@ export default function ListingPage() {
                     toggleCompare={toggleCompare}
                     compareModeActive={compareMode}
                     eagerImage={index < 4}
+                    onLeadInquiry={openListingInquiry}
                   />
                 );
               }
@@ -949,6 +967,33 @@ export default function ListingPage() {
         )}
 
       </>
+
+      <LeadInquiryModal
+        isOpen={inquiryOpen}
+        onClose={() => {
+          setInquiryOpen(false);
+          setInquiryCar(null);
+        }}
+        sourcePage="listing_card"
+        modelName={
+          inquiryCar
+            ? `${inquiryCar.brand || ""} ${inquiryCar.name || ""}`.trim()
+            : ""
+        }
+        vehicleName={
+          inquiryCar
+            ? `${inquiryCar.brand || ""} ${inquiryCar.name || ""}`.trim()
+            : ""
+        }
+        vehicleId={String(
+          inquiryCar?.slug || inquiryCar?._id || ""
+        )}
+        mongoCarId={
+          inquiryCar?._id ? String(inquiryCar._id) : ""
+        }
+        headline={inquiryHeadline}
+        submitLabel={inquirySubmit}
+      />
 
     </div>
   );
