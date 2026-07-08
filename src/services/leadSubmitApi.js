@@ -1,5 +1,4 @@
 import { API_URL } from "../config";
-import { safeFetchJson } from "../utils/safeFetch";
 import { buildLeadRoutingPlan } from "../utils/leadRouting";
 import { isTurnstileConfigured } from "../utils/turnstile";
 
@@ -46,13 +45,28 @@ export async function submitBuyerLead(payload, turnstileToken = "") {
     body.turnstileToken = turnstileToken;
   }
 
-  return safeFetchJson(`${API_URL}/leads`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    timeoutMs: 20000,
-    label: "lead_submit",
-    body: JSON.stringify(body),
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20_000);
+
+  try {
+    const res = await fetch(`${API_URL}/leads`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    return {
+      ok: res.ok,
+      status: res.status,
+      data,
+      error: res.ok ? null : data?.message || `HTTP ${res.status}`,
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 export { assertTurnstileToken, isTurnstileConfigured };

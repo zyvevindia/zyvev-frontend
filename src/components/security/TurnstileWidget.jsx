@@ -13,6 +13,10 @@ import {
 /**
  * Cloudflare Turnstile widget (managed / non-intrusive).
  * Calls onToken(token) when solved; onExpire when token expires.
+ *
+ * Callbacks are stored in refs so parent re-renders (e.g. form typing)
+ * do not destroy and recreate the widget — that would invalidate tokens
+ * while stale values remained in parent state.
  */
 export default function TurnstileWidget({
   onToken,
@@ -20,10 +24,19 @@ export default function TurnstileWidget({
   onError,
   theme = "light",
   size = "normal",
+  /** Increment to request a fresh challenge without remounting the widget. */
+  resetKey = 0,
 }) {
   const containerRef = useRef(null);
   const widgetIdRef = useRef(null);
   const [loadError, setLoadError] = useState("");
+
+  const onTokenRef = useRef(onToken);
+  const onExpireRef = useRef(onExpire);
+  const onErrorRef = useRef(onError);
+  onTokenRef.current = onToken;
+  onExpireRef.current = onExpire;
+  onErrorRef.current = onError;
 
   useEffect(() => {
     if (!isTurnstileConfigured()) {
@@ -55,13 +68,13 @@ export default function TurnstileWidget({
             theme,
             size,
             callback: (token) => {
-              onToken?.(token);
+              onTokenRef.current?.(token);
             },
             "expired-callback": () => {
-              onExpire?.();
+              onExpireRef.current?.();
             },
             "error-callback": () => {
-              onError?.(
+              onErrorRef.current?.(
                 new Error("turnstile_challenge_failed")
               );
             },
@@ -72,7 +85,7 @@ export default function TurnstileWidget({
           setLoadError(
             err?.message || "Security check unavailable"
           );
-          onError?.(err);
+          onErrorRef.current?.(err);
         }
       }
     }
@@ -95,7 +108,26 @@ export default function TurnstileWidget({
 
       widgetIdRef.current = null;
     };
-  }, [onToken, onExpire, onError, theme, size]);
+  }, [theme, size]);
+
+  useEffect(() => {
+    if (!isTurnstileConfigured()) {
+      return;
+    }
+    if (resetKey === 0 || widgetIdRef.current == null) {
+      return;
+    }
+    if (!window.turnstile?.reset) {
+      return;
+    }
+
+    try {
+      window.turnstile.reset(widgetIdRef.current);
+    } catch {
+      /* ignore */
+    }
+    onExpireRef.current?.();
+  }, [resetKey]);
 
   if (!isTurnstileConfigured()) {
     return null;

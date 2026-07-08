@@ -1,4 +1,5 @@
 import {
+  useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -189,6 +190,31 @@ export default function LeadInquiryModal({
   const [turnstileToken, setTurnstileToken] =
     useState("");
 
+  const turnstileTokenRef = useRef("");
+  const [turnstileResetKey, setTurnstileResetKey] =
+    useState(0);
+
+  const handleTurnstileToken = useCallback((token) => {
+    turnstileTokenRef.current = token;
+    setTurnstileToken(token);
+  }, []);
+
+  const handleTurnstileExpire = useCallback(() => {
+    turnstileTokenRef.current = "";
+    setTurnstileToken("");
+  }, []);
+
+  const handleTurnstileError = useCallback(() => {
+    turnstileTokenRef.current = "";
+    setTurnstileToken("");
+  }, []);
+
+  const resetTurnstileChallenge = useCallback(() => {
+    turnstileTokenRef.current = "";
+    setTurnstileToken("");
+    setTurnstileResetKey((key) => key + 1);
+  }, []);
+
   /* =========================================================
      ===================== RESET ON OPEN ===================
      ========================================================= */
@@ -233,6 +259,7 @@ export default function LeadInquiryModal({
     setCity("");
     setMessage("");
     setHoneypot("");
+    turnstileTokenRef.current = "";
     setTurnstileToken("");
     setError("");
     setFieldErrors({});
@@ -267,6 +294,7 @@ export default function LeadInquiryModal({
     });
 
     resetFormFields();
+    setTurnstileResetKey((key) => key + 1);
 
     const defaultVariant = variantOptions.find(
       (v) => v.slug === defaultVariantSlug
@@ -339,7 +367,7 @@ export default function LeadInquiryModal({
         return;
       }
 
-      if (isTurnstileConfigured() && !turnstileToken) {
+      if (isTurnstileConfigured() && !turnstileTokenRef.current) {
         setError(
           "Please complete the security check before submitting."
         );
@@ -347,6 +375,8 @@ export default function LeadInquiryModal({
       }
 
       setLoading(true);
+
+      const activeTurnstileToken = turnstileTokenRef.current;
 
       const carIdPayload =
 
@@ -406,7 +436,7 @@ export default function LeadInquiryModal({
                 : "",
             },
           },
-          turnstileToken
+          activeTurnstileToken
         );
 
         const data = res.data || {};
@@ -440,6 +470,10 @@ export default function LeadInquiryModal({
             setFieldErrors(
               mapped
             );
+          }
+
+          if (isTurnstileConfigured()) {
+            resetTurnstileChallenge();
           }
 
           throw new Error(
@@ -500,6 +534,10 @@ export default function LeadInquiryModal({
       } catch (err) {
         if (import.meta.env.DEV) {
           console.error(err);
+        }
+
+        if (isTurnstileConfigured()) {
+          resetTurnstileChallenge();
         }
 
         setError(
@@ -940,9 +978,10 @@ export default function LeadInquiryModal({
 
             <div data-testid="lead-turnstile">
               <TurnstileWidget
-                onToken={setTurnstileToken}
-                onExpire={() => setTurnstileToken("")}
-                onError={() => setTurnstileToken("")}
+                resetKey={turnstileResetKey}
+                onToken={handleTurnstileToken}
+                onExpire={handleTurnstileExpire}
+                onError={handleTurnstileError}
               />
             </div>
 
