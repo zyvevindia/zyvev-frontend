@@ -109,16 +109,22 @@
     "interior": "/images/cars/tata-tiago-ev/interior.webp",
     "dashboard": "/images/cars/tata-tiago-ev/dashboard.webp",
     "gallery": [
+      "/images/cars/tata-tiago-ev/front.webp",
       "/images/cars/tata-tiago-ev/interior.webp",
       "/images/cars/tata-tiago-ev/dashboard.webp"
     ],
     "galleryImages": [
+      "/images/cars/tata-tiago-ev/front.webp",
       "/images/cars/tata-tiago-ev/interior.webp",
       "/images/cars/tata-tiago-ev/dashboard.webp"
     ],
     "interiorImages": [
       "/images/cars/tata-tiago-ev/interior.webp",
       "/images/cars/tata-tiago-ev/dashboard.webp"
-    ]
+    ],
+    "listingThumbnail": "/images/cars/tata-tiago-ev/listing.webp",
+    "compareThumbnail": "/images/cars/tata-tiago-ev/compare.webp",
+    "heroImage": "/images/cars/tata-tiago-ev/front.webp",
+    "front": "/images/cars/tata-tiago-ev/front.webp"
   }
 }

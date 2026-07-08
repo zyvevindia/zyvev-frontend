@@ -5,9 +5,17 @@
   "tata-tigor-ev": {},
   "tata-harrier-ev": {},
   "mg-comet-ev": {},
-  "tata-tiago-ev": {},
+  "tata-tiago-ev": {
+    "front": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
+    "listing": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
+    "compare": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb"
+  },
   "mahindra-xev-9e": {},
   "byd-atto-3": {},
   "mahindra-xuv400": {},
-  "hyundai-kona-electric": {}
+  "hyundai-kona-electric": {
+    "front": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/hero",
+    "listing": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/listing-thumb",
+    "compare": "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/compare-thumb"
+  }
 }

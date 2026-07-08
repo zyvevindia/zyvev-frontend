@@ -151,6 +151,18 @@ export default function LeadInquiryModal({
   const [city, setCity] =
     useState("");
 
+  const [overlayAlignItems, setOverlayAlignItems] = useState("center");
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const sync = () => {
+      setOverlayAlignItems(mq.matches ? "flex-start" : "center");
+    };
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
   const [interestedVehicle,
     setInterestedVehicle] =
     useState("");
@@ -529,7 +541,7 @@ export default function LeadInquiryModal({
   return (
 
     <div
-      style={overlay}
+      style={{ ...overlay, alignItems: overlayAlignItems }}
       role="dialog"
       aria-modal="true"
       aria-labelledby="lead-inquiry-title"
@@ -986,7 +998,6 @@ const overlay = {
   background:
     "rgba(15,23,42,0.55)",
   display: "flex",
-  alignItems: "flex-start",
   justifyContent: "center",
   padding:
     "clamp(12px, 4vw, 24px)",

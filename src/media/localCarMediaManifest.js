@@ -41,7 +41,19 @@ export const MEDIA_COMPLETION_P1_FAMILIES = Object.freeze([
  */
 export const MEDIA_COMPLETION_P2_TYPES = Object.freeze({
   "mg-comet-ev": ["rear", "side", "interior", "dashboard"],
-  "tata-tiago-ev": ["interior", "dashboard"],
+  "tata-tiago-ev": [
+    "front",
+    "listing",
+    "compare",
+    "interior",
+    "dashboard",
+  ],
+  "hyundai-kona-electric": [
+    "front",
+    "listing",
+    "compare",
+    "dashboard",
+  ],
 });
 
 /** Priority 3 — tier-1 families missing dashboard only. */
@@ -49,7 +61,6 @@ export const MEDIA_COMPLETION_P3_DASHBOARD_FAMILIES = Object.freeze([
   "mahindra-xev-9e",
   "byd-atto-3",
   "mahindra-xuv400",
-  "hyundai-kona-electric",
 ]);
 
 export const MEDIA_COMPLETION_SPRINT_FAMILIES = Object.freeze([

@@ -74,13 +74,19 @@
     "source": "local-cars",
     "dashboard": "/images/cars/hyundai-kona-electric/dashboard.webp",
     "gallery": [
+      "/images/cars/hyundai-kona-electric/front.webp",
       "/images/cars/hyundai-kona-electric/dashboard.webp"
     ],
     "galleryImages": [
+      "/images/cars/hyundai-kona-electric/front.webp",
       "/images/cars/hyundai-kona-electric/dashboard.webp"
     ],
     "interiorImages": [
       "/images/cars/hyundai-kona-electric/dashboard.webp"
-    ]
+    ],
+    "listingThumbnail": "/images/cars/hyundai-kona-electric/listing.webp",
+    "compareThumbnail": "/images/cars/hyundai-kona-electric/compare.webp",
+    "heroImage": "/images/cars/hyundai-kona-electric/front.webp",
+    "front": "/images/cars/hyundai-kona-electric/front.webp"
   }
 }
