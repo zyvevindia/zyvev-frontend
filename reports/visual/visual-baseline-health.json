@@ -1,0 +1,177 @@
+{
+  "reportType": "visual-baseline-health",
+  "reportVersion": "1.0.0",
+  "generatedAt": "2026-07-07T07:02:19.076Z",
+  "healthy": false,
+  "manifestVersion": "1.0.0",
+  "summary": {
+    "expectedBaselines": 168,
+    "manifestEntries": 168,
+    "approvedCount": 112,
+    "invalidCount": 56,
+    "pngOnDisk": 112,
+    "validationErrors": 1,
+    "validationWarnings": 0
+  },
+  "certificationGates": {
+    "manifestCoverage": true,
+    "noOrphanBaselines": true,
+    "noDuplicateBaselines": true,
+    "metadataComplete": true,
+    "versionedAssets": true,
+    "browserOwnershipDefined": true,
+    "lifecycleDocumented": true,
+    "validationPass": false
+  },
+  "validation": {
+    "valid": false,
+    "issueCount": 1
+  },
+  "observability": {
+    "baselineCount": {
+      "manifestEntries": 168,
+      "pngOnDisk": 112,
+      "approved": 112,
+      "invalid": 56,
+      "deprecated": 0,
+      "pendingReview": 0
+    },
+    "coverage": {
+      "byBrowser": {
+        "chromium": {
+          "total": 56,
+          "approved": 56
+        },
+        "firefox": {
+          "total": 56,
+          "approved": 56
+        },
+        "webkit": {
+          "total": 56,
+          "approved": 0
+        }
+      },
+      "byViewport": {
+        "desktop": {
+          "total": 42,
+          "approved": 28
+        },
+        "laptop": {
+          "total": 42,
+          "approved": 28
+        },
+        "tablet": {
+          "total": 42,
+          "approved": 28
+        },
+        "mobile": {
+          "total": 42,
+          "approved": 28
+        }
+      },
+      "byPage": {
+        "home": {
+          "total": 12,
+          "approved": 8
+        },
+        "ev-listing": {
+          "total": 12,
+          "approved": 8
+        },
+        "vehicle-details": {
+          "total": 12,
+          "approved": 8
+        },
+        "compare": {
+          "total": 12,
+          "approved": 8
+        },
+        "buyer-assistant": {
+          "total": 12,
+          "approved": 8
+        },
+        "search": {
+          "total": 12,
+          "approved": 8
+        },
+        "budget-evs": {
+          "total": 12,
+          "approved": 8
+        },
+        "upcoming-evs": {
+          "total": 12,
+          "approved": 8
+        },
+        "news": {
+          "total": 12,
+          "approved": 8
+        },
+        "about": {
+          "total": 12,
+          "approved": 8
+        },
+        "contact": {
+          "total": 12,
+          "approved": 8
+        },
+        "privacy": {
+          "total": 12,
+          "approved": 8
+        },
+        "terms": {
+          "total": 12,
+          "approved": 8
+        },
+        "not-found": {
+          "total": 12,
+          "approved": 8
+        }
+      },
+      "bySubsystem": {
+        "marketplace-core": {
+          "total": 36,
+          "approved": 24
+        },
+        "catalog-platform": {
+          "total": 36,
+          "approved": 24
+        },
+        "dealer-ai": {
+          "total": 12,
+          "approved": 8
+        },
+        "intelligence-discovery": {
+          "total": 12,
+          "approved": 8
+        },
+        "seo-content": {
+          "total": 12,
+          "approved": 8
+        },
+        "static-content": {
+          "total": 48,
+          "approved": 32
+        },
+        "platform-shell": {
+          "total": 12,
+          "approved": 8
+        }
+      }
+    },
+    "anomalies": {
+      "missingBaselines": 0,
+      "duplicateBaselines": 0,
+      "orphanBaselines": 0,
+      "incorrectNaming": 0,
+      "metadataGaps": 0
+    },
+    "versionDistribution": {
+      "2026-07-07": 168
+    },
+    "health": {
+      "manifestToPngRatio": 0.6666666666666666,
+      "approvedCoverage": 0.6666666666666666,
+      "validationValid": false
+    }
+  }
+}

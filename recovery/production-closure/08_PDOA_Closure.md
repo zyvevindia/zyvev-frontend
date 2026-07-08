@@ -12,7 +12,7 @@
 | Catalog snapshot 404 on prod | **Resolved** | ✅ 200 live — `main` `7deae21d` |
 | `catalog:certify --strict` not in CI | **Resolved** | `ci.yml` + `catalog:certify:strict` |
 | `deploy:smoke` not automated | **Partially Resolved** | `production-verify.yml` |
-| No frontend health endpoint | **Resolved** (pending deploy) | `api/health.js` |
+| No frontend health endpoint | **Resolved** | ✅ `/api/health` → static `health.json` |
 | Vercel env not audited | **Still Open** | No dashboard access — manual steps in `03` |
 | Sentry not in prod | **Still Open** | Manual Vercel config required |
 | External uptime monitoring | **Partially Resolved** | GitHub scheduled smoke; UptimeRobot still manual |

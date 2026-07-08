@@ -1,0 +1,1715 @@
+{
+  "reportType": "visual-failure-matrix",
+  "reportVersion": "1.0.0",
+  "generatedAt": "2026-07-07T07:02:19.079Z",
+  "environment": "win32",
+  "runId": "vcp-v3-1783407241992",
+  "summary": {
+    "totalFailures": 56,
+    "byClassification": {
+      "infrastructure": 56
+    },
+    "byBrowser": {
+      "webkit": 56
+    },
+    "byPage": {
+      "home": 4,
+      "ev-listing": 4,
+      "vehicle-details": 4,
+      "compare": 4,
+      "buyer-assistant": 4,
+      "search": 4,
+      "budget-evs": 4,
+      "upcoming-evs": 4,
+      "news": 4,
+      "about": 4,
+      "contact": 4,
+      "privacy": 4,
+      "terms": 4,
+      "not-found": 4
+    },
+    "blockers": 56
+  },
+  "failures": [
+    {
+      "id": "vf-home-desktop-webkit",
+      "test": "Home matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "home",
+      "pageLabel": "Home",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "home-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/home-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-ev-listing-desktop-webkit",
+      "test": "EV Listing matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "ev-listing",
+      "pageLabel": "EV Listing",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "ev-listing-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/ev-listing-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 3,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-vehicle-details-desktop-webkit",
+      "test": "Vehicle Details matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "vehicle-details",
+      "pageLabel": "Vehicle Details",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "vehicle-details-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/vehicle-details-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-compare-desktop-webkit",
+      "test": "Compare matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "compare",
+      "pageLabel": "Compare",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "compare-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/compare-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-buyer-assistant-desktop-webkit",
+      "test": "Buyer Assistant matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "buyer-assistant",
+      "pageLabel": "Buyer Assistant",
+      "subsystem": "dealer-ai",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "buyer-assistant-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/buyer-assistant-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-search-desktop-webkit",
+      "test": "Search matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "search",
+      "pageLabel": "Search",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "search-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/search-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-budget-evs-desktop-webkit",
+      "test": "Budget EVs matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "budget-evs",
+      "pageLabel": "Budget EVs",
+      "subsystem": "intelligence-discovery",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "budget-evs-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/budget-evs-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-upcoming-evs-desktop-webkit",
+      "test": "Upcoming EVs matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "upcoming-evs",
+      "pageLabel": "Upcoming EVs",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "upcoming-evs-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/upcoming-evs-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-news-desktop-webkit",
+      "test": "Guides Hub matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "news",
+      "pageLabel": "Guides Hub",
+      "subsystem": "seo-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "news-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/news-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-about-desktop-webkit",
+      "test": "About matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "about",
+      "pageLabel": "About",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "about-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/about-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-contact-desktop-webkit",
+      "test": "Contact matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "contact",
+      "pageLabel": "Contact",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "contact-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/contact-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-privacy-desktop-webkit",
+      "test": "Privacy Policy matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "privacy",
+      "pageLabel": "Privacy Policy",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "privacy-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/privacy-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-terms-desktop-webkit",
+      "test": "Terms matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "terms",
+      "pageLabel": "Terms",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "terms-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/terms-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-not-found-desktop-webkit",
+      "test": "404 Page matches baseline",
+      "project": "visual-webkit",
+      "browser": "webkit",
+      "viewport": "desktop",
+      "pageId": "not-found",
+      "pageLabel": "404 Page",
+      "subsystem": "platform-shell",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "not-found-desktop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/not-found-desktop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-home-laptop-webkit",
+      "test": "Home matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "home",
+      "pageLabel": "Home",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "home-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/home-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 3,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-ev-listing-laptop-webkit",
+      "test": "EV Listing matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "ev-listing",
+      "pageLabel": "EV Listing",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "ev-listing-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/ev-listing-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-vehicle-details-laptop-webkit",
+      "test": "Vehicle Details matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "vehicle-details",
+      "pageLabel": "Vehicle Details",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "vehicle-details-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/vehicle-details-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-compare-laptop-webkit",
+      "test": "Compare matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "compare",
+      "pageLabel": "Compare",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "compare-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/compare-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-buyer-assistant-laptop-webkit",
+      "test": "Buyer Assistant matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "buyer-assistant",
+      "pageLabel": "Buyer Assistant",
+      "subsystem": "dealer-ai",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "buyer-assistant-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/buyer-assistant-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-search-laptop-webkit",
+      "test": "Search matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "search",
+      "pageLabel": "Search",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "search-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/search-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-budget-evs-laptop-webkit",
+      "test": "Budget EVs matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "budget-evs",
+      "pageLabel": "Budget EVs",
+      "subsystem": "intelligence-discovery",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "budget-evs-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/budget-evs-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 3,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-upcoming-evs-laptop-webkit",
+      "test": "Upcoming EVs matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "upcoming-evs",
+      "pageLabel": "Upcoming EVs",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "upcoming-evs-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/upcoming-evs-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-news-laptop-webkit",
+      "test": "Guides Hub matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "news",
+      "pageLabel": "Guides Hub",
+      "subsystem": "seo-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "news-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/news-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-about-laptop-webkit",
+      "test": "About matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "about",
+      "pageLabel": "About",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "about-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/about-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-contact-laptop-webkit",
+      "test": "Contact matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "contact",
+      "pageLabel": "Contact",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "contact-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/contact-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-privacy-laptop-webkit",
+      "test": "Privacy Policy matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "privacy",
+      "pageLabel": "Privacy Policy",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "privacy-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/privacy-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-terms-laptop-webkit",
+      "test": "Terms matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "terms",
+      "pageLabel": "Terms",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "terms-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/terms-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-not-found-laptop-webkit",
+      "test": "404 Page matches baseline",
+      "project": "visual-laptop-webkit",
+      "browser": "webkit",
+      "viewport": "laptop",
+      "pageId": "not-found",
+      "pageLabel": "404 Page",
+      "subsystem": "platform-shell",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "not-found-laptop-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/not-found-laptop-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-home-tablet-webkit",
+      "test": "Home matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "home",
+      "pageLabel": "Home",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "home-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/home-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 3,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-ev-listing-tablet-webkit",
+      "test": "EV Listing matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "ev-listing",
+      "pageLabel": "EV Listing",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "ev-listing-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/ev-listing-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-vehicle-details-tablet-webkit",
+      "test": "Vehicle Details matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "vehicle-details",
+      "pageLabel": "Vehicle Details",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "vehicle-details-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/vehicle-details-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-compare-tablet-webkit",
+      "test": "Compare matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "compare",
+      "pageLabel": "Compare",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "compare-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/compare-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-buyer-assistant-tablet-webkit",
+      "test": "Buyer Assistant matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "buyer-assistant",
+      "pageLabel": "Buyer Assistant",
+      "subsystem": "dealer-ai",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "buyer-assistant-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/buyer-assistant-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-search-tablet-webkit",
+      "test": "Search matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "search",
+      "pageLabel": "Search",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "search-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/search-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-budget-evs-tablet-webkit",
+      "test": "Budget EVs matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "budget-evs",
+      "pageLabel": "Budget EVs",
+      "subsystem": "intelligence-discovery",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "budget-evs-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/budget-evs-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-upcoming-evs-tablet-webkit",
+      "test": "Upcoming EVs matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "upcoming-evs",
+      "pageLabel": "Upcoming EVs",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "upcoming-evs-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/upcoming-evs-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-news-tablet-webkit",
+      "test": "Guides Hub matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "news",
+      "pageLabel": "Guides Hub",
+      "subsystem": "seo-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "news-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/news-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-about-tablet-webkit",
+      "test": "About matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "about",
+      "pageLabel": "About",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "about-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/about-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-contact-tablet-webkit",
+      "test": "Contact matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "contact",
+      "pageLabel": "Contact",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "contact-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/contact-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-privacy-tablet-webkit",
+      "test": "Privacy Policy matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "privacy",
+      "pageLabel": "Privacy Policy",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "privacy-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/privacy-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-terms-tablet-webkit",
+      "test": "Terms matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "terms",
+      "pageLabel": "Terms",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "terms-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/terms-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-not-found-tablet-webkit",
+      "test": "404 Page matches baseline",
+      "project": "visual-tablet-webkit",
+      "browser": "webkit",
+      "viewport": "tablet",
+      "pageId": "not-found",
+      "pageLabel": "404 Page",
+      "subsystem": "platform-shell",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "not-found-tablet-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/not-found-tablet-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-home-mobile-webkit",
+      "test": "Home matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "home",
+      "pageLabel": "Home",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "home-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/home-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 3,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-ev-listing-mobile-webkit",
+      "test": "EV Listing matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "ev-listing",
+      "pageLabel": "EV Listing",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "ev-listing-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/ev-listing-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-vehicle-details-mobile-webkit",
+      "test": "Vehicle Details matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "vehicle-details",
+      "pageLabel": "Vehicle Details",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "vehicle-details-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/vehicle-details-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 3,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-compare-mobile-webkit",
+      "test": "Compare matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "compare",
+      "pageLabel": "Compare",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "compare-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/compare-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-buyer-assistant-mobile-webkit",
+      "test": "Buyer Assistant matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "buyer-assistant",
+      "pageLabel": "Buyer Assistant",
+      "subsystem": "dealer-ai",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "buyer-assistant-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/buyer-assistant-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 3,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-search-mobile-webkit",
+      "test": "Search matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "search",
+      "pageLabel": "Search",
+      "subsystem": "catalog-platform",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "search-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/search-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-budget-evs-mobile-webkit",
+      "test": "Budget EVs matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "budget-evs",
+      "pageLabel": "Budget EVs",
+      "subsystem": "intelligence-discovery",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "budget-evs-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/budget-evs-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-upcoming-evs-mobile-webkit",
+      "test": "Upcoming EVs matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "upcoming-evs",
+      "pageLabel": "Upcoming EVs",
+      "subsystem": "marketplace-core",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "upcoming-evs-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/upcoming-evs-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 4,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-news-mobile-webkit",
+      "test": "Guides Hub matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "news",
+      "pageLabel": "Guides Hub",
+      "subsystem": "seo-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "news-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/news-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-about-mobile-webkit",
+      "test": "About matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "about",
+      "pageLabel": "About",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "about-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/about-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-contact-mobile-webkit",
+      "test": "Contact matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "contact",
+      "pageLabel": "Contact",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "contact-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/contact-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-privacy-mobile-webkit",
+      "test": "Privacy Policy matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "privacy",
+      "pageLabel": "Privacy Policy",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "privacy-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/privacy-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-terms-mobile-webkit",
+      "test": "Terms matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "terms",
+      "pageLabel": "Terms",
+      "subsystem": "static-content",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "terms-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/terms-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    },
+    {
+      "id": "vf-not-found-mobile-webkit",
+      "test": "404 Page matches baseline",
+      "project": "visual-mobile-webkit",
+      "browser": "webkit",
+      "viewport": "mobile",
+      "pageId": "not-found",
+      "pageLabel": "404 Page",
+      "subsystem": "platform-shell",
+      "environment": "win32",
+      "runId": "vcp-v3-1783407241992",
+      "status": "failed",
+      "expectedBaseline": "not-found-mobile-webkit.png",
+      "expectedBaselinePath": "tests/visual/public-pages.spec.js-snapshots/not-found-mobile-webkit.png",
+      "actualResult": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe ╔════════════════════════════════════════════════════════════╗ ║ Looks like Playwright was just installed or updated.       ║ ║ Please run the following command to download new browsers: ║ ║                                                            ║",
+      "classification": "infrastructure",
+      "classificationConfidence": "high",
+      "rootCause": "WebKit browser unavailable on platform",
+      "evidence": {
+        "durationMs": 2,
+        "retry": 0,
+        "errorSnippet": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\Nitin\\AppData\\Local\\ms-playwright\\webkit-2311\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                           ",
+        "attachments": [
+          "error-context",
+          "trace"
+        ]
+      },
+      "canBeFixed": false,
+      "certificationBlocker": true
+    }
+  ]
+}

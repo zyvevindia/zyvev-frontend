@@ -1,5 +1,5 @@
 /**
- * Cloudflare Turnstile — low-intent forms only.
+ * Cloudflare Turnstile — public forms (contact, newsletter, feedback, buyer leads).
  * https://developers.cloudflare.com/turnstile/
  */
 

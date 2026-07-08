@@ -37,8 +37,8 @@ Live verification complete 2026-07-07: `npm run deploy:smoke` all required check
 
 **Ready to deploy (in PCS commit):**
 
-- Catalog published snapshot (`public/catalog/published/` — 25 families, 88 variants)
-- Frontend health endpoint (`/api/health`)
+- Catalog published snapshot (`public/catalog/published/` — 25 families, 88 variants) — **live**
+- Frontend health (`/api/health` → static `health.json`) — **live**
 - Vercel cache headers for catalog published path
 - CI gates: `catalog:certify:strict`, expanded `deploy:smoke`
 - Production verification workflow (6h + post-push)

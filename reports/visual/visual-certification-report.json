@@ -1,0 +1,194 @@
+{
+  "reportType": "visual-certification-report",
+  "reportVersion": "1.0.0",
+  "generatedAt": "2026-07-07T07:02:19.080Z",
+  "runId": "vcp-v3-1783407241992",
+  "environment": "win32",
+  "timing": {
+    "startedAt": 1783407241992,
+    "endedAt": 1783407738947,
+    "durationMs": 496955
+  },
+  "certification": {
+    "status": "not_certified",
+    "visualTestsCertified": false,
+    "governanceCertified": false,
+    "strictGovernanceCertified": false,
+    "requireWebkit": true
+  },
+  "results": {
+    "total": 168,
+    "passed": 112,
+    "failed": 56,
+    "skipped": 0,
+    "passRate": 0.6666666666666666,
+    "passPercent": 66.67,
+    "failPercent": 33.33
+  },
+  "coverage": {
+    "byBrowser": {
+      "chromium": {
+        "total": 56,
+        "passed": 56,
+        "failed": 0,
+        "passPercent": 100,
+        "failPercent": 0
+      },
+      "firefox": {
+        "total": 56,
+        "passed": 56,
+        "failed": 0,
+        "passPercent": 100,
+        "failPercent": 0
+      },
+      "webkit": {
+        "total": 56,
+        "passed": 0,
+        "failed": 56,
+        "passPercent": 0,
+        "failPercent": 100
+      }
+    },
+    "byPage": {
+      "home": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "ev-listing": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "vehicle-details": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "compare": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "buyer-assistant": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "search": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "budget-evs": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "upcoming-evs": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "news": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "about": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "contact": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "privacy": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "terms": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "not-found": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      }
+    },
+    "byViewport": {
+      "desktop": {
+        "total": 42,
+        "passed": 28,
+        "failed": 14,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "laptop": {
+        "total": 42,
+        "passed": 28,
+        "failed": 14,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "tablet": {
+        "total": 42,
+        "passed": 28,
+        "failed": 14,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "mobile": {
+        "total": 42,
+        "passed": 28,
+        "failed": 14,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      }
+    }
+  },
+  "baseline": {
+    "manifestEntries": 168,
+    "approvedOnDisk": 112,
+    "manifestCoverage": 1,
+    "baselineCoverage": 0.6666666666666666,
+    "validationValid": false
+  },
+  "summary": {
+    "passRate": 0.6666666666666666,
+    "blockers": "see visual-failure-matrix.json"
+  }
+}

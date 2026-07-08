@@ -5,9 +5,7 @@ import {
   useState,
 } from "react";
 
-import { API_URL } from "../config";
-import { safeFetchJson } from "../utils/safeFetch";
-import { buildLeadRoutingPlan } from "../utils/leadRouting";
+import { submitBuyerLead } from "../services/leadSubmitApi";
 import { trackLeadFormAbandoned } from "../analytics/funnel";
 
 import {
@@ -36,6 +34,8 @@ import {
 } from "../event-tracking/trackBuyerEvent";
 
 import LeadTrustBanner from "./leads/LeadTrustBanner";
+import TurnstileWidget from "./security/TurnstileWidget";
+import { isTurnstileConfigured } from "../utils/turnstile";
 
 import {
   getCitiesForState,
@@ -173,6 +173,9 @@ export default function LeadInquiryModal({
   const [fieldErrors, setFieldErrors] =
     useState({});
 
+  const [turnstileToken, setTurnstileToken] =
+    useState("");
+
   /* =========================================================
      ===================== RESET ON OPEN ===================
      ========================================================= */
@@ -217,6 +220,7 @@ export default function LeadInquiryModal({
     setCity("");
     setMessage("");
     setHoneypot("");
+    setTurnstileToken("");
     setError("");
     setFieldErrors({});
     setLoading(false);
@@ -322,6 +326,13 @@ export default function LeadInquiryModal({
         return;
       }
 
+      if (isTurnstileConfigured() && !turnstileToken) {
+        setError(
+          "Please complete the security check before submitting."
+        );
+        return;
+      }
+
       setLoading(true);
 
       const carIdPayload =
@@ -344,20 +355,8 @@ export default function LeadInquiryModal({
       );
 
       try {
-        const routing = buildLeadRoutingPlan({
-          city: sanitizeInput(city),
-          state: sanitizeInput(state),
-          familySlug: leadMetadata.familySlug,
-          brand: leadMetadata.brand,
-          vehicleName: submittedVehicleName,
-        });
-
-        const res = await safeFetchJson(`${API_URL}/leads`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          timeoutMs: 20000,
-          label: "lead_submit",
-          body: JSON.stringify({
+        const res = await submitBuyerLead(
+          {
             name: sanitizeInput(name),
             phone: phone.replace(/\D/g, ""),
             email: sanitizeInput(email).toLowerCase(),
@@ -377,8 +376,6 @@ export default function LeadInquiryModal({
             leadSource: "form",
             familySlug: String(leadMetadata.familySlug || "").trim(),
             variantSlug: String(leadMetadata.variantSlug || "").trim(),
-            leadStatus: routing.plan.leadStatusTag,
-            assignedDealerId: routing.plan.dealerId,
             leadMetadata: {
               ...leadMetadata,
               leadIntent: {
@@ -394,11 +391,10 @@ export default function LeadInquiryModal({
               variantName: isTestDrive
                 ? sanitizeInput(interestedVehicle)
                 : "",
-              routing: routing.plan,
-              routingLog: routing.log,
             },
-          }),
-        });
+          },
+          turnstileToken
+        );
 
         const data = res.data || {};
 
@@ -627,6 +623,7 @@ export default function LeadInquiryModal({
             <form
               onSubmit={handleSubmit}
               style={formStack}
+              data-testid="lead-inquiry-form"
             >
             <input
               type="text"
@@ -733,6 +730,7 @@ export default function LeadInquiryModal({
 
             <input
               value={name}
+              data-testid="lead-name"
               onChange={(e) =>
                 setName(
                   sanitizeInput(
@@ -759,6 +757,7 @@ export default function LeadInquiryModal({
 
             <input
               value={phone}
+              data-testid="lead-phone"
               onChange={(e) =>
                 setPhone(
                   e.target.value
@@ -795,6 +794,7 @@ export default function LeadInquiryModal({
                 <input
                   type="email"
                   value={email}
+                  data-testid="lead-email"
                   onChange={(e) =>
                     setEmail(e.target.value.trim())
                   }
@@ -818,6 +818,7 @@ export default function LeadInquiryModal({
 
             <select
               value={state}
+              data-testid="lead-state"
               onChange={(e) => {
                 setState(e.target.value);
                 setCity("");
@@ -854,6 +855,7 @@ export default function LeadInquiryModal({
 
             <select
               value={city}
+              data-testid="lead-city"
               onChange={(e) => setCity(e.target.value)}
               disabled={!state}
               style={{
@@ -895,6 +897,7 @@ export default function LeadInquiryModal({
 
             <textarea
               value={message}
+              data-testid="lead-message"
               onChange={(e) =>
                 setMessage(
                   sanitizeInput(e.target.value)
@@ -918,14 +921,26 @@ export default function LeadInquiryModal({
 
             {error && (
 
-              <p style={globalError}>
+              <p style={globalError} role="alert">
                 {error}
               </p>
             )}
 
+            <div data-testid="lead-turnstile">
+              <TurnstileWidget
+                onToken={setTurnstileToken}
+                onExpire={() => setTurnstileToken("")}
+                onError={() => setTurnstileToken("")}
+              />
+            </div>
+
             <button
               type="submit"
-              disabled={loading}
+              data-testid="lead-submit"
+              disabled={
+                loading ||
+                (isTurnstileConfigured() && !turnstileToken)
+              }
               style={{
                 ...primaryBtn,
                 ...submitBtnLayout,

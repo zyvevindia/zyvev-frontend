@@ -1,0 +1,363 @@
+{
+  "reportType": "visual-observability",
+  "reportVersion": "1.0.0",
+  "generatedAt": "2026-07-07T07:02:19.075Z",
+  "manifestVersion": "1.0.0",
+  "metrics": {
+    "baselineCount": {
+      "manifestEntries": 168,
+      "pngOnDisk": 112,
+      "approved": 112,
+      "invalid": 56,
+      "deprecated": 0,
+      "pendingReview": 0
+    },
+    "coverage": {
+      "byBrowser": {
+        "chromium": {
+          "total": 56,
+          "approved": 56
+        },
+        "firefox": {
+          "total": 56,
+          "approved": 56
+        },
+        "webkit": {
+          "total": 56,
+          "approved": 0
+        }
+      },
+      "byViewport": {
+        "desktop": {
+          "total": 42,
+          "approved": 28
+        },
+        "laptop": {
+          "total": 42,
+          "approved": 28
+        },
+        "tablet": {
+          "total": 42,
+          "approved": 28
+        },
+        "mobile": {
+          "total": 42,
+          "approved": 28
+        }
+      },
+      "byPage": {
+        "home": {
+          "total": 12,
+          "approved": 8
+        },
+        "ev-listing": {
+          "total": 12,
+          "approved": 8
+        },
+        "vehicle-details": {
+          "total": 12,
+          "approved": 8
+        },
+        "compare": {
+          "total": 12,
+          "approved": 8
+        },
+        "buyer-assistant": {
+          "total": 12,
+          "approved": 8
+        },
+        "search": {
+          "total": 12,
+          "approved": 8
+        },
+        "budget-evs": {
+          "total": 12,
+          "approved": 8
+        },
+        "upcoming-evs": {
+          "total": 12,
+          "approved": 8
+        },
+        "news": {
+          "total": 12,
+          "approved": 8
+        },
+        "about": {
+          "total": 12,
+          "approved": 8
+        },
+        "contact": {
+          "total": 12,
+          "approved": 8
+        },
+        "privacy": {
+          "total": 12,
+          "approved": 8
+        },
+        "terms": {
+          "total": 12,
+          "approved": 8
+        },
+        "not-found": {
+          "total": 12,
+          "approved": 8
+        }
+      },
+      "bySubsystem": {
+        "marketplace-core": {
+          "total": 36,
+          "approved": 24
+        },
+        "catalog-platform": {
+          "total": 36,
+          "approved": 24
+        },
+        "dealer-ai": {
+          "total": 12,
+          "approved": 8
+        },
+        "intelligence-discovery": {
+          "total": 12,
+          "approved": 8
+        },
+        "seo-content": {
+          "total": 12,
+          "approved": 8
+        },
+        "static-content": {
+          "total": 48,
+          "approved": 32
+        },
+        "platform-shell": {
+          "total": 12,
+          "approved": 8
+        }
+      }
+    },
+    "anomalies": {
+      "missingBaselines": 0,
+      "duplicateBaselines": 0,
+      "orphanBaselines": 0,
+      "incorrectNaming": 0,
+      "metadataGaps": 0
+    },
+    "versionDistribution": {
+      "2026-07-07": 168
+    },
+    "health": {
+      "manifestToPngRatio": 0.6666666666666666,
+      "approvedCoverage": 0.6666666666666666,
+      "validationValid": false
+    },
+    "certification": {
+      "passPercent": 66.67,
+      "failPercent": 33.33,
+      "totalTests": 168,
+      "passed": 112,
+      "failed": 56
+    }
+  },
+  "certification": {
+    "status": "not_certified",
+    "passPercent": 66.67,
+    "failPercent": 33.33,
+    "passRate": 0.6666666666666666,
+    "byBrowser": {
+      "chromium": {
+        "total": 56,
+        "passed": 56,
+        "failed": 0,
+        "passPercent": 100,
+        "failPercent": 0
+      },
+      "firefox": {
+        "total": 56,
+        "passed": 56,
+        "failed": 0,
+        "passPercent": 100,
+        "failPercent": 0
+      },
+      "webkit": {
+        "total": 56,
+        "passed": 0,
+        "failed": 56,
+        "passPercent": 0,
+        "failPercent": 100
+      }
+    },
+    "byPage": {
+      "home": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "ev-listing": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "vehicle-details": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "compare": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "buyer-assistant": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "search": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "budget-evs": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "upcoming-evs": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "news": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "about": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "contact": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "privacy": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "terms": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "not-found": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      }
+    },
+    "byViewport": {
+      "desktop": {
+        "total": 42,
+        "passed": 28,
+        "failed": 14,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "laptop": {
+        "total": 42,
+        "passed": 28,
+        "failed": 14,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "tablet": {
+        "total": 42,
+        "passed": 28,
+        "failed": 14,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      },
+      "mobile": {
+        "total": 42,
+        "passed": 28,
+        "failed": 14,
+        "passPercent": 66.67,
+        "failPercent": 33.33
+      }
+    },
+    "bySubsystem": {
+      "marketplace-core": {
+        "total": 36,
+        "passed": 24,
+        "failed": 12,
+        "passPercent": 66.67
+      },
+      "catalog-platform": {
+        "total": 36,
+        "passed": 24,
+        "failed": 12,
+        "passPercent": 66.67
+      },
+      "dealer-ai": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67
+      },
+      "intelligence-discovery": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67
+      },
+      "seo-content": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67
+      },
+      "static-content": {
+        "total": 48,
+        "passed": 32,
+        "failed": 16,
+        "passPercent": 66.67
+      },
+      "platform-shell": {
+        "total": 12,
+        "passed": 8,
+        "failed": 4,
+        "passPercent": 66.67
+      }
+    }
+  }
+}

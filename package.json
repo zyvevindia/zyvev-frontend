@@ -26,6 +26,9 @@
     "recommendation:smoke": "node scripts/recommendation-smoke.mjs",
     "comparison:smoke": "node scripts/comparison-smoke.mjs",
     "buyer-journey:smoke": "node scripts/buyer-journey-smoke.mjs",
+    "lead:journey:smoke": "node scripts/lead-journey-smoke.mjs",
+    "test:leads": "node scripts/lead-journey-smoke.mjs && playwright test tests/leads --reporter=list",
+    "test:leads:live": "node scripts/lead-journey-smoke.mjs --live && playwright test tests/leads --reporter=list",
     "assistant:smoke": "node scripts/assistant-smoke.mjs",
     "assistant:validation": "node scripts/assistant-validation-report.mjs",
     "assistant:validation-smoke": "node scripts/assistant-validation-smoke.mjs",
@@ -156,6 +159,7 @@
     "recharts": "^3.8.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

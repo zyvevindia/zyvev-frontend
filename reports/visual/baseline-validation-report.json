@@ -1,0 +1,26 @@
+{
+  "reportType": "baseline-validation-report",
+  "reportVersion": "1.0.0",
+  "generatedAt": "2026-07-07T07:02:19.071Z",
+  "valid": false,
+  "summary": {
+    "totalManifestEntries": 168,
+    "totalPngOnDisk": 112,
+    "errorCount": 1,
+    "warningCount": 0,
+    "infoCount": 0,
+    "requireWebkit": true,
+    "expectedCount": 168,
+    "approvedMissingCount": 0
+  },
+  "issues": [
+    {
+      "code": "coverage_gap",
+      "severity": "error",
+      "message": "WebKit coverage incomplete: 56 non-approved webkit baselines",
+      "details": {
+        "count": 56
+      }
+    }
+  ]
+}
