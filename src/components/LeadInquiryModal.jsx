@@ -37,7 +37,7 @@ import {
 
 import LeadTrustBanner from "./leads/LeadTrustBanner";
 import TurnstileWidget from "./security/TurnstileWidget";
-import { isTurnstileConfigured } from "../utils/turnstile";
+import { isLeadTurnstileEnabled } from "../security/leadTurnstile";
 
 import {
   getCitiesForState,
@@ -367,7 +367,7 @@ export default function LeadInquiryModal({
         return;
       }
 
-      if (isTurnstileConfigured() && !turnstileTokenRef.current) {
+      if (isLeadTurnstileEnabled() && !turnstileTokenRef.current) {
         setError(
           "Please complete the security check before submitting."
         );
@@ -472,7 +472,7 @@ export default function LeadInquiryModal({
             );
           }
 
-          if (isTurnstileConfigured()) {
+          if (isLeadTurnstileEnabled()) {
             resetTurnstileChallenge();
           }
 
@@ -536,7 +536,7 @@ export default function LeadInquiryModal({
           console.error(err);
         }
 
-        if (isTurnstileConfigured()) {
+        if (isLeadTurnstileEnabled()) {
           resetTurnstileChallenge();
         }
 
@@ -976,21 +976,23 @@ export default function LeadInquiryModal({
               </p>
             )}
 
-            <div data-testid="lead-turnstile">
-              <TurnstileWidget
-                resetKey={turnstileResetKey}
-                onToken={handleTurnstileToken}
-                onExpire={handleTurnstileExpire}
-                onError={handleTurnstileError}
-              />
-            </div>
+            {isLeadTurnstileEnabled() ? (
+              <div data-testid="lead-turnstile">
+                <TurnstileWidget
+                  resetKey={turnstileResetKey}
+                  onToken={handleTurnstileToken}
+                  onExpire={handleTurnstileExpire}
+                  onError={handleTurnstileError}
+                />
+              </div>
+            ) : null}
 
             <button
               type="submit"
               data-testid="lead-submit"
               disabled={
                 loading ||
-                (isTurnstileConfigured() && !turnstileToken)
+                (isLeadTurnstileEnabled() && !turnstileToken)
               }
               style={{
                 ...primaryBtn,

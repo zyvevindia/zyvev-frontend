@@ -1,9 +1,9 @@
 import { API_URL } from "../config";
 import { buildLeadRoutingPlan } from "../utils/leadRouting";
-import { isTurnstileConfigured } from "../utils/turnstile";
+import { isLeadTurnstileEnabled } from "../security/leadTurnstile";
 
 function assertTurnstileToken(turnstileToken) {
-  if (!isTurnstileConfigured()) {
+  if (!isLeadTurnstileEnabled()) {
     return;
   }
 
@@ -69,4 +69,4 @@ export async function submitBuyerLead(payload, turnstileToken = "") {
   }
 }
 
-export { assertTurnstileToken, isTurnstileConfigured };
+export { assertTurnstileToken, isLeadTurnstileEnabled };

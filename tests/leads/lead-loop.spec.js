@@ -145,20 +145,22 @@ test.describe("Dealer and CRM visibility", () => {
 });
 
 test.describe("CAPTCHA validation", () => {
-  test("leadSubmitApi enforces Turnstile token when site key configured", () => {
+  test("leadSubmitApi keeps Turnstile helpers behind lead feature flag", () => {
     const api = readFileSync(
       join(process.cwd(), "src/services/leadSubmitApi.js"),
       "utf8"
     );
     expect(api).toContain("assertTurnstileToken");
+    expect(api).toContain("isLeadTurnstileEnabled");
     expect(api).toContain("turnstileToken");
   });
 
-  test("LeadInquiryModal disables submit until Turnstile solved", () => {
+  test("LeadInquiryModal only gates submit on Turnstile when lead flag enabled", () => {
     const modal = readFileSync(
       join(process.cwd(), "src/components/LeadInquiryModal.jsx"),
       "utf8"
     );
-    expect(modal).toContain("isTurnstileConfigured() && !turnstileToken");
+    expect(modal).toContain("isLeadTurnstileEnabled() && !turnstileToken");
+    expect(modal).toContain("isLeadTurnstileEnabled() ? (");
   });
 });

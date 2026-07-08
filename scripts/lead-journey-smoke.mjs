@@ -65,8 +65,9 @@ function checkFrontendWiring() {
     modal.includes("submitBuyerLead")
   );
   assert(
-    "LeadInquiryModal wires TurnstileWidget",
-    modal.includes("TurnstileWidget") && modal.includes("turnstileToken")
+    "LeadInquiryModal gates Turnstile behind lead feature flag",
+    modal.includes("isLeadTurnstileEnabled") &&
+      modal.includes("TurnstileWidget")
   );
   assert(
     "Lead form has data-testid hooks",
@@ -75,8 +76,9 @@ function checkFrontendWiring() {
 
   const api = readFileSync(apiPath, "utf8");
   assert(
-    "leadSubmitApi asserts Turnstile when configured",
-    api.includes("assertTurnstileToken")
+    "leadSubmitApi keeps Turnstile behind lead feature flag",
+    api.includes("isLeadTurnstileEnabled") &&
+      api.includes("assertTurnstileToken")
   );
 }
 

@@ -1,5 +1,6 @@
 /**
- * Cloudflare Turnstile — public forms (contact, newsletter, feedback, buyer leads).
+ * Cloudflare Turnstile — low-intent public forms (contact, newsletter, feedback).
+ * Lead enquiry forms use `src/security/leadTurnstile.js` (opt-in feature flag).
  * https://developers.cloudflare.com/turnstile/
  */
 
