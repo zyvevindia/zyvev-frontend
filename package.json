@@ -118,6 +118,7 @@
     "media:staging-audit": "node scripts/media-staging-audit.mjs",
     "media:completeness": "node scripts/media-completeness.mjs",
     "media:certify:sprint12": "node scripts/sprint-12-media-certification.mjs",
+    "journey:certify:sprint13": "node scripts/sprint-13-production-journey-certification.mjs",
     "catalog:audit": "node scripts/catalog-audit.mjs",
     "catalog:completeness": "node scripts/catalog-completeness.mjs",
     "compare:quality-audit": "node scripts/compare-quality-audit.mjs",
