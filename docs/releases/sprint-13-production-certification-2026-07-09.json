@@ -1,0 +1,318 @@
+{
+  "sprint": "1.3",
+  "generatedAt": "2026-07-09T10:26:30.310Z",
+  "site": "https://evsavari.com",
+  "apiUrl": "https://evsavari-api.onrender.com",
+  "verdict": "PASS",
+  "allJourneysPass": true,
+  "ctasPass": true,
+  "navPass": true,
+  "hasConsoleIssues": false,
+  "defects": [],
+  "results": [
+    {
+      "device": "desktop",
+      "journeys": [
+        {
+          "id": "journey-1",
+          "name": "Browse -> Callback",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-2",
+          "name": "Browse -> Best Deal",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-3",
+          "name": "Dealer Assistance",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-4",
+          "name": "EMI from Car Details",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-5",
+          "name": "Search -> Car Details",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-6",
+          "name": "Compare flow",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        }
+      ],
+      "ctas": [
+        {
+          "cta": "Browse EVs",
+          "pass": true
+        },
+        {
+          "cta": "Compare",
+          "pass": true
+        },
+        {
+          "cta": "Search",
+          "pass": true
+        },
+        {
+          "cta": "Filters",
+          "pass": true
+        },
+        {
+          "cta": "Pagination",
+          "pass": true
+        },
+        {
+          "cta": "Request Callback",
+          "pass": true
+        },
+        {
+          "cta": "Get Best Deal",
+          "pass": true
+        },
+        {
+          "cta": "Get Dealer Assistance",
+          "pass": true
+        },
+        {
+          "cta": "Calculate EMI",
+          "pass": true
+        },
+        {
+          "cta": "Back button",
+          "pass": true
+        }
+      ],
+      "navChecks": {
+        "hasHome": true,
+        "hasBrowse": true,
+        "hasCompare": true,
+        "hasGuides": true,
+        "hasSearch": true,
+        "hasTools": false
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedApi": []
+    },
+    {
+      "device": "tablet",
+      "journeys": [
+        {
+          "id": "journey-1",
+          "name": "Browse -> Callback",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-2",
+          "name": "Browse -> Best Deal",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-3",
+          "name": "Dealer Assistance",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-4",
+          "name": "EMI from Car Details",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-5",
+          "name": "Search -> Car Details",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-6",
+          "name": "Compare flow",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        }
+      ],
+      "ctas": [
+        {
+          "cta": "Browse EVs",
+          "pass": true
+        },
+        {
+          "cta": "Compare",
+          "pass": true
+        },
+        {
+          "cta": "Search",
+          "pass": true
+        },
+        {
+          "cta": "Filters",
+          "pass": true
+        },
+        {
+          "cta": "Pagination",
+          "pass": true
+        },
+        {
+          "cta": "Request Callback",
+          "pass": true
+        },
+        {
+          "cta": "Get Best Deal",
+          "pass": true
+        },
+        {
+          "cta": "Get Dealer Assistance",
+          "pass": true
+        },
+        {
+          "cta": "Calculate EMI",
+          "pass": true
+        },
+        {
+          "cta": "Back button",
+          "pass": true
+        }
+      ],
+      "navChecks": {
+        "hasHome": true,
+        "hasBrowse": true,
+        "hasCompare": true,
+        "hasGuides": true,
+        "hasSearch": true,
+        "hasTools": false
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedApi": []
+    },
+    {
+      "device": "mobile",
+      "journeys": [
+        {
+          "id": "journey-1",
+          "name": "Browse -> Callback",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-2",
+          "name": "Browse -> Best Deal",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-3",
+          "name": "Dealer Assistance",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-4",
+          "name": "EMI from Car Details",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-5",
+          "name": "Search -> Car Details",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        },
+        {
+          "id": "journey-6",
+          "name": "Compare flow",
+          "pass": true,
+          "defects": [],
+          "notes": []
+        }
+      ],
+      "ctas": [
+        {
+          "cta": "Browse EVs",
+          "pass": true
+        },
+        {
+          "cta": "Compare",
+          "pass": true
+        },
+        {
+          "cta": "Search",
+          "pass": true
+        },
+        {
+          "cta": "Filters",
+          "pass": true
+        },
+        {
+          "cta": "Pagination",
+          "pass": true
+        },
+        {
+          "cta": "Request Callback",
+          "pass": true
+        },
+        {
+          "cta": "Get Best Deal",
+          "pass": true
+        },
+        {
+          "cta": "Get Dealer Assistance",
+          "pass": true
+        },
+        {
+          "cta": "Calculate EMI",
+          "pass": true
+        },
+        {
+          "cta": "Back button",
+          "pass": true
+        }
+      ],
+      "navChecks": {
+        "hasHome": true,
+        "hasBrowse": true,
+        "hasCompare": true,
+        "hasGuides": true,
+        "hasSearch": true,
+        "hasTools": false
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedApi": []
+    }
+  ],
+  "regressions": {
+    "sprint11LeadFlow": "PASS",
+    "sprint12Media": "PASS"
+  }
+}
