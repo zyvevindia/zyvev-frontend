@@ -60,57 +60,6 @@ export default function Footer() {
           </p>
 
           <NewsletterSignup />
-
-          {/* ================= SOCIAL ================= */}
-
-          <div style={socialRow}>
-            {[
-              {
-                id: "x",
-                label: "𝕏",
-              },
-              {
-                id: "in",
-                label: "in",
-              },
-              {
-                id: "yt",
-                label: "▶",
-              },
-              {
-                id: "fb",
-                label: "ⓕ",
-              },
-            ].map(
-              (item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  style={socialButton}
-                  title="Social profiles coming soon"
-                  aria-label={`${item.label} (coming soon)`}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform =
-                      "translateY(-4px)";
-                    e.currentTarget.style.background =
-                      "linear-gradient(135deg, #2563eb, #1d4ed8)";
-                    e.currentTarget.style.boxShadow =
-                      "0 16px 32px rgba(37,99,235,0.28)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform =
-                      "translateY(0px)";
-                    e.currentTarget.style.background =
-                      "rgba(255,255,255,0.08)";
-                    e.currentTarget.style.boxShadow =
-                      "none";
-                  }}
-                >
-                  {item.label}
-                </button>
-              )
-            )}
-          </div>
         </div>
 
         {/* ================= QUICK LINKS ================= */}

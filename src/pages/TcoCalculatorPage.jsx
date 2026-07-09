@@ -290,7 +290,7 @@ export default function TcoCalculatorPage() {
         <nav className="ownership-tools-page__crumb" aria-label="Breadcrumb">
           <Link to="/">Home</Link>
           <span aria-hidden="true"> / </span>
-          <Link to="/tools">Tools</Link>
+          <Link to="/cars">Browse EVs</Link>
           <span aria-hidden="true"> / </span>
           <span>Total cost of ownership</span>
         </nav>

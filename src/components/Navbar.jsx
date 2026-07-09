@@ -15,7 +15,6 @@ import {
   getCompareNavDestination,
   isCompareNavActive,
 } from "../utils/compareNav";
-import { isAuthenticated, isAdmin } from "../auth";
 
 import "../styles/catalog-listing-a11y.css";
 
@@ -62,14 +61,6 @@ export default function Navbar() {
   const [isScrolled,
     setIsScrolled] =
     useState(false);
-
-  const [showAdminNav, setShowAdminNav] = useState(
-    () => isAuthenticated() && isAdmin()
-  );
-
-  useEffect(() => {
-    setShowAdminNav(isAuthenticated() && isAdmin());
-  }, [location.pathname]);
 
   /* =========================================================
      ===================== WINDOW RESIZE =====================
@@ -205,15 +196,6 @@ export default function Navbar() {
       path: "/cars#catalog-search",
       isSearch: true,
     },
-
-    ...(showAdminNav
-      ? [
-          {
-            label: "Admin",
-            path: "/admin",
-          },
-        ]
-      : []),
   ];
 
   /* =========================================================

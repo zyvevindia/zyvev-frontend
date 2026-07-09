@@ -42,6 +42,10 @@ const LegacyCarRedirect = lazy(() =>
   import("./components/routing/LegacyCarRedirect")
 );
 
+const LiteHiddenRedirect = lazy(() =>
+  import("./components/LiteHiddenRedirect")
+);
+
 const CarsSlugRouter = lazy(() =>
   import("./components/routing/CarsSlugRouter")
 );
@@ -70,14 +74,6 @@ const ReviewPage = lazy(() =>
   import("./pages/ReviewPage")
 );
 
-const OwnershipToolsPage = lazy(() =>
-  import("./pages/OwnershipToolsPage")
-);
-
-const OwnershipToolPlaceholder = lazy(() =>
-  import("./pages/OwnershipToolPlaceholder")
-);
-
 const CostPerKmPage = lazy(() =>
   import("./pages/CostPerKmPage")
 );
@@ -92,22 +88,6 @@ const PetrolSavingsPage = lazy(() =>
 
 const EmiCalculatorPage = lazy(() =>
   import("./pages/EmiCalculatorPage")
-);
-
-const Score2PlaygroundPage = lazy(() =>
-  import("./pages/Score2PlaygroundPage")
-);
-
-const AssistantPlaygroundPage = lazy(() =>
-  import("./pages/AssistantPlaygroundPage.jsx")
-);
-
-const BuyerAssistantPage = lazy(() =>
-  import("./pages/BuyerAssistantPage.jsx")
-);
-
-const AssistantShortlistPage = lazy(() =>
-  import("./pages/AssistantShortlistPage.jsx")
 );
 
 const RunningCostOwnershipPage = lazy(() =>
@@ -140,14 +120,6 @@ const PetrolSavingsQuestionPage = lazy(() =>
 
 const EmiQuestionPage = lazy(() =>
   import("./pages/ownership/EmiQuestionPage.jsx")
-);
-
-const OwnershipHubPage = lazy(() =>
-  import("./pages/ownership/OwnershipHubPage.jsx")
-);
-
-const OwnershipVehicleIndexPage = lazy(() =>
-  import("./pages/ownership/OwnershipVehicleIndexPage.jsx")
 );
 
 const SalesAnalytics = lazy(() =>
@@ -553,7 +525,7 @@ export default function App() {
 
           <Route
             path="/tools"
-            element={<OwnershipToolsPage />}
+            element={<LiteHiddenRedirect />}
           />
 
           <Route
@@ -578,21 +550,21 @@ export default function App() {
 
           <Route
             path="/playground/score2"
-            element={<Score2PlaygroundPage />}
+            element={<LiteHiddenRedirect />}
           />
 
           <Route
             path="/playground/assistant"
-            element={<AssistantPlaygroundPage />}
+            element={<LiteHiddenRedirect />}
           />
 
-          <Route path="/assistant" element={<BuyerAssistantPage />} />
+          <Route path="/assistant" element={<LiteHiddenRedirect />} />
 
-          <Route path="/assistant/shortlist" element={<AssistantShortlistPage />} />
+          <Route path="/assistant/shortlist" element={<LiteHiddenRedirect />} />
 
           <Route
             path="/tools/:toolId"
-            element={<OwnershipToolPlaceholder />}
+            element={<LiteHiddenRedirect />}
           />
 
           <Route
@@ -641,12 +613,12 @@ export default function App() {
 
           <Route
             path="/ownership"
-            element={<OwnershipHubPage />}
+            element={<LiteHiddenRedirect />}
           />
 
           <Route
             path="/ownership/vehicles"
-            element={<OwnershipVehicleIndexPage />}
+            element={<LiteHiddenRedirect />}
           />
 
           <Route

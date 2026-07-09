@@ -220,7 +220,7 @@ export default function EmiCalculatorPage() {
         <nav className="ownership-tools-page__crumb" aria-label="Breadcrumb">
           <Link to="/">Home</Link>
           <span aria-hidden="true"> / </span>
-          <Link to="/tools">Tools</Link>
+          <Link to="/cars">Browse EVs</Link>
           <span aria-hidden="true"> / </span>
           <span>EMI calculator</span>
         </nav>
