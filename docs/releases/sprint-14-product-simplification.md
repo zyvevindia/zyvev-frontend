@@ -138,4 +138,12 @@ Certification report: `docs/releases/sprint-14-lite-boundary-certification.md`
 
 ## Final Verdict
 
-_See certification report after production deploy._
+**PASS** — Production verified 2026-07-09 (`npm run lite:certify:sprint14`)
+
+- Code commit: `32b498ab`
+- Lite nav: Home, Browse EVs, Compare, Guides, Search only; Admin and Tools removed
+- Hidden hubs redirect: `/tools`, `/assistant`, `/ownership` → `/cars`
+- `/admin` operational (direct URL, not in public nav/footer)
+- All Lite journeys, CTAs, and footer company links pass on production
+
+Certification report: `docs/releases/sprint-14-lite-boundary-certification.md`
