@@ -81,14 +81,20 @@
     "source": "local-cars",
     "dashboard": "/images/cars/byd-atto-3/dashboard.webp",
     "gallery": [
+      "/images/cars/byd-atto-3/front.webp",
       "/images/cars/byd-atto-3/dashboard.webp"
     ],
     "galleryImages": [
+      "/images/cars/byd-atto-3/front.webp",
       "/images/cars/byd-atto-3/dashboard.webp"
     ],
     "interiorImages": [
       "/images/cars/byd-atto-3/dashboard.webp"
-    ]
+    ],
+    "listingThumbnail": "/images/cars/byd-atto-3/listing.webp",
+    "compareThumbnail": "/images/cars/byd-atto-3/compare.webp",
+    "heroImage": "/images/cars/byd-atto-3/front.webp",
+    "front": "/images/cars/byd-atto-3/front.webp"
   },
   "populationMeta": {
     "powerEnrichment": {

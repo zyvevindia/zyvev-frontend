@@ -1,6 +1,6 @@
 {
   "version": "media-audit-v1",
-  "generatedAt": "2026-06-10T18:49:32.597Z",
+  "generatedAt": "2026-07-09T03:50:22.828Z",
   "vehicleCount": 25,
   "requiredImageTypes": [
     "listing",
@@ -58,7 +58,6 @@
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/v1780678067/listingImage.jpg",
             "/images/cars/tata-nexon-ev/listing.webp",
             "/public/images/cars/tata-nexon-ev/listing.webp"
           ]
@@ -73,7 +72,6 @@
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/v1780678042/compaeImage.jpg",
             "/images/cars/tata-nexon-ev/compare.webp",
             "/public/images/cars/tata-nexon-ev/compare.webp"
           ]
@@ -88,7 +86,6 @@
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/v1780678387/heroImage_y5qmzt.jpg",
             "/images/cars/tata-nexon-ev/front.webp",
             "/public/images/cars/tata-nexon-ev/front.webp"
           ]
@@ -162,7 +159,6 @@
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/v1780681774/listingImage-2.jpg",
             "/images/cars/tata-punch-ev/listing.webp",
             "/public/images/cars/tata-punch-ev/listing.webp"
           ]
@@ -177,7 +173,6 @@
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/v1780681748/compareImage.png",
             "/images/cars/tata-punch-ev/compare.webp",
             "/public/images/cars/tata-punch-ev/compare.webp"
           ]
@@ -192,7 +187,6 @@
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/v1780681716/heroImage.png",
             "/images/cars/tata-punch-ev/front.webp",
             "/public/images/cars/tata-punch-ev/front.webp"
           ]
@@ -551,11 +545,12 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
+            "local-car-manifest",
             "tier1-seed",
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/listing-thumb",
+            "/images/cars/mahindra-xev-9e/listing.webp",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/960px-Mahindra_XEV_9E.jpg",
             "/public/images/cars/mahindra-xev-9e/listing.webp"
           ]
@@ -564,11 +559,12 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
+            "local-car-manifest",
             "tier1-seed",
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/compare-thumb",
+            "/images/cars/mahindra-xev-9e/compare.webp",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
             "/public/images/cars/mahindra-xev-9e/compare.webp"
           ]
@@ -577,11 +573,12 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
+            "local-car-manifest",
             "tier1-seed",
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xev-9e/hero",
+            "/images/cars/mahindra-xev-9e/front.webp",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
             "/public/images/cars/mahindra-xev-9e/front.webp"
           ]
@@ -589,10 +586,12 @@
         "rear": {
           "present": true,
           "sources": [
+            "local-car-manifest",
             "tier1-seed",
             "public-images"
           ],
           "refs": [
+            "/images/cars/mahindra-xev-9e/rear.webp",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
             "/public/images/cars/mahindra-xev-9e/rear.webp"
           ]
@@ -600,10 +599,12 @@
         "side": {
           "present": true,
           "sources": [
+            "local-car-manifest",
             "tier1-seed",
             "public-images"
           ],
           "refs": [
+            "/images/cars/mahindra-xev-9e/side.webp",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
             "/public/images/cars/mahindra-xev-9e/side.webp"
           ]
@@ -611,10 +612,12 @@
         "interior": {
           "present": true,
           "sources": [
+            "local-car-manifest",
             "tier1-seed",
             "public-images"
           ],
           "refs": [
+            "/images/cars/mahindra-xev-9e/interior.webp",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mahindra_XEV_9E.jpg/1280px-Mahindra_XEV_9E.jpg",
             "/public/images/cars/mahindra-xev-9e/interior.webp"
           ]
@@ -646,33 +649,45 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/listing-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/960px-BYD_Atto_3_1X7A6493.jpg"
+            "/images/cars/byd-atto-3/listing.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/960px-BYD_Atto_3_1X7A6493.jpg",
+            "/public/images/cars/byd-atto-3/listing.webp"
           ]
         },
         "compare": {
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/compare-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/BYD_Atto_3_1X7A7105.jpg/1280px-BYD_Atto_3_1X7A7105.jpg"
+            "/images/cars/byd-atto-3/compare.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/BYD_Atto_3_1X7A7105.jpg/1280px-BYD_Atto_3_1X7A7105.jpg",
+            "/public/images/cars/byd-atto-3/compare.webp"
           ]
         },
         "front": {
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/byd-atto-3/hero",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg"
+            "/images/cars/byd-atto-3/front.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/BYD_Atto_3_1X7A6493.jpg/1280px-BYD_Atto_3_1X7A6493.jpg",
+            "/public/images/cars/byd-atto-3/front.webp"
           ]
         },
         "rear": {
@@ -824,10 +839,11 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
+            "local-car-manifest",
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/listing-thumb",
+            "/images/cars/mg-comet-ev/listing.webp",
             "/public/images/cars/mg-comet-ev/listing.webp"
           ]
         },
@@ -835,10 +851,11 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
+            "local-car-manifest",
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/compare-thumb",
+            "/images/cars/mg-comet-ev/compare.webp",
             "/public/images/cars/mg-comet-ev/compare.webp"
           ]
         },
@@ -846,10 +863,11 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
+            "local-car-manifest",
             "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mg-comet-ev/hero",
+            "/images/cars/mg-comet-ev/front.webp",
             "/public/images/cars/mg-comet-ev/front.webp"
           ]
         },
@@ -1106,33 +1124,45 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/listing-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/960px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg"
+            "/images/cars/mahindra-xuv400/listing.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/960px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg",
+            "/public/images/cars/mahindra-xuv400/listing.webp"
           ]
         },
         "compare": {
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/compare-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg"
+            "/images/cars/mahindra-xuv400/compare.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_02.jpg",
+            "/public/images/cars/mahindra-xuv400/compare.webp"
           ]
         },
         "front": {
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/mahindra-xuv400/hero",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg"
+            "/images/cars/mahindra-xuv400/front.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg/1280px-2023_Mahindra_XUV_400_EL_EV_%2C_Ashiana_Brahmananda%2C_Jamshedpur%2C_Jharkhand%2C_India_%28_Ank_Kumar%2C_Infosys_Limited_%29_01.jpg",
+            "/public/images/cars/mahindra-xuv400/front.webp"
           ]
         },
         "rear": {
@@ -2047,33 +2077,45 @@
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/listing-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/960px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+            "/images/cars/hyundai-kona-electric/listing.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/960px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+            "/public/images/cars/hyundai-kona-electric/listing.webp"
           ]
         },
         "compare": {
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/compare-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+            "/images/cars/hyundai-kona-electric/compare.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+            "/public/images/cars/hyundai-kona-electric/compare.webp"
           ]
         },
         "front": {
           "present": true,
           "sources": [
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/hyundai-kona-electric/hero",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg"
+            "/images/cars/hyundai-kona-electric/front.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg/1280px-Hyundai_Kona_electric_%28Facelift%29_%E2%80%93_h_11042021.jpg",
+            "/public/images/cars/hyundai-kona-electric/front.webp"
           ]
         },
         "rear": {
@@ -2224,37 +2266,46 @@
         "listing": {
           "present": true,
           "sources": [
-            "verified-dossier",
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/listing-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/960px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png"
+            "/images/cars/tata-tiago-ev/listing.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/960px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+            "/public/images/cars/tata-tiago-ev/listing.webp"
           ]
         },
         "compare": {
           "present": true,
           "sources": [
-            "verified-dossier",
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/compare-thumb",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png"
+            "/images/cars/tata-tiago-ev/compare.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+            "/public/images/cars/tata-tiago-ev/compare.webp"
           ]
         },
         "front": {
           "present": true,
           "sources": [
-            "verified-dossier",
             "cloudinary-manifest",
-            "tier1-seed"
+            "local-car-manifest",
+            "tier1-seed",
+            "catalog-vehicle-json",
+            "public-images"
           ],
           "refs": [
-            "https://res.cloudinary.com/dznvmumze/image/upload/f_auto,q_auto,c_limit/evsavari/catalog/families/tata-tiago-ev/hero",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png"
+            "/images/cars/tata-tiago-ev/front.webp",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png/1280px-2022_Tata_Tiago_EV_IB_XZ%2B_Tech_LR_front_view.png",
+            "/public/images/cars/tata-tiago-ev/front.webp"
           ]
         },
         "rear": {

@@ -1,0 +1,1154 @@
+{
+  "generatedAt": "2026-07-09T03:47:03.905Z",
+  "tier1CoveragePct": 100,
+  "manifestFamilyCount": 11,
+  "tier1FamilyCount": 11,
+  "missingManifestFamilies": [],
+  "avgCompletenessPercent": 0,
+  "fallbackUsagePct": 0,
+  "compareReadyCount": 0,
+  "compareReadyPct": 0,
+  "galleryCompleteCount": 11,
+  "galleryCompletePct": 100,
+  "brokenAssetCount": 0,
+  "brokenAssets": [],
+  "brokenCoreAssetCount": 0,
+  "brokenCoreAssets": [],
+  "placeholderWarnings": 0,
+  "slugMismatches": [],
+  "topMissing": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "missing": [
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "missing": [
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "missing": [
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "missing": [
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "missing": [
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "missing": [
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "missing": [
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "missing": [
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "missing": [
+        "interior",
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "missing": [
+        "interior",
+        "charging"
+      ]
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "missing": [
+        "interior",
+        "charging"
+      ]
+    }
+  ],
+  "manifestRows": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "media": {
+        "heroImage": "/images/cars/tata-nexon-ev/front.webp",
+        "listingThumbnail": "/images/cars/tata-nexon-ev/listing.webp",
+        "compareThumbnail": "/images/cars/tata-nexon-ev/compare.webp",
+        "ogImage": "/images/cars/tata-nexon-ev/front.webp",
+        "gallery": [
+          "/images/cars/tata-nexon-ev/front.webp",
+          "/images/cars/tata-nexon-ev/rear.webp",
+          "/images/cars/tata-nexon-ev/side.webp",
+          "/images/cars/tata-nexon-ev/interior.webp",
+          "/images/cars/tata-nexon-ev/dashboard.webp"
+        ],
+        "interior": [
+          "/images/cars/tata-nexon-ev/interior.webp"
+        ],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/tata-nexon-ev/listing.webp",
+          "compareThumbnail": "/images/cars/tata-nexon-ev/compare.webp",
+          "heroImage": "/images/cars/tata-nexon-ev/front.webp",
+          "front": "/images/cars/tata-nexon-ev/front.webp",
+          "rear": "/images/cars/tata-nexon-ev/rear.webp",
+          "side": "/images/cars/tata-nexon-ev/side.webp",
+          "interior": "/images/cars/tata-nexon-ev/interior.webp",
+          "dashboard": "/images/cars/tata-nexon-ev/dashboard.webp",
+          "gallery": [
+            "/images/cars/tata-nexon-ev/front.webp",
+            "/images/cars/tata-nexon-ev/rear.webp",
+            "/images/cars/tata-nexon-ev/side.webp",
+            "/images/cars/tata-nexon-ev/interior.webp",
+            "/images/cars/tata-nexon-ev/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "charging"
+      ],
+      "variantCoverage": "tata-nexon-ev"
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "media": {
+        "heroImage": "/images/cars/tata-punch-ev/front.webp",
+        "listingThumbnail": "/images/cars/tata-punch-ev/listing.webp",
+        "compareThumbnail": "/images/cars/tata-punch-ev/compare.webp",
+        "ogImage": "/images/cars/tata-punch-ev/front.webp",
+        "gallery": [
+          "/images/cars/tata-punch-ev/front.webp",
+          "/images/cars/tata-punch-ev/rear.webp",
+          "/images/cars/tata-punch-ev/side.webp",
+          "/images/cars/tata-punch-ev/interior.webp",
+          "/images/cars/tata-punch-ev/dashboard.webp"
+        ],
+        "interior": [
+          "/images/cars/tata-punch-ev/interior.webp"
+        ],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/tata-punch-ev/listing.webp",
+          "compareThumbnail": "/images/cars/tata-punch-ev/compare.webp",
+          "heroImage": "/images/cars/tata-punch-ev/front.webp",
+          "front": "/images/cars/tata-punch-ev/front.webp",
+          "rear": "/images/cars/tata-punch-ev/rear.webp",
+          "side": "/images/cars/tata-punch-ev/side.webp",
+          "interior": "/images/cars/tata-punch-ev/interior.webp",
+          "dashboard": "/images/cars/tata-punch-ev/dashboard.webp",
+          "gallery": [
+            "/images/cars/tata-punch-ev/front.webp",
+            "/images/cars/tata-punch-ev/rear.webp",
+            "/images/cars/tata-punch-ev/side.webp",
+            "/images/cars/tata-punch-ev/interior.webp",
+            "/images/cars/tata-punch-ev/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "charging"
+      ],
+      "variantCoverage": "tata-punch-ev"
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "media": {
+        "heroImage": "/images/cars/tata-curvv-ev/front.webp",
+        "listingThumbnail": "/images/cars/tata-curvv-ev/listing.webp",
+        "compareThumbnail": "/images/cars/tata-curvv-ev/compare.webp",
+        "ogImage": "/images/cars/tata-curvv-ev/front.webp",
+        "gallery": [
+          "/images/cars/tata-curvv-ev/front.webp",
+          "/images/cars/tata-curvv-ev/rear.webp",
+          "/images/cars/tata-curvv-ev/side.webp",
+          "/images/cars/tata-curvv-ev/interior.webp",
+          "/images/cars/tata-curvv-ev/dashboard.webp"
+        ],
+        "interior": [
+          "/images/cars/tata-curvv-ev/interior.webp"
+        ],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/tata-curvv-ev/listing.webp",
+          "compareThumbnail": "/images/cars/tata-curvv-ev/compare.webp",
+          "heroImage": "/images/cars/tata-curvv-ev/front.webp",
+          "front": "/images/cars/tata-curvv-ev/front.webp",
+          "rear": "/images/cars/tata-curvv-ev/rear.webp",
+          "side": "/images/cars/tata-curvv-ev/side.webp",
+          "interior": "/images/cars/tata-curvv-ev/interior.webp",
+          "dashboard": "/images/cars/tata-curvv-ev/dashboard.webp",
+          "gallery": [
+            "/images/cars/tata-curvv-ev/front.webp",
+            "/images/cars/tata-curvv-ev/rear.webp",
+            "/images/cars/tata-curvv-ev/side.webp",
+            "/images/cars/tata-curvv-ev/interior.webp",
+            "/images/cars/tata-curvv-ev/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "charging"
+      ],
+      "variantCoverage": "tata-curvv-ev"
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "media": {
+        "heroImage": "/images/cars/tata-tiago-ev/front.webp",
+        "listingThumbnail": "/images/cars/tata-tiago-ev/listing.webp",
+        "compareThumbnail": "/images/cars/tata-tiago-ev/compare.webp",
+        "ogImage": "/images/cars/tata-tiago-ev/front.webp",
+        "gallery": [
+          "/images/cars/tata-tiago-ev/front.webp",
+          "/images/cars/tata-tiago-ev/interior.webp",
+          "/images/cars/tata-tiago-ev/dashboard.webp"
+        ],
+        "interior": [
+          "/images/cars/tata-tiago-ev/interior.webp"
+        ],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/tata-tiago-ev/listing.webp",
+          "compareThumbnail": "/images/cars/tata-tiago-ev/compare.webp",
+          "heroImage": "/images/cars/tata-tiago-ev/front.webp",
+          "front": "/images/cars/tata-tiago-ev/front.webp",
+          "rear": null,
+          "side": null,
+          "interior": "/images/cars/tata-tiago-ev/interior.webp",
+          "dashboard": "/images/cars/tata-tiago-ev/dashboard.webp",
+          "gallery": [
+            "/images/cars/tata-tiago-ev/front.webp",
+            "/images/cars/tata-tiago-ev/interior.webp",
+            "/images/cars/tata-tiago-ev/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "charging"
+      ],
+      "variantCoverage": "tata-tiago-ev"
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "media": {
+        "heroImage": "/images/cars/mg-comet-ev/front.webp",
+        "listingThumbnail": "/images/cars/mg-comet-ev/listing.webp",
+        "compareThumbnail": "/images/cars/mg-comet-ev/compare.webp",
+        "ogImage": "/images/cars/mg-comet-ev/front.webp",
+        "gallery": [
+          "/images/cars/mg-comet-ev/front.webp",
+          "/images/cars/mg-comet-ev/rear.webp",
+          "/images/cars/mg-comet-ev/side.webp",
+          "/images/cars/mg-comet-ev/interior.webp",
+          "/images/cars/mg-comet-ev/dashboard.webp"
+        ],
+        "interior": [
+          "/images/cars/mg-comet-ev/interior.webp"
+        ],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/mg-comet-ev/listing.webp",
+          "compareThumbnail": "/images/cars/mg-comet-ev/compare.webp",
+          "heroImage": "/images/cars/mg-comet-ev/front.webp",
+          "front": "/images/cars/mg-comet-ev/front.webp",
+          "rear": "/images/cars/mg-comet-ev/rear.webp",
+          "side": "/images/cars/mg-comet-ev/side.webp",
+          "interior": "/images/cars/mg-comet-ev/interior.webp",
+          "dashboard": "/images/cars/mg-comet-ev/dashboard.webp",
+          "gallery": [
+            "/images/cars/mg-comet-ev/front.webp",
+            "/images/cars/mg-comet-ev/rear.webp",
+            "/images/cars/mg-comet-ev/side.webp",
+            "/images/cars/mg-comet-ev/interior.webp",
+            "/images/cars/mg-comet-ev/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "charging"
+      ],
+      "variantCoverage": "mg-comet-ev"
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "media": {
+        "heroImage": "/images/cars/mg-zs-ev/front.webp",
+        "listingThumbnail": "/images/cars/mg-zs-ev/listing.webp",
+        "compareThumbnail": "/images/cars/mg-zs-ev/compare.webp",
+        "ogImage": "/images/cars/mg-zs-ev/front.webp",
+        "gallery": [
+          "/images/cars/mg-zs-ev/front.webp",
+          "/images/cars/mg-zs-ev/rear.webp",
+          "/images/cars/mg-zs-ev/side.webp",
+          "/images/cars/mg-zs-ev/interior.webp",
+          "/images/cars/mg-zs-ev/dashboard.webp"
+        ],
+        "interior": [
+          "/images/cars/mg-zs-ev/interior.webp"
+        ],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/mg-zs-ev/listing.webp",
+          "compareThumbnail": "/images/cars/mg-zs-ev/compare.webp",
+          "heroImage": "/images/cars/mg-zs-ev/front.webp",
+          "front": "/images/cars/mg-zs-ev/front.webp",
+          "rear": "/images/cars/mg-zs-ev/rear.webp",
+          "side": "/images/cars/mg-zs-ev/side.webp",
+          "interior": "/images/cars/mg-zs-ev/interior.webp",
+          "dashboard": "/images/cars/mg-zs-ev/dashboard.webp",
+          "gallery": [
+            "/images/cars/mg-zs-ev/front.webp",
+            "/images/cars/mg-zs-ev/rear.webp",
+            "/images/cars/mg-zs-ev/side.webp",
+            "/images/cars/mg-zs-ev/interior.webp",
+            "/images/cars/mg-zs-ev/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "charging"
+      ],
+      "variantCoverage": "mg-zs-ev"
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "media": {
+        "heroImage": "/images/cars/mahindra-be-6/front.webp",
+        "listingThumbnail": "/images/cars/mahindra-be-6/listing.webp",
+        "compareThumbnail": "/images/cars/mahindra-be-6/compare.webp",
+        "ogImage": "/images/cars/mahindra-be-6/front.webp",
+        "gallery": [
+          "/images/cars/mahindra-be-6/front.webp",
+          "/images/cars/mahindra-be-6/rear.webp",
+          "/images/cars/mahindra-be-6/side.webp",
+          "/images/cars/mahindra-be-6/interior.webp",
+          "/images/cars/mahindra-be-6/dashboard.webp"
+        ],
+        "interior": [
+          "/images/cars/mahindra-be-6/interior.webp"
+        ],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/mahindra-be-6/listing.webp",
+          "compareThumbnail": "/images/cars/mahindra-be-6/compare.webp",
+          "heroImage": "/images/cars/mahindra-be-6/front.webp",
+          "front": "/images/cars/mahindra-be-6/front.webp",
+          "rear": "/images/cars/mahindra-be-6/rear.webp",
+          "side": "/images/cars/mahindra-be-6/side.webp",
+          "interior": "/images/cars/mahindra-be-6/interior.webp",
+          "dashboard": "/images/cars/mahindra-be-6/dashboard.webp",
+          "gallery": [
+            "/images/cars/mahindra-be-6/front.webp",
+            "/images/cars/mahindra-be-6/rear.webp",
+            "/images/cars/mahindra-be-6/side.webp",
+            "/images/cars/mahindra-be-6/interior.webp",
+            "/images/cars/mahindra-be-6/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "charging"
+      ],
+      "variantCoverage": "mahindra-be-6"
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "media": {
+        "heroImage": "/images/cars/mahindra-xev-9e/front.webp",
+        "listingThumbnail": "/images/cars/mahindra-xev-9e/listing.webp",
+        "compareThumbnail": "/images/cars/mahindra-xev-9e/compare.webp",
+        "ogImage": "/images/cars/mahindra-xev-9e/front.webp",
+        "gallery": [
+          "/images/cars/mahindra-xev-9e/front.webp",
+          "/images/cars/mahindra-xev-9e/rear.webp",
+          "/images/cars/mahindra-xev-9e/side.webp",
+          "/images/cars/mahindra-xev-9e/interior.webp",
+          "/images/cars/mahindra-xev-9e/dashboard.webp"
+        ],
+        "interior": [
+          "/images/cars/mahindra-xev-9e/interior.webp"
+        ],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/mahindra-xev-9e/listing.webp",
+          "compareThumbnail": "/images/cars/mahindra-xev-9e/compare.webp",
+          "heroImage": "/images/cars/mahindra-xev-9e/front.webp",
+          "front": "/images/cars/mahindra-xev-9e/front.webp",
+          "rear": "/images/cars/mahindra-xev-9e/rear.webp",
+          "side": "/images/cars/mahindra-xev-9e/side.webp",
+          "interior": "/images/cars/mahindra-xev-9e/interior.webp",
+          "dashboard": "/images/cars/mahindra-xev-9e/dashboard.webp",
+          "gallery": [
+            "/images/cars/mahindra-xev-9e/front.webp",
+            "/images/cars/mahindra-xev-9e/rear.webp",
+            "/images/cars/mahindra-xev-9e/side.webp",
+            "/images/cars/mahindra-xev-9e/interior.webp",
+            "/images/cars/mahindra-xev-9e/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "charging"
+      ],
+      "variantCoverage": "mahindra-xev-9e"
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "media": {
+        "heroImage": "/images/cars/mahindra-xuv400/front.webp",
+        "listingThumbnail": "/images/cars/mahindra-xuv400/listing.webp",
+        "compareThumbnail": "/images/cars/mahindra-xuv400/compare.webp",
+        "ogImage": "/images/cars/mahindra-xuv400/front.webp",
+        "gallery": [
+          "/images/cars/mahindra-xuv400/front.webp",
+          "/images/cars/mahindra-xuv400/dashboard.webp"
+        ],
+        "interior": [],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/mahindra-xuv400/listing.webp",
+          "compareThumbnail": "/images/cars/mahindra-xuv400/compare.webp",
+          "heroImage": "/images/cars/mahindra-xuv400/front.webp",
+          "front": "/images/cars/mahindra-xuv400/front.webp",
+          "rear": null,
+          "side": null,
+          "interior": null,
+          "dashboard": "/images/cars/mahindra-xuv400/dashboard.webp",
+          "gallery": [
+            "/images/cars/mahindra-xuv400/front.webp",
+            "/images/cars/mahindra-xuv400/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "interior",
+        "charging"
+      ],
+      "variantCoverage": "mahindra-xuv400"
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "media": {
+        "heroImage": "/images/cars/byd-atto-3/front.webp",
+        "listingThumbnail": "/images/cars/byd-atto-3/listing.webp",
+        "compareThumbnail": "/images/cars/byd-atto-3/compare.webp",
+        "ogImage": "/images/cars/byd-atto-3/front.webp",
+        "gallery": [
+          "/images/cars/byd-atto-3/front.webp",
+          "/images/cars/byd-atto-3/dashboard.webp"
+        ],
+        "interior": [],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/byd-atto-3/listing.webp",
+          "compareThumbnail": "/images/cars/byd-atto-3/compare.webp",
+          "heroImage": "/images/cars/byd-atto-3/front.webp",
+          "front": "/images/cars/byd-atto-3/front.webp",
+          "rear": null,
+          "side": null,
+          "interior": null,
+          "dashboard": "/images/cars/byd-atto-3/dashboard.webp",
+          "gallery": [
+            "/images/cars/byd-atto-3/front.webp",
+            "/images/cars/byd-atto-3/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "interior",
+        "charging"
+      ],
+      "variantCoverage": "byd-atto-3"
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "media": {
+        "heroImage": "/images/cars/hyundai-kona-electric/front.webp",
+        "listingThumbnail": "/images/cars/hyundai-kona-electric/listing.webp",
+        "compareThumbnail": "/images/cars/hyundai-kona-electric/compare.webp",
+        "ogImage": "/images/cars/hyundai-kona-electric/front.webp",
+        "gallery": [
+          "/images/cars/hyundai-kona-electric/front.webp",
+          "/images/cars/hyundai-kona-electric/dashboard.webp"
+        ],
+        "interior": [],
+        "charging": [],
+        "local": {
+          "source": "local-cars",
+          "listingThumbnail": "/images/cars/hyundai-kona-electric/listing.webp",
+          "compareThumbnail": "/images/cars/hyundai-kona-electric/compare.webp",
+          "heroImage": "/images/cars/hyundai-kona-electric/front.webp",
+          "front": "/images/cars/hyundai-kona-electric/front.webp",
+          "rear": null,
+          "side": null,
+          "interior": null,
+          "dashboard": "/images/cars/hyundai-kona-electric/dashboard.webp",
+          "gallery": [
+            "/images/cars/hyundai-kona-electric/front.webp",
+            "/images/cars/hyundai-kona-electric/dashboard.webp"
+          ]
+        }
+      },
+      "complete": false,
+      "missing": [
+        "interior",
+        "charging"
+      ],
+      "variantCoverage": "hyundai-kona-electric"
+    }
+  ],
+  "vehicleAudits": [
+    {
+      "slug": "tata-nexon-ev",
+      "familySlug": "tata-nexon-ev",
+      "slugMapping": {
+        "variantSlug": "tata-nexon-ev",
+        "explicitFamily": "tata-nexon-ev",
+        "resolvedFamily": "tata-nexon-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/tata-nexon-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/tata-nexon-ev/front.webp",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/tata-nexon-ev/listing.webp",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/tata-nexon-ev/compare.webp",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/tata-nexon-ev/front.webp",
+          "chainLength": 9,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/tata-nexon-ev/front.webp",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "tata-punch-ev",
+      "familySlug": "tata-punch-ev",
+      "slugMapping": {
+        "variantSlug": "tata-punch-ev",
+        "explicitFamily": "tata-punch-ev",
+        "resolvedFamily": "tata-punch-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/tata-punch-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/tata-punch-ev/front.webp",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/tata-punch-ev/listing.webp",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/tata-punch-ev/compare.webp",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/tata-punch-ev/front.webp",
+          "chainLength": 9,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/tata-punch-ev/front.webp",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "tata-curvv-ev",
+      "familySlug": "tata-curvv-ev",
+      "slugMapping": {
+        "variantSlug": "tata-curvv-ev",
+        "explicitFamily": "tata-curvv-ev",
+        "resolvedFamily": "tata-curvv-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/tata-curvv-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/tata-curvv-ev/front.webp",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/tata-curvv-ev/listing.webp",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/tata-curvv-ev/compare.webp",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/tata-curvv-ev/front.webp",
+          "chainLength": 9,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/tata-curvv-ev/front.webp",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "tata-tiago-ev",
+      "familySlug": "tata-tiago-ev",
+      "slugMapping": {
+        "variantSlug": "tata-tiago-ev",
+        "explicitFamily": "tata-tiago-ev",
+        "resolvedFamily": "tata-tiago-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/tata-tiago-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/tata-tiago-ev/front.webp",
+          "chainLength": 10,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/tata-tiago-ev/listing.webp",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/tata-tiago-ev/compare.webp",
+          "chainLength": 14,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/tata-tiago-ev/front.webp",
+          "chainLength": 9,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/tata-tiago-ev/front.webp",
+          "chainLength": 4,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mg-comet-ev",
+      "familySlug": "mg-comet-ev",
+      "slugMapping": {
+        "variantSlug": "mg-comet-ev",
+        "explicitFamily": "mg-comet-ev",
+        "resolvedFamily": "mg-comet-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mg-comet-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/mg-comet-ev/front.webp",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/mg-comet-ev/listing.webp",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/mg-comet-ev/compare.webp",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/mg-comet-ev/front.webp",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/mg-comet-ev/front.webp",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mg-zs-ev",
+      "familySlug": "mg-zs-ev",
+      "slugMapping": {
+        "variantSlug": "mg-zs-ev",
+        "explicitFamily": "mg-zs-ev",
+        "resolvedFamily": "mg-zs-ev",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mg-zs-ev"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/mg-zs-ev/front.webp",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/mg-zs-ev/listing.webp",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/mg-zs-ev/compare.webp",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/mg-zs-ev/front.webp",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/mg-zs-ev/front.webp",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mahindra-be-6",
+      "familySlug": "mahindra-be-6",
+      "slugMapping": {
+        "variantSlug": "mahindra-be-6",
+        "explicitFamily": "mahindra-be-6",
+        "resolvedFamily": "mahindra-be-6",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mahindra-be-6"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/mahindra-be-6/front.webp",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/mahindra-be-6/listing.webp",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/mahindra-be-6/compare.webp",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/mahindra-be-6/front.webp",
+          "chainLength": 7,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/mahindra-be-6/front.webp",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mahindra-xev-9e",
+      "familySlug": "mahindra-xev-9e",
+      "slugMapping": {
+        "variantSlug": "mahindra-xev-9e",
+        "explicitFamily": "mahindra-xev-9e",
+        "resolvedFamily": "mahindra-xev-9e",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mahindra-xev-9e"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/mahindra-xev-9e/front.webp",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/mahindra-xev-9e/listing.webp",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/mahindra-xev-9e/compare.webp",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/mahindra-xev-9e/front.webp",
+          "chainLength": 7,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/mahindra-xev-9e/front.webp",
+          "chainLength": 6,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "mahindra-xuv400",
+      "familySlug": "mahindra-xuv400",
+      "slugMapping": {
+        "variantSlug": "mahindra-xuv400",
+        "explicitFamily": "mahindra-xuv400",
+        "resolvedFamily": "mahindra-xuv400",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/mahindra-xuv400"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/mahindra-xuv400/front.webp",
+          "chainLength": 8,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/mahindra-xuv400/listing.webp",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/mahindra-xuv400/compare.webp",
+          "chainLength": 11,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/mahindra-xuv400/front.webp",
+          "chainLength": 7,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/mahindra-xuv400/front.webp",
+          "chainLength": 3,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "byd-atto-3",
+      "familySlug": "byd-atto-3",
+      "slugMapping": {
+        "variantSlug": "byd-atto-3",
+        "explicitFamily": "byd-atto-3",
+        "resolvedFamily": "byd-atto-3",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/byd-atto-3"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/byd-atto-3/front.webp",
+          "chainLength": 4,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/byd-atto-3/listing.webp",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/byd-atto-3/compare.webp",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/byd-atto-3/front.webp",
+          "chainLength": 3,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/byd-atto-3/front.webp",
+          "chainLength": 3,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    },
+    {
+      "slug": "hyundai-kona-electric",
+      "familySlug": "hyundai-kona-electric",
+      "slugMapping": {
+        "variantSlug": "hyundai-kona-electric",
+        "explicitFamily": "hyundai-kona-electric",
+        "resolvedFamily": "hyundai-kona-electric",
+        "inManifest": true,
+        "mismatch": false,
+        "publicIdPrefix": "evsavari/catalog/families/hyundai-kona-electric"
+      },
+      "roles": {
+        "hero": {
+          "primary": "/images/cars/hyundai-kona-electric/front.webp",
+          "chainLength": 4,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "listing": {
+          "primary": "/images/cars/hyundai-kona-electric/listing.webp",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "compare": {
+          "primary": "/images/cars/hyundai-kona-electric/compare.webp",
+          "chainLength": 5,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "og": {
+          "primary": "/images/cars/hyundai-kona-electric/front.webp",
+          "chainLength": 3,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        },
+        "gallery": {
+          "primary": "/images/cars/hyundai-kona-electric/front.webp",
+          "chainLength": 3,
+          "usesLocalFallback": false,
+          "isCloudinary": false,
+          "isLegacyCdn": false,
+          "isPlaceholder": false
+        }
+      },
+      "issues": []
+    }
+  ],
+  "summary": {
+    "vehicles": 11,
+    "errors": 0,
+    "warnings": 0,
+    "cloudinaryReady": 0,
+    "issues": []
+  }
+}

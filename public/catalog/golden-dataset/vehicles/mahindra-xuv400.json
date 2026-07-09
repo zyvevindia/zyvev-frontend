@@ -107,13 +107,19 @@
     "source": "local-cars",
     "dashboard": "/images/cars/mahindra-xuv400/dashboard.webp",
     "gallery": [
+      "/images/cars/mahindra-xuv400/front.webp",
       "/images/cars/mahindra-xuv400/dashboard.webp"
     ],
     "galleryImages": [
+      "/images/cars/mahindra-xuv400/front.webp",
       "/images/cars/mahindra-xuv400/dashboard.webp"
     ],
     "interiorImages": [
       "/images/cars/mahindra-xuv400/dashboard.webp"
-    ]
+    ],
+    "listingThumbnail": "/images/cars/mahindra-xuv400/listing.webp",
+    "compareThumbnail": "/images/cars/mahindra-xuv400/compare.webp",
+    "heroImage": "/images/cars/mahindra-xuv400/front.webp",
+    "front": "/images/cars/mahindra-xuv400/front.webp"
   }
 }

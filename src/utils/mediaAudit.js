@@ -172,9 +172,10 @@ export function collectManifestMediaUrls() {
     const media = PRODUCTION_FAMILY_MEDIA[familySlug];
     if (!media) continue;
     for (const [key, value] of Object.entries(media)) {
+      if (key === "local" || key === "charging") continue;
       if (Array.isArray(value)) {
-        urls.push(...value.filter(Boolean));
-      } else if (value) {
+        urls.push(...value.filter((entry) => typeof entry === "string"));
+      } else if (typeof value === "string" && value) {
         urls.push(value);
       }
     }

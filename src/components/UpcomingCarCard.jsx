@@ -5,7 +5,7 @@ import { formatIndianPrice } from "../utils/formatIndianPrice";
 import { vehicleDetailPath } from "../utils/vehicleRoutes";
 
 import { LOCAL_FALLBACK_EV } from "../utils/imageUtils";
-import { sanitizeImageUrl } from "../utils/imageUrl";
+import { getListingImage } from "../utils/vehicleMedia";
 
 /* =========================================================
    ================ UPCOMING CAR CARD ======================
@@ -19,10 +19,7 @@ export default function UpcomingCarCard({
      NORMALIZED VALUES
      ===================================================== */
 
-  const imageUrl =
-    sanitizeImageUrl(car.heroImage) ||
-    sanitizeImageUrl(car.image) ||
-    LOCAL_FALLBACK_EV;
+  const imageUrl = getListingImage(car) || LOCAL_FALLBACK_EV;
 
   const price =
     car.price ||

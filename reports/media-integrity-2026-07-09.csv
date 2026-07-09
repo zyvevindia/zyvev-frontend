@@ -1,0 +1,12 @@
+type,familySlug,status,detail,url
+manifest,tata-nexon-ev,gap,charging,
+manifest,tata-punch-ev,gap,charging,
+manifest,tata-curvv-ev,gap,charging,
+manifest,tata-tiago-ev,gap,charging,
+manifest,mg-comet-ev,gap,charging,
+manifest,mg-zs-ev,gap,charging,
+manifest,mahindra-be-6,gap,charging,
+manifest,mahindra-xev-9e,gap,charging,
+manifest,mahindra-xuv400,gap,interior; charging,
+manifest,byd-atto-3,gap,interior; charging,
+manifest,hyundai-kona-electric,gap,interior; charging,

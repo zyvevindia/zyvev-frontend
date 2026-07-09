@@ -423,8 +423,7 @@ export default function CarDetails() {
       setSelectedVariant(withMedia);
       setSelectedColor(null);
 
-      const hero =
-        withMedia.heroImage || withMedia.image || getHeroImage(withMedia);
+      const hero = getHeroImage(withMedia);
       if (hero) setSelectedImage(hero);
 
       const galleryUrls = resolveDetailGalleryItems(withMedia)
@@ -613,10 +612,7 @@ export default function CarDetails() {
 
     if (!car) return;
 
-    const hero =
-      car.heroImage ||
-      car.image ||
-      getHeroImage(car);
+    const hero = getHeroImage(car);
 
     setSelectedImage(hero);
 
@@ -1012,7 +1008,6 @@ export default function CarDetails() {
   const displayImage =
     selectedColor?.image ||
     selectedImage ||
-    vehicle.heroImage ||
     getHeroImage(vehicle);
 
   const safeDisplayImage =

@@ -117,6 +117,7 @@
     "media:upload-tier1": "node scripts/upload-tier1-cloudinary.mjs",
     "media:staging-audit": "node scripts/media-staging-audit.mjs",
     "media:completeness": "node scripts/media-completeness.mjs",
+    "media:certify:sprint12": "node scripts/sprint-12-media-certification.mjs",
     "catalog:audit": "node scripts/catalog-audit.mjs",
     "catalog:completeness": "node scripts/catalog-completeness.mjs",
     "compare:quality-audit": "node scripts/compare-quality-audit.mjs",

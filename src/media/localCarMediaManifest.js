@@ -25,6 +25,8 @@ export const LOCAL_CAR_MEDIA_DAY3_FAMILIES = Object.freeze([
   "tata-punch-ev",
   "mg-windsor-ev",
   "mahindra-be-6",
+  "mg-comet-ev",
+  "mahindra-xev-9e",
 ]);
 
 /** Media Completion Sprint — Priority 1: full local set (7 types). */
@@ -36,11 +38,12 @@ export const MEDIA_COMPLETION_P1_FAMILIES = Object.freeze([
 ]);
 
 /**
- * Priority 2 — fill missing types only (Cloudinary covers listing/compare/front).
+ * Priority 2 — families that needed selective local slots during media sprint.
+ * Only list types that are intentionally partial; families with a full local set
+ * must not appear here (resolver uses every on-disk type via LOCAL_CAR_IMAGE_TYPES).
  * @type {Readonly<Record<string, readonly string[]>>}
  */
 export const MEDIA_COMPLETION_P2_TYPES = Object.freeze({
-  "mg-comet-ev": ["rear", "side", "interior", "dashboard"],
   "tata-tiago-ev": [
     "front",
     "listing",
@@ -54,14 +57,22 @@ export const MEDIA_COMPLETION_P2_TYPES = Object.freeze({
     "compare",
     "dashboard",
   ],
+  "byd-atto-3": [
+    "front",
+    "listing",
+    "compare",
+    "dashboard",
+  ],
+  "mahindra-xuv400": [
+    "front",
+    "listing",
+    "compare",
+    "dashboard",
+  ],
 });
 
-/** Priority 3 — tier-1 families missing dashboard only. */
-export const MEDIA_COMPLETION_P3_DASHBOARD_FAMILIES = Object.freeze([
-  "mahindra-xev-9e",
-  "byd-atto-3",
-  "mahindra-xuv400",
-]);
+/** Priority 3 — tier-1 families missing dashboard only (no core exterior gaps). */
+export const MEDIA_COMPLETION_P3_DASHBOARD_FAMILIES = Object.freeze([]);
 
 export const MEDIA_COMPLETION_SPRINT_FAMILIES = Object.freeze([
   ...MEDIA_COMPLETION_P1_FAMILIES,
