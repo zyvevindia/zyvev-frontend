@@ -568,6 +568,26 @@ export default function LeadInquiryModal({
     onClose();
   };
 
+  useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape" && !loading) {
+        resetFormFields();
+        onClose();
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isOpen, loading, onClose]);
+
   if (!isOpen) {
 
     return null;
@@ -774,13 +794,15 @@ export default function LeadInquiryModal({
               </>
             ) : null}
 
-            <label style={label}>
+            <label htmlFor="lead-field-name" style={label}>
               Full name *
             </label>
 
             <input
+              id="lead-field-name"
               value={name}
               data-testid="lead-name"
+              className="lead-modal-field"
               onChange={(e) =>
                 setName(
                   sanitizeInput(
@@ -801,13 +823,15 @@ export default function LeadInquiryModal({
               </p>
             )}
 
-            <label style={label}>
+            <label htmlFor="lead-field-phone" style={label}>
               Mobile number *
             </label>
 
             <input
+              id="lead-field-phone"
               value={phone}
               data-testid="lead-phone"
+              className="lead-modal-field"
               onChange={(e) =>
                 setPhone(
                   e.target.value
@@ -837,14 +861,16 @@ export default function LeadInquiryModal({
 
             {!isTestDrive && (
               <>
-                <label style={label}>
+                <label htmlFor="lead-field-email" style={label}>
                   Email (optional)
                 </label>
 
                 <input
+                  id="lead-field-email"
                   type="email"
                   value={email}
                   data-testid="lead-email"
+                  className="lead-modal-field"
                   onChange={(e) =>
                     setEmail(e.target.value.trim())
                   }
@@ -862,13 +888,15 @@ export default function LeadInquiryModal({
               </>
             )}
 
-            <label style={label}>
+            <label htmlFor="lead-field-state" style={label}>
               State *
             </label>
 
             <select
+              id="lead-field-state"
               value={state}
               data-testid="lead-state"
+              className="lead-modal-field"
               onChange={(e) => {
                 setState(e.target.value);
                 setCity("");
@@ -899,13 +927,15 @@ export default function LeadInquiryModal({
               </p>
             )}
 
-            <label style={label}>
+            <label htmlFor="lead-field-city" style={label}>
               City *
             </label>
 
             <select
+              id="lead-field-city"
               value={city}
               data-testid="lead-city"
+              className="lead-modal-field"
               onChange={(e) => setCity(e.target.value)}
               disabled={!state}
               style={{
@@ -939,15 +969,17 @@ export default function LeadInquiryModal({
               </p>
             )}
 
-            <label style={label}>
+            <label htmlFor="lead-field-message" style={label}>
               {isTestDrive
                 ? "Notes (optional)"
                 : "Message (optional)"}
             </label>
 
             <textarea
+              id="lead-field-message"
               value={message}
               data-testid="lead-message"
+              className="lead-modal-field"
               onChange={(e) =>
                 setMessage(
                   sanitizeInput(e.target.value)

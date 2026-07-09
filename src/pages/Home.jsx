@@ -358,6 +358,7 @@ export default function Home() {
 
             <select
               value={filters.sortBy}
+              aria-label="Sort featured EVs"
 
               onChange={(e) =>
                 setFilters({

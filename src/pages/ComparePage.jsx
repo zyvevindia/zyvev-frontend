@@ -24,6 +24,7 @@ import {
 } from "../utils/structuredData";
 
 import CompareHeroExperience from "../components/compare/CompareHeroExperience";
+import CompareGuideLoading from "../components/compare/CompareGuideLoading";
 
 import { GENERATED_COMPARE_SLUGS } from "../content/generated/manifest.js";
 import { compareGuidePath } from "../seo/slugs";
@@ -59,9 +60,11 @@ export default function ComparePage() {
   const location = useLocation();
 
   const [cars, setCars] = useState(() => loadCompareCarsFromStorage());
+  const [prefetchingFromUrl, setPrefetchingFromUrl] = useState(false);
 
   useEffect(() => {
     if (location.state?.cars != null) {
+      setPrefetchingFromUrl(false);
       setCars(saveCompareCars(location.state.cars));
       return;
     }
@@ -76,17 +79,28 @@ export default function ComparePage() {
 
       if (slugs.length >= 2) {
         let cancelled = false;
-        prefetchCompareCarsForSlugs(slugs).then((list) => {
-          if (!cancelled && list.length >= 2) {
-            setCars(list);
-          }
-        });
+        setPrefetchingFromUrl(true);
+        prefetchCompareCarsForSlugs(slugs)
+          .then((list) => {
+            if (!cancelled && list.length >= 2) {
+              setCars(list);
+            }
+          })
+          .catch(() => {
+            /* prefetch is best-effort */
+          })
+          .finally(() => {
+            if (!cancelled) {
+              setPrefetchingFromUrl(false);
+            }
+          });
         return () => {
           cancelled = true;
         };
       }
     }
 
+    setPrefetchingFromUrl(false);
     setCars(loadCompareCarsFromStorage());
   }, [location.key, location.state?.cars, location.search]);
 
@@ -142,6 +156,15 @@ export default function ComparePage() {
       compareDepth: safeCars.length,
     });
   }, [safeCars]);
+
+  if (prefetchingFromUrl) {
+    return (
+      <>
+        <SeoHead meta={comparePageMeta} />
+        <CompareGuideLoading />
+      </>
+    );
+  }
 
   if (safeCars.length < 2) {
     return (

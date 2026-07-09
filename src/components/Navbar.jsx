@@ -115,6 +115,19 @@ export default function Navbar() {
 
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return undefined;
+
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [mobileMenuOpen]);
+
   /* =========================================================
      ====================== ACTIVE ROUTE =====================
      ========================================================= */
@@ -279,9 +292,9 @@ export default function Navbar() {
 
           <div>
 
-            <h1 style={logoText}>
+            <p style={logoText} className="navbar-brand-title">
               EVSavari
-            </h1>
+            </p>
 
             <p style={logoSubtext}>
               India's EV Marketplace

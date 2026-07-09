@@ -265,12 +265,16 @@ export default function CompactCarCard({
           <Link
             to={carUrl}
             aria-label={ariaLabel}
+            className="car-card__view-link"
             style={{
+              ...button,
               textDecoration: "none",
               display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <button style={button}>View Details</button>
+            View Details
           </Link>
         )}
       </div>

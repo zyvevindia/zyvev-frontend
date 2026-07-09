@@ -169,16 +169,16 @@ export default function UpcomingCarCard({
 
         <Link
           to={carUrl}
+          className="car-card__view-link"
           style={{
+            ...notifyButton,
             textDecoration: "none",
             display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-
-          <button style={notifyButton}>
-            View Details
-          </button>
-
+          View Details
         </Link>
 
       </div>

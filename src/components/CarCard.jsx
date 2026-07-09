@@ -309,17 +309,17 @@ export default function CarCard({
         <div style={buttonContainer}>
           <Link
             to={detailPath}
+            className="car-card__view-link"
             style={{
+              ...primaryButton,
               textDecoration: "none",
               flex: 1,
               display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <button
-              style={primaryButton}
-            >
-              View Details
-            </button>
+            View Details
           </Link>
 
           {compareModeActive ? (

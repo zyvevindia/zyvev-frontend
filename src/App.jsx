@@ -19,6 +19,8 @@ import { captureAcquisitionContext } from "./utils/acquisitionContext";
 import { logSlowRoute } from "./utils/routePerformance";
 import { trackPageView } from "./utils/analytics";
 
+import "./styles/catalog-listing-a11y.css";
+
 /* =========================================================
    ===================== LAZY IMPORTS ======================
    ========================================================= */
@@ -436,29 +438,10 @@ const IntelligenceDiscoveryPage = lazy(() =>
    ========================================================= */
 
 function RouteLoader() {
-
   return (
-
-    <div style={routeLoaderWrapper}>
-
-      <div style={routeLoaderCard}>
-
-        <div style={routeLoaderLogo}>
-          ⚡
-        </div>
-
-        <h2 style={routeLoaderTitle}>
-          Loading EVSavari
-        </h2>
-
-        <p style={routeLoaderText}>
-          Preparing premium EV experience...
-        </p>
-
-        <div style={routeSpinner} />
-
-      </div>
-
+    <div className="route-loader" aria-busy="true" aria-label="Loading page">
+      <div className="route-loader__bar" />
+      <p className="route-loader__label">Loading…</p>
     </div>
   );
 }
@@ -1506,98 +1489,6 @@ const primaryButton = {
   fontWeight: "600",
 
   fontSize: "15px",
-};
-
-const routeLoaderWrapper = {
-  minHeight: "70vh",
-
-  display: "flex",
-
-  alignItems: "center",
-
-  justifyContent: "center",
-
-  padding: "30px",
-};
-
-const routeLoaderCard = {
-  background: "white",
-
-  padding: "50px 40px",
-
-  borderRadius: "32px",
-
-  border:
-    "1px solid #e2e8f0",
-
-  textAlign: "center",
-
-  boxShadow:
-    "0 24px 60px rgba(15,23,42,0.08)",
-};
-
-const routeLoaderLogo = {
-  width: "90px",
-
-  height: "90px",
-
-  margin:
-    "0 auto 24px",
-
-  borderRadius: "28px",
-
-  background:
-    "linear-gradient(135deg, #2563eb, #1d4ed8)",
-
-  display: "flex",
-
-  alignItems: "center",
-
-  justifyContent: "center",
-
-  fontSize: "40px",
-
-  color: "white",
-
-  boxShadow:
-    "0 20px 40px rgba(37,99,235,0.28)",
-};
-
-const routeLoaderTitle = {
-  fontSize: "34px",
-
-  fontWeight: "800",
-
-  color: "#0f172a",
-
-  marginBottom: "12px",
-};
-
-const routeLoaderText = {
-  color: "#64748b",
-
-  lineHeight: "1.8",
-
-  marginBottom: "28px",
-};
-
-const routeSpinner = {
-  width: "52px",
-
-  height: "52px",
-
-  margin: "0 auto",
-
-  border:
-    "4px solid rgba(37,99,235,0.12)",
-
-  borderTop:
-    "4px solid #2563eb",
-
-  borderRadius: "50%",
-
-  animation:
-    "zyvev-spin 1s linear infinite",
 };
 
 const notFoundWrapper = {

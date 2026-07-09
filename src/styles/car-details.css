@@ -649,8 +649,10 @@
   background: rgba(248, 250, 252, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid #e8edf3;
-  margin: 0 calc(-1 * clamp(16px, 3vw, 28px)) 24px;
-  padding: 0 clamp(16px, 3vw, 28px);
+  margin: 0 0 24px;
+  padding: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .cd-tabs {
@@ -708,6 +710,12 @@
 .cd-tab--cta:focus-visible {
   outline: 2px solid #2563eb;
   outline-offset: 2px;
+}
+
+.cd-tab:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
 /* —— Variants table —— */

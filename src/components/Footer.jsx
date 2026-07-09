@@ -197,6 +197,7 @@ function FooterLink({
   return (
     <Link
       to={to}
+      className="footer-nav-link"
       style={footerLink}
       onMouseEnter={(e) => {
         e.currentTarget.style.color =

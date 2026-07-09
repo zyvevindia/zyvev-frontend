@@ -1092,9 +1092,9 @@ const compareHelperBox = {
 const floatingCompareButton = {
   position: "fixed",
 
-  bottom: "22px",
+  bottom: "max(22px, env(safe-area-inset-bottom, 0px))",
 
-  right: "22px",
+  right: "max(22px, env(safe-area-inset-right, 0px))",
 
   background:
     "linear-gradient(135deg, #2563eb, #1d4ed8)",

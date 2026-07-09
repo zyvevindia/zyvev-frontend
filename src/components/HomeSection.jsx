@@ -1,4 +1,5 @@
 import { Children } from "react";
+import { Link } from "react-router-dom";
 
 import CatalogResultsGrid from "./catalog/CatalogResultsGrid";
 
@@ -44,8 +45,9 @@ export default function HomeSection({
         </div>
 
         {viewAllLink && (
-          <a
-            href={viewAllLink}
+          <Link
+            to={viewAllLink}
+            className="home-section-view-all"
             style={viewAllButton}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform =
@@ -69,7 +71,7 @@ export default function HomeSection({
             }}
           >
             View All
-          </a>
+          </Link>
         )}
       </div>
 
