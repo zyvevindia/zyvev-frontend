@@ -108,4 +108,12 @@ Report: `docs/releases/sprint-15-ux-certification.md`
 
 ## Final Verdict
 
-_See certification report after production deploy._
+**PASS** — Production verified 2026-07-09 (`npm run ux:certify:sprint15`)
+
+- Code commit: `0979185e`
+- Lite pages: no horizontal overflow, no duplicate h1
+- Lead form labels associated; modal Escape + scroll lock
+- Sprint 1.4 Lite boundary regression: PASS
+- Console clean on all Lite page sweeps
+
+Certification report: `docs/releases/sprint-15-ux-certification.md`

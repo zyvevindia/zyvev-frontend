@@ -1,0 +1,172 @@
+{
+  "sprint": "1.5",
+  "generatedAt": "2026-07-09T17:58:19.334Z",
+  "site": "https://evsavari.com",
+  "apiUrl": "https://evsavari-api.onrender.com",
+  "verdict": "PASS",
+  "pagePass": true,
+  "journeyPass": true,
+  "a11yPass": true,
+  "boundaryPass": true,
+  "hasConsoleIssues": false,
+  "defects": [],
+  "results": [
+    {
+      "device": "desktop",
+      "pageChecks": [
+        {
+          "name": "desktop Homepage UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        },
+        {
+          "name": "desktop Browse UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        },
+        {
+          "name": "desktop Compare UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=0"
+        },
+        {
+          "name": "desktop Guides UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        },
+        {
+          "name": "desktop Car Details UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=0"
+        }
+      ],
+      "a11yChecks": [
+        {
+          "name": "Lead form label association",
+          "pass": true,
+          "detail": "lead-name label linked"
+        }
+      ],
+      "boundaryChecks": [
+        {
+          "name": "Lite nav (no Admin/Tools)",
+          "pass": true,
+          "detail": "admin=0, tools=0"
+        },
+        {
+          "name": "/tools hub hidden",
+          "pass": true,
+          "detail": "/cars"
+        },
+        {
+          "name": "/admin operational",
+          "pass": true,
+          "detail": "status=200"
+        }
+      ],
+      "journeyChecks": [
+        {
+          "name": "desktop EMI journey",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "defects": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedApi": []
+    },
+    {
+      "device": "tablet",
+      "pageChecks": [
+        {
+          "name": "tablet Homepage UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        },
+        {
+          "name": "tablet Browse UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        },
+        {
+          "name": "tablet Compare UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=0"
+        },
+        {
+          "name": "tablet Guides UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        },
+        {
+          "name": "tablet Car Details UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=0"
+        }
+      ],
+      "a11yChecks": [],
+      "boundaryChecks": [],
+      "journeyChecks": [
+        {
+          "name": "tablet EMI journey",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "defects": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedApi": []
+    },
+    {
+      "device": "mobile",
+      "pageChecks": [
+        {
+          "name": "mobile Homepage UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        },
+        {
+          "name": "mobile Browse UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        },
+        {
+          "name": "mobile Compare UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=0"
+        },
+        {
+          "name": "mobile Guides UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        },
+        {
+          "name": "mobile Car Details UX",
+          "pass": true,
+          "detail": "overflowOk=true, h1Count=1"
+        }
+      ],
+      "a11yChecks": [],
+      "boundaryChecks": [],
+      "journeyChecks": [
+        {
+          "name": "mobile EMI journey",
+          "pass": true,
+          "detail": ""
+        }
+      ],
+      "defects": [],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedApi": []
+    }
+  ],
+  "regressions": {
+    "sprint14LiteBoundary": "PASS",
+    "sprint13Journeys": "PASS",
+    "sprint12Media": "PASS",
+    "sprint11Leads": "PASS"
+  }
+}
