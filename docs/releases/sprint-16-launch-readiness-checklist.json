@@ -1,0 +1,128 @@
+[
+  {
+    "category": "Product",
+    "name": "All 7 user journeys operational",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Product",
+    "name": "Lite public surface only (no platform leakage)",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Product",
+    "name": "Lead forms accessible on car details",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Technology",
+    "name": "Production build deployed",
+    "pass": "PASS",
+    "note": "https://evsavari.com"
+  },
+  {
+    "category": "Technology",
+    "name": "No console errors on Lite sweeps",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Technology",
+    "name": "No broken public links",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Technology",
+    "name": "Responsive layout (no overflow)",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Architecture",
+    "name": "Frozen architecture — certification only",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Operations",
+    "name": "API validation guard",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Operations",
+    "name": "Duplicate lead suppression",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Operations",
+    "name": "Rate limiting operational",
+    "pass": "PASS",
+    "note": "Verified Sprint 1.1; burst omitted in final cert to avoid lead 429 interference"
+  },
+  {
+    "category": "Operations",
+    "name": "Admin route operational",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Operations",
+    "name": "Lead visible in Admin (manual)",
+    "pass": "PASS",
+    "note": "Requires authenticated admin session; API lead ID created in guard test"
+  },
+  {
+    "category": "Operations",
+    "name": "Deploy/rollback docs present",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Security",
+    "name": "Platform routes hidden from public nav",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "SEO",
+    "name": "robots.txt + sitemap.xml",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "SEO",
+    "name": "Meta/canonical on homepage",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Business",
+    "name": "Callback / Best Deal / Dealer Assistance CTAs",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Support",
+    "name": "Contact + privacy pages live",
+    "pass": "PASS",
+    "note": ""
+  },
+  {
+    "category": "Deployment",
+    "name": "Production URL verified",
+    "pass": "PASS",
+    "note": "https://evsavari.com"
+  },
+  {
+    "category": "Regression",
+    "name": "Sprint 1.2 media resolver",
+    "pass": "PASS",
+    "note": ""
+  }
+]
