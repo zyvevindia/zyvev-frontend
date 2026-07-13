@@ -31,6 +31,29 @@ function filterValidChain(urls, role = "listing") {
     .filter(Boolean);
 }
 
+function isLocalCarMediaUrl(url) {
+  return typeof url === "string" && url.startsWith("/images/cars/");
+}
+
+/**
+ * Keep local WebP ahead of optional src overrides (e.g. color swatches).
+ * @param {string|null} primary
+ * @param {string[]} base
+ */
+function mergePrimaryIntoChain(primary, base) {
+  if (!primary) return base;
+  if (!base.length) return [primary];
+
+  const localTier = base.filter(isLocalCarMediaUrl);
+  const rest = base.filter((url) => url !== primary && !isLocalCarMediaUrl(url));
+
+  if (localTier.length > 0) {
+    return [...localTier, primary, ...rest];
+  }
+
+  return [primary, ...base.filter((url) => url !== primary)];
+}
+
 function resolveMediaSlug(car) {
   return (
     car?.familySlug ||
@@ -79,7 +102,7 @@ export default function VehicleImage({
     );
 
     if (primary) {
-      return [primary, ...base.filter((u) => u !== primary)];
+      return mergePrimaryIntoChain(primary, base);
     }
 
     if (base.length > 0) return base;

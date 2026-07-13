@@ -32,7 +32,9 @@ import {
 } from "../media/brandFallback.js";
 import {
   DETAIL_GALLERY_IMAGE_TYPES,
+  getLocalCarMediaTypesForFamily,
   getLocalCarMediaUrlsForRole,
+  isLocalCarMediaFamily,
   localCarMediaPath,
 } from "../media/localCarMediaManifest.js";
 
@@ -437,6 +439,24 @@ export function buildGalleryTypeFallbackChain(car, imageType) {
   );
 }
 
+function isRenderableGalleryUrl(url) {
+  if (!url || typeof url !== "string") return false;
+  if (url === LOCAL_FALLBACK_EV || url.includes("fallback-ev.svg")) return false;
+  if (isPlaceholderMediaUrl(url)) return false;
+  return true;
+}
+
+/**
+ * Gallery slots for families with partial local sets must not render
+ * missing angles (rear/side) that would exhaust to placeholder SVG.
+ * @param {string|null} familySlug
+ * @param {string} imageType
+ */
+function isProvisionedGalleryType(familySlug, imageType) {
+  if (!familySlug || !isLocalCarMediaFamily(familySlug)) return true;
+  return getLocalCarMediaTypesForFamily(familySlug).includes(imageType);
+}
+
 /**
  * Typed gallery items for detail hero thumbnails (no empty slots).
  * @param {object} car
@@ -445,11 +465,23 @@ export function buildGalleryTypeFallbackChain(car, imageType) {
 export function resolveDetailGalleryItems(car) {
   if (!car || typeof car !== "object") return [];
 
+  const familySlug =
+    resolveFamilySlugFromCar(car) ||
+    resolveFamilySlugFromVariantSlug(slugFromCar(car));
+
   return DETAIL_GALLERY_IMAGE_TYPES.map((imageType) => {
+    if (!isProvisionedGalleryType(familySlug, imageType)) return null;
+
     const chain = buildGalleryTypeFallbackChain(car, imageType);
-    const src = chain[0] || null;
+    const src =
+      chain.find((url) => isRenderableGalleryUrl(url)) || null;
     if (!src) return null;
-    return { imageType, src, chain };
+
+    return {
+      imageType,
+      src,
+      chain: chain.filter((url) => isRenderableGalleryUrl(url)),
+    };
   }).filter(Boolean);
 }
 
