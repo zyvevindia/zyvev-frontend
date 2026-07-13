@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 import SEO from "../components/SEO/SEO";
+import SeoHead from "../components/SEO/SeoHead";
 import JsonLd from "../components/SEO/JsonLd";
 import SeoPageIntro from "../components/SEO/SeoPageIntro";
 import SeoRecommendationList from "../components/SEO/SeoRecommendationList";
@@ -172,6 +173,14 @@ export default function DiscoverySeoPage({ pageType }) {
   if (loading) {
     return (
       <div className={isCompareGuide ? "compare-guide-page" : undefined} style={!isCompareGuide ? editorialPageStyles.page : undefined}>
+        <SeoHead
+          meta={{
+            title: "Loading guide | EVSavari",
+            description: "EV guides and comparisons on EVSavari.",
+            canonical: routeContext.canonicalUrl,
+            robots: "index, follow",
+          }}
+        />
         {isCompareGuide ? (
           <CompareGuideLoading />
         ) : (

@@ -22,6 +22,7 @@ import {
 } from "./meta";
 
 import { normalizePathname } from "./slugs";
+import { SEO_CONTENT_YEAR } from "./seoConstants.js";
 
 const DEFAULT_KEYWORDS =
   "electric vehicles India, EV comparison, EV price, EVSavari";
@@ -31,12 +32,12 @@ const DEFAULT_KEYWORDS =
  */
 export function buildHomePageMeta(siteOrigin = SITE_ORIGIN) {
   return buildPageMeta({
-    title: "EVSavari | India's Premium EV Marketplace",
+    title: `Compare Electric Cars in India (${SEO_CONTENT_YEAR})`,
     description:
-      "Explore electric cars, scooters and bikes in India. Compare EV prices, battery range, charging time, specifications and reviews on EVSavari.",
+      "Research and compare electric cars in India. Side-by-side specs, real-world range estimates, charging times, ownership costs, and buyer guides — updated from the live catalog.",
     canonical: absoluteUrl("/", siteOrigin),
     keywords:
-      "EV India, electric cars India, EV marketplace, Tata EV, MG EV, Mahindra EV, electric scooters, EVSavari",
+      "EV India, electric cars India, EV comparison, Tata EV, MG EV, Mahindra EV, EV price, EVSavari",
   });
 }
 
@@ -56,16 +57,21 @@ export function buildVehiclePageMeta({
   const displayName = String(name || "Electric vehicle").trim();
   const title =
     metaTitle ||
-    `${displayName} Price, Range, Charging Time & Variants`;
+    `${displayName} — Price, Range, Charging & Variants (${SEO_CONTENT_YEAR})`;
 
   const description =
     metaDescription ||
     String(overview || "").trim() ||
-    `Compare ${displayName} price, certified range, charging time and variants in India. ${brand ? `${brand} ` : ""}EV specs, images and buyer guides on EVSavari.`;
+    `Compare ${displayName} price, certified range, charging time and variants in India. ${brand ? `${brand} ` : ""}EV specs, ownership costs and buyer guides on EVSavari.`;
+
+  const normalizedDescription =
+    description.length >= 50
+      ? description
+      : `${description} Compare price, range, charging and ownership on EVSavari.`.slice(0, 160);
 
   return buildPageMeta({
     title,
-    description: description.slice(0, 160),
+    description: normalizedDescription.slice(0, 160),
     canonical: canonicalVehicleUrl(familySlug, siteOrigin),
     image,
     ogType: "product",
@@ -165,8 +171,8 @@ export function buildListingPageMeta({
       description: `Future EV launches and models to watch. ${baseDesc}`,
     },
     "/cars": {
-      title: "Browse Electric Cars & EVs",
-      description: `Explore electric cars and SUVs. ${baseDesc}`,
+      title: `Browse Electric Cars in India (${SEO_CONTENT_YEAR}) – Filter by Price, Range & Brand`,
+      description: `Explore and filter electric cars and SUVs in India by price, range, brand, and charging. ${baseDesc}`,
     },
     "/bikes": {
       title: "Electric Bikes in India",
@@ -241,10 +247,10 @@ export function buildBrandPageMeta({
   const label = String(brandName || brandSlug || "Brand").trim();
 
   return buildPageMeta({
-    title: `${label} Electric Vehicles in India`,
+    title: `${label} Electric Cars in India (${SEO_CONTENT_YEAR}) – Prices, Range & Charging`,
     description:
       description ||
-      `Explore ${label} electric cars and SUVs in India — prices, range, charging and comparisons on EVSavari.`,
+      `Explore ${label} electric cars and SUVs in India — prices, range, charging, variants, and comparisons on EVSavari.`,
     canonical: absoluteUrl(`/brands/${brandSlug}`, siteOrigin),
     ogType: "website",
   });

@@ -893,8 +893,20 @@ export default function CarDetails() {
      ========================================================= */
 
   if (loading || catalogLoading) {
+    const loadingFamilySlug =
+      extractFamilySlug(slug || "") || normalizeVehicleSlug(slug);
 
-    return <CarDetailsSkeleton />;
+    return (
+      <>
+        <SeoHead
+          meta={buildVehiclePageMeta({
+            name: formatFamilyName(loadingFamilySlug),
+            familySlug: loadingFamilySlug,
+          })}
+        />
+        <CarDetailsSkeleton />
+      </>
+    );
   }
 
   /* =========================================================
@@ -1062,13 +1074,13 @@ export default function CarDetails() {
       : null;
 
   const pageMeta = buildVehiclePageMeta({
-    name: vehicle.name,
+    name: familyTitle,
     brand: vehicle.brand,
     overview,
     familySlug,
     image: getOgImage(vehicle),
-    metaTitle: vehicle.seo?.metaTitle,
-    metaDescription: vehicle.seo?.metaDescription,
+    metaTitle: family?.seo?.metaTitle || vehicle.seo?.metaTitle,
+    metaDescription: family?.seo?.metaDescription || vehicle.seo?.metaDescription,
   });
 
   const faqSchema = buildFaqSchema(

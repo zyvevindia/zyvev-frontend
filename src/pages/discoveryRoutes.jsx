@@ -1,9 +1,14 @@
 import DiscoverySeoPage from "./DiscoverySeoPage";
+import IntelligenceDiscoveryPage from "./IntelligenceDiscoveryPage";
 import { PAGE_TYPES } from "../seo/registry";
+import LandingRouter from "../landing/LandingRouter.jsx";
+import { LANDING_ROUTE_FAMILIES } from "../landing/landingRouteConfig.js";
 
 export function BestEvsDiscoveryPage() {
   return (
-    <DiscoverySeoPage pageType={PAGE_TYPES.BEST_EVS} />
+    <LandingRouter routeFamily={LANDING_ROUTE_FAMILIES.BEST_EVS}>
+      <DiscoverySeoPage pageType={PAGE_TYPES.BEST_EVS} />
+    </LandingRouter>
   );
 }
 
@@ -26,7 +31,11 @@ export function OwnershipGuideDiscoveryPage() {
 }
 
 export function BrandDiscoveryPage() {
-  return <DiscoverySeoPage pageType={PAGE_TYPES.BRAND} />;
+  return (
+    <LandingRouter routeFamily={LANDING_ROUTE_FAMILIES.BRANDS}>
+      <DiscoverySeoPage pageType={PAGE_TYPES.BRAND} />
+    </LandingRouter>
+  );
 }
 
 export function CityEvsDiscoveryPage() {
@@ -36,5 +45,13 @@ export function CityEvsDiscoveryPage() {
 export function CityChargingDiscoveryPage() {
   return (
     <DiscoverySeoPage pageType={PAGE_TYPES.CITY_CHARGING} />
+  );
+}
+
+export function DiscoverLandingPage() {
+  return (
+    <LandingRouter routeFamily={LANDING_ROUTE_FAMILIES.DISCOVER}>
+      <IntelligenceDiscoveryPage />
+    </LandingRouter>
   );
 }

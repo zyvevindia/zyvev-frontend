@@ -427,11 +427,8 @@ import {
   BrandDiscoveryPage,
   CityEvsDiscoveryPage,
   CityChargingDiscoveryPage,
+  DiscoverLandingPage,
 } from "./pages/discoveryRoutes";
-
-const IntelligenceDiscoveryPage = lazy(() =>
-  import("./pages/IntelligenceDiscoveryPage")
-);
 
 /* =========================================================
    ==================== ROUTE LOADER =======================
@@ -557,7 +554,7 @@ export default function App() {
 
           <Route
             path="/discover/:presetSlug"
-            element={<IntelligenceDiscoveryPage />}
+            element={<DiscoverLandingPage />}
           />
 
           <Route

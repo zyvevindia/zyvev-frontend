@@ -1,0 +1,208 @@
+.landing-page {
+  min-height: 60vh;
+  background: #f8fafc;
+  padding: 2rem 1rem 4rem;
+}
+
+.landing-page__shell {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.landing-page--not-found {
+  text-align: center;
+}
+
+.landing-hero {
+  margin-bottom: 2rem;
+}
+
+.landing-hero__badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin: 0 0 0.75rem;
+}
+
+.landing-hero__title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+.landing-hero__subtitle {
+  font-size: 1.0625rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.landing-hero__logo {
+  height: 40px;
+  width: auto;
+  margin-bottom: 0.75rem;
+}
+
+.landing-hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.landing-hero__stats dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  margin: 0;
+}
+
+.landing-hero__stats dd {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.landing-hero__actions {
+  margin-top: 1.25rem;
+}
+
+.landing-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #0f172a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.landing-hero__cta:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.landing-section__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 1rem;
+}
+
+.landing-intro {
+  margin-bottom: 2rem;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.landing-intro p {
+  margin: 0 0 1rem;
+}
+
+.landing-buying-guide {
+  margin-bottom: 2.5rem;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.landing-buying-guide__block + .landing-buying-guide__block {
+  margin-top: 1.5rem;
+}
+
+.landing-buying-guide__heading {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.landing-buying-guide__block p {
+  margin: 0 0 0.75rem;
+}
+
+.landing-buying-guide__list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.landing-buying-guide__list li {
+  margin-bottom: 0.35rem;
+}
+
+.landing-vehicle-grid {
+  margin-bottom: 2.5rem;
+}
+
+.landing-vehicle-grid__notice,
+.landing-vehicle-grid__error {
+  font-size: 0.9375rem;
+  color: #64748b;
+  margin: 0 0 1rem;
+}
+
+.landing-faq {
+  margin-bottom: 2rem;
+}
+
+.landing-faq__item {
+  margin-bottom: 1rem;
+}
+
+.landing-faq__item dt {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.landing-faq__item dd {
+  margin: 0.35rem 0 0;
+  color: #475569;
+}
+
+.landing-internal-links {
+  margin-bottom: 2rem;
+}
+
+.landing-internal-links__group + .landing-internal-links__group {
+  margin-top: 1.25rem;
+}
+
+.landing-internal-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.landing-cta {
+  margin-top: 2rem;
+}
+
+.landing-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.landing-section--loading {
+  min-height: 120px;
+  color: #94a3b8;
+}

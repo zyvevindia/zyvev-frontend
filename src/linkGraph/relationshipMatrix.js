@@ -1,0 +1,157 @@
+/**
+ * Page-family → relationship-type matrix (configuration only).
+ * Adding City Pages = extend this matrix + one resolver — never rewrite the engine.
+ */
+
+import { LINK_PAGE_FAMILIES, LINK_RELATIONSHIP_TYPES } from "./types.js";
+
+/** @type {Record<string, string[]>} */
+export const LINK_RELATIONSHIP_MATRIX = Object.freeze({
+  [LINK_PAGE_FAMILIES.HOME]: [
+    LINK_RELATIONSHIP_TYPES.BRAND,
+    LINK_RELATIONSHIP_TYPES.PRICE_SEGMENT,
+    LINK_RELATIONSHIP_TYPES.USE_CASE,
+    LINK_RELATIONSHIP_TYPES.BROWSE,
+    LINK_RELATIONSHIP_TYPES.GUIDES_HUB,
+  ],
+  [LINK_PAGE_FAMILIES.BROWSE]: [
+    LINK_RELATIONSHIP_TYPES.BRAND,
+    LINK_RELATIONSHIP_TYPES.PRICE_SEGMENT,
+    LINK_RELATIONSHIP_TYPES.USE_CASE,
+    LINK_RELATIONSHIP_TYPES.GUIDES_HUB,
+  ],
+  [LINK_PAGE_FAMILIES.BRAND]: [
+    LINK_RELATIONSHIP_TYPES.PRICE_SEGMENT,
+    LINK_RELATIONSHIP_TYPES.USE_CASE,
+    LINK_RELATIONSHIP_TYPES.VEHICLE,
+    LINK_RELATIONSHIP_TYPES.BUYING_GUIDE,
+    LINK_RELATIONSHIP_TYPES.OWNERSHIP_GUIDE,
+    LINK_RELATIONSHIP_TYPES.COMPARE,
+  ],
+  [LINK_PAGE_FAMILIES.PRICE]: [
+    LINK_RELATIONSHIP_TYPES.BRAND,
+    LINK_RELATIONSHIP_TYPES.VEHICLE,
+    LINK_RELATIONSHIP_TYPES.USE_CASE,
+    LINK_RELATIONSHIP_TYPES.BUYING_GUIDE,
+    LINK_RELATIONSHIP_TYPES.OWNERSHIP_GUIDE,
+  ],
+  [LINK_PAGE_FAMILIES.USE_CASE]: [
+    LINK_RELATIONSHIP_TYPES.BRAND,
+    LINK_RELATIONSHIP_TYPES.PRICE_SEGMENT,
+    LINK_RELATIONSHIP_TYPES.VEHICLE,
+    LINK_RELATIONSHIP_TYPES.COMPARE,
+    LINK_RELATIONSHIP_TYPES.BUYING_GUIDE,
+    LINK_RELATIONSHIP_TYPES.OWNERSHIP_GUIDE,
+    LINK_RELATIONSHIP_TYPES.CHARGING_GUIDE,
+  ],
+  [LINK_PAGE_FAMILIES.VEHICLE]: [
+    LINK_RELATIONSHIP_TYPES.BRAND,
+    LINK_RELATIONSHIP_TYPES.PRICE_SEGMENT,
+    LINK_RELATIONSHIP_TYPES.USE_CASE,
+    LINK_RELATIONSHIP_TYPES.VEHICLE,
+    LINK_RELATIONSHIP_TYPES.COMPARE,
+    LINK_RELATIONSHIP_TYPES.BUYING_GUIDE,
+    LINK_RELATIONSHIP_TYPES.OWNERSHIP_GUIDE,
+    LINK_RELATIONSHIP_TYPES.CHARGING_GUIDE,
+  ],
+  [LINK_PAGE_FAMILIES.COMPARE]: [
+    LINK_RELATIONSHIP_TYPES.VEHICLE,
+    LINK_RELATIONSHIP_TYPES.BRAND,
+    LINK_RELATIONSHIP_TYPES.PRICE_SEGMENT,
+    LINK_RELATIONSHIP_TYPES.BUYING_GUIDE,
+    LINK_RELATIONSHIP_TYPES.OWNERSHIP_GUIDE,
+    LINK_RELATIONSHIP_TYPES.COMPARE,
+  ],
+  [LINK_PAGE_FAMILIES.GUIDE]: [
+    LINK_RELATIONSHIP_TYPES.VEHICLE,
+    LINK_RELATIONSHIP_TYPES.BRAND,
+    LINK_RELATIONSHIP_TYPES.PRICE_SEGMENT,
+    LINK_RELATIONSHIP_TYPES.USE_CASE,
+    LINK_RELATIONSHIP_TYPES.COMPARE,
+    LINK_RELATIONSHIP_TYPES.OWNERSHIP_GUIDE,
+    LINK_RELATIONSHIP_TYPES.CHARGING_GUIDE,
+  ],
+  [LINK_PAGE_FAMILIES.CHARGING]: [
+    LINK_RELATIONSHIP_TYPES.VEHICLE,
+    LINK_RELATIONSHIP_TYPES.USE_CASE,
+    LINK_RELATIONSHIP_TYPES.OWNERSHIP_GUIDE,
+    LINK_RELATIONSHIP_TYPES.GUIDES_HUB,
+  ],
+  [LINK_PAGE_FAMILIES.OWNERSHIP]: [
+    LINK_RELATIONSHIP_TYPES.VEHICLE,
+    LINK_RELATIONSHIP_TYPES.BRAND,
+    LINK_RELATIONSHIP_TYPES.PRICE_SEGMENT,
+    LINK_RELATIONSHIP_TYPES.CHARGING_GUIDE,
+    LINK_RELATIONSHIP_TYPES.GUIDES_HUB,
+  ],
+  /** Future — resolver stubs return [] until configured */
+  [LINK_PAGE_FAMILIES.CITY]: [
+    LINK_RELATIONSHIP_TYPES.VEHICLE,
+    LINK_RELATIONSHIP_TYPES.BRAND,
+    LINK_RELATIONSHIP_TYPES.CHARGING_GUIDE,
+    LINK_RELATIONSHIP_TYPES.CITY,
+  ],
+  [LINK_PAGE_FAMILIES.DEALER]: [LINK_RELATIONSHIP_TYPES.VEHICLE, LINK_RELATIONSHIP_TYPES.BRAND],
+  [LINK_PAGE_FAMILIES.OEM]: [LINK_RELATIONSHIP_TYPES.VEHICLE, LINK_RELATIONSHIP_TYPES.BRAND],
+  [LINK_PAGE_FAMILIES.FINANCE]: [
+    LINK_RELATIONSHIP_TYPES.PRICE_SEGMENT,
+    LINK_RELATIONSHIP_TYPES.OWNERSHIP_GUIDE,
+  ],
+});
+
+/**
+ * Human-readable matrix for documentation and certification.
+ * @returns {{ from: string, linksTo: string }[]}
+ */
+export function getRelationshipMatrixRows() {
+  const label = {
+    brand: "Brands",
+    price_segment: "Price",
+    use_case: "Use Cases",
+    vehicle: "Vehicles",
+    compare: "Compare",
+    buying_guide: "Buying Guides",
+    ownership_guide: "Ownership Guides",
+    charging_guide: "Charging Guides",
+    browse: "Browse",
+    guides_hub: "Guides",
+    finance: "Finance",
+    dealer: "Dealers",
+    oem: "OEM",
+    city: "Cities",
+    editorial: "Editorial",
+    news: "News",
+    video: "Videos",
+    review: "Reviews",
+  };
+
+  const fromLabel = {
+    home: "Home",
+    browse: "Browse EVs",
+    brand: "Brand",
+    price: "Price",
+    use_case: "Use Case",
+    vehicle: "Vehicle",
+    compare: "Compare",
+    guide: "Guide",
+    charging: "Charging",
+    ownership: "Ownership",
+    city: "City",
+    dealer: "Dealer",
+    oem: "OEM",
+    finance: "Finance",
+  };
+
+  return Object.entries(LINK_RELATIONSHIP_MATRIX).map(([from, types]) => ({
+    from: fromLabel[from] || from,
+    linksTo: types.map((t) => label[t] || t).join(", "),
+  }));
+}
+
+/**
+ * @param {string} pageFamily
+ * @returns {string[]}
+ */
+export function getRelationshipsForPageFamily(pageFamily) {
+  return LINK_RELATIONSHIP_MATRIX[pageFamily] || [];
+}
