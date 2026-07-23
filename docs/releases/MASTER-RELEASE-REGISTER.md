@@ -21,13 +21,30 @@
 | **v2.0.2-customer-intelligence-foundation** | **Customer Intelligence Foundation** | **`e2c933da`** | **`dpl_B29xAQwnunrTyH1bMmSbPjYo4TYe`** | **2026-07-23** | **Approved** | **PASS_WITH_WARNINGS** (99/100) | **PASS** (prod smoke) | **Yes** | **Released** |
 | R-ANALYTICS | Customer Intelligence Foundation (v2.0.2) | `e2c933da` | `dpl_B29xAQwnunrTyH1bMmSbPjYo4TYe` | 2026-07-23 | Approved | PASS_WITH_WARNINGS | PASS | Yes | **Released** |
 | **v2.0.1-media-foundation** | **Local Vehicle WebP Media Foundation (12)** | **`83248fd8`** | **`dpl_BuTkDAXtiv7ZdFYF7vi4EPqTZdk5`** | **2026-07-13** | **Approved** | **PASS** (media production cert) | **PASS** (56/56 smoke) | **Yes** | **Released** |
-| R-GEN | Generated SEO Data & Sitemaps | — | on prod via build | 2026-07 | N/A | gsc:verify PASS | PASS | Regenerate | **Optional commit** |
+| **v2.0.3-generated-seo-assets** | **Generated SEO Assets** | **`e3bedc16`** | **`dpl_664fyQaCxrfKiVgEdEUYdtwsm9mv`** | **2026-07-23** | **Approved** | **PASS** (gsc:verify) | **PASS** (prod smoke) | **Yes** | **Released** |
+| R-GEN | Generated SEO Assets (v2.0.3) | `e3bedc16` | `dpl_664fyQaCxrfKiVgEdEUYdtwsm9mv` | 2026-07-23 | Approved | PASS | PASS | Yes | **Released** |
 | R-CERT | Certification & Release Engineering | — | N/A | 2026-07-13 | N/A | Self | N/A | N/A | **Uncommitted docs/scripts** |
 | R-DOCS-ARCH | Architecture Handbook & ADRs | — | N/A | 2026-07 | N/A | N/A | N/A | N/A | **Uncommitted** |
 | R-RECOVERY-R1 | Media Recovery R1 (forensics) | — | partial | 2026-07-10 | N/A | recovery-r1 cert | Partial | N/A | **Docs only — uncommitted** |
 
-**Tags:** `v2.0.0-production-baseline` → `b1fb0985` · `v2.0.1-media-foundation` → `83248fd8` · `v2.0.2-customer-intelligence-foundation` → `e2c933da`  
+**Tags:** `v2.0.0-production-baseline` → `b1fb0985` · `v2.0.1-media-foundation` → `83248fd8` · `v2.0.2-customer-intelligence-foundation` → `e2c933da` · `v2.0.3-generated-seo-assets` → `e3bedc16`  
 **Production URL:** https://evsavari.com
+
+---
+
+## v2.0.3 – Generated SEO Assets (detail)
+
+| Field | Value |
+|-------|-------|
+| **Release Name** | v2.0.3 – Generated SEO Assets |
+| **Release Date** | 2026-07-23 |
+| **Commit Hash** | `e3bedc16` |
+| **Tag** | `v2.0.3-generated-seo-assets` |
+| **Deployment ID** | `dpl_664fyQaCxrfKiVgEdEUYdtwsm9mv` |
+| **Business Summary** | Synchronized 158 tracked generated SEO artifacts (seo-data JSON, sitemaps, content manifest) with production prebuild output — crawl/index hygiene only |
+| **Architecture Summary** | No runtime code changes; editorial SSOT `generate-content.mjs` + sitemap SSOT `build-sitemaps.mjs`; Vercel `prebuild` regenerates on every deploy |
+| **Repository Health** | Improved — R-GEN cleared (~159 files); ~75 dirty remain (R-DOCS, R-CERT, secrets/tests blocked) |
+| **Known Notes** | **Generated assets synchronized** · **No runtime code changes** · Diffs were `generatedAt`/`lastmod` only · Legacy orphans outside manifest remain future cleanup |
 
 ---
 
@@ -68,4 +85,4 @@
 
 ---
 
-*Last updated: 2026-07-23 — v2.0.2 Customer Intelligence Foundation released (`e2c933da`, `dpl_B29xAQwnunrTyH1bMmSbPjYo4TYe`)*
+*Last updated: 2026-07-23 — v2.0.3 Generated SEO Assets released (`e3bedc16`, `dpl_664fyQaCxrfKiVgEdEUYdtwsm9mv`)*
