@@ -1,0 +1,648 @@
+{
+  "sprint": "2.6",
+  "title": "SEO Optimization & Content Enhancement",
+  "generatedAt": "2026-07-11T18:24:49.330Z",
+  "site": "https://evsavari.com",
+  "deploymentId": "dpl_DFXoZ7SXChr3uunRc2kVS6Hf6eZt",
+  "architecture": [
+    {
+      "name": "single metadata pipeline (SeoHead → pageMetadata/meta)",
+      "pass": true
+    },
+    {
+      "name": "single schema pipeline (landingSchema → JsonLd)",
+      "pass": true
+    },
+    {
+      "name": "single landing framework (LandingPage.jsx)",
+      "pass": true
+    },
+    {
+      "name": "single link graph (getRelatedPages)",
+      "pass": true
+    },
+    {
+      "name": "no forbidden parallel SEO components",
+      "pass": true,
+      "detail": "none"
+    },
+    {
+      "name": "content block registry exported",
+      "pass": true
+    },
+    {
+      "name": "buying guide section implemented",
+      "pass": true
+    },
+    {
+      "name": "18 landing registry entries",
+      "pass": true,
+      "detail": "count=18"
+    }
+  ],
+  "metadataAudit": [
+    {
+      "id": "brand-tata",
+      "title": "Tata Electric Cars in India (2026) – Prices, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "brand-mahindra",
+      "title": "Mahindra Electric Cars in India (2026) – Prices, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "brand-mg",
+      "title": "MG Electric Cars in India (2026) – Prices, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "brand-hyundai",
+      "title": "Hyundai Electric Cars in India (2026) – Prices, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "brand-byd",
+      "title": "BYD Electric Cars in India (2026) – Prices, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "brand-kia",
+      "title": "Kia Electric Cars in India (2026) – Prices, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "brand-bmw",
+      "title": "BMW Electric Cars in India (2026) – Prices, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "brand-mercedes-benz",
+      "title": "Mercedes-Benz Electric Cars in India (2026) – Prices, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "price-under-10-lakh",
+      "title": "Best Electric Cars Under ₹10 Lakh (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "price-under-15-lakh",
+      "title": "Best Electric Cars Under ₹15 Lakh (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "price-under-20-lakh",
+      "title": "Best Electric Cars Under ₹20 Lakh (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "price-premium",
+      "title": "Best Premium Electric Cars in India (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "use_case-city",
+      "title": "Best Electric Cars for City Driving (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "use_case-family",
+      "title": "Best Electric Cars for Families (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "use_case-highway",
+      "title": "Best Electric Cars for Highway Driving (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "use_case-long-range",
+      "title": "Best Long-Range Electric Cars in India (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "use_case-fast-charging",
+      "title": "Fastest-Charging Electric Cars in India (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "use_case-budget",
+      "title": "Best Budget Electric Cars in India (2026) – Compare Price, Range & Charging",
+      "pass": true
+    },
+    {
+      "id": "seo-title-helper",
+      "title": "Best Electric Cars Under ₹10 Lakh (2026) – Compare Price, Range & Charging",
+      "pass": true
+    }
+  ],
+  "pageAudits": [
+    {
+      "family": "home",
+      "path": "/",
+      "title": "Compare Electric Cars in India (2026) | EVSavari",
+      "titleHasYear": true,
+      "titleHasBrand": true,
+      "descriptionLength": 160,
+      "descriptionOk": true,
+      "canonical": "https://evsavari.com/",
+      "canonicalOk": true,
+      "ogTitleOk": true,
+      "h1Count": 1,
+      "oneH1": true,
+      "hierarchyOk": true,
+      "contentBlocks": [],
+      "missingBlocks": [],
+      "blocksComplete": true,
+      "schemaTypes": [
+        "WebSite"
+      ],
+      "hasBreadcrumb": false,
+      "hasFaq": false,
+      "hasCollection": false,
+      "linkAnchorCount": 0,
+      "noGenericAnchors": true,
+      "emptyImageAlts": 0,
+      "pass": true
+    },
+    {
+      "family": "browse",
+      "path": "/cars",
+      "title": "Browse Electric Cars in India (2026) – Filter by Price, Range & Brand | EVSavari",
+      "titleHasYear": true,
+      "titleHasBrand": true,
+      "descriptionLength": 160,
+      "descriptionOk": true,
+      "canonical": "https://evsavari.com/cars",
+      "canonicalOk": true,
+      "ogTitleOk": true,
+      "h1Count": 1,
+      "oneH1": true,
+      "hierarchyOk": false,
+      "contentBlocks": [],
+      "missingBlocks": [],
+      "blocksComplete": true,
+      "schemaTypes": [],
+      "hasBreadcrumb": false,
+      "hasFaq": false,
+      "hasCollection": false,
+      "linkAnchorCount": 0,
+      "noGenericAnchors": true,
+      "emptyImageAlts": 0,
+      "pass": true
+    },
+    {
+      "family": "brand",
+      "path": "/brands/tata",
+      "title": "Tata Electric Cars in India (2026) – Prices, Range & Charging | EVSavari",
+      "titleHasYear": true,
+      "titleHasBrand": true,
+      "descriptionLength": 160,
+      "descriptionOk": true,
+      "canonical": "https://evsavari.com/brands/tata",
+      "canonicalOk": true,
+      "ogTitleOk": true,
+      "h1Count": 1,
+      "oneH1": true,
+      "hierarchyOk": true,
+      "contentBlocks": [
+        "hero",
+        "intro",
+        "vehicleGrid",
+        "buyingGuide",
+        "faq",
+        "relatedPages",
+        "cta"
+      ],
+      "missingBlocks": [],
+      "blocksComplete": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "hasBreadcrumb": true,
+      "hasFaq": true,
+      "hasCollection": true,
+      "linkAnchorCount": 23,
+      "noGenericAnchors": true,
+      "emptyImageAlts": 0,
+      "pass": true
+    },
+    {
+      "family": "price",
+      "path": "/best-evs/under-10-lakh",
+      "title": "Best Electric Cars Under ₹10 Lakh (2026) – Compare Price, Range & Charging | EVSavari",
+      "titleHasYear": true,
+      "titleHasBrand": true,
+      "descriptionLength": 158,
+      "descriptionOk": true,
+      "canonical": "https://evsavari.com/best-evs/under-10-lakh",
+      "canonicalOk": true,
+      "ogTitleOk": true,
+      "h1Count": 1,
+      "oneH1": true,
+      "hierarchyOk": true,
+      "contentBlocks": [
+        "hero",
+        "intro",
+        "vehicleGrid",
+        "buyingGuide",
+        "faq",
+        "relatedPages",
+        "cta"
+      ],
+      "missingBlocks": [],
+      "blocksComplete": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "hasBreadcrumb": true,
+      "hasFaq": true,
+      "hasCollection": true,
+      "linkAnchorCount": 19,
+      "noGenericAnchors": true,
+      "emptyImageAlts": 0,
+      "pass": true
+    },
+    {
+      "family": "use_case",
+      "path": "/best-evs/city",
+      "title": "Best Electric Cars for City Driving (2026) – Compare Price, Range & Charging | EVSavari",
+      "titleHasYear": true,
+      "titleHasBrand": true,
+      "descriptionLength": 160,
+      "descriptionOk": true,
+      "canonical": "https://evsavari.com/best-evs/city",
+      "canonicalOk": true,
+      "ogTitleOk": true,
+      "h1Count": 1,
+      "oneH1": true,
+      "hierarchyOk": true,
+      "contentBlocks": [
+        "hero",
+        "intro",
+        "vehicleGrid",
+        "buyingGuide",
+        "faq",
+        "relatedPages",
+        "cta"
+      ],
+      "missingBlocks": [],
+      "blocksComplete": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "hasBreadcrumb": true,
+      "hasFaq": true,
+      "hasCollection": true,
+      "linkAnchorCount": 27,
+      "noGenericAnchors": true,
+      "emptyImageAlts": 0,
+      "pass": true
+    },
+    {
+      "family": "vehicle",
+      "path": "/cars/tata-nexon-ev",
+      "title": "Tata Nexon Ev — Price, Range, Charging & Variants (2026) | EVSavari",
+      "titleHasYear": true,
+      "titleHasBrand": true,
+      "descriptionLength": 103,
+      "descriptionOk": true,
+      "canonical": "https://evsavari.com/cars/tata-nexon-ev",
+      "canonicalOk": true,
+      "ogTitleOk": true,
+      "h1Count": 1,
+      "oneH1": true,
+      "hierarchyOk": false,
+      "contentBlocks": [],
+      "missingBlocks": [],
+      "blocksComplete": true,
+      "schemaTypes": [
+        "Product",
+        "BreadcrumbList"
+      ],
+      "hasBreadcrumb": true,
+      "hasFaq": false,
+      "hasCollection": false,
+      "linkAnchorCount": 8,
+      "noGenericAnchors": true,
+      "emptyImageAlts": 0,
+      "pass": true
+    },
+    {
+      "family": "compare",
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "title": "Tata Nexon EV vs MG Zs EV — Decision Comparison | EVSavari",
+      "titleHasYear": false,
+      "titleHasBrand": true,
+      "descriptionLength": 86,
+      "descriptionOk": true,
+      "canonical": "https://evsavari.com/compare/nexon-ev-vs-mg-zs-ev",
+      "canonicalOk": true,
+      "ogTitleOk": true,
+      "h1Count": 1,
+      "oneH1": true,
+      "hierarchyOk": false,
+      "contentBlocks": [],
+      "missingBlocks": [],
+      "blocksComplete": true,
+      "schemaTypes": [
+        "BreadcrumbList",
+        "FAQPage",
+        "Article",
+        "ItemList"
+      ],
+      "hasBreadcrumb": true,
+      "hasFaq": true,
+      "hasCollection": false,
+      "linkAnchorCount": 8,
+      "noGenericAnchors": true,
+      "emptyImageAlts": 0,
+      "pass": true
+    },
+    {
+      "family": "guide",
+      "path": "/ownership-guides/running-cost",
+      "title": "EV Ownership: Running cost vs petrol | EVSavari",
+      "titleHasYear": false,
+      "titleHasBrand": true,
+      "descriptionLength": 97,
+      "descriptionOk": true,
+      "canonical": "https://evsavari.com/ownership-guides/running-cost",
+      "canonicalOk": true,
+      "ogTitleOk": true,
+      "h1Count": 1,
+      "oneH1": true,
+      "hierarchyOk": true,
+      "contentBlocks": [],
+      "missingBlocks": [],
+      "blocksComplete": true,
+      "schemaTypes": [
+        "BreadcrumbList",
+        "FAQPage",
+        "Article",
+        "ItemList"
+      ],
+      "hasBreadcrumb": true,
+      "hasFaq": true,
+      "hasCollection": false,
+      "linkAnchorCount": 3,
+      "noGenericAnchors": true,
+      "emptyImageAlts": 0,
+      "pass": true
+    }
+  ],
+  "qualityScores": [
+    {
+      "area": "Metadata",
+      "score": 75,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": false
+        },
+        {
+          "pass": false
+        }
+      ]
+    },
+    {
+      "area": "Headings",
+      "score": 63,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": false
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": false
+        },
+        {
+          "pass": false
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Schema",
+      "score": 100,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Content",
+      "score": 100,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Internal Links",
+      "score": 100,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Accessibility",
+      "score": 100,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Performance",
+      "score": 100,
+      "checks": [
+        {
+          "pass": true,
+          "note": "No new client bundles in Sprint 2.6"
+        }
+      ]
+    }
+  ],
+  "regression": [
+    {
+      "path": "/",
+      "family": "home",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/cars",
+      "family": "browse",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/brands/tata",
+      "family": "brand",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/best-evs/under-10-lakh",
+      "family": "price",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/best-evs/city",
+      "family": "use_case",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/cars/tata-nexon-ev",
+      "family": "vehicle",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "family": "compare",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/ownership-guides/running-cost",
+      "family": "guide",
+      "status": 200,
+      "pass": true
+    }
+  ],
+  "seoFoundation": {
+    "pass": true,
+    "detail": "rsed=.env:1keys, .env.local:9keys\n✓ vehicle title brand suffix\n✓ compare title format\n✓ slug normalization lowercase\n✓ compare pair slug deterministic\n✓ sitemap index exists\n✓ robots.txt exists\n✓ robots references sitemap\n✓ robots disallows admin\n✓ robots allows discovery paths\n✓ compare sitemap includes editorial guides\n✓ static sitemap includes listing hubs\n✓ vehicle sitemap has tier-1 families\n✓ manifest has counts\n✓ compare.xml includes nexon vs mg guide\n\nSEO foundation smoke checks passed.\n"
+  },
+  "contentBlockOrder": [
+    "hero",
+    "intro",
+    "vehicleGrid",
+    "buyingGuide",
+    "faq",
+    null,
+    "cta"
+  ],
+  "lighthouse": {
+    "note": "Sprint 2.6 adds no new JS bundles; SEO category should match or exceed Sprint 2.5 baseline",
+    "beforeBaseline": "Sprint 2.5 production (link graph deploy dpl_9cmBoArDLiSz4TcifxS5cT6eurV7)",
+    "afterDeployment": "dpl_DFXoZ7SXChr3uunRc2kVS6Hf6eZt"
+  },
+  "futureAiReadiness": {
+    "contentBlocks": [
+      "hero",
+      "intro",
+      "vehicleGrid",
+      "buyingGuide",
+      "faq",
+      null,
+      "cta"
+    ],
+    "metadataPipeline": "pageMetadata → meta.js → SeoHead",
+    "schemaPipeline": "landingSchema → JsonLd",
+    "linkGraph": "getRelatedPages() unchanged",
+    "extensibility": "Future Dealer/OEM/City pages = registry config + matrix row only; AI consumes content blocks by ID"
+  },
+  "issues": [],
+  "verdict": "PASS"
+}

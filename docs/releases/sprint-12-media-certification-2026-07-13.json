@@ -1,0 +1,157 @@
+{
+  "sprint": "1.2",
+  "title": "Media Stabilization & Production Certification",
+  "generatedAt": "2026-07-13T02:48:53.612Z",
+  "verdict": "PASS",
+  "productionFamilyCount": 11,
+  "passCount": 11,
+  "failCount": 0,
+  "oemSummary": [
+    {
+      "oem": "BYD",
+      "models": 1,
+      "status": "PASS"
+    },
+    {
+      "oem": "Hyundai",
+      "models": 1,
+      "status": "PASS"
+    },
+    {
+      "oem": "Mahindra",
+      "models": 3,
+      "status": "PASS"
+    },
+    {
+      "oem": "MG",
+      "models": 2,
+      "status": "PASS"
+    },
+    {
+      "oem": "Tata",
+      "models": 4,
+      "status": "PASS"
+    }
+  ],
+  "families": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "oem": "Tata",
+      "listing": "/images/cars/tata-nexon-ev/listing.webp",
+      "hero": "/images/cars/tata-nexon-ev/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/tata-nexon-ev/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "oem": "Tata",
+      "listing": "/images/cars/tata-punch-ev/listing.webp",
+      "hero": "/images/cars/tata-punch-ev/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/tata-punch-ev/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "oem": "Tata",
+      "listing": "/images/cars/tata-curvv-ev/listing.webp",
+      "hero": "/images/cars/tata-curvv-ev/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/tata-curvv-ev/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "oem": "Tata",
+      "listing": "/images/cars/tata-tiago-ev/listing.webp",
+      "hero": "/images/cars/tata-tiago-ev/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/tata-tiago-ev/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "oem": "MG",
+      "listing": "/images/cars/mg-comet-ev/listing.webp",
+      "hero": "/images/cars/mg-comet-ev/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/mg-comet-ev/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "oem": "MG",
+      "listing": "/images/cars/mg-zs-ev/listing.webp",
+      "hero": "/images/cars/mg-zs-ev/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/mg-zs-ev/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "oem": "Mahindra",
+      "listing": "/images/cars/mahindra-be-6/listing.webp",
+      "hero": "/images/cars/mahindra-be-6/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/mahindra-be-6/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "oem": "Mahindra",
+      "listing": "/images/cars/mahindra-xev-9e/listing.webp",
+      "hero": "/images/cars/mahindra-xev-9e/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/mahindra-xev-9e/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "oem": "Mahindra",
+      "listing": "/images/cars/mahindra-xuv400/listing.webp",
+      "hero": "/images/cars/mahindra-xuv400/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/mahindra-xuv400/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "oem": "BYD",
+      "listing": "/images/cars/byd-atto-3/listing.webp",
+      "hero": "/images/cars/byd-atto-3/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/byd-atto-3/listing.webp",
+      "pass": true
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "oem": "Hyundai",
+      "listing": "/images/cars/hyundai-kona-electric/listing.webp",
+      "hero": "/images/cars/hyundai-kona-electric/front.webp",
+      "listingClass": "local",
+      "heroClass": "local",
+      "chainHead": "/images/cars/hyundai-kona-electric/listing.webp",
+      "pass": true
+    }
+  ],
+  "architecture": {
+    "singleResolver": "src/utils/vehicleMedia.js",
+    "fallbackOrder": [
+      "local-webp",
+      "cloudinary",
+      "placeholder"
+    ],
+    "manifestSource": "src/media/familyMediaManifest.js + src/media/localCarMediaManifest.js"
+  }
+}

@@ -1,0 +1,809 @@
+{
+  "sprint": "R1",
+  "title": "Production Media Recovery — Browser Certification",
+  "generatedAt": "2026-07-10T06:34:15.936Z",
+  "site": "https://evsavari.com",
+  "verdict": "PASS",
+  "priorityFamilies": [
+    "tata-tiago-ev",
+    "hyundai-kona-electric",
+    "mg-comet-ev",
+    "mahindra-xev-9e",
+    "mahindra-xuv400",
+    "byd-atto-3"
+  ],
+  "productionFamilyCount": 11,
+  "passCount": 11,
+  "failCount": 0,
+  "surfaces": [
+    {
+      "surface": "homepage",
+      "url": "https://evsavari.com/",
+      "cardsSeen": 0,
+      "pass": true,
+      "rows": []
+    },
+    {
+      "surface": "browse",
+      "url": "https://evsavari.com/cars",
+      "pagesScanned": 20,
+      "cardsSeen": 25,
+      "pass": true,
+      "families": {
+        "tata-nexon-ev": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/tata-nexon-ev/listing.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1067,
+          "pass": true,
+          "issues": []
+        },
+        "tata-punch-ev": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/tata-punch-ev/listing.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1205,
+          "pass": true,
+          "issues": []
+        },
+        "tata-curvv-ev": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/tata-curvv-ev/listing.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1067,
+          "pass": true,
+          "issues": []
+        },
+        "tata-tiago-ev": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/tata-tiago-ev/listing.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        },
+        "mg-comet-ev": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/mg-comet-ev/listing.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 962,
+          "pass": true,
+          "issues": []
+        },
+        "mg-zs-ev": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/mg-zs-ev/listing.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 941,
+          "pass": true,
+          "issues": []
+        },
+        "mahindra-be-6": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/mahindra-be-6/listing.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        "mahindra-xev-9e": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/mahindra-xev-9e/listing.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        "mahindra-xuv400": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/mahindra-xuv400/listing.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        },
+        "byd-atto-3": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/byd-atto-3/listing.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        },
+        "hyundai-kona-electric": {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/hyundai-kona-electric/listing.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        }
+      }
+    },
+    {
+      "surface": "search:tiago",
+      "url": "https://evsavari.com/cars?search=tiago",
+      "cardsSeen": 1,
+      "pass": true,
+      "rows": [
+        {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/tata-tiago-ev/listing.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "surface": "search:kona",
+      "url": "https://evsavari.com/cars?search=kona",
+      "cardsSeen": 1,
+      "pass": true,
+      "rows": [
+        {
+          "role": "listing",
+          "src": "https://evsavari.com/images/cars/hyundai-kona-electric/listing.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "surface": "compare",
+      "url": "https://evsavari.com/compare?cars=tata-tiago-ev,hyundai-kona-electric,mg-comet-ev",
+      "imagesSeen": 3,
+      "pass": true,
+      "rows": [
+        {
+          "role": "compare",
+          "src": "https://evsavari.com/images/cars/tata-tiago-ev/compare.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "compare",
+          "src": "https://evsavari.com/images/cars/hyundai-kona-electric/compare.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "compare",
+          "src": "https://evsavari.com/images/cars/mg-comet-ev/compare.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        }
+      ]
+    }
+  ],
+  "families": [
+    {
+      "familySlug": "tata-nexon-ev",
+      "url": "https://evsavari.com/cars/tata-nexon-ev",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/tata-nexon-ev/front.webp",
+        "class": "local",
+        "naturalWidth": 1600,
+        "naturalHeight": 1067,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/tata-nexon-ev/front.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1067,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/tata-nexon-ev/rear.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1600,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-2",
+          "src": "https://evsavari.com/images/cars/tata-nexon-ev/side.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1600,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-3",
+          "src": "https://evsavari.com/images/cars/tata-nexon-ev/interior.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-4",
+          "src": "https://evsavari.com/images/cars/tata-nexon-ev/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 717,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "tata-punch-ev",
+      "url": "https://evsavari.com/cars/tata-punch-ev",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/tata-punch-ev/front.webp",
+        "class": "local",
+        "naturalWidth": 1600,
+        "naturalHeight": 1205,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/tata-punch-ev/front.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1205,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/tata-punch-ev/rear.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-2",
+          "src": "https://evsavari.com/images/cars/tata-punch-ev/side.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-3",
+          "src": "https://evsavari.com/images/cars/tata-punch-ev/interior.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-4",
+          "src": "https://evsavari.com/images/cars/tata-punch-ev/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 717,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "tata-curvv-ev",
+      "url": "https://evsavari.com/cars/tata-curvv-ev",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/tata-curvv-ev/front.webp",
+        "class": "local",
+        "naturalWidth": 1600,
+        "naturalHeight": 1067,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/tata-curvv-ev/front.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1067,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/tata-curvv-ev/rear.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1066,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-2",
+          "src": "https://evsavari.com/images/cars/tata-curvv-ev/side.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1067,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-3",
+          "src": "https://evsavari.com/images/cars/tata-curvv-ev/interior.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-4",
+          "src": "https://evsavari.com/images/cars/tata-curvv-ev/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 717,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "tata-tiago-ev",
+      "url": "https://evsavari.com/cars/tata-tiago-ev",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/tata-tiago-ev/front.webp",
+        "class": "local",
+        "naturalWidth": 1280,
+        "naturalHeight": 800,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/tata-tiago-ev/front.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/tata-tiago-ev/interior.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-2",
+          "src": "https://evsavari.com/images/cars/tata-tiago-ev/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 717,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "mg-comet-ev",
+      "url": "https://evsavari.com/cars/mg-comet-ev",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/mg-comet-ev/front.webp",
+        "class": "local",
+        "naturalWidth": 1600,
+        "naturalHeight": 962,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/mg-comet-ev/front.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 962,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/mg-comet-ev/rear.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 2133,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-2",
+          "src": "https://evsavari.com/images/cars/mg-comet-ev/side.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-3",
+          "src": "https://evsavari.com/images/cars/mg-comet-ev/interior.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 2133,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-4",
+          "src": "https://evsavari.com/images/cars/mg-comet-ev/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 538,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "mg-zs-ev",
+      "url": "https://evsavari.com/cars/mg-zs-ev",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/mg-zs-ev/front.webp",
+        "class": "local",
+        "naturalWidth": 1600,
+        "naturalHeight": 807,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/mg-zs-ev/front.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 807,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/mg-zs-ev/rear.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 863,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-2",
+          "src": "https://evsavari.com/images/cars/mg-zs-ev/side.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-3",
+          "src": "https://evsavari.com/images/cars/mg-zs-ev/interior.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1066,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-4",
+          "src": "https://evsavari.com/images/cars/mg-zs-ev/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 638,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "mahindra-be-6",
+      "url": "https://evsavari.com/cars/mahindra-be-6",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/mahindra-be-6/front.webp",
+        "class": "local",
+        "naturalWidth": 1600,
+        "naturalHeight": 1200,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/mahindra-be-6/front.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/mahindra-be-6/rear.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-2",
+          "src": "https://evsavari.com/images/cars/mahindra-be-6/side.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 902,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-3",
+          "src": "https://evsavari.com/images/cars/mahindra-be-6/interior.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-4",
+          "src": "https://evsavari.com/images/cars/mahindra-be-6/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 717,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "mahindra-xev-9e",
+      "url": "https://evsavari.com/cars/mahindra-xev-9e",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/mahindra-xev-9e/front.webp",
+        "class": "local",
+        "naturalWidth": 1600,
+        "naturalHeight": 1200,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/mahindra-xev-9e/front.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/mahindra-xev-9e/rear.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1205,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-2",
+          "src": "https://evsavari.com/images/cars/mahindra-xev-9e/side.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-3",
+          "src": "https://evsavari.com/images/cars/mahindra-xev-9e/interior.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 1200,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-4",
+          "src": "https://evsavari.com/images/cars/mahindra-xev-9e/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 717,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "mahindra-xuv400",
+      "url": "https://evsavari.com/cars/mahindra-xuv400",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/mahindra-xuv400/front.webp",
+        "class": "local",
+        "naturalWidth": 1280,
+        "naturalHeight": 800,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/mahindra-xuv400/front.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/mahindra-xuv400/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 717,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "byd-atto-3",
+      "url": "https://evsavari.com/cars/byd-atto-3",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/byd-atto-3/front.webp",
+        "class": "local",
+        "naturalWidth": 1280,
+        "naturalHeight": 800,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/byd-atto-3/front.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/byd-atto-3/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 638,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    },
+    {
+      "familySlug": "hyundai-kona-electric",
+      "url": "https://evsavari.com/cars/hyundai-kona-electric",
+      "pass": true,
+      "hero": {
+        "role": "hero",
+        "src": "https://evsavari.com/images/cars/hyundai-kona-electric/front.webp",
+        "class": "local",
+        "naturalWidth": 1280,
+        "naturalHeight": 800,
+        "pass": true,
+        "issues": []
+      },
+      "thumbs": [
+        {
+          "role": "gallery-0",
+          "src": "https://evsavari.com/images/cars/hyundai-kona-electric/front.webp",
+          "class": "local",
+          "naturalWidth": 1280,
+          "naturalHeight": 800,
+          "pass": true,
+          "issues": []
+        },
+        {
+          "role": "gallery-1",
+          "src": "https://evsavari.com/images/cars/hyundai-kona-electric/dashboard.webp",
+          "class": "local",
+          "naturalWidth": 1600,
+          "naturalHeight": 717,
+          "pass": true,
+          "issues": []
+        }
+      ],
+      "related": [],
+      "placeholderCount": 0
+    }
+  ],
+  "architecture": {
+    "singleResolver": "src/utils/vehicleMedia.js",
+    "fallbackOrder": [
+      "local-webp",
+      "cloudinary",
+      "placeholder"
+    ],
+    "certificationMode": "browser-rendered (naturalWidth > 0, no fallback SVG for core roles)"
+  }
+}

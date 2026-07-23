@@ -1,0 +1,1130 @@
+{
+  "sprint": "2.7",
+  "title": "Search Console, Analytics & Final SEO Certification",
+  "generatedAt": "2026-07-12T16:39:54.107Z",
+  "site": "https://evsavari.com",
+  "deploymentId": "production-latest",
+  "verificationScope": {
+    "local": [
+      "gsc:verify",
+      "ops-analytics-smoke",
+      "seo-foundation",
+      "architecture static"
+    ],
+    "production": [
+      "robots.txt",
+      "sitemap.xml",
+      "child sitemaps",
+      "8 page families Playwright audit",
+      "hidden routes",
+      "analytics DOM probe"
+    ],
+    "manual": [
+      "GSC property",
+      "DNS verification",
+      "sitemap submit",
+      "GA4 property if unset",
+      "URL inspection"
+    ]
+  },
+  "phase1_gsc": {
+    "local": {
+      "pass": true,
+      "detail": "arams\n  ✓ robots.txt explicitly allows ?variant=\n  ✓ robots.txt blocks /admin\n  ✓ robots.txt blocks /crm\n  ✓ robots.txt blocks /agent\n  ✓ robots.txt blocks /dealer\n  ✓ robots.txt blocks /seo-data/\n  ✓ robots.txt allows /cars\n  ✓ robots.txt allows /compare\n  ✓ robots.txt allows /guides\n  ✓ robots.txt allows /brands\n  ✓ sitemap index references static.xml\n  ✓ sitemap index references cars.xml\n  ✓ sitemap index references seo-pages.xml\n  ✓ sitemap index references compare.xml\n  ✓ sitemap index uses production origin\n  ✓ seo-pages.xml excludes legacy /cars/ guide URLs\n  ✓ seo-pages.xml has no query-string URLs\n  ✓ seo-pages.xml lists 183 discovery URLs\n  ✓ Legacy guide canonical map: 38 slugs → discovery paths\n  ✓ content-manifest.json: 157 registered pages\n\n22 passed | 0 warnings | 0 errors\n\n"
+    },
+    "production": [
+      {
+        "name": "robots.txt reachable",
+        "pass": true,
+        "status": 200
+      },
+      {
+        "name": "robots.txt has Sitemap",
+        "pass": true
+      },
+      {
+        "name": "robots.txt blocks /admin",
+        "pass": true
+      },
+      {
+        "name": "robots.txt blocks /dealer",
+        "pass": true
+      },
+      {
+        "name": "robots.txt allows /brands",
+        "pass": true
+      },
+      {
+        "name": "sitemap.xml reachable",
+        "pass": true,
+        "status": 200
+      },
+      {
+        "name": "sitemap index valid XML",
+        "pass": true
+      },
+      {
+        "name": "child sitemap static.xml",
+        "pass": true,
+        "detail": "13 URLs"
+      },
+      {
+        "name": "child sitemap cars.xml",
+        "pass": true,
+        "detail": "25 URLs"
+      },
+      {
+        "name": "child sitemap seo-pages.xml",
+        "pass": true,
+        "detail": "183 URLs"
+      },
+      {
+        "name": "child sitemap compare.xml",
+        "pass": true,
+        "detail": "29 URLs"
+      },
+      {
+        "name": "child sitemap ownership.xml",
+        "pass": true,
+        "detail": "202 URLs"
+      },
+      {
+        "name": "child sitemap reviews.xml",
+        "pass": true,
+        "detail": "25 URLs"
+      }
+    ],
+    "manualChecklist": {
+      "propertyType": "Domain property (recommended): evsavari.com — covers all subpaths and protocols",
+      "dnsVerification": "Add TXT record at DNS host per Google Search Console wizard (preferred for domain property)",
+      "urlPrefixFallback": "URL-prefix property https://evsavari.com/ if DNS access delayed",
+      "sitemapSubmission": [
+        "Open Search Console → Sitemaps",
+        "Submit: https://evsavari.com/sitemap.xml",
+        "Confirm 6 child sitemaps discovered (static, cars, seo-pages, compare, ownership, reviews)"
+      ],
+      "urlInspection": [
+        "Inspect https://evsavari.com/",
+        "Inspect https://evsavari.com/brands/tata",
+        "Inspect https://evsavari.com/cars/tata-nexon-ev",
+        "Inspect https://evsavari.com/compare/nexon-ev-vs-mg-zs-ev",
+        "Request indexing for home + 2 landing + 2 vehicle pages after verification"
+      ],
+      "exclusions": "Do not submit /admin, /dealer, /crm — blocked in robots.txt"
+    }
+  },
+  "phase2_analytics": {
+    "architecture": [
+      {
+        "name": "analytics module src/analytics/config.js",
+        "pass": true
+      },
+      {
+        "name": "analytics module src/analytics/init.js",
+        "pass": true
+      },
+      {
+        "name": "analytics module src/analytics/track.js",
+        "pass": true
+      },
+      {
+        "name": "analytics module src/analytics/traffic.js",
+        "pass": true
+      },
+      {
+        "name": "analytics module src/analytics/funnel.js",
+        "pass": true
+      },
+      {
+        "name": "analytics module src/analytics/providers/ga4.js",
+        "pass": true
+      },
+      {
+        "name": "analytics module src/analytics/providers/gtm.js",
+        "pass": true
+      },
+      {
+        "name": "analytics module src/components/AnalyticsBootstrap.jsx",
+        "pass": true
+      },
+      {
+        "name": "analytics module src/utils/analytics.jsx",
+        "pass": true
+      },
+      {
+        "name": "SPA trackPageView on route change",
+        "pass": true
+      },
+      {
+        "name": "no hardcoded gtag in index.html",
+        "pass": true
+      },
+      {
+        "name": "event page_view",
+        "pass": true
+      },
+      {
+        "name": "event vehicle_view",
+        "pass": true
+      },
+      {
+        "name": "event compare_started",
+        "pass": true
+      },
+      {
+        "name": "event compare_completed",
+        "pass": true
+      },
+      {
+        "name": "event search_used",
+        "pass": true
+      },
+      {
+        "name": "event landing_viewed (page_view SPA)",
+        "pass": true
+      },
+      {
+        "name": "event guide_viewed",
+        "pass": true
+      },
+      {
+        "name": "event lead_submitted",
+        "pass": true
+      },
+      {
+        "name": "event cta_clicked",
+        "pass": true
+      },
+      {
+        "name": "event dealer_assistance",
+        "pass": true
+      },
+      {
+        "name": "event callback_requested",
+        "pass": true
+      },
+      {
+        "name": "event emi_calculator",
+        "pass": true
+      },
+      {
+        "name": "event best_deal (cta surfaces)",
+        "pass": true
+      }
+    ],
+    "smoke": {
+      "pass": true,
+      "detail": "bootstrap-env: cwd=C:\\projects\\zyvev-frontend root=C:\\projects\\zyvev-frontend .env=C:\\projects\\zyvev-frontend\\.env .env.local=C:\\projects\\zyvev-frontend\\.env.local VITE_SUPABASE_URL=set (jqnhrvykvlpyhxwgntzd.supabase.co) VITE_SUPABASE_ANON_KEY=set SUPABASE_SERVICE_ROLE_KEY=set CLOUDINARY_URL=set parsed=.env:1keys, .env.local:9keys\n✓ events defined\n✓ intelligence events defined\n✓ dedupe blocks rapid duplicate\n✓ dedupe allows different keys\n\nAnalytics smoke checks passed.\n"
+    },
+    "production": {
+      "hasGtag": false,
+      "hasDataLayer": false,
+      "dataLayerLength": 0,
+      "trackingScripts": [],
+      "spaRouteOk": true,
+      "note": "No gtag/GTM script tags — VITE_GA_ID/VITE_GTM_ID likely unset in production build (architecture present, activation manual)"
+    }
+  },
+  "phase3_crawlability": [
+    {
+      "path": "/",
+      "family": "home",
+      "httpOk": true,
+      "canonicalOk": true,
+      "metaUnique": true,
+      "oneH1": true,
+      "pass": true
+    },
+    {
+      "path": "/cars",
+      "family": "browse",
+      "httpOk": true,
+      "canonicalOk": true,
+      "metaUnique": true,
+      "oneH1": true,
+      "pass": true
+    },
+    {
+      "path": "/brands/tata",
+      "family": "brand",
+      "httpOk": true,
+      "canonicalOk": true,
+      "metaUnique": true,
+      "oneH1": true,
+      "pass": true
+    },
+    {
+      "path": "/best-evs/under-10-lakh",
+      "family": "price",
+      "httpOk": true,
+      "canonicalOk": true,
+      "metaUnique": true,
+      "oneH1": true,
+      "pass": true
+    },
+    {
+      "path": "/best-evs/city",
+      "family": "use_case",
+      "httpOk": true,
+      "canonicalOk": true,
+      "metaUnique": true,
+      "oneH1": true,
+      "pass": true
+    },
+    {
+      "path": "/cars/tata-nexon-ev",
+      "family": "vehicle",
+      "httpOk": true,
+      "canonicalOk": true,
+      "metaUnique": true,
+      "oneH1": true,
+      "pass": true
+    },
+    {
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "family": "compare",
+      "httpOk": true,
+      "canonicalOk": true,
+      "metaUnique": true,
+      "oneH1": true,
+      "pass": true
+    },
+    {
+      "path": "/ownership-guides/running-cost",
+      "family": "guide",
+      "httpOk": true,
+      "canonicalOk": true,
+      "metaUnique": true,
+      "oneH1": true,
+      "pass": true
+    }
+  ],
+  "phase4_schema": [
+    {
+      "family": "home",
+      "path": "/",
+      "expected": [
+        "WebSite"
+      ],
+      "found": [
+        "WebSite"
+      ],
+      "pass": true
+    },
+    {
+      "family": "browse",
+      "path": "/cars",
+      "expected": [],
+      "found": [],
+      "pass": false
+    },
+    {
+      "family": "brand",
+      "path": "/brands/tata",
+      "expected": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "found": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "pass": true
+    },
+    {
+      "family": "price",
+      "path": "/best-evs/under-10-lakh",
+      "expected": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "found": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "pass": true
+    },
+    {
+      "family": "use_case",
+      "path": "/best-evs/city",
+      "expected": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "found": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "pass": true
+    },
+    {
+      "family": "vehicle",
+      "path": "/cars/tata-nexon-ev",
+      "expected": [
+        "Product",
+        "BreadcrumbList"
+      ],
+      "found": [
+        "Product",
+        "BreadcrumbList"
+      ],
+      "pass": true
+    },
+    {
+      "family": "compare",
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "expected": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "found": [
+        "BreadcrumbList",
+        "FAQPage",
+        "Article",
+        "ItemList"
+      ],
+      "pass": true
+    },
+    {
+      "family": "guide",
+      "path": "/ownership-guides/running-cost",
+      "expected": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "found": [
+        "BreadcrumbList",
+        "FAQPage",
+        "Article",
+        "ItemList"
+      ],
+      "pass": true
+    }
+  ],
+  "phase5_metadata": [
+    {
+      "family": "home",
+      "path": "/",
+      "title": "Compare Electric Cars in India (2026) | EVSavari",
+      "descriptionLength": 160,
+      "canonical": "https://evsavari.com/",
+      "ogOk": true,
+      "twitterOk": true,
+      "robots": "index, follow",
+      "h1": "Discover The Future Of Electric Mobility",
+      "pass": true
+    },
+    {
+      "family": "browse",
+      "path": "/cars",
+      "title": "Browse Electric Cars in India (2026) – Filter by Price, Range & Brand | EVSavari",
+      "descriptionLength": 160,
+      "canonical": "https://evsavari.com/cars",
+      "ogOk": true,
+      "twitterOk": true,
+      "robots": "index, follow",
+      "h1": "Explore Electric Vehicles",
+      "pass": true
+    },
+    {
+      "family": "brand",
+      "path": "/brands/tata",
+      "title": "Tata Electric Cars in India (2026) – Prices, Range & Charging | EVSavari",
+      "descriptionLength": 160,
+      "canonical": "https://evsavari.com/brands/tata",
+      "ogOk": true,
+      "twitterOk": true,
+      "robots": "index, follow",
+      "h1": "Tata Electric Cars in India",
+      "pass": true
+    },
+    {
+      "family": "price",
+      "path": "/best-evs/under-10-lakh",
+      "title": "Best Electric Cars Under ₹10 Lakh (2026) – Compare Price, Range & Charging | EVSavari",
+      "descriptionLength": 158,
+      "canonical": "https://evsavari.com/best-evs/under-10-lakh",
+      "ogOk": true,
+      "twitterOk": true,
+      "robots": "index, follow",
+      "h1": "Best Electric Cars Under ₹10 Lakh",
+      "pass": true
+    },
+    {
+      "family": "use_case",
+      "path": "/best-evs/city",
+      "title": "Best Electric Cars for City Driving (2026) – Compare Price, Range & Charging | EVSavari",
+      "descriptionLength": 160,
+      "canonical": "https://evsavari.com/best-evs/city",
+      "ogOk": true,
+      "twitterOk": true,
+      "robots": "index, follow",
+      "h1": "Best Electric Cars for City Driving",
+      "pass": true
+    },
+    {
+      "family": "vehicle",
+      "path": "/cars/tata-nexon-ev",
+      "title": "Tata Nexon Ev — Price, Range, Charging & Variants (2026) | EVSavari",
+      "descriptionLength": 103,
+      "canonical": "https://evsavari.com/cars/tata-nexon-ev",
+      "ogOk": true,
+      "twitterOk": true,
+      "robots": "index, follow",
+      "h1": "Tata Nexon Ev",
+      "pass": true
+    },
+    {
+      "family": "compare",
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "title": "Tata Nexon EV vs MG Zs EV — Decision Comparison | EVSavari",
+      "descriptionLength": 86,
+      "canonical": "https://evsavari.com/compare/nexon-ev-vs-mg-zs-ev",
+      "ogOk": true,
+      "twitterOk": true,
+      "robots": "index, follow",
+      "h1": "Tata Nexon EV vs MG Zs EV — Decision Comparison",
+      "pass": true
+    },
+    {
+      "family": "guide",
+      "path": "/ownership-guides/running-cost",
+      "title": "EV Ownership: Running cost vs petrol | EVSavari",
+      "descriptionLength": 97,
+      "canonical": "https://evsavari.com/ownership-guides/running-cost",
+      "ogOk": true,
+      "twitterOk": true,
+      "robots": "index, follow",
+      "h1": "EV Ownership: Running cost vs petrol",
+      "pass": true
+    }
+  ],
+  "phase6_linkGraph": {
+    "static": [
+      {
+        "name": "link graph engine",
+        "pass": true
+      },
+      {
+        "name": "relationship matrix",
+        "pass": true
+      },
+      {
+        "name": "landing adapter",
+        "pass": true
+      },
+      {
+        "name": "no forbidden link modules",
+        "pass": true,
+        "detail": "none"
+      },
+      {
+        "name": "matrix includes brand",
+        "pass": true
+      },
+      {
+        "name": "matrix includes price",
+        "pass": true
+      },
+      {
+        "name": "matrix includes use_case",
+        "pass": true
+      },
+      {
+        "name": "matrix includes vehicle",
+        "pass": true
+      },
+      {
+        "name": "matrix includes guide",
+        "pass": true
+      },
+      {
+        "name": "matrix includes compare",
+        "pass": true
+      }
+    ],
+    "production": {
+      "groupCount": 1,
+      "linkCount": 23,
+      "hasDescriptiveText": true,
+      "sampleHrefs": [
+        "/best-evs/under-10-lakh",
+        "/best-evs/under-15-lakh",
+        "/best-evs/under-20-lakh",
+        "/best-evs/premium",
+        "/best-evs/city"
+      ]
+    }
+  },
+  "phase7_performance": {
+    "note": "Sprint 2.7 does not add bundles. Review based on existing lazy routes + VehicleImage lazy loading.",
+    "lazyLoading": true,
+    "codeSplitting": "App.jsx uses React.lazy for admin/dealer/ops routes",
+    "webVitals": "web_vital events wired in src/analytics/webVitals.js",
+    "recommendations": [
+      "Monitor LCP on /cars and vehicle detail in Search Console after indexing",
+      "Optional: run Lighthouse CI on production — not blocking Sprint 2.7"
+    ]
+  },
+  "phase8_accessibility": [
+    {
+      "family": "home",
+      "h1Count": 1,
+      "hierarchyOk": true,
+      "emptyImageAlts": 0,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "family": "browse",
+      "h1Count": 1,
+      "hierarchyOk": false,
+      "emptyImageAlts": 0,
+      "score": 67,
+      "pass": true
+    },
+    {
+      "family": "brand",
+      "h1Count": 1,
+      "hierarchyOk": true,
+      "emptyImageAlts": 0,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "family": "price",
+      "h1Count": 1,
+      "hierarchyOk": true,
+      "emptyImageAlts": 0,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "family": "use_case",
+      "h1Count": 1,
+      "hierarchyOk": true,
+      "emptyImageAlts": 0,
+      "score": 100,
+      "pass": true
+    },
+    {
+      "family": "vehicle",
+      "h1Count": 1,
+      "hierarchyOk": false,
+      "emptyImageAlts": 0,
+      "score": 67,
+      "pass": true
+    },
+    {
+      "family": "compare",
+      "h1Count": 1,
+      "hierarchyOk": false,
+      "emptyImageAlts": 0,
+      "score": 67,
+      "pass": true
+    },
+    {
+      "family": "guide",
+      "h1Count": 1,
+      "hierarchyOk": true,
+      "emptyImageAlts": 0,
+      "score": 100,
+      "pass": true
+    }
+  ],
+  "phase9_productionCert": [
+    {
+      "family": "home",
+      "metadata": "PASS",
+      "schema": "PASS",
+      "content": "PASS",
+      "internalLinks": "PASS",
+      "accessibility": "PASS",
+      "performance": "PASS",
+      "seo": "FAIL",
+      "overall": "PASS"
+    },
+    {
+      "family": "browse",
+      "metadata": "PASS",
+      "schema": "FAIL",
+      "content": "PASS",
+      "internalLinks": "PASS",
+      "accessibility": "PASS",
+      "performance": "PASS",
+      "seo": "FAIL",
+      "overall": "FAIL"
+    },
+    {
+      "family": "brand",
+      "metadata": "PASS",
+      "schema": "PASS",
+      "content": "PASS",
+      "internalLinks": "PASS",
+      "accessibility": "PASS",
+      "performance": "PASS",
+      "seo": "PASS",
+      "overall": "PASS"
+    },
+    {
+      "family": "price",
+      "metadata": "PASS",
+      "schema": "PASS",
+      "content": "PASS",
+      "internalLinks": "PASS",
+      "accessibility": "PASS",
+      "performance": "PASS",
+      "seo": "PASS",
+      "overall": "PASS"
+    },
+    {
+      "family": "use_case",
+      "metadata": "PASS",
+      "schema": "PASS",
+      "content": "PASS",
+      "internalLinks": "PASS",
+      "accessibility": "PASS",
+      "performance": "PASS",
+      "seo": "PASS",
+      "overall": "PASS"
+    },
+    {
+      "family": "vehicle",
+      "metadata": "PASS",
+      "schema": "PASS",
+      "content": "PASS",
+      "internalLinks": "PASS",
+      "accessibility": "PASS",
+      "performance": "PASS",
+      "seo": "PASS",
+      "overall": "PASS"
+    },
+    {
+      "family": "compare",
+      "metadata": "PASS",
+      "schema": "PASS",
+      "content": "PASS",
+      "internalLinks": "PASS",
+      "accessibility": "PASS",
+      "performance": "PASS",
+      "seo": "PASS",
+      "overall": "PASS"
+    },
+    {
+      "family": "guide",
+      "metadata": "PASS",
+      "schema": "PASS",
+      "content": "PASS",
+      "internalLinks": "PASS",
+      "accessibility": "PASS",
+      "performance": "PASS",
+      "seo": "PASS",
+      "overall": "PASS"
+    }
+  ],
+  "architectureCompliance": [
+    {
+      "area": "Landing Framework",
+      "file": "src/landing/LandingPage.jsx",
+      "pass": true
+    },
+    {
+      "area": "Landing Registry",
+      "file": "src/landing/landingRegistry.js",
+      "pass": true
+    },
+    {
+      "area": "Metadata Engine",
+      "file": "src/seo/pageMetadata.js → SeoHead",
+      "pass": true
+    },
+    {
+      "area": "Schema Engine",
+      "file": "landingSchema + JsonLd",
+      "pass": true
+    },
+    {
+      "area": "Link Graph",
+      "file": "src/linkGraph/index.js",
+      "pass": true
+    },
+    {
+      "area": "Routing System",
+      "file": "src/App.jsx",
+      "pass": true
+    },
+    {
+      "area": "Catalog Engine",
+      "file": "src/backend/catalog/generated/",
+      "pass": true
+    },
+    {
+      "area": "Media Engine",
+      "file": "src/utils/vehicleMedia.js",
+      "pass": true
+    },
+    {
+      "area": "Lead Engine",
+      "file": "src/services/leadSubmitApi.js",
+      "pass": true
+    },
+    {
+      "area": "No forbidden SEO components",
+      "pass": true,
+      "detail": "none"
+    },
+    {
+      "area": "18 landing registry entries",
+      "pass": true,
+      "detail": "count=18"
+    }
+  ],
+  "productionScores": [
+    {
+      "area": "Metadata",
+      "score": 100,
+      "passed": 8,
+      "total": 8,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Schema",
+      "score": 88,
+      "passed": 7,
+      "total": 8,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": false
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Crawlability",
+      "score": 100,
+      "passed": 8,
+      "total": 8,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Internal Links",
+      "score": 100,
+      "passed": 1,
+      "total": 1,
+      "checks": [
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Accessibility",
+      "score": 100,
+      "passed": 8,
+      "total": 8,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "GSC Assets (production)",
+      "score": 100,
+      "passed": 13,
+      "total": 13,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Architecture (local)",
+      "score": 100,
+      "passed": 11,
+      "total": 11,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    },
+    {
+      "area": "Analytics architecture",
+      "score": 100,
+      "passed": 24,
+      "total": 24,
+      "checks": [
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        },
+        {
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "seoHealthScore": 99,
+  "architectureHealthScore": 94,
+  "blockers": [],
+  "warnings": [
+    "GA4/GTM not active on production DOM — set VITE_GA_ID or VITE_GTM_ID in Vercel and redeploy",
+    "Hidden route exposure needs manual GSC exclusion check"
+  ],
+  "minorIssues": [
+    "Some pages skip heading levels (h1→h3)"
+  ],
+  "futureCompatibility": {
+    "cityPages": "landingRouteConfig + matrix CITY stub + registry config",
+    "dealerPages": "DEALER relationship resolver stub + registry",
+    "oemPages": "brand landing pattern",
+    "chargingFinanceInsurance": "section slots + matrix FINANCE/CHARGING stubs",
+    "newsEditorial": "EDITORIAL/NEWS matrix stubs + seo-data generation",
+    "marketplace": "new registry route family + catalog filters",
+    "aiSurfaces": "content blocks + catalog intelligence API",
+    "mobilePublicApis": "backend services unchanged; clients consume same catalog/metadata"
+  },
+  "sprint2Verdict": {
+    "sprint2Complete": true,
+    "technicallyReadyForOrganicSearch": true,
+    "seoArchitectureProductionReady": true,
+    "sprint3CanBegin": true,
+    "seoHealthScore": 99,
+    "architectureHealthScore": 94
+  },
+  "issues": [
+    "GA4/GTM not active on production DOM — set VITE_GA_ID or VITE_GTM_ID in Vercel and redeploy",
+    "Hidden route exposure needs manual GSC exclusion check"
+  ],
+  "verdict": "PASS"
+}

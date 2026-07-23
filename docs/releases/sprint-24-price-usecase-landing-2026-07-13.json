@@ -1,0 +1,378 @@
+{
+  "sprint": "2.4",
+  "title": "Price & Use-Case Landing Pages",
+  "generatedAt": "2026-07-13T02:47:18.024Z",
+  "site": "https://evsavari.com",
+  "registrySize": 18,
+  "priceSlugs": [
+    "under-10-lakh",
+    "under-15-lakh",
+    "under-20-lakh",
+    "premium"
+  ],
+  "useCaseSlugs": [
+    "city",
+    "family",
+    "highway",
+    "long-range",
+    "fast-charging",
+    "budget"
+  ],
+  "architecture": [
+    {
+      "name": "registry has 18 entries (8 brand + 4 price + 6 use case)",
+      "pass": true,
+      "detail": "size=18"
+    },
+    {
+      "name": "4 price entries",
+      "pass": true
+    },
+    {
+      "name": "6 use_case entries",
+      "pass": true
+    },
+    {
+      "name": "8 brand entries preserved",
+      "pass": true
+    },
+    {
+      "name": "single LandingPage renderer",
+      "pass": true
+    },
+    {
+      "name": "no price/use-case page components",
+      "pass": true
+    },
+    {
+      "name": "configs in definition files only",
+      "pass": true
+    },
+    {
+      "name": "LandingRouter unchanged routing pattern",
+      "pass": true
+    }
+  ],
+  "landingAudits": [
+    {
+      "slug": "under-10-lakh",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 4,
+      "pass": true
+    },
+    {
+      "slug": "under-15-lakh",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 7,
+      "pass": true
+    },
+    {
+      "slug": "under-20-lakh",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 12,
+      "pass": true
+    },
+    {
+      "slug": "premium",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 25,
+      "pass": true
+    },
+    {
+      "slug": "city",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 3,
+      "pass": true
+    },
+    {
+      "slug": "family",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 25,
+      "pass": true
+    },
+    {
+      "slug": "highway",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 22,
+      "pass": true
+    },
+    {
+      "slug": "long-range",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 19,
+      "pass": true
+    },
+    {
+      "slug": "fast-charging",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 12,
+      "pass": true
+    },
+    {
+      "slug": "budget",
+      "canonicalOk": true,
+      "titleOk": true,
+      "h1Ok": true,
+      "landingShell": true,
+      "notLegacyEditorial": true,
+      "hasFaqBlock": true,
+      "schemaTypes": [
+        "CollectionPage",
+        "ItemList",
+        "ListItem",
+        "Vehicle",
+        "BreadcrumbList",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "hasCollectionPage": true,
+      "hasBreadcrumb": true,
+      "hasItemList": true,
+      "hasFaqSchema": true,
+      "hasProduct": false,
+      "vehicleCards": 1,
+      "pass": true
+    }
+  ],
+  "regression": [
+    {
+      "path": "/",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/cars",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/cars/tata-nexon-ev",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/compare",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/guides",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/brands/tata",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/brands/mahindra",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/best-evs/large-family",
+      "status": 200,
+      "pass": true
+    }
+  ],
+  "seoFoundation": {
+    "pass": true,
+    "detail": "rsed=.env:1keys, .env.local:9keys\n✓ vehicle title brand suffix\n✓ compare title format\n✓ slug normalization lowercase\n✓ compare pair slug deterministic\n✓ sitemap index exists\n✓ robots.txt exists\n✓ robots references sitemap\n✓ robots disallows admin\n✓ robots allows discovery paths\n✓ compare sitemap includes editorial guides\n✓ static sitemap includes listing hubs\n✓ vehicle sitemap has tier-1 families\n✓ manifest has counts\n✓ compare.xml includes nexon vs mg guide\n\nSEO foundation smoke checks passed.\n"
+  },
+  "issues": [],
+  "verdict": "PASS",
+  "extensibility": {
+    "example": {
+      "file": "src/landing/config/priceLandingDefinitions.js",
+      "action": "Add { slug: 'under-25-lakh', category: 'price', h1: '...', filters: { intelligenceFilterIds: ['price_under_20'], ... } }",
+      "note": "No JSX, routes, or SEO changes required"
+    }
+  }
+}

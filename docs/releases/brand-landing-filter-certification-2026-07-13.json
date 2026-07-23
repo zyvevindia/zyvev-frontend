@@ -1,0 +1,223 @@
+{
+  "title": "Brand Landing Filter Membership Certification",
+  "generatedAt": "2026-07-13T05:18:15.635Z",
+  "site": "https://evsavari.com",
+  "rootCauseFix": "landingFilter.js: rankFamiliesForPreset(filtered) instead of families",
+  "localResults": [
+    {
+      "scope": "local",
+      "slug": "source-ranks-filtered-set",
+      "pass": true,
+      "detail": "rankFamiliesForPreset(filtered, ...) present"
+    },
+    {
+      "scope": "local",
+      "slug": "tata",
+      "expectedBrand": "Tata",
+      "cardCount": 2,
+      "brands": [
+        "Tata"
+      ],
+      "foreign": [],
+      "pass": true,
+      "detail": "Bug pattern confirmed: ranking full catalog leaks other OEMs"
+    },
+    {
+      "scope": "local",
+      "slug": "mahindra",
+      "expectedBrand": "Mahindra",
+      "cardCount": 1,
+      "brands": [
+        "Mahindra"
+      ],
+      "foreign": [],
+      "pass": true,
+      "detail": "Bug pattern confirmed: ranking full catalog leaks other OEMs"
+    },
+    {
+      "scope": "local",
+      "slug": "mg",
+      "expectedBrand": "MG",
+      "cardCount": 1,
+      "brands": [
+        "MG"
+      ],
+      "foreign": [],
+      "pass": true,
+      "detail": "Bug pattern confirmed: ranking full catalog leaks other OEMs"
+    },
+    {
+      "scope": "local",
+      "slug": "hyundai",
+      "expectedBrand": "Hyundai",
+      "cardCount": 0,
+      "brands": [],
+      "foreign": [],
+      "pass": true,
+      "detail": "Bug pattern confirmed: ranking full catalog leaks other OEMs"
+    },
+    {
+      "scope": "local",
+      "slug": "byd",
+      "expectedBrand": "BYD",
+      "cardCount": 1,
+      "brands": [
+        "BYD"
+      ],
+      "foreign": [],
+      "pass": true,
+      "detail": "Bug pattern confirmed: ranking full catalog leaks other OEMs"
+    },
+    {
+      "scope": "local",
+      "slug": "kia",
+      "expectedBrand": "Kia",
+      "cardCount": 1,
+      "brands": [
+        "Kia"
+      ],
+      "foreign": [],
+      "pass": true,
+      "detail": "Bug pattern confirmed: ranking full catalog leaks other OEMs"
+    },
+    {
+      "scope": "local",
+      "slug": "bmw",
+      "expectedBrand": "BMW",
+      "cardCount": 0,
+      "brands": [],
+      "foreign": [],
+      "pass": true,
+      "detail": "Bug pattern confirmed: ranking full catalog leaks other OEMs"
+    },
+    {
+      "scope": "local",
+      "slug": "mercedes-benz",
+      "expectedBrand": "Mercedes-Benz",
+      "cardCount": 0,
+      "brands": [],
+      "foreign": [],
+      "pass": true,
+      "detail": "Bug pattern confirmed: ranking full catalog leaks other OEMs"
+    },
+    {
+      "scope": "local",
+      "slug": "regression-sortBy-keeps-brand",
+      "expectedBrand": "Tata",
+      "cardCount": 2,
+      "brands": [
+        "Tata"
+      ],
+      "pass": true,
+      "detail": "Fixed path = Tata only; buggy path would include Mahindra"
+    }
+  ],
+  "productionResults": [
+    {
+      "scope": "production",
+      "path": "/brands/tata",
+      "expectedBrand": "Tata",
+      "cardCount": 6,
+      "links": [
+        "/cars/tata-harrier-ev",
+        "/cars/tata-punch-ev",
+        "/cars/tata-curvv-ev",
+        "/cars/tata-tiago-ev",
+        "/cars/tata-nexon-ev",
+        "/cars/tata-tigor-ev"
+      ],
+      "foreign": [],
+      "pass": true
+    },
+    {
+      "scope": "production",
+      "path": "/brands/mahindra",
+      "expectedBrand": "Mahindra",
+      "cardCount": 3,
+      "links": [
+        "/cars/mahindra-xev-9e",
+        "/cars/mahindra-be-6",
+        "/cars/mahindra-xuv400"
+      ],
+      "foreign": [],
+      "pass": true
+    },
+    {
+      "scope": "production",
+      "path": "/brands/mg",
+      "expectedBrand": "MG",
+      "cardCount": 3,
+      "links": [
+        "/cars/mg-zs-ev",
+        "/cars/mg-windsor-ev",
+        "/cars/mg-comet-ev"
+      ],
+      "foreign": [],
+      "pass": true
+    },
+    {
+      "scope": "production",
+      "path": "/brands/hyundai",
+      "expectedBrand": "Hyundai",
+      "cardCount": 3,
+      "links": [
+        "/cars/hyundai-creta-electric",
+        "/cars/hyundai-ioniq-5",
+        "/cars/hyundai-kona-electric"
+      ],
+      "foreign": [],
+      "pass": true
+    },
+    {
+      "scope": "production",
+      "path": "/brands/byd",
+      "expectedBrand": "BYD",
+      "cardCount": 2,
+      "links": [
+        "/cars/byd-atto-3",
+        "/cars/byd-seal"
+      ],
+      "foreign": [],
+      "pass": true
+    },
+    {
+      "scope": "production",
+      "path": "/brands/kia",
+      "expectedBrand": "Kia",
+      "cardCount": 1,
+      "links": [
+        "/cars/kia-ev6"
+      ],
+      "foreign": [],
+      "pass": true
+    },
+    {
+      "scope": "production",
+      "path": "/brands/bmw",
+      "expectedBrand": "BMW",
+      "cardCount": 1,
+      "links": [
+        "/cars/bmw-ix1"
+      ],
+      "foreign": [],
+      "pass": true
+    },
+    {
+      "scope": "production",
+      "path": "/brands/mercedes-benz",
+      "expectedBrand": "Mercedes-Benz",
+      "cardCount": 2,
+      "links": [
+        "/cars/mercedes-eqa",
+        "/cars/mercedes-eqb"
+      ],
+      "foreign": [],
+      "pass": true
+    }
+  ],
+  "productionSkipped": false,
+  "localPass": true,
+  "productionPass": true,
+  "verdict": "PASS",
+  "note": "Production checks verify live site. Local PASS + production FAIL means deploy the filter fix, then re-run without SKIP_PRODUCTION_BRAND_FILTER."
+}

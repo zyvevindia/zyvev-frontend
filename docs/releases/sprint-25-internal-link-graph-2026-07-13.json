@@ -1,0 +1,311 @@
+{
+  "sprint": "2.5",
+  "title": "Internal Link Graph",
+  "generatedAt": "2026-07-13T02:47:38.305Z",
+  "site": "https://evsavari.com",
+  "architecture": [
+    {
+      "name": "single link graph engine (src/linkGraph)",
+      "pass": true
+    },
+    {
+      "name": "getRelatedPages entry point",
+      "pass": true
+    },
+    {
+      "name": "no forbidden page-specific link modules",
+      "pass": true,
+      "detail": "none"
+    },
+    {
+      "name": "landing adapter delegates to engine",
+      "pass": true
+    },
+    {
+      "name": "engine returns groups for brand context",
+      "pass": true,
+      "detail": "groups=5"
+    },
+    {
+      "name": "engine returns groups for vehicle context",
+      "pass": true,
+      "detail": "groups=6"
+    },
+    {
+      "name": "relationship matrix documented",
+      "pass": true
+    }
+  ],
+  "relationshipMatrix": [
+    {
+      "from": "Home",
+      "linksTo": "Brands, Price, Use Cases, Browse, Guides"
+    },
+    {
+      "from": "Browse EVs",
+      "linksTo": "Brands, Price, Use Cases, Guides"
+    },
+    {
+      "from": "Brand",
+      "linksTo": "Price, Use Cases, Vehicles, Buying Guides, Ownership Guides, Compare"
+    },
+    {
+      "from": "Price",
+      "linksTo": "Brands, Vehicles, Use Cases, Buying Guides, Ownership Guides"
+    },
+    {
+      "from": "Use Case",
+      "linksTo": "Brands, Price, Vehicles, Compare, Buying Guides, Ownership Guides, Charging Guides"
+    },
+    {
+      "from": "Vehicle",
+      "linksTo": "Brands, Price, Use Cases, Vehicles, Compare, Buying Guides, Ownership Guides, Charging Guides"
+    },
+    {
+      "from": "Compare",
+      "linksTo": "Vehicles, Brands, Price, Buying Guides, Ownership Guides, Compare"
+    },
+    {
+      "from": "Guide",
+      "linksTo": "Vehicles, Brands, Price, Use Cases, Compare, Ownership Guides, Charging Guides"
+    },
+    {
+      "from": "Charging",
+      "linksTo": "Vehicles, Use Cases, Ownership Guides, Guides"
+    },
+    {
+      "from": "Ownership",
+      "linksTo": "Vehicles, Brands, Price, Charging Guides, Guides"
+    },
+    {
+      "from": "City",
+      "linksTo": "Vehicles, Brands, Charging Guides, Cities"
+    },
+    {
+      "from": "Dealer",
+      "linksTo": "Vehicles, Brands"
+    },
+    {
+      "from": "OEM",
+      "linksTo": "Vehicles, Brands"
+    },
+    {
+      "from": "Finance",
+      "linksTo": "Price, Ownership Guides"
+    }
+  ],
+  "engineSmoke": {
+    "groupCount": 5,
+    "titles": [
+      "Price segments",
+      "Use cases",
+      "Buying guides",
+      "Ownership guides",
+      "Popular comparisons"
+    ]
+  },
+  "pageAudits": [
+    {
+      "family": "brand",
+      "path": "/brands/tata",
+      "linkCount": 23,
+      "uniqueCount": 23,
+      "noDuplicates": true,
+      "hasLinks": true,
+      "sampleHrefs": [
+        "/best-evs/under-10-lakh",
+        "/best-evs/under-15-lakh",
+        "/best-evs/under-20-lakh",
+        "/best-evs/premium",
+        "/best-evs/city",
+        "/best-evs/family",
+        "/best-evs/highway",
+        "/best-evs/long-range"
+      ],
+      "pass": true
+    },
+    {
+      "family": "price",
+      "path": "/best-evs/under-10-lakh",
+      "linkCount": 19,
+      "uniqueCount": 19,
+      "noDuplicates": true,
+      "hasLinks": true,
+      "sampleHrefs": [
+        "/brands/tata",
+        "/brands/mahindra",
+        "/brands/mg",
+        "/brands/hyundai",
+        "/brands/byd",
+        "/brands/kia",
+        "/best-evs/city",
+        "/best-evs/family"
+      ],
+      "pass": true
+    },
+    {
+      "family": "use_case",
+      "path": "/best-evs/city",
+      "linkCount": 27,
+      "uniqueCount": 27,
+      "noDuplicates": true,
+      "hasLinks": true,
+      "sampleHrefs": [
+        "/brands/tata",
+        "/brands/mahindra",
+        "/brands/mg",
+        "/brands/hyundai",
+        "/brands/byd",
+        "/brands/kia",
+        "/best-evs/under-10-lakh",
+        "/best-evs/under-15-lakh"
+      ],
+      "pass": true
+    },
+    {
+      "family": "vehicle",
+      "path": "/cars/tata-nexon-ev",
+      "linkCount": 8,
+      "uniqueCount": 8,
+      "noDuplicates": true,
+      "hasLinks": true,
+      "sampleHrefs": [
+        "/brands/tata",
+        "/brands/mahindra",
+        "/brands/mg",
+        "/brands/hyundai",
+        "/brands/byd",
+        "/brands/kia",
+        "/brands/bmw",
+        "/brands/mercedes-benz"
+      ],
+      "pass": true,
+      "engineGroups": 6
+    },
+    {
+      "family": "compare",
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "linkCount": 8,
+      "uniqueCount": 8,
+      "noDuplicates": true,
+      "hasLinks": true,
+      "sampleHrefs": [
+        "/brands/tata",
+        "/brands/mahindra",
+        "/brands/mg",
+        "/brands/hyundai",
+        "/brands/byd",
+        "/brands/kia",
+        "/brands/bmw",
+        "/brands/mercedes-benz"
+      ],
+      "pass": true
+    },
+    {
+      "family": "guide",
+      "path": "/ownership-guides/running-cost",
+      "linkCount": 3,
+      "uniqueCount": 3,
+      "noDuplicates": true,
+      "hasLinks": true,
+      "sampleHrefs": [
+        "/guides",
+        "/cars",
+        "/compare"
+      ],
+      "pass": true
+    }
+  ],
+  "regression": [
+    {
+      "path": "/",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/cars",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/brands/tata",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/best-evs/under-15-lakh",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/best-evs/family",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/compare",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/guides",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/cars/tata-nexon-ev",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "status": 200,
+      "pass": true
+    }
+  ],
+  "linkChecks": [
+    {
+      "path": "/brands/tata",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/best-evs/under-10-lakh",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/best-evs/city",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/cars/tata-nexon-ev",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/compare/nexon-ev-vs-mg-zs-ev",
+      "status": 200,
+      "pass": true
+    },
+    {
+      "path": "/ownership-guides/running-cost",
+      "status": 200,
+      "pass": true
+    }
+  ],
+  "seoFoundation": {
+    "pass": true,
+    "detail": "rsed=.env:1keys, .env.local:9keys\n✓ vehicle title brand suffix\n✓ compare title format\n✓ slug normalization lowercase\n✓ compare pair slug deterministic\n✓ sitemap index exists\n✓ robots.txt exists\n✓ robots references sitemap\n✓ robots disallows admin\n✓ robots allows discovery paths\n✓ compare sitemap includes editorial guides\n✓ static sitemap includes listing hubs\n✓ vehicle sitemap has tier-1 families\n✓ manifest has counts\n✓ compare.xml includes nexon vs mg guide\n\nSEO foundation smoke checks passed.\n"
+  },
+  "issues": [],
+  "verdict": "PASS",
+  "extensibility": {
+    "cityPagesExample": {
+      "file": "src/linkGraph/relationshipMatrix.js",
+      "action": "Add city row relationships + populate CITY resolver in resolveRelationships.js",
+      "note": "No LandingPage or route changes required"
+    }
+  }
+}
