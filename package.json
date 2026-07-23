@@ -34,6 +34,8 @@
     "assistant:validation-smoke": "node scripts/assistant-validation-smoke.mjs",
     "assistant:production-qa": "node scripts/assistant-production-qa.mjs",
     "seo:foundation": "node scripts/seo-foundation-smoke.mjs",
+    "analytics:certify:foundation": "node scripts/analytics-foundation-certification.mjs",
+
     "ops:analytics-smoke": "node scripts/ops-analytics-smoke.mjs",
     "intelligence:smoke": "node scripts/intelligence-smoke.mjs",
     "intelligence:phase2-smoke": "node scripts/intelligence-phase2-smoke.mjs",

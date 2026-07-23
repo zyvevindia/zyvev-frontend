@@ -14,7 +14,19 @@ const POSTHOG_KEY = String(
 
 const POSTHOG_HOST = String(
   import.meta.env.VITE_POSTHOG_HOST || "https://us.i.posthog.com"
-).trim().replace(/\/$/, "");
+)
+  .trim()
+  .replace(/\/$/, "");
+
+const META_PIXEL_ID = String(import.meta.env.VITE_META_PIXEL_ID || "").trim();
+
+const LINKEDIN_PARTNER_ID = String(
+  import.meta.env.VITE_LINKEDIN_PARTNER_ID || ""
+).trim();
+
+const SERVER_ENDPOINT = String(
+  import.meta.env.VITE_ANALYTICS_SERVER_ENDPOINT || ""
+).trim();
 
 const SENTRY_DSN = String(
   import.meta.env.VITE_SENTRY_DSN || ""
@@ -43,6 +55,9 @@ export const analyticsConfig = {
   clarityId: CLARITY_ID,
   posthogKey: POSTHOG_KEY,
   posthogHost: POSTHOG_HOST,
+  metaPixelId: META_PIXEL_ID,
+  linkedinPartnerId: LINKEDIN_PARTNER_ID,
+  serverEndpoint: SERVER_ENDPOINT,
   sentryDsn: SENTRY_DSN,
   appEnv: APP_ENV,
   isProd: IS_PROD,
@@ -68,6 +83,18 @@ export function isClarityConfigured() {
 
 export function isPostHogConfigured() {
   return Boolean(analyticsConfig.posthogKey);
+}
+
+export function isMetaPixelConfigured() {
+  return Boolean(analyticsConfig.metaPixelId);
+}
+
+export function isLinkedInConfigured() {
+  return Boolean(analyticsConfig.linkedinPartnerId);
+}
+
+export function isServerSideAnalyticsConfigured() {
+  return Boolean(analyticsConfig.serverEndpoint);
 }
 
 export function isSentryConfigured() {

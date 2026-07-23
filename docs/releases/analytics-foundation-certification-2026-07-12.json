@@ -1,0 +1,277 @@
+{
+  "title": "Analytics Foundation & GA4 Activation Certification",
+  "phase": "Pre-Sprint 3",
+  "generatedAt": "2026-07-12T17:35:25.341Z",
+  "site": "https://evsavari.com",
+  "verificationScope": {
+    "local": [
+      "architecture",
+      "taxonomy",
+      "privacy",
+      "env config",
+      "direct call scan",
+      "smoke"
+    ],
+    "production": [
+      "SPA navigation",
+      "graceful without IDs",
+      "console errors"
+    ],
+    "manual": [
+      "GA4 property",
+      "measurement ID in Vercel",
+      "redeploy",
+      "real-time verify",
+      "GSC link"
+    ]
+  },
+  "architecture": [
+    {
+      "name": "Analytics Engine (track.js)",
+      "pass": true,
+      "path": "src/analytics/track.js"
+    },
+    {
+      "name": "Event Dispatcher (providers/index.js)",
+      "pass": true,
+      "path": "src/analytics/providers/index.js"
+    },
+    {
+      "name": "Configuration Layer",
+      "pass": true,
+      "path": "src/analytics/config.js"
+    },
+    {
+      "name": "Event Taxonomy",
+      "pass": true,
+      "path": "src/analytics/events.js"
+    },
+    {
+      "name": "Event Categories",
+      "pass": true,
+      "path": "src/analytics/categories.js"
+    },
+    {
+      "name": "Event Envelope",
+      "pass": true,
+      "path": "src/analytics/envelope.js"
+    },
+    {
+      "name": "GA4 Provider",
+      "pass": true,
+      "path": "src/analytics/providers/ga4.js"
+    },
+    {
+      "name": "GTM Provider",
+      "pass": true,
+      "path": "src/analytics/providers/gtm.js"
+    },
+    {
+      "name": "Clarity Provider",
+      "pass": true,
+      "path": "src/analytics/providers/clarity.js"
+    },
+    {
+      "name": "Meta Stub",
+      "pass": true,
+      "path": "src/analytics/providers/meta.js"
+    },
+    {
+      "name": "LinkedIn Stub",
+      "pass": true,
+      "path": "src/analytics/providers/linkedin.js"
+    },
+    {
+      "name": "Server-side Stub",
+      "pass": true,
+      "path": "src/analytics/providers/serverSide.js"
+    },
+    {
+      "name": "Dedupe",
+      "pass": true,
+      "path": "src/analytics/dedupe.js"
+    },
+    {
+      "name": "SPA Listeners",
+      "pass": true,
+      "path": "src/analytics/listeners.js"
+    },
+    {
+      "name": "Bootstrap",
+      "pass": true,
+      "path": "src/components/AnalyticsBootstrap.jsx"
+    }
+  ],
+  "exactlyOne": {
+    "analyticsEngine": true,
+    "eventDispatcher": true,
+    "providerLayer": true,
+    "eventTaxonomy": true,
+    "configurationLayer": true,
+    "noDuplicateTracking": true,
+    "noDirectProviderInComponents": true
+  },
+  "taxonomy": [
+    {
+      "event": "page_view",
+      "pass": true
+    },
+    {
+      "event": "homepage_viewed",
+      "pass": true
+    },
+    {
+      "event": "browse_viewed",
+      "pass": true
+    },
+    {
+      "event": "landing_viewed",
+      "pass": true
+    },
+    {
+      "event": "guide_viewed",
+      "pass": true
+    },
+    {
+      "event": "vehicle_view",
+      "pass": true
+    },
+    {
+      "event": "compare_started",
+      "pass": true
+    },
+    {
+      "event": "compare_completed",
+      "pass": true
+    },
+    {
+      "event": "search_used",
+      "pass": true
+    },
+    {
+      "event": "lead_submitted",
+      "pass": true
+    },
+    {
+      "event": "callback_requested",
+      "pass": true
+    },
+    {
+      "event": "cta_clicked",
+      "pass": true
+    },
+    {
+      "event": "internal_link_clicked",
+      "pass": true
+    }
+  ],
+  "privacy": [
+    {
+      "name": "blocks email in sanitizeProps",
+      "pass": true
+    },
+    {
+      "name": "blocks phone in sanitizeProps",
+      "pass": true
+    },
+    {
+      "name": "blocks name in sanitizeProps",
+      "pass": true
+    },
+    {
+      "name": "GA4 IP anonymization",
+      "pass": true
+    },
+    {
+      "name": "send_page_view false (SPA control)",
+      "pass": true
+    }
+  ],
+  "envConfig": [
+    {
+      "name": "VITE_GA_ID supported",
+      "pass": true
+    },
+    {
+      "name": "VITE_GTM_ID supported",
+      "pass": true
+    },
+    {
+      "name": "VITE_CLARITY_ID supported",
+      "pass": true
+    },
+    {
+      "name": "VITE_META_PIXEL_ID stub",
+      "pass": true
+    },
+    {
+      "name": "VITE_LINKEDIN_PARTNER_ID stub",
+      "pass": true
+    },
+    {
+      "name": "no hardcoded G- measurement ID",
+      "pass": true
+    },
+    {
+      "name": "no hardcoded GTM- ID",
+      "pass": true
+    }
+  ],
+  "directProviderViolations": [],
+  "smoke": {
+    "pass": true,
+    "detail": "bootstrap-env: cwd=C:\\projects\\zyvev-frontend root=C:\\projects\\zyvev-frontend .env=C:\\projects\\zyvev-frontend\\.env .env.local=C:\\projects\\zyvev-frontend\\.env.local VITE_SUPABASE_URL=set (jqnhrvykvlpyhxwgntzd.supabase.co) VITE_SUPABASE_ANON_KEY=set SUPABASE_SERVICE_ROLE_KEY=set CLOUDINARY_URL=set parsed=.env:1keys, .env.local:9keys\n✓ events defined\n✓ intelligence events defined\n✓ dedupe blocks rapid duplicate\n✓ dedupe allows different keys\n\nAnalytics smoke checks passed.\n"
+  },
+  "production": {
+    "homeProbe": {
+      "hasGtag": false,
+      "hasDataLayer": false,
+      "analyticsInitFlag": false,
+      "pathname": "/"
+    },
+    "spaProbe": {
+      "pathname": "/brands/tata",
+      "title": "Tata Electric Cars in India (2026) – Prices, Range & Charging | EVSavari"
+    },
+    "analyticsConsoleErrors": [],
+    "trackingActive": false,
+    "spaNavigationOk": true,
+    "gracefulWithoutIds": true
+  },
+  "scores": {
+    "architecture": 100,
+    "taxonomy": 100,
+    "privacy": 100,
+    "envConfig": 100,
+    "noDirectCalls": 100,
+    "production": 95
+  },
+  "analyticsHealthScore": 99,
+  "blockers": [],
+  "warnings": [
+    "GA4/GTM not active on production — set VITE_GA_ID or VITE_GTM_ID in Vercel and redeploy (manual)"
+  ],
+  "manualSteps": [
+    "Create GA4 property in Google Analytics",
+    "Create Web Data Stream for https://evsavari.com",
+    "Copy Measurement ID (G-XXXXXXXX)",
+    "Add VITE_GA_ID=G-XXXXXXXX to Vercel Production Environment Variables (or VITE_GTM_ID for GTM-first)",
+    "Optional: VITE_CLARITY_ID, VITE_POSTHOG_KEY",
+    "Redeploy production",
+    "Verify Real-Time events in GA4 (page_view, landing_viewed, vehicle_view)",
+    "Link GA4 property with Search Console (Admin → Product links)",
+    "Configure GA4 conversions per docs/analytics/conversion-tracking-guide.md"
+  ],
+  "docs": {
+    "architectureReport": "docs/analytics/analytics-architecture-report.md",
+    "eventTaxonomy": "docs/analytics/event-taxonomy.md",
+    "ga4Guide": "docs/analytics/ga4-activation-guide.md",
+    "gtmGuide": "docs/analytics/gtm-activation-guide.md",
+    "gscGuide": "docs/analytics/search-console-integration-guide.md",
+    "conversionGuide": "docs/analytics/conversion-tracking-guide.md",
+    "privacyReport": "docs/analytics/privacy-compliance-report.md",
+    "dashboardRecommendations": "docs/analytics/dashboard-recommendations.md",
+    "adr": "docs/architecture/adr-analytics-foundation.md"
+  },
+  "verdict": "PASS_WITH_WARNINGS"
+}

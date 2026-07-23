@@ -4,6 +4,9 @@ import { initGa4 } from "./providers/ga4";
 import { initGtm } from "./providers/gtm";
 import { initClarity } from "./providers/clarity";
 import { initPostHog } from "./providers/posthog";
+import { initMetaPixel } from "./providers/meta";
+import { initLinkedInInsight } from "./providers/linkedin";
+import { setupAnalyticsListeners } from "./listeners";
 
 let booted = false;
 
@@ -31,5 +34,8 @@ export function initAnalytics() {
   }
 
   initClarity();
+  initMetaPixel();
+  initLinkedInInsight();
   void initPostHog();
+  setupAnalyticsListeners();
 }

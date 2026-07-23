@@ -5,6 +5,12 @@
 
 export const ANALYTICS_EVENTS = Object.freeze({
   PAGE_VIEW: "page_view",
+  HOMEPAGE_VIEWED: "homepage_viewed",
+  BROWSE_VIEWED: "browse_viewed",
+  LANDING_VIEWED: "landing_viewed",
+  GUIDE_VIEWED: "guide_viewed",
+  INTERNAL_LINK_CLICKED: "internal_link_clicked",
+  LANDING_ENGAGED: "landing_engaged",
   /** Growth Phase 3 canonical GA4 events */
   VEHICLE_VIEW: "vehicle_view",
   COMPARE_VIEW: "compare_view",

@@ -5,6 +5,9 @@
 import { trackBuyerEvent } from "../../event-tracking/trackBuyerEvent";
 import { BUYER_EVENTS } from "../../event-tracking/eventTypes";
 import { PAGE_TYPES } from "../../seo/registry";
+import { trackAnalytics } from "../../analytics/track.js";
+import { ANALYTICS_EVENTS } from "../../analytics/events.js";
+import { EVENT_CATEGORIES } from "../../analytics/categories.js";
 
 function basePayload(routeContext, seoPage) {
   return {
@@ -20,6 +23,16 @@ function basePayload(routeContext, seoPage) {
 
 export function trackGuideViewed(routeContext, seoPage) {
   trackBuyerEvent(BUYER_EVENTS.GUIDE_VIEWED, basePayload(routeContext, seoPage));
+  trackAnalytics(
+    ANALYTICS_EVENTS.GUIDE_VIEWED,
+    {
+      source_page: routeContext?.path || seoPage?.canonicalPath || "",
+      seo_page_slug: seoPage?.slug || routeContext?.contentSlug || "",
+      page_type: routeContext?.pageType || "",
+      event_category: EVENT_CATEGORIES.GUIDE,
+    },
+    { dedupeKey: routeContext?.path || seoPage?.slug || "" }
+  );
 }
 
 export function trackCityPageViewed(routeContext, seoPage) {
