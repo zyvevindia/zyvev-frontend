@@ -24,11 +24,29 @@
 | **v2.0.3-generated-seo-assets** | **Generated SEO Assets** | **`e3bedc16`** | **`dpl_664fyQaCxrfKiVgEdEUYdtwsm9mv`** | **2026-07-23** | **Approved** | **PASS** (gsc:verify) | **PASS** (prod smoke) | **Yes** | **Released** |
 | R-GEN | Generated SEO Assets (v2.0.3) | `e3bedc16` | `dpl_664fyQaCxrfKiVgEdEUYdtwsm9mv` | 2026-07-23 | Approved | PASS | PASS | Yes | **Released** |
 | R-CERT | Certification & Release Engineering | — | N/A | 2026-07-13 | N/A | Self | N/A | N/A | **Uncommitted docs/scripts** |
-| R-DOCS-ARCH | Architecture Handbook & ADRs | — | N/A | 2026-07 | N/A | N/A | N/A | N/A | **Uncommitted** |
-| R-RECOVERY-R1 | Media Recovery R1 (forensics) | — | partial | 2026-07-10 | N/A | recovery-r1 cert | Partial | N/A | **Docs only — uncommitted** |
+| **v2.0.4-sprint2-documentation-package** | **Sprint 2 Documentation & Operations Package** | **`6273ced3`** | **`dpl_Afs6TX9WPTFA4bWbv2i61TgmpCLh`** | **2026-07-23** | **Approved** | **PASS** (docs-only) | **PASS** (behaviour unchanged) | **Yes** | **Released** |
+| R-DOCS | Sprint 2 Documentation & Operations (v2.0.4) | `6273ced3` | `dpl_Afs6TX9WPTFA4bWbv2i61TgmpCLh` | 2026-07-23 | Approved | PASS | PASS | Yes | **Released** |
+| R-RECOVERY-R1 | Media Recovery R1 (forensics) | `6273ced3` (in R-DOCS) | bundled w/ v2.0.4 | 2026-07-23 | Approved | N/A | N/A | Yes | **Released** (in R-DOCS) |
 
-**Tags:** `v2.0.0-production-baseline` → `b1fb0985` · `v2.0.1-media-foundation` → `83248fd8` · `v2.0.2-customer-intelligence-foundation` → `e2c933da` · `v2.0.3-generated-seo-assets` → `e3bedc16`  
+**Tags:** `v2.0.0-production-baseline` → `b1fb0985` · `v2.0.1-media-foundation` → `83248fd8` · `v2.0.2-customer-intelligence-foundation` → `e2c933da` · `v2.0.3-generated-seo-assets` → `e3bedc16` · `v2.0.4-sprint2-documentation-package` → `6273ced3`  
 **Production URL:** https://evsavari.com
+
+---
+
+## v2.0.4 – Sprint 2 Documentation & Operations Package (detail)
+
+| Field | Value |
+|-------|-------|
+| **Release Name** | v2.0.4 – Sprint 2 Documentation & Operations Package |
+| **Release Date** | 2026-07-23 |
+| **Commit Hash** | `6273ced3` |
+| **Tag** | `v2.0.4-sprint2-documentation-package` |
+| **Deployment ID** | `dpl_Afs6TX9WPTFA4bWbv2i61TgmpCLh` |
+| **Repository Health** | Improved — R-DOCS committed; ~59 files remain (mostly R-CERT + blocked) |
+| **Business Summary** | Permanent Sprint 2 architecture and release-engineering documentation SSOT for development, ops, and knowledge transfer |
+| **Architecture Summary** | Documentation only — Handbook, Landing Framework, Link Graph, ADRs 23–27; no runtime/engine changes |
+| **Documentation Summary** | 18 files: Handbook v1.0, 5 ADRs, landing/link-graph guides, Inventory, Isolation, recovery forensics (R1/R1A/R1B), completion report, release notes |
+| **Known Notes** | Identifier standardized to **R-DOCS** (replaced R-DOCS-ARCH) · Named ZEOS/onboarding/runbook gaps remain optional follow-up · R-CERT still uncommitted |
 
 ---
 
@@ -85,4 +103,4 @@
 
 ---
 
-*Last updated: 2026-07-23 — v2.0.3 Generated SEO Assets released (`e3bedc16`, `dpl_664fyQaCxrfKiVgEdEUYdtwsm9mv`)*
+*Last updated: 2026-07-23 — v2.0.4 Sprint 2 Documentation Package released (`6273ced3`, `dpl_Afs6TX9WPTFA4bWbv2i61TgmpCLh`)*
