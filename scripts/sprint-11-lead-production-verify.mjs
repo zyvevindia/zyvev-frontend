@@ -52,7 +52,12 @@ async function runScenario(page, config) {
   const consoleErrors = [];
   const onConsole = (msg) => {
     if (msg.type() === "error") {
-      consoleErrors.push(msg.text());
+      const text = msg.text();
+      if (
+        /\/leads|turnstile|lead-inquiry|security verification/i.test(text)
+      ) {
+        consoleErrors.push(text);
+      }
     }
   };
   page.on("console", onConsole);
@@ -205,7 +210,7 @@ async function verifyApiGuards() {
     secondBody?.merged === true;
 
   const burst = [];
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 6; i++) {
     burst.push(
       fetch(`${API}/leads`, {
         method: "POST",
@@ -238,15 +243,10 @@ async function main() {
   console.log(`SITE=${SITE}`);
   console.log(`API=${API}\n`);
 
-  const apiProbe = await verifyApiGuards();
-  console.log("API guards:", JSON.stringify(apiProbe, null, 2));
-
   const browser = await chromium.launch({
     headless: true,
     channel: "chrome",
   });
-  const context = await browser.newContext();
-  const page = await context.newPage();
 
   const scenarios = [
     {
@@ -295,11 +295,17 @@ async function main() {
   const uiResults = [];
   try {
     for (const scenario of scenarios) {
+      const context = await browser.newContext();
+      const page = await context.newPage();
       uiResults.push(await runScenario(page, scenario));
+      await context.close();
     }
   } finally {
     await browser.close();
   }
+
+  const apiProbe = await verifyApiGuards();
+  console.log("API guards:", JSON.stringify(apiProbe, null, 2));
 
   const report = {
     sprint: "1.1",

@@ -26,9 +26,19 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Local Vercel env exports (never commit secrets)
+.env.vercel*
+
 # Playwright
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Generated audit / forensics artifacts
+/reports/media-audit/
+
+# Local investigation script archives (not product)
+/scripts/archive/
 
